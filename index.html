@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>giorgiotani/PeaZip @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #273f4e;
+		  font-family: "Helvetica,Arial,FreeSans";
+  		color: #ffffff;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #d8c0b1; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #d8c0b1; }
+    h3 { text-align: center; color: #d8c0b1; }
+    a { color: #d8c0b1; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/giorgiotani/PeaZip"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/giorgiotani/PeaZip/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/giorgiotani/PeaZip/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/giorgiotani/PeaZip">PeaZip</a>
+      <span class="small">by <a href="http://github.com/giorgiotani">giorgiotani</a></span></h1>
+
+    <div class="description">
+      Cross-platform file and archive manager. Features volume spanning, compression, authenticated encryption. Supports 7Z, 7-Zip sfx, ACE, ARJ, BZ2, CAB, CHM, CPIO, DEB, GZ, ISO, JAR, LHA/LZH, NSIS, OOo, PAQ/LPAQ, PEA, QUAD, RAR, RPM, split, TAR, Z, ZIP.
+    </div>
+
+    <p>Open source file and archive manager.
+Flexible, portable, secure, and free as in freedom.
+create 7Z, ARC, BZ2, GZ, PAQ/ZPAQ, PEA, QUAD/BALZ, TAR, UPX, ZIP
+extract 124 archive types: ACE, ARJ, CAB, DMG, ISO, LHA, RAR, UDF and many more</p><h2>Install</h2>
+<p>To run unattended installation launch the Windows installer with /SILENT parameter; use /VERYSILENT for background installation, without notification to the users.
+On install, PeaZip creates some useful entries in SendTo menu that can be simply copied to one user to another as needed, they are located in C:\Documents and Settings\(username)\SendTo (Windows XP) or C:\Users\(username)\AppData\Roaming\Microsoft\Windows\SendTo (Vista/7), assuming C as system's disk.
+When unistalled, PeaZip restores files association with Windows' Compressed Folders, for the supported file types.
+In any moment, to manually restore file associations with Compressed Folders utility run: cmd /c assoc .zip=CompressedFolder replacing .zip with any file extension it is desired to be associated to Compressed Folder utility.
+To restore file associations with a previous archive manager please refer to its own documentation, usually it can be done running the program's setup package, or from the application's itself.
+On networks, the application can be made available to multiple users, either whith a shared configuration or with separate configuration for each user, see "Advanced settings editing" and "Customization and scripting" in the help file.
+On Linux systems, PeaZip installer automatically create menu entries for KDE (on most versions); to add PeaZip to Gnome menu copy the "Archiving" folder placed in PeaZip/Freedesktop_integration/nautilus-scripts to system's Nautilus script's folder (in most versions open "Scripts" menu in system's context menu, and select "Open script's folder").
+You can freely replace backend executables in PeaZip/res directory (any PeaZip release/package) with updated ones (as long as they support the same syntax) or with 64 bit counterpart, if available; in this case please note that on Linux 64 bit systems you will need ia32-libs, as long as you need to run a 32 bit executable.
+To extract ACE files it is needed a separate plugin (due to UnACE closed source nature) available in Add-ons page.
+
+* DEB packages reports (all) for architecture check, so can be installed on 32 and 64 bit systems.Please note that ia32-libs are required to run any 32 bit binary on 64 bit systems.
+Note for third parts packagers: those packages can be transformed in i386 DEB if desired; i386 DEB can anyway be installed on 64 bit systems using dpkg -i --force-architecture
+** Qt widgetset packages requires Qt 4.3.4 or more recent, and needs libqt4intf.so installed in /usr/local/lib or equivalent directory (copy the file and run ldconfig; it is done automatically in installable packages), such as /usr/lib or /usr/lib32 on some 64 bit distributions. A copy of libqt4intf.so is avaiilable in PeaZip's directory, ./usr/local/share/PeaZip/ for the installable packages.</p>
+<h2>License</h2>
+<p>LGPLv3</p>
+<h2>Authors</h2>
+<p>Giorgio Tani</p>
+<h2>Contact</h2>
+<p> (giorgio.tani.software@gmail.com)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/giorgiotani/PeaZip/zipball/master">zip</a> or
+      <a href="http://github.com/giorgiotani/PeaZip/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/giorgiotani/PeaZip</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/giorgiotani/PeaZip">giorgiotani/PeaZip</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
