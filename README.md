@@ -9,5 +9,9 @@ Open and extract over 150 archive types: ACE, ARJ, CAB, DMG, ISO, LHA, RAR, UDF,
 
 Downloads http://peazip.sourceforge.net
 
+Support and multilingual help http://peazip.sourceforge.net/peazip-help.html
+
+FAQ http://peazip.sourceforge.net/peazip-help-faq.html
+
 Mirror http://www.peazip.org
 
