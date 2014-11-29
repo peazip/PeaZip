@@ -13,7 +13,7 @@ PeaZip project is focused on security, featuring strong encryption with optional
 
 Downloads http://peazip.sourceforge.net
 
-Support and multilingual help http://peazip.sourceforge.net/peazip-help.html
+Support http://peazip.sourceforge.net/peazip-help.html
 
 FAQ http://peazip.sourceforge.net/peazip-help-faq.html
 
