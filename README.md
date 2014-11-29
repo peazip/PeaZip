@@ -1,4 +1,4 @@
-PeaZip, free Zip files utility and Rar extractor
+PeaZip
 ======
 
 PeaZip is a free cross-platform file archiver and file manager utility for Windows, ReactOS, and Linux x86/x86_64 (Linux ARM and BSD ports exists).
