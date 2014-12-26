@@ -1,7 +1,8 @@
-PeaZip
+PeaZip free archiver
 ======
 
-PeaZip is a free cross-platform file archiver and file manager utility for Windows, ReactOS, and Linux x86/x86_64 (Linux ARM and BSD ports exists).
+PeaZip is a free cross-platform zip utility and rar file extractor.
+Open Source alternative to software as WinZip and WinRar, PeaZip project replaces proprietary software providing a freeware file archiver and file manager tool for Windows, ReactOS, and Linux x86/x86_64 (Linux ARM and BSD ports exists).
 
 Create 7Z, ARC, BZ2, GZ, *PAQ, PEA, QUAD/BALZ, TAR, UPX, WIM, XZ, ZIP files
 
