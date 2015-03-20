@@ -1,16 +1,11 @@
 PeaZip free archiver
 ======
 
-PeaZip is a free cross-platform zip utility and rar file extractor.
-Open Source alternative to software as WinZip and WinRar, PeaZip project replaces proprietary software providing a freeware file archiver and file manager tool for Windows, ReactOS, and Linux x86/x86_64 (Linux ARM and BSD ports exists).
+PeaZip project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ, UPX) focused on file and archive management, and security (strong encryption, optional two factor authentication, encrypted password manager, secure file delete).
 
-Create 7Z, ARC, BZ2, GZ, *PAQ, PEA, QUAD/BALZ, TAR, UPX, WIM, XZ, ZIP files
+The program offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), and run as native application on Windows/Win64, Wine/ReactOS, and Linux x86/x86-64, with Linux ARM and BSD ports also available.
 
-Open and extract over 150 archive types: ACE, ARJ, CAB, DMG, ISO, LHA, RAR, UDF, ZIPX files and more...
-
-The application provides an unified portable GUI for many state of art Open Source technologies like 7-Zip, FreeArc, PAQ, UPX, and introduces various file and archive management features: find duplicate files, set bookmarks, view thumbnails, convert archives, export/schedule task definition as scripts to automate backup and restore operation, or to fine tune the operation beyond GUI application capabilities, or for learning purpose
-
-PeaZip project is focused on security, featuring strong encryption with optional two factor authentication, encrypted password manager, secure file deletion, calculate file hashes and checksums.
+The project is written in Lazarus / FreePascal, and Windows installable packages are scripted with InnoSetup.
 
 Downloads http://peazip.sourceforge.net
 
@@ -19,4 +14,3 @@ Support http://peazip.sourceforge.net/peazip-help.html
 FAQ http://peazip.sourceforge.net/peazip-help-faq.html
 
 Mirror http://www.peazip.org
-
