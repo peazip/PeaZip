@@ -1,7 +1,7 @@
 PeaZip free archiver
 ======
 
-PeaZip project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ, PEA, UPX) focused on file and archive management, and security (strong encryption, optional two factor authentication, encrypted password manager, secure file delete).
+PeaZip project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ, PEA, UPX) focused on file and archive management, and security (strong encryption, two factor authentication, encrypted password manager, secure delete).
 
 The program offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), and run as native application on Windows/Win64, Wine/ReactOS, and Linux x86/x86-64, with Linux ARM and BSD ports also available.
 
