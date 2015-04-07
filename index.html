@@ -1,42 +1,30 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Peazip : Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager. Features volume spanning, compression, authenticated encryption. Supports 7Z, 7-Zip sfx, ACE, ARJ, BZ2, CAB, CHM, CPIO, DEB, GZ, ISO, JAR, LHA/LZH, NSIS, OOo, PAQ/LPAQ, PEA, QUAD, RAR, RPM, split, TAR, Z, ZIP, ZIPX.">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Peazip</title>
+    <meta charset="UTF-8">
+    <title>Peazip by giorgiotani</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Peazip</h1>
+      <h2 class="project-tagline">Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager. Features volume spanning, compression, authenticated encryption. Supports 7Z, 7-Zip sfx, ACE, ARJ, BZ2, CAB, CHM, CPIO, DEB, GZ, ISO, JAR, LHA/LZH, NSIS, OOo, PAQ/LPAQ, PEA, QUAD, RAR, RPM, split, TAR, Z, ZIP, ZIPX.</h2>
+      <a href="https://github.com/giorgiotani/PeaZip" class="btn">View on GitHub</a>
+      <a href="https://github.com/giorgiotani/PeaZip/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/giorgiotani/PeaZip/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/giorgiotani/PeaZip">View on GitHub</a>
-
-          <h1 id="project_title">Peazip</h1>
-          <h2 id="project_tagline">Free Zip / Unzip software and Rar file extractor. Cross-platform file and archive manager. Features volume spanning, compression, authenticated encryption. Supports 7Z, 7-Zip sfx, ACE, ARJ, BZ2, CAB, CHM, CPIO, DEB, GZ, ISO, JAR, LHA/LZH, NSIS, OOo, PAQ/LPAQ, PEA, QUAD, RAR, RPM, split, TAR, Z, ZIP, ZIPX.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/giorgiotani/PeaZip/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/giorgiotani/PeaZip/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="peazip-free-archiver" class="anchor" href="#peazip-free-archiver" aria-hidden="true"><span class="octicon octicon-link"></span></a>PeaZip free archiver</h1>
 
-<p>PeaZip is a free file compression software (zip/unzip tool and rar file extractor) available for Windows and Linux as portable and installable native software.</p>
+<p>PeaZip is a free file compression software (zip/unzip tool and rar file extractor) available for MS Windows and Linux systems as portable and installable native software.</p>
 
-<p>The application works with over 150+ archive formats and variants:</p>
+<p>The project provides a cross-platform alternative to proprietary software (WinZip, WinRar, etc), and works with over 150+ archive formats and variants:</p>
 
 <ul>
 <li>Create 7Z, ARC, BZip2, GZip, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ, TAR, UPX, WIM, XZ, ZIP</li>
@@ -59,23 +47,21 @@
 <p><img src="http://peazip.sourceforge.net/nav.png" alt="PeaZip archive manager utility">
 <a href="http://peazip.sourceforge.net/screenshots-peazip-1.html">PeaZip screenshots</a></p>
 
-<p>PeaZip project is aimed to provide a cross-platform front-end GUI for multiple file and archive management Open Source technologies (7-Zip, FreeArc, PAQ, PEA, UPX), with special focus on security: multiple archive encryption standards for 7Z, ARC, RAR, ZIP, ZIPX file (based on AES, Twofish, Serpent), optional two factor authentication, encrypted password manager, secure file delete.</p>
+<p>The application deploy a cross-platform front-end GUI for multiple file and archive management Open Source components (7-Zip, FreeArc, PAQ/LPAQ/ZPAQ, PEA, UPX), with special focus on security: support for multiple archive encryption standards for 7Z, ARC, RAR, ZIP, ZIPX file formats (based on AES, Twofish, Serpent algorithms), optional two factor (password + key file) authentication, password manager (optionally encrypted) with random password generator, secure file erase.</p>
 
 <p>The software handle spanned (split) archives (.001, .R01, .Z01, etc) and supports in-archive browsing and searching.</p>
 
-<p>The program is written in FreePascal using Lazarus IDE, Windows installable packages are scripted with InnoSetup (Delphi compatible syntax) and offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, and Linux x86/x86-64, with Linux ARM and BSD ports also available.</p>
-      </section>
-    </div>
+<p>The software is developed using Lazarus IDE (and InnoSetup for Microsoft Windows installers) and released under LGPLv3 license.</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Peazip maintained by <a href="https://github.com/giorgiotani">giorgiotani</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/giorgiotani/PeaZip">Peazip</a> is maintained by <a href="https://github.com/giorgiotani">giorgiotani</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
+
