@@ -9,6 +9,8 @@ The program is written in Lazarus / FreePascal (Windows installable packages are
 
 Downloads http://peazip.sourceforge.net
 
+Add-ons and Plugin (UNRAR5, UNACE,...) http://peazip.sourceforge.net/peazip-add-ons.html
+
 Support http://peazip.sourceforge.net/peazip-help.html
 
 FAQ http://peazip.sourceforge.net/peazip-help-faq.html
