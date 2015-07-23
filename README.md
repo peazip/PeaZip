@@ -14,3 +14,5 @@ Add-ons and Plugin (UNRAR5, UNACE,...) http://www.peazip.org/peazip-add-ons.html
 Support http://www.peazip.org/peazip-help.html
 
 FAQ http://www.peazip.org/peazip-help-faq.html
+
+How to use or provide translations: https://github.com/giorgiotani/PeaZip-Translations
