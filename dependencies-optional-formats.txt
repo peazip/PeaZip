@@ -1,0 +1,2 @@
+In addition to main package dependencies:
+libc.so.6(GLIBC_2.3), libc.so.6(GLIBC_2.3.4), libc.so.6(GLIBC_2.4), libcurl.so.4, libgcc_s.so.1(GLIBC_2.0), libgmp.so.3, libncurses.so.5, libpthread.so.0(GLIBC_2.3.2), librt.so.1 librt.so.1(GLIBC_2.2)

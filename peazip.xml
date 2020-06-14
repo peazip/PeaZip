@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.51 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Giorgio Tani</Company_Name>
+		<Address_1>PeaZip srl</Address_1>
+		<Address_2 />
+		<City_Town>Ravenna</City_Town>
+		<State_Province>Italy</State_Province>
+		<Zip_Postal_Code>48015</Zip_Postal_Code>
+		<Country>Italy</Country>
+		<Company_WebSite_URL>https://www.peazip.org</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Giorgio</Author_First_Name>
+			<Author_Last_Name>Tani</Author_Last_Name>
+			<Author_Email>giorgio.tani.software@gmail.com</Author_Email>
+			<Contact_First_Name>Giorgio</Contact_First_Name>
+			<Contact_Last_Name>Tani</Contact_Last_Name>
+			<Contact_Email>giorgio.tani.software@gmail.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>giorgio.tani.software@gmail.com</Sales_Email>
+			<Support_Email>giorgio.tani.software@gmail.com</Support_Email>
+			<General_Email>giorgio.tani.software@gmail.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>PeaZip</Program_Name>
+		<Program_Version>7.3.1</Program_Version>
+		<Program_Release_Month>06</Program_Release_Month>
+		<Program_Release_Day>02</Program_Release_Day>
+		<Program_Release_Year>2020</Program_Release_Year>
+		<Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>Major Update</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win2000,Win7 x32,Win7 x64,Win98,WinOther,WinServer,WinVista,WinVista x64,WinXP,Other</Program_OS_Support>
+		<Program_Language>English,Arabic,Byelorussian,Chinese,ChineseSimplified,ChineseTraditional,Czech,Dutch,French,Galician,German,Greek,Hungarian,Italian,Japanese,Korean,Norwegian,Polish,Portuguese,Romanian,Russian,Singhalese,Spanish,Swedish,Turkish,Ukrainian,Vietnamese</Program_Language>
+		<Program_Change_Info>Fixes, improved themes, Zstd 1.4.5</Program_Change_Info>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Category_Class>System Utilities::File Compression</Program_Category_Class>
+		<Program_System_Requirements>Any Windows system</Program_System_Requirements>
+		<File_Info>
+			<File_Size_Bytes>8395053</File_Size_Bytes>
+			<File_Size_K>8198</File_Size_K>
+			<File_Size_MB>8.01</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>free, rar, zip, windows, files, utility, archiver, software, opener, extractor, tar, 7z, bzip2, gzip</Keywords>
+			<Char_Desc_45>Free ZIP files utility, open 7Z RAR TAR ZIP</Char_Desc_45>
+			<Char_Desc_80>Free ZIP files utility, open 7Z ACE ISO TAR RAR ZIP ZIPX archives (180+ formats)</Char_Desc_80>
+			<Char_Desc_250>Free ZIP files utility, encrypt and split files, open and extract RAR, 7Z, BR, ACE, CAB, BZ2, ISO, GZ, PAQ, PEA, sfx, TAR, ZIP/ZIPX, ZST files and many more archive types (180+ formats). Portable and Open Source, PeaZip runs on Windows, Linux, BSD.</Char_Desc_250>
+			<Char_Desc_450>PeaZip is a free ZIP files utility and free RAR extractor, features encryption, secure deletion and file split. Create 7Z, Brotli, BZip2, GZip, PAQ, PEA, split, sfx, TAR, WIM, XZ, ZIP, Zstandard files. Open and extract RAR, ACE, CAB, DMG, ISO, JAR, MSI, UDF, ZIPX files and more (180+ types). Tabbed browsing, multiple inclusion/exclusion filters, save archive layout, save and schedule task definition as script, work on multiple archives at once.</Char_Desc_450>
+			<Char_Desc_2000>PeaZip is a free archiver and file manager software, a fast and elegant all-purpose free ZIP files utility and free RAR extractor for Windows, Linux, and BSD.
+The program freatures a powerful unified GUI that, unlike most of other classic file archivers like i.e. WinZip and WinRar, is natively portable and cross-platform.
+PeaZip is based on solid and proven Open Source technology of 7-Zip for handling mainstream archive formats, and other great Open Source tools (Brotli, FreeARC, PAQ, UPX, Zstandard...) for supporting additional file formats and features, for a total of over 180 file formats supported.
+
+Write (create) 7Z, ARC, Brotli, BZ2, GZ, *PAQ, PEA, QUAD/BALZ, TAR, UPX, WIM, XZ, ZIP, Zstandard files
+
+Read (open, extract) RAR, ACE, ARJ, CAB, DEB, DMG, ISO, LHA, RPM, UDF, ZIPX files and more...
+
+PeaZip is localized in over 30 languages and is capable of handling all most popular archive formats (180+ file types), supporting a wide array of advanced file and archive management features (tabbed browsing, search, bookmarks, thumbnail viewer, hashing, find duplicate files, convert archives, edit files in archives, drag and drop extraction...), and it is especially focused on security: strong encryption, two factor authentication, encrypted password manager, secure data delete.
+
+A distinctive trait of PeaZip is the extremely user-friendly compression/extraction interface, more similar to CD burners GUI rather than to a classic file compressor: this innovative design integrates a full featured file manager component and makes very simple to check/update items set for compression and extraction.
+
+Tasks created in the GUI can be easily saved (and scheduled) as batch scripts, in order to help automate backup/restore operations, or for fine tuning, or for learning purpose, bridging the gap between the ease of use of GUI applications and power and flexibility of console.</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>https://www.peazip.org</Application_Info_URL>
+			<Application_Order_URL>https://www.peazip.org</Application_Order_URL>
+			<Application_Screenshot_URL>https://www.peazip.org/peazip-thumb.jpg</Application_Screenshot_URL>
+			<Application_Icon_URL>https://www.peazip.org/peazip_ico32.gif</Application_Icon_URL>
+			<Application_XML_File_URL>https://www.peazip.org/peazip.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>https://sourceforge.net/projects/peazip/files/7.3.1/peazip-7.3.1.WINDOWS.exe</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>LGPL</Distribution_Permissions>
+		<EULA>LGPL</EULA>
+	</Permissions>
+</XML_DIZ_INFO>

@@ -1,0 +1,293 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.50 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Giorgio Tani</Company_Name>
+		<Address_1>PeaZip srl</Address_1>
+		<Address_2 />
+		<City_Town>Ravenna</City_Town>
+		<State_Province>Italy</State_Province>
+		<Zip_Postal_Code>48015</Zip_Postal_Code>
+		<Country>Italy</Country>
+		<Company_WebSite_URL>http://www.peazip.org</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Giorgio</Author_First_Name>
+			<Author_Last_Name>Tani</Author_Last_Name>
+			<Author_Email>giorgio.tani.software@gmail.com</Author_Email>
+			<Contact_First_Name>Giorgio</Contact_First_Name>
+			<Contact_Last_Name>Tani</Contact_Last_Name>
+			<Contact_Email>giorgio.tani.software@gmail.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>giorgio.tani.software@gmail.com</Sales_Email>
+			<Support_Email>giorgio.tani.software@gmail.com</Support_Email>
+			<General_Email>giorgio.tani.software@gmail.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>PeaUtils</Program_Name>
+		<Program_Version>1.2</Program_Version>
+		<Program_Release_Month>04</Program_Release_Month>
+		<Program_Release_Day>17</Program_Release_Day>
+		<Program_Release_Year>2017</Program_Release_Year>
+		<Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win2000,Win7 x32,Win7 x64,Win98,WinOther,WinServer,WinVista,WinVista x64,WinXP,Other</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info>Varuious fixes and improvements</Program_Change_Info>
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Category_Class>System Utilities::File &amp; Disk Management</Program_Category_Class>
+		<Program_System_Requirements>Any Windows system</Program_System_Requirements>
+		<File_Info>
+			<File_Size_Bytes>6817698</File_Size_Bytes>
+			<File_Size_K>6657</File_Size_K>
+			<File_Size_MB>6.50</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>free, hash, checksum, files, secure delete, eraser, file management, tools, suite, utilities, md5, crc, sha, sha256, sha3</Keywords>
+			<Char_Desc_45>Free hash file, split, secure delete utility</Char_Desc_45>
+			<Char_Desc_80>Free file management tools suite: hash, checksum, split, secure delete files</Char_Desc_80>
+			<Char_Desc_250>PeaUtils is a free suite of file management tools, spin-off of PeaZip project, also available as portable software not requiring installation. Supports file hashing, checksum, split/merge, secure data deletion. Open Source (LGPLv3), free for any use.</Char_Desc_250>
+			<Char_Desc_450>PeaUtils is a free suite of file management tools, spin-off of PeaZip project meant for providing a minimal, easy to use GUI to access most common file management functions, as compute file checksum (CRC), hash (MD5, SHA1, SHA2, SHA3), hex preview, split and join files, and secure deletion of files and free disk space. The program is also available as portable software not requiring installation. Open Source (LGPLv3), free for any use.</Char_Desc_450>
+			<Char_Desc_2000>PeaUtils is a free suite providing a wide array of file management utilities, a Swiss-Army-knife tool for computing checksum values (CRC32, CRC64), hash algorithms (MD5, SHA1, SHA256, SHA-3_356), compare two files byte-to-byte, view hexadecimal preview of a file, split file in smaller parts and join spanned volumes back to original file, perform secure data deletion - either files and folders, or free disk space.
+
+To use the application, open it clicking on program's shortcut or on pea.exe file in program's folder, drag one of more files or folders on it (or use its standard open file dialog), and simply select the function to be performed on listed items.
+
+As alternative, during setup Windows installable version can optionally create a submenu in system's context menu, providing quick access to a customizable list of most common file management (eraser, integrity checking) tools.
+
+Open Source (LGPLv3), free for any private and professional use, PeaUtils is a spin-off of PeaZip project meant for providing an user friendly and very simple single-purpose GUI to easily access file management functions.
+
+The program is available for Microsoft Windows and Linux systems (desktop neutral), and it is also available as portable software not requiring installation, useful for deploying its rich set of functions when it is not possible to modify the host machine installing software.
+</Char_Desc_2000>
+		</English>
+		<Chinese>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Chinese>
+		<Dutch>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Dutch>
+		<French>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</French>
+		<German>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</German>
+		<Italian>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Italian>
+		<Japanese>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Japanese>
+		<Portuguese>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Portuguese>
+		<Russian>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Russian>
+		<Spanish>
+			<Keywords />
+			<Char_Desc_45 />
+			<Char_Desc_80 />
+			<Char_Desc_250 />
+			<Char_Desc_450 />
+			<Char_Desc_2000 />
+		</Spanish>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://www.peazip.org/peautils-hash-secure-delete.html</Application_Info_URL>
+			<Application_Order_URL>http://www.peazip.org/peautils-hash-secure-delete.html</Application_Order_URL>
+			<Application_Screenshot_URL>http://www.peazip.org/peautils.jpg</Application_Screenshot_URL>
+			<Application_Icon_URL>http://www.peazip.org/peaextractor/peaextractor_ico32.gif</Application_Icon_URL>
+			<Application_XML_File_URL>http://www.peazip.org/peautils.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://osdn.jp/dl/peazip/peautils-1.2.WINDOWS.exe</Primary_Download_URL>
+			<Secondary_Download_URL>http://osdn.jp/dl/peazip/peautils-1.2.WIN64.exe</Secondary_Download_URL>
+			<Additional_Download_URL_1>http://osdn.jp/dl/peazip/peautils-portable-1.2.WINDOWS.zip</Additional_Download_URL_1>
+			<Additional_Download_URL_2>http://osdn.jp/dl/peazip/peautils-portable-1.2.WIN64.zip</Additional_Download_URL_2>
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>LGPL</Distribution_Permissions>
+		<EULA>LGPL</EULA>
+	</Permissions>
+	<Affiliates>
+		<Affiliates_FORM>Y</Affiliates_FORM>
+		<Affiliates_VERSION>1.4</Affiliates_VERSION>
+		<Affiliates_URL>http://pad.asp-software.org/extensions/Affiliates.htm</Affiliates_URL>
+		<Affiliates_Information_Page />
+		<Affiliates_Avangate_Order_Page />
+		<Affiliates_Avangate_Vendor_ID />
+		<Affiliates_Avangate_Product_ID />
+		<Affiliates_Avangate_Maximum_Commission_Rate />
+		<Affiliates_BMTMicro_Order_Page />
+		<Affiliates_BMTMicro_Vendor_ID />
+		<Affiliates_BMTMicro_Product_ID />
+		<Affiliates_BMTMicro_Maximum_Commission_Rate />
+		<Affiliates_Cleverbridge_Order_Page />
+		<Affiliates_Cleverbridge_Vendor_ID />
+		<Affiliates_Cleverbridge_Product_ID />
+		<Affiliates_Cleverbridge_Maximum_Commission_Rate />
+		<Affiliates_clixGalore_Order_Page />
+		<Affiliates_clixGalore_Vendor_ID />
+		<Affiliates_clixGalore_Product_ID />
+		<Affiliates_clixGalore_Maximum_Commission_Rate />
+		<Affiliates_CommissionJunction_Order_Page />
+		<Affiliates_CommissionJunction_Vendor_ID />
+		<Affiliates_CommissionJunction_Product_ID />
+		<Affiliates_CommissionJunction_Maximum_Commission_Rate />
+		<Affiliates_DigiBuy_Order_Page />
+		<Affiliates_DigiBuy_Vendor_ID />
+		<Affiliates_DigiBuy_Product_ID />
+		<Affiliates_DigiBuy_Maximum_Commission_Rate />
+		<Affiliates_DigitalCandle_Order_Page />
+		<Affiliates_DigitalCandle_Vendor_ID />
+		<Affiliates_DigitalCandle_Product_ID />
+		<Affiliates_DigitalCandle_Maximum_Commission_Rate />
+		<Affiliates_Emetrix_Order_Page />
+		<Affiliates_Emetrix_Vendor_ID />
+		<Affiliates_Emetrix_Product_ID />
+		<Affiliates_Emetrix_Maximum_Commission_Rate />
+		<Affiliates_eSellerate_Order_Page />
+		<Affiliates_eSellerate_Vendor_ID />
+		<Affiliates_eSellerate_Product_ID />
+		<Affiliates_eSellerate_Maximum_Commission_Rate />
+		<Affiliates_iPortis_Order_Page />
+		<Affiliates_iPortis_Vendor_ID />
+		<Affiliates_iPortis_Product_ID />
+		<Affiliates_iPortis_Maximum_Commission_Rate />
+		<Affiliates_Kagi_Order_Page />
+		<Affiliates_Kagi_Vendor_ID />
+		<Affiliates_Kagi_Product_ID />
+		<Affiliates_Kagi_Maximum_Commission_Rate />
+		<Affiliates_LinkShare_Order_Page />
+		<Affiliates_LinkShare_Vendor_ID />
+		<Affiliates_LinkShare_Product_ID />
+		<Affiliates_LinkShare_Maximum_Commission_Rate />
+		<Affiliates_NorthStarSol_Order_Page />
+		<Affiliates_NorthStarSol_Vendor_ID />
+		<Affiliates_NorthStarSol_Product_ID />
+		<Affiliates_NorthStarSol_Maximum_Commission_Rate />
+		<Affiliates_OneNetworkDirect_Order_Page />
+		<Affiliates_OneNetworkDirect_Vendor_ID />
+		<Affiliates_OneNetworkDirect_Product_ID />
+		<Affiliates_OneNetworkDirect_Maximum_Commission_Rate />
+		<Affiliates_Order1_Order_Page />
+		<Affiliates_Order1_Vendor_ID />
+		<Affiliates_Order1_Product_ID />
+		<Affiliates_Order1_Maximum_Commission_Rate />
+		<Affiliates_Osolis_Order_Page />
+		<Affiliates_Osolis_Vendor_ID />
+		<Affiliates_Osolis_Product_ID />
+		<Affiliates_Osolis_Maximum_Commission_Rate />
+		<Affiliates_Plimus_Order_Page />
+		<Affiliates_Plimus_Vendor_ID />
+		<Affiliates_Plimus_Product_ID />
+		<Affiliates_Plimus_Maximum_Commission_Rate />
+		<Affiliates_Regnet_Order_Page />
+		<Affiliates_Regnet_Vendor_ID />
+		<Affiliates_Regnet_Product_ID />
+		<Affiliates_Regnet_Maximum_Commission_Rate />
+		<Affiliates_Regnow_Order_Page />
+		<Affiliates_Regnow_Vendor_ID />
+		<Affiliates_Regnow_Product_ID />
+		<Affiliates_Regnow_Maximum_Commission_Rate />
+		<Affiliates_Regsoft_Order_Page />
+		<Affiliates_Regsoft_Vendor_ID />
+		<Affiliates_Regsoft_Product_ID />
+		<Affiliates_Regsoft_Maximum_Commission_Rate />
+		<Affiliates_ShareIt_Order_Page />
+		<Affiliates_ShareIt_Vendor_ID />
+		<Affiliates_ShareIt_Product_ID />
+		<Affiliates_ShareIt_Maximum_Commission_Rate />
+		<Affiliates_Shareasale_Order_Page />
+		<Affiliates_Shareasale_Vendor_ID />
+		<Affiliates_Shareasale_Product_ID />
+		<Affiliates_Shareasale_Maximum_Commission_Rate />
+		<Affiliates_SWReg_Order_Page />
+		<Affiliates_SWReg_Vendor_ID />
+		<Affiliates_SWReg_Product_ID />
+		<Affiliates_SWReg_Maximum_Commission_Rate />
+		<Affiliates_V-Share_Order_Page />
+		<Affiliates_V-Share_Vendor_ID />
+		<Affiliates_V-Share_Product_ID />
+		<Affiliates_V-Share_Maximum_Commission_Rate />
+		<Affiliates_VFree_Order_Page />
+		<Affiliates_VFree_Vendor_ID />
+		<Affiliates_VFree_Product_ID />
+		<Affiliates_VFree_Maximum_Commission_Rate />
+		<Affiliates_Yaskifo_Order_Page />
+		<Affiliates_Yaskifo_Vendor_ID />
+		<Affiliates_Yaskifo_Product_ID />
+		<Affiliates_Yaskifo_Maximum_Commission_Rate />
+	</Affiliates>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number />
+	</ASP>
+</XML_DIZ_INFO>

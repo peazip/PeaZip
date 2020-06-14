@@ -1,0 +1,398 @@
+2011 08 27
+3.9.1
+BACKEND
+Fewer FreeArc's SFX modules are now embedded by default: arc-tiny.linux.sfx, freearc.sfx, freearc-installer.sfx, freearc-tiny.sfx. If needed, other self extracting modules can still be downloaded from FreeArc's official website for free.
+Main executables are no longer compressed with UPX, resulting in a bit larger disk occupation (about 7MB) but smaller installer (about 1.5 MB) and less RAM usage (each instance does no longer need to be uncompressed in memory to run)
+If it is critical to reduce disk occupation, executables can be compressed with UPX through PeaZip itself
+
+FILE MANAGER
+Added history popup menu rightclicking on refresh button in address bar
+Added search history popup menu rightclicking on search button in address bar
+Changed low contrast text color to avoid it being the same color of default form color in Classic Windows theme for Vista/7
+Minor fixes
+
+EXTRACTION and ARCHIVING
+Fixed speed calculation for jobs lasting past midnight
+
+WINDOWS INSTALLER
+64 bit version has now WIN64 in application name
+New icons for most common archive formats 7Z, RAR and ZIP/ZIPX
+
+2011 07 31
+3.9
+FILE MANAGER
+Fixed bug in saving window's height when using PeaZip from context menu
+Re-introduced and improved contextual menus for toolbar buttons
+Add: shows favorite formats menu to directly select the archive format
+Convert: as add, but the favorite format menu starts archive conversion
+Extract: shows menu to extract all and (when browsing archives) displayed or selected content
+Extract all to: shows quick extraction menu
+Test: shows additional functions menu
+Reorganized keyboard shortcuts
+Organize shortcuts, related the way file/archive browser displays content, are associated to Alt combinations
+Alt+0 swap tool bar (priority to functions) and address bar (priority to navigation)
+Alt+1 hide/show menu bar
+Alt+2 toggle toolbar mode
+Alt+3 hide/show address bar
+Alt+4 toggle navigation bar
+Alt+5 toggle broser mode
+Alt+6 toggle
+Alt+7 Toggle sorting
+Ctrl+Alt+1 sort by name
+Ctrl+Alt+2 sort by type
+Ctrl+Alt+3 sort by size
+Ctrl+Alt+4 sort by packed size
+Ctrl+Alt+5 sort by date
+Ctrl+Alt+6 sort by attributes
+Ctrl+Alt+7 sort by crc
+Alt+8 toggle status bar
+Shift+Alt+0..6 jump to specific status bar view
+Alt+9 configure custom applications
+Quick options (Shift+Ctrl combinations): added Shift+Ctrl+O to toggle "open output path when job completes"
+Common operations are associated to Ctrl combinations (unchanged)
+F3 start search while in PeaZip's file browser, and system's search while in other modes (in order to search and drag files/folder to PeaZip)
+Alt+F3 always start system's search
+Reorganized browser's context menu and other GUI elements
+explore path made more prominent, featured in main context menu (and in navigation popup menu)
+select all made more prominent featured in main context menu grouped with Sort by submenu
+displayed sort column in status bar, especially useful when browser is not in Details mode
+Themes
+added 48 px icons, used in "icons" mode (any browser's size)
+added themes with embedded graphic: Seven-embedded (now default theme for all systems) and Nographic-embedded
+Seven and Firecrystal themes are distributed as compressed packages, this allows faster installation deploying less files
+Size submenu in Organize, for selecting size of browser's icons
+small (default) small icons 16 px (in details and list mode) / large icons 64 px (in icons mode)
+medium 32 px / 128 px
+large 64 px / 256 px
+
+EXTRACTION and ARCHIVING
+Added extraction support for ZIPX format
+
+WINDOWS INSTALLER
+Added file association for ZIPX files
+Added shortcut in Start menu to reset the application to factory settings
+
+134 file extensions supported (.zipx files)   
+        
+2011 06 12
+3.8
+BACKEND
+(Windows) 7z updated to 9.22 beta
+Pea 0.36
+
+CODE
+Added a constant switch COMPQT to fix some visual and functional problems compiling the application for Qt on Linux, default is 0, if experiencing problems with the compiled binary set it to 1 for better results on Qt on Linux
+
+EXTRACTION and ARCHIVING
+Added write support for WIM and XZ formats
+Added context menu handlers for right button drag and drop operation from application to system
+from file browser: move, copy, extract, extract in new folder
+from within archives: extract selected here, extract all here (both also in new folder)
+Added "Extract all to..." button on toolbar
+Fixed adding files to existing archives through "Add" procedure
+Fixed updating archive content in application window bar after delete operations
+Fixed browsing files with .bz extension and its variants
+Fixed creating new folder if folder with same name exists, in extraction and archive conversion
+Fixed restoring archive content in application window bar after exiting "Extract" procedure
+Fixed show correct path in the breadcrumb when opening and empty or non readable archive
+Various minor fixes
+
+WINDOWS INSTALLER
+Used InnoSetup ANSI version to keep compatibility with 9x systems
+
+133 file extensions supported (improved support for .bz2 variants; .ipa files)
+
+2011 04 06
+3.7
+BACKEND
+Pea 0.35
+(Linux) p7zip 0.9.20
+
+CODE
+Compiled with -O3 optimizations
+Compiled with Lazarus 0.9.30, done preliminary code cleanup to improve compatibility with 0.9.31 and following releases
+Replaced TNotebook (deprecated) with TPageControl
+File manager related functions moved from pea_utils (dependent on crypto library) to list_utils (not dependent on the crypto library)
+Moved application's initialization code from FormCreate to FormShow event
+Updated *_utils units to introduce new features for improving and customizing the application
+Used pure pascal replacement for crc_hash library units
+
+FILE MANAGER
+Automatic hint window on Listview to highlight data about file/folder below the mouse cursor
+(Windows) Improved browser aspect in Icon mode
+Improved navigation
+Added breadcrumb address field displaying up to 8 parent paths
+click on names to jump to parent directories
+click on spacer arrows or on free space on the breadcrumb to switch to classic editable address field, leave the control to return to the breadcrumb
+rightclick on the breadcrumb to show a popup menu displaying full path of parent paths (up to 8) and computer's root
+Implemented fast swicthing between navigation and treeview mode navigator
+Improved navigation sidebar's treeview mode (Shift+Ctrl+3), navigating a folder updates the selected foler in the treeview
+Simplified address bar
+Removed history button from address bar (it is featured in navigation button on the left of the address field)
+Refresh placed on the right of address field
+Search placed on the right of filter field
+Improved sorting: sorting is possible also in non-details modes using "Sort by" menu in main menu and browser's context menu
+Linked PeaZip's tracker in help menu to help users in filing bug reports and feature requests
+Tool bar and Address bar can be swapped in position to give visual priority either to functions or to navigation
+Themes: tool bar and address bar can be optionally themed with a texture
+Web search: added menu entries to search with PeaZip Search, powered by Google Custom Search
+Various minor fixes and enhancements
+
+ARCHIVING
+When creating archives containing multiple files or folders, the archive is named as the parent folder of the items, except if "add to separate archives" option is flagged.
+
+2011 02 26
+3.6.2
+FILE MANAGER
+(recommended) Improved recognition of malformed archives not explicitly listing folders' entries, now PeaZip is able to auto-switch to Flat view in order to show the full content of those archives in all tested cases
+Pre-set chunk sizes for DVD and DVD-DL decreased by 1MB in order to work without problems with most burning applications
+Better protection against unwanted multiple click on Ok for archiving and extraction operations
+
+WINDOWS INSTALLER
+Improved displaying information about the software to the end user
+
+WINDOWS PORTABLE
+(recommended) Packages now contain a default configuration file to allow application to run from first time in a read only path (not writable or protected by UAC) as standard user; a writable path is still recommended
+                   
+2011 02 10
+3.6.1
+CODE
+Compiled with -O3 optimizations
+
+FILE MANAGER
+File browser can now rename (Ctrl+R) multiple files at once
+Fixed: correct handling of maximized window state
+Fixed: navigating from the treeview updates history
+Improved sorting, sort function keeps context of previously sorted columns
+Middle mouse button navigate up one level
+Various minor fixes and improvements
+
+Translations updated
+               
+2010 12 26
+3.6
+BACKEND
+Updated to Pea 0.34
+
+CODE
+Updated Wolfgang Ehrhardt's crypto lybrary with crc_hash_2010-12-19
+
+FILE MANAGER
+Fixed: installable version unable to update archives on Windows 64 bit
+default 7z working dir (-w parameter) changed to explicitly set to use output path
+if 7z working dir is set to temporary folder, let 7z determinate the appropriate path
+when deleting files from a file supported through 7z backend, apply 7z working dir preference
+Fixed button position and size with large fonts / high dpi
+StringGrid's rows are now auto sized
+Modal buttons text is now translated
+Open output path moved from Options to Add and Extract interfaces for better visibility
+On archive creation, if password is set and the format supports encryption, the encryption label is evidenced in green for better visibility
+New option for ignoring paths for drag and drop extraction (default on)
+with ignore path directive applied, extraction through 7z and freearc backends will be performed using e (extract without paths) instead of x (extract with paths), in order to extract files from the archive without recreating the parent path's directory tree on the extraction destination
+with this new directive applied by default, all partial extraction operations starting from the file/archive browser (extract and open, and extraction by drag and drop), behaves uniformly trying to extract selected file(s) without recreating parent path tree
+the directive is overridden if a directory is selected, as extraction without paths will lose information about directory tree below that directory
+see Options > Settings, Open archive tab for fine tuning "ignore paths" directives
+
+129 file extensions supported
+Added support for .APK (Android package) and .SAR, and .IMF (IncrediMail) 
+
+2010 12 13
+3.5.1
+BACKEND
+Updated to UPX 3.07
+CODE
+Updated Wolfgang Ehrhardt's crypto library units to latest available version
+FILE MANAGER
+Fixed: opening a password protected archive counts as password validation, so the password confirmation field inherits password field value
+Fixed: "Encrypt also file names" option is ignored for formats not supporting this feature
+"Encrypt also file names" flag is now remembered
+Removed -x.y version suffix from language file names so next version's updates will preserved user-selected language
+It is possible to select existing themes (previously loaded custom temes) with directory selection dialog
+
+2010 11 25
+3.5
+BACKEND
+(Windows) 7z 9.20 stable
+(Windows) 7z.sfx and 7z-con.sfx modules updated to 9.20 stable version, customised with PeaZip icons
+Pea 0.33, updated look and feel of the utility
+FILE MANAGER
+fixed some non translated text strings
+fixed: don't ask for password confirmation for extraction operations
+ask confirmation for archiving and browsing (password set during browsing is used by default for archiving, as in WinRAR/7-Zip); never ask for confirmation if "Show password field" flag is set
+new quick extraction menu and keyboard shortcut Ctrl+0 to extract to same path of last successfull extraction operation
+reorganized info mode for status bar (Ctrl+Alt+2)
+themes modified in order to be released as autonomous packages
+default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, in user's home/application data for installable versions)
+themes are distributed as compressed packages (supported: 7z, zip and rar)
+custom theme packages can be created by PeaZip
+for further customization: theme file can be edited as plain utf8-text, program's graphic can be edited as bitmap files, theme package is built compressing the theme directory in 7z, zip or rar format using any compression utility
+(update recommended) updated web links to new PeaZip site
+added Mininova as featured search engine
+126 file extensions supported
+added .sfs and .image
+
+2010 10 25
+3.4
+BACKEND
+(Windows) updated to 7z 9.17 beta
+CODE
+Updated units of Wolfgang Ehrhardt's crypto library
+FILE MANAGER
+Improved information reported by PeaLauncher, when applicable total and selected size of extraction operation reported separately
+Improved indication of progress during long operation
+if an operation exceeds 0.5 seconds it is shown a (simil)marquee progress bar
+if an operation exceeds 0.5 seconds the refresh button is changed in stop button, allowing to stop current operation
+to prevent loss of time and user's focus a fresh instance of PeaZip is started in the last directory while the old instance is handled in background
+Added PanelIntro, usually not visible due to the speed of a normal startup
+if startup of the program is slowed for any reason user is informed about loading progress (0 inital form status 1 configuration and theming files loaded 2 input parameters parsed and executed)
+controls cannot be clicked for error until GUI is fully loaded and ready to accept user's input
+some controls load faster as they aren't visible
+Improved file browser
+Tighter integration with extraction interface
+New toolbar button on the right of "Extract", featuring a menu for
+direct extraction of the whole archive (or selected archives) to most commonly used locations
+check and modify most common extraction settings
+New keyboard shortcuts available bot in browser and in extraction interfaces for "Extract all to..." (Ctrl+E or F12), "Extract all here" (Ctrl+Alt+E), "Extract all to Desktop" (Ctrl+Shift+E), "Extract all to Documents" (Ctrl+Alt+Shift+E); Ctrl+1..8 extract to bookmark's 1..8 path (if defined); Ctrl+9 extract to default output path (if defined).
+Extraction from context menu made context sensitive, if no archive is selected the extract/test entries are disabled
+Added small icons mode for file browser
+Changed Toolbar modes: 3 with large and 3 with small icons (text below, text on the right, no text), and text only mode
+Toolbar is now set to large mode by default for better readability of main program's function
+Remapped function keys:
+Ctrl+* shortcuts for status bar types remapped to Ctrl+Alt+*
+Ctrl+F9 create keyfile
+F12 extract all to...
+Apps moved to a separate modal form, reachable in Organize menu
+Theme moved to a separate form, reachable in Options menu
+(Windows) Configure system integration entry now reachable in Options menu
+Default language file now changed to default.txt, that can be overwritten (i.e. by hand, or by custom installers or configuration script) to start by default the application in a non-Englih language; resetting the application will then result to swicth back to the language chosen for default.txt
+Rationalized themes moving some common decoration elements from separate bitmaps to non-themed graphic resources of the executable
+Various minor fixes and improvements
+124 file extensions supported
+added .fla; use Open with... > Open as archive to open, as for other non-archive types (supported formats not originally meant to be used as classic archives)
+
+2010 09 15
+3.3
+BACKEND
+(Windows) updated to 7z 9.16 beta
+FILE MANAGER
+improved capability of launching favourite programs and websites from file browser
+"Open..." group in navigation menu to launch most common operations (such as open file or directory) and favourite applications and websites
+new "Run" entry to type and launch arbitrary programs or websites
+new "Web search" dialog for launching single or multiple searches at once
+added alternative command for advanced applications/scripts group, to be executed if no parameter is received
+updated integration with Avira and Virustotal
+(Windows) improved aspect of drag and drop information panel
+(Windows Vista/7) improved desktop recognition
+(Windows) improved handling of non accessible mapped units
+if the operation takes more time than expected, following remote unit tests are skipped
+added an option to skip testing mapped units in Options > General (2), which is automatically set when the previous case applies
+improved recognition of malformed archives (not containing entries for directories), which triggers to switch to flat browsing mode in order to show all objects
+toggle flat/browse mode icon is prompted in the taskbar to speed up "show all" inside archives
+added link to PeaZip's folder in Options > Settings > General (1)
+themes were updated
+fixed browsing of .Z files
+fixed setting preferred applications brings to correct options page
+
+    * 2010 06 30
+          o 3.2.1
+                + BACKEND
+                      # (Windows) 7z 9.15 beta
+                + FILE MANAGER
+                      # fixed browsing some types of split compressed files, i.e. .bz.001
+                      # fixed preserving/removing original file extension in archive name accordingly to archive type
+                      # added optional theming image for file manager's toolbar
+                + WINDOWS INSTALLER
+                      # fixed: the installer now removes older versions' language files during the installation
+                + LINUX INSTALLERS
+                      # Nautilus script files are now marked as executable, as required in some distributions
+                      # (Qt version) the installer now tries to link libqt4intf.so in some more paths used by some distributions
+    * 2010 06 14
+          o 3.2
+                + BACKEND
+                      # UPX 3.05
+                      # 7z 9.14 beta (Windows)
+                      # p7zip 9.13 beta (Linux)
+                      # FreeArc 0.666 alpha (Windows)
+                + FILE MANAGER
+                      # (Windows Vista and 7) Added "All tasks" entry in System tools
+                      # Added link to donate to charitable organizations suggested by PeaZip in the "Help" submenu, along project's links
+                      # In context menu's Misc > Search on the web added entries to search filename in torrents, uploads and eMule
+                + EXTRACTION and ARCHIVING
+                      # Options > Settings > General (2): added flag for 7z/p7zip's -mcu to use UTF8 encoding inside ZIP archives for file names that contain non-ASCII symbols
+
+    * 2010 04 29
+          o 3.1
+                + BACKEND
+                      # (Windows) 7z 9.13 beta
+                + FILE MANAGER
+                      # Added entries to add and organize bookmarks in navigation bar
+                      # Options > Settings: click ok to accept changes or cancel to discard
+                      # Various minor updates
+                      # (Linux) Added service menus for KDE4/Dolphin
+                + EXTRACTION and ARCHIVING
+                      # Fixed: removed unsupported -mmt switch for creation of GZip archives
+                      # Last used custom application for archiving and extraction is automatically remembered
+                      # Ok and Cancel buttons can now be selected using tab in archiving and extraction interfaces, and Ok button is now automatically selected to allow confirm job simply pressing enter
+                      # In extraction/archiving interfaces click Ok to apply the changes to options and launch the job (or only to apply changes if the layout is empty), click Cancel to discard the changes and the job
+    * 2010 04 10
+          o 3.1.beta
+                + BACKEND
+                      # Updated 7z 9.12 (Windows)
+                            * Updated sfx modules
+                            * Support reading/writing PPMd compressed ZIP files
+                + CODE
+                      # Updated Wolfgang Ehrhardt's libraries
+                + FILE MANAGER
+                      # Added option to force "Open as archive" in "Open with..." menu
+                      # Added link to Google's Language Tools in "Search on the web" submenu (in application's context menu > Misc)
+                      # Allows to set working directory both for archive creation and archive preview jobs
+                      # Displays if the archive is encrypted in application's title bar
+                      # Displays if the path is inside a PeaZip's temporary path (i.e. browsing archives inside archives), higlighting in light yellow the address and search bar
+                      # Displays selected compression level in title bar in archiving interface (7z/p7zip archive types)
+                      # Improved displaying UTF-8 encoded names in archive manager (7z/p7zip)
+                      # Remember alternative exctraction action for 7z, arc and ace backends
+                      # (Windows) Added navigation links to system's recent (all Windows systems), to searches and downloads (introduced by Vista), and libraries (introduced by Seven)
+                      # (Windows) Link user's SendTo in "Settings", simplify customizing entries in this menu
+                      # Various fixes
+                            * Shift+character hotkeys canged to Shift+Ctrl+character: Shift+Ctrl+N, Shift+Ctrl+7, Shift+Ctrl+B, Shift+Ctrl+G, Shift+Ctrl+S, Shift+Ctrl+T, Shift+Ctrl+Z
+                            * Fixed behavior of Extract without paths option in extraction interface
+                            * Fixed division by zero error if a string longer than 19500 characters is provided as keyfile path or extraction path
+                            * (Windows 7) fixed "Search and drag here" entries
+                + EXTRACTION and ARCHIVING
+                      # Added option to run job windows minimized, in Options > Settings > Pea Launcher combo box
+                      # On "extract selected" (default action for extract button in toolbar, while browsing an archive) and "extract displayed" it is now possible to switch directly to "extract all" from extraction interface
+                + WINDOWS INSTALLER
+                      # Added new optional context menu entries to directly add to 7z and zip at fastest, normal or ultra compression levels
+                      # Changed MultiSelectModel, can now select up to 100 items from context menu entries
+                      # Removed + and - prefixes in legacy context menu entries
+
+    * 2010 02 20
+          o 3.0
+                + FILE MANAGER
+                      # Added support to .cbr, .cbz, .cbt, .cba, .cb7, 123 file extensions supported 
+                + EXTRACTION and ARCHIVING
+                      # Default naming policy option for 7z backend is now "skip existing files" as for other backend executables
+                      # Added "Ask before overwriting" mode in extraction options for 7z backend (all other options are still available: skip, auto rename extracted, auto rename existing, overwrite existing)
+                      # Custom syntax combobox default changed to "parameters, output, input"
+                      # Improved password form's text
+                      # Validatecl procedure allows > and < characters, still disallowed in checkfilename and checkfiledirname
+                      # Improved sizes detection in pealauncher
+                + WINDOWS INSTALLER
+                      # Separate icons for 7z, rar and zip file types
+                      # Context menu item "Browse path with PeaZip" now enabled by default
+    * 2010 02 10
+          o 3.0.beta
+                + FILE MANAGER
+                      # Improved password request's and error reporting messages
+                      # All reset functions (bookmarks, open with, theme etc) collected in Options > Settings main tab
+                      # It is now possible to configure the application (file associations, context menu and SendTo menu) from Options > Settings main tab, through InnoSetup scripts (for Windows and Win64 packages), whithout need to keep the installer
+                + EXTRACTION and ARCHIVING
+                      # Faster test for password routine before direct extraction
+                      # Multiple objects per instance implemented in context menu
+                            * "Add to archive", "Add to .7z", "Add to .zip", and "Add to self-extracting archive", adding multiple files at once, are now featured
+                            * "Extract..." now schedule all selected files so they can be extracted sequentially in a single instance of PeaZip
+                      # "Convert existing archives" is now enabled by default for "custom" format
+                      # various fixes to menus directly accessing to peazip/extract mode
+                      # more information available in PeaLauncher while jobs are running, Pealauncher session's options moved to "Options" tab
+                + WINDOWS INSTALLER
+                      # Updated Windows installer (new context menu items)

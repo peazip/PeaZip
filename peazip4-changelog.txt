@@ -1,0 +1,405 @@
+2013 04 24
+4.9.2
+BACKEND
+Pea updated to 0.43 release
+
+FILE MANAGER
+Enlarged small icon size
+16 px icons are now shown in 20px areas (as in Vista and newer systems file explorer) to improve usability on touch devices and high resolution screens
+Improved Recent menu
+menu displays also folders relevant for recent activities
+recent folders quick selection menu in archiving and extraction interfaces does not contain duplicate recent pats
+Various minor fixes
+
+EXTRACTION and ARCHIVING
+Fixed PEA format single volume size issue on Win64
+Fixed "keyfile not found" issue for PEA format extraction
+
+2013 03 28
+4.9.1
+CODE
+Updated Wolfgang Ehrhardt's crypto library units to 2013-01-07 release
+Compiled with Lazarus 1.0.8
+x86_64 packages natively compiled for Windows and Linux
+
+FILE MANAGER
+Various fixes and improvements
+[Linux] fixed path not found possible issue at startup
+if default text file is deleted automatically switch to English
+if items in recent archives are not found are automatically removed from recent list
+fixed information on current directory content
+default height set to multiple of medium/large icon sizes
+
+2013 03 08
+4.9
+CODE
+Compiled with Lazarus 1.0.6
+
+FILE MANAGER
+New theming engine with 16, 32, 48 and 96px icons.
+New style options for decoration of image thumbnails, Options > Browser > Style
+New Image manager context menu replicating main Image manager tool bar functions
+New keyboard shortcuts
+ Backspace or Alt+left: go back
+ Alt+right: go forward
+ Alt+up: go up one level
+ Esc: exit compression and extraction interfaces
+ F4: go to root
+ Ctrl+F4: go to desktop
+ Shift+F4: go to home
+Various fixes and improvements
+ Drag and drop information box shows destination path
+ Improved browser presets
+ Sort by name is always the secondary sorting criteria
+ When "Extract to new folder" option is checked it is displayed with a plus sign in "Extract" and "Extract all to" icons
+
+EXTRACTION and ARCHIVING
+Context menu "Add to (format)" directly starts compression without requiring further user interaction
+Context menu "Add to .ZIP" "Zip and mail" and "Add to .7Z" uses default compression settings 
+
+2013 01 31
+4.8.1
+FILE MANAGER
+Added shared sync folders to predefined system paths for navigation, extraction and compression, automatically detected: Dropbox, Google Drive, SkyDrive, Ubuntu One
+Bar toggling buttons (tools, address, navigation) now displays context menu on click for faster switching and better discoverability of alternative bars
+Navigation menus were uniformed and was reduced duplication of navigation features
+Details view now by default without thumbnails for more speed and lower resource usage, quicker switching to icons and images mode in Status bar
+Improved bookmarking
+Any file type can be bookmarked, bookmarked non-archive files are opened with associated applications
+Bookmarks can be added by drag and drop from the system and from PeaZip
+Status bar
+Two icons for faster and more intuitive switching details / icons and pictures styles
+Password / Keyfile icon on the right side, alongside other icons
+One click button to close advanced views (bookmarks, clipboard, etc) and return to status bar
+Reduced amount of information displayed on right side about navigation and selection, for better focus on important information
+Address bar
+Address filed / search filed separator can now be adjusted
+Search context menu displayed clicking on search button
+Refresh context menu displays refresh, history and recent archives
+Improved switching from breadcrumb to classic address field
+Minor visual enhancements, tool bar buttons with text on the side by default for better use of vertical space
+Various minor fixes
+
+EXTRACTION and ARCHIVING
+Set password control displayed as button and moved in output parameters area for better visibility
+Reorganized Extraction and Archiving status bar information
+Context menu button in Archiving and Extraction status bar on the left of confirmation button
+Favourite archive formats context menu in Archiving interface launches directly compression/conversion in the selected format
+Extract here / to new folder context menu in Extraction interface launches direct extraction
+Uniformed password information, with same colour code representation of password strength as in Password dialog
+
+WINDOWS INSTALLER
+Fixed some issues of cascaded menu
+limited maximum number of cascaded menu items as some systems does not handle correctly more than 16 elements
+for filetypes not associated with PeaZip all the extraction actions are now featured on the bottom of the menu
+
+2012 11 23
+4.8
+FILE MANAGER
+Image manager, handles BMP, JPEG, PNG and TIFF images
+rotate, flip, mirror
+crop
+transform: resize/fit to, and convert in a single passage
+Functions side bar: quick acess to alphabetically sorted most commonly used functions of the program
+Presets in Organize menu collects most common browser's settings, featured also in Organize group in context menu and in status bar
+Browser's presets can be toggled with Alt+6, Sorting is now toggled with Alt+5
+Updated themes and PeaLauncher icon
+Various minor fixes and enhancements
+
+EXTRACTION and ARCHIVING
+Improved mail integration
+Send by mail option featured in main archive creation/conversion tab
+Send by mail by default now does not keep a copy of the sent archive on the filesystem
+Added Keep archive switch to optionally save on the filesystem archives sent by mail
+Added -add2multi7zmail and -add2multizipmail switches (for context menu entries) to copress and mail
+Added "Zip and mail" context menu entry, enabled by default, in context menu install screen
+Added WIM to quick format selection menus
+Fixed Convert quick format selection popup menu when browsing archives, only formats suitable for conversion procedure are presented
+Fixed opening with custom application inside ARC format
+PeaLauncher minimized status is inherited by following instances, in order to not steal focus when multiple instances are operating in background
+Previewing archived files with PeaZip sets the temporary copy read only, so the user is presented "save as" dialog if files are changed
+
+WINDOWS INSTALLER
+New installation option "No system integration", avoids menu entries and file associations
+Default, Custom and No system integration options are now available in the Options > System integration wizard
+
+2012 10 28
+4.7.3
+171 file extensions supported: added explicit support for Open Packaging Conventions file formats (Windows 8 .appx, AutoCAD .dwfx, .xps, etc)
+Fixed: it is now possible to disable multithreading for 7z backend
+New high resolution Windows icon for the application
+Updated Spanish, and Galician translations
+
+2012 09 18
+4.7.2
+BACKEND
+ZPAQ updated to 4.04
+
+FILE MANAGER
+Fixed: corrected some extraction jobs not being launched from "Console" tab reporting illegal character in job definition
+Re-introduced by default "Extract here" and "Extract here (to new folder)" in SendTo menu
+Start with no selection so "Add", "Convert", and "Extract" starts a new empty layout by default
+Minor: full screen and Immersive shortcuts listed in Organize > Dock; bars color changed to clForm in themes (better integrates in Windows 8 UI); improved layout of Settings form for better support variable sized fonts
+
+EXTRACTION and ARCHIVING
+Fixed: Two-factor authentication not enabled for self executable archives, only the password is applied as sfx module supports only password authentication
+PeaLauncher shows the name of the archive in form title during extraction
+
+2012 08 21
+4.7.1
+Updated translations
+Various fixes and UI enhancements
+Improved Advanced filters form
+Improved Console tab in extraction and archiving interfaces
+Uniformed Button Panels design over the application
+
+2012 08 13
+4.7
+FILE MANAGER
+Quick approximate calculation of possible compression in Archive creation interface and with List function
+Calculation of password strength in password form
+Random password generation (Ctrl+F9) can optionally create password containing symbols alongside mixed case characters and numbers
+(Windows) Added "Move to recycle bin" deletion mode, default action pressing Del key; quick deletion moved to Ctrl+Del shortcut
+Various minor improvements
+Show thumbnails flag featured in quick browser organization menus (in context menu and status bar)
+Open as archive featured in Open with dropdown menu in File manager bar
+
+EXTRACTION and ARCHIVING
+Added semaphore to improve performances, optimize system's resource usage, and increase reliability operating on multiple instances launched from system's context menu
+"Extract here" and "Extract here (in new folder)" function uses semaphore to schedule one job at time, password requests are prompted at once to optimize user's time usage and don't interrupt scheduler's work
+"Extract to..." function, that already creates a single job queue, can operate in parallel to the semaphore when it is needed by the user to launch other independent jobs
+Main extraction parameters are reported in extraction interface's form caption and on drag and drop information box
+
+158 file extensions supported (added .tb2)
+
+2012 07 11
+4.6.1
+Added context menu to all "+" areas to quickly customize all function bars
+Updated translations
+Minor fixes
+
+2012 06 13
+4.6
+BACKEND
+Pea backend updated to 0.40
+UPX backed updated to 3.08
+
+CODE
+Updated used Wolfgang Ehrhardt's crypto libraries with packages crc_hash_2012-03-27, ppch_2012-03-27, and util_2012-03-27
+
+FILE MANAGER
+Added "Recent archives" group in Navigation bar
+Added quick link to "Users" folder in Filesystem group (in Navigation bar and navigation menus)
+Improved quick jump context menu (Navigation bar, breadcrumb), now displaying first 4 bookmarks and first 4 recent archives for quick access
+Improved address bar dropdown menu bar
+Improved application toolbar
+Added secure delete and properties buttons to archive manager toolbar, improved additional functions drop down menu
+New file manager toolbar containing buttons of most common file management features
+"+" icon on the right of the toolbar area toggles archive manager and file manager toolbars, consistently with navigation and status bar
+Improved handling of Pea file format and of utilities provided through Pea backend
+PEA/UNPEA operations now takes password/keyfile from PeaZip consistently with other formats
+Pea format volume check algorithm is now set in context sensitive way with PeaZip GUI, if password is set AES EAX256 encryption is used, else SHA hash is used
+Pea executable auto closes if no error is encountered, improving its use for chained operations: PEA/UNPEA, file split/join, secure delete
+Improved saving resource usage when displaying several thousands of items, update intervals are better scaled
+Updated themes
+Fixed: dynamically loading SHMultiFileProperties to allow running the application on Windows 2000 and previous systems
+Various minor fixes and improvements
+Added switches -add2archive-add add to existing archive (if found) and -add2archive-update as previous switch, but updates only if files in archive are older
+Improved browsing UNC paths
+Improved displaying file types and icons inside some types of archive
+Reorganized System tools submenu
+
+157 extensions supported: added support for IMA, IMG and IMZ disk images, and AIR Adobe installer files
+
+2012 05 10
+4.5.1
+Added support for Open Office 1.x fils (SX*/ST*), PCV MozBackup files, BSZ (BS Player), RMSKIN (Rainmeter), WSZ/WAL (Winamp), and WMZ (Windows Media Player) skin files
+Fixed untranslated strings in UI
+Fixed bug in navigating non mapped network paths from the breadcrumb
+
+2012 04 10
+4.5
+FILE MANAGER
+Added keyboard shortcuts
+Ctrl+Alt+F3 (web search form) and Shift+Alt+F3 (web search on peazip.org)
+Ctrl+F5 (open path) Shift+F5 (open archive)
+(Windows) New quick window docking menu: send PeaZip to the four sides and angles of the desktop with Ctrl+Alt+arrow
+(Windows) Added "Properties" dialog in context menu
+Added switches
+-add2multiseparate: start a single instance, add multiple input to archive, each to separate archive
+-add2multisplit (replaces add2split): start a single instance, add multiple input to file split (consolidate in tar if it is not a single file)
+-ext2browseasarchive: force opening the file as archive
+(Windows) Added "Check for updates" feature in help group
+Fixed display the application in foreground when started
+(Windows) Improved startup times in slow network environment
+By default, does not get mapped network drives information
+If set to get information, in case of failure the switch is ignored for the session, and then tried again in next sessions
+Improved "Save job definition"
+Featured as context menu in archiving and extraction interfaces
+(Windows) by default saves as .bat file with default system's character encoding, so the script can be directly executed
+It is now possible to save job definition for extracting multiple files at once
+It is now possible to save job definition for archiving each input item to separate archives
+Job definition scripts are saved by default in PeaZip's applications data path (user specific for installable version)
+Improved file split/join features
+(Windows) Split file featured by default in system context menu
+Split is by default a favourite format (Add button's context menu, Archive interface)
+Re-introduced file split/join entries in File tools submenu
+Selecting Split format automatically switches volume size to Custom
+Fixed a graphic glitch in displaying file split buttons
+No checksum by default, consistently with default behavior of other file split utilities
+Improved file/archive manager
+Improved context menu, now divided in 3 functional areas
+Archive management (top) add, extract, test, password...
+Navigation (middle) navigation and organization features (browser mode, sorting, select)
+File management (bottom) open with, rename, delete, properties...
+Improved status area
+Status area displays a quick switch button between views (same as Alt+8)
+Status bar and Details bar displays basic controls to customize browser type and size
+Improved Details view
+Improved toolbar area, buttons are auto sized for optimal placement
+Improved navigation bar
+More prominence given to Open path, Open archive, and Search and drag here, moved in a top level branch expaneded by default
+Application menu opens selected objects with chosen application, launches the application if nothing is selected
+Added quick jump context menu to navigation bar (same popup menu as for the root of breadcrumb in the address bar)
+Improved Web search adding search in Google+ and SourceForge
+
+WINDOWS INSTALLER
+(Windows 7+) Added option to use non-cascaded menu as alternative to default cascaded menus (flag Custom during installation, or run System integration wizard)
+Added -ext2browseasarchive "Open as archive" action for any file type
+Added "Extract archives" to any file type when the menu is cascaded, as quick shortcut to open extraction interface (accepts dropping files) or fallback if an archive type is not associated with PeaZip for any reason
+Removed emergency Start menu link "Reset PeaZip", moved as .bat in PeaZip's /res folder
+SendTo menu by default features Add, Extract, Open as archive, and Browse path with PeaZip entries
+                                      
+2012 01 29
+4.4
+FILE MANAGER
+136 file extensions supported (added .oxt file format) 
+Fixed integration of PEA format with context menu
+Fixed untranslated text in Password form
+Improved extraction against unintended automatic extraction without paths: when extracting while browsing in flat mode the ignore paths directive is overridden
+Improved deleting directories, first retry automatically (in case files temporarily locked by the system or resident software during the first attempt), then ask user about possible locked files
+Improved -peazipreset switch for selective removal of configuration and of customizations (Applications, Bookmarks, and Password manager)
+It is now possible to use only keyfiles for encryption (alongside only password, or both), consistently with Password manager encryption
+Password manager shows up to date dropdown menu in Password form each time it is updated
+
+EXTRACTION and ARCHIVING
+Archiving and extraction interfaces were made simpler to read and use
+Input area is now in the top side of the form in the first tab, output area (with output name and most important options) is in the bottom area
+Removed redundant information and graphic
+Improved aspect with larger fonts, and on Linux
+In archiving interface compression level option was added in the first tab, and output name fild can be directly edited (changing archive type and using dialog displays standard name suggestion, as in previous versions)
+
+WINDOWS INSTALLER
+By default now only "Add to archive" and "Browse path with PeaZip" are created in SendTo menu
+
+2011 12 26
+4.3
+BACKEND
+Added support to open as archive EPUB ebook file format, a total of 135 file extensions are supported - formats usually not handled as archives can be opened from PeaZip's context menu "Open as archive" rather being associated with the application directly, which would be inconvenient for most users.
+
+FILE MANAGER
+Address field can now be set to be viewed as breadcrumb (default) or string, with "Show address as breadcrumb" flag in address bar navigation dropdown menu
+Improved password management
+Flag "Keep password for current session" (default) in password form, to remember password and keyfile for the current session; unflagging this option password and keyfile are kept until a new archive is browsed
+Fixed bug in keeping "Show password" flag
+Keyfile field now accepts paste and free edit
+Password manager
+passwords list (may even contain keyfiles name, if desired) can be saved with authenticated encryption and optional two factor authentication
+a default password is used unless the user sets password and/or keyfile, recommended to keep privacy of data saved in the password manager
+once password/keyfile is set, authentication will be required before accessing data from password manager
+password list is shown in password form, in the dropdown menu on the left of password filed (when selected, are automatically applied to confirmation field)
+password and notes can also be copied and pasted where needed, i.e. password manager can be used to store passwords for other applications, websites, etc
+password list can be exported
+as plain text file, containing unencrypted data, for any use
+as encrypted file, for backup
+a password list's .bak file can be manually imported back as password manager file, renaming it as pm (no extension) and copying it to PeaZip's configuration path (linked in Options > Settings); this file will have the same content and password it had when it was originally saved. This mechanism in example allows to roll back to a previous password list, or maintain various off line password lists, or exchange protected password lists with other users or other machines
+Improved search
+It is now possible to set search recursivity from search popup menu
+It is now possible to set default for search recursivity
+Fixed: create ARC with relative paths fails if path contains space
+Open as archive moved to root level of file browser context menu for better visibility
+
+2011 11 20
+4.2
+FILE MANAGER
+Immersive mode for file browser (full screen, no window border), toggle with Ctrl+F11 (option is volatile, not saved in configuration, it is just meant for enhancing browsing space on request)
+Improved custom applications menus
+allows 8 more applications, links or scripts
+automatically detects recent AVG versions, Microsoft Security Essentials, Google Chrome
+Improved thumbnail viewer
+does not rebuild thumbnails when sorting
+free memory changing small/large icon size
+Fixed: (Windows) browsing computer's root may fail at application startup
+Fixed: (Windows) loading list of objects from system context menu may not work under some conditions, only the first time application runs in a session
+Fixed: descending sorting is now remembered
+Fixed: correct size is now reported in status bar for selected items over 2GB
+Various minor fixes and improvements
+
+EXTRACTION and ARCHIVING
+ARC format, now archiving relative paths by default, optionally absolute paths can be stored (advanced options tab in archive creation interface)
+More information dispayed in report tab during operation: completed strings are displayed
+
+WINDOWS INSTALLER
+Reduce packages size
+some superseeded formats' programs (lpaq1/5, paq8f/jd/l) moved to external plugin
+uses uncompressed Winodws icons (package compression is more efficient)      
+
+2011 10 22
+4.1
+BACKEND
+Pea 0.39
+
+CODE
+Optimized installer, help file is now by default online, users save it locally only if desired
+
+FILE MANAGER
+File tools
+Checksum/hash (selected/displayed) files fully integrated in file manager, algorithm can be selected from a wide array of 15 algorithms: Adler32, CRC16/24/32/64, eDonkey, MD4, MD5, Ripemd160, SHA1, SHA224/256/386/512, Whirlpool512
+Fast duplicate finder (selected/displayed) fully integrated in file manager, can find duplicate files in directories or search filters, uses the algorithm selected for Checksum/hash function
+Split/Join file entry hidden in File tools submenu, as the features are fully integrated in Add/Extract
+Fixed: quick and secure delete functions can now operate on read only files (Windows)
+Improved handling potentially lengthy job interacting with file manager
+checksum, find duplicates and rename displays progress in title bar, and have an uniform activity indicator (progress bar in address bar), and uniform model for stopping (stop button in address bar)
+Improved address bar
+Added history context menu to back and forward icons
+Added computer's root icon in address bar's breadcrumb
+Added context menu with synthetic quick jump list (most common filesystem paths and bookmarks 1..8) to computer's root icon
+Keyboard shortcuts
+Ctrl+F2 copy to
+Shift+F2 move to
+Ctrl+F4 browse computer root (Ctrl+U removed)
+Shift+F4 browse desktop
+F7 add to bookmarks
+Ctrl+F7 open in a new instance of PeaZip
+Shif+F7 open command prompt in selected path
+Alt+F7 explore selected path
+Advanced filters shortcut changed to Shift+F9
+Ctrl+F10 run as different user
+Alt+F10 run as administrator
+F11 toggle maximized mode
+Rename single or multiple selected files using middle mouse button
+Search
+Searching from filter field now apply recursivity, if set, as searching with F3
+Simple search mode in Organize menu (optional, flagged by default) for easier searches
+Various speed and responsiveness improvements
+(Windows Vista and newer) UAC integration: main menu Options > Run as administrator (Alt+F10) to perform operations requiring elevated permission
+(Linux) fixed problem in Ctrl+A to select all
+
+EXTRACTION and ARCHIVING
+Archiving path is cheched if accessible and writeable before attempting to write the output file
+More information given in the graphic wrapper during extraction/archiving operations
+
+2011 09 19
+4.0
+FILE MANAGER
+(Windows) File manager shows image thumbnails and information about graphic files, only while browsing/searching the filesystem
+thumbnails does not get stored
+thumbnails calculation generates a set of 4 dedicated threads, if folder or search filter is changed a new set of threads is created and old threads are stopped as soon as possible (file level and thread level granularity: each thread can be stopped separately, at the completition of each image)
+Organize > Show picture thumbnails in main menu toggle the feature on/off
+No file is selected when an archive is opened (generally, anytime listing root level of the archive), so by default extract button performs "extract all"
+F2 remapped to rename file(s) as in Windows' file explorer
+Unchanged: Ctrl+F2 browse desktop, Shift+F2 browse computer root, Ctrl+Shift+F2 browse archive's root
+
+EXTRACTION and ARCHIVING
+PeaLauncher improved as standalone application, at startup accepts drag and drop of a single archive to be extracted (or alternatively it can start file selection dialog)
+Elapsed time string shows minutes and seconds if the job takes more than one minute
