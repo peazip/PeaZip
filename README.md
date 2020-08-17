@@ -7,12 +7,12 @@ The project aims to provide a cross-platform, portable, GUI frontend for multipl
 
 The program is written in Lazarus / FreePascal (Windows installable packages are scripted with InnoSetup) and offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, and Linux x86/x86-64, with Linux ARM and BSD ports also available.
 
-Downloads https://www.peazip.org
+Downloads https://peazip.github.io
 
-Add-ons and Plugin (UNRAR5, UNACE,...) https://www.peazip.org/peazip-add-ons.html
+Add-ons and Plugin (UNRAR5, UNACE,...) https://peazip.github.io/peazip-add-ons.html
 
-Support https://www.peazip.org/peazip-help.html
+Support https://peazip.github.io/peazip-help.html
 
-FAQ https://www.peazip.org/peazip-help-faq.html
+FAQ https://peazip.github.io/peazip-help-faq.html
 
-How to use or provide translations: https://github.com/giorgiotani/PeaZip-Translations
+How to use or provide translations: https://peazip.github.io/PeaZip-Translations
