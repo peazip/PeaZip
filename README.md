@@ -15,4 +15,6 @@ Support https://peazip.github.io/peazip-help.html
 
 FAQ https://peazip.github.io/peazip-help-faq.html
 
+Donations https://peazip.github.io/donations.html
+
 How to use or provide translations: https://github.com/peazip/PeaZip-Translations
