@@ -19,10 +19,6 @@ Donations https://peazip.github.io/donations.html
 
 How to use or provide translations: https://github.com/peazip/PeaZip-Translations
 
-GitHub 
-
-![GitHub all releases](https://img.shields.io/github/downloads/peazip/PeaZip/total) 
-
-SourceForge 
-
-![SourceForge](https://img.shields.io/sourceforge/dt/peazip)
+| GitHub | SourceForge |
+| :---:         |     :---:      |
+| ![GitHub all releases](https://img.shields.io/github/downloads/peazip/PeaZip/total)    | ![SourceForge](https://img.shields.io/sourceforge/dt/peazip)     |
