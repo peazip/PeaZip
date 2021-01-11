@@ -1,0 +1,231 @@
+object FormImgRes: TFormImgRes
+  Left = 1200
+  Height = 300
+  Top = 708
+  Width = 480
+  AutoSize = True
+  Caption = 'Resize'
+  ClientHeight = 300
+  ClientWidth = 480
+  Color = clWindow
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 480
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.8.4.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 12
+    Height = 33
+    Top = 255
+    Width = 456
+    BorderSpacing.Left = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    BorderSpacing.Around = 0
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    HelpButton.Enabled = False
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.Enabled = False
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+    ShowBevel = False
+    object ImageInfoArchive4: TImage
+      AnchorSideLeft.Control = ButtonPanel1
+      AnchorSideTop.Control = ButtonPanel1
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 0
+      Height = 16
+      Top = 8
+      Width = 16
+      OnClick = ImageInfoArchive4Click
+    end
+  end
+  object PanelImgRes: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel1
+    Left = 0
+    Height = 231
+    Top = 0
+    Width = 480
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 24
+    BevelOuter = bvNone
+    ClientHeight = 231
+    ClientWidth = 480
+    TabOrder = 1
+    object SpinEditW: TSpinEdit
+      AnchorSideLeft.Control = LabelW
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ComboBoxAction
+      AnchorSideTop.Side = asrBottom
+      Left = 59
+      Height = 34
+      Top = 77
+      Width = 92
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 24
+      MaxValue = 64000
+      MinValue = 1
+      OnChange = SpinEditWChange
+      TabOrder = 0
+      Value = 1024
+    end
+    object SpinEditH: TSpinEdit
+      AnchorSideLeft.Control = LabelH
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditW
+      Left = 213
+      Height = 34
+      Top = 77
+      Width = 92
+      BorderSpacing.Left = 6
+      MaxValue = 64000
+      MinValue = 1
+      OnChange = SpinEditHChange
+      TabOrder = 1
+      Value = 768
+    end
+    object CheckBoxPercent: TCheckBox
+      AnchorSideLeft.Control = SpinEditH
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditW
+      AnchorSideTop.Side = asrCenter
+      Left = 321
+      Height = 23
+      Top = 83
+      Width = 39
+      BorderSpacing.Left = 16
+      BorderSpacing.Top = 12
+      Caption = '%'
+      OnChange = CheckBoxPercentChange
+      TabOrder = 2
+    end
+    object CheckBoxAspectRatio: TCheckBox
+      AnchorSideLeft.Control = LabelW
+      AnchorSideTop.Control = SpinEditW
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 123
+      Width = 169
+      BorderSpacing.Top = 12
+      Caption = 'Maintain aspect ratio'
+      Checked = True
+      OnClick = CheckBoxAspectRatioClick
+      State = cbChecked
+      TabOrder = 3
+    end
+    object LabelW: TLabel
+      AnchorSideLeft.Control = ComboBoxAction
+      AnchorSideTop.Control = SpinEditW
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 17
+      Top = 86
+      Width = 41
+      Caption = 'Width'
+      ParentColor = False
+    end
+    object LabelH: TLabel
+      AnchorSideLeft.Control = SpinEditW
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelW
+      Left = 163
+      Height = 17
+      Top = 86
+      Width = 44
+      BorderSpacing.Left = 12
+      Caption = 'Heigth'
+      ParentColor = False
+    end
+    object ComboBoxConvert: TComboBox
+      AnchorSideLeft.Control = LabelConvert
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = CheckBoxAspectRatio
+      AnchorSideTop.Side = asrBottom
+      Left = 71
+      Height = 29
+      Top = 158
+      Width = 92
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 12
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'No'
+        'BMP'
+        'ICO'
+        'JPEG'
+        'PNG'
+        'TIFF'
+        'PPM'
+        'XPM'
+      )
+      OnChange = ComboBoxConvertChange
+      Style = csDropDownList
+      TabOrder = 4
+      Text = 'No'
+    end
+    object LabelConvert: TLabel
+      AnchorSideLeft.Control = LabelW
+      AnchorSideTop.Control = ComboBoxConvert
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 17
+      Top = 164
+      Width = 53
+      Caption = 'Convert'
+      ParentColor = False
+    end
+    object SpinEditJ: TSpinEdit
+      AnchorSideLeft.Control = ComboBoxConvert
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ComboBoxConvert
+      AnchorSideTop.Side = asrCenter
+      Left = 169
+      Height = 34
+      Top = 155
+      Width = 72
+      BorderSpacing.Left = 6
+      TabOrder = 6
+      Value = 90
+      Visible = False
+    end
+    object ComboBoxAction: TComboBox
+      AnchorSideLeft.Control = PanelImgRes
+      AnchorSideTop.Control = PanelImgRes
+      AnchorSideRight.Side = asrBottom
+      Left = 12
+      Height = 29
+      Top = 24
+      Width = 400
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      ItemHeight = 0
+      ItemIndex = 1
+      Items.Strings = (
+        'Keep'
+        'Resize'
+        'Fit to'
+        'Fit to largest'
+      )
+      OnChange = ComboBoxActionChange
+      Style = csDropDownList
+      TabOrder = 5
+      Text = 'Resize'
+    end
+  end
+end

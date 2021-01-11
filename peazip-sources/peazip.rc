@@ -1,0 +1,26 @@
+MAINICON ICON "peazip.ico"
+// Version Info 
+1 VERSIONINFO 
+FILEVERSION 7,7,0,0 
+PRODUCTVERSION 7,7,0,0 
+{ 
+ BLOCK "StringFileInfo" 
+  { 
+  BLOCK "040904E4" 
+   { 
+VALUE "CompanyName", "Giorgio Tani" 
+VALUE "FileVersion", "7.7.0" 
+VALUE "FileDescription", "PeaZip, file and archive manager" 
+VALUE "InternalName", "PeaZip" 
+VALUE "LegalCopyright", "Giorgio Tani, LGPLv3" 
+VALUE "LegalTrademarks", "none" 
+VALUE "OriginalFilename", "PeaZip" 
+VALUE "ProductName", "PeaZip" 
+VALUE "ProductVersion", "7.7.0" 
+   } 
+  } 
+ BLOCK "VarFileInfo" 
+ { 
+  VALUE "Translation", 1033, 1252 
+ } 
+}

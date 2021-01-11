@@ -1,0 +1,58 @@
+object Form_demo_lib: TForm_demo_lib
+  Left = 212
+  Height = 280
+  Top = 195
+  Width = 400
+  HorzScrollBar.Page = 399
+  VertScrollBar.Page = 279
+  ActiveControl = Button1
+  Caption = 'Form_demo_lib'
+  ClientHeight = 280
+  ClientWidth = 400
+  ShowHint = True
+  LCLVersion = '0.9.25'
+  object Button1: TButton
+    Left = 8
+    Height = 61
+    Hint = 'Archive sourcecode .pas files, using compression and authenticated encryption'#13#10'mode of operation BATCH: show the GUI, don''t ask for user interaction'#13#10'a non existing file is scheduled to be archived to show skipping and reporting features'
+    Top = 16
+    Width = 384
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Demo: start pea (params hardcoded in the source)'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 8
+    Height = 61
+    Hint = 'Extract and authenticate sourcecode .pas files in "units" folder'#13#10'mode of operation HIDDEN_REPORT: don''t show the GUI, don''t ask for user interaction, autosave job report'
+    Top = 80
+    Width = 384
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Demo: start unpea (params hardcoded in the source)'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 8
+    Height = 61
+    Hint = 'Split unit_demo_lib.pas file in 1000 byte chunks'#13#10'mode of operation HIDDEN_REPORT: don''t show the GUI, don''t ask for user interaction, autosave job report'
+    Top = 144
+    Width = 384
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Demo: start raw file split (params hardcoded in the source)'
+    OnClick = Button3Click
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Left = 8
+    Height = 61
+    Hint = 'Join unit_demo_lib.pas chunks (named "test.***")'#13#10'mode of operation BATCH_REPORT: show the GUI, don''t ask for user interaction, autosave job report'
+    Top = 208
+    Width = 384
+    BorderSpacing.InnerBorder = 4
+    Caption = 'Demo: start raw file join (params hardcoded in the source)'
+    OnClick = Button4Click
+    TabOrder = 3
+  end
+end

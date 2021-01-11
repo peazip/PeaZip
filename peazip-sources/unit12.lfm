@@ -1,0 +1,29 @@
+object FormPaths: TFormPaths
+  Left = 1200
+  Height = 240
+  Top = 768
+  Width = 480
+  Caption = 'FormPaths'
+  ClientHeight = 240
+  ClientWidth = 480
+  Constraints.MinHeight = 240
+  Constraints.MinWidth = 480
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object MemoPaths: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 480
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderStyle = bsNone
+    ParentColor = True
+    TabOrder = 0
+  end
+end

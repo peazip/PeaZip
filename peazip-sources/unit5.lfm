@@ -1,0 +1,283 @@
+object FormKF: TFormKF
+  Left = 105
+  Height = 400
+  Top = 608
+  Width = 600
+  Caption = 'FormKF'
+  ClientHeight = 400
+  ClientWidth = 600
+  Color = clWindow
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 600
+  Icon.Data = {
+    7E0500000000010001001010FF00000000006805000016000000280000001000
+    0000200000000100080000000000000000000000000000000000000000000000
+    0000009F7800009F720000A9770000B87F0000CD890000E3940000E6960000E4
+    9500009E7F0000976C0000AA4F0000B3410000A95000009B6F0000DC910000E2
+    950000A9940000AD4B0000BE390000C1670000BE360000A8520000966E000098
+    6F0000BE820000DD940000B8AD0000B9390000C3780000C9D20000C1640000B5
+    3E0000A6760000DD910000D5930000CCD40000AF480000BF3E0000C379000097
+    6B0000A25B0000A5570000996800009E720000D98F0000CB920000E3FB00009C
+    740000AE4A0000B83900009D630000BE340000BC350000C0910000E6FF0000B7
+    AE0000966D0000C0570000C7BC0000C8C50000C2750000D6930000BF910000DC
+    F0000098730000BD320000C6A20000A6550000BD810000C3910000BDBA00009A
+    670000BD330000C5960000A35900008E6E0000B78C0000E4FD0000A68E0000B0
+    460000BF440000C5980000C6A30000C0580000926D0000836C00009D7B0000DD
+    F10000A94F0000A94000009B4E0000876D0000BC8F0000D9EB00009C640000AC
+    4B0000B6380000B8660000B53500009A500000AC850000B0380000B9770000C0
+    D00000B7630000AA3D00009C7B0000BCB900008D720000A2460000B53C0000B5
+    3800009C4D000091740000E2FF0000CCFF0000B1FF0000A6EF000093AB000087
+    710000A1480000AE380000A0490000846A000089700000DFFF0000D8FF0000BD
+    FF0000ADFF0000ABFF0000A9FB00009ED2000093AA00008C900000877D000088
+    7600000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000001020304050606060606060606060708090A0B0C0D030E060606060606
+    060F101112131415161718070606060606191A1B1C1D1E1F1616162021060606
+    062223242526120A2728292A2B2C0606062D2E2F3031113231331434282B2106
+    073536371638381F393A3B3C342A20073D3E363F40163241421D1D3B14431644
+    453E363646164748491D1D3A334A164B4C3E36364D4E164F5051525331275455
+    563E3636365708274F48411F3258595A5B5C363636365D0816475E385F606162
+    63643636363636574E16165465666768696A3636363636364D6B6C556D6E666F
+    7071363636363672737475767778797A7B7C727D7E737F808181818182838485
+    8687000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000
+  }
+  OnClose = FormClose
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.8.4.0'
+  object PanelKeyfile: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 400
+    Top = 0
+    Width = 600
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 400
+    ClientWidth = 600
+    TabOrder = 0
+    OnMouseMove = PanelKeyfileMouseMove
+    object GroupBoxKF: TGroupBox
+      AnchorSideLeft.Control = EditSuggestPW
+      AnchorSideTop.Control = PanelKeyfile
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = ButtonPanel1
+      Left = 12
+      Height = 92
+      Top = 258
+      Width = 576
+      Anchors = [akLeft, akRight, akBottom]
+      BorderSpacing.Bottom = 12
+      Caption = 'Enthropy sampling tools'
+      ClientHeight = 72
+      ClientWidth = 572
+      TabOrder = 0
+      OnMouseMove = GroupBoxKFMouseMove
+      object EditEnt: TEdit
+        AnchorSideLeft.Control = GroupBoxKF
+        AnchorSideRight.Control = ButtonKFLoadFile
+        Left = 12
+        Height = 23
+        Top = 0
+        Width = 463
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 6
+        OnKeyPress = EditEntKeyPress
+        TabOrder = 0
+        Text = 'Enter random keys'
+      end
+      object ButtonKFLoadFile: TButton
+        AnchorSideLeft.Control = EditEnt
+        AnchorSideTop.Control = EditEnt
+        AnchorSideRight.Control = GroupBoxKF
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = EditEnt
+        AnchorSideBottom.Side = asrBottom
+        Left = 481
+        Height = 23
+        Top = 0
+        Width = 79
+        Anchors = [akTop, akRight, akBottom]
+        AutoSize = True
+        BorderSpacing.Right = 12
+        BorderSpacing.InnerBorder = 4
+        Caption = 'Load file'
+        OnClick = ButtonKFLoadFileClick
+        TabOrder = 1
+      end
+    end
+    object ButtonKF: TButton
+      AnchorSideLeft.Control = EditSuggestPW
+      AnchorSideTop.Control = CheckBoxSuggestPW
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = ButtonPanel1
+      Left = 12
+      Height = 25
+      Top = 127
+      Width = 576
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Top = 24
+      BorderSpacing.Bottom = 6
+      Caption = 'Create KeyFile'
+      OnClick = ButtonKFClick
+      TabOrder = 1
+    end
+    object EditSuggestPW: TEdit
+      AnchorSideLeft.Control = PanelKeyfile
+      AnchorSideTop.Control = PanelKeyfile
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideBottom.Control = ButtonKF
+      Left = 12
+      Height = 23
+      Top = 24
+      Width = 498
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 12
+      TabOrder = 2
+    end
+    object SpinEditSuggestPW: TSpinEdit
+      AnchorSideTop.Control = EditSuggestPW
+      AnchorSideRight.Control = PanelKeyfile
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = EditSuggestPW
+      AnchorSideBottom.Side = asrBottom
+      Left = 516
+      Height = 23
+      Top = 24
+      Width = 72
+      Anchors = [akTop, akRight, akBottom]
+      BorderSpacing.Right = 12
+      MaxValue = 64
+      MinValue = 4
+      TabOrder = 3
+      Value = 8
+    end
+    object ButtonSuggestPW: TButton
+      AnchorSideLeft.Control = EditSuggestPW
+      AnchorSideTop.Control = SpinEditSuggestPW
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 12
+      Height = 25
+      Top = 53
+      Width = 576
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Top = 6
+      Caption = 'Suggest password'
+      OnClick = ButtonSuggestPWClick
+      TabOrder = 4
+    end
+    object ButtonPanel1: TButtonPanel
+      Left = 12
+      Height = 26
+      Top = 362
+      Width = 576
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Left = 12
+      BorderSpacing.Right = 12
+      BorderSpacing.Bottom = 12
+      BorderSpacing.Around = 0
+      OKButton.Name = 'OKButton'
+      OKButton.DefaultCaption = True
+      OKButton.Enabled = False
+      HelpButton.Name = 'HelpButton'
+      HelpButton.DefaultCaption = True
+      HelpButton.Enabled = False
+      CloseButton.Name = 'CloseButton'
+      CloseButton.DefaultCaption = True
+      CancelButton.Name = 'CancelButton'
+      CancelButton.DefaultCaption = True
+      CancelButton.Enabled = False
+      TabOrder = 5
+      ShowButtons = [pbClose]
+      ShowBevel = False
+      object ProgressBar1: TProgressBar
+        AnchorSideLeft.Control = ImageInfoArchive1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = ButtonPanel1
+        AnchorSideTop.Side = asrCenter
+        Left = 22
+        Height = 10
+        Top = 8
+        Width = 100
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        Max = 4096
+        Position = 16
+        Step = 1
+        TabOrder = 4
+      end
+      object ImageInfoArchive1: TImage
+        AnchorSideLeft.Control = ButtonPanel1
+        AnchorSideTop.Control = ButtonPanel1
+        AnchorSideTop.Side = asrCenter
+        Cursor = crHandPoint
+        Left = 0
+        Height = 16
+        Top = 5
+        Width = 16
+        OnClick = ImageInfoArchive1Click
+      end
+    end
+    object CheckBoxSuggestPW: TCheckBox
+      AnchorSideLeft.Control = EditSuggestPW
+      AnchorSideTop.Control = ButtonSuggestPW
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 19
+      Top = 84
+      Width = 226
+      BorderSpacing.Top = 6
+      Caption = 'Limit characters to letters and numbers'
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Title = 'Save as'
+    FileName = 'KeyFile'
+    FilterIndex = 0
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    left = 412
+    top = 272
+  end
+  object OpenDialog2: TOpenDialog
+    Title = 'Open file(s)'
+    FilterIndex = 0
+    Options = [ofAllowMultiSelect, ofEnableSizing, ofViewDetail]
+    left = 384
+    top = 272
+  end
+end

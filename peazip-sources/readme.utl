@@ -1,0 +1,58 @@
+The archive contains a collection of small units; in the past some of the
+units were available separately.
+
+The units and basic test programs can be compiled with the usual Pascal
+(TP5/5.5/6, BP7, VP 2.1, FPC 1.0/2.0/2.2/2.4/2.6/3+) and Delphi (1..7/9/
+10/12/17/18/25/26) versions.
+
+Online help is available as Windows .hlp file or as a .tph for BP7 IDE.
+
+ * Base2N V0.42: General base 2**N conversion routines (N=1...6)
+
+ * Bitarray V0.19: Bit array context with max. 524160 bits (spin off from
+   MPArith 16 bit prime sieve)
+
+ * BTypes V0.21: Portable common basic types
+
+ * Compvers V0.41: Compiler version as string or symbol
+
+ * Dates V0.38: Implements compiler and OS independent routines for the
+   current date and time (including milliseconds since midnight) and functions
+   for Julian day numbers.
+
+ * Hrtimer V0.29: Contains a high resolution timer for most Pascal/Delphi
+   compilers using the comp data type. It uses the RDTSC instruction,
+   therefore it will stop on machines (except ARM) that do not support RDTSC
+   (this feature can be turned off via $ifdef). The timer is used by several
+   optimizing test programs.
+
+ * memh V0.15: Implements portable heap memory allocation functions
+
+ * Mem_util V0.99: Implements compiler independent routines for comparing
+   memory blocks and converting memory blocks to HEX and Base64 strings.
+
+ * Ministat V0.45: Statistics unit with accurate "on the fly" statistics
+   routines for one and two variables.
+
+ * Sort V1.18: General QuickSort, HeapSort (standard and bottom-up), CombSort
+   routines using swap/compare functions. Additional pointer versions have a
+   typeless data pointer that is carried through the functions and can be used
+   to access local data etc. by the caller.
+
+ * std.inc V1.75: Standard include file for compiler detection, standard
+   definitions, options.
+
+ * Tsc V0.44: This unit has a more low level access to the Time Stamp Counter
+   than hrtimer and additionally defines a system dependent low resolution
+   counter (GetTickCount, 18.2 Hz Systick, or milliseconds since midnight) if
+   RDTSC support is not available.
+
+
+---------------------------------------------------------------------------
+
+Last changes (Nov. 2018)
+
+  * Standard include file std.inc V1.75 and unit Compvers V0.41
+    support Delphi 26 / 10.3 'Rio' / VER330.
+
+http://wolfgang-ehrhardt.de

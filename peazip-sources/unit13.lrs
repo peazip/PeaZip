@@ -1,0 +1,56 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFormSelect','FORMDATA',[
+  'TPF0'#11'TFormSelect'#10'FormSelect'#4'Left'#3'L'#3#6'Height'#3#220#0#3'Top'
+  +#3#20#3#5'Width'#3#224#1#8'AutoSize'#9#7'Caption'#6#6'Select'#12'ClientHeigh'
+  +'t'#3#220#0#11'ClientWidth'#3#224#1#5'Color'#7#8'clWindow'#21'Constraints.Mi'
+  +'nHeight'#3#220#0#20'Constraints.MinWidth'#3#224#1#8'Position'#7#14'poScreen'
+  +'Center'#10'LCLVersion'#6#7'1.8.4.0'#0#12'TButtonPanel'#12'ButtonPanel1'#22
+  +'AnchorSideLeft.Control'#7#5'Owner'#23'AnchorSideRight.Control'#7#5'Owner'#4
+  +'Left'#2#12#6'Height'#2#26#3'Top'#3#182#0#5'Width'#3#200#1#18'BorderSpacing.'
+  +'Left'#2#12#19'BorderSpacing.Right'#2#12#20'BorderSpacing.Bottom'#2#12#20'Bo'
+  +'rderSpacing.Around'#2#0#13'OKButton.Name'#6#8'OKButton'#23'OKButton.Default'
+  +'Caption'#9#15'HelpButton.Name'#6#10'HelpButton'#25'HelpButton.DefaultCaptio'
+  +'n'#9#18'HelpButton.Enabled'#8#16'CloseButton.Name'#6#11'CloseButton'#26'Clo'
+  +'seButton.DefaultCaption'#9#19'CloseButton.Enabled'#8#17'CancelButton.Name'#6
+  +#12'CancelButton'#27'CancelButton.DefaultCaption'#9#8'TabOrder'#2#0#11'ShowB'
+  +'uttons'#11#4'pbOK'#8'pbCancel'#0#9'ShowBevel'#8#0#0#6'TPanel'#11'PanelSelec'
+  +'t'#22'AnchorSideLeft.Control'#7#5'Owner'#21'AnchorSideTop.Control'#7#5'Owne'
+  +'r'#23'AnchorSideRight.Control'#7#5'Owner'#20'AnchorSideRight.Side'#7#9'asrB'
+  +'ottom'#24'AnchorSideBottom.Control'#7#12'ButtonPanel1'#4'Left'#2#0#6'Height'
+  +#3#158#0#3'Top'#2#0#5'Width'#3#224#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRi'
+  +'ght'#8'akBottom'#0#8'AutoSize'#9#20'BorderSpacing.Bottom'#2#24#10'BevelOute'
+  +'r'#7#6'bvNone'#12'ClientHeight'#3#158#0#11'ClientWidth'#3#224#1#8'TabOrder'
+  +#2#1#0#9'TComboBox'#9'ComboBox1'#22'AnchorSideLeft.Control'#7#9'ComboBox2'#21
+  +'AnchorSideTop.Control'#7#9'ComboBox2'#18'AnchorSideTop.Side'#7#9'asrBottom'
+  +#23'AnchorSideRight.Control'#7#9'ComboBox2'#20'AnchorSideRight.Side'#7#9'asr'
+  +'Bottom'#4'Left'#2#12#6'Height'#2#23#3'Top'#2';'#5'Width'#3#200#1#7'Anchors'
+  +#11#5'akTop'#6'akLeft'#7'akRight'#0#17'BorderSpacing.Top'#2#12#13'DropDownCo'
+  +'unt'#2#24#10'ItemHeight'#2#15#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#0
+  +#0#0#9'TComboBox'#9'ComboBox2'#22'AnchorSideLeft.Control'#7#11'PanelSelect'
+  +#21'AnchorSideTop.Control'#7#11'PanelSelect'#23'AnchorSideRight.Control'#7#11
+  +'PanelSelect'#20'AnchorSideRight.Side'#7#9'asrBottom'#4'Left'#2#12#6'Height'
+  +#2#23#3'Top'#2#24#5'Width'#3#200#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRigh'
+  +'t'#0#18'BorderSpacing.Left'#2#12#17'BorderSpacing.Top'#2#24#19'BorderSpacin'
+  +'g.Right'#2#12#10'ItemHeight'#2#15#5'Style'#7#14'csDropDownList'#8'TabOrder'
+  +#2#1#0#0#6'TLabel'#6'Label1'#22'AnchorSideLeft.Control'#7#9'ComboBox2'#21'An'
+  +'chorSideTop.Control'#7#9'ComboBox1'#18'AnchorSideTop.Side'#7#9'asrBottom'#6
+  +'Cursor'#7#11'crHandPoint'#4'Left'#2#12#6'Height'#2#15#3'Top'#2'j'#5'Width'#2
+  +'.'#17'BorderSpacing.Top'#2#24#7'Caption'#6#10'Select all'#10'Font.Color'#4
+  +#17'U'#204#0#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#11'Label1Click'
+  +#0#0#6'TLabel'#6'Label3'#22'AnchorSideLeft.Control'#7#10'Labelspac2'#19'Anch'
+  +'orSideLeft.Side'#7#9'asrBottom'#21'AnchorSideTop.Control'#7#6'Label1'#18'An'
+  +'chorSideTop.Side'#7#9'asrCenter'#6'Cursor'#7#11'crHandPoint'#4'Left'#2'W'#6
+  +'Height'#2#15#3'Top'#2'j'#5'Width'#2'P'#18'BorderSpacing.Left'#2#12#7'Captio'
+  +'n'#6#16'Invert selection'#10'Font.Color'#4#17'U'#204#0#11'ParentColor'#8#10
+  +'ParentFont'#8#7'OnClick'#7#11'Label3Click'#0#0#6'TLabel'#10'Labelspac2'#22
+  +'AnchorSideLeft.Control'#7#6'Label1'#19'AnchorSideLeft.Side'#7#9'asrBottom'
+  +#21'AnchorSideTop.Control'#7#6'Label1'#18'AnchorSideTop.Side'#7#9'asrCenter'
+  +#4'Left'#2'F'#6'Height'#2#15#3'Top'#2'j'#5'Width'#2#5#18'BorderSpacing.Left'
+  +#2#12#7'Caption'#6#1'/'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'L'
+  +'abel5'#22'AnchorSideLeft.Control'#7#6'Label1'#21'AnchorSideTop.Control'#7#6
+  +'Label1'#18'AnchorSideTop.Side'#7#9'asrBottom'#6'Cursor'#7#11'crHandPoint'#4
+  +'Left'#2#12#6'Height'#2#15#3'Top'#3#133#0#5'Width'#2'W'#17'BorderSpacing.Top'
+  +#2#12#7'Caption'#6#17'Sort by selection'#10'Font.Color'#4#17'U'#204#0#11'Par'
+  +'entColor'#8#10'ParentFont'#8#7'OnClick'#7#11'Label5Click'#0#0#0#0
+]);

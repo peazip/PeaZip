@@ -1,0 +1,380 @@
+object FormPW: TFormPW
+  Left = 1120
+  Height = 270
+  Top = 738
+  Width = 560
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
+  Caption = 'FormPW'
+  ClientHeight = 270
+  ClientWidth = 560
+  Color = clWindow
+  Constraints.MinHeight = 220
+  Constraints.MinWidth = 560
+  Icon.Data = {
+    7E0500000000010001001010FF00000000006805000016000000280000001000
+    0000200000000100080000000000000000000000000000000000000000000000
+    0000009F7800009F720000A9770000B87F0000CD890000E3940000E6960000E4
+    9500009E7F0000976C0000AA4F0000B3410000A95000009B6F0000DC910000E2
+    950000A9940000AD4B0000BE390000C1670000BE360000A8520000966E000098
+    6F0000BE820000DD940000B8AD0000B9390000C3780000C9D20000C1640000B5
+    3E0000A6760000DD910000D5930000CCD40000AF480000BF3E0000C379000097
+    6B0000A25B0000A5570000996800009E720000D98F0000CB920000E3FB00009C
+    740000AE4A0000B83900009D630000BE340000BC350000C0910000E6FF0000B7
+    AE0000966D0000C0570000C7BC0000C8C50000C2750000D6930000BF910000DC
+    F0000098730000BD320000C6A20000A6550000BD810000C3910000BDBA00009A
+    670000BD330000C5960000A35900008E6E0000B78C0000E4FD0000A68E0000B0
+    460000BF440000C5980000C6A30000C0580000926D0000836C00009D7B0000DD
+    F10000A94F0000A94000009B4E0000876D0000BC8F0000D9EB00009C640000AC
+    4B0000B6380000B8660000B53500009A500000AC850000B0380000B9770000C0
+    D00000B7630000AA3D00009C7B0000BCB900008D720000A2460000B53C0000B5
+    3800009C4D000091740000E2FF0000CCFF0000B1FF0000A6EF000093AB000087
+    710000A1480000AE380000A0490000846A000089700000DFFF0000D8FF0000BD
+    FF0000ADFF0000ABFF0000A9FB00009ED2000093AA00008C900000877D000088
+    7600000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000001020304050606060606060606060708090A0B0C0D030E060606060606
+    060F101112131415161718070606060606191A1B1C1D1E1F1616162021060606
+    062223242526120A2728292A2B2C0606062D2E2F3031113231331434282B2106
+    073536371638381F393A3B3C342A20073D3E363F40163241421D1D3B14431644
+    453E363646164748491D1D3A334A164B4C3E36364D4E164F5051525331275455
+    563E3636365708274F48411F3258595A5B5C363636365D0816475E385F606162
+    63643636363636574E16165465666768696A3636363636364D6B6C556D6E666F
+    7071363636363672737475767778797A7B7C727D7E737F808181818182838485
+    8687000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000
+  }
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.8.4.0'
+  object PanelPWOpen: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel1
+    Left = 0
+    Height = 201
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 24
+    BevelOuter = bvNone
+    ClientHeight = 201
+    ClientWidth = 560
+    TabOrder = 0
+    object LableListPath1: TLabel
+      AnchorSideTop.Control = EditUn7zaPW
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = ButtonEditNamePw
+      Left = 72
+      Height = 17
+      Top = 33
+      Width = 70
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = 'Password:'
+      ParentColor = False
+    end
+    object LableListPath2: TLabel
+      AnchorSideTop.Control = EditName3
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = LableListPath3
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 93
+      Height = 17
+      Top = 113
+      Width = 49
+      Anchors = [akTop, akRight]
+      Caption = 'Keyfile:'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = LableListPath2Click
+    end
+    object LableListPath3: TLabel
+      AnchorSideLeft.Control = LableListPath2
+      AnchorSideTop.Control = EditUn7zaPW1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = LableListPath1
+      AnchorSideRight.Side = asrBottom
+      Left = 84
+      Height = 17
+      Top = 73
+      Width = 58
+      Anchors = [akTop, akRight]
+      Caption = 'Confirm:'
+      ParentColor = False
+    end
+    object EditUn7zaPW: TEdit
+      AnchorSideTop.Control = PanelPWOpen
+      AnchorSideRight.Control = PanelPWOpen
+      AnchorSideRight.Side = asrBottom
+      Left = 180
+      Height = 34
+      Top = 24
+      Width = 368
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      EchoMode = emPassword
+      OnChange = EditUn7zaPWChange
+      OnKeyPress = EditUn7zaPWKeyPress
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object EditName3: TEdit
+      AnchorSideLeft.Control = EditUn7zaPW
+      AnchorSideTop.Control = EditUn7zaPW1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = ButtonEditName3
+      Left = 180
+      Height = 34
+      Top = 104
+      Width = 342
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Bottom = 6
+      TabOrder = 3
+    end
+    object ButtonEditName3: TButton
+      AnchorSideTop.Control = EditName3
+      AnchorSideRight.Control = EditUn7zaPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = EditName3
+      AnchorSideBottom.Side = asrBottom
+      Left = 522
+      Height = 34
+      Top = 104
+      Width = 26
+      Anchors = [akTop, akRight, akBottom]
+      BorderSpacing.InnerBorder = 4
+      Caption = '...'
+      OnClick = ButtonEditName3Click
+      PopupMenu = PopupMenupw
+      TabOrder = 2
+    end
+    object EditUn7zaPW1: TEdit
+      AnchorSideLeft.Control = EditUn7zaPW
+      AnchorSideTop.Control = EditUn7zaPW
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = EditUn7zaPW
+      AnchorSideRight.Side = asrBottom
+      Left = 180
+      Height = 34
+      Top = 64
+      Width = 368
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      EchoMode = emPassword
+      OnKeyPress = EditUn7zaPWKeyPress
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object ButtonEditNamePw: TSpeedButton
+      AnchorSideTop.Control = EditUn7zaPW
+      AnchorSideRight.Control = EditName3
+      AnchorSideBottom.Control = EditUn7zaPW
+      AnchorSideBottom.Side = asrBottom
+      Left = 154
+      Height = 34
+      Top = 24
+      Width = 26
+      Anchors = [akTop, akRight, akBottom]
+      BorderSpacing.InnerBorder = 4
+      Flat = True
+      OnClick = ButtonEditNamePwClick
+    end
+    object PanelPWOpen1: TPanel
+      AnchorSideLeft.Control = PanelPWOpen
+      AnchorSideTop.Control = ButtonEditName3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelPWOpen
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelPWOpen
+      AnchorSideBottom.Side = asrBottom
+      Left = 24
+      Height = 39
+      Top = 162
+      Width = 536
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 24
+      BorderSpacing.Top = 24
+      BevelOuter = bvNone
+      ClientHeight = 39
+      ClientWidth = 536
+      TabOrder = 4
+      object CheckBoxShowPWField: TCheckBox
+        AnchorSideLeft.Control = CheckBoxEncFn
+        AnchorSideTop.Control = CheckBoxKeepPW
+        AnchorSideTop.Side = asrBottom
+        Left = 0
+        Height = 23
+        Top = 52
+        Width = 131
+        BorderSpacing.Top = 3
+        Caption = 'Show password'
+        OnClick = CheckBoxShowPWFieldClick
+        TabOrder = 1
+      end
+      object CheckBoxEncFn: TCheckBox
+        AnchorSideLeft.Control = PanelPWOpen1
+        AnchorSideTop.Control = PanelPWOpen1
+        Left = 0
+        Height = 23
+        Top = 0
+        Width = 337
+        Caption = 'Encrypt filenames (if supported by the format)'
+        TabOrder = 0
+      end
+      object CheckBoxKeepPW: TCheckBox
+        AnchorSideLeft.Control = CheckBoxEncFn
+        AnchorSideTop.Control = CheckBoxEncFn
+        AnchorSideTop.Side = asrBottom
+        Left = 0
+        Height = 23
+        Top = 26
+        Width = 283
+        BorderSpacing.Top = 3
+        Caption = 'Keep password for the current session'
+        TabOrder = 2
+      end
+    end
+    object PanelKF: TPanel
+      AnchorSideLeft.Control = EditName3
+      AnchorSideTop.Control = EditName3
+      AnchorSideRight.Control = ButtonEditName3
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = EditName3
+      AnchorSideBottom.Side = asrBottom
+      Left = 180
+      Height = 34
+      Top = 104
+      Width = 368
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BevelOuter = bvNone
+      TabOrder = 5
+    end
+  end
+  object ButtonPanel1: TButtonPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 12
+    Height = 33
+    Top = 225
+    Width = 536
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 6
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    BorderSpacing.Around = 0
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    HelpButton.Enabled = False
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.Enabled = False
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 1
+    ShowButtons = [pbOK, pbCancel]
+    ShowBevel = False
+  end
+  object Shape1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 1
+    Top = 269
+    Width = 560
+    Anchors = [akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    TabOrder = 2
+  end
+  object PopupMenupw: TPopupMenu
+    left = 440
+    top = 88
+    object mpwreset: TMenuItem
+      Caption = 'Reset keyfile'
+      OnClick = mpwresetClick
+    end
+    object mpwexplore: TMenuItem
+      Caption = 'Explore path'
+      OnClick = mpwexploreClick
+    end
+  end
+  object OpenDialogKF: TOpenDialog
+    Title = 'Open file'
+    FilterIndex = 0
+    left = 368
+    top = 64
+  end
+  object PopupMenupwman: TPopupMenu
+    left = 104
+    top = 16
+    object mpwmreset: TMenuItem
+      Caption = 'Reset'
+      OnClick = mpwmresetClick
+    end
+    object MenuItem3: TMenuItem
+      Caption = '-'
+    end
+    object mpwman1: TMenuItem
+      OnClick = mpwman1Click
+    end
+    object mpwman2: TMenuItem
+      OnClick = mpwman2Click
+    end
+    object mpwman3: TMenuItem
+      OnClick = mpwman3Click
+    end
+    object mpwman4: TMenuItem
+      OnClick = mpwman4Click
+    end
+    object mpwman5: TMenuItem
+      OnClick = mpwman5Click
+    end
+    object mpwman6: TMenuItem
+      OnClick = mpwman6Click
+    end
+    object mpwman7: TMenuItem
+      OnClick = mpwman7Click
+    end
+    object mpwman8: TMenuItem
+      OnClick = mpwman8Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = '-'
+    end
+    object mpwman: TMenuItem
+      Caption = 'Password manager'
+      OnClick = mpwmanClick
+    end
+  end
+end
