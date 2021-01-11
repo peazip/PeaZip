@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="64" Y="6"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Formdragdropfilesdll"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unitdragdropfilesdll"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="20"/>
+        <CursorPos X="24" Y="66"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="project1.pas"/>
+        <UnitName Value="dragdropfilesdll"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value=""/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit3>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="73" Column="27" TopLine="38"/>
+      </Position1>
+      <Position2>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="36" Column="51"/>
+      </Position2>
+      <Position3>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="100" Column="8" TopLine="76"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="53" Column="32" TopLine="43"/>
+      </Position4>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
