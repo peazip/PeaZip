@@ -1,0 +1,1 @@
+windres -i pea.rc -o pea.res

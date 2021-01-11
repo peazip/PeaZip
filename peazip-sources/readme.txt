@@ -19,7 +19,7 @@ dragdropfilesdll directory contains sources to build dragdropfilesdll.dll, which
 application-to-system files drag&drop functions under Windows systems, sources in this path
 requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be 
 compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael 
-KÃ¶cher / six (on Lazarus).
+Köcher / six (on Lazarus).
 
 peazip-setup_script.iss in "installer" path is a setup script file for Inno Setup for 
 creating Windows installer with file association for PeaZip; forms were created using

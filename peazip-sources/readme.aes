@@ -1,0 +1,108 @@
+This archive contains AES (Advanced Encryption Standard) related Pascal /
+Delphi sources: basic AES routines and recommended block cipher modes of
+operation (with test programs that verify compilation and results).
+
+The block level routines supply separate units for encryption and decryption.
+The source code for basic encryption/decryption is split into several include
+files. At the lowest level there are type definitions and common routines. Key
+sizes of 128, 192, and 256 bits are supported.
+
+The following recommended block cipher modes of operation are implemented:
+CBC, CFB128, CFB8, CTR, ECB, OFB, OMAC, CMAC, CCM, EAX, GCM, and XTS. All
+chaining modes allow plain and cipher text lengths that need not be multiples
+of the block length (for ECB and CBC cipher text stealing is used for the
+short block; only one short block is allowed and there must be at least one
+full block). CTR mode can use 4 built-in incrementing functions or a user
+supplied one, and provides seek functions for random access reads.
+
+All routines have been included in the AES_DLL.DLL, there are two interface
+units for this DLL (one for Virtual Pascal, the second for the other Win32
+compilers).
+
+Since the July 2006 release there are conditional defines to support
+compressed tables: one 2K encryption table (calculated with t_mkctab) replaces
+the four 1K tables (same for decryption, here the inverse SBox is no longer
+needed). Besides using less static memory, compressed tables are considered as
+a countermeasure against cache timing attacks.
+
+W.Ehrhardt, Nov. 2017
+http://wolfgang-ehrhardt.de
+
+-------------------------------------------------------------------------------
+
+Last changes:
+
+Nov. 2017
+- FPC/ARM and Delphi Tokyo adjustments
+
+Sep. 2015
+- Constant time verification/compare for the all-in-one packet 
+  functions (aes_eax, aes_gcm, aes_ccm)
+
+Jan. 2013
+- Adjustments (test programs) for D17 (XE3), {$J+} if needed
+
+Dec. 2012
+- Small 64-bit adjustments (separate BIT64 include statements in
+  aes_decr and aes_encr; improved aes_gcm)
+
+July 2012
+- 64-bit adjustment for GCM
+
+Oct. 2010
+- Galois/Counter Mode (GCM)
+- Fix PPP unit for TP5
+
+Aug. 2010
+- Message length ILen has now type longint
+- New PPP unit (Perfect Paper Passwords)
+
+June 2010
+- AES_CTR_Seek functions
+
+July 2009
+- Delphi 2009 (D12) adjustments
+
+May  2009
+- Counter with CBC-MAC (CCM) mode
+
+Nov. 2008
+- Uses the BTypes unit for better portability
+
+Aug. 2008
+- All-in-one EAX functions for encrypt / authenticate and decrypt / verify:
+  decryption is performed only if the verification was successful.
+- Range check safe IncProcs for FPC -dDebug
+
+Jan. 2008
+New unit aes_cfb8 implementing the 8 bit CFB mode
+
+Oct. 2007
+- New unit aes_xts implementing the XTS mode from the IEEE P1619 Draft Standard
+ for Cryptographic Protection of Data on Block-Oriented Storage Devices.
+
+June 2007
+- AES-CMAC-PRF-128 from RFC 4615
+- New EAX context name
+
+Nov. 2006
+- Contributed AES256 file crypt/authenticate unit
+
+July 2006
+- CMAC mode, compressed tables as a countermeasure against cache timing attacks
+
+Jul. 2004
+- EAX mode, AES DLL, new demo programs
+
+Jun. 2004
+- OMAC mode on AES page
+
+Mar. 2004
+- Significant speedup of AES key generation
+
+Jan. 2004
+- New faster AES routines
+
+Dec. 2003
+- First version of AES archive released
+

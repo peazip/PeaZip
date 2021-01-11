@@ -1,0 +1,372 @@
+---------------------------------------------------------------------------
+More information about the Hash/HMAC/KDF routines
+---------------------------------------------------------------------------
+
+
+Introduction
+---------------------------------------------------------------------------
+A hash function is a mapping of arbitrary length message bit strings to fixed
+size bit strings, the digests or finger prints of the messages. A cryptographic
+hash function has at least two additional features:
+
+  * It should be a computationally efficient public one-way function, i.e. is
+    easy to calculate the digest of a given message but it is computationally
+    infeasible to find a message that is mapped to given value.
+  * It should be a computationally strong collision resistant function, i.e. it
+    is computationally infeasible to find two distinct messages which are
+    mapped to the same value.
+
+Obviously a hash function cannot be injective (i.e. there are collisions),
+because there are more messages than digests.
+
+A Message Authentication Code (MAC) is a function that maps pairs of key bit
+strings and arbitrary length message bit strings to fixed size bit strings (the
+MAC tag), and it is computationally infeasible to find two distinct
+(key,message) pairs which are mapped to the same value.
+
+If the keys are kept secret, MACs can be used for authentication. Hash
+functions can be used for example for data integrity checks, but normally not
+for authentication because everybody can calculate the finger print of a
+message.
+
+HMAC is a construction to turn hash functions into MACs using the basic
+definition (plus some technical details):
+
+HMAC(key,message) = hash((const1 xor key) || hash((const2 xor key) || message))
+
+The CRC/Hash package contains Pascal / Delphi source related to CRC,
+cryptographic Hash, and HMAC calculations; unless otherwise stated, the basic
+routines can be compiled with most Pascal (TP 5/5.5/6, BP 7, VP 2.1, FPC
+1.0/2.0/2.2/2.4/2.6/3.x) and Delphi versions (tested with V1 to V7,
+V9/10/12/17/18, V25Starter).
+
+The CRC routines are quite self-contained, but the Hash/HMAC routines shall be
+explained a bit more. There are three general and 19 hash algorithm specific
+units; the ed2k unit is a special case, because the MD4-based eDonkey/eMule
+hash does not fit in the framework defined in hash.pas.
+
+The Hash unit
+
+The Hash unit interfaces basic definitions for the HMAC, KDF, and the specific
+units:
+
+type
+  THashAlgorithm = (_MD4, _MD5, _RIPEMD160, _SHA1,
+                    _SHA224, _SHA256, _SHA384, _SHA512,
+                    _Whirlpool, _SHA512_224, _SHA512_256,
+                    _SHA3_224, _SHA3_256, _SHA3_384, _SHA3_512,
+                    _Blake2S_224, _Blake2S_256,
+                    _Blake2B_384, _Blake2B_512); {Supported hash algorithms}
+
+const
+  _RMD160  = _RIPEMD160;      {Alias}
+
+const
+  MaxBlockLen  = 128;         {Max. block length (buffer size), multiple of 4}
+  MaxDigestLen = 64;          {Max. length of hash digest}
+  MaxStateLen  = 16;          {Max. size of internal state}
+  MaxOIDLen    = 11;          {Current max. OID length}
+  C_HashSig    = $3D7A;       {Signature for Hash descriptor}
+  C_HashVers   = $00020002;   {Version of Hash definitions}
+  C_MinHash    = _MD4;        {Lowest  hash in THashAlgorithm}
+  C_MaxHash    = _Blake2B_512;{Highest hash in THashAlgorithm}
+
+type
+  THashState   = packed array[0..MaxStateLen-1] of longint;         {Internal state}
+  THashBuffer  = packed array[0..MaxBlockLen-1] of byte;            {hash buffer block}
+  THashDigest  = packed array[0..MaxDigestLen-1] of byte;           {hash digest}
+  PHashDigest  = ^THashDigest;                                      {pointer to hash digest}
+  THashBuf32   = packed array[0..MaxBlockLen  div 4 -1] of longint; {type cast helper}
+  THashDig32   = packed array[0..MaxDigestLen div 4 -1] of longint; {type cast helper}
+  THMacBuffer  = packed array[0..143] of byte;                      {hmac buffer block}
+
+const
+  HASHCTXSIZE  = 448;  {Common size of enlarged padded old context}
+                       {and new padded SHA3/SHAKE/Keccak context  }
+
+type
+  THashContext = packed record
+                   Hash  : THashState;             {Working hash}
+                   MLen  : packed array[0..3] of longint; {max 128 bit msg length}
+                   Buffer: THashBuffer;            {Block buffer}
+                   Index : longint;                {Index in buffer}
+                   Fill2 : packed array[213..HASHCTXSIZE] of byte;
+                 end;
+
+The THashContext type records information about the working state of a hash
+algorithm and is used in (most) hash related functions; the arrays have maximum
+length in order to be usable as a generic record. Fill2 is the only change made
+compared to the pre-SHA3 type, the SHA3 specific context actually is a padded
+Keccak sponge state padded to length HASHCTXSIZE).
+
+type
+  HashInitProc     = procedure(var Context: THashContext);
+                      {-initialize context}
+
+  HashUpdateXLProc = procedure(var Context: THashContext; Msg: pointer; Len: longint);
+                      {-update context with Msg data}
+
+  HashFinalProc    = procedure(var Context: THashContext; var Digest: THashDigest);
+                      {-finalize calculation, clear context}
+
+  HashFinalBitProc = procedure(var Context: THashContext; var Digest: THashDigest; BData: byte; bitlen: integer);
+                      {-finalize calculation with bitlen bits from BData, clear context}
+
+type
+  TOID_Vec  = packed array[1..MaxOIDLen] of longint; {OID vector}
+  POID_Vec  = ^TOID_Vec;                             {ptr to OID vector}
+
+type
+  THashName = string[19];                      {Hash algo name type }
+  PHashDesc = ^THashDesc;                      {Ptr to descriptor   }
+  THashDesc = packed record
+                HSig      : word;              {Signature=C_HashSig }
+                HDSize    : word;              {sizeof(THashDesc)   }
+                HDVersion : longint;           {THashDesc Version   }
+                HBlockLen : word;              {Blocklength of hash }
+                HDigestlen: word;              {Digestlength of hash}
+                HInit     : HashInitProc;      {Init  procedure     }
+                HFinal    : HashFinalProc;     {Final procedure     }
+                HUpdateXL : HashUpdateXLProc;  {Update procedure    }
+                HAlgNum   : longint;           {Algo ID, longint avoids problems with enum size/DLL}
+                HName     : THashName;         {Name of hash algo   }
+                HPtrOID   : POID_Vec;          {Pointer to OID vec  }
+                HLenOID   : word;              {Length of OID vec   }
+                HFill     : word;
+                HFinalBit : HashFinalBitProc;  {Bit-API Final proc  }
+                HReserved : packed array[0..19] of byte;
+              end;
+
+const
+  BitAPI_Mask: array[0..7] of byte = ($00,$80,$C0,$E0,$F0,$F8,$FC,$FE);
+  BitAPI_PBit: array[0..7] of byte = ($80,$40,$20,$10,$08,$04,$02,$01);
+
+procedure RegisterHash(AlgId: THashAlgorithm; PHash: PHashDesc);
+  {-Register algorithm with AlgID and Hash descriptor PHash^}
+
+function  FindHash_by_ID(AlgoID: THashAlgorithm): PHashDesc;
+  {-Return PHashDesc of AlgoID, nil if not found/registered}
+
+function  FindHash_by_Name(AlgoName: THashName): PHashDesc;
+  {-Return PHashDesc of Algo with AlgoName, nil if not found/registered}
+
+The hash descriptor type THashDesc defines the basic properties and functions
+of a specific hash algorithm (some fields are reserved for future extensions).
+Every specific unit has a private variable of type THashDesc, which is used in
+the initialization part to register the hash. This means, that a specific unit,
+whose hash algorithm shall be used in an application, must appear in the uses
+statement of the application or another unit. The registered hash algorithms
+are collected in an array[THashAlgorithm] of PHashDesc in the implementation
+part of the hash unit.
+
+The FindHash_by... routines are used to get the descriptor of a specific hash
+algorithm for use with HMAC or key derivation functions.
+
+The specific units
+
+These units contain all the code and data for a single specific of the 19
+supported hash algorithms: MD4, MD5, RIPEMD-160, SHA1, SHA224, SHA256, SHA384,
+SHA512, SHA512/224, SHA512/256, SHA3-224, SHA3-256, SHA3-384, SHA3-512,
+Blake2S-224, Blake2S-256, Blake2B-384, Blake2B-512, and Whirlpool. Note: Most
+code for the SHA3 algorithms is in SHA3.pas, which also handles the XOF
+functions SHAKE128/256; additionally it contains a separate function
+SHA3_FinalBit_LSB to process the final trailing LSB bits of a message (due to
+NIST's unfortunate decision to change the SHA3 bit-ordering compared to all
+former SHA versions).
+
+The MD4 and MD5 functions are broken: collisions are known and can be
+constructed within minutes using desktop computers; and recently collisions for
+SHA1 are published. The three functions are included for completeness but
+should not be used for new applications. Their corresponding HMAC functions are
+still considered safe.
+
+Every unit interfaces a uniform set of functions (where [Hash] is substituted
+by an algorithm specific string):
+
+procedure [Hash]Init(var Context: THashContext);
+  {-initialize context}
+
+procedure [Hash]Update(var Context: THashContext; Msg: pointer; Len: word);
+  {-update context with Msg data}
+
+procedure [Hash]UpdateXL(var Context: THashContext; Msg: pointer; Len: longint);
+  {-update context with Msg data}
+
+procedure [Hash]Final(var Context: THashContext; var Digest: T[Hash]Digest);
+  {-finalize [Hash] calculation, clear context}
+
+procedure [Hash]FinalEx(var Context: THashContext; var Digest: THashDigest);
+  {-finalize [Hash] calculation, clear context}
+
+procedure [Hash]FinalBitsEx(var Context: THashContext; var Digest: THashDigest; BData: byte; bitlen: integer);
+  {-finalize [Hash] calculation with bitlen bits from BData (big-endian), clear context}
+
+procedure [Hash]FinalBits(var Context: THashContext; var Digest: T[Hash]Digest; BData: byte; bitlen: integer);
+  {-finalize [Hash] calculation with bitlen bits from BData (big-endian), clear context}
+
+function  [Hash]SelfTest: boolean;
+  {-self test for [Hash]}
+
+procedure [Hash]Full(var Digest: T[Hash]Digest; Msg: pointer; Len: word);
+  {-[Hash] of Msg with init/update/final}
+
+procedure [Hash]FullXL(var Digest: T[Hash]Digest; Msg: pointer; Len: longint);
+  {-[Hash] of Msg with init/update/final}
+
+procedure [Hash]File(fname: String; var Digest: T[Hash]Digest; var buf; bsize: word; var Err: word);
+  {-[Hash] of file, buf: buffer with at least bsize bytes}
+
+The [Hash]Init procedure starts the hash algorithm (initialize the THashState
+field and clear the rest of the context); it must be called before using the
+other procedures with this context record.
+
+The [Hash]Update procedures hash the contents of a buffer; they can be called
+repeatedly or in a loop.
+
+To get the hash result (the hash digest), one of the [Hash]Final procedures
+must be called.
+
+To hash a message with a bit length L that is not a multiple of 8, use the
+[Hash]Update procedures for the (L div 8)*8 complete bytes, then use one of the
+[Hash]FinalBits procedures to process the remaining L mod 8 bits. The
+(big-endian) bit positions used from the BData parameter are given by
+BitAPI_Mask[L mod 8]. Blake2 does not support bit-sized messages and the
+trailing bits are ignored.
+
+In order to test the implementation and compilation the [Hash]SelfTest can be
+called, it compares the hash digests of known buffers (also known as test
+vectors) against known answers. At least two test vectors are processed with
+two different strategies for the byte versions, and one or two tests are done
+for the bit API. The answer is true if all tests are passed.
+
+The [Hash]Full procedures are simple wrappers (for Init, Update, Final) to hash
+a complete buffer with a single call. [Hash]File calculates the hash of a file
+by reading and processing a buffer in a loop.
+
+The HMAC unit
+---------------------------------------------------------------------------
+The HMAC unit is a surprisingly small unit, that implements the HMAC
+construction for all supported hash algorithms (the former HMAC[Hash] units are
+still supplied but are considered obsolete, they are now simple wrappers for
+HMAC using descriptors for [Hash]).
+
+type
+  THMAC_Context = record
+                    hashctx: THashContext;
+                    hmacbuf: THashBuffer;
+                    phashd : PHashDesc;
+                  end;
+
+procedure hmac_init(var ctx: THMAC_Context; phash: PHashDesc; key: pointer; klen: word);
+  {-initialize HMAC context with hash descr phash^ and key}
+
+procedure hmac_inits(var ctx: THMAC_Context; phash: PHashDesc; skey: Str255);
+  {-initialize HMAC context with hash descr phash^ and skey}
+
+procedure hmac_update(var ctx: THMAC_Context; data: pointer; dlen: word);
+  {-HMAC data input, may be called more than once}
+
+procedure hmac_updateXL(var ctx: THMAC_Context; data: pointer; dlen: longint);
+  {-HMAC data input, may be called more than once}
+
+procedure hmac_final(var ctx: THMAC_Context; var mac: THashDigest);
+  {-end data input, calculate HMAC digest}
+
+procedure hmac_final_bits(var ctx: THMAC_Context; var mac: THashDigest; BData: byte; bitlen: integer);
+  {-end data input with bitlen bits (MSB format) from BData, calculate HMAC digest}
+
+The hmac_init and hmac_inits procedures initialize a THMAC_Context with the
+hash algorithm given by phash and a (secret) key buffer or string. The
+remaining procedures work only with this context. Note that hmac_final_bits
+expects the bits in MSB format and therefore trailing bits in SHA3-LSB format
+must be converted to MSB! All functions check if phash/phashd is not nil.
+
+The KDF unit
+---------------------------------------------------------------------------
+The Key Derivation Functions of this unit use Hash/HMAC algorithms to construct
+reproducible secret keys from either
+
+  * shared secrets and optional other info or
+  * pass phrases, (session) salts, and iteration counts according to PKCS#5
+
+The basic hash algorithm is given by a PHashDesc. Additionally there is the
+Mask Generation Function mgf1, which is equivalent to kdf1 without OtherInfo.
+
+The KDF unit is the successor of my old keyderiv and pb_kdf units, which
+supported only the pbkdf2 functions. The scrypt functions (based on HMAC-SHA256
+and Salsa20/8) are implemented in the scrypt unit.
+
+function kdf1(phash: PHashDesc; Z: pointer; zLen: word; pOtherInfo: pointer; oiLen: word; var DK; dkLen: word): integer;
+  {-Derive key DK from shared secret Z using optional OtherInfo, hash function from phash}
+
+function kdf2(phash: PHashDesc; Z: pointer; zLen: word; pOtherInfo: pointer; oiLen: word; var DK; dkLen: word): integer;
+  {-Derive key DK from shared secret Z using optional OtherInfo, hash function from phash}
+
+function kdf3(phash: PHashDesc; Z: pointer; zLen: word; pOtherInfo: pointer; oiLen: word; var DK; dkLen: word): integer;
+  {-Derive key DK from shared secret Z using optional OtherInfo, hash function from phash}
+
+function mgf1(phash: PHashDesc; pSeed: pointer; sLen: word; var Mask; mLen: word): integer;
+  {-Derive Mask from seed, hash function from phash, Mask Generation Function 1 for PKCS #1}
+
+function pbkdf1(phash: PHashDesc; pPW: pointer; pLen: word; salt: pointer; C: longint; var DK; dkLen: word): integer;
+  {-Derive key DK from password pPW using 8 byte salt and iteration count C, uses hash function from phash}
+
+function pbkdf1s(phash: PHashDesc; sPW: Str255; salt: pointer; C: longint; var DK; dkLen: word): integer;
+  {-Derive key DK from password string sPW using 8 byte salt and iteration count C, uses hash function from phash}
+
+function pbkdf2(phash: PHashDesc; pPW: pointer; pLen: word; salt: pointer; sLen,C: longint; var DK; dkLen: longint): integer;
+  {-Derive key DK from password pPW using salt and iteration count C, uses hash function from phash}
+
+function pbkdf2s(phash: PHashDesc; sPW: Str255; salt: pointer; sLen,C: longint; var DK; dkLen: longint): integer;
+  {-Derive key DK from password string sPW using salt and iteration count C, uses hash function from phash}
+
+function hkdf(phash: PHashDesc;              {Descriptor of the Hash to use}
+              pIKM: pointer; L_IKM: word;    {input key material: addr/length}
+              salt: pointer; L_salt: word;   {optional salt; can be nil: see below }
+              info: pointer; L_info: word;   {optional context/application specific information}
+              var DK; dkLen: word): integer; {output key material: addr/length}
+  {-Derive key DK from input key material and salt/info, uses hash function from phash}
+  { If salt=nil then phash^.HDigestLen binary zeros will be used as salt.}
+
+function hkdfs(phash: PHashDesc; sIKM: Str255; {Hash; input key material as string}
+               salt: pointer; L_salt: word;    {optional salt; can be nil: see below }
+               info: pointer; L_info: word;    {optional context/application specific information}
+               var DK; dkLen: word): integer;  {output key material: addr/length}
+  {-Derive key DK from input key material and salt/info, uses hash function from phash}
+  { If salt=nil then phash^.HDigestLen binary zeros will be used as salt.}
+
+function scrypt_kdf(pPW: pointer; pLen: word; salt: pointer; sLen,N,r,p: longint; var DK; dkLen: longint): integer;
+  {-Derive key DK from password pPW and salt using scrypt with parameters N,r,p}
+
+function scrypt_kdfs(sPW: Str255; salt: pointer; sLen,N,r,p: longint; var DK; dkLen: longint): integer;
+  {-Derive key DK from password sPW and salt using scrypt with parameters N,r,p}
+
+function scrypt_kdfss(sPW, salt: Str255; N,r,p: longint; var DK; dkLen: longint): integer;
+  {-Derive key DK from password sPW and salt using scrypt with parameters N,r,p}
+
+
+
+Examples
+---------------------------------------------------------------------------
+The supplied test programs should be viewed as simple examples used for
+verification. Non-trivial examples for the hash (and CRC) functions can be
+found in the CCH and GCH programs and in the FAR manager plugin; the HMAC and
+pb_kdf functions are used in the FCA and FZCA demo programs.
+
+Here is an example layout for HMAC calculations:
+
+  phash := FindHash_by_Name(MyHash);
+  if phash=nil then begin
+    {Action for 'Hash function not found/registered.'}
+    exit;
+  end;
+
+  hmac_init(ctx, phash, @key, sizeof(key));
+  hmac_update(ctx, @data1, sizeof(data1));
+  hmac_updateXL(ctx, @data2, sizeof(data2));
+  {...}
+  hmac_final(ctx, mac);
+
+
+---------------------------------------------------------------------------
+W.Ehrhardt, Dec. 2017

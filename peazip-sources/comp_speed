@@ -1,0 +1,25 @@
+Cycles and MB/s for AES core encryption
+
+Win 98, Pentium 4, 1.8 GHz
+
+[-F for full tables, -C for compressed tables]
+
+   Compiler  Cyc/Bl-F  MB/s-F  Cyc/Bl-C  MB/s-C
+~~~~~~~~~~~  ~~~~~~~~  ~~~~~~  ~~~~~~~~  ~~~~~~
+        TP5      6302     4.6      5356     5.4
+       TP55      6321     4.5      6980     4.1
+        TP6      1436    20.0      1762    16.3
+        BP7      1493    19.2      1927    14.9
+        VPC       426    67.3       425    67.3
+ FPC 1 GoV2       542    53.0       541    53.1
+  FPC 2.0.2       571    50.2       546    52.5
+FPC 2.2 -O3       416    69.0       417    68.8
+    Delphi2       365    78.6       398    72.1
+    Delphi3       373    76.9       398    72.1
+    Delphi4       386    74.3       398    72.1
+    Delphi5       375    76.5       398    72.1
+    Delphi6       380    75.5       398    72.1
+    Delphi7       380    75.5       398    72.1
+    Delphi9       381    76.3       397    72.3
+   Delphi10       380    75.0       398    72.1
+

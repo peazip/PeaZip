@@ -1,0 +1,92 @@
+The basic routines in this archive can be compiled with most current Pascal
+(TP 5/5.5/6, BP 7, VP 2.1, FPC 1.0/2.0/2.2) and Delphi versions (tested with
+V1 up to V7/9/10).
+
+--------------------------------------------------------------------------------
+Last changes:
+
+  * Renamed and expanded KDF unit with key derivations functions kdf1, kdf2,
+    kdf3, mgf1, pbkdf1, pbkdf2
+  * improved and fixed crcmodel unit (now included in DLL)
+  * New crcm_cat unit with predefined parameter records for more than 30 CRC
+    algorithms
+
+
+--------------------------------------------------------------------------------
+Since Feb. 2006 there is a new Hash/HMAC architecture: Hash descriptor records
+allow a simple and uniform HMAC implementation for all hash algorithms; the
+key derivation functions can use all supported hash algorithms. A separate
+short introduction (intro.txt) gives some more information about the Hash/HMAC
+units and procedures.
+
+Since May 2008 the cryptographic hash and HMAC routines support messages with
+arbitrary bit lengths.
+
+--------------------------------------------------------------------------------
+The basic routines were slightly improved in the previous versions, but
+optimizing seems to be black magic. The cycles/times are heavily dependent on
+CPU, cache, compiler, code position, etc. For example: if the SHA256 loop is
+unrolled, the calculation slows down for about 40% on one machine (1.8GHz P4,
+D6, Win98), but is about 15% faster on another (AMD 2600+, D5, Win98). In the
+archive sha256unroll.zip you can find some snippets related to SHA256 loop
+unrolling.
+
+With the test program T_SpeedA and the high resolution timer from hrtimer you
+can measure the CPU cycles per byte (Cyc/B) and the processing rate in MB/s
+(note that the CPU frequency is determined dynamically). Here are the values
+for Delphi/FPC on Win98 with Pentium 4 / 1.8 GHz using a blocksize of 50000
+bytes (Std: standard routines with BASM, PP: Pure Pascal with inline for D10
+and FPC2.2 -O3):
+
+       +-----------+--------+--------+--------+-------+--------+--------+
+       |           | D3/Std | D3/Std | D6/Std | D6/PP | D10/PP | FPC/PP |
+       |      Name |   MB/s |  Cyc/B |  Cyc/B | Cyc/B |  Cyc/B |  Cyc/B |
+       +-----------+--------+--------+--------+-------+--------+--------+
+       |     CRC16 | 206.37 |    8.7 |    8.8 |  34.4 |   27.6 |   45.6 |
+       |     CRC24 | 185.48 |    9.7 |    9.7 |  31.0 |   27.5 |   43.0 |
+       |     CRC32 | 287.27 |    6.2 |    6.4 |  18.7 |   19.7 |   22.8 |
+       |    FCRC32 | 406.65 |    4.4 |    4.5 |  20.0 |   18.7 |   18.9 |
+       |   Adler32 | 400.05 |    4.5 |    5.1 |   4.7 |    3.8 |    8.4 |
+       |     CRC64 |  95.33 |   18.8 |   18.7 |  96.4 |   98.2 |   64.8 |
+       |   eDonkey | 212.36 |    8.4 |    8.4 |   8.4 |    8.6 |   21.6 |
+       |       MD4 | 214.93 |    8.3 |    8.4 |   8.4 |    8.4 |   20.1 |
+       |       MD5 | 155.54 |   11.5 |   11.6 |  11.6 |   11.7 |   31.7 |
+       |    RMD160 |  55.00 |   32.6 |   33.1 |  33.1 |   32.0 |   92.9 |
+       |      SHA1 |  51.04 |   35.1 |   36.7 |  40.0 |   36.3 |   45.2 |
+       |    SHA224 |  30.35 |   59.1 |   58.9 |  72.3 |   53.1 |   55.2 |
+       |    SHA256 |  30.79 |   58.2 |   58.1 |  72.1 |   52.1 |   54.7 |
+       |    SHA384 |  10.06 |  178.3 |  213.7 | 214.3 |  213.3 |  205.8 |
+       |    SHA512 |  10.06 |  178.3 |  213.1 | 213.6 |  214.3 |  201.0 |
+       | Whirlpool |  17.60 |  101.9 |  132.3 | 132.4 |  102.8 |  101.0 |
+       +-----------+--------+--------+--------+-------+--------+--------+
+
+MD4, eDonkey/eMule: For files/messages with a multiple of 9728000 bytes the
+eDonkey and eMule hashes are different; the ed2k unit always calculates both
+digests. The demo programs and the FAR plugin display both values if they are
+different.
+
+Int64 support for SHA384/512:  Unfortunately there are conflicting processor
+specific results: on a P4 / 1.8GHz the speed decreases to 83% of the longint
+speed (Cyc/B increase from 174 to 209). For a Celeron 500MHz the speed
+increases more than 30%, the Cyc/B decrease from 146 (longint) to 111 (Int64).
+In the source Int64 is default for D4+ and FPC (conditional define UseInt64 in
+SHA512.PAS)
+
+BASM16 table alignment: Because some BASM16 implementations use 32 bit access
+to 32 bit tables, these tables should be dword aligned for optimal speed. But
+the 16 bit compilers support byte or word alignment only! Therefore the
+defines from the align.inc include file allow to generate dummy words, which
+align the tables to 32 bit boundaries. This feature is implemented for CRC24
+... CRC64; if more than one of these units are used, it may be necessary to
+iterate the alignment procedure.
+
+Rocksoft^tm Model CRC Algorithm: The crcmodel unit is a Pascal implementation of
+Ross William's parameterized model CRC algorithm described in A Painless Guide
+to CRC Error Detection Algorithms. Most of the usual CRC algorithms with
+polynomials up to degree 32 can be modeled by this unit. The crcm_cat unit has
+predefined parameter records for more than 30 CRC algorithms, most of them
+adapted from Greg Cook's Catalogue of Parameterised CRC Algorithms, more
+references are listed in the unit header.
+
+W.Ehrhardt, July 16, 2008
+

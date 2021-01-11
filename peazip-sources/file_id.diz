@@ -1,0 +1,37 @@
+AES demo applications  (c) 2003-2007 W.Ehrhardt
+
+Simple demo programs for file encryption/authentication and
+decryption/verification
+
+Source code included/available
+
+http://home.netsurf.de/wolfgang.ehrhardt
+
+The programs use two modes, first is 128 bit AES-CTR mode with HMAC-SHA1-128;
+the second mode is EAX. The 96 bit salt is a truncated SHA1 hash, keys and pass
+phrase verifier are derived from the pass phrase according to RFC 2898.
+
+To compile the demo programs from the sources you need the base routines
+aes_<yyyy-mm-dd>.zip, crc_hash_<yyyy-mm-dd>.zip, and util_<yyyy-mm-dd>.zip
+
+The FZCA program optionally compresses the data before encryption, the source
+from zlibw114_<yyyy-mm-dd>.zipis is required.
+
+Since Nov. 2006 there is the contributed fcaes256 unit started by Georgio Tani
+using 256 bit AES-EAX mode or AES-CTR and HMAC-Whirlpool-128 (also used in
+Georgio's PeaZip project). fca256 is the 256 bit equivalent of FCA.
+
+---------------------------------------------------------------------------
+June 2007
+Last changes:  The new TAES_EAXContext name is used.
+
+FPC note: Use the source with std.inc V1.30 or newer which introduces a helper
+definition for FPC's crazy handling of procedure variables. If you need to
+compile in Turbo Pascal mode (-So or -Mtp) you should manually change the
+single {$ifdef FPC} to {$ifdef FPC_ProcVar} in the hash descriptor constants
+(sha1.pas and whirlpool.pas).
+
+4 GB note: the demo programs should only be applied to files with sizes less
+than 4 GB if compiled with Delphi or 16 bit Pascal (Delphi eof bug and/or 32
+bit filesize function). Newer FreePascal versions with 64 bit filesize function
+may work for such big files.

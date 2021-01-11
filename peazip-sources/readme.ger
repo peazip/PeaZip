@@ -1,0 +1,40 @@
+Das Archiv enth„lt eine Ansammlung kleiner Units, die zum Teil frher separat
+angeboten wurden. Hilfedateien gibt es als Windows .hlp und als .tph fr die
+BP7 IDE:
+
+* Base2N V0.38: Allgemeine Konvertierungen zur Basis 2**N, N=1...6
+* Bitarray V0.17: Bit-Array-Context mit max. 524160 Bits (Nebenprodukt des
+  mpint-Siebs fr 16-Bit-Primzahlen)
+* BTypes V0.12: Gemeinsame grundlegende Typdefinitionen
+* Compvers V0.18: Compiler-Version als String oder Symbol
+* Dates V0.33: Implementiert Compiler- und Betriebssystem unabh„ngige
+  Routinen fr das aktuelle Datum und die aktuelle Zeit (incl. Millisekunden
+  seit Mitternacht) und Funktionen fr Julianische Tageszahlen.
+* Fio V0.15: Datei-IO mit $I- und Err-Variable (ohne try/finally), einfache
+  Hllen fr System-Routinen.
+* Hrtimer V0.23: Enth„lt einen hochaufl”senden Zeitmesser fr
+  Pascal/Delphi-Compiler, es wird der comp Datentyp verwendet. Der Zeitmesser
+  benutzt den RDTSC-Befehl, deshalb stoppt die Unit auf allen Systemen, die
+  diesen Befehl nicht untersttzen (abschaltbar via $ifdef). HRTimer wird von
+  einigen Optimierungs-Testprogrammen ben”tigt.
+* Mem_util V0.94: Implementiert Compiler-unabh„ngige Routinen zum Vergleich
+  von Speicherbl”cken und zur Darstellung von Speicherbereichen als HEX- und
+  Base64-Strings.
+* Ministat V0.43: Kleine Statistik-Unit mit akkuraten "laufende
+  Statistik"-Routinen fr eine und zwei Variable.
+* Sort V1.18: Allgemeine QuickSort-, HeapSort- (Standard und Bottom-up),
+  CombSort-Routinen, die swap/compare-Funktionen benutzen. Zus„tzliche
+  Pointerversionen haben einen typlosen Zeiger, der in den Routinen
+  durchgeschleift wird und zum Zugriff auf lokale Daten usw. des Aufrufers
+  verwendet werden kann.
+* Tsc V0.35: Diese Unit verwendet einen maschinenn„heren Zugriff auf den TSC
+  als hrtimer. Es wird auáerdem ein systemabh„ngiger allgemeiner Z„hler
+  bereitgestellt (TSC falls vorhanden; sonst GetTickCount, 18.2 Hz
+  Systick-Z„hler oder Millisekunden seit Mitternacht).
+
+Letzte nderungen:
+ - FPC 2.2.2 in Compvers V0.18
+ - Code fr TP5-7 in Sort V1.18
+
+
+http://home.netsurf.de/wolfgang.ehrhardt

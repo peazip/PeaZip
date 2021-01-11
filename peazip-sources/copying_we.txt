@@ -1,0 +1,50 @@
+(C) Copyright 2002-2017 Wolfgang Ehrhardt
+
+Based on "The zlib/libpng License": 
+http://www.opensource.org/licenses/zlib-license.php
+
+__________________
+COPYING CONDITIONS
+
+ This software is provided 'as-is', without any express or implied warranty.
+ In no event will the authors be held liable for any damages arising from
+ the use of this software.
+
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software in
+    a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+
+ 3. This notice may not be removed or altered from any source distribution.
+
+_______________________________________
+Bedingungen fuer Nutzung und Weitergabe
+
+Die Software (Quellcodes und Binaerdateien) wird ohne jegliche Zusagen
+oder Garantien bezueglich Funktionalitaet oder Funktionsfaehigkeit
+abgegeben. Die Autoren uebernehmen keine Verantwortung fuer Schaeden, die
+durch die Benutzung der Software verursacht werden.
+
+Die Software darf frei verwendet und weitergegeben werden (kommerzielle
+Nutzung/Weitergabe ist erlaubt), vorausgesetzt die folgenden Bedingungen
+werden eingehalten:
+
+1. Die Herkunft der Software darf nicht falsch angegeben werden; es ist
+   nicht erlaubt, die Software als Werk eines anderen auszugeben. Wird die
+   Software in Teilen oder als Ganzes in einem Produkt benutzt, so ist
+   Hinweis auf die Herkunft in der Dokumentation erwuenscht, aber nicht
+   notwendig.
+
+2. Geaenderte Quellcodes muessen deutlich als solche gekennzeichnet werden
+   und duerfen nicht als die Originalsoftware ausgegeben werden.
+
+3. Die Bedingungen ueber die Nutzung/Weitergabe duerfen nicht entfernt oder
+   geaendert werden.
+

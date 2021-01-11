@@ -1,0 +1,29 @@
+Development history for Hash/CRC
+
+Feb 2003  Hash/CRC V1.1: published on http://home.netsurf.de/wolfgang.ehrhardt
+Mar 2003  Hash/CRC V1.2: better SHA256 display, interruptible, VP
+Apr 2003  Hash/CRC V1.3: English .lng file
+May 2003  GCH/CCH demo programs
+Jul 2003  Tableless bCRC32, "File" and "Full" versions
+Sep 2003  Adler32, CRC64, bCRC64,  "XL" versions, updated GCH/CCH demo programs
+Sep 2003  Hash/CRC V1.4: Adler32 and CRC64
+Oct 2003  English comments, optimizations, overall speedup about 25%
+Nov 2003  Hash/CRC V1.5: October speedups and VP improvements
+Dez 2003  Speedup: 25% Delphi32 .. 42% BP7, SHA384/512, GCH INI file
+Jan 2004  New SHA224 hash function, Base64 format in GCH, Hash/CRC V1.6
+Mar 2004  Int64 support for SHA384/512
+Apr 2004  Delphi 7 compatibility verified, CCH for BP7 Win/DPMI
+Jan 2005  Hash/CRC V1.7.1: bug fixes in SHA512
+May 2005  D9, FPC 1.9.8; keyderiv: $ifndef SHA1ONLY to avoid SHA256/512 overhead
+Dec 2005  Whirlpool, FAR Hash/CRC V1.10
+Feb 2006  HashDescriptors, RIPEMD-160, FAR Hash/CRC V1.11
+Apr 2006  CRC24, GCH with new GUI layout, FAR Hash/CRC V1.12
+May 2006  FAR Hash/CRC V1.13 with special MD5 processing for PE files
+Jan 2007  Fixed Whirlpool unit, updated demo programs, FAR Hash/CRC V1.14
+Feb 2007  Work around for Delphi eof bug for file sizes > 4 GB, FAR Plugin V1.15
+Mar 2007  MD4, eDonkey, and eMule added, FAR Hash/CRC V1.16
+Jul 2007  Fast FCRC32 implementation, BASM16 for Adler32, align.inc
+Oct 2007  SHA512/384 512MB, PPCH: Pure Pascal CRC/Hash replacement units
+May 2008  Hash and HMAC routines support messages with arbitrary bit lengths
+Jul 2008  Renamed and expanded KDF unit, new crcm_cat unit with 30+ parameter records
+

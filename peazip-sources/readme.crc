@@ -1,0 +1,236 @@
+The basic routines in the CRC/Hash archive can be compiled with most current
+Pascal (TP 5/5.5/6, BP 7, VP 2.1, FPC 1.0/2.0-2.6/3.x) and Delphi versions
+(tested with V1-7/9/10/12/17-18/25S).
+
+
+--------------------------------------------------------------------------------
+Last changes (Dec. 2017)
+
+ * User-requested unit BJL3 which implements Bob Jenkins' non-cryptographic
+   hash function lookup3, which is used in newer Delphi's system.hash unit;
+
+ * Another user-request: The [hash]file functions take a string as file
+   name parameter type (str255 was a relict from older versions which had
+   DLL callable functions);
+
+ * Updated Hash/HMAC/KDF introduction.
+
+
+--------------------------------------------------------------------------------
+Since Feb. 2006 there is a new Hash/HMAC architecture: Hash descriptor
+records allow a simple and uniform HMAC implementation for all hash
+algorithms; the key derivation functions can use all supported hash
+algorithms.Since May 2008 the cryptographic hash and HMAC routines support
+messages with arbitrary bit lengths and in Aug. 2015 the integration of SHA3
+forces a change of THashContext. Since June 2017 there are minor changes in
+the hash descriptor (Blake2 has OID vectors of length 11).
+
+
+--------------------------------------------------------------------------------
+The basic routines were slightly improved in the previous versions, but
+optimizing seems to be black magic. The cycles/times are heavily dependent
+on CPU, cache, compiler, code position, etc. For example: if the SHA256 loop
+is unrolled, the calculation slows down for about 40% on one machine (1.8GHz
+P4, D6, Win98), but is about 15% faster on another (AMD 2600+, D5, Win98).
+
+With the test program T_SpeedA and the high resolution timer from hrtimer
+you can measure the CPU cycles per byte (Cyc/B) and the processing rate in
+MB/s (note that the CPU frequency is determined dynamically). Here are the
+values for Delphi/FPC on Win98 with Pentium 4 / 1.7 GHz using a blocksize of
+50000 bytes (Std: standard routines with BASM, PP or 64: Pure Pascal with
+inline for D18 and FPC2.6.4 -O3, 64-bit on Win7/64 Core i3-2350M):
+
++-------------+--------+--------+--------+-------+--------+--------+--------+
+|             | D3/Std | D3/Std | D6/Std | D6/PP | FPC/PP | FPC-64 | D18-64 |
+|        Name |   MB/s |  Cyc/B |  Cyc/B | Cyc/B |  Cyc/B |  Cyc/B |  Cyc/B |
++-------------+--------+--------+--------+-------+--------+--------+--------+
+|       CRC16 | 200.16 |    8.5 |    8.5 |  33.4 |   44.9 |   16.3 |   14.7 |
+|       CRC24 | 180.17 |    9.4 |    9.4 |  29.9 |   35.1 |   15.3 |   14.2 |
+|       CRC32 | 276.51 |    6.1 |    6.1 |  19.7 |   22.3 |   15.2 |   14.2 |
+|      FCRC32 | 389.18 |    4.4 |    4.4 |  19.4 |   17.0 |    5.8 |    5.6 |
+|     Adler32 | 350.85 |    4.8 |    4.5 |   4.6 |    7.2 |    2.2 |    2.0 |
+|  BJ lookup3 | 412.23 |    4.1 |    4.1 |   4.1 |    9.0 |    3.5 |    2.8 |
+|       CRC64 |  93.06 |   18.2 |   18.3 |  93.2 |   59.8 |   11.4 |   10.3 |
+|     eDonkey | 208.88 |    8.1 |    8.1 |   8.1 |   23.9 |    7.0 |    8.2 |
+|         MD4 | 206.74 |    8.2 |    8.1 |   8.1 |   23.2 |    7.0 |    8.2 |
+|         MD5 | 151.30 |   11.2 |   11.2 |  11.2 |   44.5 |   10.5 |   10.5 |
+|      RMD160 |  53.27 |   31.8 |   31.7 |  31.9 |   88.6 |   29.0 |   27.9 |
+|        SHA1 |  51.27 |   33.1 |   38.1 |  41.7 |   52.6 |   25.8 |   18.7 |
+|      SHA224 |  28.88 |   58.7 |   55.6 |  50.1 |   64.2 |   45.7 |   34.8 |
+|      SHA256 |  28.91 |   58.6 |   55.4 |  50.2 |   64.6 |   45.8 |   34.6 |
+|      SHA384 |   9.79 |  173.2 |  205.7 | 206.2 |  219.9 |   28.4 |   25.2 |
+|      SHA512 |   9.77 |  173.4 |  205.7 | 206.4 |  227.6 |   28.5 |   25.1 |
+|  SHA512/224 |   9.77 |  173.5 |  205.7 | 206.6 |  227.7 |   28.5 |   25.1 |
+|  SHA512/256 |   9.79 |  173.1 |  205.8 | 206.2 |  219.2 |   28.5 |   25.2 |
+|   Whirlpool |  17.14 |   98.9 |   98.9 |  99.1 |   98.7 |   66.1 |   58.3 |
+|    SHA3-224 |  15.20 |  111.5 |  110.7 | 109.4 |  124.1 |   23.6 |   22.5 |
+|    SHA3-256 |  14.60 |  116.1 |  116.7 | 115.9 |  132.5 |   24.9 |   23.8 |
+|    SHA3-384 |  10.97 |  154.5 |  151.5 | 149.9 |  173.7 |   32.6 |   30.9 |
+|    SHA3-512 |   7.87 |  215.5 |  216.1 | 215.3 |  234.6 |   46.7 |   44.6 |
+| Blake2s-224 |  33.87 |   50.0 |   50.4 |  49.7 |   68.1 |   40.8 |   30.0 |
+| Blake2s-256 |  33.76 |   50.2 |   49.2 |  49.2 |   62.0 |   40.7 |   30.0 |
+| Blake2b-384 |  12.17 |  139.3 |  116.5 | 116.4 |  104.6 |   23.8 |   18.2 |
+| Blake2b-512 |  12.17 |  139.2 |  116.4 | 116.3 |  104.6 |   23.7 |   18.2 |
++-------------+--------+--------+--------+-------+--------+--------+--------+
+
+
+MD4, eDonkey/eMule: For files/messages with a multiple of 9728000 bytes
+the eDonkey and eMule hashes are different; the ed2k unit always
+calculates both digests. The demo programs and the FAR plugin display both
+values if they are different.
+
+Units SHA5_224 and SHA5_256: In March 2012 NIST released the new Secure
+Hash Standard FIPS 180-4. It defines (among others) two additional secure
+hash algorithms SHA-512/224 and SHA-512/256. These are designed like
+SHA384, using the compression function of SHA512 but different IVs. NIST
+quote: SHA-512/224 and SHA-512/256 may be more efficient alternatives to
+SHA-224 and SHA-256, respectively, on platforms that are optimized for
+64-bit operations, see the 64-bit columns in the table. My Pascal
+implementations use the standard SHA512 and are now fully integrated in
+CRC/Hash package; symbols for the new algorithms are defined in the
+general hash unit, specific hash and HMAC units are available.
+
+Keccak, SHA-3, and SHAKE: On Oct. 2, 2012 NIST announced Keccak, designed
+by Guido Bertoni, Joan Daemen, Michael Peeters, and Gilles Van Assche, as
+the winner of the SHA-3 Cryptographic Hash Algorithm Competition. My
+original Pascal/Delphi Keccak implementation using the SHA-3 NIST API:
+arbitrary length bit sequences are allowed for the messages to be hashed,
+the supported digest lengths are 224, 256, 384, 512 bits, and arbitrary
+length byte output.
+
+Right now, there are two basic code variants of Keccak-f[1600]: The first
+with 32-bit interleaving and rotate instructions coded inline in 32+ bit
+PurePascal or inline functions for 16-bit compilers; the second uses
+64-bit data types and rotations. However, the 64-bit code is faster than
+32-bit only if compiled for a 64-bit CPU and executed on a 64-bit OS!
+With {$define USE_MMXCODE} in unit sha3.pas newer 32-bit compilers can use
+MMX code (the relative performance change depends on CPU and algorithm;
+actually there are two include files, the one contributed by Eric Grange is
+the default, it is faster than that from Anna Kaliszewicz and payl on all
+tested systems).
+
+In August 2015 NIST published the Standard SHA-3 / FIPS202, which describes
+the hash functions SHA3-224/256/384/512 (related but not identical to the
+Keccak functions) and the XOF (eXtendable Output) functions SHAKE128/256.
+This archive contains the implementation of the new functions based on my
+Keccak routines. Unfortunately NIST also changed the bit order in bytes;
+therefore the SHA-3 unit has a separate function SHA3_FinalBit_LSB to
+process the final trailing LSB bits. The included test programs verify my
+implementation against the NIST test examples and the updated test vectors
+from the Keccak team.
+
+Int64 support for SHA384/512:  Unfortunately there are conflicting
+processor specific results: on a P4 / 1.8GHz the speed decreases to 83% of
+the longint speed (Cyc/B increase from 174 to 209). For a Celeron 500MHz
+the speed increases more than 30%, the Cyc/B decrease from 146 (longint)
+to 111 (Int64). In the source Int64 is default for D4+ and FPC
+(conditional define UseInt64 in SHA512.PAS)
+
+BASM16 table alignment: Because some BASM16 implementations use 32 bit
+access to 32 bit tables, these tables should be dword aligned for optimal
+speed. But the 16 bit compilers support byte or word alignment only!
+Therefore the defines from the align.inc include file allow to generate
+dummy words, which align the tables to 32 bit boundaries. This feature is
+implemented for CRC24 ... CRC64; if more than one of these units are used,
+it may be necessary to iterate the alignment procedure.
+
+Pure Pascal versions: The source archive contains pure Pascal versions of
+the basic routines without BASM (formerly published in a separate
+archive). The main purpose is to supply sources for more portable code
+(e.g. for Linux/ARM); consequently the code layout is for FPC with int64
+and without asm, but it can be compiled with Delphi 4+. Pure Pascal
+routines are invoked if the symbol PurePascal is defined: {$define
+PurePascal}, forced for BIT64. For 32-bit systems the PP CRC routines are
+significantly slower than the standard sources (see table), but the Hash
+function speeds are not so uniform. The pure Pascal routines are 64-bit
+compatible (tested with D17+ and FPC 2.6+ on Win64). Special thanks goes
+to Nicola Lugato who asked for the pure Pascal units and tested the first
+versions on his ARM/Linux machine.
+
+RocksoftTM Model CRC Algorithm: The crcmodel unit is a Pascal
+implementation of Ross William's parameterized model CRC algorithm
+described in A Painless Guide to CRC Error Detection Algorithms (local
+HTML version). Most of the usual CRC algorithms with polynomials up to
+degree 32 can be modeled by this unit. The crcm_cat unit has predefined
+parameter records for about 100 CRC algorithms, most of them adapted
+from Greg Cook's Catalogue of Parameterised CRC Algorithms, more
+references are listed in the unit header. The GUI demo programs
+tcrc16/tcrc32 interactively calculate and display the results from all
+crcm_cat CRC16/CRC32 algorithms for hex and string input, SRP16 searches
+CRC16 Rocksoft parameters for given data; the archive
+chksum_bin_2017-06-xx.zip includes the EXE files.
+
+
+--------------------------------------------------------------------------------
+Keccak, SHA-3, and SHAKE
+
+On Oct. 2, 2012 NIST announced Keccak, designed by Guido Bertoni, Joan
+Daemen, Michael Peeters, and Gilles Van Assche, as the winner of the
+SHA-3 Cryptographic Hash Algorithm Competition. The archive
+keccak_2013-01-07.zip contains my original Pascal/Delphi Keccak
+implementation using the SHA-3 NIST API: arbitrary length bit sequences
+are allowed for the messages to be hashed, the supported digest lengths
+are 224, 256, 384, 512 bits, and arbitrary length byte output.
+
+Right now, there are two basic code variants of Keccak-f[1600]: The
+first with 32-bit interleaving and rotate instructions coded inline in
+32+ bit PurePascal or inline functions for 16-bit compilers; the second
+uses 64-bit data types and rotations. However, the 64-bit code is faster
+than 32-bit only if compiled for a 64-bit CPU and executed on a 64-bit
+OS! With {$define USE_MMXCODE} in unit sha3.pas newer 32-bit compilers
+can use MMX code (the relative performance change depends on CPU and
+algorithm; actually there are two include files, the one contributed by
+Eric Grange is the default, it is faster than that from Anna Kaliszewicz
+and payl on all tested systems).
+
+In August 2015 NIST published the Standard SHA3 / FIPS202, which
+describes the hash functions SHA3-224/256/384/512 (related but not
+identical to the Keccak functions) and the XOF (eXtendable Output)
+functions SHAKE128/256. The CRC/Hash archive crc_hash_2017-06-xx.zip
+contains the implementation of the new functions based on my Keccak
+routines. Unfortunately NIST also changed the bit order in bytes;
+therefore the SHA-3 unit has a separate function SHA3_FinalBit_LSB to
+process the final trailing LSB bits. The included test programs verify
+my implementation against the NIST test examples and the updated test
+vectors from the Keccak team.
+
+
+--------------------------------------------------------------------------------
+Blake2
+
+The Blake2 cryptographic hash function was designed by J.-P. Aumasson,
+S. Neves, Z. Wilcox-O'Hearn, and C. Winnerlein. It has been standardized
+in RFC 7693. Blake has it's own mode for keyed message authentication,
+making HMAC-Blake2 superfluous. Special thanks goes to EddyHawk for his
+fast 32/64-bit compression routines.
+
+My first implementation included in the CRC/Hash archive was Blake2s
+which can be compiled by all supported Pascal compilers. Blake2s returns
+hash digests of any size up to 32 bytes. Unit blake2s.pas implements the
+general Blake2s functions including key support, units blaks224.pas and
+blaks256.pas have the special code for unkeyed 224- and 256-bit digests.
+
+There is another incompatible version called Blake2b, which is optimized
+for 64-bit systems. It can be compiled with all compilers, but note that
+for compilers older than Delphi 4 the int64 arithmetic is simulated (and
+therefore slower).
+
+
+--------------------------------------------------------------------------------
+Bob Jenkins' lookup3
+
+This hash function by Bob Jenkins is designed for hash table lookup, it is no
+cryptographic hash. The purpose of the user-requested unit BJL3 is to make
+available the non-cryptographic function from Delphi's system.hash unit (since
+Delphi 22 / XE8 / VER290). BJL3 is a clean-room Pascal implementation of the
+lookup3 C code for little endian, and does not use Delphi of FPC source codes.
+Note: Lookup3 hashes all bytes of a message with a single call, including the
+message length. A standard chaining / on-line algorithm (Init/Update/Final) can
+be implemented, but it depends on the splitting of the message, and is
+therefore virtually inappropriate for file check sums.
+
+
+---------------------------------------------------------------------------
+W.Ehrhardt, Dec. 2017
+http://wolfgang-ehrhardt.de
+
