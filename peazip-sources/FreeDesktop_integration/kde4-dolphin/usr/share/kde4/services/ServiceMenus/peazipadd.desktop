@@ -1,0 +1,13 @@
+[Desktop Action peazipadd]
+Exec=peazip -add2archive %F
+Icon=peazip
+Name=Archive with PeaZip
+
+[Desktop Entry]
+Type=Service
+Actions=peazipadd;
+Encoding=UTF-8
+Name=peazipadd
+Name[en_US]=peazipadd
+Icon=peazip
+ServiceTypes=KonqPopupMenu/Plugin,all/all

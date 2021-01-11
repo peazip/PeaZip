@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=PeaZip
+MimeType=application/x-gzip;application/x-lha;application/x-tar;application/x-tgz;application/x-tbz;application/x-tbz2;application/x-zip;application/zip;application/x-bzip;application/x-rar;application/x-tarz;application/x-archive;application/x-bzip2;application/x-jar;application/x-deb;application/x-ace;application/x-7z;application/x-arc;application/x-arj;application/x-compress;application/x-cpio;
+GenericName=Archiving Tool
+Exec=peazip %F
+Icon=peazip
+Type=Application
+Terminal=false
+X-KDE-HasTempFileOption=true
+Categories=GTK;KDE;Utility;System;Archiving;
+Name[en_US]=PeaZip

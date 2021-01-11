@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+MimeType=all/all
+GenericName=Archiving Tool
+Name=PeaZip
+Exec=peazip %F
+Icon=peazip
+Type=Application
+Terminal=false
+X-KDE-HasTempFileOption=true
+Categories=GTK;KDE;Utility;System;Archiving;

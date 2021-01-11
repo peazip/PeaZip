@@ -1,0 +1,11 @@
+[Desktop Action peazipextfolder]
+Exec=peazip -ext2folder %F
+Icon=tar
+Name=Extract here to new folder (PeaZip)
+
+[Desktop Entry]
+Actions=peazipextfolder;
+Encoding=UTF-8
+Name=peazipextfolder
+Name[en_US]=peazipextfolder
+ServiceTypes=all/all

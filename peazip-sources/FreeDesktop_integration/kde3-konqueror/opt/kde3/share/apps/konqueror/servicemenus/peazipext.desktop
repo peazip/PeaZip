@@ -1,0 +1,11 @@
+[Desktop Action peazipext]
+Exec=peazip -ext2full %F
+Icon=tar
+Name=Extract (PeaZip)
+
+[Desktop Entry]
+Actions=peazipext;
+Encoding=UTF-8
+Name=peazipext
+Name[en_US]=peazipext
+ServiceTypes=all/all
