@@ -1,9 +1,0 @@
-Source: PeaZip
-License: LGPL
-Maintainer: Giorgio Tani <giorgio.tani.software@gmail.com>
-Homepage: https://peazip.github.io
-Package: PeaZip
-Version: 7.7.0
-Architecture: amd64
-Description: Free file archiver utility
-
