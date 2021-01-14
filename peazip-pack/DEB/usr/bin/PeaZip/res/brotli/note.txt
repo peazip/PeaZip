@@ -1,0 +1,3 @@
+All software in this path is released under MIT License by Jyrki Alakuijala, Eugene Kliuchnikov, Robert Obryk, Zoltán Szabadka, Lode Vandevenne
+
+Reference: https://github.com/google/brotli

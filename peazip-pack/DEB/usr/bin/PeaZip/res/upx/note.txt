@@ -1,0 +1,5 @@
+Software in this path:
+Strip (for Windows): from binutils GNU package (GPL)
+UPX: released undr GPL by Markus F.X.J. Oberhumer, László Molnár and John F. Reiser
+
+Reference: http://upx.sourceforge.net/

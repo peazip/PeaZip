@@ -1,0 +1,1271 @@
+﻿=== PeaZip language file ===
+- Euskara (Basque)
+7.7
+- Itzultzailea: Xabier Aramendi
+- Azken berrikustzailea: Xabier Aramendi
+- Azken berrikuspena: 2018-03-03
+
+=== PeaZip text group ===
+
+txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
+txt_7_7_nonetemp: None, User's temp if necessary
+txt_7_7_outtemp: Output, preview in User's temp
+txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
+txt_7_7_sys7z: Use system 7z in Linux
+txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_6_color: Color
+txt_7_6_custenc: Custom code page
+txt_7_6_dark: Dark
+txt_7_6_tno: Do not sync archive tree
+txt_7_6_forcelocalenc: Force local
+txt_7_6_forceutf8enc: Force UTF-8
+txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
+txt_7_6_defaultenc: Local, UTF-8 for extra symbols
+txt_7_6_dim: Low light
+txt_7_6_setcurdef: Set current path as default output path
+txt_7_6_setdef: Set default output path
+txt_7_6_tadvanced: Sync archive tree, keep visited nodes
+txt_7_6_tsimple: Sync archive tree, simple
+txt_7_6_tacolor: Text accent
+txt_7_5_always: Always
+txt_7_5_ask: Ask
+txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
+txt_7_5_cutlen: Cut name at specified length
+txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
+txt_7_5_dragnone: Do not lock target
+txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
+txt_7_5_ee: Extract everything for special file types
+txt_7_5_draghide: Hide drop target
+txt_7_5_draglh: Lock and hide target
+txt_7_5_draglock: Lock drop target
+txt_7_5_never: Never
+txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_4_comment: Comment
+txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
+txt_7_4_presetrar: High compression, RAR
+txt_7_4_tkeep: Keep original archive timestamp
+txt_7_4_lock: Lock archive
+txt_7_4_locked: locked
+txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
+txt_7_4_recover: Repair archive
+txt_7_4_tcurr: Set archive timestamp from current system time
+txt_7_4_setarc: Set archiving options
+txt_7_4_setext: Set extraction options
+txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
+txt_7_3_archiveerrors: [archive may contain errors]
+txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_3_clickextall: Click "Extract all" to enable
+txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
+txt_7_3_profile7zfastest: Fast compression, 7Z fastest
+txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
+txt_7_3_maxzstd: Maximize Zstandard compression using more memory
+txt_7_3_profile7zfast: Medium compression, 7Z fast
+txt_7_3_stl: Set archive timestamp from most recent file
+txt_7_2_altcomp: Alternative compression, ARC
+txt_7_2_clearnoupdate: Clear edited files
+txt_7_2_autoclosepeazip: Close PeaZip when task completes
+txt_7_2_zpaqall: Extract all revisions
+txt_7_2_extcomp: Extreme compression, ZPAQ
+txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
+txt_7_2_fbrotlicomp: Fastest compression, Brotli
+txt_7_2_fzstandardcomp: Fastest compression, Zstandard
+txt_7_2_loadcompsettings: Load compression settings
+txt_7_2_savecompsettings: Save compression settings
+txt_7_2_source: Source
+txt_7_2_updateclear: Update edited files in archive, and clear edited files
+txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
+txt_7_1_new: Extract all here, in new folder
+txt_7_1_smart: Extract all here, smart
+txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
+txt_7_1_renfilesonly: Rename only files
+txt_7_1_typetosearch: Type to search in current path
+txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
+txt_7_0_af: Analyze content of folders
+txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
+txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
+txt_6_9_autou: Auto update modified files in archives
+txt_6_9_forceu: Force update modified files in archives
+txt_6_9_opuns: Operation not supported for current archive type
+txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
+txt_6_9_uconf: Previewed file has been modified. Update the current archive?
+txt_6_8_ndrop: Use native Drag And Drop on Windows
+txt_6_7_nop: (no preview)
+txt_6_6_pdupfound: possible duplicates found (quick approximate test)
+txt_6_6_rsh: Reset search history
+txt_6_6_pdupfind: Suggest possible duplicates
+txt_6_6_forcemodify: Try to edit non explicitly supported file types
+txt_6_5_mandatory: (mandatory)
+txt_6_5_abort: Utzi
+txt_6_5_askp: Galdetu sarhitza ezartzeko abiatzean
+txt_6_5_chp: Aldatu sarhitza
+txt_6_5_def: Adiera
+txt_6_5_nop: Ez galdetu sarhitza ezartzeaz abiatzean
+txt_6_5_error: Akatsa
+txt_6_5_seqerr: Akatsa(k) atzeman d(ir)a, jatorrizko agiriak ez dira ezabatuko
+txt_6_5_sni: Barneratu NT segurtasun argibideak
+txt_6_5_sns: Barneratu NTFS Alternate Data Stream
+txt_6_5_privacy: Pribatutasuna
+txt_6_5_showvolatile: Erakutsi zein aukera diren lurrunkorrak / hitzinguruaren mendekoak
+txt_6_5_force: Saitu akatsak dituzten artxiboak irekitzen
+txt_6_5_warning: Kontuz
+txt_6_5_yes: Bai
+txt_6_5_yesall: Bai guztiari
+txt_6_5_np: Orain bihurtutako artxibo(ar)en sarhitza berri batera aldatu dezakezu, edo utzi hutsik sarhitza enkriptaketari jauzi egiteko
+txt_6_4_absolute: Helburu osoak
+txt_6_4_appdirn: Erantsi zuzenbide izena
+txt_6_4_closeallother: Itxi beste hegats guztiak
+txt_6_4_closeright: Itxi eskuineko hegatsak
+txt_6_4_collapse: Bildu hegatsak
+txt_6_4_expand: Hedatu hegatsak
+txt_6_4_full: Helburu osoak
+txt_6_4_new: Berria
+txt_6_4_openintab: Ireki hegats berri batean
+txt_6_4_paths: Helburuak
+txt_6_4_prepdirn: Aurreratu zuzenbide izena
+txt_6_4_relative: Helburu erlatiboak
+txt_6_4_tabbar: Hegats barra
+txt_6_3_autoadjust: Berez zehaztu zutabeak
+txt_6_3_cinfo: Argibideak eta aipamenak
+txt_6_3_syn: Aldiberetu artxiboa diskarekin
+txt_6_3_uar: Eguneratu jadanik artxiboan dauden agiriak bakarrik
+txt_6_2_encext: Gehitu ".enc" atzizkia enkriptatutako artxiboei
+txt_6_2_archive: Artxibo agiri mota
+txt_6_2_container: Edukiontzi agiri mota
+txt_6_1_ec: Hedatu / bildu artxibo zuhaitza
+txt_6_0_msq: Antolatu agiri motaz konpresio solidorako
+txt_5_9_lff: Aztertu agiriak eta agiritegiak
+txt_5_9_pff: Aztertu, erakutsi agiri idazburua/EOF
+txt_5_9_start: Hasi hemendik
+txt_5_8_l0: Ahalbidetu sostengatutako edozein osagai/heuskarri
+txt_5_8_l1: Ahalbidetu Free Software osagaiak bakarrik
+txt_5_8_l2: Ahalbidetu artxibo heuskarri irekitzea bakarrik
+txt_5_8_ascii: ASCII segurua, eskriptak seguruak dira ondorena ingurugiroetan
+txt_5_8_cp: Code Page segurua, eskriptek badaiteke arazoak eragitea ondorena ingurugiroetan Code Pages ezberdinekin
+txt_5_8_fs: Free Software betekizuna
+txt_5_8_utf: Eskriptek UTF-8 / Unicode ingurugiro osoa behar dute
+txt_5_8_fsr: Heuskarri hau ez dago sostengatuta Free Software betekizun murrizpenengaitik (Aukera > Aurreratua)
+txt_5_7_pinstalled: EZARRITA
+txt_5_7_pmissing: EZARRI GABE
+txt_5_7_plugin: Plugina ez dago, hemendik ezarri daiteke Laguntza > Egiaztatu pluginak eta gehigarriak
+txt_5_6_basic: Ohinarrizkoa
+txt_5_6_exarc: Atera artxiboa
+txt_5_6_tab: Ireki hegats berrian
+txt_5_6_rc: Eskuin klikatu aukeratarako
+txt_5_6_layouts: Gorde antolakuntzak
+txt_5_6_upexisting: Eguneratu dagoen artxiboa
+txt_5_6_verbose: Berritsua
+txt_5_5_case: (bereizi hizki xehe-larriak)
+txt_5_5_add: Gehitu katea adierazitako kokapenean
+txt_5_5_addsel: Gehitu oraingo hautapenera
+txt_5_5_ext: Aldatu agiri luzapena
+txt_5_5_plugin: Egiaztatu pluginak eta gehigarriak
+txt_5_5_copypath: Kopiatu helburua
+txt_5_5_delete: Ezabatu hizkiak adierazitako kokapenean
+txt_5_5_halt: Gelditu sistema eginkizunak osatutakoan
+txt_5_5_positionw: Aholkua: 1 gehitu lehen hizkiaren ondoren, 2 bigarrena, etab... "z" agiri izenaren amaierarako
+txt_5_5_positionwd: Aholkua: 1 ezabatu barneratutako lehen hizkitik, 2 bigarrena, ... "z" agiri izenaren amaierarako
+txt_5_5_replaceneww: Aholkua: eman kate berri huts bat edo kendu kate zaharra besterik gabe
+txt_5_5_lower: Hizki xeheak
+txt_5_5_replaceoldw: Aldatu kate edo hizki honen agiri izeneko gertaera guztiak
+txt_5_5_newext: Luzapen berria
+txt_5_5_new: Kate berria
+txt_5_5_n: Ezabatzeko hizki zenbatekoa
+txt_5_5_old: Kate zaharra
+txt_5_5_position: Kokapena (zenbakia edo "z" amaitzeko)
+txt_5_5_intdir: Kendu tarteko zuzenbide bakarra Atera agiritegi berrira eragiketatan
+txt_5_5_replacestr: Ordeztu/kendu katea
+txt_5_5_datesameday: Hautaturiko objetuaren egun berdina
+txt_5_5_datesamehour: Hautaturiko objetuaren ordu berdina
+txt_5_5_datesamemonth: Hautaturiko objetuaren hilabete berdina
+txt_5_5_datesameweek: Hautaturiko objetuaren aste berdina
+txt_5_5_datesameyear: Hautaturiko objetuaren urte berdina
+txt_5_5_scan: Mihatu
+txt_5_5_select: Hautatu
+txt_5_5_similar: Hautaturiko objetuaren antzekoa
+txt_5_5_starting: Hizki berarekin hasten da
+txt_5_5_string: Gehitzeko katea
+txt_5_5_subtractsel: Kendu oraingo hautapenetik
+txt_5_5_datehour: Ordu honetan
+txt_5_5_datemonth: Hilabete honetan
+txt_5_5_dateweek: Aste honetan
+txt_5_5_dateyear: Urte honetan
+txt_5_5_dateday: Gaur
+txt_5_5_upper: Hizki larriak
+txt_5_5_extw: Kontuz: agiriaren luzapena aldatzeak erabiltezina bihurtu dezake
+txt_5_4_da: Gehitze eguna
+txt_5_4_deletearchives: Ezabatu artxiboak atera ondoren
+txt_5_4_deletefiles: Ezabatu agiriak artxibatu ondoren
+txt_5_4_deleteoriginal: Ezabapen jarraipidea, ikusleiho nagusian ezarrita bezala, eskriptera erantsiko da.
+txt_5_4_lv: Ikusitako azkenak
+txt_5_4_deletearchivesconfirm: Baieztatu jatorrizko artxiboen ezabapena?
+txt_5_4_deletefilesconfirm: Baieztatu jatorrizko agirien ezabapena?
+txt_5_4_used: Erabilita
+txt_5_3_profilebest: Konpresio hoberena, 7Z heuskarriaren Ultra maila
+txt_5_3_profileadvanced: Konpresio aurreratua, 7Z heuskarria
+txt_5_3_profilenormal: Arrunta ZIP konpresioa, bateragarria ateratzaile gehienekin
+txt_5_3_profileveryfast: Oso azkarra ZIP konpresioa, gomendatua multimedia agiri handientzat
+txt_5_3_profilepassword: Sarhitzez babestuta, 7Z heuskarria
+txt_5_3_profile10mb: Heutsi irteera 25 MB-tik behera, post@ eranspen mugetarako
+txt_5_3_profilesfx: Berez aterapena, edukiontziak ez du aterapen softwarerik behar
+txt_5_3_cml: Sistemako hitzinguru menuaren hizkuntza
+txt_5_3_cmlmessage: Klik bikoitza nahi den hitzinguru menuaren hizkuntzan eta baieztatu erregistro bateratzea. Ezarpen hauek ber-ezarri egin behar dira aplikazioa ezartzen/eguneratzen denean edo Sistema baterapen laguntzailea erabiltzen denean.
+txt_5_3_exc: Kanpo uzte iragazkiek lehentasuna dute barneratu iragazkiekiko
+txt_5_3_ia: Barneratu ere
+txt_5_3_io: Barneratu bakarrik
+txt_5_3_rec: Azpizuzenbide baliabideak
+txt_5_3_resetsi: Ber-itxuratu sistema baterapena (hitzinguru menua, BidaliHona, agiri elkarketa)?
+txt_5_2_oadd: Artxibatu jatorrizko helburuan
+txt_5_2_zerodelete: Hautaturiko agiriak 0-rekin ezabatzea eta gainidaztea nahi duzu? Eragiketa ezin da desegin eta agiriak ez dira berreskuratu ahal izango
+txt_5_2_zfree: Gidagailuko toki askea 0-rekin gainidaztea nahi duzu?
+txt_5_2_sdfree: Gidagailu honetako toki askea segurtasunez ezabatzea nahi duzu?
+txt_5_2_oext: Atera jatorrizko helburura
+txt_5_2_securedeletefree: Toki aske ezabapen segurua
+txt_5_2_free: Eragiketa honek zenbait minutu hartu ditzake eta, aldiz, azkar amaitu dezake flash-ohinarriko disketan
+txt_5_2_zerofiles: Huts ezabapen
+txt_5_2_zerofree: Huts ezabapen toki aske
+txt_5_1_schedadd: Gehitu egitaraupena
+txt_5_1_schederr: Ezinezkoa egitaraupena sortzea
+txt_5_1_daily: Egunka
+txt_5_1_day: Eguna
+txt_5_1_days: Egunak
+txt_5_1_enddate: Amaiera eguna
+txt_5_1_every: Epea
+txt_5_1_w6: Ostirala
+txt_5_1_hourly: Orduka
+txt_5_1_hours: Ordu
+txt_5_1_last: Azkena
+txt_5_1_schedmanage: Eginkizun Egitarautzailea, kudeatu PeaZip adarrean gordetako eginkizunak
+txt_5_1_scriptmanage: Kudeatu gordetako egitaraupen eskriptak
+txt_5_1_w2: Astelehena
+txt_5_1_monthly: Hilabeteka
+txt_5_1_months: Hilabetea
+txt_5_1_onlogin: Saioa hastean
+txt_5_1_onstart: Abiaraztean
+txt_5_1_once: Behin
+txt_5_1_w7: Larunbata
+txt_5_1_schedule: Egitarautu
+txt_5_1_schedexplain: Sortu idazki lau eskript bat EIG eginkizuna adieratik eta egitarautu hau. Egitarauturiko eginkizun' eskriptak "Egitarau eskriptak" agiritegian gordetzen dira. Egitarauturiko eginkizunak editatzeko edo ezabatzeko sistemaren Eginkizun Egitarautzailea erabili dezakezu, PeaZip-rekin egitarauturiko eginkizun guztiak eginkizun liburutegiko "PeaZip" adarrean biltegiratzen dira.
+txt_5_1_schedok: Egitaraupena ongi sortu da
+txt_5_1_schedscripts: Gordetako egitarau eskriptak
+txt_5_1_startdate: Hasiera eguna
+txt_5_1_starttime: Hasiera ordua
+txt_5_1_w1: Igandea
+txt_5_1_schedname: Eginkizun izena, ezagutarazi biak gordetako egitaraupen eskripta eta sistemaren egitaraupen eginkizuna
+txt_5_1_ts: Eginkizun Egitarautzailea
+txt_5_1_w5: Osteguna
+txt_5_1_w3: Asteartea
+txt_5_1_w4: Asteazkena
+txt_5_1_weekly: Asteka
+txt_5_1_weeks: Aste
+txt_5_0_bc: Ogiapurra
+txt_5_0_resetpm: Sarhitz Kudeatzailea berrezartzea baieztatzen duzu? PeaZip-ren Sarhitz Kudeatzailean biltegiraturiko sarhitz guztiak galduko dira baieztatzen bada.
+txt_5_0_enum: Zehaztu zuzenbide edukia
+txt_5_0_music: Musika
+txt_5_0_ps: Ireki PowerShell hemen
+txt_5_0_perf: Egintzak
+txt_5_0_pictures: Argazkia
+txt_5_0_removeall: Kendu denak
+txt_5_0_resetbookmarks: Berrezarri Lastermarkak berezkoetan? (Lastermarkak orduan norbereratu daitezke honekin Lastermarkak > Antolatu)
+txt_5_0_sh: Saio historia
+txt_5_0_skip: Jauzi zuzenbide eduki zehazpena antolakuntzan
+txt_5_0_videos: Bideoak
+txt_4_9_frame: Uztaia
+txt_4_9_listth: Zerrenda eta txikirudiak
+txt_4_9_shadow: Itzala
+txt_4_9_style: Estiloa
+txt_4_8_attach25: 25 MB (eranspen muga)
+txt_4_8_crop: Moztu
+txt_4_8_detailsno: Xehetasunak
+txt_4_8_details: Xehetasunak eta txikirudiak
+txt_4_8_fit: Finkatu hona
+txt_4_8_fitl: Finkatu handienera
+txt_4_8_flip: Itzulikatu
+txt_4_8_fullscreen: Ikusleiho osoa
+txt_4_8_fun: Eginkizunak
+txt_4_8_h: Garaiera
+txt_4_8_keeparchive: Heutsi artxiboari
+txt_4_8_noresize: Heutsi jatorrizko neurriari
+txt_4_8_iconl: Irudi handiak
+txt_4_8_iconm: Ikurrak eta irudiak
+txt_4_8_imagemanager: Irudi kudeatzailea
+txt_4_8_immersive: Murgildua
+txt_4_8_listno: Zerrenda
+txt_4_8_aspect: Heutsi ikuspegi maila
+txt_4_8_mirror: Ispilua
+txt_4_8_presets: Aurrezarpenak
+txt_4_8_replace: Ordeztu jatorrizko irudia(k)? "Ez" ezarri eraldaketa agiri berri(et)an.
+txt_4_8_resize: Birneurriratu
+txt_4_8_rl: Itzulikatu ezkerrera
+txt_4_8_rr: Itzulikatu eskuinera
+txt_4_8_stop: Gelditu
+txt_4_8_t: Eraldatu
+txt_4_8_w: Zabalera
+txt_4_7_pk: Sortu zorizko sarhitza / giltzagiria
+txt_4_7_spchar: Mugatu hizkiak hizkirri eta zenbakietara
+txt_4_7_recycleask: Mugitu hautaturiko agiria(k) Birziklapen Ontzira?
+txt_4_7_recycle: Mugitu Birziklapen Ontzira
+txt_4_7_pcomp: Konpresio potentziala
+txt_4_6_am: Agiritegi kudeatzailea
+txt_4_6_fm: Agiri kudeatzailea
+txt_4_6_users: Erabiltzaileak
+txt_4_5_goupdate: Bertsio berri bat eskuragarri dago. Ireki PeaZip-ren webgune ofiziala eguneraketa jeisteko?
+txt_4_5_b: Beheren
+txt_4_5_koupdate: Ezinezkoa eguneraketak egiaztatzea, ez dago elkarketarik eguneraketa zerbitzariarekin
+txt_4_5_update: Egiaztatu eguneraketak
+txt_4_5_dock: Uztartu
+txt_4_5_l: Ezkerrean
+txt_4_5_noupdate: PeaZip eguneratuta dago
+txt_4_5_properties: Ezaugarriak
+txt_4_5_r: Eskuinean
+txt_4_5_pj: Gordetako lan adiera eskriptak
+txt_4_5_shaddress: Erakutsi helbide barra
+txt_4_5_shnav: Erakutsi nabigazio barra
+txt_4_5_shstatus: Erakutsi egoera barra
+txt_4_5_shtool: Erakutsi tresna barra
+txt_4_5_upxpj: Barkatu, ezin da lan adiera esportatu ekintza edo aukera honek komando ezberdin anitz eragitea eskatzen duelako
+txt_4_5_t: Goren
+txt_4_4_confremoveall: Kendu PeaZip norbereratze agiri guztiak (Aplikazioak, Lastermarkak, Sarhitz kudeatzailea)?
+txt_4_4_confremove: Kendu PeaZip itxurapena?
+txt_4_3_pwmanhint: Klik bikoitza gaiak editatzeko sarhitz zerrendan, eskuin-klika aukeratarako, Ktrl+C sarhitzak kopiatzeko
+txt_4_3_exppl: Esportatu sarhitz zerrenda
+txt_4_3_expple: Enkriptaturik (babeskopia Sarhitz kudeatzailea)
+txt_4_3_keeppw: Heutsi sarhitza/giltzagiria oraingo saiorako
+txt_4_3_pwmanpwhint: Gomendagarria da sarhitz/giltzagiri bat (aukerazkoa) ezartzea sarhitz zerrenda enkriptatzeko, honela egiaztapena beharrezkoa izango da sarhitz kudeatzailera sarbidea izateko. Sarhitz/giltzagiria edonoiz aldatu daiteke galdekizun honetatik.
+txt_4_3_pwmanmaster: Ezarri/aldatu sarhitz nagusia
+txt_4_3_pwmanlist: Sarhitz zerrenda
+txt_4_3_pwman: Sarhitz kudeatzailea
+txt_4_3_pwmancorr: Sarhitz kudeatzailea manipulatua edo hondatuta dagoela dirudi. Heutsi Sarhitz kudeatzaileari horrela ere eta saiatu oraingo sarhitz zerrenda berreskuratzen, fidatzen bazara? (Ez du sarhitz kudeatzailea berrezarriko, gomendatua)
+txt_4_3_expplp: Idazki laua (erabilpen orotarako)
+txt_4_3_recsrc: Bilaketa mugagabea berez
+txt_4_3_resetpm: Berrezarri Sarhitz kudeatzailea? Gordetako sarhitz guztiak ezabatuko dira
+txt_4_3_breadcrumb: Erakutsi Helbidea ogiapur bezala
+txt_4_2_arcabspath: Erabili helburu osoak
+txt_4_1_duplicateshint: "neurria"/"egiaztapen-batura" katea CRC zutabean jakinarazten da oraingo zuzenbidean edo bilaketa iragazkian aurkitutako hautagai bikoiztu guztietarako
+txt_4_1_adminhint: (IRADOKIZUNA: aukeran, UAC azterketa eskatu dezakezu babestutako helburuetan lan egiteko, Alt+F10 edo Aukerak > Ekin administrari bezala)
+txt_4_1_selected: (hautaturik)
+txt_4_1_duplicatesfound: bikoiztuak aurkitu dira
+txt_4_1_duplicatesfind: Bilatu bikoiztuak
+txt_4_1_runasadmin: Ekin administrari bezala
+txt_4_1_simplesearch: Bilaketa arrunta
+txt_4_0_thim: Erakutsi argazki txikirudiak
+txt_3_8_type_description_wim: WIM: Microsoft-ren diska irudi heuskarria
+txt_3_8_type_description_xz: XZ: agiri konpresio indartsua LZMA2-an ohinarrituta
+txt_3_7_donations: Dirulaguntzak
+txt_3_7_nameasparent: Izendatu artxiboa hautaturiko gaiaren gaineko agiritegia bezala, gai anitz gehitzen badira
+txt_3_7_tracker: PeaZip aztarnaria: akatsak, ezaugarri eskaerak
+txt_3_7_sort: Antolatu honela
+txt_3_7_swapbars: Aldatu Tresna barra / Helbide barra
+txt_3_7_themedbars: Azalgaituriko barrak
+txt_3_6_ignoredd: Betik ezikusi helburuak arrastatu eta askatu aterapenerako
+txt_3_6_close: Itxi
+txt_3_6_resetapps: Aplikazioak berrezartzea nahi dituzu (programa norbereragarri multzoa eta agiriak irekitzeko eskriptak, agiri elkarketak ezeztatuz)?
+txt_3_6_ethemes: Dauden Azalgaiak
+txt_3_5_td: Jeitsi Azalgaiak
+txt_3_5_managecustomthemes: Kudeatu Azalgaiak
+txt_3_4_nopaths: Ez dago helbururik
+txt_3_4_smallicons: Ikurrak
+txt_3_3_skipunits: (Windows) Lortu bolumen argibideak sare unitateetatik, abiatze astiroa
+txt_3_3_stralt: Aukerazko komandoa, parametrorik pasatzen ez denean
+txt_3_3_apps: Aplikazioak
+txt_3_3_multi: Hautapen anitza
+txt_3_3_runexp: Ireki programa, agiri, agiritegi edo webgune bat
+txt_3_3_apppath: Ireki PeaZip-ren agiritegia
+txt_3_3_run: Ekin
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu UTF8 erabiltzen du ez-ASCII sinboloak dituzten agiri izenentzat .zip agirien barnean
+txt_3_2_alltasks: Eginkizun guztiak
+txt_3_2_conf: Itxurapena
+txt_3_2_donations: Dirulaguntza erruki erakundeentzat
+txt_3_1_sccenc: 7z / p7zip -scc hizki-kodeaketa
+txt_3_1_downloads: Jeisketak
+txt_3_1_lib: Liburutegiak
+txt_3_1_more: Gehiago
+txt_3_1_openasarchive: Ireki agiritegi bezala
+txt_3_1_sendto: Ireki erabiltzailearen BidaliHona menu agiritegia
+txt_3_1_pathexc: Helburuak ahalbideturiko gehienezko neurria gainditzen du
+txt_3_1_recent: Berriak
+txt_3_1_plsmartmin: Ekin erretiluan, erakutsi/heutsi irekita beharrezkoa bada bakarrik
+txt_3_1_src: Bilaketak
+txt_3_1_systmp: Sistemaren temp
+txt_3_1_languagetools: Itzuli
+txt_3_1_workingdir: Lan zuzenbidea
+txt_3_0_nonreadableorpw: Artxiboa ez da irakurgarria. Nahi duzu sarhitz batekin saiatzea?
+txt_3_0_readablepw: Artxiboa sarhitzez babestua dagoela dirudi
+txt_3_0_configure: Sistema baterapena
+txt_3_0_resettmp: Berrezarri peazip-tmp
+txt_2_9_address: Helbide barra
+txt_2_9_adv: Iragazki aurreratuak 7z edo FreeArc barrenek sostengaturiko edozein agiri kudeatzerakoan ezartzen dira, ikusi agiritza, eta ohinarrizko iragazkiak ezeztatzen dituzte (hauek eginkizunak bilatzeko erabiltzen dira eta Lastermarka eta Historia paneletan erakusten dira)
+txt_2_9_columns: Zutabeak
+txt_2_9_copyhere: Kopiatu hemen
+txt_2_9_noscan: Ez mihatu antolakuntzara gehitzen diren agiriak
+txt_2_9_extconsole: Aterapen kontsola artxiboetan nabigatzerakoan bakarrik dago eskuragarri dago
+txt_2_9_thl: Nabarmendu botoiak
+txt_2_9_home: Etxea
+txt_2_9_lt: Handia
+txt_2_9_mt: Ertaina
+txt_2_9_movehere: Mugitu hona
+txt_2_9_nav: Nabigazioa
+txt_2_9_navbar: Nabigazio barra
+txt_2_9_none: Ezer ez
+txt_2_9_organize: Antolatu
+txt_2_9_public: Publikoa
+txt_2_9_rec: Mugagabea: bilatu azpizuzenbideetan, denbora apur bat hartu dezake
+txt_2_9_selected: Hautaturik
+txt_2_9_setapps: Antolatu Aplikazioak
+txt_2_9_showmenu: Erakutsi menu barra
+txt_2_9_st: Txikia
+txt_2_9_test_pw2G: Aztertu enkriptaketa <2GB artxiboetan
+txt_2_9_vst: Idazkia bakarrik
+txt_2_9_toolbar: Tresna barra
+txt_2_9_tree: Zuhaitza
+txt_2_9_views: Ikuspenak
+txt_2_8_experimental: (esperimentala)
+txt_2_8_zcopy: (Windows) Kopiatu agiriak berrabiarazgarri moduan, astiroa
+txt_2_8_addvol: Bolumen osoa(k) artxibora gehitzeak denbora luzea hartu dezake, jarraitu horrela ere?
+txt_2_8_uniterror: Ezinezkoa unitatera sartzea
+txt_2_8_cannotconvert: Ezinezkoa hautaturiko artxiboak bihurtzea
+txt_2_8_convertbegin: Jarraitu konpresio ekinaldiarekin bihurketa amaitzeko?
+txt_2_8_convert: Bihurtu
+txt_2_8_convertexisting: Bihurtu dauden artxiboak
+txt_2_8_convertdelete: Ezabatu bihurketarako aldibaterako sortutako agiriak eta agiritegiak?
+txt_2_8_details: Xehetasunak
+txt_2_8_parallel: Exekutatu lanak kideturik ahal denean
+txt_2_8_convertnote: Edonola jatorrizko artxiboak ez dira aldatu, erabiltzaileari hauei heustea edo kentzearen agintea emateko
+txt_2_8_custom: ez dago zuzenean sostengatua PeaZip-en, baina aterapen ekinaldian PeaZip ezarri dezakezu norbere agiri motak kudeatzeko "Aurreratua" hegatsean. Jarraitu agiri hau irekitzen?
+txt_2_8_unitrecommend: Gomendatzen da ateratzea (eskuin-klikatu > atera hautatua) edo ireki agiri-sistema ordenagailuaren errotik (sistema tresnak > Ireki unitatea artxibo bezala)
+txt_2_8_viewasarchive: Ireki unitatea artxibo bezala
+txt_2_8_nounit: Ez dago unitaterik hautatuta
+txt_2_8_rowselect: Lerro hautapena
+txt_2_8_statusbar: Egoera barra
+txt_2_8_typeunit: Idatzi unitate logikoaren edo fisikoaren izena
+txt_2_8_usedefaultoutpath: Erabili berezko irteera helburua
+txt_2_7_experimental: (esperimentala, ikusi agiritza)
+txt_2_7_optional: (aukerazkoa)
+txt_2_7_list_tryflatorpw: , ahalezko konponbideak: saiatu ikuspegi laua (F6), eman sarhitza (F9), lortu artxiboaren kopia berri bat
+txt_2_7_separate: Gehitu objetu bakoitza artxibo bereizi batera
+txt_2_7_pwsupported: sarhitzarekin artxiboratzen
+txt_2_7_cancel: Ezeztatu
+txt_2_7_encfn: Enkriptatu agiri izenak ere (heuskarriak sostengatzen badu)
+txt_2_7_setpw: Sartu sarhitza / giltzagiria
+txt_2_7_ext: Ateratzen:
+txt_2_7_extfrom: Artxibotik ateratzen:
+txt_2_7_es: Atera sostengaturiko ez-artxibo agiri motak, adib. exekutagarriak, MS Office eta OOo agiriak
+txt_2_7_eu: Atera sostengu-gabeko agiri motak, norbere aterapen erabilgarria adieraziz
+txt_2_7_clipboard: Gakoa
+txt_2_7_goarclayout: Joan artxibatze antolakuntzara
+txt_2_7_goextlayout: Joan ateratze antolakuntzara
+txt_2_7_ok: Ongi
+txt_2_7_drag_archive: ireki agiria artxibo berri bezala? ("Ez" agiria oraingo artxibatze antolakuntzara gehitzeko)
+txt_2_7_oop: Ireki irteera helburua lana osatutakoan
+txt_2_7_validatefn: Eragiketa geldituta, agiri izen baliogabea atzeman da:
+txt_2_7_validatecl: Eragiketa geldituta, komando potentzialki kaltegarria atzeman da (adib. komando kateadura ez dago ahalbidetuta programaren barnean):
+txt_2_7_output: Irteera
+txt_2_7_pwnotset: Sarhitza ez dago ezarrita
+txt_2_7_pwarcset: Sarhitza ezarrita dago
+txt_2_7_pwextset: Sarhitza ezarrita dago, enkriptaturiko artxiboak atera/zerrendatu/aztertu daitezke
+txt_2_7_archivehint: Eskuin-klikatu agiriak artxibo batera gehitzeko eta beste eginkizun eskuragarri batzuk ikusteko, edo arrastatu hemen agiriak gehitzeko
+txt_2_7_exthint: Eskuin-klikatu agiriak ateratzeko gehitzeko eta beste eginkizun eskuragarri batzuk ikusteko, edo arrastatu hemen ateratzeko agiriak
+txt_2_7_setadvf: Ezarri iragazki aurreratuak
+txt_2_7_selpath: Hautaturiko gaiaren helburua
+txt_2_7_separateerror: Barkatu, ezin da lan adieraren agindu lerroa inportatu "Gehitu objetu bakoitza artxibo bereizi batera" aldaketa erabiltzen den bitartean, lana agindu ezberdin anitz bezala egiten denez
+txt_2_7_noinput: Antolakuntza hutsik dago: mesedez erabili Gehitu agiria(k), Gehitu agiritegia(k) edo Gertatu Antolakuntza artxiboaren antolakuntza hornitzeko
+txt_2_7_dirsize: Agiritegien eduki neurria ez da egiaztatu neurri osoa kalkulatu ahal izateko
+txt_2_7_un7z_browse_flat: saiatu ikuspegi laua (F6)
+txt_2_7_updating: Eguneraketa, dagoen artxibora gehitzea:
+txt_2_6_folders: (agiritegiak)
+txt_2_6_advanced: Aurreratua
+txt_2_6_plalways: Betik heutsi irekita lanaren jakinarazpena ikertzeko
+txt_2_6_plsmart: Heutsi irekita beharrezkoa bada bakarrik (akats, zerrenda edo azterketa jakinar.)
+txt_2_5_sessionio: (saio hau)
+txt_2_5_advanced: Edizioa aurreratua: kokapen eremuak parametro kateen eta agirizenen artean beharrezkoa bada
+txt_2_5_basic: Ohinarrizko edizioa: aplikazioa eta parametroak sarrera izenaren aurretik
+txt_2_5_cannotrun: Ezin da ekin
+txt_2_5_custeditors: Norbere editatzaileak, irakurgailuak, birus-aurkako mihagailuak, etab.... (ezeztatu sistemaren agiri elkarketak)
+txt_2_5_delete: Ezabatu
+txt_2_5_delete_fromarchive: Ezabatu artxibotik
+txt_2_5_langflag: Erakutsi artxibaturiko objetuaren izena UTF-8 idazki bezala; deshautatu hizki hedatuak "?"-rekin ordezteko
+txt_2_5_encpj: Kodeatu lan adiera UTF-8 idazki bezala
+txt_2_5_execommand: Exekutagarria edo komandoa
+txt_2_5_help: Laguntza
+txt_2_5_langhint: Iradokizuna: hizki hedatuak "?" hizki alaiarekin ordezteak joskera hobetu dezake uneko makinan artxiboaren hizki ezarpena ezin bada ongi bihurtu
+txt_2_5_mini_help: Ikasgai txikia
+txt_2_5_offline_help: PeaZip laguntza
+txt_2_5_tray: Erretiluratu
+txt_2_5_remove: Kendu
+txt_2_5_hintpaths: Eskuin-klika sistemaren eta erabiltzailearen helburuak irekitzeko
+txt_2_5_selectapp: Hautatu aplikazioa
+txt_2_5_strafter: Sarrera izenaren ondorengo katea
+txt_2_5_strbefore: Sarrera izenaren aurreko katea
+txt_2_5_encoding: Idazki kodeaketa
+txt_2_5_nopw: artxibo mota honek ez du enkriptaketarik sostengatzen
+txt_2_4_draghint: [arrastatu Explorer-ra gaitutako Helbide barrarekin]
+txt_2_4_tb: Tresnabarra botoiak egokitu (PeaZip berrabiarazten du)
+txt_2_4_adding: Gehitzen
+txt_2_4_advclip: Gakoak hautapen ugariri heusten die
+txt_2_4_yanswers: Erantzunak
+txt_2_4_itemsheight: Berez-neurritu gaien garaiera
+txt_2_4_clearclipboard: Garbitu gakoa (Irten)
+txt_2_4_wcommons: Arruntak
+txt_2_4_copyfrom: Kopiatu hemendik
+txt_2_4_deletebookmarks: Ezabatzea nahi duzu lastermakatutako agiri eta agiritegi zerrenda?
+txt_2_4_documents: Agiriak
+txt_2_4_wenc: Enziklopedia
+txt_2_4_extractfrom: Atera hemendik
+txt_2_4_hexp: Hex aurreikuspena
+txt_2_4_operation: Eragiketa
+txt_2_4_path: helburua ez da idazgarria (adib. irakurtzekoa-bakarrik). Nahi duzu irteera helburu idazgarri bat hautatzea?
+txt_2_4_removefromclipboard: Kendu gakotik
+txt_2_4_stdclip: Estandarra: heutsi hautapen bakarra gakoan, garbitu ebaki eragiketak itsasterakoan
+txt_2_4_totalmem: oroimena guztira
+txt_2_4_gvideo: Bideoa
+txt_2_4_wbook: Wikiliburuak
+txt_2_4_wnews: Wikiberriak
+txt_2_4_wsrc: Wikiturburua
+txt_2_4_wdict: Wikiztegia
+txt_2_3_pw_errorchar: adartxo hizkiak ezin dira PeaZip EIG-n erabili sarhitz bezala oraingo sisteman, mesedez aldatu sarhitza edo hautatu Kontsola modua Barren binario erabiltzaile interfazean, Aukerak > Ezarpenak
+txt_2_3_envstr: Erakutsi inguru aldaerak
+txt_2_3_never_pw: Ez galdetu sarhitza
+txt_2_3_home: Erabiltzailearen etxea
+txt_2_3_on_pw: Sistemaren menuetatik atera/zerrenda/azterketa eragiketatan:
+txt_2_3_test_pw100: Aztertu enkriptaketa <100MB artxiboetan
+txt_2_3_test_pw: Aztertu enkriptaketa (astiroa izan daiteke)
+txt_exclude_recourse: "kanpo" mugagabe azpizuzenb
+txt_action_extopen: "Atera eta ireki elkarturiko aplikazioarekin" ekintza
+txt_error_passwordnotmatch: "Sarhitza" eta "Baieztatu sarhitza" eremuak ez datoz bat, mesedez zuzendu itzazu
+txt_action_preview: "Aurreikuspena elkarturiko aplikazioarekin" ekintza
+txt_preview_hint: "Aurreikuspena" ekintzak "Atera eta ireki"-ren eginkizun bera burutzen du baina aldibaterako helburu batera irteera zuzenbidean, berezgaitasunez kentzen da artxiboa isten denean.
+txt_better: (hobea)
+txt_default2: (berezkoa)
+txt_faster: (azkarragoa)
+txt_fastermem: (azkarragoa, oroimen gutxiago)
+txt_tempdir: (PeaZip-ren aldibaterako lan agiritegia)
+txt_stream: (ezarrita "Jario agintea")
+txt_slowermem: (astiroagoa, oroimen gehiago)
+txt_store: (biltegia, azkarrena)
+txt_newfolder: (agiritegi berrian)
+txt_7z_exitcodeunknown: : Akats ezezaguna lanean
+txt_list_isfolder:  [agiritegia]
+txt_none: <ezer ez>
+txt_fd: 1.44 MB Disketea
+txt_7z_exitcode1: 1: Kontuz: akats ez larria(k); adib. zenbait agiri galduta edo blokeatuta
+txt_attach10: 10 MB (eranspen muga)
+txt_7z_exitcode2: 2: Akats larria gertatu da
+txt_7z_exitcode255: 255: Lana erabiltzaileak etenda
+txt_fat32: 4 GB (geh FAT32 agiri neurria)
+txt_dvd: 4.7 GB DVD-a
+txt_attach5: 5 MB (eranspen muga)
+txt_cd650: 650 MB CD-a
+txt_7z_exitcode7: 7: Akatsa: komando lerro okerra
+txt_cd700: 700 MB CD-a
+txt_type_description_7z: 7Z: artxibo heuskarri aberatsa konpresio maila handiarekin
+txt_dvddl: 8.5 GB DVD BG-koa
+txt_7z_exitcode8: 8: Akatsa: ez dago nahikoa oroimenik eskaturiko eragiketarako
+txt_abort: Utzi egitarauturiko agiri kopiatze/mugitze eragiketak?
+txt_about: Honi buruz
+txt_action: Ekintza
+txt_action_hint: Ireki edo aurreikusi elkarturiko aplikazioarekin ekintza
+txt_add: Gehitu
+txt_add_existing_archive: gehitu (artxiboa badago)
+txt_add_archive: Gehitu artxiboa
+txt_add_files: Gehitu agiria(k)
+txt_add_folder: Gehitu agiritegia
+txt_add_path: Gehitu helburua
+txt_add_tolayout: Gehitu hautaturiko agiriak eta agiritegiak artxiboaren antolakuntzara
+txt_add_toarchive: Gehitu artxibora
+txt_add_tobookmarks: Gehitu lastermarketara
+txt_address_hint: Iragazkia: onartzen du * eta ? ordezhizkiak
+txt_adv_filters: Iragazki aurreratuak
+txt_algo: Algoritmoa
+txt_all: guztiak
+txt_all_default: Guztiak (berezkoa)
+txt_all_type: Mota honetako objetu guztiak
+txt_all_date: Egun hau duten objetu denak...
+txt_all_psize: Pakete neurri hau duten objetu denak...
+txt_all_attributes: Ezaugarri berdina duten objetu denak
+txt_all_size: Neurri hau duten objetu denak...
+txt_error_input_upx: ahalbidetu exekutagarri agiri bakarra sarrera bezala
+txt_always_pw: Betik galdetu sarhitza
+txt_ignore_ext: Betik ezikusi helburuak "Atera eta..."-rako
+txt_ignore_disp: Betik ezikusi helburuak "Atera erakutsia..."-rako
+txt_ignore_sel: Betik ezikusi helburuak "Atera hautatua..."-rako
+txt_key_hint: Erantsi giltzagiriaren hasha sarhitzera; PeaZip-ek eta beste aplikazioek artxiboa desenkriptatu dezakete estandar bera jarraituz, edo hasha sarhitzaren atal bezala sartuz
+txt_timestamp: Erantsi denbora-irarketa artxibo izenari
+txt_appoptions: Aplikazio aukerak
+txt_type_description_arc: ARC: artxibatzaile esperimentala, indartsua, eraginkorra eta ezaugarriz-aberatsa
+txt_archive: Artxiboa
+txt_un7z_browse_ok: artxiboa mihatu da
+txt_interface: Artxibo nabigatzaile interfazea
+txt_archivecreation: Artxibo sortzea
+txt_tarbefore_hint: Artxibatu datuak TAR heuskarrian adierazitako motaren aurretik.
+txt_archive_hint: Artxibatu, konprimitu, banandu eta heutsi agiri, agiritegi eta bolumen pribatuak
+txt_compressionratio_hint: Artxiboaren konpresio maila
+txt_archiving: Artxibaketa:
+txt_cl_long: Dirudienez argumentoek PeaZip-ek igaro dezakeen gehienezko neurria gainditzen dute, mesedez hautatu sarrera agiri gutxiago (adib. hautatu zuzenbideak agiri soilen ordez)
+txt_overwrite_askbefore: Galdetu gainidatzi aurretik (kontsolan)
+txt_associated: Elkarturiko aplikazioa
+txt_attributes: Ezaugarriak
+txt_author: Egilea
+txt_ren_existing: Berez berrizendatu dauden agiriak
+txt_ren_extracted: Berez berrizendatu ateratako agiriak
+txt_autofolder: Berezgaitasunez sortu agiritegi berria artxiboa bertan ateratzeko?
+txt_back: Atzera
+txt_backend: Barren bitar erabiltzaile interfazea
+txt_backupexe: Babeskopia exekutagarria (gomendatua)
+txt_bettercompression: konpresio hobea
+txt_blogs: Blogak
+txt_blowfish: Blowfish448 (64 bit-eko blokeak)
+txt_bookmarks: Lastermarkak
+txt_browse: Bilatu
+txt_browser: Nabigatzailea
+txt_aborted_error: Artxibo bilaketa geldituta, denbora gehiegi hartuko luke. Hautapena murriztu dezakezu bilaketa (F3) erabiliz edo ikuspegi Lau modutik (F6) irtenez; aterapen/zerrenda/azterketa eragiketak ez dute eraginik arazo honekin.
+txt_list_browsing: Nabigazioa
+txt_archive_root: Nabigazioa: artxiboaren erroa
+txt_type_description_bzip2: BZip2: konpresio, bataz-besteko abiadura nahiko indartsua
+txt_pw_empty: Mesedez eman sarhitz bat (edo giltzagiri bat)
+txt_add_error: Ezinezkoa objetua(k) gehitzea/eguneratzea edo ezabatzea; zihurrenik artxibo motak nabigazio/aterapen sostengua besterik ez du, edo ez du eragiketa zehatz hori sostengatzen (adib. bolumen-anitzekoa edo solidoa da), edo PeaZip-ek ezin du artxiboaren izena osoki kudeatu
+txt_un7z_browse_failure: ezin da artxiboa bilatu
+txt_list_error: Ezin da artxiboaren edukia zerrendatu, mesedez egiaztatu artxiboa sarhitzez babestua edo hondatuta dagoen.
+txt_conf_cannotsave: Ezin da itxurapen agiria gorde, egiaztatu helburua idazgarria den eta toki askea duela
+txt_check_hint: Egiaztatu datu hondatuen bila; hash algoritmoak datu kaltegarri manipulatuak atzemateko ere egokiak dira (ikusi agiritza)
+txt_check: Egiaztapen-batura/hash agiria(k)
+txt_check_select: Egiaztapen-batura/hasha
+txt_clear: Garbitu
+txt_clearlayout: Garbitu antolakuntza
+txt_pj_hint: Klikatu lana inportatzeko, aldaketak berrezartzeko eta EIG-rako adiera eguneratua gertatzeko
+txt_autoclose: Itxi PeaLauncher lana osatutakoan
+txt_cl: komando lerroa:
+txt_compare: Alderatu agiriak
+txt_compress: Konpresioa
+txt_compress_executable: Konpresio exekutagarria
+txt_compress_openforwriting: Konprimitu idazteko irekitako agiriak
+txt_compression: Konpresioa
+txt_compmanagement: Ordenagailu kudeaketa
+txt_pw_confirm: Baieztatu sarhitza
+txt_console: Kontsola
+txt_console_interface: Kontsola: interfaze natiboa
+txt_content: Edukia
+txt_controlpanel: Aginte panela
+txt_convert: Bihurtu diska NTFS-ra
+txt_copy: Kopiatu
+txt_copyto: Kopiatu hona...
+txt_create: Sortu
+txt_create_archive: Sortu artxiboa
+txt_title_create: Sortu artxiboa, konprimitu, enkriptatu, banandu...
+txt_create_keyfile: Sortu giltzagiria
+txt_create_folder: Sortu agiritegi berria
+txt_create_theme: Sortu Azalgaia oraingo ezarpenentzat
+txt_rr: Sortu berreskurapen grabaketak
+txt_create_sfx: Sortu berez-aterapen artxiboa
+txt_cr_current: Oraingo helburua edo iragazki konpresio maila
+txt_custom: Norberea
+txt_type_description_custom: Norberea (erabiltzaile aurreratuak): sartu exekutagarri izena eta parametroak
+txt_customapp: Norbere aplikazioa
+txt_custom_parameters: Norbere parametroak
+txt_customsize: Norbere neurria
+txt_cut: Ebaki
+txt_datetime: Eguna/ordua
+txt_default: berezkoa
+txt_default_compression: berezko konpresioa
+txt_default_format: Berezko heuskarria
+txt_theme_default: Berezko azalgaia
+txt_hard_reset_hint: Ezabatu lastermarka agiria
+txt_desktop: Mahaigaina
+txt_dictionary: Hiztegia
+txt_dirs: zuzb,
+txt_dis: Deszalantzapena:
+txt_disk_cleanup: Diska garbiketa
+txt_disk_defrag: Diska deszatiketa
+txt_disk_management: Diska kudeaketa
+txt_dispaly: Erakutsi emaitzak honela
+txt_displayedmnu_obj: Erakutsita
+txt_displayedobjects: Erakutsitako objetuak
+txt_nocompress: ez konprimitu
+txt_delete: Hautaturiko agiria(k) ezabatzea nahi d(it)uzu? Eragiketa ezin da desegin eta agiriak ezingo dira birziklapen ontzitik berreskuratu
+txt_wipe: Hautaturiko agiria(k) segurtasunez ezabatzea nahi d(it)uzu? Eragiketa ezin da desegin eta agiria(k) ez d(ir)a berreskuragarria(k).
+txt_done: Eginda
+txt_edit: Editatu
+txt_elapsed: igarota:
+txt_error_emptycl: Komando lerroa hutsik!
+txt_encrypt: Enkriptatu
+txt_encrypted: Enkriptaturik
+txt_encryption: Enkriptaketa
+txt_note: Sartu oharra/azalpena
+txt_random_keys: Sartu zorizko giltzak
+txt_random_keys_hint: Sartu zorizko giltzak (ez duzu gogoratu behar)
+txt_ent: Entropia azterketa
+txt_ent_tools: Mugitu sagua edo erabili entropia gehigarri laginketa tresnak
+txt_eqorlarger: hautaturiko objetuaren berdina edo handiagoa
+txt_eqorrecent: hautaturiko objetua bezain berria edo gehiago
+txt_eqorolder: hautaturiko objetua bezain zaharra edo gehiago
+txt_eqorsmaller: hautaturiko objetuaren berdina edo txikiagoa
+txt_equal: hautaturiko objetuaren berdina
+txt_erase_hint: Ezabapen segurua: gainidatzi zorizko datuekin, mozorro neurria, berreizend., azkenean ezaba
+txt_extraction_error: Akatsa hautaturiko objetua ateratzerakoan. Artxiboa sarhitzez babestua badago mesedez eman ezazu
+txt_exclude_hint: Kanporatu agiria(k), bat lerroko; erabili * eta ? ordezhizkiak; " eta ' mugatzaileak ez dira beharrezkoak
+txt_exclusion_recourse: Kanpo iragazkiak mugagabe azpizuzenb
+txt_exclusion: Kanpo:
+txt_exe: Exekutagarria
+txt_overwrite_qry: badago helmuga helburuan; gainidatzi izen bereko agiriekin iturburu helburutik? (Ezeztatu: jauzi objetu hau kopiatzea)
+txt_confirm_overwrite: badago; gainidatzi? (ez jauzteko)
+txt_explore_outpath: Esploratze irteera helburua
+txt_explore_path: Esploratu helburua
+txt_ext: Ater.:
+txt_caption_extract: Atera
+txt_ext_nopath: Atera (helburu gabe)
+txt_ext_all: Atera denak
+txt_ext_allhere: Atera denak hemen
+txt_ext_allto: Atera denak hona...
+txt_extopen_custom: Atera eta ireki norbere aplikazioarekin
+txt_extopen_with: Atera eta ireki honekin...
+txt_ext_disp_here: Atera erakutsitakoa hemen
+txt_ext_disp: Atera erakutsitako objetua(k)
+txt_ext_disp_to: Atera erakutsitako objetua(k) hona...
+txt_ext_here: Atera hemen
+txt_ext_sel_here: Atera hautaturikoa hemen
+txt_ext_sel: Atera hautaturiko objetua(k)
+txt_ext_sel_to: Atera hautaturiko objetua(k) hona...
+txt_extobj: Atera objetua
+txt_newfoldermenu: Atera agiritegi berrian
+txt_extto: Atera hona...
+txt_level_fast: Azkar
+txt_fastcompr: konpresioa azkarra
+txt_fastopen: Irekitze azkarreko bidea, gelditu bilaketa zerrendak gainditzen badu
+txt_level_fastest: Azkarrena
+txt_favformats: Heuskarri gogokoenak
+txt_file: Agiria
+txt_filebrowser: Agiri nabigatzailea / artxibo nabigatzailea
+txt_filetools: Agiri tresnak
+txt_files: agiri,
+txt_nfiles: Agiriak
+txt_fs: Agiri-sistema
+txt_filters_recourse: Iragazki mugagabe azpizuzenb
+txt_filters: Iragazkiak
+txt_flat: Laua (erakutsi denak)
+txt_list_flat: Ikuspegi laua
+txt_unit_floppy: Disketea
+txt_foldername: Agiritegi izena
+txt_nfolders: Agiritegiak
+txt_error_input_multi: heuskarriak agiri bakarra ahalbidetzen du sarrera bezala; "TAR aurretik" aldaketa erabili dezakezu sarrera aurretik .TAR artxibo bat bezala gordetzeko, bestela beste heuskarri bat hautatu dezakezu. IRADOKIZUNA: hautatu artxibo heuskarria sarrera datua hautatu ondoren: "TAR aurretik" aldaketa berezgaitasunez ezarriko da
+txt_fwd: Aurrera
+txt_list_found: Bilatu
+txt_free: Askea
+txt_free2: askea
+txt_name_full: Izen osoa
+txt_function: Eginkizuna
+txt_general: Orokorra
+txt_multithreading: hari-anitz generikoa
+txt_go_browser: Joan agiri nabigatzailera
+txt_go_path: Esploratu helburua (PeaZip)
+txt_guicl: Grafika + kontsola
+txt_guipealauncher: Grafika: PeaLauncher-ek bilduta
+txt_graphic: Grafikaren agiritegia
+txt_gridaltcolor: Saretxoen aukerazko margoa
+txt_gridrowheight: Saretxo lerro garaiera
+txt_gui: EIG
+txt_type_description_gzip: GZip: konpresio azkarra
+txt_here: hemen
+txt_list_history: Historia
+txt_homeroot: Ordenagailu/artxibo erro maila
+txt_quickbrowse_hint: Bilaketa geldituta badago erabiltzaileak hautapena murriztu dezake bilaketa edo iragazki eginkizunak erabiliz; atera/zerrenda/azterketa eginkizunak ez dute eraginik izango inola ere.
+txt_backupexe_hint: Zerbait oker badoa eta emaitz erabiltezin batera badarama, jatorrizko exekutagarria berreskuratu dezakezu berezgaitasunezko babeskopiatik
+txt_attach: Post@ bezeroak agindua sostengatzen badu, artxiboa post@ berri bati erantsiko zaio
+txt_images: Irudiak
+txt_include_hint: Barneratu agiria(k), bat lerroko; erabili * eta ? ordezhizkiak; " eta ' mugatzaileak ez dira beharrezkoak
+txt_filters_hint: Barneratze eta kanporatze iragazkiak 7z binarioarentzat, mesedez irakurri kontu handiz 7-Zip agiritza iragazki hauek nola lan egiten duten ulertzeko
+txt_inclusion_recourse: Barne iragazki mugagabe azpizuzenb
+txt_inclusion: Barne:
+txt_error_function: Eginkizun okerra eskatu da
+txt_info: Argibideak
+txt_infoall: Guztien argibideak
+txt_infodisp: Erakutsitako objetu argibideak
+txt_infosel: Hautaturiko objetu argibideak
+txt_inputinfo: Sarrera argibideak
+txt_input_list: Sarrera zerrenda:
+txt_iop: sarrera, irteera, parametroak
+txt_ipo: sarrera, parametroak, irteera
+txt_input: sarrera:
+txt_integrity: Osotasun egiaztapena
+txt_chunk_size: Norbere neurri baliogabea, mesedez zuzendu ezazu zenbakizko balio batera
+txt_invertsel: Alderantzizkatu hautapena
+txt_type_exe: Windows exekutagarri bat da, ekitea nahi duzu? ("Ez" artxibo bezala irekitzen saiatzeko) IRADOKIZUNA: zenbait exekutagarrik badaiteke egoki ez ekitea aurretik artxibo osoa atera ez bada
+txt_return_to_archive: une honetan irekita dago; bilatzea nahi duzu?
+txt_not_accessible: ez da gehiago eskuragarria
+txt_type_unsupported: ez da artxibo mota sostengatua
+txt_checkname_failed: ez da baliozko izen bat.
+txt_not_accessible_list: ez da eskuragarria, mesedez egiaztatu agiri zerrenda zuzena dela eta eguneratuta dagoela
+txt_theme_create_error: Ezinezkoa azalgaia sortzea, saiatu agiritegiarentzako baliozko izen bat erabiltzen azalgai izena bezala edo hautatu helburu idazgarri bat
+txt_theme_exists: jadanik badago, mesedez eman beste helburu bat
+txt_job_code: lanaren kodea:
+txt_job_definition_saved: Lan adiera ongi gorde da hemen
+txt_job_success: Lana ongi osatu da!
+txt_join: Batu
+txt_joinfiles: Batu agiriak
+txt_keyfile: Giltzagiria
+txt_keyfile_not_found: Giltzagiria ezin da aurkitu edo irakurri. Mesedez hautatu beste Giltzagiri bat.
+txt_keyfile_notcreated: Giltza-Agiria ez da sortu
+txt_larger: hautaturiko objetua baino handiagoa
+txt_lastused: Erabilitako azkena
+txt_launch: Abiarazi lana
+txt_layout: Antolakuntza
+txt_filelist_savedas: Antolakuntza honela gordeta
+txt_level: Maila
+txt_license: Baimena
+txt_caption_list: Zerrenda
+txt_list_details: Zerrenda (xehetasunekin)
+txt_list_all: Zerrendatu denak
+txt_list_disp: Zerrendatu erakutsitako objetua(k)
+txt_list_sel: Zerrendatu hautaturiko objetua(k)
+txt_toggle_warning: Helburu edukien ikuspen laua zerrendatzeak denbora luzea hartu dezake, jarraitu horrela ere?
+txt_loadfile: Gertatu agiria
+txt_loadlayout: Gertatu antolakuntza
+txt_unit_hd: Tokiko diska
+txt_localization: Hizkuntza
+txt_lpaqver: LPAQ bertsioa
+txt_type_description_lpaq: LPAQ: PAQ-ren bertsio azkarragoa, konpresio oso ona
+txt_maininterface: Interfaze Nagusia
+txt_maxcomp: Geh konpresio modua
+txt_level_maximum: Gehienezkoa
+txt_restartrequired: Badaiteke aplikazioa berrabiarazi behar izatea ezartzeko
+txt_required_memory: MB-eko oroimena behar da
+txt_method: Metodoa
+txt_misc: Askotarikoa
+txt_modify: Aldatu
+txt_morecontrols: Aginte gehiago (historia, lastermarkak, ...)
+txt_morerecent: hautaturiko objetua baino berriagoa
+txt_ent_hint: Mugitu sagua, sartu giltzak edizio eremuan, gertatu agiriak sistematik entropia biltzeko...
+txt_moveto: Mugitu hona...
+txt_mypc: Ordenagailuaren erroa
+txt_list_na: e/g
+txt_name: Izena
+txt_naming: Izendapen araudia
+txt_unit_remote: Sare gidagailua
+txt_newarchive: artxibo berria
+txt_cnewfolder: Agiritegi berria
+txt_news: Berriak
+txt_no: EZ
+txt_noinput: Sarrera eskuraezina jaso da
+txt_nocompress_hint: konpresio gabe (azkarra)
+txt_split_noinput: Ez da sarrerarik hautatu; mesedez hautatu banantzeko agiri bat
+txt_open_noinput: Ez da sarrerarik hautatu; mesedez hautatu artxibo bat (lehen artxiboaren bolumena bolumen-anitzeko artxiboentzat)
+txt_list_nomatch: ez dator bat
+txt_singlethread: hari-anitz ez
+txt_none2: ezer ez
+txt_nonsolid: Ez-solidoa
+txt_level_normal: Arrunta
+txt_copy_error: ez da ongi kopiatu edo mugitu, akats kodea:
+txt_description: Oharra/azalpena
+txt_compare_second: Orain hautatu alderatzeko agiria
+txt_peaobj: Objetu agintea
+txt_displayed_obj: objetua(k)
+txt_olderthan: hautaturiko objetua baino zaharragoa
+txt_on: on
+txt_ondblclick: Klik-bikoitzak egiten du:
+txt_opacity: Argikaiztasuna
+txt_open: Ireki
+txt_openarchive: Ireki artxiboa
+txt_title_open: Artxiboa ireki, desenkriptatu, batu...
+txt_open_bookmark: Ireki lastermarka
+txt_cphere: Ireki komando leihoa hemen
+txt_open_file: Ireki agiria
+txt_open_files: Ireki agiria(k)
+txt_open_path: Ireki helburua
+txt_opensource: Iturburu irekiko artxibatzaile eramangarria
+txt_openwith: Ireki honekin...
+txt_aborted: Eragiketa utzita
+txt_unit_cd: Gidagailu optikoa
+txt_options: Aukerak
+txt_other: Bestelakoak
+txt_otherparams: Beste parametroak (edizio askea)
+txt_oip: irteera, sarrera, parametroak
+txt_opi: irteera, parametroak, sarrera
+txt_output: irteera:
+txt_overwrite: Gainidatzi dauden agiriak
+txt_compressed_size: Paketea
+txt_paqver: PAQ bertsioa
+txt_type_description_paq: PAQ: astiroa baina konprimitzaile oso indartsua
+txt_pio: parametroak, sarrera, irteera
+txt_poi: parametroak, irteera, sarrera
+txt_parameters: Parametroak:
+txt_error_partial: Zatikako aterapena ez dago oraingo artxibo motarentzat gehituta
+txt_passes: Pasaldiak
+txt_pw: Sarhitza
+txt_pwlength: Sarhitz luzera hizkitan (4..64)
+txt_un7z_browse_pw: sarhitza beharrezkoa izan daiteke
+txt_un7z_browse_pw_other: sarhitza okerra izan daiteke
+txt_paste: Itsatsi
+txt_path: Helburua:
+txt_pea_appcolor: Pea aplikazioa margoa
+txt_pea_textcolor: Pea idazki margoa
+txt_type_description_pea: PEA: segurtasunera bideraturiko artxibo heuskarria konpresio azkarrarekin
+txt_peazip_new: PeaZip (eskabide berria)
+txt_peazip_help: PeaZip sostengu orrialdeak
+txt_peazip_web: PeaZip egitasmoaren webgunea
+txt_performall: Egin sostengaturiko algoritmo guztiak
+txt_name_provide: Izen berria (mesedez saihestu \ / : * ? ' " < > | hizkiak)
+txt_upxorstrip: Mesedez hautatu Zuritzea eta/edo UPX binarioan
+txt_not_removable_file: Mesedez itxi erabilia den agiria, PeaZip-eri hura kentzen uzteko:
+txt_not_removable: Mesedez itxi erabiltzen ari diren agiriak, PeaZip-eri agiritegia kentzen uzteko:
+txt_custom_executable_missing: Mesedez eman norbere exekutagarriaren izena
+txt_type_unsupported_select: Mesedez hautatu sostengaturiko artxibo mota:
+txt_no_theme_name: Mesedez adierazi azalgai izen bat
+txt_please_wait: Mesedez itxaron
+txt_copy_wait: Mesedez itxaron orain egitarauturiko agiri kopiatze/mugitze eragiketak osatu arte mota bereko beste eragiketa batzuk egitarautu aurretik
+txt_previewwith: Aurreikuspena honekin...
+txt_projectadmin: Egitasmoaren administraria:
+txt_type_description_quad: BALZ/QUAD: ontasun-handiko ROLZ-ohinarriko agiri konprimitzaileak
+txt_quickdelete: Ezabapen azkarra
+txt_quit: Utzi
+txt_unit_ram: RAM diska
+txt_read: Irakurri:
+txt_recentarchives: Azken artxiboak
+txt_rr_hint: Berreskurapen grabaketak artxiboak zuzentzen saiatzea ahalbidetzen du datuak hondatuta badaude
+txt_search_refine: Hobetu bilaketa iragazkia, onartzen du ? eta * ordezhizkiak
+txt_fefreshf5: Berritu (F5)
+txt_release: argitalpena:
+txt_unit_removable: Untitate kengarria
+txt_remove_bookmark: Kendu lastermarka
+txt_remove_external_unit: Kendu kanpoko unitatea(k)
+txt_removeselected: Kendu hautaturiko objetua(k)
+txt_rename: Berrizendatu
+txt_caption_repair: Konpondu
+txt_restartrequired2: aplikazioa berrabiarazi behar da ezartzeko
+txt_reset: Berrezarri
+txt_reset_archivename: Berrezarri artxiboaren izena
+txt_hardreset: Berrezarri lastermarkak
+txt_reset_theme: Berrezarri barneko azalgaira
+txt_restore_att: leheneratu jatorrizko ezaugarriak
+txt_run_as: Ekin honela (ezin da sarhitz hutseko erabiltzailera aldatu)
+txt_run_as2: Ekin beste erabiltzaile bat bezala
+txt_sample: Lagina: 
+txt_saveas: Gorde honela
+txt_savehistory: Gorde erabilitako azken artxiboen historia
+txt_save_infolder: Gorde agiritegian (berez)
+txt_savejob: Gorde lan adiera
+txt_savejobdefinition: Gorde lan adiera
+txt_savejobdefinition_hint: Gorde lanaren adiera idazki lau bezala; zure eskriptetarako erabili dezakezu
+txt_savelayout: Gorde antolakuntza
+txt_save_winstate: Gorde leiho nagusiaren egoera
+txt_search: Bilatu (mugagabe, denbora apur bat hartu dezake)
+txt_searchanddrag: Bilatu eta arrastatu hona
+txt_searchfor: Bilatu
+txt_nrsearch: Bilatu hemen (ez mugagabea)
+txt_search_hint: Bilatu bat datozenak artxiboaren azpizuzenbideetan iragarkia(k) erabiliz
+txt_search_web: Web bilaketa
+txt_list_searching: Bilatzen...
+txt_securedelete: Ezabapen segurua
+txt_default_description: Hautatu eginkizun bat edo arrastatu agiriak hona
+txt_selectall: Hautatu denak
+txt_selectdir: Hautatu zuzenbidea
+txt_selected_obj: Hautaturik
+txt_selected_objects: Hautaturiko objetuak
+txt_sfx: Berez-aterapena
+txt_sendbymail: Bidali post@z
+txt_set_defaults: Ezarri aplikazioaren berezko parametroak
+txt_settings: Ezarpenak
+txt_sfx_interface: sfx interfazea
+txt_showhints: Erakutsi iradokizunak
+txt_show_messages: Erakutsi argibide mezuak
+txt_showpw: Erakutsi sarhitz eremu edukia
+txt_singlevol: Bolumen bakarra
+txt_size: Neurria
+txt_sizeb: Neurria (B)
+txt_skip_existing: Jauzi dauden agiriak
+txt_slowercomp: konpresio astiroagoa baina deskonpresio azkartasun berdina
+txt_smaller: hautaturiko objetua baino txikiagoa
+txt_solid: Solidoa
+txt_solid_block: Bloke solidoa
+txt_solid_auto: Solidoa, berez-zehaztea
+txt_solid_extension: Solidoa, taldea luzapenez
+txt_listtest: barkatu, zerrenda/azterketa eragiketa ez dago heuskarri honentzat gehituta
+txt_sortbysel: Antolatu hautapen egoeraz
+txt_list_sorting: Antolatzen...
+txt_speed: abiadura
+txt_split: Banandu
+txt_type_description_split: Banandu agiri bat aukerazko osotasun egiaztapenarekin
+txt_split_file: Banandu agiria
+txt_list_nostats: Estatistikak ez daude eskuragarri
+txt_status: Egoera
+txt_level_store: Biltegia
+txt_stream_control: Jario agintea
+txt_strip: Zuritu UPX aurretik (gomendatua)
+txt_keyfile_created: Giltza-Agiria ongi sortu da honela:
+txt_suggestpw: Sortu zorizko sarhitza
+txt_noupx: Sinbolo zuritzea, UPX konpresio gabe
+txt_syntax: Joskera:
+txt_sysbenchmark: Sistema benchmark
+txt_benchmark: Sistema benchmark-ak zenbait minutu hartuko ditu eta CPU eta oroimen baliabide eskuragarri guztiak erabiliko ditu. Sistemak badaiteke ez erantzutea benchmarka egiten den bitartean; ekin horrela ere?
+txt_systools: Sistema tresnak
+txt_tarbefore: TAR aurretik
+txt_type_description_tar: TAR: artxibatze heuskarri nagusia UNIX sistematan
+txt_taskman: Eginkizun Kudeatzailea
+txt_caption_test: Aztertu
+txt_testall: Aztertu denak
+txt_testdisp: Aztertu erakutsitako objetua(k)
+txt_testpw: Aztertu sarhitza / giltzagiria
+txt_testsel: Aztertu hautaturiko objetua(k)
+txt_col_hint: Margoa beste ikurren margoarekin eta EIG-ren beste osagaiekin ongi bateratzeko moduan hautatu behar da
+txt_bookmarks_hint: Lastermarka zerrenda osoa eta editagarria eskuragarri dago agiri nabigazio interfazean, klikatu "Aginte gehiago" ikurra eta "Aldatu historia/lastermarkak"
+txt_archive_noinput_tolist: Antolakuntza hutsik dago: mesedez erabili Gehitu agiria(k), Gehitu agiritegia(k) edo Gertatu Antolakuntza artxiboaren antolakuntza hornitzeko
+txt_theme: Azalgaia
+txt_icons_found: Azalgaia ongi gertatu da.
+txt_themename: Azalgai izena
+txt_icons_not_found: Azalgaia ez da zuzen gertatu. Saiatu berezko azalgaira aldatzen, edo lan egiten duela dakizun batera.
+txt_theme_create_success: azalgaia ongi sortu da hemen
+txt_theming: Azalgaitzea
+txt_extand_error: Eginkizun hau objetu bakar batean egin daiteke aldiberean
+txt_threads: Hariak
+txt_titlescolor: Izenburuen margoa
+txt_to: hona
+txt_toggle_browseflat: Aldatu nabigazioa / ikuspegi laua (erakutsi denak)
+txt_toggle_historybookmarks: Aldatu historia/lastermarkak
+txt_toolbarscolor: Barren margoa
+txt_tools: Tresnak
+txt_best: saiatu ezarpen hoberenekin (astiroa)
+txt_type: Mota
+txt_level_ultra: Ultra
+txt_error_openfile: Ezinezkoa adierazitako agiria irekitzea
+txt_cl_hint: UNACE eta UPX-k betik ekiten dute kontsola moduan; zerrendapen, azterketa eta benchmark lanek betik ekiten dute EIG modua erabiliz
+txt_ace_missing: UNACE plugina ez dago; ACE artxiboak kudeatzeko plugina PeaZip-ren webgunetik jeitsi dezakezu (UNACE iturburu itxikoa denez, plugina ez dago ohinarriko paketearen barne)
+txt_units: unitateak
+txt_unit_unknown: Gidagailu mota ezezaguna
+txt_un7z_pw_untested: Aztertugabea
+txt_up: Gora
+txt_update: eguneratu (artxiboa badago)
+txt_type_description_upx: UPX: agiri exekutagarriak bakarrik konprimitzen ditu
+txt_advfilters: Erabili iragazki aurreratuak
+txt_openfiles_hint: Erabili aukera hau artxiboan beste aplikazioek idazteko irekitako agiriak barneratzeko (erabilgarria babeskopia lanetan)
+txt_usenet: Usenet
+txt_user_name: Erabiltzaile izena; erabili erabiltzailea@DOMEINUA edo DOMEINUA\erabiltzailea forma beharrezkoa bada.
+txt_using: Erabilpena:
+txt_volumepea: Bolumen agintea
+txt_volume_size: Bolumen neurria
+txt_type_ext_uns: ongi atera da
+txt_websearch: Web bilaketa
+txt_websites: Webguneak
+txt_word: Hitza
+txt_write: Idatzi:
+txt_ramdompw_hint: Zoriz sortutako sarhitza kopiatu dezakezu hemendik
+txt_exe_hint: Askatasunez sartu ditzakezu exekutagarriaren izena eta parametroak norbere konpresiorako, eta joskera eraiketa hautatzeko. Mesedez ohartu "Kontsola" hegatsean komandoaren joskera eskuz ere aldatu dezakezula.
+txt_pj_hint2: Lan adiera EIG-tik beheko oroimen eremuan inportatu dezakezu. Orduan, editatu, abiarazi edo gorde dezakezu EIG-k zehazturiko lana aldatu edo galdu gabe.
+txt_type_description_zip: ZIP: artxibatze/konpresio heuskarri azkarra, nagusia Windows sistematan
+txt_zipcrypto_hint: ZipCrypto (ondorena)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: remaining
+txt_6_5_abort: Abort
+txt_6_5_error: Error
+txt_6_5_no: No
+txt_6_5_warning: Warning
+txt_6_5_yes: Yes
+txt_6_5_yesall: Yes to all
+txt_5_6_update: Egiaztatu eguneraketarik dagoen
+txt_5_6_cml: Sistemako hitzinguru menuaren hizkuntza
+txt_5_6_donations: Dirulaguntzak
+txt_5_6_localization: Hizkuntza
+txt_5_6_runasadmin: Ekin administrari bezala
+txt_5_6_help: Sostengua
+txt_5_5_cancelall: Ezeztatu denak
+txt_5_3_details: Xehetasunak
+txt_5_3_files: agiriak
+txt_5_3_folders: agiritegiak
+txt_5_3_info: Argibideak
+txt_5_3_list: Zerrenda
+txt_5_3_os: Jatorrizko neurria
+txt_5_3_ps: Pakete neurria
+txt_5_3_test: Aztertu
+txt_5_0_extract: Atera
+txt_5_0_from: hemendik
+txt_5_0_in: hemen
+txt_5_0_to: hona
+txt_4_5_search: bilatu
+txt_4_0_drag: Arrastatu hona artxiboa ateratzeko, edo 
+txt_4_0_dragorselect: Arrastatu hona edo hautatu agiria
+txt_4_0_select: hautatu agiria
+txt_3_6_selectdir: Hautatu zuzenbidea
+txt_3_5_close: Itxi
+txt_3_0_details: Xehetasun gehiagorako, "Jakinarazpena"-k lanaren oharra du, eta "Kontsola"-k lanaren adiera komando lerro bezala
+txt_3_0_hints: Akatsari buruzko iradokizunak
+txt_3_0_arc: Zenbait sarrera agiri ezin dira irakurri (badaiteke blokeaturik, eskuraezin edo hondatuta egotea)
+txt_3_0_ext: Artxiboak badaiteke sarhitz ezberdin bat behar izatea oraingo eragiketarako
+txt_2_8_oop: Ireki irteera helburua lana osatutakoan
+txt_2_7_validatefn: Eragiketa geldituta, agiri izen baliogabea atzeman da:
+txt_2_7_validatecl: Eragiketa geldituta, komando potentzialki kaltegarria atzeman da (adib. komando kateadura ez dago ahalbidetuta programaren barnean):
+txt_2_6_open: Ireki agiritegia
+txt_2_5_ace_missing: UNACE plugina ez dago; ACE artxiboak kudeatzeko plugina PeaZip-ren webgunetik jeitsi dezakezu (UNACE iturburu itxikoa denez, plugina ez dago ohinarri paketearen barne)
+txt_2_3_pw_errorchar_gwrap: adartxo hizkiak ezin dira PeaLauncher-en erabili sarhitz bezala oraingo sisteman, mesedez aldatu sarhitza edo hautatu Kontsola modua Barren binario erabiltzaile interfazean, Aukerak > Ezarpenak
+txt_2_3_renameexisting: Berez berrizendatu dauden agiriak
+txt_2_3_renameextracted: Berez berrizendatu ateratako agiriak
+txt_2_3_cancel: Ezeztatu
+txt_2_3_encryption: Enkriptaketa
+txt_2_3_extinnew: Atera agiritegi berri batean
+txt_2_3_keyfile: Giltzagiria
+txt_2_3_kf_not_found_gwrap: Giltzagiria ezin da aurkitu edo irakurri. Mesedez hautatu beste Giltzagiri bat.
+txt_2_3_moreoptions: Aukera gehiago...
+txt_2_3_nopaths: Helbururik ez
+txt_2_3_options: Aukerak
+txt_2_3_overexisting: Gainidatzi dauden agiriak
+txt_2_3_pw: Sarhitza
+txt_2_3_skipexisting: Jauzi dauden agiriak
+txt_job_unknown: : Akats ezezaguna aurkitu da
+txt_stdjob: [animazioa gelditu egingo da lana osatutakoan]
+txt_benchmarkjob: [sistemak astiro erantzungo du benchmark ekinean dagoen bitartean (minutu batzuk)]
+txt_defragjob: [ez du erantzungo deszatikatzea egiten den bitartean, ekinean utzi dezakezu barrenean]
+txt_consolejob: [lanen irizkizuna eta garapen xehetua eskuragarri kontsola leihoan]
+txt_job1: 1: Kontuz: akats ez larria(k); adib. zenbait agiri ez daude edo blokeatuta
+txt_job127: 127: Ezinezkoa eskaturiko eragiketa exekutatzea
+txt_job2: 2: Akats larria gertatu da
+txt_job255: 255: Lana erabiltzaileak etenda
+txt_job7: 7: Akatsa: komando lerro okerra
+txt_job8: 8: Akatsa: ez dago nahikoa oroimen eskatutako eragiketarako
+txt_autoclose: Itxi leiho hau lana osatutakoan
+txt_crscale: Konpresio maila (apalena, hoberena):
+txt_console: Kontsola
+txt_benchscale: Core 2 Duo 6600 maila, MHz abiadura baliokidea.
+txt_create: Sortu
+txt_done: Eginda:
+txt_nocl: Komando lerroa hutsik
+txt_error: Akatsa:
+txt_explore: Esploratu
+txt_extto: Atera hona
+txt_halt: Eten sistema lana osatutakoan
+txt_halted: Etenda:
+txt_hardware: hardwarea
+txt_high: Lehentasun handia
+txt_idle: Lehentasun gabe
+txt_input: Sarrera:
+txt_jpaused: Lana pausatuta
+txt_jresumed: Lana berrekinda
+txt_job_started: Lana hasita
+txt_jobstatus: Lanaren egoera:
+txt_jstopped: Lana erabiltzaileak etenda
+txt_jobstopped: Lana erabiltzaileak etenda; lanaren irteera zatia ikertu dezakezu "Esploratu" botoia sakatuz edo lan oharra irakurriz
+txt_job_success: Lana ongi osatu da
+txt_lt: Zerrendatu/aztertu/konpondu agiritegia
+txt_normal: lehentasun arrunta
+txt_ok: Ongi
+txt_output: Irteera:
+txt_pause: Pausatu
+txt_paused: pausatuta,
+txt_p_high: Lehentasun handian ezarrita
+txt_p_idle: Lehentasun gabe ezarrita
+txt_p_normal: Lehentasun arruntean ezarrita
+txt_p_realtime: Lehentasuna egizko denboran ezarrita
+txt_rating: Mailaketa:
+txt_rt: egizko denbora lehentasuna
+txt_report: Jakinarazpena
+txt_resume: Berrekin
+txt_priority: Klikatu lanaren lehentasuna ezartzeko
+txt_running: ekiten,
+txt_isrunning: Ekiten...
+txt_saveas: Gorde honela
+txt_savejob: Gorde lanaren adiera (sarhitza barneratu dezake!)
+txt_savelog: Gorde lan oharra
+txt_software: softwarea
+txt_speedscale: Abiadura, eskala logaritmikoa (handia, hobea):
+txt_status: Egoera
+txt_stop: Gelditu
+txt_bench: Sistema benchmark
+txt_threads: Hariak:
+txt_time: Denbora:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+ATERA ARTXIBOA(K)
+Sistematik
+- eskuin-klikatu artxibo(et)an eta sistemaren hitzinguru menuan klikatu "Atera hemen" edo "Atera hemen (agiritegi berrian) elkarrekintza gehiago gabe ateratzeko
+- bestela erabili "Atera..." menu sarrera aukera gehiago izateko: irteera helburua, sarhitza, atera agiriak zuzenbide berri batera, hautatu jauzteko, berrizendatu edo gainidatzi dauden agiriak, etab.
+
+Ireki artxibo bat PeaZip-ean, adib. klik-bikoitzarekin edo arrastatu artxiboa PeaZip-ren leihora edo ikurrera
+- klikatu "Atera" tresnabarran edo hitzinguru menuan hautaturiko objetuak bakarrik ateratzeko baieztapen elkarrizketaren bidez aukera guztiak ezartzea ahalbideturik (irteera helburua, sarhitza, izendapen araudia, atera zuzenbide berri batera, etab.)
+- arrastatu agiriak eta agiritegiak nahi dituzun helmugara, hautaturiko edukia bakarrik aterako da (argibide gehiagorako ikusi arrastatu eta askaturi buruzko atala PeaZip-en)
+- klikatu aterapen azkarra hedagarri botoia "Atera"-ren eskuinean tresnabarran, honek artxibo osoa helmuga arrutenetara osorik ateratzea (baieztapen elkarrizketa jauziz) eta aukera garrantzitsuenak ezartzea ahalbidetzen du; lasterteklak: Ktrl+E (edo F12) artxibo osoa ateratzen du, irteera zuzenbidea galdetzen du; Ktrl+Alt+E artxiboa bere uneko agiritegian ateratzen du; Ktrl+Aldatu+E mahaigainera ateratzen du; Ktrl+Alt+Aldatu+E agirietara ateratzen du; Ktrl+0 aurreko helburura ateratzen du; Ktrl+1...8 lastermarka helburura ateratzen du 1...8 (adierazia bada)
+
+Ireki PeaZip, hautatu artxibo bat edo gehiago eta klikatu "Atera" tresnabarran edo hitzinguru menuan, edo erabili aterapen azkarreko helmugak aurreko puntuan azaldu bezala.
+
+ATERA ARTXIBOTIK HAUTATURIKO AGIRIAK BAKARRIK
+Ireki artxibo bat PeaZip-ren, adib. klik-bikoitzarekin, edo arrastatu artxiboa PeaZip-ren leihora edo ikurrera
+- klik "Atera" tresnabarran: hautaturiko gaiak bakarrik aterako dira
+- arrastatu agiriak eta agiritegiak nahi dituzun helmugara, hautaturiko edukia bakarrik aterako da
+- eskuin-klikatu eta hitzinguru menuko "Atera" multzoan klikatu "Atera hautatua" (hautaturiko gaiak bakarrik ateratzeko) edo "Atera erakutsia" (uneko zuzenbideko edo uneko bilaketa iragazkiko edukia ateratzeko)
+
+SARTU SARHITZA ARTXIBO BATI NABIGAZIOAN EDO ATERATZEKO
+Klikatu kandadu ikurrean sarhitza eta aukeran giltzagiria sartzeko.
+Ikurra bietan agertzen da, PeaZip-ren agiri nabigatzaile egoera barran eta artxibo aterapen interfazean; behin sarhitza ezarritakoan ikurraren margoa aldatu egingo da.
+
+SORTU ARTXIBOA
+Sistematik
+- eskuin-klikatu artxibatuak izan behar diren objetuetan eta klikatu "Gehitu artxibora" hitzinguru menuan edo BidaliHona menuan. Artxibo sortze baieztapen elkarrizketa irekiko du, aukera gehiago daude eskuragarri "Aurreratua" hegatsean; klikatu Ongi artxiboa sortzeko.
+- aukeran, arrastatu agiriak/agiritegiak PeaZip-ren leihora edo lasterbidera; artxibo sortze interfaze berdina erakutsiko da.
+
+PeaZip-tik 
+- hautatu artxibatuak izan behar diren objetuak eta klikatu "Gehitu" botoia; artxibo sortze interfaze bera erakutsiko da.
+
+GEHITU AGIRIAK/AGIRITEGIAK DAGOEN ARTXIBOA EGUNERATZEKO
+Ireki artxibo bat PeaZip-ean (adib. klik-bikoitzarekin, edo arrastatu artxibo bat PeaZip-ren leihora edo ikurrera), orduan arrastatu artxibora gehitu behar diren agiriak eta agiritegiak (edo klikatu "Gehitu" botoia eta erabili aplikazioaren hitzinguru menua objetuak artxibora gehitzeko).
+Honek artxibo sortze baieztapen elkarrizketa bat irekiko du, klikatu Ongi artxiboa eguneratzeko.
+
+SORTU ARTXIBO BANANDUA AGIRI TXIKIAGOTAN
+Artxibo bat sortzerakoan aurreko puntuetan azaldu den bezala, klikatu "Bolumen bakarra" hedagarri menua artxiboa banandu behar den irteera agirien (bolumenen) neurria hautatzeko.
+Artxibo mota arrunt gehienek aukera hau sostengatzen dute.
+
+SORTU ENKRIPTATURIKO ARTXIBOA
+Klikatu kandadu ikurra sarhitza sartzeko eta aukeran giltzagiria, ikurra bietan agertzen da PeaZip-ren agiri nabigatzailearen egoera barran eta artxibo sortze interfazean.
+Artxiboan dauden agirien eta zuzenbideen izenak ezkutatzeko hautatu "Enkriptatu agirizenak bakarrik", mesedez ohartu hau ezarriko dela bakarrik artxiboa eginkizun hau sostengatzen duen heuskarri batean sortu bazen, 7Z eta ARC bezala.
+Ohartu artxibo sortze interfazean, kandadu ikurraren ondoan, ohar bat dagoela enkriptaketa ezarri den eta uneko artxiboaren heuskarriak enkriptaketa sostengatzen duen argibideak ikusteko.
+
+SORTU ARTXIBO BEREIZIAK
+Gehitu artxibatuak izan behar diren objetuak (PeaZip-ren "Gehitu" botoiarekin, edo sistemaren hitzinguru menuarekin edo BidaliHona menuarekin) eta "Ongi"-rekin baieztatu aurretik hautatu "Gehitu objetu bakoitza artxibo bereizi batera" aukera.
+
+BIHURTU ARTXIBOAK
+PeaZip-etik hautatu bihurtuak izan behar diren artxiboak eta klikatu "Bihurtu" tresnabarran edo hitzinguru menuan, ez-artxiboak diren agiriak eta agiritegiak ere gehitu daitezke, aldea konpresio ekinaldiaren aurretik ateratako artxiboetan dago.
+"Bihurtu dauden artxiboak" aldaketa "Gehitu objetu bakoitza artxibo bereizi batera"-rekin (berezkoa) batera erabiliz zerrendaturiko artxiboen multzo bihurketa egiten du, aldaketa hau gabe artxibo bihurketak sarrera datuak artxibo bakarrean egonkortzeko joera du, konpresio eraginkortasuna hobetuz jatorrizko datuen berkonpresioa ahalbidetzen duelako bere konprimitu gabeko formatik.
+
+ZUZENEAN SORTU ARTXIBOAK ADIERAZITAKO HEUSKARRIAN ETA HAUTATURIKO KONPRESIO MAILA BATEKIN
+“Sistema baterapena" jarraipidea erabiliz Aukerak menuan hitzinguru menu sarrerak gaitu daitezke zuzenean gehitzeko agiriak/agiritegiak ZIP, 7Z edo berez ateratze artxibo batera.
+Zip eta 7Z heuskarrietarako hitzinguru menu sarrerak gaitu daitezke azkarren, arrunt edo ultra mailan konprimitzeko, berezko konpresio maila igaroz hautaturiko heuskarriarentzat.
+
+SARHITZ KUDEATZAILEA
+Sarhitz kudeatzailea eskuragarri dago menu nagusian, Tresnak > Sarhitz kudeatzailea edo Sarhitz galdekizunetik, Sarhitz eremuaren ezkerreko menu hedagarritik.
+Gordetako sarhitzak Sarhitz galdekizuneko sarhitz eremuaren ezkerreko menu hedagarritik hautatu daitezke, edo sarhitz kudeatzailetik kopiatu daitezke beste edozein aplikazio batean erabiltzeko.
+Ez bada sarhitz nagusirik ezartzen sarhitz kudeatzailearentzat, sarhitz zerrenda eskuragarria da egiaztapenik galdetu gabe, bestela sarhitzak ez dira erakutsiko erabiltzailea zuzen egiaztatu arte.
+
+ITXURATU APLIKAZIOA
+Aukerak > Hizkuntza (eta Aukerak > Ezarpenak, lehen hegatsa) aplikazioaren hizkuntza ezartzea ahalbidetzen du.
+Aukerak > Ezarpenak aplikazioaren ezarpenak editatzea ahalbidetzen du
+Aukerak > Azalgaiak aplikazioaren ikurrak eta irudia aldatzea ahalbidetzen du
+Aukerak > Sistema baterapenak agiri elkarketa, hitzinguru menuak eta BidaliHona menu sarrerak itxuratzeko aurrerabide bat irekitzen du (Windows-en)
+Antolatu menuak nabigatzaile ezaugarriak norbereratu, gaitu edo ezgaitu, tresnabarra, helbide barra, nabigazio barra, etab. bezalakoak ditu
+
+F1 	laguntza
+F2 	berrizendatu agiria(k) / Ktrl+F2 kopiatu hautatua hona / Aldatu+F2 mugitu hautatua hona
+F3	bilatu (mugagabe aukera gogoratzen da) / Ktrl+F3 hasi ez mugagabe bezala (bilatu hemen) / Aldatu+F3 mugagabe / Alt+F3 sistema bilaketa
+F4 	F4 nabigatu ordenagailu erroan / Ktrl+F4 nabigatu mahaigainean / Aldatu+F4 nabigatu etxean
+F5 	berritu
+F6 	aldatu nabigazioa/ikuspegi laua
+F7 	gehitu lastermarketara / Ktrl+F7 ireki PeaZip-ren eskabide berri batean / Aldatu+F7 ireki komando leihoa hautaturiko helburuan / Alt+F7 esploratu hautaturiko helburua
+F8 	bilatu lastermarka zerrendako lehen gaia (Ktrl+F8, bigarrena, Aldatu+F8, hirugarrena)
+F9 	ezarri sarhitza/giltzagiria / Aldatu+F9 sarhitz kudeatzailea / Ktrl+F9 sortu giltzagiria edo zorizko sarhitza / Ktrl+Aldatu+F9 ezarri iragazki aurreratuak
+F10 	menua / Ktrl+F10 ekin beste erabiltzaile bat bezala / Alt+F10 ekin administrari bezala (Windows Vista eta sistema berriagoetan)
+F11 	aldatu ikusleiho osoa modua / Ktrl+F11 murgildua
+F12 	atera denak hona...
+
+PEAZIP BURUZ
+
+PeaZip iturburu irekiko agiri eta artxibo kudeatzaile bat da: plataforma anitzekoa, eskuragarri software eramangarri eta ezargarri bezala 32 eta 64 bit-eko Windows-rako (9x, 2k, XP, Vista) eta Linux-rako (PeaZip mahaigaineko aplikazio neutrala da).
+
+PeaZip-ek ahalbidetzen du artxibo edukiari bilaketa iragazki indartsu ugari ezartzea; artxibo ugari aldiberean sortzea eta ateratzea, berez-ateratze artxiboak sortzea; lan adiera komando lerro bezala esportatzea; artxibatze eta aterapen antolakuntzak gordetzea; artxiboak eta agiritegiak lastermarkatzea; agiri konprimituak eta konprimitu gabeak norbere aplikazioekin mihatzea eta irekitzea, etab....
+
+Beste ezaugarriak: enkriptaketa gogorra, agiri kopiatze indartsua, agiri banantze/batzea (agiri span), datu ezabapen segurua, alderaketa, egiaztapen-batura eta hash agiriak, sistema benchmark, zorizko sarhitzak eta giltzagiriak sortzea.
+
+Jeisketak eta aldaketa-oharra: https://peazip.github.io
+Ezaugarri eta sostengaturiko heuskarrien zerrenda osoa: https://peazip.github.io/peazip-free-archiver.html
+Sostengua: https://peazip.github.io/peazip-help.html
+FAQ: https://peazip.github.io/peazip-help-faq.html
+
+Eskerrak PeaZip egitasmoaren aplikazio honetan erabiltzen diren Iturburu irekiko osagai guztiak garatzen lagundu duen jende guztiari (ikusi webgunea zerrenda osorako), eta bere irizkizun, jarduera eta iragarkiekin ekarpena egin duten erabiltzaile guztiei.

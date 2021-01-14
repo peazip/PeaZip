@@ -1,0 +1,3 @@
+All software in this path is released under GPL by Bulat Ziganshin
+
+Reference: http://freearc.sourceforge.net/
