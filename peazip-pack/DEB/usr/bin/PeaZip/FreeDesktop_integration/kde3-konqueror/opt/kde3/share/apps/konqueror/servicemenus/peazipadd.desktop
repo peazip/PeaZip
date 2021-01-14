@@ -1,0 +1,11 @@
+[Desktop Action peazipadd]
+Exec=peazip -add2archive %F
+Icon=tar
+Name=Archive with PeaZip
+
+[Desktop Entry]
+Actions=peazipadd;
+Encoding=UTF-8
+Name=peazipadd
+Name[en_US]=peazipadd
+ServiceTypes=all/all

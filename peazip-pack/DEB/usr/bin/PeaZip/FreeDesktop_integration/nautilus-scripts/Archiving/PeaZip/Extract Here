@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PeaZip Nautilus script
+#
+# AUTHOR: Giorgio Tani, basing on Gias Kay Lee modification of Chris Giles' script
+# VERSION: 0.1
+
+APPLICATION="PeaZip"
+TITLE="Error"
+MESSAGE="Could not find the $APPLICATION executable."
+basedir="`echo $NAUTILUS_SCRIPT_CURRENT_URI | cut -d'/' -f3- | sed 's/%20/ /g'`"
+
+if which peazip 2> /dev/null
+then
+	peazip -ext2here "$basedir/$1"
+else
+	# Show an error message
+	if which nautilus-error-dialog; then
+		nautilus-error-dialog --title "$TITLE" --message "$MESSAGE"
+	elif which gdialog; then
+		gdialog --title "$TITLE" --msgbox "$MESSAGE" 20 100
+	elif which kdialog; then
+		kdialog --title "$TITLE" --msgbox "$MESSAGE"
+	elif which gxmessage; then
+		gxmessage -buttons OK -title "$TITLE" "$MESSAGE"
+	elif which xmessage; then
+		xmessage -buttons OK -title "$TITLE" "$MESSAGE"
+	fi
+fi
