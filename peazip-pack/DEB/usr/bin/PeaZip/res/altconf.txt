@@ -1,2 +1,0 @@
-﻿[alternative configuration's path: specify a location for bookmarks.txt, conf.txt and rnd (either absolute or relative path, use " and ' if needed); write "same" to use this path, "appdata" to use user's application data or home path]
-appdata
