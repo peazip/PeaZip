@@ -46,6 +46,7 @@ interface
  0.42     17.03.17  we          Simple routines for FPC/CPUARM
  0.43     30.03.17  we          FPC/CPUARM uses fpgettimeofday
  0.44     11.11.17  we          Use time for FPC/WINCE
+ 0.45     17.01.21  gt          CPUAARCH64 disable Intel ASM
 **************************************************************************)
 
 
@@ -95,7 +96,7 @@ function  _CheckRDTSC: boolean;
 
 implementation
 
-{$ifdef CPUARM}
+{$if defined(CPUARM) or defined(CPUAARCH64)}
 
 {$ifdef WINCE}
 

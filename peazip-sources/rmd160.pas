@@ -46,6 +46,7 @@ interface
  0.28     28.03.17  we          No '$asmmode intel' for CPUARM
  0.29     15.05.17  we          adjust OID to new MaxOIDLen
  0.30     29.11.17  we          RMD160File - fname: string
+ 0.31     17.01.21  gt          CPUAARCH64 disable Intel ASM
 
 **************************************************************************)
 
@@ -125,7 +126,7 @@ implementation
 
 
 {$ifdef FPC}
-  {$ifndef CPUARM}
+  {$if not(defined(CPUARM)) and not(defined(CPUAARCH64))}
     {$asmmode intel}
   {$endif}
 {$endif}
