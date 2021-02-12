@@ -7,12 +7,12 @@ Last rev.: 20121227
 
 === PeaZip text group ===
 
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_7_noneall: Нет (без просмотра и перетаскивания мышью)
+txt_7_7_nonetemp: Нет, "temp" пользователя, если нужно
+txt_7_7_outtemp: Целевой, просмотр с помощью "temp" пользователя
+txt_7_7_sys7zreq: Требуется установленный p7zip-full или эквивалент
+txt_7_7_tw: Временный каталог для создания архивов, их изменения, просмотра и распаковки перетаскиванием.
+txt_7_7_sys7z: В Линуксе использовать системный 7z
 txt_7_6_zipenc: Кодовая стр. для имён файлов 7z/p7zip ZIP
 txt_7_6_color: Цвет
 txt_7_6_custenc: Другая кодовая страница

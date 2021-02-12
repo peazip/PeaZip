@@ -3,16 +3,16 @@ Français
 7.7
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 17.12.2020
+Date du: 9.01.2021
 
 === PeaZip text group ===
 
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_7_noneall: Aucun (pas d'aperçu, pas d'extraction par glisser-déposer)
+txt_7_7_nonetemp: Aucun, température de l'utilisateur si nécessaire
+txt_7_7_outtemp: Sortie, aperçu dans la température de l'utilisateur
+txt_7_7_sys7zreq: Nécessite l'installation de p7zip-full ou équivalent
+txt_7_7_tw: Dossier de travail temporaire pour la création d'archives, l'édition, l'aperçu et l'extraction par glisser-déposer.
+txt_7_7_sys7z: Utiliser le système 7z sous Linux
 txt_7_6_zipenc: Encodage des noms de fichiers 7z/p7zip ZIP
 txt_7_6_color: Couleur
 txt_7_6_custenc: Page de code personnalisée

@@ -3,16 +3,16 @@ Norwegian - Norsk
 7.7
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20201229
+Sist revidert: 20210126
 
 === PeaZip text group ===
 
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_7_noneall: Ingen (ikke forhåndsvisning, ikke Dra-og-slipp utpakking)
+txt_7_7_nonetemp: Ingen, Brukers temp om nødvendig
+txt_7_7_outtemp: Opprett, forhåndsvis i Brukers temp
+txt_7_7_sys7zreq: Krever at p7zip-full eller tilsvarende er installert
+txt_7_7_tw: Midlertidig arbeidsmappe for å opprette arkiv, editering, forhåndsvisning og Dra-og slipp utpakking.
+txt_7_7_sys7z: Bruk systemets 7z i Linux
 txt_7_6_zipenc: 7z/p7zip ZIP filnavn tegnkoding
 txt_7_6_color: Farge
 txt_7_6_custenc: Tilpasset tegnsett
