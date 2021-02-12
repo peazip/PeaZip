@@ -1,8 +1,8 @@
 ﻿[Setup]        
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 7.7.0 (WIN64)
-AppVersion=7.7.0
+AppVerName=PeaZip 7.7.1 (WIN64)
+AppVersion=7.7.1
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,11 +11,11 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-7.7.0.WIN64\copying.txt
+LicenseFile=C:\input\peazip-7.7.1.WIN64\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-7.7.0.WIN64
-SetupIconFile=peazip-icon-green.ico
-Compression=lzma2
+OutputBaseFilename=peazip-7.7.1.WIN64
+SetupIconFile=C:\input\peazip-icon-green.ico
+Compression=lzma2/max
 SolidCompression=yes
 ChangesAssociations=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -29,13 +29,13 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-7.7.0.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-7.7.0.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-7.7.0.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\input\peazip-7.7.0.WIN64\SendTo.7z"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-7.7.0.WIN64\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-7.7.0.WIN64\readme_Win64.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-7.7.0.WIN64\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-7.7.1.WIN64\SendTo.pea"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\readme_Win64.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-7.7.1.WIN64\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]

@@ -16,8 +16,8 @@ DisableProgramGroupPage=yes
 ;CreateAppDir=no
 OutputDir=C:\output\
 OutputBaseFilename=peazip-configuration
-SetupIconFile=peazip-icon-green.ico
-Compression=lzma
+SetupIconFile=C:\input\peazip-icon-green.ico
+Compression=none
 SolidCompression=yes
 ChangesAssociations=yes 
 
