@@ -161,6 +161,7 @@ unit Unit_pea;
                                   A 1..128 bytes block of random data is added after password verification tag in order to mask exact archive size
                                   Each cipher generate its own 128 bit sized stream authentication tag, tags are concatenated and hashed with SHA3-384; the SHA3-384 value is checked for verification, this requires all the 3 tags to match to expected values and does not allow ciphers to be authenticated separately
  0.75     20201206  G.Tani        Recompiled with updated theming
+ 0.76     20210121  G.Tani        Improved quoting on Unix-like sistems, fixes
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -208,8 +209,10 @@ type
     Bevel11: TBevel;
     Bevel9: TBevel;
     ButtonDone1: TBitBtn;
+    ButtonPeaExit1: TBitBtn;
     ButtonPW1: TBitBtn;
     ButtonPW2: TBitBtn;
+    ButtonPeaExit: TBitBtn;
     ButtonRefSize: TButton;
     ButtonUtilsCancel: TBitBtn;
     ButtonToolsCancel: TBitBtn;
@@ -295,6 +298,7 @@ type
     Timer1: TTimer;
     procedure Bevel12ChangeBounds(Sender: TObject);
     procedure ButtonDone1Click(Sender: TObject);
+    procedure ButtonPeaExitClick(Sender: TObject);
     procedure ButtonPW1Click(Sender: TObject);
     procedure ButtonPW2Click(Sender: TObject);
     procedure ButtonRFSinteractive1Click(Sender: TObject);
@@ -335,7 +339,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '0.75'; //declares release version for the whole build
+  P_RELEASE          = '0.76'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -2083,7 +2087,8 @@ var
    pw_len,fns:word;
    adler,crc32,adler_obj,crc32_obj,adler_volume,crc32_volume:longint;
    i,j,ci,cj,h,k,numread,numwritten,n_chunks,n_dirs,n_input_files,compsize,uncompsize,addr,fage,fattrib,buf_size:dword;
-   total,wrk_space,exp_space,cent_size,fs,nobj,out_size,qw0,qw1,qw2,qw3,qw4,qw5,qw6,qw7:qword;
+   total,wrk_space,exp_space,cent_size,fs,out_size,qw0,qw1,qw2,qw3,qw4,qw5,qw6,qw7:qword;
+   nobj:int64;
    stream_error,obj_error,volume_error,end_of_archive,pwneeded,chunks_ok,filenamed,out_created,no_more_files,readingstream,readingheader,readingfns,readingtrigger,readingfn,readingfs,readingfage,readingfattrib,readingcompsize,fassigned,readingf,readingcompblock,readingobjauth,readingauth,singlevolume:boolean;
    subroot,basedir,s,in_file,in_name,in_folder,out_path,out_file,algo,obj_algo,volume_algo,compr,fn:ansistring;
 label 1;
@@ -5191,7 +5196,8 @@ procedure check; //ALL: all algorithms, otherwise specify the algorithm to use f
 var
    sbuf:array [1..32767] of byte;
    i,j,n,t,td,te,k,dmax,dmin,x,icount,iver,rc,dup,icol:integer;
-   f_size,nfiles,ntfiles,ndirs,ctsize,etsize,tsize,nfound,ntotalexp,time,speed,compest,compsize,smax,smin:qword;
+   f_size,nfiles,ntfiles,ndirs,ctsize,etsize,tsize,nfound,ntotalexp,time,speed,compest,compsize:qword;
+   smax,smin:int64;
    exp_files:TFoundList;
    exp_fsizes:TFoundListSizes;
    exp_ftimes:TFoundListAges;
@@ -6592,6 +6598,11 @@ begin
 Close;
 end;
 
+procedure TForm_pea.ButtonPeaExitClick(Sender: TObject);
+begin
+halt;
+end;
+
 procedure TForm_pea.Bevel12ChangeBounds(Sender: TObject);
 begin
 
@@ -6717,12 +6728,12 @@ var
   P:TProcessUTF8;
 begin
 Form_report.StringGrid1.PopupMenu:=nil;
-bin_name:=delimiter+escapefilename(executable_path,desk_env)+'pea'+EXEEXT+delimiter;
+bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
 in_param:='';
 cl:='';
 for i:=0 to ListMemo.Lines.Count do
    if length(ListMemo.Lines[i])>1 then
-      in_param:=in_param+delimiter+ListMemo.Lines[i]+delimiter+' ';
+      in_param:=in_param+stringdelim(ListMemo.Lines[i])+' ';
 case ComboBoxUtils.ItemIndex of
    16: begin end;
    17: begin end;
@@ -6741,10 +6752,10 @@ case ComboBoxUtils.ItemIndex of
    8: cl:=bin_name+' CHECK HEX CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256 ON '+in_param;
    9: cl:=bin_name+' CHECK HEX ALL ON '+in_param;
    10: cl:=bin_name+' CHECK HEX LIST ON '+in_param;
-   11: cl:=bin_name+' RFS AUTONAME ASK NONE BATCH '+delimiter+ListMemo.Lines[0]+delimiter; //one file
-   12: cl:=bin_name+' RFJ '+delimiter+ListMemo.Lines[0]+delimiter+' BATCH AUTONAME'; //one file (strictly)
+   11: cl:=bin_name+' RFS AUTONAME ASK NONE BATCH '+stringdelim(ListMemo.Lines[0]); //one file
+   12: cl:=bin_name+' RFJ '+stringdelim(ListMemo.Lines[0])+' BATCH AUTONAME'; //one file (strictly)
    13: cl:=bin_name+' COMPARE '+in_param; //two files or one file (ask for second file, ignores more files)
-   14: cl:=bin_name+' HEXPREVIEW '+delimiter+ListMemo.Lines[0]+delimiter;  //one file
+   14: cl:=bin_name+' HEXPREVIEW '+stringdelim(ListMemo.Lines[0]);  //one file
    15: begin
       if MessageDlg('Do you want to securely delete selected file(s)? The operation can''t be undone and files will be not recoverable', mtWarning, [mbYes,mbNo], 0)=6 then
          begin
@@ -7067,6 +7078,8 @@ i16res:=(qscaleimages*16) div 100;
    Form_pea.ImageUtils.Picture.Bitmap:=Binfo;
    Form_pea.buttonpw1.Glyph:=Bok;
    Form_pea.buttonpw2.Glyph:=Bcancel;
+   Form_pea.ButtonPeaExit.Glyph:=Bcancel;
+   Form_pea.ButtonPeaExit1.Glyph:=Bcancel;
    Form_pea.buttonrfsinteractive.Glyph:=Bok;
    Form_pea.buttonrfsinteractive1.Glyph:=Bcancel;
    Form_pea.buttonutilsok.Glyph:=Bok;

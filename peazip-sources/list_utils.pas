@@ -111,6 +111,7 @@ unit list_utils;
                                 .mub, .pkg, and .ppmd compressed files
  0.54     20201230  G.Tani      Added support for .appxbundle format, 211 extensions supported
                                 Improved recognition of temp and other system's paths
+ 0.55     20210123  G.Tani      Improved handling of special characters in passwords and filenames
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -343,11 +344,20 @@ procedure ComboBoxSetPaths(acombobox: TComboBox; apath:ansistring);
 function checkfiledirname(s: ansistring): integer;
 function checkfiledirname_acceptblank(s: ansistring): integer;
 
+//check for some special characters in filenames in *x environments
+function checkescapedoutname(s: ansistring):ansistring;
+
 //escape filenames in *x environments likely using Gnome or KDE as desktop environment (Linux, *BSD)
 function escapefilenamelinuxlike(s: ansistring; desk_env: byte): ansistring;
 
 //cross platform filename escaping
 function escapefilename(s: ansistring; desk_env: byte): ansistring;
+
+//escape file names and apply correct quotes
+function escapefilenamedelim(s: ansistring; desk_env: byte): ansistring;
+
+//apply correct quotes (on *x like swap ' and " quotes if needed)
+function stringdelim(s:ansistring): ansistring;
 
 //open Explorer selecting specified file
 procedure winexplorepath(s: ansistring);
@@ -357,6 +367,9 @@ function cp_open_linuxlike(s: ansistring; desk_env: byte): integer;
 
 //open Gnome or KDE search interface
 procedure cp_search_linuxlike(desk_env: byte);
+
+//get correct quotes to delimit a string, swapping ' and " quotes if needed and if it is supported by the OS
+function correctdelimiter(s:AnsiString): AnsiString;
 
 //get desktop environment
 procedure getdesk_env(var bytedesk: byte; var caption_build, delimiter: ansistring);
@@ -742,6 +755,9 @@ Result:=-1;
 if (FindFirst(d1 + '*', faAnyFile, r) = 0) then
    try
       repeat
+      {$IFNDEF MSWINDOWS}
+      if FileExists(d2+r.name) then break;
+      {$ENDIF}
       if (r.Name <> '.') and (r.Name <> '..') then
          renamefile(d1+r.name, d2+r.name);
       until findnext(r) <> 0;
@@ -1461,9 +1477,6 @@ begin
 {$IFDEF MSWINDOWS}
   if pos('"', s) <> 0 then
     exit;
-{$ELSE}
-  if pos('''', s) <> 0 then
-    exit;
 {$ENDIF}
   if pos('<', s) <> 0 then
     exit;
@@ -1504,19 +1517,44 @@ if s = '' then result:=0
 else result:=checkfiledirname(s);
 end;
 
+function checkescapedoutname(s: ansistring):ansistring;
+var
+   varstr: ansistring;
+   i: integer;
+begin
+varstr := s;
+{$IFNDEF MSWINDOWS}
+repeat
+   i := pos('?', varstr);
+   if i > 0 then
+      varstr[pos('?', varstr)] := '_';
+until i = 0;
+{$ENDIF}
+result:=varstr;
+end;
+
 function escapefilenamelinuxlike(s: ansistring; desk_env: byte): ansistring;
 var
-  varstr: ansistring;
+  varstr,dstr: ansistring;
   i: integer;
 begin
   varstr := s;
-  // replace ' with ? (quick way to to preserve string delimitation in command line)
+  dstr:=correctdelimiter(s);
+  // replace quote characters if found in string;
+  //correctdelimiter swaps ' and " quotes, but that cannot guarantee against both characters being used in the same string - the remaining character is replaced by a jolly
   i := 1;
-  repeat
-    i := pos('''', varstr);
-    if i > 0 then
-      varstr[pos('''', varstr)] := '?';
-  until i = 0;
+  if dstr='''' then
+     repeat
+     i := pos('''', varstr);
+     if i > 0 then
+        varstr[pos('''', varstr)] := '?';
+     until i = 0;
+  if dstr='"' then
+     repeat
+     i := pos('"', varstr);
+     if i > 0 then
+        varstr[pos('"', varstr)] := '?';
+     until i = 0;
   // find and delete 'file://' (and any part before) if it is passed as part of filename (it happens sometimes in Gnome, i.e. using "open with" context menu entry)
   i := pos('file://', varstr);
   if i > 0 then
@@ -1535,10 +1573,6 @@ begin
   escapefilenamelinuxlike := varstr;
 end;
 
-{in Linux and BSDs if filename contains delimiter ' change the character in ?, and checking special cases for Gnome and KDE
-in Windows delimiter is " and it's not a valid character in filenames, so this control returns the input string (which doesn't need to be variable)
-on other systems filenames are not escaped
-}
 function escapefilename(s: ansistring; desk_env: byte): ansistring;
 begin
 {$IFDEF MSWINDOWS}
@@ -1553,6 +1587,22 @@ begin
 {$IFDEF NETBSD}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
 {$ENDIF}
+end;
+
+function escapefilenamedelim(s: ansistring; desk_env: byte): ansistring;
+var
+   cdelim:utf8string;
+begin
+cdelim:=correctdelimiter(s);
+result := cdelim+escapefilename(s, desk_env)+cdelim;
+end;
+
+function stringdelim(s:ansistring): ansistring;
+var
+   cdelim:utf8string;
+begin
+cdelim:=correctdelimiter(s);
+result := cdelim+s+cdelim;
 end;
 
 function cp_open_linuxlike(s: ansistring; desk_env: byte): integer;
@@ -1611,6 +1661,16 @@ begin
     P.Executable := 'kfind';
   P.Execute;
   P.Free;
+end;
+
+function correctdelimiter(s:AnsiString): AnsiString;
+begin
+result := '''';
+{$IFDEF MSWINDOWS}
+result := '"';
+{$ELSE}
+if pos('''',s)<>0 then result := '"';
+{$ENDIF}
 end;
 
 procedure getdesk_env(var bytedesk: byte; var caption_build, delimiter: ansistring);
@@ -1766,9 +1826,6 @@ begin
 {$IFDEF MSWINDOWS}
   if pos('"', s) <> 0 then
     exit;
-{$ELSE}
-  if pos('''', s) <> 0 then
-    exit;
 {$ENDIF}
   if pos('<', s) <> 0 then
     exit;
@@ -1805,24 +1862,21 @@ end;
 function validatecl(var s: ansistring): integer;
 var
   i: integer;
-  s1,delimiter:ansistring;
+  s1,delimch:ansistring;
 begin
 validatecl := -1;
 if s = '' then   exit;
 for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
 
-{$IFDEF MSWINDOWS}
-delimiter := '"';
-{$ELSE}
-delimiter := '''';
-{$ENDIF}
+delimch := correctdelimiter(s);
+
 s1:=s;
-if pos('7z',s)<>0 then
-   if pos(delimiter+'-p',s)<>0 then
+if (pos('res'+directoryseparator+'7z',s)<>0) or (pos('res'+directoryseparator+'arc',s)<>0) or (pos('Rar.exe',s)<>0) then
+   if pos(delimch+'-p',s)<>0 then
       begin
-      s1:=copy(s,pos(delimiter+'-p',s)+3,length(s)-pos(delimiter+'-p',s)-2);
-      s1:=copy(s1,pos(delimiter,s1)+1,length(s1)-pos(delimiter,s1));
-      s1:=copy(s,1,pos(delimiter+'-p',s))+s1;
+      s1:=copy(s,pos(delimch+'-p',s)+3,length(s)-pos(delimch+'-p',s)-2);
+      s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1));
+      s1:=copy(s,1,pos(delimch+'-p',s))+s1;
       end
    else
       if pos(' -p',s)<>0 then
@@ -1831,6 +1885,31 @@ if pos('7z',s)<>0 then
       s1:=copy(s1,pos(' ',s1)+1,length(s1)-pos(' ',s1));
       s1:=copy(s,1,pos(' -p',s))+s1;
       end;
+
+if (pos('res'+directoryseparator+'arc',s)<>0) or (pos('Rar.exe',s)<>0) then
+   if pos(delimch+'-hp',s)<>0 then
+      begin
+      s1:=copy(s,pos(delimch+'-hp',s)+4,length(s)-pos(delimch+'-hp',s)-3);
+      s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1));
+      s1:=copy(s,1,pos(delimch+'-hp',s))+s1;
+      end
+   else
+      if pos(' -hp',s)<>0 then
+      begin
+      s1:=copy(s,pos(' -hp',s)+4,length(s)-pos(' -hp',s)-3);
+      s1:=copy(s1,pos(' ',s1)+1,length(s1)-pos(' ',s1));
+      s1:=copy(s,1,pos(' -hp',s))+s1;
+      end;
+
+if (pos('res'+directoryseparator+'pea',s)<>0) then
+   if pos('BATCH',s)<>0 then
+      begin
+      s1:=copy(s,pos('BATCH',s)+6,length(s)-pos('BATCH',s)-5);
+      if pos('FROMCL',s1)<>0 then s1:=copy(s1,pos('FROMCL',s1)+7,length(s1)-pos('FROMCL',s1)-6)
+      else s1:=copy(s1,pos('NOKEYFILE',s1)+9,length(s1)-pos('NOKEYFILE',s1)-8);
+      s1:=copy(s,1,pos('BATCH',s))+s1;
+      end;
+
 {if pos('<',s1)<>0 then exit;
 if pos('>',s1)<>0 then exit;}
 if pos('|', s1) <> 0 then exit;

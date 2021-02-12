@@ -1515,7 +1515,7 @@ if runelevated=true then
    fe:='0';
    seiexit:=127;
    wd:=copy(cl,1,pos('.exe',cl)+4);
-   w0:=utf8decode((delimiter+wd+delimiter));
+   w0:=utf8decode(stringdelim(wd));
    wd:=copy(cl,pos('.exe',cl)+6,length(cl)-pos('.exe',cl)-4);
    cl:=wd;
    w1:=utf8decode(cl);
@@ -1917,18 +1917,6 @@ begin
 save_cl;
 end;
 
-procedure msg_pw_errorchar;
-var
-   errchar:ansistring;
-begin
-{$IFDEF MSWINDOWS}
-errchar:='"';
-{$ELSE}
-errchar:='''';
-{$ENDIF}
-pMessageWarningOK(errchar+' '+txt_2_3_pw_errorchar_gwrap);
-end;
-
 procedure TForm_gwrap.ButtonStop1Click(Sender: TObject);
 var
    p:TPoint;
@@ -2203,8 +2191,8 @@ var
    bin_name,in_param:ansistring;
 begin
 P:=TProcessUTF8.Create(nil);
-in_param:=delimiter+escapefilename(cl,desk_env)+delimiter;
-bin_name:=delimiter+escapefilename(peazippath,desk_env)+'peazip'+EXEEXT+delimiter;
+in_param:=stringdelim(escapefilename(cl,desk_env));
+bin_name:=stringdelim(escapefilename(peazippath,desk_env)+'peazip'+EXEEXT);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poNoConsole, poWaitOnExit];{$ENDIF}
 cl:=bin_name+' -ext2open '; //ext2open handles a single input in open interface
 P.Parameters.Add('-ext2open');

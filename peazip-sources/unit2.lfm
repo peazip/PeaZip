@@ -145,11 +145,9 @@ object FormWeb: TFormWeb
       'Apple'
       'Bing'
       'Britannica'
-      'CNET Download.com'
       'DuckDuckGo'
       'eBay'
       'Facebook'
-      'Flickr'
       'Google'
       'Google Maps'
       'Google News'
@@ -161,9 +159,11 @@ object FormWeb: TFormWeb
       'Pinterest'
       'Reddit'
       'SourceForge'
+      'Stackoverflow'
       'Twitter'
       'Wikipedia'
       'Wiktionary'
+      'Yahoo'
       'YouTube'
     )
     OnItemClick = CheckGroup1ItemClick

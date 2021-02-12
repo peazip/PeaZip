@@ -2105,15 +2105,13 @@ read_filelist:=SUCCESS;
 end;
 
 function pw4cl(sw:ansistring; var pw:ansistring):integer;
+var
+   cdelim:utf8string;
 begin
 pw4cl:=-1;
-{$IFDEF MSWINDOWS}
-if pos('"', pw)<>0 then exit;
-pw:='"'+sw+pw+'"';
-{$ELSE} //all other systems are treated like *x like; correct it with suitable values to port to non-Unix systems
-if pos('''', pw)<>0 then exit;
-pw:=''''+sw+pw+'''';
-{$ENDIF}
+cdelim:=correctdelimiter(sw+pw);//Windows = ", Linux and others = ' unless ' is found in the string, in this case swap to "
+if pos(cdelim, sw+pw)<>0 then exit;
+pw:=cdelim+sw+pw+cdelim;
 pw4cl:=0;
 end;
 

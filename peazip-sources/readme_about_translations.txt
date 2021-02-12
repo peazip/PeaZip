@@ -1,4 +1,8 @@
-﻿Notes to 7.7.0 release
+﻿Notes to 7.7.1 release
+
+No existing text changed
+
+Notes to 7.7.0 release
 
 Existing text string modified
 txt_3_1_systmp: User's temp

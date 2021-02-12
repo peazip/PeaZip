@@ -157,13 +157,7 @@ procedure TFormInput.BitBtn2Click(Sender: TObject);
 begin
 if FormInput.OpenDialog3.Execute then
    if FormInput.OpenDialog3.FileName<>'' then
-      begin
-      {$IFDEF MSWINDOWS}
-      FormInput.Editinputquery.Caption:='"'+FormInput.OpenDialog3.FileName+'"';
-      {$ELSE}
-      FormInput.Editinputquery.Caption:=''''+FormInput.OpenDialog3.FileName+'''';
-      {$ENDIF}
-      end;
+      FormInput.Editinputquery.Caption:=stringdelim(FormInput.OpenDialog3.FileName);
 end;
 
 initialization

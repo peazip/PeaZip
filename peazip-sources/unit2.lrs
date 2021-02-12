@@ -81,11 +81,11 @@ LazarusResources.Add('TFormWeb','FORMDATA',[
   +#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclTopToBottomThenLeftToRigh'
   +'t'#27'ChildSizing.ControlsPerLine'#2#8#12'ClientHeight'#3#21#1#11'ClientWid'
   +'th'#3'<'#2#12'ColumnLayout'#7#24'clVerticalThenHorizontal'#7'Columns'#2#3#13
-  +'Items.Strings'#1#6#6'Amazon'#6#5'Apple'#6#4'Bing'#6#10'Britannica'#6#17'CNE'
-  +'T Download.com'#6#10'DuckDuckGo'#6#4'eBay'#6#8'Facebook'#6#6'Flickr'#6#6'Go'
-  +'ogle'#6#11'Google Maps'#6#11'Google News'#6#16'Google Translate'#6#4'IMDB'#6
-  +#9'Instagram'#6#8'LinkedIn'#6#4'OSDN'#6#9'Pinterest'#6#6'Reddit'#6#11'Source'
-  +'Forge'#6#7'Twitter'#6#9'Wikipedia'#6#10'Wiktionary'#6#7'YouTube'#0#11'OnIte'
-  +'mClick'#7#20'CheckGroup1ItemClick'#8'TabOrder'#2#2#4'Data'#10#28#0#0#0#24#0
-  +#0#0#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#0#0#0
+  +'Items.Strings'#1#6#6'Amazon'#6#5'Apple'#6#4'Bing'#6#10'Britannica'#6#10'Duc'
+  +'kDuckGo'#6#4'eBay'#6#8'Facebook'#6#6'Google'#6#11'Google Maps'#6#11'Google '
+  +'News'#6#16'Google Translate'#6#4'IMDB'#6#9'Instagram'#6#8'LinkedIn'#6#4'OSD'
+  +'N'#6#9'Pinterest'#6#6'Reddit'#6#11'SourceForge'#6#13'Stackoverflow'#6#7'Twi'
+  +'tter'#6#9'Wikipedia'#6#10'Wiktionary'#6#5'Yahoo'#6#7'YouTube'#0#11'OnItemCl'
+  +'ick'#7#20'CheckGroup1ItemClick'#8'TabOrder'#2#2#4'Data'#10#28#0#0#0#24#0#0#0
+  +#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#0#0#0
 ]);
