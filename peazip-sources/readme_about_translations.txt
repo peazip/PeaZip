@@ -1,11 +1,7 @@
-﻿Notes to 7.7.1 release
+﻿Notes to 7.9.0 release
 
-No existing text changed
-
-Notes to 7.7.0 release
-
-Existing text string modified
-txt_3_1_systmp: User's temp
+Pre-existing text string modified:
+txt_7_7_noneall: None, disable actions requiring temp files
 
 General notes for translators:
 

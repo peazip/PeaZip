@@ -351,21 +351,16 @@ LazarusResources.Add('TForm_gwrap','FORMDATA',[
   +'e...'#7'OnClick'#7#14'pmexploreClick'#0#0#9'TMenuItem'#8'pmsearch'#7'Captio'
   +'n'#6#6'Search'#7'OnClick'#7#13'pmsearchClick'#0#0#9'TMenuItem'#2'N1'#7'Capt'
   +'ion'#6#1'-'#0#0#9'TMenuItem'#12'pmbackground'#7'Caption'#6#10'Background'#7
-  +'OnClick'#7#17'pmbackgroundClick'#0#0#9'TMenuItem'#2'N2'#7'Caption'#6#1'-'#0
-  +#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6#9'Real time'#7'OnClick'#7#14'MenuI'
-  +'tem1Click'#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#4'High'#7'OnClick'#7
-  +#14'MenuItem2Click'#0#0#9'TMenuItem'#9'MenuItem3'#7'Caption'#6#6'Normal'#7'O'
-  +'nClick'#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'MenuItem4'#7'Caption'#6#4'I'
-  +'dle'#7'OnClick'#7#14'MenuItem4Click'#0#0#0#11'TSaveDialog'#11'SaveDialog2'#4
-  +'left'#3#184#0#3'top'#3#216#0#0#0#22'TSelectDirectoryDialog'#22'SelectDirect'
-  +'oryDialog1'#5'Title'#6#13'Create folder'#4'left'#3#136#1#3'top'#3#216#0#0#0
-  +#11'TOpenDialog'#11'OpenDialog1'#5'Title'#6#12'Open archive'#6'Filter'#6#139
-  +'*.*|*.*|7Z/XZ|*.7z;*.lzma*;*.xz|ISO/UDF|*.iso;*.udf|PEA|*.pea|RAR|*.rar|TAR'
-  +'/BZ2/GZ|*.tar;*.taz;*.tbz;*.tgz;*.bz2;*.gz|ZIP/ZIPX|*.zip;*.zipx'#10'Initia'
-  +'lDir'#6#25'C:\Users\Giorgio\Desktop\'#4'left'#3#176#1#3'top'#3#216#0#0#0#6
-  +'TTimer'#6'Timer2'#7'Enabled'#8#8'Interval'#2'd'#7'OnTimer'#7#11'Timer2Timer'
-  +#4'left'#3#144#0#3'top'#3#216#0#0#0#11'TOpenDialog'#11'OpenDialog2'#5'Title'
-  +#6#20'Select language file'#6'Filter'#6#9'txt|*.txt'#4'left'#3#176#1#3'top'#3
+  +'OnClick'#7#17'pmbackgroundClick'#0#0#0#11'TSaveDialog'#11'SaveDialog2'#4'le'
+  +'ft'#3#184#0#3'top'#3#216#0#0#0#22'TSelectDirectoryDialog'#22'SelectDirector'
+  +'yDialog1'#5'Title'#6#13'Create folder'#4'left'#3#136#1#3'top'#3#216#0#0#0#11
+  +'TOpenDialog'#11'OpenDialog1'#5'Title'#6#12'Open archive'#6'Filter'#6#139'*.'
+  +'*|*.*|7Z/XZ|*.7z;*.lzma*;*.xz|ISO/UDF|*.iso;*.udf|PEA|*.pea|RAR|*.rar|TAR/B'
+  +'Z2/GZ|*.tar;*.taz;*.tbz;*.tgz;*.bz2;*.gz|ZIP/ZIPX|*.zip;*.zipx'#10'InitialD'
+  +'ir'#6#25'C:\Users\Giorgio\Desktop\'#4'left'#3#176#1#3'top'#3#216#0#0#0#6'TT'
+  +'imer'#6'Timer2'#7'Enabled'#8#8'Interval'#2'd'#7'OnTimer'#7#11'Timer2Timer'#4
+  +'left'#3#144#0#3'top'#3#216#0#0#0#11'TOpenDialog'#11'OpenDialog2'#5'Title'#6
+  +#20'Select language file'#6'Filter'#6#9'txt|*.txt'#4'left'#3#176#1#3'top'#3
   +#176#0#0#0#9'TTrayIcon'#9'TrayIcon1'#9'PopUpMenu'#7#10'PopupMenu2'#9'Icon.Da'
   +'ta'#10#130#5#0#0'~'#5#0#0#0#0#1#0#1#0#16#16#255#0#0#0#0#0'h'#5#0#0#22#0#0#0
   +'('#0#0#0#16#0#0#0' '#0#0#0#1#0#8#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
@@ -385,12 +380,12 @@ LazarusResources.Add('TForm_gwrap','FORMDATA',[
   +#0#157'{'#0#0#221#241#0#0#169'O'#0#0#169'@'#0#0#155'N'#0#0#135'm'#0#0#188#143
   +#0#0#217#235#0#0#156'd'#0#0#172'K'#0#0#182'8'#0#0#184'f'#0#0#181'5'#0#0#154
   +'P'#0#0#172#133#0#0#176'8'#0#0#185'w'#0#0#192#208#0#0#183'c'#0#0#170'='#0#0
-  ,#156'{'#0#0#188#185#0#0#141'r'#0#0#162'F'#0#0#181'<'#0#0#181'8'#0#0#156'M'#0
+  +#156'{'#0#0#188#185#0#0#141'r'#0#0#162'F'#0#0#181'<'#0#0#181'8'#0#0#156'M'#0
   +#0#145't'#0#0#226#255#0#0#204#255#0#0#177#255#0#0#166#239#0#0#147#171#0#0#135
   +'q'#0#0#161'H'#0#0#174'8'#0#0#160'I'#0#0#132'j'#0#0#137'p'#0#0#223#255#0#0
   +#216#255#0#0#189#255#0#0#173#255#0#0#171#255#0#0#169#251#0#0#158#210#0#0#147
   +#170#0#0#140#144#0#0#135'}'#0#0#136'v'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  ,#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0

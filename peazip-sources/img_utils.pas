@@ -90,6 +90,9 @@ DECO_FRAME = 2; //light frame 6px away from the image
 DECO_BORDER = 3; //light frame around the full icon
 DECO_SPACE = 4; //6 px empty border
 
+var
+relwindowcolor: TColor;
+
 implementation
 
 procedure autoscale_image(aform:Tform; var aimage:Timage; var ascale,iscale:double);
@@ -153,9 +156,9 @@ begin
    bbitmap.width:=isize;
    bbitmap.height:=isize;
    bbitmap.Transparent:=false;
-   bbitmap.canvas.Brush.Color:=clwindow;
+   bbitmap.canvas.Brush.Color:=relwindowcolor;
    if deco=DECO_BORDER then bbitmap.canvas.Pen.Color:=clbtnface
-   else bbitmap.canvas.Pen.Color:=clnone;
+   else bbitmap.canvas.Pen.Color:=relwindowcolor;
    bbitmap.canvas.Rectangle(0,0,isize,isize);
 
    iwidth:=abitmap.Width;
@@ -367,13 +370,13 @@ bbitmap.width:=wsize;
 bbitmap.height:=hsize;
 {$IFDEF MSWINDOWS}
 bbitmap.Transparent:=true;
-bbitmap.canvas.Brush.Color:=clwindow;
+bbitmap.canvas.Brush.Color:=relwindowcolor;
 bbitmap.canvas.Pen.Color:=clnone;
 bbitmap.canvas.Rectangle(0,0,wsize,hsize);
 {$ELSE}
 {$IFDEF LCLGTK2}
 bbitmap.Transparent:=true;
-bbitmap.canvas.Brush.Color:=clwindow;
+bbitmap.canvas.Brush.Color:=relwindowcolor;
 bbitmap.canvas.Pen.Color:=clnone;
 bbitmap.canvas.Rectangle(0,0,wsize,hsize);
 {$ENDIF}

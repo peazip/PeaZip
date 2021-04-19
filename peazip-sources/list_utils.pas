@@ -112,6 +112,7 @@ unit list_utils;
  0.54     20201230  G.Tani      Added support for .appxbundle format, 211 extensions supported
                                 Improved recognition of temp and other system's paths
  0.55     20210123  G.Tani      Improved handling of special characters in passwords and filenames
+ 0.56     20210224  G.Tani      Improved checkfilename function
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -180,7 +181,7 @@ function checksingle(dir, mask: ansistring;
 //check if a directory contains a single intermediate dir
 function checksingle_intdir(dir:ansistring; var oname: ansistring):boolean;
 
-//check if a directory contains a single odject (file or directory)
+//check if a directory contains a single object (file or directory)
 function checksingle_obj(dir:ansistring; var oname: ansistring):boolean;
 
 //check if a directory is empty
@@ -746,10 +747,10 @@ if FindFirst(dir + mask, fattrib, r) = 0 then
    end;
 end;
 
-function movecontent_todir(d1,d2:ansistring; mode:integer):integer; //input, output, mode 0:keep input dir 1:delete input dir if empty
-//results -1 copy error, 0 success, 1 remove input dir error
+{function movecontent_todir(d1,d2:ansistring; mode:integer):integer; //input, output, mode 0:keep input dir 1:delete input dir if empty
+//results -1 copy error (only exceptions), 0 success, 1 remove input dir error
 var
-r: TSearchRec;
+   r:TSearchRec;
 begin
 Result:=-1;
 if (FindFirst(d1 + '*', faAnyFile, r) = 0) then
@@ -760,6 +761,60 @@ if (FindFirst(d1 + '*', faAnyFile, r) = 0) then
       {$ENDIF}
       if (r.Name <> '.') and (r.Name <> '..') then
          renamefile(d1+r.name, d2+r.name);
+      until findnext(r) <> 0;
+   except
+      FindClose(r);
+      exit;
+   end;
+FindClose(r);
+Result:=0;
+if mode=1 then
+   if checkempty_dir(d1)= true then
+      try
+      if removedir(d1)=true then else Result:=1;
+      except
+      Result:=1;
+      end
+   else Result:=1;
+end;}
+
+function movecontent_todir(d1,d2:ansistring; mode:integer):integer; //input, output, mode 0:keep input dir 1:delete input dir if empty
+//results -1 copy error, 0 success, 1 remove input dir error
+var
+   r:TSearchRec;
+begin
+Result:=-1;
+if (FindFirst(d1 + '*', faAnyFile, r) = 0) then //scan for naming conflicts
+   try
+      repeat
+      if (r.Name <> '.') and (r.Name <> '..') then
+         begin
+         if FileExists(d2+r.name) then
+            begin
+            FindClose(r);
+            exit;
+            end;
+         if DirectoryExists(d2+r.name) then
+            begin
+            FindClose(r);
+            exit;
+            end;
+         end;
+      until findnext(r) <> 0;
+   except
+      FindClose(r);
+      exit;
+   end;
+FindClose(r);
+if (FindFirst(d1 + '*', faAnyFile, r) = 0) then
+   try
+      repeat
+      if (r.Name <> '.') and (r.Name <> '..') then
+         if renamefile(d1+r.name, d2+r.name)=false then
+            begin
+            FindClose(r);
+            exit;
+            end;
       until findnext(r) <> 0;
    except
       FindClose(r);
@@ -1615,7 +1670,7 @@ begin
   if (desk_env = 10) or (desk_env = 20) then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10 and Darwin=20
     exit;
   P := TProcessUTF8.Create(nil);
-  P.Options := [poNoConsole, poWaitOnExit];
+  P.Options := [poWaitOnExit];
   P.Executable:='xdg-open';
   P.Parameters.Add(escapefilename(s, desk_env));
   P.Execute;
@@ -1654,7 +1709,7 @@ begin
   if (desk_env = 0) or (desk_env = 10) or (desk_env = 20) then
     exit;
   P := TProcessUTF8.Create(nil);
-  P.Options := [poNoConsole, poWaitOnExit];
+  P.Options := [poWaitOnExit];
   if desk_env = 1 then
     P.Executable := 'gnome-search-tool';
   if desk_env = 2 then
@@ -1804,37 +1859,25 @@ var
   i: integer;
 begin
   checkfilename := -1;
-  if s = '' then
-    exit;
+  if (s = '') or (s='.') or (s='..') then exit;
   //illegal characters (no problem for additional UTF8 bytes since have MSB set to 1 to avoid conflict with those control characters)
   for i := 0 to 31 do
   begin
-    if pos(char(i), s) <> 0 then
-      exit;
+    if pos(char(i), s) <> 0 then exit;
   end;
   //reserved characters
-  if pos('\', s) <> 0 then
-    exit;
-  if pos('/', s) <> 0 then
-    exit;
-  if pos(':', s) <> 0 then
-    exit;
-  if pos('*', s) <> 0 then
-    exit;
-  if pos('?', s) <> 0 then
-    exit;
+  if pos('\', s) <> 0 then exit;
+  if pos('/', s) <> 0 then exit;
+  if pos(':', s) <> 0 then exit;
+  if pos('*', s) <> 0 then exit;
+  if pos('?', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
-  if pos('"', s) <> 0 then
-    exit;
+  if pos('"', s) <> 0 then exit;
 {$ENDIF}
-  if pos('<', s) <> 0 then
-    exit;
-  if pos('>', s) <> 0 then
-    exit;
-  if pos('|', s) <> 0 then
-    exit;
-  if pos('     ', s) <> 0 then
-    exit;
+  if pos('<', s) <> 0 then exit;
+  if pos('>', s) <> 0 then exit;
+  if pos('|', s) <> 0 then exit;
+  if pos('     ', s) <> 0 then exit;
   //reserved filenames (Windows)
 {$IFDEF MSWINDOWS}
   s1 := extractfilename(s);

@@ -22,7 +22,7 @@ object FormDlg: TFormDlg
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelal
     Left = 56
-    Height = 67
+    Height = 75
     Top = 24
     Width = 480
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -41,15 +41,15 @@ object FormDlg: TFormDlg
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 12
-    Height = 45
-    Top = 115
+    Height = 37
+    Top = 123
     Width = 536
     Anchors = [akLeft, akRight, akBottom]
     AutoSize = True
     BorderSpacing.Left = 12
     BorderSpacing.Right = 12
     BevelOuter = bvNone
-    ClientHeight = 45
+    ClientHeight = 37
     ClientWidth = 536
     TabOrder = 0
     object babort: TBitBtn
@@ -59,7 +59,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = 448
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]
@@ -77,7 +77,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = 354
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]
@@ -95,7 +95,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = 260
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]
@@ -113,7 +113,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = 166
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]
@@ -131,7 +131,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = -22
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]
@@ -148,7 +148,7 @@ object FormDlg: TFormDlg
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
       Left = 72
-      Height = 33
+      Height = 25
       Top = 0
       Width = 88
       Anchors = [akRight, akBottom]

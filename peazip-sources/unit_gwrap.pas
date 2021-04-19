@@ -145,6 +145,7 @@ unit Unit_gwrap;
  1.04     20200509  G.Tani      Cancel all button (and options dropdown menu) are no longer hidden when task ends
  1.05     20200528  G.Tani      Improved progress bar accuracy for multiple tasks
  1.06     20200902  G.Tani      Fixed wrong error 127 report for some cases, fixed typos
+ 1.07     20210305  G.Tani      Supports Windows 7+ progress bar in application's status bar icon
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -171,7 +172,7 @@ interface
 
 uses
   {$IFDEF MSWINDOWS}
-  Windows, activex, shellapi,
+  Windows, activex, shellapi, ShlObj, comobj, Win32Int, InterfaceBase, LCLIntf,
   {$ENDIF}
   Unit7, Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, ExtCtrls, strutils,
   StdCtrls, Buttons, Process, UTF8Process, Menus,
@@ -220,7 +221,6 @@ type
     LabelWarning1: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
-    MenuItem1: TMenuItem;
     pm2pause: TMenuItem;
     pm2cancel: TMenuItem;
     pm2cancelall: TMenuItem;
@@ -231,7 +231,6 @@ type
     N4: TMenuItem;
     N3: TMenuItem;
     pm2restore: TMenuItem;
-    N2: TMenuItem;
     N1: TMenuItem;
     pmbackground: TMenuItem;
     OpenDialog2: TOpenDialog;
@@ -245,9 +244,6 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     PanelBench: TPanel;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
-    MenuItem4: TMenuItem;
     pmei: TMenuItem;
     pmeo: TMenuItem;
     pmexplore: TMenuItem;
@@ -298,10 +294,6 @@ type
     procedure LabelTitle4MouseEnter(Sender: TObject);
     procedure LabelTitle4MouseLeave(Sender: TObject);
     procedure LabelWarning1Click(Sender: TObject);
-    procedure MenuItem1Click(Sender: TObject);
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
-    procedure MenuItem4Click(Sender: TObject);
     procedure pm2cancelallClick(Sender: TObject);
     procedure pm2cancelClick(Sender: TObject);
     procedure pm2eiClick(Sender: TObject);
@@ -320,6 +312,10 @@ type
     procedure TrayIcon1DblClick(Sender: TObject);
   private
     { private declarations }
+    {$IFDEF MSWINDOWS}
+    FTaskBarList: ITaskbarList3;
+    AppHandle: THandle;
+    {$ENDIF}
   public
     { public declarations }
   end;
@@ -331,7 +327,6 @@ const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
   STR_STOPALL   = '.pstopall';
-  COMPQT        = 0; //use if experiencing problems with application compiled for Qt, set it to 1
   {$IFDEF MSWINDOWS}
   DEFAULT_THEME = 'ten-embedded';
   {$ELSE}
@@ -362,11 +357,11 @@ var
   T,conf:text;
   f:file of byte;
   launched,stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall,
-  needinteraction,exbackground,pldesigned:boolean;
+  needinteraction,exbackground,pldesigned,okseven:boolean;
   tsin:TTimestamp;
   activelabel_launcher :TLabel;
   //imported strings
-  txt_7_4_recover,txt_rr:ansistring;
+  txt_7_4_recover,txt_rr,txt_7_8_dd:ansistring;
   //translations
   txt_6_9_remaining,txt_6_5_abort,txt_6_5_error,txt_6_5_no,txt_6_5_yes,txt_6_5_yesall,txt_6_5_warning,
   txt_5_6_update,txt_5_6_cml,txt_5_6_donations,txt_5_6_localization,txt_5_6_runasadmin,
@@ -658,10 +653,6 @@ Button1.Caption:='   '+txt_ok+'   ';
 ButtonStop.Caption:='   '+txt_2_3_cancel+'   ';
 ButtonStopAll.Caption:='   '+txt_5_5_cancelall+'   ';
 ButtonPause.Caption:='   '+txt_pause+'   ';
-MenuItem1.Caption:=txt_rt;
-MenuItem2.Caption:=txt_high;
-MenuItem3.Caption:=txt_normal;
-MenuItem4.Caption:=txt_idle;
 ImageSavePJ.Caption:=txt_savejob;
 ImageButton2.Caption:=txt_savelog;
 Label2.Hint:=txt_benchscale;
@@ -805,10 +796,6 @@ with Form_gwrap do
    try
    Imagefixed.Picture.Bitmap:=Barchive;
    Imagestatus.Picture.Bitmap:=Bp1;
-   MenuItem1.Bitmap:=Bpriority4;
-   MenuItem2.Bitmap:=Bpriority3;
-   MenuItem3.Bitmap:=Bpriority2;
-   MenuItem4.Bitmap:=Bpriority1;
    except
    end;
 end;
@@ -887,7 +874,7 @@ end;
 
 procedure progress10; //progress counter
 var
-   outsize,percentout,i,iprog,incstep,refsize:qword;
+   outsize,percentout,i,iprog,incstep,refsize,gperc:qword;
    tdiff,speed,umode:integer;
    tsout:TTimeStamp;
    tpath:ansistring;
@@ -1024,19 +1011,29 @@ if iperc>0 then
    Form_gwrap.TrayIcon1.Hint:=Form_gwrap.Caption;
    Form_gwrap.pm2restore.Caption:=Form_gwrap.Caption;
    end;
-end;
 
 if (pfun<>'UN7Z') and (pfun<>'7Z') then
-   Form_gwrap.LabelInfo3.Caption:=nicetime(inttostr(tdiff))
+   LabelInfo3.Caption:=nicetime(inttostr(tdiff))
 else
    begin
    if (iperc>0) and (iperc<100) then
       if iperc>ipercp then
          remtime:=(tdiff*(100-iperc)) div iperc;
-   if remtime>0 then Form_gwrap.LabelInfo3.Caption:=nicetime(inttostr(tdiff))+', '+txt_6_9_remaining+' '+nicetime(inttostr(remtime))
-   else Form_gwrap.LabelInfo3.Caption:=nicetime(inttostr(tdiff));
+   if remtime>0 then LabelInfo3.Caption:=nicetime(inttostr(tdiff))+', '+txt_6_9_remaining+' '+nicetime(inttostr(remtime))
+   else LabelInfo3.Caption:=nicetime(inttostr(tdiff));
    end;
 if (iperc>0) and (iperc<100) then ipercp:=iperc;
+if ShapeGlobalProgress.visible=true then gperc:=(ShapeGlobalProgress.Width * 100) div Form_gwrap.Width
+else gperc:=iperc;
+{$IFDEF MSWINDOWS}
+if okseven=true then
+   try
+   FTaskBarList.SetProgressState(AppHandle, TBPF_Normal);
+   FTaskBarList.SetProgressValue(AppHandle, gperc, 100);
+   except
+   end;
+{$ENDIF}
+end;
 end;
 
 procedure setiomenu;
@@ -1153,7 +1150,7 @@ if pfromnativedrag=true then
    begin
    Form_gwrap.l3.Visible:=false;
    Form_gwrap.l4.Visible:=false;
-   Form_gwrap.l6.Caption:='(Drag and Drop)';
+   Form_gwrap.l6.Caption:='('+txt_7_8_dd+')';
    Form_gwrap.l6.Visible:=true;
    Form_gwrap.pmeo.Visible:=false;
    Form_gwrap.pm2eo.Visible:=false;
@@ -1213,10 +1210,10 @@ with Form_gwrap do
    if ppause=true then Label1.Caption:=txt_paused+' '
    else Label1.Caption:=txt_running+' ';
    case ppriority of
-      1: Label1.Caption:=Label1.Caption+txt_rt+', ';
-      2: Label1.Caption:=Label1.Caption+txt_high+', ';
-      3: Label1.Caption:=Label1.Caption+txt_normal+', ';
-      4: Label1.Caption:=Label1.Caption+txt_idle+', ';
+      0: Label1.Caption:=Label1.Caption+txt_rt+', ';
+      1: Label1.Caption:=Label1.Caption+txt_high+', ';
+      2: Label1.Caption:=Label1.Caption+txt_normal+', ';
+      3: Label1.Caption:=Label1.Caption+txt_idle+', ';
       end;
    case modeofuse of
       3 : Label5.Caption:=txt_defragjob;//unused
@@ -1444,7 +1441,7 @@ procedure launch_cl;
 var
    P: TProcessUTF8;
    tsout:TTimeStamp;
-   tdiff,speed1,speed2,i,j,BytesRead,BytesRead2,prevpriority:integer;
+   tdiff,speed1,speed2,i,j,BytesRead,BytesRead2:integer;
    outsize,cratio:qword;
    s,stri,astri,bstri,wd,m2s:ansistring;
    fe:ansistring;
@@ -1469,9 +1466,7 @@ ipercp:=0;
 iperc:=0;
 remtime:=0;
 ppause:=false;
-if ppriority=0 then ppriority:=3;//default: normal priority
 prevpause:=false;
-prevpriority:=ppriority;
 if cl='' then
    begin
    pMessageErrorOK(txt_nocl);
@@ -1495,7 +1490,11 @@ if runelevated=false then
    BytesRead2 := 0;
    if modeofuse=20 then
    else
+      {$IFDEF MSWINDOWS}
       P.Options := [poUsePipes, poNoConsole];
+      {$ELSE}
+      P.Options := [poUsePipes];
+      {$ENDIF}
    end;
 try
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); ended:=true; exit; end;
@@ -1544,6 +1543,20 @@ if runelevated=true then
 else
    begin
    Form_gwrap.Timer2.enabled:=true;
+   case ppriority of
+      0: begin
+         P.Priority:=ppRealTime;
+         end;
+      1: begin
+         P.Priority:=ppHigh;
+         end;
+      2: begin
+         P.Priority:=ppNormal;
+         end;
+      3: begin
+         P.Priority:=ppIdle;
+         end;
+      end;
    P.Execute;
    while P.Running do
    begin
@@ -1551,6 +1564,13 @@ else
    if stopped=true then
       begin
       P.Terminate(255);
+      {$IFDEF MSWINDOWS}
+      if okseven=true then
+         try
+         Form_gwrap.FTaskBarList.SetProgressState(Form_gwrap.AppHandle, TBPF_ERROR);
+         except
+         end;
+      {$ENDIF}
       Form_gwrap.ShapeProgress.Color:=PRED;
       Form_gwrap.ShapeGlobalProgress.Color:=PRED;
       break;
@@ -1570,24 +1590,6 @@ else
          P.Resume;
          prevpause:=false;
          end;
-      end;
-   if ppriority<>prevpriority then //if priority has changed, update process priority and log the event
-      begin
-      case ppriority of
-      1: begin
-         P.Priority:=ppRealTime;
-         end;
-      2: begin
-         P.Priority:=ppHigh;
-         end;
-      3: begin
-         P.Priority:=ppNormal;
-         end;
-      4: begin
-         P.Priority:=ppIdle;
-         end;
-      end;
-      prevpriority:=ppriority;
       end;
    setlabel1text;
    if modeofuse>=20 then Sleep(100)
@@ -1766,6 +1768,13 @@ if exit_code=0 then
 else
    begin
    Form_gwrap.Imagestatus.Picture.Bitmap:=Berror;
+   {$IFDEF MSWINDOWS}
+   if okseven=true then
+      try
+      Form_gwrap.FTaskBarList.SetProgressState(Form_gwrap.AppHandle, TBPF_ERROR);
+      except
+      end;
+   {$ENDIF}
    Form_gwrap.ShapeProgress.Color:=PRED;
    Form_gwrap.ShapeGlobalProgress.Color:=PRED;
    end;
@@ -1821,15 +1830,14 @@ begin
 if Form_gwrap.CheckBoxHalt.State=cbChecked then
    begin
    P:=TProcessUTF8.Create(nil);
-   P.Options := [poUsePipes, poNoConsole];
    {$IFDEF MSWINDOWS}
+   P.Options := [poNoConsole];
    P.Executable:='shutdown';
    P.Parameters.Add('/s');
    P.Parameters.Add('/t 10');
+   {$ELSE}
+   P.Executable:='halt';
    {$ENDIF}
-   {$IFDEF LINUX}P.Executable:='halt';{$ENDIF}
-   {$IFDEF FREEBSD}P.Executable:='halt';{$ENDIF}
-   {$IFDEF NETBSD}P.Executable:='halt';{$ENDIF}
    if Form_gwrap.Visible=true then Application.ProcessMessages;
    P.Execute;
    P.Free;
@@ -2023,6 +2031,13 @@ begin
 ppause:=not(ppause);
 if ppause=false then
    begin
+   {$IFDEF MSWINDOWS}
+   if okseven=true then
+      try
+      Form_gwrap.FTaskBarList.SetProgressState(Form_gwrap.AppHandle, TBPF_Normal);
+      except
+      end;
+   {$ENDIF}
    Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
    Form_gwrap.pm2pause.Caption:=txt_pause;
    Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
@@ -2031,6 +2046,13 @@ if ppause=false then
    end
 else
    begin
+   {$IFDEF MSWINDOWS}
+   if okseven=true then
+      try
+      Form_gwrap.FTaskBarList.SetProgressState(Form_gwrap.AppHandle, TBPF_PAUSED);
+      except
+      end;
+   {$ENDIF}
    Form_gwrap.ButtonPause.Caption:='   '+txt_resume+'   ';
    Form_gwrap.pm2pause.Caption:=txt_resume;
    Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
@@ -2103,7 +2125,6 @@ else
    Form_gwrap.ShapeGlobalProgress.visible:=false;
    Form_gwrap.ShapeProgress.height:=pbarh;
    end;
-ppriority:=0;
 iperc:=1;
 if exbackground=false then Form_gwrap.Visible:=True;
 
@@ -2146,7 +2167,13 @@ else
 except
 insize:=0;
 end;
-
+{$IFDEF MSWINDOWS}
+if okseven=true then
+   try
+   Form_gwrap.FTaskBarList.SetProgressState(Form_gwrap.AppHandle, TBPF_NOPROGRESS);
+   except
+   end;
+{$ENDIF}
 Form_gwrap.ShapeProgress.Color:=PGREEN;
 Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
 if insize=0 then
@@ -2167,12 +2194,37 @@ launched:=false;
 launch_cl;
 end;
 
+procedure checkseven;
+{$IFDEF MSWINDOWS}
+var
+  osVerInfo: TOSVersionInfo;
+{$ENDIF}
+begin
+okseven:=false;
+{$IFDEF MSWINDOWS}
+osVerInfo.dwOSVersionInfoSize := SizeOf(TOSVersionInfo);
+if GetVersionEx(osVerInfo) then
+   if osVerInfo.dwMajorVersion>6 then okseven:=true
+   else
+      if (osVerInfo.dwMajorVersion=6) and (osVerInfo.dwMinorVersion>=1) then okseven:=true;
+{$ENDIF}
+end;
+
 procedure TForm_gwrap.FormCreate(Sender: TObject);
 begin
 launched:=true;
 needinteraction:=false;
 exbackground:=false;
 pldesigned:=false;
+{$IFDEF MSWINDOWS}
+checkseven;
+if okseven=true then
+   try
+   AppHandle := Form_gwrap.Handle;
+   FTaskBarList := CreateComObject(CLSID_TaskbarList) as ITaskbarList3;
+   except
+   end;
+{$ENDIF}
 end;
 
 procedure TForm_gwrap.l2Click(Sender: TObject);
@@ -2193,7 +2245,7 @@ begin
 P:=TProcessUTF8.Create(nil);
 in_param:=stringdelim(escapefilename(cl,desk_env));
 bin_name:=stringdelim(escapefilename(peazippath,desk_env)+'peazip'+EXEEXT);
-{$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poNoConsole, poWaitOnExit];{$ENDIF}
+{$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 cl:=bin_name+' -ext2open '; //ext2open handles a single input in open interface
 P.Parameters.Add('-ext2open');
 cl:=cl+in_param;//(cl was not transformed in utf8 before)
@@ -2294,26 +2346,6 @@ else
 s:=s+char($0D)+char($0A)+txt_3_0_details;
 if stopped=true then s:=txt_jobstopped+char($0D)+char($0A)+txt_3_0_details;
 pMessageWarningOK(s);
-end;
-
-procedure TForm_gwrap.MenuItem1Click(Sender: TObject);
-begin
-ppriority:=1;
-end;
-
-procedure TForm_gwrap.MenuItem2Click(Sender: TObject);
-begin
-ppriority:=2;
-end;
-
-procedure TForm_gwrap.MenuItem3Click(Sender: TObject);
-begin
-ppriority:=3;
-end;
-
-procedure TForm_gwrap.MenuItem4Click(Sender: TObject);
-begin
-ppriority:=4;
 end;
 
 procedure TForm_gwrap.pm2cancelallClick(Sender: TObject);

@@ -225,11 +225,12 @@ object Form_report: TForm_report
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
-    Left = 102
+    Left = 108
     Height = 15
     Top = 388
-    Width = 9
-    Caption = ' | '
+    Width = 3
+    BorderSpacing.Left = 6
+    Caption = '|'
     ParentColor = False
   end
   object LabelSaveTxt1: TLabel
@@ -238,10 +239,11 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
     Cursor = crHandPoint
-    Left = 111
+    Left = 117
     Height = 15
     Top = 388
     Width = 17
+    BorderSpacing.Left = 6
     Caption = 'csv'
     Font.Color = 13391121
     ParentColor = False

@@ -195,6 +195,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 24
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 24
       BorderSpacing.Top = 24
       Transparent = True
@@ -348,6 +349,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 27
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 12
       BorderSpacing.Top = 1
       Transparent = True
@@ -654,6 +656,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 238
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 12
       OnClick = ImageUtilsClick
       Transparent = True
@@ -670,9 +673,9 @@ object Form_pea: TForm_pea
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 12
       BorderSpacing.Right = 6
-      DropDownCount = 19
+      DropDownCount = 23
       ItemHeight = 15
-      ItemIndex = 8
+      ItemIndex = 12
       Items.Strings = (
         'CRC32 checksum'
         'CRC64 checksum'
@@ -682,6 +685,10 @@ object Form_pea: TForm_pea
         'Blake2s hash'
         'SHA256 hash'
         'SHA3_256 hash'
+        'Blake2b hash'
+        'SHA512 hash'
+        'SHA3_512 hash'
+        'Whirlpool hash'
         'Checksum/Hash (common algorithms)'
         'Checksum/Hash (all supported algorithms)'
         'Analyze files and folders'
@@ -1014,6 +1021,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 23
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 24
       Transparent = True
     end
@@ -1214,6 +1222,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 23
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 24
       Transparent = True
     end
@@ -1407,6 +1416,7 @@ object Form_pea: TForm_pea
       Height = 16
       Top = 143
       Width = 16
+      AutoSize = True
       BorderSpacing.Left = 24
       Transparent = True
       Visible = False

@@ -160,8 +160,11 @@ unit Unit_pea;
                                   Each block between password verification tag and stream authentication tag is encrypted with all 3 ciphers
                                   A 1..128 bytes block of random data is added after password verification tag in order to mask exact archive size
                                   Each cipher generate its own 128 bit sized stream authentication tag, tags are concatenated and hashed with SHA3-384; the SHA3-384 value is checked for verification, this requires all the 3 tags to match to expected values and does not allow ciphers to be authenticated separately
- 0.75     20201206  G.Tani        Recompiled with updated theming
- 0.76     20210121  G.Tani        Improved quoting on Unix-like sistems, fixes
+ 0.75     20201206  G.Tani      Recompiled with updated theming
+ 0.76     20210121  G.Tani      Improved quoting on Unix-like sistems, fixes
+ 0.77     20210302  G.Tani      Various fixes
+ 1.00     20210415  G.Tani      Added 512 bit hash functions to file utilities menu
+                                Updated theming to allow custom zooming and spacing accordingly to peazip binary
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -339,7 +342,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '0.76'; //declares release version for the whole build
+  P_RELEASE          = '1.00'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -381,7 +384,7 @@ var
    Bfd,Bmail,Bhd,Bdvd,Binfo,Blog,Bok,Bcancel,Butils,Badmin:TBitmap;
    //theming
    conf:text;
-   opacity,closepolicy,qscale,qscaleimages:integer;
+   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming:integer;
    executable_path,persistent_source,color1,color2,color3,color4,color5:string;
 
 {
@@ -6735,9 +6738,9 @@ for i:=0 to ListMemo.Lines.Count do
    if length(ListMemo.Lines[i])>1 then
       in_param:=in_param+stringdelim(ListMemo.Lines[i])+' ';
 case ComboBoxUtils.ItemIndex of
-   16: begin end;
-   17: begin end;
-   18: begin end;
+   20: begin end;
+   21: begin end;
+   22: begin end;
    else if in_param='' then exit;
    end;
 case ComboBoxUtils.ItemIndex of
@@ -6749,19 +6752,27 @@ case ComboBoxUtils.ItemIndex of
    5: cl:=bin_name+' CHECK HEX BLAKE2S ON '+in_param;
    6: cl:=bin_name+' CHECK HEX SHA256 ON '+in_param;
    7: cl:=bin_name+' CHECK HEX SHA3_256 ON '+in_param;
-   8: cl:=bin_name+' CHECK HEX CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256 ON '+in_param;
-   9: cl:=bin_name+' CHECK HEX ALL ON '+in_param;
-   10: cl:=bin_name+' CHECK HEX LIST ON '+in_param;
-   11: cl:=bin_name+' RFS AUTONAME ASK NONE BATCH '+stringdelim(ListMemo.Lines[0]); //one file
-   12: cl:=bin_name+' RFJ '+stringdelim(ListMemo.Lines[0])+' BATCH AUTONAME'; //one file (strictly)
-   13: cl:=bin_name+' COMPARE '+in_param; //two files or one file (ask for second file, ignores more files)
-   14: cl:=bin_name+' HEXPREVIEW '+stringdelim(ListMemo.Lines[0]);  //one file
-   15: begin
+   8: cl:=bin_name+' CHECK HEX BLAKE2B ON '+in_param;
+   9: cl:=bin_name+' CHECK HEX SHA512 ON '+in_param;
+   10: cl:=bin_name+' CHECK HEX SHA3_512 ON '+in_param;
+   11: cl:=bin_name+' CHECK HEX WHIRLPOOL ON '+in_param;
+   12: cl:=bin_name+' CHECK HEX CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256 ON '+in_param;
+   13: cl:=bin_name+' CHECK HEX ALL ON '+in_param;
+   14: cl:=bin_name+' CHECK HEX LIST ON '+in_param;
+   15: cl:=bin_name+' RFS AUTONAME ASK NONE BATCH '+stringdelim(ListMemo.Lines[0]); //one file
+   16: cl:=bin_name+' RFJ '+stringdelim(ListMemo.Lines[0])+' BATCH AUTONAME'; //one file (strictly)
+   17: cl:=bin_name+' COMPARE '+in_param; //two files or one file (ask for second file, ignores more files)
+   18: cl:=bin_name+' HEXPREVIEW '+stringdelim(ListMemo.Lines[0]);  //one file
+   19: begin
       if MessageDlg('Do you want to securely delete selected file(s)? The operation can''t be undone and files will be not recoverable', mtWarning, [mbYes,mbNo], 0)=6 then
          begin
          cl:=bin_name+' WIPE MEDIUM '+in_param;
          P:=TProcessUTF8.Create(nil);
+         {$IFDEF MSWINDOWS}
          P.Options := [poNoConsole,poWaitOnExit];
+         {$ELSE}
+         P.Options := [poWaitOnExit];
+         {$ENDIF}
          cl:=(cl);
          P.CommandLine:=cl;
          if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
@@ -6777,7 +6788,7 @@ case ComboBoxUtils.ItemIndex of
          end
       else exit;
       end;
-   16: begin
+   20: begin
       {$IFDEF MSWINDOWS}
       in_param:=ComboBoxUnits.Caption;
       if MessageDlg('The operation can take some time, depending on the size of the disk, continue?', mtInformation, [mbYes,mbNo], 0)=6 then
@@ -6788,7 +6799,7 @@ case ComboBoxUtils.ItemIndex of
       exit;
       {$ENDIF}
       end;
-   17: begin
+   21: begin
       {$IFDEF MSWINDOWS}
       in_param:=ComboBoxUnits.Caption;
       if MessageDlg('The operation can take some time, depending on the size of the disk, continue?', mtInformation, [mbYes,mbNo], 0)=6 then
@@ -6799,10 +6810,12 @@ case ComboBoxUtils.ItemIndex of
       exit;
       {$ENDIF}
       end;
-   18: cl:=bin_name+' ENVSTR';
+   22: cl:=bin_name+' ENVSTR';
 end;
 P:=TProcessUTF8.Create(nil);
+{$IFDEF MSWINDOWS}
 P.Options := [poNoConsole];
+{$ENDIF}
 cl:=(cl);
 P.CommandLine:=cl;
 if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
@@ -6879,7 +6892,7 @@ LabelOpenFile0.Visible:=False;
 LabelOpenFile2.Visible:=False;
 LabelOpenFile3.Visible:=False;
 ButtonUtilsReset.Enabled:=False;
-if ComboBoxUtils.ItemIndex<>18 then
+if ComboBoxUtils.ItemIndex<>22 then
    begin
    ComboBoxUnits.Visible:=true;
    getunits;
@@ -6908,9 +6921,13 @@ case ComboBoxUtils.ItemIndex of
    13: enabledropmenu;
    14: enabledropmenu;
    15: enabledropmenu;
-   16: disabledropmenu;
-   17: disabledropmenu;
-   18: disabledropmenu;
+   16: enabledropmenu;
+   17: enabledropmenu;
+   18: enabledropmenu;
+   19: enabledropmenu;
+   20: disabledropmenu;
+   21: disabledropmenu;
+   22: disabledropmenu;
 end;
 end;
 
@@ -7181,7 +7198,10 @@ try
    readln(conf,color3);
    readln(conf,color4);
    readln(conf,color5);
-   readconf_relativeline(9,dummy); closepolicy:=strtoint(dummy);
+   readln(conf,dummy);
+   readln(conf,dummy); pzooming:=strtoint(dummy);
+   readln(conf,dummy); pspacing:=strtoint(dummy);
+   readconf_relativeline(6,dummy); closepolicy:=strtoint(dummy);
    CloseFile(conf);
    if opacity<0 then opacity:=0;
    if opacity>100 then opacity:=100;
@@ -7202,6 +7222,8 @@ except
    color4:='$00669999';
    color5:=colortostring(clWindowText);
    closepolicy:=1;
+   pzooming:=100;
+   pspacing:=4;
 end;
 Unit_report.color1:=color1;
 Unit_report.color2:=color2;
@@ -7255,7 +7277,7 @@ if paramcount>0 then
       if funutil=0 then Form_pea.PanelUtils.visible:=false
       else
          begin
-         kfun:=8;
+         kfun:=12;
          Form_pea.ComboBoxUtils.ItemIndex:=kfun;
          Form_pea.ComboBoxUtilsChange(nil);
          for i:=1 to paramcount do
@@ -7286,6 +7308,8 @@ with Form_pea do
 begin
 refsize:=ButtonRefSize.Height;
 get_pformscaling(refsize,qscale,qscaleimages);
+qscale:=(qscale*pzooming) div 100;
+qscaleimages:=(qscaleimages*pzooming) div 100;
 Width:=560*qscale div 100;
 Height:=270*qscale div 100;
 Form_report.Width:=800*qscale div 100;
@@ -7299,7 +7323,7 @@ Panelsp0.Height:=tabheightl;
 Panelsp1.Height:=tabheightl;
 Panelsp2.Height:=tabheightl;
 //grid
-rowheight:=22*qscale div 100;
+rowheight:=((16+2+pspacing) * qscale) div 100;
 Form_report.StringGrid1.DefaultRowHeight:=rowheight;
 Form_report.StringGrid2.DefaultRowHeight:=rowheight;
 end;
@@ -7311,6 +7335,7 @@ set_items_height;
 load_icons;
 if color3='clForm' then color3:=ColorToString(PTACOL);
 getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3));
+img_utils.relwindowcolor:=stringtocolor(color2);
 Form_pea.Color:=StringToColor(color2);
 Form_pea.LabelE1.Font.Color:=pgray;
 Form_pea.labelopenfile2.Font.Color:=ptextaccent;
