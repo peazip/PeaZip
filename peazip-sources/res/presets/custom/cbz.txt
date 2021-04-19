@@ -1,14 +1,14 @@
 PEAZIP CUSTOM COMPRESSION SETTINGS
 To replace an existing preset with a custom compression settings file, copy the desired custom compression settings file in PeaZip\res\presets folder, in place of one of the existing preset files (named 1..15).
 Displayed name, below, can be edited and will be shown in presets menu in place of the name of the replaced preset (displayed names in embedded presets are 1..15, and are translated to language-dependant strings).
-12
+CBZ
 
 GENERAL OPTIONS
 Type
-Zstd
-16
+ZIP
+15
 Compression level
-2
+3
 Action
 0
 Spanning
@@ -90,9 +90,9 @@ Encryption algorithm (if password and/or keyfile is provided)
 
 BACKEND OPTIONS: Custom
 Executable
-C:\Program Files\WinRAR\Rar.exe
-Extension
 
+Extension
+rar
 Other options
 
 Syntax
@@ -108,9 +108,9 @@ BACKEND OPTIONS: PEA
 Compression
 1
 Object control algorithm
-11
+9
 Volume control algorithm
-4
+3
 Stream control algorithm
 0
 
@@ -124,7 +124,7 @@ Solid block size
 
 BACKEND OPTIONS: Split
 Integrity check
-13
+11
 
 BACKEND OPTIONS: UPX
 Compression
@@ -176,5 +176,5 @@ RAR lock archive
 
 7.8.0 EXTENSION
 Custom archive extension
-0
-
+1
+cbz
