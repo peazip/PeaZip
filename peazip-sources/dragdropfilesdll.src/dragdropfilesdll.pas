@@ -20,6 +20,8 @@ DRAGDROPFILESDLL
 0.10     20190501  G.Tani      Initial version, implement dodropfiles and dodropvfiles
 0.11     20190515  G.Tani      Drop source path for dodropvfiles can be changed on the fly calling changevpath before finalyzing drag&drop operation
                                Status of drag and drop process is now communicated through Unitdragdropfilesdll.vstatus
+0.12     20210202  G.Tani      dodropvfiles can be stopped calling changevpath('') which resets virtual output path
+                               dodropvfiles expands the list of files and folders in source's path at the end of DropFileSource1Drop (synced by semaphore with main app to allow extraction to take place) in order to be compatible with most of drag and drop implementations in third parts apps
 }
 
 {$mode objfpc}{$H+}
@@ -68,8 +70,9 @@ should be listening using readvstatus procedure.
 and report to the dll when it is ready, setting Unitdragdropfilesdll.vstatus to
 '.finalizedrop' using setvstatus procedure - which the dll waits for.
 3) Before completing the ondrop event the dll reads if the main application changed
-the vpath (which can ve done using changevpath procedure in main app), updates drop
-source if needed and completes the drag & drop.
+the vpath (which can ve done using changevpath procedure in main app), always updates
+drop source expanding (non recursively) list of files and folder in the source path,
+and finally completes the drag & drop.
 NOTE: removing vpath folder(s) is let to the main application}
 var
    s:ansistring;
@@ -88,7 +91,7 @@ case dropmode of
 if DragDetectPlus(winc) then
    begin
    Formdragdropfilesdll.DropFileSource1.Files.Clear;
-   s:=vpath+'source\*';
+   s:=vpath+'source\';
    Formdragdropfilesdll.DropFileSource1.Files.Add(s);
    Formdragdropfilesdll.DropFileSource1.Execute;
    end;

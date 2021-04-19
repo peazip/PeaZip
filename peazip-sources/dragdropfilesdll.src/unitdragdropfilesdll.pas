@@ -7,6 +7,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DragDropFile, DragDrop;
 
+type Tfound = array of ansistring;
+
 type
 
   { TFormdragdropfilesdll }
@@ -22,6 +24,8 @@ type
 
   end;
 
+function dList(dir, mask: ansistring; var flist: Tfound): integer;
+
 var
   Formdragdropfilesdll: TFormdragdropfilesdll;
   dragproc:integer;
@@ -33,10 +37,38 @@ implementation
 
 { TFormdragdropfilesdll }
 
+function dList(dir, mask: ansistring; var flist: Tfound): integer;
+var
+  r: TSearchRec;
+begin
+  result := 0;
+  if FindFirst(dir + mask, faAnyFile, r) = 0 then
+  begin
+    try
+        repeat
+          if ((r.Name <> '.') and (r.Name <> '..')) then
+          begin
+            SetLength(flist, length(flist) + 1);
+            flist[length(flist)-1] := dir + (r.Name);
+          end;
+        until findnext(r) <> 0;
+    except
+      FindClose(r);
+      result := -1;
+      exit;
+    end;
+    FindClose(r);
+  end;
+  if result = 0 then
+    result := 1;
+end;
+
 procedure TFormdragdropfilesdll.DropFileSource1Drop(Sender: TObject; DragType: TDragType;
   var ContinueDrop: Boolean);
 var
   s:ansistring;
+  flist:Tfound;
+  i,k:integer;
 begin
 if dragproc=2 then
    begin
@@ -57,12 +89,18 @@ if dragproc=2 then
    {3) Verify if the main application has changed the drop source path on the fly,
    and update dodropvfiles source accordingly if needed, before finalyzing drag&drop
    operation}
-   if vdragpath2<>vdragpath then
+   if vdragpath2='' then
       begin
       DropFileSource1.Files.Clear;
-      s:=vdragpath2+'source\*';
-      DropFileSource1.Files.Add(s);
+      vstatus:='.enddrop';
+      exit;
       end;
+   DropFileSource1.Files.Clear;
+   s:=vdragpath2+'source\';
+   dlist(s,'*',flist);
+   k:=length(flist);
+   for i:=0 to k-1 do
+      Formdragdropfilesdll.DropFileSource1.Files.Add(flist[i]);
    vstatus:='.enddrop';
    end;
 end;
