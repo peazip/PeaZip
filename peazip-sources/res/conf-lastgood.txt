@@ -7,8 +7,8 @@ $00CC5511
 clAppWorkspace
 clWindowText
 0
-
-
+100
+4
 0
 [language]
 default.txt
@@ -630,3 +630,19 @@ Computer's root
 
 [update archive tree when browsing: 0 no 1 simple 2 full, keep visited nodes]
 2
+
+[use system 7z on Linux]
+0
+
+[two step extraction: first extract to a fresh folder, then move to relative path in destination directory]
+1
+
+[tasks priority]
+2
+
+[special file types triggering extract everything for]
+001 bat exe htm html msi r01 z01
+
+[custom archive extension]
+0
+
