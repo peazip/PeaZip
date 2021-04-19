@@ -2166,7 +2166,7 @@ begin
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.analyze', '', 'CRC, hash and file tools');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.analyze', 'Icon', ExpandConstant('"{app}\res\icons\peazip_seven.icl",9'));
         RegWriteDWordValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.analyze', 'CommandFlags', 32);
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.analyze\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "8" "%1"'));         
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.analyze\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "12" "%1"'));         
 
 end;
 
@@ -2267,9 +2267,9 @@ begin
        
     if cbcontextcrc.state = cbChecked then
        begin
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\CRC, hash and file tools\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "8" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\CRC, hash and file tools\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "12" "%1"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\CRC, hash and file tools', 'MultiSelectModel', 'single');
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "8" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools\command', '', ExpandConstant('"{app}\res\PEA.EXE" "PEAUTILS" "12" "%1"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools', 'MultiSelectModel', 'single');
        end;
 
