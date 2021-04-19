@@ -1,13 +1,27 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-7.7
+7.9
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20201231
+Ultima rev.: 20210314
 
 === PeaZip text group ===
 
-txt_7_7_noneall: Nessuna (no preview, no estrazione Drag And Drop)
+txt_7_9_spacing: Spaziatura
+txt_7_9_zooming: Zoom
+txt_7_8_changelocalization: Modifica localizzazione di PeaZip
+txt_7_8_custext: Estensione personalizzata
+txt_7_8_destexistfile: La destinazione contiene già i file estratti. Sovrascrivere i file con lo stesso nome?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: Alta
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Estrazione interattiva
+txt_7_8_prioritynormal: Normale
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [richiede riavvio di PeaZip]
+txt_7_8_tpriority: Priorità dei lavori
+txt_7_8_update: Update
+txt_7_7_noneall: Nessuna, disabilita azioni con file temporanei
 txt_7_7_nonetemp: Nessuna, Temp dell'utente se necessario
 txt_7_7_outtemp: Output, preview nella Temp dell'utente
 txt_7_7_sys7zreq: Richiede l'installazione del pacchetto p7zip-full o equivalente

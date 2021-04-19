@@ -1,12 +1,26 @@
 ﻿=== PeaZip language file ===
 Portuguese (Brazil) - Português
-7.7
+7.9
 Translated by: Havokdan
 Last rev. by: 20190818
 Last rev.: 20190818
 
 === PeaZip text group ===
 
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Mudar idioma do PeaZip
+txt_7_8_custext: Personalizar extensão
+txt_7_8_destexistfile: O destino já contém arquivos processados. Substituir arquivos com o mesmo nome?
+txt_7_8_dd: Arrastar e Soltar
+txt_7_8_priorityhigh: Alta
+txt_7_8_priorityidle: Ociosa
+txt_7_8_rel: Extração interativa
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Tempo real
+txt_7_8_requirerestart: [requer reinício do PeaZip]
+txt_7_8_tpriority: Prioridade das tarefas
+txt_7_8_update: Atualizar
 txt_7_7_noneall: Vazio (sem prévia, sem extração por Arrastar & Soltar)
 txt_7_7_nonetemp: Vazio, Temp do usuário se necessário
 txt_7_7_outtemp: Saída, prévia em temp do Usuário

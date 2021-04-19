@@ -1,12 +1,26 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-7.7
+7.9
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20210126
+Sist revidert: 20210330
 
 === PeaZip text group ===
 
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Bytt språk for PeaZip
+txt_7_8_custext: Tilpasset utvidelse
+txt_7_8_destexistfile: Målet inneholder allerede behandlede filer. Erstatt filer med samme navn?
+txt_7_8_dd: Dra-og-slipp
+txt_7_8_priorityhigh: Høy
+txt_7_8_priorityidle: Ledig
+txt_7_8_rel: Interaktiv utpakking
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Sanntid
+txt_7_8_requirerestart: [krever omstart av PeaZip]
+txt_7_8_tpriority: Oppgaveprioritet
+txt_7_8_update: Oppdater
 txt_7_7_noneall: Ingen (ikke forhåndsvisning, ikke Dra-og-slipp utpakking)
 txt_7_7_nonetemp: Ingen, Brukers temp om nødvendig
 txt_7_7_outtemp: Opprett, forhåndsvis i Brukers temp

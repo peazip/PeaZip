@@ -1,59 +1,73 @@
 ﻿=== PeaZip language file ===
 Hungarian - Magyar
-7.7
+7.9
 Fordító: Zityi's Translator Team
 Last rev. by: Giorgio Tani
-Last rev.: 20200313
+Last rev.: 20210314
 
 === PeaZip text group ===
 
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
-txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
-txt_7_6_setcurdef: Set current path as default output path
-txt_7_6_setdef: Set default output path
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
-txt_7_6_tacolor: Text accent
-txt_7_5_always: Always
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Cut name at specified length
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
-txt_7_5_never: Never
-txt_7_5_repnascii: Replace/remove non-ASCII characters
-txt_7_4_comment: Comment
-txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
-txt_7_4_presetrar: High compression, RAR
-txt_7_4_tkeep: Keep original archive timestamp
-txt_7_4_lock: Lock archive
-txt_7_4_locked: locked
-txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
-txt_7_4_recover: Repair archive
-txt_7_4_tcurr: Set archive timestamp from current system time
-txt_7_4_setarc: Set archiving options
-txt_7_4_setext: Set extraction options
-txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: PeaZip nyelv módosítása
+txt_7_8_custext: Egyéni kiterjesztés
+txt_7_8_destexistfile: A cél már tartalmaz feldolgozott fájlokat. Lecseréli az azonos nevű fájlokat?
+txt_7_8_dd: Húzás egérrel
+txt_7_8_priorityhigh: Magas
+txt_7_8_priorityidle: Inaktív
+txt_7_8_rel: Interaktív kibontás
+txt_7_8_prioritynormal: Normál
+txt_7_8_priorityrealtime: Valós idejű
+txt_7_8_requirerestart: [a PeaZip újraindítását igényli]
+txt_7_8_tpriority: Feladatok prioritása
+txt_7_8_update: Frissítés
+txt_7_7_noneall: Nincs (nincs előnézet, nincs húzással történő kibontás)
+txt_7_7_nonetemp: Nincs, felhasználói ideiglenes mappa, ha szükséges
+txt_7_7_outtemp: Kimenet, előnézet a felhasználói ideiglenes mappában
+txt_7_7_sys7zreq: A p7zip teljes vagy azzal egyenértékű telepítését igényli
+txt_7_7_tw: Ideiglenes munkamappa az archívumok létrehozásához, szerkesztéséhez, előnézetéhez és húzással történő kibontásához.
+txt_7_7_sys7z: A 7z rendszer használata Linuxon
+txt_7_6_zipenc: 7z/p7zip ZIP fájlnevek kódolása
+txt_7_6_color: Szín
+txt_7_6_custenc: Egyéni kódlap
+txt_7_6_dark: Sötét
+txt_7_6_tno: Ne szinkronizálja az archívum-fát
+txt_7_6_forcelocalenc: Helyi kényszerítése
+txt_7_6_forceutf8enc: UTF-8 kényszerítése
+txt_7_6_cpnote: Ha a kiválasztott egyéni kódlap nem támogatott, a feladatok mindig hibával zárulnak (valószínűleg memóriafoglalási hiba). Ebben az esetben módosítsa a kódlapot, vagy állítsa alaphelyzetbe az alkalmazást.
+txt_7_6_defaultenc: Helyi, UTF-8 az extra szimbólumokhoz
+txt_7_6_dim: Gyenge fény
+txt_7_6_setcurdef: Az aktuális hely beállítása alapértelmezett kimeneti útvonalként
+txt_7_6_setdef: Alapértelmezett kimeneti hely beállítása
+txt_7_6_tadvanced: Archívum- fa szinkronizálása, felkeresett csomópontok megtartása
+txt_7_6_tsimple: Archívum- fa szinkronizálása, egyszerű
+txt_7_6_tacolor: Szövegkiemelés
+txt_7_5_always: Mindig
+txt_7_5_ask: Kérdezzen rá
+txt_7_5_autoclosesingle: Automatikus bezárás a kibontás után, ha nem történtek böngészési műveletek
+txt_7_5_cutlen: Név kivágása a megadott hosszúságban
+txt_7_5_cutlenw: Név kivágása a megadott hosszúságban (4..255), az elnevezési ütközések később manuálisan is kijavíthatók
+txt_7_5_dragnone: Ne zárolja a célt
+txt_7_5_specialbrowse: Szeretne mindent kibontani annak érdekében, hogy a fájl megkapja a szükséges extra adatokat?
+txt_7_5_ee: Összes kibontása a speciális fájltípusok esetén
+txt_7_5_draghide: Áthúzási cél elrejtése
+txt_7_5_draglh: Cél zárolása és elrejtése
+txt_7_5_draglock: Áthúzási cél zárolása
+txt_7_5_never: Soha
+txt_7_5_repnascii: A nem ASCII karakterek cseréje/eltávolítása
+txt_7_4_comment: Megjegyzés
+txt_7_4_7zfbrotlicomp: Leggyorsabb tömörítés, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Leggyorsabb tömörítés, 7Z Zstandard
+txt_7_4_presetrar: Magas tömörítési arány, RAR
+txt_7_4_tkeep: Eredeti archiválási időbélyeg megtartása
+txt_7_4_lock: Archívum zárolása
+txt_7_4_locked: zárolva
+txt_7_4_lockconfirm: A zárolt archívumok a későbbiekben nem módosíthatók, folytatja az archívum zárolását?
+txt_7_4_recover: Archívum javítása
+txt_7_4_tcurr: Archíválási időbélyeg beállítása az aktuális rendszeridőből
+txt_7_4_setarc: Speciális archiválási lehetőségek beállítása
+txt_7_4_setext: Speciális kibontási lehetőségek beállítása
+txt_7_4_swzipx: Váltás zipx kiterjesztésre a nem-deflate módú zip archívumok esetén
 txt_7_3_archiveerrors: [az archívum hibákat tartalmazhat]
 txt_7_3_archiveerrorshint: Előfordulhat, hogy az archívum nem érvényes (hiányos, sérült, vagy nem szabványos adatokból áll), lehetőség van teszt futtatására részletes információkért. Ha az archívum tartalomtáblája titkosítva van, a böngészés előtt jelszóra lesz szükség.
 txt_7_3_clickextall: Kattintson az "Összes kibontása" lehetőségre az engedélyezéshez
@@ -459,7 +473,7 @@ txt_2_7_ok: OK
 txt_2_7_drag_archive: fájl megnyitása új archívumként? ("Nem" fájl hozzáadása a jelenlegi archiválási elrendezéshez)
 txt_2_7_oop: A kimeneti hely megnyitása a művelet befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
 txt_2_7_output: Kimenet
 txt_2_7_pwnotset: Nincs jelszó beállítva
 txt_2_7_pwarcset: Jelszó beállítva
@@ -649,7 +663,7 @@ txt_controlpanel: Vezérlőpult
 txt_convert: Lemez konvertálása NTFS fájlrendszerbe
 txt_copy: Másolás
 txt_copyto: Másolás...
-txt_create: Készítés
+txt_create: Készítés 
 txt_create_archive: Új archívum létrehozása
 txt_title_create: Archívum létrehozása, tömörítés, titkosítás, darabolás...
 txt_create_keyfile: Kulcsfájl készítés
@@ -1093,7 +1107,7 @@ txt_3_0_arc: Néhány bemeneti állomány nem olvasható (lehet, hogy zárolt, n
 txt_3_0_ext: Előfordulhat, hogy az archívumnál más jelszóra van szükség az aktuális művelethez
 txt_2_8_oop: Kimeneti hely megnyitása a feladat befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
 txt_2_6_open: Archívum megnyitása
 txt_2_5_ace_missing: Az UNACE beépülő modul hiányzik; az ACE archívumok kezeléséhez a beépülő modul letölthető a PeaZip weboldaláról (mivel a UNACE zárt forrású, a beépülő nem szerepel az alapcsomagban)
 txt_2_3_pw_errorchar_gwrap: idézőjel nem használható a PeaLauncher által a jelszavakban a jelenlegi rendszerben. Módosítsa a jelszót vagy használja a PeaZip konzol módot a háttérbináris fájlok felhasználói felületén (Eszközök > Beállítások)
@@ -1125,7 +1139,7 @@ txt_autoclose: Ablak bezárása a művelet végén
 txt_crscale: Tömörítési arány (alacsonyabb, jobb):
 txt_console: Konzol
 txt_benchscale: 2 magos Duo 6600 besorolás, egyenértékű MHz sebesség.
-txt_create: Készítés 
+txt_create: Készítés
 txt_done: Kész:
 txt_nocl: Üres parancssor
 txt_error: Hiba:
@@ -1257,14 +1271,14 @@ F12 	összes kibontása...
 
 A PEAZIP-RŐL
 
-A PeaZip, egy ingyenes, hordozható, nyílt forrású fájl és archívum kezelő: kereszt-platformos alkalmazás, elérhető portable és telepítős változatban 32 és 64 bites Windows (9x, 2k, XP, Vista) és Linux rendszerekhez (a PeaZip egy asztal semleges alkalmazás).
+A PeaZip egy ingyenes, hordozható, nyílt forrású fájl és archívum kezelő: kereszt-platformos alkalmazás, elérhető hordozható és telepítős változatban 32 és 64 bites Windows (9x, 2k, XP, Vista) és Linux rendszerekhez (a PeaZip egy asztal semleges alkalmazás).
 
 A PeaZip lehetőséget ad összetett keresési szűrők alkalmazására az archívum tartalmához; több archívum készítése és kicsomagolása egy időben; önkicsomagoló archívumok létrehozása; feladatdefinició exportálása parancssorként; archiválási és kicsomagolási elrendezések mentése; archívum és mappa könyvjelzők; vizsgálat és a tömörített/kicsomagolt fájlok megnyitása egyéni alkalmazásokkal, stb...
 
 További funkciók: hatékony titkosítás, megbízható fájlmásolás, fájlok vágása/egyesítése, biztonságos adattörlés, összehasonlítás, ellenőrzőösszeg és hash fájlok, rendszer teljesítménymérés, véletlenszerű jelszavak és kulcsfájlok generálása.
 
 Letöltések: https://peazip.github.io
-További tudnivalók: https://peazip.github.io/peazip-free-archiver.html
+További információk: https://peazip.github.io/peazip-free-archiver.html
 Támogatás: https://peazip.github.io/peazip-help.html
 GYIK: https://peazip.github.io/peazip-help-faq.html
 

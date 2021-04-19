@@ -1,12 +1,26 @@
 ﻿=== PeaZip language file ===
 Uzbek - O‘zbekcha
-7.7
+7.9
 Translated by: Zafar Shamsiddinov
 Last rev. by: Zafar Shamsiddinov
 Last rev.: 20.10.2020
 
 === PeaZip text group ===
 
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Change PeaZip language
+txt_7_8_custext: Custom extension
+txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: High
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Interactive extraction
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [requires restarting PeaZip]
+txt_7_8_tpriority: Tasks priority
+txt_7_8_update: Update
 txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
 txt_7_7_nonetemp: None, User's temp if necessary
 txt_7_7_outtemp: Output, preview in User's temp

@@ -1,12 +1,26 @@
 ﻿=== PeaZip language file ===
 Français
-7.7
+7.9
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 9.01.2021
 
 === PeaZip text group ===
 
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Change PeaZip language
+txt_7_8_custext: Custom extension
+txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: High
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Interactive extraction
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [requires restarting PeaZip]
+txt_7_8_tpriority: Tasks priority
+txt_7_8_update: Update
 txt_7_7_noneall: Aucun (pas d'aperçu, pas d'extraction par glisser-déposer)
 txt_7_7_nonetemp: Aucun, température de l'utilisateur si nécessaire
 txt_7_7_outtemp: Sortie, aperçu dans la température de l'utilisateur

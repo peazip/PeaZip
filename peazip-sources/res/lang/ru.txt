@@ -1,12 +1,26 @@
 ﻿=== PeaZip language file ===
 Russian - русский
-7.7
+7.9
 Translated by: Rytikov Slava, Dmitry Tsvetkov, xoxmodav
 Last rev. by: 
 Last rev.: 20121227
 
 === PeaZip text group ===
 
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Сменить язык PeaZip
+txt_7_8_custext: Произвольное расширение
+txt_7_8_destexistfile: Целевой каталог уже содержит такие файлы. Заменить существующие?
+txt_7_8_dd: Перетаскивание мышью
+txt_7_8_priorityhigh: Высокий
+txt_7_8_priorityidle: Низкий
+txt_7_8_rel: Интерактивное извлечение
+txt_7_8_prioritynormal: Нормальный
+txt_7_8_priorityrealtime: Реального времени
+txt_7_8_requirerestart: [требуется перезапуск PeaZip]
+txt_7_8_tpriority: Приоритет задачи
+txt_7_8_update: Обновление
 txt_7_7_noneall: Нет (без просмотра и перетаскивания мышью)
 txt_7_7_nonetemp: Нет, "temp" пользователя, если нужно
 txt_7_7_outtemp: Целевой, просмотр с помощью "temp" пользователя

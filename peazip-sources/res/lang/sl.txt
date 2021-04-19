@@ -1,23 +1,37 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-7.7
+7.9
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20201215
+Zadnja revizija: 20210321
 
 === PeaZip text group ===
 
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Spremeni jezik PeaZipa
+txt_7_8_custext: Končnica po meri
+txt_7_8_destexistfile: Cilj že vsebuje obdelane datoteke. Želite zamenjati datoteke z istim imenom?
+txt_7_8_dd: Povleci in spusti
+txt_7_8_priorityhigh: Visoka
+txt_7_8_priorityidle: Nedejavna
+txt_7_8_rel: Interaktivno razširjanje
+txt_7_8_prioritynormal: Običajna
+txt_7_8_priorityrealtime: Stvarnočasovna
+txt_7_8_requirerestart: [zahteva ponovni zagon PeaZipa]
+txt_7_8_tpriority: Prednost opravil
+txt_7_8_update: Posodobi
+txt_7_7_noneall: Brez (brez predogleda, brez razširjanja 'Povleci in spusti')
+txt_7_7_nonetemp: Brez, uporabnikova začasna mapa, če je potrebno 
+txt_7_7_outtemp: Izhod, predogled v uporabnikova začasna 
+txt_7_7_sys7zreq: Zahteva namestitev p7zip-full ali enakovrednega
+txt_7_7_tw: Začasna delovna mapa za ustvarjanje, urejanje, predogled in razširjanje 'Povleci in spusti'. 
+txt_7_7_sys7z: V Linuxu uporabi sistem 7z 
 txt_7_6_zipenc: Kodiranje imen datotek 7z/p7zip ZIP
 txt_7_6_color: Barva
 txt_7_6_custenc: Kodna stran po meri
 txt_7_6_dark: Temna
-txt_7_6_tno: Ne sinhroniziraj drevesa arhivov
+txt_7_6_tno: Ne sinkroniziraj drevesa arhivov
 txt_7_6_forcelocalenc: Prisili lokalno
 txt_7_6_forceutf8enc: Prisili UTF-8
 txt_7_6_cpnote: Če izbrana kodna stran po meri ni podprta, se opravila vedno končajo z napako (najverjetneje napaka pri dodeljevanju pomnilnika). V tem primeru spremenite kodno stran ali ponastavite aplikacijo.
@@ -25,8 +39,8 @@ txt_7_6_defaultenc: Lokalno, UTF-8 za posebne simbole
 txt_7_6_dim: Medla svetloba
 txt_7_6_setcurdef: Nastavi trenutno pot kot privzeto izhodno pot
 txt_7_6_setdef: Nastavi privzeto izhodno pot
-txt_7_6_tadvanced: Sinhroniziraj drevo arhiva, obdrži obiskana vozlišča
-txt_7_6_tsimple: Sinhroniziraj drevo arhiva, preprosto
+txt_7_6_tadvanced: Sinkroniziraj drevo arhiva, obdrži obiskana vozlišča
+txt_7_6_tsimple: Sinkroniziraj drevo arhiva, preprosto
 txt_7_6_tacolor: Poudarek besedila
 txt_7_5_always: Vedno
 txt_7_5_ask: Vprašaj
@@ -128,7 +142,7 @@ txt_6_4_relative: Relativne poti
 txt_6_4_tabbar: Vrstica z zavihki
 txt_6_3_autoadjust: Samodejno prilagodi stolpce
 txt_6_3_cinfo: Informacije in komentarji
-txt_6_3_syn: Sinhroniziraj arhiv z diskom
+txt_6_3_syn: Sinkroniziraj arhiv z diskom
 txt_6_3_uar: Posodobi le datoteke, ki so že v arhivu
 txt_6_2_encext: Dodaj pripono '.enc' šifriranim arhivom
 txt_6_2_archive: Vrsta arhivske datoteke
@@ -367,7 +381,7 @@ txt_3_5_managecustomthemes: Upravljaj teme
 txt_3_4_nopaths: Ni poti
 txt_3_4_smallicons: Ikone
 txt_3_3_skipunits: (Windows) Pridobi podatke o količini omrežnih enot. Počasnejši zagon
-txt_3_3_stralt: Alternativni ukaz, ko ni sprejet noben parameter
+txt_3_3_stralt: Nadomestni ukaz, ko ni sprejet noben parameter
 txt_3_3_apps: Aplikacije
 txt_3_3_multi: Večkratni izbor
 txt_3_3_runexp: Odpri program, datoteko, mapo ali spletno stran
@@ -1137,7 +1151,7 @@ txt_hardware: strojna oprema
 txt_high: visoka prioriteta
 txt_idle: mirovanje
 txt_input: Vhod:
-txt_jpaused: Opravilo je pavzirano
+txt_jpaused: Opravilo je začasno ustavljeno
 txt_jresumed: Opravilo je nadaljevano
 txt_job_started: Opravilo je začeto
 txt_jobstatus: Stanje opravila:
@@ -1149,7 +1163,7 @@ txt_normal: običajna prioriteta
 txt_ok: Vredu
 txt_output: Izhod:
 txt_pause: Pavza
-txt_paused: Pavzirano,
+txt_paused: Začasno ustavljeno,
 txt_p_high: Prioriteta je nastavljena na visoko
 txt_p_idle: Prioriteta je nastavljena na mirovanje
 txt_p_normal: Prioritetat je nastavljena na mirovanje
@@ -1201,7 +1215,7 @@ Ikona je prikazana v statusni vrstici PeaZipovega brskalnika datotek, kot tudi v
 USTVARI ARHIV
 Iz sistema
 - kliknite z desnim gumbom na arhive, nato v priročnem meniju, ali v meniju PošljiV kliknite na 'Dodaj v arhiv'. To bo odprlo pogovorno okno za potrdite izdelave arhiva. Več možnosti je na voljo pod zavihkom “Napredno”. Kliknite na 'Vredu', da ustvarite archiv.
-- alternativno, povlecite datoteke/mape v PeaZipovo okno ali bližnjico. Prikazan bo isti vmesnik za ustvarjanje arhiva.
+- nadomestno, povlecite datoteke/mape v PeaZipovo okno ali bližnjico. Prikazan bo isti vmesnik za ustvarjanje arhiva.
 
 Iz PeaZipa 
 - izberite predmete za arhiviranje in kliknite na gumb 'Dodaj'. Prikazan bo isti vmesnik za ustvarjanje arhiva..
