@@ -1,7 +1,16 @@
-﻿Notes to 7.9.0 release
+﻿Notes to 8.0.0 release
 
 Pre-existing text string modified:
-txt_7_7_noneall: None, disable actions requiring temp files
+txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
+txt_7_7_nonetemp: None, user's temp if necessary
+txt_7_7_outtemp: Output, preview in user's temp
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
+txt_6_8_ndrop: Use native Drag and Drop on Windows
+txt_6_6_forcemodify: Edit non-canonical archive types
+txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
+txt_performall: All algorithms
+txt_add_error: Cannot add/update or delete object(s). The archive is not writeable, or cannot support this operation. Editing non-canonical archive types can be enabled in Archive manager options.
+txt_ondblclick: On doubleclick
 
 General notes for translators:
 

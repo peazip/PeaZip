@@ -22,6 +22,7 @@ type
     ButtonEditName3: TButton;
     ButtonPanel1: TButtonPanel;
     CheckBoxEncFn: TCheckBox;
+    CheckBoxIntPw: TCheckBox;
     CheckBoxKeepPW: TCheckBox;
     CheckBoxShowPWField: TCheckBox;
     EditName3: TEdit;
@@ -53,6 +54,7 @@ type
     Shape1: TPanel;
     procedure ButtonEditNamePwClick(Sender: TObject);
     procedure ButtonEditName3Click(Sender: TObject);
+    procedure CheckBoxIntPwClick(Sender: TObject);
     procedure CheckBoxShowPWFieldClick(Sender: TObject);
     procedure EditUn7zaPWChange(Sender: TObject);
     procedure EditUn7zaPWKeyPress(Sender: TObject; var Key: char);
@@ -154,6 +156,30 @@ if OpenDialogKF.Execute then
    if OpenDialogKF.FileName<>'' then EditName3.Text:=OpenDialogKF.FileName
    else exit
 else exit;
+end;
+
+procedure TFormPW.CheckBoxIntPwClick(Sender: TObject);
+begin
+if CheckBoxIntPw.State=cbChecked then
+   begin
+   EditUn7zaPW.Text:='';
+   EditUn7zaPW1.Text:='';
+   PanelKF.Visible:=true;
+   EditUn7zaPW.Enabled:=false;
+   EditUn7zaPW1.Enabled:=false;
+   LableListPath2.Enabled:=false;
+   CheckBoxKeepPW.Enabled:=false;
+   CheckBoxShowPWField.Enabled:=false;
+   end
+else
+   begin
+   EditUn7zaPW.Enabled:=true;
+   EditUn7zaPW1.Enabled:=true;
+   LableListPath2.Enabled:=true;
+   CheckBoxKeepPW.Enabled:=true;
+   CheckBoxShowPWField.Enabled:=true;
+   end;
+FormPW.Refresh;
 end;
 
 procedure TFormPW.ButtonEditNamePwClick(Sender: TObject);

@@ -130,7 +130,7 @@ repeat
          end
       else begin end
    else //allow symbols and special characters
-      if ((keyarr[j]>31) and (keyarr[j]<127)) then
+      if (keyarr[j]>31) and (keyarr[j]<127) and (keyarr[j]<>34) and (keyarr[j]<>39) then
          begin
          pw[i]:=char(keyarr[j]);
          i:=i+1;

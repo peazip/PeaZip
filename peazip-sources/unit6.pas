@@ -17,7 +17,7 @@ type
     BitBtn2: TBitBtn;
     ButtonPanel1: TButtonPanel;
     CheckBox1: TCheckBox;
-    Editinputquery: TEdit;
+    Editinputquery: TComboBox;
     LabelLow: TLabel;
     Labelrenamereset: TLabel;
     Labelspac2: TLabel;

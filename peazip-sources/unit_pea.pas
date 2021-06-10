@@ -165,6 +165,20 @@ unit Unit_pea;
  0.77     20210302  G.Tani      Various fixes
  1.00     20210415  G.Tani      Added 512 bit hash functions to file utilities menu
                                 Updated theming to allow custom zooming and spacing accordingly to peazip binary
+ 1.01     20210522  G.Tani      Updated theming consistently with PeaZip 8.0 (allow optional alternate grid colors for readability)
+                                Added exit codes for main functions
+                                 1 abnormal termination
+                                 0 success
+                                 -1 incomplete
+                                 -2 completed with errors
+                                  pea: some files cannot be archived (not found, not readable)
+                                  unpea: errors detected in the archive
+                                  wipe: some files cannot be deleted (locked, not found)
+                                 -3 internal error
+                                 -4 cancelled by user
+                                Batch and hidden *_report modes now save report to output path without needing user interaction
+                                Improved hiding the GUI in HIDDEN mode
+                                Improved byte to byte file comparison function
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -299,7 +313,6 @@ type
     peautilsbtn: TSpeedButton;
     SpinEdit1: TSpinEdit;
     Timer1: TTimer;
-    procedure Bevel12ChangeBounds(Sender: TObject);
     procedure ButtonDone1Click(Sender: TObject);
     procedure ButtonPeaExitClick(Sender: TObject);
     procedure ButtonPW1Click(Sender: TObject);
@@ -382,9 +395,10 @@ var
    fattr,exp_fattr:TFoundListAttrib;
    obj_tags,exp_obj_tags,volume_tags,exp_volume_tags:TFoundListArray64;
    Bfd,Bmail,Bhd,Bdvd,Binfo,Blog,Bok,Bcancel,Butils,Badmin:TBitmap;
+   fshown:boolean;
    //theming
    conf:text;
-   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming:integer;
+   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,gridaltcolor:integer;
    executable_path,persistent_source,color1,color2,color3,color4,color5:string;
 
 {
@@ -492,7 +506,7 @@ if err<>0 then
    begin
    decode_pea_error(err,decoded_err);
    MessageDlg('Error '+s+': '+inttostr(err)+' '+decoded_err, mtError, [mbOK], 0);
-   Application.Terminate;
+   halt(-3);
    end;
 end;
 
@@ -500,7 +514,7 @@ end;
 procedure internal_error (s:ansistring);
 begin
 MessageDlg(s, mtError, [mbOK], 0);
-halt;
+halt(-3);
 end;
 
 procedure clean_global_vars;
@@ -535,7 +549,7 @@ size_ok:=false;
 repeat
    if ((chsize>diskfree(0)) and (chsize<>1024*1024*1024*1024*1024)) then
       if MessageDlg('Output path '+outpath+' seems to not have enough free space for an output volume, try to free some space on it or exchange it with an empty one if it''s a removable media. Do you want to test the path another time?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate
+      else halt(-3)
    else size_ok:=true;
 until size_ok=true;
 end;
@@ -547,7 +561,7 @@ size_ok:=false;
 repeat
    if ((chsize>diskfree(0)) and (chsize<>1024*1024*1024*1024*1024-volume_authsize)) then
       if MessageDlg('Output path '+outpath+' seems to not have enough free space for an output volume, try to free some space on it or exchange it with an empty one if it''s a removable media. Do you want to test the path another time?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate
+      else halt(-3)
    else size_ok:=true;
 until size_ok=true;
 end;
@@ -840,6 +854,7 @@ var
    n_exp,file_size,total,cent_size,prog_size,prog_compsize,in_size,out_size,exp_size,ch_res:qword;
    in_qualified_name,out_file,out_path,out_name,s:ansistring;
    ansi_qualified_name:ansistring;
+   inskipped:boolean;
 label 1;
 
 procedure clean_variables;
@@ -1582,10 +1597,10 @@ else ch_number_expected:=0;
 if ch_number_expected>9999 then
    if (upcase(compr)='PCOMPRESS0') then
       if MessageDlg('Expected '+inttostr(ch_number_expected)+' volumes. It seems a lot! Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate
+      else halt(-3)
    else
       if MessageDlg('Up to '+inttostr(ch_number_expected)+' volumes are expected. It seems a lot, even if the selected compression scheme may reduce the actual number. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate;
+      else halt(-3);
 if ch_number_expected>0 then
    if (upcase(compr)<>'PCOMPRESS0') then
       if ch_size<>1024*1024*1024*1024*1024-volume_authsize then Form_pea.LabelEncrypt5.Caption:='Volume number and total output size may vary due to the compressibility of the input; volume size: '+inttostr(ch_size+volume_authsize)+' B'
@@ -1609,10 +1624,10 @@ Form_pea.LabelEncrypt3.Caption:='Output: '+out_path+out_file+'.*';
 if exp_size>diskfree(0) then
    if (upcase(compr)='PCOMPRESS0') then
       if MessageDlg('Output path '+out_path+' seems to not have enough free space, you should continue only if it is a removable support and you have enough removable media. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate
+      else halt(-3)
    else
       if MessageDlg('Output path '+out_path+' seems to not have enough free space, you should continue only if it is a removable support and you have enough removable media (however the selected compression scheme may reduce the total space needed for the output). Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate;
+      else halt(-3);
 end;
 
 procedure do_report_PEA;
@@ -1636,7 +1651,12 @@ obj_ok:=0;
 for k:=0 to n_input_files-1 do
     begin
     Form_report.StringGrid1.Cells[0,k+1]:=in_files[k];
-    if status_files[k]=true then Form_report.StringGrid1.Cells[1,k+1]:='Archived' else Form_report.StringGrid1.Cells[1,k+1]:='Skipped';
+    if status_files[k]=true then Form_report.StringGrid1.Cells[1,k+1]:='Archived'
+    else
+       begin
+       inskipped:=true;
+       Form_report.StringGrid1.Cells[1,k+1]:='Skipped';
+       end;
     if status_files[k]=true then
        begin
        Form_report.StringGrid1.Cells[2,k+1]:=inttostr(fsizes[k]);
@@ -1698,7 +1718,9 @@ else
 end;
 
 begin
+exitcode:=-1;
 clean_variables;
+inskipped:=false;
 get_fingerprint (fingerprint,false);
 if (upcase(pw_param)<>'HIDDEN') and (upcase(pw_param)<>'HIDDEN_REPORT') then Form_pea.Visible:=true else Form_pea.Visible:=false;
 Form_pea.Caption:='Pea';
@@ -1954,7 +1976,9 @@ Form_pea.LabelOpen.Caption:='Explore';
 output:=out_path;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
-if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log PEA','txt');
+Form_pea.ButtonPeaExit.Visible:=false;
+if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log PEA','txt',upcase(pw_param),out_path);
+if inskipped=true then exitcode:=-2 else exitcode:=0;
 Sleep(500);
 if closepolicy>0 then Form_pea.Close; //error conditions are intercepted before and handled with internal_error procedure
 end;
@@ -2164,10 +2188,10 @@ Form_pea.LabelDecrypt3.Caption:='Output: '+out_path+out_file+DirectorySeparator;
 if exp_space>diskfree(0) then
    if (upcase(compr)='PCOMPRESS0') then
       if MessageDlg('Output path '+out_path+' seems to not have enough free space, you should continue only if it is a removable support and you have enough removable media. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate
+      else halt(-3)
    else
       if MessageDlg('Output path '+out_path+' seems to not have enough free space, you should continue only if it is a removable support and you have enough removable media (however the selected compression scheme may reduce the total space needed for the output). Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-      else Application.Terminate;
+      else halt(-3);
 end;
 
 procedure ansiextract2dir;
@@ -2873,6 +2897,7 @@ MessageDlg(s, mtError, [mbOK], 0);
 end;
 
 begin
+exitcode:=-1;
 clean_variables;
 if (upcase(pw_param)<>'HIDDEN') and (upcase(pw_param)<>'HIDDEN_REPORT') then Form_pea.Visible:=true else Form_pea.Visible:=false;
 Form_pea.PanelDecrypt1.visible:=true;
@@ -2907,7 +2932,7 @@ evaluate_output;
 setcurrentdir(extractfilepath(out_param));
 if exp_space>diskfree(0) then
    if MessageDlg('Output path '+extractfilepath(out_param)+' seems to not have enough free space. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-   else Application.Terminate;
+   else halt(-3);
 {blockread 10 byte archive header; since volume tag size is unknown to UnPEA,
 PEA set first volume size mandatory at least 10 byte (plus volume tag) in order
 to make UnPEA able to blockread the archive header and calculate the volume tag
@@ -3508,7 +3533,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          try
             setcurrentdir(out_path);
             do_report_unpea;
-            save_report('error log','txt');
+            save_report('error log','txt',upcase(pw_param),out_path);
          except
          end;
       internal_error('Unexpected error working on volume '+inttostr(j)+'; data is either become non accessible or could be corrupted in a way that not allow the current implementation to extract data from the archive (in that case you should try to obtain a new copy of the archive). Tried to extract available output to: '+out_path+out_file+DirectorySeparator+' and to save the error report in: '+out_path);
@@ -3529,12 +3554,15 @@ Form_pea.LabelOpen.Caption:='Explore';
 output:=out_path+out_file;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
-if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt');
+Form_pea.ButtonPeaExit1.Visible:=false;
+if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt',upcase(pw_param),out_path);
 if report_errors =0 then
    begin
+   exitcode:=0;
    sleep(500);
    if closepolicy>0 then Form_pea.Close;
-   end;
+   end
+else exitcode:=-2;
 end;
 
 {
@@ -3848,7 +3876,7 @@ ch_number_expected:=(in_size div ch_size)+1;
 if (exp_size mod ch_size)=0 then ch_number_expected:=ch_number_expected-1;
 if ch_number_expected>9999 then
    if MessageDlg('Expected '+inttostr(ch_number_expected)+' volumes. It seems a lot! Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-   else Application.Terminate;
+   else halt(-3);
 if ch_size<>1024*1024*1024*1024*1024 then Form_pea.LabelEncrypt5.Caption:='Expected '+inttostr(ch_number_expected)+' volume(s) of '+inttostr(ch_size+volume_authsize)+' B for a total output size of '+inttostr(exp_size)+' B'
 else Form_pea.LabelEncrypt5.Caption:='Expected a single volume of '+inttostr(exp_size)+' B of size';
 end;
@@ -3866,7 +3894,7 @@ if out_path[length(out_path)]<>DirectorySeparator then out_path:=out_path+Direct
 Form_pea.LabelEncrypt3.Caption:='Output: '+out_path+out_file;
 if exp_size>diskfree(0) then
    if MessageDlg('Output path '+out_path+' seems to not have enough free space, you should continue only if it is a removable support and you have enough removable media. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-   else Application.Terminate;
+   else halt(-3);
 end;
 
 procedure do_report_rfs;
@@ -3927,6 +3955,7 @@ Form_pea.LabelEncrypt6.Visible:=true;
 end;
 
 begin
+exitcode:=-1;
 clean_variables;
 if (upcase(pw_param)<>'HIDDEN') and (upcase(pw_param)<>'HIDDEN_REPORT') then Form_pea.Visible:=true else Form_pea.Visible:=false;
 Form_pea.PanelDecrypt1.visible:=false;
@@ -4000,7 +4029,9 @@ Form_pea.LabelOpen.Caption:='Explore';
 output:=out_path;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
-if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log Raw File Split','txt');
+Form_pea.ButtonPeaExit.Visible:=false;
+if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log Raw File Split','txt',upcase(pw_param),out_path);
+exitcode:=0;
 Sleep(500);
 if closepolicy>0 then Form_pea.Close;
 end;
@@ -4150,7 +4181,7 @@ if out_path[length(out_path)]<>DirectorySeparator then out_path:=out_path+Direct
 Form_pea.LabelDecrypt3.Caption:='Input: '+out_path+out_file;
 if exp_space>diskfree(0) then
    if MessageDlg('Output path '+out_path+' seems to not have enough free space. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
-   else Application.Terminate;
+   else halt(-3);
 end;
 
 procedure init_volume_control_algo;
@@ -4293,6 +4324,7 @@ Form_report.Label4.Caption:='Joined '+inttostr(j-1)+' volume(s)';
 end;
 
 begin
+exitcode:=-1;
 clean_variables;
 if (upcase(pw_param)<>'HIDDEN') and (upcase(pw_param)<>'HIDDEN_REPORT') then Form_pea.Visible:=true else Form_pea.Visible:=false;
 Form_pea.PanelDecrypt1.visible:=true;
@@ -4412,7 +4444,9 @@ output:=out_path+out_file;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.LabelLog1.Visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
-if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log Raw File Join','txt');
+Form_pea.ButtonPeaExit1.Visible:=false;
+if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log Raw File Join','txt',upcase(pw_param),out_path);
+exitcode:=0;
 Sleep(500);
 if closepolicy>0 then Form_pea.Close;
 end;
@@ -4505,6 +4539,7 @@ end;
 {$ENDIF}
 
 begin
+exitcode:=-1;
 tsin:=datetimetotimestamp(now);
 Form_pea.PanelPW1.height:=2;
 Form_pea.ButtonToolsCancel.visible:=true;
@@ -4763,9 +4798,11 @@ Form_pea.LabelLog1.Visible:=true;
 Application.ProcessMessages;
 if errors=0 then
    begin
+   exitcode:=0;
    Sleep(1500);
    if closepolicy>0 then Form_pea.Close;
-   end;
+   end
+else exitcode:=-2;
 end;
 
 //procedure to wipe/sanitize free space: write files smaller than 2GB then delete
@@ -4808,12 +4845,12 @@ end;
 
 procedure cancelsanitize(n:integer);
 begin
-Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' operation cancelled, recovering free space from '+wrkdir+' ...';
+Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' operation cancelled by user, recovering free space from '+wrkdir+' ...';
 Application.ProcessMessages;
 recoverfreespace(n);
 removedir(wrkdir);
 sleep(1500);
-Application.Terminate;
+halt(-4);
 end;
 
 procedure sanitizefixed(b:byte;j:integer);
@@ -4857,6 +4894,7 @@ begin
    end;
 
 begin
+exitcode:=-1;
 {$IFDEF MSWINDOWS}
 Form_pea.ButtonToolsCancel.visible:=true;
 Form_pea.PanelPW1.height:=2;
@@ -5007,6 +5045,7 @@ Application.ProcessMessages;
    if closepolicy>0 then Form_pea.Close;
    end;}
 {$ENDIF}
+exitcode:=0;
 end;
 
 //procedure to compare files
@@ -5017,8 +5056,9 @@ var
    sizea,sizeb,sizemin,total:qword;
    i,d,x,numreada,numreadb,numreadmin,continue:integer;
    bufa,bufb:array[0..65535]of byte;
-label 1;
+   stoppedcomparison:boolean;
 begin
+exitcode:=-1;
 Form_pea.PanelPW1.height:=2;
 Form_report.visible:=true;
 Form_report.Notebook1.PageIndex:=0;
@@ -5115,6 +5155,8 @@ Form_report.Label2.Caption:=Form_pea.LabelTools2.Caption;
 Form_report.Label3.Caption:=Form_pea.LabelTools3.Caption+' ('+inttostr(sizea)+' B)';
 Form_report.Label4.Caption:=Form_pea.LabelTools4.Caption+' ('+inttostr(sizeb)+' B)';
 Form_pea.Visible:=false;
+stoppedcomparison:=false;
+Form_report.StringGrid1.BeginUpdate;
 repeat
    blockread (fa,bufa,65536,numreada);
    blockread (fb,bufb,65536,numreadb);
@@ -5137,22 +5179,24 @@ repeat
                begin
                Form_report.StringGrid1.Cells[0,d+x]:='Comparison terminated by user';
                Form_report.StringGrid1.Cells[1,d+x]:='More than 100 different bytes';
-               goto 1;
+               stoppedcomparison:=true;
+               break;
                end;
             end;
          if (d>=10000) then
             begin
             Form_report.StringGrid1.Cells[0,d+x]:='Comparison automatically terminated';
             Form_report.StringGrid1.Cells[1,d+x]:='More than 10000 different bytes';
-            goto 1;
+            stoppedcomparison:=true;
+            break;
             end;
          end;
       end;
    inc(total,numreadmin);
    Form_pea.ProgressBar1.Position:=(total*100) div sizemin;
    Application.ProcessMessages;
-until ((numreada=0) or (numreadb=0));
-1:
+until ((numreada=0) or (numreadb=0) or (stoppedcomparison=true));
+Form_report.StringGrid1.EndUpdate;
 closefile(fa);
 closefile(fb);
 Form_report.StringGrid1.RowCount:=Form_report.StringGrid1.RowCount+1;
@@ -5192,6 +5236,7 @@ Form_pea.ButtonDone1.Visible:=true;
 Form_pea.LabelOpen.Visible:=true;
 Form_pea.LabelOpen.Enabled:=false;
 Form_pea.LabelLog1.Visible:=true;
+exitcode:=0;
 end;
 
 //procedure to checksum/hash files
@@ -5253,10 +5298,11 @@ begin
 Form_pea.LabelTools4.Caption:='Operation cancelled by user, terminating...';
 Application.ProcessMessages;
 sleep(1500);
-Application.Terminate;
+halt(-4);
 end;
 
 begin
+exitcode:=-1;
 tsin:=datetimetotimestamp(now);
 Form_pea.PanelPW1.height:=2;
 Form_pea.ButtonToolsCancel.visible:=true;
@@ -5308,7 +5354,7 @@ else
       else
          begin
          MessageDlg('Mode '+paramstr(2)+' is not valid, use HEX to see output coded as hexadecimal, LSBHEX for LSB hexadecimal or BASE64 for output coded in BASE64', mtError, [mbOK], 0);
-         Application.Terminate;
+         halt(-3);
          end;
 //read algorithms to be used
 j:=3;
@@ -5380,12 +5426,12 @@ until ((upcase(paramstr(j-1))='ON') or (j>paramcount));
 if j=4 then
    begin
    MessageDlg('No algorithm received', mtError, [mbOK], 0);
-   Application.Terminate;
+   halt(-3);
    end;
 if j>paramcount then
    begin
    MessageDlg('No input file received', mtError, [mbOK], 0);
-   Application.Terminate;
+   halt(-3);
    end;
 if oper='CRCHASH' then Form_pea.Caption:='Checksum and hash'
 else Form_pea.Caption:='Analyze';
@@ -6180,6 +6226,7 @@ Form_pea.LabelOpen.Enabled:=false;
 Form_pea.LabelLog1.Visible:=true;
 Form_report.Visible:=true;
 Form_pea.Visible:=false;
+exitcode:=0;
 end;
 
 //procedure to display environment variables strings
@@ -6187,6 +6234,7 @@ procedure envstr;
 var
    i:integer;
 begin
+exitcode:=-1;
 Form_pea.PanelPW1.height:=2;
 Form_report.Notebook1.PageIndex:=0;
 Form_report.Caption:='Environment variables';
@@ -6217,6 +6265,7 @@ Form_pea.LabelOpen.Enabled:=false;
 Form_pea.LabelLog1.Visible:=true;
 Form_report.Visible:=true;
 Form_pea.Visible:=false;
+exitcode:=0;
 end;
 
 procedure listfiles; //list files: mode INFO gives detailed information, LIST plain list
@@ -6231,6 +6280,7 @@ var
    nfound,nsize,smax,smin,compsize:qword;
    dmax,dmin,compest:integer;
 begin
+exitcode:=-1;
 mode:=(paramstr(2));
 s:=(paramstr(3));
 Form_pea.Caption:=mode;
@@ -6299,6 +6349,7 @@ if upcase(mode)='INFO' then
    end;
 Form_report.Visible:=true;
 Form_pea.Visible:=false;
+exitcode:=0;
 end;
 
 //hex preview
@@ -6311,6 +6362,7 @@ var
    bufa:array[0..65535]of byte;
    bufhex:array[0..15,0..4095]of byte;
 begin
+exitcode:=-1;
 if directoryexists(paramstr(2)) then
    begin
    Form_pea.LabelTools2.Caption:=paramstr(2)+' is a directory, cannot be previewed';
@@ -6345,7 +6397,7 @@ if sizea=0 then begin internal_error('The file is empty, cannot be previewed'); 
 setcurrentdir(extractfilepath((paramstr(2))));
 except
 MessageDlg((paramstr(2))+' is not accessible (or not a file)', mtError, [mbOK], 0);
-Application.Terminate;
+halt(-3);
 exit;
 end;
 if sizea>32*1024*1024 then
@@ -6413,6 +6465,7 @@ Form_pea.ButtonDone1.Visible:=true;
 Form_pea.LabelOpen.Visible:=true;
 Form_pea.LabelOpen.Enabled:=false;
 Form_pea.LabelLog1.Visible:=true;
+exitcode:=0;
 end;
 
 {
@@ -6448,6 +6501,7 @@ if (upcase(paramstr(7))='TRIATS') or (upcase(paramstr(7))='TRITSA') or (upcase(p
    (upcase(paramstr(7))='EAX') or (upcase(paramstr(7))='TF') or (upcase(paramstr(7))='SP') or (upcase(paramstr(7))='HMAC') then
    if (upcase(paramstr(8))='INTERACTIVE') or (upcase(paramstr(8))='INTERACTIVE_REPORT') then
       begin
+      Form_pea.Visible:=true;
       Form_pea.PanelDecrypt1.visible:=false;
       Form_pea.PanelEncrypt1.visible:=true;
       Form_pea.PanelPW1.Visible:=true;
@@ -6517,6 +6571,7 @@ decode_control_algo ( algo,
 if pwneeded=true then
    if (upcase(paramstr(7))='INTERACTIVE') or (upcase(paramstr(7))='INTERACTIVE_REPORT') then
       begin
+      Form_pea.Visible:=true;
       Form_pea.PanelDecrypt1.visible:=true;
       Form_pea.PanelEncrypt1.visible:=false;
       Form_pea.PanelPW1.Visible:=true;
@@ -6527,6 +6582,7 @@ end;
 
 procedure call_rfs;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=false;
 if upcase(paramstr(3))='ASK' then
@@ -6540,6 +6596,7 @@ end;
 
 procedure call_rfj;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=false;
 interacting:=false;
@@ -6547,6 +6604,7 @@ end;
 
 procedure call_wipe;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6554,6 +6612,7 @@ end;
 
 procedure call_sanitize;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6561,6 +6620,7 @@ end;
 
 procedure call_compare;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6568,6 +6628,7 @@ end;
 
 procedure call_check;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6575,6 +6636,7 @@ end;
 
 procedure call_envstr;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6582,6 +6644,7 @@ end;
 
 procedure call_list;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6589,6 +6652,7 @@ end;
 
 procedure call_hexpreview;
 begin
+Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=true;
 interacting:=false;
@@ -6603,12 +6667,7 @@ end;
 
 procedure TForm_pea.ButtonPeaExitClick(Sender: TObject);
 begin
-halt;
-end;
-
-procedure TForm_pea.Bevel12ChangeBounds(Sender: TObject);
-begin
-
+halt(-4);
 end;
 
 procedure TForm_pea.ButtonPW1Click(Sender: TObject);
@@ -7141,8 +7200,8 @@ end;
 
 var
    dummy:ansistring;
-   kfun,funutil,i:integer;
 begin
+fshown:=false;
 executable_path:=extractfilepath((paramstr(0)));
 if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
@@ -7198,7 +7257,7 @@ try
    readln(conf,color3);
    readln(conf,color4);
    readln(conf,color5);
-   readln(conf,dummy);
+   readln(conf,dummy); gridaltcolor:=strtoint(dummy);
    readln(conf,dummy); pzooming:=strtoint(dummy);
    readln(conf,dummy); pspacing:=strtoint(dummy);
    readconf_relativeline(6,dummy); closepolicy:=strtoint(dummy);
@@ -7224,6 +7283,7 @@ except
    closepolicy:=1;
    pzooming:=100;
    pspacing:=4;
+   gridaltcolor:=0;
 end;
 Unit_report.color1:=color1;
 Unit_report.color2:=color2;
@@ -7243,49 +7303,6 @@ Panel1.visible:=false;
 details:=false;
 control:=false;
 interacting:=true;
-if paramcount>0 then
-   begin
-   if upcase(paramstr(1))='PEAUTILS' then
-      begin
-      try
-      kfun:=strtoint(paramstr(2));
-      Form_pea.ComboBoxUtils.ItemIndex:=kfun;
-      Form_pea.ComboBoxUtilsChange(nil);
-      for i:=3 to paramcount do
-         Form_pea.ListMemo.Append(paramstr(i));
-      except
-      Form_pea.ComboBoxUtilsChange(nil);
-      end;
-      end
-   else
-      begin
-      funutil:=0;
-      case upcase(paramstr(1)) of
-         'PEA' : call_pea;
-         'UNPEA' : call_unpea;
-         'RFS' : call_rfs;
-         'RFJ' : call_rfj;
-         'WIPE' : call_wipe;
-         'SANITIZE' : call_sanitize;
-         'COMPARE' : call_compare;
-         'CHECK' : call_check;
-         'ENVSTR' : call_envstr;
-         'LIST' : call_list;
-         'HEXPREVIEW' : call_hexpreview;
-      else funutil:=1;//internal_error('Incorrect request for Pea, the action "'+paramstr(1)+'" is not supported');
-      end;
-      if funutil=0 then Form_pea.PanelUtils.visible:=false
-      else
-         begin
-         kfun:=12;
-         Form_pea.ComboBoxUtils.ItemIndex:=kfun;
-         Form_pea.ComboBoxUtilsChange(nil);
-         for i:=1 to paramcount do
-            Form_pea.ListMemo.Append(paramstr(i));
-         end;
-      end;
-   end
-else Form_pea.ComboBoxUtilsChange(nil);
 end;
 
 procedure TForm_pea.FormDropFiles(Sender: TObject;
@@ -7330,7 +7347,12 @@ end;
 end;
 
 procedure TForm_pea.FormShow(Sender: TObject);
+var
+  kfun,funutil,i:integer;
 begin
+if fshown=true then exit;
+fshown:=true;
+Form_pea.Visible:=false;
 set_items_height;
 load_icons;
 if color3='clForm' then color3:=ColorToString(PTACOL);
@@ -7345,6 +7367,65 @@ Form_report.ShapeTitleREPb1.Brush.Color:=pvvlblue;
 Form_report.ShapeTitleREPb2.Brush.Color:=pvvlblue;
 Form_report.LabelSaveTxt.Font.Color:=ptextaccent;
 Form_report.LabelSaveTxt1.Font.Color:=ptextaccent;
+if gridaltcolor=1 then
+   begin
+   Form_report.StringGrid1.AlternateColor:=stringtocolor(collow);
+   Form_report.StringGrid2.AlternateColor:=stringtocolor(collow);
+   end
+else
+   begin
+   Form_report.StringGrid1.AlternateColor:=stringtocolor(color2);
+   Form_report.StringGrid2.AlternateColor:=stringtocolor(color2);
+   end;
+if paramcount>0 then
+   begin
+   if upcase(paramstr(1))='PEAUTILS' then
+      begin
+      try
+      kfun:=strtoint(paramstr(2));
+      Form_pea.Visible:=True;
+      Form_pea.ComboBoxUtils.ItemIndex:=kfun;
+      Form_pea.ComboBoxUtilsChange(nil);
+      for i:=3 to paramcount do
+         Form_pea.ListMemo.Append(paramstr(i));
+      except
+      Form_pea.ComboBoxUtilsChange(nil);
+      end;
+      end
+   else
+      begin
+      funutil:=0;
+      case upcase(paramstr(1)) of
+         'PEA' : call_pea;
+         'UNPEA' : call_unpea;
+         'RFS' : call_rfs;
+         'RFJ' : call_rfj;
+         'WIPE' : call_wipe;
+         'SANITIZE' : call_sanitize;
+         'COMPARE' : call_compare;
+         'CHECK' : call_check;
+         'ENVSTR' : call_envstr;
+         'LIST' : call_list;
+         'HEXPREVIEW' : call_hexpreview;
+      else funutil:=1;//internal_error('Incorrect request for Pea, the action "'+paramstr(1)+'" is not supported');
+      end;
+      if funutil=0 then Form_pea.PanelUtils.visible:=false
+      else
+         begin
+         kfun:=12;
+         Form_pea.Visible:=True;
+         Form_pea.ComboBoxUtils.ItemIndex:=kfun;
+         Form_pea.ComboBoxUtilsChange(nil);
+         for i:=1 to paramcount do
+            Form_pea.ListMemo.Append(paramstr(i));
+         end;
+      end;
+   end
+else
+   begin
+   Form_pea.Visible:=True;
+   Form_pea.ComboBoxUtilsChange(nil);
+   end;
 end;
 
 procedure TForm_pea.ImageUtilsClick(Sender: TObject);

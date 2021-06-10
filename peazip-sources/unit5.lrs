@@ -1,10 +1,10 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TFormKF','FORMDATA',[
-  'TPF0'#7'TFormKF'#6'FormKF'#4'Left'#2'i'#6'Height'#3#144#1#3'Top'#3'`'#2#5'Wi'
-  +'dth'#3'X'#2#7'Caption'#6#6'FormKF'#12'ClientHeight'#3#144#1#11'ClientWidth'
-  +#3'X'#2#5'Color'#7#8'clWindow'#21'Constraints.MinHeight'#3#144#1#20'Constrai'
-  +'nts.MinWidth'#3'X'#2#9'Icon.Data'#10#130#5#0#0'~'#5#0#0#0#0#1#0#1#0#16#16
+  'TPF0'#7'TFormKF'#6'FormKF'#4'Left'#3#133#0#6'Height'#3#144#1#3'Top'#3#238#1#5
+  +'Width'#3'X'#2#7'Caption'#6#6'FormKF'#12'ClientHeight'#3#144#1#11'ClientWidt'
+  +'h'#3'X'#2#5'Color'#7#8'clWindow'#21'Constraints.MinHeight'#3#144#1#20'Const'
+  +'raints.MinWidth'#3'X'#2#9'Icon.Data'#10#130#5#0#0'~'#5#0#0#0#0#1#0#1#0#16#16
   +#255#0#0#0#0#0'h'#5#0#0#22#0#0#0'('#0#0#0#16#0#0#0' '#0#0#0#1#0#8#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#159'x'#0#0#159'r'#0#0#169'w'#0#0#184
   +#127#0#0#205#137#0#0#227#148#0#0#230#150#0#0#228#149#0#0#158#127#0#0#151'l'#0
@@ -94,15 +94,15 @@ LazarusResources.Add('TFormKF','FORMDATA',[
   +'ditSuggestPW'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#4#2#6'Heig'
   +'ht'#2#23#3'Top'#2#24#5'Width'#2'H'#7'Anchors'#11#5'akTop'#7'akRight'#8'akBo'
   +'ttom'#0#19'BorderSpacing.Right'#2#12#8'MaxValue'#2'@'#8'MinValue'#2#4#8'Tab'
-  +'Order'#2#3#5'Value'#2#8#0#0#7'TButton'#15'ButtonSuggestPW'#22'AnchorSideLef'
-  +'t.Control'#7#13'EditSuggestPW'#21'AnchorSideTop.Control'#7#17'SpinEditSugge'
-  +'stPW'#18'AnchorSideTop.Side'#7#9'asrBottom'#23'AnchorSideRight.Control'#7#17
-  +'SpinEditSuggestPW'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorSideBot'
-  +'tom.Side'#7#9'asrBottom'#4'Left'#2#12#6'Height'#2#25#3'Top'#2'5'#5'Width'#3
-  +'@'#2#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'AutoSize'#9#17'BorderS'
-  +'pacing.Top'#2#6#7'Caption'#6#16'Suggest password'#7'OnClick'#7#20'ButtonSug'
-  +'gestPWClick'#8'TabOrder'#2#4#0#0#12'TButtonPanel'#12'ButtonPanel1'#4'Left'#2
-  +#12#6'Height'#2#26#3'Top'#3'j'#1#5'Width'#3'@'#2#7'Anchors'#11#7'akRight'#8
+  +'Order'#2#3#5'Value'#2#12#0#0#7'TButton'#15'ButtonSuggestPW'#22'AnchorSideLe'
+  +'ft.Control'#7#13'EditSuggestPW'#21'AnchorSideTop.Control'#7#17'SpinEditSugg'
+  +'estPW'#18'AnchorSideTop.Side'#7#9'asrBottom'#23'AnchorSideRight.Control'#7
+  +#17'SpinEditSuggestPW'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorSide'
+  +'Bottom.Side'#7#9'asrBottom'#4'Left'#2#12#6'Height'#2#25#3'Top'#2'5'#5'Width'
+  +#3'@'#2#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'AutoSize'#9#17'Borde'
+  +'rSpacing.Top'#2#6#7'Caption'#6#16'Suggest password'#7'OnClick'#7#20'ButtonS'
+  +'uggestPWClick'#8'TabOrder'#2#4#0#0#12'TButtonPanel'#12'ButtonPanel1'#4'Left'
+  +#2#12#6'Height'#2#26#3'Top'#3'j'#1#5'Width'#3'@'#2#7'Anchors'#11#7'akRight'#8
   +'akBottom'#0#18'BorderSpacing.Left'#2#12#19'BorderSpacing.Right'#2#12#20'Bor'
   +'derSpacing.Bottom'#2#12#20'BorderSpacing.Around'#2#0#13'OKButton.Name'#6#8
   +'OKButton'#23'OKButton.DefaultCaption'#9#16'OKButton.Enabled'#8#15'HelpButto'

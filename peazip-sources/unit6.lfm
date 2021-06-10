@@ -1,7 +1,7 @@
 object FormInput: TFormInput
-  Left = 621
+  Left = 77
   Height = 200
-  Top = 808
+  Top = 547
   Width = 560
   AutoSize = True
   Caption = 'PeaZip'
@@ -77,35 +77,20 @@ object FormInput: TFormInput
     ClientHeight = 138
     ClientWidth = 560
     TabOrder = 0
-    object Editinputquery: TEdit
-      AnchorSideLeft.Control = PanelInput
-      AnchorSideTop.Control = PanelInput
-      AnchorSideRight.Control = PanelInput
-      AnchorSideRight.Side = asrBottom
-      Left = 12
-      Height = 23
-      Top = 24
-      Width = 536
-      Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 24
-      BorderSpacing.Right = 12
-      OnKeyPress = EditinputqueryKeyPress
-      TabOrder = 0
-    end
     object CheckBox1: TCheckBox
       AnchorSideLeft.Control = Editinputquery
-      AnchorSideTop.Control = Editinputquery
       AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Control = PanelInput
+      AnchorSideBottom.Side = asrBottom
       Left = 12
       Height = 19
-      Top = 71
+      Top = 119
       Width = 207
-      BorderSpacing.Top = 24
+      Anchors = [akLeft, akBottom]
       Caption = 'Recoursive: search in subdirectories'
       Checked = True
       State = cbChecked
-      TabOrder = 1
+      TabOrder = 0
     end
     object LabelWarning: TLabel
       AnchorSideLeft.Control = Editinputquery
@@ -137,8 +122,8 @@ object FormInput: TFormInput
     object LabelUp: TLabel
       AnchorSideLeft.Control = Labelspac2
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Editinputquery
-      AnchorSideTop.Side = asrBottom
+      AnchorSideTop.Control = Labelspac2
+      AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
       Left = 86
       Height = 15
@@ -154,8 +139,8 @@ object FormInput: TFormInput
     end
     object LabelTimestamp: TLabel
       AnchorSideLeft.Control = Labelspac4
-      AnchorSideTop.Control = Editinputquery
-      AnchorSideTop.Side = asrBottom
+      AnchorSideTop.Control = Labelspac2
+      AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
       Left = 148
       Height = 15
@@ -244,6 +229,25 @@ object FormInput: TFormInput
       Caption = '/'
       ParentColor = False
       ParentFont = False
+    end
+    object Editinputquery: TComboBox
+      AnchorSideLeft.Control = PanelInput
+      AnchorSideTop.Control = PanelInput
+      AnchorSideRight.Control = PanelInput
+      AnchorSideRight.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 24
+      Width = 536
+      Anchors = [akTop, akLeft, akRight]
+      AutoComplete = True
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      ItemHeight = 15
+      OnKeyPress = EditinputqueryKeyPress
+      TabOrder = 1
     end
   end
   object ButtonPanel1: TButtonPanel

@@ -113,6 +113,8 @@ unit list_utils;
                                 Improved recognition of temp and other system's paths
  0.55     20210123  G.Tani      Improved handling of special characters in passwords and filenames
  0.56     20210224  G.Tani      Improved checkfilename function
+ 0.57     20210509  G.Tani      Added support for .xappx, .3mf, .vsdx, .mmzx, .aasx, .slx, ad .scdoc files, 218 extensions supported
+                                Reorganized extensions codes in textext function: 0..99 traditional archives 100..499 containers 500..599 containers that are usually not expected to be handled as archives 1000+archive types handled (for browsing) through separate backends
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -746,37 +748,6 @@ if FindFirst(dir + mask, fattrib, r) = 0 then
    FindClose(r);
    end;
 end;
-
-{function movecontent_todir(d1,d2:ansistring; mode:integer):integer; //input, output, mode 0:keep input dir 1:delete input dir if empty
-//results -1 copy error (only exceptions), 0 success, 1 remove input dir error
-var
-   r:TSearchRec;
-begin
-Result:=-1;
-if (FindFirst(d1 + '*', faAnyFile, r) = 0) then
-   try
-      repeat
-      {$IFNDEF MSWINDOWS}
-      if FileExists(d2+r.name) then break;
-      {$ENDIF}
-      if (r.Name <> '.') and (r.Name <> '..') then
-         renamefile(d1+r.name, d2+r.name);
-      until findnext(r) <> 0;
-   except
-      FindClose(r);
-      exit;
-   end;
-FindClose(r);
-Result:=0;
-if mode=1 then
-   if checkempty_dir(d1)= true then
-      try
-      if removedir(d1)=true then else Result:=1;
-      except
-      Result:=1;
-      end
-   else Result:=1;
-end;}
 
 function movecontent_todir(d1,d2:ansistring; mode:integer):integer; //input, output, mode 0:keep input dir 1:delete input dir if empty
 //results -1 copy error, 0 success, 1 remove input dir error
@@ -2015,16 +1986,14 @@ begin
   ext := lowercase(extractfileext(s));
   //file types supported through 7z backend
   case ext of
+    //trditioanl archive types 0..99
     '.7z', '.cb7': testext := 0;
     '.bz', '.bz2', '.bzip2', '.bzip', '.tbz2', '.tbz', '.tbzip2', '.tbzip', '.tb2': testext := 1;
     '.gz', '.gzip', '.tgz', '.tpz', '.cpgz' : testext := 2;
     '.tar', '.cbt': testext := 5;
     '.zip', '.cbz', '.smzip', '.ppmd': testext := 6;
     '.arj': testext := 7;
-    '.cab', '.imf': testext := 8; //cab and derived formats
-    '.chm', '.chi', '.chq', '.chw', '.hxs', '.hxi', '.hxr', '.hxq', '.hxw', '.lit': testext := 9;
     '.cpio': testext := 10;
-    '.deb': testext := 11;
     '.lzh': testext := 12;
     '.rar', '.cbr', '.r00', '.r01': testext := 13;
     '.00':
@@ -2033,65 +2002,74 @@ begin
        if lowercase(extractfileext(s)) = '.rar' then
        testext := 13;
        end;//.rar.00
-    '.rpm': testext := 14;
-    '.z', '.taz', '.tz': testext := 16;
-    '.iso': testext := 19;
-    '.jar', '.ear', '.sar', '.war', '.apk': testext := 20;//Java and Android package (.zip derived)
-    '.lha': testext := 21;
-    '.pet', '.pup': testext := 22;//PuppyLinux packages
-    '.pak', '.pk3', '.pk4', '.iwd': testext := 23; //package format used in Quake3 (pk3) and Quake 4 and Doom3 (pk4), zip with checksum appended
-    '.slp': testext := 24;//Stampede Linux packages
-    '': if extractfilename(s) = '[Content]' then testext := 25;//in case of [Content] filename as when extracting RPM or SLP files
-    '.xpi': testext := 26;//Mozilla installer package
-    '.wim', '.swm': testext := 27;//WIM Windows image file, SWM Split WIM image file
-    '.u3p': testext := 28;//U3P portable application package
-    '.lzma86', '.lzma': testext := 29;
-    '.udf': testext := 30;
-    '.xar', '.pkg': testext := 31;
-    '.dmg': testext := 32;
-    '.hfs', '.hfsx': testext := 33;
-    '.part1', '.split': testext := 34; //generic spanned archive, open with 7z binary
-    '.gpt':  testext := 35; //GPT GUID Partition Table file
-    '.zipx': testext := 36;//non-legacy WinZip archives (supported for reading as for 7z 9.22)
-    '.kmz': testext := 37;
-    '.xz', '.txz': testext := 38;
-    '.vhd': testext := 39;//Microsoft Virtual PC Virtual Hard Disk
-    '.mslz': testext := 40;
-    '.apm': testext := 41; //Apple Partition Map disk images
-    '.ipa', '.ipsw': testext := 42; //.ipa iPhone application archive file .ipsw iOS devices firmware packages (.zip variants)
-    '.bsz': testext := 43;
-    '.rmskin': testext := 44;
-    '.pcv': testext := 45; //Thunderbird profile MozBackup
-    '.wal', '.wsz': testext := 46;
-    '.wmz': testext := 47; //compressed Windows Media Player file
-    '.air': testext := 48; // Adobe Integrated Runtime
-    '.ima', '.img': testext := 49;
-    '.imz': testext := 50;
-    '.mdf': testext := 51; //Alchool 120 image file
-    '.crx': testext := 52; //Chrome extension
-    '.appx', '.appxbundle', '.appv', '.smpk', '.nupkg': testext := 53;//OPC files treated as archives
-    '.xzm': testext := 54;//Porteus Linux packages
-    '.mlc', '.mui': testext := 55;//Microsoft's Language Interface Pack and Multilingua User Interface packages
-    '.qcow', '.qcow2', '.qcow2c': testext := 56;//QUEMU image file
-    '.vmdk': testext := 57;//VMware Virtual Machine Disk
-    '.vdi': testext := 58;//Oracle VirtualBox Virtual Drive Image
-    '.xip': testext := 59;//Apple signed zip files
-    '.msix','.esd': testext := 60;//Microsoft MSIX app packages and ESD images
-    '.snap': testext := 61;//Canonical Ubuntu Snap packages
-    '.appimage': testext := 62;//AppImage packages
-    '.ipk': testext := 63; //Freedesktop's Listaller .ipk packages
-    '.mub': testext := 64; //mub compressed files
-    //mbr and filesystems that can be browsed by 7z backend
-    '.mbr': testext := 100;
-    '.fat': testext := 101;
-    '.ntfs': testext := 102;
-    '.sfs': testext := 103;
-    '.image': testext := 104;
-    '.squashfs': testext := 105;
-    '.cramfs': testext := 106;
-    '.ext', '.ext2', '.ext3', '.ext4': testext := 107;
-    '.scap', '.uefif': testext := 108;
-    //(500 to 503) file types usually not handled as archives, can be supported through 7z backend
+    '.z', '.taz', '.tz': testext := 14;
+    '.zipx': testext := 15;//non-legacy WinZip archives (supported for reading as for 7z 9.22)
+    '.xz', '.txz': testext := 16;
+    '.lha': testext := 17;
+    '.wim', '.swm': testext := 18;//MS WIM Windows image file, SWM Split WIM image file
+    '.lzma86', '.lzma': testext := 19;
+    '.part1', '.split': testext := 20; //generic spanned archive, open with 7z binary
+
+    //container types 100..499
+    '.cab', '.imf': testext := 100; //cab and derived formats
+    '.chm', '.chi', '.chq', '.chw', '.hxs', '.hxi', '.hxr', '.hxq', '.hxw', '.lit': testext := 101;
+    '.swf', '.fla': testext := 102; //Adobe Flash projects
+    '.air': testext := 103; // Adobe Integrated Runtime
+    '.xpi',//Mozilla installer package
+    '.maff': testext := 104; //Mozilla web archive
+    '.pcv': testext := 105; //Thunderbird profile MozBackup
+    '.crx': testext := 106; //Chrome extension
+    '.pak', '.pk3', '.pk4', '.iwd': testext := 107; //package format used in Quake3 (pk3) and Quake 4 and Doom3 (pk4), zip with checksum appended
+    '': if extractfilename(s) = '[Content]' then testext := 108;//in case of [Content] filename as when extracting RPM or SLP files
+    '.u3p': testext := 109;//U3P portable application package
+    '.xar', '.pkg': testext := 110;
+    '.kmz': testext := 111;
+    '.mslz': testext := 112;
+    '.bsz': testext := 113;
+    '.rmskin': testext := 114;
+    '.wal', '.wsz': testext := 115;
+    '.wmz': testext := 116; //compressed Windows Media Player file
+    '.xip': testext := 117;//Apple signed zip files
+    '.mub': testext := 118; //mub compressed files
+    '.dmg': testext := 119;
+    '.deb': testext := 120;
+    '.rpm': testext := 121;
+    '.pet', '.pup': testext := 122;//PuppyLinux packages
+    '.slp': testext := 123;//Stampede Linux packages
+    '.ipa', '.ipsw': testext := 124; //.ipa iPhone application archive file .ipsw iOS devices firmware packages (.zip variants)
+    '.jar', '.ear', '.sar', '.war', '.apk', '.xapk': testext := 125;//Java and Android package (.zip derived)
+    '.xzm': testext := 126;//Porteus Linux packages
+    '.mlc', '.mui': testext := 127;//Microsoft's Language Interface Pack and Multilingua User Interface packages
+    '.appx', '.appxbundle', '.appv', '.smpk', '.nupkg',
+    '.dwfx', '.familyx', '.fdix', '.semblio', '.vsix', '.cspkg', '.scdoc',
+    '.xps', '.oxps', '.jtx', '.cddx', '.3mf', '.vsdx', '.mmzx', '.aasx', '.slx': testext := 128;//OPC files treated as archives
+    '.msix','.esd': testext := 129;//Microsoft MSIX app packages and ESD images
+    '.snap': testext := 130;//Canonical Ubuntu Snap packages
+    '.appimage': testext := 131;//AppImage packages
+    '.ipk': testext := 132; //Freedesktop's Listaller .ipk packages
+    '.iso': testext := 133;
+    '.udf': testext := 134;
+    '.hfs', '.hfsx': testext := 135;
+    '.vhd': testext := 136;//Microsoft Virtual PC Virtual Hard Disk
+    '.apm': testext := 137; //Apple Partition Map disk images
+    '.ima', '.img': testext := 138;
+    '.imz': testext := 139;
+    '.mdf': testext := 140; //Alchool 120 image file
+    '.gpt':  testext := 150; //GPT GUID Partition Table file
+    '.qcow', '.qcow2', '.qcow2c': testext := 151;//QUEMU image file
+    '.vmdk': testext := 152;//VMware Virtual Machine Disk
+    '.vdi': testext := 153;//Oracle VirtualBox Virtual Drive Image
+    '.mbr': testext := 154;
+    '.fat': testext := 155;
+    '.ntfs': testext := 156;
+    '.sfs': testext := 157;
+    '.image': testext := 158;
+    '.squashfs': testext := 159;
+    '.cramfs': testext := 160;
+    '.ext', '.ext2', '.ext3', '.ext4': testext := 161;
+    '.scap', '.uefif': testext := 162;
+
+    //file types usually not handled as archives, can be supported through 7z backend 500..599
     '.exe', '.dll', '.sys': testext := 500; //most executables can be opened
     '.msi', '.msp', '.msu': testext := 500;
     '.sxc', '.sxd', '.sxi', '.sxw', '.stc', '.std', '.sti', '.stw', '.sxg', '.sxm': testext := 501; //OOo 1.x legacy filetypes
@@ -2100,18 +2078,11 @@ begin
     '.doc', '.dot', '.xls', '.xlt', '.ppt', '.pps', '.pot': testext := 502; //non executable COMPOUND files
     '.docx', '.dotx', '.xlsx', '.xltx', '.pptx': testext := 502; //OPC MS Office 2007 compressed formats, treated as othes MS Office formats
     '.mpp': testext := 502; //misc MS formats
-    //any other format to be handled primarily as non-archive:
-    //misc
-    '.swf', '.fla', '.flv',
-    //EPUB ebook (.zip variant)
-    '.epub',
-    //Mozilla web archive
-    '.maff',
-    //compressed Unix/Linux man files
-    '.man',
-    //other Open Packaging Conventions filetypes
-    '.dwfx', '.familyx', '.fdix', '.semblio', '.vsix', '.cspkg',
-    '.xps', '.oxps', '.jtx', '.cddx': testext := 503;
+    //misc formats to be handled primarily as non-archive:
+    '.flv', //flash videos
+    '.epub', //EPUB ebook (.zip variant)
+    '.man': testext := 503; //compressed Unix/Linux man files
+
     //files supported through other backends
     '.quad': testext := 1001;
     '.balz': testext := 1002;

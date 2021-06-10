@@ -41,6 +41,7 @@ unit Unit_report;
  0.22     20091103  G.Tani      New icons
  0.23     20101105  G.Tani      Updated look and feel
  0.24     20200414  G.Tani      New function to save crc/hash value(s) to file
+ 0.25     20210502  G.Tani      Batch and hidden *_report modes now save report to output path without requiring user interaction
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -130,7 +131,7 @@ type
     { public declarations }
   end;
 
-procedure save_report(s,reptype:ansistring);
+procedure save_report(s,reptype,modparam,out_path:ansistring);
   
 var
   Form_report: TForm_report;
@@ -271,7 +272,7 @@ end;
 {$ENDIF}
 end;
 
-procedure save_report(s,reptype:ansistring);
+procedure save_report(s,reptype,modparam,out_path:ansistring);
 var
 x,y:dword;
 field_delim:string;
@@ -279,14 +280,26 @@ p:ansistring;
 begin
 if reptype='txt' then field_delim:=chr($09)
 else field_delim:=';';
-{$IFDEF MSWINDOWS}wingetdesk(p);{$ELSE}get_desktop_path(p);{$ENDIF}
-if p[length(p)]<>directoryseparator then p:=p+directoryseparator;
-s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+s+'.'+reptype;
-Form_report.SaveDialog1.FileName:=p+s;
-if directoryexists(p) then Form_report.SaveDialog1.InitialDir:=p;
-if Form_report.SaveDialog1.Execute then
+
+if upcase(modparam)='INTERACTIVE_REPORT' then //interactive
+   begin
+   {$IFDEF MSWINDOWS}wingetdesk(p);{$ELSE}get_desktop_path(p);{$ENDIF}
+   if p[length(p)]<>directoryseparator then p:=p+directoryseparator;
+   s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+s+'.'+reptype;
+   Form_report.SaveDialog1.FileName:=p+s;
+   if directoryexists(p) then Form_report.SaveDialog1.InitialDir:=p;
+   if Form_report.SaveDialog1.Execute then s:=Form_report.SaveDialog1.FileName
+   else s:='';
+   end
+else //batch or hidden, non interactive
+   begin
+   p:=out_path;
+   if p[length(p)]<>directoryseparator then p:=p+directoryseparator;
+   s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+s+'.'+reptype;
+   end;
+
+if s<>'' then
 begin
-s:=Form_report.SaveDialog1.FileName;
 assignfile(t,s);
 rewrite(t);
 write_header(t);
@@ -353,7 +366,9 @@ end;
 procedure TForm_report.LabelCaseClick(Sender: TObject);
 var
    irow,icol:integer;
+   orig_activelabel_rep:TLabel;
 begin
+orig_activelabel_rep:=activelabel_rep;
 if LabelCase.Caption='[CASE]' then
    begin
    LabelCase.Caption:='[case]';
@@ -361,7 +376,6 @@ if LabelCase.Caption='[CASE]' then
    if Form_report.StringGrid1.ColCount<24 then exit;
    for irow:=1 to Form_report.StringGrid1.RowCount-1 do
       for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=lowercase(Form_report.StringGrid1.Cells[icol,irow]);
-   save_report_clip;
    end
 else
    begin
@@ -370,18 +384,19 @@ else
    if Form_report.StringGrid1.ColCount<24 then exit;
    for irow:=1 to Form_report.StringGrid1.RowCount-1 do
       for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=upcase(Form_report.StringGrid1.Cells[icol,irow]);
-   save_report_clip;
    end;
+clicklabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+if orig_activelabel_rep=LabelTitleREP1 then clicklabel_rep(LabelTitleREP1,ShapeTitleREPb1);
 end;
 
 procedure TForm_report.LabelSaveTxt1Click(Sender: TObject);
 begin
-save_report(Form_report.Caption,'csv');
+save_report(Form_report.Caption,'csv','INTERACTIVE_REPORT','');
 end;
 
 procedure TForm_report.LabelSaveTxtClick(Sender: TObject);
 begin
-save_report(Form_report.Caption,'txt');
+save_report(Form_report.Caption,'txt','INTERACTIVE_REPORT','');
 end;
 
 procedure TForm_report.LabelTitleREP1Click(Sender: TObject);

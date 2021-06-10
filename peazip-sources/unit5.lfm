@@ -1,7 +1,7 @@
 object FormKF: TFormKF
-  Left = 105
+  Left = 133
   Height = 400
-  Top = 608
+  Top = 494
   Width = 600
   Caption = 'FormKF'
   ClientHeight = 400
@@ -178,7 +178,7 @@ object FormKF: TFormKF
       MaxValue = 64
       MinValue = 4
       TabOrder = 3
-      Value = 8
+      Value = 12
     end
     object ButtonSuggestPW: TButton
       AnchorSideLeft.Control = EditSuggestPW
