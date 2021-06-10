@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 English
-7.9
+8.0
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20210314
+Last rev.: 20210523
 
 === PeaZip text group ===
 
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
 txt_7_9_spacing: Spacing
 txt_7_9_zooming: Zooming
 txt_7_8_changelocalization: Change PeaZip language
@@ -21,11 +31,11 @@ txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [requires restarting PeaZip]
 txt_7_8_tpriority: Tasks priority
 txt_7_8_update: Update
-txt_7_7_noneall: None, disable actions requiring temp files
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
+txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
+txt_7_7_nonetemp: None, user's temp if necessary
+txt_7_7_outtemp: Output, preview in user's temp
 txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
 txt_7_7_sys7z: Use system 7z in Linux
 txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
 txt_7_6_color: Color
@@ -104,12 +114,12 @@ txt_6_9_forceu: Update edited files in archive
 txt_6_9_opuns: Operation not supported for current archive type
 txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
 txt_6_9_uconf: Previewed file has been modified. Update the current archive?
-txt_6_8_ndrop: Use native Drag And Drop on Windows
+txt_6_8_ndrop: Use native Drag and Drop on Windows
 txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possible duplicates found (quick approximate test)
 txt_6_6_rsh: Reset search history
 txt_6_6_pdupfind: Suggest possible duplicates
-txt_6_6_forcemodify: Try to edit non explicitly supported file types
+txt_6_6_forcemodify: Edit non-canonical archive types
 txt_6_5_mandatory: (mandatory)
 txt_6_5_abort: Abort
 txt_6_5_askp: Ask to set password at startup
@@ -372,7 +382,7 @@ txt_3_7_tracker: Issue Tracker
 txt_3_7_sort: Sort by
 txt_3_7_swapbars: Swap Tool bar / Address bar
 txt_3_7_themedbars: Themed bars
-txt_3_6_ignoredd: Always ignore paths for drag and drop extraction
+txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
 txt_3_6_close: Close
 txt_3_6_resetapps: Do you want to reset Applications (customizable group of programs and scripts to open files with, overriding file associations)?
 txt_3_6_ethemes: Existing Themes
@@ -637,7 +647,7 @@ txt_list_browsing: Browsing
 txt_archive_root: Browsing: archive's root
 txt_type_description_bzip2: BZip2: quite powerful compression, average speed
 txt_pw_empty: Please provide a password (or a keyfile)
-txt_add_error: Cannot add/update or delete object(s); probably the archive type has browse/extract only support, or cannot support that particular operation (i.e. it's multi-volume or solid), or PeaZip cannot fully handle the archive name
+txt_add_error: Cannot add/update or delete object(s). The archive is not writeable, or cannot support this operation. Editing non-canonical archive types can be enabled in Archive manager options.
 txt_un7z_browse_failure: cannot browse archive
 txt_list_error: Cannot list archive's content, please check if the archive is password protected or corrupted.
 txt_conf_cannotsave: Cannot save configuration file, check if the path is writeable and with some free space
@@ -874,7 +884,7 @@ txt_peaobj: Object control
 txt_displayed_obj: object(s)
 txt_olderthan: Older than selected object
 txt_on: on
-txt_ondblclick: On doubleclick do:
+txt_ondblclick: On doubleclick
 txt_opacity: Opacity
 txt_open: Open
 txt_openarchive: Open archive
@@ -915,7 +925,7 @@ txt_type_description_pea: PEA: security oriented archive format with fast compre
 txt_peazip_new: PeaZip (new instance)
 txt_peazip_help: Online support
 txt_peazip_web: PeaZip Website
-txt_performall: Perform all supported algorithms
+txt_performall: All algorithms
 txt_name_provide: \ / : * ? ' " < > | characters are not allowed in file names
 txt_upxorstrip: Please chose Strip and/or UPX on the binary
 txt_not_removable_file: Please close file in use, in order to allow PeaZip to remove it:

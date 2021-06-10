@@ -1,26 +1,36 @@
 ﻿=== PeaZip language file ===
 Français
-7.9
+8.0
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 9.01.2021
+Date du: 19.04.2021
 
 === PeaZip text group ===
 
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_7_9_spacing: Espacement
+txt_7_9_zooming: Zoomer
+txt_7_8_changelocalization: Changer la langue de PeaZip
+txt_7_8_custext: Extension personnalisée
+txt_7_8_destexistfile: Destination contient déjà des fichiers traités. Remplacer les fichiers par le même nom ?
+txt_7_8_dd: Glisser/déposer
+txt_7_8_priorityhigh: Élevé
+txt_7_8_priorityidle: Inactif
+txt_7_8_rel: Extraction Interactive
 txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
+txt_7_8_priorityrealtime: Temps réel
+txt_7_8_requirerestart: [nécessite le redémarrage de PeaZip]
+txt_7_8_tpriority: Priorité des tâches
+txt_7_8_update: Mise à jour
 txt_7_7_noneall: Aucun (pas d'aperçu, pas d'extraction par glisser-déposer)
 txt_7_7_nonetemp: Aucun, température de l'utilisateur si nécessaire
 txt_7_7_outtemp: Sortie, aperçu dans la température de l'utilisateur

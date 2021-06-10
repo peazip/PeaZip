@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Finnish
-7.9
+8.0
 Translated by: Veikko M.
 Last rev. by: Giorgio Tani
 Last rev.: 20141220
 
 === PeaZip text group ===
 
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
 txt_7_9_spacing: Spacing
 txt_7_9_zooming: Zooming
 txt_7_8_changelocalization: Change PeaZip language

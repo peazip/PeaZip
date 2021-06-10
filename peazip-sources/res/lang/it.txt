@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-7.9
+8.0
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20210314
+Ultima rev.: 20210524
 
 === PeaZip text group ===
 
+txt_8_0_altcol: Colori alternati nelle griglie
+txt_8_0_forcebrowse: Esplora archivi di tipi non canonici (containers, immagini disco, installers,...)
+txt_8_0_commonalgo: Algoritmi comuni
+txt_8_0_forceconvert: Converti archivi di tipi non canonici
+txt_8_0_defaultactionhint: Azione da eseguire quando da sistema si fa doppio click su un tipo di file associato a PeaZip
+txt_8_0_defaultaction: Azione all'apertura
+txt_8_0_enableextand: Mostra il submenu "Estrai e apri con"
+txt_8_0_forcetyping: Richiedi sempre la password interattivamente
+txt_8_0_setpwopt: Opzioni password / keyfile
+txt_8_0_forcetypinghelp: Le operazioni saranno eseguite in console, non consente di esplorare archivi con nomi file cifrati. Permette di creare script che richiederanno all'utente di digitare la password interattivamente.
 txt_7_9_spacing: Spaziatura
 txt_7_9_zooming: Zoom
 txt_7_8_changelocalization: Modifica localizzazione di PeaZip
@@ -21,11 +31,11 @@ txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [richiede riavvio di PeaZip]
 txt_7_8_tpriority: Priorità dei lavori
 txt_7_8_update: Update
-txt_7_7_noneall: Nessuna, disabilita azioni con file temporanei
-txt_7_7_nonetemp: Nessuna, Temp dell'utente se necessario
-txt_7_7_outtemp: Output, preview nella Temp dell'utente
+txt_7_7_noneall: Nessuna: disabilita preview, edit, estrazione drag&drop e interattiva
+txt_7_7_nonetemp: Nessuna, temp dell'utente se necessario
+txt_7_7_outtemp: Output, preview nella temp dell'utente
 txt_7_7_sys7zreq: Richiede l'installazione del pacchetto p7zip-full o equivalente
-txt_7_7_tw: Directory di lavoro temporanea per creazione archivi, editing, preview ed estrazione Ddrag And Drop.
+txt_7_7_tw: Directory di lavoro temporanea per creazione archivi, editing, preview ed estrazione drag&drop
 txt_7_7_sys7z: Usa 7z di sistema in Linux
 txt_7_6_zipenc: 7z/p7zip ZIP encoding dei nomi file
 txt_7_6_color: Colore
@@ -109,7 +119,7 @@ txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possibili duplicati trovati (test veloce approssimato)
 txt_6_6_rsh: Cancella cronologia ricerche
 txt_6_6_pdupfind: Suggerisci possibili duplicati
-txt_6_6_forcemodify: Prova a modificare i file di tipi non esplicitamente supportati
+txt_6_6_forcemodify: Consenti modifica per archivi di tipi non canonici
 txt_6_5_mandatory: (obbligatorio)
 txt_6_5_abort: Annulla
 txt_6_5_askp: Chiedi di settare una password all'avvio
@@ -637,7 +647,7 @@ txt_list_browsing: Navigazione:
 txt_archive_root: Livello superiore dell'archivio
 txt_type_description_bzip2: BZip2: buon compromesso tra velocità e livello di compressione
 txt_pw_empty: Inserire una password (o un keyfile)
-txt_add_error: Impossibile aggiungere, aggiornare o cancellare oggetti; probabilmente il tipo di archivio è supportato in sola lettura, o non supporta la specifica operazione (es multi-volume o solido), o PeaZip non ne può gestire correttamente il nome
+txt_add_error: Impossibile aggiungere, aggiornare o cancellare oggetti. L'archivio non può essere modificato, o non supporta la specifica operazione. E'possibile abilitare la modifica per archivi di tipi non canonici dalle opzioni dell'Archive manager.
 txt_un7z_browse_failure: impossibile navigare l'archivio
 txt_list_error: Impossibile mostrare il contenuto dell'archivio, che potrebbe essere corrotto o protetto da password
 txt_conf_cannotsave: Impossibile salvare il file di configurazione, controllare se il percorso del programma ha abbastanza spazio ed è accessibile in scrittura
@@ -874,7 +884,7 @@ txt_peaobj: Controllo sugli oggetti
 txt_displayed_obj: oggetti
 txt_olderthan: Meno recente dell'oggetto selezionato
 txt_on: su
-txt_ondblclick: Azione al doppio click:
+txt_ondblclick: Doppio click
 txt_opacity: Opacità
 txt_open: Apri
 txt_openarchive: Apri archivio
@@ -915,7 +925,7 @@ txt_type_description_pea: PEA: formato orientato alla sicurezza, compressione ve
 txt_peazip_new: PeaZip (nuova istanza)
 txt_peazip_help: Guida online
 txt_peazip_web: Sito PeaZip
-txt_performall: Esegui tutti gli algoritmi supportati
+txt_performall: Tutti gli algoritmi
 txt_name_provide: Non utilizzare i caratteri \ / : * ? ' " < > |
 txt_upxorstrip: Selezionare Strip e/o UPX
 txt_not_removable_file: Chiudere il file in uso per consentire a PeaZip di rimuoverlo:
