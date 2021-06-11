@@ -2,41 +2,41 @@
 Turkish (Türkçe)
 8.0
 Çeviren: Osman Öz
-Son güncelleyen: Osman Öz
-Son güncelleme: 31 Aralık 2020
+Son güncelleyen: Cihan Alkan
+Son güncelleme: 11 Haziran 2021
 
 === PeaZip text group ===
 
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
+txt_8_0_altcol: Alternatif ızgara rengi
+txt_8_0_forcebrowse: Kurallı olmayan arşiv türlerine göz atın (kaplar, disk görüntüleri, yükleyiciler,...)
+txt_8_0_commonalgo: Ortak algoritmalar
+txt_8_0_forceconvert: Standart olmayan arşiv türlerini dönüştürün
+txt_8_0_defaultactionhint: Sistemden PeaZip ile ilişkili bir dosyaya çift tıklayınca varsayılan eylem
+txt_8_0_defaultaction: Başlangıçta varsayılan eylem
+txt_8_0_enableextand: "Ayıkla ve birlikte aç" alt menüsünü etkinleştirin
+txt_8_0_forcetyping: Etkileşimli olarak parola yazmaya zorlama
+txt_8_0_setpwopt: Şifre/anahtar dosyası seçeneklerini ayarla
+txt_8_0_forcetypinghelp: Konsolda arka uç ikili dosyalarını çalıştırır, şifreli dosya adlarıyla arşivlere göz atamaz. Katılımsız çalışmayan, bunun yerine kullanıcıdan etkileşimli olarak parola isteyen komut dosyaları oluşturmaya izin verir.
+txt_7_9_spacing: Aralık
+txt_7_9_zooming: Yakınlaştırma
+txt_7_8_changelocalization: PeaZip dilini değiştir
+txt_7_8_custext: Özel uzantı
+txt_7_8_destexistfile: Hedef zaten işlenmiş dosyalar içeriyor. Aynı ada sahip dosyalar değiştirilsin mi?
+txt_7_8_dd: Sürükle ve bırak
+txt_7_8_priorityhigh: Yüksek
+txt_7_8_priorityidle: Boşta
+txt_7_8_rel: Etkileşimli çıkarma
 txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_8_priorityrealtime: Gerçek zamanlı
+txt_7_8_requirerestart: [PeaZip'in yeniden başlatılmasını gerektirir]
+txt_7_8_tpriority: Görev önceliği
+txt_7_8_update: Güncelle
+txt_7_7_noneall: Yok (önizleme yok, Sürükle ve Bırak çıkarma yok)
+txt_7_7_nonetemp: Yok, gerekirse Kullanıcıda
+txt_7_7_outtemp: Çıktı, Kullanıcıda önizleme
+txt_7_7_sys7zreq: Yüklenmesi için p7zip-full veya eşdeğeri gerekir
+txt_7_7_tw: Arşiv oluşturma, düzenleme, önizleme ve Sürükle ve Bırak çıkarma için geçici çalışma klasörü.
+txt_7_7_sys7z: Linux'ta sistem 7z kullanın
 txt_7_6_zipenc: 7z/p7zip ZIP dosya adlarını kodlama
 txt_7_6_color: Renk
 txt_7_6_custenc: Özel kod sayfası
