@@ -1,3 +1,6 @@
+PeaZip free archiver project sources
+https://peazip.github.io/
+
 To compile sources you need Lazarus IDE (https://sourceforge.net/projects/lazarus).
 Open .lpi project files and do "build all" to compile the executables.
 
