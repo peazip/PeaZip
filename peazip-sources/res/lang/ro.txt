@@ -1,0 +1,1305 @@
+﻿=== PeaZip language file ===
+Romanian - Română
+8.1
+Translated by: Vik Thor
+Last rev. by: Vik Thor
+Last rev.: 20111225
+
+=== PeaZip text group ===
+
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Change PeaZip language
+txt_7_8_custext: Custom extension
+txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: High
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Interactive extraction
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [requires restarting PeaZip]
+txt_7_8_tpriority: Tasks priority
+txt_7_8_update: Update
+txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
+txt_7_7_nonetemp: None, User's temp if necessary
+txt_7_7_outtemp: Output, preview in User's temp
+txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
+txt_7_7_sys7z: Use system 7z in Linux
+txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_6_color: Color
+txt_7_6_custenc: Custom code page
+txt_7_6_dark: Dark
+txt_7_6_tno: Do not sync archive tree
+txt_7_6_forcelocalenc: Force local
+txt_7_6_forceutf8enc: Force UTF-8
+txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
+txt_7_6_defaultenc: Local, UTF-8 for extra symbols
+txt_7_6_dim: Low light
+txt_7_6_setcurdef: Set current path as default output path
+txt_7_6_setdef: Set default output path
+txt_7_6_tadvanced: Sync archive tree, keep visited nodes
+txt_7_6_tsimple: Sync archive tree, simple
+txt_7_6_tacolor: Text accent
+txt_7_5_always: Always
+txt_7_5_ask: Ask
+txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
+txt_7_5_cutlen: Cut name at specified length
+txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
+txt_7_5_dragnone: Do not lock target
+txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
+txt_7_5_ee: Extract everything for special file types
+txt_7_5_draghide: Hide drop target
+txt_7_5_draglh: Lock and hide target
+txt_7_5_draglock: Lock drop target
+txt_7_5_never: Never
+txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_4_comment: Comment
+txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
+txt_7_4_presetrar: High compression, RAR
+txt_7_4_tkeep: Keep original archive timestamp
+txt_7_4_lock: Lock archive
+txt_7_4_locked: locked
+txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
+txt_7_4_recover: Repair archive
+txt_7_4_tcurr: Set archive timestamp from current system time
+txt_7_4_setarc: Set archiving options
+txt_7_4_setext: Set extraction options
+txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
+txt_7_3_archiveerrors: [archive may contain errors]
+txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_3_clickextall: Click "Extract all" to enable
+txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
+txt_7_3_profile7zfastest: Fast compression, 7Z fastest
+txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
+txt_7_3_maxzstd: Maximize Zstandard compression using more memory
+txt_7_3_profile7zfast: Medium compression, 7Z fast
+txt_7_3_stl: Set archive timestamp from most recent file
+txt_7_2_altcomp: Alternative compression, ARC
+txt_7_2_clearnoupdate: Clear edited files
+txt_7_2_autoclosepeazip: Close PeaZip when task completes
+txt_7_2_zpaqall: Extract all revisions
+txt_7_2_extcomp: Extreme compression, ZPAQ
+txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
+txt_7_2_fbrotlicomp: Fastest compression, Brotli
+txt_7_2_fzstandardcomp: Fastest compression, Zstandard
+txt_7_2_loadcompsettings: Load compression settings
+txt_7_2_savecompsettings: Save compression settings
+txt_7_2_source: Source
+txt_7_2_updateclear: Update edited files in archive, and clear edited files
+txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
+txt_7_1_new: Extract all here, in new folder
+txt_7_1_smart: Extract all here, smart
+txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
+txt_7_1_renfilesonly: Rename only files
+txt_7_1_typetosearch: Type to search in current path
+txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
+txt_7_0_af: Analyze content of folders
+txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
+txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
+txt_6_9_autou: Auto update modified files in archives
+txt_6_9_forceu: Force update modified files in archives
+txt_6_9_opuns: Operation not supported for current archive type
+txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
+txt_6_9_uconf: Previewed file has been modified. Update the current archive?
+txt_6_8_ndrop: Use native Drag And Drop on Windows
+txt_6_7_nop: (no preview)
+txt_6_6_pdupfound: possible duplicates found (quick approximate test)
+txt_6_6_rsh: Reset search history
+txt_6_6_pdupfind: Suggest possible duplicates
+txt_6_6_forcemodify: Try to edit non explicitly supported file types
+txt_6_5_mandatory: (mandatory)
+txt_6_5_abort: Abort
+txt_6_5_askp: Ask to set password at startup
+txt_6_5_chp: Change password
+txt_6_5_def: Definition
+txt_6_5_nop: Don't ask to set password at startup
+txt_6_5_error: Error
+txt_6_5_seqerr: Error(s) detected, original files will not be deleted
+txt_6_5_sni: Include NT security information
+txt_6_5_sns: Include NTFS Alternate Data Stream
+txt_6_5_privacy: Privacy
+txt_6_5_showvolatile: Show which options are volatile / context depentent
+txt_6_5_force: Try to open archives containing errors
+txt_6_5_warning: Warning
+txt_6_5_yes: Yes
+txt_6_5_yesall: Yes to all
+txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
+txt_6_4_absolute: Absolute paths
+txt_6_4_appdirn: Append directory name
+txt_6_4_closeallother: Close all other tabs
+txt_6_4_closeright: Close tabs on the right
+txt_6_4_collapse: Collapse tabs
+txt_6_4_expand: Expand tabs
+txt_6_4_full: Full paths
+txt_6_4_new: New
+txt_6_4_openintab: Open in a new tab
+txt_6_4_paths: Paths
+txt_6_4_prepdirn: Prepend directory name
+txt_6_4_relative: Relative paths
+txt_6_4_tabbar: Tab bar
+txt_6_3_autoadjust: Auto adjust columns
+txt_6_3_cinfo: Info and comments
+txt_6_3_syn: Synchronize archive with disk
+txt_6_3_uar: Update only files already in archive
+txt_6_2_encext: Add ".enc" suffix to encrypted archives
+txt_6_2_archive: Archive file type
+txt_6_2_container: Container file type
+txt_6_1_ec: Expand / collapse archive tree
+txt_6_0_msq: Sort by file type for solid compression
+txt_5_9_lff: Analyze files and folders
+txt_5_9_pff: Analyze, show files header/EOF
+txt_5_9_start: Start from
+txt_5_8_l0: Allow any supported component/format
+txt_5_8_l1: Allow only Free Software components
+txt_5_8_l2: Allow only open archive formats
+txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
+txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
+txt_5_8_fs: Free Software compliance
+txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
+txt_5_8_fsr: This format is not suported due Free Software compliance restrictions (Options > Advanced)
+txt_5_7_pinstalled: INSTALLED
+txt_5_7_pmissing: MISSING
+txt_5_7_plugin: Plugin missing, can be installed from Help > Check for pulgin and addon
+txt_5_6_basic: Basic
+txt_5_6_exarc: Extract archive
+txt_5_6_tab: Open in new tab
+txt_5_6_rc: Right click for options
+txt_5_6_layouts: Saved layouts
+txt_5_6_upexisting: Update existing archive
+txt_5_6_verbose: Verbose
+txt_5_5_case: (case sensitive)
+txt_5_5_add: Add string at specified position
+txt_5_5_addsel: Add to current selection
+txt_5_5_ext: Change files extension
+txt_5_5_plugin: Check for plugin and addon
+txt_5_5_copypath: Copy path
+txt_5_5_delete: Delete characters at specified position
+txt_5_5_halt: Halt system when task completes
+txt_5_5_positionw: Hint: 1 add before first char, 2 second, etc... "z" for end of file name
+txt_5_5_positionwd: Hint: 1 delete from first char included, 2 second, ... "z" for end of file name
+txt_5_5_replaceneww: Hint: provide an empty new string to simply remove the old string
+txt_5_5_lower: Lowercase
+txt_5_5_replaceoldw: Modify all occurrences of this string or character in the file name
+txt_5_5_newext: New extension
+txt_5_5_new: New string
+txt_5_5_n: Number of characters to delete
+txt_5_5_old: Old string
+txt_5_5_position: Position (number or "z" for end)
+txt_5_5_intdir: Smart new folder
+txt_5_5_replacestr: Replace/remove string
+txt_5_5_datesameday: Same day of selected object
+txt_5_5_datesamehour: Same hour of selected object
+txt_5_5_datesamemonth: Same month of selected object
+txt_5_5_datesameweek: Same week of selected object
+txt_5_5_datesameyear: Same year of selected object
+txt_5_5_scan: Scan
+txt_5_5_select: Select
+txt_5_5_similar: Similar to selected object
+txt_5_5_starting: Starting with same character
+txt_5_5_string: String to add
+txt_5_5_subtractsel: Subtract from current selection
+txt_5_5_datehour: This hour
+txt_5_5_datemonth: This month
+txt_5_5_dateweek: This week
+txt_5_5_dateyear: This year
+txt_5_5_dateday: Today
+txt_5_5_upper: Uppercase
+txt_5_5_extw: Warning: changing file extension the file may become unusable
+txt_5_4_da: Date added
+txt_5_4_deletearchives: Delete archives after extraction
+txt_5_4_deletefiles: Delete files after archiving
+txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
+txt_5_4_lv: Last visited
+txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
+txt_5_4_deletefilesconfirm: Confirm deletion of original files?
+txt_5_4_used: Used
+txt_5_3_profilebest: Best compression, 7Z format Ultra level
+txt_5_3_profileadvanced: Advanced compression, 7Z format
+txt_5_3_profilenormal: Normal ZIP compression, compatible with most extractors
+txt_5_3_profileveryfast: Very fast ZIP compression, recommended for large multimedia files
+txt_5_3_profilepassword: Protect with password, 7Z format
+txt_5_3_profile10mb: Keep output under 25 MB, for mail attachment limitations
+txt_5_3_profilesfx: Auto extracting, recipient will not need an extraction software
+txt_5_3_cml: System context menu language
+txt_5_3_cmlmessage: Double click on desired context menu language and confirm registry merging. This setting needs to be re-applied when the application is installed/updated or after System integration wizard is used.
+txt_5_3_exc: Exclusion filters prevail on inclusion filters
+txt_5_3_ia: Include also
+txt_5_3_io: Include only
+txt_5_3_rec: Recurse subdirs
+txt_5_3_resetsi: Re-configure system integration (context menu, SendTo, file associations)?
+txt_5_2_oadd: Archive to original path
+txt_5_2_zerodelete: Do you want to delete and overwrite with all 0 selected file(s)? The operation can't be undone and files will be not recoverable
+txt_5_2_zfree: Do you want to overwrite with all 0 free space on this drive?
+txt_5_2_sdfree: Do you want to securely delete free space on this drive?
+txt_5_2_oext: Extract to original path
+txt_5_2_securedeletefree: Secure delete free space
+txt_5_2_free: This operation can take some minutes and, if performed often, it can quickly wear flash-based disks
+txt_5_2_zerofiles: Zero delete
+txt_5_2_zerofree: Zero delete free space
+txt_5_1_schedadd: Add schedule
+txt_5_1_schederr: Cannot create schedule
+txt_5_1_daily: Daily
+txt_5_1_day: Day
+txt_5_1_days: Days
+txt_5_1_enddate: End date
+txt_5_1_every: Every
+txt_5_1_w6: Friday
+txt_5_1_hourly: Hourly
+txt_5_1_hours: Hours
+txt_5_1_last: Last
+txt_5_1_schedmanage: Task Scheduler, manage tasks saved in PeaZip branch
+txt_5_1_scriptmanage: Manage saved scheduled scripts
+txt_5_1_w2: Monday
+txt_5_1_monthly: Monthly
+txt_5_1_months: Months
+txt_5_1_onlogin: On login
+txt_5_1_onstart: On start
+txt_5_1_once: Once
+txt_5_1_w7: Saturday
+txt_5_1_schedule: Schedule
+txt_5_1_schedexplain: Create a plain text script from GUI task definition and schedule it. Scheduled tasks' scripts are saved in "Scheduled scripts" folder. To edit or delete scheduled tasks you can use system's Task Scheduler, all scheduled tasks created by PeaZip are collected in "PeaZip" branch of the tasks library.
+txt_5_1_schedok: Schedule created successfully
+txt_5_1_schedscripts: Saved scheduled scripts
+txt_5_1_startdate: Start date
+txt_5_1_starttime: Start time
+txt_5_1_w1: Sunday
+txt_5_1_schedname: Task name, identify both the saved scheduled script and the system's scheduled task
+txt_5_1_ts: Task Scheduler
+txt_5_1_w5: Thursday
+txt_5_1_w3: Tuesday
+txt_5_1_w4: Wednesday
+txt_5_1_weekly: Weekly
+txt_5_1_weeks: Weeks
+txt_5_0_bc: Breadcrumb
+txt_5_0_resetpm: Do you confirm resetting Password Manager? All passwords stored in PeaZip's Password Manager will be lost if confirmed.
+txt_5_0_enum: Enumerate directories' content
+txt_5_0_music: Music
+txt_5_0_ps: Open PowerShell here
+txt_5_0_perf: Performances
+txt_5_0_pictures: Pictures
+txt_5_0_removeall: Remove all
+txt_5_0_resetbookmarks: Reset Bookmarks to default? (Bookmarks can then be customized with Bookmarks > Organize)
+txt_5_0_sh: Session history
+txt_5_0_skip: Skip enumerating directories' content in layout
+txt_5_0_videos: Videos
+txt_4_9_frame: Frame
+txt_4_9_listth: List and thumbnails
+txt_4_9_shadow: Shadow
+txt_4_9_style: Style
+txt_4_8_attach25: 25 MB (attachment limit)
+txt_4_8_crop: Crop
+txt_4_8_detailsno: Light file browser
+txt_4_8_details: File browser with thumbnails
+txt_4_8_fit: Fit to
+txt_4_8_fitl: Fit to largest
+txt_4_8_flip: Flip
+txt_4_8_fullscreen: Full screen
+txt_4_8_fun: Functions
+txt_4_8_h: Height
+txt_4_8_keeparchive: Keep archive
+txt_4_8_noresize: Keep original size
+txt_4_8_iconl: Large images
+txt_4_8_iconm: Icons and images
+txt_4_8_imagemanager: Image manager
+txt_4_8_immersive: Immersive
+txt_4_8_listno: Minimal list
+txt_4_8_aspect: Maintain aspect ratio
+txt_4_8_mirror: Mirror
+txt_4_8_presets: Presets
+txt_4_8_replace: Replace original image(s)? "No" apply the transformation in new file(s).
+txt_4_8_resize: Resize
+txt_4_8_rl: Rotate left
+txt_4_8_rr: Rotate right
+txt_4_8_stop: Stop
+txt_4_8_t: Transform
+txt_4_8_w: Width
+txt_4_7_pk: Create random password / keyfile
+txt_4_7_spchar: Limit characters to letters and numbers
+txt_4_7_recycleask: Move selected file(s) to Recycle Bin?
+txt_4_7_recycle: Move to Recycle Bin
+txt_4_7_pcomp: Potential compression
+txt_4_6_am: Archive manager
+txt_4_6_fm: File manager
+txt_4_6_users: Users
+txt_4_5_goupdate: A new version is available. Open PeaZip's official website to download the update?
+txt_4_5_b: Bottom
+txt_4_5_koupdate: Cannot check for updates, no connection with update server
+txt_4_5_update: Check for updates
+txt_4_5_dock: Dock
+txt_4_5_l: Left
+txt_4_5_noupdate: PeaZip is up to date
+txt_4_5_properties: Properties
+txt_4_5_r: Right
+txt_4_5_pj: Saved job definition scripts
+txt_4_5_shaddress: Show address bar
+txt_4_5_shnav: Show navigation bar
+txt_4_5_shstatus: Show status bar
+txt_4_5_shtool: Show tool bar
+txt_4_5_upxpj: Sorry, cannot export job definition since this action or option requires performing multiple distinct commands
+txt_4_5_t: Top
+txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks, Password manager)?
+txt_4_4_confremove: Remove PeaZip configuration?
+txt_4_3_pwmanhint: Dublu-click pentru a edita itemuri in lista de parole, click-dreapta pentru optiuni, Ctrl+C pentru a copia parole
+txt_4_3_exppl: Exporta lista de parole
+txt_4_3_expple: Criptat (Manager de rezerva pentru parole)
+txt_4_3_keeppw: Pastreaza parola/fisier-cheie pentru sesiunea curenta
+txt_4_3_pwmanpwhint: Setarea unei parole/fisier-cheie (optional) pentru criptarea listei de parole este recomandata, astfel autentificarea va fi necesara pentru accesul la managerul de parole. Parola/fisier-cheie poate fi schimbata oricand utilizand acest formular.
+txt_4_3_pwmanmaster: Setare/Schimbare parola principala (master password)
+txt_4_3_pwmanlist: Lista de parole
+txt_4_3_pwman: Manager de parole
+txt_4_3_pwmancorr: Managerul de parole pare a fi modificat sau degradat. Pastreaza oricum Managerul de parole si incearca recuperarea listei de parole, daca esti sigur? (NU - va reseta managerul de parole, optiune recomandata)
+txt_4_3_expplp: Text simplu (toti utilizatorii)
+txt_4_3_recsrc: Cautarea implicita este recursiva
+txt_4_3_resetpm: Resetare Manager de parole? Toate parolele salvate vor fi sterse
+txt_4_3_breadcrumb: Arata adresa ca firmituri (breadcrumb)
+txt_4_2_arcabspath: Foloseste cai absolute
+txt_4_1_duplicateshint: sirul "marime"/"suma-de-verificare" este afisat in coloana CRC pentru toate posibilele duplicate gasite in directorul curent sau in filtrul de cautare
+txt_4_1_adminhint: (INDICIU: ca metoda alternativa, puteti cere ridicarea nivelului UAC pentru a lucra in caile protejate, Alt+F10 sau Optiuni > Rulare ca administrator)
+txt_4_1_selected: (selectat)
+txt_4_1_duplicatesfound: Duplicate (identice) gasite
+txt_4_1_duplicatesfind: Gaseste duplicatele (identice)
+txt_4_1_runasadmin: Executa ca administrator (Run as administrator)
+txt_4_1_simplesearch: Cautare simpla
+txt_4_0_thim: Arata miniaturile imaginilor (thumbnails)
+txt_3_8_type_description_wim: WIM: Formatul imagine-de-disc de la Microsoft
+txt_3_8_type_description_xz: XZ: compresie de fisier puternica, bazata pe LZMA2
+txt_3_7_donations: Donatii
+txt_3_7_nameasparent: Denumeste arhiva la fel ca dosarul-parinte al itemului(-lor) selectat(e), daca sunt selectate mai multe itemuri
+txt_3_7_tracker: Tracker PeaZip: greseli de programare, cereri pentru optiuni noi
+txt_3_7_sort: Sortare dupa
+txt_3_7_swapbars: Comutare Bara de Unelte / Bara de adrese
+txt_3_7_themedbars: Bare cu teme
+txt_3_6_ignoredd: Intotdeauna ignora caile pentru extractii de tip "trage si lasa" (drag and drop)
+txt_3_6_close: Inchide
+txt_3_6_resetapps: Doriti sa resetati Aplicatii (grup particularizabil de programe si scripturi cu care se pot deschide fisiere, schimband asocierile fisierelor)?
+txt_3_6_ethemes: Teme existente
+txt_3_5_td: Descarca teme
+txt_3_5_managecustomthemes: Organizator teme
+txt_3_4_nopaths: Nicio cale
+txt_3_4_smallicons: Icons
+txt_3_3_skipunits: (Windows) Obtine informatii despre volume aflate in unitati de retea, pornire (startup) mai lenta
+txt_3_3_stralt: Comanda alternativa, atunci cand nu sunt folositi parametri
+txt_3_3_apps: Applicatii
+txt_3_3_multi: Selectii multiple
+txt_3_3_runexp: Deschide un program, fisier, dosar sau pagina web
+txt_3_3_apppath: deschide dosarul programului PeaZip
+txt_3_3_run: Executa
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu use UTF8 for file names containing non-ASCII symbols inside .zip files
+txt_3_2_alltasks: All tasks
+txt_3_2_conf: Configurare
+txt_3_2_donations: Doneaza organizatiilor caritabile
+txt_3_1_sccenc: 7z / p7zip -scc character encoding
+txt_3_1_downloads: Descarcari
+txt_3_1_lib: Biblioteci
+txt_3_1_more: Mai multe
+txt_3_1_openasarchive: Deschide ca arhiva
+txt_3_1_sendto: Deschide dosarul de utilizator pentru meniul TrimitereCatre
+txt_3_1_pathexc: Calea (fisierului) depaseste marimea maxima permisa
+txt_3_1_recent: Recente
+txt_3_1_plsmartmin: Ruleaza in sertar, arata/pastreaza deschis doar daca este necesar
+txt_3_1_src: Cautari
+txt_3_1_systmp: Memorie temporara a sistemului
+txt_3_1_languagetools: Traducere
+txt_3_1_workingdir: Directorul de lucru
+txt_3_0_nonreadableorpw: Arhiva nu poate fi citita; doriti sa incercati o parola?
+txt_3_0_readablepw: Arhiva pare a fi protejata cu parola
+txt_3_0_configure: Integrare de sistem
+txt_3_0_resettmp: Resetare peazip-tmp
+txt_2_9_address: Bara de adrese
+txt_2_9_adv: Advanced filters are applied when managing any file supported through 7z or FreeArc backends, see documentation, and overrides basic filters (that are used for search functions and are displayed in Bookmarks and History panels)
+txt_2_9_columns: Coloane
+txt_2_9_copyhere: Copiaza aici
+txt_2_9_noscan: Nu scana fisierele care sunt adaugate la aspect
+txt_2_9_extconsole: Consola pentru extractii este disponibila doar in timpul explorarii arhivelor
+txt_2_9_thl: Evidentiere butoane
+txt_2_9_home: Acasa
+txt_2_9_lt: Mare
+txt_2_9_mt: Mediu
+txt_2_9_movehere: Mutare aici
+txt_2_9_nav: Navigare
+txt_2_9_navbar: Bara de navigare
+txt_2_9_none: Niciunul
+txt_2_9_organize: Organizare
+txt_2_9_public: Public
+txt_2_9_rec: Recursiva: cautare in subdirectoare, poate dura ceva timp
+txt_2_9_selected: Selectate
+txt_2_9_setapps: Organizare aplicatii
+txt_2_9_showmenu: Arata bara de meniuri
+txt_2_9_st: Mic
+txt_2_9_test_pw2G: Testare pentru criptare arhive <2GB
+txt_2_9_vst: Doar text
+txt_2_9_toolbar: Bara de unelte
+txt_2_9_tree: Arbore (de directoare)
+txt_2_9_views: Vederi
+txt_2_8_experimental: (experimental)
+txt_2_8_zcopy: (Windows) Copiere fisiere in modul restartabil, mai lent
+txt_2_8_addvol: Adaugarea intregului volum(e) la arhiva poate dura mult timp, continuati oricum?
+txt_2_8_uniterror: Nu pot accessa unitatea
+txt_2_8_cannotconvert: Arhivele selectate nu se pot convert
+txt_2_8_convertbegin: Contiuna cu faza de compresie pentru a incheia conversia?
+txt_2_8_convert: Converteste
+txt_2_8_convertexisting: Converteste arhive existente
+txt_2_8_convertdelete: Sterge fisierele si dosarele tempoare folosite la conversie?
+txt_2_8_details: Detalii
+txt_2_8_parallel: Executa operatiuni in paralel cand este posibil
+txt_2_8_convertnote: In orice caz arhivele originale nu au fost modificate, pentru a lasa utilizatorul sa decida daca vrea sa le pastreze sau daca vrea sa le stearga
+txt_2_8_custom: nu este suportat in mod direct de catre PeaZip, dar in faza de extragere puteti seta PeaZip sa manipuleze tipuri particulare de fisiere folosind fila "Avansat". Continuati deschiderea acestui fisier?
+txt_2_8_unitrecommend: Este recomandat fie sa extrageti (click-dreapta > extrage selectatele), fie sa deschideti sistemele de fisiere din radacina computerurlui (Unelte de sistem > Deschide unitatea ca pe o arhiva)
+txt_2_8_viewasarchive: Deschide unitate ca pe o arhiva
+txt_2_8_nounit: Nicio unitate selectata
+txt_2_8_rowselect: Selectare rand
+txt_2_8_statusbar: Bara de stare
+txt_2_8_typeunit: Precizeaza numele unitatii fizice sau logice
+txt_2_8_usedefaultoutpath: Foloseste cale de iesire (a fisierului) implicita
+txt_2_7_experimental: (experimental, vezi documnetatie)
+txt_2_7_optional: (optional)
+txt_2_7_list_tryflatorpw: , solutii posibile: incercati vizualizarea plata (F6), precizati parola (F9), obtineti o noua copie a arhivei
+txt_2_7_separate: Adauga fiecare proiect intr-o arhiva individuala
+txt_2_7_pwsupported: arhivare cu parola
+txt_2_7_cancel: Anulare
+txt_2_7_encfn: Cripteaza si numele fisierelor (daca formatul suporta acest lucru)
+txt_2_7_setpw: Introduce parola / fisier-cheie
+txt_2_7_ext: Extragere:
+txt_2_7_extfrom: Extragere din arhiva:
+txt_2_7_es: Extragere tipuri de fisiere suportate care nu sunt arhive, de ex. fisiere executabile, fisiere MS Office si OpenOffice
+txt_2_7_eu: Extragere tipuri de fisiere nesuportate, precizand utilitarul de extractie ce trebuie folosit
+txt_2_7_clipboard: Clipboard
+txt_2_7_goarclayout: Du-te la aspectul de arhivare fisiere
+txt_2_7_goextlayout: Du-te la aspectul de extragere fisiere
+txt_2_7_ok: OK
+txt_2_7_drag_archive: Deschid fisierul ca arhiva noua? ("NU" pentru adaugarea fisierului la aspectul actual al arhivei)
+txt_2_7_oop: Deschide calea de iesire (a fisierului) cand operatia curenta este terminata
+txt_2_7_validatefn: Operatie oprita, a fost detectat un nume de fisier nevalid:
+txt_2_7_validatecl: Operatie oprita, a fost detectata o comanda periculoasa (de ex. comanda concatenata nepermisa in program):
+txt_2_7_output: (Cale de) iesire
+txt_2_7_pwnotset: Parola nu e stabilita 
+txt_2_7_pwarcset: Parola e stabilita
+txt_2_7_pwextset: Parola e stabilita, se pot extrage/lista/testa arhive criptate
+txt_2_7_archivehint: Click-dreapta pentru a adauga fisiere la arhiva si pentru a vedea alte functii disponibile, sau trageti aici fisierele ce trebuie adaugate
+txt_2_7_exthint: Click-dreapta pentru a adauga fisiere la arhiva si pentru a vedea alte functii disponibile, sau trageti aici fisierele ce trebuie adaugate
+txt_2_7_setadvf: Setare filtre avansate
+txt_2_7_selpath: Selectare calea itemului
+txt_2_7_separateerror: Scuze, nu se poate importa linia de comanda a definitiei operatiunii in timpul folosirii comutatorului "Convertire arhiva existenta", din moment ce operatiunea este folosita ca un sir de comenzi distincte
+txt_2_7_noinput: Aspectul arhivei este gol: va rog utilizati Adaugare fisier(e) sau Incarcare Aspect pentru a umple lista de arhive ce trebuiesc extrase
+txt_2_7_dirsize: The size of the content of folders is not checked for calculating the total size
+txt_2_7_un7z_browse_flat: incearca vederea (vizualizarea) plata (F6)
+txt_2_7_updating: Actualizare, adaugare la arhiva existenta:
+txt_2_6_folders: (dosare)
+txt_2_6_advanced: Advansat
+txt_2_6_plalways: Intotdeauna pastreaza deschis pentru a inspecta raportul operatiunii(lor)
+txt_2_6_plsmart: Pastreaza deschis doar daca este necesar (eroare, lista sau rapoarte de testare)
+txt_2_5_sessionio: (aceasta sesiune)
+txt_2_5_advanced: Editare avansata: pozitioneaza spatii intre sirurile de parametri si numele fisierlui daca este necesar
+txt_2_5_basic: Editare simpla (de baza): aplicatie si parametrii inaintea numelui de intrare (input name)
+txt_2_5_cannotrun: Nu se poate executa
+txt_2_5_custeditors: Editoare particulare, playere, scanere antivirus etc... (trece peste asocierile fisierelor stabilite de sistemul de operare)
+txt_2_5_delete: Sterge
+txt_2_5_delete_fromarchive: Sterge din arhiva
+txt_2_5_langflag: Afiseaza numele obiectului ca si text UTF-8; debifati pentru a inlocui caracterele (literele) speciale cu "?"
+txt_2_5_encpj: Codeaza definitia operatiunii ca text UTF-8
+txt_2_5_execommand: Executabil sau comanda
+txt_2_5_help: Ajutor
+txt_2_5_langhint: Indiciu: inlocuind caracterele (literele) speciale cu semnul intrebarii "?" poate duce la imbunatatirea sintaxei, in cazul in care setul de caractere al arhivei nu poate fi convertit folosind acest calculator
+txt_2_5_mini_help: Mini tutorial
+txt_2_5_offline_help: Ajutor PeaZip
+txt_2_5_tray: Minimizeaza in sertar
+txt_2_5_remove: Inlatura
+txt_2_5_hintpaths: Click-dreapta pentru a deschide calea de sistem si calea de utilizator
+txt_2_5_selectapp: Selectare aplicatie
+txt_2_5_strafter: String dupa numele de intrare
+txt_2_5_strbefore: String inaintea numelui de intrare
+txt_2_5_encoding: Tipul de codare text
+txt_2_5_nopw: acest tip de arhive nu suporta criptare
+txt_2_4_draghint: [trage in Explorator cu Bara de Adrese activata]
+txt_2_4_tb: Adapteaza butoanele barei de unelte (reporneste PeaZip)
+txt_2_4_adding: Adaugare
+txt_2_4_advclip: Avansat: pastreaza selectii multiple in clipboard (fara duplicate), sterge dupa lipire
+txt_2_4_yanswers: Raspunsuri
+txt_2_4_itemsheight: Auto-potrivirea inaltimii itemurilor
+txt_2_4_clearclipboard: Goleste clipboardul (Esc)
+txt_2_4_wcommons: Comune
+txt_2_4_copyfrom: Copiere din
+txt_2_4_deletebookmarks: Doriti sa stergeti lista cu semne-de-carte pentru fisiere si dosare?
+txt_2_4_documents: Documente
+txt_2_4_wenc: Enciclopedie
+txt_2_4_extractfrom: Extragere din
+txt_2_4_hexp: Previzualizare Hex
+txt_2_4_operation: Operatie
+txt_2_4_path: calea nu este disponibila in modul scriere (lipseste, sau este doar-in-citire), va rog selectati o cale de iesire disponibila in modul scriere
+txt_2_4_removefromclipboard: Inlatura din clipboard
+txt_2_4_stdclip: Standard: tine a singura selectie in clipboard, sterge operatiile de taiere dupa lipire
+txt_2_4_totalmem: memorie totala
+txt_2_4_gvideo: Video
+txt_2_4_wbook: Wikicarte
+txt_2_4_wnews: Wikistiri
+txt_2_4_wsrc: Wikisursa
+txt_2_4_wdict: Wiktionar
+txt_2_3_pw_errorchar: Semnul "ghilimele" nu poate fi utilizat in parole de catre PeaLauncher in acest sistem (de operare), va rog schimbati parola sau alegeti Modul Consola in meniul Optiuni > Setari > Backend binaries user interface
+txt_2_3_envstr: Display environment variables
+txt_2_3_never_pw: Nu cere parola
+txt_2_3_home: Dosarul Acasa al utilizatorului
+txt_2_3_on_pw: La folosirea operatiilor de extragere/listare/testare din meniurile sistemului de operare:
+txt_2_3_test_pw100: Test for encryption <100MB archives
+txt_2_3_test_pw: Test pentru criptare (poate dura mult timp)
+txt_exclude_recourse: "exclude" recurse subdirs
+txt_action_extopen: actiune de tip "Extrage si deschide cu aplicatia asociata"
+txt_error_passwordnotmatch: Campurile "Parola" and "Confirmare parola" nu corespund, va rog corectati
+txt_action_preview: actiune de tip "Previzualizare cu aplicatie asociata"
+txt_preview_hint: Actiunea "Previzualizare" face acelasi lucru ca si "Extrage si deschide" dar intr-o cale temporara situata in directorul de iesire (output), calea temporara fiind stearsa in mod automat in momentul cand arhiva este inchisa.
+txt_better: (mai bine)
+txt_default2: (implicit)
+txt_faster: (rapid)
+txt_fastermem: (rapid, mai putina memorie)
+txt_tempdir: (dosarl temporar de lucru al PeaZip)
+txt_stream: (set by "Stream control")
+txt_slowermem: (incet, mai multa memorie)
+txt_store: (depozitare, cel mai rapid)
+txt_newfolder: (in dosar nou)
+txt_7z_exitcodeunknown: : Eroare necunoscuta in operatiune
+txt_list_isfolder:  [dosar]
+txt_none: <none>
+txt_fd: Unitate de discheta 1.44 MB (Floppy Disk)
+txt_7z_exitcode1: 1: Avertizare: eroare(-i) nefatala(-e); de ex. unele fisiere lipsesc sau sunt blocate
+txt_attach10: 10 MB (limita maxima a atasamentului)
+txt_7z_exitcode2: 2: A aparut o eroare fatala
+txt_7z_exitcode255: 255: Operatiune intrerupta de catre utilizator
+txt_fat32: 4 GB (marimea maxima a fisierelor situate in partitii FAT32)
+txt_dvd: 4.7 GB DVD
+txt_attach5: 5 MB (marimea maxima a atasamentului)
+txt_cd650: 650 MB CD
+txt_7z_exitcode7: 7: Eroare: am linie de comanda incorecta
+txt_cd700: 700 MB CD
+txt_type_description_7z: 7Z: format de arhiva cu multiple optiuni si cu rata de compresie mare
+txt_dvddl: 8.5 GB DVD DL
+txt_7z_exitcode8: 8: Eroare: memorie insuficienta pentru operatia ceruta
+txt_abort: Anuleaza operatiile programate de copiere/mutare fisiere?
+txt_about: Despre
+txt_action: Actiune
+txt_action_hint: Actiune la deschidere sau previzualizare cu aplicatia asociata
+txt_add: Adauga
+txt_add_existing_archive: adauga (daca arhiva exista)
+txt_add_archive: Adaugare arhiva
+txt_add_files: Adauga fisier(e)
+txt_add_folder: Adauga dosar
+txt_add_path: Adauga cale
+txt_add_tolayout: Adauga dosarele si fisierele selectate la aspectul arhivei
+txt_add_toarchive: Adauga la arhiva
+txt_add_tobookmarks: Adauga la semne de carte
+txt_address_hint: Filtru: accepta valori universale ca  * si ?
+txt_adv_filters: Filtre avansate
+txt_algo: Algoritm
+txt_all: toate
+txt_all_default: Toate (implicit)
+txt_all_type: Toate obiectele de acest tip
+txt_all_date: Toate obiectele cu data...
+txt_all_psize: Toate obiectele cu marimea impachetata...
+txt_all_attributes: Toate obiectele cu atribute identice
+txt_all_size: Toate obiectele cu marimea...
+txt_error_input_upx: permite un singur fisier executabil ca intrare (input)
+txt_always_pw: Intreaba intotdeauna pentru parola
+txt_ignore_ext: Ignora intotdeauna caile pentru "Extragere si..."
+txt_ignore_disp: Ignora intotdeauna caile pentru "Extrage cele afisate..."
+txt_ignore_sel: Ignora intotdeauna caile pentru "Extrage cele selectate..."
+txt_key_hint: Alocand hash-ul fisierului-cheie parolei; arhiva poate fi decriptata de catre PeaZip si de catre alte programe folosind acelasi standard, sau introducand hash-ul ca parte integranta a parolei
+txt_timestamp: Aloca marca-de-timp (timestamp) la numele arhivei
+txt_appoptions: Optiuni aplicatie
+txt_type_description_arc: ARC: arhivator experimental, puternic, eficient si cu multiple optiuni
+txt_archive: Arhiva
+txt_un7z_browse_ok: arhiva explorata cu succes
+txt_interface: Interfata explorator de arhiva
+txt_archivecreation: Creare arhiva(e)
+txt_tarbefore_hint: Arhiveaza datele in formatul TAR inainte de a le arhiva in formatul specificat.
+txt_archive_hint: Arhiveaza, comprima, despica si pastreaza ascuns fisiere, dosare si volume
+txt_compressionratio_hint: Rata de compresie a arhivei
+txt_archiving: Se arhiveaza:
+txt_cl_long: Argumentele par sa depaseasca marimea maxima ce poate fi procesata de interfata PeaZip, va rog selectati mai putine fisiere de intrare (de ex. selectati directoare/foldere in loc de fisiere)
+txt_overwrite_askbefore: Intreaba inaintea suprascrierii (in consola)
+txt_associated: Aplicatie asociata
+txt_attributes: Atribute
+txt_author: Autor
+txt_ren_existing: Auto-redenumeste fisierele existente
+txt_ren_extracted: Auto-redenumeste fisierele extrase
+txt_autofolder: Creaza automat dosar nou in care se va extrage arhiva?
+txt_back: Inapoi
+txt_backend: Backend binaries user interface
+txt_backupexe: Executabil de rezerva (backup) (recomandat)
+txt_bettercompression: compresie mai buna
+txt_blogs: Bloguri
+txt_blowfish: Blowfish448 (64 bit blocks)
+txt_bookmarks: Semne de carte
+txt_browse: Rasfoire(Explorare)
+txt_browser: Explorator
+txt_aborted_error: Explorarea arhivei a fost oprita, ar dura prea mult timp. Puteti limita selectia utilizand Cautare (F3) sau iesind din modul de vedere Plat (F6); operatiile de extragere/listare/testare nu sunt afectate de aceasta schimbare.
+txt_list_browsing: Rasfoire:
+txt_archive_root: Rasfoire: radacina arhivei
+txt_type_description_bzip2: BZip2: compresie destul de puternica, viteza medie
+txt_pw_empty: Parola goala nu poate fi acceptata, va rog, fie introduceti o parola, fie debifati optiunea "Criptare"
+txt_add_error: Nu se pot adauga/actualiza sau sterge obiecte; probabil tipul arhivei permite doar explorarea sau extragerea, sau nu suporta operatia precizata (de ex. arhiva solida sau multi-volum), ori PeaZip nu poate manipula complet numele arhivei
+txt_un7z_browse_failure: nu pot rasfoi arhiva
+txt_list_error: Nu se poate lista continutul arhivei, va rog verificati daca arhiva este protejata cu parola sau este stricata.
+txt_conf_cannotsave: Nu se poate salva fisierul de configurare, verificati daca calea poate fi accesata in modul scriere si daca are suficient spatiu liber
+txt_check_hint: Check for casual data corruption; hash algorithms are suitable to detect even malicious data tampering (see the documentation)
+txt_check: Creati Suma-de-verificare/hash pentru fisierul(-ele)
+txt_check_select: Suma-de-verificare/hash
+txt_clear: Curata
+txt_clearlayout: Curata aspectul
+txt_pj_hint: Click pentru a importa operatiuni, reseta schimbari si incarca definitii actualizate din interfata grafica (GUI)
+txt_autoclose: Inchide PeaLansator cand operatiunea este terminata
+txt_cl: linie de comanda:
+txt_compare: Compara fisiere
+txt_compress: Comprima
+txt_compress_executable: Executabil pentru compresie
+txt_compress_openforwriting: Comprima fisiere deschise pentru scriere
+txt_compression: Compresie
+txt_compmanagement: Computer management
+txt_pw_confirm: Confirma parola
+txt_console: Consola
+txt_console_interface: Consola: interfata nativa
+txt_content: Continut
+txt_controlpanel: Panou de control
+txt_convert: Converteste discul in NTFS
+txt_copy: Copiere
+txt_copyto: Copiere in...
+txt_create: Creare
+txt_create_archive: Creare archiva
+txt_title_create: Creare archiva, compresie, criptare, despicare...
+txt_create_keyfile: Creare fisier-cheie
+txt_create_folder: Creare dosar nou
+txt_create_theme: Creare tema utilizand setarile actuale
+txt_rr: Creare inregistrari-pentru-recuperare (recovery)
+txt_create_sfx: Creare arhiva auto-extractiva
+txt_cr_current: cale curenta sau rata de compresie a filtrului
+txt_custom: Particular(izat)
+txt_type_description_custom: Particular (utilizatori avansati): introduceti numele executabilului si parametrii
+txt_customapp: Aplicatie particulara
+txt_custom_parameters: Parametri particularizati
+txt_customsize: Marime particularizata
+txt_cut: Taiere
+txt_datetime: Data/timp
+txt_default: implicit
+txt_default_compression: compresie implicita
+txt_default_format: Formatul implicit
+txt_theme_default: Tema implicita
+txt_hard_reset_hint: Sterge fisierul cu semnele de carte
+txt_desktop: Desktop
+txt_dictionary: Dictionar
+txt_dirs: dir(s),
+txt_dis: Dezambiguare:
+txt_disk_cleanup: Curatare disc
+txt_disk_defrag: Defragmentare disc
+txt_disk_management: Managementul discurilor
+txt_dispaly: Afiseaza rezultate ca
+txt_displayedmnu_obj: afisat
+txt_displayedobjects: Obiecte afisate
+txt_nocompress: nu comprima
+txt_delete: Doriti sa stergeti obiectul(-ele) selectat(e)? Operatiunea nu poate fi anulata si fisierele nu vor putea fi recuperate din Cos de Gunoi.
+txt_wipe: Doriti sa stergeti fisierul(-ele) selectat(e) in modul sigur? Operatiunea nu poate fi anulata si fisierele nu vor putea fi recuperate.
+txt_done: Facut(terminat)
+txt_edit: Editare
+txt_elapsed: timp scurs:
+txt_error_emptycl: Linia de comanda goala!
+txt_encrypt: Cripteaza
+txt_encrypted: criptat
+txt_encryption: Criptare
+txt_note: Introduceti nota/descriere
+txt_random_keys: Folosete chei aleatoare (la intamplare)
+txt_random_keys_hint: Folosete chei aleatoare (nu e necesar sa le retii in minte)
+txt_ent: Evaluarea entropiei
+txt_ent_tools: Unelte pentru probarea entropiei
+txt_eqorlarger: egal sau mai mare ca obiectul selectat
+txt_eqorrecent: egal sau mai recent ca obiectul selectat
+txt_eqorolder: egal sau mai vechi decat obiectul selectat
+txt_eqorsmaller: egal sau mai mic decat obiectul selectat
+txt_equal: egal cu obiectul selectat
+txt_erase_hint: Stergere sigura: suprascrie cu date aleatoare, ascunde marimea, redenumeste, si in final sterge
+txt_extraction_error: Eroare la extragerea obiectului selectat. Daca arhiva este protejata cu parola, va rog precizati parola
+txt_exclude_hint: Exclude file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
+txt_exclusion_recourse: Exclusion filters recurse subdirs
+txt_exclusion: Excluziune:
+txt_exe: Executabil
+txt_overwrite_qry: exista in calea destinatie; suprascrieti cu fisierul(-ele) cu acelasi nume din calea sursa? (Anulare: sari peste copierea acestui obiect)
+txt_confirm_overwrite: exista; suprascrieti? (NU pentru a sari peste acest pas)
+txt_explore_outpath: Exploreaza calea de iesire
+txt_explore_path: Exploreaza calea
+txt_ext: Ext:
+txt_caption_extract: Extrage
+txt_ext_nopath: Extrage (fara cale)
+txt_ext_all: Extrage toate
+txt_ext_allhere: Extrage toate aici
+txt_ext_allto: Extrage toate in
+txt_extopen_custom: Extrage si deschide cu program particular
+txt_extopen_with: Extrage si deschide cu...
+txt_ext_disp_here: Extrage afisatele aici
+txt_ext_disp: Extrage obiectul(-ele) afisat(e)
+txt_ext_disp_to: Extrage obiectul(-ele) afisat(e) in...
+txt_ext_here: Extrage aici
+txt_ext_sel_here: Extrage selectatele aici
+txt_ext_sel: Extrage obiectul(-ele) selectat(e)
+txt_ext_sel_to: Extrage obiectul(-ele) in...
+txt_extobj: Extrage obiectul
+txt_newfoldermenu: Extrage in dosar nou
+txt_extto: Extrage in ...
+txt_level_fast: rapid
+txt_fastcompr: compresie rapida
+txt_fastopen: Routina pentru deschidere rapida, opriti explorarea daca lista depaseste
+txt_level_fastest: cel mai rapid
+txt_favformats: Formate favorite
+txt_file: Fisier
+txt_filebrowser: Explorator de fisiere / explorator de arhive
+txt_filetools: Unelte pentru fisiere
+txt_files: fisier(e),
+txt_nfiles: Fisiere
+txt_fs: Sistem-de-fisiere
+txt_filters_recourse: filter(s) recurse subdirs
+txt_filters: Filtru
+txt_flat: Plat (arata toate)
+txt_list_flat: Flat view:
+txt_unit_floppy: Unitate de discheta (Floppy disk)
+txt_foldername: Nume dosar
+txt_nfolders: Dosare
+txt_error_input_multi: format allows a single file as input; you can use "TAR before" switch to save input in a .TAR archive before, otherwise you can chose another format. HINT: chose archive format after had selected input data: "TAR before" switch will be automatically set
+txt_fwd: Inainte
+txt_list_found: Gasite:
+txt_free: Liber
+txt_free2: liber
+txt_name_full: Nume intreg
+txt_function: Functie
+txt_general: General
+txt_multithreading: generic multithreading
+txt_go_browser: Du-te la navigatorul de fisiere
+txt_go_path: Exploreaza calea (PeaZip)
+txt_guicl: Grafic + consola
+txt_guipealauncher: Grafic: impachetat de catre PeaLauncher
+txt_graphic: Dosarul graficelor
+txt_gridaltcolor: Culori alternante in grila
+txt_gridrowheight: Inaltime rand grila
+txt_gui: GUI
+txt_type_description_gzip: GZip: compresie rapida
+txt_here: here
+txt_list_history: Historic
+txt_homeroot: Nivelul radacina (root) al computerului/arhivei
+txt_quickbrowse_hint: Daca explorarea s-a oprit utilizatorul poate limita selectia folosind functii de cautare sau de filtrare; functiile de extragere/listare/testare nu sunt afectate in niciun fel.
+txt_backupexe_hint: Daca ceva merge prost si conduce la un rezultat nefunctional, puteti recupera executabilul original din copia de rezerva (backup) creata automat
+txt_attach: Daca clientul de email suporta acea comanda, arhiva va fi atasata la un email nou
+txt_images: Imagini
+txt_include_hint: Include fisier(e), cate unul per linie; foloseste valori universale * si ? ; delimitatori de tip " si " nu sunt necesari
+txt_filters_hint: Filtre de includere si excluder pentru fisiere binare 7z, va rog cititi cu atentie documentatia despre 7-Zip pentru a intelege cum functioneaza aceste filtre
+txt_inclusion_recourse: Inclusion filters recurse subdirs
+txt_inclusion: Incluziune:
+txt_error_function: A fost ceruta o functie incorecta
+txt_info: Info
+txt_infoall: Info despre toate
+txt_infodisp: Info despre obiectul(-ele) afisate
+txt_infosel: Info despre obiectul(-ele) selectat(e)
+txt_inputinfo: Informatie de intrare
+txt_input_list: Lista de intrare:
+txt_iop: intrari, iesiri, parametri
+txt_ipo: intrari, parametri, iesiri
+txt_input: intrari:
+txt_integrity: Verificare de integritate
+txt_chunk_size: Marime particulara nevalida, va rog corectati cu o valoare numerica
+txt_invertsel: Inverseaza selectia
+txt_type_exe: este un executabil Windows, doriti sa il rulati(executati)? ("NU" pentru a il deschide in exploratorul de arhive al PeaZip; doar instalatoare NSIS, 7-Zip's sfx si instalatoare .MSI pot fi explorate in acest fel)
+txt_return_to_archive: este deschis in prezent; doriti sa il rasfoiti(explorati)?
+txt_not_accessible: nu mai este accesibil
+txt_type_unsupported: nu este un tip de arhiva suportat
+txt_checkname_failed: nu este un nume valid.
+txt_not_accessible_list: nu este accesibil, va rog verificati daca lista de fisiere furnizata este actualizata si corecta
+txt_theme_create_error: Crearea temei nu a fost posibila, incercati sa folositi un nume valid pentru un dosar ca nume al temei si sa alegeti o cale de iesire a fisierului care sa poata fi accesata in modul scriere
+txt_theme_exists: jet exista, va rog furnizati o alta cale
+txt_job_code: codul operatiunii:
+txt_job_definition_saved: Definitia operatiunii a fost salvata cu succes in
+txt_job_success: Operatiunea s-a incheiat cu succes!
+txt_join: unire
+txt_joinfiles: Unire fisiere
+txt_keyfile: Fisier-cheie
+txt_keyfile_not_found: Fisierul-cheie nu a fost gasit sau nu poate fi citit. Va rog, alegeti alt fisier-cheie.
+txt_keyfile_notcreated: Fisierul-cheie nu a fost creat
+txt_larger: mai mare decat obiectul selectat
+txt_lastused: Ultimul folosit
+txt_launch: Lanseaza operatiunea
+txt_layout: Aspect
+txt_filelist_savedas: Aspect salvat ca
+txt_level: Nivel
+txt_license: Licenta
+txt_caption_list: Lista
+txt_list_details: Lista (cu detalii)
+txt_list_all: Listare toate
+txt_list_disp: Listare obiect(e) afisat(e)
+txt_list_sel: Listare obiect(e) selectat(e)
+txt_toggle_warning: Listarea continutului caii in Vizualizarea Plata poate dura mult timp, continuati?
+txt_loadfile: Incarca fisier
+txt_loadlayout: Incarca aspect
+txt_unit_hd: Disc local
+txt_localization: Localizare
+txt_lpaqver: versiune LPAQ
+txt_type_description_lpaq: LPAQ: o versiune mai rapida a PAQ, compresie foarte buna
+txt_maininterface: Interfata principala
+txt_maxcomp: Mod compresie maxima
+txt_level_maximum: maximum
+txt_restartrequired: Poate necesita restartarea aplicatiei pentru a putea fi aplicate schimbarile 
+txt_required_memory: MB de memorie necesari
+txt_method: Metoda
+txt_misc: Misc
+txt_modify: Modificare
+txt_morecontrols: Mai multe controale (istoric, semne de carte, ...)
+txt_morerecent: mai recent decat obiectul selectat
+txt_ent_hint: Move the mouse, enter keys in the edit field, load files to collect enthropy from the system...
+txt_moveto: Muta in...
+txt_mypc: Radacina computerului
+txt_list_na: n/a
+txt_name: Nume
+txt_naming: Politica de atribuire a numelor
+txt_unit_remote: Disc (drive) de retea
+txt_newarchive: arhiva noua
+txt_cnewfolder: Dosar nou
+txt_news: Noutati
+txt_no: Nu
+txt_noinput: Nu a fost receptionat nicio intrare (input) accesibila
+txt_nocompress_hint: fara compresie (mai rapid)
+txt_split_noinput: Niciun input selectat; va rog selectati un fisier pentru despicare
+txt_open_noinput: Niciun input selectat; va rog selectati o arhiva (sau primul volum ar arhivei - in cazul arhivelor multi-volum)
+txt_list_nomatch: niciun rezultat gasit
+txt_singlethread: no multithreading
+txt_none2: niciunul
+txt_nonsolid: Non-solid
+txt_level_normal: normal
+txt_copy_error: Copiere sau mutare esuata, cod eroare:
+txt_description: Nota/descriere
+txt_compare_second: Acum selecteaza fisierul cu care se compara
+txt_peaobj: Controlul obiectelor
+txt_displayed_obj: obiect(e)
+txt_olderthan: mai vechi decat obiectul selectat
+txt_on: on
+txt_ondblclick: La dubluclick fa:
+txt_opacity: Opacitate
+txt_open: Deschide
+txt_openarchive: Deschidere arhiva
+txt_title_open: Deschidere arhiva, decriptare, unire...
+txt_open_bookmark: Deschide semn de carte
+txt_cphere: Deschide linie de comanda aici
+txt_open_file: Deschide fisier
+txt_open_files: Deschide fisier(e)
+txt_open_path: Deschidere cale
+txt_opensource: Deschide arhivatorul portabil sursa
+txt_openwith: Deschidere cu...
+txt_aborted: Operatie anulata
+txt_unit_cd: Disc (drive) optic
+txt_options: Optiuni
+txt_other: Altul
+txt_otherparams: Alti parametri (editare libera)
+txt_oip: iesire, intrare, parametri
+txt_opi: iesire, parametri, intrare
+txt_output: rezultat (iesire):
+txt_overwrite: Suprascrie fisierele existente
+txt_compressed_size: Impachetat
+txt_paqver: versiunea PAQ
+txt_type_description_paq: PAQ: compresor lent, dar extrem de puternic
+txt_pio: parametri, intrare, iesire
+txt_poi: parametri, iesire, intrare
+txt_parameters: Parametri:
+txt_error_partial: Extractia partiala nu este implementata pentru acest tip de arhiva
+txt_passes: Numar de treceri (passes)
+txt_pw: Parola
+txt_pwlength: Lungimea parolei in litere (4..64)
+txt_un7z_browse_pw: parola poate fi necesara
+txt_un7z_browse_pw_other: parola s-ar putea sa fie gresita
+txt_paste: Lipire
+txt_path: Cale:
+txt_pea_appcolor: Culoarea aplicatiei Pea
+txt_pea_textcolor: Culoarea textului Pea
+txt_type_description_pea: PEA: format de arhiva orientat catre siguranta (security), cu compresie rapida
+txt_peazip_new: PeaZip (instanta noua)
+txt_peazip_help: Pagini de sprijin PeaZip
+txt_peazip_web: Situl web al proiectului PeaZip
+txt_performall: Perform all supported algorithms
+txt_name_provide: Nume nou (va rog, nu folositi caraacterele \ / : * ? ' " < > |)
+txt_upxorstrip: Please chose Strip and/or UPX on the binary
+txt_not_removable_file: Va rog inchideti fisierul deschis (folosit) in prezent, pentru a permite PeaZip sa il inlature:
+txt_not_removable: Va rog inchideti fisierele deschise (folosite) in prezent, pentru a permite PeaZip sa inlature dosarul:
+txt_custom_executable_missing: Va rog precizati numele executabilului particular
+txt_type_unsupported_select: Va rog selectati un tip de arhiva suportat:
+txt_no_theme_name: Va rog precizati numele unei teme
+txt_please_wait: Va rog, asteptati
+txt_copy_wait: Va rog asteptati ca operatiile de tip copiere/mutare fisiere programate in prezent sa se incheie inainte de a programa alte operatii de acelasi fel
+txt_previewwith: Previzualizare cu...
+txt_projectadmin: Administraor de proiect:
+txt_type_description_quad: BALZ/QUAD: compresoare de fisiere, de mare performanta, bazate-pe-ROLZ
+txt_quickdelete: Stergere rapida
+txt_quit: Oprire
+txt_unit_ram: memorie RAM (disk)
+txt_read: Citire:
+txt_recentarchives: Arhive recente
+txt_rr_hint: Inregistrarile de recuperare permit tentative de corectare a arhivelor in cazul aparitiei unor degradari ale datelor
+txt_search_refine: Filtru de rafinare a cautarii, accepta criterii universale de tip ? si *
+txt_fefreshf5: Reimprospatare (F5)
+txt_release: release:
+txt_unit_removable: Unitate detasabila (USB)
+txt_remove_bookmark: Inlatura semn de carte
+txt_remove_external_unit: Inlatura unitate(-i) externa(-e)
+txt_removeselected: Inlatura obiectul(-ele) selectat(e)
+txt_rename: Reenumeste
+txt_caption_repair: Reparare
+txt_restartrequired2: necesita repornirea aplicatiei pentru a putea fi aplicate (schimbarile)
+txt_reset: Resetare
+txt_reset_archivename: Resetare nume arhiva
+txt_hardreset: Resetare semne de carte
+txt_reset_theme: Resetare la tema inglobata
+txt_restore_att: restaureaza atributele originale
+txt_run_as: Executare ca (utilizatorii fara parola nu sunt acceptati/valizi)
+txt_run_as2: Executare ca alt utilizator
+txt_sample: Proba: 
+txt_saveas: Salvare ca
+txt_savehistory: Salvare istoric al ultimei arhive folosite
+txt_save_infolder: Salvare in dosar (auto)
+txt_savejob: Salvare operatiune
+txt_savejobdefinition: Salvare definitia operatiunii
+txt_savejobdefinition_hint: Salvare definitia operatiunii ca text simplu; o puteti utiliza din scripturile voastre
+txt_savelayout: Salvare aspect
+txt_save_winstate: Salvare statusul ferestrei principale
+txt_search: Cautare (recursiva, poate dura ceva timp)
+txt_searchanddrag: Cautare si mutare (drag) aici
+txt_searchfor: Cautare
+txt_nrsearch: cauta aici (ne-recursiv)
+txt_search_hint: Cauta in subdirectoarele arhivei pentru rezultate care sa corespunda filtrului (filtrelor) de cautare
+txt_search_web: Cautare web
+txt_list_searching: Se cauta...
+txt_securedelete: Stergere sigura
+txt_default_description: Selectati o functie sau trageti fisiere aici
+txt_selectall: selectare toate
+txt_selectdir: Selectare director
+txt_selected_obj: selectate
+txt_selected_objects: Obiecte selectate
+txt_sfx: Auto-extractiv
+txt_sendbymail: Trimite prin email (daca se poate)
+txt_set_defaults: Setare parametrii impliciti ai aplicatiei
+txt_settings: Setari
+txt_sfx_interface: interfata sfx
+txt_showhints: Arata indicii
+txt_show_messages: Arata mesaje de informare
+txt_showpw: Arata continutul campului parola
+txt_singlevol: Volum unic
+txt_size: Marime
+txt_sizeb: Marime (B)
+txt_skip_existing: Ignora fisierele existente
+txt_slowercomp: compresie mai lenta dar decompresie la fel de rapida
+txt_smaller: mai mic decat  obiectul selectat
+txt_solid: Solid
+txt_solid_block: Solid block
+txt_solid_auto: Solid, auto-ajustare
+txt_solid_extension: Solid, grupare dupa extensie
+txt_listtest: Scuze, operatia de listare/testare nu este inca implementata pentru acest tip de format
+txt_sortbysel: Sortare dupa starea selectiei
+txt_list_sorting: Sortare...
+txt_speed: viteza
+txt_split: Despicare
+txt_type_description_split: Despica un fisier cu verificarea optionala a integritatii
+txt_split_file: Despica fisier
+txt_list_nostats: Nu sunt disponibile statistici
+txt_status: Status
+txt_level_store: stocare
+txt_stream_control: controlul Stream-ului
+txt_strip: Strip before UPX (recommended)
+txt_keyfile_created: Fisier-cheie creat cu succes ca:
+txt_suggestpw: Sugerare parola
+txt_noupx: Symbols stripped, UPX compression omitted
+txt_syntax: Sintaxa:
+txt_sysbenchmark: Banc-de-teste pentru sistem
+txt_benchmark: Bancul-de-probe pentru sistem va dura cateva minute si va folosi toate resursele procesorului (CPU) si memoriei (RAM). Este posibil ca sistemul sa nu raspunda la comenzi in timpul rularii bancului-de-probe; doriti sa il rulati oricum?
+txt_systools: Unelte de sistem
+txt_tarbefore: TAR before
+txt_type_description_tar: TAR: format principal de arhiva pe sisteme UNIX
+txt_taskman: Task manager
+txt_caption_test: Testare
+txt_testall: Testare toate
+txt_testdisp: Testare obiect(e) afisat(e)
+txt_testpw: Testare parola / fisier-cheie
+txt_testsel: Testare obiect(e) selectat(e)
+txt_col_hint: Culoarea trebuie aleasa astfel incat sa se integreze bine cu culorile icoanelor si cu culorile celorlalte elemente ale interfetei grafice
+txt_bookmarks_hint: Lista completa si editabila a semnelor-de-carte este disponibila in interfata de explorare a fisierelor (explorator fisiere), facand click pe icoana "Mai multe controale" si pe "Comutare istoric/semne de carte"
+txt_archive_noinput_tolist: Aspectul arhivei este gol: va rog folositi comanda Adaugare fisier(e), Adaugare dosar(e) sau Incarcare Aspect pentru a umple aspectul arhivei cu obiecte
+txt_theme: Tema
+txt_icons_found: Tema a fost incarcata cu succes.
+txt_themename: Nume tema
+txt_icons_not_found: Tema nu s-a incarcat corect. Incearca sa folosesti tema implicita, sau o alta tema care merge.
+txt_theme_create_success: tema a fost creata cu succes in
+txt_theming: Theming
+txt_extand_error: Aceasta functie poate fi aplicata doar unui singur fisier in acelasi timp
+txt_threads: Threads
+txt_titlescolor: Culoare pentru titluri
+txt_to: catre
+txt_toggle_browseflat: Comutare vedere explorare / plata (arata toate)
+txt_toggle_historybookmarks: Comutare istoric/semne de carte
+txt_toolbarscolor: Culori pentru bare
+txt_tools: Unelte
+txt_best: incearca setarile cele mai bune (lent)
+txt_type: Tip
+txt_level_ultra: ultra
+txt_error_openfile: Fisierul specificat nu poate fi deschis
+txt_cl_hint: UNACE si UPX ruleaza intotdeauna folosind modul consola; operatiunile de listare, testare si banc-de-probe ruleazaa intotdeauna folosind modul de interfata grafica (modul GUI)
+txt_ace_missing: Pluginul UNACE lipseste; pentru manipularea arhivelor de tip ACE puteti descarca pluginul de pe situl PeaZip (UNACE avand sursa inchisa, pluginul nu este prezent in pachetul de baza al Peazip)
+txt_units: unitati
+txt_unit_unknown: Tip de disc (drive) necunoscut
+txt_un7z_pw_untested: Netestat
+txt_up: Sus
+txt_update: actualizare (daca arhiva exista)
+txt_type_description_upx: UPX: comprima doar fisierele executabile
+txt_advfilters: Foloseste filtre avansate
+txt_openfiles_hint: Folositi aceasta optiune pentru a include in arhiva fisiere deschise pentru editare in alte programe (optiune folositoare in opratiuni de tip backup=copie de rezerva)
+txt_usenet: Usenet)
+txt_user_name: User name; use user@DOMAIN or DOMAIN\user form if needed.
+txt_using: Utilizare:
+txt_volumepea: Control volum
+txt_volume_size: Marime volum
+txt_type_ext_uns: a fost extrasa cu succes
+txt_websearch: Cautare web
+txt_websites: Situri web
+txt_word: Cuvant
+txt_write: Scriere:
+txt_ramdompw_hint: Puteti copia parola generata aleator de aici
+txt_exe_hint: You can freely enter executable name and parameters for custom compression, and chose syntax's contruction. Please note that you can also manually change command's syntax in "Console" tab.
+txt_pj_hint2: You can import the job's definition from the GUI frontend in the memo field below. Then, you can edit, launch or save it without changing or losing the job defined for the GUI frontend.
+txt_type_description_zip: ZIP: format de arhivare/comprimare rapida, cel mai folosit pe sisteme Windows
+txt_zipcrypto_hint: ZipCrypto (antic)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: remaining
+txt_6_5_abort: Abort
+txt_6_5_error: Error
+txt_6_5_no: No
+txt_6_5_warning: Warning
+txt_6_5_yes: Yes
+txt_6_5_yesall: Yes to all
+txt_5_6_update: Check for updates
+txt_5_6_cml: System context menu language
+txt_5_6_donations: Donations
+txt_5_6_localization: Localization
+txt_5_6_runasadmin: Run as administrator
+txt_5_6_help: Online support
+txt_5_5_cancelall: Cancel all
+txt_5_3_details: Details
+txt_5_3_files: files
+txt_5_3_folders: folders
+txt_5_3_info: Info
+txt_5_3_list: List
+txt_5_3_os: Original size
+txt_5_3_ps: Packed size
+txt_5_3_test: Test
+txt_5_0_extract: Extract
+txt_5_0_from: from
+txt_5_0_in: in
+txt_5_0_to: to
+txt_4_5_search: search
+txt_4_0_drag: Trageti aici arhiva pentru extragere, sau 
+txt_4_0_dragorselect: Trageti aici sau selectati fisier
+txt_4_0_select: selectare fisier
+txt_3_6_selectdir: Selectare director
+txt_3_5_close: Inchide
+txt_3_0_details: Pentru mai multe detalii, "Raport" contine jurnalul operatiunilor, si "Consola" contine definitia operatiunilor ca si linie de comanda
+txt_3_0_hints: Indicii privind eroarea
+txt_3_0_arc: Unele fisiere de intrare nu pot fi citite (pot fi blocate, inaccesibile sau degradate)
+txt_3_0_ext: Arhiva poate necesita o alta parola pentru operatia curenta
+txt_2_8_oop: Deschide calea de iesire cand operatiunea este terminata
+txt_2_7_validatefn: Operatie oprita, a fost detectat un nume de fisier nevalid:
+txt_2_7_validatecl: Operatie oprita, a fost detectata o comanda potential periculoasa (de ex. concatenare de comenzi nepermisa in program):
+txt_2_6_open: Deschide arhiva
+txt_2_5_ace_missing: Pluginul UNACE lipseste; pentru manipularea arhivelor de tip ACE puteti descarca pluginul de pe situl PeaZip (UNACE avand sursa inchisa, pluginul nu este prezent in pachetul de baza al Peazip)
+txt_2_3_pw_errorchar_gwrap: Semnul "ghilimele" nu poate fi utilizat in parole de catre PeaLauncher in acest sistem (de operare), va rog schimbati parola sau alegeti Modul Consola in meniul Optiuni > Setari > Backend binaries user interface
+txt_2_3_renameexisting: Auto-redenumire fisiere existente
+txt_2_3_renameextracted: Auto-redenumire fisiere extrase
+txt_2_3_cancel: anulare
+txt_2_3_encryption: Criptare
+txt_2_3_extinnew: Extragere in dosar nou
+txt_2_3_keyfile: Fisier-cheie
+txt_2_3_kf_not_found_gwrap: Fisierul-cheie nu poate fi gasit sau citit. Va rog alegeti un alt fisier-cheie.
+txt_2_3_moreoptions: Mai multe optiuni...
+txt_2_3_nopaths: Nicio cale
+txt_2_3_options: Optiuni
+txt_2_3_overexisting: Suprascrie fisiere(le) existente
+txt_2_3_pw: Parola
+txt_2_3_skipexisting: Ignora (Sari peste) fisierele existente
+txt_job_unknown: : A fost gasita o eroare necunoscuta
+txt_stdjob: [animatia se va opri la incheierea operatiunii]
+txt_benchmarkjob: [sistemul va raspunde foarte incat la comenzi in timpul rularii bancului-de-probe (ceva mai multe minute)]
+txt_defragjob: [nu va raspunde la comenzi in timpul defragmentarii, o puteti lasa sa ruleze in fundal]
+txt_consolejob: [feedback-ul si detaliile de desfasurare ale operatiunii sunt disponibile in fereastra consola]
+txt_job1: 1: Avertizare: eroare(-i) nefatala(-e); de ex. unele fisiere lipsesc sau sunt blocate
+txt_job127: 127: Operatiunea ceruta nu poate fi executata
+txt_job2: 2: A aparut o eroare fatala
+txt_job255: 255: Operatiune intrerupta de catre utilizator
+txt_job7: 7: Eroare: linie de comanda incorecta
+txt_job8: 8: Eroare: memorie insuficienta pentru operatiunea ceruta
+txt_autoclose: Inchide aceasta fereastra cand operatiunea este terminata
+txt_crscale: Rata de compresie (mai joasa, mai bine):
+txt_console: Consola
+txt_benchscale: Core 2 Duo 6600 rating, viteza echivalenta MHz.
+txt_create: Creare
+txt_done: Terminat:
+txt_nocl: Linie de comanda goala
+txt_error: Eroare:
+txt_explore: Explorare
+txt_extto: Extragere in
+txt_halt: Oprire sistem cand operatiunea este incheiata
+txt_halted: Oprit:
+txt_hardware: hardware
+txt_high: prioritate inalta
+txt_idle: prioritate minima
+txt_input: Input:
+txt_jpaused: Operatiune pauzata
+txt_jresumed: Operatiune reluata
+txt_job_started: Operatiune inceputa
+txt_jobstatus: Status operatiune:
+txt_jstopped: Operatiune intrerupta de catre utilizator
+txt_jobstopped: Operatiune intrerupta de catre utilizator; puteti inspecta rezultatul partial al operatiunii facand click pe butonul "Explorare" sau citind jurnalul operatiunii
+txt_job_success: Operatiune incheiata cu succes
+txt_lt: Listare/testare/reparare archiva
+txt_normal: prioritate normala
+txt_ok: OK
+txt_output: Rezultat (Output):
+txt_pause: Pauza
+txt_paused: pauzat,
+txt_p_high: Setat ca Prioritate Inalta
+txt_p_idle: Setat ca Prioritate Inactiv
+txt_p_normal: Setat ca Prioritate Normala
+txt_p_realtime: Setat ca Prioritate Timp Real
+txt_rating: Rating:
+txt_rt: prioritate timp real
+txt_report: Raportare
+txt_resume: Reluare
+txt_priority: Faceti click pentru a seta prioritatea
+txt_running: in curs de executare,
+txt_isrunning: In curs de executare...
+txt_saveas: Salvare ca
+txt_savejob: Salvare definitia operatiunii (poate include parola!)
+txt_savelog: Salvare jurnal de operatiuni
+txt_software: software
+txt_speedscale: Viteza, scara logaritmica (mai sus, mai bine):
+txt_status: Status
+txt_stop: Stop
+txt_bench: Banc-de-teste pentru sistem
+txt_threads: Threads:
+txt_time: Timp:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+EXTRAGERE ARHIVA(-E)
+Din sistem 
+- click-dreapta pe arhiva(e), apoi click pe "Extrage aici" din meniul contextual sau pe "Extrage aici (in dosar nou) pentru a extrage fara alte optiuni suplimentare
+- o metoda alternativa este folosirea comenzii "Extrage...", pentru a accesa optiuni suplimentare: calea de iesire, parola, extragerea fisierelor intr-un dosar (director) nou, posibilitatea de a sari peste anumite optiuni, redenumire sau suprascriere fisiere existente, etc.
+
+Deschide o arhiva in PeaZip, de ex. prin dublu-click, sau prin tragerea arhivei in fereastra Peazip sau pe icoana Peazip
+- click pe "Extrage" in  bara de unelte sau in meniiul contextual pentru a extrage doar obiectele selectate prin dialogul de confirmare stabilind setarea tuturor optiunilor (cale de iesire, parola, politici de numire, extragere intr-un director nou, etc)
+- trage fisiere si dosare in locatia dorita, doar elementele selectate vor fi extrase (pentru mai multe informatii vezi capitolul despre tragerea si plasarea in PeaZip)
+- click the quick extraction dropdown button on the right of “Extract” in the toolbar, it allows to directly extract the entire archive to most common destinations (skipping the confirmation dialog) and to set most important options; keyboard shortcuts: Ctrl+E (or F12) extracts the entire archive, asks for output directory; Ctrl+Alt+E extracts archive in its current folder; Ctrl+Shift+E extracts to desktop; Ctrl+Alt+Shift+E extracts to documents; Ctrl+0 extracts to previous path; Ctrl+1..8 extracts to path of bookmark 1..8 (if defined)
+
+Deschide PeaZip, selecteaza una sau mai multe arhive si fa click pe “Extract” in bara de unelte sau in meniul contextual, sau foloseste destinatii pentru extractii rapide asa cum este explicat la punctul precedent.
+
+EXTRACTIE SELECTIVA A UNOR OBIECTE DINTR-O ARHIVA
+Deschide o arhiva in PeaZip, de ex. prin dublu-click, sau prin tragerea arhivei in fereastra Peazip sau pe icoana Peazip
+- click pe "Extrage" in bara de unelte: doar itemurile selectate vor fi extrase
+- trageti fisierele si dosarele in destinatia dorita, doar elementele selectate vor fi extrase
+- click-dreapta si in grupul “Extrage” din meniul comtextual faceti click pe “Extrage selectate” (pentru a extrage doar itemurile selectate) sau click pe “Extrage afisate” (pentru a extrage continutul directorului curent sau continutul din criteriul de cautare curent)
+
+INTRODUCETI O PAROLA PENTRU RASFOIREA SAU EXTRAGEREA UNEI ARHIVE
+Click pe icoana lacat pentru a introduce o parola si, optional, un fisier-cheie.
+Icoana este prezenta atat in bara de stare a exploratorului de fisiere PeaZip, ca si in interfata de creare a arhivelor; odata ce parola este setata, icoana isi va schimba culoarea.
+
+CREARE ARHIVA
+Din sistem
+- click-dreapta pe obiectele ce trebuiesc arhivate si click pe "Adaugare la arhiva" in meniul contextual sau pe meniul TrimitereCatre. Se va deschide fereastra pentru confirmarea crearii arhivei, mai multe optiuni sunt disponibile in fila "Avansat"; click pe OK pentru a crea arhiva.
+- ca metoda alternativa, trageti fisiere/dosare in fereastra sau in scurtatura programului PeaZip; acceasi interfata pentru crearea de arhive va fi afisata.
+
+Din PeaZip 
+- selecteaza obiectele ce trebuie arhivate si fa click pe butonul "Adauga"; aceeasi interfata de creeare a arhivelor va fi afisata.
+
+ADAUGARE FISIERE/DOSARE PENTRU ACTUALIZAREA ARHIVEI EXISTENTE
+Deschide o arhiva in PeaZip (de ex. prin dublu-click, sau prin tragerea arhivei in fereastra Peazip sau pe icoana Peazip), apoi trageti fisiere si dosare pentru a le adauga la arhiva (sau faceti click pe butonul "Adaugare" si folositi meniul contextual al aplicatiei pentru a adauga obiecte in arhiva).
+Va deschide fereastra de confirmare a crearii arhivei, faceti click pe OK pentru a actualiza arhiva existenta.
+
+CREARE ARHIVA DESPICATA IN MAI MULTE FISIERE MAI MICI
+In timpul crearii unei arhive asa cum a fost explicat la punctele anterioare, faceti click pe meniul derulant "Volum unic" (single volume) pentru a selecta o marime pentru fisierele de iesire (volume) in care arhiva va fi despicata.
+Tipurile de arhive cele mai des intalnite suporta aceasta optiune.
+
+CREARE ARHIVA CRIPTATA
+Click pe icoana lacat pentru a introduce o parola si, optional, un fisier-cheie; icoana este prezenta atat in bara de stare a exploratorului de fisiere PeaZip, ca si in interfata de creare a arhivelor.
+Pentru a ascunde numele fisierelor si directoarelor continute in arhiva, bifati "Cripteaza si numele fisierelor". Tinei minte ca aceasta optiune va fi aplicat doar daca arhiva va fi creata intr-un format de fisier ce suporta aceasta functie, precum 7Z sau ARC.
+Note that in archive creation interface, alongside the padlock icon, there is a warning to visually inform if encryption is set and if the current archive format supports encryption.
+
+CREARE ARHIVE SEPARATE
+Adaugati obiectele ce trebuiesc arhivate (cu butonul "Adaugare" din PeaZip, sau din meniul contextual al sistemului de operare ori din meniul TrimitereCatre) si inaintea confirmarii cu butonul "OK", bifati optiunea "Adaugare fiecare obiect intr-o arhiva proprie (separata)".
+
+CONVERSIE ARHIVE
+Din PeaZip selectati arhive pentru a fi convertite si faceti click pe "Convertire" din bara de unelte sau din meniul contextual; fisiere care nu sunt arhive, precum si dosare, pot fi adaugate deasemenea, diferenta fiind ca arhivele vor fi extrase inaintea fazei de compresie.
+Folosind comutatorul "Convertire arhive existente" in conjunctie cu "Adauga fiecare obiect intr-o arhiva proprie" (implicit), va avea ca rezultat o conversie in masa a arhivelor din lista. Fara activarea acelui comutator, conversia de arhive este destinata sa consolideze datele de intrare intr-o singura arhiva, imbunatatind astfel eficienta comprimarii deoarece permite recompresia datelor originale din forma lor necomprimata.
+
+CREARE DIRECTA A ARHIVELOR INTR-UN FORMAT SPECIFICAT SI CU UN NIVEL DE COMPRESIE ANUME ALES
+Folosind procedura “Integrare in sistem" din meniul Optiuni se pot activa comenzile din meniul contextual ce permit adaugarea directa a fisierelor/dosarelor selectate la o arhiva ZIP, 7Z sau la o arhiva autoextractiva.
+Pentru formatele Zip si 7Z este deasemenea posibila activarea optiunilor din meniul contextual referitoare la nivelul de compresie: rapida, normala sau nivel ultra de compresie, sarind peste nivelul implicit de compresie al formatului de arhiva selectat.
+
+MANAGER DE PAROLE
+Managerul de Parole este accesibil din meniul principal, Unelte > Manager de Parole sau din Formularul Parola, din meniul derulant situat in stanga campului Parola.
+Parolele salvate pot fi selectate din meniul derulant situat la stanga parolei completate in Formularul Parola, sau pot fi copiate din managerul de parole pentru a putea fi utilizate in alte aplicatii.
+Daca nicio parola generala (master password) nu este setata pentru managerul de parole, atunci lista cu parole este accesibila fara a fi necesara autentificarea, in caz contrar parolele nu vor fi afisate pana cand utilizatorul nu se autentifica (in mod corect).
+
+CONFIGURAREA APLICATIEI
+Optiuni > Localizare (si in Optiuni > Setari, primul tab) permite setarea limbii aplicatiei.
+Optiuni > Setari permite editarea setarilor/optiunilor aplicatiei
+Optiuni > Tema permite schimbarea culorilor si icoanelor aplicatiei
+Optiuni > Integrarea in sistem inializeaza o procedura de configurare a asocierii tipurilor de fisiere cu diverse programe, a meniului contextual si a elementelor submeniului contextual TrimitereCatre (in Windows)
+Organizare meniu contine intrari pentru particularizare, intrari de activare sau dezactivare a elementelor interfetei grafice a exploratorului, precum bara de unelte, bara de adrese, bara de navigare, etc.
+
+F1 	ajutor
+F2 	redenumire fisier(e) / Ctrl+F2 copiaza cele selectate in / Shift+F2 muta cele selectate in
+F3	cautare (optiunea recursiva a cautarii va fi tinuta minte) / Ctrl+F3 start cautare nerecursiva (cautare aici) / Shift+F3 recursiva / Alt+F3 cautare in (tot) sistemul
+F4 	mai sus un nivel /  Ctrl+F4 exploreaza radacina computerului / Shift+F4 exploreaza desktop-ul
+F5 	reimprospatare
+F6 	comutare vedere explorator/vedere plata
+F7 	adaugare la semne-de-carte / Ctrl+F7 deschidere intr-o instanta noua a PeaZip / Shift+F7 deschide linia de cmanda in calea selectata / Alt+F7 exploreaza calea selectata
+F8 	exploreaza primul item din lista cu semne-de-carte (Ctrl, al doilea, Shift, al treilea)
+F9 	setare parola/fisier-cheie / Shift+F9 manager de parole / Ctrl+F9 creare fisier-cheie sau parola aleatoare / Ctrl+Shift+F9 setare filtre avansate
+F10 	meniu / Ctrl+F10 executare ca alt utilizator / Alt+F10 executare ca administrator (Windows Vista si alte sisteme mai noi)
+F11 	comuta in modul Ecran Complet / Ctrl+F11 mod micsorat
+F12 	extrage toate in...
+
+DESPRE PEAZIP
+
+PeaZip este un manager cu sursa deschisa, pentru fisiere si arhive: disponibil pe platforme multiple (cross platform), isponibil ca software, atat in varianta portabila, cat si varianta instalabila pentru Windows pe 32 si 64 biti (9x, 2k, XP, Vista) si Linux (PeaZip este o aplicatie neutra - ruleaza sub orice manager de ferestre linux).
+
+PeaZip allows to apply powerful multiple search filters to archive's content; create and extract multiple archives at once; create self-extracting archives; export job definition as command line; save archiving and extraction layouts; bookmark archives and folders; scan and open with custom applications compressed and uncompressed files etc...
+
+Alte caracteristici: criptare puternica, copiere robusta de fisiere, despicare/unire fisiere (lungime fisier), stergere sigura a datelor, comparare, suma-de-varificare si fisiere hash, banc-de-probe pentru sistem, generare aleatoare de parole si fisiere-chei.
+
+Descarcari: https://peazip.github.io
+Caracteristici si lista completa a formatelor suportate: https://peazip.github.io/peazip-free-archiver.html
+Sprijin: https://peazip.github.io/peazip-help.html
+FAQ: https://peazip.github.io/peazip-help-faq.html
+
+Multe multumiri tuturor celor care au contribuit la cresterea proiectului PeaZip prin dezvoltarea componentelor software cu Sursa Deschisa folosite in aceasta aplicatie ( vezi situl web pentru lista completa), precum si tuturor utilizatorilor care au contribuit cu feedback-ul, experienta si sfaturi.
