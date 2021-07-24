@@ -1,8 +1,8 @@
 [Setup]                          
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 8.0.0
-AppVersion=8.0.0
+AppVerName=PeaZip 8.1.0
+AppVersion=8.1.0
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,9 +11,9 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-8.0.0.WINDOWS\copying.txt
+LicenseFile=C:\input\peazip-8.1.0.WINDOWS\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-8.0.0.WINDOWS
+OutputBaseFilename=peazip-8.1.0.WINDOWS
 SetupIconFile=C:\input\peazip-icon-green.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -27,13 +27,13 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-8.0.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.0.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.0.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\input\peazip-8.0.0.WINDOWS\SendTo.pea"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.0.0.WINDOWS\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.0.0.WINDOWS\readme_Win32.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.0.0.WINDOWS\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-8.1.0.WINDOWS\SendTo.pea"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\readme_Win32.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.1.0.WINDOWS\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -298,11 +298,11 @@ begin
    ShellExecAsOriginalUser('open', 'https://peazip.github.io/peazip-help-faq.html', '', '', SW_SHOW, ewNoWait, ErrorCode)
 end;
 
-{ install_CreatePage }
-
 function install_CreatePage(PreviousPageId: Integer): Integer;
 var
-  Page: TWizardPage;
+  Page: TWizardPage; 
+  i:integer; 
+  l:string;
 begin
   Page := CreateCustomPage(
     PreviousPageId,
@@ -449,6 +449,56 @@ begin
     ItemIndex := 9;
   end;
   if (GetWindowsVersion < $06000000) then ComboBox1.visible:=false;
+
+  try 
+  l:=uppercase(paramstr(paramcount));
+  if length(l)>0 then if l[1]='/' then l:=copy(l,2,length(l)-1);
+  case l of
+  'AR': i:=0;
+  'BG': i:=1;
+  'BY-CR','BY': i:=2;
+  'BY-LT': i:=3;
+  'CHS','CH': i:=4; 
+  'CHT': i:=5;
+  'CZ': i:=6;
+  'DE-UML','DE': i:=7;
+  'DEFAULT': i:=9;
+  'EN': i:=10;
+  'EN-GB': i:=11;
+  'ES-ES','ES': i:=12;
+  'ES-LA': i:=13;
+  'EU': i:=14;
+  'FI': i:=15;
+  'FR': i:=16;
+  'GL': i:=17;
+  'GR': i:=18;
+  'HU': i:=19;
+  'ID': i:=20;
+  'IT': i:=21;
+  'JA': i:=22;
+  'KO': i:=23;
+  'NL': i:=24;
+  'NO': i:=25;
+  'PL': i:=26;
+  'PT-BR': i:=27;
+  'PT-PT','PT': i:=28;
+  'RO': i:=29;
+  'RU': i:=30;
+  'SI': i:=31;
+  'SK': i:=32;
+  'SL': i:=33;
+  'SV': i:=34;
+  'TJ': i:=35;
+  'TR': i:=36;
+  'UK': i:=37;
+  'UZ': i:=38;
+  'VN': i:=39;
+  else i:=9;
+  end;
+  if i>=0 then 
+     combobox1.itemindex:=i;
+  except
+  end;
 
   { cbinstallcu }
   cbinstallcu := Tcheckbox.Create(Page);
