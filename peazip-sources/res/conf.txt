@@ -1,0 +1,666 @@
+﻿themes\ten-embedded\theme.txt
+themes\ten-embedded\
+100
+$00FF9933
+clWindow
+$00CC5511
+clAppWorkspace
+clWindowText
+0
+100
+4
+0
+[language]
+default.txt
+
+[pealauncher: 0: always keep open for inspection 1: (default) keep open only if errors are detected 2: always close when task ends]
+1
+
+[pealauncher: open output directory when job ends]
+0
+
+[console binaries interface]
+2
+
+[Clipboard mode]
+0
+
+[Initial dir for file/archive browser]
+Computer's root
+
+[default archiving format]
+18
+
+[last used archiving format]
+15
+
+[default PEA compression level]
+1
+
+[default PEA object level control algorithm]
+11
+
+[default PEA volume level control algorithm]
+4
+
+[default PEA stream level control algorithm]
+0
+
+[default integrity check algorithm for file split]
+13
+
+[show hints popup]
+1
+
+[show password field in clear]
+0
+
+[ask for password on extract/list/test operations from system's menus]
+3
+
+[archive browser style]
+0
+
+[ignore archived path structure when performing extract and run or preview jobs: all ignore path directivesd are overridden in the content is a directory, as it would lose information about tree structure below]
+0
+
+[ignore archived path structure when performing extraction of displayed objects]
+0
+
+[ignore archived path structure when performing extraction of selected objects]
+0
+
+[archive browser speed optimization: 0 no optimization 1..4 slower to faster optimization (3 default) 5 do not pre-parse archives, may non correctly list some out of standard archives]
+3
+
+[(obsolete) don't pre-parse archives over this in-memory size]
+192
+
+[overwrite / skip policy using 7z binary]
+0
+
+[overwrite / skip policy using arc binary]
+2
+
+[save history of recent archives]
+1
+
+
+
+
+
+
+
+
+
+[recently used custom executables]
+
+
+
+
+
+
+
+
+
+1
+
+1
+
+[save program's windows status]
+1
+
+[maximized status]
+0
+
+[left]
+64
+
+[top]
+64
+
+[width]
+960
+
+[height]
+600
+
+[archive formats to show in favourite popup menu]
+1
+0
+1
+0
+1
+0
+0
+1
+0
+0
+0
+0
+1
+0
+
+[default 7z compression level]
+2
+
+[default 7z compression method]
+LZMA2
+
+[default ARC compression level]
+4
+
+[default ARC solid mode]
+1
+
+[use recovery records in ARC]
+1
+
+[encryption algorithm for ARC 0 AES 1 Serpent 2 Twofish 3 Blowfish]
+0
+
+[default bzip2 compression level]
+2
+
+[default gz compression level]
+2
+
+[default zpaq compression level]
+1
+
+[default quad/balz/bcm compression level]
+0
+
+[default upx compression level]
+10
+
+[default zip compression level]
+2
+
+[default zip compression method]
+Deflate
+
+[archive files open for writing (from 7z binary)]
+0
+
+[checksum/hash file options: display format, default algorithm, common algorithms]
+0
+13
+0
+0
+0
+1
+1
+0
+0
+1
+1
+1
+1
+1
+0
+0
+0
+
+[erase file options: security level]
+0
+
+[desktop path]
+
+
+[job definition encoding]
+0
+
+[archived object's name encoding]
+1
+
+[last output path]
+
+
+[height of the navigation's splitter]
+220
+
+[status bar view]
+0
+
+[extract supported non-archive types]
+0
+
+[extract unsupported archive types, specifying custom executable]
+0
+
+[configuration check]
+PeaZip
+
+[browser's style and settings]
+0
+9
+1
+240
+80
+88
+88
+120
+48
+88
+0
+
+[extract to new folder]
+0
+
+[execute archiving/extraction jobs in parallel when possible]
+0
+
+[default output path for extraction operations]
+
+
+[default output path for archiving operations]
+
+
+[(Windows) copy files in restartable mode, slower]
+0
+
+[show menu bar]
+1
+
+[address bar]
+1
+
+[navigation bar]
+0
+
+[columns to show]
+1
+1
+1
+1
+1
+1
+1
+1
+
+[toolbar]
+0
+0
+
+[size of the navigation sidebar]
+180
+
+[status of navigation groups]
+0
+0
+1
+0
+0
+
+[7z / p7zip backend encoding (-scc)]
+0
+
+[extraction or alternative action for 7z, arc, and ace backend binaries]
+0
+0
+0
+
+[working directory]
+1
+
+[7z / p7zip text encoding for file names inside .ZIP files]
+0
+
+[(Windows) get volume information of mapped remote units]
+0
+
+[status of run group]
+0
+0
+
+[last successful extraction path]
+
+
+[encrypt also filenames, if the feature is supported by the format]
+0
+
+[ignore archived path structure when performing custom drag and drop extraction]
+0
+
+[swap position of Toolbar and Address bar]
+0
+
+[if multiple items are added to a new archive, name the archive as selected item's folder]
+1
+
+[new favorite types (3.8)]
+0
+0
+
+[default xz compression level]
+2
+
+[browser icons size]
+0
+
+[search history]
+
+
+
+
+
+
+
+
+
+[show thumbnails]
+0
+
+[default checksum/hash algorithm for the file browser (calculated on request)]
+4
+
+[simple search mode]
+1
+
+[use absolute paths for ARC format]
+0
+
+[search is recursive by default]
+1
+
+[keep password for current session]
+1
+
+[show address field as breadcrumb]
+1
+
+[immersive mode]
+0
+
+[toolbar]
+1
+
+[limit random password generator characters to letters and numbers (as required by some services)]
+1
+
+[default *paq family]
+2
+
+[last browser preset (overridden by style/size settings)]
+1
+
+[image editing parameters]
+1
+1024
+768
+0
+1
+0
+90
+10
+10
+10
+10
+1
+
+[keep archives sent by mail]
+0
+
+[help/config section splitter position]
+180
+
+[thumbnails decoration style]
+0
+
+[save history of recent directories]
+Computer's root
+
+
+
+
+
+
+
+
+[enumerate content of directories sent to archiving operations (slow): 1 no (default) 0 yes]
+1
+
+[default address bar left menu: 1 bookmarks 2 filesystem (default) 3 history]
+2
+
+[default max threads option for 7z]
+1
+
+[default deletion mode for delete after extraction / delete after archiving option: 0 recycle (Windows) 1 quick 2 zero 3 secure]
+0
+
+[status of function branch in run group]
+0
+
+[remove redundant intermediate directory (a single directory in output root) on "Extract to new folder" operations]
+1
+
+[verbose confirmation at each archive conversion step 1=yes, 0=no (default)]
+0
+
+[Free Software compliance 0 = permissive (default) 1 = allow only Free Software components 2 = allow only Free Software components and open archive formats; 1 and 2 modes can be hardcoded at compile time]
+0
+
+[non-verbose output log from 7z / p7zip, faster (especially when many small files are involved), but less informative 1=yes (default) 0=no]
+1
+
+[timestamp style: 0 (default) name.date.time, 1 name.date, 2 date.time.name, 3 date.name]
+0
+
+[use 7z / p7zip implementation of UNRAR5 (even if RarLab's UNRAR5 plugin is installed) 1=yes (default) 0=no NOTE: overridden by Free Software compliance setting if > 0]
+1
+
+[sort files by type for 7z solid compression 1 = on, usually better compression (default) 0 = off, faster on NTFS filesystem]
+1
+
+[always start file browser from 0 last browserd directory(default) 1 computer's root 2 home 3 desktop 4 custom, defined below]
+0
+
+
+[delete originals after archival, extraction: 0 no (default) 1 yes - anyway user will be asked for confirmation]
+0
+0
+
+[add timestamp suffix when creating archives: 0 no (default) 1 yes]
+0
+
+[add ".enc" suffix before extension when creating encrypted archives: 0 no (default) 1 yes]
+0
+
+[tab bar]
+0
+
+[privacy_mode directive 0 = none 1 = ask for password or keyfile when application starts, skippable 2 = non skippable]
+0
+
+[manage NT security information]
+0
+
+[manage NTFS alternate data streams]
+1
+
+[change password during conversion 1=yes, 0=no (default)]
+0
+
+[show volatile options]
+0
+
+[try to open archives containing errors]
+1
+
+[try to edit non-canonical archive formats]
+0
+
+[force extracting unsupported archive types using PeaZip]
+1
+
+[custom working directory]
+
+
+[encryption algorithm for ZIP 0 AES 1 ZipCrypto (legacy)]
+0
+
+[use native drag and drop on Windows]
+1
+
+[launcher left]
+92
+
+[launcher top]
+92
+
+[launcher width]
+640
+
+[launcher height]
+320
+
+[automatically sync archives if previewed files are updated]
+1
+
+[automatically open single tar archive in tar.* files]
+1
+
+[default Brotli compression level]
+3
+
+[default Zstd compression level]
+2
+
+[new favorite types (7.1)]
+1
+1
+
+[rename only files]
+0
+
+[file spanning]
+0
+100
+2
+
+[advanced 7z/p7zip compression settings]
+0
+4
+0
+0
+
+[auto close PeaZip when task completes]
+0
+
+[ZPAQ advanced extraction options]
+0
+0
+0
+
+[Custom other parameters for 7z/p7zip and Arc]
+
+
+
+[set 7z/p7zip archive time from most recent file time]
+0
+
+[maximize Brotli compression using larger memory --large_window=27 (may be incompatible with some Brotli extractors)]
+0
+
+[maximize Zstandard compression using larger memory window --long=27]
+0
+
+[do not ask confirmation to delete after extraction / archiving]
+0
+
+[automatically configure Custom compression to use Rar.exe as compressor, if WinRar is installed
+1
+
+[default Rar.exe compression level]
+3
+
+[1 create RAR5 (default) 0 create legacy RAR4]
+1
+
+[RAR5 dictionary size
+5
+
+[RAR5 use BLAKE2 hash instead of CRC]
+0
+
+[RAR create sfx]
+0
+
+[RAR create solid archive]
+0
+
+[RAR create recovery records]
+0
+
+[RAR recovery records %]
+3
+
+[RAR save files open for writing]
+0
+
+[RAR save NT security]
+0
+
+[RAR save NTFS alternate streams]
+0
+
+[RAR set archive time from most recent file time]
+0
+
+[RAR lock archive]
+0
+
+[switch to zipx extension form non-Deflate zip archives]
+0
+
+[close PeaZip after extraction if no browsing actions took place]
+0
+
+[protect drag and drop target window during operation: 0 no protection 1 lock 2 hide 3 lock and hide]
+3
+
+[extract everything for special file types in archive: 0 never 1 ask 2 always; 0 entire archive, 1 displayed items only]
+2
+0
+
+[custom code page for ZIP files, when -mcp option is used]
+1252
+
+[update archive tree when browsing: 0 no 1 simple 2 full, keep visited nodes]
+2
+
+[use system 7z on Linux]
+0
+
+[integractive extraction, two steps: first extract to a fresh folder, then move to relative path in destination directory]
+1
+
+[tasks priority]
+2
+
+[special file types triggering extract everything for]
+001 bat exe htm html msi r01 z01
+
+[custom archive extension]
+0
+
+
+[try to browse non-canonical archive formats]
+1
+
+[try to convert non-canonical archive formats]
+0
+
+[force typing password in backend console, apply also to generated scripts]
+0
+
+[default action on start-up for single input, e.g. double-click on associated file type from the system]
+0
+
+[enable "Extract and open with" submenu]
+0
+
+[(Windows) use integrated Extrac32 to unpack CAB 1=yes (default) 0=no NOTE: overridden by Free Software compliance setting if > 0]
+0

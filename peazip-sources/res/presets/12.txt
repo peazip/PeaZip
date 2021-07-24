@@ -1,0 +1,180 @@
+PEAZIP CUSTOM COMPRESSION SETTINGS
+To replace an existing preset with a custom compression settings file, copy the desired custom compression settings file in PeaZip\res\presets folder, in place of one of the existing preset files (named 1..15).
+Displayed name, below, can be edited and will be shown in presets menu in place of the name of the replaced preset (displayed names in embedded presets are 1..15, and are translated to language-dependant strings).
+12
+
+GENERAL OPTIONS
+Type
+7Z
+0
+Compression level
+1
+Action
+0
+Spanning
+0
+100
+2
+Add to separate archives
+0
+Archive to original path
+0
+Convert
+0
+0
+0
+Delete files after archiving (be careful)
+0
+0
+Open output path when task completes
+0
+Send by mail
+0
+0
+TAR before compressing/archiving
+0
+Close PeaZip when task completes
+0
+Halt system when task is completed
+0
+Add .enc suffix to encrypted archives
+0
+Add timestamp to archive name
+0
+0
+
+BACKEND OPTIONS: 7z/p7zip
+Method
+12
+Dictionary
+-1
+Word
+-1
+Passes
+-1
+Solid block size
+4
+Sort by name for solid compression
+1
+Compress files open for writing
+0
+SFX module
+1
+Paths: relative, full, absolute
+0
+Threads
+1
+Other options
+
+Include NT secutity info (WIM)
+0
+Include NTFS Alternate Data Stream (WIM)
+1
+Encryption algorithm (if password and/or keyfile is provided)
+0
+
+BACKEND OPTIONS: FreeArc
+Solid mode
+1
+Recovery records
+1
+SFX module
+0
+1
+Other options
+
+Absolute paths
+0
+Encryption algorithm (if password and/or keyfile is provided)
+0
+
+BACKEND OPTIONS: Custom
+Executable
+C:\Program Files\WinRAR\Rar.exe
+Extension
+
+Other options
+
+Syntax
+1
+
+BACKEND OPTIONS: PAQ/LPAQ/ZPAQ
+Executable
+2
+Compression
+1
+
+BACKEND OPTIONS: PEA
+Compression
+1
+Object control algorithm
+11
+Volume control algorithm
+4
+Stream control algorithm
+0
+
+BACKEND OPTIONS: QUAD/BALZ/BCM
+Executable
+2
+Maximum compression mode
+0
+Solid block size
+1
+
+BACKEND OPTIONS: Split
+Integrity check
+13
+
+BACKEND OPTIONS: UPX
+Compression
+10
+Run strip before UPX (recommended)
+1
+Backup executable (recommended)
+1
+
+SPECIAL OPTIONS
+Interactively ask for password
+0
+
+7.3.0 EXTENSION
+Set 7z/p7zip archive time from most recent file time
+0
+Maximize Brotli compression using larger window size (may be incompatible with some Brotli extractors)
+0
+Maximize Zstandard compression using larger window size
+0
+
+7.4.0 EXTENSION
+Use Rar.exe if available
+1
+Create RAR5
+1
+RAR5 dictionary size
+5
+RAR5 use BLAKE2 instead of CRC
+0
+RAR create sfx archive
+0
+RAR create solid archive
+0
+RAR create recovery records
+0
+RAR recovery records %
+3
+RAR save files open for writing
+0
+RAR save NT security info
+0
+RAR save NTFS streams
+0
+RAR set archive time from most recent file time
+0
+RAR lock archive
+0
+
+7.8.0 EXTENSION
+Custom archive extension
+0
+
