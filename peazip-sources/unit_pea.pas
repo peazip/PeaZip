@@ -179,6 +179,8 @@ unit Unit_pea;
                                 Batch and hidden *_report modes now save report to output path without needing user interaction
                                 Improved hiding the GUI in HIDDEN mode
                                 Improved byte to byte file comparison function
+ 1.02     20210711  G.Tani      Over 2x improved speed of hex preview, now enabled for files up to 64 MB in size
+                                Updated files and free space secure delete functions, new ONE parameter to overwrite all bits with 1
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -355,7 +357,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.00'; //declares release version for the whole build
+  P_RELEASE          = '1.02'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -4457,11 +4459,12 @@ procedure wipe ( level: ansistring);
 //QUICK: alias for NONE
 //RECYCLE: move to recycle bin (Windows only)
 //ZERO: overwrite with zero, flush, delete
-//VERY_FAST: 1 * (random data overwrite, flush), cloak file size <4KB, 1 * (rename, flush), delete
-//FAST: 2 * (random data overwrite, flush), cloak file size <4KB*2, 2 * (rename, flush), delete
-//MEDIUM: 4 * (random data overwrite, flush), cloak file size <4KB*4, 4 * (rename, flush), delete
-//SLOW: 8 * (random data overwrite, flush), cloak file size <4KB*8, 8 * (rename, flush), delete
-//VERY_SLOW: 16 * (random data overwrite, flush), cloak file size <4KB*16, 16 * (rename, flush), delete
+//ONE: overwrite with one, flush, delete
+//VERY_FAST: overwrite with random data, flush, delete
+//FAST: 2 * overwrite with random data, flush, delete
+//MEDIUM: zero delete, one delete, random data overwrite, flush, mask file size <4KB, 3 * (rename, flush), delete
+//SLOW: zero delete, one delete, 2 * (random data overwrite, flush), mask file size <4KB*2, 4 * (rename, flush), delete
+//VERY_SLOW: zero delete, one delete, 3 * (random data overwrite, flush), mask file size <4KB*3, 5 * (rename, flush), delete
 var
    f:file of byte;
    exp_files:TFoundList;
@@ -4470,8 +4473,8 @@ var
    exp_ftimes:TFoundListAges;
    exp_fattr:TFoundListAttrib;
    exp_fattr_dec:TFoundList;
-   nfound,size,total,ntotalexp,tsize,etsize,nfiles,ndirs,ctsize,speed:qword;
-   i,j,k,errors,dfiles,ddirs,numread,numwritten,nlevel,nleveli,rc,attr,time:integer;
+   nfound,size,total,ntotalexp,tsize,etsize,nfiles,ndirs,ctsize,speed,numread:qword;
+   i,j,k,errors,dfiles,ddirs,nlevel,nleveli,rc,attr,time,numwritten:integer;
    buf:array[0..65535]of byte;
    aes_ctx:TAESContext;
    aes_iv:array[0..15]of byte;
@@ -4565,11 +4568,12 @@ case level of
    'RECYCLE' : nlevel:=0;
    'HEADER' : nlevel:=1;
    'ZERO' : nlevel:=1;
+   'ONE' : nlevel:=1;
    'VERY_FAST' : nlevel:=1;
    'FAST' : nlevel:=2;
-   'MEDIUM' : nlevel:=4;
-   'SLOW' : nlevel:=8;
-   else nlevel:=16;
+   'MEDIUM' : nlevel:=3;
+   'SLOW' : nlevel:=4;
+   else nlevel:=5;
    end;
 nleveli:=nlevel;
 tsize:=0;
@@ -4647,6 +4651,11 @@ for j:=3 to paramcount do
                   wipefixed(0);
                   udeletefile(exp_files[k]);
                   end;
+               'ONE': //overwrite with one
+                  begin
+                  wipefixed(255);
+                  udeletefile(exp_files[k]);
+                  end;
                else // secure delete (and header quick delete)
                begin
                get_fingerprint(fingerprint,false);
@@ -4658,11 +4667,13 @@ for j:=3 to paramcount do
                   begin
                   nleveli:=nlevel-2;
                   wipefixed(0);
+                  sleep(random(250));
                   wipefixed(255);
+                  sleep(random(250));
                   end;
                for i:=1 to nleveli do //overwrite nlevel times with random data (AES256 CTR init once by system fingerprint)
                   begin
-                  assignfile(f,(exp_files[k]));
+                  assignfile(f,exp_files[k]);
                   rewrite(f);
                   total:=0;
                   repeat
@@ -4687,22 +4698,27 @@ for j:=3 to paramcount do
                      if level='HEADER' then begin etsize:=etsize+size-numread; break; end;//overwrite only file header up to 64KB
                   until (total>=size);
                   closefile(f);//causes flush;
+                  if nleveli>1 then sleep(random(250));
                   end;
-               numread:=1+random(4096*i);//replace file with random sized block 1B-(4KB*i) to cloak original size
-               AES_CTR_Encrypt(@buf, @buf, numread, aes_ctx);
-               assignfile(f,(exp_files[k]));
-               rewrite(f);
-               blockwrite(f,buf,numread,numwritten);
-               closefile(f);
-               randomstring:=(exp_files[k]);
-               for i:=1 to nlevel do //rename
+               if nlevel>2 then
                   begin
-                  oldrandomstring:=randomstring;
-                  assignfile(f,randomstring);
-                  randomstring:=extractfilepath(randomstring)+inttostr(random(maxint))+'.tmp';
-                  renamefile(oldrandomstring,randomstring);
-                  end;
-               udeletefile(randomstring);
+                  numread:=1+random(4096*i);//replace file with random sized block 1B-(4KB*i) to mask original size
+                  AES_CTR_Encrypt(@buf, @buf, numread, aes_ctx);
+                  assignfile(f,(exp_files[k]));
+                  rewrite(f);
+                  blockwrite(f,buf,numread,numwritten);
+                  closefile(f);
+                  randomstring:=(exp_files[k]);
+                  for i:=1 to nleveli do //rename
+                     begin
+                     oldrandomstring:=randomstring;
+                     assignfile(f,randomstring);
+                     randomstring:=extractfilepath(randomstring)+inttostr(random(maxint))+'.tmp';
+                     renamefile(oldrandomstring,randomstring);
+                     end;
+                  udeletefile(randomstring);
+                  end
+               else udeletefile(exp_files[k]);
                end;
                end;
                Form_report.StringGrid1.Cells[0,rc-1]:=exp_files[k];
@@ -4808,11 +4824,12 @@ end;
 //procedure to wipe/sanitize free space: write files smaller than 2GB then delete
 procedure sanitize ( level: ansistring);
 //ZERO: overwrite free space with zero, flush
+//ONE: overwrite free space with one, flush
 //VERY_FAST: 1 * (random data overwrite filling free space, flush, delete work files)
 //FAST: 2 * (random data overwrite filling free space, flush, delete work files)
-//MEDIUM: 4 * (random data overwrite filling free space, flush, delete work files)
-//SLOW: 8 * (random data overwrite filling free space, flush, delete work files)
-//VERY_SLOW: 16 * (random data overwrite filling free space, flush, delete work files)
+//MEDIUM: zero delete, one delete, 1 * (random data overwrite filling free space, flush, delete work files)
+//SLOW: zero delete, one delete, 2 * (random data overwrite filling free space, flush, delete work files)
+//VERY_SLOW: zero delete, one delete, 3* (random data overwrite filling free space, flush, delete work files)
 
 var
    f:file of byte;
@@ -4903,6 +4920,7 @@ Form_report.StringGrid1.RowCount:=1;
 level:=upcase(level);
 case level of
    'ZERO' : wrktitle:='Zero delete free space';
+   'ONE' : wrktitle:='One delete free space';
    else wrktitle:='Secure delete free space ('+level+')';
    end;
 Form_report.Caption:=wrktitle;
@@ -4911,11 +4929,12 @@ Form_pea.ProgressBar1.Position:=0;
 Form_pea.PanelTools.Cursor:=crHourGlass;
 case level of
    'ZERO' : nlevel:=1;
+   'ONE' : nlevel:=1;
    'VERY_FAST' : nlevel:=1;
    'FAST' : nlevel:=2;
-   'MEDIUM' : nlevel:=4;
-   'SLOW' : nlevel:=8;
-   else nlevel:=16;
+   'MEDIUM' : nlevel:=3;
+   'SLOW' : nlevel:=4;
+   else nlevel:=5;
    end;
 nleveli:=nlevel;
 randomize;
@@ -4950,6 +4969,8 @@ Application.ProcessMessages;
 case level of
    'ZERO': //overwrite with zero
    sanitizefixed(0,1);
+   'ONE': //overwrite with one
+   sanitizefixed(255,1);
    else // secure delete
    begin
    get_fingerprint(fingerprint,false);
@@ -6352,10 +6373,10 @@ Form_pea.Visible:=false;
 exitcode:=0;
 end;
 
-//hex preview
-procedure hexpreview; //slow, limited to 16MB
+//hex preview: slow, limited to 64 MB
+procedure hexpreview;
 var
-   hexs,astr,offs,s:ansistring;
+   hexs,hexs1,astr,offs,s:ansistring;
    fa:file of byte;
    sizea,total:qword;
    i,x,y,numreada,nrows,prows,noffs,wrbytes:integer;
@@ -6385,7 +6406,7 @@ Form_report.StringGrid1.Cells[2,0]:='Possible UTF8';
 Form_report.StringGrid1.Font.Name:='Courier';
 Form_report.StringGrid1.Font.Size:=10;
 Form_report.StringGrid1.ColWidths[0]:=96;
-Form_report.StringGrid1.ColWidths[1]:=420;
+Form_report.StringGrid1.ColWidths[1]:=460;
 Form_report.StringGrid1.ColWidths[2]:=180;
 sizea:=0;
 try
@@ -6400,9 +6421,9 @@ MessageDlg((paramstr(2))+' is not accessible (or not a file)', mtError, [mbOK], 
 halt(-3);
 exit;
 end;
-if sizea>32*1024*1024 then
+if sizea>64*1024*1024 then
   begin
-  MessageDlg('Hex preview is currently limited to small files, up to 32MB', mtWarning, [mbOK], 0);
+  MessageDlg('Hex preview is currently limited to small files, up to 64 MB', mtWarning, [mbOK], 0);
   exit;
   end;
 Form_pea.LabelTools3.Caption:='Size '+nicenumber(inttostr(sizea))+' ('+inttostr(sizea)+' B)';
@@ -6429,22 +6450,31 @@ repeat
    for y:=0 to nrows-1 do
       begin
       noffs:=y+prows-1;
-      offs:=hexlong(noffs*16);
+      offs:=inttohex(noffs*16,8);
       Form_report.StringGrid1.Cells[0,y+prows]:=offs;
       astr:='';
-      hexs:='';
       for x:=0 to 15 do
          begin
-         astr:=astr+(chr(bufhex[x,y]));
-         hexs:=hexs+hexstr(@bufhex[x,y],1)+' ';
          i:=i+1;
          if i=numreada then break;
          end;
-      setlength(hexs,length(hexs)-1);
+      astr:=chr(bufhex[0,y])+chr(bufhex[1,y])+chr(bufhex[2,y])+chr(bufhex[3,y])+chr(bufhex[4,y])+chr(bufhex[5,y])+chr(bufhex[6,y])+chr(bufhex[7,y])+
+            chr(bufhex[8,y])+chr(bufhex[9,y])+chr(bufhex[10,y])+chr(bufhex[11,y])+chr(bufhex[12,y])+chr(bufhex[13,y])+chr(bufhex[14,y])+chr(bufhex[15,y]);
+      SetLength(astr, x+1);
+      hexs:='';
+      hexs1:='';
+      SetLength(hexs, Length(astr)*2);
+      BinToHex(@astr[1], @hexs[1], Length(astr));
+      hexs1:=hexs[1]+hexs[2]+' '+hexs[3]+hexs[4]+' '+hexs[5]+hexs[6]+' '+hexs[7]+hexs[8]+' '+
+             hexs[9]+hexs[10]+' '+hexs[11]+hexs[12]+' '+hexs[13]+hexs[14]+' '+hexs[15]+hexs[16]+' '+
+             hexs[17]+hexs[18]+' '+hexs[19]+hexs[20]+' '+hexs[21]+hexs[22]+' '+hexs[23]+hexs[24]+' '+
+             hexs[25]+hexs[26]+' '+hexs[27]+hexs[28]+' '+hexs[29]+hexs[30]+' '+hexs[31]+hexs[32];
+      //setlength(hexs,length(hexs)-1);
       wrbytes:=wrbytes+16;
-      Form_report.StringGrid1.Cells[1,y+prows]:=hexs;
+      Form_report.StringGrid1.Cells[1,y+prows]:=hexs1;
       Form_report.StringGrid1.Cells[2,y+prows]:=ansitoutf8(astr);
       end;
+   ///
    inc(total,numreada);
    prows:=prows+nrows;
    Form_pea.ProgressBar1.Position:=(total*100) div sizea;

@@ -146,6 +146,8 @@ unit Unit_gwrap;
  1.05     20200528  G.Tani      Improved progress bar accuracy for multiple tasks
  1.06     20200902  G.Tani      Fixed wrong error 127 report for some cases, fixed typos
  1.07     20210305  G.Tani      Supports Windows 7+ progress bar in application's status bar icon
+ 1.08     20210706  G.Tani      Fixed window stealing focus at each new task, occurring on some Linux machines
+                                Optimized speed for operations on archives containing large number of files
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -342,7 +344,7 @@ var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
   pprogbar,pprogbarprev,perrors,ipercp,remtime:integer;
-  pproglast,pfromnativedrag,runelevated:boolean;
+  pproglast,pprogfirst,pfromnativedrag,runelevated,pgook:boolean;
   pautoclose:byte;
   Barchive,Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
   Bpriority1,Bpriority2,Bpriority3,Bpriority4,
@@ -1244,7 +1246,7 @@ for i:=0 to Form_gwrap.Memo1.Lines.Count-1 do Form_gwrap.StringGrid1.Cells[0,i]:
 Form_gwrap.Memo1.Clear;
 Form_gwrap.StringGrid1.RowCount:=Form_gwrap.StringGrid1.Rowcount-1; //last row may be incomplete
 Form_gwrap.StringGrid1.Row:=Form_gwrap.StringGrid1.Rowcount-1;
-Form_gwrap.StringGrid1.AutosizeColumns;
+//Form_gwrap.StringGrid1.AutosizeColumns;
 end;
 end;
 
@@ -1486,6 +1488,7 @@ if runelevated=false then
    P.CommandLine:=(cl);
    M := TMemoryStream.Create;
    BytesRead := 0;
+   M.setsize(16*1024*1024);
    M2 := TMemoryStream.Create;
    BytesRead2 := 0;
    if modeofuse=20 then
@@ -1597,7 +1600,10 @@ else
       begin
       if P.output.NumBytesAvailable>0 then
          begin
-         M.SetSize(BytesRead + max_l);
+         if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
+         if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
+         if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
+         if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + max_l);
          i := P.Output.Read((M.Memory + BytesRead)^, max_l);
          end
       else i:=0;
@@ -1623,9 +1629,6 @@ else
       if (i=0) and (j=0) then Sleep(10);
       end;
    end;
-   {M2.Position:=0;
-   m2s:=' ';
-   M2.Write(m2s,m2.Size);}
    M2.Destroy;
    end;
 Form_gwrap.Timer2.enabled:=false;
@@ -1677,6 +1680,7 @@ if runelevated=false then
             stri:=copy(stri,1,pos(char($0A)+char($0D),stri)-1);
             stri:=ReverseString(stri);
             M.Free;
+            Form_gwrap.StringGrid1.BeginUpdate;
             if Form_gwrap.Memo1.Lines.Count>0 then
                begin
                Form_gwrap.StringGrid1.Rowcount:=Form_gwrap.Memo1.Lines.Count+1;
@@ -1684,7 +1688,7 @@ if runelevated=false then
                Form_gwrap.Memo1.Clear;
                i:=i+1;
                Form_gwrap.StringGrid1.Cells[0,i]:='';
-               Form_gwrap.StringGrid1.AutosizeColumns;
+               if Form_gwrap.StringGrid1.RowCount<128*1024 then Form_gwrap.StringGrid1.AutosizeColumns;
                Form_gwrap.StringGrid1.Row:=Form_gwrap.StringGrid1.Rowcount-1;
                end
             else
@@ -1692,6 +1696,7 @@ if runelevated=false then
                Form_gwrap.StringGrid1.Rowcount:=1;
                Form_gwrap.StringGrid1.Cells[0,0]:='';
                end;
+            Form_gwrap.StringGrid1.EndUpdate;
          end;
    end;
 Form_gwrap.Stringgrid1.Cursor:=crDefault;
@@ -1757,7 +1762,7 @@ if modeofuse>=20 then
    Form_gwrap.StringGrid1.Cells[0,2]:=Form_gwrap.Labeli.Caption+' '+Form_gwrap.LabelInfo1.Caption;
    Form_gwrap.StringGrid1.Cells[0,3]:=Form_gwrap.Labelo.Caption+' '+Form_gwrap.LabelInfo2.Caption;
    Form_gwrap.StringGrid1.Cells[0,4]:=Form_gwrap.LabelInfo3.Caption;
-   Form_gwrap.StringGrid1.AutosizeColumns;
+   //Form_gwrap.StringGrid1.AutosizeColumns;
    end;
 if exit_code=0 then
    begin
@@ -1822,7 +1827,7 @@ if Form_gwrap.ShapeGlobalProgress.visible=true then Form_gwrap.ShapeGlobalProgre
 if pproglast=true then Form_gwrap.ShapeGlobalProgress.Width:=Form_gwrap.Width;
 ended:=true;
 Application.ProcessMessages;
-Form_gwrap.StringGrid1.AutosizeColumns;
+//Form_gwrap.StringGrid1.AutosizeColumns;
 
 //final actions, options
 if (pproglast=true) or (pprogn='') then
@@ -1912,6 +1917,7 @@ end;
 procedure go_ok;
 begin
 gocancelall:=false;
+pgook:=true;
 Form_gwrap.Close;
 end;
 
@@ -2126,8 +2132,9 @@ else
    Form_gwrap.ShapeProgress.height:=pbarh;
    end;
 iperc:=1;
-if exbackground=false then Form_gwrap.Visible:=True;
-
+if exbackground=false then
+   if (pprogfirst=true) or (pprogn='') or (pgook=true) then Form_gwrap.Visible:=True;
+pgook:=false;
 //get job type 0 archive/extract 1 test; 2 benchmark; (3 defrag, unused); 4 info (list and give message); 5 list and verbose list; 20 archive/extract, not using pipes, visible console (mode 10 was removed)
 modeofuse:=strtoint(pjobtype);
 insize:=0;
@@ -2138,8 +2145,8 @@ if modeofuse>=1000 then
    end;
 
 case modeofuse of
-   0: max_l:=2*1024;
-   1,4,5: max_l:=2*1024;
+   0: max_l:=4*1024;
+   1,4,5: max_l:=4*1024;
    2: begin max_l:=32; insize:=0; ptsize:='0'; end;
    3: max_l:=32;
    end;
@@ -2216,6 +2223,7 @@ launched:=true;
 needinteraction:=false;
 exbackground:=false;
 pldesigned:=false;
+pgook:=false;
 {$IFDEF MSWINDOWS}
 checkseven;
 if okseven=true then

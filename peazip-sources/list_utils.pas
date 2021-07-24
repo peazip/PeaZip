@@ -114,7 +114,10 @@ unit list_utils;
  0.55     20210123  G.Tani      Improved handling of special characters in passwords and filenames
  0.56     20210224  G.Tani      Improved checkfilename function
  0.57     20210509  G.Tani      Added support for .xappx, .3mf, .vsdx, .mmzx, .aasx, .slx, ad .scdoc files, 218 extensions supported
-                                Reorganized extensions codes in textext function: 0..99 traditional archives 100..499 containers 500..599 containers that are usually not expected to be handled as archives 1000+archive types handled (for browsing) through separate backends
+                                Reorganized extensions codes in testext function: 0..99 traditional archives 100..499 containers 500..599 containers that are usually not expected to be handled as archives 1000+archive types handled (for browsing) through separate backends
+ 0.58     20210629  G.Tani      Improved size detection for multipart archives
+                                Added support for .whl Python packages and .gem Ruby gem packages, 220 extensions supported
+                                Reorganized codes in testext function for containers: 100..199 package formats 200..499 filesystems and others
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -230,8 +233,8 @@ function check_in(var f_in: TFileOfByte;
 
 function srcfilesize(s: ansistring; var fsize: qword): integer;
 
-function srcfilesize_multipart(s: ansistring;
-  var fsize: qword): integer;
+function srcfilesize_multipart(s: ansistring; var fsize: qword): integer;
+function srcfilesize_multipart_v(s: ansistring; var vn,fsize: qword): integer;
 
 {
 list files, dirs and size matching the given path, mask and file attributes;
@@ -965,17 +968,25 @@ begin
   end;
 end;
 
-function srcfilesize_multipart(s: ansistring;
-  var fsize: qword): integer;
+function srcfilesize_multipart(s: ansistring; var fsize: qword): integer;
+var
+  vn:qword;
+begin
+result:=srcfilesize_multipart_v(s,vn,fsize);
+end;
+
+function srcfilesize_multipart_v(s: ansistring; var vn,fsize: qword): integer;
 var
   s_ext, sh_ext, s_name, sh_name, s_path: ansistring;
   k, j, sh_len: integer;
   r: TSearchRec;
 begin
-srcfilesize_multipart := -1;
+result := -1;
 fsize := 0;
+vn:=0;
 if filegetattr(s) and faDirectory = 0 then //object is a file
    begin
+   vn:=1;
    s_ext := extractfileext(s);
    s_name := extractfilename(s);
    setlength(s_name, length(s_name) - length(s_ext));
@@ -983,7 +994,7 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
    if FindFirst(s, faAnyFile, r) = 0 then //size of a single file or part
       begin
       fsize := r.Size;
-      srcfilesize_multipart := 0;
+      result := 0;
       end;
    FindClose(r);
    case s_ext of
@@ -1001,6 +1012,25 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
             fsize := fsize + r.Size;
          FindClose(r);
       until k <> 0;
+      vn:=j-1;
+      end;
+   '.pea':
+      begin
+      if pos('.000001',lowercase(extractfileext(s_name)))<>0 then //multipart pea .000001.pea
+         begin
+         j:=0;
+         sh_name:=s_name;
+         setlength(sh_name, length(s_name) - 7);
+         repeat
+            j := j + 1;
+            sh_ext:='.'+IntToStr(j).PadLeft(6,'0');
+            k := FindFirst(s_path + sh_name + sh_ext + s_ext, faAnyFile, r);
+            if k = 0 then
+               fsize := fsize + r.Size;
+            FindClose(r);
+         until k <> 0;
+         vn:=j;
+         end;
       end;
    '.zip':
       begin
@@ -1016,6 +1046,8 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
                fsize := fsize + r.Size;
             FindClose(r);
          until k <> 0;
+      vn:=j;
+      if vn=0 then vn:=1;
       end;
    '.zipx':
       begin
@@ -1031,6 +1063,8 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
                fsize := fsize + r.Size;
             FindClose(r);
          until k <> 0;
+      vn:=j;
+      if vn=0 then vn:=1;
       end;
    '.rar':
       begin
@@ -1065,6 +1099,8 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
             until k <> 0;
             end;
          end;
+      vn:=j;
+      if vn=0 then vn:=1;
       end;
    end;
    end;
@@ -2011,6 +2047,7 @@ begin
     '.part1', '.split': testext := 20; //generic spanned archive, open with 7z binary
 
     //container types 100..499
+    //100..199 packages
     '.cab', '.imf': testext := 100; //cab and derived formats
     '.chm', '.chi', '.chq', '.chw', '.hxs', '.hxi', '.hxr', '.hxq', '.hxw', '.lit': testext := 101;
     '.swf', '.fla': testext := 102; //Adobe Flash projects
@@ -2047,27 +2084,31 @@ begin
     '.snap': testext := 130;//Canonical Ubuntu Snap packages
     '.appimage': testext := 131;//AppImage packages
     '.ipk': testext := 132; //Freedesktop's Listaller .ipk packages
-    '.iso': testext := 133;
-    '.udf': testext := 134;
-    '.hfs', '.hfsx': testext := 135;
-    '.vhd': testext := 136;//Microsoft Virtual PC Virtual Hard Disk
-    '.apm': testext := 137; //Apple Partition Map disk images
-    '.ima', '.img': testext := 138;
-    '.imz': testext := 139;
-    '.mdf': testext := 140; //Alchool 120 image file
-    '.gpt':  testext := 150; //GPT GUID Partition Table file
-    '.qcow', '.qcow2', '.qcow2c': testext := 151;//QUEMU image file
-    '.vmdk': testext := 152;//VMware Virtual Machine Disk
-    '.vdi': testext := 153;//Oracle VirtualBox Virtual Drive Image
-    '.mbr': testext := 154;
-    '.fat': testext := 155;
-    '.ntfs': testext := 156;
-    '.sfs': testext := 157;
-    '.image': testext := 158;
-    '.squashfs': testext := 159;
-    '.cramfs': testext := 160;
-    '.ext', '.ext2', '.ext3', '.ext4': testext := 161;
-    '.scap', '.uefif': testext := 162;
+    '.whl': testext := 133; //Python package
+    '.gem': testext := 134; //Ruby gem package
+
+    //200..499 filesystems
+    '.iso': testext := 200;
+    '.udf': testext := 201;
+    '.hfs', '.hfsx': testext := 202;
+    '.vhd': testext := 203;//Microsoft Virtual PC Virtual Hard Disk
+    '.apm': testext := 204; //Apple Partition Map disk images
+    '.ima', '.img': testext := 205;
+    '.imz': testext := 206;
+    '.mdf': testext := 207; //Alchool 120 image file
+    '.gpt':  testext := 208; //GPT GUID Partition Table file
+    '.qcow', '.qcow2', '.qcow2c': testext := 209;//QUEMU image file
+    '.vmdk': testext := 210;//VMware Virtual Machine Disk
+    '.vdi': testext := 211;//Oracle VirtualBox Virtual Drive Image
+    '.mbr': testext := 212;
+    '.fat': testext := 213;
+    '.ntfs': testext := 214;
+    '.sfs': testext := 215;
+    '.image': testext := 216;
+    '.squashfs': testext := 217;
+    '.cramfs': testext := 218;
+    '.ext', '.ext2', '.ext3', '.ext4': testext := 219;
+    '.scap', '.uefif': testext := 220;
 
     //file types usually not handled as archives, can be supported through 7z backend 500..599
     '.exe', '.dll', '.sys': testext := 500; //most executables can be opened

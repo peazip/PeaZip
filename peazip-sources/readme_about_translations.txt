@@ -1,16 +1,13 @@
-﻿Notes to 8.0.0 release
+﻿Notes to 8.1.0 release
+
+Some minor updates were added to === about text group ===
 
 Pre-existing text string modified:
-txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
-txt_7_7_nonetemp: None, user's temp if necessary
-txt_7_7_outtemp: Output, preview in user's temp
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
-txt_6_8_ndrop: Use native Drag and Drop on Windows
-txt_6_6_forcemodify: Edit non-canonical archive types
-txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
-txt_performall: All algorithms
-txt_add_error: Cannot add/update or delete object(s). The archive is not writeable, or cannot support this operation. Editing non-canonical archive types can be enabled in Archive manager options.
-txt_ondblclick: On doubleclick
+txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, volumes may be missing, or its table of content could be encrypted. Would you like to try a password?
+txt_3_0_readablepw: Archive may be password protected
+txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted, volumes in multipart archive may be missing)
+txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search (F3) or avoiding Flat view mode (F6). You can directly extract, list or test the archive.
+
 
 General notes for translators:
 

@@ -168,71 +168,54 @@ unit peach;
  1.51     20210315  G.Tani      7.8.0
  1.52     20210417  G.Tani      7.9.0
  1.53     20210609  G.Tani      8.0.0
+ 1.54     20210720  G.Tani      8.1.0
 
 BACKEND
-PEA 1.01
- Added exit codes to functions for easier integration with third party software and scripts
- Running PEA in batch_report and hidden_report mode automatically saves task log without further user interaction
- Fixed: hidden and hidden_report modes do not flash the GUI before hiding it
- Updated online documentation at https://peazip.github.io/pea_help.pdf
-CAB (Windows)
- Selecting custom format (and deselecting to use RAR, if present) it is now available "CAB" preset in custom executable dropdown menu, to use Windows' makecab.exe utility (which accepts single files as input)
+Pea 1.02
+ Improved speed of hex preview function, updated secure delete function
+Zstd 1.50
+(Windows) Tino Reichardt codecs for 7z v1.5.0r1
+ updates codecs to Brotli 1.0.9, FLZMA2 1.0.1, Lizard 1.0, LZ4 1.9.3, LZ5 1.5, Zstandard 1.5.0
+(Linux) p7zip 17.04:
+ introduces support for Brotli, Lizard, LZ5
+ updates LZ4 1.9.3 and zstd 1.4.9
+ on Linux systems Brotli and Zstandard presets now points to single step compression in 7z using Brotli or Zstd compression (tar.br and tar.zst presets are still available as alternative)
+(Windows) added support for system's Extrac32 as alternative CAB extraction engine
+ Extrac32 backend be enabled in Options > Settings, Advanced tab
+ CAB will be still listed/tested using 7z backend, Extrac32 (if enabled) will be used for for extraction operations
 
 CODE
-Various fixes and improvements
+Various fixes
+Improved performances working with archives containing large number of items (files, folders)
+ on 64K items archive 50% speed increase, -25% RAM usage
+ on 128K items archive 2x speed increase, -25% RAM usage
+ on 256K items archive 4x speed increase, -35% RAM usage
+ Improved speed for listing archives, also minor speed improvements for test, archive and extract operations involving a large number of files
 
 FILE MANAGER
-Added support for .xappx, and various Open Packaging Conventions filetypes (.3mf, .vsdx, .mmzx, .aasx, .slx, .scdoc) files, 218 file extensions supported
- by default support is read only, to enable write support check "Edit non-canonical archive types" in main menu, Options > Settings > Archive manager
-Added text completion for search field
-Checksum/hash files can now be set to perform a single algorithm (faster), by default SHA256
- Performing all algorithms at once, or all common algorithms at once, is available as option in Option > Settings > File manager
-Dragging a single archive file on file manager screen, the archive is now opened without requiring further interaction/disambiguation
-Improved preview and open with functions
- If nothing is selected, preview takes current directory as input
- To avoid confusion with "Preview" actions submenu, "Extract and open with" sumbenu can now be enabled / disabled from Options > Setings > Archive manager
-Improved random password generator in main menu, Tools > Create random password / keyfile
- Default length is now 12 characters
- Quote characters ' and " are avoided to keep the password console-friendly regardless the character escaping abilities of the scripting environment that will be employed by the user
-Improved smart sorting of file names
-Improved status bar
- Browser modes "Details" and "Icons and images" can now be selected with a single click from respective icons on status bar
- Style dropdown menu button on the left of browser modes icons allows to set most common UI settings fro a single, easily visible place:
-  set tool bar to archive manager, file manager, images manager
-  toggle tab bar on/off
-  toggle row select on/off
-  set browser preset modes
-  set themes
-  set side bar to navigation panel, treeview, or hidden
- Style menu entries are replicated also in context menu, Navigation submenu
-Improved support for non-canonical archive types (containers, disk images, installers...) with new options in main menu, Options > Settings > Archive manager
- "Browse non-canonical archive types" (default on) set those file types to be opened for browsing on doubleclcik in PeaZip file manager; unchecking this option those file types will be opened with associated application but can still be browsed on demand (as any arbitrary file type) using "Open file as archive" menu entry
- "Convert non-canonical archive types" (default off) will treat those file types as archives in Conversion process (extract and recompress them), otherwise those files will be left unchanged and simply compressed in the desired format
-Improved theming: can now optionally display grids with alternate color for better readability
-Replicated link to Text encoding settings in main menu, Options; extended hint for custom codepage
+Added new user-provided themes: KDE Breeze, Oxygen
+Improved browsing archives: clicking on root in breadcrumb bar now simply lists root content, while pressing refresh (F5) re-opens the archive, fully re-parsing the content
+In case of spanned archive, the number of volumes actually found in current path (as required by PeaZip for extraction) is shown in application's title bar and status bar
+Improved Settings
+ More flexible Browser optimization in General tab, Performances group
+ Reorganized varios settings for better readability
+Updated translations
 
 EXTRACTION and ARCHIVING
-Added "Force typing passwords interactively" option in password screen that forces to always type password in the native backend interface
- This option allows to create scripts that will require operator to enter the password interactively rather than running unattended
- Zpaq backend does not support this option
- Backends not supporting encryption are not affected by this option
- Please note this option forces console mode for backend utilities (except PEA, which is a graphic application)
- With this option enabled PeaZip cannot browse archives with encrypted name of files (encrypted toc), but it is anyway possible to list/test/extract them
-Can now edit existing 7Z-compressed sfx archives
-Improved "TAR before" option, which saves multiple input to TAR archive before compression step
- Option to delete original files now works whith "TAR before" option enabled
- Tasks with "TAR before" option enabled can now be saved as command line
-It is now possible to customize the default action to perform when a file type associated with PeaZip is double-clicked on the system (or any time a single file is sent as input to PeaZip)
- In main menu, Options > Settings > Archive manager "Default action on start-up" can be set to
-  Open, default
-  Open as archive, force trying to open any arbitrary file type as archive
-  Extract..., show full extraction screen to enter password and change options before confirming extraction
-  Extract here, immediately start extraction with default parameters
+Added support (as container files) to .whl Python archives and .gem Ruby gem archives
+Added option to extract all, selected or displayed items to extractiondropdown menu, replicating Extract button context menu
+Added actions to Test all, selected or displayed items in Test button context menu
+Improved archive conversion procedure
+ Extraction stage is now shown as a single sequence of tasks, and main screen is hidden to reduce visual clutter
+ If errors are encountered in extraction stage it is reported to user, so conversion can be stopped (to correct errors) or continued if desired
+Improved extraction command line creation: when all items are selected switch to a more compact command line using filters rather than item's list
 
 WINDOWS & LINUX INSTALLERS
+Windows installer now supports command line parameter to set language during installation
+ language can be declared as last parameter, with or without "/" prefix
+ to identify the language please check the name of the language file in PeaZip\res\lang\ directory
 
-
-218 file extensions supported
+220 file extensions supported
 
 Translations updated and replaced in the package
 
@@ -243,6 +226,69 @@ Status of Unicode support (tested on Lazarus 1.6.0)
 3 - (Windows) Launch processes supporting Unicode > using tprocessutf8 instead
 of tprocess works without requiring workarounds used in 5.8/5.9 releases.
 (Unix-like) No issues about full Unicode support are known on *x systems.
+--------------------------------------------------------------------------------
+Performances
+
+Due the use of TListView component browser rendering performances, in filesystem
+and archives, are limited to few thousands of files - in the same directory or
+search filter - to operate in real near time; 10s thousands of files are
+rendered in a matter of seconds producing a noticeable delay.
+A1) Auto-refresh delay, browsing the filesystem, is increased starting from 4K
+items, and disabled at 16K items.
+A2) Switching to flat mode listing raises warning message always in filesystem,
+and starting from 64K items in archives (number of items is found during
+pre-parsing, B1).
+
+PeaZip pre-parse 7z/p7zip supported formats at opening in order to warn users in
+advance of possible issues.
+B1) check if full actual content of the archive can be listed (list -l option),
+regardless of what is declared in TOC table (which may be corrpted or have been
+maliciosly modified), which scales reasonably up to 1.5M files.
+B2) scan for non explicitly listed dirs, which scales slowly and is maxed at
+256K files.
+
+PeaZip lists 7z/p7zip supported formats using the more informative -slt option,
+which is slower and uses more memory.
+C1) PeaZip browse / search archives is allowed to scale up to 0.5M files to be
+display at once
+C2) same setting is used to scan archives for encrypted content (if applicable
+for current format/operation), and scales as C1 up to 0.5M files.
+
+Browser performances dropdown (Options > Settings, Performances) internally sets
+prebrowse variable which controls the behavior of the application.
+"Always pre-parse" will not stop pre-parsing B1, B2 nor listing C1 regadless the
+number of found items, even if performances can be poor for very large archives
+"Do not pre-parse" will skip pre-parsing A1 and otherwise uses same settings as
+Fastest mode.
+Following table showhs limitations in number of items allowed to be process for
+Slow to Fastest modes, and the amount of memory the application is allowed to
+use for B1, C1, C2 operations
+
+                   list at once  pre-parse      scan for dirs
+         memory    C1, C2 -slt   B1 -l          B2
+Slow     192 MB	   0.5M          1.5M+	        256K
+Medium   64 MB	   160K          0.5M+	        256K
+Fast     32 MB	   80K           256K+	        128K
+Fastest  16 MB	   40K           128K+	        64K
+
+In any case archives that cannot be browsed can still be directly listed, tested
+and extracted.
+
+Details
+1a - execute_cl reading backend output will start using 8 MB of memory and will
+increase to 16, 32, and 64 MB (doubled for listing), the latter approximately
+sufficient for pre-parsing 0.5M files or listing 400K files at once, then will
+keep increasing as needed (slow)
+1b - pre-parsing the full content of the archive at opening will stop as set by
+prebrowse variable, and can be omitted with Do not prebrowse (5) setting
+1c - searching for encrypted content in archive will stop accordingly to
+prebrowse setting (will not be skipped with 5)
+2a - list_slt table used for browsing is allocated up to 0.5 M files and will
+then increase (slow) as needed, while list_l table used for pre-parsing is
+allocated to the needed size, unless pre-parsing was stopped at 1b
+2b - scanning for omitted directories, which scales slowly, will stop
+accordingly to prebrowse setting, maxed to 256K files
+
 --------------------------------------------------------------------------------
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
@@ -450,6 +496,8 @@ type
      cbcustext: TCheckBox;
      cbzooming: TComboBox;
      cbspacing: TComboBox;
+     CheckBox7zunrar5: TCheckBox;
+     CheckBoxExtrac32: TCheckBox;
      CheckBoxForceBrowse: TCheckBox;
      CheckBoxForceConvert: TCheckBox;
      CheckBoxExtAnd: TCheckBox;
@@ -487,7 +535,6 @@ type
      CheckBoxzpaqforce: TCheckBox;
      CheckBoxzpaqall: TCheckBox;
      CheckBoxsns: TCheckBox;
-     CheckBox7zunrar5: TCheckBox;
      CheckBoxARC1: TCheckBox;
      CheckBoxARC2: TCheckBox;
      CheckBoxARC3: TCheckBox;
@@ -694,6 +741,10 @@ type
      MenuItem122: TMenuItem;
      MenuItem124: TMenuItem;
      MenuItem125: TMenuItem;
+     MenuItem128: TMenuItem;
+     pmqeselected: TMenuItem;
+     pmqedisplayed: TMenuItem;
+     pmqeall: TMenuItem;
      mtab: TMenuItem;
      mtool3: TMenuItem;
      mtool2: TMenuItem;
@@ -710,6 +761,10 @@ type
      MenuItem141: TMenuItem;
      mtheme: TMenuItem;
      MenuItem30: TMenuItem;
+     pmtestcontext: TPopupMenu;
+     pmtestcontextall: TMenuItem;
+     pmtestcontextdisplayed: TMenuItem;
+     pmtestcontextselected: TMenuItem;
      pmthemes: TMenuItem;
      MenuItem83: TMenuItem;
      pmrow: TMenuItem;
@@ -976,7 +1031,6 @@ type
      Labeloptsub4: TLabel;
      LabelPanelHintAdd: TLabel;
      LabelPanelHintExtract: TLabel;
-     Labelpasses: TLabel;
      LabelPEA6: TLabel;
      LabelPEA7: TLabel;
      LabelPEA8: TLabel;
@@ -2971,6 +3025,7 @@ type
       procedure CheckBoxEditArchivesChange(Sender: TObject);
       procedure CheckBoxEnumdClick(Sender: TObject);
       procedure CheckBoxExtAndClick(Sender: TObject);
+      procedure CheckBoxExtrac32Click(Sender: TObject);
       procedure CheckBoxFolder1Click(Sender: TObject);
       procedure CheckBoxForceBrowseClick(Sender: TObject);
       procedure CheckBoxForceConvertClick(Sender: TObject);
@@ -3113,6 +3168,9 @@ type
       procedure mtool1Click(Sender: TObject);
       procedure mtool2Click(Sender: TObject);
       procedure mtool3Click(Sender: TObject);
+      procedure pmqeallClick(Sender: TObject);
+      procedure pmqedisplayedClick(Sender: TObject);
+      procedure pmqeselectedClick(Sender: TObject);
       procedure pmrowClick(Sender: TObject);
       procedure pmsnavClick(Sender: TObject);
       procedure pmstreeClick(Sender: TObject);
@@ -3184,6 +3242,9 @@ type
       procedure pmtabsfsClose(Sender: TObject);
       procedure pmtabshistoryClose(Sender: TObject);
       procedure pmtabsmClick(Sender: TObject);
+      procedure pmtestcontextallClick(Sender: TObject);
+      procedure pmtestcontextdisplayedClick(Sender: TObject);
+      procedure pmtestcontextselectedClick(Sender: TObject);
       procedure pmtextencClick(Sender: TObject);
       procedure pmthemesClick(Sender: TObject);
       procedure pmtool1Click(Sender: TObject);
@@ -4755,6 +4816,7 @@ function compose_unquad_cl(var cl,jobcode,outname:ansistring; real_extract:boole
 function compose_unbrotli_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
 function compose_unzstd_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
 function compose_unpea_cl(var cl,jobcode,outname:ansistring):integer;
+function compose_uncustom_cl(var cl,jobcode,outname:ansistring; real_extract:boolean):integer;
 function setoutname(var s:ansistring; i:integer):integer;
 function control_outpath(var out_param:ansistring):integer;
 function testencrypted:integer;
@@ -4867,13 +4929,15 @@ procedure erase_fromarchiving(erasemode:integer; executemode:integer; var cl:ans
 {$IFDEF MSWINDOWS}function fileop_fromnamelist(fnames: array of ansistring; fto:ansistring; fileopfun:integer; fileopflags:integer):integer;{$ENDIF}
 procedure openwith_base(act,target:ansistring);
 procedure openwith_cust(act,custmode:ansistring; j:integer);
+procedure browsefiledir(s:ansistring);
+procedure browse_special_cases;
 
 const
   MAX_CL        = 31744; //most of modern OSes handle about up to 32KB command line, checked conservatively at 31KB
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  INTVERSION    = '1.53';
-  PEAZIPVERSION = '8.0';
+  INTVERSION    = '1.54';
+  PEAZIPVERSION = '8.1';
   PEAZIPREVISION= '.0';
   PEAZIPSINTVER = '800';
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
@@ -4910,6 +4974,7 @@ const
   {$ENDIF}
   ZCHAR         = '+';
   ZSTRING       = '----------';
+  ZSTRINGS      = '--';
   ZSTRINGL      = '------------------- ----- ------------ ------------  ------------------------';
   {$IFDEF MSWINDOWS}
   NDLINES       = 3;//15.x+
@@ -4920,7 +4985,7 @@ const
   READE_LIST    = '7Z, ACE, ARC/WRC, ARJ, BR, BZ/TBZ, CAB, CHM/CHW/HXS, COMPOUND (MSI, DOC, XLS, PPT), CPIO, GZ/TGZ, ISO, Java (JAR, EAR, WAR), LZH/LHA, Linux (DEB, PET/PUP, RPM, SLP), NSIS, OOo, PAK/PK3/PK4, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ/BCM, RAR, TAR, WIM/SWM, XPI, Z/TZ, ZIP, ZST...';
   WRITEE_LIST   = '7Z, 7Z-sfx, ARC, ARC-sfx, BR, BZ2, GZ, *PAQ, PEA, QUAD/BALZ/BCM, split, TAR, UPX, WIM, XZ, ZIP, ZST';
   APPMAIN       = 'PeaZip';
-  APPLICATION1  = 'Pea 1.01 (LGPLv3, Giorgio Tani);';
+  APPLICATION1  = 'Pea 1.02 (LGPLv3, Giorgio Tani);';
   STR_7Z        = '7Z';
   STR_ARC       = 'ARC';
   STR_BROTLI    = 'Brotli';
@@ -4946,7 +5011,7 @@ const
   {$IFDEF MSWINDOWS}
   EXEEXT        = '.exe';
   UNRARNAME     = 'unrar';
-  APPLICATION2  = '7z 19.00 (LGPL, Igor Pavlov), and Tino Reichardt codecs v1.4.5r2 (LGPL);';
+  APPLICATION2  = '7z 19.00 (LGPL, Igor Pavlov), and Tino Reichardt codecs v1.5.0r1 (LGPL);';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.15 [Matt Mahoney et al. (GPL)];';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.95 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser);';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15 (Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev);';
@@ -4954,12 +5019,12 @@ const
   APPLICATION7  = 'FreeArc 0.67 alpha (GPL, Bulat Ziganshin).';
   APPLICATION8  = 'UNRAR 5.21 (freeware, royalty-free, source available with unrar restriction, Alexander Roshal)';
   APPLICATION9  = 'Brotli 1.0.7 (MIT License, Jyrki Alakuijala, Eugene Kliuchnikov, Robert Obryk, Zoltán Szabadka, Lode Vandevenne)';
-  APPLICATION10 = 'Zstd 1.4.5 (Dual license BSD / GPLv2, Yann Collet, Przemysław Skibiński)';
+  APPLICATION10 = 'Zstd 1.5.0 (Dual license BSD / GPLv2, Yann Collet, Przemysław Skibiński)';
   {$ENDIF}
   {$IFDEF LINUX}
   EXEEXT        = '';
   UNRARNAME     = 'unrar-nonfree';
-  APPLICATION2  = 'szcnick/p7zip 17.02 (LGPL, fork of Myspace p7zip, based on Igor Pavlov''s 7z);';
+  APPLICATION2  = 'szcnick/p7zip 17.04 (LGPL, fork of Myspace p7zip, based on Igor Pavlov''s 7z);';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.05 [Matt Mahoney et al. (GPL)];';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.96 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser);';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15(Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev);';
@@ -4967,7 +5032,7 @@ const
   APPLICATION7  = 'FreeArc 0.60 (GPL, Bulat Ziganshin).';
   APPLICATION8  = 'UNRAR 5.21 beta 2 (freeware, royalty-free, source available with unrar restriction, Alexander Roshal, Petr Cech)';
   APPLICATION9  = 'Brotli 1.0.7 (MIT License, Jyrki Alakuijala, Eugene Kliuchnikov, Robert Obryk, Zoltán Szabadka, Lode Vandevenne)';
-  APPLICATION10 = 'Zstd 1.4.5 (Dual license BSD / GPLv2, Yann Collet, Przemysław Skibiński)';
+  APPLICATION10 = 'Zstd 1.5.0 (Dual license BSD / GPLv2, Yann Collet, Przemysław Skibiński)';
   {$ENDIF}
   {$IFDEF FREEBSD}
   EXEEXT        = '';
@@ -5048,7 +5113,7 @@ var
    vopt1,vopt1b,vopt7c,vopt12t,vopt19e:ansistring;
    vopt2,vopt3,vopt4,vopt4b,vopt4c,vopt4d,vopt4e,vopt4f,vopt5,vopt5b,vopt5c,vopt5d,vopt5d1,vopt5d2,vopt5e,
    vopt5f,vopt5f1,vopt5g,vopt5h,vopt5sw,vopt6,vopt7,vopt7b,vopt8,vopt9,vopt10,vopt11,vopt12,voptlibre,
-   voptprivacy,vopt13,voptts,vopt14,vopt15c,vopt15d,vopt15e,vopt15f,vopt15g,vopt16,vopt17,vopt18,vopt18b,
+   voptprivacy,vopt13,voptts,vopt14,vopt15c,vopt15d,vopt15e,vopt15e2,vopt15f,vopt15g,vopt16,vopt17,vopt18,vopt18b,
    vopt19,vopt19b,vopt19c,vopt19d,vopt20,vopt20b,vopt21,vopt22,vopt23,vopt24,vopt24b,vopt25,valg1,valg2,valg3,valg4,valg5,
    valg6,valg7,valg8,valg9,valg10,valg11,valg12,valg13,valg14,valg15:integer;
 
@@ -5114,9 +5179,9 @@ var
    checkver,extsel,defaultextractpath,defaultarchivepath,dn,
    prevrun,titlestring,sortstatusstring,updateid,prevupdateid,prevarchive,inputfile,
    peaziptmpdir,peaziptmpdirroot,peaziptmpdir_tmp,basedragtitle,unacepluginstatus,unrar5pluginstatus,addformatspluginstatus,
-   prevlistfilter,browsersdir,custom_work_path,tempaddinarchive,beingpreviewed,moverelpath,move_out_param:ansistring;
+   prevlistfilter,browsersdir,custom_work_path,tempaddinarchive,beingpreviewed,moverelpath,move_out_param,lcmethod:ansistring;
 
-   tvolumes,tdirs,tfiles,psize,tsize,infosize1,infosize2:qword;
+   tvolumes,tdirs,tfiles,psize,tvol,tsize,infosize1,infosize2:qword;
 
    devtype:array [1..26] of integer;
    appdb:array [1..16] of integer;
@@ -5135,7 +5200,7 @@ var
    doptadd,doptext,privacy_mode,showvolatile,tryopenwerrors,forcecanbechanged,euns1,
    autosync,sys7zlin,i16res,i32res,i48res,i96res,tabheight,tabheightl,pbarh,autoopentar,spansize,advopdictionary,
    advopword,advoppasses,advopblocksize,noconfdel,specialmoderar,pforceconsole,closeonsingleextract,movetorelativepath,
-   forcebrowse,forceconvert:integer;
+   forcebrowse,forceconvert,nitems:integer;
 
    ltime,stime:longint;
 
@@ -5154,7 +5219,7 @@ var
    customsyntax1,erasepasses,extopt7z,extoptarc,extaction7z,extactionarc,extactionace,
    autosizetoolbarbutton,autosizetoolbarbuttond,clipmode,jobdefenc,
    archivenameenc,tonewfolder,parallelarchive,zcopy,mcuzip,nameaspartent,spchar,enumd,addencext,repcustext,addtstext,swzipx,
-   defaulttabsmenu,multi_option,nonverboselog,use7zunrar5,sort7zbytype,browsersd,userar,userar5,userarblake2,
+   defaulttabsmenu,multi_option,nonverboselog,use7zunrar5,useextrac32,sort7zbytype,browsersd,userar,userar5,userarblake2,
    userardict,userarsfx,userarsolid,userarrr,puserarrr,userarsaveopen,userarsavesecurity,userarsavestreams,userarlastmodtime,
    userarlock,tmpremoveintdir,renselonly,renfilesonly,defaultspanning,spanunit,zpaqall,zpaqabsolute,zpaqforce,
    dragtargetprotect,whenspecialopen,howspecialopen,ptsync,taskpriority,defaultactionst:byte;
@@ -5170,7 +5235,8 @@ var
    funflag,endflag,setbs,launchwithsemaphore,disable_twofactor,extselall,tmpenumd,uacneeded,
    cancellingarchive,nffromdrag,unrar5shown,unaceshown,restartingapp,needsave,is_searching,
    h_folders,nomatch,set_archivetree,aisexpanded,setsequenceerror,tmpextnf,settmpextnf,
-   keeppreview,loadadvdefaults,havewinrar,singleextract,specialopen,pm_tabs,pclicked,willbemoved,forcewillbemoved,forcenotwillbemoved:boolean;
+   keeppreview,loadadvdefaults,havewinrar,singleextract,specialopen,pm_tabs,pclicked,
+   willbemoved,forcewillbemoved,forcenotwillbemoved,pdrop,prebrowsing:boolean;
 
    activelabel_options,activelabel_add,activelabel_extract,activelabel_apps:TLabel;
 
@@ -5190,6 +5256,7 @@ var
 
    lang_file:ansistring;
    //text strings
+   txt_8_1_volumes,txt_8_1_ed,txt_8_1_slow,txt_8_1_preparse,txt_8_1_nopreparse,txt_8_1_preparsehint,txt_8_1_bo,txt_8_1_bop,txt_8_1_togglearc,txt_8_1_vslow,
    txt_8_0_altcol,txt_8_0_commonalgo,txt_8_0_forcebrowse,txt_8_0_forceconvert,txt_8_0_forcetyping,txt_8_0_forcetypinghelp,txt_8_0_setpwopt,txt_8_0_defaultaction,txt_8_0_defaultactionhint,txt_8_0_enableextand,
    txt_7_9_spacing,txt_7_9_zooming,
    txt_7_8_dd,txt_7_8_custext,txt_7_8_rel,txt_7_8_priorityhigh,txt_7_8_priorityidle,txt_7_8_prioritynormal,txt_7_8_priorityrealtime,txt_7_8_tpriority,txt_7_8_requirerestart,txt_7_8_changelocalization,
@@ -5686,6 +5753,16 @@ begin
 valorize_text:=-1;
 try
 readln(t,s);
+readln(t,s); txt_8_1_preparse:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_bo:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_bop:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_nopreparse:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_ed:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_togglearc:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_preparsehint:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_slow:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_vslow:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_8_1_volumes:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_0_altcol:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_0_forcebrowse:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_0_commonalgo:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
@@ -8495,6 +8572,7 @@ with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.selected,Form_Peac
    ImageIndex:=3;
    SelectedIndex:=3;
    end;
+Form_Peach.TreeView1.BeginUpdate;
 for i:=2 to Form_Peach.StringGridAddress1.RowCount-1 do
    begin
    nodefound:=false;
@@ -8530,7 +8608,7 @@ for i:=2 to Form_Peach.StringGridAddress1.RowCount-1 do
          SelectedIndex:=3;
          end;
    end;
-
+Form_Peach.TreeView1.EndUpdate;
 Form_Peach.StringGridAddress1.clear;
 Form_Peach.StringGridAddress1.rowcount:=Form_Peach.treeview1.Items.Count;
 for i:=1 to Form_Peach.treeview1.Items.Count-1 do
@@ -9497,8 +9575,12 @@ Labeloptsub4.Caption:=txt_browser;
 Labeloptsub5.Caption:=txt_check_select;
 RadioGroup3.Items.Strings[0]:=txt_8_0_commonalgo;
 RadioGroup3.Items.Strings[1]:=txt_performall;
-LabelOptsub2.Caption:=txt_erase_hint;
-Labelpasses.Caption:=txt_passes;
+LabelOptsub2.Caption:=txt_securedelete;
+ComboBoxPasses.Items[0]:=txt_level_fastest;
+ComboBoxPasses.Items[1]:=txt_level_fast;
+ComboBoxPasses.Items[2]:=txt_level_normal;
+ComboBoxPasses.Items[3]:=txt_8_1_slow;
+ComboBoxPasses.Items[4]:=txt_8_1_vslow;
 theme_label1.Hint:=txt_reset_theme;
 LabelResetTheme.Caption:=txt_3_5_managecustomthemes;
 LabelAdvThemes.Caption:=txt_2_6_advanced;
@@ -9516,9 +9598,15 @@ CheckBoxParallelarchiving.Caption:=txt_2_8_parallel;
 CheckBoxzcopy.Caption:=txt_2_8_zcopy;
 CheckBoxnetworkinfo.Caption:=txt_3_3_skipunits;
 Label7.Caption:=txt_3_1_workingdir;
-ComboBoxBrowser.Items.Strings[0]:=txt_level_normal;
-ComboBoxBrowser.Items.Strings[1]:=txt_level_fast;
-ComboBoxBrowser.Items.Strings[2]:=txt_level_fastest;
+ComboBoxBrowser.Items.Strings[0]:=txt_8_1_preparse;
+ComboBoxBrowser.Items.Strings[1]:=txt_8_1_slow;
+ComboBoxBrowser.Items.Strings[2]:=txt_level_normal;
+ComboBoxBrowser.Items.Strings[3]:=txt_level_fast;
+ComboBoxBrowser.Items.Strings[4]:=txt_level_fastest;
+ComboBoxBrowser.Items.Strings[5]:=txt_8_1_nopreparse;
+ComboBoxBrowser.Hint:=txt_8_1_preparsehint;
+CheckBoxPrebrowse.Caption:=txt_8_1_bo;
+CheckBoxPrebrowse.Hint:=txt_8_1_preparsehint;
 ComboBoxDrag.Items.Strings[0]:=txt_7_5_dragnone;
 ComboBoxDrag.Items.Strings[1]:=txt_7_5_draglock;
 ComboBoxDrag.Items.Strings[2]:=txt_7_5_draghide;
@@ -9909,6 +9997,12 @@ pmOpenPJselected.Caption:=txt_selected_objects;
 pmextcontextall.Caption:=txt_ext_all;
 pmextcontextdisplayed.Caption:=txt_ext_disp;
 pmextcontextselected.Caption:=txt_ext_sel;
+pmtestcontextall.Caption:=txt_testall;
+pmtestcontextdisplayed.Caption:=txt_testdisp;
+pmtestcontextselected.Caption:=txt_testsel;
+pmqeall.Caption:=txt_ext_all;
+pmqedisplayed.Caption:=txt_ext_disp;
+pmqeselected.Caption:=txt_ext_sel;
 pmJump1.Caption:=txt_mypc;
 pmJump5.Caption:=txt_mypc;
 MenuItemOpen_pc.Caption:=txt_mypc;
@@ -10135,6 +10229,16 @@ end;
 
 procedure load_default_texts;
 begin
+txt_8_1_preparse:='Always pre-parse archives';
+txt_8_1_bo:='Browser optimization';
+txt_8_1_bop:='Browser optimization options can be set from Options > Settings, General tab';
+txt_8_1_nopreparse:='Do not pre-parse archives';
+txt_8_1_ed:='error(s) detected.';
+txt_8_1_togglearc:='Listing flat view of archive content may take long time, continue anyway?';
+txt_8_1_preparsehint:='Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.';
+txt_8_1_slow:='Slow';
+txt_8_1_vslow:='Very slow';
+txt_8_1_volumes:='volumes';
 txt_8_0_altcol:='Alternate grid color';
 txt_8_0_forcebrowse:='Browse non-canonical archive types (containers, disk images, installers,...)';
 txt_8_0_commonalgo:='Common algorithms';
@@ -13353,11 +13457,13 @@ ignorepathdisp:=0; //ignore path extracting displayed objects: off
 ignorepathsel:=0; //ignore path extracting selected objects: off
 enableextand:=0; //do not enable extract and open with menu, only preview
 removeintdir:=1;//remove intermediate dir on extract to new folder: on
-prebrowse:=1; //stop browsing if archive is listed in more than prebrowsesize*1M blocks of memory (dramatically faster for very much populated archives): on by default
+//Performance parameter for 7z/p7zip -slt listing, stop time consuming operations (dramatically faster on archives containing many files):
+prebrowse:=3;
 taskpriority:=2; //launch tasks with normal priority
 dragtargetprotect:=3; //lock and hide drag and drop target window during operation
 nonverboselog:=1;//non-verbose output for 7z / p7zip (v15.x onward), faster when many small files are involved
 use7zunrar5:=1;//use 7z / p7zip UNRAR5 implementation (v15.06+)
+useextrac32:=0;//(Windows) use system's Extrac32 to unpack CAB files
 enumd:=1; //do not enumerate content of directories added for archiving operations
 userar:=1;//use winrar's rar.exe for rar compression if installed
 userar5:=1;//create rar5 instead of rar4
@@ -13381,7 +13487,7 @@ multi_option:=1; //generic multithreading
 favdelete:=0; //default delete mode for delete option concatenated with archive/extract operations 0 Recycle (Windows) 1 Quick 2 Zero 3 Secure
 doptadd:=0;// do not delete originals after archiving by default
 doptext:=0;// do not delete originals after extraction by default
-prebrowsesize:=128; //max M blocks of memory allowed to list archive content in the browser
+prebrowsesize:=192; //max M blocks of memory allowed to list archive content in the browser
 savehistory:=1; //save usage history - last archives, last directories, last searches, access data about bookmarks to ease bookmarks management
 customsyntax:=1; //syntax type for custom executable, creation
 customsyntax1:=1; //syntax type for custom executable, extraction
@@ -13453,7 +13559,7 @@ algosha256:=1;
 algosha3_512:=0;
 algosha512:=0;
 algowhirl:=0;
-erasepasses:=1;
+erasepasses:=0;
 {$IFDEF MSWINDOWS}jobdefenc:=0;{$ELSE}jobdefenc:=1;{$ENDIF}//encoding for job definition 0 system's default; 1 utf8
 archivenameenc:=1; //encoding for filenames in archives 0 replace extended chars with ?; 1 utf8
 mcuzip:=0; //encode non ascii chars as utf8 in 7z77zip for ZIP filenames
@@ -14042,11 +14148,12 @@ if (nativedrag<0) or (nativedrag>1) then nativedrag:=1;
 if (autosync<0) or (autosync>1) then autosync:=1;
 if nativedrag=1 then ignorepathdd:=0 else ignorepathdd:=1;
 if (removeintdir>1) then removeintdir:=1;
-if (prebrowse>2) then prebrowse:=1;
+if (prebrowse>5) then prebrowse:=3;
 if (taskpriority>3) then taskpriority:=2;
 if (dragtargetprotect>3) then dragtargetprotect:=1;
 if (nonverboselog>1) then nonverboselog:=1;
 if (use7zunrar5>1) then use7zunrar5:=1;
+if (useextrac32>1) then useextrac32:=0;
 if (enumd>1) then enumd:=1;
 if (userar>1) then userar:=1;
 if (userar5>1) then userar5:=1;
@@ -14069,7 +14176,7 @@ if (length(Form_peach.editcustext.Caption)>100) then Form_peach.editcustext.Capt
 if (defaulttabsmenu<1) or (defaulttabsmenu>4) then defaulttabsmenu:=2;
 if (multi_option>9) then multi_option:=1;
 {$IFDEF MSWINDOWS}if (favdelete<0) or (favdelete>3) then favdelete:=0;{$ELSE}if (favdelete<1) or (favdelete>3) then favdelete:=1; {$ENDIF}
-if (prebrowsesize<1) or (prebrowsesize>200) then prebrowsesize:=128; //200 roughly allows to parse in memory 1 million files
+if (prebrowsesize<4) or (prebrowsesize>512) then prebrowsesize:=192; //unused
 if (savehistory>1) then savehistory:=1;
 if (customsyntax>5) then customsyntax:=1;
 if (customsyntax1>5) then customsyntax:=1;
@@ -14099,15 +14206,10 @@ if (favzstandard>1) then favzstandard:=1;
 if (favzpaq>1) then favzpaq:=0;
 if (level_7z>5) then level_7z:=3;
 if (level_xz>4) then level_xz:=2;
-{$IFDEF MSWINDOWS}
 if (method_7z<>'LZMA') and (method_7z<>'LZMA2') and (method_7z<>'PPMd') and (method_7z<>'BZip2') and
-   (method_7z<>'Brotli') and (method_7z<>'FLZMA2') and (method_7z<>'Lizard_fastLZ4') and (method_7z<>'Lizard_LIZv1')
-   and (method_7z<>'Lizard_fastLZ4+Huffman') and (method_7z<>'Lizard_LIZv1+Huffman') and (method_7z<>'LZ4') and (method_7z<>'LZ5')
-   and (method_7z<>'Zstd') then method_7z:='LZMA2';
-{$ELSE}
-if (method_7z<>'LZMA') and (method_7z<>'LZMA2') and (method_7z<>'PPMd') and (method_7z<>'BZip2') and
-   (method_7z<>'FLZMA2') and (method_7z<>'LZ4') and (method_7z<>'Zstd') then method_7z:='LZMA2';
-{$ENDIF}
+   (method_7z<>'Brotli') and (method_7z<>'FLZMA2') and (method_7z<>'Lizard_fastLZ4') and (method_7z<>'Lizard_LIZv1') and
+   (method_7z<>'Lizard_fastLZ4+Huffman') and (method_7z<>'Lizard_LIZv1+Huffman') and (method_7z<>'LZ4') and (method_7z<>'LZ5') and
+   (method_7z<>'Zstd') then method_7z:='LZMA2';
 if (level_arc>9) then level_arc:=4;
 if (solid_arc>2) then solid_arc:=1;
 if (rr_arc>1) then rr_arc:=1;
@@ -14145,7 +14247,7 @@ if (algosha256>1) then algosha256:=1;
 if (algosha3_512>1) then algosha3_512:=0;
 if (algosha512>1) then algosha512:=0;
 if (algowhirl>1) then algowhirl:=0;
-if (erasepasses>4) then erasepasses:=1;
+if (erasepasses>4) then erasepasses:=0;
 if (jobdefenc>1) then {$IFDEF MSWINDOWS}jobdefenc:=0;{$ELSE}jobdefenc:=1;{$ENDIF}
 if (showvolatile<0) or (showvolatile>1) then showvolatile:=0;
 if (archivenameenc>1) then archivenameenc:=1;
@@ -16028,6 +16130,9 @@ readln(conf,s); defaultactionst:=strtoint(s);
 readln(conf,s);
 readln(conf,s);
 readln(conf,s); enableextand:=strtoint(s);
+readln(conf,s);
+readln(conf,s);
+readln(conf,s); useextrac32:=strtoint(s);
 end;
 
 procedure writeconf_colors;
@@ -16122,10 +16227,10 @@ writeln(conf,'');
 writeln(conf,'[ignore archived path structure when performing extraction of selected objects]');
 writeln(conf,inttostr(ignorepathsel));
 writeln(conf,'');
-writeln(conf,'[archive browser optimization: 0 no optimization 1 fast open routine, stop prebrowsing archives containing large number of files to preserve performances 2 do not prebrowse (may non correctly list some out of standard archives)]');
+writeln(conf,'[archive browser speed optimization: 0 no optimization 1..4 slower to faster optimization (3 default) 5 do not pre-parse archives, may non correctly list some out of standard archives]');
 writeln(conf,inttostr(prebrowse));
 writeln(conf,'');
-writeln(conf,'[prebrowse size: don''t pre-browse archives over this in-memory size]');
+writeln(conf,'[(obsolete) don''t pre-parse archives over this in-memory size]');
 writeln(conf,inttostr(prebrowsesize));
 writeln(conf,'');
 writeln(conf,'[overwrite / skip policy using 7z binary]');
@@ -16757,6 +16862,9 @@ writeln(conf,inttostr(defaultactionst));
 writeln(conf,'');
 writeln(conf,'[enable "Extract and open with" submenu]');
 writeln(conf,inttostr(enableextand));
+writeln(conf,'');
+writeln(conf,'[(Windows) use integrated Extrac32 to unpack CAB 1=yes (default) 0=no NOTE: overridden by Free Software compliance setting if > 0]');
+writeln(conf,inttostr(useextrac32));
 end;
 
 function geticon(fullname,fulltype:ansistring; pc:boolean):integer;
@@ -17747,6 +17855,7 @@ Form_peach.ComboBoxBrowser.ItemIndex:=prebrowse;
 Form_peach.ComboBoxPriority.ItemIndex:=taskpriority;
 if nonverboselog=1 then Form_peach.CheckBoxBrowseNotVerbose.State:=cbChecked else Form_peach.CheckBoxBrowseNotVerbose.State:=cbUnChecked;
 if use7zunrar5=1 then Form_peach.CheckBox7zunrar5.State:=cbChecked else Form_peach.CheckBox7zunrar5.State:=cbUnChecked;
+if useextrac32=1 then Form_peach.CheckBoxExtrac32.State:=cbChecked else Form_peach.CheckBoxExtrac32.State:=cbUnChecked;
 if enumd=0 then Form_peach.CheckBoxEnumd.State:=cbChecked else Form_peach.CheckBoxEnumd.State:=cbUnChecked;
 if userar=1 then Form_peach.cbRAR.State:=cbChecked else Form_peach.cbRAR.State:=cbUnChecked;
 if userar5=1 then Form_peach.cbRAR5.State:=cbChecked else Form_peach.cbRAR5.State:=cbUnChecked;
@@ -19933,13 +20042,11 @@ if archive_type='7z' then
    Form_peach.CheckBoxMQS.Enabled:=true;
    Form_peach.ComboBoxArchiveSolid.Enabled:=true;
    Form_peach.ComboBoxArchive3.Clear;
-   {$IFDEF MSWINDOWS}Form_peach.ComboBoxArchive3.DropDownCount:=13;
-   {$ELSE}Form_peach.ComboBoxArchive3.DropDownCount:=13;{$ENDIF}
+   Form_peach.ComboBoxArchive3.DropDownCount:=13;
    Form_peach.ComboBoxArchive3.Items.Append('LZMA');
    Form_peach.ComboBoxArchive3.Items.Append('LZMA2');
    Form_peach.ComboBoxArchive3.Items.Append('PPMd');
    Form_peach.ComboBoxArchive3.Items.Append('BZip2');
-   {$IFDEF MSWINDOWS}
    Form_peach.ComboBoxArchive3.Items.Append('Brotli');
    Form_peach.ComboBoxArchive3.Items.Append('FLZMA2');
    Form_peach.ComboBoxArchive3.Items.Append('Lizard_fastLZ4');
@@ -19949,17 +20056,6 @@ if archive_type='7z' then
    Form_peach.ComboBoxArchive3.Items.Append('LZ4');
    Form_peach.ComboBoxArchive3.Items.Append('LZ5');
    Form_peach.ComboBoxArchive3.Items.Append('Zstd');
-   {$ELSE}
-   Form_peach.ComboBoxArchive3.Items.Append('/Brotli');
-   Form_peach.ComboBoxArchive3.Items.Append('FLZMA2');
-   Form_peach.ComboBoxArchive3.Items.Append('/Lizard_fastLZ4');
-   Form_peach.ComboBoxArchive3.Items.Append('/Lizard_LIZv1');
-   Form_peach.ComboBoxArchive3.Items.Append('/Lizard_fastLZ4+Huffman');
-   Form_peach.ComboBoxArchive3.Items.Append('/Lizard_LIZv1+Huffman');
-   Form_peach.ComboBoxArchive3.Items.Append('LZ4');
-   Form_peach.ComboBoxArchive3.Items.Append('/LZ5');
-   Form_peach.ComboBoxArchive3.Items.Append('Zstd');
-   {$ENDIF}
    Form_peach.ComboBoxArchive4.Clear;
    Form_peach.ComboBoxArchive4.DropDownCount:=6;
    Form_peach.ComboBoxArchive4.Items.Append(txt_level_store);
@@ -22907,18 +23003,112 @@ if firstnumber=true then
    result:=copy(result,1,firstpos-1)+snumb+fnumb+copy(result,firstpos,length(result)+1-firstpos);
 end;
 
+procedure scan_omitted_dirs(var nfolders:integer);
+var
+   i,j,rc,rc2,sle:integer;
+   searchsize:qword;
+   s:ansistring;
+   found:boolean;
+begin
+Form_Peach.StringGridAddress1.RowCount:=1;
+Form_Peach.StringGridAddress2.RowCount:=1;
+Form_Peach.StringGridAddress1.BeginUpdate;
+Form_Peach.StringGridAddress1.Clear;
+Form_Peach.StringGridAddress2.BeginUpdate;
+Form_Peach.StringGridAddress2.Clear;
+Form_Peach.StringGridAddress1.RowCount:=nfolders+1;
+Form_Peach.StringGridAddress2.RowCount:=1;
+Form_Peach.StringGridAddress2.ColCount:=Form_Peach.StringGridAddress1.ColCount;
+set_archivetree:=true;
+i:=1;
+for j:=0 to Form_Peach.StringGridList.RowCount-1 do
+  if Form_peach.StringGridList.Cells[2,j]<>txt_list_isfolder then
+  else
+     begin
+     Form_Peach.StringGridAddress1.Rows[i].Assign(Form_Peach.StringGridList.Rows[j]);
+     i:=i+1;
+     end;
+//if pre-parsing optimization is enabled, limit omitted folders test for reasonable performances
+case prebrowse of
+   1: searchsize := 256*1024;
+   2: searchsize := 256*1024;
+   3: searchsize := 128*1024;
+   4,5: searchsize := 64*1024;
+   end;
+if (Form_peach.StringGridList.RowCount<searchsize) or (prebrowse=0) then
+begin
+for i:=1 to Form_peach.StringGridList.RowCount-1 do
+   begin
+   s:=Form_peach.StringGridList.Cells[8,i];
+   if dirExtractFilePath(Form_peach.StringGridList.Cells[8,i])=dirExtractFilePath(Form_peach.StringGridList.Cells[8,i-1]) then
+   else
+      repeat
+      s:=dirExtractFilePath(s);
+      if (s<>'') and (s<>'/') and (s<>'\') and (s<>DirectorySeparator) and (s<>DirectorySeparator+DirectorySeparator) then
+         begin
+         if (s[length(s)]='/') or (s[length(s)]='\') or (s[length(s)]=DirectorySeparator) then setlength(s, length(s)-1);
+         found:=false;
+         sle:=Length(s);
+         for j:=1 to Form_peach.StringGridAddress1.RowCount-1 do
+            if sle=length(Form_peach.StringGridAddress1.Cells[8,j]) then
+            if s=Form_peach.StringGridAddress1.Cells[8,j] then
+               begin
+               found:=true;
+               break;
+               end;
+         if found=true then break
+         else //add virtual folder
+            begin
+            h_folders:=true;
+            rc:=Form_peach.StringGridAddress1.RowCount;
+            rc2:=Form_peach.StringGridAddress2.RowCount;
+            Form_peach.StringGridAddress1.RowCount:=rc+1;
+            Form_peach.StringGridAddress2.RowCount:=rc2+1;
+            Form_peach.StringGridAddress1.Cells[1,rc]:=dirextractfilename(s);
+            Form_peach.StringGridAddress1.Cells[2,rc]:=txt_list_isfolder;
+            Form_peach.StringGridAddress1.Cells[8,rc]:=s;
+            Form_peach.StringGridAddress1.Cells[9,rc]:='1'+dirextractfilename(s);
+            Form_peach.StringGridAddress1.Cells[3,rc]:='0';
+            Form_peach.StringGridAddress1.Cells[10,rc]:=inttostr(length(inttostr(length(Form_peach.StringGridAddress1.Cells[3,j]))))+inttostr(length(Form_peach.StringGridAddress1.Cells[3,j]))+Form_peach.StringGridAddress1.Cells[3,j];
+            Form_peach.StringGridAddress1.Cells[4,rc]:='0';
+            Form_peach.StringGridAddress1.Cells[11,rc]:=inttostr(length(inttostr(length(Form_peach.StringGridAddress1.Cells[4,j]))))+inttostr(length(Form_peach.StringGridAddress1.Cells[4,j]))+Form_peach.StringGridAddress1.Cells[4,j];
+            Form_peach.StringGridAddress1.Cells[6,rc]:='D';
+            Form_peach.StringGridAddress1.Cells[12,rc]:='0';
+            Form_peach.StringGridAddress2.Rows[rc2].Assign(Form_peach.StringGridAddress1.Rows[rc]);
+            nfolders:=nfolders+1;
+            end;
+         end;
+      until (s='') or (s='\') or (s='/') or (s=DirectorySeparator) or (s=DirectorySeparator+DirectorySeparator);
+   if i and (16*1024)-1 = 0 then Application.ProcessMessages;
+   end;
+end;
+prebrowse_dirs:=nfolders;
+prebrowse_records:=j;
+Form_Peach.StringGridAddress1.EndUpdate;
+Form_Peach.StringGridAddress2.EndUpdate;
+end;
+
 procedure list_l(mode:ansistring); //special formats through 7z
 var
-   i,k:integer;
+   i,k,nfiles,nfolders:integer;
    size,csize,rsize:qword;
-   s:ansistring;
+   s,cmethod:ansistring;
 begin
-if (mode='browse') or (mode='flat') then
+Form_peach.StringGridList.BeginUpdate;
+size:=0;
+csize:=0;
+nfiles:=0;
+nfolders:=0;
+nitems:=0;
+if (mode='browse') or (mode='flat') or (mode='silent') then
    begin
    Form_peach.StringGridList.RowCount:=Form_peach.MemoList.Lines.Count-title_lines_7z-1+(3-NDLINES);
    for i:=title_lines_7z to Form_peach.MemoList.Lines.Count-NDLINES do
       begin
       k:=i-title_lines_7z+1;
+      Form_peach.StringGridList.Cells[6,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
+      if Form_peach.StringGridList.Cells[6,k]<>'     ' then
+      begin
       s:=copy(Form_peach.MemoList.Lines[i],54,length(Form_peach.MemoList.Lines[i])-53);
       tempcharcodefix(s);
       Form_peach.StringGridList.Cells[1,k]:=extractfilename(s);
@@ -22927,46 +23117,62 @@ if (mode='browse') or (mode='flat') then
          Form_peach.StringGridList.Cells[2,k]:=txt_list_isfolder;
          Form_peach.StringGridList.Cells[8,k]:=s;
          Form_peach.StringGridList.Cells[9,k]:='1'+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         nfolders:=nfolders+1;
          end
       else
          begin
          Form_peach.StringGridList.Cells[2,k]:=extractfileext(Form_peach.StringGridList.Cells[1,k]);
          Form_peach.StringGridList.Cells[8,k]:=s;
          Form_peach.StringGridList.Cells[9,k]:='2'+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         nfiles:=nfiles+1;
          end;
       Form_peach.StringGridList.Cells[3,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],27,12));
+      try size:=size+strtoint(Form_peach.StringGridList.Cells[3,k]); except end;
       Form_peach.StringGridList.Cells[10,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_peach.StringGridList.Cells[3,k];
       Form_peach.StringGridList.Cells[4,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],40,12));
+      try csize:=csize+strtoint(Form_peach.StringGridList.Cells[4,k]); except end;
       Form_peach.StringGridList.Cells[11,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
       Form_peach.StringGridList.Cells[5,k]:=copy(Form_peach.MemoList.Lines[i],1,19);
-      Form_peach.StringGridList.Cells[6,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
       Form_peach.StringGridList.Cells[12,k]:='0';
       end;
+      end;
+   if i and (16*1024)-1 = 0 then Application.ProcessMessages;
+   end;
+
+if (mode='browse') or (mode='flat') then
    if Form_peach.StringGridList.RowCount>1 then
       begin
       Form_peach.StringGridList.SortColRow(true,listsortcol);
       sort_az_stringgridlist_special(listsortcol);
       if az=false then sort_za_stringgridlist(listsortcol);
       end;
-   end;
-i:=Form_peach.MemoList.Lines.Count-NDLINES;
-status1:=copy(Form_peach.MemoList.Lines[i+2],54,length(Form_peach.MemoList.Lines[i+2])-53)+'; '+nicenumber(trimleft(copy(Form_peach.MemoList.Lines[i+2],27,12)))+' > '+nicenumber(trimleft(copy(Form_peach.MemoList.Lines[i+2],40,12)));
-size:=0;
-csize:=0;
+
+if mode='silent' then scan_omitted_dirs(nfolders);
+cmethod:=lcmethod;
+if cmethod<>'' then status1:=cmethod+' | '
+else status1:='';
+nitems:=nfiles+nfolders;
+status1:=status1+inttostr(nfolders)+' '+txt_dirs+' '+inttostr(nfiles)+' '+txt_files+' '+nicenumber(inttostr(size))+' > '+nicenumber(inttostr(csize));
 rsize:=0;
 try
-   size:=strtoqword(trimleft(copy(Form_peach.MemoList.Lines[i+2],27,12)));
-   csize:=strtoqword(trimleft(copy(Form_peach.MemoList.Lines[i+2],40,12)));
    if size<>0 then rsize:=((csize) *100) div (size);
    infosize2:=48 * rsize div 100;
 except
    infosize2:=0;
 end;
 if (rsize>1) and (rsize<200) then status1:=status1+' ('+inttostr(rsize)+'%)';
-if Form_peach.StringGridList.RowCount<2 then status1:=txt_list_nomatch+txt_2_7_list_tryflatorpw;
 
-if (mode='silent') then Form_peach.StringGridArchive.RowCount:=1;//unused for formats supported through list_l
+if Form_peach.StringGridList.RowCount<2 then Form_peach.StringGridList.RowCount:=2;
 
+if (mode='silent') then
+   begin
+   Form_peach.StringGridArchive.RowCount:=Form_peach.StringGridList.RowCount+Form_peach.StringGridAddress2.RowCount-1;
+   for i:=1 to Form_peach.StringGridList.Rowcount-1 do Form_peach.StringGridArchive.Rows[i]:=Form_peach.StringGridList.Rows[i];
+   for i:=1 to Form_peach.StringGridAddress2.Rowcount-1 do Form_peach.StringGridArchive.Rows[Form_peach.StringGridList.Rowcount+i-1]:=Form_peach.StringGridAddress2.Rows[i];
+   end;
+if tvol>1 then status1:=inttostr(tvol)+' '+txt_8_1_volumes+' | '+status1;
+
+Form_peach.StringGridList.EndUpdate;
 end;
 
 function identify_field(s:ansistring):ansistring;
@@ -23023,10 +23229,18 @@ end;
 
 function find_7zl_titles:integer;
 var
-   i:integer;
-   s1:ansistring;
+   i,zsline:integer;
+   s1,s2,archtype:ansistring;
 begin
 result:=0;
+
+i:=0;
+repeat
+   s1:=Form_peach.MemoList.Lines[i];
+   i:=i+1;
+until (s1=ZSTRINGS) or (i>=Form_peach.MemoList.Lines.Count);
+zsline:=i;
+
 i:=0;
 repeat
    s1:=Form_peach.MemoList.Lines[i];
@@ -23034,14 +23248,41 @@ repeat
 until (s1=ZSTRINGL) or (i>=Form_peach.MemoList.Lines.Count);
 title_lines_7z:=i; //dynamically find title and comment lines
 if i>=Form_peach.MemoList.Lines.Count then result:=-1 else result:=1;
+
+lcmethod:='';
+archtype:='';
+if (zsline<title_lines_7z) and (result=1) then
+   for i:=zsline to title_lines_7z-1 do
+     begin
+     s1:=Form_peach.MemoList.Lines[i];
+     s2:=identify_field(s1);
+     case s2 of
+        'Type':
+         begin
+         archtype:=copy(s1,8,length(s1)-7);
+         end;
+         'Method':
+         begin
+         if lcmethod='' then
+            lcmethod:=copy(s1,10,length(s1)-9);
+         if pos('AES',s1)<>0 then
+            begin
+            seemencrypted:=true;
+            set_pw;
+            end;
+        end;
+     end;
+     end;
+if (archtype<>'') and (lcmethod<>'') then lcmethod:=archtype+', '+lcmethod;
+if (archtype<>'') and (lcmethod='') then lcmethod:=archtype;
 end;
 
 procedure list_slt(mode:ansistring);
 var
-   i,j,k,nfiles,nfolders,rc,rc2,ll:integer;
+   i,j,k,nfiles,nfolders,ll:integer;
    size,csize,rsize:qword;
    s1,s2,s3,s,cmethod:ansistring;
-   stopped_prebrowse,found:boolean;
+   stopped_prebrowse:boolean;
 begin
 i:=title_lines_7z-2;
 k:=Form_peach.MemoList.Lines.Count;
@@ -23064,7 +23305,7 @@ Form_peach.StringGridList.RowCount:=1;
 status0:=txt_list_searching;
 status1:=txt_please_wait;
 Form_peach.StringGridList.BeginUpdate;
-if k<4*1024*1024 then ll:=(k div 8) else ll:=512*1024;
+if k<4*1024*1024 then ll:=(k div 8) else ll:=512*1024; //optimized for up to 0.5 M files
 Form_peach.StringGridList.RowCount:=ll;
 repeat
    if j<ll then
@@ -23178,87 +23419,12 @@ repeat
          Form_peach.StringGridList.RowCount:=Form_peach.StringGridList.RowCount-1;
          ll:=ll-1;
          end;
-   if Form_peach.Visible=true then if j and 31 = 0 then Application.ProcessMessages;
+   if i and (16*1024)-1 = 0 then Application.ProcessMessages;
 until i>=k-1;
 if j<1 then j:=1;
 Form_peach.StringGridList.RowCount:=j;
 
-if mode='silent' then
-begin
-Form_Peach.StringGridAddress1.RowCount:=1;
-Form_Peach.StringGridAddress2.RowCount:=1;
-Form_Peach.StringGridAddress1.BeginUpdate;
-Form_Peach.StringGridAddress1.Clear;
-Form_Peach.StringGridAddress2.BeginUpdate;
-Form_Peach.StringGridAddress2.Clear;
-Form_Peach.StringGridAddress1.RowCount:=nfolders+1;
-Form_Peach.StringGridAddress2.RowCount:=1;
-Form_Peach.StringGridAddress2.ColCount:=Form_Peach.StringGridAddress1.ColCount;
-set_archivetree:=true;
-
-i:=1;
-for j:=0 to Form_Peach.StringGridList.RowCount-1 do
-  if Form_peach.StringGridList.Cells[2,j]<>txt_list_isfolder then
-  else
-     begin
-     Form_Peach.StringGridAddress1.Rows[i].Assign(Form_Peach.StringGridList.Rows[j]);
-     i:=i+1;
-     end;
-
-if (Form_peach.StringGridList.RowCount<prebrowsesize*1024) or (prebrowse=0) then //if fast prebrowsing is enabled, limit omitted folders test to reasonable performances
-begin
-for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   begin
-   s:=Form_peach.StringGridList.Cells[8,i];
-   if dirExtractFilePath(Form_peach.StringGridList.Cells[8,i])=dirExtractFilePath(Form_peach.StringGridList.Cells[8,i-1]) then
-   else
-      repeat
-      s:=dirExtractFilePath(s);
-      if (s<>'') and (s<>'/') and (s<>'\') and (s<>DirectorySeparator) and (s<>DirectorySeparator+DirectorySeparator) then
-         begin
-         if (s[length(s)]='/') or (s[length(s)]='\') or (s[length(s)]=DirectorySeparator) then setlength(s, length(s)-1);
-         found:=false;
-         for j:=1 to Form_peach.StringGridAddress1.RowCount-1 do
-            begin
-            if s<>Form_peach.StringGridAddress1.Cells[8,j] then
-            else
-               begin
-               found:=true;
-               break;
-               end;
-            end;
-         if found=true then
-         else //add virtual folder
-            begin
-            h_folders:=true;
-            rc:=Form_peach.StringGridAddress1.RowCount;
-            rc2:=Form_peach.StringGridAddress2.RowCount;
-            Form_peach.StringGridAddress1.RowCount:=rc+1;
-            Form_peach.StringGridAddress2.RowCount:=rc2+1;
-            Form_peach.StringGridAddress1.Cells[1,rc]:=dirextractfilename(s);
-            Form_peach.StringGridAddress1.Cells[2,rc]:=txt_list_isfolder;
-            Form_peach.StringGridAddress1.Cells[8,rc]:=s;
-            Form_peach.StringGridAddress1.Cells[9,rc]:='1'+dirextractfilename(s);
-            Form_peach.StringGridAddress1.Cells[3,rc]:='0';
-            Form_peach.StringGridAddress1.Cells[10,rc]:=inttostr(length(inttostr(length(Form_peach.StringGridAddress1.Cells[3,j]))))+inttostr(length(Form_peach.StringGridAddress1.Cells[3,j]))+Form_peach.StringGridAddress1.Cells[3,j];
-            Form_peach.StringGridAddress1.Cells[4,rc]:='0';
-            Form_peach.StringGridAddress1.Cells[11,rc]:=inttostr(length(inttostr(length(Form_peach.StringGridAddress1.Cells[4,j]))))+inttostr(length(Form_peach.StringGridAddress1.Cells[4,j]))+Form_peach.StringGridAddress1.Cells[4,j];
-            Form_peach.StringGridAddress1.Cells[6,rc]:='D';
-            Form_peach.StringGridAddress1.Cells[12,rc]:='0';
-            Form_peach.StringGridAddress2.Rows[rc2].Assign(Form_peach.StringGridAddress1.Rows[rc]);
-            nfolders:=nfolders+1;
-            end;
-         end;
-      until (s='') or (s='\') or (s='/') or (s=DirectorySeparator) or (s=DirectorySeparator+DirectorySeparator);
-   if Form_peach.Visible=true then if i and 31 = 0 then Application.ProcessMessages;
-   end;
-end;
-
-prebrowse_dirs:=nfolders;
-prebrowse_records:=j;
-Form_Peach.StringGridAddress1.EndUpdate;
-Form_Peach.StringGridAddress2.EndUpdate;
-end;
+if mode='silent' then scan_omitted_dirs(nfolders);
 
 if stopped_prebrowse=true then
    begin
@@ -23298,7 +23464,7 @@ if (mode='silent') then
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do Form_peach.StringGridArchive.Rows[i]:=Form_peach.StringGridList.Rows[i];
    for i:=1 to Form_peach.StringGridAddress2.Rowcount-1 do Form_peach.StringGridArchive.Rows[Form_peach.StringGridList.Rowcount+i-1]:=Form_peach.StringGridAddress2.Rows[i];
    end;
-
+if tvol>1 then status1:=inttostr(tvol)+' '+txt_8_1_volumes+' | '+status1;
 Form_peach.StringGridList.EndUpdate(true);
 end;
 
@@ -23520,7 +23686,7 @@ var
   i,BytesRead:integer;
   skipped_prebrowse:boolean;
   M:TmemoryStream;
-  nfiles,ndirs,tsize:QWord;
+  nfiles,ndirs,tsize,browselimitsize:QWord;
 begin
 execute_cl:=-1;
 zaout:=zaout1;
@@ -23549,24 +23715,35 @@ if (mode='extandrun') or (mode='delete') or (mode='add') or (mode='preview') the
 else P.Options := [poUsePipes];
 if fun='UNARC' then if intpw=1 then P.Options := [poNoConsole, poWaitOnExit] else P.Options := [poUsePipes];
 {$ENDIF}
+if mode='silent' then nitems:=0;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+M.SetSize(16*1024*1024);
+case prebrowse of
+   1: browselimitsize:=192*1024*1024; //pre-parse 1.5M+ / list 0.5M files approx
+   2: browselimitsize:=64*1024*1024; //0.5M+ / 200K
+   3: browselimitsize:=32*1024*1024; //256K+ / 100K
+   4,5: browselimitsize:=16*1024*1024; //128K+ (5 excludes pre-parsing) / 50K
+   end;
 P.Execute;
-M.SetSize(32*1024*1024);
 while P.Running do
    begin
+   if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
+   if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
+   if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
    if BytesRead+4*1024>=M.Size then M.SetSize(BytesRead + 4*1024);
-   if prebrowse=1 then
+   if prebrowse>0 then
       begin
-      if M.Size>(prebrowsesize*1024*1024) then //limit memorystream size to 1M*prebrowsesize blocks
+      if BytesRead>browselimitsize then
          begin
-         if mode<>'silent' then pMessageErrorOK(txt_aborted_error);
+         if mode<>'silent' then pMessageInfoOK(txt_aborted_error+char($0D)+char($0A)+txt_8_1_bop);
          status0:=txt_aborted;
+         status1:='';
          skipped_prebrowse:=true;
          P.Terminate(255);
          break;
          end;
       end;
-   if (mode<>'extandrun') and (mode<>'delete') and (mode<>'add')  and (mode<>'preview') then i := P.Output.Read((M.Memory + BytesRead)^, 2*1024);
+   if (mode<>'extandrun') and (mode<>'delete') and (mode<>'add')  and (mode<>'preview') then i := P.Output.Read((M.Memory + BytesRead)^, 4*1024);
    if i > 0 then Inc(BytesRead, i)
    else Sleep(100);
    if Form_peach.Visible=true then Application.ProcessMessages;
@@ -23642,10 +23819,11 @@ if execute_cl=0 then
       exit_busy_status;
       exit;
       end;
-   if (mode='silent') and (skipped_prebrowse=true) then
+   if (skipped_prebrowse=true) then
       begin
       M.Free;
       exit_busy_status;
+      if (mode<>'silent') then restartclosepeaapp;
       exit;
       end;
    case browse_option of
@@ -23691,6 +23869,7 @@ function testencrypted_fromname(fname:ansistring):integer; //-1 unchecked 0 not 
 var
   P: tprocessutf8;
   i,k,ec,BytesRead:integer;
+  browselimitsize:QWord;
   Labelenc:boolean;
   s,s1,s2,fun:ansistring;
   jobcode,outname:ansistring;
@@ -23713,27 +23892,36 @@ M := TMemoryStream.Create;
 BytesRead := 0;
 P.Options := [poUsePipes{$IFDEF MSWINDOWS}, poNoConsole{$ENDIF}];
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+M.SetSize(16*1024*1024);
+case prebrowse of
+   1: browselimitsize:=192*1024*1024; //0.5M files approx
+   2: browselimitsize:=64*1024*1024; //200K
+   3: browselimitsize:=32*1024*1024; //100K
+   4,5: browselimitsize:=16*1024*1024; //50K
+   end;
 P.Execute;
-M.SetSize(32*1024*1024);
 while P.Running do
    begin
-   if BytesRead+2*1024>=M.Size then M.SetSize(BytesRead + 2*1024);
-   if prebrowse=1 then
+   if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
+   if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
+   if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
+   if BytesRead+4*1024>=M.Size then M.SetSize(BytesRead + 4*1024);
+   if prebrowse>0 then
       begin
-      if M.Size>(prebrowsesize*1024*1024) then
+      if BytesRead>browselimitsize then
          begin
          P.Terminate(255);
          break;
          end;
       end;
-   i := P.Output.Read((M.Memory + BytesRead)^, 2*1024);
+   i := P.Output.Read((M.Memory + BytesRead)^, 4*1024);
    if i > 0 then Inc(BytesRead, i)
    else Sleep(100);
    if Form_peach.Visible=true then Application.ProcessMessages;
    end;
 repeat
-   M.SetSize(BytesRead + 2*1024);
-   i := P.Output.Read((M.Memory + BytesRead)^, 2*1024);
+   M.SetSize(BytesRead + 4*1024);
+   i := P.Output.Read((M.Memory + BytesRead)^, 4*1024);
    if i > 0 then Inc(BytesRead, i)
    else Sleep(100);
 until i <= 0;
@@ -24216,7 +24404,10 @@ if (upcase(extractfileext(Form_peach.EditOpenIn.Text))='.ZIP') or (upcase(extrac
    end;
 if mcu_option<>'' then cl:=cl+' '+mcu_option;
 if fun='UN7Z' then
+   begin
+   browse_special_cases;
    if browse_option='slt' then cl:=cl+' -slt';
+   end;
 cl:=cl+' -bb0 -bse0 -bsp0';
 cl:=cl+' '+pw+' '+in_param;
 //filter(s)
@@ -25835,12 +26026,20 @@ procedure set_extcontext_off;
 begin
 Form_peach.pmextcontextdisplayed.enabled:=false;
 Form_peach.pmextcontextselected.enabled:=false;
+Form_peach.pmqedisplayed.enabled:=false;
+Form_peach.pmqeselected.enabled:=false;
+Form_peach.pmtestcontextdisplayed.enabled:=false;
+Form_peach.pmtestcontextselected.enabled:=false;
 end;
 
 procedure set_extcontext_on;
 begin
 Form_peach.pmextcontextdisplayed.enabled:=true;
 Form_peach.pmextcontextselected.enabled:=true;
+Form_peach.pmqedisplayed.enabled:=true;
+Form_peach.pmqeselected.enabled:=true;
+Form_peach.pmtestcontextdisplayed.enabled:=true;
+Form_peach.pmtestcontextselected.enabled:=true;
 end;
 
 procedure setbuttonmenus;
@@ -27016,9 +27215,9 @@ end;
 procedure threadextract(vpath:ansistring);
 {$IFDEF MSWINDOWS}
 var
-   fres,totrow:integer;
+   fres,totrow,pend:integer;
    nfiles,ndirs,size:QWord;
-   cl,jobcode,outname,dragdest,relpath,prevout:ansistring;
+   cl,jobcode,outname,dragdest,relpath,prevout,fun1,fun_status1:ansistring;
    P:tprocessutf8;
    lpPoint:TPoint;
    haddress:THandle;
@@ -27081,6 +27280,17 @@ if totrow>=3 then
       exit;
       end;
    end;
+fun1:=fun;
+fun_status1:=fun_status;
+if (useextrac32=1) and (libre_directive=0) then
+   if lowercase(extractfileext(Form_peach.EditOpenIn.Text))='.cab' then
+      begin
+      fun:='UNCUSTOM';
+      fun_status:=fun;
+      Form_peach.EditNameCustom1.Text:='Extrac32';
+      Form_peach.ComboBoxArchiveCustom1.ItemIndex:=0;
+      customsyntax1:=0;
+      end;
 case fun of
    'RFJ' : fres:=compose_unpea_cl(cl,jobcode,outname);
    'UNPEA' : fres:=compose_unpea_cl(cl,jobcode,outname);
@@ -27091,6 +27301,7 @@ case fun of
    'UNBROTLI' : fres:=compose_unbrotli_cl(cl,jobcode,outname,true,'ext','single');
    'UNZSTD' : fres:=compose_unzstd_cl(cl,jobcode,outname,true,'ext','single');
    'UNACE' :  fres:=compose_unace_cl(cl,jobcode,outname,true,'ext','single');
+   'UNCUSTOM': fres:=compose_uncustom_cl(cl,jobcode,outname,true);
    end;
 if testencrypted=0 then
    begin
@@ -27110,7 +27321,23 @@ if fres=0 then
    if (dragtargetprotect=1) or (dragtargetprotect=3) then if haddress<>0 then EnableWindow(haddress,false);
    if (dragtargetprotect=2) or (dragtargetprotect=3) then if haddress<>0 then ShowWindow(haddress,6);
    P.Execute;
+   pend:=P.ExitCode;
    P.Free;
+   if (pend=0) and (fileexists(peaziptmpdir+'.pdrope')=true) then //utter check to handle errors not correctly passed between processes and from the underlying process or console mode
+      begin
+      pend:=2;
+      DeleteFile(peaziptmpdir+'.pdrope');
+      end;
+   if pend<>0 then
+      begin
+      Form_peach.Visible:=true;
+      if haddress<>0 then EnableWindow(haddress,true);
+      if haddress<>0 then ShowWindow(haddress,9);
+      fun:=fun1;
+      fun_status:=fun_status1;
+      Form_peach.EditOpenOut.Text:=prevout;
+      exit;
+      end;
    if status0=txt_list_browsing then
       begin
       relpath:=StringReplace(Form_peach.StringGridList.Cells[8,Form_peach.StringGridList.Row],':','_',[rfReplaceAll]);
@@ -27131,6 +27358,8 @@ if fres=0 then
    if haddress<>0 then EnableWindow(haddress,true);
    if haddress<>0 then ShowWindow(haddress,9);
    end;
+fun:=fun1;
+fun_status:=fun_status1;
 Form_peach.EditOpenOut.Text:=prevout;
 {$ENDIF}
 end;
@@ -30420,7 +30649,9 @@ var
 begin
 Form_peach.EditUn7zaFilter.Text:='*';
 Form_peach.EditUn7zaFilterExclude.Text:='';
+prebrowsing:=true;
 i:=list_un7z('silent');//don't add to history
+prebrowsing:=false;
 teststatus(i,statust);
 archive_content:=status1;
 infosize1:=infosize2;
@@ -30462,12 +30693,14 @@ if (extractfileext(s)='.001') then //check for same extensions before .001
    end;
 cutextension(s);
 if extractfileext(s)='.cpio' then browse_option:='l'; //cpio.gz in rpm archives
+if (prebrowsing=true) then
+   browse_option:='l';
 end;
 
 procedure open_7z;
 begin
 browse_special_cases;
-if prebrowse<2 then do_prebrowse;
+if prebrowse<5 then do_prebrowse;
 open_7z_prepare;
 if browsingmode7z=0 then list_root
 else listun7z_expandall;
@@ -30577,7 +30810,7 @@ subfun:='';
 if keeppreview=false then create_ptmpcode(ptmpcode);
 setpanel_extract(1);
 try
-   srcfilesize_multipart(Form_peach.OpenDialogArchive.Filename,tsize); //expressed in B
+   srcfilesize_multipart_v(Form_peach.OpenDialogArchive.Filename,tvol,tsize); //expressed in B
 except
 end;
 testarctype(Form_peach.OpenDialogArchive.Filename,open_inputselect,fun);
@@ -32095,6 +32328,7 @@ vopt15g:=ComboBoxPriority.ItemIndex;
 vopt15f:=ComboBoxDrag.ItemIndex;
 if CheckBoxBrowseNotVerbose.State=cbchecked then vopt15d:=1 else vopt15d:=0;
 if CheckBox7zunrar5.State=cbchecked then vopt15e:=1 else vopt15e:=0;
+if CheckBoxExtrac32.State=cbchecked then vopt15e2:=1 else vopt15e2:=0;
 vopt16:=RadioGrouppwrequest.ItemIndex;
 if CheckBoxIgnoreDisp.State=cbchecked then vopt17:=1 else vopt17:=0;
 if CheckBoxIntDir.State=cbchecked then vopt25:=1 else vopt25:=0;
@@ -32386,6 +32620,11 @@ popupmenu1.PopUp(p.x,p.y);
 popupmenu1.Alignment:=paLeft;
 end;
 
+procedure on_CheckBoxExtrac32_click;
+begin
+if Form_peach.CheckBoxExtrac32.State=cbChecked then useextrac32:=1 else useextrac32:=0;
+end;
+
 procedure on_CheckBox7zunrar5_click;
 begin
 if Form_peach.CheckBox7zunrar5.State=cbChecked then use7zunrar5:=1 else use7zunrar5:=0;
@@ -32393,7 +32632,7 @@ end;
 
 procedure TForm_peach.CheckBox7zunrar5Click(Sender: TObject);
 begin
-  on_CheckBox7zunrar5_click;
+on_CheckBox7zunrar5_click;
 end;
 
 procedure on_CheckBoxShowVolatileClick;
@@ -32505,8 +32744,9 @@ custom_work_path:=vopt12t;
 RadioGroup0.ItemIndex:=vopt13; on_RadioGroup0Change;
 RadioGroupTS.ItemIndex:=voptts; on_RadioGroupTSClick;
 RadioGroupBrowser.ItemIndex:=vopt14; on_RadioGroupBrowserChange;
-if  vopt15d=1 then CheckBoxBrowseNotVerbose.State:=cbchecked else CheckBoxBrowseNotVerbose.State:=cbunchecked; on_CheckBoxBrowseNotVerbose_click;
-if  vopt15e=1 then CheckBox7zunrar5.State:=cbchecked else CheckBox7zunrar5.State:=cbunchecked; on_CheckBox7zunrar5_click;
+if vopt15d=1 then CheckBoxBrowseNotVerbose.State:=cbchecked else CheckBoxBrowseNotVerbose.State:=cbunchecked; on_CheckBoxBrowseNotVerbose_click;
+if vopt15e=1 then CheckBox7zunrar5.State:=cbchecked else CheckBox7zunrar5.State:=cbunchecked; on_CheckBox7zunrar5_click;
+if vopt15e2=1 then CheckBoxExtrac32.State:=cbchecked else CheckBoxExtrac32.State:=cbunchecked; on_CheckBoxExtrac32_click;
 ComboBoxBrowser.ItemIndex:=vopt15c; on_CheckBoxPrebrowse_click;
 ComboBoxPriority.ItemIndex:=vopt15g; on_comboboxprioritychange;
 ComboBoxDrag.ItemIndex:=vopt15f; on_CheckBoxDrag_click;
@@ -34132,6 +34372,11 @@ case Form_peach.ComboBoxArchiveCustom1.ItemIndex of
    4: cl:=bin_name+' '+out_param+' '+param_param+' '+in_param;
    5: cl:=bin_name+' '+out_param+' '+in_param+' '+param_param;
    end;
+
+if Form_peach.EditnameCustom1.Text='Extrac32' then
+   if (useextrac32=1) and (libre_directive=0) then
+      cl:=bin_name+' '+param_param+' /E '+in_param+' /L '+out_param;
+
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 compose_uncustom_cl:=0;
 end;
@@ -34504,13 +34749,8 @@ if (archive_type='7z') or (archive_type='zip') or (archive_type='bz2') then
    begin
    if Form_peach.ComboBoxArchive8.Enabled=false then thread_option:='-mmt=off'
    else
-   {$IFDEF MSWINDOWS}
    if (s='Deflate') or (s='Deflate64') or (s='LZMA') or (s='LZMA2') or (s='BZip2') or (s='Brotli') or (s='FLZMA2') or (s='Lizard_fastLZ4') or (s='Lizard_LIZv1')
       or (s='Lizard_fastLZ4+Huffman') or (s='Lizard_LIZv1+Huffman') or (s='LZ4') or (s='LZ5') or (s='Zstd') then
-   {$ELSE}
-   if (s='Deflate') or (s='Deflate64') or (s='LZMA') or (s='LZMA2') or (s='BZip2')
-      or (s='FLZMA2') or (s='LZ4') or (s='Zstd') then
-   {$ENDIF}
       case Form_peach.ComboBoxArchive8.ItemIndex of
       0: thread_option:='-mmt=off';
       1: thread_option:='-mmt=on';
@@ -36383,6 +36623,12 @@ var
    i,jobtype:integer;
    keepopen:boolean;
 
+   procedure clean_after_launch;
+   begin
+   inputfile:='';
+   unit_gwrap.pfromnativedrag:=false;
+   end;
+
   procedure withconsole;
    var
       i:integer;
@@ -36442,7 +36688,8 @@ setsequenceerror:=true;
 if length(cl)>MAX_CL then
    begin
    pMessageErrorOK(txt_cl_long);
-   inputfile:='';
+   if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
+   clean_after_launch;
    exit;
    end;
 if intpw=1 then pforceconsole:=1;
@@ -36451,14 +36698,23 @@ if Form_peach.CheckBoxTarBefore.State=cbChecked then P.Options := [poWaitOnExit]
 if needwaitupdating=true then P.Options := [poWaitOnExit];
 P.CommandLine:=cl;
 i:=validatecl(cl);
-if i<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if i<>0 then
+   begin
+   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
+   clean_after_launch;
+   exit;
+   end;
 s:=Form_peach.EditOpenIn.Text;
 if (fun='PEA') or (fun='UNPEA') or (fun='RFJ') or (fun='RFS') then
    begin
    P.Options := [poWaitOnExit];
    P.Execute;
    result:=P.ExitStatus;
-   if result=0 then setsequenceerror:=false;
+   if result=0 then setsequenceerror:=false
+   else
+      if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
+   clean_after_launch;
    P.Free;
    end //launch Pea
 else //launch either or pealauncher or ConsoleCreate application, depending on rules
@@ -36467,10 +36723,12 @@ else //launch either or pealauncher or ConsoleCreate application, depending on r
    if (pforceconsole=1) or (fun='UPX') or ((fun='UNACE') and (subfun<>'list')) then //UPX and UNACE(extract and test) should run without pealauncher (the latter to allowing input in console), ACE listing is possible in pealauncher because doesn't require feedback even if archive is encrypted
       begin
       withconsole;
-      inputfile:='';
       result:=P.ExitStatus;
-      if result=0 then setsequenceerror:=false;
+      inputfile:='';
       unit_gwrap.pfromnativedrag:=false;
+      if result=0 then setsequenceerror:=false
+      else
+         if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
       P.Free;
       pforceconsole:=0;
       exit;
@@ -36506,9 +36764,11 @@ else //launch either or pealauncher or ConsoleCreate application, depending on r
       unit_gwrap.pprogn:='';
       unit_gwrap.pprogbar:=0;
       unit_gwrap.pproglast:=false;
+      unit_gwrap.pprogfirst:=false;
+      if Form_peach.stringgrid1.row=1 then unit_gwrap.pprogfirst:=true;
       unit_gwrap.ppsize:='0';
       case subfun of
-         'archive':
+         'archive','convert':
          begin
          if Form_peach.ComboboxArchive7.Text<>'' then
             unit_gwrap.paction:=' ('+Form_peach.ComboboxArchive7.Text+')'
@@ -36570,20 +36830,22 @@ else //launch either or pealauncher or ConsoleCreate application, depending on r
       ws_gw_width:=unit_gwrap.ws_gw_width;
       ws_gw_height:=unit_gwrap.ws_gw_height;
       Form_peach.Enabled:=true;
-      inputfile:='';
       zaout:=zaout1;
       result:=unit_gwrap.exit_code;
-      if result=0 then setsequenceerror:=false;
-      unit_gwrap.pfromnativedrag:=false;
+      if result=0 then setsequenceerror:=false
+      else
+         if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
+      clean_after_launch;
       end
    else
       begin
       withconsole;
-      inputfile:='';
       zaout:=zaout1;
       result:=P.ExitStatus;
-      if result=0 then setsequenceerror:=false;
-      unit_gwrap.pfromnativedrag:=false;
+      if result=0 then setsequenceerror:=false
+      else
+         if pdrop=true then Filecreate(peaziptmpdir+'.pdrope');
+      clean_after_launch;
       P.Free;
       end;
    end;
@@ -42067,25 +42329,37 @@ application.ProcessMessages;
 
 if Form_peach.CheckBoxConvert.State=cbChecked then
    begin
+   subfun:='convert';
    dummytitle:=Form_peach.Caption;
-   Form_peach.Shape3.Width:=(Form_peach.Width*50) div 100;
    Form_peach.enabled:=false;
+   Form_peach.visible:=false;
    needwaitupdating:=true; //execute jobs sequentially, needed by conversion, replaces previous rules
    Form_peach.CheckBoxFolder.State:=cbUnChecked; //override extract to new folder
    for i:=1 to Form_peach.StringGrid1.Rowcount-1 do
       begin
       if checkstopsequencefile=true then
          begin
+         subfun:='archive';
+         Form_peach.enabled:=true;
+         Form_peach.visible:=true;
          Form_peach.Caption:=dummytitle;
          clearstopsequencefile;
          break;
          end;
+      if Form_peach.Width<>0 then unit_gwrap.pprogbarprev:=Form_peach.Shape3.Width*Form_gwrap.Width div Form_peach.Width;
+      Form_peach.Shape3.Width:=(((Form_peach.Width*i)*100) div (Form_peach.StringGrid1.Rowcount-1))div 100;
       Form_peach.Caption:=txt_2_8_convertexisting+'... ('+inttostr(i)+'/'+inttostr(Form_peach.StringGrid1.Rowcount-1)+')';
       Form_peach.StringGrid1.Row:=i;
       Form_peach.StringGrid1.Cells[11,i]:='1';
-      application.processmessages;
+      Application.ProcessMessages;
       otest:=extractfilepath(Form_peach.Edit5.Text);
-      if control_outpath_archive(otest)<>0 then begin Form_peach.enabled:=true; exit; end;
+      if control_outpath_archive(otest)<>0 then
+         begin
+         subfun:='archive';
+         Form_peach.enabled:=true;
+         Form_peach.visible:=true;
+         exit;
+         end;
       aname:=Form_peach.StringGrid1.Cells[8,i];
       iext:=testext(aname);
       if forceconvert=0 then if ((iext>=100) and (iext<500)) then iext:=-1;//non-canonical archive types are not converted (compressed as is) if this option is not enabled
@@ -42100,6 +42374,8 @@ if Form_peach.CheckBoxConvert.State=cbChecked then
             if getoname(aname,oname)<0 then
                begin
                Form_peach.enabled:=true;
+               Form_peach.visible:=true;
+               subfun:='archive';
                pMessageWarningOK(txt_2_8_cannotconvert);
                end_convert;
                if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
@@ -42161,15 +42437,27 @@ if Form_peach.CheckBoxConvert.State=cbChecked then
          end;
       Form_peach.StringGrid1.Cells[11,i]:='0';
       end;
-   Form_peach.Enabled:=true;
+   Form_peach.enabled:=true;
+   Form_peach.visible:=true;
    if form_peach.Visible=true then Form_peach.SetFocus;
-   if convertverbose=1 then
-      if pMessageInfoYesNo(txt_2_8_convertbegin)=7 then
+   if (setsequenceerror=true) or (unit_gwrap.perrors>0) then
+      if pMessageErrorYesNo(inttostr(unit_gwrap.perrors)+' '+txt_8_1_ed+char($0D)+char($0A)+txt_2_8_convertbegin)=7 then
          begin
+         subfun:='archive';
          end_convert;
          ares:=0;
          if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
-         Form_peach.enabled:=true;
+         if stayopen=false then exit_withsave
+         else tobrowser_fromarchiver;
+         exit;
+         end;
+   if convertverbose=1 then
+      if pMessageInfoYesNo(txt_2_8_convertbegin)=7 then
+         begin
+         subfun:='archive';
+         end_convert;
+         ares:=0;
+         if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
          if stayopen=false then exit_withsave
          else tobrowser_fromarchiver;
          exit;
@@ -42183,6 +42471,7 @@ if Form_peach.CheckBoxConvert.State=cbChecked then
       end;
    Form_peach.Caption:=dummytitle;
    Form_peach.Shape3.Width:=0;
+   subfun:='archive';
    end;
 if precheckaddinarchive=false then
    begin
@@ -42272,7 +42561,7 @@ if Form_peach.CheckBoxTarBefore.State=cbUnChecked then //deletion of original fi
    begin
    checklistarchive(nsel, strsel);
    if Form_peach.cbType.Text<>STR_UPX then
-   if setsequenceerror=true then
+   if (setsequenceerror=true) or (unit_gwrap.perrors>0) then
       pMessageErrorOk(inttostr(unit_gwrap.perrors)+' '+txt_6_5_seqerr)
    else
       if (noconfdel=1) or (pMessageWarningYesNo(txt_5_4_deletefilesconfirm+char($0D)+char($0A)+char($0D)+char($0A)+
@@ -43243,13 +43532,28 @@ contextconvert_switch:=true;
 end;
 
 function extract_finalize_bytype(fn,s:ansistring; var cl,jobcode,outname,mode:ansistring; realext:boolean): integer;
+var
+   overridecabext:boolean;
 begin
 if fun='FILEBROWSER' then testarctype(fn,extract_finalize_bytype,fun);
+
+overridecabext:=false;
+if (useextrac32=1) and (libre_directive=0) then
+   if lowercase(extractfileext(fn))='.cab' then
+      begin
+      fun:='UNCUSTOM';
+      fun_status:=fun;
+      Form_peach.EditNameCustom1.Text:='Extrac32';
+      Form_peach.ComboBoxArchiveCustom1.ItemIndex:=0;
+      customsyntax1:=0;
+      overridecabext:=true;
+      end;
+
 extract_finalize_bytype:=-1;
 case fun of
 'UNCUSTOM':
    begin
-   if euns1=1 then
+   if (euns1=1) and (overridecabext=false) then
       begin
       if compose_un7z_cl(cl,jobcode,outname,realext,s,mode)<>0 then begin zaout:=zaout1; exit; end;
       end
@@ -43400,6 +43704,23 @@ case s_ext of
             FindClose(r);
          until k <> 0;
          end;
+      end;
+   end;
+'.pea':
+   begin
+   if pos('.000001',lowercase(extractfileext(s_name)))<>0 then //multipart pea .000001.pea
+      begin
+      j:=0;
+      sh_name:=s_name;
+      setlength(sh_name, length(s_name) - 7);
+      repeat
+         j := j + 1;
+         sh_ext:='.'+IntToStr(j).PadLeft(6,'0');
+         k := FindFirst(s_path + sh_name + sh_ext + s_ext, faAnyFile, r);
+         if k = 0 then
+            in_param:=in_param+stringdelim(escapefilename(s_path + sh_name + sh_ext + s_ext,desk_env))+' ';
+         FindClose(r);
+      until k <> 0;
       end;
    end;
 end;
@@ -43665,6 +43986,7 @@ if (form_peach.RadioGroupAction.ItemIndex<2) //extraction operations
       if fun='FILEBROWSER' then relpath:=''; //for entire archives use root
       end;
    if moverelpath='*' then moverelpath:='';
+   if relpath='*' then relpath:='';
 
    setaltdest(outname,altdest);
 
@@ -43675,6 +43997,7 @@ if (form_peach.RadioGroupAction.ItemIndex<2) //extraction operations
    {$ENDIF}
    try
       if (pos(STR_TMPEXT,outname)<>0) and (outname<>altdest) then cleardirsimple(outname);
+      {$IFDEF MSWINDOWS}SHChangeNotify(SHCNE_RMDIR,SHCNF_PATH,pstring(altdest),nil);{$ENDIF}
    except
    end;
 
@@ -43810,7 +44133,7 @@ if Form_peach.RadioGroupAction.ItemIndex<2 then
    if fun='FILEBROWSER' then
    begin
    checklistextract(nsel, strsel);
-   if setsequenceerror=true then
+   if (setsequenceerror=true) or (unit_gwrap.perrors>0) then
       pMessageErrorOk(inttostr(unit_gwrap.perrors)+' '+txt_6_5_seqerr)
    else
       if (noconfdel=1) or (pMessageWarningYesNo(txt_5_4_deletearchivesconfirm+char($0D)+char($0A)+char($0D)+char($0A)+
@@ -43840,7 +44163,7 @@ if Form_peach.RadioGroupAction.ItemIndex<2 then
       s_ext := extractfileext(s_in);
       s_in := extractfilename(s_in);
       if s_ext = '.001' then s_in:=s_in+'/xxx';
-      if setsequenceerror=true then
+      if (setsequenceerror=true) or (unit_gwrap.perrors>0) then
          pMessageErrorOk(inttostr(unit_gwrap.perrors)+' '+txt_6_5_seqerr)
       else
       if (noconfdel=1) or (pMessageWarningYesNo(txt_5_4_deletearchivesconfirm+char($0D)+char($0A)+char($0D)+char($0A)+
@@ -44720,7 +45043,7 @@ end;
 procedure list_toextractor(act,modeofuse:ansistring);
 var
    i,j,rc,c,k:integer;
-   okfile,checksel:boolean;
+   okfile,checksel,allselected:boolean;
    exp_files:TFoundList;
    exp_fsizes:TFoundListSizes;
    exp_ftimes:TFoundListAges;
@@ -44734,6 +45057,19 @@ Form_peach.cbdeleteinputmode.Enabled:=true;
 Form_peach.CheckBoxDeleteInput.Hint:='';
 resetminimizedlauncher;
 extselall:=false;
+if Form_peach.EditOpenIn.Caption=Form_peach.EditOpenIn1.Caption then //no display filters
+   if act='selected' then
+      begin
+      allselected:=true;
+      rc:=Form_peach.StringGridList.RowCount;
+      for i:=1 to rc-1 do
+         if Form_peach.StringGridList.Cells[12,i]='0' then
+            begin
+            allselected:=false;
+            Break;
+            end;
+      if allselected=true then act:='displayed';
+      end;
 case act of
    'multi' :
    begin
@@ -44966,7 +45302,14 @@ begin
 if browserbusy=true then exit;
 Form_peach.EditOpenIn1.Caption:=Form_peach.EditOpenIn.Caption;
 if fun='UN7Z' then
-   if status0=txt_list_browsing then listun7z_expandall
+   if status0=txt_list_browsing then
+      begin
+      if nitems>64*1024 then
+         if pMessageWarningYesNo(txt_8_1_togglearc)=6 then listun7z_expandall
+         else
+      else
+         listun7z_expandall;
+      end
    else list_root;
 if fun='FILEBROWSER' then
    begin
@@ -45508,7 +45851,13 @@ end;
 
 procedure TForm_peach.LabelClickAddress8Click(Sender: TObject);
 begin
-browsefiledir(pmbc1.caption);
+if fun<>'FILEBROWSER' then
+   begin
+   EditUn7zaFilter1.Caption:='*';
+   kp_EditUn7zaFilter1_nr;
+   end
+else
+   browsefiledir(pmbc1.caption);
 end;
 
 procedure TForm_peach.LabelClickAddress8MouseEnter(Sender: TObject);
@@ -53962,7 +54311,10 @@ end;
 procedure TForm_peach.mRefreshClick(Sender: TObject);
 begin
 {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
-do_forcerefresh;
+if (fun='UN7Z') and (EditUn7zaFilter1.Caption='*') then
+   browsefiledir(pmbc1.caption)
+else
+   do_forcerefresh;
 end;
 
 procedure removeselected;
@@ -55706,6 +56058,7 @@ end;
 
 procedure setbasevars;
 begin
+pdrop:=false;
 specialmoderar:=0;
 bctemp:=0;
 specialopen:=false;
@@ -56012,8 +56365,9 @@ case lowercase(paramstr(1)) of
    outname:='';
    unit_gwrap.pfromnativedrag:=true;
    for i:=6 to paramcount do cl:=cl+stringdelim(paramstr(i))+' ';
+   pdrop:=true;
    lerr:=launch_cl(cl,jobcode,outname);
-   if lerr<>0 then halt(-1) else halt(0);
+   halt;
    end;
    //direct archive
    '-add2pea' :
@@ -56834,6 +57188,7 @@ MenuItem91.Visible:=false;
 w7contextlang.Visible:=false;
 setwindowsopacity;
 {$IFDEF MSWINDOWS}
+CheckBoxExtrac32.Visible:=true;
 po_zerofree.Visible:=true;
 po_securedeletefree.Visible:=true;
 MenuItem56.Visible:=true;
@@ -57855,7 +58210,7 @@ end;
 
 procedure TForm_peach.mprofilebrotliClick(Sender: TObject);
 begin
-applypreset('11.txt');//different on Linux
+applypreset('11.txt');
 end;
 
 procedure TForm_peach.mprofilezipbz2Click(Sender: TObject);
@@ -57865,7 +58220,7 @@ end;
 
 procedure TForm_peach.mprofilezstdClick(Sender: TObject);
 begin
-applypreset('12.txt');//different on Linux
+applypreset('12.txt');
 end;
 
 procedure TForm_peach.mprofileextremezpaqClick(Sender: TObject);
@@ -58231,6 +58586,21 @@ procedure TForm_peach.pmtabsmClick(Sender: TObject);
 begin
 {$IFDEF MSWINDOWS}if PanelOpen.Visible=false{$ELSE}if PanelOpen.top<>0{$ENDIF} then exit;
 if ptabbar=1 then settabbar(0) else settabbar(1);
+end;
+
+procedure TForm_peach.pmtestcontextallClick(Sender: TObject);
+begin
+archive_funsel('test','all');
+end;
+
+procedure TForm_peach.pmtestcontextdisplayedClick(Sender: TObject);
+begin
+archive_funsel('test','displayed');
+end;
+
+procedure TForm_peach.pmtestcontextselectedClick(Sender: TObject);
+begin
+archive_funsel('test','selected');
 end;
 
 procedure TForm_peach.pmtextencClick(Sender: TObject);
@@ -59805,38 +60175,7 @@ if StringGridSessionHistory.RowCount>2 then
    end;
 end;
 
-procedure context_extall;
-begin
-{$IFDEF MSWINDOWS}
-if Form_peach.EditOpenIn.Text=txt_mypc then
-   begin
-   list_toextractor('none','full');
-   exit;
-   end;
-{$ENDIF}
-if Form_peach.StringGridList.RowCount<2 then exit;
-if Form_peach.StringGridList.Cells[1,1]='' then
-   begin
-   if fun='FILEBROWSER' then
-      list_toextractor('none','full')
-   else
-      list_toextractor('all','full');
-   exit;
-   end;
-if fun='FILEBROWSER' then list_toextractor('multi','full')
-else list_toextractor('all','full');
-end;
-
-procedure TForm_peach.pmextcontextallClick(Sender: TObject);
-begin
-context_extall;
-end;
-
-procedure TForm_peach.MenuItemOpen_ext_allClick(Sender: TObject);
-begin
-context_extall;
-end;
-
+{//unused: direct extraction superseded by full extraction
 procedure extractdisplayed;
 var
    cl,jobcode,outname:ansistring;
@@ -59861,19 +60200,9 @@ if (fun='UNARC') then
    if compose_unarc_cl(cl,jobcode,outname,true,'neutral','selected')=0 then launch_cl(cl,jobcode,outname);
 if (fun='UN7Z') then
    if compose_un7z_cl(cl,jobcode,outname,true,'neutral','selected')=0 then launch_cl(cl,jobcode,outname);
-end;
+end;}
 
-procedure TForm_peach.pmextcontextdisplayedClick(Sender: TObject);
-begin
-extractdisplayed;
-end;
-
-procedure TForm_peach.pmextcontextselectedClick(Sender: TObject);
-begin
-extractselected;
-end;
-
-procedure TForm_peach.MenuItemOpen_ext_displayedClick(Sender: TObject);
+procedure context_extall;
 begin
 {$IFDEF MSWINDOWS}
 if Form_peach.EditOpenIn.Text=txt_mypc then
@@ -59882,8 +60211,30 @@ if Form_peach.EditOpenIn.Text=txt_mypc then
    exit;
    end;
 {$ENDIF}
-if StringGridList.RowCount<2 then exit;
-if StringGridList.Cells[1,1]='' then
+if Form_peach.StringGridList.RowCount<2 then exit;
+if Form_peach.StringGridList.Cells[1,1]='' then
+   begin
+   if fun='FILEBROWSER' then
+      list_toextractor('none','full')
+   else
+      list_toextractor('all','full');
+   exit;
+   end;
+if fun='FILEBROWSER' then list_toextractor('multi','full')
+else list_toextractor('all','full');
+end;
+
+procedure context_extdisplayed;
+begin
+{$IFDEF MSWINDOWS}
+if Form_peach.EditOpenIn.Text=txt_mypc then
+   begin
+   list_toextractor('none','full');
+   exit;
+   end;
+{$ENDIF}
+if Form_peach.StringGridList.RowCount<2 then exit;
+if Form_peach.StringGridList.Cells[1,1]='' then
    begin
    if fun='FILEBROWSER' then
       list_toextractor('none','full');
@@ -59893,7 +60244,7 @@ if fun='FILEBROWSER' then list_toextractor('multi','full')
 else list_toextractor('displayed','full');
 end;
 
-procedure TForm_peach.MenuItemOpen_ext_selectedClick(Sender: TObject);
+procedure context_extselected;
 begin
 {$IFDEF MSWINDOWS}
 if Form_peach.EditOpenIn.Text=txt_mypc then
@@ -59902,8 +60253,8 @@ if Form_peach.EditOpenIn.Text=txt_mypc then
    exit;
    end;
 {$ENDIF}
-if StringGridList.RowCount<2 then exit;
-if StringGridList.Cells[1,1]='' then
+if Form_peach.StringGridList.RowCount<2 then exit;
+if Form_peach.StringGridList.Cells[1,1]='' then
    begin
    if fun='FILEBROWSER' then
       list_toextractor('none','full');
@@ -59911,6 +60262,51 @@ if StringGridList.Cells[1,1]='' then
    end;
 if fun='FILEBROWSER' then list_toextractor('multi','full')
 else list_toextractor('selected','full');
+end;
+
+procedure TForm_peach.pmextcontextallClick(Sender: TObject);
+begin
+context_extall;
+end;
+
+procedure TForm_peach.MenuItemOpen_ext_allClick(Sender: TObject);
+begin
+context_extall;
+end;
+
+procedure TForm_peach.pmqeallClick(Sender: TObject);
+begin
+context_extall;
+end;
+
+procedure TForm_peach.pmqedisplayedClick(Sender: TObject);
+begin
+context_extdisplayed;
+end;
+
+procedure TForm_peach.pmqeselectedClick(Sender: TObject);
+begin
+context_extselected;
+end;
+
+procedure TForm_peach.pmextcontextdisplayedClick(Sender: TObject);
+begin
+context_extdisplayed;
+end;
+
+procedure TForm_peach.pmextcontextselectedClick(Sender: TObject);
+begin
+context_extselected;
+end;
+
+procedure TForm_peach.MenuItemOpen_ext_displayedClick(Sender: TObject);
+begin
+context_extdisplayed;
+end;
+
+procedure TForm_peach.MenuItemOpen_ext_selectedClick(Sender: TObject);
+begin
+context_extselected;
 end;
 
 procedure extractdisplayedto;
@@ -60039,7 +60435,7 @@ end;
 
 procedure TForm_peach.MenuItemOpen_test_selectedClick(Sender: TObject);
 begin
-archive_funsel('test','selected')
+archive_funsel('test','selected');
 end;
 
 procedure TForm_peach.MenuItemOpen_upClick(Sender: TObject);
@@ -60995,6 +61391,11 @@ end;
 procedure TForm_peach.CheckBoxExtAndClick(Sender: TObject);
 begin
 on_CheckBoxExtAnd_click;
+end;
+
+procedure TForm_peach.CheckBoxExtrac32Click(Sender: TObject);
+begin
+on_CheckBoxExtrac32_click;
 end;
 
 procedure TForm_peach.CheckBoxFolder1Click(Sender: TObject);
@@ -64953,7 +65354,7 @@ else
    disdrag:=true;
    dodropvfiles(Form_peach.ListView1, vpath, 2);
    MyThreaddrop.Terminate;
-   //SHChangeNotify(SHCNE_RMDIR,SHCNF_PATH,pstring(vpath2),nil);
+   SHChangeNotify(SHCNE_RMDIR,SHCNF_PATH,pstring(vpath2),nil);
    vpatha:=vpath;
    vpathb:=vpath2;
    if imdel=true then cleandragtmp;
