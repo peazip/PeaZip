@@ -7,31 +7,31 @@ Windows Registry Editor Version 5.00
 @="Jedes Objekt zu separatem Archiv hinzufügen"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7z]
-@="Zu Archiv hinzufügen, .7Z"
+@="Zu Archiv hinzufügen, .7z"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest]
-@="Zu Archiv hinzufügen, .7Z schnellste"
+@="Zu Archiv hinzufügen, .7z schnell"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal]
-@="Zu Archiv hinzufügen, .7Z normal"
+@="Zu Archiv hinzufügen, .7z normal"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zultra]
-@="Zu Archiv hinzufügen, .7Z ultra"
+@="Zu Archiv hinzufügen, .7z ultra"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zencrypt]
-@="Encrypt (7Z)"
+@="Verschlüsseln (7z)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezip]
-@="Zu Archiv hinzufügen, .ZIP"
+@="Zu Archiv hinzufügen, .zip"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipfastest]
-@="Zu Archiv hinzufügen, .ZIP schnellste"
+@="Zu Archiv hinzufügen, .zip schnell"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipnormal]
-@="Zu Archiv hinzufügen, .ZIP normal"
+@="Zu Archiv hinzufügen, .zip normal"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipultra]
-@="Zu Archiv hinzufügen, .ZIP ultra"
+@="Zu Archiv hinzufügen, .zip ultra"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipmail]
 @="Zip und per E-Mail senden"
@@ -40,7 +40,7 @@ Windows Registry Editor Version 5.00
 @="Zu selbstentpackendem Archiv hinzufügen"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2browseasarchive]
-@="Als Archive öffnen"
+@="Als Archiv öffnen"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2browsepath]
 @="Pfad durchsuchen mit PeaZip"
@@ -52,7 +52,7 @@ Windows Registry Editor Version 5.00
 @="Konvertieren"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2wipe]
-@="Sicher Löschen"
+@="Sicher löschen"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2here]
 @="Entpacke hier"
@@ -61,7 +61,7 @@ Windows Registry Editor Version 5.00
 @="Entpacke hier (smart)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder]
-@="Entpacke hier (in neues Verzeichnis)"
+@="Entpacke hier (in neuem Verzeichnis)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2main]
 @="Entpacke..."
