@@ -1,22 +1,32 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-8.0
+8.1
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
-Last rev.: 20210419
+Last rev.: 20210611
 
 === PeaZip text group ===
 
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: 另一种网格色彩
+txt_8_0_forcebrowse: 浏览非规范的归档文件（容器、磁盘镜像、安装程序等）
+txt_8_0_commonalgo: 通用算法
+txt_8_0_forceconvert: 转换非规范的归档文件类型
+txt_8_0_defaultactionhint: 在系统里双击关联到 PeaZip 的文件时的默认动作
+txt_8_0_defaultaction: 启动时的默认动作
+txt_8_0_enableextand: 启用“解压并以…打开”子菜单
+txt_8_0_forcetyping: 强制交互式输入密码
+txt_8_0_setpwopt: 设置密码或密钥文件选项
+txt_8_0_forcetypinghelp: 将在控制台运行后端程序，此时将不能浏览带加密文件名的归档文件。允许创建交互式询问用户密码而非无人值守的脚本。
 txt_7_9_spacing: 间隔
 txt_7_9_zooming: 缩放
 txt_7_8_changelocalization: 更改 PeaZip 的语言
@@ -811,7 +821,7 @@ txt_ipo: 输入、参数、输出
 txt_input: 输入：
 txt_integrity: 完整性检查
 txt_chunk_size: 自定义大小无效，请修改为数值
-txt_invertsel: 反computer‘s root选
+txt_invertsel: 反选
 txt_type_exe: 是个 Windows 可执行文件，要运行它吗？（选“否”将尝试以归档文件打开）提示：有些可执行文件在完整提取后才能正常运行
 txt_return_to_archive: 正在被打开；仍要浏览它吗?
 txt_not_accessible: 已不能访问

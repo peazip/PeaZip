@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 English
-8.0
+8.1
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20210523
 
 === PeaZip text group ===
 
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
 txt_8_0_altcol: Alternate grid color
 txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
 txt_8_0_commonalgo: Common algorithms
@@ -414,8 +424,8 @@ txt_3_1_src: Searches
 txt_3_1_systmp: User's temp
 txt_3_1_languagetools: Translate
 txt_3_1_workingdir: Working directory
-txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, or its table of content could be encrypted. Would you like to try a password?
-txt_3_0_readablepw: Archive seems password protected
+txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, volumes may be missing, or its table of content could be encrypted. Would you like to try a password?
+txt_3_0_readablepw: Archive may be password protected
 txt_3_0_configure: File associations and system menu integration
 txt_3_0_resettmp: Reset peazip-tmp
 txt_2_9_address: Address bar
@@ -642,7 +652,7 @@ txt_blowfish: Blowfish448 (64 bit blocks)
 txt_bookmarks: Bookmarks
 txt_browse: Browse
 txt_browser: Browser
-txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search (F3) or exiting Flat view mode (F6); extract/list/test operations are not affected by this issue.
+txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search (F3) or avoiding Flat view mode (F6). You can directly extract, list or test the archive.
 txt_list_browsing: Browsing
 txt_archive_root: Browsing: archive's root
 txt_type_description_bzip2: BZip2: quite powerful compression, average speed
@@ -1113,7 +1123,7 @@ txt_3_6_selectdir: Select directory
 txt_3_5_close: Close
 txt_3_0_details: For more details, "Report" contains the task's log, and "Console" contains the task definition as command line.
 txt_3_0_hints: Hints about the error
-txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted)
+txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted, volumes in multipart archive may be missing)
 txt_3_0_ext: The archive may require a different password for the current operation
 txt_2_8_oop: Open output path when task completes
 txt_2_7_validatefn: Operation stopped, invalid file name detected:
@@ -1202,7 +1212,7 @@ txt_time: Time:
 
 EXTRACT ARCHIVE(S)
 From the system 
-- rightclick on the archive(s) and in system’s context menu click "Extract here" or "Extract here (in new folder)" to extract with no further interaction
+- rightclick on the archive(s) and in system’s context menu click "Extract here" or "Extract here (smart new folder)" to extract with no further interaction. Smart new folder option takes care to create a new top level folder only if necessary, when the archives root contains more than one file or folder.
 - otherwise use "Extract..." menu entry for having more options: output path, password, extract files to a new directory, chose to skip, rename or overwrite existing files etc.
 
 Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
@@ -1263,7 +1273,7 @@ CONFIGURE THE APPLICATION
 Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
 Options > Settings allows to edit applications’ settings
 Options > Theme allows to change application’s icons and appearance
-Options > System integration starts a procedure to configure file associations, context menu and SendTo menu entries (on Windows)
+Options > System integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, navigation bar, etc
 
 F1 	help

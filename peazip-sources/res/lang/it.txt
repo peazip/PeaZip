@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.0
+8.1
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20210524
 
 === PeaZip text group ===
 
+txt_8_1_preparse: Analizza gli archivi all'apertura
+txt_8_1_bo: Ottimizzazione del browser
+txt_8_1_bop: E' possibile mostrare più files regolando l'ottimizzazione del browser in Opzioni > Impostazioni, tab Generale.
+txt_8_1_nopreparse: Non analizzare gli archivi all'apertura
+txt_8_1_ed: errori rilevati.
+txt_8_1_togglearc: Elencare il contenuto di un archivio in modo flat può richiedere molto tempo, continuare?
+txt_8_1_preparsehint: Ottimizza le prestazioni del browser regolando l'analisi all'aperture per archivi molto grandi. L'analisi all'apertura serve ad avvisare in anticipo di possibili problemi con il contenuto dell'archivio.
+txt_8_1_slow: Lento
+txt_8_1_vslow: Molto lento
+txt_8_1_volumes: volumi
 txt_8_0_altcol: Colori alternati nelle griglie
 txt_8_0_forcebrowse: Esplora archivi di tipi non canonici (containers, immagini disco, installers,...)
 txt_8_0_commonalgo: Algoritmi comuni
@@ -414,7 +424,7 @@ txt_3_1_src: Ricerche
 txt_3_1_systmp: Temp dell'utente
 txt_3_1_languagetools: Traduttore
 txt_3_1_workingdir: Directory di lavoro
-txt_3_0_nonreadableorpw: Archivio non leggibile. L'archivio potrebbe essere non valido, o con elenco dei contenuti cifrato. Provare una password?
+txt_3_0_nonreadableorpw: Archivio non leggibile. L'archivio potrebbe essere non valido, avere partim mancanti, o elenco dei contenuti cifrato. Provare una password?
 txt_3_0_readablepw: Archivio protetto da password
 txt_3_0_configure: Configura associazione file e integrazione con il sistema
 txt_3_0_resettmp: Reset peazip-tmp
@@ -1113,7 +1123,7 @@ txt_3_6_selectdir: Seleziona cartella
 txt_3_5_close: Chiudi
 txt_3_0_details: Per maggiori dettagli, "Rapporto" contiene il log del lavoro e "Console" la definizione del lavoro come linea di comando
 txt_3_0_hints: Suggerimenti sull'errore
-txt_3_0_arc: Alcuni file di input non sono leggibili (bloccati, non accessibili o corrotti)
+txt_3_0_arc: Alcuni file di input non sono leggibili (bloccati, non accessibili o corrotti, con parti mancanti)
 txt_3_0_ext: L'archivio può richiedere una password diversa per il lavoro corrente
 txt_2_8_oop: Aprire il percorso di output al termine dell'operazione
 txt_2_7_validatefn: Operazione interrotta, nome file non valido:

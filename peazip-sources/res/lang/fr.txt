@@ -1,22 +1,32 @@
 ﻿=== PeaZip language file ===
 Français
-8.0
+8.1
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 19.04.2021
+Date du: 10.06.2021
 
 === PeaZip text group ===
 
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: Autre couleur de grille
+txt_8_0_forcebrowse: Parcourir les types d’archives non canoniques (conteneurs, images disque, programmes d’installation,...)
+txt_8_0_commonalgo: Algorithmes courants
+txt_8_0_forceconvert: Convertir des types d’archives non canoniques
+txt_8_0_defaultactionhint: Action par défaut double-cliquant sur un fichier associé à PeaZip à partir du système
+txt_8_0_defaultaction: Action par défaut au démarrage
+txt_8_0_enableextand: Activer le sous-menu "Extraire et ouvrir avec"
+txt_8_0_forcetyping: Forcer la saisie interactive des mots de passe
+txt_8_0_setpwopt: Définir les options du mot de passe/fichier de clé
+txt_8_0_forcetypinghelp: Exécutera les fichiers binaires principaux dans la console, ne peut pas parcourir les archives avec des noms de fichiers chiffrés. Permet de créer des scripts qui ne s’exécuteront pas sans assistance, mais demanderont plutôt à l’utilisateur de manière interactive un mot de passe.
 txt_7_9_spacing: Espacement
 txt_7_9_zooming: Zoomer
 txt_7_8_changelocalization: Changer la langue de PeaZip

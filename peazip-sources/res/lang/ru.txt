@@ -1,22 +1,32 @@
 ﻿=== PeaZip language file ===
 Russian - русский
-8.0
+8.1
 Translated by: Rytikov Slava, Dmitry Tsvetkov, xoxmodav
 Last rev. by: 
 Last rev.: 20121227
 
 === PeaZip text group ===
 
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: Альтернативный цвет сетки
+txt_8_0_forcebrowse: Просмотр файлов, непосредственно не являющихся архивами (контейнеры, образы дисков, инсталляторы,...)
+txt_8_0_commonalgo: Общие алгоритмы
+txt_8_0_forceconvert: Преобразование файлов, непосредственно не являющихся архивами
+txt_8_0_defaultactionhint: Действие по умолчанию для ассоциированного с PeaZip файла, открытого двойным кликом
+txt_8_0_defaultaction: Действие по двойному клику
+txt_8_0_enableextand: Разрешить подменю "Извлечь и открыть с помощью"
+txt_8_0_forcetyping: Принудительный ввод паролей в интерактивном режиме
+txt_8_0_setpwopt: Параметры пароля / файла ключей
+txt_8_0_forcetypinghelp: Будет выполняться в консоли, без возможности просмотра архивов с зашифрованными именами файлов. Можно создавать скрипты, которые не выполняются автоматически, а запрашивают пароль у пользователя.
 txt_7_9_spacing: Межстрочный интервал
 txt_7_9_zooming: Масштаб
 txt_7_8_changelocalization: Сменить язык PeaZip
@@ -682,7 +692,7 @@ txt_create_theme: Создать тему из данных настроек:
 txt_rr: Добавить информацию для восстановления
 txt_create_sfx: Создать самораспаковывающийся архив
 txt_cr_current: Текущий путь или фильтр степени сжатия
-txt_custom: Выборочно
+txt_custom: Выбрать
 txt_type_description_custom: Выборочно (для опытных): ввести имя исполняемого файла и параметры
 txt_customapp: выборочное приложение
 txt_custom_parameters: Выборочные параметры
