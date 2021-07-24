@@ -1,0 +1,1305 @@
+﻿=== PeaZip language file ===
+Bahasa Indonesia
+8.1
+Diterjemahkan oleh: Muhammad Mauli Mubassari
+Terakhir direvisi oleh: Muhammad Mauli Mubassari
+Terakhir direvisi: 16 Januari 2020
+
+=== PeaZip text group ===
+
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Change PeaZip language
+txt_7_8_custext: Custom extension
+txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: High
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Interactive extraction
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [requires restarting PeaZip]
+txt_7_8_tpriority: Tasks priority
+txt_7_8_update: Update
+txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
+txt_7_7_nonetemp: None, User's temp if necessary
+txt_7_7_outtemp: Output, preview in User's temp
+txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
+txt_7_7_sys7z: Use system 7z in Linux
+txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_6_color: Color
+txt_7_6_custenc: Custom code page
+txt_7_6_dark: Dark
+txt_7_6_tno: Do not sync archive tree
+txt_7_6_forcelocalenc: Force local
+txt_7_6_forceutf8enc: Force UTF-8
+txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
+txt_7_6_defaultenc: Local, UTF-8 for extra symbols
+txt_7_6_dim: Low light
+txt_7_6_setcurdef: Set current path as default output path
+txt_7_6_setdef: Set default output path
+txt_7_6_tadvanced: Sync archive tree, keep visited nodes
+txt_7_6_tsimple: Sync archive tree, simple
+txt_7_6_tacolor: Text accent
+txt_7_5_always: Always
+txt_7_5_ask: Ask
+txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
+txt_7_5_cutlen: Cut name at specified length
+txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
+txt_7_5_dragnone: Do not lock target
+txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
+txt_7_5_ee: Extract everything for special file types
+txt_7_5_draghide: Hide drop target
+txt_7_5_draglh: Lock and hide target
+txt_7_5_draglock: Lock drop target
+txt_7_5_never: Never
+txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_4_comment: Comment
+txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
+txt_7_4_presetrar: High compression, RAR
+txt_7_4_tkeep: Keep original archive timestamp
+txt_7_4_lock: Lock archive
+txt_7_4_locked: locked
+txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
+txt_7_4_recover: Repair archive
+txt_7_4_tcurr: Set archive timestamp from current system time
+txt_7_4_setarc: Set archiving options
+txt_7_4_setext: Set extraction options
+txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
+txt_7_3_archiveerrors: [archive may contain errors]
+txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_3_clickextall: Click "Extract all" to enable
+txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
+txt_7_3_profile7zfastest: Fast compression, 7Z fastest
+txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
+txt_7_3_maxzstd: Maximize Zstandard compression using more memory
+txt_7_3_profile7zfast: Medium compression, 7Z fast
+txt_7_3_stl: Set archive timestamp from most recent file
+txt_7_2_altcomp: Alternative compression, ARC
+txt_7_2_clearnoupdate: Clear edited files
+txt_7_2_autoclosepeazip: Close PeaZip when task completes
+txt_7_2_zpaqall: Extract all revisions
+txt_7_2_extcomp: Extreme compression, ZPAQ
+txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
+txt_7_2_fbrotlicomp: Fastest compression, Brotli
+txt_7_2_fzstandardcomp: Fastest compression, Zstandard
+txt_7_2_loadcompsettings: Load compression settings
+txt_7_2_savecompsettings: Save compression settings
+txt_7_2_source: Source
+txt_7_2_updateclear: Update edited files in archive, and clear edited files
+txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
+txt_7_1_new: Extract all here, in new folder
+txt_7_1_smart: Extract all here, smart
+txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
+txt_7_1_renfilesonly: Rename only files
+txt_7_1_typetosearch: Type to search in current path
+txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
+txt_7_0_af: Analisa konten folder
+txt_7_0_autoopentar: Buka otomatis arsip tar tunggal di dalam file tar.*
+txt_7_0_exttmppath: Konten akan diekstrak di luar alur kerja sementara, di:
+txt_6_9_autou: Perbarui otomatis file yang diubah di arsip
+txt_6_9_forceu: Paksa perbarui file yang diubah di arsip
+txt_6_9_opuns: Operasi tidak didukung untuk jenis arsip terkini
+txt_6_9_overarch: Timpa file dengn nama yang sama yang ada di dalam arsip?
+txt_6_9_uconf: File yang dipratinjau telah diubah. Perbarui arsip terkini?
+txt_6_8_ndrop: Gunakan Klik dan Geser Bawaan pada Windows
+txt_6_7_nop: (pratinjau)
+txt_6_6_pdupfound: Kemungkinan terganda ditemukan (mencoba perkiraan cepat)
+txt_6_6_rsh: Atur ulang riwayat pencarian
+txt_6_6_pdupfind: Sarankan kemungkinan terganda
+txt_6_6_forcemodify: Coba untuk mengubah tipe file yang tidak didukung secara tegas
+txt_6_5_mandatory: (wajib)
+txt_6_5_abort: Gagal
+txt_6_5_askp: Tanyakan untuk mengatur sandi saat memulai
+txt_6_5_chp: Ubah kata sandi
+txt_6_5_def: Definisi
+txt_6_5_nop: Jangan tanyakan untuk mengatur sandi saat memulai
+txt_6_5_error: Kesalahan
+txt_6_5_seqerr: Kesalahan terdeteksi, file asli tidak akan dihapus
+txt_6_5_sni: Termasuk informasi keamanan NT
+txt_6_5_sns: Termasuk aliran data NTFS Alternatif
+txt_6_5_privacy: Privasi
+txt_6_5_showvolatile: Tampilkan opsi mana saja yang mudah berubah / tergantung konteks
+txt_6_5_force: Coba untuk membuka arsip yang mengandung kesalahan
+txt_6_5_warning: Peringatan
+txt_6_5_yes: Ya
+txt_6_5_yesall: Ya untuk semua
+txt_6_5_np: Sekarang kamu dapat mengubah kata sandi dari arsip yang telah dikonversi, atau kosongkan saja untuk melewati enkripsi
+txt_6_4_absolute: Alur sepenuhnya
+txt_6_4_appdirn: Tambahkan nama direktori
+txt_6_4_closeallother: Tutup semua tab lainnya
+txt_6_4_closeright: Tutup tab yang di sebelah kanan
+txt_6_4_collapse: Rampingkan tab
+txt_6_4_expand: Perluas tab
+txt_6_4_full: Alur Penuh
+txt_6_4_new: Baru
+txt_6_4_openintab: Buka di tab baru
+txt_6_4_paths: Alur
+txt_6_4_prepdirn: Dahulukan nama direktori
+txt_6_4_relative: Alur yang berhubungan
+txt_6_4_tabbar: Bar tab
+txt_6_3_autoadjust: Sesuaikan kolom otomatis
+txt_6_3_cinfo: Informasi dan komentar
+txt_6_3_syn: Sinkronisasikan arsip dengan cakram
+txt_6_3_uar: Hanya perbarui file yang tersedia di arsip
+txt_6_2_encext: Tambahkan akhiran ".enc" untuk arsip terenkripsi
+txt_6_2_archive: Jenis file arsip
+txt_6_2_container: Jenis file kontainer
+txt_6_1_ec: Perluas / rampingkan pohon arsip
+txt_6_0_msq: Urutkan berdasarkan jenis file terkonversi solid
+txt_5_9_lff: Analisa file dan folder
+txt_5_9_pff: Analisa, tampilkan tajuk file/EOF
+txt_5_9_start: Mulai dari
+txt_5_8_l0: Izinkan semua komponen/format terdukung
+txt_5_8_l1: Izinkan hanya perangkat lunak gratis
+txt_5_8_l2: Izinkan hanya format arsip terbuka
+txt_5_8_ascii: ASCII safe, skrip aman pada environment lawas
+txt_5_8_cp: Code Page safe, skrip mungkin akan menimbulkan masalah pada environment lawas dengan Code Pages yang berbeda
+txt_5_8_fs: Pemenuhan Perangkat Lunak Gratis
+txt_5_8_utf: Skrip membutuhkan UTF-8 / Unicode environment penuh
+txt_5_8_fsr: Format ini tidak didukung sejak pembatasan Pemenuhan Perangkat Lunak Gratis (Pengaturan > Lanjutan)
+txt_5_7_pinstalled: TERPASANG
+txt_5_7_pmissing: HILANG
+txt_5_7_plugin: Plugin menghilang, dapat diinstall melalui Bantuan > Periksa plugin dan addon
+txt_5_6_basic: Dasar
+txt_5_6_exarc: Ekstrak arsip
+txt_5_6_tab: Buka di tab baru
+txt_5_6_rc: Klik kanan untuk pengaturan
+txt_5_6_layouts: Tata letak tersimpan
+txt_5_6_upexisting: Perbarui arsip yang tersedia
+txt_5_6_verbose: Berlebihan
+txt_5_5_case: (hal-hal yang sensitif)
+txt_5_5_add: Tambahkan string pada posisi tertentu
+txt_5_5_addsel: Tambah ke posisi saat ini
+txt_5_5_ext: Ubah ekstensi file
+txt_5_5_plugin: Periksa plugin dan addon
+txt_5_5_copypath: Salin alur
+txt_5_5_delete: Hapus karakter pada posisi tertentu
+txt_5_5_halt: Hentikan sistem saat pekerjaan selesai
+txt_5_5_positionw: Petunjuk: 1 tambahkan sebelum karakter pertama, 2 kedua, dst... "z" untuk akhiran dari nama file
+txt_5_5_positionwd: Petunjuk: 1 hapus termasuk dari karakter pertama, 2 kedua, ... "z" untuk akhiran dari nama file
+txt_5_5_replaceneww: Petunjuk: sediakan string kosong baru untuk memudahkan mengganti string yang lama
+txt_5_5_lower: Huruf kecil
+txt_5_5_replaceoldw: Ubah semua kejadian dari string ini atau karakter pada nama file
+txt_5_5_newext: Ekstensi baru
+txt_5_5_new: String baru
+txt_5_5_n: Jumlah karakter untuk dihapus
+txt_5_5_old: String lama
+txt_5_5_position: Posisi (jumlah "z" hingga akhir)
+txt_5_5_intdir: Folder baru pintar
+txt_5_5_replacestr: Ganti/buang string
+txt_5_5_datesameday: Hari yang sama dengan objek terpilih
+txt_5_5_datesamehour: Jam yang sama dengan objek terpilih
+txt_5_5_datesamemonth: Bulan yang sama dengan objek terpilih
+txt_5_5_datesameweek: Minggu yang sama dengan objek terpilih
+txt_5_5_datesameyear: Tahun yang sama dengan onjek terpilih
+txt_5_5_scan: Pindai
+txt_5_5_select: Pilih
+txt_5_5_similar: Serupa dengan objek terpilih
+txt_5_5_starting: Mulai dengan karakter yang sama
+txt_5_5_string: String untuk menambahkan
+txt_5_5_subtractsel: Kurangi dari seleksi saat ini
+txt_5_5_datehour: Jam saat ini
+txt_5_5_datemonth: Bulan ini
+txt_5_5_dateweek: Minggu ini
+txt_5_5_dateyear: Tahun ini
+txt_5_5_dateday: Hari ini
+txt_5_5_upper: Huruf besar
+txt_5_5_extw: Peringatan: mengubah ekstensi file dapat berakibat pada file tidak dapat digunakan
+txt_5_4_da: Tanggal ditambahkan
+txt_5_4_deletearchives: Hapus arsip setelah diekstrak
+txt_5_4_deletefiles: Hapus file setelah diarsipkan
+txt_5_4_deleteoriginal: Prosedur penghapusan, sebagaimana yang diatur pada layar utama, akan ditambahkan ke skrip.
+txt_5_4_lv: Terakhir dikunjungi
+txt_5_4_deletearchivesconfirm: Konfirmasi penghapusan arsip asli?
+txt_5_4_deletefilesconfirm: Konfirmasi penghapusan file asli?
+txt_5_4_used: Digunakan
+txt_5_3_profilebest: Kompresi terbaik, tingkatan Ultra format 7Z
+txt_5_3_profileadvanced: Kompresi lanjutan, format 7Z
+txt_5_3_profilenormal: Kompresi ZIP normal, mendukung kebanyakan pengekstrak
+txt_5_3_profileveryfast: Kompresi ZIP sangat cepat, direkomendasikan untuk file multimedia berukuran besar
+txt_5_3_profilepassword: Lindungi dengan kata sandi, format 7Z
+txt_5_3_profile10mb: Jaga keluaran dibawah 25 MB, untuk pembatasan untuk lampiran email
+txt_5_3_profilesfx: Mengekstrak otomatis, penerima tidak membutuhkan perangkat lunak untuk mengekstrak
+txt_5_3_cml: Bahasa menu sistem konteks
+txt_5_3_cmlmessage: Klik ganda pada bahasa konteks menu yang diinginkan dan konfirmasi penggabungan registry. Pengaturan ini butuh diatur ulang pada saat aplikasi terpasang/diperbarui atau setelah System integration wizard digunakan.
+txt_5_3_exc: Kecualikan filter yang berlaku pada filter termasuk
+txt_5_3_ia: Masukkan juga
+txt_5_3_io: Masukkan hanya
+txt_5_3_rec: Sub-direktori berulang
+txt_5_3_resetsi: Konfigurasi ulang integrasi sistem (menu konteks, SendTo, asosiasi file)?
+txt_5_2_oadd: Arsipkan ke alur asli
+txt_5_2_zerodelete: Apakah kamu ingin menghapus dan menimpa dengan seluruh 0 file terpilih? Operasi ini tidak dapat dibatalkan dan file tidak dapat dikembalikan
+txt_5_2_zfree: Apakah kamu ingin menimpa dengan semua 0 ruang bebas pada drive ini?
+txt_5_2_sdfree: Apakah kamu ingin menghapus dengan aman ruang bebas pada drive ini?
+txt_5_2_oext: Ekstrak ke alur asli
+txt_5_2_securedeletefree: Hapus ruang bebas dengan aman
+txt_5_2_free: Operasi ini memerlukan waktu beberapa menit dan, jika sering kali dilakukan, ini dengan cepat dapat menggunakan disk berbasis flash
+txt_5_2_zerofiles: Kosong penghapusan
+txt_5_2_zerofree: Kosong penghapusan ruang bebas
+txt_5_1_schedadd: Tambahkan jadwal
+txt_5_1_schederr: Tidak dapat membuat jadwal
+txt_5_1_daily: Harian
+txt_5_1_day: Hari
+txt_5_1_days: Hari
+txt_5_1_enddate: Tanggal akhir
+txt_5_1_every: Setiap
+txt_5_1_w6: Jum'at
+txt_5_1_hourly: Per-jam
+txt_5_1_hours: Jam
+txt_5_1_last: Terakhir
+txt_5_1_schedmanage: Tugas terjadwal, mengelola tugas tersimpan pada percabangan PeaZip
+txt_5_1_scriptmanage: Kelola skrip terjadwal yang tersimpan
+txt_5_1_w2: Senin
+txt_5_1_monthly: Bulanan
+txt_5_1_months: Bulan
+txt_5_1_onlogin: Saat masuk
+txt_5_1_onstart: Saat memulai
+txt_5_1_once: Sekali
+txt_5_1_w7: Sabtu
+txt_5_1_schedule: Penjadwalan
+txt_5_1_schedexplain: Buat sebuah skrip teks biasa dari GUI task definition dan jadwalkan. Tugas skrip terjadwal akan tersimpan pada folder "Scheduled scripts". Untung menghapus atau mengubah tugas terjadwal kamu dapat menggunakan Task Scheduler sistem, semua tugas terjadwal yang dibuat oleh PeaZip akat terkumpul pada percabangan "PeaZip" pada pustaka pertugasan.
+txt_5_1_schedok: Jadwal berhasil dibuat
+txt_5_1_schedscripts: Skrip terjadwal tersimpan
+txt_5_1_startdate: Tanggal mulai
+txt_5_1_starttime: Waktu mulai
+txt_5_1_w1: Minggu
+txt_5_1_schedname: Nama tugas, identifikasi skrip terjadwal yang tersimpan dan tugas penjadwalan sistem
+txt_5_1_ts: Tugas Terjadwal
+txt_5_1_w5: Kamis
+txt_5_1_w3: Selasa
+txt_5_1_w4: Rabu
+txt_5_1_weekly: Mingguan
+txt_5_1_weeks: Minggu
+txt_5_0_bc: Breadcrumb
+txt_5_0_resetpm: Apakah kamu yakin akan mengkonfirmasi untuk mengatur ulang Pengelola Kata Sandi? Semua kata sandi pada Pengelola Kata Sandi PeaZip akan dihapus jika dikonfirmasi.
+txt_5_0_enum: Menghitung konten folder
+txt_5_0_music: Musik
+txt_5_0_ps: Buka PowerShell di sini
+txt_5_0_perf: Performa
+txt_5_0_pictures: Gambar
+txt_5_0_removeall: Buang semua
+txt_5_0_resetbookmarks: Atur ulang penanda ke bawaan? (Penanda dapat di kostumisasi dengan Penanda > Kelola)
+txt_5_0_sh: Riwayat sesi
+txt_5_0_skip: Lewati menghitungan konten direktori pada tata letak
+txt_5_0_videos: Video
+txt_4_9_frame: Bingkai
+txt_4_9_listth: Daftar dan thumbnail
+txt_4_9_shadow: Bayangan
+txt_4_9_style: Gaya
+txt_4_8_attach25: Lampiran 25 MB
+txt_4_8_crop: Potong
+txt_4_8_detailsno: Rincian
+txt_4_8_details: Rincian and thumbnail
+txt_4_8_fit: Sesuaikan ke
+txt_4_8_fitl: Sesuaikan ke yang terbesar
+txt_4_8_flip: Balik
+txt_4_8_fullscreen: Layar penuh
+txt_4_8_fun: Fungsi
+txt_4_8_h: Tinggi
+txt_4_8_keeparchive: Pertahankan arsip
+txt_4_8_noresize: Pertahankan ukuran asli
+txt_4_8_iconl: Gambar besar
+txt_4_8_iconm: Ikon dan gambar
+txt_4_8_imagemanager: Pengelola gambar
+txt_4_8_immersive: Immersif
+txt_4_8_listno: Daftar
+txt_4_8_aspect: Pertahankan aspek rasio
+txt_4_8_mirror: Cermin
+txt_4_8_presets: Preset
+txt_4_8_replace: Ganti gambar asli? "Tidak" terapkan perubahan pada file baru.
+txt_4_8_resize: Ubah ukuran
+txt_4_8_rl: Putar ke kiri
+txt_4_8_rr: Putar ke kanan
+txt_4_8_stop: Hentikan
+txt_4_8_t: Ubah
+txt_4_8_w: Lebar
+txt_4_7_pk: Buat kata sandi / keyfile acak
+txt_4_7_spchar: Batas karakter untuk huruf dan angka
+txt_4_7_recycleask: Pindahkan file terpilih ke Recycle Bin?
+txt_4_7_recycle: Pindahkan ke Recycle Bin
+txt_4_7_pcomp: Kompresi berpotensi
+txt_4_6_am: Pengelola arsip
+txt_4_6_fm: Pengelola file
+txt_4_6_users: Pengguna
+txt_4_5_goupdate: Versi terbaru telah tersedia. Buka laman resmi PeaZip untuk mengunduh pembaruan?
+txt_4_5_b: Bawah
+txt_4_5_koupdate: Tidak dapat memeriksa pembaruan, tidak terhubung dengan server perbaruan
+txt_4_5_update: Periksa pembaruan
+txt_4_5_dock: Dok
+txt_4_5_l: Kiri
+txt_4_5_noupdate: PeaZip sudah yang terbaru
+txt_4_5_properties: Properti
+txt_4_5_r: Kanan
+txt_4_5_pj: Skrip tersimpan
+txt_4_5_shaddress: Tampilkan bilah alamat
+txt_4_5_shnav: Tampilkan bilah navigasi
+txt_4_5_shstatus: Tampilkan bilah status
+txt_4_5_shtool: Tampilkan bilah alat
+txt_4_5_upxpj: Maaf, tidak dapat mengekspor definisi tugas sejak aksi atau opsi ini membutuhkan dijalankannya perintah yang berbeda
+txt_4_5_t: Atas
+txt_4_4_confremoveall: Hapus semua file konfigurasi PeaZip (Aplikasi, Penanda, Pengelola Kata Sandi)?
+txt_4_4_confremove: Hapus konfigurasi PeaZip?
+txt_4_3_pwmanhint: Klik ganda untuk mengubah item pada daftar kata sandi, klik-kanan untuk opsi, Ctrl+C untuk menyalin kata sandi
+txt_4_3_exppl: Ekspor daftar kat sandi
+txt_4_3_expple: Terenkripsi (cadangkan Pengelola Kata Sandi)
+txt_4_3_keeppw: Pertahankan kata sandi/keyfile untuk sesi terbaru
+txt_4_3_pwmanpwhint: Direkomendasikan untuk mengatur kata sandi/keyfile (opsional) untuk mengenkripsi daftar kata sandi, otentifikasi akan diperlukan untuk mengakses Pengelola Kata Sandi. Kata sandi/keyfile dapat diubah kapanpun melalui form ini.
+txt_4_3_pwmanmaster: Atur/ubah kata sandi utama
+txt_4_3_pwmanlist: Daftar Kata Sandi
+txt_4_3_pwman: Pengelola Kata Sandi
+txt_4_3_pwmancorr: Tampaknya Pengelola Kata Sandi telah rusak atau korup. Pertahankan Pengelola Kata Sandi bagaimanapun juga dan coba kembalikan daftar kata sandi terbaru, jika kamu mempercayainya? (Tidak akan mengatur ulang Pengelola Kata sandi, direkomendasikan)
+txt_4_3_expplp: Teks biasa (semua penggunaan)
+txt_4_3_recsrc: Rekursi pencarian secara bawaan
+txt_4_3_resetpm: Atur ulang Pengelola Kata Sandi? Semua kata sandi tersimpan akan dihapus
+txt_4_3_breadcrumb: Tampilkan alamat sebagai breadcrumb
+txt_4_2_arcabspath: Gunakan alur penuh
+txt_4_1_duplicateshint: String "ukuran"/"checksum" dilaporkan pada kolom CRC untuk semua kandidat terduplikasi yang ditemukan pada direktori terbaru atau filter pencarian
+txt_4_1_adminhint: (Petunjuk: cara lainnya, kamu dapat meminta elevasi UAC untuk bekerja pada alur terproteksi, Alt+F10 atau Pengaturan > Jalankan sebagai Admin)
+txt_4_1_selected: (terpilih)
+txt_4_1_duplicatesfound: terganda ditemukan
+txt_4_1_duplicatesfind: Mencari terganda
+txt_4_1_runasadmin: Jalankan sebagai Admin
+txt_4_1_simplesearch: Pencarian sederhana
+txt_4_0_thim: Tampilkan gambar thumbnail
+txt_3_8_type_description_wim: WIM: format image disk Microsoft
+txt_3_8_type_description_xz: XZ: mengkompresi file kuat berbasis LZMA2
+txt_3_7_donations: Donasi
+txt_3_7_nameasparent: Nama arsip sebagai item folder induk terpilih, jika item terganda ditambahkan
+txt_3_7_tracker: Pelacak Isu
+txt_3_7_sort: Urut berdasarkan
+txt_3_7_swapbars: Tukar bilah alat / bilah alamat
+txt_3_7_themedbars: Bilah tema
+txt_3_6_ignoredd: Selalu abaikan alur untuk ekstrak dengan seret dan geser
+txt_3_6_close: Tutup
+txt_3_6_resetapps: Apakah mau ingin mengatur ulang Aplikasi (kelompok program terkostumisasi dan skrip untuk busa dengan, asosiasi file utama)?
+txt_3_6_ethemes: Tema tersedia
+txt_3_5_td: Unduh Tema
+txt_3_5_managecustomthemes: Kelola Tema
+txt_3_4_nopaths: Tidak ada alur
+txt_3_4_smallicons: Ikon
+txt_3_3_skipunits: (Windows) Dapatkan informasi volume untuk unit jaringan, membuka lebih lambat
+txt_3_3_stralt: Perintah alternatif, saat tidak ada parameter dilalui
+txt_3_3_apps: Aplikasi
+txt_3_3_multi: Seleksi gandi
+txt_3_3_runexp: Buka program, file, folder atau laman web
+txt_3_3_apppath: Folder PeaZip
+txt_3_3_run: Jalankan
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu menggunakan UTF8 untuk nama file mengandung simbol non-ASCII di dalam file .zip
+txt_3_2_alltasks: Semua tugas
+txt_3_2_conf: Konfigurasi
+txt_3_2_donations: Donasi untuk organisasi sosial
+txt_3_1_sccenc: 7z / p7zip -scc karakter enkoding
+txt_3_1_downloads: Unduhan
+txt_3_1_lib: Pustaka
+txt_3_1_more: Lainnya
+txt_3_1_openasarchive: Buka sebagai arsip
+txt_3_1_sendto: Folder menu SendTo Pengguna
+txt_3_1_pathexc: alur melebihi maksimal ukuran yang diizinkan
+txt_3_1_recent: Terbaru
+txt_3_1_plsmartmin: Jalankan diminimalkan, tampilkan/pertahankan dibuka jika dibutuhkan
+txt_3_1_src: Pencarian
+txt_3_1_systmp: Temp sistem
+txt_3_1_languagetools: Terjemahan
+txt_3_1_workingdir: DIrektori kerja
+txt_3_0_nonreadableorpw: Arsip tidak dapat dibaca. Apaka kamu mau mencoba kata sandi?
+txt_3_0_readablepw: Arsip tampaknya terlindungi kata sandi
+txt_3_0_configure: Integrasi sistem dan Asosiasi file
+txt_3_0_resettmp: Atur ulang peazip-tmp
+txt_2_9_address: Bar alamat
+txt_2_9_adv: Filter lanjutan telah diterapkan saat mengelola file yang mendukung seperti 7z atau FreeArc backends, lihat dokumentasi, dan timpa filter asal (itu digunakan untuk fungsi pencarian dan ditampilkan pada panel Penanda dan Riwayat)
+txt_2_9_columns: Kolom
+txt_2_9_copyhere: Salin di sini
+txt_2_9_noscan: Jangan pindai file yang ditambahkan pada tata letak
+txt_2_9_extconsole: Konsol pengekstrak hanya tersedia saat menjelajah arsip
+txt_2_9_thl: Sorot tombol
+txt_2_9_home: Beranda
+txt_2_9_lt: Besar
+txt_2_9_mt: Sedang
+txt_2_9_movehere: Pindah ke sini
+txt_2_9_nav: Navigasi
+txt_2_9_navbar: Bilah navigasi
+txt_2_9_none: Tidak ada
+txt_2_9_organize: Kelola
+txt_2_9_public: Publik
+txt_2_9_rec: Berulang: cari di sub-direktori, mungkin akan membutuhkan beberapa saat
+txt_2_9_selected: Terpilih
+txt_2_9_setapps: Kelola Aplikasi
+txt_2_9_showmenu: Tampilkan bilah menu
+txt_2_9_st: Kecil
+txt_2_9_test_pw2G: Coba untuk enkripsi arsip <2GB
+txt_2_9_vst: Hanya teks
+txt_2_9_toolbar: Bilah alat
+txt_2_9_tree: Pohon
+txt_2_9_views: Dilihat
+txt_2_8_experimental: (uji-coba)
+txt_2_8_zcopy: (Windows) Salin file pada mode dapat dimuat ulang, menyalin lebih lambat
+txt_2_8_addvol: Menambahkan keseluruhan volume ke arsip mungkin akan membutuhkan waktu yang lama, tetap lanjutkan?
+txt_2_8_uniterror: Tidak dapat mengakses unit
+txt_2_8_cannotconvert: Tidak dapat mengkonversi arsip terpilih
+txt_2_8_convertbegin: Lanjutkan ke tahap pengkompresan untuk finalisasi pengkompesan?
+txt_2_8_convert: Konversi
+txt_2_8_convertexisting: Konversi arsip tersedia
+txt_2_8_convertdelete: Hapus file dan folder yang dibuat sebentara untuk pengkonversian?
+txt_2_8_details: Rincian
+txt_2_8_parallel: Jalankan tugas secara paralel jika memungkinkan
+txt_2_8_convertnote: Dalam beberapa kasus arsip asli tidak dapat dimodifikasi, untuk membiarkan pengguna untuk membiarkan ataupun membuangnya
+txt_2_8_custom: tidak didukung oleh PeaZip, namun pada tahap pengekstrakan kamu dapat mengatur PeaZip untuk menangani tipe file kustom pada tab "Lanjutan". Proses untuk membuka file ini?
+txt_2_8_unitrecommend: Ini direkomendasikan untuk diekstrak (klik-kanan > ekstrak terpilih) atau buka sistem file dari root komputer (alat sistem > Buka unit sebagai arsip)
+txt_2_8_viewasarchive: Buka unit sebagai arsip
+txt_2_8_nounit: Tidak ada unit terpilih
+txt_2_8_rowselect: Baris terpilih
+txt_2_8_statusbar: Bilah status
+txt_2_8_typeunit: Tipe nama unit logical atau physical
+txt_2_8_usedefaultoutpath: Gunakan alur keluaran bawaan
+txt_2_7_experimental: (eksperimental, lihat dokumentasi)
+txt_2_7_optional: (opsional)
+txt_2_7_list_tryflatorpw: , solusi yang memungkinkan: coba tampilan datar (F6), sediakan kata sandi (F9), dapatkan salinan terbaru dari arsip
+txt_2_7_separate: Tambahkan setiap objek ke arsip terpisah
+txt_2_7_pwsupported: mengarsipkan dengan kata sandi
+txt_2_7_cancel: Batal
+txt_2_7_encfn: Enkripsi nama file juga (jika format mendukung)
+txt_2_7_setpw: Masukkan kata sandi / keyfile
+txt_2_7_ext: Mengekstrak:
+txt_2_7_extfrom: Mengekstrak dari arsip:
+txt_2_7_es: Mengekstrak jenis file non-arsip terdukung, mis. file tereksekusi, MS Office dan file OOo
+txt_2_7_eu: Mengekstrak jenis file yang tidak didukung, mementukan utilitas ekstraksi kustom
+txt_2_7_clipboard: Papan-klip
+txt_2_7_goarclayout: Menuju ke tata letak pengarsipan
+txt_2_7_goextlayout: Menuju ke tata letak pengekstrakan
+txt_2_7_ok: OK
+txt_2_7_drag_archive: buka file sebagai aris baru? ("Tidak" untuk menambahkan file ke tata letak arsip terbaru)
+txt_2_7_oop: Buka alur keluaran saat tugas selesai
+txt_2_7_validatefn: Operasi dihentikan, nama tidak sah terdeteksi:
+txt_2_7_validatecl: Operasi dihentikan, perintah yang berpotensi bahaya terdeteksi (mis. perintah penggabungan tidah diizinkan di dalam program):
+txt_2_7_output: Keluaran
+txt_2_7_pwnotset: Kata sandi tidak diatur 
+txt_2_7_pwarcset: Kata sandi diatur
+txt_2_7_pwextset: Kata sandi diatur, memungkinkan untuk mengekstrak/daftar/mencoba arsip terenkripsi
+txt_2_7_archivehint: Seret file dan folder ke sini untuk diarsipkan, atau klik-kanan untuk opsi lainnya
+txt_2_7_exthint: Seret arsip ke sini untuk mengekstrak, atau klik kanan untuk opsi lainnya
+txt_2_7_setadvf: Atur filter lanjutan
+txt_2_7_selpath: Alur item terpilih
+txt_2_7_separateerror: Maaf, tidak dapat mengimpor pendefinisian baris perintah tugas saat menggunakan "Tambahkan setiap objek ke arsip terpisah", sejak tugas dijalankan sebagai perintah yang berbeda
+txt_2_7_noinput: Tata letak kosong: harap gunakan Tambah file atau muat tata letak untuk mengisi daftar arsip untuk diekstrak
+txt_2_7_dirsize: Ukuran dari konten folder tidak dihitung dari ukuran keseluruhan
+txt_2_7_un7z_browse_flat: coba tampilan datar (F6)
+txt_2_7_updating: Memperbarui arsip tersedia
+txt_2_6_folders: (folder)
+txt_2_6_advanced: Lanjutan
+txt_2_6_plalways: Selalu biarkan terbuka untuk memeriksa laporan tugas
+txt_2_6_plsmart: Pertahankan tetap terbuka hanya jika dibutuhkan (bermasalah, daftar atau laporan uji-coba)
+txt_2_5_sessionio: (sesi ini)
+txt_2_5_advanced: Pengubahan lanjutan: letakkan spasi diantara parameter string dan nama file jika dibutuhkan
+txt_2_5_basic: Pengubahan dasar: aplikasi dan parameter sebelum memasukkan nama
+txt_2_5_cannotrun: Tidak dapat dijalankan
+txt_2_5_custeditors: Pengubah kustom, pemutar, pemindai antivirus dll... (menimpa asosiasi file sistem)
+txt_2_5_delete: Hapus
+txt_2_5_delete_fromarchive: Hapus dari arsip
+txt_2_5_langflag: Tampilkan nama objek terarsip sebagai teks UTF-8; jangan centang untuk mengganti karakter panjang dengan "?"
+txt_2_5_encpj: Enkoding definisi tugas sebagai teks UTF-8
+txt_2_5_execommand: Tereksekusi atau perintah
+txt_2_5_help: Bantuan
+txt_2_5_langhint: Petunjuk: ganti karakter panjang dengan "?" karakter yang berlebihan dapat mengimprovisasai sintaks jika sek karakter dari arsip tidak behasil diubah pad mesin terbaru
+txt_2_5_mini_help: Tata cara penglokalan
+txt_2_5_offline_help: Bantuan PeaZip
+txt_2_5_tray: Kecilkan ke tray
+txt_2_5_remove: Buang
+txt_2_5_hintpaths: Klik-kanan untuk membuka sistem dan alur pengguna
+txt_2_5_selectapp: Pilih aplikasi
+txt_2_5_strafter: String setelah memasukkan nama
+txt_2_5_strbefore: String sebelum memasukkan nama
+txt_2_5_encoding: Teks enkoding
+txt_2_5_nopw: jenis arsip ini tidak mendukung enkripsi
+txt_2_4_draghint: [seret ke Explorer dengan bilah alamat aktif]
+txt_2_4_tb: Adaptasikan tombol bilah alat (muat ulang PeaZip)
+txt_2_4_adding: Menambahkan
+txt_2_4_advclip: Papan-klip mempertahankan pilihan ganda
+txt_2_4_yanswers: Jawab
+txt_2_4_itemsheight: Atur otomatis ukuran ke tinggi item
+txt_2_4_clearclipboard: Bersihkan papan-klip (Esc)
+txt_2_4_wcommons: Umum
+txt_2_4_copyfrom: Salin dari
+txt_2_4_deletebookmarks: Apakah kamu yakin akan menghapus daftar dari penanda file dan folder?
+txt_2_4_documents: Dokumen
+txt_2_4_wenc: Ensiklopedia
+txt_2_4_extractfrom: Ekstrak dari
+txt_2_4_hexp: Pratinjau hex
+txt_2_4_operation: Operasi
+txt_2_4_path: alur tidak dapat ditulis (mis. hanya-baca). Apakah kamu ingin memilih alur yang dapat ditulis?
+txt_2_4_removefromclipboard: Buang dari papan-klip
+txt_2_4_stdclip: Standard: bisrksn seleksi tunggal pada papan-klip, bersihkan opersai potong pada tempel
+txt_2_4_totalmem: total memori
+txt_2_4_gvideo: Video
+txt_2_4_wbook: Wikibook
+txt_2_4_wnews: Wikinews
+txt_2_4_wsrc: Wikisource
+txt_2_4_wdict: Wiktionary
+txt_2_3_pw_errorchar: karakter petik tidak dapat digunakan oleh PeaZip GUI pada kata sandi di bawah sistem terbaru, harap ubah kata sandi atau pilih mode Konsol di binari Backend tampilan pengguna di Opsi > Pengaturan
+txt_2_3_envstr: Tampilkan variabel environment
+txt_2_3_never_pw: jangan tanyakan kata sandi
+txt_2_3_home: Beranda pengguna
+txt_2_3_on_pw: Pada ekstrak/daftar/uji-coba operasi pada sistem menu:
+txt_2_3_test_pw100: Coba untuk enkripsi arsip <100MB
+txt_2_3_test_pw: Coba untuk enkripsi (mungkin akan lambat)
+txt_exclude_recourse: "kecualikan" sub-direktori berulang
+txt_action_extopen: Aksi "ekstrak dan buka dengan aplikasi terasosiasi"
+txt_error_passwordnotmatch: Bidang "Kata Sandi" dan "Konfirmasi" tidak sesuai, harap diperbaiki
+txt_action_preview: Aksi "Pratinjau dengan aplikasi terasosiasi"
+txt_preview_hint: Aksi "Pratinjau" menjalankan tugas yang sama dengan "Ekstrak dan buka" tapi ke alur sementara pada direktori keluaran, akan dihapus otomatis saat file ditutup.
+txt_better: (lebih baik)
+txt_default2: (bawaan)
+txt_faster: (lebih cepat)
+txt_fastermem: (lebih cepat, sedikit memori)
+txt_tempdir: (folder kerja sementara PeaZip)
+txt_stream: (atur berdasarkan "pengendali Aliran")
+txt_slowermem: (lebih lambat, banyak memori)
+txt_store: (penyimpan, tercepat)
+txt_newfolder: (di folder baru)
+txt_7z_exitcodeunknown: : Kesalahan tidak diketahui pada tugas
+txt_list_isfolder:  [folder]
+txt_none: <tidak ada>
+txt_fd: 1.44 MB Floppy Disk
+txt_7z_exitcode1: 1: Peringatan: kesalahan yang tidak fatal; mis. beberapa file hilang atau terkunci
+txt_attach10: Lampiran 10 MB
+txt_7z_exitcode2: 2: Terjadi kelasalahan fatal
+txt_7z_exitcode255: 255: Tugas dihentikan oleh pengguna
+txt_fat32: file 4 GB FAT32
+txt_dvd: 4.7 GB DVD
+txt_attach5: Lampiran 5 MB
+txt_cd650: 650 MB CD
+txt_7z_exitcode7: 7: Kesalahan: terdapat baris perintah yang tidak tepat
+txt_cd700: 700 MB CD
+txt_type_description_7z: 7Z: format arsip yang kaya fitur dengan rasio kompres tinggi
+txt_dvddl: 8.5 GB DVD DL
+txt_7z_exitcode8: 8: Kesalahan: memori tidak mencukupi untuk operasi yang diminta
+txt_abort: Gagalkan operasi penjadwalan salin/pindah file?
+txt_about: Tentang
+txt_action: Aksi
+txt_action_hint: Aksi untuk membuka atau pratinjau file dengan aplikasi terasosisasi
+txt_add: Tambah
+txt_add_existing_archive: Tambah (jika arsip tersedia)
+txt_add_archive: Tambah arsip
+txt_add_files: Tambah file
+txt_add_folder: Tambah folder
+txt_add_path: Tambah alur
+txt_add_tolayout: Tambah file dan folder terpilih ke tata letak arsip
+txt_add_toarchive: Tambah ke arsip
+txt_add_tobookmarks: Tambah ke penanda
+txt_address_hint: Filter: Terima wildcard * dan ?
+txt_adv_filters: Filter lanjutan
+txt_algo: Algoritma
+txt_all: semua
+txt_all_default: Semua (bawaan)
+txt_all_type: Tipe yang sama
+txt_all_date: Tanggal
+txt_all_psize: Ukuran file yang dikemas
+txt_all_attributes: Atribut yang sama
+txt_all_size: Ukuran file
+txt_error_input_upx: izinkan file tereksekusi tunggal sebagai masukan
+txt_always_pw: Selalu tanyakan kata sandi
+txt_ignore_ext: Selalu abaikan alur untuk "Ekstark dan..."
+txt_ignore_disp: Selalu abaikan alur untuk "Ekstrak ditampilkan..."
+txt_ignore_sel: Selalu abaikan alur untuk "Ekstrak dipilih..."
+txt_key_hint: Tambahkan hash keyfile ke kata sandi; arsip dapat didekripsi oleh PeaZip dan aplikasi lain dengan standar yang sama, atau masukkan hash sebagai bagian dari kata sandi
+txt_timestamp: Tambahkan penanda waktu ke nama
+txt_appoptions: Opsi aplikasi
+txt_type_description_arc: ARC: pengarsip eksperimental, bertenaga, efisien dan kaya fitur
+txt_archive: Arsip
+txt_un7z_browse_ok: arsip dijelajah sukses
+txt_interface: Arsipkan antarmuka penjelajah
+txt_archivecreation: Arsipkan kreasi
+txt_tarbefore_hint: Arsipkan data dengan format TAR sebeluk ke jenis yang spesifik.
+txt_archive_hint: Arsipkan, kompres, pecah dan pertahankan file, folder, dan volume pribadi
+txt_compressionratio_hint: Rasio kompres arsip
+txt_archiving: Mengarsipkan:
+txt_cl_long: Argumen tampaknya melebihi ukuran maksimal yang dapat dilewati oleh PeaZip frontend, harap pilih masukkan file yang lebih sedikit (mis. pilih direktori daripada memilih file tunggal)
+txt_overwrite_askbefore: Tanyakan sebelum menimpa (pada konsol)
+txt_associated: Aplikasi terasosiasi
+txt_attributes: Atribut
+txt_author: Pemilik
+txt_ren_existing: Ganti nama otomatis file yang tersedia
+txt_ren_extracted: Ganti nama otomatis file terekstrak
+txt_autofolder: Buat folder baru otomatis untuk mengekstrak arsip ke dalamnya?
+txt_back: Kembali
+txt_backend: Binari backend antarmuka pengguna
+txt_backupexe: Cadangkan tereksekusi (direkomendasikan)
+txt_bettercompression: kompresi lebih baik
+txt_blogs: Blog
+txt_blowfish: Blowfish448 (blok 64 bit)
+txt_bookmarks: Penanda
+txt_browse: Jelajahi
+txt_browser: Penjelajah
+txt_aborted_error: Penjelajah arsip terhenti. Mungkin akan membutuhkan waktu yang sangat lama. Kamu dapat merampingkan pilihan menggunakan pencarian (F3) atau menutup mode tampilan datar (F6); ekstrak/daftar/uji-coba operasi tidak berpengaruh dengan masalah ini.
+txt_list_browsing: Menjelajah
+txt_archive_root: Menjelajah: root arsip
+txt_type_description_bzip2: BZip2: pengkompres cukup bertenaga, kecepatan rata-rata
+txt_pw_empty: Harap sediakan kata sandi (atau sebuah keyfile)
+txt_add_error: Tidak apat menambah/memperbarui ataupun menghapus objek; mungkin tipe arsip hanya mendukung penjelajahan/ekstrak saja, atau tidak mendukung operasi tertentu (mis. multi-volume atau solid), atau PeaZip tidak dapat menangani nama file sepenuhnya
+txt_un7z_browse_failure: tidak dapat menjelajahi objek
+txt_list_error: Tidak dapat mendata konten arsip, harap periksa jikalau arsip terproteksi atau mungkin rusak.
+txt_conf_cannotsave: Tidak dapat menyimpan file konfigurasi, harap periksa apakah alur dapat ditulis dan tersedia ruang kosong
+txt_check_hint: Periksa untuk kerusakan data kasual; algoritma hash memungkinkan untuk mendeteksi bahkan perusak data bebahaya (lihat dokumentasi)
+txt_check: File checksum/hash
+txt_check_select: Checksum/hash
+txt_clear: Bersihkan
+txt_clearlayout: Bersihkan tata letak
+txt_pj_hint: Tekan untuk mengimpor tugas, mengatur ulang perubahan dan memuat definisi tugas terbaru dari GUI
+txt_autoclose: Tutup PeaLauncher saat tugas selesai
+txt_cl: baris perintah:
+txt_compare: Bandingkan file
+txt_compress: Kompres
+txt_compress_executable: Kompres tereksekusi
+txt_compress_openforwriting: Kompres file terbuka untuk menulis
+txt_compression: Pengkompresan
+txt_compmanagement: Pengelolaan komputer
+txt_pw_confirm: Konfirmasi
+txt_console: Konsol
+txt_console_interface: Konsol: antarmuka asal
+txt_content: Konten
+txt_controlpanel: Panel kontrol
+txt_convert: Ubah disk ke NTFS
+txt_copy: Salin
+txt_copyto: Salin ke...
+txt_create: Buat
+txt_create_archive: Buat arsip baru
+txt_title_create: Buat arsip, kompres, enkripsi, pecah...
+txt_create_keyfile: Buat keyfile
+txt_create_folder: Buat folder baru
+txt_create_theme: Buat tema berdasarkan pengaturan terakhir
+txt_rr: Buat catatan pemulihan
+txt_create_sfx: Buat arsip terekstrak sendiri
+txt_cr_current: Alur terbaru atau filter rasio kompres
+txt_custom: Kustom
+txt_type_description_custom: Kustom (pengguna lanjutan): masukkan nama tereksekusi dan parameter
+txt_customapp: Kustom aplikasi
+txt_custom_parameters: Kustom parameter
+txt_customsize: Kustom ukuran
+txt_cut: Potong
+txt_datetime: Tanggal/waktu
+txt_default: bawaan
+txt_default_compression: pengkompresan bawaan
+txt_default_format: Format bawaan
+txt_theme_default: Tema bawaan
+txt_hard_reset_hint: Hapus file penanda
+txt_desktop: Desktop
+txt_dictionary: Kamus
+txt_dirs: direktori,
+txt_dis: Disambiguasi:
+txt_disk_cleanup: Pembersihan disk
+txt_disk_defrag: Disk defrag
+txt_disk_management: Pengelola disk
+txt_dispaly: Tampilkan hasil sebagai
+txt_displayedmnu_obj: ditampilkan
+txt_displayedobjects: Objek ditampilkan
+txt_nocompress: jangan kompres
+txt_delete: Apakah kamu ingin menghapus file terpilih? Operasi ini tidak dapat dibatalkan dan file tidak dapat diselamatkan dari Recycle bin
+txt_wipe: Apakah kamu inginmengapus file terpilih dengan aman? Operasi ini tidak dapat dibatalkan dan file tidak dapat dikembalikan
+txt_done: Selesai
+txt_edit: Ubah
+txt_elapsed: tersisa:
+txt_error_emptycl: Baris perintah kosong!
+txt_encrypt: Enkripsi
+txt_encrypted: Terenkripsi
+txt_encryption: Enkripsi
+txt_note: Masukkan catatan / deskripsi
+txt_random_keys: Masukkan kunci acak
+txt_random_keys_hint: Masukkan kunci acak (tidak harus diingat)
+txt_ent: Evaluasi entropi
+txt_ent_tools: Pindahkan tetikus atau gunakan alat pengambilan sampel entropi tambahan
+txt_eqorlarger: Sama atau lebih besar dari objek
+txt_eqorrecent: Sama atau lebih baru dari objek terpilih
+txt_eqorolder: Sama atau lebih lama dari objek terpilih
+txt_eqorsmaller: Sama atau lebih kecil dari objek terpilih
+txt_equal: Sama dengan objek terpilih
+txt_erase_hint: Penghapusan aman: timpa dengan data acak, sembunyikan ukuran, ubah nama, baru kemudian hapus
+txt_extraction_error: Kesalahan saat mengekstrak objek terpilih. Jika arsip terlindungi kata sandi, harap masukkan
+txt_exclude_hint: Kecualikan file, satu per baris; gunakan wildcard * dan ?; pembatas " dan ' tidak dibutuhkan
+txt_exclusion_recourse: Kecualikan filter sub-direktori berulang
+txt_exclusion: Pengecualian
+txt_exe: Tereksekusi
+txt_overwrite_qry: tersedia di alur tujuan; timpa dengan file dengan nama yang sama dari folder sumber? (Batal: lewati penyalinan objek ini)
+txt_confirm_overwrite: tersedia; timpa itu? (tidak untuk dilewati)
+txt_explore_outpath: Jelajahi alur keluaran
+txt_explore_path: Jelajahi alur
+txt_ext: Ekst:
+txt_caption_extract: Ekstrak
+txt_ext_nopath: Ekstrak (tanpa alur)
+txt_ext_all: Ekstrak semua
+txt_ext_allhere: Ekstrak semua di sini
+txt_ext_allto: Ekstrak semua ke
+txt_extopen_custom: Ekstrak dan buka dengan aplikasi kustom
+txt_extopen_with: Ekstrak dan buka dengan...
+txt_ext_disp_here: Ekstrak yang ditampilkan di sini
+txt_ext_disp: Ekstrak objek yang ditampilkan
+txt_ext_disp_to: Ekstrak objek yang ditampilkan ke...
+txt_ext_here: Ekstrak di sini
+txt_ext_sel_here: Ekstrak terpilih di sini
+txt_ext_sel: Ekstrak objek terpilih
+txt_ext_sel_to: Ekstrak objek terpilih ke...
+txt_extobj: Ekstrak objek
+txt_newfoldermenu: Ekstrak folder baru
+txt_extto: Ekstrak ke...
+txt_level_fast: Cepat
+txt_fastcompr: kompresi cepat
+txt_fastopen: Biasakan membuka cepat, hentikan penjelajahan secara paksa arsip yang besar, cukup menggunakan filter
+txt_level_fastest: Tercepat
+txt_favformats: Format favorit
+txt_file: File
+txt_filebrowser: File jelajah / arsip jelajah
+txt_filetools: Alat file
+txt_files: file,
+txt_nfiles: File
+txt_fs: File sistem
+txt_filters_recourse: filter sub-direktori berulang
+txt_filters: Filter
+txt_flat: Datar (tampilkan semua)
+txt_list_flat: Tampilan datar
+txt_unit_floppy: Floppy disk
+txt_foldername: Nama folder
+txt_nfolders: Folder
+txt_error_input_multi: format mengizinkan file tunggal sebagai masukan; kamu dapat menggunakan "TAR terlebih dahulu" untuk menyimpan file inputan ke arsip .TAR terlebih dahulu, atau kamu dapat menggunakan format lainnya. PETUNJUK: pilih format arsip setelah data masukan telah terpilih: "TAR terlebih dahulu" akan teralih secara otomatis
+txt_fwd: Maju
+txt_list_found: Ditemukan
+txt_free: Bebas
+txt_free2: bebas
+txt_name_full: Nama lengkap
+txt_function: Fungsi
+txt_general: Umum
+txt_multithreading: Thread-ganda generik
+txt_go_browser: Ke penjelajah file
+txt_go_path: Jelajahi alur (PeaZip)
+txt_guicl: Grafis + konsole
+txt_guipealauncher: Grafis: diolah oleh PeaLauncher
+txt_graphic: Grafis folder
+txt_gridaltcolor: Kisi warna alternatif
+txt_gridrowheight: Kisi tinggi baris
+txt_gui: GUI
+txt_type_description_gzip: GZip: pengkompres cepat
+txt_here: di sini
+txt_list_history: Riwayat
+txt_homeroot: Tingkatan root komputer/arsip
+txt_quickbrowse_hint: Jika penjelajah terhenti pengguna dapat merampingkan pilihan dengan fungsi pencarian atau filter; ekstrak/daftar/uji-coba fungsi tidak akan terpengaruh sama sekali.
+txt_backupexe_hint: Jika terjadi suatu kesalahan dan menghadirkan hasil yang tidak berfungsi, kamu dapat memulihkan tereksekusi asli dari penyalinan pencadangan otomatis
+txt_attach: Jika klien email mendukung perintah tersebut, arsip akan dilampirkan ke pesan baru
+txt_images: Gambar
+txt_include_hint: Termasuk file, satu per baris; gunakan wildcard * dan ?; pembatasan " dan ' tidak dibutuhkan
+txt_filters_hint: Masukkan dan kecualikan filter untuk binari 7z, harap baca dokumentasi 7-Zip dengan hati-hati untuk memahami bagaimana filter tersebut bekerja
+txt_inclusion_recourse: Masukkan filter sub-direktori berulang
+txt_inclusion: Termasuk
+txt_error_function: Fungsi yang diminta tidak tepat
+txt_info: Informasi
+txt_infoall: Informasi untuk semuanya
+txt_infodisp: Informasi untuk objek yang ditampilkan
+txt_infosel: Informasi untuk objek terpilih
+txt_inputinfo: Masukkan informasi
+txt_input_list: Daftar masukan:
+txt_iop: masukan, keluaran, parameter
+txt_ipo: masukan, parameter, keluaran
+txt_input: masukan:
+txt_integrity: Pemeriksaan integritas
+txt_chunk_size: Ukuran kustom tidak tepat, harap perbaiki itu dengan nilai angka
+txt_invertsel: Balikkan pilihan
+txt_type_exe: adalah file tereksekusi Windows, apakah kamu ingin menjalankannya? ("Tidak" untuk membukanya sebagai arsip) PETUNJUK: beberapa file tereksekusi tidak akan berjalan dengan benar kecuali jika arsip diekstrak secara keseluruhan
+txt_return_to_archive: sedang dibuka; apakah kamu ingin menjelajahinya?
+txt_not_accessible: tidak dapat diakses
+txt_type_unsupported: bukanlah tipe arsip yang didukuung
+txt_checkname_failed: bukanlah nama yang sah.
+txt_not_accessible_list: tidak dapat diakses, harap periskas jika daftar file yang disediakan itu benar dan terbaru
+txt_theme_create_error: Tidak dimungkinkan untuk membuat tema, coba gunakan nama yang sah untuk folder sebagai nama tema dan pilihlah alur yang dapat ditulis
+txt_theme_exists: tidak tersedia, harap sediakan alur yang berbeda
+txt_job_code: kode tugas:
+txt_job_definition_saved: Definisi tugas behhasil disimpan di
+txt_job_success: Tugas telah selesai!
+txt_join: Gabung
+txt_joinfiles: Gabungkan file
+txt_keyfile: Keyfile
+txt_keyfile_not_found: Keyfile tidak dapat ditemukan ataupun dibaca. Harap pilh Keyfile yang berbeda.
+txt_keyfile_notcreated: KeyFile tidak dibuat
+txt_larger: Lebih besar dari objek terpilih
+txt_lastused: Terkhir kali digunakan
+txt_launch: Luncurkan tugas
+txt_layout: Tata letak
+txt_filelist_savedas: Tata letak disimpan sebagai
+txt_level: Tingkatan
+txt_license: Lisensi
+txt_caption_list: Daftar
+txt_list_details: Daftar (dengan detail)
+txt_list_all: Daftar semua
+txt_list_disp: Daftar objek yang tampil
+txt_list_sel: Daftar objek terpilih
+txt_toggle_warning: Mendaftar tampilan datar dari alur konten akam membutuhkan waktu yang lama, tetap lanjutkan?
+txt_loadfile: Muat file
+txt_loadlayout: Muat tata letak
+txt_unit_hd: Disk lokal
+txt_localization: Terjemahan
+txt_lpaqver: Versi LPAQ
+txt_type_description_lpaq: LPAQ: versi lebih cepat dari PAQ, kompresi sangat baik
+txt_maininterface: Antarmuka utama
+txt_maxcomp: Mode kompresi maksimal
+txt_level_maximum: Maksimum
+txt_restartrequired: Mungkin akan membutuhkan pemuatan ulang aplikasi untuk menerapkannya
+txt_required_memory: MB memori dibutuhkan
+txt_method: Metode
+txt_misc: Macam-macam
+txt_modify: Modifikasi
+txt_morecontrols: Pengendali lainnya (riwayat, penanda, ...)
+txt_morerecent: Lebih baru dari objek terpilih
+txt_ent_hint: Pindahkan tetikus, masukkan kunci di bidang pengubah, muat file untuk mengumpulkan entropi dari sistem...
+txt_moveto: Pindah ke...
+txt_mypc: Root komputer
+txt_list_na: tidak ada
+txt_name: Nama
+txt_naming: Kebijakan penamaan
+txt_unit_remote: Drive jaringan
+txt_newarchive: Arsip baru
+txt_cnewfolder: Folder baru
+txt_news: Berita
+txt_no: Tidak ada
+txt_noinput: Tidak ada masukan yang dapat diakses tersedia
+txt_nocompress_hint: tanpa kompresi (lebih cepat)
+txt_split_noinput: Tidak ada inputan terpilih; harap pilih file untuk dipecah
+txt_open_noinput: Tidak ada inputan terpilih; harap pilih arsip (volume arsip pertama untuk arsip volume-ganda)
+txt_list_nomatch: tidak cocok
+txt_singlethread: Tidak ada thread-ganda
+txt_none2: tidak ada
+txt_nonsolid: Tidak solid
+txt_level_normal: Normal
+txt_copy_error: tidak berhasil menyalin atau memindahkan, kode kesalahan:
+txt_description: Catatan
+txt_compare_second: Sekarang pilih file untuk dibandingkan dengan
+txt_peaobj: Kendali objek
+txt_displayed_obj: objek
+txt_olderthan: Lebih lama dari objek terpilih
+txt_on: nyala
+txt_ondblclick: Pada perlakuan klik-ganda:
+txt_opacity: Transparansi
+txt_open: Buka
+txt_openarchive: Buka arsip
+txt_title_open: Buka arsip, dekripsi, gabung...
+txt_open_bookmark: Buka penanda
+txt_cphere: Buka perintah cepat di sini
+txt_open_file: Buka file
+txt_open_files: Buka banyak file
+txt_open_path: Buka alur
+txt_opensource: Pengarsip portabel dengan sumber terbuka
+txt_openwith: Buka dengan...
+txt_aborted: Operasi dibatalkan
+txt_unit_cd: Drive optik
+txt_options: Opsi
+txt_other: Lainnya
+txt_otherparams: Parameter lainnya (bebas untuk diubah)
+txt_oip: keluaran, masukan, parameter
+txt_opi: keluaran, parameter, masukan
+txt_output: keluaran:
+txt_overwrite: Timpa file tersedia
+txt_compressed_size: Terpaket
+txt_paqver: Versi PAQ
+txt_type_description_paq: PAQ: lambat tapi pengkompres yang sangat bertenaga
+txt_pio: parameter, masukan, keluaran
+txt_poi: parameter, keluaran, masukan
+txt_parameters: Parameter:
+txt_error_partial: Sebagian ekstraksi tidak terimplementasi untuk jenis arsip terbaru
+txt_passes: Dilewati
+txt_pw: Kata sandi
+txt_pwlength: Panjang kata sandi dalam karakter (4..64)
+txt_un7z_browse_pw: mungkin membutuhkan kata sandi
+txt_un7z_browse_pw_other: mungkin kata sandi salah
+txt_paste: Tempel
+txt_path: Alur
+txt_pea_appcolor: Warna aplikasi
+txt_pea_textcolor: Warna text Pea
+txt_type_description_pea: PEA: format arsip yang berorientasi pada keamanan dengan kompresi cepat
+txt_peazip_new: PeaZip (contoh baru)
+txt_peazip_help: Bantuan online
+txt_peazip_web: Situs PeaZip
+txt_performall: Kerjakan semua algoritma yang didukung
+txt_name_provide: Karakter \ / : * ? ' " < > | tidak diizinkan pada nama file
+txt_upxorstrip: Harap pilih Strip dan/atau UPX pada binari
+txt_not_removable_file: Harap tutup file yang terbuka, untuk mengizinkan PeaZip untuk menghapusnya:
+txt_not_removable: Harap tutup file yang terbuka, untuk mengizinkan PeaZip untuk menghapus foldernya:
+txt_custom_executable_missing: Harap sediakan nama tereksekusi kustom
+txt_type_unsupported_select: Harap pilih jenis arsip yang didukung:
+txt_no_theme_name: Harap tentukan nama tema
+txt_please_wait: Harap tunggu
+txt_copy_wait: Harap tunggu penjadwalan operasi menyalin/memindahkan file diselesaikan sebelum menjadwalkan operasi lain dengan jenis file yang sama
+txt_previewwith: Pratinjau dengan...
+txt_projectadmin: Projek admin:
+txt_type_description_quad: BALZ/QUAD: file kompresi berperforma tinggi berbasis ROLZ
+txt_quickdelete: Hapus cepat
+txt_quit: Keluar
+txt_unit_ram: RAM disk
+txt_read: Baca:
+txt_recentarchives: Arsip terbaru
+txt_rr_hint: Rekaman pemulihan mengizinkan untuk mencoba mengkoreksi arsip jika terjadi kerusakan
+txt_search_refine: Menyaring filter pencarian, wildcard ? dan * diizinkan
+txt_fefreshf5: Segarkan (F5)
+txt_release: rilis:
+txt_unit_removable: Unit dapat dilepas
+txt_remove_bookmark: Buang penanda
+txt_remove_external_unit: Lepaskan drive eksternal
+txt_removeselected: Buang objek terpilih
+txt_rename: Ubah nama
+txt_caption_repair: Perbaikan
+txt_restartrequired2: Memuat ulang aplikasi dibutuhkan untuk menerapkannya
+txt_reset: Atur ulang
+txt_reset_archivename: Atur ulang nama arsip
+txt_hardreset: Atur ulang penanada
+txt_reset_theme: Atur ulang ke tema tertanam
+txt_restore_att: Pulihkan ke atribut asli
+txt_run_as: Jalankan sebagai (tidak dapat berpindah ke pengguna dengan kata sandi kosong)
+txt_run_as2: Jalankan sebagai pengguna yang berbeda
+txt_sample: Contoh: 
+txt_saveas: Simpan sebagai
+txt_savehistory: Simpan data riwayat
+txt_save_infolder: Simpan di folder (otomatis)
+txt_savejob: Simpan definisi tugas
+txt_savejobdefinition: Simpan definisi tugas
+txt_savejobdefinition_hint: Simpan definisi tugas sebagai teks biasa; kamu dapat menggunakannya dari skripmu
+txt_savelayout: Simpan tata letak
+txt_save_winstate: Simpan status jendela utama
+txt_search: Cari (berulang, mungkin membutuhkan beberapa waktu)
+txt_searchanddrag: Cari dan seret ke sini
+txt_searchfor: Cari
+txt_nrsearch: Cari di sini (tidak berulang)
+txt_search_hint: Cari di sub-direktori arsip untuk disesuaikan dengan filter
+txt_search_web: Pencarian web
+txt_list_searching: Mencari...
+txt_securedelete: Menghapus dengan aman
+txt_default_description: Pilih fungsi atau seret file ke sini
+txt_selectall: Pilih semua
+txt_selectdir: Pilih direktori
+txt_selected_obj: terpilih
+txt_selected_objects: Objek terpilih
+txt_sfx: Terekstrak sendiri
+txt_sendbymail: Kirim melalui email
+txt_set_defaults: Atur parameter bawaan aplikasi
+txt_settings: Pengaturan
+txt_sfx_interface: antarmuka sfx
+txt_showhints: Tampilkan petunjuk
+txt_show_messages: Tampilkan pesan informasi
+txt_showpw: Tampilkan konten bidang kata sandi
+txt_singlevol: Volume tunggal, jangan dipecah
+txt_size: Ukuran
+txt_sizeb: Ukuran (B)
+txt_skip_existing: Lewati file tersedia
+txt_slowercomp: lebih lambat di kompres tapi rata-rata lebih cepat di dekompres
+txt_smaller: Lebih kecil dari objek terpilih
+txt_solid: Solid
+txt_solid_block: Ukuran blok
+txt_solid_auto: Solid, penyesuaian otomatis
+txt_solid_extension: Solid, pengelompokan berdasarkan ekstensi
+txt_listtest: maaf, daftar/uji-coba operasi tidak terimplementasi pada format ini
+txt_sortbysel: Urutkan berdasarkan status seleksi
+txt_list_sorting: Mengurutkan...
+txt_speed: kecepatan
+txt_split: Pecahkan
+txt_type_description_split: Pecahkan file dengan pilihan pengecekan integritas
+txt_split_file: Pecahkan file
+txt_list_nostats: statistik tidak tersedia
+txt_status: Status
+txt_level_store: Penyimpanan
+txt_stream_control: Kendali aliran
+txt_strip: Strip sebelum UPX (direkomendasikan)
+txt_keyfile_created: Berhasil membuat KeyFile sebagai:
+txt_suggestpw: Buat kata sandi acak
+txt_noupx: Simbol ter-strip, pengkompresan UPX diabaikan
+txt_syntax: Sintaks:
+txt_sysbenchmark: Benchmark sistem
+txt_benchmark: Benchmark sistem akan memakan waktu beberapa menit dan akam neggunakan sumber-daya CPU dan memori yang tersedia. Sistem mungkin akan tidak merespon selama benchmark; tetap jalankan?
+txt_systools: Alat sistem
+txt_tarbefore: TAR terlebih dahulu
+txt_type_description_tar: TAR: format pengarsipan umum pada sistem UNIX
+txt_taskman: Pengelola tugas
+txt_caption_test: Uji coba
+txt_testall: Uji-coba semua
+txt_testdisp: Uji-coba objek yang ditampilkan
+txt_testpw: Uji-coba kata sandi / keyfile
+txt_testsel: Uji-coba objek terpilih
+txt_col_hint: Warna harus dipilih untuk diintegrasikan dengan baik dengan wana ikon dan elemen GUI lainnya
+txt_bookmarks_hint: Daftar penanda yang selesai dan dapat diubah tersedia pada antarmuka penjelajah file, tekan pada ikon "Pengendali lainnya" dan pada "Sakelar riwayat/penanda"
+txt_archive_noinput_tolist: Tata letak kosong: harap Tambahkan file, Tambahkan folder atau Muat Tata letak untuk mengisi tata letak arsip
+txt_theme: Tema
+txt_icons_found: Tema berhasil dimuat.
+txt_themename: Nama tema
+txt_icons_not_found: Tema tidak dimuat dengan benar. Coba beralih ke tema bawaan, atau ke tema yang bekerja.
+txt_theme_create_success: tema berhasil dibuat
+txt_theming: Penemaan
+txt_extand_error: Fungsi ini tidak dapat dijalankan pada objek tunggal pada waktu yang sama
+txt_threads: Thread
+txt_titlescolor: Warna judul
+txt_to: ke
+txt_toggle_browseflat: Sakelar penjelajah / tampilan datar (tampilkan semua)
+txt_toggle_historybookmarks: Sakelar riwayat / penanda
+txt_toolbarscolor: Warna bilah
+txt_tools: Alat
+txt_best: coba pengaturan terbaik (lambat)
+txt_type: Tipe
+txt_level_ultra: Ultra
+txt_error_openfile: Gagal membuka file tertentu
+txt_cl_hint: UNACE dan UPX selalu berjalan menggunakan mode konsol; tugas daftar, uji-coba dan benchmark selalu berjalan menggunakan mode GUI
+txt_ace_missing: Plugin UNACE hilang; untuk menangani arsip ACE kamu dapat mengunduhnya melalui laman PeaZip (karena UNACE merupakan sumber tertutup, plugin tidak disediakan di paket utama)
+txt_units: unit
+txt_unit_unknown: Jenis drive tidak diketahui
+txt_un7z_pw_untested: Tidak diuji-coba
+txt_up: Atas
+txt_update: Perbarui (jika arsip tersedia)
+txt_type_description_upx: UPX: hanya mengkompres file tereksekusi saja
+txt_advfilters: Gunakan filter lanjutan
+txt_openfiles_hint: Gunakan opsi ini untuk termasuk ke dalam file arsip terbuka untuk ditulis dengan aplikasi lain (berguna pada tugas pencadangan)
+txt_usenet: Usenet
+txt_user_name: Nama pengguna; gunakan bidang pengguna@DOMAIN atau DOMAIN\pengguna jika dibutuhkan.
+txt_using: Menggunakan:
+txt_volumepea: Pengendali volume
+txt_volume_size: Ukuran volume
+txt_type_ext_uns: berhasil diekstrak
+txt_websearch: Pencarian web
+txt_websites: Laman Web
+txt_word: Huruf
+txt_write: Tulis:
+txt_ramdompw_hint: Kamu dapat menyalin kata sandi yang dibuat acak di sini
+txt_exe_hint: Kamu dapat dengan bebas membuat nama dan parameter tereksekusi untuk pengkompresan kustom, dan pilih kontruksi sintaks. Harap dicatat bahwa kamu juga bisa mengubah perintah sintaks secara manual di tab "Konsol".
+txt_pj_hint2: Kamu dapat mengimpor definisi tugas dari frontend GUI pada bidang memo di bawah. lalu, kamu dapat mengubah, meluncurkan ataupun menyimpannya tanpa mengubah ataupun kehilangan definisi tugas untuk frontend GUI.
+txt_type_description_zip: ZIP: format pengarsipan/pengkompresan cepat, umum pada sistem Windows
+txt_zipcrypto_hint: ZipCrypto (pustaka)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: tersisa
+txt_6_5_abort: Hentikan
+txt_6_5_error: Kesalahan
+txt_6_5_no: Tidak
+txt_6_5_warning: Peringatan
+txt_6_5_yes: Ya
+txt_6_5_yesall: Ya untuk semua
+txt_5_6_update: Periksa pembaruan
+txt_5_6_cml: Bahasa menu sisem konteks
+txt_5_6_donations: Donasi
+txt_5_6_localization: Terjemahan
+txt_5_6_runasadmin: Jalankan sebagai admin
+txt_5_6_help: Dukungan online
+txt_5_5_cancelall: Batalkan semua
+txt_5_3_details: Rincian
+txt_5_3_files: file
+txt_5_3_folders: folder
+txt_5_3_info: Informasi
+txt_5_3_list: Daftar
+txt_5_3_os: Ukuran asli
+txt_5_3_ps: Ukuran paket
+txt_5_3_test: Uji-coba
+txt_5_0_extract: Ekstrak
+txt_5_0_from: dari
+txt_5_0_in: di
+txt_5_0_to: ke
+txt_4_5_search: Cari
+txt_4_0_drag: Seret arsip ke sini untuk mengekstrak, atau 
+txt_4_0_dragorselect: Seret ke sini atau pilih file
+txt_4_0_select: pilih file
+txt_3_6_selectdir: Pilih direktori
+txt_3_5_close: Tutup
+txt_3_0_details: Untuk lebih rincinya, "Laporan" termasuk log tugas, dan "Konsol" termasuk definisi tugas sebagai baris perintah.
+txt_3_0_hints: Petunjuk mengenai masalah
+txt_3_0_arc: Beberapa  asukan file tidak dapat dibaca (mungkin terkunci, tidak dapat diakses atau mungkin rusak)
+txt_3_0_ext: Arsip mungkin membutuhkan kata sandi yang berbeda untuk operasi terbaru
+txt_2_8_oop: Buka alur keluaran saat tugas selesai
+txt_2_7_validatefn: Operasi dihentikan, nama tidak sah terdeteksi:
+txt_2_7_validatecl: Operasi dihentikan, perintah yang berpotensi membahayakan terdeteksi (mis. perintah penggabungan tidak diizinkan di dalam program):
+txt_2_6_open: Buka arsip
+txt_2_5_ace_missing: Plugin UNACE hilang; untuk menangani arsip ACE kamu dapat mengunduhnya melalui laman PeaZip (karena UNACE merupakan sumber tertutup, plugin tidak disediakan di paket utama)
+txt_2_3_pw_errorchar_gwrap: karakter petik tidak dapat digunakan oleh PeaZip GUI pada kata sandi di bawah sistem terbaru, harap ubah kata sandi atau pilih mode Konsol di binari Backend tampilan pengguna di Opsi > Pengaturan
+txt_2_3_renameexisting: Ganti nama otomatis file yang tersedia
+txt_2_3_renameextracted: Ganti nama otomatis file terekstrak
+txt_2_3_cancel: Batal
+txt_2_3_encryption: Enkripsi
+txt_2_3_extinnew: Ekstrak di folder baru
+txt_2_3_keyfile: Keyfile
+txt_2_3_kf_not_found_gwrap: Keyfile tidak dapat ditemukan atau dibaca. Harap pilih Keyfile yang berbeda.
+txt_2_3_moreoptions: Opsi lainnya...
+txt_2_3_nopaths: Tidak ada alur
+txt_2_3_options: Opsi
+txt_2_3_overexisting: Timpa file yang tersedia
+txt_2_3_pw: Kata sandi
+txt_2_3_skipexisting: Lewati file yang tersedia
+txt_job_unknown: : Kesalahan tidak diketahui ditemukan
+txt_stdjob: [animasi akan berhenti saat tugas selesai]
+txt_benchmarkjob: [sistem akan lambat dalam merespon selama menjalankan benchmark (beberapa menit)]
+txt_defragjob: [tidak akan merespon selama defragmenting, kamu dapat membiarkannya berjalan di latar belakang]
+txt_consolejob: [Umpan balik dan rincian progres tugas tersedia pada jendela konsol]
+txt_job1: 1: Peringatan: kesalahan yang tidak fatal; mis. beberapa file hilang atau terkunci
+txt_job127: 127: Tidak dapat menjalankan operasi yang diminta
+txt_job2: 2: Terjadi kesalahan fatal
+txt_job255: 255: Tugas dihentikan oleh pengguna
+txt_job7: 7: Kesalahan: terdapat baris perintah yang tidak tepat
+txt_job8: 8: Kesalahan: memori tidak cukup untuk perintah yang diminta
+txt_autoclose: Tutup jendela ini saat tugas selesai
+txt_crscale: Rasio kompresi (lebih rendah, lebih baik):
+txt_console: Konsol
+txt_benchscale: Peringkat core 2 Duo 6600, setara dengan kecepatan MHz.
+txt_create: Buat
+txt_done: Selesai:
+txt_nocl: Baris perintah kosong
+txt_error: Kesalahan:
+txt_explore: Jelajah
+txt_extto: Ekstrak ke
+txt_halt: Hentikan sistem ketika tugas selesai
+txt_halted: Dihentikan:
+txt_hardware: perangkat keras
+txt_high: prioritas tinggi
+txt_idle: prioritas diam
+txt_input: Masukan:
+txt_jpaused: Tugas dijeda
+txt_jresumed: Tugas dilanjutkan
+txt_job_started: Tugas dijalankan
+txt_jobstatus: Status tugas:
+txt_jstopped: Tugas dihentikan oleh pengguna
+txt_jobstopped: Tugas dihentikan oleh pengguna; kamu dapat memeriksa sabagian hasil dengan menekan tautan alur keluaran.
+txt_job_success: Tugas selesai dengan sempurna
+txt_lt: Daftar/uji-coba
+txt_normal: prioritas normal
+txt_ok: OK
+txt_output: Keluaran:
+txt_pause: Jeda
+txt_paused: Dijeda,
+txt_p_high: Prioritas diatur ke tinggi
+txt_p_idle: Prioritas diatur ke diam
+txt_p_normal: Prioritas diatur ke normal
+txt_p_realtime: Prioritas diatur ke waktu nyata
+txt_rating: Peringkat:
+txt_rt: prioritas waktu nyata
+txt_report: Laporkan
+txt_resume: Lanjut
+txt_priority: Tekan untuk mengatur prioritas tugas
+txt_running: Berjalan,
+txt_isrunning: Berjalan...
+txt_saveas: Simpan sebagai
+txt_savejob: Simpan efinisi tugas
+txt_savelog: Simpan log tugas
+txt_software: perangkat lunak
+txt_speedscale: Kecepatan, skala logaritma (lebih tinggi, lebih baik):
+txt_status: Status
+txt_stop: Berhenti
+txt_bench: Benchmark sistem
+txt_threads: Thread:
+txt_time: Waktu:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+MENGEKSTRAK ARSIP
+Melalui sistem
+- klik-kanan pada arsip dan pada menu konteks sistem tekan "Ekstrak di disini" atau "Ekstrak di sini (di folder baru)" untung mengekstrak tanpa adanya interaksi
+- atau gunakan menu masukan "Ekstrak..." untuk mendapatkan opsi yang lebih: alur keluaran, kata sandi, ekstrak file ke direktori baru, pilih untuk melewati, ganti nama atau timpa file yang tersedia dll.
+
+Buka arsip di PeaZip, dengan cara klik-ganda, atau seret arsip ke jendela atau ikon PeaZip
+- tekan "Ekstrak" di bilah alat atau di menu konteks untuk hanya mengekstrak file terpilih saja melalui dialog konfirmasi untuk mengizinkan mengatur semua opsi (alur keluaran, kata sandi, kebijakan penamaan, ekstrak ke direktori baru dll)
+- seret file dan folder ke tujuan yang diinginkan, hanya konten yang tepilih yang akan diekstrak (untuk informasi lebih lanjut lihat bagian mengenai seret dan geser di PeaZip)
+- tekan tombol dropdown ekstrak tepat di sebelah kanan “Ekstrak” di bilah alat, mengizinkan pengekstrakan langsung keseluruhan arsip ke destinasi yang paling umum (melewti dialog konfirmasi) dan mengatur opsi yang paling penting; pintasan papan-ketik: Ctrl+E (atau F12) ekstrak keseluruhan arsip, akan ditanyakan untuk direktori keluaran; Ctrl+Alt+E ekstrak arsip di folder terbaru; Ctrl+Shift+E ekstrak ke desktop; Ctrl+Alt+Shift+E ekstrak ke dokumen; Ctrl+0 ekstrak ke alur sebelumnya; Ctrl+1..8 ekstrak ke alur dari penanda 1..8 (jika dibuat)
+
+Buka PeaZip, pilih satu atau lebih arsip dan tekan “Ekstrak” di bilah alat atau menu konteks, atau gunakan destinasi pengekstrakan cepat seperti yang telah dijelaskan pada poin sebelumnya.
+
+EKSTRAK HANYA OBJEK TERPILIH DARI ARSIP
+Buka arsip di PeaZip, dengan cara klik-ganda, atau seret arsip ke jendela atau ikon PeaZip
+- tekan "Ekstrak" pada bilah alat: hanya item yang terpilih yang akan diekstrak
+- seret file dan folder ke tujuan yang diinginkan, hanya konten yang dipilih yang akan diekstrak
+- klik-kanan dan pada grup “Ekstrak” pada menu konteks tekan “Ekstrak terpilih” (untuk hanya mengekstrak item terpilih) atau “Ekstrak yang ditampilkan” (untuk mengekstrak konten dari direktori terbaru atau dari filter pencarian terbaru)
+
+MEMASUKAN KATA SANDI UNTUK MENJELAJAH ATAU MENGEKSTRAK ARSIP
+Tekan pada ikon gembok untuk memasukkan kata sandi atau mungkin keyfile.
+Ikon tersebut ditampilkan di bilah status penjelajah file PeaZip dan di antarmuka pengekstrakan arsip; saat kata sandi diatur warna ikon akan berubah.
+
+MEMBUAT ARSIP
+Melalui sistem
+- klik kanan pada objek yang akan diarsipkan dan tekan pada "Tambahkan ke arsip" pada menu konteks atau menu SendTo. Itu akan membuka dialog konfirmasi pembuatan arsip, opsi lainnya terdapat pada tab “Lanjutan”; tekan OK untuk membuat arsip.
+- selain itu, bisa juga dengan cara seret file/folder ke jendela PeaZip atau pintasan; antarmuka pembuatan arsip yang sama akan muncul.
+
+Melalui PeaZip 
+- pilih objek yang akan diarsipkandan tekan tombol "Tambah"; ntarmuka pembuatan arsip yang sama akan muncul.
+
+MENAMBAHKAN FILE/FOLDER UNTUK MEMPERBARUI ARSIP YANG TERSEDIA
+Buka arsip di PeaZip (dengan cara klik-ganda, atau seret arsip ke jendela atau ikon PeaZip), lalu seret file dan folder untuk ditambahkan ke arsip (atau tekan tombol "Tambah" dan gunakan menu konteks aplikasi untuk menambahkan objek ke arsip).
+Itu akan membuka dialog konfirmasi pembuatan arsip, tekan OK untuk memperbarui arsip yang tersedia.
+
+MEMBUAT ARSIP TERPECAH UNTUK FILE YANG LEBIH KECIL
+Saat membuat arsip seperti yang dijelaskan pada poin sebelumnya, tekan pada menu dropdown “Volume tunggal” untuk memilih ukuran pada file keluaran (volume) dari arsip yang akan dipecah.
+Kebanyakan jenis arsip yang umum mendukung opsi ini.
+
+MEMBUAT ARSIP TERENKRIPSI
+Tekan pada ikon gembok untuk memasukkan kata sandi atau mungkin keyfile.; ikon tersebut ditampilkan di bilah status penjelajah file PeaZip dan di antarmuka pembuatan arsip.
+Untuk menyembunyikan nama dan direktori file yang terkandung pada arsip centang “Enkripsi nama file juga”, harap dicatat bahwa itu hanya akan diterapkan jika arsip dibuat dengan format yang mendukung fungsi ini, seperti 7Z dan ARC.
+Perhatikan dalam antarmuka pembuatan arsip, di sebelah ikon gembok, terdapat peringatan untuk menginformasikan secara visual jika enkripsi telah diatur dan jika format arsip terbaru mendukung pengenkripsian.
+
+MEMBUAT BEBERAPA ARSIP
+Tambahkan objek ke arsip (dengan tombol "Tambah" PeaZip, atau melalui menu konteks sistem atau menu SendTo) dan sebelum mengkonfirmasinya dengan "Ok" centang opsi "Tambahkan setiap objek ke arsip terpisah".
+
+MENGKONVERSI ARSIP
+Dari PeaZip pilih arsip yang ingin dikonversi dan tekan pada "Konversi" pada bilah alat atau menu konteks, file dan folder yang bukan arsip dapat ditambahkan juga, bedanya arsip akan diekstrak terlebih dahulu sebelum ke tahap pengkompresan.
+Menggunakan sekelar “Konversi arsip tersedia” bersamaan dengan “Tambahkan setiap objek ke arsip terpisah" (bawaan) akan menjalankan konversi masal dari arsip yang terdaftar, tanpa hal tersebut arsip akan dimasukkan ke arsip tunggal, meningkatkan efisiensi karena mengizinkan pengkompresan ulang data asli dari bagian yang tidak terkompresi.
+
+MEMBUAT ARSIP DENGAN FORMAT DAN DENGAN TINGKATAN KOMPRESI TERPILIH SECARA SPESIFIK
+Menggunakan prosedur “Integrasi sistem” di menu Opsi memungkinkan untuk mengaktifkan entri menu konteks untuk secara langsung menambahkan file/folder terpilih ke ZIP, 7Z atau arsip yang terekstrak sendiri.
+Untuk format Zip dan 7Z juga memungkinkan untuk mengaktifkan entri menu konteks untuk kompres ke tingkatan tercepat, normal atau ultra, melewati tingkatan pengkompresan bawaan untuk format terpilih.
+
+PENGELOLA KATA SANDI
+Pengelola kata sandi dapat diakses melalui menu utama, Alat > Pengelola kata sandi atau melalui Pengisian kata sandi, pada menu dropdown di bagian kiri bidang kata sandi.
+Kata sandi tersimpan dapat dipilih melalui menu dropdown di bagian kiri dari bidang kata sandi pada pengisian kata sandi, atau dapat disalin dari pengelola kata sandi untuk digunakan di aplikasi lain.
+Jika tidak ada kata sandi utama yang diatur di pengelola kata sandi, daftar kata sandi dapat diakses tanpa adanya otentifikasi, jika tidak kata sandi tidak akan muncul hingga diotentifikasi oleh pengguna dengan benar.
+
+KONFIGURASI APLIKASI
+Opsi > Terjemahan (dan di Opsi > Pengaturan, tab pertama) mengizinkan untuk mengubah bahasa aplikasi.
+Opsi > Pengaturan mengizinkan untuk mengubah peraturan aplikasi
+Opsi > Tema mengizinkan untuk mengubah ikon dan penampilan aplikasi
+Opsi > Integrasi sistem menjalankan proseduran untuk mengkonfigurasi asosiasi file, menu konteks menu SendTo (di Windows)
+Mengatur menu berisikan masukan untuk disesuaikan, nyalakan dan matikan fitur penjelajahan, seperti bilah alat, bilah alamat, bilah navigasi, dll
+
+F1 	bantuan
+F2 	ganti nama file / Ctrl+F2 salin pilihan ke / Shift+F2 pindah pilihan ke
+F3	pencarian (opsi pengulangan akan diingat) / Ctrl+F3 mulai tanpa pengulangan (cari di sini) / Shift+F3 pengulangan / Alt+F3 pencarian sistem
+F4 	tampilkan menu munculan navigasi / Ctrl+Shift+F4 jelajahi root komputer / Ctrl+F4 jelajahi desktop / Shift+F4 jelajahi beranda
+F5 	muat-ulang
+F6 	pengalih tampilan penjelajah/datar
+F7 	tambahkan ke penanda / Ctrl+F7 buka di contoh baru PeaZip / Shift+F7 buka perintah cepat di alur terpilih / Alt+F7 jelajahi alur terpilih
+F8 	jelajahi item pertama dalam daftar penanda (Ctrl, kedua, Shift, ketiga)
+F9 	atur kata sandi/keyfile / Shift+F9 pengelola kata sandi / Ctrl+F9 buat keyfile atau kata sandi acak / Ctrl+Shift+F9 atur filter lanjutan
+F10 	menu / Ctrl+F10 jalankan sebagai pengguna yang berbeda / Alt+F10 jalankan sebagai admin (Windows Vista dan yang terbaru)
+F11 	pengalih mode layar penuh / Ctrl+F11 immersif
+F12 	ekstrak semua ke...
+
+TENTANG PEAZIP
+
+PeaZip adalah file sumber terbuka dan pengelola arsip: lintas perangkat, tersedia portabel dan dapat dipasang di Windows 32 dan 64 bit (9x, 2k, XP, Vista) dan Linux (PeaZip adalah aplikasi desktop yang netral).
+
+PeaZip mengizinkan untuk menerapkan filter pencarian ganda yang bertenaga to archive's content; membuat dan mengekstrak banyak arsip dalam satu waktu; memebuat arsip yang terekstrak sendiri; mengekspor definisi tugas sebagai baris perintah; menyimpan tata letak pengarsipan dan pengekstrakan; menandai arsip dan folder; pindai dan buka dengan aplikasi kustom; kompres dan unkompres file dsb...
+
+Fitur lainnya: enkripsi yang kuat, penyalinan file yang kuat, pecahkan/gabungkan file (merentangkan file), penghapusan data yang aman, pembandingan, file checksum dan hash, benchmark sistem, buat kata sandi dan keyfile acak.
+
+Unduh: https://peazip.github.io
+Pelajari lebih lanjut: https://peazip.github.io/peazip-free-archiver.html
+Dukungan: https://peazip.github.io/peazip-help.html
+Tanya-Jawab: https://peazip.github.io/peazip-help-faq.html
+
+Terima kasih banyak kepada semua orang yang berkontribusi terhadap projek PeaZip serta tumbuh-kembangnya komponen perangkat lunak Sumber Terbuka yang digunakan pada aplikasi ini (lihat laman web untuk daftar lengkapnya), dan ke semua pengguna yang berkontribusi melalui umpan-balik, pengalaman serta sarannya.
