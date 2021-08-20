@@ -1,21 +1,21 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
 8.1
-Çeviren: Osman Öz
-Son güncelleyen: Cihan Alkan
-Son güncelleme: 11 Haziran 2021
+Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
+Son güncelleyen: Muhammed Emin Subaşı
+Son güncelleme: 20 Ağustos 2021
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
+txt_8_1_preparse: Arşivleri her zaman önceden ayrıştırın
+txt_8_1_bo: Tarayıcı optimizasyonu
+txt_8_1_bop: Tarayıcı optimizasyon seçenekleri, tarayıcının çok sayıda öğe içeren arşivleri görüntülemesine izin vermek için Seçenekler > Ayarlar, Genel sekmesinden ayarlanabilir.
+txt_8_1_nopreparse: Arşivleri önceden ayrıştırmayın
+txt_8_1_ed: Hatalar Tespit Edildi.
 txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
+txt_8_1_preparsehint: Büyük arşivlerin ön ayrıştırılmasını sınırlayan performansları Optimize edin. Ön ayrıştırma, arşiv içeriğindeki olası sorunları önceden tespit etmek içindir.
+txt_8_1_slow: Yavaş
+txt_8_1_vslow: Çok Yavaş
 txt_8_1_volumes: volumes
 txt_8_0_altcol: Alternatif ızgara rengi
 txt_8_0_forcebrowse: Kurallı olmayan arşiv türlerine göz atın (kaplar, disk görüntüleri, yükleyiciler,...)
