@@ -3,7 +3,7 @@ Turkish (Türkçe)
 8.1
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 20 Ağustos 2021
+Son güncelleme: 21 Ağustos 2021
 
 === PeaZip text group ===
 
@@ -12,8 +12,8 @@ txt_8_1_bo: Tarayıcı optimizasyonu
 txt_8_1_bop: Tarayıcı optimizasyon seçenekleri, tarayıcının çok sayıda öğe içeren arşivleri görüntülemesine izin vermek için Seçenekler > Ayarlar, Genel sekmesinden ayarlanabilir.
 txt_8_1_nopreparse: Arşivleri önceden ayrıştırmayın
 txt_8_1_ed: Hatalar Tespit Edildi.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Büyük arşivlerin ön ayrıştırılmasını sınırlayan performansları Optimize edin. Ön ayrıştırma, arşiv içeriğindeki olası sorunları önceden tespit etmek içindir.
+txt_8_1_togglearc: Arşiv içeriğinin düzgün görünmesini listelemek zaman alabilir, devam edilsin mi?
+txt_8_1_preparsehint: Büyük arşivlerin ön ayrıştırılmasını sınırlayan performansları optimize edin. Ön ayrıştırma, arşiv içeriğindeki olası sorunları önceden tespit etmek içindir.
 txt_8_1_slow: Yavaş
 txt_8_1_vslow: Çok Yavaş
 txt_8_1_volumes: volumes
