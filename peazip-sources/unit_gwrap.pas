@@ -192,6 +192,7 @@ type
     ImageButton2: TLabel;
     Imagefixed: TImage;
     ImageSavePJ: TLabel;
+    ImageKeep: TLabel;
     Imagestatus: TImage;
     Button1: TBitBtn;
     ButtonStop: TBitBtn;
@@ -273,6 +274,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ImageKeepClick(Sender: TObject);
     procedure ImageSavePJClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure ImageButton2Click(Sender: TObject);
@@ -308,6 +310,7 @@ type
     procedure pmeiClick(Sender: TObject);
     procedure pmeoClick(Sender: TObject);
     procedure pmexploreClick(Sender: TObject);
+    procedure pmkeeperrClick(Sender: TObject);
     procedure pmsearchClick(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure TrayIcon1Click(Sender: TObject);
@@ -344,7 +347,7 @@ var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
   pprogbar,pprogbarprev,perrors,ipercp,remtime:integer;
-  pproglast,pprogfirst,pfromnativedrag,runelevated,pgook:boolean;
+  pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore:boolean;
   pautoclose:byte;
   Barchive,Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
   Bpriority1,Bpriority2,Bpriority3,Bpriority4,
@@ -363,7 +366,7 @@ var
   tsin:TTimestamp;
   activelabel_launcher :TLabel;
   //imported strings
-  txt_7_4_recover,txt_rr,txt_7_8_dd:ansistring;
+  txt_7_4_recover,txt_rr,txt_7_8_dd,txt_8_2_keep:ansistring;
   //translations
   txt_6_9_remaining,txt_6_5_abort,txt_6_5_error,txt_6_5_no,txt_6_5_yes,txt_6_5_yesall,txt_6_5_warning,
   txt_5_6_update,txt_5_6_cml,txt_5_6_donations,txt_5_6_localization,txt_5_6_runasadmin,
@@ -410,11 +413,35 @@ with Form_gwrap do
 begin
 imagebutton2.visible:=false;
 imagesavepj.visible:=false;
+imagekeep.visible:=false;
 case i of
-   1: begin Page1.Visible:=true; Page2.Visible:=false; Page3.Visible:=false; Page4.Visible:=false; end;
-   2: begin Page1.Visible:=false; Page2.Visible:=true; Page3.Visible:=false; Page4.Visible:=false; imagebutton2.visible:=true; end;
-   3: begin Page1.Visible:=false; Page2.Visible:=false; Page3.Visible:=true; Page4.Visible:=false; imagesavepj.visible:=true; end;
-   4: begin Page1.Visible:=false; Page2.Visible:=false; Page3.Visible:=false; Page4.Visible:=true; end;
+   1: begin
+      Page1.Visible:=true;
+      Page2.Visible:=false;
+      Page3.Visible:=false;
+      Page4.Visible:=false;
+      if ImageKeep.Caption=txt_8_2_keep then ImageKeep.visible:=true;
+      end;
+   2: begin
+      Page1.Visible:=false;
+      Page2.Visible:=true;
+      Page3.Visible:=false;
+      Page4.Visible:=false;
+      imagebutton2.visible:=true;
+      end;
+   3: begin
+      Page1.Visible:=false;
+      Page2.Visible:=false;
+      Page3.Visible:=true;
+      Page4.Visible:=false;
+      imagesavepj.visible:=true;
+      end;
+   4: begin
+      Page1.Visible:=false;
+      Page2.Visible:=false;
+      Page3.Visible:=false;
+      Page4.Visible:=true;
+      end;
    end;
 end;
 end;
@@ -641,6 +668,7 @@ procedure assign_guitext;
 begin
 with Form_gwrap do
 begin
+ImageKeep.Caption:='';
 labelWarning1.Caption:=txt_3_0_hints;
 LabelTitle1.Caption:='      '+txt_status+'      ';
 LabelTitle2.Caption:='      '+txt_report+'      ';
@@ -1829,6 +1857,13 @@ ended:=true;
 Application.ProcessMessages;
 //Form_gwrap.StringGrid1.AutosizeColumns;
 
+if exit_code<>0 then
+   if pcanignore=true then
+      begin
+      Form_gwrap.ImageKeep.Visible:=true;
+      Form_gwrap.ImageKeep.Caption:=txt_8_2_keep;
+      end;
+
 //final actions, options
 if (pproglast=true) or (pprogn='') then
 begin
@@ -2022,6 +2057,12 @@ settheme;
 pldesigned:=true;
 end;
 
+procedure TForm_gwrap.ImageKeepClick(Sender: TObject);
+begin
+if pcanignore=true then perrignore:=true;
+go_ok;
+end;
+
 procedure TForm_gwrap.ImageButton2Click(Sender: TObject);
 begin
 save_report;
@@ -2114,6 +2155,8 @@ ended:=false;
 launchwithsemaphore:=false;
 gocancelall:=true;
 setbuttonsnormal;
+Form_gwrap.ImageKeep.Visible:=false;
+Form_gwrap.ImageKeep.Caption:='';
 Form_gwrap.Label5.Visible:=false;
 Form_gwrap.Label6.Visible:=false;
 Form_gwrap.LabelWarning1.Visible:=false;
@@ -2434,6 +2477,11 @@ end;
 procedure TForm_gwrap.pmexploreClick(Sender: TObject);
 begin
 do_explorepath;
+end;
+
+procedure TForm_gwrap.pmkeeperrClick(Sender: TObject);
+begin
+
 end;
 
 procedure TForm_gwrap.pmsearchClick(Sender: TObject);

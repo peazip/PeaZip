@@ -118,6 +118,8 @@ unit list_utils;
  0.58     20210629  G.Tani      Improved size detection for multipart archives
                                 Added support for .whl Python packages and .gem Ruby gem packages, 220 extensions supported
                                 Reorganized codes in testext function for containers: 100..199 package formats 200..499 filesystems and others
+ 0.59     20210727  G.Tani      Added CPU architecture, and widget set strings to info about build
+ 0.60     20210817  G.Tani      Added support for .lz file extension, and for .apkm, .apks, .aab packages: 225 extensions supported
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -385,6 +387,9 @@ procedure get_desktop_path(var s: ansistring);
 
 //get home path (*x) or profile path (win)
 procedure get_home_path(var s: ansistring);
+
+//get sub paths in home (*x)
+procedure get_home_subpaths(var usr_documents,usr_downloads,usr_music,usr_pictures,usr_videos: ansistring);
 
 //get a temporary work path writeable from current user
 procedure get_usrtmp_path(var s: ansistring);
@@ -1653,10 +1658,14 @@ end;
 
 function escapefilenamedelim(s: ansistring; desk_env: byte): ansistring;
 var
-   cdelim:utf8string;
+   cdelim,estr:utf8string;
 begin
-cdelim:=correctdelimiter(s);
-result := cdelim+escapefilename(s, desk_env)+cdelim;
+estr:=escapefilename(s, desk_env);
+if pos(' ',estr)<>0 then
+   cdelim:=correctdelimiter(s)
+else
+   cdelim:='';
+result:=cdelim+estr+cdelim;
 end;
 
 function stringdelim(s:ansistring): ansistring;
@@ -1772,6 +1781,22 @@ begin
 {$IFDEF DARWIN}
   bytedesk := 20;
 {$ENDIF}
+
+//Architecture
+{$IFDEF CPUX86} caption_build := caption_build + ', x86'; {$ENDIF}
+{$IFDEF CPUX86_64} caption_build := caption_build + ', x86_64'; {$ENDIF}
+{$IFDEF CPUARM} caption_build := caption_build + ', ARM'; {$ENDIF}
+{$IFDEF CPUAARCH64} caption_build := caption_build + ', AARCH64'; {$ENDIF}
+
+//Widget set
+{$IFDEF LCLCARBON} caption_build := caption_build + ', Carbon'; {$ENDIF}
+{$IFDEF LCLCOCOA} caption_build := caption_build + ', Cocoa'; {$ENDIF}
+{$IFDEF LCLQT} caption_build := caption_build + ', QT4'; {$ENDIF}
+{$IFDEF LCLQT5} caption_build := caption_build + ', QT5'; {$ENDIF}
+{$IFDEF LCLGTK} caption_build := caption_build + ', GTK'; {$ENDIF}
+{$IFDEF LCLGTK2} caption_build := caption_build + ', GTK2'; {$ENDIF}
+{$IFDEF LCLGTK3} caption_build := caption_build + ', GTK3'; {$ENDIF}
+
   if getenvironmentvariable('GNOME_DESKTOP_SESSION_ID') <> '' then
     bytedesk := 1; //if this Gnome specific env variable is set, probably the user is running Gnome
   if getenvironmentvariable('KDE_FULL_SESSION') <> '' then
@@ -1807,6 +1832,17 @@ if s = '' then
 if s<>'' then
    if s[length(s)] <> directoryseparator then
      s := s + directoryseparator;
+end;
+
+procedure get_home_subpaths(var usr_documents,usr_downloads,usr_music,usr_pictures,usr_videos: ansistring);
+begin
+{$IFNDEF MSWINDOWS}
+if DirectoryExists(GetEnvironmentVariable('HOME') + '/Documents/') then usr_documents := GetEnvironmentVariable('HOME') + '/Documents/';
+if DirectoryExists(GetEnvironmentVariable('HOME') + '/Downloads/') then usr_downloads := GetEnvironmentVariable('HOME') + '/Downloads/';
+if DirectoryExists(GetEnvironmentVariable('HOME') + '/Music/') then usr_music := GetEnvironmentVariable('HOME') + '/Music/';
+if DirectoryExists(GetEnvironmentVariable('HOME') + '/Pictures/') then usr_pictures := GetEnvironmentVariable('HOME') + '/Pictures/';
+if DirectoryExists(GetEnvironmentVariable('HOME') + '/Videos/') then usr_videos := GetEnvironmentVariable('HOME') + '/Videos/';
+{$ENDIF}
 end;
 
 procedure get_desktop_path(var s: ansistring); //superseded in Windows
@@ -2030,6 +2066,7 @@ begin
     '.zip', '.cbz', '.smzip', '.ppmd': testext := 6;
     '.arj': testext := 7;
     '.cpio': testext := 10;
+    '.lz': testext := 11;
     '.lzh': testext := 12;
     '.rar', '.cbr', '.r00', '.r01': testext := 13;
     '.00':
@@ -2074,7 +2111,7 @@ begin
     '.pet', '.pup': testext := 122;//PuppyLinux packages
     '.slp': testext := 123;//Stampede Linux packages
     '.ipa', '.ipsw': testext := 124; //.ipa iPhone application archive file .ipsw iOS devices firmware packages (.zip variants)
-    '.jar', '.ear', '.sar', '.war', '.apk', '.xapk': testext := 125;//Java and Android package (.zip derived)
+    '.jar', '.ear', '.sar', '.war': testext := 125;//Java packages (.zip derived)
     '.xzm': testext := 126;//Porteus Linux packages
     '.mlc', '.mui': testext := 127;//Microsoft's Language Interface Pack and Multilingua User Interface packages
     '.appx', '.appxbundle', '.appv', '.smpk', '.nupkg',
@@ -2086,6 +2123,7 @@ begin
     '.ipk': testext := 132; //Freedesktop's Listaller .ipk packages
     '.whl': testext := 133; //Python package
     '.gem': testext := 134; //Ruby gem package
+    '.apk', '.xapk', '.apkm', '.apks', '.aab' : testext := 134; //Android packages (.zip derived)
 
     //200..499 filesystems
     '.iso': testext := 200;
@@ -2143,6 +2181,8 @@ begin
     '.zst','.zstd','.tzst': testext := 5002;//Zstd .zst compressed file
     '.001': testext := 10000;//generic spanned archive
     '.pea': testext := 10001;
+    else
+      if length(ext)>2 then if ext[length(ext)-1]+ext[length(ext)]='aa' then testext := 10000;
   end;
 end;
 
