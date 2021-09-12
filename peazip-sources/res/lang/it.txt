@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.1
+8.2
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20210524
 
 === PeaZip text group ===
 
+txt_8_2_slower: (più lento)
+txt_8_2_df: 7z / p7zip mostra il contenuto delle cartelle
+txt_8_2_vreport: 7z / p7zip report sintetico
+txt_8_2_ta: Accesso
+txt_8_2_tc: Creazione
+txt_8_2_keep: Mantieni i file
+txt_8_2_tm: Modifica
+txt_8_2_skipet: Non testare cifratura
+txt_8_2_alltimes: Salva tutte le date
+txt_8_2_supportedby: Supportato da
 txt_8_1_preparse: Analizza gli archivi all'apertura
 txt_8_1_bo: Ottimizzazione del browser
 txt_8_1_bop: E' possibile mostrare più files regolando l'ottimizzazione del browser in Opzioni > Impostazioni, tab Generale.

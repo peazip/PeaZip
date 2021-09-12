@@ -1,23 +1,32 @@
 ﻿=== PeaZip language file ===
 Français
-8.1
+8.2
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 10.06.2021
+Date du: 24.07.2021
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Autre couleur de grille
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Toujours pré-analyser les archives
+txt_8_1_bo: Optimisation du navigateur
+txt_8_1_bop: Les options d’optimisation du navigateur peuvent être définies à partir des options > paramètres, onglet Général, afin de permettre au navigateur d’afficher des archives contenant un très grand nombre d’éléments.
+txt_8_1_nopreparse: Ne pas pré-analyser les archives
+txt_8_1_ed: erreur(s) détectée(s).
+txt_8_1_togglearc: La liste des vues plates du contenu des archives peut prendre beaucoup de temps, continuez quand même ?
+txt_8_1_preparsehint: Optimiser les performances en limitant la pré-analyse des grandes archives. La pré-analyse est destinée à détecter à l’avance les éventuels problèmes dans le contenu de l’archive.
+txt_8_1_slow: Lent
+txt_8_1_vslow: Très lent
+txt_8_1_volumes: Autre couleur de grille
 txt_8_0_forcebrowse: Parcourir les types d’archives non canoniques (conteneurs, images disque, programmes d’installation,...)
 txt_8_0_commonalgo: Algorithmes courants
 txt_8_0_forceconvert: Convertir des types d’archives non canoniques

@@ -1,22 +1,32 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-8.1
+8.2
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20210622
+Sist revidert: 20210724
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Alltid forhåndssøk arkiver
+txt_8_1_bo: Utforsker optimisering
+txt_8_1_bop: Utforsker optimiseringsalternativer kan settes fra Alternativer > Innstillinger, Generelt fane, for å tillate utforsker å vise arkiver som inneholder svært mange poster.
+txt_8_1_nopreparse: Ikke forhåndssøk arkiver
+txt_8_1_ed: feil oppdaget.
+txt_8_1_togglearc: Listing av flat visning av arkiv-innhold kan ta lang tid, fortsette likevel?
+txt_8_1_preparsehint: Optimiser ytelser ved bergrenset forhåndssøk av store arkiver. Forhåndssøk er ment å oppdage mulige problemer med arkivinnholdet på forhånd.
+txt_8_1_slow: Sakte
+txt_8_1_vslow: Veldig sakte
+txt_8_1_volumes: volumer
 txt_8_0_altcol: Veksle rammefarge
 txt_8_0_forcebrowse: Se på ureglementære arkivtyper (containere, diskbilder, installatørere,...)
 txt_8_0_commonalgo: Felles algoritmer

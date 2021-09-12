@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Dutch - Nederlands
-8.1
+8.2
 Translated by: Koos van Riemsdijk - Stephan Paternotte
 Last rev. by: Stephan Paternotte
 Last rev.: 20160620
 
 === PeaZip text group ===
 
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
 txt_8_1_preparse: Always pre-parse archives
 txt_8_1_bo: Browser optimization
 txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.

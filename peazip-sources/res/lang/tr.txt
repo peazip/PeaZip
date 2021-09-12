@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-8.1
+8.2
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
 Son güncelleme: 21 Ağustos 2021
 
 === PeaZip text group ===
 
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
 txt_8_1_preparse: Arşivleri her zaman önceden ayrıştırın
 txt_8_1_bo: Tarayıcı optimizasyonu
 txt_8_1_bop: Tarayıcı optimizasyon seçenekleri, tarayıcının çok sayıda öğe içeren arşivleri görüntülemesine izin vermek için Seçenekler > Ayarlar, Genel sekmesinden ayarlanabilir.

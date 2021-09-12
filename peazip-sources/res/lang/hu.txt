@@ -1,34 +1,44 @@
 ﻿=== PeaZip language file ===
 Hungarian - Magyar
-8.1
+8.2
 Fordító: Zityi's Translator Team
 Last rev. by: Giorgio Tani
-Last rev.: 20210314
+Last rev.: 20210523
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Mindig végezzen előzetes elemzést az archívumoknál
+txt_8_1_bo: Böngésző optimalizálás
+txt_8_1_bop: A böngésző optimalizálási lehetőségei az Opciók > Beállítások, Általános lapon állíthatók be annak érdekében, hogy a böngésző képes legyen megjeleníteni a nagyon sok elemet tartalmazó archívumokat..
+txt_8_1_nopreparse: Ne végezzen előzetes elemzést az archívumoknál
+txt_8_1_ed: hiba észlelve.
+txt_8_1_togglearc: Az archív tartalmak egyszintű listázása hosszú időt vehet igénybe, folytatja mindenképp?
+txt_8_1_preparsehint: Optimalizálja a teljesítményt, korlátozva a nagyméretű archívumok előzetes elemzését. Az előzetes elemzés célja, hogy előre felismerje az archívum tartalmának lehetséges problémáit.
+txt_8_1_slow: Lassú
+txt_8_1_vslow: Nagyon gyors
+txt_8_1_volumes: kötet
+txt_8_0_altcol: Alternatív rácsszín
+txt_8_0_forcebrowse: Böngészés a nem kifejezetten támogatott archívumtípusok között (tárolók, lemezképek, telepítők,...)
+txt_8_0_commonalgo: Közös algoritmusok
+txt_8_0_forceconvert: A nem kifejezetten támogatott archívumtípusok konvertálása
+txt_8_0_defaultactionhint: Alapértelmezett művelet a PeaZip-hez társított fájlra való dupla kattintáskor a rendszerből
+txt_8_0_defaultaction: Alapértelmezett művelet indításkor
+txt_8_0_enableextand: A "Kibontás és megnyitás a következővel" almenü engedélyezése
+txt_8_0_forcetyping: Jelszavak interaktív beírásának kényszerítése
+txt_8_0_setpwopt: Jelszó / kulcsfájl opciók beállítása
+txt_8_0_forcetypinghelp: Futtatja a háttéreszköz binárisokat a konzolon, nem lehet titkosított fájlnevekkel rendelkező archívumokat böngészni. Lehetővé teszi olyan parancsfájlok létrehozását, amelyek nem futnak felügyelet nélkül, hanem interaktívan kérik a felhasználó jelszavát.
+txt_7_9_spacing: Térköz
+txt_7_9_zooming: Nagyítás
 txt_7_8_changelocalization: PeaZip nyelv módosítása
 txt_7_8_custext: Egyéni kiterjesztés
 txt_7_8_destexistfile: A cél már tartalmaz feldolgozott fájlokat. Lecseréli az azonos nevű fájlokat?
@@ -41,9 +51,9 @@ txt_7_8_priorityrealtime: Valós idejű
 txt_7_8_requirerestart: [a PeaZip újraindítását igényli]
 txt_7_8_tpriority: Feladatok prioritása
 txt_7_8_update: Frissítés
-txt_7_7_noneall: Nincs (nincs előnézet, nincs húzással történő kibontás)
-txt_7_7_nonetemp: Nincs, felhasználói ideiglenes mappa, ha szükséges
-txt_7_7_outtemp: Kimenet, előnézet a felhasználói ideiglenes mappában
+txt_7_7_noneall: Nincs: előnézet, szerkesztés, fogd és vidd mód és interaktív kibontás letiltása
+txt_7_7_nonetemp: Nincs, a felhasználó ideiglenes mappája, ha szükséges
+txt_7_7_outtemp: Kimenet, előnézet a felhasználó ideiglenes mappájában
 txt_7_7_sys7zreq: A p7zip teljes vagy azzal egyenértékű telepítését igényli
 txt_7_7_tw: Ideiglenes munkamappa az archívumok létrehozásához, szerkesztéséhez, előnézetéhez és húzással történő kibontásához.
 txt_7_7_sys7z: A 7z rendszer használata Linuxon
@@ -124,12 +134,12 @@ txt_6_9_forceu: Szerkesztett fájlok frissítése az archívumban
 txt_6_9_opuns: A művelet nem támogatott az aktuális archívumtípusnál
 txt_6_9_overarch: Felülírja az archívumban már jelen lévő azonos nevű fájlokat?
 txt_6_9_uconf: Az előnézeti fájl módosult. Frissíti az aktuális archívumot?
-txt_6_8_ndrop: Natív fogd és vidd használata a Windows-ban
+txt_6_8_ndrop: Natív fogd és vidd mód használata a Windows-ban
 txt_6_7_nop: (nincs előnézet)
 txt_6_6_pdupfound: lehetséges másolatok észlelése (gyors hozzávetőleges teszt)
 txt_6_6_rsh: Keresési előzmények visszaállítása
 txt_6_6_pdupfind: Lehetséges másolatok ajánlása
-txt_6_6_forcemodify: Kísérlet a nem kifejezetten támogatott fájltípusok szerkesztésére
+txt_6_6_forcemodify: A nem kifejezetten támogatott archívumtípusok szerkesztése
 txt_6_5_mandatory: (kötelező)
 txt_6_5_abort: Megszakít
 txt_6_5_askp: Kérje a jelszó beállítását indításkor
@@ -424,8 +434,8 @@ txt_3_1_src: Keresések
 txt_3_1_systmp: Rendszer temp mappa
 txt_3_1_languagetools: Fordítás
 txt_3_1_workingdir: Munkakönyvtár
-txt_3_0_nonreadableorpw: Az archívum nem olvasható. Előfordulhat, hogy az archívum érvénytelen, vagy a tartalomjegyzéke titkosított. Szeretne kipróbálni egy jelszót?
-txt_3_0_readablepw: Úgy tűnik, hogy az archívum jelszóval van védve
+txt_3_0_nonreadableorpw: Az archívum nem olvasható. Előfordulhat, hogy az archívum érvénytelen, hiányoznak a kötetei, vagy a tartalomjegyzék titkosítva van. Szeretné kipróbálni a jelszót?
+txt_3_0_readablepw: Archívum lehet, hogy jelszóval van védve
 txt_3_0_configure: Rendszerintegráció és fájltársítások
 txt_3_0_resettmp: Peazip-tmp visszaállítása
 txt_2_9_address: Címsor
@@ -476,7 +486,7 @@ txt_2_8_typeunit: Adja meg a logikai vagy fizikai egység nevét
 txt_2_8_usedefaultoutpath: Alapértelmezett kimeneti hely használata
 txt_2_7_experimental: (kisérleti, tekintse meg a dokumentációt)
 txt_2_7_optional: (nem kötelező)
-txt_2_7_list_tryflatorpw: , lehetséges megoldások: próbálja ki a normál nézetet (F6), adja meg a jelszót (F9), szerezzen egy friss másolatot az archívumból
+txt_2_7_list_tryflatorpw: , lehetséges megoldások: próbálja ki az egyszintű nézetet (F6), adja meg a jelszót (F9), szerezzen egy friss másolatot az archívumból
 txt_2_7_separate: Elemek hozzáadása különálló archívumba
 txt_2_7_pwsupported: archiválás jelszóval
 txt_2_7_cancel: Mégse
@@ -493,7 +503,7 @@ txt_2_7_ok: OK
 txt_2_7_drag_archive: fájl megnyitása új archívumként? ("Nem" fájl hozzáadása a jelenlegi archiválási elrendezéshez)
 txt_2_7_oop: A kimeneti hely megnyitása a művelet befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
 txt_2_7_output: Kimenet
 txt_2_7_pwnotset: Nincs jelszó beállítva
 txt_2_7_pwarcset: Jelszó beállítva
@@ -505,7 +515,7 @@ txt_2_7_selpath: Kiválasztott elemek helye
 txt_2_7_separateerror: Sajnáljuk, de nem importálható a feladatdefiníció parancssora, míg használatban van a "Minden elem hozzáadása egy különálló archívumhoz" kapcsoló, mivel a feladat több különböző parancs szerint van végrehajtva
 txt_2_7_noinput: Az elrendezés üres: használja a Fájl(ok) hozzáadása vagy Elrendezés betöltése opciót a kibontandó archívumok listájának feltöltéséhez
 txt_2_7_dirsize: A mappák tartalmának mérete nincs ellenőrizve a teljes méret kiszámításánál
-txt_2_7_un7z_browse_flat: próbálja ki a normál nézetet (F6)
+txt_2_7_un7z_browse_flat: próbálja ki az egyszintű nézetet (F6)
 txt_2_7_updating: Meglévő archívum frissítése
 txt_2_6_folders: (mappák)
 txt_2_6_advanced: Speciális
@@ -652,12 +662,12 @@ txt_blowfish: Blowfish448 (64 bites blokk)
 txt_bookmarks: Könyvjelzők
 txt_browse: Böngészés
 txt_browser: Böngésző
-txt_aborted_error: Az archívum böngészése le lett állítva, mivel túl sok ideig tartana. A kiválasztást szűkítheti a keresés (F3) segítségével vagy kiléphet a normál nézeti módból (F6); a kicsomagolás/lista/teszt műveleteket ez a probléma nem érinti.
+txt_aborted_error: Az archívum böngészése leállt, mivel túl sok időt venne igénybe. Szűkítheti a kiválasztást a keresés (F3) használatával vagy az egyszintű megjelenítési mód (F6) elkerülésével. Közvetlenül kibonthatja, listázhatja vagy tesztelheti az archívumot.
 txt_list_browsing: Böngészés
 txt_archive_root: Böngészés: archívum gyökérkönyvtára
 txt_type_description_bzip2: BZip2: elég erős tömörítés, átlagos sebesség
 txt_pw_empty: Adjon meg egy jelszót (vagy kulcsfájlt)
-txt_add_error: Nem lehet hozzáadni/frissíteni vagy törölni az elem(eke)t; valószínűleg az archívum típusa csak a böngészés/kicsomagolás funkciókat támogatja, vagy nem támogatja az adott műveletet (pl. többkötetes vagy tömör), vagy a PeaZip nem tudja teljes mértékben kezelni az archívum nevét
+txt_add_error: Nem lehet hozzáadni/frissíteni vagy törölni az objektumokat. Az archívum nem írható, vagy nem támogatja ezt a műveletet. A nem kifejezetten támogatott archívumok szerkesztése engedélyezhető az Archívumkezelő opciókban.
 txt_un7z_browse_failure: nem lehet böngészni az archívumot
 txt_list_error: Nem lehet listázni az archívum tartalmát. Ellenőrizze, hogy az archívum jelszóval védett vagy sérült-e.
 txt_conf_cannotsave: Nem lehet menteni a konfigurációs fájlt. Ellenőrizze, hogy a hely írható és, hogy van-e elég szabad terület
@@ -775,8 +785,8 @@ txt_nfiles: Fájl
 txt_fs: Fájlrendszer
 txt_filters_recourse: rekurzív alkönyvtár szűrő(k)
 txt_filters: Szűrők
-txt_flat: Normál (összes megjelenítése)
-txt_list_flat: Normál nézet
+txt_flat: Egyszintű (összes megjelenítése)
+txt_list_flat: Egyszintű nézet
 txt_unit_floppy: Hajlékonylemez
 txt_foldername: Mappa neve
 txt_nfolders: Mappák
@@ -850,7 +860,7 @@ txt_list_details: Lista (részletekkel)
 txt_list_all: Összes lista
 txt_list_disp: Megjelenített elem(ek) listája
 txt_list_sel: Kijelölt elem(ek) listája
-txt_toggle_warning: Az útvonal tartalmának normál módú listázása hosszú időt vehet igénybe, mindenképp folytatja?
+txt_toggle_warning: Az útvonal tartalmának egyszintű listázása hosszú időt vehet igénybe, mindenképp folytatja?
 txt_loadfile: Fájl betöltése
 txt_loadlayout: Elrendezés betöltése
 txt_unit_hd: Helyi lemez
@@ -894,7 +904,7 @@ txt_peaobj: Elem vezérlés
 txt_displayed_obj: elem
 txt_olderthan: Régebbi, mint a kijelölt elem
 txt_on: be
-txt_ondblclick: Dupla kattintási művelet:
+txt_ondblclick: Dupla kattintásnál
 txt_opacity: Opacitás
 txt_open: Megnyitás
 txt_openarchive: Archívum megnyitása
@@ -935,7 +945,7 @@ txt_type_description_pea: PEA: biztonság orientált archívum formátum, gyors 
 txt_peazip_new: PeaZip (új példány)
 txt_peazip_help: Online támogatás
 txt_peazip_web: PeaZip weboldal
-txt_performall: Az összes támogatott algoritmus végrehajtása
+txt_performall: Minden algoritmus
 txt_name_provide: \\ / : * ? ' " < > | karakterek nem engedélyezettek a fájlnevekben
 txt_upxorstrip: Válassza a Strip/UPX-et a binárison
 txt_not_removable_file: Zárja be a használatban lévő fájlt annak érdekében, hogy PeaZip el tudja távolítani:
@@ -1051,7 +1061,7 @@ txt_extand_error: Ez a funkció egyszerre egyetlen elemen is elvégezhető
 txt_threads: Végrehajtási szálak
 txt_titlescolor: Feliratok színe
 txt_to: ide:
-txt_toggle_browseflat: Tallózás/normál nézet kapcsoló (összes megjelenítése)
+txt_toggle_browseflat: Tallózás/egyszintű nézet kapcsoló (összes megjelenítése)
 txt_toggle_historybookmarks: Előzmények/könyvjelzők kapcsoló
 txt_toolbarscolor: Sávok színe
 txt_tools: Eszközök
@@ -1123,11 +1133,11 @@ txt_3_6_selectdir: Könyvtár kiválasztása
 txt_3_5_close: Bezárás
 txt_3_0_details: További részletekért, a "Jelentés" tartalmazza a feladatnaplót, illetve a "Konzol" tartalmazza a feladatdefiníciót parancssorként.
 txt_3_0_hints: Információk a hibáról
-txt_3_0_arc: Néhány bemeneti állomány nem olvasható (lehet, hogy zárolt, nem hozzáférhető vagy sérült)
+txt_3_0_arc: Néhány bemeneti fájl nem olvasható (lehet, hogy zárolt, nem hozzáférhető vagy sérült, a többrészes archívumban lévő kötetek hiányozhatnak)
 txt_3_0_ext: Előfordulhat, hogy az archívumnál más jelszóra van szükség az aktuális művelethez
 txt_2_8_oop: Kimeneti hely megnyitása a feladat befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
 txt_2_6_open: Archívum megnyitása
 txt_2_5_ace_missing: Az UNACE beépülő modul hiányzik; az ACE archívumok kezeléséhez a beépülő modul letölthető a PeaZip weboldaláról (mivel a UNACE zárt forrású, a beépülő nem szerepel az alapcsomagban)
 txt_2_3_pw_errorchar_gwrap: idézőjel nem használható a PeaLauncher által a jelszavakban a jelenlegi rendszerben. Módosítsa a jelszót vagy használja a PeaZip konzol módot a háttérbináris fájlok felhasználói felületén (Eszközök > Beállítások)
@@ -1212,7 +1222,7 @@ txt_time: Idő:
 
 ARCHÍVUM(OK) KICSOMAGOLÁSA
 A rendszerből: 
-- kattintson jobb egérgombbal az archívumra, majd a rendszer szövegkörnyezeti menüjéből válassza a "Kicsomagolás ide" vagy "Kicsomagolás ide (új mappába)" menüpontot a további beavatkozás nélküli  kicsomagoláshoz. 
+- kattintson a jobb gombbal az archívum(ok)ra, és a rendszer helyi menüjében kattintson a "Kibontás ide" vagy "Kibontás ide (intelligens új mappa)" elemre a további beavatkozás nélküli kibontáshoz. Az intelligens új mappa opció gondoskodik arról, hogy csak akkor hozzon létre új legfelső szintű mappát, ha szükséges, ha az archívum gyökere egynél több fájlt vagy mappát tartalmaz.
 - vagy használja a "Kicsomagolás..." menüpontot a további opciók eléréséhez: mentési hely, jelszó, fájlok kicsomagolása egy új könyvtárba, kihagyás, átnevezés vagy létező fájlok felülírása, stb.
 
 Nyisson meg egy archívumot a PeaZip programban, például dupla-kattintással vagy az archívum PeaZip ablakára vagy ikonjára húzásával
@@ -1273,7 +1283,7 @@ ALKALMAZÁS KONFIGURÁLÁSA
 Az Opciók > Lokalizáció (Opciók > Beállítások első fül) lehetőséget ad az alkalmazás nyelvének beállítására.
 Az Opciók > Beállítások menü lehetőséget ad az alkalmazás beállításainak szerkesztésére
 Az Opciók > Téma menü lehetőséget ad az alkalmazás ikonjainak és megjelenésének módosítására
-Az Opciók > Rendszerintegráció menü lehetőséget ad a fájltársítások, szövegkörnyezeti és Küldés menü bejegyzések konfigurálására (Windows alatt)
+Az Opciók > Rendszerintegráció elindít egy varázslót a fájltársítások, a szövegkörnyezeti menü és a Küldés menüpontok konfigurálásához (Windows-on).
 A Rendszerezés menü bejegyzést tartalmaz a böngésző olyan funkcióinak testreszabásához, engedélyezéséhez vagy letiltásához, mint például az eszköztár, a címsor, a navigációs sáv, stb.
 
 F1 	súgó

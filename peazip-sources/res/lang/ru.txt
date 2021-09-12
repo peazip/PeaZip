@@ -1,22 +1,32 @@
 ﻿=== PeaZip language file ===
 Russian - русский
-8.1
+8.2
 Translated by: Rytikov Slava, Dmitry Tsvetkov, xoxmodav
 Last rev. by: 
 Last rev.: 20121227
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Делать пред. парсинг
+txt_8_1_bo: Оптимизация просмотра
+txt_8_1_bop: Оптимизацию просмотра можно настроить в меню "Настройки > Настройки > Основные", чтобы было удобнее просматривать архивы, содержащие очень большое количество элементов.
+txt_8_1_nopreparse: Не делать пред. парсинг
+txt_8_1_ed: обнаружены ошибки.
+txt_8_1_togglearc: Вывод содержимого архива в развёрнутом виде может занять много времени. Продолжить несмотря на это?
+txt_8_1_preparsehint: Оптимизация производительности за счёт сокращения предварительного парсинга больших архивов. Такой парсинг предназначен для обнаружения возможных проблем в содержимом архива.
+txt_8_1_slow: Медленно
+txt_8_1_vslow: Очень медленно
+txt_8_1_volumes: тома
 txt_8_0_altcol: Альтернативный цвет сетки
 txt_8_0_forcebrowse: Просмотр файлов, непосредственно не являющихся архивами (контейнеры, образы дисков, инсталляторы,...)
 txt_8_0_commonalgo: Общие алгоритмы

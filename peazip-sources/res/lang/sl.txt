@@ -1,34 +1,44 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-8.1
+8.2
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
 Zadnja revizija: 20210321
 
 === PeaZip text group ===
 
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Vedno vnaprej razčleni arhive
+txt_8_1_bo: Optimizacija brskalnika
+txt_8_1_bop: Možnosti optimizacije brskalnika lahko nastavite v Možnosti -> Nastavitve, zavihek Splošno, da brskalnik lahko prikaže arhive, ki vsebujejo zelo veliko vnosov.
+txt_8_1_nopreparse: Vnaprej ne analiziraj arhivov
+txt_8_1_ed: zaznanih napak.
+txt_8_1_togglearc: Raven prikaz vsebine arhiva lahko traja dolgo. Vseeno želite nadaljevati?
+txt_8_1_preparsehint: Optimizirajte delovanje, ki omejujejo vnaprejšnjo razčlenitev velikih arhivov. Predrazčlenitev naj bi vnaprej odkrila morebitne težave v vsebini arhiva.
+txt_8_1_slow: Počasi
+txt_8_1_vslow: Zelo počasi
+txt_8_1_volumes: nosilcevi
+txt_8_0_altcol: Nadomestna barva mreže
+txt_8_0_forcebrowse: Brskajte po nekanoničnih vrstah arhivov (vsebniki, slike diska, namestitveni programi...)
+txt_8_0_commonalgo: Pogosti algoritmi
+txt_8_0_forceconvert: Pretvori nekanonične vrste arhivov
+txt_8_0_defaultactionhint: Privzeta akcija dvoklika na datoteko, povezane s programom PeaZip, iz sistema
+txt_8_0_defaultaction: Privzeta akcija ob zagonu
+txt_8_0_enableextand: omogočite podmeni 'Razširi in odpri z'
+txt_8_0_forcetyping: Vsilit interaktivno vnašanje gesel
+txt_8_0_setpwopt: Nastavite možnosti gesla/datoteke s ključi
+txt_8_0_forcetypinghelp: V konzoli bo zagnal zaledne dvojišle datoteke. Ne more brskati po arhivih s šifriranimi imeni datotek. Dovoljuje ustvarjanje skriptov, ki se ne bodo izvajali brez nadzora, temveč bodo uporabnika interaktivno prosili za geslo.
+txt_7_9_spacing: Razmik
+txt_7_9_zooming: Povečava 
 txt_7_8_changelocalization: Spremeni jezik PeaZipa
 txt_7_8_custext: Končnica po meri
 txt_7_8_destexistfile: Cilj že vsebuje obdelane datoteke. Želite zamenjati datoteke z istim imenom?

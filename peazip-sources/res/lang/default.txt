@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 English
-8.1
+8.2
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20210523
 
 === PeaZip text group ===
 
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
 txt_8_1_preparse: Always pre-parse archives
 txt_8_1_bo: Browser optimization
 txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
@@ -110,8 +120,8 @@ txt_7_2_savecompsettings: Save compression settings
 txt_7_2_source: Source
 txt_7_2_updateclear: Update edited files in archive, and clear edited files
 txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here, in new folder
-txt_7_1_smart: Extract all here, smart new folder
+txt_7_1_new: Extract all here (in new folder)
+txt_7_1_smart: Extract all here (smart new folder)
 txt_7_1_profileintermediate: Medium compression, ZIP/BZip2 fast
 txt_7_1_renfilesonly: Rename only files
 txt_7_1_typetosearch: Type to search in current path
@@ -141,7 +151,7 @@ txt_6_5_seqerr: Error(s) detected, original files will not be deleted
 txt_6_5_sni: Include NT security information
 txt_6_5_sns: Include NTFS Alternate Data Stream
 txt_6_5_privacy: Privacy
-txt_6_5_showvolatile: Show which options are volatile / context depentent
+txt_6_5_showvolatile: Show which options are volatile / context dependent
 txt_6_5_force: Try to open archives containing errors
 txt_6_5_warning: Warning
 txt_6_5_yes: Yes
@@ -568,7 +578,7 @@ txt_exclude_recourse: "exclude" recurse subdirs
 txt_action_extopen: "Extract and open with associated application" action
 txt_error_passwordnotmatch: "Password" and "Confirm" fields doesn't match, please correct them
 txt_action_preview: "Preview with associated application" action
-txt_preview_hint: "Preview" action perform the same task as "Extract and open" but to a temporary path in output directory, automathically removed when the archive is closed.
+txt_preview_hint: "Preview" action perform the same task as "Extract and open" but to a temporary path in output directory, automatically removed when the archive is closed.
 txt_better: (better)
 txt_default2: (default)
 txt_faster: (faster)
@@ -802,7 +812,7 @@ txt_here: here
 txt_list_history: History
 txt_homeroot: Computer/archive's root level
 txt_quickbrowse_hint: If browsing is stopped the user can narrow the selection using search or filter functions; extract/list/test functions are not affected in any way.
-txt_backupexe_hint: If something goes wrong and lead to a non functional result, you may recover the original executable from the authomatic backup copy
+txt_backupexe_hint: If something goes wrong and lead to a non functional result, you may recover the original executable from the automatic backup copy
 txt_attach: If the mail client supports that command, the archive will be attached to a new mail
 txt_images: Images
 txt_include_hint: Include file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
