@@ -259,6 +259,8 @@ begin
    ShellExecAsOriginalUser('open', 'https://peazip.github.io/peazip-help-faq.html', '', '', SW_SHOW, ewNoWait, ErrorCode)
 end;
 
+{ install_CreatePage }
+
 function install_CreatePage(PreviousPageId: Integer): Integer;
 var
   Page: TWizardPage; 
@@ -1765,6 +1767,7 @@ deletefile(expandconstant('{sendto}')+'\Secure delete.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract....lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here (in new folder).lnk');
+deletefile(expandconstant('{sendto}')+'\Extract here (smart new folder).lnk');
 deletefile(expandconstant('{sendto}')+'\Open with PeaZip.lnk');
 deletefile(expandconstant('{sendto}')+'\Test archive(s).lnk');
 deletefile(expandconstant('{sendto}')+'\Open as archive.lnk');
@@ -1782,7 +1785,7 @@ end;
 
 procedure clearcontextlegacy;
 begin
-RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -1830,7 +1833,7 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Secure dele
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...');
 //local
-RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -2410,28 +2413,28 @@ begin
   SW_SHOWNORMAL);
       end;
 
-    //link to PeaZip -ext2here: extract here
+    //link to PeaZip -ext2mainhere: extract here
     if cbfunext2here.state = cbChecked then
       begin
       CreateShellLink(
       ExpandConstant('{sendto}\Extract here.lnk'),
       'PeaZip archiver, extract here',
       ExpandConstant('{app}\peazip.exe'),
-      '-ext2here',
+      '-ext2mainhere',
       '',
       ExpandConstant('{app}\res\icons\peazip_seven.icl'),//icon filename
       4,//icon index
       SW_SHOWNORMAL);
       end;
 
-    //link to PeaZip -ext2folder: extract here to new folder
+    //link to PeaZip -ext2mainsmart: extract here to new folder
     if cbfunext2folder.state = cbChecked then
       begin
       CreateShellLink(
-      ExpandConstant('{sendto}\Extract here (in new folder).lnk'),
-      'PeaZip archiver, extract here to new folder',
+      ExpandConstant('{sendto}\Extract here (smart new folder).lnk'),
+      'PeaZip archiver, extract here (smart new folder)',
       ExpandConstant('{app}\peazip.exe'),
-      '-ext2folder',
+      '-ext2mainsmart',
       '',
       ExpandConstant('{app}\res\icons\peazip_seven.icl'),//icon filename
       4,//icon index

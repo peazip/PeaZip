@@ -1,8 +1,8 @@
 [Setup]                          
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 8.1.0
-AppVersion=8.1.0
+AppVerName=PeaZip 8.2.0
+AppVersion=8.2.0
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,9 +11,9 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-8.1.0.WINDOWS\copying.txt
+LicenseFile=C:\input\peazip-8.2.0.WINDOWS\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-8.1.0.WINDOWS
+OutputBaseFilename=peazip-8.2.0.WINDOWS
 SetupIconFile=C:\input\peazip-icon-green.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -27,13 +27,12 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-8.1.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.1.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.1.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\input\peazip-8.1.0.WINDOWS\SendTo.pea"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.1.0.WINDOWS\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.1.0.WINDOWS\readme_Win32.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.1.0.WINDOWS\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.2.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.2.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.2.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-8.2.0.WINDOWS\copying.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.2.0.WINDOWS\readme_Win32.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.2.0.WINDOWS\peazip_help.pdf"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -48,9 +47,11 @@ Name: "{userdesktop}\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: quicklaunchicon
 Name: "{group}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 2
 Name: "{group}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{group}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
 Name: "{group}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
 Name: "{app}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 2
 Name: "{app}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{app}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
 Name: "{app}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
 
 [Run]
@@ -1804,6 +1805,7 @@ deletefile(expandconstant('{sendto}')+'\Secure delete.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract....lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here (in new folder).lnk');
+deletefile(expandconstant('{sendto}')+'\Extract here (smart new folder).lnk');
 deletefile(expandconstant('{sendto}')+'\Open with PeaZip.lnk');
 deletefile(expandconstant('{sendto}')+'\Test archive(s).lnk');
 deletefile(expandconstant('{sendto}')+'\Open as archive.lnk');
@@ -1821,7 +1823,7 @@ end;
 
 procedure clearcontextlegacy;
 begin
-RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -1869,7 +1871,7 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Secure dele
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...');
 //local
-RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -2467,8 +2469,8 @@ begin
     if cbfunext2folder.state = cbChecked then
       begin
       CreateShellLink(
-      ExpandConstant('{sendto}\Extract here (in new folder).lnk'),
-      'PeaZip archiver, extract here to new folder',
+      ExpandConstant('{sendto}\Extract here (smart new folder).lnk'),
+      'PeaZip archiver, extract here (smart new folder)',
       ExpandConstant('{app}\peazip.exe'),
       '-ext2folder',
       '',

@@ -1769,6 +1769,7 @@ deletefile(expandconstant('{sendto}')+'\Secure delete.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here.lnk');
 deletefile(expandconstant('{sendto}')+'\Extract....lnk');
 deletefile(expandconstant('{sendto}')+'\Extract here (in new folder).lnk');
+deletefile(expandconstant('{sendto}')+'\Extract here (smart new folder).lnk');
 deletefile(expandconstant('{sendto}')+'\Open with PeaZip.lnk');
 deletefile(expandconstant('{sendto}')+'\Test archive(s).lnk');
 deletefile(expandconstant('{sendto}')+'\Open as archive.lnk');
@@ -1786,7 +1787,7 @@ end;
 
 procedure clearcontextlegacy;
 begin
-RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -1834,7 +1835,7 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Secure dele
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...');
 //local
-RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -2432,8 +2433,8 @@ begin
     if cbfunext2folder.state = cbChecked then
       begin
       CreateShellLink(
-      ExpandConstant('{sendto}\Extract here (in new folder).lnk'),
-      'PeaZip archiver, extract here to new folder',
+      ExpandConstant('{sendto}\Extract here (smart new folder).lnk'),
+      'PeaZip archiver, extract here (smart new folder)',
       ExpandConstant('{app}\peazip.exe'),
       '-ext2folder',
       '',
