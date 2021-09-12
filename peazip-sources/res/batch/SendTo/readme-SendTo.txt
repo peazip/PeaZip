@@ -1,0 +1,4 @@
+PeaZip installer creates some useful entries in SendTo menu, this folder contains examples of all SendTo entries that can be created during installation, in order to make simpler to customize the installation, to share the same SenTo menu items between users, and to simplify using this type of system integration for PeaZip Portable.
+SendTo menu items of each user are link files and can be simply copied to one user to another as needed, they are stored in C:\Documents and Settings\(username)\SendTo (Windows XP) or C:\Users\(username)\AppData\Roaming\Microsoft\Windows\SendTo (Vista and more recent systems), assuming C as system's disk.
+SendTo_Program Files subfolder contains links pointing to default PeaZip installation directory C:\Program Files\PeaZip\
+SendTo_Program Files (x86) subfolder contains links pointing to C:\Program Files (x86)\PeaZip\ which apply if a 32 bit package is installed on a 64 bit system

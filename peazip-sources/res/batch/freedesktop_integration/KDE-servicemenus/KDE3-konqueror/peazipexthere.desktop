@@ -1,0 +1,11 @@
+[Desktop Action peazipexthere]
+Exec=peazip -ext2here %F
+Icon=tar
+Name=Extract here (PeaZip)
+
+[Desktop Entry]
+Actions=peazipexthere;
+Encoding=UTF-8
+Name=peazipexthere
+Name[en_US]=peazipexthere
+ServiceTypes=all/all
