@@ -7,16 +7,16 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: (Mais lento)
+txt_8_2_df: Exibir conteúdo de pastas 7z / p7zip
+txt_8_2_vreport: Relatório não-verboso 7z / p7zip
+txt_8_2_ta: Acessado
+txt_8_2_tc: Criado
+txt_8_2_keep: Manter arquivos
+txt_8_2_tm: Modificado
+txt_8_2_skipet: Pular testes para criptografia
+txt_8_2_alltimes: Armazene todos os registros da data/hora
+txt_8_2_supportedby: Suportado por
 txt_8_1_preparse: Sempre pré-analisar arquivos
 txt_8_1_bo: Otimização do navegador
 txt_8_1_bop: As opções de otimização do navegador podem ser definidas a partir de Opções>Configurações, aba Geral, para permitir que o navegador exiba arquivos contendo um número muito grande de itens.
@@ -465,7 +465,7 @@ txt_2_9_toolbar: Barra de Ferramentas
 txt_2_9_tree: Árvore
 txt_2_9_views: Visualizações
 txt_2_8_experimental: (experimental)
-txt_2_8_zcopy: (Windows) Cópias arquivas em modo reinicio, lento
+txt_2_8_zcopy: (Windows) Copiar arquivos em modo reinicio, lento
 txt_2_8_addvol: Adicionando todo volume(s) para um arquivo pode levar muito tempo, deseja continuar mesmo assim?
 txt_2_8_uniterror: Unidade acessível
 txt_2_8_cannotconvert: Não foi possível converter os arquivos selecionados

@@ -3,20 +3,20 @@ Slovenski jezik
 8.2
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20210321
+Zadnja revizija: 20210913
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: (počasneje)
+txt_8_2_df: 7z / p7zip prikaz vsebine map
+txt_8_2_vreport: 7z / p7zip nepoglobljeno poročilo 
+txt_8_2_ta: Dostopan
+txt_8_2_tc: Ustvarjen
+txt_8_2_keep: Obdrži datoteke
+txt_8_2_tm: Spremenjen
+txt_8_2_skipet: Preskoči preizkus šifriranja
+txt_8_2_alltimes: Shrani vse časovne žige 
+txt_8_2_supportedby: Podprt z
 txt_8_1_preparse: Vedno vnaprej razčleni arhive
 txt_8_1_bo: Optimizacija brskalnika
 txt_8_1_bop: Možnosti optimizacije brskalnika lahko nastavite v Možnosti -> Nastavitve, zavihek Splošno, da brskalnik lahko prikaže arhive, ki vsebujejo zelo veliko vnosov.

@@ -3,20 +3,20 @@ Simplified Chinese - 简体中文
 8.2
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
-Last rev.: 20210723
+Last rev.: 20210912
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: （较慢）
+txt_8_2_df: 7z / p7zip 显示目录内容
+txt_8_2_vreport: 7z / p7zip 简要报告
+txt_8_2_ta: 访问时间
+txt_8_2_tc: 创建时间
+txt_8_2_keep: 保留文件
+txt_8_2_tm: 修改时间
+txt_8_2_skipet: 跳过加密测试
+txt_8_2_alltimes: 保存所有时间戳
+txt_8_2_supportedby: 支持的文件格式：
 txt_8_1_preparse: 总是预解析归档文件
 txt_8_1_bo: 浏览优化
 txt_8_1_bop: 要显示内含巨量文件的归档文件，可以在选项 > 设置，常规标签页中选定“浏览优化”。

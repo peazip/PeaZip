@@ -3,20 +3,20 @@ Français
 8.2
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 24.07.2021
+Date du: 12.09.2021
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: (lent)
+txt_8_2_df: 7z / p7zip afficher le contenu des dossiers
+txt_8_2_vreport: 7z / p7zip rapport non verbeux
+txt_8_2_ta: Consultée
+txt_8_2_tc: Créé
+txt_8_2_keep: Conserver les fichiers
+txt_8_2_tm: Modifié
+txt_8_2_skipet: Ignorer les tests de chiffrement
+txt_8_2_alltimes: Stocker tous les horodatages
+txt_8_2_supportedby: Supporté par
 txt_8_1_preparse: Toujours pré-analyser les archives
 txt_8_1_bo: Optimisation du navigateur
 txt_8_1_bop: Les options d’optimisation du navigateur peuvent être définies à partir des options > paramètres, onglet Général, afin de permettre au navigateur d’afficher des archives contenant un très grand nombre d’éléments.
@@ -27,6 +27,7 @@ txt_8_1_preparsehint: Optimiser les performances en limitant la pré-analyse des
 txt_8_1_slow: Lent
 txt_8_1_vslow: Très lent
 txt_8_1_volumes: Autre couleur de grille
+txt_8_0_altcol: Alternate grid color
 txt_8_0_forcebrowse: Parcourir les types d’archives non canoniques (conteneurs, images disque, programmes d’installation,...)
 txt_8_0_commonalgo: Algorithmes courants
 txt_8_0_forceconvert: Convertir des types d’archives non canoniques
