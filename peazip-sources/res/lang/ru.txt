@@ -7,16 +7,16 @@ Last rev.: 20121227
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: (медленнее)
+txt_8_2_df: 7z / p7zip показать содержимое каталогов
+txt_8_2_vreport: 7z / p7zip отчёт без подробностей
+txt_8_2_ta: Доступно
+txt_8_2_tc: Создано
+txt_8_2_keep: Сохранять файлы
+txt_8_2_tm: Изменено
+txt_8_2_skipet: Не делать проверку шифрования
+txt_8_2_alltimes: Запоминать все метки времени
+txt_8_2_supportedby: Поддерживается
 txt_8_1_preparse: Делать пред. парсинг
 txt_8_1_bo: Оптимизация просмотра
 txt_8_1_bop: Оптимизацию просмотра можно настроить в меню "Настройки > Настройки > Основные", чтобы было удобнее просматривать архивы, содержащие очень большое количество элементов.
@@ -849,7 +849,7 @@ txt_keyfile: Ключевой файл
 txt_keyfile_not_found: Ключевой файл не найден или недоступен. Пожалуйста, выберите другой
 txt_keyfile_notcreated: Ключевой файл не создан
 txt_larger: большим, чем выделенные объекты
-txt_lastused: последний раз использовался
+txt_lastused: последний использованный
 txt_launch: Запустить задание
 txt_layout: Список
 txt_filelist_savedas: Список сохранен как
