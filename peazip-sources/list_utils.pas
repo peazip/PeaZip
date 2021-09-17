@@ -1653,6 +1653,9 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
+{$ENDIF}   
+{$IFDEF DARWIN}
+  escapefilename := escapefilenamelinuxlike(s, desk_env);
 {$ENDIF}
 end;
 
@@ -1683,12 +1686,18 @@ begin
   cp_open_linuxlike := -1;
   if s = '' then
     exit;
-  if (desk_env = 10) or (desk_env = 20) then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10 and Darwin=20
+  if desk_env = 10 then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10
     exit;
   P := TProcessUTF8.Create(nil);
   P.Options := [poWaitOnExit];
-  P.Executable:='xdg-open';
-  P.Parameters.Add(escapefilename(s, desk_env));
+  if desk_env = 20 then // Darwin=20
+  begin
+    P.CommandLine:='open ' + escapefilename(s, desk_env);
+  end else
+  begin
+    P.Executable:='xdg-open';
+    P.Parameters.Add(escapefilename(s, desk_env));
+  end;
   P.Execute;
   cp_open_linuxlike := P.ExitStatus;
   P.Free;
@@ -1826,6 +1835,9 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   s := GetEnvironmentVariable('HOME');
+{$ENDIF}  
+{$IFDEF DARWIN}
+  s := GetEnvironmentVariable('HOME');
 {$ENDIF}
 if s = '' then
    s := (getcurrentdir);
@@ -1857,6 +1869,9 @@ begin
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
 {$ENDIF}
 {$IFDEF NETBSD}
+  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+{$ENDIF}  
+{$IFDEF DARWIN}
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
 {$ENDIF}
 if s = '' then get_home_path(s);

@@ -5286,7 +5286,7 @@ var
    israr5,browse_option,caption_release,caption_build,tempstring,alt_tempstring,archive_type,archive_t,
    compression_method,compression_level,parameters,kdir,in_name,in_file,in_folder,
    output_name,out_qualified_name,size_u,cks,data_compression,save_cks,bcomp,
-   keyfname,themedir,theme_name,theme_author,theme_license,theme_path,wrk_path,executable_path,
+   keyfname,themedir,theme_name,theme_author,theme_license,theme_path,wrk_path,executable_path,resource_path,
    persistent_source,fun,subfun,btfun,tools_path,color1,color2,color3,color4,color5,color1d,
    color2d,color3d,color4d,color5d,prev_type,
    prev_method,prev_level,method_7z,dmethod_7z,method_zip,dmethod_zip,ptmpcode,ptmpdir,pstmpdir,graphicsfolder,graphicsfolderd,
@@ -5792,7 +5792,7 @@ end;
 
 procedure updatepluginstatus;
 begin
-if fileexists(executable_path+'res'+DirectorySeparator+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT) then
+if fileexists(resource_path+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT) then
    begin
    unrar5pluginstatus:=txt_5_7_pinstalled;
    Form_peach.baboutremoveunrar.Visible:=true;
@@ -5802,7 +5802,7 @@ else
    unrar5pluginstatus:=txt_5_7_pmissing;
    Form_peach.baboutremoveunrar.Visible:=false;
    end;
-if fileexists(executable_path+'res'+DirectorySeparator+'unace'+DirectorySeparator+'unace'+EXEEXT) then
+if fileexists(resource_path+'unace'+DirectorySeparator+'unace'+EXEEXT) then
    begin
    unacepluginstatus:=txt_5_7_pinstalled;
    Form_peach.baboutremoveunace.Visible:=true;
@@ -5812,7 +5812,7 @@ else
    unacepluginstatus:=txt_5_7_pmissing;
    Form_peach.baboutremoveunace.Visible:=false;
    end;
-if fileexists(executable_path+'res'+DirectorySeparator+'lpaq'+DirectorySeparator+'lpaq1'+EXEEXT) then
+if fileexists(resource_path+'lpaq'+DirectorySeparator+'lpaq1'+EXEEXT) then
 addformatspluginstatus:=txt_5_7_pinstalled
 else
 addformatspluginstatus:=txt_5_7_pmissing;
@@ -10364,7 +10364,7 @@ var
 begin
 load_texts:=-1;
 try
-   assignfile(t,(executable_path+'res'+directoryseparator+'lang'+directoryseparator+lang));
+   assignfile(t,(resource_path+'lang'+directoryseparator+lang));
    filemode:=0;
    reset(t);
    read_header(t);
@@ -11562,7 +11562,7 @@ if theme_name='' then
    end;
 //default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
 if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC-EMBEDDED') then thpath:=confpath
-else thpath:=executable_path+'res'+directoryseparator;
+else thpath:=resource_path;
 end;
 
 procedure clearimagelist(var aimagelist:TImageList);
@@ -20392,14 +20392,14 @@ var
 begin
 result:=-1;
 try
-   assignfile(aconf,executable_path+'res'+directoryseparator+'altconf.txt'); //load alternative configuration path (for conf and bookmarks)
+   assignfile(aconf,resource_path+'altconf.txt'); //load alternative configuration path (for conf and bookmarks)
    filemode:=0;
    reset(aconf);
    read_header(aconf);
    readln(aconf,s);
    readln(aconf,confpath);
    CloseFile(aconf);
-if (confpath='same') or (confpath='"same"') or (confpath='''same''') or (confpath=' ') or (confpath='') then confpath:=executable_path+'res'+directoryseparator; //if confpath parameter is set to 'same' or empty use classic conf location (in res folder)
+if (confpath='same') or (confpath='"same"') or (confpath='''same''') or (confpath=' ') or (confpath='') then confpath:=resource_path; //if confpath parameter is set to 'same' or empty use classic conf location (in res folder)
 {$IFDEF MSWINDOWS}
 if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then
    if wingetappdata(confpath)<>0 then confpath:=(GetEnvironmentVariable('APPDATA'))+'\PeaZip\'; //if wingetappdata fails use env variables
@@ -20413,11 +20413,14 @@ if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or
 {$IFDEF NETBSD}
 if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
 {$ENDIF}
+{$IFDEF DARWIN}
+if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
+{$ENDIF}
 if not(directoryexists(confpath)) then forcedirectories(confpath);
 confpath:=ExpandFileName(confpath);
 if confpath<>'' then
    if confpath[length(confpath)]<>directoryseparator then confpath:=confpath+directoryseparator;
-if not(directoryexists(confpath)) then confpath:=executable_path+'res'+directoryseparator; //if alternative configuration directory does not exist or is not accessible, use res path
+if not(directoryexists(confpath)) then confpath:=resource_path; //if alternative configuration directory does not exist or is not accessible, use res path
 result:=0;
 except
    result:=-1;
@@ -24710,7 +24713,8 @@ if cp_open<33 then
 {$ENDIF}
 {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}   
+{$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
 procedure cp_search(desk_env:byte);
@@ -24719,11 +24723,12 @@ begin
 if winver='nt6+' then
    shellexecutew(Form_peach.handle, PWideChar('find'), PWideChar(''), PWideChar(''), PWideChar (''), SW_SHOWNORMAL)
 else
-   cp_open(executable_path+'res'+directoryseparator+'empty.fnd',desk_env);
+   cp_open(resource_path+'empty.fnd',desk_env);
 {$ENDIF}
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
+{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}  
+{$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 
 function execute_obj(efun:byte; outname:ansistring):integer;
@@ -25005,7 +25010,7 @@ if upcase(ext)='.RAR' then
       try close(f_in); except end;
    end;
 if result=1 then
-   if fileexists(executable_path+'res'+DirectorySeparator+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT) then
+   if fileexists(resource_path+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT) then
    else
    begin
    result:=0;
@@ -25069,7 +25074,7 @@ begin
 result:=-1;
 in_param:=stringdelim(escapefilename((Form_peach.EditOpenIn.Text),desk_env));
 if fun='UN7Z' then exe_name:='7z';
-bin_name:=stringdelim(escapefilename((executable_path),desk_env)+'res'+DirectorySeparator+exe_name+DirectorySeparator+exe_name+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+exe_name+DirectorySeparator+exe_name+EXEEXT);
 pw:=FormPW.EditUn7zaPW.Text;
 if FormPW.EditName3.Text<>'' then
    if prepend_keyfile(pw,FormPW.EditName3.Text)<>0 then
@@ -25125,7 +25130,7 @@ begin
 result:=-1;
 in_param:=stringdelim(escapefilename(Form_peach.EditOpenIn.Text,desk_env));
 if fun='UN7Z' then exe_name:=UNRARNAME;
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unrar'+DirectorySeparator+exe_name+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unrar'+DirectorySeparator+exe_name+EXEEXT);
 pw:=FormPW.EditUn7zaPW.Text;
 if FormPW.EditName3.Text<>'' then
    if prepend_keyfile(pw,FormPW.EditName3.Text)<>0 then
@@ -31651,7 +31656,7 @@ case fun of
    begin
    if libre_directive>0 then begin reportnotsupported('ACE'); exit; end
    else
-      if not(fileexists((executable_path+'res'+directoryseparator+'unace'+directoryseparator+'unace'+EXEEXT))) then
+      if not(fileexists((resource_path+'unace'+directoryseparator+'unace'+EXEEXT))) then
          begin
          if unaceshown=false then
             begin
@@ -34261,7 +34266,7 @@ begin
          include_param:=include_param+' '+stringdelim('-n'+FormAdvf.MemoAdvIncludeAlso.Lines[i])+' ';
          end;
 end;
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'arc'+DirectorySeparator+'arc'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'arc'+DirectorySeparator+'arc'+EXEEXT);
 cl:=bin_name+' '+archive_function+' '+compression_level;
 if solid_option<>'' then cl:=cl+' '+solid_option;
 if recovery_option<>'' then cl:=cl+' '+recovery_option;
@@ -34789,7 +34794,7 @@ if (archive_function<>'x') and (archive_function<>'e') then //clear overwrite po
    end;
 //end archive function attribution
 if out_param<>'' then out_param:=stringdelim('-dp'+escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'arc'+DirectorySeparator+'arc'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'arc'+DirectorySeparator+'arc'+EXEEXT);
 cl:=bin_name+' '+archive_function;
 if overwrite_policy<>'' then cl:=cl+' '+overwrite_policy;
 cl:=cl+' '+in_param;
@@ -35118,7 +35123,7 @@ compose_arcspecfun_cl:=-1;
 //output name
 out_param:=Form_peach.EditOpenIn.Text;
 outname:=out_param;
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'arc'+DirectorySeparator+'arc'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'arc'+DirectorySeparator+'arc'+EXEEXT);
 archive_function:=specfun;
 if archive_function='r' then archive_function:=archive_function+' -y';
 cl:=bin_name+' '+archive_function;
@@ -35662,7 +35667,7 @@ begin
             include_param:=include_param+' '+stringdelim('-i!'+FormAdvf.MemoAdvIncludeAlso.Lines[i])+' ';
       end;
 end;
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
 {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
 cl:=bin_name+' '+archive_function+' '+type_option;
 if compressor_option<>'' then cl:=cl+' '+compressor_option;
@@ -35877,7 +35882,7 @@ if (archive_function<>'x') and (archive_function<>'e') and (archive_function<>'d
    end;
 //end archive function attribution
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
 cl:=bin_name+' '+archive_function;
 if overwrite_policy<>'' then cl:=cl+' '+overwrite_policy;
 if intpw=1 then
@@ -36183,7 +36188,7 @@ if (archive_function='x') or (archive_function='e') or (archive_function='d') th
       2: path_option:='-spf';
       end;
 if out_param<>'' then out_param:=stringdelim('-o'+escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
 {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
 cl:=bin_name+' '+archive_function;
 if delcase<>'' then cl:=cl+' '+delcase;
@@ -36411,7 +36416,7 @@ if intpw=1 then
    out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
    get_in_param(in_param,sel);
    in_param:='FROMCL '+in_param;
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
    cl:=bin_name+' '+fun+' '+out_param+' '+inttostr(vol_size)+' '+compr+' '+vol_algo+' '+obj_algo+' '+strm_algo+' '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
 compose_pea_cl:=0;
@@ -36507,7 +36512,7 @@ fun:='RFS';
       end;
    out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
    in_param:=stringdelim(escapefilename(Form_peach.StringGrid1.Cells[8,Form_peach.StringGrid1.Row],desk_env));
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
    cl:=bin_name+' '+fun+' '+out_param+' '+inttostr(vol_size)+' '+vol_algo+' BATCH '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
 compose_rfs_cl:=0;
@@ -36537,7 +36542,7 @@ if Form_peach.labelstatus2.Caption= txt_2_7_ext then
    in_param:=stringdelim(escapefilename(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row],desk_env))
 else
    in_param:=stringdelim(escapefilename(Form_peach.EditOpenIn.Text,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 if fun='UNPEA' then
    begin
    pw:=FormPW.EditUn7zaPW.Text;
@@ -36626,7 +36631,7 @@ if fileexists((out_param)) then
       if real_extract=true then clearfile(out_param);
 if not(DirectoryExists(extractfilepath(out_param))) then CreateDir(extractfilepath(out_param));
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'lpaq'+DirectorySeparator+lpaq_ver+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'lpaq'+DirectorySeparator+lpaq_ver+EXEEXT);
 cl:=bin_name+' d '+in_param+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 compose_unlpaq_cl:=0;
@@ -36658,7 +36663,7 @@ if Form_peach.labelstatus2.Caption= txt_2_7_ext then
 else
    paq_ver:=copy(extractfileext(Form_peach.EditOpenIn.Text),2,length(extractfileext(Form_peach.EditOpenIn.Text))-1);
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'paq'+DirectorySeparator+paq_ver+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'paq'+DirectorySeparator+paq_ver+EXEEXT);
 cl:=bin_name+' -d '+in_param+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 compose_unpaq_cl:=0;
@@ -36701,7 +36706,7 @@ case Form_peach.RadioGroupPaq.ItemIndex of
          end;
       out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
       get_in_param(in_param,sel);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'lpaq'+DirectorySeparator+paq_ver+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'lpaq'+DirectorySeparator+paq_ver+EXEEXT);
       cl:=bin_name+' '+compression_level+' '+in_param+' '+out_param;
       end;
    1: begin
@@ -36729,7 +36734,7 @@ case Form_peach.RadioGroupPaq.ItemIndex of
       outname:=out_param+'.'+paq_ver;
       out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
       get_in_param(in_param,sel);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'paq'+DirectorySeparator+paq_ver+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'paq'+DirectorySeparator+paq_ver+EXEEXT);
       cl:=bin_name+' '+compression_level+' '+out_param;
       if out_param<>trimright(in_param) then cl:=cl+' '+in_param;
       end;
@@ -36773,7 +36778,7 @@ case Form_peach.RadioGroupPaq.ItemIndex of
       outname:=out_param+'.zpaq';
       out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env))+'.zpaq');
       get_in_param_zpaq(in_param,sel);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
       cl:=bin_name;
       //if intpw=1 then //not supported for zpaq
       if pw<>'' then cl:=cl+' '+pw;
@@ -36814,7 +36819,7 @@ if zpaqabsolute=0 then
    else Form_peach.CheckBoxFolder.State:=cbUnchecked;
 outname:=out_param+directoryseparator;
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env)+'/'); //was needed by 4.04
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
 if mode='list' then modefun:='l'
 else modefun:='x';
 pw:=FormPW.EditUn7zaPW.Text;
@@ -36897,7 +36902,7 @@ if Form_peach.ComboBoxUPX.ItemIndex=10 then compression_level:='--best'
 else compression_level:='-'+inttostr((Form_peach.ComboBoxUPX.ItemIndex));
 get_in_param(in_param,sel);
 outname:=escapefilename(Form_peach.StringGrid1.Cells[8,1],desk_env);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'upx'+DirectorySeparator+'upx'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'upx'+DirectorySeparator+'upx'+EXEEXT);
 cl:=bin_name+' '+compression_level;
 cl:=cl+' '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
@@ -36921,7 +36926,7 @@ if Form_peach.CheckBoxUPX1.State=cbChecked then
    begin
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}
-   P.CommandLine:=('"'+executable_path+'res'+DirectorySeparator+'upx'+DirectorySeparator+'strip.exe" '+in_param);
+   P.CommandLine:=('"'+resource_path+'upx'+DirectorySeparator+'strip.exe" '+in_param);
    {$ELSE}//assuming generic unix coming with strip command
    P.CommandLine:=('strip '+in_param);
    {$ENDIF}
@@ -36969,7 +36974,7 @@ get_new_archive_name(out_param);
 outname:=out_param;
 out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
 get_in_param(in_param,sel);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
 cl:=bin_name;
 compression_level:='-'+Form_peach.ComboBoxArchive9.Text;
 cl:=cl+' '+compression_level;
@@ -37026,7 +37031,7 @@ if mode<>'test' then
          if real_extract=true then clearfile(out_param);
 if not(DirectoryExists(extractfilepath(out_param))) then CreateDir(extractfilepath(out_param));
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
 if mode<>'test' then cl:=bin_name+' -d '+in_param+' -o '+out_param
 else cl:=bin_name+' -t '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
@@ -37062,7 +37067,7 @@ get_new_archive_name(out_param);
 outname:=out_param;
 out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
 get_in_param(in_param,sel);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
 cl:=bin_name;
 compression_level:='-'+Form_peach.ComboBoxArchive9.Text;
 cl:=cl+' -T0 -q '+compression_level;
@@ -37119,7 +37124,7 @@ if mode<>'test' then
          if real_extract=true then clearfile(out_param);
 if not(DirectoryExists(extractfilepath(out_param))) then CreateDir(extractfilepath(out_param));
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
 if mode<>'test' then cl:=bin_name+' -d '+in_param+' -o '+out_param
 else cl:=bin_name+' -t '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
@@ -37155,7 +37160,7 @@ get_new_archive_name(out_param);//issue: it adds progressive number after extens
 outname:=out_param;
 out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
 get_in_param(in_param,sel);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'quad'+DirectorySeparator+exetype+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'quad'+DirectorySeparator+exetype+EXEEXT);
 cl:=bin_name;
 case Form_peach.RadioGroupQuad.ItemIndex of
    0: begin
@@ -37229,19 +37234,19 @@ if not(DirectoryExists(extractfilepath(out_param))) then CreateDir(extractfilepa
 if out_param<>'' then out_param:=stringdelim(escapefilename(out_param,desk_env));
 if extractfileext(s_in)='.quad' then
    begin
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'quad'+DirectorySeparator+'quad'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'quad'+DirectorySeparator+'quad'+EXEEXT);
    cl:=bin_name+' -d '+in_param+' '+out_param;
    btfun:='unquad';
    end;
 if extractfileext(s_in)='.bcm' then
    begin
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'quad'+DirectorySeparator+'bcm'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'quad'+DirectorySeparator+'bcm'+EXEEXT);
    cl:=bin_name+' -d '+in_param+' '+out_param;
    btfun:='unbcm';
    end;
 if extractfileext(s_in)='.balz' then
    begin
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'quad'+DirectorySeparator+'balz'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'quad'+DirectorySeparator+'balz'+EXEEXT);
    cl:=bin_name+' d '+in_param+' '+out_param;
    btfun:='unbalz';
    end;
@@ -37321,7 +37326,7 @@ if (archive_function<>'x') and (archive_function<>'e') then
    begin
    out_param:='';
    end;
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unace'+DirectorySeparator+'unace'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unace'+DirectorySeparator+'unace'+EXEEXT);
 cl:=bin_name+' '+archive_function;
 cl:=cl+' '+in_param;
 //if out_param<>'' then cl:=cl+' '+out_param; changed the way to communicate out param; it's implicitly communicated setting working path since Win demo executable fails extracting to paths containing space
@@ -37334,7 +37339,7 @@ end;
 procedure check_files(var in_param,cl,oper:ansistring);
 var bin_name,disp_type,algo_list:ansistring;
 begin
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 case Form_peach.radiogroup1.ItemIndex of
    0: disp_type:='HEX';
    1: disp_type:='BASE64';
@@ -37840,7 +37845,7 @@ outname:=out_param;
 getworkpath(work_path,out_param);
 out_param:=stringdelim(escapefilename(out_param,desk_env));
 get_in_param(in_param,sel);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
 {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
 cl:=bin_name+' '+archive_function+' '+type_option;
 if work_path<>'' then cl:=cl+' '+work_path;
@@ -38594,7 +38599,7 @@ if fileexists((out_param+'.pea')) then
 in_param:='';
 out_param:=stringdelim(escapefilename(out_param,desk_env));
 for i:=2 to j+1 do in_param:=in_param+stringdelim(escapefilename(ExpandFileName((paramstr(i))),desk_env))+' ';
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 if pmode='crypt' then
    cl:=bin_name+' '+fun+' '+out_param+' 0 PCOMPRESS2 SHA256 CRC64 TRIATS INTERACTIVE FROMCL '+in_param
 else
@@ -38618,7 +38623,7 @@ if test_in_params(j)<>0 then begin exit_nosave; exit; end;
    if pMessageWarningYesNo(txt_wipe)=6 then
       begin
       for i:=2 to j+1 do in_param:=in_param+stringdelim(escapefilename(ExpandFileName((paramstr(i))),desk_env))+' ';
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
       case erasepasses of
          0: eraselevel:='VERY_FAST';
          1: eraselevel:='FAST';
@@ -38645,7 +38650,7 @@ begin
 in_param:='';
 if test_in_params(j)<>0 then begin exit_nosave; exit; end;
 for i:=2 to 3 do in_param:=in_param+stringdelim(escapefilename(ExpandFileName((paramstr(i))),desk_env))+' ';
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 cl:=bin_name+' COMPARE '+in_param;
@@ -38666,7 +38671,7 @@ fun_status:='FILEBROWSER';
 subfun:='extract';
 s:=escapefilename(ExpandFileName(fname),desk_env);
 in_param:=stringdelim(s);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 out_param:=extractfilepath(s);
 if control_outpath(out_param)<>0 then exit;
 if out_param<>'' then
@@ -38735,7 +38740,7 @@ outname:=out_param;
 getworkpath(work_path,out_param);
 out_param:=stringdelim(escapefilename(out_param,desk_env));
 for i:=2 to j+1 do in_param:=in_param+stringdelim(escapefilename(ExpandFileName((paramstr(i))),desk_env))+' ';
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
 {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
 if pmode='zip' then
    begin
@@ -38828,7 +38833,7 @@ for i:=2 to paramcount do
       getworkpath(work_path,out_param);
       out_param:=stringdelim(escapefilename(out_param,desk_env));
       in_param:=stringdelim(escapefilename(in_param,desk_env));
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
       {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
       if pmode='zip' then
          begin
@@ -39213,7 +39218,7 @@ begin
          cutextension(out_param);
          out_param:=stringdelim(escapefilename(out_param,desk_env));
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
          cl:=bin_name+' UNPEA '+in_param+' '+out_param+' RESETDATE SETATTR EXTRACT2DIR INTERACTIVE';
          fun:='UNPEA';
          fun_status:=fun;
@@ -39224,7 +39229,7 @@ begin
          if extractfilename(out_param)='' then out_param:='AUTONAME'
          else out_param:=stringdelim(escapefilename(out_param,desk_env));
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
          cl:=bin_name+' RFJ '+in_param+' BATCH '+out_param;
          fun:='RFJ';
          fun_status:=fun;
@@ -39241,7 +39246,7 @@ begin
             if out_param[length(out_param)]=directoryseparator then setlength(out_param,length(out_param)-1);
          in_param:=stringdelim(escapefilename(in_param,desk_env));
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'paq'+DirectorySeparator+paq_ver+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'paq'+DirectorySeparator+paq_ver+EXEEXT);
          cl:=bin_name+' -d '+in_param+' '+out_param;
          launch_cl(cl,jobcode,outname);
          end;
@@ -39261,13 +39266,13 @@ begin
             if pMessageWarningYesNo(out_param+' '+txt_confirm_overwrite)<>6 then exit
             else clearfile(out_param);
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'quad'+DirectorySeparator+ext+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'quad'+DirectorySeparator+ext+EXEEXT);
          if (ext='quad') or (ext='bcm') then cl:=bin_name+' -d '+in_param+' '+out_param
          else cl:=bin_name+' d '+in_param+' '+out_param;
          launch_cl(cl,jobcode,outname);
          end;
       7: begin
-         if not(fileexists((executable_path+'res'+directoryseparator+'unace'+directoryseparator+'unace'+EXEEXT))) then
+         if not(fileexists((resource_path+'unace'+directoryseparator+'unace'+EXEEXT))) then
             begin
             if libre_directive>0 then begin reportnotsupported('ACE'); exit; end
             else
@@ -39285,7 +39290,7 @@ begin
          jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
          outname:=out_param;
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unace'+DirectorySeparator+'unace'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unace'+DirectorySeparator+'unace'+EXEEXT);
          cl:=bin_name+' x '+in_param;
          if out_param<>'' then setcurrentdir((out_param));
          launch_cl(cl,jobcode,outname);
@@ -39306,7 +39311,7 @@ begin
             if pMessageWarningYesNo(out_param+' '+txt_confirm_overwrite)<>6 then exit
             else clearfile(out_param);
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'lpaq'+DirectorySeparator+lpaq_ver+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'lpaq'+DirectorySeparator+lpaq_ver+EXEEXT);
          cl:=bin_name+' d '+in_param+' '+out_param;
          launch_cl(cl,jobcode,outname);
          end;
@@ -39363,7 +39368,7 @@ begin
          outname:=out_param;
          in_param:=stringdelim(escapefilename(in_param,desk_env));
          out_param:=stringdelim('-dp'+escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'arc'+DirectorySeparator+'arc'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'arc'+DirectorySeparator+'arc'+EXEEXT);
          cl:=bin_name+' x '+overwrite_policy+' '+in_param;
          if intpw=1 then pforceconsole:=1 else cl:=cl+' '+pw;
          cl:=cl+' '+out_param;
@@ -39378,7 +39383,7 @@ begin
             if out_param[length(out_param)]=directoryseparator then setlength(out_param,length(out_param)-1);
          in_param:=stringdelim(escapefilename(in_param,desk_env));
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
          cl:=bin_name+' x '+in_param;
          tmpvar:=zpaqabsolute;
          zpaqabsolute:=1;
@@ -39400,7 +39405,7 @@ begin
             if pMessageWarningYesNo(out_param+' '+txt_confirm_overwrite)<>6 then exit
             else clearfile(out_param);
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'brotli'+DirectorySeparator+'brotli'+EXEEXT);
          cl:=bin_name+' -d '+in_param+' -o '+out_param;
          launch_cl(cl,jobcode,outname);
          end;
@@ -39419,7 +39424,7 @@ begin
             if pMessageWarningYesNo(out_param+' '+txt_confirm_overwrite)<>6 then exit
             else clearfile(out_param);
          out_param:=stringdelim(escapefilename(out_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zstd'+DirectorySeparator+'zstd'+EXEEXT);
          cl:=bin_name+' -d '+in_param+' -o '+out_param;
          launch_cl(cl,jobcode,outname);
          end;
@@ -39484,7 +39489,7 @@ begin
             outname:=out_param;
             out_param:=stringdelim(escapefilename(out_param,desk_env));
             in_param:=stringdelim(escapefilename(in_param,desk_env));
-            bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
+            bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
             archive_function:='x';
             cl:=bin_name+' '+archive_function;
             cl:=cl+' '+in_param;
@@ -39561,7 +39566,7 @@ begin
                end;
             out_param:=stringdelim('-o'+escapefilename(out_param,desk_env));
             in_param:=stringdelim(escapefilename(in_param,desk_env));
-            bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+            bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
             {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
             archive_function:='x';
             cl:=bin_name+' '+archive_function;
@@ -39747,7 +39752,7 @@ for i:=2 to paramcount do
          break;
          end;
       7: begin
-         if not(fileexists((executable_path+'res'+directoryseparator+'unace'+directoryseparator+'unace'+EXEEXT))) then
+         if not(fileexists((resource_path+'unace'+directoryseparator+'unace'+EXEEXT))) then
             begin
             if libre_directive>0 then begin reportnotsupported('ACE'); exit; end
             else
@@ -39767,7 +39772,7 @@ for i:=2 to paramcount do
          jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
          out_param:=extractfilepath(in_param);
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unace'+DirectorySeparator+'unace'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unace'+DirectorySeparator+'unace'+EXEEXT);
          //archive function
          archive_function:=ltfun;
          cl:=bin_name+' '+archive_function;
@@ -39821,7 +39826,7 @@ for i:=2 to paramcount do
          jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
          out_param:=extractfilepath(in_param);
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'arc'+DirectorySeparator+'arc'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'arc'+DirectorySeparator+'arc'+EXEEXT);
          //archive function
          archive_function:=ltfun;
          cl:=bin_name+' '+archive_function;
@@ -39838,7 +39843,7 @@ for i:=2 to paramcount do
          jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
          out_param:=extractfilepath(in_param);
          in_param:=stringdelim(escapefilename(in_param,desk_env));
-         bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
+         bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'zpaq'+DirectorySeparator+'zpaq'+EXEEXT);
          archive_function:=ltfun;
          if archive_function='t' then archive_function:='x';
          cl:=bin_name+' '+archive_function;
@@ -39899,7 +39904,7 @@ for i:=2 to paramcount do
             end;
             out_param:=extractfilepath(in_param);
             in_param:=stringdelim(escapefilename(in_param,desk_env));
-            bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
+            bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'unrar'+DirectorySeparator+UNRARNAME+EXEEXT);
             //archive function
             if ltfun='l' then archive_function:='lb'
             else archive_function:='t';
@@ -39954,7 +39959,7 @@ for i:=2 to paramcount do
             end;
             out_param:=extractfilepath(in_param);
             in_param:=stringdelim(escapefilename(in_param,desk_env));
-            bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+            bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
             {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
             //archive function
             archive_function:=ltfun;
@@ -40278,7 +40283,7 @@ end;
 
 procedure changelanguage;
 begin
-Form_peach.OpenDialogLang.InitialDir:=executable_path+'res'+directoryseparator+'lang'+directoryseparator;
+Form_peach.OpenDialogLang.InitialDir:=resource_path+'lang'+directoryseparator;
 if Form_peach.OpenDialogLang.execute then
    if Form_peach.OpenDialogLang.FileName<>'' then
       begin
@@ -40900,7 +40905,7 @@ procedure TForm_peach.baboutremoveunaceClick(Sender: TObject);
 var
    s:ansistring;
 begin
-s:=executable_path+'res'+DirectorySeparator+'unace'+DirectorySeparator;
+s:=resource_path+'unace'+DirectorySeparator;
 cleardir(s,true,false);
 updatepluginstatus;
 end;
@@ -40909,7 +40914,7 @@ procedure TForm_peach.baboutremoveunrarClick(Sender: TObject);
 var
    s:ansistring;
 begin
-s:=executable_path+'res'+DirectorySeparator+'unrar'+DirectorySeparator;
+s:=resource_path+'unrar'+DirectorySeparator;
 cleardir(s,true,false);
 updatepluginstatus;
 end;
@@ -43040,7 +43045,7 @@ var
    erasemode:integer;
 begin
 if in_param='' then exit; //input parameter must be already set from the calling procedure
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 if ptype='archive' then
    begin
    if doptadd=0 then exit;
@@ -43112,7 +43117,7 @@ in_param:='';
 if Form_peach.StringGrid1.Row=0 then exit;
 if Form_peach.StringGrid1.Cells[1,1]='' then exit;
 P:=tprocessutf8.Create(nil);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 for i:=1 to Form_peach.StringGrid1.Rowcount-1 do
    begin
    s:=Form_peach.StringGrid1.Cells[8,i];
@@ -44231,7 +44236,7 @@ for i:=0 to k-1 do
       if (funct1='details') then
          begin
          P:=tprocessutf8.Create(nil);
-         cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT)+' list info '+stringdelim(Form_peach.EditOpenIn.Text);
+         cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' list info '+stringdelim(Form_peach.EditOpenIn.Text);
          P.CommandLine:=cl;
          if Form_peach.Visible=true then Application.ProcessMessages;
          if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -44701,7 +44706,7 @@ in_param:='';
 if Form_peach.StringGrid2.Row=0 then exit;
 if Form_peach.StringGrid2.Cells[1,1]='' then exit;
 P:=tprocessutf8.Create(nil);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 for i:=1 to Form_peach.StringGrid2.Rowcount-1 do
    begin
    s:=Form_peach.StringGrid2.Cells[8,i];
@@ -44733,7 +44738,7 @@ var
 begin
 in_param:='';
 P:=tprocessutf8.Create(nil);
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 s:=Form_peach.EditOpenIn.Text;
 if checkfiledirname(s)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s); exit; end;
 getmultiname(s,in_param);
@@ -46893,7 +46898,7 @@ var
 begin
 {$IFDEF MSWINDOWS}
 P:=tprocessutf8.Create(nil);
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'peazip-configuration'+EXEEXT)+' /DIR='+stringdelim(escapefilename(executable_path,desk_env));
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'peazip-configuration'+EXEEXT)+' /DIR='+stringdelim(escapefilename(executable_path,desk_env));
 if pwait=true then P.Options := [poNoConsole, poWaitOnExit]
 else P.Options := [poNoConsole];
 P.CommandLine:=cl;
@@ -46931,7 +46936,7 @@ end;
 procedure TForm_peach.LabelLang4Click(Sender: TObject);
 begin
 pMessageInfoOK(txt_5_3_cmlmessage);
-cp_open(executable_path+'res'+directoryseparator+'lang-wincontext'+directoryseparator,desk_env);
+cp_open(resource_path+'lang-wincontext'+directoryseparator,desk_env);
 end;
 
 procedure TForm_peach.LabelPanelHintAddMouseDown(Sender: TObject;
@@ -49612,7 +49617,11 @@ var
    cl:ansistring;
 begin
 P:=tprocessutf8.Create(nil);
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT);
+{$IFDEF DARWIN}
+cl:='open ' + executable_path + '../../../pea.app';
+{$ELSE}
+cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
+{$ENDIF}
 P.CommandLine:=cl;
 if Form_peach.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -51063,7 +51072,7 @@ if Form_peach.visible=true then
    if pMessageInfoYesNo(s0+char($0D)+char($0A)+char($0D)+char($0A)+s1+char($0D)+char($0A)+char($0D)+char($0A)+txt_5_2_free)=6 then
       begin
       P:=tprocessutf8.Create(nil);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
       case erasepasses of
          0: eraselevel:='VERY_FAST';
          1: eraselevel:='FAST';
@@ -52926,7 +52935,7 @@ begin
 else sg:=Form_peach.StringGrid2;
 if sg.Row=0 then exit;
 in_param:=stringdelim(escapefilename(sg.Cells[8,sg.Row],desk_env));
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 P.CommandLine:=cl;
@@ -52946,7 +52955,7 @@ var
    cl:ansistring;
 begin
 P:=tprocessutf8.Create(nil);
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT)+' envstr';
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' envstr';
 P.CommandLine:=cl;
 if Form_peach.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -53155,7 +53164,7 @@ if fun<>'FILEBROWSER' then
    begin
    if checkfiledirname(Form_peach.EditOpenIn.Text)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.EditOpenIn.Text); exit; end;
    in_param:=stringdelim(escapefilename(Form_peach.EditOpenIn.Text,desk_env));
-   cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
+   cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    P.CommandLine:=cl;
@@ -53170,7 +53179,7 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
       begin
       if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
       in_param:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env));
-      cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
+      cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       P.CommandLine:=cl;
@@ -54686,7 +54695,7 @@ var
    cl:ansistring;
 begin
 P:=tprocessutf8.Create(nil);
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'pea'+EXEEXT)+' envstr';
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT)+' envstr';
 P.CommandLine:=cl;
 if Form_peach.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -55325,7 +55334,8 @@ webopen:=ShellExecuteW(Form_peach.Handle, PWideChar ('open'), PWideChar(w), PWid
 {$ENDIF}
 {$IFDEF LINUX}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+{$IFDEF NETBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}    
+{$IFDEF DARWIN}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
 procedure run_websearch(s:ansistring);
@@ -56441,7 +56451,7 @@ if s<>'' then
    if libre_directive=2 then if testifrar(escapefilename(s,desk_env))=1 then exit;
    in_param:=stringdelim(escapefilename(s,desk_env));
    out_param:=stringdelim('-o'+escapefilename(confpath+'themes'+directoryseparator,desk_env));
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT);
    {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z';{$ENDIF}
    cl:=bin_name+' x -aoa '+out_param+' '+in_param;
    P.CommandLine:=cl;
@@ -56490,9 +56500,9 @@ begin
 case ComboBoxTheme.ItemIndex of
    0: begin
       try
-         s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'ten-embedded'+directoryseparator+'theme.txt';
+         s:=resource_path+'themes'+directoryseparator+'ten-embedded'+directoryseparator+'theme.txt';
          theme_name:='ten-embedded';
-         theme_path:=extractrelativepath(executable_path+'res'+directoryseparator,s);
+         theme_path:=extractrelativepath(resource_path,s);
          load_theme;
          check_theme_failure;
       except
@@ -56502,9 +56512,9 @@ case ComboBoxTheme.ItemIndex of
       end;
    1: begin
       try
-         s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'nographic-embedded'+directoryseparator+'theme.txt';
+         s:=resource_path+'themes'+directoryseparator+'nographic-embedded'+directoryseparator+'theme.txt';
          theme_name:='nographic-embedded';
-         theme_path:=extractrelativepath(executable_path+'res'+directoryseparator,s);
+         theme_path:=extractrelativepath(resource_path,s);
          load_theme;
          check_theme_failure;
       except
@@ -56514,7 +56524,7 @@ case ComboBoxTheme.ItemIndex of
       end;
    2: begin
       try
-      s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'classic.theme.7z';
+      s:=resource_path+'themes'+directoryseparator+'classic.theme.7z';
       if loadthemefile(s)<>0 then
          begin
          theme_failure;
@@ -56527,7 +56537,7 @@ case ComboBoxTheme.ItemIndex of
       end;
    3: begin
       try
-      s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'experience.theme.7z';
+      s:=resource_path+'themes'+directoryseparator+'experience.theme.7z';
       if loadthemefile(s)<>0 then
          begin
          theme_failure;
@@ -56540,7 +56550,7 @@ case ComboBoxTheme.ItemIndex of
       end;
    4: begin
       try
-      s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'firecrystal.theme.7z';
+      s:=resource_path+'themes'+directoryseparator+'firecrystal.theme.7z';
       if loadthemefile(s)<>0 then
          begin
          theme_failure;
@@ -56553,7 +56563,7 @@ case ComboBoxTheme.ItemIndex of
       end;
    5: begin
       try
-      s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'seven.theme.7z';
+      s:=resource_path+'themes'+directoryseparator+'seven.theme.7z';
       if loadthemefile(s)<>0 then
          begin
          theme_failure;
@@ -56566,7 +56576,7 @@ case ComboBoxTheme.ItemIndex of
       end;
    6: begin
       try
-      s:=executable_path+'res'+directoryseparator+'themes'+directoryseparator+'ten.theme.7z';
+      s:=resource_path+'themes'+directoryseparator+'ten.theme.7z';
       if loadthemefile(s)<>0 then
          begin
          theme_failure;
@@ -57038,6 +57048,11 @@ if ((executable_path='') or (executable_path='..\')) then executable_path:=extra
 if executable_path<>'' then
    if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
+{$IFDEF DARWIN}
+   resource_path:=executable_path+'../Resources/';
+{$ELSE}
+   resource_path:=resource_path;
+{$ENDIF}
 archiveopened:=false;
 browsinghistory:=false;
 imgloaded:=false;
@@ -57259,7 +57274,7 @@ if ExtractFileExt(s)<>'.txt' then s:='default.txt';
 lang_file:=s;
 {$IFDEF MSWINDOWS}
 if (winver='nt6+') and (majmin<>'6.0') then
- if confpath<>executable_path+'res'+directoryseparator then //if Windows instalable version
+ if confpath<>resource_path then //if Windows instalable version
    begin
    exepath:=utf8decode(executable_path);
    cutextension(s);
@@ -58352,64 +58367,64 @@ if caption_build='Win64 Build' then strb:='x64' else strb:='x32';
 try
 if winver='nt6+' then
    begin
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll') then
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll') then
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll');
    end
 else
    begin //XP, ReactOS
-   if not(DirectoryExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk')) then
-      ForceDirectories(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk');
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll') then
+   if not(DirectoryExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk')) then
+      ForceDirectories(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk');
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'brotli-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'brotli-'+strb+'.dll');
       end;
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll') then
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'flzma2-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'flzma2-'+strb+'.dll');
       end;
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll') then
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lizard-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lizard-'+strb+'.dll');
       end;
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll') then
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz4-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz4-'+strb+'.dll');
       end;
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll') then
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'lz5-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'lz5-'+strb+'.dll');
       end;
-   if FileExists(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll') then
+   if FileExists(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll') then
       begin
-      DeleteFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll');
-      RenameFile(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll',
-      escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll');
+      DeleteFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll');
+      RenameFile(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'zstd-'+strb+'.dll',
+      escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'Codecs'+DirectorySeparator+'bk'+DirectorySeparator+'zstd-'+strb+'.dll');
       end;
    end;
 except
@@ -59254,52 +59269,52 @@ procedure load_presetsnames;
 var
    s:ansistring;
 begin
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'0.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'0.txt',s);
 if s='0' then s:=txt_7_4_presetrar;
 Form_peach.mprofilerar.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'1.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'1.txt',s);
 if s='1' then s:=txt_7_2_extcompultra;
 Form_peach.mprofileextremezpaq.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'2.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'2.txt',s);
 if s='2' then s:=txt_7_2_extcomp;
 Form_peach.mprofilebetterzpaq.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'3.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'3.txt',s);
 if s='3' then s:=txt_5_3_profilebest;
 Form_peach.mprofileultra7z.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'4.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'4.txt',s);
 if s='4' then s:=txt_5_3_profileadvanced;
 Form_peach.mprofilenormal7z.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'5.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'5.txt',s);
 if s='5' then s:=txt_7_2_altcomp;
 Form_peach.mprofilealtarc.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'6.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'6.txt',s);
 if s='6' then s:=txt_7_3_profile7zfast;
 Form_peach.mprofile7zfast.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'7.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'7.txt',s);
 if s='7' then s:=txt_7_1_profileintermediate;
 Form_peach.mprofilezipbz2.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'8.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'8.txt',s);
 if s='8' then s:=txt_5_3_profilenormal;
 Form_peach.mprofilenormalzip.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'9.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'9.txt',s);
 if s='9' then s:=txt_7_3_profile7zfastest;
 Form_peach.mprofile7zfastest.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'10.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'10.txt',s);
 if s='10' then s:=txt_5_3_profileveryfast;
 Form_peach.mprofilefastzip.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'11.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'11.txt',s);
 if s='11' then s:={$IFDEF MSWINDOWS}txt_7_4_7zfbrotlicomp{$ELSE}txt_7_2_fbrotlicomp{$ENDIF}; ;
 Form_peach.mprofilebrotli.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'12.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'12.txt',s);
 if s='12' then s:={$IFDEF MSWINDOWS}txt_7_4_7zfzstandardcomp{$ELSE}txt_7_2_fzstandardcomp{$ENDIF}; ;
 Form_peach.mprofilezstd.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'13.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'13.txt',s);
 if s='13' then s:=txt_5_3_profilepassword;
 Form_peach.mprofileencrypt7z.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'14.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'14.txt',s);
 if s='14' then s:=txt_5_3_profile10mb;
 Form_peach.mprofilesplitzip.Caption:=s;
-check_presets_name(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+'15.txt',s);
+check_presets_name(resource_path+'presets'+DirectorySeparator+'15.txt',s);
 if s='15' then s:=txt_5_3_profilesfx;
 Form_peach.mprofileauto.Caption:=s;
 end;
@@ -59557,7 +59572,7 @@ end;
 
 procedure applypreset(presetname: ansistring);
 begin
-applycompsettings(executable_path+'res'+DirectorySeparator+'presets'+DirectorySeparator+presetname);
+applycompsettings(resource_path+'presets'+DirectorySeparator+presetname);
 end;
 
 procedure TForm_peach.mprofile7zfastClick(Sender: TObject);
@@ -61266,7 +61281,7 @@ procedure peazipreset;
 begin
 peazipdoreset;
 {$IFDEF MSWINDOWS}
-if confpath<>executable_path+'res'+directoryseparator then //if windows instalable version
+if confpath<>resource_path then //if windows instalable version
    begin
    peaziplanguagenc('default.txt');
    if pMessageInfoYesNo(txt_5_3_resetsi)=6 then configure_systemintegration(true);
@@ -61280,7 +61295,7 @@ procedure peaziptotalreset;//as peazipreset, no restart
 begin
 peazipdoreset;
 {$IFDEF MSWINDOWS}
-if confpath<>executable_path+'res'+directoryseparator then //if windows instalable version
+if confpath<>resource_path then //if windows instalable version
    begin
    peaziplanguagenc('default.txt');
    if pMessageInfoYesNo(txt_5_3_resetsi)=6 then configure_systemintegration(true);
@@ -61467,7 +61482,7 @@ var
 begin
 if pMessageInfoYesNo(txt_benchmark)=7 then exit;
 s:=fun;
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT)+' b';
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT)+' b';
 {$IFDEF LINUX}if sys7zlin=1 then cl:='7z b';{$ENDIF}
 fun:='7Z';
 fun_status:=fun;
@@ -62199,7 +62214,7 @@ if Form_peach.OpenDialogArchive.Execute then
       filea:=stringdelim(escapefilename(sg.Cells[8,sg.Row],desk_env));
       fileb:=stringdelim(escapefilename(Form_peach.OpenDialogArchive.Filename,desk_env));
       P:=tprocessutf8.Create(nil);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       cl:=bin_name+' COMPARE '+filea+' '+fileb;
       P.CommandLine:=cl;
@@ -62224,7 +62239,7 @@ if Form_peach.OpenDialogArchive.Execute then
       filea:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row],desk_env));
       fileb:=stringdelim(escapefilename(Form_peach.OpenDialogArchive.Filename,desk_env));
       P:=tprocessutf8.Create(nil);
-      bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+      bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       cl:=bin_name+' COMPARE '+filea+' '+fileb;
       P.CommandLine:=cl;
@@ -62260,7 +62275,7 @@ if Form_peach.visible=true then
    if pMessageWarningYesNo(s+char($0D)+char($0A)+char($0D)+char($0A)+inttostr(nsel)+' '+txt_displayed_obj+':'+char($0D)+char($0A)+char($0D)+char($0A)+strsel)=6 then
    begin
    P:=tprocessutf8.Create(nil);
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do
       if Form_peach.StringGridList.Cells[15,i]='1' then
          begin
@@ -62302,7 +62317,7 @@ if Form_peach.visible=true then
    if pMessageWarningYesNo(s+char($0D)+char($0A)+char($0D)+char($0A)+s_in)=6 then
    begin
    P:=tprocessutf8.Create(nil);
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+directoryseparator+'pea'+EXEEXT);
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
    if checkfiledirname(s_in)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s_in); exit; end;
    in_param:=stringdelim(escapefilename((s_in),desk_env));
    case erasepasses of
@@ -64230,7 +64245,7 @@ if (fextl='.RAR') and (havewinrar=true) and (userar=1) then
    end
 else
    begin
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT)+' d -y -ssc';
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT)+' d -y -ssc';
    {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z d -y -ssc';{$ENDIF}
    if stl7z=1 then bin_name:=bin_name+' -stl';
    end;
@@ -64285,7 +64300,7 @@ if (fextl='.RAR') and (havewinrar=true) and (userar=1) then
    end
 else
    begin
-   bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT)+' rn';
+   bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT)+' rn';
    {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z rn';{$ENDIF}
    if stl7z=1 then bin_name:=bin_name+' -stl';
    //encryption
@@ -67235,7 +67250,7 @@ in_param:=stringdelim(escapefilename(confpath+themedir,desk_env));
 out_param:=local_desktop+Form_peach.Edit1.text+'.theme.7z';
 getworkpath(work_path,out_param);
 out_param:=stringdelim(escapefilename(out_param,desk_env));
-bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'res'+DirectorySeparator+'7z'+DirectorySeparator+'7z'+EXEEXT)+' a -t7z -m0=LZMA -mmt=on -mx5 -md=16m -mfb=32 -ms=2g';
+bin_name:=stringdelim(escapefilename(resource_path,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT)+' a -t7z -m0=LZMA -mmt=on -mx5 -md=16m -mfb=32 -ms=2g';
 {$IFDEF LINUX}if sys7zlin=1 then bin_name:='7z a -t7z -m0=LZMA -mmt=on -mx5 -md=16m -mfb=32 -ms=2g';{$ENDIF}
 if work_path<>'' then cl:=cl+' '+work_path;
 cl:=bin_name+' '+out_param+' '+in_param;
@@ -68050,7 +68065,7 @@ end;
 procedure TForm_peach.w7contextlangClick(Sender: TObject);
 begin
 pMessageInfoOK(txt_5_3_cmlmessage);
-cp_open(executable_path+'res'+directoryseparator+'lang-wincontext'+directoryseparator,desk_env);
+cp_open(resource_path+'lang-wincontext'+directoryseparator,desk_env);
 end;
 
 procedure TForm_peach.TimerdragTimer(Sender: TObject);
