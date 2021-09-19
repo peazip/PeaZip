@@ -148,6 +148,7 @@ unit Unit_gwrap;
  1.07     20210305  G.Tani      Supports Windows 7+ progress bar in application's status bar icon
  1.08     20210706  G.Tani      Fixed window stealing focus at each new task, occurring on some Linux machines
                                 Optimized speed for operations on archives containing large number of files
+ 1.09     20210919  G.Tani      Merged patches for Darwin support
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -791,7 +792,7 @@ if cp_open<33 then
 {$ENDIF}
 {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}      
+{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
@@ -2050,18 +2051,17 @@ procedure TForm_gwrap.FormShow(Sender: TObject);
 begin
 if pldesigned=true then exit;
 getdesk_env(desk_env,caption_build,delimiter);
-
-executable_path:=extractfilepath((paramstr(0))); //valorize application's paths
+//executable_path is passed from unit peach prepare_Form_gwrap;
+{executable_path:=extractfilepath((paramstr(0))); //valorize application's paths
 if ((executable_path='') or (executable_path='..\')) then executable_path:=extractfilepath((paramstr(0)));
 if executable_path<>'' then
-   if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
+   if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;}
 setcurrentdir(executable_path);
 {$IFDEF DARWIN}
-   resource_path:=executable_path+'../Resources/';
+resource_path:=executable_path+'../Resources/';
 {$ELSE}
-   resource_path:=resource_path;
+resource_path:=executable_path+'res'+DirectorySeparator;
 {$ENDIF}
-
 peazippath:=executable_path;
 {$IFDEF MSWINDOWS}getwinenv(wincomspec,winver);{$ENDIF}
 texts(lang_file);
@@ -2330,7 +2330,7 @@ else
 {$ENDIF}
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}  
+{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 

@@ -181,6 +181,7 @@ unit Unit_pea;
                                 Improved byte to byte file comparison function
  1.02     20210711  G.Tani      Over 2x improved speed of hex preview, now enabled for files up to 64 MB in size
                                 Updated files and free space secure delete functions, new ONE parameter to overwrite all bits with 1
+ 1.03     20210919  G.Tani      Merged patches for Darwin
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -7273,7 +7274,7 @@ try
    {$ENDIF}
    {$IFDEF NETBSD}
    if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
-   {$ENDIF}  
+   {$ENDIF}
    {$IFDEF DARWIN}
    if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
    {$ENDIF}
@@ -7282,7 +7283,10 @@ try
    confpath:=expandfilename(confpath);
    if confpath[length(confpath)]<>directoryseparator then confpath:=confpath+directoryseparator;
    if not(directoryexists(confpath)) then confpath:=resource_path; //if alternative configuration directory does not exist or is not accessible, use res path
+   persistent_source:=confpath+'rnd';
+   {$IFDEF DARWIN}
    persistent_source:=resource_path+'rnd';
+   {$ENDIF}
    assignfile(conf,(confpath+'conf.txt'));
    filemode:=0;
    reset(conf);

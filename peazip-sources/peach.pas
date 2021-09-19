@@ -170,75 +170,21 @@ unit peach;
  1.53     20210609  G.Tani      8.0.0
  1.54     20210720  G.Tani      8.1.0
  1.55     20210909  G.Tani      8.2.0
+ 1.56     2021xxxx  G.Tani      8.3.0
 
 BACKEND
-(LInux) Upodated Brotli to 1.0.9 version
-(Linux) Added read support (browse / test / extract) to Lzip .lz file type
-Added support for .apkm, .apks, and .aab packages Android package formats
 
 CODE
-(Linux) maximum length of CL generated on Linux systems is now increased to 128 K characters in contrast to much more limited 32 K characters allowed on Windows systems
-About screen now displays information about widget set and CPU architecture of the build for better troubleshooting
-Improved command line usage
- New res\batch\ folder containing scripts pointing to main app functions to help portabilize and deploy the application on multiple environments
-  The directory contains sample .bat scripts (Windows), SendTo menu links (Windows), freedesktop_integration examples (Linux) and will expand in future
- Fixed -add27z, -add2zip and related switches: when multiple items are passed the archive is named accordingly the directory name of first item, as in the GUI version of the same action
- New -ext2here, -ext2folder (alias -ext2smart), -ext2newfolder switches for CL, executing single or multiple tasks as a single sequence of extract here, extract here smart folder, and extract here to new folder respectively
-  Extraction to new folder can now be forced to use smart folder option (-ext2folder, alias -ext2smart) or to not use it (-ext2newfolder)
-  With new extraction functions extraction of multiple items can run in a single instance without stealing the focus each time the next task in sequence is started
-  SendTo links to extraction functions are updated to use those new functions for better handling of queues of multiple tasks, now matching features provided by context menu entries but with advantages of being cross platform, not suffering artificial limitation of input items number, and being much more faster and cpu/memory efficient in receiving input list from system to application
-  Previous version of same switches, not running as a single instance queue, are available with "_" suffix, i.e. -ext2here_
-   In this way existing scripts does not need to be updated to benefit of new functions, but can be easily adapted to use old version of the switches if preferred
-Improved generation of more compact command lines from GUI, with better detection of cases of automatic switch to "extract all"
-Various fixes
- Fixed breadcrumb for "Open unit as archive" in context menu, File manager > System tools
- Fixed deselecting "TAR before" and selecting "Add each object to a separate archive" it is now possible to create multiple archive at once for types such as bz2, br, gz, zst
+Fixes
+GitHub: Merged ACTom's "Initial support for MacOS #25"
 
 FILE MANAGER
-(Linux) Improved system directories shown by default in navigation tree on the left of file manager
-(Linux) Updated list of apps automatically detected for Open with submenu; apps and scripts can be customized in Options > Settings, Applications tab
-(Linux) Enabled System tools submenu in context menu > File manager
-(Windows) Improved and re-organized System tools submenu in context menu > File manger
-Improved archive browser
- Added Method column to display compression/encryption method for each single object (this column is enabled by default)
- Added Created and Accessed timestamps columns in addition to existing Modified timestamp column (those columns are disabled by default)
- The new columns can be enabled/disabled from columns header's context menu, and from main menu > Organize > Browser > Columns
- If enabled, those columns are automatically shown browsing archives and hidden browsing the fileystem
- Folders in 7z/p7zip archives now show number of contained folders, files, and total uncompressed size (displayed in same column of files' checksums)
-  This feature is limited on basis of the number of items contained in the archive, and can be tuned from "Browser optimization" dropdown menu in Options > Settings, General tab Performances group
-New Ctrl+Alt+A link to autoadjust file browser columns
-Themes: added "Presets" link on the right of Application accent color picker, allowing to quickly customize both application and text accent colors accordingly to common color themes of reference Operating Systems e.g. Mint, Ubuntu, Windows
+Column header context menu is now accessible alternatively right-clicking the status bar
 
 EXTRACTION and ARCHIVING
-Added XZ (Linux, Windows) and Zstd (Linux) as optional algorithms for ZIP/ZIPX compression, from Advanced tab in archiving / conversion screen
-Improved extraction
- Added option to skip testing for encryption on extraction, suppressing password requests
- Improved Interactive extraction option
-  Empty folder is now removed in case of error with Extract to new folder
-  Naming policy dropdown menu is enabled with "Interactive extraction", allowing to resolve issues of conflicting filenames in the same archive
-  New "Keep files" link in extraction progress windows in case of errors "Interactive extraction", allows to preserve extracted files which whould be otherwise automatically deleted
- New "Store all timestamps" option (checked by default) is available in Archiving / Conversion screen
-  If this option is active, created, modified, last access time are saved to archive rather than modified timestamp only
-  Formats supporting this feature are: 7Z, RAR, ZIP
-Improved raw file spanning, it is now possible to submit multiple separate input files at once to be split to specified size
-Improved support for .xxxaa spanned files from Unix/Linux split command
-New option for default behavior at application startup: Extract all here (smart new folder)
- This option can be set from Options > Settings > Archive manager
- Doubleclicking on an a file of associated type, or clicking Open from context menu on a group of selected files associated with PeaZip, the selected action is performed
- Available actions: Open (default), Open as archive (force trying to open file as archive), Extract (showing options and confirmation screen), Extract all here, Extract all here (smart new folder)
 
 WINDOWS & LINUX INSTALLERS
-(Windows) SendTo menu entries use new extraction functions, more efficient for handling queues of multiple tasks, and "Extract here (smart new folder)" replaces "Extract here (in new folder)"
- With this update SendTo functions provides same features provided by context menu entries, but much more faster and efficient and without artificial limitation in terms of number of input items
-(Linux) Improved Linux installers
- install the app in /opt/peazip directory (non capitalized)
- configuration files are saved in .PeaZip directory in user's home as in previous releases
- link peazip binary in /usr/bin
- place peazip.desktop file in /usr/share/applications
- place peazip.png icon in /usr/share/icons, /usr/share/pixmaps for DEB packages
- optional .desktop files and icons are available in (peazip)/res/batch/freedesktop_integration to provide direct access to specific functions even on DE not supporting Actions
- DEB packages place machine readable copyright file in /usr/share/doc/peazip
- DEB packages are now named following Debian naming standard (all other packages - Windows, Linux, portable - follows RedHat naming standard)
+
 
 225 file extensions supported (224 on Windows)
 
@@ -5063,10 +5009,10 @@ const
   {$ENDIF}
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  INTVERSION    = '1.55';
-  PEAZIPVERSION = '8.2';
+  INTVERSION    = '1.56';
+  PEAZIPVERSION = '8.2';//***
   PEAZIPREVISION= '.0';
-  PEAZIPSINTVER = '800';
+  PEAZIPSINTVER = 830;
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   FIRSTDOM      = 'https://peazip.github.io/';
   SECONDDOM     = 'https://peazip.sourceforge.io/';
@@ -5085,19 +5031,19 @@ const
   {$IFDEF MSWINDOWS}
   COL1D         = 240;
   COL2D         = 80;
-  COL3D         = 88;
-  COL4D         = 88;
-  COL5D         = 120;
-  COL6D         = 48;
-  COL7D         = 120;
+  COL3D         = 80;
+  COL4D         = 80;
+  COL5D         = 160;
+  COL6D         = 60;
+  COL7D         = 100;
   {$ELSE}
   COL1D         = 240;
   COL2D         = 80;
-  COL3D         = 96;
-  COL4D         = 96;
-  COL5D         = 144;
-  COL6D         = 64;
-  COL7D         = 144;
+  COL3D         = 80;
+  COL4D         = 80;
+  COL5D         = 160;
+  COL6D         = 60;
+  COL7D         = 100;
   {$ENDIF}
   ZCHAR         = '+';
   ZSTRING       = '----------';
@@ -5112,7 +5058,7 @@ const
   READE_LIST    = '7Z, ACE, ARC/WRC, ARJ, BR, BZ/TBZ, CAB, CHM/CHW/HXS, COMPOUND (MSI, DOC, XLS, PPT), CPIO, GZ/TGZ, ISO, Java (JAR, EAR, WAR), LZH/LHA, Linux (DEB, PET/PUP, RPM, SLP), NSIS, OOo, PAK/PK3/PK4, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ/BCM, RAR, TAR, WIM/SWM, XPI, Z/TZ, ZIP, ZST...';
   WRITEE_LIST   = '7Z, 7Z-sfx, ARC, ARC-sfx, BR, BZ2, GZ, *PAQ, PEA, QUAD/BALZ/BCM, split, TAR, UPX, WIM, XZ, ZIP, ZST';
   APPMAIN       = 'PeaZip';
-  APPLICATION1  = 'Pea 1.02 (LGPLv3, Giorgio Tani);';
+  APPLICATION1  = 'Pea 1.03 (LGPLv3, Giorgio Tani);';
   STR_7Z        = '7Z';
   STR_ARC       = 'ARC';
   STR_BROTLI    = 'Brotli';
@@ -8926,7 +8872,7 @@ pmselectadv.Caption:=txt_5_5_select+'...';
 mselectadv.Caption:=txt_5_5_select+'...';
 po_copypath.Caption:=txt_5_5_copypath;
 pmhcopypath.Caption:=txt_5_5_copypath;
-org_autoadjust.Caption:=txt_6_3_autoadjust;
+org_autoadjust.Caption:=txt_6_3_autoadjust+' (Ctrl+Alt+A)';
 mautoadjust.Caption:=txt_6_3_autoadjust;
 pmcname.Caption:=txt_name;
 pmctype.Caption:=txt_type;
@@ -23823,7 +23769,12 @@ cmethod:=lcmethod;
 if cmethod<>'' then status1:=cmethod+' | '
 else status1:='';
 nitems:=nfiles+nfolders;
-status1:=status1+inttostr(nfolders)+' '+txt_dirs+' '+inttostr(nfiles)+' '+txt_files+' '+nicenumber(inttostr(size))+' > '+nicenumber(inttostr(csize));
+
+if tvol>1 then
+   status1:=status1+nicenumber(inttostr(size))+' > '+nicenumber(inttostr(csize))
+else
+   status1:=status1+inttostr(nfolders)+' '+txt_dirs+' '+inttostr(nfiles)+' '+txt_files+' '+nicenumber(inttostr(size))+' > '+nicenumber(inttostr(csize));
+
 rsize:=0;
 try
    if size<>0 then rsize:=((csize) *100) div (size);
@@ -24713,7 +24664,7 @@ if cp_open<33 then
 {$ENDIF}
 {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}   
+{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
@@ -24727,7 +24678,7 @@ else
 {$ENDIF}
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}  
+{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 
@@ -25074,7 +25025,7 @@ begin
 result:=-1;
 in_param:=stringdelim(escapefilename((Form_peach.EditOpenIn.Text),desk_env));
 if fun='UN7Z' then exe_name:='7z';
-bin_name:=stringdelim(escapefilename(resource_path,desk_env)+exe_name+DirectorySeparator+exe_name+EXEEXT);
+bin_name:=stringdelim(escapefilename((executable_path),desk_env)+'res'+DirectorySeparator+exe_name+DirectorySeparator+exe_name+EXEEXT);
 pw:=FormPW.EditUn7zaPW.Text;
 if FormPW.EditName3.Text<>'' then
    if prepend_keyfile(pw,FormPW.EditName3.Text)<>0 then
@@ -27308,12 +27259,24 @@ else
       Form_Peach.ListView1.Column[5].Width:=0;
       Form_Peach.ListView1.Column[6].Width:=0;
       Form_Peach.ListView1.Column[7].Width:=0;
+      Form_peach.mccreated.Enabled:=False;
+      Form_peach.mcaccessed.Enabled:=False;
+      Form_peach.mcmethod.Enabled:=False;
+      Form_peach.pmccreated.Enabled:=False;
+      Form_peach.pmcaccessed.Enabled:=False;
+      Form_peach.pmcmethod.Enabled:=False;
       end
    else
       begin
       if ccreated=false then begin Form_Peach.ListView1.Column[5].Width:=0; end;
       if caccessed=false then begin Form_Peach.ListView1.Column[6].Width:=0; end;
       if cmethod=false then begin Form_Peach.ListView1.Column[7].Width:=0; end;
+      Form_peach.mccreated.Enabled:=True;
+      Form_peach.mcaccessed.Enabled:=True;
+      Form_peach.mcmethod.Enabled:=True;
+      Form_peach.pmccreated.Enabled:=True;
+      Form_peach.pmcaccessed.Enabled:=True;
+      Form_peach.pmcmethod.Enabled:=True;
       end;
    end;
 end;
@@ -28798,11 +28761,11 @@ var
    i:integer;
 begin
 i:=testifrarlocked(Form_peach.EditOpenIn.Text);
-case i of
-   0: Form_peach.Caption:=Form_peach.Caption+' | RAR4';
-   1: Form_peach.Caption:=Form_peach.Caption+' | RAR4, '+txt_7_4_locked;
-   2: Form_peach.Caption:=Form_peach.Caption+' | RAR5';
-   3: Form_peach.Caption:=Form_peach.Caption+' | RAR5, '+txt_7_4_locked;
+case i of //RAR revision already reported in status1 as method
+   //0: Form_peach.Caption:=Form_peach.Caption;
+   1: Form_peach.Caption:=Form_peach.Caption+' | '+txt_7_4_locked;
+   //2: Form_peach.Caption:=Form_peach.Caption;
+   3: Form_peach.Caption:=Form_peach.Caption+' | '+txt_7_4_locked;
    end;
 case i of
    -1: //not rar
@@ -29475,11 +29438,26 @@ listingdir:=false;
 {$ENDIF}
 end;
 
+procedure savecol;
+begin
+if (browsertype=0) and (Form_Peach.EditOpenIn.Caption<>txt_mypc) then
+   begin
+   col1size:=Form_Peach.ListView1.Column[0].Width;
+   if ctype=false then else col2size:=Form_Peach.ListView1.Column[1].Width;
+   if csize=false then else col3size:=Form_Peach.ListView1.Column[2].Width;
+   if cpacked=false then else col4size:=Form_Peach.ListView1.Column[3].Width;
+   if cdate=false then else col5size:=Form_Peach.ListView1.Column[4].Width;
+   if catt=false then else col6size:=Form_Peach.ListView1.Column[8].Width;
+   if ccrc=false then else col7size:=Form_Peach.ListView1.Column[9].Width;
+   end;
+end;
+
 procedure filter_archivecontent;
 var
    i,j,nfolders,nfiles,size,csize,rsize,rc:integer;
    sfilter,sfilterf,stemp,stempf,tstr:ansistring;
 begin
+savecol;
 
 if status0=txt_list_browsing then list_un7z('browse')
 else list_un7z('flat');
@@ -31238,6 +31216,9 @@ if (s=txt_mypc) or (s='Computer''s root\') then
 {$ENDIF}
 if listingdir=true then exit;
 listingdir:=true;
+
+savecol;
+
 keeppreview:=false;
 selnode:=0;
 beingpreviewed:='';
@@ -47796,7 +47777,7 @@ end;
 
 procedure select_by(sel:ansistring; op:ansistring);
 var
-   i,rc,sr,wsel,wa,wd:integer;
+   i,rc,sr,wsel,wa,wd,wsz,wpsz:integer;
    ci,cs,sdt,sdtr,istr:ansistring;
    sg:TStringGrid;
 begin
@@ -47808,6 +47789,8 @@ begin
    wsel:=11;
    wa:=7;
    wd:=6;
+   wsz:=3;
+   wpsz:=1;//not supported
    end;
 {$IFDEF MSWINDOWS}if Form_peach.PanelExtract.Visible=true{$ELSE}if Form_peach.PanelExtract.top=0{$ENDIF} then
    begin
@@ -47817,6 +47800,8 @@ begin
    wsel:=11;
    wa:=7;
    wd:=6;
+   wsz:=3;
+   wpsz:=1;//not supported
    end;
 {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.Top=0{$ENDIF} then
    begin
@@ -47825,9 +47810,11 @@ begin
    sg:=Form_peach.StringGridList;
    sr:=Form_peach.StringGridList.Row;
    rc:=Form_peach.StringGridList.Rowcount;
-   wsel:=12;
+   wsel:=15;
    wa:=6;
    wd:=5;
+   wsz:=3;
+   wpsz:=4;
    end;
 
 if rc<2 then exit;
@@ -48018,7 +48005,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[3,i])=0) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])=0) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48029,7 +48016,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[3,i])<=102400) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])<=102400) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48040,7 +48027,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if ((strtoqword(sg.Cells[3,i])>102400) and (strtoqword(sg.Cells[3,i])<=10485760)) then apply_select(istr,'1',op)
+      if ((strtoqword(sg.Cells[wsz,i])>102400) and (strtoqword(sg.Cells[wsz,i])<=10485760)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48051,7 +48038,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if ((strtoqword(sg.Cells[3,i])>10485760) and (strtoqword(sg.Cells[3,i])<=104857600)) then apply_select(istr,'1',op)
+      if ((strtoqword(sg.Cells[wsz,i])>10485760) and (strtoqword(sg.Cells[wsz,i])<=104857600)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48062,7 +48049,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (strtoqword(sg.Cells[3,i])>104857600) then apply_select(istr,'1',op)
+      if (strtoqword(sg.Cells[wsz,i])>104857600) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48073,7 +48060,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[3,i])*10)>=(strtoqword(sg.Cells[3,sr])*9)) and ((strtoqword(sg.Cells[3,i])*10)<=(strtoqword(sg.Cells[3,sr])*11)) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[wsz,i])*10)>=(strtoqword(sg.Cells[wsz,sr])*9)) and ((strtoqword(sg.Cells[wsz,i])*10)<=(strtoqword(sg.Cells[wsz,sr])*11)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48084,58 +48071,73 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[3,i])*10)>=(strtoqword(sg.Cells[3,sr])*5)) and ((strtoqword(sg.Cells[3,i])*10)<=(strtoqword(sg.Cells[3,sr])*15)) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[wsz,i])*10)>=(strtoqword(sg.Cells[wsz,sr])*5)) and ((strtoqword(sg.Cells[wsz,i])*10)<=(strtoqword(sg.Cells[wsz,sr])*15)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
    except
    end;
    'sizesmaller'://size, comparison
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[10,i]<sg.Cells[10,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])<strtoqword(sg.Cells[wsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    'sizesmallerequal':
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[10,i]<=sg.Cells[10,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])<=strtoqword(sg.Cells[wsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    'sizeequal':
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[10,i]=sg.Cells[10,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])=strtoqword(sg.Cells[wsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    'sizelargerequal':
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[10,i]>=sg.Cells[10,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wsz,i])>=strtoqword(sg.Cells[wsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    'sizelarger':
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if sg.Cells[10,i]>sg.Cells[10,sr] then apply_select(istr,'1',op)
+      if (strtoqword(sg.Cells[wsz,i])>strtoqword(sg.Cells[wsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    'packedempty'://packed size (only in archives displaying packed size), absolute
    try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[4,i])=0) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])=0) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48146,7 +48148,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[4,i])<=102400) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])<=102400) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48157,7 +48159,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if ((strtoqword(sg.Cells[4,i])>102400) and (strtoqword(sg.Cells[4,i])<=10485760)) then apply_select(istr,'1',op)
+      if ((strtoqword(sg.Cells[wpsz,i])>102400) and (strtoqword(sg.Cells[wpsz,i])<=10485760)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48168,7 +48170,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if ((strtoqword(sg.Cells[4,i])>10485760) and (strtoqword(sg.Cells[4,i])<=104857600)) then apply_select(istr,'1',op)
+      if ((strtoqword(sg.Cells[wpsz,i])>10485760) and (strtoqword(sg.Cells[wpsz,i])<=104857600)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48179,7 +48181,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (strtoqword(sg.Cells[4,i])>104857600) then apply_select(istr,'1',op)
+      if (strtoqword(sg.Cells[wpsz,i])>104857600) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48190,7 +48192,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[4,i])*10)>=(strtoqword(sg.Cells[4,sr])*9)) and ((strtoqword(sg.Cells[4,i])*10)<=(strtoqword(sg.Cells[4,sr])*11)) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[wpsz,i])*10)>=(strtoqword(sg.Cells[wpsz,sr])*9)) and ((strtoqword(sg.Cells[wpsz,i])*10)<=(strtoqword(sg.Cells[wpsz,sr])*11)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48201,7 +48203,7 @@ case sel of
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[4,i])*10)>=(strtoqword(sg.Cells[4,sr])*5)) and ((strtoqword(sg.Cells[4,i])*10)<=(strtoqword(sg.Cells[4,sr])*15)) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and ((strtoqword(sg.Cells[wpsz,i])*10)>=(strtoqword(sg.Cells[wpsz,sr])*5)) and ((strtoqword(sg.Cells[wpsz,i])*10)<=(strtoqword(sg.Cells[wpsz,sr])*15)) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
@@ -48210,57 +48212,72 @@ case sel of
    'packedsmaller'://packed size (only in archives displaying packed size), comparison
    begin
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[11,i]<sg.Cells[11,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])<strtoqword(sg.Cells[wpsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    end;
    'packedsmallerequal':
    begin
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[11,i]<=sg.Cells[11,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])<=strtoqword(sg.Cells[wpsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    end;
    'packedequal':
    begin
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[11,i]=sg.Cells[11,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])=strtoqword(sg.Cells[wpsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    end;
    'packedlargerequal':
    begin
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if (sg.Cells[2,i]<>txt_list_isfolder) and (sg.Cells[11,i]>=sg.Cells[11,sr]) then apply_select(istr,'1',op)
+      if (sg.Cells[2,i]<>txt_list_isfolder) and (strtoqword(sg.Cells[wpsz,i])>=strtoqword(sg.Cells[wpsz,sr])) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    end;
    'packedlarger':
    begin
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+   try
    for i:=1 to rc-1 do
       begin
       istr:=sg.Cells[wsel,i];
-      if sg.Cells[11,i]>sg.Cells[11,sr] then apply_select(istr,'1',op)
+      if strtoqword(sg.Cells[wpsz,i])>strtoqword(sg.Cells[wpsz,sr]) then apply_select(istr,'1',op)
       else apply_select(istr,'0',op);
       sg.Cells[wsel,i]:=istr;
       end;
+   except
+   end;
    end;
    'char'://start with same character
    for i:=1 to rc-1 do
@@ -49620,7 +49637,7 @@ P:=tprocessutf8.Create(nil);
 {$IFDEF DARWIN}
 cl:='open ' + executable_path + '../../../pea.app';
 {$ELSE}
-cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
+cl:=stringdelim(escapefilename(resource_path,desk_env)+'pea'+EXEEXT);
 {$ENDIF}
 P.CommandLine:=cl;
 if Form_peach.Visible=true then Application.ProcessMessages;
@@ -50439,7 +50456,7 @@ begin
    try
      for i := 0 to FileCount - 1 do
        try
-         if not (DirectoryExists(Files[i]) or FileExists(Files[i])) then Continue;
+         //if not (DirectoryExists(Files[i]) or FileExists(Files[i])) then Continue;
          OleCheck(Root.ParseDisplayName(GetActiveWindow,
            nil,
            PWideChar(WideString(Files[i])),
@@ -51449,7 +51466,9 @@ if simplesearch=1 then setsimplesearch(0) else setsimplesearch(1);
 end;
 
 procedure checkupdates;
-var dom,s:ansistring;
+var
+   dom,s:ansistring;
+   sint:integer;
 begin
 checkdom(dom,s);
 if s='' then
@@ -51458,7 +51477,8 @@ else
    begin
 {$IFDEF MSWINDOWS}
 try
-if s=PEAZIPVERSION+PEAZIPREVISION then
+sint:=strtoint(s[1]+s[3]+s[5]);
+if sint<=PEAZIPSINTVER then
    pMessageInfoOK(s+' - '+txt_4_5_noupdate)
 else
    if pMessageInfoYesNo(s+' - '+txt_4_5_goupdate)=6 then
@@ -55334,7 +55354,7 @@ webopen:=ShellExecuteW(Form_peach.Handle, PWideChar ('open'), PWideChar(w), PWid
 {$ENDIF}
 {$IFDEF LINUX}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}    
+{$IFDEF NETBSD}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 {$IFDEF DARWIN}webopen:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
@@ -57051,7 +57071,7 @@ setcurrentdir(executable_path);
 {$IFDEF DARWIN}
    resource_path:=executable_path+'../Resources/';
 {$ELSE}
-   resource_path:=resource_path;
+   resource_path:=executable_path+'res'+directoryseparator;
 {$ENDIF}
 archiveopened:=false;
 browsinghistory:=false;

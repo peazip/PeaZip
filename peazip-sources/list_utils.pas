@@ -1102,6 +1102,7 @@ if filegetattr(s) and faDirectory = 0 then //object is a file
                   fsize := fsize + r.Size;
                FindClose(r);
             until k <> 0;
+            j:=j-1;
             end;
          end;
       vn:=j;
@@ -1653,7 +1654,7 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
-{$ENDIF}   
+{$ENDIF}
 {$IFDEF DARWIN}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
 {$ENDIF}
@@ -1686,18 +1687,19 @@ begin
   cp_open_linuxlike := -1;
   if s = '' then
     exit;
-  if desk_env = 10 then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10
+  if (desk_env = 10) then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10
     exit;
   P := TProcessUTF8.Create(nil);
   P.Options := [poWaitOnExit];
   if desk_env = 20 then // Darwin=20
-  begin
+    begin
     P.CommandLine:='open ' + escapefilename(s, desk_env);
-  end else
-  begin
+    end
+  else
+    begin
     P.Executable:='xdg-open';
     P.Parameters.Add(escapefilename(s, desk_env));
-  end;
+    end;
   P.Execute;
   cp_open_linuxlike := P.ExitStatus;
   P.Free;
@@ -1780,7 +1782,7 @@ begin
   delimiter := '''';
 {$ENDIF}
 {$IFDEF DARWIN}
-  caption_build := 'OSX Build';
+  caption_build := 'Darwin Build';
   delimiter := '''';
 {$ENDIF}
   bytedesk := 0; //unrecognized desktop environment
@@ -1835,7 +1837,7 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   s := GetEnvironmentVariable('HOME');
-{$ENDIF}  
+{$ENDIF}
 {$IFDEF DARWIN}
   s := GetEnvironmentVariable('HOME');
 {$ENDIF}
@@ -1870,7 +1872,7 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
-{$ENDIF}  
+{$ENDIF}
 {$IFDEF DARWIN}
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
 {$ENDIF}
