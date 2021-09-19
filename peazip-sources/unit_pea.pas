@@ -401,7 +401,7 @@ var
    //theming
    conf:text;
    opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,gridaltcolor:integer;
-   executable_path,persistent_source,color1,color2,color3,color4,color5:string;
+   executable_path,resource_path,persistent_source,color1,color2,color3,color4,color5:string;
 
 {
 PEA features can be called using different modes of operation:
@@ -7110,7 +7110,7 @@ if s<>'' then setlength(s,length(s)-1);
 theme_name:=extractfilename(s);
 //default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
 if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC') then thpath:=confpath
-else thpath:=executable_path;
+else thpath:=resource_path;
 end;
 
 procedure load_icons; //load icons from bitmaps
@@ -7160,10 +7160,10 @@ i16res:=(qscaleimages*16) div 100;
       end;
    if (graphicsfolder<>'themes'+directoryseparator+'nographic'+directoryseparator) and (graphicsfolder<>'themes'+directoryseparator+'ten-embedded'+directoryseparator) then
       begin
-      Binfo.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-info.bmp');
-      Blog.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-paste.bmp');
-      Bok.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-test.bmp');
-      Bcancel.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-stop.bmp');
+      Binfo.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-info.png');
+      Blog.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-paste.png');
+      Bok.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-test.png');
+      Bcancel.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-stop.png');
       end;
    setpbitmap(Bfd,i16res);
    setpbitmap(Bmail,i16res);
@@ -7235,6 +7235,11 @@ fshown:=false;
 executable_path:=extractfilepath((paramstr(0)));
 if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
+{$IFDEF Darwin}
+   resource_path:=executable_path+'../Resources/';
+{$ELSE}
+   resource_path:=executable_path;
+{$ENDIF}
 SetFocusedControl(EditPW1);
 getdesk_env(desk_env,caption_build,delimiter);
 height_set:=false;
@@ -7245,14 +7250,14 @@ if (PEA_FILEFORMAT_VER <> pea_utils.PEA_FILEFORMAT_VER) or (PEA_FILEFORMAT_REV <
 try
    {PEA executable must be in the same path of altconf.txt file, otherwise or if
    theming errors occurs, default theming values will be loaded}
-   assignfile(conf,executable_path+'altconf.txt'); //load alternative configuration path
+   assignfile(conf,resource_path+'altconf.txt'); //load alternative configuration path
    filemode:=0;
    reset(conf);
    read_header(conf);
    readln(conf,dummy);
    readln(conf,confpath);
    CloseFile(conf);
-   if (confpath='same') or (confpath='"same"') or (confpath='''same''') or (confpath=' ') or (confpath='') then confpath:=executable_path; //if confpath parameter is set to 'same' or empty use classic conf location (in res folder)
+   if (confpath='same') or (confpath='"same"') or (confpath='''same''') or (confpath=' ') or (confpath='') then confpath:=resource_path; //if confpath parameter is set to 'same' or empty use classic conf location (in res folder)
    {$IFDEF MSWINDOWS}
    if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then
    if wingetappdata(confpath)<>0 then confpath:=(GetEnvironmentVariable('APPDATA'))+'\PeaZip\'; //if wingetappdata fails use env variables
@@ -7268,13 +7273,16 @@ try
    {$ENDIF}
    {$IFDEF NETBSD}
    if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
+   {$ENDIF}  
+   {$IFDEF DARWIN}
+   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
    {$ENDIF}
    if not(directoryexists(confpath)) then mkdir(confpath);
    if (confpath[1]='.') and (confpath[2]='.') then confpath:='..'+directoryseparator+confpath; //relative path, needs to be adjusted since pea is in a subfolder of peazip path
    confpath:=expandfilename(confpath);
    if confpath[length(confpath)]<>directoryseparator then confpath:=confpath+directoryseparator;
-   if not(directoryexists(confpath)) then confpath:=executable_path; //if alternative configuration directory does not exist or is not accessible, use res path
-   persistent_source:=confpath+'rnd';
+   if not(directoryexists(confpath)) then confpath:=resource_path; //if alternative configuration directory does not exist or is not accessible, use res path
+   persistent_source:=resource_path+'rnd';
    assignfile(conf,(confpath+'conf.txt'));
    filemode:=0;
    reset(conf);
@@ -7301,7 +7309,7 @@ try
    if color4='' then color4:='$00669999';
    if color5='' then color5:=colortostring(clWindowText);
 except
-   persistent_source:=executable_path+'rnd';
+   persistent_source:=resource_path+'rnd';
    graphicsfolder:='themes'+directoryseparator+DEFAULT_THEME+directoryseparator;
    dodirseparators(graphicsfolder);
    opacity:=100;

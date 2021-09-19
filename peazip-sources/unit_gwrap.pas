@@ -352,7 +352,7 @@ var
   Barchive,Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
   Bpriority1,Bpriority2,Bpriority3,Bpriority4,
   Bsuccess,Berror: TBitmap;
-  cl,cl1,outpath,executable_path,graphicsfolder,dummy,Color1,Color2,Color3,
+  cl,cl1,outpath,executable_path,resource_path,graphicsfolder,dummy,Color1,Color2,Color3,
   Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver:ansistring;
   modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,
   ws_gw_height,ws_gw_width,pbarh,pbarhsmall:integer;
@@ -709,7 +709,7 @@ var
 begin
 load_texts:=-1;
 try
-   assignfile(t,(executable_path+'res'+DirectorySeparator+'lang'+Directoryseparator+lang));
+   assignfile(t,(resource_path+'lang'+Directoryseparator+lang));
    filemode:=0;
    reset(t);
    read_header(t);
@@ -791,7 +791,8 @@ if cp_open<33 then
 {$ENDIF}
 {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+{$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}      
+{$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
 procedure apply_theme;
@@ -815,7 +816,7 @@ if s<>'' then setlength(s,length(s)-1);
 theme_name:=extractfilename(s);
 //default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
 if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC') then thpath:=confpath
-else thpath:=executable_path+'res'+directoryseparator;
+else thpath:=resource_path;
 end;
 
 procedure load_icons;
@@ -2049,7 +2050,18 @@ procedure TForm_gwrap.FormShow(Sender: TObject);
 begin
 if pldesigned=true then exit;
 getdesk_env(desk_env,caption_build,delimiter);
+
+executable_path:=extractfilepath((paramstr(0))); //valorize application's paths
+if ((executable_path='') or (executable_path='..\')) then executable_path:=extractfilepath((paramstr(0)));
+if executable_path<>'' then
+   if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
+{$IFDEF DARWIN}
+   resource_path:=executable_path+'../Resources/';
+{$ELSE}
+   resource_path:=resource_path;
+{$ENDIF}
+
 peazippath:=executable_path;
 {$IFDEF MSWINDOWS}getwinenv(wincomspec,winver);{$ENDIF}
 texts(lang_file);
@@ -2314,11 +2326,12 @@ begin
 if winver='nt6+' then
    shellexecutew(Form_gwrap.handle, PWideChar('find'), PWideChar(''), PWideChar(''), PWideChar (''), SW_SHOWNORMAL)
 else
-   cp_open(executable_path+'res'+directoryseparator+'empty.fnd',desk_env);
+   cp_open(resource_path+'empty.fnd',desk_env);
 {$ENDIF}
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
-{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
+{$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}  
+{$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 
 procedure TForm_gwrap.labelopenfile0Click(Sender: TObject);
