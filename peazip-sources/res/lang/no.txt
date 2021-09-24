@@ -3,20 +3,20 @@ Norwegian - Norsk
 8.2
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20210724
+Sist revidert: 20210924
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_2_slower: (saktere)
+txt_8_2_df: 7z / p7zip vis innhold i mapper
+txt_8_2_vreport: 7z / p7zip ikke-detaljert rapport
+txt_8_2_ta: Aksessert
+txt_8_2_tc: Opprettet
+txt_8_2_keep: Behold filer
+txt_8_2_tm: Endret
+txt_8_2_skipet: Utelat testing for kryptering
+txt_8_2_alltimes: Lagre alle tidsmarkeringer
+txt_8_2_supportedby: Supportert av
 txt_8_1_preparse: Alltid forhåndssøk arkiver
 txt_8_1_bo: Utforsker optimisering
 txt_8_1_bop: Utforsker optimiseringsalternativer kan settes fra Alternativer > Innstillinger, Generelt fane, for å tillate utforsker å vise arkiver som inneholder svært mange poster.
