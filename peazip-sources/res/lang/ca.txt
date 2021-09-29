@@ -14,77 +14,77 @@ txt_8_2_ta: Últim accés
 txt_8_2_tc: Creat el
 txt_8_2_keep: Conserva els fitxers
 txt_8_2_tm: Modificat el
-txt_8_2_skipet: Skip testing for encryption
+txt_8_2_skipet: Omet la verificació per a l'encriptació
 txt_8_2_alltimes: Emmagatzema totes les marques horàries
 txt_8_2_supportedby: Suportat per
-txt_8_1_preparse: Always pre-parse archives
+txt_8_1_preparse: Pre-analitzar sempre els arxius
 txt_8_1_bo: Optimització del navegador
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_bop: Les opcions d’optimització del navegador es poden configurar a Opcions >  Configuració, pestanya General, per tal de permetre al navegador mostrar arxius que contenen un gran nombre d’elements.
+txt_8_1_nopreparse: No analitzeu prèviament els arxius
 txt_8_1_ed: error(s) detectats.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_togglearc: La visualització plana del contingut de l'arxiu pot tardar molt de temps, vols continuar de totes maneres?
+txt_8_1_preparsehint: Optimitza el rendiment a base de limitar el pre-anàlisi dels arxius grans. El pre-anàlisi pretén detectar amb antelació possibles problemes en el contingut de l'arxiu.
 txt_8_1_slow: Lent
 txt_8_1_vslow: Molt lent
 txt_8_1_volumes: volums
 txt_8_0_altcol: Alterna el color de la quadrícula
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_forcebrowse: Cerca tipus d’arxius no canònics (contenidors, imatges de disc, instal·ladors, ...)
 txt_8_0_commonalgo: Algoritmes comuns
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Configura les opcions de contrasenya / fitxer-clau
+txt_8_0_forceconvert: Converteix els tipus d’arxius no canònics
+txt_8_0_defaultactionhint: Acció per defecte en fet doble clic des del sistema sobre un fitxer associat al PeaZip
+txt_8_0_defaultaction: Acció predeterminada en iniciar
+txt_8_0_enableextand: Activa el submenú "Extreu i obre amb"
+txt_8_0_forcetyping: Força l’escriptura de contrasenyes de manera interactiva
+txt_8_0_setpwopt: Configura les opcions de contrasenya i dels fitxers de xifratge
 txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
 txt_7_9_spacing: Espaiat
 txt_7_9_zooming: Zooming
 txt_7_8_changelocalization: Canvia l'idioma del PeaZip
 txt_7_8_custext: Extensió personalitzada
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
+txt_7_8_destexistfile: La destinació ja conté fitxers processats. Vols substituir-los?
+txt_7_8_dd: Arrossegar i deixar anar
 txt_7_8_priorityhigh: Alta
-txt_7_8_priorityidle: Idle
+txt_7_8_priorityidle: Quan estigui inactiu
 txt_7_8_rel: Extracció interactiva
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: En temps real
 txt_7_8_requirerestart: [requereix reiniciar el PeaZip]
 txt_7_8_tpriority: Prioritat de tasques
 txt_7_8_update: Actualitza
-txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
-txt_7_7_nonetemp: None, user's temp if necessary
+txt_7_7_noneall: Cap: desactiva la previsualització, l'edició, la funcionalitat d'"arrossega i deixa anar" i l'extracció interactiva
+txt_7_7_nonetemp: Cap, el directori temporal de l'usuari si és necessari
 txt_7_7_outtemp: Output, preview in user's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_7_sys7zreq: Requereix tenir instal·lat el p7zip-full o equivalent
+txt_7_7_tw: Carpeta de treball temporal per crear arxius, editar-los, previsualitzar-los i extreure'ls amb la funcionalitat "arrossega i deixa anar"
+txt_7_7_sys7z: Utilitza el 7z del sistema del Linux
+txt_7_6_zipenc: Codificació de noms de fitxer ZIP 7z / p7zip
 txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
+txt_7_6_custenc: Pàgina de codis personalitzats
 txt_7_6_dark: Fosc
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
+txt_7_6_tno: No sincronitzis l'arbre de l'arxiu
+txt_7_6_forcelocalenc: Força'l local
+txt_7_6_forceutf8enc: Força'l UTF-8
+txt_7_6_cpnote: Si la pàgina de codis personalitzats escollida no és compatible, les tasques acabaran sempre amb un error (probablement, un error d'assignació de memòria). En cas que això passi, canvieu la pàgina de codis o restabliu l'aplicació.
+txt_7_6_defaultenc: Local, UTF-8 per a símbols addicionals
+txt_7_6_dim: Clar
 txt_7_6_setcurdef: Estableix la ubicació actual com a ubicació d'extracció per defecte
 txt_7_6_setdef: Estableix una ubicació d'extracció per defecte
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
-txt_7_6_tacolor: Text accent
+txt_7_6_tadvanced: Sincronitza l'arbre de l'arxiu, manté els elements visitats
+txt_7_6_tsimple: Sincronitza l'arbre de l'arxiu, simple
+txt_7_6_tacolor: Accent de text
 txt_7_5_always: Sempre
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Retalla el nom en una longitud determinada
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
+txt_7_5_ask: Pregunta
+txt_7_5_autoclosesingle: Tanca automàticament després de l'extracció si no es realitza cap acció de navegació
+txt_7_5_cutlen: Retalla el nom a una longitud determinada
+txt_7_5_cutlenw: Retalla el nom a una longitud determinada (4..255) els conflictes de noms es poden corregir manualment més tard
+txt_7_5_dragnone: No bloquegis el destí
+txt_7_5_specialbrowse: Vols extreure-ho tot per proporcionar al fitxer les dades addicionals que pugui necessitar?
+txt_7_5_ee: Extraieu-ho tot per a tipus de fitxers especials
+txt_7_5_draghide: Amaga el destí
+txt_7_5_draglh: Bloqueja i amaga el destí
+txt_7_5_draglock: Bloqueja el destí
 txt_7_5_never: Mai
-txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_5_repnascii: Substitueix / elimina caràcters que no siguin ASCII
 txt_7_4_comment: Comenta
 txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
 txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
@@ -181,7 +181,7 @@ txt_6_1_ec: Expand / collapse archive tree
 txt_6_0_msq: Sort by file type for solid compression
 txt_5_9_lff: Analyze files and folders
 txt_5_9_pff: Analyze, show files header/EOF
-txt_5_9_start: Start from
+txt_5_9_start: Comença a
 txt_5_8_l0: Allow any supported component/format
 txt_5_8_l1: Allow only Free Software components
 txt_5_8_l2: Allow only open archive formats
@@ -242,7 +242,7 @@ txt_5_4_da: Date added
 txt_5_4_deletearchives: Delete archives after extraction
 txt_5_4_deletefiles: Delete files after archiving
 txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
-txt_5_4_lv: Last visited
+txt_5_4_lv: Últim lloc visitat
 txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
 txt_5_4_deletefilesconfirm: Confirm deletion of original files?
 txt_5_4_used: Utilitzat
@@ -346,7 +346,7 @@ txt_4_8_rr: Gira a la dreta
 txt_4_8_stop: Atura
 txt_4_8_t: Transforma
 txt_4_8_w: Amplada
-txt_4_7_pk: Genera una contrasenya / fitxer-clau aleatori/a
+txt_4_7_pk: Genera una contrasenya / fitxer de xifratge aleatori/a
 txt_4_7_spchar: Limita els caràcters a lletres i números
 txt_4_7_recycleask: Vols moure els fitxers seleccionats a la paperera de reciclatge?
 txt_4_7_recycle: Desplaça a la paperera de reciclatge
@@ -375,7 +375,7 @@ txt_4_4_confremove: Vols eliminar la configuració del PeaZip?
 txt_4_3_pwmanhint: Double click to edit items in password list, rightclick for options, Ctrl+C to copy passwords
 txt_4_3_exppl: Exporta la llista de contrasenyes
 txt_4_3_expple: Encrypted (backup Password Manager)
-txt_4_3_keeppw: Recorda la contrasenya/fitxer-clau durant la sessió actual
+txt_4_3_keeppw: Recorda la contrasenya/fitxer de xifratge durant la sessió actual
 txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
 txt_4_3_pwmanmaster: Estableix/canvia la contrasenya global
 txt_4_3_pwmanlist: Llista de contrasenyes
@@ -445,7 +445,7 @@ txt_2_9_copyhere: Copia aquí
 txt_2_9_noscan: Don't scan files being added to layout
 txt_2_9_extconsole: Extraction console is available only while browsing archives
 txt_2_9_thl: Highlight buttons
-txt_2_9_home: Home
+txt_2_9_home: Directori de l'usuari
 txt_2_9_lt: Gran
 txt_2_9_mt: Mitjà
 txt_2_9_movehere: Mou-lo aquí
@@ -491,7 +491,7 @@ txt_2_7_separate: Add each object to a separate archive
 txt_2_7_pwsupported: archiving with password
 txt_2_7_cancel: Cancel·la
 txt_2_7_encfn: Encripta també els noms dels fitxers (si el format ho suporta)
-txt_2_7_setpw: Introdueix una contrasenya / fitxer-clau
+txt_2_7_setpw: Introdueix una contrasenya / fitxer de xifratge
 txt_2_7_ext: Extraient:
 txt_2_7_extfrom: Extraient de l'arxiu:
 txt_2_7_es: Extract supported non-archive file types, i.e. executables, MS Office and OOo files
@@ -558,7 +558,7 @@ txt_2_4_wenc: Encyclopedia
 txt_2_4_extractfrom: Extreu desde
 txt_2_4_hexp: Previsualització hex
 txt_2_4_operation: Operació
-txt_2_4_path: la ubicació no es pot escriure (p.ex. només lectura). Vols seleccionar una altra ubicació d'extracció escrivible?
+txt_2_4_path: la ubicació no es pot escriure (p. ex. només lectura). Vols seleccionar una altra ubicació d'extracció escrivible?
 txt_2_4_removefromclipboard: Elimina del porta-retalls
 txt_2_4_stdclip: Standard: keep a single selection in clipboard, clear cut operations on paste
 txt_2_4_totalmem: memòria total
@@ -570,7 +570,7 @@ txt_2_4_wdict: Wiktionary
 txt_2_3_pw_errorchar: quote character is not recommended to be used in passwords (for PeaZip and scripts). If you need to create or extract an archive with this password you can dismiss the message and you will be asked to enter the password interactively in console.
 txt_2_3_envstr: Display environment variables
 txt_2_3_never_pw: Don't ask for password
-txt_2_3_home: User's home
+txt_2_3_home: Directori de l'usuari
 txt_2_3_on_pw: On extract/list/test operations from system's menus:
 txt_2_3_test_pw100: Test for encryption <100MB archives
 txt_2_3_test_pw: Test for encryption (may be slow)
@@ -696,13 +696,13 @@ txt_copyto: Copia a...
 txt_create: Create
 txt_create_archive: Create new archive
 txt_title_create: Create archive, compress, encrypt, split...
-txt_create_keyfile: Crea un fitxer-clau
+txt_create_keyfile: Crea un fitxer de xifratge
 txt_create_folder: Create new folder
 txt_create_theme: Create Theme from current settings
 txt_rr: Create recovery records
 txt_create_sfx: Create self-extracting archive
 txt_cr_current: Current path or filter compression ratio
-txt_custom: Custom
+txt_custom: Personalitzat
 txt_type_description_custom: Custom (advanced users): enter executable name and parameters
 txt_customapp: Aplicació personalitzada
 txt_custom_parameters: Paràmetres personalitzats
@@ -845,7 +845,7 @@ txt_job_definition_saved: Task definition successfully saved in
 txt_job_success: Task successfully completed!
 txt_join: Join
 txt_joinfiles: Join files
-txt_keyfile: Fitxer-clau
+txt_keyfile: Fitxer de xifratge
 txt_keyfile_not_found: Keyfile cannot be found or read. Please chose a different Keyfile.
 txt_keyfile_notcreated: KeyFile not created
 txt_larger: Larger than selected object
@@ -1046,7 +1046,7 @@ txt_taskman: Task Manager
 txt_caption_test: Verifica
 txt_testall: Verifica-ho tot
 txt_testdisp: Verifica els objectes mostrats
-txt_testpw: Verifica la contrasenya / fitxer-clau
+txt_testpw: Verifica la contrasenya / fitxer de xifratge
 txt_testsel: Verifica els objectes seleccionats
 txt_col_hint: The color should be chosen in order to integrate well with icon colors and to other GUI's elements
 txt_bookmarks_hint: The complete and editable list of bookmarks is available in the file browser interface, clicking on the "More controls" icon and on "Toggle history/bookmarks"
@@ -1135,10 +1135,10 @@ txt_3_0_details: For more details, "Report" contains the task's log, and "Consol
 txt_3_0_hints: Hints about the error
 txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted, volumes in multipart archive may be missing)
 txt_3_0_ext: The archive may require a different password for the current operation
-txt_2_8_oop: Open output path when task completes
-txt_2_7_validatefn: Operation stopped, invalid file name detected:
-txt_2_7_validatecl: Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program):
-txt_2_6_open: Open archive
+txt_2_8_oop: Obre l'ubicació de sortida quan finalitzi la tasca
+txt_2_7_validatefn: S'ha aturat l’operació, s'ha detectat un nom de fitxer invàlid:
+txt_2_7_validatecl: S'ha aturat l’operació, s'ha detectat una comanda potencialment perillosa (p. ex. comandes concatenades no permeses al programa):
+txt_2_6_open: Obre un arxiu
 txt_2_5_ace_missing: UNACE plugin is missing; for handling ACE archives you can download the plugin form PeaZip's website (being UNACE closed source, the plugin is not featured in base package)
 txt_2_3_pw_errorchar_gwrap: quote character cannot be used by PeaLauncher in passwords under current system, please change password or chose Console mode in Backend binaries user interface in Options > Settings
 txt_2_3_renameexisting: Reanomena automàticament els fitxers existents
@@ -1146,8 +1146,8 @@ txt_2_3_renameextracted: Reanomena automàticament els fitxers extrets
 txt_2_3_cancel: Cancel·la
 txt_2_3_encryption: Encriptació
 txt_2_3_extinnew: Extreu-ho en una nova carpeta
-txt_2_3_keyfile: Fitxer-clau
-txt_2_3_kf_not_found_gwrap: Keyfile cannot be found or read. Please chose a different Keyfile.
+txt_2_3_keyfile: Fitxer de xifratge
+txt_2_3_kf_not_found_gwrap: No s'ha trobat o no s'ha pogut llegir el fitxer de xifratge. Si us plau, escull un fitxer de xifratge diferent.
 txt_2_3_moreoptions: Més opcions...
 txt_2_3_nopaths: Sense camins
 txt_2_3_options: Opcions
@@ -1156,51 +1156,51 @@ txt_2_3_pw: Contrasenya
 txt_2_3_skipexisting: Salta els fitxers existents
 txt_job_unknown: : S'ha trobat un error desconegut
 txt_stdjob: [l'animació s'aturarà quan es completi la tasca]
-txt_benchmarkjob: [system will respond slowly while running the benchmark (some minutes)]
-txt_defragjob: [will not respond while defragmenting, you can let it run in background]
-txt_consolejob: [task's feedback and detailed progress available in console window]
-txt_job1: 1: Avís: s'han produït errors lleus; p.ex. no s'han trobat alguns fitxers o estaven bloquejats
+txt_benchmarkjob: [el sistema respondrà lentament mentre s'executi la prova de rendiment del sistema (pot tardar alguns minuts)]
+txt_defragjob: [no respondrà mentre transcorri la desfragmentació, pots executarlo en segon pla]
+txt_consolejob: [pots consultar l'evolució de la tasca a la finestra de la consola]
+txt_job1: 1: Avís: s'han produït errors lleus; p. ex. no s'han trobat alguns fitxers o estaven bloquejats
 txt_job127: 127: No s'ha pogut executar la operació sol·licitada
 txt_job2: 2: Error fatal
-txt_job255: 255: Task halted by the user
+txt_job255: 255: Tasca interrompuda per l'usuari
 txt_job7: 7: Error: línia de comandes incorrecta
 txt_job8: 8: Error: no hi ha prou memòria per a la operació sol·licitada
 txt_autoclose: Tanca la finestra quan finalitzi la tasca
 txt_crscale: Ràtio de compressió (com més baixa, millor):
 txt_console: Consola
-txt_benchscale: Core 2 Duo 6600 rating, equivalent MHz speed.
+txt_benchscale: Evaluació Core 2 Duo 6600, equivalent a la velocitat de MHz.
 txt_create: Crea
 txt_done: Fet:
-txt_nocl: Línia de comandes buida
+txt_nocl: Buida la línia de comandes
 txt_error: Error:
 txt_explore: Explora
 txt_extto: Extreu a
-txt_halt: Halt system when task completes
-txt_halted: Halted:
+txt_halt: Apaga l'ordinador en finalitzar la tasca
+txt_halted: Interromput:
 txt_hardware: hardware
 txt_high: prioritat alta
-txt_idle: idle priority
+txt_idle: prioritat quan estigui inactiu
 txt_input: Entrada:
 txt_jpaused: Tasca pausada
 txt_jresumed: Tasca continuada
 txt_job_started: Tasca iniciada
 txt_jobstatus: Estat de la tasca:
-txt_jstopped: Task halted by the user
-txt_jobstopped: Task halted by the user; you can inspect the partial outcome clicking output path link.
+txt_jstopped: Tasca interrompuda per l'usuari
+txt_jobstopped: L'usuari ha interromput la tasca; pots revisar el resultat parcial fent clic a l'enllaç del directori de sortida.
 txt_job_success: Tasca completada satisfactòriament
-txt_lt: List/test
+txt_lt: Allista/verifica/repara un fitxer
 txt_normal: prioritat normal
-txt_ok: OK
+txt_ok: D'acord
 txt_output: Sortida:
 txt_pause: Pausa
 txt_paused: Pausada,
-txt_p_high: Priority set to high
-txt_p_idle: Priority set to idle
-txt_p_normal: Priority set to normal
-txt_p_realtime: Priority set to real time
+txt_p_high: Estableix la prioritat alta
+txt_p_idle: Estableix la prioritat quan estigui inactiu
+txt_p_normal: Estableix la prioritat normal
+txt_p_realtime: Estableix la prioritat en temps real
 txt_rating: Valoració:
 txt_rt: prioritat en temps real
-txt_report: Report
+txt_report: Informe
 txt_resume: Continua
 txt_priority: Fes clic aquí per establir la prioritat de la tasca
 txt_running: En curs,
@@ -1212,7 +1212,7 @@ txt_software: programa
 txt_speedscale: Velocitat, escala logarítmica (com més alta, millor):
 txt_status: Estat
 txt_stop: Atura
-txt_bench: System benchmark
+txt_bench: Prova de rendiment del sistema
 txt_threads: Fils:
 txt_time: Temps:
 
