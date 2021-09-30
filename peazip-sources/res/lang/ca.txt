@@ -67,7 +67,7 @@ txt_7_6_forceutf8enc: Força'l UTF-8
 txt_7_6_cpnote: Si la pàgina de codis personalitzats escollida no és compatible, les tasques acabaran sempre amb un error (probablement, un error d'assignació de memòria). En cas que això passi, canvieu la pàgina de codis o restabliu l'aplicació.
 txt_7_6_defaultenc: Local, UTF-8 per a símbols addicionals
 txt_7_6_dim: Clar
-txt_7_6_setcurdef: Estableix la ubicació actual com a ubicació d'extracció per defecte
+txt_7_6_setcurdef: Estableix l'ubicació actual com a ubicació d'extracció per defecte
 txt_7_6_setdef: Estableix una ubicació d'extracció per defecte
 txt_7_6_tadvanced: Sincronitza l'arbre de l'arxiu, manté els elements visitats
 txt_7_6_tsimple: Sincronitza l'arbre de l'arxiu, simple
@@ -86,112 +86,112 @@ txt_7_5_draglock: Bloqueja el destí
 txt_7_5_never: Mai
 txt_7_5_repnascii: Substitueix / elimina caràcters que no siguin ASCII
 txt_7_4_comment: Comenta
-txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
-txt_7_4_presetrar: High compression, RAR
-txt_7_4_tkeep: Keep original archive timestamp
-txt_7_4_lock: Lock archive
-txt_7_4_locked: locked
-txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
+txt_7_4_7zfbrotlicomp: Compressió molt ràpida, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Compressió molt ràpida, 7Z Zstandard
+txt_7_4_presetrar: Compressió alta, RAR
+txt_7_4_tkeep: Manté la marca horària de l'arxiu original
+txt_7_4_lock: Bloqueja l'arxiu
+txt_7_4_locked: bloquejat
+txt_7_4_lockconfirm: Els fitxers bloquejats no es poden modificar més endavant, vols continuar bloquejant aquest arxiu?
 txt_7_4_recover: Repara l'arxiu
-txt_7_4_tcurr: Set archive timestamp from current system time
-txt_7_4_setarc: Set advanced archiving options
-txt_7_4_setext: Set advanced extraction options
-txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
-txt_7_3_archiveerrors: [archive may contain errors]
-txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_4_tcurr: Estableix la marca horària de l'arxiu des del rellotge actual del sistema
+txt_7_4_setarc: Estableix opcions avançades d'arxiu
+txt_7_4_setext: Estableix opcions avançades d'extracció
+txt_7_4_swzipx: Canvia a l'extensió zipx per a arxius ZIP no-Deflate
+txt_7_3_archiveerrors: [l'arxiu pot contenir errors]
+txt_7_3_archiveerrorshint: L'arxiu pot no ser vàlid (a causa de dades perdudes, corrompudes o fora dels estàndards), és possible executar la Verificació per obtenir informació més detallada. Si la taula de l'arxiu està encriptada, es requereix una contrasenya abans de poder-hi navegar.
 txt_7_3_clickextall: Fes clic a "Extreu-ho tot" per habilitar-ho
-txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
-txt_7_3_profile7zfastest: Fast compression, 7Z fastest
-txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
-txt_7_3_maxzstd: Maximize Zstandard compression using more memory
-txt_7_3_profile7zfast: Medium compression, 7Z fast
-txt_7_3_stl: Set archive timestamp from most recent file
-txt_7_2_altcomp: High compression, ARC
-txt_7_2_clearnoupdate: Clear edited files
-txt_7_2_autoclosepeazip: Close PeaZip when task completes
-txt_7_2_zpaqall: Extract all revisions
-txt_7_2_extcomp: Extreme compression, ZPAQ
-txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
-txt_7_2_fbrotlicomp: Fastest compression, Brotli
-txt_7_2_fzstandardcomp: Fastest compression, Zstandard
-txt_7_2_loadcompsettings: Load compression settings
-txt_7_2_savecompsettings: Save compression settings
-txt_7_2_source: Source
-txt_7_2_updateclear: Update edited files in archive, and clear edited files
-txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here (in new folder)
-txt_7_1_smart: Extract all here (smart new folder)
-txt_7_1_profileintermediate: Medium compression, ZIP/BZip2 fast
-txt_7_1_renfilesonly: Rename only files
-txt_7_1_typetosearch: Type to search in current path
-txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
-txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
-txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
-txt_6_9_autou: Auto update modified files in archives
-txt_6_9_forceu: Update edited files in archive
-txt_6_9_opuns: Operation not supported for current archive type
-txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
-txt_6_9_uconf: Previewed file has been modified. Update the current archive?
-txt_6_8_ndrop: Use native Drag and Drop on Windows
+txt_7_3_noconfdel: No em demanis confirmació d'eliminació després de l'arxivament o l'extracció
+txt_7_3_profile7zfastest: Compressió ràpida, 7Z més ràpid
+txt_7_3_maxbr: Maximitza la compressió Brotli utilitzant més memòria (pot ser incompatible amb alguns extractors)
+txt_7_3_maxzstd: Maximitza la compressió Zstandard utilitzant més memòria
+txt_7_3_profile7zfast: Compressió mitjana, 7Z ràpid
+txt_7_3_stl: Estableix la marca horària de l'arxiu a partir del fitxer més recent
+txt_7_2_altcomp: Compressió alta, ARC
+txt_7_2_clearnoupdate: Neteja la llista de fitxers editats
+txt_7_2_autoclosepeazip: Tanca el PeaZip quan acabi la tasca
+txt_7_2_zpaqall: Extreu totes les revisions
+txt_7_2_extcomp: Compressió extrema, ZPAQ
+txt_7_2_extcompultra: Compressió extrema, ZPAQ ultra
+txt_7_2_fbrotlicomp: Compressió molt ràpida, Brotli
+txt_7_2_fzstandardcomp: Compressió molt ràpida, Zstandard
+txt_7_2_loadcompsettings: Carrega la configuració de compressió
+txt_7_2_savecompsettings: Desa la configuració de compressió
+txt_7_2_source: Font
+txt_7_2_updateclear: Actualitza els fitxers editats a l'arxiu, i neteja la llista de fitxers editats
+txt_7_1_type_description_brotli: Brotli: compressor ràpid de Google, descompressió molt ràpida
+txt_7_1_new: Extreu-ho tot aquí (en una nova carpeta)
+txt_7_1_smart: Extreu-ho tot aquí (en una nova carpeta intel·ligent)
+txt_7_1_profileintermediate: Compressió mitjana, ZIP/BZip2 ràpid
+txt_7_1_renfilesonly: Reanomena només els fitxers
+txt_7_1_typetosearch: Escriu aquí per cercar dins el directori actual
+txt_7_1_type_description_zstd: Zstandard: compressor ràpid de Facebook, descompressió molt ràpida
+txt_7_0_af: Analitza el contingut de les carpetes
+txt_7_0_autoopentar: Obre automàticament un arxiu tar dins un fitxer tar.*
+txt_7_0_exttmppath: El contingut s'extraurà fora de la carpeta temporal de treball, a: 
+txt_6_9_autou: Actualitza automàticament els fitxers modificats dins d'arxius comprimits
+txt_6_9_forceu: Actualitza els fitxers editats dins l'arxiu comprimit
+txt_6_9_opuns: El tipus d'arxiu no suporta aquesta operació
+txt_6_9_overarch: Vols sobreescriure els fitxers amb el mateix nom que es trobin dins l'arxiu comprimit?
+txt_6_9_uconf: El fitxer previsualitzat ha canviat. Vols actualitzar l'arxiu actual?
+txt_6_8_ndrop: Utilitza l'"arrossega i deixa anar" natiu del Windows
 txt_6_7_nop: (sense previsualització)
 txt_6_6_pdupfound: s'han trobat possibles duplicats (comprovació ràpida aproximada)
 txt_6_6_rsh: Neteja l'historial de cerques
 txt_6_6_pdupfind: Suggereix possibles duplicats
-txt_6_6_forcemodify: Edit non-canonical archive types
+txt_6_6_forcemodify: Modifica tipus d'arxius no canònics
 txt_6_5_mandatory: (obligatori)
 txt_6_5_abort: Avorta
-txt_6_5_askp: Ask to set password at startup
+txt_6_5_askp: Demana'm que defineixi una contrasenya a l'arrancada
 txt_6_5_chp: Canvia la contrasenya
 txt_6_5_def: Definició
-txt_6_5_nop: Don't ask to set password at startup
+txt_6_5_nop: No em demanis que defineixi una contrasenya a l'arrancada
 txt_6_5_error: Error
-txt_6_5_seqerr: Error(s) detected, original files will not be deleted
-txt_6_5_sni: Include NT security information
-txt_6_5_sns: Include NTFS Alternate Data Stream
+txt_6_5_seqerr: Error(s) detectats, no s'eliminaran els fitxers originals
+txt_6_5_sni: Inclou la informació de seguretat NT
+txt_6_5_sns: Inclou NTFS Alternate Data Stream
 txt_6_5_privacy: Privacitat
-txt_6_5_showvolatile: Show which options are volatile / context dependent
-txt_6_5_force: Try to open archives containing errors
+txt_6_5_showvolatile: Mostra quines opcions són volàtils / dependen del context
+txt_6_5_force: Intenta obrir arxius que contenen errors
 txt_6_5_warning: Avís
 txt_6_5_yes: Sí
 txt_6_5_yesall: Sí a tot
-txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
+txt_6_5_np: Ara pots canviar la contrasenya dels arxius convertits per una de nova o deixar-la en blanc per ometre l'encriptació
 txt_6_4_absolute: Camí absolut
-txt_6_4_appdirn: Append directory name
+txt_6_4_appdirn: Afegeix el nom del directori al final
 txt_6_4_closeallother: Tanca totes les altres pestanyes
 txt_6_4_closeright: Tanca totes les pestanyes de la dreta
 txt_6_4_collapse: Comprimeix les pestanyes
 txt_6_4_expand: Expandeix les pestanyes
 txt_6_4_full: Camí complet
-txt_6_4_new: New
+txt_6_4_new: Nou
 txt_6_4_openintab: Obre en una pestanya nova
-txt_6_4_paths: Paths
-txt_6_4_prepdirn: Prepend directory name
+txt_6_4_paths: Rutes
+txt_6_4_prepdirn: Afegeix el nom del directori al principi
 txt_6_4_relative: Camí relatiu
-txt_6_4_tabbar: Tab bar
+txt_6_4_tabbar: Barra de pestanyes
 txt_6_3_autoadjust: Ajusta la columna automàticament
-txt_6_3_cinfo: Info and comments
-txt_6_3_syn: Synchronize archive with disk
-txt_6_3_uar: Update only files already in archive
-txt_6_2_encext: Add ".enc" suffix to encrypted archives
-txt_6_2_archive: Archive file type
-txt_6_2_container: Container file type
-txt_6_1_ec: Expand / collapse archive tree
-txt_6_0_msq: Sort by file type for solid compression
-txt_5_9_lff: Analyze files and folders
-txt_5_9_pff: Analyze, show files header/EOF
+txt_6_3_cinfo: Informació i comentaris
+txt_6_3_syn: Sincronitza l'arxiu amb el disc
+txt_6_3_uar: Actualitza només els fitxers que ja es troben dins l'arxiu
+txt_6_2_encext: Afegeix el sufix ".enc" als arxius encriptats
+txt_6_2_archive: Tipus de fitxer de l'arxiu
+txt_6_2_container: Tipus de fitxer del contenidor
+txt_6_1_ec: Amplia / replega l'arbre de l'arxiu
+txt_6_0_msq: Ordeneu per tipus de fitxer per a una compressió sòlida
+txt_5_9_lff: Analitza fitxers i carpetes
+txt_5_9_pff: Analitza, mostra la capçalera dels fitxers/EOF
 txt_5_9_start: Comença a
-txt_5_8_l0: Allow any supported component/format
-txt_5_8_l1: Allow only Free Software components
-txt_5_8_l2: Allow only open archive formats
+txt_5_8_l0: Permet qualsevol component o format admès
+txt_5_8_l1: Permet només components de programari lliure
+txt_5_8_l2: Permet només formats d'arxiu oberts
 txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
 txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
 txt_5_8_fs: Free Software compliance
 txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
 txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Advanced)
 txt_5_7_pinstalled: INSTAL·LAT
-txt_5_7_pmissing: MISSING
+txt_5_7_pmissing: ABSENT
 txt_5_7_plugin: Plugin missing, can be installed from Help > Check for plugin and addon
 txt_5_6_basic: Basic
 txt_5_6_exarc: Extract archive
