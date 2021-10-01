@@ -10,13 +10,13 @@ Windows Registry Editor Version 5.00
 @="Afegeix a un 7Z"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest]
-@="Afegeix a un 7Z, m√©s r√†pid"
+@="Afegeix a un 7Z, mÈs r‡pid"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal]
 @="Afegeix a un 7Z, normal"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zultra]
-@="Afegeix a un 7Z, ultra r√†pid"
+@="Afegeix a un 7Z, ultra r‡pid"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zencrypt]
 @="Encripta (7Z)"
@@ -25,19 +25,19 @@ Windows Registry Editor Version 5.00
 @="Afegeix a un ZIP"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipfastest]
-@="Afegeix a un ZIP, m√©s r√†pid"
+@="Afegeix a un ZIP, mÈs r‡pid"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipnormal]
 @="Afegeix a un ZIP, normal"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipultra]
-@="Afegeix a un ZIP, ultra r√†pid"
+@="Afegeix a un ZIP, ultra r‡pid"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezipmail]
 @="Comprimeix i envia per e-mail"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesfx]
-@="Afegeix a un arxiu auto-extra√Øble"
+@="Afegeix a un arxiu auto-extraÔble"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2browseasarchive]
 @="Obre com a document"
@@ -55,13 +55,13 @@ Windows Registry Editor Version 5.00
 @="Elimina amb seguretat"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2here]
-@="Extreu aqu√≠"
+@="Extreu aquÌ"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart]
-@="Extreu aqu√≠ (nova carpeta intel¬∑ligent)"
+@="Extreu aquÌ≠ (nova carpeta intel∑ligent)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder]
-@="Extreu aqu√≠ (en una nova carpeta)"
+@="Extreu aquÌ≠ (en una nova carpeta)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2main]
 @="Extreu..."
