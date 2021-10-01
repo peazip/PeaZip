@@ -58,7 +58,7 @@ Windows Registry Editor Version 5.00
 @="Extreu aquí"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart]
-@="Extreu aquí­ (nova carpeta intel·ligent)"
+@="Extreu aquí (nova carpeta intel·ligent)"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder]
 @="Extreu aquí­ (en una nova carpeta)"
