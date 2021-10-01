@@ -38,7 +38,7 @@ txt_8_0_forcetyping: Força l’escriptura de contrasenyes de manera interactiva
 txt_8_0_setpwopt: Configura les opcions de contrasenya i dels fitxers de xifratge
 txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
 txt_7_9_spacing: Espaiat
-txt_7_9_zooming: Zooming
+txt_7_9_zooming: Proporció d'ampliació
 txt_7_8_changelocalization: Canvia l'idioma del PeaZip
 txt_7_8_custext: Extensió personalitzada
 txt_7_8_destexistfile: La destinació ja conté fitxers processats. Vols substituir-los?
@@ -151,7 +151,7 @@ txt_6_5_seqerr: Error(s) detectats, no s'eliminaran els fitxers originals
 txt_6_5_sni: Inclou la informació de seguretat NT
 txt_6_5_sns: Inclou NTFS Alternate Data Stream
 txt_6_5_privacy: Privacitat
-txt_6_5_showvolatile: Mostra quines opcions són volàtils / dependen del context
+txt_6_5_showvolatile: Mostra quines opcions són volàtils o dependents del context
 txt_6_5_force: Intenta obrir arxius que contenen errors
 txt_6_5_warning: Avís
 txt_6_5_yes: Sí
@@ -185,82 +185,82 @@ txt_5_9_start: Comença a
 txt_5_8_l0: Permet qualsevol component o format admès
 txt_5_8_l1: Permet només components de programari lliure
 txt_5_8_l2: Permet només formats d'arxiu oberts
-txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
-txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
-txt_5_8_fs: Free Software compliance
-txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
-txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Advanced)
+txt_5_8_ascii: ASCII segur, els scripts són compatibles amb entorns antics
+txt_5_8_cp: Pàgina de codi segura, els scripts poden provocar problemes en entorns antics amb pàgines de codi diferents
+txt_5_8_fs: Compliment de la política del programari lliure
+txt_5_8_utf: Els scripts necessiten un entorn UTF-8/Unicode complet
+txt_5_8_fsr: No es suporta aquest format a causa de la restricció de compliment de la política del programari lliure (Opcions > Avançat)
 txt_5_7_pinstalled: INSTAL·LAT
 txt_5_7_pmissing: ABSENT
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for plugin and addon
+txt_5_7_plugin: Falta un complement, el pots instal·lar desde Ajuda > Cerca connectors i complements
 txt_5_6_basic: Basic
-txt_5_6_exarc: Extract archive
+txt_5_6_exarc: Extreu l'arxiu
 txt_5_6_tab: Obre en una pestanya nova
-txt_5_6_rc: Right click for options
-txt_5_6_layouts: Saved layouts
-txt_5_6_upexisting: Update existing archive
-txt_5_6_verbose: Verbose
+txt_5_6_rc: Botó de la dreta per veure les opcions
+txt_5_6_layouts: Maquetacions desades
+txt_5_6_upexisting: Actualitza l'arxiu existent
+txt_5_6_verbose: Detallat
 txt_5_5_case: (sensible a les majúscules)
-txt_5_5_add: Add string at specified position
+txt_5_5_add: Afegeix una cadena alfanumèrica a la posició especificada
 txt_5_5_addsel: Afegeix a la selecció
 txt_5_5_ext: Canvia les extensions dels fitxers
-txt_5_5_plugin: Check for plugin and addon
-txt_5_5_copypath: Copy path
-txt_5_5_delete: Delete characters at specified position
-txt_5_5_halt: Halt system when task completes
-txt_5_5_positionw: Hint: 1 add before first char, 2 second, etc... "z" for end of file name
-txt_5_5_positionwd: Hint: 1 delete from first char included, 2 second, ... "z" for end of file name
-txt_5_5_replaceneww: Hint: provide an empty new string to simply remove the old string
-txt_5_5_lower: lowercase
-txt_5_5_replaceoldw: Modify all occurrences of this string or character in the file name
+txt_5_5_plugin: Cerca connectors i complements
+txt_5_5_copypath: Copia el camí
+txt_5_5_delete: Elimina caràcters a la posició especificada
+txt_5_5_halt: Apaga el sistema quan es completi la tasca
+txt_5_5_positionw: Suggeriment: 1 per afegir abans del primer caràcter, 2 pel segon, etc... "z" pel final del nom del fitxer
+txt_5_5_positionwd: Suggeriment: 1 eliminar des del primer caràcter inclòs, 2 des del segon... "z" pel final del nom del fitxer
+txt_5_5_replaceneww: Suggeriment: proporciona una nova cadena alfanumèrica buida per eliminar l'anterior
+txt_5_5_lower: minúscules
+txt_5_5_replaceoldw: Modifica totes les occurències d'aquesta cadena alfanumèrica o caràcter al nom del fitxer
 txt_5_5_newext: Nova extensió
-txt_5_5_new: New string
-txt_5_5_n: Number of characters to delete
-txt_5_5_old: Old string
-txt_5_5_position: Position (number or "z" for end)
+txt_5_5_new: Nova cadena alfanumèrica
+txt_5_5_n: Número de caràcters a eliminar
+txt_5_5_old: Cadena alfanumèrica antiga
+txt_5_5_position: Posició (número, o bé, "z" per indicar l'última posició)
 txt_5_5_intdir: Nova carpeta intel·ligent
-txt_5_5_replacestr: Replace/remove string
-txt_5_5_datesameday: Same day of selected object
-txt_5_5_datesamehour: Same hour of selected object
-txt_5_5_datesamemonth: Same month of selected object
-txt_5_5_datesameweek: Same week of selected object
-txt_5_5_datesameyear: Same year of selected object
+txt_5_5_replacestr: Reemplaça/elimina la cadena alfanumèrica
+txt_5_5_datesameday: El mateix dia que l'objecte seleccionat
+txt_5_5_datesamehour: La mateixa hora que l'objecte seleccionat
+txt_5_5_datesamemonth: El mateix mes que l'objecte seleccionat
+txt_5_5_datesameweek: La mateixa setmana que l'objecte seleccionat
+txt_5_5_datesameyear: El mateix any que l'objecte seleccionat
 txt_5_5_scan: Escaneja
-txt_5_5_select: Select
-txt_5_5_similar: Similar to selected object
-txt_5_5_starting: Starting with same character
-txt_5_5_string: String to add
-txt_5_5_subtractsel: Subtract from current selection
+txt_5_5_select: Selecciona
+txt_5_5_similar: Semblant a l'objecte seleccionat
+txt_5_5_starting: Que comenci amb el mateix caràcter
+txt_5_5_string: Cadena alfanumèrica a afegir
+txt_5_5_subtractsel: Desmarca de la selecció actual
 txt_5_5_datehour: Aquesta hora
 txt_5_5_datemonth: Aquest mes
 txt_5_5_dateweek: Aquesta setmana
 txt_5_5_dateyear: Aquest any
 txt_5_5_dateday: Avui
-txt_5_5_upper: UPPERCASE
-txt_5_5_extw: Warning: changing file extension the file may become unusable
-txt_5_4_da: Date added
-txt_5_4_deletearchives: Delete archives after extraction
-txt_5_4_deletefiles: Delete files after archiving
-txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
+txt_5_5_upper: MAJÚSCULES
+txt_5_5_extw: Avís: si es modifica l'extensió, pot ser que el fitxer quedi inservible
+txt_5_4_da: Data afegit
+txt_5_4_deletearchives: Elimina els arxius després de l'extracció
+txt_5_4_deletefiles: Elimina els fitxers després de la compressió
+txt_5_4_deleteoriginal: El procés d'eliminació, tal i com s'ha establert a la finestra principal, s'afegirà al script.
 txt_5_4_lv: Últim lloc visitat
-txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
-txt_5_4_deletefilesconfirm: Confirm deletion of original files?
+txt_5_4_deletearchivesconfirm: Confirmes l'eliminació dels arxius originals?
+txt_5_4_deletefilesconfirm: Confirmes l'eliminació dels fitxers originals?
 txt_5_4_used: Utilitzat
-txt_5_3_profilebest: Extreme compression, 7Z ultra
-txt_5_3_profileadvanced: High compression, 7Z
-txt_5_3_profilenormal: Medium compression, ZIP (compatible with most extractors)
-txt_5_3_profileveryfast: Fast compression, ZIP fast (compatible with most extractors)
-txt_5_3_profilepassword: Protect with password, 7Z format
+txt_5_3_profilebest: Compressió extrema, 7Z ultra
+txt_5_3_profileadvanced: Compressió alta, 7Z
+txt_5_3_profilenormal: Compressió mitjana, ZIP (compatible amb la majoria d'extractors)
+txt_5_3_profileveryfast: Compressió ràpida, ZIP ràpid (compatible amb la majoria d'extractors)
+txt_5_3_profilepassword: Protegeix amb contrasenya, format 7Z
 txt_5_3_profile10mb: Manté el resultat per sota dels 25 MB, per les limitacions d'enviament
-txt_5_3_profilesfx: Auto extracting, recipient will not need an extraction software
+txt_5_3_profilesfx: Auto-extraïble, el destinatari no necessitarà cap programa d'extracció
 txt_5_3_cml: Idioma del menú contextual del sistema
-txt_5_3_cmlmessage: Double click on desired context menu language and confirm registry merging. This setting needs to be re-applied when the application is installed/updated or after System integration wizard is used.
-txt_5_3_exc: Exclusion filters prevail on inclusion filters
+txt_5_3_cmlmessage: Fes doble clic a l'idioma del menú contextual desitjat i confirma l'aplicació al registre. Aquesta configuració necessita tornar-se a aplicar quan s'instal·la o s'actualitza l'aplicació, o després d'utilitzar l'assistent d'integració amb el sistema.
+txt_5_3_exc: Els filtres d'exclusió prevalen sobre els filtres d'inclusió
 txt_5_3_ia: Inclou també
 txt_5_3_io: Inclou només
-txt_5_3_rec: Recurse subdirs
-txt_5_3_resetsi: Re-configure system integration (context menu, SendTo, file associations)?
-txt_5_2_oadd: Archive to original path
+txt_5_3_rec: Subdirectoris recursius
+txt_5_3_resetsi: Vols reconfigurar la integració amb el sistema (menú contextual, Enviar a, associacions de fitxers)?
+txt_5_2_oadd: Comprimeix a la ubicació original
 txt_5_2_zerodelete: Vols eliminar i reemplaçar els fitxers seleccionats amb 0? La operació no es pot desfer i els fitxers no es podran recuperar
 txt_5_2_zfree: Vols reemplaçar l'espai lliure d'aquesta unitat amb 0?
 txt_5_2_sdfree: Vols esborrar l'espai lliure d'aquesta unitat de forma segura?
@@ -279,9 +279,9 @@ txt_5_1_every: Cada
 txt_5_1_w6: Divendres
 txt_5_1_hourly: Cada hora
 txt_5_1_hours: Hores
-txt_5_1_last: Last
-txt_5_1_schedmanage: Task Scheduler, manage tasks saved in PeaZip branch
-txt_5_1_scriptmanage: Manage saved scheduled scripts
+txt_5_1_last: Última
+txt_5_1_schedmanage: Programador de tasques, gestió de tasques desades delete PeaZip
+txt_5_1_scriptmanage: Gestió de tasques programades
 txt_5_1_w2: Dilluns
 txt_5_1_monthly: Mensualment
 txt_5_1_months: Mesos
@@ -289,10 +289,10 @@ txt_5_1_onlogin: En iniciar la sessió de l'usuari
 txt_5_1_onstart: A l'engegada
 txt_5_1_once: Una vegada
 txt_5_1_w7: Dissabte
-txt_5_1_schedule: Schedule
-txt_5_1_schedexplain: Creates a plain text script from GUI task definition and schedule it. Scheduled tasks' scripts are saved in "Scheduled scripts" folder. To edit or delete scheduled tasks you can use system's Task Scheduler, all scheduled tasks created by PeaZip are collected in "PeaZip" branch of the tasks library.
-txt_5_1_schedok: Schedule created successfully
-txt_5_1_schedscripts: Saved scheduled scripts
+txt_5_1_schedule: Programa
+txt_5_1_schedexplain: Crea un script de text pla des de la interfície gràfica d’usuari i programa'l. Els scripts de tasques programades es desen a la carpeta "Scripts programats". Per editar o eliminar tasques programades podeu utilitzar el Programador de tasques del sistema, totes les tasques programades creades per PeaZip es recopilen a la branca "PeaZip" de la biblioteca de tasques.
+txt_5_1_schedok: La programació s'ha desat satisfactòriament
+txt_5_1_schedscripts: Scripts programats desats
 txt_5_1_startdate: Data d'inici
 txt_5_1_starttime: Hora d'inici
 txt_5_1_w1: Diumenge
@@ -303,7 +303,7 @@ txt_5_1_w3: Dimarts
 txt_5_1_w4: Dimecres
 txt_5_1_weekly: Setmanalment
 txt_5_1_weeks: Setmanes
-txt_5_0_bc: Breadcrumb
+txt_5_0_bc: Ruta d'exploració
 txt_5_0_resetpm: Confirmes que vols reestablir l'administrador de contrasenyes? Totes les contrasenyes emmagatzemades a l'administrador de contrasenyes del PeaZip es perdran si ho confirmes.
 txt_5_0_enum: Enumera el contingut de la carpeta
 txt_5_0_music: Música
@@ -311,9 +311,9 @@ txt_5_0_ps: Obre el PowerShell aquí
 txt_5_0_perf: Rendiment
 txt_5_0_pictures: Imatges
 txt_5_0_removeall: Elimina-ho tot
-txt_5_0_resetbookmarks: Reset Bookmarks to default? (Bookmarks can then be customized with Bookmarks > Organize)
+txt_5_0_resetbookmarks: Vols reestablir els marcadors? (Els marcadors es poden personalitzar a Marcadors > Organitza)
 txt_5_0_sh: Historial de la sessió
-txt_5_0_skip: Skip enumerating directories' content in layout
+txt_5_0_skip: Omet enumerar el contingut dels directoris a la maquetació
 txt_5_0_videos: Vídeos
 txt_4_9_frame: Marc
 txt_4_9_listth: Llista i miniatures
@@ -325,7 +325,7 @@ txt_4_8_detailsno: Detalls
 txt_4_8_details: Detalls i miniatures
 txt_4_8_fit: Ajusta a
 txt_4_8_fitl: Ajusta a la més gran
-txt_4_8_flip: Flip
+txt_4_8_flip: Dóna la volta
 txt_4_8_fullscreen: Pantalla completa
 txt_4_8_fun: Funcions
 txt_4_8_h: Altura
@@ -336,10 +336,10 @@ txt_4_8_iconm: Icones i imatges
 txt_4_8_imagemanager: Administrador d'imatges
 txt_4_8_immersive: Immersiu
 txt_4_8_listno: Llista
-txt_4_8_aspect: Maintain aspect ratio
+txt_4_8_aspect: Mantén la relació d'aspecte
 txt_4_8_mirror: Simetria
-txt_4_8_presets: Presets
-txt_4_8_replace: Replace original image(s)? "No" apply the transformation in new file(s).
+txt_4_8_presets: Ajustos predeterminats
+txt_4_8_replace: Vols substituir les imatges originals? "No" aplica la transformació en fitxers nous.
 txt_4_8_resize: Canvia la mida
 txt_4_8_rl: Gira a l'esquerra
 txt_4_8_rr: Gira a la dreta
@@ -357,13 +357,13 @@ txt_4_6_users: Usuaris
 txt_4_5_goupdate: Hi ha una actualització disponible. Vols obrir la web oficial del PeaZip per descarregar l'actualització?
 txt_4_5_b: Part inferior
 txt_4_5_koupdate: No s'han pogut comprovar les actualitzacions, no hi ha connexió amb el servidor d'actualitzacions
-txt_4_5_update: Comprova si hi ha actualitzacions
+txt_4_5_update: Comprova les actualitzacions
 txt_4_5_dock: Ancora
 txt_4_5_l: Esquerra
 txt_4_5_noupdate: El PeaZip està actualitzat
 txt_4_5_properties: Propietats
 txt_4_5_r: Dreta
-txt_4_5_pj: Saved scripts
+txt_4_5_pj: Scripts desats
 txt_4_5_shaddress: Mostra la barra d'adreça
 txt_4_5_shnav: Mostra la barra de navegació
 txt_4_5_shstatus: Mostra la barra d'estat
@@ -372,39 +372,39 @@ txt_4_5_upxpj: Em sap greu, no es pot exportar la definició de la tasca, ja que
 txt_4_5_t: Part superior
 txt_4_4_confremoveall: Vols eliminar tots els fitxers personalitzats del PeaZip (Aplicacions, Preferits, Administrador de contrasenyes)?
 txt_4_4_confremove: Vols eliminar la configuració del PeaZip?
-txt_4_3_pwmanhint: Double click to edit items in password list, rightclick for options, Ctrl+C to copy passwords
+txt_4_3_pwmanhint: Feu doble clic per editar els elements de la llista de contrasenyes, feu clic amb el botó dret per veure les opcions, Ctrl + C per copiar les contrasenyes
 txt_4_3_exppl: Exporta la llista de contrasenyes
-txt_4_3_expple: Encrypted (backup Password Manager)
+txt_4_3_expple: Encriptat (còpia de seguretat del Gestor de Contrasenyes)
 txt_4_3_keeppw: Recorda la contrasenya/fitxer de xifratge durant la sessió actual
-txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
+txt_4_3_pwmanpwhint: Es recomana establir una contrasenya o fitxer de xifratge (opcional) per encriptar la llista de contrasenyes, d'aquesta manera es requerirà autenticació per accedir al Gestor de Contrasenyes. La contrasenya o el fitxer de xifratge es poden modificar en qualsevol moment des d'aquest formulari.
 txt_4_3_pwmanmaster: Estableix/canvia la contrasenya global
 txt_4_3_pwmanlist: Llista de contrasenyes
 txt_4_3_pwman: Administrador de contrasenyes
-txt_4_3_pwmancorr: Password Manager seems tampered or corrupted. Keep Password Manager anyway and try to recover current password list, if you trust it? (No will reset Password Manager, recommended)
+txt_4_3_pwmancorr: El Gestor de Contrasenyes sembla manipulat o malmès. Si hi confies, vols conservar-lo igualment i intentar llegir la llista de contrasenyes actual? ("No" reestablirà el Gestor de Contrasenyes (opció recomanada))
 txt_4_3_expplp: Text pla (tots els usuaris)
-txt_4_3_recsrc: Recursive search by default
+txt_4_3_recsrc: Cerca recursiva per defecte
 txt_4_3_resetpm: Vols reestablir l'administrador de contrasenyes? S'eliminaran totes les contrasenyes emmagatzemades
-txt_4_3_breadcrumb: Show Address as breadcrumb
+txt_4_3_breadcrumb: Mostra el camí com a ruta de navegació
 txt_4_2_arcabspath: Utilitza rutes absolutes
-txt_4_1_duplicateshint: "size"/"checksum" string is reported in CRC column for all duplicate candidates found in current directory or search filter
-txt_4_1_adminhint: (HINT: alternatively, you can request UAC elevation to work in protected paths, Alt+F10 or Options > Run as administrator)
-txt_4_1_selected: (selected)
-txt_4_1_duplicatesfound: duplicates found
-txt_4_1_duplicatesfind: Troba duplicats
+txt_4_1_duplicateshint: La "mida" i la "suma de comprovació" s'anoten a la columna CRC per a tots els candidats duplicats que es troben al directori actual o al filtre de cerca
+txt_4_1_adminhint: (SUGGERIMENT: com a alternativa, podeu sol·licitar l'elevació UAC per treballar en ubicacions protegides, Alt + F10 o Opcions > Executa com a administrador)
+txt_4_1_selected: (seleccionat)
+txt_4_1_duplicatesfound: duplicats trobats
+txt_4_1_duplicatesfind: Cerca duplicats
 txt_4_1_runasadmin: Executa com a administrador
 txt_4_1_simplesearch: Cerca bàsica
-txt_4_0_thim: Show picture thumbnails
-txt_3_8_type_description_wim: WIM: Microsoft's disk image format
-txt_3_8_type_description_xz: XZ: powerful file compression based on LZMA2
+txt_4_0_thim: Mostra les miniatures de les imatges
+txt_3_8_type_description_wim: WIM: Format d'imatge del disc de Microsoft
+txt_3_8_type_description_xz: XZ: potent compressor de fitxers basat en LZMA2
 txt_3_7_donations: Donacions
-txt_3_7_nameasparent: Name archive as selected item's parent folder, if multiple items are added
-txt_3_7_tracker: Issue Tracker
+txt_3_7_nameasparent: Anomeneu l'arxiu com la carpeta on es troba l'element seleccionat, si s'afegeixen diversos elements
+txt_3_7_tracker: Suggeriments, errors, sol·licituds
 txt_3_7_sort: Ordena per
-txt_3_7_swapbars: Swap Tool bar / Address bar
-txt_3_7_themedbars: Themed bars
-txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
+txt_3_7_swapbars: Barra d'eines d'intercanvi / barra d'adreces
+txt_3_7_themedbars: Barres temàtiques
+txt_3_6_ignoredd: Ignoreu sempre els camins per a l'extracció d'arrossegar i deixar anar
 txt_3_6_close: Tanca
-txt_3_6_resetapps: Do you want to reset Applications (customizable group of programs and scripts to open files with, overriding file associations)?
+txt_3_6_resetapps: Voleu restablir les aplicacions (grup personalitzable de programes i scripts per obrir fitxers, substituint les associacions de fitxers del sistema)?
 txt_3_6_ethemes: Temes existents
 txt_3_5_td: Descarrega temes
 txt_3_5_managecustomthemes: Administrador de temes
@@ -417,34 +417,34 @@ txt_3_3_multi: Selecció múltiple
 txt_3_3_runexp: Obre un programa, fitxers, carpeta o lloc web
 txt_3_3_apppath: Carpeta del PeaZip
 txt_3_3_run: Executa
-txt_3_2_7zutf8nonascii: 7z / p7zip -mcu use UTF8 for file names containing non-ASCII symbols inside .zip files
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu utilitza UTF8 per als noms de fitxers que continguin símbols que no siguin ASCII dins dels fitxers .zip
 txt_3_2_alltasks: Totes els tasques
 txt_3_2_conf: Configuració
-txt_3_2_donations: Donate to charitable organizations
-txt_3_1_sccenc: 7z/p7zip CONSOLE character encoding
+txt_3_2_donations: Feu una donació a organitzacions benèfiques
+txt_3_1_sccenc: codificació de caràcters 7z/p7zip CONSOLE
 txt_3_1_downloads: Descàrregues
 txt_3_1_lib: Biblioteques
 txt_3_1_more: Més
 txt_3_1_openasarchive: Obre com a arxiu
-txt_3_1_sendto: User’s SendTo menu folder
-txt_3_1_pathexc: La ruta excedeit la mida màxima permesa
+txt_3_1_sendto: Carpeta del menú "Enviar a" de l'usuari
+txt_3_1_pathexc: La ruta excedeix la mida màxima permesa
 txt_3_1_recent: Recents
 txt_3_1_plsmartmin: Executa minimitzat, mostra'l/manten-lo obert només quan sigui necessari
 txt_3_1_src: Cerques
 txt_3_1_systmp: Carpeta temporal de l'usuari
 txt_3_1_languagetools: Tradueix
 txt_3_1_workingdir: Directori de treball
-txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, volumes may be missing, or its table of content could be encrypted. Would you like to try a password?
+txt_3_0_nonreadableorpw: L'arxiu no es pot llegir. És possible que l’arxiu no sigui vàlid, que faltin volums o que la seva taula de contingut estigui xifrada. Voleu provar d'introduir una contrasenya?
 txt_3_0_readablepw: L'arxiu pot estar protegit amb contrasenya
 txt_3_0_configure: Associació de fitxers i integració del menú del sistema
-txt_3_0_resettmp: Reset peazip-tmp
+txt_3_0_resettmp: Reestableix peazip-tmp
 txt_2_9_address: Barra d'adreces
-txt_2_9_adv: Advanced filters are applied when managing any file supported through 7z or FreeArc backends, see documentation, and overrides basic filters (that are used for search functions and are displayed in Bookmarks and History panels)
+txt_2_9_adv: Els filtres avançats s'apliquen quan es gestiona qualsevol fitxer compatible amb els backends 7z o FreeArc, vegeu la documentació, i substitueix els filtres bàsics (que s'utilitzen per a funcions de cerca i que es mostren als panells de Marcadors i Historial)
 txt_2_9_columns: Columnes
 txt_2_9_copyhere: Copia aquí
-txt_2_9_noscan: Don't scan files being added to layout
-txt_2_9_extconsole: Extraction console is available only while browsing archives
-txt_2_9_thl: Highlight buttons
+txt_2_9_noscan: No analitzeu els fitxers que s’afegeixen a la maquetació
+txt_2_9_extconsole: La consola d’extracció només està disponible mentre navegueu pels arxius
+txt_2_9_thl: Destaca els botons
 txt_2_9_home: Directori de l'usuari
 txt_2_9_lt: Gran
 txt_2_9_mt: Mitjà
@@ -454,25 +454,25 @@ txt_2_9_navbar: Barra de navegació
 txt_2_9_none: Cap
 txt_2_9_organize: Organitza
 txt_2_9_public: Públic
-txt_2_9_rec: Recursive: search in subdirectories, may take some time
+txt_2_9_rec: Recursiu: la cerca als subdirectoris pot tardar més
 txt_2_9_selected: Seleccionat
 txt_2_9_setapps: Organitza les aplicacions
 txt_2_9_showmenu: Mostra la barra de menús
 txt_2_9_st: Petit
-txt_2_9_test_pw2G: Test for encryption <2GB archives
+txt_2_9_test_pw2G: Prova d'encriptació d'arxius <2GB
 txt_2_9_vst: Només text
 txt_2_9_toolbar: Barra d'eines
 txt_2_9_tree: Arbre
 txt_2_9_views: Vistes
 txt_2_8_experimental: (experimental)
-txt_2_8_zcopy: (Windows) Copy files in restartable mode, slower copy
-txt_2_8_addvol: Adding entire volume(s) to archive may take long time, continue anyway?
+txt_2_8_zcopy: (Windows) Copia els fitxers en mode reiniciable, la còpia és més lenta
+txt_2_8_addvol: Afegir volums sencers a l'arxiu pot trigar molt de temps, vols continuar igualment?
 txt_2_8_uniterror: No es pot accedir a la unitat
-txt_2_8_cannotconvert: Cannot convert selected archives
-txt_2_8_convertbegin: Continue with compression stage to finalize the conversion?
+txt_2_8_cannotconvert: No es poden convertir els arxius seleccionats
+txt_2_8_convertbegin: Voleu continuar amb la fase de compressió per finalitzar la conversió?
 txt_2_8_convert: Converteix
 txt_2_8_convertexisting: Converteix els fitxers existents
-txt_2_8_convertdelete: Delete files and folders created temporarily for conversion?
+txt_2_8_convertdelete: Vols suprimir fitxers i carpetes creats temporalment per a la conversió?
 txt_2_8_details: Detalls
 txt_2_8_parallel: Executa les tasques en paral·lel quan sigui possible
 txt_2_8_convertnote: In any case original archives were not modified, to let the user in control about keeping or removing them
@@ -606,7 +606,7 @@ txt_type_description_7z: 7Z: feature rich archive format with high compression r
 txt_dvddl: 8.5 GB DVD DL
 txt_7z_exitcode8: 8: Error: not enough memory for requested operation
 txt_abort: Abort scheduled file copy/move operations?
-txt_about: About
+txt_about: Sobre
 txt_action: Acció
 txt_action_hint: Action on open or preview with associated application
 txt_add: Afegeix
@@ -659,7 +659,7 @@ txt_backupexe: Backup executable (recommended)
 txt_bettercompression: millor compressió
 txt_blogs: Blogs
 txt_blowfish: Blowfish448 (blocs de 64 bit)
-txt_bookmarks: Bookmarks
+txt_bookmarks: Marcadors
 txt_browse: Navega
 txt_browser: Navegador
 txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search (F3) or avoiding Flat view mode (F6). You can directly extract, list or test the archive.
@@ -675,7 +675,7 @@ txt_check_hint: Check for casual data corruption; hash algorithms are suitable t
 txt_check: Checksum/hash file(s)
 txt_check_select: Checksum/hash
 txt_clear: Neteja
-txt_clearlayout: Clear layout
+txt_clearlayout: Neteja la maquetació
 txt_pj_hint: Click to import task, reset changes and load up to date task definition from GUI
 txt_autoclose: Close PeaLauncher when task completes
 txt_cl: línia de comandes:
@@ -985,14 +985,14 @@ txt_sample: Sample:
 txt_saveas: Anomena i desa
 txt_savehistory: Desa l'historial
 txt_save_infolder: Save in folder (auto)
-txt_savejob: Save task definition
-txt_savejobdefinition: Save task definition
-txt_savejobdefinition_hint: Save task definition as plain text; you can use it from your scripts
-txt_savelayout: Save layout
+txt_savejob: Desa la definició de la tasca
+txt_savejobdefinition: Desa la definició de la tasca
+txt_savejobdefinition_hint: Desa la definició de la tasca com a text pla; la podràs utilitzar en els teus scripts
+txt_savelayout: Desa la maquetació
 txt_save_winstate: Save main window state
-txt_search: Search (recursive, may take some time)
-txt_searchanddrag: Search and drag here
-txt_searchfor: Search
+txt_search: Cerca (recursivament, pot tardar un cert temps)
+txt_searchanddrag: Cerca i arrossega aquí
+txt_searchfor: Cerca
 txt_nrsearch: Cerca aquí (no recursiu)
 txt_search_hint: Search in archive's subdirectories for matches with filter(s)
 txt_search_web: Cerca en línia
@@ -1025,7 +1025,7 @@ txt_listtest: sorry, list/test operation is not yet implemented for this format
 txt_sortbysel: Sort by selection status
 txt_list_sorting: Ordenant...
 txt_speed: velocitat
-txt_split: Divisió
+txt_split: Múltiples parts
 txt_type_description_split: Split a file with optional integrity check
 txt_split_file: Divideix el fitxer
 txt_list_nostats: no hi ha estadístiques disponibles
@@ -1034,15 +1034,15 @@ txt_level_store: Store
 txt_stream_control: Stream control
 txt_strip: Strip before UPX (recommended)
 txt_keyfile_created: Successfully created KeyFile as:
-txt_suggestpw: Create random password
+txt_suggestpw: Crea una contrasenya aleatòria
 txt_noupx: Symbols stripped, UPX compression omitted
-txt_syntax: Syntax:
-txt_sysbenchmark: System benchmark
-txt_benchmark: System benchmark will take some minutes and will use all available CPU and memory resource. The system may not respond during the benchmark; run it anyway?
-txt_systools: System tools
+txt_syntax: Sintaxi:
+txt_sysbenchmark: Prova de rendiment del sistema
+txt_benchmark: La prova de rendiment del sistema pot tardar alguns minuts i utilitzarà tota la CPU i memòria disponibles. El sistema pot ser que no respongui durant la prova de rendiment; el vols executar igualment?
+txt_systools: Eines del sistema
 txt_tarbefore: TAR before
 txt_type_description_tar: TAR: archiving format mainstream on UNIX systems
-txt_taskman: Task Manager
+txt_taskman: Administrador de tasques
 txt_caption_test: Verifica
 txt_testall: Verifica-ho tot
 txt_testdisp: Verifica els objectes mostrats
