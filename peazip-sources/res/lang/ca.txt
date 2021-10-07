@@ -1,9 +1,9 @@
 ﻿=== PeaZip language file ===
-Catalan - Català
+Català
 8.2
-Translated by: Marc Roca Musach
-Last rev. by: Marc Roca Musach
-Last rev.: 20210927
+Traduït per: Marc Roca Musach
+Última revisió per: Marc Roca Musach
+Última revisió el: 20211007
 
 === PeaZip text group ===
 
@@ -20,9 +20,9 @@ txt_8_2_supportedby: Suportat per
 txt_8_1_preparse: Pre-analitzar sempre els arxius
 txt_8_1_bo: Optimització del navegador
 txt_8_1_bop: Les opcions d’optimització del navegador es poden configurar a Opcions >  Configuració, pestanya General, per tal de permetre al navegador mostrar arxius que contenen un gran nombre d’elements.
-txt_8_1_nopreparse: No analitzeu prèviament els arxius
+txt_8_1_nopreparse: No analitzis prèviament els arxius
 txt_8_1_ed: error(s) detectats.
-txt_8_1_togglearc: La visualització plana del contingut de l'arxiu pot tardar molt de temps, vols continuar de totes maneres?
+txt_8_1_togglearc: La visualització plana del contingut de l'arxiu pot tardar molt de temps, voleu continuar igualment?
 txt_8_1_preparsehint: Optimitza el rendiment a base de limitar el pre-anàlisi dels arxius grans. El pre-anàlisi pretén detectar amb antelació possibles problemes en el contingut de l'arxiu.
 txt_8_1_slow: Lent
 txt_8_1_vslow: Molt lent
@@ -31,17 +31,17 @@ txt_8_0_altcol: Alterna el color de la quadrícula
 txt_8_0_forcebrowse: Cerca tipus d’arxius no canònics (contenidors, imatges de disc, instal·ladors, ...)
 txt_8_0_commonalgo: Algoritmes comuns
 txt_8_0_forceconvert: Converteix els tipus d’arxius no canònics
-txt_8_0_defaultactionhint: Acció per defecte en fet doble clic des del sistema sobre un fitxer associat al PeaZip
+txt_8_0_defaultactionhint: Acció per defecte en fer doble clic des del sistema sobre un fitxer associat al PeaZip
 txt_8_0_defaultaction: Acció predeterminada en iniciar
 txt_8_0_enableextand: Activa el submenú "Extreu i obre amb"
 txt_8_0_forcetyping: Força l’escriptura de contrasenyes de manera interactiva
 txt_8_0_setpwopt: Configura les opcions de contrasenya i dels fitxers de xifratge
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_8_0_forcetypinghelp: Executarà binaris del backend a la consola, no es poden explorar fitxers amb noms encriptats. Permet crear scripts que s'executaran interactivament i preguntaran la contrasenya a l'usuari.
 txt_7_9_spacing: Espaiat
 txt_7_9_zooming: Proporció d'ampliació
 txt_7_8_changelocalization: Canvia l'idioma del PeaZip
 txt_7_8_custext: Extensió personalitzada
-txt_7_8_destexistfile: La destinació ja conté fitxers processats. Vols substituir-los?
+txt_7_8_destexistfile: La destinació ja conté fitxers processats. Voleu substituir-los?
 txt_7_8_dd: Arrossegar i deixar anar
 txt_7_8_priorityhigh: Alta
 txt_7_8_priorityidle: Quan estigui inactiu
@@ -53,7 +53,7 @@ txt_7_8_tpriority: Prioritat de tasques
 txt_7_8_update: Actualitza
 txt_7_7_noneall: Cap: desactiva la previsualització, l'edició, la funcionalitat d'"arrossega i deixa anar" i l'extracció interactiva
 txt_7_7_nonetemp: Cap, el directori temporal de l'usuari si és necessari
-txt_7_7_outtemp: Output, preview in user's temp
+txt_7_7_outtemp: Sortida, previsualitza a la carpeta temporal de l'usuari
 txt_7_7_sys7zreq: Requereix tenir instal·lat el p7zip-full o equivalent
 txt_7_7_tw: Carpeta de treball temporal per crear arxius, editar-los, previsualitzar-los i extreure'ls amb la funcionalitat "arrossega i deixa anar"
 txt_7_7_sys7z: Utilitza el 7z del sistema del Linux
@@ -69,38 +69,38 @@ txt_7_6_defaultenc: Local, UTF-8 per a símbols addicionals
 txt_7_6_dim: Clar
 txt_7_6_setcurdef: Estableix l'ubicació actual com a ubicació d'extracció per defecte
 txt_7_6_setdef: Estableix una ubicació d'extracció per defecte
-txt_7_6_tadvanced: Sincronitza l'arbre de l'arxiu, manté els elements visitats
+txt_7_6_tadvanced: Sincronitza l'arbre de l'arxiu, conserva els elements visitats
 txt_7_6_tsimple: Sincronitza l'arbre de l'arxiu, simple
 txt_7_6_tacolor: Color del text
 txt_7_5_always: Sempre
 txt_7_5_ask: Pregunta
 txt_7_5_autoclosesingle: Tanca automàticament després de l'extracció si no es realitza cap acció de navegació
 txt_7_5_cutlen: Retalla el nom a una longitud determinada
-txt_7_5_cutlenw: Retalla el nom a una longitud determinada (4..255) els conflictes de noms es poden corregir manualment més tard
+txt_7_5_cutlenw: Retalla el nom a una longitud determinada (4..255) els conflictes de noms es poden corregir manualment més endavant
 txt_7_5_dragnone: No bloquegis el destí
-txt_7_5_specialbrowse: Vols extreure-ho tot per proporcionar al fitxer les dades addicionals que pugui necessitar?
-txt_7_5_ee: Extraieu-ho tot per a tipus de fitxers especials
+txt_7_5_specialbrowse: Voleu extreure-ho tot per proporcionar al fitxer les dades addicionals que pugui necessitar?
+txt_7_5_ee: Extreu-ho tot per a tipus de fitxers especials
 txt_7_5_draghide: Amaga el destí
 txt_7_5_draglh: Bloqueja i amaga el destí
 txt_7_5_draglock: Bloqueja el destí
 txt_7_5_never: Mai
-txt_7_5_repnascii: Substitueix / elimina caràcters que no siguin ASCII
+txt_7_5_repnascii: Substitueix o elimina caràcters que no siguin ASCII
 txt_7_4_comment: Comenta
 txt_7_4_7zfbrotlicomp: Compressió molt ràpida, 7Z Brotli
 txt_7_4_7zfzstandardcomp: Compressió molt ràpida, 7Z Zstandard
 txt_7_4_presetrar: Compressió alta, RAR
-txt_7_4_tkeep: Manté la marca horària de l'arxiu original
+txt_7_4_tkeep: Conserva la marca horària de l'arxiu original
 txt_7_4_lock: Bloqueja l'arxiu
 txt_7_4_locked: bloquejat
-txt_7_4_lockconfirm: Els fitxers bloquejats no es poden modificar més endavant, vols continuar bloquejant aquest arxiu?
+txt_7_4_lockconfirm: Els fitxers bloquejats no es poden modificar més endavant, voleu continuar bloquejant aquest arxiu?
 txt_7_4_recover: Repara l'arxiu
 txt_7_4_tcurr: Estableix la marca horària de l'arxiu des del rellotge actual del sistema
-txt_7_4_setarc: Estableix opcions avançades d'arxiu
+txt_7_4_setarc: Estableix opcions avançades d'arxivament
 txt_7_4_setext: Estableix opcions avançades d'extracció
 txt_7_4_swzipx: Canvia a l'extensió zipx per a arxius ZIP no-Deflate
 txt_7_3_archiveerrors: [l'arxiu pot contenir errors]
-txt_7_3_archiveerrorshint: L'arxiu pot no ser vàlid (a causa de dades perdudes, corrompudes o fora dels estàndards), és possible executar la Verificació per obtenir informació més detallada. Si la taula de l'arxiu està encriptada, es requereix una contrasenya abans de poder-hi navegar.
-txt_7_3_clickextall: Fes clic a "Extreu-ho tot" per habilitar-ho
+txt_7_3_archiveerrorshint: L'arxiu pot no ser vàlid (a causa de dades perdudes, malmeses o fora dels estàndards), és possible executar la Verificació per obtenir informació més detallada. Si la taula de l'arxiu està encriptada, es requereix una contrasenya abans de poder-hi navegar.
+txt_7_3_clickextall: Feu clic a "Extreu-ho tot" per habilitar-ho
 txt_7_3_noconfdel: No em demanis confirmació d'eliminació després de l'arxivament o l'extracció
 txt_7_3_profile7zfastest: Compressió ràpida, 7Z més ràpid
 txt_7_3_maxbr: Maximitza la compressió Brotli utilitzant més memòria (pot ser incompatible amb alguns extractors)
@@ -127,13 +127,13 @@ txt_7_1_renfilesonly: Reanomena només els fitxers
 txt_7_1_typetosearch: Escriu aquí per cercar dins el directori actual
 txt_7_1_type_description_zstd: Zstandard: compressor ràpid de Facebook, descompressió molt ràpida
 txt_7_0_af: Analitza el contingut de les carpetes
-txt_7_0_autoopentar: Obre automàticament un arxiu tar dins un fitxer tar.*
+txt_7_0_autoopentar: Obre automàticament un arxiu TAR dins un fitxer amb extensió ".tar.*"
 txt_7_0_exttmppath: El contingut s'extraurà fora de la carpeta temporal de treball, a: 
 txt_6_9_autou: Actualitza automàticament els fitxers modificats dins d'arxius comprimits
 txt_6_9_forceu: Actualitza els fitxers editats dins l'arxiu comprimit
 txt_6_9_opuns: El tipus d'arxiu no suporta aquesta operació
-txt_6_9_overarch: Vols sobreescriure els fitxers amb el mateix nom que es trobin dins l'arxiu comprimit?
-txt_6_9_uconf: El fitxer previsualitzat ha canviat. Vols actualitzar l'arxiu actual?
+txt_6_9_overarch: Voleu sobreescriure els fitxers que es trobin dins l'arxiu comprimit amb el mateix nom?
+txt_6_9_uconf: El fitxer previsualitzat ha canviat. Voleu actualitzar l'arxiu actual?
 txt_6_8_ndrop: Utilitza l'"arrossega i deixa anar" natiu del Windows
 txt_6_7_nop: (sense previsualització)
 txt_6_6_pdupfound: s'han trobat possibles duplicats (comprovació ràpida aproximada)
@@ -156,7 +156,7 @@ txt_6_5_force: Intenta obrir arxius que contenen errors
 txt_6_5_warning: Avís
 txt_6_5_yes: Sí
 txt_6_5_yesall: Sí a tot
-txt_6_5_np: Ara pots canviar la contrasenya dels arxius convertits per una de nova o deixar-la en blanc per ometre l'encriptació
+txt_6_5_np: Ara podeu canviar la contrasenya dels arxius convertits per una de nova o deixar-la en blanc per ometre l'encriptació
 txt_6_4_absolute: Camí absolut
 txt_6_4_appdirn: Afegeix el nom del directori al final
 txt_6_4_closeallother: Tanca totes les altres pestanyes
@@ -192,7 +192,7 @@ txt_5_8_utf: Els scripts necessiten un entorn UTF-8/Unicode complet
 txt_5_8_fsr: No es suporta aquest format a causa de la restricció de compliment de la política del programari lliure (Opcions > Avançat)
 txt_5_7_pinstalled: INSTAL·LAT
 txt_5_7_pmissing: ABSENT
-txt_5_7_plugin: Falta un complement, el pots instal·lar desde Ajuda > Cerca connectors i complements
+txt_5_7_plugin: Falta un complement, el podeu instal·lar des d'Ajuda > Cerca connectors i complements
 txt_5_6_basic: Basic
 txt_5_6_exarc: Extreu un arxiu
 txt_5_6_tab: Obre en una pestanya nova
@@ -210,7 +210,7 @@ txt_5_5_delete: Elimina caràcters a la posició especificada
 txt_5_5_halt: Apaga el sistema quan es completi la tasca
 txt_5_5_positionw: Suggeriment: 1 per afegir abans del primer caràcter, 2 pel segon, etc... "z" pel final del nom del fitxer
 txt_5_5_positionwd: Suggeriment: 1 eliminar des del primer caràcter inclòs, 2 des del segon... "z" pel final del nom del fitxer
-txt_5_5_replaceneww: Suggeriment: proporciona una nova cadena alfanumèrica buida per eliminar l'anterior
+txt_5_5_replaceneww: Suggeriment: proporcioneu una nova cadena alfanumèrica buida per eliminar l'anterior
 txt_5_5_lower: minúscules
 txt_5_5_replaceoldw: Modifica totes les occurències d'aquesta cadena alfanumèrica o caràcter al nom del fitxer
 txt_5_5_newext: Nova extensió
@@ -243,30 +243,30 @@ txt_5_4_deletearchives: Elimina els arxius després de l'extracció
 txt_5_4_deletefiles: Elimina els fitxers després de la compressió
 txt_5_4_deleteoriginal: El procés d'eliminació, tal i com s'ha establert a la finestra principal, s'afegirà al script.
 txt_5_4_lv: Últim lloc visitat
-txt_5_4_deletearchivesconfirm: Confirmes l'eliminació dels arxius originals?
-txt_5_4_deletefilesconfirm: Confirmes l'eliminació dels fitxers originals?
+txt_5_4_deletearchivesconfirm: Segur que voleu eliminar dels arxius originals?
+txt_5_4_deletefilesconfirm: Segur que voleu eliminar dels fitxers originals?
 txt_5_4_used: Utilitzat
 txt_5_3_profilebest: Compressió extrema, 7Z ultra
 txt_5_3_profileadvanced: Compressió alta, 7Z
 txt_5_3_profilenormal: Compressió mitjana, ZIP (compatible amb la majoria d'extractors)
 txt_5_3_profileveryfast: Compressió ràpida, ZIP ràpid (compatible amb la majoria d'extractors)
 txt_5_3_profilepassword: Protegeix amb contrasenya, format 7Z
-txt_5_3_profile10mb: Manté el resultat per sota dels 25 MB, per les limitacions d'enviament
+txt_5_3_profile10mb: Mantén el resultat per sota dels 25 MB, per les limitacions d'enviament
 txt_5_3_profilesfx: Auto-extraïble, el destinatari no necessitarà cap programa d'extracció
 txt_5_3_cml: Idioma del menú contextual del sistema
-txt_5_3_cmlmessage: Fes doble clic a l'idioma del menú contextual desitjat i confirma l'aplicació al registre. Aquesta configuració necessita tornar-se a aplicar quan s'instal·la o s'actualitza l'aplicació, o després d'utilitzar l'assistent d'integració amb el sistema.
+txt_5_3_cmlmessage: Feu doble clic a l'idioma del menú contextual desitjat i confirmeu l'aplicació al registre. Aquesta configuració necessita tornar-se a aplicar quan s'instal·la o s'actualitza l'aplicació, o després d'utilitzar l'assistent d'integració amb el sistema.
 txt_5_3_exc: Els filtres d'exclusió prevalen sobre els filtres d'inclusió
 txt_5_3_ia: Inclou també
 txt_5_3_io: Inclou només
 txt_5_3_rec: Subdirectoris recursius
-txt_5_3_resetsi: Vols reconfigurar la integració amb el sistema (menú contextual, Enviar a, associacions de fitxers)?
+txt_5_3_resetsi: Voleu reconfigurar la integració amb el sistema (menú contextual, Enviar a, associacions de fitxers)?
 txt_5_2_oadd: Comprimeix a la ubicació original
-txt_5_2_zerodelete: Vols eliminar i reemplaçar els fitxers seleccionats amb 0? La operació no es pot desfer i els fitxers no es podran recuperar
-txt_5_2_zfree: Vols reemplaçar l'espai lliure d'aquesta unitat amb 0?
-txt_5_2_sdfree: Vols esborrar l'espai lliure d'aquesta unitat de forma segura?
+txt_5_2_zerodelete: Voleu eliminar i reemplaçar els fitxers seleccionats amb 0? La operació no es pot desfer i els fitxers no es podran recuperar
+txt_5_2_zfree: Voleu reemplaçar l'espai lliure d'aquesta unitat amb 0?
+txt_5_2_sdfree: Voleu esborrar l'espai lliure d'aquesta unitat de forma segura?
 txt_5_2_oext: Extreu a la ubitació original
 txt_5_2_securedeletefree: Elimina l'espai lliure de forma segura
-txt_5_2_free: Aquesta operació pot tardar uns minuts i, si es realitza sovint, pot desgastar ràpidament discs de memòria flash
+txt_5_2_free: Aquesta operació pot tardar uns minuts i, si es realitza sovint, pot desgastar ràpidament discs de memòria flash (per exemple, targetes extraïbles SD)
 txt_5_2_zerofiles: Reemplaça amb 0
 txt_5_2_zerofree: Reemplaça l'espai lliure amb 0
 txt_5_1_schedadd: Afegeix una programació
@@ -290,7 +290,7 @@ txt_5_1_onstart: A l'engegada
 txt_5_1_once: Una vegada
 txt_5_1_w7: Dissabte
 txt_5_1_schedule: Programa
-txt_5_1_schedexplain: Crea un script de text pla des de la interfície gràfica d’usuari i programa'l. Els scripts de tasques programades es desen a la carpeta "Scripts programats". Per editar o eliminar tasques programades podeu utilitzar el Programador de tasques del sistema, totes les tasques programades creades per PeaZip es recopilen a la branca "PeaZip" de la biblioteca de tasques.
+txt_5_1_schedexplain: Creeu un script de text pla des de la interfície gràfica d’usuari i programeu-lo. Els scripts de tasques programades es desen a la carpeta "Scripts programats". Per editar o eliminar tasques programades podeu utilitzar el Programador de tasques del sistema, totes les tasques programades creades per PeaZip es recopilen a la branca "PeaZip" de la biblioteca de tasques.
 txt_5_1_schedok: La programació s'ha desat satisfactòriament
 txt_5_1_schedscripts: Scripts programats desats
 txt_5_1_startdate: Data d'inici
@@ -304,14 +304,14 @@ txt_5_1_w4: Dimecres
 txt_5_1_weekly: Setmanalment
 txt_5_1_weeks: Setmanes
 txt_5_0_bc: Ruta d'exploració
-txt_5_0_resetpm: Confirmes que vols reestablir l'administrador de contrasenyes? Totes les contrasenyes emmagatzemades a l'administrador de contrasenyes del PeaZip es perdran si ho confirmes.
+txt_5_0_resetpm: Segur que voleu reestablir l'administrador de contrasenyes? Totes les contrasenyes emmagatzemades a l'administrador de contrasenyes del PeaZip es perdran si ho confirmeu.
 txt_5_0_enum: Enumera el contingut de la carpeta
 txt_5_0_music: Música
 txt_5_0_ps: Obre el PowerShell aquí
 txt_5_0_perf: Rendiment
 txt_5_0_pictures: Imatges
 txt_5_0_removeall: Elimina-ho tot
-txt_5_0_resetbookmarks: Vols reestablir els preferits? (Els preferits es poden personalitzar a Preferits > Organitza)
+txt_5_0_resetbookmarks: Voleu reestablir els preferits? (Els preferits es poden personalitzar a Preferits > Organitza)
 txt_5_0_sh: Historial de la sessió
 txt_5_0_skip: Omet enumerar el contingut dels directoris a la vista
 txt_5_0_videos: Vídeos
@@ -329,38 +329,38 @@ txt_4_8_flip: Dóna la volta
 txt_4_8_fullscreen: Pantalla completa
 txt_4_8_fun: Funcions
 txt_4_8_h: Altura
-txt_4_8_keeparchive: Manté l'arxiu
-txt_4_8_noresize: Manté la mida original
+txt_4_8_keeparchive: Conserva l'arxiu
+txt_4_8_noresize: Conserva la mida original
 txt_4_8_iconl: Imatges grans
 txt_4_8_iconm: Icones i imatges
 txt_4_8_imagemanager: Administrador d'imatges
 txt_4_8_immersive: Immersiu
 txt_4_8_listno: Llista
-txt_4_8_aspect: Mantén la relació d'aspecte
+txt_4_8_aspect: Conserva la relació d'aspecte
 txt_4_8_mirror: Simetria
 txt_4_8_presets: Ajustos predeterminats
-txt_4_8_replace: Vols substituir les imatges originals? "No" aplica la transformació en fitxers nous.
+txt_4_8_replace: Voleu substituir les imatges originals? "No" aplica la transformació en fitxers nous.
 txt_4_8_resize: Canvia la mida
 txt_4_8_rl: Gira a l'esquerra
 txt_4_8_rr: Gira a la dreta
 txt_4_8_stop: Atura
 txt_4_8_t: Transforma
 txt_4_8_w: Amplada
-txt_4_7_pk: Genera una contrasenya / fitxer de xifratge aleatori/a
+txt_4_7_pk: Genera una contrasenya o fitxer de xifratge aleatori
 txt_4_7_spchar: Limita els caràcters a lletres i números
-txt_4_7_recycleask: Vols moure els fitxers seleccionats a la paperera de reciclatge?
+txt_4_7_recycleask: Voleu traslladar els fitxers seleccionats a la paperera de reciclatge?
 txt_4_7_recycle: Desplaça a la paperera de reciclatge
 txt_4_7_pcomp: Compressió potencial
 txt_4_6_am: Administrador d'arxius
 txt_4_6_fm: Administrador de fitxers
 txt_4_6_users: Usuaris
-txt_4_5_goupdate: Hi ha una actualització disponible. Vols obrir la web oficial del PeaZip per descarregar l'actualització?
+txt_4_5_goupdate: Hi ha una actualització disponible. Voleu obrir la web oficial del PeaZip per descarregar l'actualització?
 txt_4_5_b: Part inferior
 txt_4_5_koupdate: No s'han pogut comprovar les actualitzacions, no hi ha connexió amb el servidor d'actualitzacions
 txt_4_5_update: Comprova les actualitzacions
 txt_4_5_dock: Ancora
 txt_4_5_l: Esquerra
-txt_4_5_noupdate: El PeaZip està actualitzat
+txt_4_5_noupdate: El PeaZip està actualitzat!
 txt_4_5_properties: Propietats
 txt_4_5_r: Dreta
 txt_4_5_pj: Scripts desats
@@ -370,8 +370,8 @@ txt_4_5_shstatus: Mostra la barra d'estat
 txt_4_5_shtool: Mostra la barra d'eines
 txt_4_5_upxpj: Em sap greu, no es pot exportar la definició de la tasca, ja que aquesta acció o opció requereix executar múltiples ordres diferents
 txt_4_5_t: Part superior
-txt_4_4_confremoveall: Vols eliminar tots els fitxers personalitzats del PeaZip (Aplicacions, Preferits, Administrador de contrasenyes)?
-txt_4_4_confremove: Vols eliminar la configuració del PeaZip?
+txt_4_4_confremoveall: Voleu eliminar tots els fitxers personalitzats del PeaZip (Aplicacions, Preferits, Administrador de contrasenyes)?
+txt_4_4_confremove: Voleu eliminar la configuració del PeaZip?
 txt_4_3_pwmanhint: Feu doble clic per editar els elements de la llista de contrasenyes, feu clic amb el botó dret per veure les opcions, Ctrl + C per copiar les contrasenyes
 txt_4_3_exppl: Exporta la llista de contrasenyes
 txt_4_3_expple: Encriptat (còpia de seguretat del Gestor de Contrasenyes)
@@ -380,10 +380,10 @@ txt_4_3_pwmanpwhint: Es recomana establir una contrasenya o fitxer de xifratge (
 txt_4_3_pwmanmaster: Estableix/canvia la contrasenya global
 txt_4_3_pwmanlist: Llista de contrasenyes
 txt_4_3_pwman: Administrador de contrasenyes
-txt_4_3_pwmancorr: El Gestor de Contrasenyes sembla manipulat o malmès. Si hi confies, vols conservar-lo igualment i intentar llegir la llista de contrasenyes actual? ("No" reestablirà el Gestor de Contrasenyes (opció recomanada))
+txt_4_3_pwmancorr: Sembla que s'ha manipulat o malmès el Gestor de Contrasenyes. Si hi confieu, voleu conservar-lo igualment i intentar llegir la llista de contrasenyes actual? ("No" reestablirà el Gestor de Contrasenyes (opció recomanada))
 txt_4_3_expplp: Text pla (tots els usuaris)
 txt_4_3_recsrc: Cerca recursiva per defecte
-txt_4_3_resetpm: Vols reestablir l'administrador de contrasenyes? S'eliminaran totes les contrasenyes emmagatzemades
+txt_4_3_resetpm: Voleu reestablir l'administrador de contrasenyes? S'eliminaran totes les contrasenyes emmagatzemades
 txt_4_3_breadcrumb: Mostra el camí com a ruta de navegació
 txt_4_2_arcabspath: Utilitza rutes absolutes
 txt_4_1_duplicateshint: La "mida" i la "suma de comprovació" s'anoten a la columna CRC per a tots els candidats duplicats que es troben al directori actual o al filtre de cerca
@@ -397,14 +397,14 @@ txt_4_0_thim: Mostra les miniatures de les imatges
 txt_3_8_type_description_wim: WIM: Format d'imatge del disc de Microsoft
 txt_3_8_type_description_xz: XZ: potent compressor de fitxers basat en LZMA2
 txt_3_7_donations: Donacions
-txt_3_7_nameasparent: Anomeneu l'arxiu com la carpeta on es troba l'element seleccionat, si s'afegeixen diversos elements
+txt_3_7_nameasparent: Anomena l'arxiu igual que la carpeta on es troba l'element seleccionat, si s'afegeixen diversos elements
 txt_3_7_tracker: Suggeriments, errors, sol·licituds
 txt_3_7_sort: Ordena per
 txt_3_7_swapbars: Intercanvia la barra d'eines i la barra d'adreces
 txt_3_7_themedbars: Barres temàtiques
 txt_3_6_ignoredd: Ignora sempre els camins per a l'extracció d'arrossegar i deixar anar
 txt_3_6_close: Tanca
-txt_3_6_resetapps: Vols restablir les aplicacions (grup personalitzable de programes i scripts per obrir fitxers, substituint les associacions de fitxers del sistema)?
+txt_3_6_resetapps: Voleu restablir les aplicacions (grup personalitzable de programes i scripts per obrir fitxers, substituint les associacions de fitxers del sistema)?
 txt_3_6_ethemes: Temes existents
 txt_3_5_td: Descarrega temes
 txt_3_5_managecustomthemes: Administrador de temes
@@ -442,7 +442,7 @@ txt_2_9_address: Barra d'adreces
 txt_2_9_adv: Els filtres avançats s'apliquen quan es gestiona qualsevol fitxer compatible amb els backends 7z o FreeArc, vegeu la documentació, i substitueix els filtres bàsics (que s'utilitzen per a funcions de cerca i que es mostren als panells de Preferits i Historial)
 txt_2_9_columns: Columnes
 txt_2_9_copyhere: Copia aquí
-txt_2_9_noscan: No analitzeu els fitxers que s’afegeixen a la maquetació
+txt_2_9_noscan: No analitzeu els fitxers que s’afegeixen a la visualització
 txt_2_9_extconsole: La consola d’extracció només està disponible mentre navegueu pels arxius
 txt_2_9_thl: Destaca els botons
 txt_2_9_home: Directori de l'usuari
@@ -466,17 +466,17 @@ txt_2_9_tree: Arbre
 txt_2_9_views: Vistes
 txt_2_8_experimental: (experimental)
 txt_2_8_zcopy: (Windows) Copia els fitxers en mode reiniciable, la còpia és més lenta
-txt_2_8_addvol: Afegir volums sencers a l'arxiu pot trigar molt de temps, vols continuar igualment?
+txt_2_8_addvol: Afegir volums sencers a l'arxiu pot trigar molt de temps, voleu continuar igualment?
 txt_2_8_uniterror: No es pot accedir a la unitat
 txt_2_8_cannotconvert: No es poden convertir els arxius seleccionats
 txt_2_8_convertbegin: Voleu continuar amb la fase de compressió per finalitzar la conversió?
 txt_2_8_convert: Converteix
 txt_2_8_convertexisting: Converteix els fitxers existents
-txt_2_8_convertdelete: Vols suprimir fitxers i carpetes creats temporalment per a la conversió?
+txt_2_8_convertdelete: Voleu suprimir fitxers i carpetes creats temporalment per a la conversió?
 txt_2_8_details: Detalls
 txt_2_8_parallel: Executa les tasques en paral·lel quan sigui possible
 txt_2_8_convertnote: En qualsevol cas, els arxius originals no s'han modificat, per tal de permetre a l'usuari controlar la seva conservació o eliminació
-txt_2_8_custom: no es suporta directament amb el PeaZip, però a la fase d'extracció pots configurar PeaZip per gestionar tipus de fitxers personalitzats a la pestanya "Avançat". Vols continuar obrint aquest fitxer?
+txt_2_8_custom: no es suporta directament amb el PeaZip, però a la fase d'extracció pots configurar PeaZip per gestionar tipus de fitxers personalitzats a la pestanya "Avançat". Voleu continuar obrint aquest fitxer?
 txt_2_8_unitrecommend: Es recomana extreure (Botó dret > Extreu els objectes seleccionats) o obrir sistemes de fitxers des de l'arrel de l'ordinador (Eines del sistema > Obre la unitat com a arxiu)
 txt_2_8_viewasarchive: Obre la unitat com a arxiu
 txt_2_8_nounit: No s'ha seleccionat cap unitat
@@ -491,16 +491,16 @@ txt_2_7_separate: Afegeix cada objecte a un arxiu separat
 txt_2_7_pwsupported: arxivant amb contrasenya
 txt_2_7_cancel: Cancel·la
 txt_2_7_encfn: Encripta també els noms dels fitxers (si el format ho suporta)
-txt_2_7_setpw: Introdueix una contrasenya / fitxer de xifratge
+txt_2_7_setpw: Introdueix una contrasenya o fitxer de xifratge
 txt_2_7_ext: Extraient:
 txt_2_7_extfrom: Extraient de l'arxiu:
-txt_2_7_es: Extreu els tipus de fitxers compatibles que no són comprimits, p. ex. executables, MS Office i fitxers OOo
+txt_2_7_es: Extreu els tipus de fitxers compatibles que no són comprimits, per exemple, executables, MS Office i fitxers OOo
 txt_2_7_eu: Extreu tipus de fitxers no suportats, especificant una utilitat d'extracció personalitzada
 txt_2_7_clipboard: Porta-retalls
 txt_2_7_goarclayout: Vés a la vista de compressió
 txt_2_7_goextlayout: Vés a la vista d'extracció
 txt_2_7_ok: D'acord
-txt_2_7_drag_archive: vols obrir el fitxer com a nou arxiu? (clica "No" per afegir el fitxer a la finestra actual d'arxivament)
+txt_2_7_drag_archive: voleu obrir el fitxer com a nou arxiu? (feu clic a "No" per afegir el fitxer a la finestra actual d'arxivament)
 txt_2_7_oop: Obra la ubicació d'extracció quan finalitzi el procés
 txt_2_7_validatefn: L'operació s'ha aturat, s'ha detectat un nom de fitxer no vàlid:
 txt_2_7_validatecl:  L'operació s'ha aturat, s'ha detectat una ordre potencialment perillosa (p. ex. concatenació d'ordres prohibides dins del programa):
@@ -508,19 +508,19 @@ txt_2_7_output: Sortida
 txt_2_7_pwnotset: Contrasenya no definida
 txt_2_7_pwarcset: Contrasenya definida
 txt_2_7_pwextset: Contrasenya definida, és possible extreure, llistar i verificar arxius xifrats
-txt_2_7_archivehint: Arrossega fitxers i carpetes aquí per arxivar-los, o fes clic amb el botó dret per obtenir més opcions
-txt_2_7_exthint: Arrossega arxius comprimits aquí per extreure'ls, o fes clic amb el botó dret per obtenir més opcions
+txt_2_7_archivehint: Arrossegueu fitxers i carpetes aquí per arxivar-los, o feu clic amb el botó dret per obtenir més opcions
+txt_2_7_exthint: Arrossegueu arxius comprimits aquí per extreure'ls, o feu clic amb el botó dret per obtenir més opcions
 txt_2_7_setadvf: Estableix filtres avançats
 txt_2_7_selpath: Camí de l'element seleccionat
 txt_2_7_separateerror: No es poden importar les ordres de la tasca mentre la opció "Afegeix cada objecte a un arxiu separat" està activada, ja que la tasca s'executa com a múltiples ordres diferents
-txt_2_7_noinput: La vista és buida: utilitza "Afegeix fitxers" o "Carrega una vista" per omplir la llista d’arxius que s’extreuran
+txt_2_7_noinput: La vista és buida: utilitzeu "Afegeix fitxers" o "Carrega una vista" per omplir la llista d’arxius que s’extreuran
 txt_2_7_dirsize: No es comprova la mida del contingut de les carpetes per calcular la mida total
-txt_2_7_un7z_browse_flat: prova la vista plana (F6)
+txt_2_7_un7z_browse_flat: proveu la vista plana (F6)
 txt_2_7_updating: S'està actualitzant l'arxiu existent
 txt_2_6_folders: (carpetes)
 txt_2_6_advanced: Avançat
-txt_2_6_plalways: Mantén-lo sempre obert per inspeccionar l'informe de la tasca
-txt_2_6_plsmart: Mantén-lo obert només si cal (informes d'errors, llista o proves)
+txt_2_6_plalways: Conserva'l sempre obert per inspeccionar l'informe de la tasca
+txt_2_6_plsmart: Conserva'l obert només si cal (informes d'errors, llista o proves)
 txt_2_5_sessionio: (aquesta sessió)
 txt_2_5_advanced: Edició avançada: col·loqueu espais entre les cadenes de paràmetres i el nom del fitxer si cal
 txt_2_5_basic: Edició bàsica: aplicació i paràmetres abans de la introducció del nom
@@ -528,7 +528,7 @@ txt_2_5_cannotrun: No es pot executar
 txt_2_5_custeditors: Editors personalitzats, reproductors, antivirus, etc ... (sobreescriu les associacions de fitxers del sistema)
 txt_2_5_delete: Suprimeix
 txt_2_5_delete_fromarchive: Suprimeix de l'arxiu
-txt_2_5_langflag: Mostra el nom de l'objecte arxivat com a text UTF-8; desmarca aquesta opció per substituir els caràcters especials per "?"
+txt_2_5_langflag: Mostra el nom de l'objecte arxivat com a text UTF-8; desmarqueu aquesta opció per substituir els caràcters especials per "?"
 txt_2_5_encpj: Codifica la definició de tasques com a text UTF-8
 txt_2_5_execommand: Executable o ordre
 txt_2_5_help: Ajuda
@@ -537,7 +537,7 @@ txt_2_5_mini_help: Tutorial d'ajuda
 txt_2_5_offline_help: Ajuda del PeaZip
 txt_2_5_tray: Minimitza a la safata del sistema
 txt_2_5_remove: Elimina
-txt_2_5_hintpaths: Fes clic amb el botó de la dreta per per obrir les rutes del sistema y de l'usuari
+txt_2_5_hintpaths: Feu clic amb el botó dret per obrir les rutes del sistema i de l'usuari
 txt_2_5_selectapp: Selecciona una aplicació
 txt_2_5_strafter: Cadena alfanumèrica després del nom d'entrada
 txt_2_5_strbefore: Cadena alfanumèrica abans del nom d'entrada
@@ -552,22 +552,22 @@ txt_2_4_itemsheight: Redimensiona l'altura dels elements
 txt_2_4_clearclipboard: Neteja el porta-retalls (Esc)
 txt_2_4_wcommons: Commons
 txt_2_4_copyfrom: Copia desde
-txt_2_4_deletebookmarks: Vols eliminar la llista de fitxers i carpetes preferides?
+txt_2_4_deletebookmarks: Voleu eliminar la llista de fitxers i carpetes preferides?
 txt_2_4_documents: Documents
 txt_2_4_wenc: Encyclopedia
 txt_2_4_extractfrom: Extreu desde
 txt_2_4_hexp: Previsualització hex
 txt_2_4_operation: Operació
-txt_2_4_path: la ubicació no es pot escriure (p. ex. només lectura). Vols seleccionar una altra ubicació d'extracció escrivible?
+txt_2_4_path: la ubicació no es pot escriure (potser té permisos de només lectura). Voleu seleccionar una altra ubicació d'extracció escrivible?
 txt_2_4_removefromclipboard: Elimina del porta-retalls
-txt_2_4_stdclip: Estàndard: mantén una única selecció al porta-retalls, esborra les operacions de retall en enganxar
+txt_2_4_stdclip: Estàndard: conserva una única selecció al porta-retalls, esborra les operacions de retall en enganxar
 txt_2_4_totalmem: memòria total
 txt_2_4_gvideo: Vídeo
 txt_2_4_wbook: Wikibook
 txt_2_4_wnews: Wikinews
 txt_2_4_wsrc: Wikisource
 txt_2_4_wdict: Wiktionary
-txt_2_3_pw_errorchar: no es recomana utilitzar les cometes a les contrasenyes (al PeaZip i als scripts). Si necessites crear o extreure un arxiu amb aquesta contrasenya, pots ometre aquest missatge i se't demanarà que introdueixis la contrasenya de forma interactiva des de la consola.
+txt_2_3_pw_errorchar: no es recomana utilitzar les cometes a les contrasenyes (al PeaZip i als scripts). Si necessiteu crear o extreure un arxiu amb aquesta contrasenya, podeu ometre aquest missatge i se us demanarà que introduïu la contrasenya de forma interactiva des de la consola.
 txt_2_3_envstr: Mostra les variables d'entorn
 txt_2_3_never_pw: No demanis cap contrasenya
 txt_2_3_home: Directori de l'usuari
@@ -576,7 +576,7 @@ txt_2_3_test_pw100: Verifica si es poden encriptar, arxius <100MB
 txt_2_3_test_pw: Verifica si es poden encriptar (pot ser un procés lent)
 txt_exclude_recourse: Recursiu (explou les subcarpetes)
 txt_action_extopen: Acció de "Extreu i obre amb l'aplicació associada"
-txt_error_passwordnotmatch: Els camps de contrasenya i confirmació de la contrasenya no coincideixen, si us plau, corregeir-los
+txt_error_passwordnotmatch: Els camps de contrasenya i confirmació de la contrasenya no coincideixen, si us plau, reviseu-los
 txt_action_preview: Acció de "Previsualitza amb l'aplicació associada"
 txt_preview_hint: L'acció "Previsualitza" realitza la mateixa funció que "Extreu i obre", però en un directori temporal que s'elimina automàticament quan es tanca l'arxiu.
 txt_better: (millor)
@@ -592,10 +592,10 @@ txt_7z_exitcodeunknown: : Error de tasca desconegut
 txt_list_isfolder:  [carpeta]
 txt_none: <cap>
 txt_fd: 1.44 MB Disquet
-txt_7z_exitcode1: 1: Avís: no s'han produït errors fatals, però alguns falten alguns fitxers o estan bloquejats
+txt_7z_exitcode1: 1: Avís: no s'han produït errors fatals, però falten alguns fitxers o estan bloquejats
 txt_attach10: adjunt de 10 MB
 txt_7z_exitcode2: 2: S'ha produït un error fatal
-txt_7z_exitcode255: 255: L'usuari ha interromput la tasca
+txt_7z_exitcode255: 255: L'usuari ha aturat la tasca
 txt_fat32: 4 GB Fitxer FAT32
 txt_dvd: 4.7 GB DVD
 txt_attach5: adjunt de 5 MB
@@ -605,7 +605,7 @@ txt_cd700: 700 MB CD
 txt_type_description_7z: 7Z: format amb una alta capacitat de compressió i moltes característiques de configuració
 txt_dvddl: 8.5 GB DVD DL
 txt_7z_exitcode8: 8: Error: no hi ha prou memòria disponible per a la operació sol·licitada
-txt_abort: Vols cancel·lar les operacions programades de còpia i desplaçament de fitxers?
+txt_abort: Voleu cancel·lar les operacions programades de còpia i desplaçament de fitxers?
 txt_about: Sobre
 txt_action: Acció
 txt_action_hint: Acció en obrir o previsualitzar amb l'aplicació associada
@@ -634,7 +634,7 @@ txt_ignore_ext: Ignora sempre els camins per "Extreu i..."
 txt_ignore_disp: Ignora sempre els camins per "Extreu els visibles..."
 txt_ignore_sel: Ignora sempre els camins per "Extreu els seleccionats..."
 txt_key_hint: Afegeix el hash del fitxer de xifratge a la contrasenya. El PeaZip i altres aplicacions poden desxifrar l'arxiu seguint el mateix estàndard o introduint el hash com a part de la contrasenya
-txt_timestamp: Afegeix la marca horària al nom
+txt_timestamp: Afegeix la marca horària al nom del fitxer
 txt_appoptions: Opcions de l'aplicació
 txt_type_description_arc: ARC: arxivador experimental, potent, eficient i amb moltes característiques
 txt_archive: Arxiu
@@ -645,14 +645,14 @@ txt_tarbefore_hint: Uneix-ho tot en un fitxer TAR abans de comprimir-ho al forma
 txt_archive_hint: Arxiva, comprimeix, divideix i desa fitxers, carpetes i volums privats
 txt_compressionratio_hint: Ràtio de compressió de l'arxiu
 txt_archiving: Arxivant:
-txt_cl_long: Els arguments semblen superar la mida màxima que pot passar la interfície gràfica del PeaZip, selecciona menys fitxers d'entrada (és a dir, selecciona carpetes en lloc de fitxers individuals)
+txt_cl_long: Els arguments semblen superar la mida màxima que pot passar la interfície gràfica del PeaZip, seleccioneu menys fitxers d'entrada (és a dir, seleccioneu carpetes en comptes de fitxers individuals)
 txt_overwrite_askbefore: Pregunta'm abans de substituir fitxers (a la consola)
 txt_associated: Aplicació associada
 txt_attributes: Atributs
 txt_author: Autor
 txt_ren_existing: Reanomena automàticament els fitxers existents
 txt_ren_extracted: Reanomena automàticament els fitxers extrets
-txt_autofolder: Vols crear una nova carpeta automàticament per extreure-hi l'arxiu a dins?
+txt_autofolder: Voleu crear una nova carpeta automàticament per extreure-hi l'arxiu a dins?
 txt_back: Endarrera
 txt_backend: Interfície d'usuari dels binaris del backend
 txt_backupexe: Conserva l'executable (recomanat)
@@ -664,20 +664,20 @@ txt_browse: Navega
 txt_browser: Navegador
 txt_aborted_error: S'ha aturat la navegació de l'arxiu perquè trigaria massa temps. Podeu restringir la selecció mitjançant la cerca (F3) o evitant el mode de visualització plana (F6). Podeu extreure, llistar o verificar directament l'arxiu.
 txt_list_browsing: Navegant per
-txt_archive_root: Browsing: archive's root
-txt_type_description_bzip2: BZip2: quite powerful compression, average speed
-txt_pw_empty: Si us plau, proporciona una contrasenya (o un fitxer de xifratge)
-txt_add_error: Cannot add/update or delete object(s). The archive is not writeable, or cannot support this operation. Editing non-canonical archive types can be enabled in Archive manager options.
+txt_archive_root: Navegant: arrel de l'arxiu
+txt_type_description_bzip2: BZip2: compressió bastant potent, velocitat mitjana
+txt_pw_empty: Si us plau, proporcioneu una contrasenya (o un fitxer de xifratge)
+txt_add_error: No es poden afegir, actualitzar ni suprimir els objectes. L'arxiu no es pot escriure o no admet aquesta operació. L'edició de formats no canònics es pot habilitar a les opcions del Gestor d'arxius.
 txt_un7z_browse_failure: no es pot navegar per l'arxiu
-txt_list_error: Cannot list archive's content, please check if the archive is password protected or corrupted.
-txt_conf_cannotsave: Cannot save configuration file, check if the path is writeable and with some free space
-txt_check_hint: Check for casual data corruption; hash algorithms are suitable to detect even malicious data tampering (see the documentation)
-txt_check: Checksum/hash file(s)
+txt_list_error: No es pot llegir el contingut de l'arxiu. Comproveu si l'arxiu està protegit amb contrasenya o està malmès.
+txt_conf_cannotsave: No es pot desar el fitxer de configuració. Comproveu si la ubicació es pot escriure i disposa d'espai lliure
+txt_check_hint: Comproveu si hi ha danys ocasionals de dades; els algoritmes de hash són adequats per detectar fins i tot manipulacions malicioses de dades (vegeu la documentació)
+txt_check: Suma de comprovació/hash del fitxer
 txt_check_select: Suma de comprovació/hash
 txt_clear: Neteja
 txt_clearlayout: Neteja el resultat
-txt_pj_hint: Click to import task, reset changes and load up to date task definition from GUI
-txt_autoclose: Close PeaLauncher when task completes
+txt_pj_hint: Feu clic per importar la tasca, restablir els canvis i carregar la definició de tasques actualitzada des de la interfície gràfica
+txt_autoclose: Tanca el PeaLauncher quan finalitzi la tasca
 txt_cl: línia de comandes:
 txt_compare: Compara els fitxers
 txt_compress: Comprimeix
@@ -725,33 +725,33 @@ txt_dispaly: Mostra els resultats com a
 txt_displayedmnu_obj: mostrats
 txt_displayedobjects: Objectes mostrats
 txt_nocompress: no comprimeixis
-txt_delete: Vols suprimir definitivament els fitxers seleccionats? L’operació no es pot desfer i els fitxers no es podran recuperar des de la paperera de reciclatge
-txt_wipe: Vols suprimir de forma segura els fitxers seleccionats? L’operació no es pot desfer i els fitxers no es podran recuperar ni amb una aplicació de recuperació de fitxers eliminats
+txt_delete: Voleu eliminar definitivament els fitxers seleccionats? L’operació no es pot desfer i els fitxers no es podran recuperar des de la paperera de reciclatge
+txt_wipe: Voleu eliminar de forma segura els fitxers seleccionats? L’operació no es pot desfer i els fitxers no es podran recuperar ni amb una aplicació de recuperació de fitxers eliminats
 txt_done: Fet
 txt_edit: Edita
 txt_elapsed: transcorregut:
-txt_error_emptycl: Empty command line!
+txt_error_emptycl: Línia d'ordres buida!
 txt_encrypt: Encripta
 txt_encrypted: encriptat
 txt_encryption: Encriptació
-txt_note: Introdueix una nota o descripció
-txt_random_keys: Introdueix claus aleatòries
-txt_random_keys_hint: Introdueix claus aleatòries (no cal que les recordis més endavant)
+txt_note: Introduïu una nota o descripció
+txt_random_keys: Introduïu claus aleatòries
+txt_random_keys_hint: Introduïu claus aleatòries (no cal que les recordeu més endavant)
 txt_ent: Avaluació de l'entropia
-txt_ent_tools: Mou el cursor o utilitza eines addicionals de mostreig d’entropia 
+txt_ent_tools: Moveu el cursor o utilitzeu eines addicionals de mostreig d’entropia 
 txt_eqorlarger: Igual o més gran que el fitxer seleccionat
 txt_eqorrecent: Igual o més recent que el fitxer seleccionat
 txt_eqorolder: Igual o més antic que el fitxer seleccionat
 txt_eqorsmaller: Igual o més petit que el fitxer seleccionat
 txt_equal: Igual que el fitxer seleccionat
 txt_erase_hint: Eliminació segura: sobreescriu amb dades aleatòries, emmascara la mida, reanomena i finalment elimina
-txt_extraction_error: Error extracting the selected object. If the archive is password protected please provide it
-txt_exclude_hint: Exclude file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
+txt_extraction_error: Error extraient l'objecte seleccionat. Si l'arxiu està protegit amb contrasenya, si us plau, proporcioneu-la.
+txt_exclude_hint: Fitxers a excloure, un per línia. Podeu utilitzar els comodins * i ?. Els delimitadors " i ' no són necessaris
 txt_exclusion_recourse: Filtres d'exclusió amb subdirectoris recursius
 txt_exclusion: Exclou
 txt_exe: Executable
-txt_overwrite_qry: existeix a la ubicació de destinació. Vols substituir els fitxers que s'anomenen igual? (Cancel·la per ometre els fitxers que s'anomenen igual)
-txt_confirm_overwrite: ja existeix. Vols sobreesciure'l? (Clica "No" per ometre'l)
+txt_overwrite_qry: existeix a la ubicació de destinació. Voleu sobreesciure els fitxers que s'anomenen igual? (Cancel·leu per ometre els fitxers que s'anomenen igual)
+txt_confirm_overwrite: ja existeix. Voleu sobreesciure'l? (Feu clic a "No" per ometre'l)
 txt_explore_outpath: Explora la ubicació d'extracció
 txt_explore_path: Explora la ubicació
 txt_ext: Ext:
@@ -790,7 +790,7 @@ txt_list_flat: Vista plana
 txt_unit_floppy: Disquet
 txt_foldername: Nom de la carpeta
 txt_nfolders: Carpetes
-txt_error_input_multi: permet un fitxer únic com a entrada. Pots utilitzar el commutador "Uneix-ho tot en un fitxer TAR abans de comprimir" per desar l'entrada en un arxiu .TAR prèviament, en cas contrari pots triar un altre format. SUGGERIMENT: si selecciones les dades a comprimir abans d'escollir el format de l'arxiu, el commutador "Uneix-ho tot en un fitxer TAR abans de comprimir" es configurarà automàticament
+txt_error_input_multi: permet un fitxer únic com a entrada. Podeu utilitzar el commutador "Uneix-ho tot en un fitxer TAR abans de comprimir" per desar l'entrada en un arxiu .TAR prèviament, en cas contrari podeu escollir un altre format. SUGGERIMENT: si seleccioneu les dades a comprimir abans d'escollir el format de l'arxiu, el commutador "Uneix-ho tot en un fitxer TAR abans de comprimir" es configurarà automàticament
 txt_fwd: Endavant
 txt_list_found: Trobat
 txt_free: Lliure
@@ -811,12 +811,12 @@ txt_type_description_gzip: GZip: compressió més ràpida
 txt_here: aquí
 txt_list_history: Historial
 txt_homeroot: Arrel de l'ordinador o de l'arxiu
-txt_quickbrowse_hint: If browsing is stopped the user can narrow the selection using search or filter functions; extract/list/test functions are not affected in any way.
-txt_backupexe_hint: If something goes wrong and lead to a non functional result, you may recover the original executable from the automatic backup copy
+txt_quickbrowse_hint: Si s'atura la navegació, l'usuari pot restringir la selecció mitjançant funcions de cerca o de filtre; les funcions d'extracció, llistat i verificació no es veuen afectades de cap manera.
+txt_backupexe_hint: Si alguna cosa surt malament i comporta un resultat no funcional, podeu recuperar l'executable original de la còpia de seguretat automàtica
 txt_attach: Si el client de correu admet aquesta ordre, l'arxiu s'adjuntarà a un correu nou
-txt_images: Images
-txt_include_hint: Include file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
-txt_filters_hint: Inclusion and exclusion filters for 7z binary, please carefully read 7-Zip documentation to understand how those filters works
+txt_images: Imatges
+txt_include_hint: Fitxers a incloure, un per línia. Podeu utilitzar els comodins * i ?. Els delimitadors " i ' no són necessaris
+txt_filters_hint: Filtres d’inclusió i exclusió per al binari 7z. Si us plau, llegiu atentament la documentació de 7-Zip per entendre com funcionen aquests filtres
 txt_inclusion_recourse: Filtres d'inclusió amb subdirectoris recursius
 txt_inclusion: Inclou
 txt_error_function: Funció sol·licitada incorrecta
@@ -830,23 +830,23 @@ txt_iop: entrada, sortida, paràmetres
 txt_ipo: entrada, paràmetres, sortida
 txt_input: entrada:
 txt_integrity: Verifica la integritat
-txt_chunk_size: Mida personalitzada invàlida. Si us plau, corregeix-la a un valor numèric
+txt_chunk_size: Mida personalitzada invàlida. Si us plau, corregiu-la a un valor numèric
 txt_invertsel: Inverteix la selecció
-txt_type_exe: és un executable de Windows, vols executar-lo? (Selecciona "No" per intentar-lo obrir com a arxiu) SUGGERIMENT: alguns executables poden presentar problemes de funcionament si abans no s'extreu la totalitat de l'arxiu
-txt_return_to_archive: està obert actualment. Vols explorar-lo?
+txt_type_exe: és un executable de Windows, voleu executar-lo? (seleccioneu "No" per intentar-lo obrir com a arxiu) SUGGERIMENT: alguns executables poden presentar problemes de funcionament si abans no s'extreu la totalitat de l'arxiu
+txt_return_to_archive: està obert actualment. Voleu explorar-lo?
 txt_not_accessible: ja no és accessible
 txt_type_unsupported: no és un format d'arxiu suportat
 txt_checkname_failed: no és un nom vàlid.
-txt_not_accessible_list: no és accessible. Si us plau, comprova si la llista de fitxers és correcta i està actualitzada
-txt_theme_create_error: It was not possible to create the theme, try to use a name valid for a folder as theme name and to chose a writeable path
-txt_theme_exists: ja existeis. Si us plau, proporciona una ubicació diferent
+txt_not_accessible_list: no és accessible. Si us plau, comproveu si la llista de fitxers és correcta i està actualitzada
+txt_theme_create_error: No ha estat possible crear el tema. Proveu d'utilitzar un nom vàlid per a una carpeta com a nom del tema i triar un camí escrivible
+txt_theme_exists: ja existeix. Si us plau, proporcioneu una ubicació diferent
 txt_job_code: codi de tasca:
 txt_job_definition_saved: La definició de la tasca s'ha desat satisfactòriament a
 txt_job_success: La tasca s'ha completat satisfactòriament!
 txt_join: Uneix
 txt_joinfiles: Uneix fitxers
 txt_keyfile: Fitxer de xifratge
-txt_keyfile_not_found: El fitxer de xifrats no s'ha trobat o no s'ha pogut llegir. Si us plau, selecciona'n un altre
+txt_keyfile_not_found: El fitxer de xifrats no s'ha trobat o no s'ha pogut llegir. Si us plau, seleccioneu-ne un altre
 txt_keyfile_notcreated: No s'ha pogut crear el fitxer de xifratge
 txt_larger: Més gran que el fitxer seleccionat
 txt_lastused: Utilitzat per última vegada
@@ -860,7 +860,7 @@ txt_list_details: Llista (amb detalls)
 txt_list_all: Llista-ho tot
 txt_list_disp: Llista els objectes visibles
 txt_list_sel: Llista els objectes seleccionats
-txt_toggle_warning: Generar la vista plana amb tot el contingut de la ubicació actual pot tardar un cert temps, vols continuar igualment?
+txt_toggle_warning: Generar la vista plana amb tot el contingut de la ubicació actual pot tardar un cert temps, voleu continuar igualment?
 txt_loadfile: Carrega un fitxer
 txt_loadlayout: Carrega una vista
 txt_unit_hd: Disc local
@@ -890,16 +890,16 @@ txt_news: Notícies
 txt_no: No
 txt_noinput: No s'ha rebut cap entrada accessible
 txt_nocompress_hint: sense compressió (més ràpid)
-txt_split_noinput: No s'ha seleccionat cap entrada. Si us plua, selecciona un fitxer a dividir
-txt_open_noinput: No s'ha seleccionat cap entrada. Si us plua, selecciona un arxiu (aquest haurà de ser el primer dels arxius en cas que sigui un conjunt d'arxius multivolum)
+txt_split_noinput: No s'ha seleccionat cap entrada. Si us plau, seleccioneu un fitxer a dividir
+txt_open_noinput: No s'ha seleccionat cap entrada. Si us plau, seleccioneu un arxiu (aquest haurà de ser el primer dels arxius en cas que sigui un conjunt d'arxius multivolum)
 txt_list_nomatch: cap coincidència
 txt_singlethread: Sense processament en paral·lel
 txt_none2: cap
 txt_nonsolid: No-sòlid
 txt_level_normal: Normal
-txt_copy_error: no s'ha copiat o mogut satisfactòriament, codi d'error:
+txt_copy_error: no s'ha copiat o desplaçat satisfactòriament, codi d'error:
 txt_description: Notes
-txt_compare_second: Ara selecciona el fitxer a comparar
+txt_compare_second: Ara seleccioneu el fitxer a comparar
 txt_peaobj: Control d'objectes
 txt_displayed_obj: objecte(s)
 txt_olderthan: Més antic que l'objecte seleccionat
@@ -927,11 +927,11 @@ txt_output: sortida:
 txt_overwrite: Substitueix els fitxers existents
 txt_compressed_size: Empaquetat
 txt_paqver: PAQ version
-txt_type_description_paq: PAQ: slow but extremely powerful compressor
+txt_type_description_paq: PAQ: compressor lent però extremadament potent
 txt_pio: paràmetres, entrada, sortida
 txt_poi: paràmetres, sortida, entrada
 txt_parameters: Paràmetres:
-txt_error_partial: Partial extraction not implemented for current archive type
+txt_error_partial: L'extracció parcial no és compatible amb aquest format d'arxiu
 txt_passes: Passes
 txt_pw: Contrasenya
 txt_pwlength: Longitud de la contrasenya en caràcters (4..64)
@@ -947,14 +947,14 @@ txt_peazip_help: Suport en línia
 txt_peazip_web: Lloc web del PeaZip
 txt_performall: Tots els algoritmes
 txt_name_provide: Els caràcters \ / : * ? ' " < > | no es permeten als noms dels fitxers
-txt_upxorstrip: Si us plau, tanca el Strip i/o l'UPX al binari
-txt_not_removable_file: Si us plau, tanca el fitxer obert per tal que el PeaZip pugui eliminar-lo:
-txt_not_removable: Si us plau, tanca els fitxers oberts per tal que el PeaZip pugui eliminar la carpeta:
-txt_custom_executable_missing: Please provide the custom executable's name
-txt_type_unsupported_select: Si us plau, selecciona un tipus de fitxer suportat:
-txt_no_theme_name: Si us plau, especifica el nom del tema
-txt_please_wait: Si us plau, espera un moment...
-txt_copy_wait: Si us plau, espera que es completin les operacions de còpia i desplaçament de fitxers programades actualment abans de programar altres operacions del mateix tipus
+txt_upxorstrip: Si us plau, tanqueu el Strip i/o l'UPX al binari
+txt_not_removable_file: Si us plau, tanqueu el fitxer obert per tal que el PeaZip pugui eliminar-lo:
+txt_not_removable: Si us plau, tanqueu els fitxers oberts per tal que el PeaZip pugui eliminar la carpeta:
+txt_custom_executable_missing: Si us plau, proporcioneu el nom de l'executable personalitzat
+txt_type_unsupported_select: Si us plau, seleccioneu un tipus de fitxer suportat:
+txt_no_theme_name: Si us plau, especifiqueu el nom del tema
+txt_please_wait: Si us plau, espereu un moment...
+txt_copy_wait: Si us plau, espereu que es completin les operacions de còpia i desplaçament de fitxers programades actualment abans de programar altres operacions del mateix tipus
 txt_previewwith: Previsualitza amb...
 txt_projectadmin: Administrador del projecte:
 txt_type_description_quad: BALZ/QUAD: compressor de fitxers d'alt rendiment basat en ROLZ
@@ -966,11 +966,11 @@ txt_recentarchives: Arxius recents
 txt_rr_hint: Els registres de recuperació permeten intentar corregir arxius en cas de corrupció de dades
 txt_search_refine: Refina els filtres de cerca, accepta els caràcters comodins ? i *
 txt_fefreshf5: Actualitza (F5)
-txt_release: release:
+txt_release: versió:
 txt_unit_removable: Unitat extraïble
-txt_remove_bookmark: Remove bookmark
-txt_remove_external_unit: Remove external device(s)
-txt_removeselected: Remove selected object(s)
+txt_remove_bookmark: Elimina dels preferits
+txt_remove_external_unit: Elimina les unitats extraïbles
+txt_removeselected: Elimina els objectes seleccionats
 txt_rename: Reanomena
 txt_caption_repair: Repara
 txt_restartrequired2: requereix reiniciar l'aplicació per aplicar els canvis
@@ -998,59 +998,59 @@ txt_search_hint: Cerca coincidències amb els filtres als subdirectoris de l'arx
 txt_search_web: Cerca en línia
 txt_list_searching: Cercant...
 txt_securedelete: Eliminació segura
-txt_default_description: Select a function or drag files here
+txt_default_description: Seleccioneu una funció o arrossegueu els fitxers aquí
 txt_selectall: Selecciona-ho tot
 txt_selectdir: Selecciona un directori
 txt_selected_obj: seleccionat
 txt_selected_objects: Objectes seleccionats
 txt_sfx: Autoextraïble
-txt_sendbymail: Envia per e-mail
+txt_sendbymail: Envia per correu electrònic
 txt_set_defaults: Estableix els paràmetres per defecte de l'aplicació
 txt_settings: Configuració
-txt_sfx_interface: sfx interface
+txt_sfx_interface: interfície sfx
 txt_showhints: Mostra els suggeriments
 txt_show_messages: Mostra els missatges informatius
 txt_showpw: Mostra el contigut del camp de la contrasenya
-txt_singlevol: Single volume, do not split
+txt_singlevol: Un sol volum, no es divideix
 txt_size: Mida
 txt_sizeb: Mida (B)
 txt_skip_existing: Omet els fitxers existents
 txt_slowercomp: compressió més lenta però descompressió igual de ràpida
 txt_smaller: Més petit que l'objecte seleccionat
-txt_solid: Solid
+txt_solid: Sòlid
 txt_solid_block: Mida del bloc
-txt_solid_auto: Solid, auto-adjust
-txt_solid_extension: Solid, group by extension
-txt_listtest: sorry, list/test operation is not yet implemented for this format
+txt_solid_auto: Sòlid, ajust automàtic
+txt_solid_extension: Sòlid, agrupa per extensió
+txt_listtest: Ho sentim, les operacions de llistat i verificació encara no s'han implementat per a aquest format
 txt_sortbysel: Ordena segons l'estat de selecció
 txt_list_sorting: Ordenant...
 txt_speed: velocitat
 txt_split: Múltiples parts
-txt_type_description_split: Split a file with optional integrity check
+txt_type_description_split: Dividiu un fitxer i, opcionalment, comproveu-ne la integritat
 txt_split_file: Divideix el fitxer
 txt_list_nostats: no hi ha estadístiques disponibles
 txt_status: Estat
-txt_level_store: Store
+txt_level_store: Emmagatzema
 txt_stream_control: Control de flux
-txt_strip: Strip before UPX (recommended)
+txt_strip: Reemplaça caràcters especials abans de la compressió UPX (recomanat)
 txt_keyfile_created: Fitxer de xifratge creat satisfactòriament com a:
 txt_suggestpw: Crea una contrasenya aleatòria
-txt_noupx: Symbols stripped, UPX compression omitted
+txt_noupx: S'han reemplaçat els símbols, s'ha omès la compressió UPX
 txt_syntax: Sintaxi:
 txt_sysbenchmark: Prova de rendiment del sistema
-txt_benchmark: La prova de rendiment del sistema pot tardar alguns minuts i utilitzarà tota la CPU i memòria disponibles. El sistema pot ser que no respongui durant la prova de rendiment; el vols executar igualment?
+txt_benchmark: La prova de rendiment del sistema pot tardar alguns minuts i utilitzarà tota la CPU i memòria disponibles. El sistema pot ser que no respongui durant la prova de rendiment; el voleu executar igualment?
 txt_systools: Eines del sistema
 txt_tarbefore: Uneix-ho tot en un fitxer TAR abans de comprimir
-txt_type_description_tar: TAR: archiving format mainstream on UNIX systems
+txt_type_description_tar: TAR: format de compressió habitual en sistemes UNIX
 txt_taskman: Administrador de tasques
 txt_caption_test: Verifica
 txt_testall: Verifica-ho tot
 txt_testdisp: Verifica els objectes mostrats
 txt_testpw: Verifica la contrasenya / fitxer de xifratge
 txt_testsel: Verifica els objectes seleccionats
-txt_col_hint: The color should be chosen in order to integrate well with icon colors and to other GUI's elements
-txt_bookmarks_hint: The complete and editable list of bookmarks is available in the file browser interface, clicking on the "More controls" icon and on "Toggle history/bookmarks"
-txt_archive_noinput_tolist: La vista és buida: utilitza "Afegeix fitxers" o "Carrega una vista" per omplir la llista d’arxius
+txt_col_hint: El color s’hauria d’escollir per tal d’integrar-se bé amb els colors de les icones i amb altres elements de la interfície gràfica
+txt_bookmarks_hint: La llista completa i editable de preferits està disponible a la interfície del navegador de fitxers, fent clic a la icona "Més controls" i a "Canvia entre l'historial i els preferits"
+txt_archive_noinput_tolist: La vista és buida: utilitzeu "Afegeix fitxers" o "Carrega una vista" per omplir la llista d’arxius
 txt_theme: Tema
 txt_icons_found: Tema carregat satisfactòriament.
 txt_themename: Nom del tema
@@ -1080,19 +1080,19 @@ txt_type_description_upx: UPX: només comprimeix fitxers executables
 txt_advfilters: Utilitza els filtres avançats
 txt_openfiles_hint: Utilitzeu aquesta opció per incloure a l'arxiu els fitxers oberts des d’altres aplicacions (útil en tasques de còpia de seguretat)
 txt_usenet: Usenet
-txt_user_name: Nom d'usuari; utilitza la forma usuari@DOMINI o DOMINI\usuari si és necessari.
+txt_user_name: Nom d'usuari; utilitzeu la forma usuari@DOMINI o DOMINI\usuari si és necessari.
 txt_using: En ús:
-txt_volumepea: Volume control
+txt_volumepea: Control de volum
 txt_volume_size: Mida del volum
 txt_type_ext_uns: s'ha extret satisfactòriament
 txt_websearch: Cerca en línia
 txt_websites: Pàgines web
-txt_word: Word
+txt_word: Utilització
 txt_write: Escriptura:
-txt_ramdompw_hint: Pots copiar la contrasenya generada aleatòriament des d’aquí
+txt_ramdompw_hint: Podeu copiar la contrasenya generada aleatòriament des d’aquí
 txt_exe_hint: Podeu introduir el nom i els paràmetres d'execució de la compressió personalitzada i escollir la construcció de la sintaxi. Tingueu en compte que també podeu canviar manualment la sintaxi de l'ordre a la pestanya "Consola".
 txt_pj_hint2: Podeu importar la definició de la tasca des de la interfície gràfica d’usuari al camp següent. A continuació, podeu editar-lo, iniciar-lo o desar-lo sense canviar ni perdre la tasca definida per a la interfície gràfica.
-txt_type_description_zip: ZIP: format d'arxivament i compressió ràpid, habitual als sistemes Windows
+txt_type_description_zip: ZIP: format de compressió ràpid, habitual als sistemes Windows
 txt_zipcrypto_hint: ZipCrypto (abandonat)
 
 === end PeaZip text group ===
@@ -1126,28 +1126,28 @@ txt_5_0_from: des de
 txt_5_0_in: dins de
 txt_5_0_to: a
 txt_4_5_search: Cerca
-txt_4_0_drag: Arrossega aquí el fitxer a extreure, o
-txt_4_0_dragorselect: Arrossega'l aquí o selecciona un fitxer
+txt_4_0_drag: Arrossegueu aquí el fitxer a extreure, o
+txt_4_0_dragorselect: Arrossegueu-lo aquí o seleccioneu un fitxer
 txt_4_0_select: selecciona un fitxer
 txt_3_6_selectdir: Selecciona un directori
 txt_3_5_close: Tanca
 txt_3_0_details: Per a més informació, l'"Informe" conté el registre de la tasca i "Consola" conté la definició de la tasca com a seqüència d'ordres.
 txt_3_0_hints: Suggeriments sobre l'error
-txt_3_0_arc: Alguns fitxers d'entrada no s'han pogut llegir (potser estan bloquejats, no són accessibles o estan corromputs, o bé, potser falten alguns volums d'un arxiu multivolum)
+txt_3_0_arc: Alguns fitxers d'entrada no s'han pogut llegir (potser estan bloquejats, no són accessibles o estan malmesos, o bé, potser falten alguns volums d'un arxiu multivolum)
 txt_3_0_ext: L'arxiu deu requerir una contrasenya diferent per executar aquesta operació
 txt_2_8_oop: Obre l'ubicació de sortida quan finalitzi la tasca
 txt_2_7_validatefn: S'ha aturat l’operació, s'ha detectat un nom de fitxer invàlid:
 txt_2_7_validatecl: S'ha aturat l’operació, s'ha detectat una ordre potencialment perillosa (p. ex. ordres concatenades no permeses al programa):
 txt_2_6_open: Obre un arxiu
 txt_2_5_ace_missing: Falta el connector UNACE; per gestionar arxius ACE, podeu descarregar el connector del lloc web del PeaZip (en ser un codi tancat d'UNACE, el connector no es distribueix a,b el paquet base)
-txt_2_3_pw_errorchar_gwrap: les cometes no es poden utilitzar en contrasenyes del PeaLauncher en aquest sistema operatiu, si us plau, canvia la contrasenya o utilitza el mode Consola a Binaris del Backend dins de Opcions > Configuració
+txt_2_3_pw_errorchar_gwrap: les cometes no es poden utilitzar en contrasenyes del PeaLauncher en aquest sistema operatiu, si us plau, canvieu la contrasenya o utilitzeu el mode Consola a Binaris del Backend dins de Opcions > Configuració
 txt_2_3_renameexisting: Reanomena automàticament els fitxers existents
 txt_2_3_renameextracted: Reanomena automàticament els fitxers extrets
 txt_2_3_cancel: Cancel·la
 txt_2_3_encryption: Encriptació
 txt_2_3_extinnew: Extreu-ho en una nova carpeta
 txt_2_3_keyfile: Fitxer de xifratge
-txt_2_3_kf_not_found_gwrap: No s'ha trobat o no s'ha pogut llegir el fitxer de xifratge. Si us plau, escull un fitxer de xifratge diferent.
+txt_2_3_kf_not_found_gwrap: No s'ha trobat o no s'ha pogut llegir el fitxer de xifratge. Si us plau, escolliu un fitxer de xifratge diferent.
 txt_2_3_moreoptions: Més opcions...
 txt_2_3_nopaths: Sense camins
 txt_2_3_options: Opcions
@@ -1157,8 +1157,8 @@ txt_2_3_skipexisting: Salta els fitxers existents
 txt_job_unknown: : S'ha trobat un error desconegut
 txt_stdjob: [l'animació s'aturarà quan es completi la tasca]
 txt_benchmarkjob: [el sistema respondrà lentament mentre s'executi la prova de rendiment del sistema (pot tardar alguns minuts)]
-txt_defragjob: [no respondrà mentre transcorri la desfragmentació, pots executarlo en segon pla]
-txt_consolejob: [pots consultar l'evolució de la tasca a la finestra de la consola]
+txt_defragjob: [no respondrà mentre transcorri la desfragmentació, podeu executar-lo en segon pla]
+txt_consolejob: [podeu consultar l'evolució de la tasca a la finestra de la consola]
 txt_job1: 1: Avís: s'han produït errors lleus; p. ex. no s'han trobat alguns fitxers o estaven bloquejats
 txt_job127: 127: No s'ha pogut executar la operació sol·licitada
 txt_job2: 2: Error fatal
@@ -1202,7 +1202,7 @@ txt_rating: Valoració:
 txt_rt: prioritat en temps real
 txt_report: Informe
 txt_resume: Continua
-txt_priority: Fes clic aquí per establir la prioritat de la tasca
+txt_priority: Feu clic aquí per establir la prioritat de la tasca
 txt_running: En curs,
 txt_isrunning: En curs...
 txt_saveas: Anomena i desa
@@ -1220,17 +1220,17 @@ txt_time: Temps:
 
 === about text group ===
 
-EXTRACT ARCHIVE(S)
-From the system 
-- rightclick on the archive(s) and in system’s context menu click "Extract here" or "Extract here (smart new folder)" to extract with no further interaction. Smart new folder option takes care to create a new top level folder only if necessary, when the archives root contains more than one file or folder.
-- otherwise use "Extract..." menu entry for having more options: output path, password, extract files to a new directory, chose to skip, rename or overwrite existing files etc.
+EXTRACCIÓ D'ARXIUS COMPRIMITS
+Des del sistema
+- Feu clic amb el botó dret sobre l'arxiu o arxius i, al menú contextual del sistema, feu clic a “Extreu aquí” o “Extreu aquí (nova carpeta intel·ligent)” per extreure'ls sense cap interacció addicional. L'opció de “carpeta nova intel·ligent” s'encarrega de crear una nova carpeta només si la ubicació d'extracció ja conté altres fitxers o carpetes.
+- En cas contrari, utilitzeu l'entrada de menú “Extreu ...” per poder escollir més opcions: ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.
 
-Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
-- click on "Extract" in toolbar or in context menu to extract only selected objects trough the confirmation dialog allowing to set all options (output path, password, naming policy, extract to a new directory etc)
-- drag files and folders to the desired destination, only selected content will be extracted (for more information see chapter about drag and drop in PeaZip)
-- click the quick extraction dropdown button on the right of “Extract” in the toolbar, it allows to directly extract the entire archive to most common destinations (skipping the confirmation dialog) and to set most important options; keyboard shortcuts: Ctrl+E (or F12) extracts the entire archive, asks for output directory; Ctrl+Alt+E extracts archive in its current folder; Ctrl+Shift+E extracts to desktop; Ctrl+Alt+Shift+E extracts to documents; Ctrl+0 extracts to previous path; Ctrl+1..8 extracts to path of bookmark 1..8 (if defined)
+Obriu un arxiu amb el PeaZip, per exemple, fent-li doble clic o arrossegant-lo sobre la finestra o l'icona del PeaZip.
+- Feu clic al botó “Extreu” a la barra superior d'eines o al menú contextual per extreure només els objectes seleccionats mitjançant un quadre de diàleg que us permetrà establir totes les opcions (ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.)
+- Arrossegueu fitxers i carpetes a la destinació desitjada: només s'extreurà el contingut seleccionat (per obtenir més informació, consulteu el capítol sobre arrossegar i deixar anar del PeaZip)
+- Feu clic al menú ràpid d'extracció situat a la dreta d'“Extreu”, a la barra d'eines. Permet extreure directament l'arxiu sencer a la majoria de destinacions habituals (ometent el quadre de diàleg avançat) i configurar les opcions més importants; Dreceres del teclat: Ctrl+E (o F12) extreu l'arxiu sencer preguntant la ubicació de destí; Ctrl+Alt+E extreu l'arxiu a la seva carpeta actual; Ctrl+Shift+E l'extreu a l'Escriptori; Ctrl+Alt+Shift+E l'extreu als Documents; Ctrl+0 l'extreu a la ubicació anterior; Ctrl+1..8 l'extreu a la ubicació del preferit 1..8 (si s'ha definit prèviament)
 
-Open PeaZip, select one or more archives and click “Extract” in toolbar or context menu, or use quick extraction destinations as explained at the previous point.
+Obre el PeaZip, selecciona un o més arxius i fes clic a “Extreu” a la barra superior d'eines o al menú contextual, o utilitza les destinacions d'extracció ràpides tal i com s'explica en el punt anterior.
 
 EXTRACT ONLY SELECTED OBJECTS FROM THE ARCHIVE
 Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
