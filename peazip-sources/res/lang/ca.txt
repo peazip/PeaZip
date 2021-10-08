@@ -3,7 +3,7 @@ Català
 8.2
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
-Última revisió el: 20211007
+Última revisió el: 20211008
 
 === PeaZip text group ===
 
@@ -610,7 +610,7 @@ txt_about: Sobre
 txt_action: Acció
 txt_action_hint: Acció en obrir o previsualitzar amb l'aplicació associada
 txt_add: Afegeix
-txt_add_existing_archive: Afegeix (si l'arxiu existeis)
+txt_add_existing_archive: Afegeix (si l'arxiu existeix)
 txt_add_archive: Afegeix un arxiu
 txt_add_files: Afegeix fitxers
 txt_add_folder: Afegeix una carpeta
@@ -1220,27 +1220,27 @@ txt_time: Temps:
 
 === about text group ===
 
-EXTRACCIÓ D'ARXIUS COMPRIMITS
+EXTRACCIÓ D’ARXIUS COMPRIMITS
 Des del sistema
-- Feu clic amb el botó dret sobre l'arxiu o arxius i, al menú contextual del sistema, feu clic a “Extreu aquí” o “Extreu aquí (nova carpeta intel·ligent)” per extreure'ls sense cap interacció addicional. L'opció de “carpeta nova intel·ligent” s'encarrega de crear una nova carpeta només si la ubicació d'extracció ja conté altres fitxers o carpetes.
-- En cas contrari, utilitzeu l'entrada de menú “Extreu ...” per poder escollir més opcions: ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.
+— Feu clic amb el botó dret sobre l’arxiu o arxius i, al menú contextual del sistema, feu clic a «Extreu aquí» o «Extreu aquí (nova carpeta intel·ligent)» per extreure’ls sense cap interacció addicional. L’opció de «carpeta nova intel·ligent» s’encarrega de crear una nova carpeta només si la ubicació d’extracció ja conté altres fitxers o carpetes.
+— En cas contrari, utilitzeu l’entrada de menú «Extreu...» per poder escollir més opcions: ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.
 
-Obriu un arxiu amb el PeaZip, per exemple, fent-li doble clic o arrossegant-lo sobre la finestra o l'icona del PeaZip.
-- Feu clic al botó “Extreu” a la barra superior d'eines o al menú contextual per extreure només els objectes seleccionats mitjançant un quadre de diàleg que us permetrà establir totes les opcions (ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.)
-- Arrossegueu fitxers i carpetes a la destinació desitjada: només s'extreurà el contingut seleccionat (per obtenir més informació, consulteu el capítol sobre arrossegar i deixar anar del PeaZip)
-- Feu clic al menú ràpid d'extracció situat a la dreta d'“Extreu”, a la barra d'eines. Permet extreure directament l'arxiu sencer a la majoria de destinacions habituals (ometent el quadre de diàleg avançat) i configurar les opcions més importants; Dreceres del teclat: Ctrl+E (o F12) extreu l'arxiu sencer preguntant la ubicació de destí; Ctrl+Alt+E extreu l'arxiu a la seva carpeta actual; Ctrl+Shift+E l'extreu a l'Escriptori; Ctrl+Alt+Shift+E l'extreu als Documents; Ctrl+0 l'extreu a la ubicació anterior; Ctrl+1..8 l'extreu a la ubicació del preferit 1..8 (si s'ha definit prèviament)
+Obriu un arxiu amb el PeaZip, per exemple, fent-li doble clic o arrossegant-lo sobre la finestra o la icona del PeaZip.
+— Feu clic al botó «Extreu» de la barra superior d’eines o al menú contextual per extreure només els objectes seleccionats mitjançant un quadre de diàleg que us permetrà establir totes les opcions: ubicació de sortida, contrasenya, extracció en un nou directori, omissió de fitxers, canviar el nom o sobreescriure els fitxers existents, etc.
+— Arrossegueu fitxers i carpetes a la destinació desitjada: només s’extraurà el contingut seleccionat (per obtenir més informació, consulteu el capítol sobre arrossegar i deixar anar del PeaZip).
+— Feu clic al menú ràpid d’extracció situat a la dreta d’«Extreu», a la barra d’eines. Permet extreure directament l’arxiu sencer a la majoria de destinacions habituals (ometent el quadre de diàleg avançat) i configurar les opcions més importants; Dreceres del teclat: Ctrl+E (o F12) extreu l’arxiu sencer preguntant la ubicació de destí; Ctrl+Alt+E extreu l’arxiu a la seva carpeta actual; Ctrl+Shift+E l’extreu a l’Escriptori; Ctrl+Alt+Shift+E l’extreu als Documents; Ctrl+0 l’extreu a la ubicació anterior; Ctrl+1…8 l’extreu a la ubicació del preferit 1…8 (si s’ha definit prèviament).
 
-Obre el PeaZip, selecciona un o més arxius i fes clic a “Extreu” a la barra superior d'eines o al menú contextual, o utilitza les destinacions d'extracció ràpides tal i com s'explica en el punt anterior.
+Obre el PeaZip, selecciona un o més arxius i fes clic a «Extreu» a la barra superior d’eines o al menú contextual, o utilitza les destinacions d’extracció ràpides tal com s’explica en el punt anterior.
 
-EXTRACT ONLY SELECTED OBJECTS FROM THE ARCHIVE
-Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
-- click "Extract" in toolbar: only selected items will be extracted
-- drag files and folders to the desired destination, only selected content will be extracted
-- rightclick and in “Extract” group of the context menu click “Extract selected” (to extract only selected items) or “Extract displayed” (to extract content of current directory or of current search filter)
+EXTRACCIÓ NOMÉS DELS OBJECTES SELECCIONATS DE L’ARXIU
+Obriu un arxiu amb el PeaZip, per exemple, fent-li doble clic o arrossegant-lo sobre la finestra o la icona del PeaZip.
+— Feu clic a «Extreu» a la barra superior d’eines: només s’extrauran els elements seleccionats.
+— Arrossegueu fitxers i carpetes des del PeaZip fins a la destinació desitjada: només s’extraurà el contingut seleccionat.
+— Feu clic amb el botó dret, aneu al menú contextual «Extreu» i feu clic a «Extreu els objectes seleccionats» per extreure només els elements seleccionats, o bé a “Extreu els objectes mostrats” per extreure el contingut del directori actual o del contingut filtrat amb la cerca.
 
-ENTER A PASSWORD TO BROWSE OR EXTRACT AN ARCHIVE
-Click on the padlock icon to enter a password and optionally a keyfile.
-The icon is featured both in PeaZip’s file browser’s status bar and in the archive extraction interface; once the password is set the icon will change color.
+INTRODUCCIÓ D’UNA CONTRASENYA PER NAVEGAR O EXTREURE UN ARXIU
+Feu clic a la icona del cadenat per introduir una contrasenya o, opcionalment, un fitxer de xifratge.
+La icona es mostra tant a la barra d’estat del navegador de fitxers del PeaZip com a la interfície d’extracció d’arxius. Quan s’hagi especificat una contrasenya, la icona canviarà de color.
 
 CREATE ARCHIVE
 From the system
