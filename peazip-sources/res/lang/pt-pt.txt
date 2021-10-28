@@ -1,90 +1,90 @@
 ﻿=== PeaZip language file ===
 Portuguese (Portugal)
 8.2
-Tradução: José Carlos
-Revisão: Sérgio Marques 
-Revisto em: 20200521
+Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
+Revisão: Hugo Carvalho 
+Revisto em: 20211028
 
 === PeaZip text group ===
 
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
+txt_8_2_slower: (mais lento)
+txt_8_2_df: 7z / p7zip mostra o conteúdo das pastas
+txt_8_2_vreport: 7z / p7zip relatório não sumário
+txt_8_2_ta: Acedido
+txt_8_2_tc: Criado
+txt_8_2_keep: Manter ficheiros
+txt_8_2_tm: Modificado
+txt_8_2_skipet: Ignorar testes para encriptação
+txt_8_2_alltimes: Armazenar todas as marcas de tempo
+txt_8_2_supportedby: Suportado por
+txt_8_1_preparse: Pré-analisar sempre os arquivos
+txt_8_1_bo: Optimização do navegador
+txt_8_1_bop: As opções de optimização do navegador podem ser definidas em Opções > Definições, separador Geral, de modo a permitir que o navegador exiba arquivos contendo um número muito grande de itens.
+txt_8_1_nopreparse: Não pré-analisar arquivos
+txt_8_1_ed: erro(s) detetado(s).
+txt_8_1_togglearc: Listar o conteúdo de um arquivo de uma forma plana pode ser demorado, continuar?
+txt_8_1_preparsehint: Optimizar os desempenhos limitando a pré-análise de grandes arquivos. A pré-análise destina-se a detetar antecipadamente possíveis problemas no conteúdo dos arquivos.
+txt_8_1_slow: Lento
+txt_8_1_vslow: Muito lento
 txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
+txt_8_0_altcol: Alternar cor da grelha
+txt_8_0_forcebrowse: Navegar por arquivos de tipos não canónicos (contentores, imagens de disco, instaladores, ...)
+txt_8_0_commonalgo: Algoritmos comuns
+txt_8_0_forceconvert: Converter arquivos de tipos não canónicos
+txt_8_0_defaultactionhint: Ação predefinida ao fazer duplo clique num ficheiro associado ao PeaZip a partir do sistema
+txt_8_0_defaultaction: Ação predefinida no arranque
+txt_8_0_enableextand: Ativar o submenu "Extrair e abrir com"
+txt_8_0_forcetyping: Forçar a introdução de palavras-passe de forma interativa
+txt_8_0_setpwopt: Opções de palavra-passe / ficheiro-chave
+txt_8_0_forcetypinghelp: Irá executar binários backend na consola, não pode navegar por arquivos com nomes de ficheiros encriptados. Permite criar scripts que não serão executados sem supervisão, mas sim pedir ao utilizador interativamente uma palavra-passe.
+txt_7_9_spacing: Espaçamento
+txt_7_9_zooming: Ampliação
+txt_7_8_changelocalization: Alterar o idioma do PeaZip
+txt_7_8_custext: Extensão personalizada
+txt_7_8_destexistfile: O destino já contém ficheiros processados. Substituir ficheiros com o mesmo nome?
+txt_7_8_dd: Arrastar e Largar
+txt_7_8_priorityhigh: Alta
+txt_7_8_priorityidle: Sem prioridade
+txt_7_8_rel: Extração interativa
 txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
-txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
-txt_7_6_setcurdef: Set current path as default output path
-txt_7_6_setdef: Set default output path
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
-txt_7_6_tacolor: Text accent
-txt_7_5_always: Always
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Cut name at specified length
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
-txt_7_5_never: Never
-txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_8_priorityrealtime: Em tempo real
+txt_7_8_requirerestart: [requer o reinício do PeaZip]
+txt_7_8_tpriority: Prioridade das tarefas
+txt_7_8_update: Atualizar
+txt_7_7_noneall: Nenhuma: desativar a pré-visualização, edição, arastar e largar e extração interativa
+txt_7_7_nonetemp: Nenhuma, temp do utilizador, se necessário
+txt_7_7_outtemp: Saída, pré-visualização no temp do utilizador
+txt_7_7_sys7zreq: Requer a instalação do pacote p7zip-full ou equivalente
+txt_7_7_tw: Pasta de trabalho temporária para criação de arquivos, edição, pré-visualização e extração por arrastar e largar.
+txt_7_7_sys7z: Usar o sistema 7z no Linux
+txt_7_6_zipenc: 7z/p7zip ZIP codificação de nomes de ficheiros
+txt_7_6_color: Cor
+txt_7_6_custenc: Página de código personalizada
+txt_7_6_dark: Escuro
+txt_7_6_tno: Não sincronizar árvore de arquivo
+txt_7_6_forcelocalenc: Forçar local
+txt_7_6_forceutf8enc: Forçar UTF-8
+txt_7_6_cpnote: Se a página de código personalizada escolhida não for suportada, as tarefas terminarão sempre em erro (muito provavelmente erro de atribuição de memória). No caso de isso acontecer, altere a página de código ou reinicie a aplicação.
+txt_7_6_defaultenc: Local, UTF-8 para símbolos extra
+txt_7_6_dim: Luz fraca
+txt_7_6_setcurdef: Definir caminho atual como caminho de saída padrão
+txt_7_6_setdef: Definir caminho de saída padrão
+txt_7_6_tadvanced: Sincronizar a árvore de arquivos, manter os nodes visitados
+txt_7_6_tsimple: Sincronizar árvore de arquivo, simples
+txt_7_6_tacolor: Realce do texto
+txt_7_5_always: Sempre
+txt_7_5_ask: Perguntar
+txt_7_5_autoclosesingle: Fechar automaticamente após a extracção se não se realizarem ações de navegação
+txt_7_5_cutlen: Cortar o nome no comprimento especificado
+txt_7_5_cutlenw: Cortar o nome no comprimento especificado (4..255) os nomes em conflito podem ser corrigidos manualmente mais tarde
+txt_7_5_dragnone: Não bloquear o destino
+txt_7_5_specialbrowse: Deseja extrair tudo para fornecer ao ficheiro os dados extra de que este possa necessitar?
+txt_7_5_ee: Extrair tudo para tipos de ficheiros especiais
+txt_7_5_draghide: Ocultar o destino
+txt_7_5_draglh: Bloquear e ocultar o destino
+txt_7_5_draglock: Bloquear o destino
+txt_7_5_never: Nunca
+txt_7_5_repnascii: Substituir/remover caracteres não-ASCII
 txt_7_4_comment: Comentário
 txt_7_4_7zfbrotlicomp: Compressão rápida, 7Z Brotli
 txt_7_4_7zfzstandardcomp: Compressão rápida, 7Z Zstandard
@@ -134,7 +134,7 @@ txt_6_9_forceu: Atualizar no arquivo os ficheiros editados
 txt_6_9_opuns: Operação não permitida para o tipo de arquivo atual
 txt_6_9_overarch: Substituir ficheiro(s) existente(s) no arquivo?
 txt_6_9_uconf: O ficheiro visualizado foi alterado. Deseja atualizar o arquivo atual?
-txt_6_8_ndrop: Utilizar 'Drag And Drop' nativo em sistemas Windows
+txt_6_8_ndrop: Utilizar 'Arrastar e Largar' nativo em sistemas Windows
 txt_6_7_nop: (sem pré-visualização)
 txt_6_6_pdupfound: potenciais duplicados encontrados (teste rápido)
 txt_6_6_rsh: Repor histórico de pesquisa
@@ -326,7 +326,7 @@ txt_4_8_details: Detalhes e miniaturas
 txt_4_8_fit: Ajustar a
 txt_4_8_fitl: Ajustar ao mais largo
 txt_4_8_flip: Inverter
-txt_4_8_fullscreen: Ecrã completo
+txt_4_8_fullscreen: Ecrã inteiro
 txt_4_8_fun: Funções
 txt_4_8_h: Altura
 txt_4_8_keeparchive: Manter arquivo
@@ -447,7 +447,7 @@ txt_2_9_extconsole: A consola de extração só está disponível ao navegar nos
 txt_2_9_thl: Destacar botões
 txt_2_9_home: Pasta pessoal
 txt_2_9_lt: Grande
-txt_2_9_mt: Média
+txt_2_9_mt: Médio
 txt_2_9_movehere: Mover para aqui
 txt_2_9_nav: Navegação
 txt_2_9_navbar: Barra de navegação
@@ -458,7 +458,7 @@ txt_2_9_rec: Intensiva: pesquisa nos subdiretórios e pode levar algum tempo
 txt_2_9_selected: Seleção
 txt_2_9_setapps: Organizar aplicações
 txt_2_9_showmenu: Mostrar barra de menu
-txt_2_9_st: Pequena
+txt_2_9_st: Pequeno
 txt_2_9_test_pw2G: Teste de cifra para arquivos <2GB
 txt_2_9_vst: Apenas texto
 txt_2_9_toolbar: Barra de ferramentas
@@ -1099,6 +1099,7 @@ txt_zipcrypto_hint: ZipCrypto (legacy)
 
 === PeaLauncher text group ===
 
+txt_6_9_remaining: restante
 txt_6_5_abort: Abortar
 txt_6_5_error: Erro
 txt_6_5_no: Não
@@ -1295,7 +1296,7 @@ F7	adicionar aos marcadores / Ctrl+F7 abrir nova instância do PeaZip / Shift+F7
 F8	procurar o primeiro item na lista de marcadores (Ctrl, segundo, Shift, terceiro)
 F9	definir palavra-passe ou ficheiro-chave / Ctrl+F9 criar ficheiro-chave ou palavra-passe aleatória / Shift+F9 definir filtros avançados
 F10		menu / Ctrl+F10 executar com outro utilizador / Alt+F10 executar como administrator (Windows Vista e mais recentes)
-F11		trocar entre acrã completo/janela
+F11		trocar entre acrã inteiro/janela
 F12		extrair tudo para...
 
 ACERCA O PEAZIP
@@ -1304,7 +1305,7 @@ PeaZip é um gestor de arquivos de código livre e multiplataforma, disponível 
 
 O PeaZip permite-lhe aplicar diversos filtros de pesquisa ao conteúdo dos arquivos; criar e extrair diversos arquivos em simultâneo; criar arquivos de extração automática; exportar definições de tarefas como linha de comandos; guardar disposições de arquivação e extração; marcar arquivos e pastas; procurar e abrir com aplicações personalizadas, comprimir e descomprimir ficheiros, etc...
 
-Outras funcionalidades: cifra de ficheiros, copiar/separar/unir ficheiros, eliminação permanente, comparações, validação de códigos "hash" e "checksum", análises de desempenho, geração de palavras-passe e ficheiros chave.
+Outras funcionalidades: cifra de ficheiros, copiar/separar/unir ficheiros, eliminação permanente, comparações, validação de códigos "hash" e "checksum", análises de desempenho, geração de palavras-passe e ficheiros-chave.
 
 Descargas: https://peazip.github.io
 Saber mais: https://peazip.github.io/peazip-free-archiver.html
