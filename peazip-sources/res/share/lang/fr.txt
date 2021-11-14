@@ -3,21 +3,21 @@ Français
 8.3
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 12.09.2021
+Date du: 14.11.2021
 
 === PeaZip text group ===
 
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_3_mbubin: Binaire
+txt_8_3_cw: Changer de répertoire de travail ? Cela réinitialisera les fichiers de travail temporaires et redémarrera l’application.
+txt_8_3_temperature: Température de couleur
+txt_8_3_mbudec: Décimal
+txt_8_3_htab: Onglets de surbrillance
+txt_8_3_maxarg: Longueur maximale des arguments
+txt_8_3_mbu: Unité à plusieurs octets
+txt_8_3_prefalgo: Algorithmes préférés
+txt_8_3_skipdel: Ignorer la suppression des fichiers temporaires verrouillés (utilisez la réinitialisation pour supprimer à la demande)
+txt_8_3_lw: Certains fichiers du répertoire de travail sont verrouillés et ne peuvent pas être supprimés automatiquement
+txt_8_3_noupx: Ce binaire ne peut pas être compressé (peut être déjà compressé)
 txt_8_2_slower: (lent)
 txt_8_2_df: 7z / p7zip afficher le contenu des dossiers
 txt_8_2_vreport: 7z / p7zip rapport non verbeux
@@ -37,8 +37,8 @@ txt_8_1_togglearc: La liste des vues plates du contenu des archives peut prendre
 txt_8_1_preparsehint: Optimiser les performances en limitant la pré-analyse des grandes archives. La pré-analyse est destinée à détecter à l’avance les éventuels problèmes dans le contenu de l’archive.
 txt_8_1_slow: Lent
 txt_8_1_vslow: Très lent
-txt_8_1_volumes: Autre couleur de grille
-txt_8_0_altcol: Alternate grid color
+txt_8_1_volumes: Volumes
+txt_8_0_altcol: Autre couleur de grille
 txt_8_0_forcebrowse: Parcourir les types d’archives non canoniques (conteneurs, images disque, programmes d’installation,...)
 txt_8_0_commonalgo: Algorithmes courants
 txt_8_0_forceconvert: Convertir des types d’archives non canoniques
@@ -1324,33 +1324,3 @@ Support: http://www.peazip.org/peazip-help.html
 FAQ: http://www.peazip.org/peazip-help-faq.html
 
 Un grand merci à toutes les personnes contribuant à la croissance du projet PeaZip par le développement de composants logiciels Open Source utilisés dans cette application (voir le site web pour la liste complète), et à tous les utilisateurs donnant leur retour d'informations, leurs expériences et leurs conseils sur PeaZip.
-
-CHANGER DE LANGUE
-
-Interface utilisateur est disponible en différentes langues: Options > Paramètres > Langue
-
-EXTRAIRE DES ARCHIVES
-
-Depuis le système: clique-droit sur les archives et cliquer sur "Extraire ici" ou "Extraire ici (dans un nouveau repertoire)" depuis le menu contextuel, ou "Extraire..." pour plus d'options (chemin, mot de passe...)
-
-Depuis PeaZip (recommandé): selectionner les archives et cliquer sur le bouton "Extraire", ou bouton-droit et cliquer sur "Extraire" ou "Extraire (dans un nouveau répertoire)" dans le menu
-
-EXTRAIRE DES OBJETS D'UNE ARCHIVE
-
-Double-cliquer sur l'archive pour l'ouvrir avec PeaZip, selectionner les fichiers et répertoires à extraire et les faire glisser/déposer vers la cible (Bureau, répertoire etc) ou clique-droit et choisir "Extraire les sélectionnés" dans le menu contextuel
-
-CRÉER UNE ARCHIVE
-
-Depuis le système: clique-droit sur les objets à archiver et choisir "Ajouter à l'archive" dans le menu "Envoyer vers"
-
-Depuis PeaZip (recommandé): selectionner les objets à archiver et cliquer sur le bouton "Ajouter" du menu
-
-CRÉER DES ARCHIVES SÉPAREES
-
-Depuis le système: clique-droit sur les objets à archiver et choisir "Ajouter à des archives séparée" dans le menu contextuel
-
-Depuis PeaZip (recommandé): selectionner les objets à archiver et cliquer sur le bouton "Ajouter"; avant de confirmer avec "OK", vérifier que l'option "Ajouter chaque objet dans une archive séparée" est activée
-
-MODIFIER UNE ARCHIVE EXISTANTE
-
-Double-cliquer sur l'archive pour l'ouvrir avec PeaZip et y glisser-déposer les fichiers et répertoires à y ajouter, ou cliquer sur le bouton "Ajouter" et utiliser le menu pour ajouter les objets à l'archive

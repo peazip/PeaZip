@@ -7,17 +7,17 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
+txt_8_3_mbubin: Binários
+txt_8_3_cw: Alterar diretório de trabalho? Isso irá redefinir arquivos de trabalho temporários e reiniciará o aplicativo.
+txt_8_3_temperature: Temperatura de cor
 txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_3_htab: Destacar abas
+txt_8_3_maxarg: Comprimento máximo dos argumentos
+txt_8_3_mbu: Unidade de múltiplos bytes
+txt_8_3_prefalgo: Algoritmos preferidos
+txt_8_3_skipdel: Ignore a exclusão de arquivos temporários bloqueados (use redefinir para excluir sob demanda)
+txt_8_3_lw: Alguns arquivos no diretório de trabalho são bloqueados e não podem ser removidos automaticamente
+txt_8_3_noupx: Este binário não pode ser comprimido (pode já estar comprimido)
 txt_8_2_slower: (Mais lento)
 txt_8_2_df: Exibir conteúdo de pastas 7z / p7zip
 txt_8_2_vreport: Relatório não-verboso 7z / p7zip
