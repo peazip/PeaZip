@@ -1,0 +1,1 @@
+..\peazip.exe -peazipreset
