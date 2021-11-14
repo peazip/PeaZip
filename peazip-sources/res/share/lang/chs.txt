@@ -3,21 +3,21 @@ Simplified Chinese - 简体中文
 8.3
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
-Last rev.: 20210912
+Last rev.: 20211114
 
 === PeaZip text group ===
 
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_3_mbubin: 二进制
+txt_8_3_cw: 要更改工作目录吗？这将重置临时文件并重启本应用。
+txt_8_3_temperature: 色温
+txt_8_3_mbudec: 十进制
+txt_8_3_htab: 高亮选项卡
+txt_8_3_maxarg: 最大参数长度
+txt_8_3_mbu: 多字节单位
+txt_8_3_prefalgo: 偏好的算法
+txt_8_3_skipdel: 不删除锁定的临时文件（重置以按需删除它们）
+txt_8_3_lw: 工作目录下的一些文件被锁定了，不能被自动删除
+txt_8_3_noupx: 无法压缩此二进制文件（可能已经压缩过了）
 txt_8_2_slower: （较慢）
 txt_8_2_df: 7z / p7zip 显示目录内容
 txt_8_2_vreport: 7z / p7zip 简要报告
