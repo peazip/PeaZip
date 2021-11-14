@@ -1,0 +1,13 @@
+[Desktop Action peazipopen]
+Exec=peazip -ext2browse %F
+Icon=peazip
+Name=Open with PeaZip
+
+[Desktop Entry]
+Type=Service
+Actions=peazipopen;
+Encoding=UTF-8
+Icon=peazip
+Name=peazipopen
+Name[en_US]=peazipopen
+ServiceTypes=KonqPopupMenu/Plugin,all/all
