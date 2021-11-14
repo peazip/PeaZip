@@ -1,0 +1,1336 @@
+﻿=== PeaZip language file ===
+Italian - Italiano
+8.3
+Tradotto da: Giorgio Tani
+Ultima rev. di: Giorgio Tani
+Ultima rev.: 20210524
+
+=== PeaZip text group ===
+
+txt_8_3_mbubin: Binario
+txt_8_3_cw: Modificare la directory ddi lavoro? L'applicazione sarà riavviate i file temporanei resettati.
+txt_8_3_temperature: Temperatura colore
+txt_8_3_mbudec: Decimale
+txt_8_3_htab: Evidenzia tab
+txt_8_3_maxarg: Lunghezza massima comando
+txt_8_3_mbu: Multipli
+txt_8_3_prefalgo: Algoritmi preferiti
+txt_8_3_skipdel: Non cancellare i file temporanei bloccati (cancellare manualmente con reset)
+txt_8_3_lw: Alcuni file nella directory di lavoro non possono essere cancellati automaticamente
+txt_8_3_noupx: Questo eseguibile non può essere compresso (potrebbe essere già compresso)
+txt_8_2_slower: (più lento)
+txt_8_2_df: 7z / p7zip mostra il contenuto delle cartelle
+txt_8_2_vreport: 7z / p7zip report sintetico
+txt_8_2_ta: Accesso
+txt_8_2_tc: Creazione
+txt_8_2_keep: Mantieni i file
+txt_8_2_tm: Modifica
+txt_8_2_skipet: Non testare cifratura
+txt_8_2_alltimes: Salva tutte le date
+txt_8_2_supportedby: Supportato da
+txt_8_1_preparse: Analizza gli archivi all'apertura
+txt_8_1_bo: Ottimizzazione del browser
+txt_8_1_bop: E' possibile mostrare più files regolando l'ottimizzazione del browser in Opzioni > Impostazioni, tab Generale.
+txt_8_1_nopreparse: Non analizzare gli archivi all'apertura
+txt_8_1_ed: errori rilevati.
+txt_8_1_togglearc: Elencare il contenuto di un archivio in modo flat può richiedere molto tempo, continuare?
+txt_8_1_preparsehint: Ottimizza le prestazioni del browser regolando l'analisi all'aperture per archivi molto grandi. L'analisi all'apertura serve ad avvisare in anticipo di possibili problemi con il contenuto dell'archivio.
+txt_8_1_slow: Lento
+txt_8_1_vslow: Molto lento
+txt_8_1_volumes: volumi
+txt_8_0_altcol: Colori alternati nelle griglie
+txt_8_0_forcebrowse: Esplora archivi di tipi non canonici (containers, immagini disco, installers,...)
+txt_8_0_commonalgo: Algoritmi comuni
+txt_8_0_forceconvert: Converti archivi di tipi non canonici
+txt_8_0_defaultactionhint: Azione da eseguire quando da sistema si fa doppio click su un tipo di file associato a PeaZip
+txt_8_0_defaultaction: Azione all'apertura
+txt_8_0_enableextand: Mostra il submenu "Estrai e apri con"
+txt_8_0_forcetyping: Richiedi sempre la password interattivamente
+txt_8_0_setpwopt: Opzioni password / keyfile
+txt_8_0_forcetypinghelp: Le operazioni saranno eseguite in console, non consente di esplorare archivi con nomi file cifrati. Permette di creare script che richiederanno all'utente di digitare la password interattivamente.
+txt_7_9_spacing: Spaziatura
+txt_7_9_zooming: Zoom
+txt_7_8_changelocalization: Modifica localizzazione di PeaZip
+txt_7_8_custext: Estensione personalizzata
+txt_7_8_destexistfile: La destinazione contiene già i file estratti. Sovrascrivere i file con lo stesso nome?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: Alta
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Estrazione interattiva
+txt_7_8_prioritynormal: Normale
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [richiede riavvio di PeaZip]
+txt_7_8_tpriority: Priorità dei lavori
+txt_7_8_update: Update
+txt_7_7_noneall: Nessuna: disabilita preview, edit, estrazione drag&drop e interattiva
+txt_7_7_nonetemp: Nessuna, temp dell'utente se necessario
+txt_7_7_outtemp: Output, preview nella temp dell'utente
+txt_7_7_sys7zreq: Richiede l'installazione del pacchetto p7zip-full o equivalente
+txt_7_7_tw: Directory di lavoro temporanea per creazione archivi, editing, preview ed estrazione drag&drop
+txt_7_7_sys7z: Usa 7z di sistema in Linux
+txt_7_6_zipenc: 7z/p7zip ZIP encoding dei nomi file
+txt_7_6_color: Colore
+txt_7_6_custenc: Code page personalizzato
+txt_7_6_dark: Scuro
+txt_7_6_tno: Non sincronizzare treeview
+txt_7_6_forcelocalenc: Forzare locale
+txt_7_6_forceutf8enc: Forzare UTF-8
+txt_7_6_cpnote: Se il code page personalizzato scelto non è supportato, i lavori termineranno in errore (probabilmente di memory allocation). In questo caso cambiare il code page o resettare l'applicazione.
+txt_7_6_defaultenc: Locale, UTF-8 per caratteri extra
+txt_7_6_dim: Meno luminoso
+txt_7_6_setcurdef: Settare questo percorso come output predefinito
+txt_7_6_setdef: Scegliere il percorso di output predefinito
+txt_7_6_tadvanced: Sincronizza treeview, avanzato
+txt_7_6_tsimple: Sincronizza treeview, semplice
+txt_7_6_tacolor: Colore speciale testo
+txt_7_5_always: Sempre
+txt_7_5_ask: Chiedi
+txt_7_5_autoclosesingle: Chiudi automaticamente dopo estrazione senza navigazione
+txt_7_5_cutlen: Taglia nome dopo n caratteri
+txt_7_5_cutlenw: Taglia dopo (4..255) caratteri, i nomi duplicati possono essere corretti manualmente
+txt_7_5_dragnone: Non bloccare la destinazione
+txt_7_5_specialbrowse: Si desidera estrarre tutto, in modo da fornire al file tutti i dati esterni di cui può necessitare?
+txt_7_5_ee: Estrai tutto per tipi file speciali
+txt_7_5_draghide: Nascondi la destinazione
+txt_7_5_draglh: Blocca e nascondi la destinazione
+txt_7_5_draglock: Blocca la destinazione
+txt_7_5_never: Mai
+txt_7_5_repnascii: Sostituisci/rimuovi caratteri non-ASCII
+txt_7_4_comment: Commenti
+txt_7_4_7zfbrotlicomp: Compressione velocissima, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Compressione velocissima, 7Z Zstandard
+txt_7_4_presetrar: Compressione alta, RAR
+txt_7_4_tkeep: Mantenere data e ora originali
+txt_7_4_lock: Blocca archivio
+txt_7_4_locked: bloccato
+txt_7_4_lockconfirm: Gli archivi bloccati non possono essere ulteriormente modificati. Procedere bloccando questo archivio?
+txt_7_4_recover: Ripara archivio
+txt_7_4_tcurr: Impostare data e ora dell'archivio a data e ora del sistema
+txt_7_4_setarc: Impostare le opzioni avanzate di archiviazione
+txt_7_4_setext: Impostare le opzioni avanzate di estrazione
+txt_7_4_swzipx: Utilizzare l'estensione zipx per gli archivi zip non-Deflate
+txt_7_3_archiveerrors: [l'archivio contiene errori]
+txt_7_3_archiveerrorshint: L'archivio potrebbe non essere valido (a causa di dati mancanti, corrotti o fuori standard), è possibile usare Test per informazioni più dettagliate. Se l'elenco dei contenuti dell'archivio è cifrato, è necessaria la password per aprirlo.
+txt_7_3_clickextall: Cliccare "Estrai tutto" per abilitare
+txt_7_3_noconfdel: Non chiedere conferma per cancellazione dopo archiviazione / estrazione
+txt_7_3_profile7zfastest: Compressione veloce, 7Z molto veloce
+txt_7_3_maxbr: Massimizza la compressione con Brotli utilizzando più memoria (può essere incompatibile con alcuni estrattori)
+txt_7_3_maxzstd: Massimizza la compressione con Zstandard utilizzando più memoria
+txt_7_3_profile7zfast: Compressione media, 7Z veloce
+txt_7_3_stl: Impostare data e ora dell'archivio dal file più recente
+txt_7_2_altcomp: Compressione alta, ARC
+txt_7_2_clearnoupdate: Elimina le anteprime
+txt_7_2_autoclosepeazip: Chiudi PeaZip al termine
+txt_7_2_zpaqall: Estrai tutte le revisioni dei file
+txt_7_2_extcomp: Compressione estrema, ZPAQ
+txt_7_2_extcompultra: Compressione estrema, ZPAQ ultra
+txt_7_2_fbrotlicomp: Compressione velocissima, Brotli
+txt_7_2_fzstandardcomp: Compressione velocissima, Zstandard
+txt_7_2_loadcompsettings: Carica opzioni di compressione
+txt_7_2_savecompsettings: Salva opzioni di compressione
+txt_7_2_source: Sorgente
+txt_7_2_updateclear: Aggiorna i file modificati ed elimina le anteprime
+txt_7_1_type_description_brotli: Brotli: compressore veloce di Google, decompressione molto rapida
+txt_7_1_new: Estrai tutto qui, nuova cartella
+txt_7_1_smart: Estrai tutto qui, smart
+txt_7_1_profileintermediate: Compressione media, ZIP/BZip2 veloce
+txt_7_1_renfilesonly: Rinomina soli i files
+txt_7_1_typetosearch: Digita per cercare in questo percorso
+txt_7_1_type_description_zstd: Zstandard: compressore veloce di Facebook, decompressione molto rapida
+txt_7_0_af: Analizza il contenuto delle cartelle
+txt_7_0_autoopentar: Apri automaticamente gli archivi tar compressi in file tar.*
+txt_7_0_exttmppath: Il contenuto sarà estratto fuori dal percorso temporaneo di lavoro, in: 
+txt_6_9_autou: Aggiorna automaticamente i file modificati negli archivi
+txt_6_9_forceu: Aggiorna i file modificati
+txt_6_9_opuns: Operazione non supportata per questo tipo di archivi
+txt_6_9_overarch: Sovrascrivere i file con lo stesso nome già presenti nell'archivio?
+txt_6_9_uconf: Il file aperto in anteprima è stato modificato. Aggiornare l'archivio?
+txt_6_8_ndrop: Usa Drag And Drop nativo in Windows
+txt_6_7_nop: (no preview)
+txt_6_6_pdupfound: possibili duplicati trovati (test veloce approssimato)
+txt_6_6_rsh: Cancella cronologia ricerche
+txt_6_6_pdupfind: Suggerisci possibili duplicati
+txt_6_6_forcemodify: Consenti modifica per archivi di tipi non canonici
+txt_6_5_mandatory: (obbligatorio)
+txt_6_5_abort: Annulla
+txt_6_5_askp: Chiedi di settare una password all'avvio
+txt_6_5_chp: Cambia password
+txt_6_5_def: Definizione
+txt_6_5_nop: Non chiedere si settare una password all'avvio
+txt_6_5_error: Errore
+txt_6_5_seqerr: Rilevati errori, i file originali non saranno cancellati
+txt_6_5_sni: Includere NT security information
+txt_6_5_sns: Includere NTFS Alternate Data Stream
+txt_6_5_privacy: Privacy
+txt_6_5_showvolatile: Mostra quali sono le opzioni volatili / dipendenti dal contesto
+txt_6_5_force: Tenta l'apertura di archivi con errori
+txt_6_5_warning: Avviso
+txt_6_5_yes: Si
+txt_6_5_yesall: Si a tutto
+txt_6_5_np: E'ora possibile cambiare la password degli archivi convertiti; cancellare la password per non cifrare
+txt_6_4_absolute: Percorsi assoluti
+txt_6_4_appdirn: Aggiungi nome directory
+txt_6_4_closeallother: Chiudi tutti gli altri tab
+txt_6_4_closeright: Chiudi i tab a destra
+txt_6_4_collapse: Riduci i tab
+txt_6_4_expand: Espandi i tab
+txt_6_4_full: Percorsi completi
+txt_6_4_new: Nuovo
+txt_6_4_openintab: Apri in un nuovo tab
+txt_6_4_paths: Percorsi
+txt_6_4_prepdirn: Aggiungi nome directory (all'inizio)
+txt_6_4_relative: Percorsi relativi
+txt_6_4_tabbar: Barra dei tab
+txt_6_3_autoadjust: Adatta colonne
+txt_6_3_cinfo: Info e commenti
+txt_6_3_syn: Sincronizza archivio con disco
+txt_6_3_uar: Aggiorna solo i file già in archivio
+txt_6_2_encext: Aggiungi ".enc" agli archivi cifrati
+txt_6_2_archive: Tipo file archivio
+txt_6_2_container: Tipo file contenitore
+txt_6_1_ec: Espandi / nascondi struttura archivio
+txt_6_0_msq: Ordina per tipo file per compressione solida
+txt_5_9_lff: Esamina file e cartelle
+txt_5_9_pff: Esamina e mostra header/EOF
+txt_5_9_start: Directory iniziale
+txt_5_8_l0: Consenti ogni componente e formato supportato
+txt_5_8_l1: Consenti solo componenti di Software Libero
+txt_5_8_l2: Consenti solo formati aperti
+txt_5_8_ascii: ASCII-safe, nessun problema in ambienti legacy
+txt_5_8_cp: Code Page safe, possibili problemi su ambienti legacy con diverso Code Page
+txt_5_8_fs: Policy riguardo il Software Libero
+txt_5_8_utf: Richiede ambienti completamente compatibili con UTF-8 / Unicode
+txt_5_8_fsr: Questo formato non è supportato causa impostazione delle policy riguardo il Software Libero (Opzioni > Avanzate)
+txt_5_7_pinstalled: INSTALLATO
+txt_5_7_pmissing: MANCANTE
+txt_5_7_plugin: Plugin mancante, può essere installato da Aiuto > Pulgin e addon
+txt_5_6_basic: Di base
+txt_5_6_exarc: Estrai archivio
+txt_5_6_tab: Apri in nuovo tab
+txt_5_6_rc: Tasto destro per opzioni
+txt_5_6_layouts: Layout salvati
+txt_5_6_upexisting: Aggiorna archivio esistente
+txt_5_6_verbose: Mostra dettagli
+txt_5_5_case: (case sensitive)
+txt_5_5_add: Aggiungi stringa alla posizione specificata
+txt_5_5_addsel: Aggiungi alla selezione
+txt_5_5_ext: Cambia l'estensione
+txt_5_5_plugin: Plugin e addon
+txt_5_5_copypath: Copia percorso
+txt_5_5_delete: Cancella caratteri alla posizione specificata
+txt_5_5_halt: Arresta il sistema quando il lavoro è completato
+txt_5_5_positionw: 1 aggiungi prima del primo carattere, 2 secondo, ... "z" alla fine del nome file
+txt_5_5_positionwd: 1 cancella dal primo carattere incluso, 2 secondo, ... "z" dalla fine del nome file
+txt_5_5_replaceneww: Suggerimento: lasciare vuoto per cancellare la vecchia stringa
+txt_5_5_lower: Tutto minuscolo
+txt_5_5_replaceoldw: Modifica tutte le occorrenze della stringa o carattere nel nome file
+txt_5_5_newext: Nuova estensione
+txt_5_5_new: Nuova stringa
+txt_5_5_n: Numero di caratteri da cancellare
+txt_5_5_old: Vecchia stringa
+txt_5_5_position: Posizione (numero o "z" per fine)
+txt_5_5_intdir: Estrazione smart in nuova cartella
+txt_5_5_replacestr: Sostituisci/rimuovi stringa
+txt_5_5_datesameday: Stesso giorno dell'oggetto selezionato
+txt_5_5_datesamehour: Stessa ora dell'oggetto selezionato
+txt_5_5_datesamemonth: Stesso mese dell'oggetto selezionato
+txt_5_5_datesameweek: Stessa settimana dell'oggetto selezionato
+txt_5_5_datesameyear: Stesso anno dell'oggetto selezionato
+txt_5_5_scan: Scansione
+txt_5_5_select: Seleziona
+txt_5_5_similar: Simile all'oggetto selezionato
+txt_5_5_starting: Inizia con lo stesso carattere
+txt_5_5_string: Stringa da aggiungere
+txt_5_5_subtractsel: Rimuovi dalla selezione
+txt_5_5_datehour: Ora corrente
+txt_5_5_datemonth: Mese corrente
+txt_5_5_dateweek: Settimana corrente
+txt_5_5_dateyear: Anno corrente
+txt_5_5_dateday: Oggi
+txt_5_5_upper: Tutto maiuscolo
+txt_5_5_extw: Attenzione: modificando l'estensione il file potrebbe essere non utilizzabile
+txt_5_4_da: Aggiunto in data
+txt_5_4_deletearchives: Cancella archivi dopo l'estrazione
+txt_5_4_deletefiles: Cancella files dopo l'archiviazione
+txt_5_4_deleteoriginal: La procedura di cancellazione, definita nella schermata principale, sarà aggiunta allo script.
+txt_5_4_lv: Ultima visita
+txt_5_4_deletearchivesconfirm: Confermare la cancellazione degli archivi originali?
+txt_5_4_deletefilesconfirm: Confermare la cancellazione dei file originali?
+txt_5_4_used: Utilizzato
+txt_5_3_profilebest: Compressione estrema, 7Z ultra
+txt_5_3_profileadvanced: Compressione alta, 7Z
+txt_5_3_profilenormal: Compressione media, ZIP (compatibile con la maggior parte dei software)
+txt_5_3_profileveryfast: Compressione veloce, ZIP veloce (compatibile con la maggior parte dei software)
+txt_5_3_profilepassword: Proteggi con password, formato 7Z
+txt_5_3_profile10mb: Mantieni l'output sotto i 25 MB, raccomandato per allegati mail
+txt_5_3_profilesfx: Auto estraente, il destinatario non necessiterà di un software di estrazione
+txt_5_3_cml: Lingua del menu contestuale di sistema
+txt_5_3_cmlmessage: Fare doppio click sul linguaggio scelto e confermare le unioni delle informazioni al registro. Questo operazione necessita di essere ripetuta se il software viene reinstallato o riconfigurato con il wizard di integrazione.
+txt_5_3_exc: I filtri di esclusione prevalgono su quelli di inclusione
+txt_5_3_ia: Includi anche
+txt_5_3_io: Includi solo
+txt_5_3_rec: Ricorsivo (applica alle sottocartelle)
+txt_5_3_resetsi: Riconfigurare l'integrazione nel sistema (menu contestuale, Invia a, associazione file)?
+txt_5_2_oadd: Archivia nel percorso di origine
+txt_5_2_zerodelete: Cancellare e sovrascrivere con 0 i file selezionati? L'operazione non può essere annullata e i file non saranno più recuperabili
+txt_5_2_zfree: Sovrascrivere con 0 lo spazio libero di questa unità?
+txt_5_2_sdfree: Cancellare in modo sicuro lo spazio libero di questa unità?
+txt_5_2_oext: Estrai nel percorso di origine
+txt_5_2_securedeletefree: Cancellazione sicura spazio libero
+txt_5_2_free: Questa operazione può impiegare alcuni minuti e, se effettuata spesso, può usurare precocemente le unità basate su memorie flash
+txt_5_2_zerofiles: Cancellazione zero
+txt_5_2_zerofree: Cancellazione zero spazio libero
+txt_5_1_schedadd: Aggiungi pianificazione
+txt_5_1_schederr: Impossibile creare attività pianificata
+txt_5_1_daily: Giornaliero
+txt_5_1_day: Giorno
+txt_5_1_days: Giorni
+txt_5_1_enddate: Data fine
+txt_5_1_every: Ogni
+txt_5_1_w6: Venerdì
+txt_5_1_hourly: Orario
+txt_5_1_hours: Ore
+txt_5_1_last: Ultimo
+txt_5_1_schedmanage: Attività pianificate, gestione lavori pianificati nella sottocartella PeaZip
+txt_5_1_scriptmanage: Gestione script lavori pianificati
+txt_5_1_w2: Lunedì
+txt_5_1_monthly: Mensile
+txt_5_1_months: Mese
+txt_5_1_onlogin: Al login
+txt_5_1_onstart: All'avvio
+txt_5_1_once: Una volta
+txt_5_1_w7: Sabato
+txt_5_1_schedule: Pianificazione
+txt_5_1_schedexplain: Creazione di uno script (plain text) a partire dalla definizione di lavoro nella GUI, e pianificazione dell'esecuzione. Per gestire o eliminare i lavori pianificati utilizzare l'Unità di pianificazione di sistema, i lavori sono contenuti nella sottocartella "PeaZip" della libreria di attività pianificate.
+txt_5_1_schedok: Pianificazione creata correttamente
+txt_5_1_schedscripts: Script lavori pianificati
+txt_5_1_startdate: Data inizio
+txt_5_1_starttime: Ora inizio
+txt_5_1_w1: Domenica
+txt_5_1_schedname: Nome dell'attività, identifica sia lo script che l'attività pianificata
+txt_5_1_ts: Utilità di pianificazione
+txt_5_1_w5: Giovedì
+txt_5_1_w3: Martedì
+txt_5_1_w4: Mercoledì
+txt_5_1_weekly: Settimanale
+txt_5_1_weeks: Settimane
+txt_5_0_bc: Breadcrumb
+txt_5_0_resetpm: Confermare il reset del Password Manager? Tutte le password conservate nel Password Manager di PeaZip saranno eliminate se si conferma.
+txt_5_0_enum: Enumera il contenuto delle directory
+txt_5_0_music: Musica
+txt_5_0_ps: Apri PowerShell qui
+txt_5_0_perf: Performances
+txt_5_0_pictures: Immagini
+txt_5_0_removeall: Rimuovi tutto
+txt_5_0_resetbookmarks: Resettare i Preferiti alla selezione di default? (i Preferiti possono essere gestiti da Preferiti > Organizza)
+txt_5_0_sh: Cronologia della sessione
+txt_5_0_skip: Non enumerare il contenuto delle directory aggiunte ai layout
+txt_5_0_videos: Video
+txt_4_9_frame: Cornice
+txt_4_9_listth: Lista e miniature
+txt_4_9_shadow: Ombreggiatura
+txt_4_9_style: Stile
+txt_4_8_attach25: 25 MB (allegato posta elettronica)
+txt_4_8_crop: Ritaglia
+txt_4_8_detailsno: Dettagli
+txt_4_8_details: Dettagli e miniature
+txt_4_8_fit: Adatta a
+txt_4_8_fitl: Adatta all'asse maggiore
+txt_4_8_flip: Ribalta
+txt_4_8_fullscreen: Schermo intero
+txt_4_8_fun: Funzioni
+txt_4_8_h: Altezza
+txt_4_8_keeparchive: Salva copia archivio
+txt_4_8_noresize: Mantieni dimensioni originali
+txt_4_8_iconl: Immagini grandi
+txt_4_8_iconm: Icone e immagini
+txt_4_8_imagemanager: Gestione immagini
+txt_4_8_immersive: Immersive
+txt_4_8_listno: Lista
+txt_4_8_aspect: Mantieni le proporzioni
+txt_4_8_mirror: Speculare
+txt_4_8_presets: Presets
+txt_4_8_replace: Sovrascrivere le immagini originali? "No" applica la trasformazione in nuovi file(s).
+txt_4_8_resize: Ridimensiona
+txt_4_8_rl: Ruota a sinistra
+txt_4_8_rr: Ruota a destra
+txt_4_8_stop: Stop
+txt_4_8_t: Trasforma
+txt_4_8_w: Larghezza
+txt_4_7_pk: Crea password / keyfile random
+txt_4_7_spchar: Usa solo lettere e numeri
+txt_4_7_recycleask: Spostare i file selezionati nel Cestino?
+txt_4_7_recycle: Sposta nel Cestino
+txt_4_7_pcomp: Compressione potenziale
+txt_4_6_am: Archive manager
+txt_4_6_fm: File manager
+txt_4_6_users: Utenti
+txt_4_5_goupdate: E'disponibile una nuova versione, aprire il sito ufficiale di PeaZip per scaricarla?
+txt_4_5_b: Basso
+txt_4_5_koupdate: Impossibile controllare gli aggiornamenti, nessuna connessione con il server
+txt_4_5_update: Controlla aggiornamenti
+txt_4_5_dock: Aggancia
+txt_4_5_l: Sinistra
+txt_4_5_noupdate: PeaZip è aggiornato
+txt_4_5_properties: Proprietà
+txt_4_5_r: Destra
+txt_4_5_pj: Script lavori salvati
+txt_4_5_shaddress: Mostra la barra degli indirizzi
+txt_4_5_shnav: Mostra la barra di navigazione
+txt_4_5_shstatus: Mostra la barra di stato
+txt_4_5_shtool: Mostra la barra degli strumenti
+txt_4_5_upxpj: Non è possibile esportare la definizione del lavoro perchè questa azione deve essere eseguita in più comandi
+txt_4_5_t: Alto
+txt_4_4_confremoveall: Rimuovere tutte le personalizzazioni di PeaZip (Applicazioni, Preferiti, Password manager)?
+txt_4_4_confremove: Rimuovere la configurazione di PeaZip?
+txt_4_3_pwmanhint: Doppio click per editare gli oggetti nell'elenco password, tasto destro per opzioni, Ctrl+C per copiare le password
+txt_4_3_exppl: Esporta elenco password
+txt_4_3_expple: Cifrato (backup del Password manager)
+txt_4_3_keeppw: Mantieni password/keyfile per la sessione corrente
+txt_4_3_pwmanpwhint: Si raccomanda di usare password/keyfile (optional) per cifrare l'elenco password, in questo modo sarà richiesta l'autenticazione per accedere al password manager. Password/keyfile possono essere cambiati in qualunque momento da questo form.
+txt_4_3_pwmanmaster: Inserire/modificare la master password
+txt_4_3_pwmanlist: Elenco password
+txt_4_3_pwman: Password manager
+txt_4_3_pwmancorr: Il Password manager sembra essere corrotto o manomesso. Aprire comunque il Password manager per cercare di recuperare l'attuale lista di password? (No resetterà il password manager, scelta raccomandata)
+txt_4_3_expplp: Plain text (per tutti gli usi)
+txt_4_3_recsrc: Ricerca ricorsiva per default
+txt_4_3_resetpm: Resettare il Password manager? Tutte le password salvate verranno cancellate
+txt_4_3_breadcrumb: Barra dell'indirizzo breadcrumb
+txt_4_2_arcabspath: Usa percorsi assoluti
+txt_4_1_duplicateshint: la stringa "dimensioni"/"checksum" è visualizzata nella colonna CRC per tutti i possibili duplicati trovati nella directory o filtro di ricerca corrente
+txt_4_1_adminhint: (alternativamente, è possibile elevare i diritti utente per lavorare su percorsi protetti, Alt+F10 o Opzioni > Esegui come amministratore)
+txt_4_1_selected: (selezionati)
+txt_4_1_duplicatesfound: duplicati trovati
+txt_4_1_duplicatesfind: Trova duplicati
+txt_4_1_runasadmin: Esegui come amministratore
+txt_4_1_simplesearch: Ricerca semplice
+txt_4_0_thim: Visualizza anteprime delle immagini
+txt_3_8_type_description_wim: WIM: formato immagine disco di Microsoft
+txt_3_8_type_description_xz: XZ: potente compressione basata su LZMA2
+txt_3_7_donations: Donazioni
+txt_3_7_nameasparent: Nomina l'archivio come la cartella che contiene l'oggetto selezionato
+txt_3_7_tracker: Tracker
+txt_3_7_sort: Ordina per
+txt_3_7_swapbars: Scambia barra degli strumenti / barra degli indirizzi
+txt_3_7_themedbars: Barre decorate secondo il tema
+txt_3_6_ignoredd: Ignora la struttura per le operazioni drag and drop
+txt_3_6_close: Chiudi
+txt_3_6_resetapps: Resettare Applicazioni (gruppo customizzabile di programmi e script per aprire file bypassando le associazioni file di sistema)?
+txt_3_6_ethemes: Temi salvati
+txt_3_5_td: Download Temi
+txt_3_5_managecustomthemes: Gestisci Temi
+txt_3_4_nopaths: Non mantenere la struttura
+txt_3_4_smallicons: Icone
+txt_3_3_skipunits: (Windows) Mostra informazioni sulle unità remote, avvio più lento
+txt_3_3_stralt: Comando alternativo (quando nessun parametro è stato passato)
+txt_3_3_apps: Applicazioni
+txt_3_3_multi: Selezione multipla
+txt_3_3_runexp: Apri programma, file, cartella o sito web
+txt_3_3_apppath: Cartella di PeaZip
+txt_3_3_run: Esegui
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu usa UTF8 per i simboli non ASCII all'interno di archivi .zip
+txt_3_2_alltasks: Tutte le attività
+txt_3_2_conf: Configurazione
+txt_3_2_donations: Donazioni ad associazioni umanitarie
+txt_3_1_sccenc: 7z/p7zip encoding caratteri CONSOLE
+txt_3_1_downloads: Downloads
+txt_3_1_lib: Raccolte
+txt_3_1_more: Altro
+txt_3_1_openasarchive: Apri come archivio
+txt_3_1_sendto: Cartella del menu SendTo dell'utente
+txt_3_1_pathexc: Il percorso supera la lunghezza massima consentita
+txt_3_1_recent: Recenti
+txt_3_1_plsmartmin: Esegui ridotto a icona, mostra/lascia aperto se necessario
+txt_3_1_src: Ricerche
+txt_3_1_systmp: Temp dell'utente
+txt_3_1_languagetools: Traduttore
+txt_3_1_workingdir: Directory di lavoro
+txt_3_0_nonreadableorpw: Archivio non leggibile. L'archivio potrebbe essere non valido, avere partim mancanti, o elenco dei contenuti cifrato. Provare una password?
+txt_3_0_readablepw: Archivio protetto da password
+txt_3_0_configure: Configura associazione file e integrazione con il sistema
+txt_3_0_resettmp: Reset file temporanei di lavoro
+txt_2_9_address: Barra degli indirizzi
+txt_2_9_adv: I filtri avanzati sono applicati solo agli archivi gestiti attraverso 7z o FreeArc, vedi documentazione, e sostituiscono i filtri semplici (che sono usati per le funzioni di ricerca e sono visualizzati in Preferiti e Cronologia)
+txt_2_9_columns: Colonne
+txt_2_9_copyhere: Copia qui
+txt_2_9_noscan: Non esaminare i file aggiunti al layout
+txt_2_9_extconsole: La console di estrazione è abilitata solo quando ci si trova all'interno di un archivio
+txt_2_9_thl: Evidenzia pulsanti
+txt_2_9_home: Home
+txt_2_9_lt: Grande
+txt_2_9_mt: Media
+txt_2_9_movehere: Sposta qui
+txt_2_9_nav: Navigazione
+txt_2_9_navbar: Barra di navigazione
+txt_2_9_none: Nessuna
+txt_2_9_organize: Organizza
+txt_2_9_public: Pubblici
+txt_2_9_rec: Ricorsiva: cerca nelle sottocartelle, può richiedere molto tempo
+txt_2_9_selected: Selezionati
+txt_2_9_setapps: Organizza Applicazioni
+txt_2_9_showmenu: Mostra barra dei menu
+txt_2_9_st: Piccola
+txt_2_9_test_pw2G: Verifica archivi <2GB
+txt_2_9_vst: Solo testo
+txt_2_9_toolbar: Barra degli strumenti
+txt_2_9_tree: Albero
+txt_2_9_views: viste
+txt_2_8_experimental: (sperimentale)
+txt_2_8_zcopy: (Windows) Copia file in modalità riavviabile, la copia è più lenta
+txt_2_8_addvol: Aggiungere interi volumi può richiedere molto tempo, continuare?
+txt_2_8_uniterror: Impossibile accedere all'unità
+txt_2_8_cannotconvert: Impossibile convertire gli archivi selezionati
+txt_2_8_convertbegin: Continuare con la fase di compressione per finalizzare la conversione degli archivi?
+txt_2_8_convert: Converti
+txt_2_8_convertexisting: Converti archivi
+txt_2_8_convertdelete: Cancellare file e cartelle creati temporaneamente per la conversione?
+txt_2_8_details: Dettagli
+txt_2_8_parallel: Eseguire i lavori in parallelo quando possibile
+txt_2_8_convertnote: In ogni caso gli archivi originali non sono stati modificati, per lasciare all'utente l'opzione di conservarli o rimuoverli
+txt_2_8_custom: non è direttamente supportato da PeaZip, ma in fase di estrazione è possibile configurare PeaZip per gestire formati custom, nel tab "Avanzate". Aprire il file?
+txt_2_8_unitrecommend: Si raccomanda o l'estrazione dell'oggetto (tasto destro > estrai selezionati) o di aprire il filesystem da risorse dalla root del computer (strumenti di sistema > Apri unità come archivio)
+txt_2_8_viewasarchive: Apri unità come archivio
+txt_2_8_nounit: Nessuna unità selezionata
+txt_2_8_rowselect: Seleziona riga
+txt_2_8_statusbar: Barra di stato
+txt_2_8_typeunit: Inserire il nome di una unità logica o fisica
+txt_2_8_usedefaultoutpath: Usa sempre percorso di output predefinito
+txt_2_7_experimental: (sperimentale, vedere documentazione)
+txt_2_7_optional: (opzionale)
+txt_2_7_list_tryflatorpw: , possibili soluzioni: visualizza tutto (F6), inserire password (F9), ottenere un'altra copia dell'archivio
+txt_2_7_separate: Archivia separatamente ciascun oggetto
+txt_2_7_pwsupported: archivia con password
+txt_2_7_cancel: Annulla
+txt_2_7_encfn: Cifra anche i nomi file (se supportato dal formato)
+txt_2_7_setpw: Password / keyfile
+txt_2_7_ext: Estrazione:
+txt_2_7_extfrom: Estrazione dall'archivio:
+txt_2_7_es: Estrai tipi di file non di archivio supportati, es. eseguibili, file di MS Office e OOo
+txt_2_7_eu: Estrai tipi di file non supportati, specificando l'utility
+txt_2_7_clipboard: Clipboad
+txt_2_7_goarclayout: Vai al layout di archiviazione
+txt_2_7_goextlayout: Vai al layout di estrazione
+txt_2_7_ok: OK
+txt_2_7_drag_archive: aprire il file come archivio? ("No" per aggiungerlo al layout di archiviazione)
+txt_2_7_oop: Aprire il percorso di output al termine dell'operazione
+txt_2_7_validatefn: Operazione interrotta, nome file non valido:
+txt_2_7_validatecl: Operazione interrotta, comando potenzialmente pericoloso (es. concatenazione di comandi, non permessa all'interno del programma):
+txt_2_7_output: Output
+txt_2_7_pwnotset: Password non settata
+txt_2_7_pwarcset: Password settata
+txt_2_7_pwextset: Password settata, è possibile estrarre/navigare/testare archivi cifrati
+txt_2_7_archivehint: Trascinare qui i file da aggiungere, tasto destro per altre funzioni di selezione
+txt_2_7_exthint: Trascinare qui i file da estrarre, tasto destro per altre funzioni di selezione
+txt_2_7_setadvf: Imposta filtri avanzati
+txt_2_7_selpath: Percorso dell'oggetto selezionato
+txt_2_7_separateerror: Non è possibile importare la definizione di un lavoro che utilizza l'opzione "Archivia separatamente ciascun oggetto" perché il lavoro è costituito da più comandi distinti
+txt_2_7_noinput: Il layout è vuoto: usare Aggiungi file(s) o Carica Layout per popolare la lista di file da estrarre
+txt_2_7_dirsize: Le dimensioni del contenuto delle cartelle non è calcolato nella dimensione totale
+txt_2_7_un7z_browse_flat: provare visualizza tutto (F6)
+txt_2_7_updating: Update, aggiunta all'archivio
+txt_2_6_folders: (cartelle)
+txt_2_6_advanced: Avanzate
+txt_2_6_plalways: Lasciare sempre aperto per esaminare il risultato del lavoro
+txt_2_6_plsmart: Lasciare aperto solo quando necessario (errori, report di list o test)
+txt_2_5_sessionio: (per questa sessione)
+txt_2_5_advanced: Configurazione avanzata: mettere gli spazi tra parametri e nome file se necessario
+txt_2_5_basic: Configurazione di base: applicazione e parametri prima del nome file
+txt_2_5_cannotrun: Impossibile eseguire
+txt_2_5_custeditors: Applicazioni personalizzate: editor, player, scansione file con antivirus ecc... (sostituiscono le associazioni file predefinite)
+txt_2_5_delete: Cancella
+txt_2_5_delete_fromarchive: Cancella dall'archivio
+txt_2_5_langflag: Mostra i nomi degli oggetti negli archivi come testo UTF-8; in alternativa sostituisci i caratteri estesi con "?"
+txt_2_5_encpj: Salva la definizione dei lavori come testo UTF-8
+txt_2_5_execommand: Eseguibile o comando
+txt_2_5_help: Aiuto
+txt_2_5_langhint: Suggerimento: sostituendo i caratteri estesi con il carattere jolly "?" è possibile ottenere una migliore sintassi dei comandi se il set di caratteri usato dall'archivio non può essere convertito con successo sul sistema in uso
+txt_2_5_mini_help: Tutorial localizzato
+txt_2_5_offline_help: Guida di PeaZip
+txt_2_5_tray: Riduci ad icona
+txt_2_5_remove: Rimuovi
+txt_2_5_hintpaths: Click con tasto destro per mostrare le cartelle di sistema e dell'utente
+txt_2_5_selectapp: Seleziona applicazione
+txt_2_5_strafter: Stringa dopo il nome file
+txt_2_5_strbefore: Stringa prima del nome file
+txt_2_5_encoding: Codifica caratteri
+txt_2_5_nopw: questo tipo di archivi non può essere cifrato
+txt_2_4_draghint: [richiede Explorer con barra Indirizzo visibile]
+txt_2_4_tb: Adatta i bottoni della toolbar (riavvia PeaZip)
+txt_2_4_adding: Sto aggiungendo
+txt_2_4_advclip: Selezioni multiple nella clipboard
+txt_2_4_yanswers: Answers
+txt_2_4_itemsheight: Altezza oggetti automatica
+txt_2_4_clearclipboard: Pulisci clipboard (Esc)
+txt_2_4_wcommons: Commons
+txt_2_4_copyfrom: Copia da
+txt_2_4_deletebookmarks: Si desidera cancellare la lista di file e cartelle preferiti?
+txt_2_4_documents: Documenti
+txt_2_4_wenc: Enciclopedia
+txt_2_4_extractfrom: Estrai da
+txt_2_4_hexp: Contenuto esadecimale
+txt_2_4_operation: Operazione
+txt_2_4_path: non è scrivibile (mancante o in sola lettura), selezionare un percorso accessibile in scrittura per l'output
+txt_2_4_removefromclipboard: Rimuovi dalla clipboard
+txt_2_4_stdclip: Standard: salva una singola selezione, elimina le operazioni taglia dopo incolla
+txt_2_4_totalmem: memoria totale
+txt_2_4_gvideo: Video
+txt_2_4_wbook: Wikibook
+txt_2_4_wnews: Wikinews
+txt_2_4_wsrc: Wikisource
+txt_2_4_wdict: Wiktionary
+txt_2_3_pw_errorchar: il carattere apice non dovrebbe essere usato nella password (per PeaZip o script). Se si desidera usare questa password è possibile ignorare il messaggio ed inserire la password interattivamente nella console.
+txt_2_3_envstr: Mostra variabili d'ambiente
+txt_2_3_never_pw: Non chiedere la password
+txt_2_3_home: Home dell'utente
+txt_2_3_on_pw: Nelle operazioni di estrazione/list/test dai menu del sistema:
+txt_2_3_test_pw100: Verifica archivi <100MB
+txt_2_3_test_pw: Verifica archivi (lento)
+txt_exclude_recourse: esclusione ricorsiva
+txt_action_extopen: azione per "Estrai e apri con l'applicazione associata"
+txt_error_passwordnotmatch: "Password" e "Conferma" sono diversi
+txt_action_preview: azione per "Anteprima con l'applicazione associata"
+txt_preview_hint: "Anteprima" agisce come "Estrai e apri", ma in una cartella di lavoro temporanea automaticamente rimossa alla chiusura dell'archivio
+txt_better: (migliore)
+txt_default2: (predefinito)
+txt_faster: (più veloce)
+txt_fastermem: (più veloce, usa meno memoria)
+txt_tempdir: (cartella di lavoro temporanea di PeaZip)
+txt_stream: (determinato da "Controllo su stream")
+txt_slowermem: (più lento, usa più memoria)
+txt_store: (nessuna compressione, più veloce)
+txt_newfolder: (in una nuova cartella)
+txt_7z_exitcodeunknown: : Errore sconosciuto
+txt_list_isfolder:  [cartella]
+txt_none: <nessuno>
+txt_fd: 1,44 MB Floppy
+txt_7z_exitcode1: 1: Errore parziale, es. alcuni file bloccati o non trovati
+txt_attach10: 10 MB (allegato posta elettronica)
+txt_7z_exitcode2: 2: Errore
+txt_7z_exitcode255: 255: Lavoro interrotto dall'utente
+txt_fat32: 4 GB (massima dimensione file in FAT32)
+txt_dvd: 4,7 GB DVD
+txt_attach5: 5 MB (allegato posta elettronica)
+txt_cd650: 650 MB CD
+txt_7z_exitcode7: 7: Linea di comando errata
+txt_cd700: 700 MB CD
+txt_type_description_7z: 7Z: archiviazione e compressione potente e versatile
+txt_dvddl: 8,5 GB DVD DL
+txt_7z_exitcode8: 8: Memoria insufficiente per completare l'operazione
+txt_abort: Annullare l'operazione di spostamento o copia programmata?
+txt_about: Informazioni
+txt_action: Azione
+txt_action_hint: Azione su apertura o anteprima con l'applicazione associata
+txt_add: Aggiungi
+txt_add_existing_archive: aggiungi (se l'archivio esiste)
+txt_add_archive: Aggiungi archivio
+txt_add_files: Aggiungi file
+txt_add_folder: Aggiungi cartella
+txt_add_path: Aggiungi percorso
+txt_add_tolayout: Aggiungi file e cartelle selezionate al layout dell'archivio
+txt_add_toarchive: Aggiungi all'archivio
+txt_add_tobookmarks: Aggiungi ai preferiti
+txt_address_hint: Filtro: accetta caratteri jolly * e ?
+txt_adv_filters: Filtri avanzati
+txt_algo: Algoritmo
+txt_all: tutto
+txt_all_default: Tutto (predefinito)
+txt_all_type: Stesso tipo
+txt_all_date: Data
+txt_all_psize: Dimensione file (compressa)
+txt_all_attributes: Stessi attributi
+txt_all_size: Dimensione file
+txt_error_input_upx: consente un singolo eseguibile come input
+txt_always_pw: Chiedi sempre la password
+txt_ignore_ext: Ignora la struttura per "Estrai e..."
+txt_ignore_disp: Ignora la struttura per "Estrai visualizzati..."
+txt_ignore_sel: Ignora la struttura per "Estrai selezionati..."
+txt_key_hint: Accoda l'hash del file-chiave alla password; l'archivio potrà essere decifrato da PeaZip o altre applicazioni che seguano la stessa convenzione, o scrivendo l'hash come parte della password
+txt_timestamp: Aggiungi data e ora al nome
+txt_appoptions: Opzioni dell'applicazione
+txt_type_description_arc: ARC: archiviatore e compressore sperimentale, potente e versatile
+txt_archive: Archivio
+txt_un7z_browse_ok: archivio analizzato con successo
+txt_interface: Interfaccia del browser di archivi
+txt_archivecreation: Creazione archivio
+txt_tarbefore_hint: Archivia in formato TAR prima che nel formato specificato
+txt_archive_hint: Archivia, comprimi, dividi e cifra file, cartelle e volumi
+txt_compressionratio_hint: Rapporto di compressione dell'archivio
+txt_archiving: Archiviazione:
+txt_cl_long: La linea di comando creata è troppo lunga e non può essere passata a PeaZip; è possibile ridurre la selezione ad esempio indicando cartelle anziché singoli file
+txt_overwrite_askbefore: Chiedi conferma (in console)
+txt_associated: Applicazione associata
+txt_attributes: Attributi
+txt_author: Autore
+txt_ren_existing: Rinomina file esistenti
+txt_ren_extracted: Rinomina file estratti
+txt_autofolder: Creare automaticamente una nuova cartella in cui estrarre l'archivio?
+txt_back: Indietro
+txt_backend: Interfaccia degli eseguibili backend
+txt_backupexe: Backup dell'eseguibile (raccomandato)
+txt_bettercompression: compressione migliore
+txt_blogs: Blog
+txt_blowfish: Blowfish448 (blocchi di 64 bit)
+txt_bookmarks: Preferiti
+txt_browse: Naviga
+txt_browser: Browser
+txt_aborted_error: La navigazione dell'archivio è stata fermata perché richiedeva troppo tempo; è possibile visualizzare una selezione più ristretta usando filtri o ricerca (o uscendo dal modo flat)
+txt_list_browsing: Navigazione:
+txt_archive_root: Livello superiore dell'archivio
+txt_type_description_bzip2: BZip2: buon compromesso tra velocità e livello di compressione
+txt_pw_empty: Inserire una password (o un keyfile)
+txt_add_error: Impossibile aggiungere, aggiornare o cancellare oggetti. L'archivio non può essere modificato, o non supporta la specifica operazione. E'possibile abilitare la modifica per archivi di tipi non canonici dalle opzioni dell'Archive manager.
+txt_un7z_browse_failure: impossibile navigare l'archivio
+txt_list_error: Impossibile mostrare il contenuto dell'archivio, che potrebbe essere corrotto o protetto da password
+txt_conf_cannotsave: Impossibile salvare il file di configurazione, controllare se il percorso del programma ha abbastanza spazio ed è accessibile in scrittura
+txt_check_hint: Controlla l'integrità dei dati; gli algoritmi di hash sono in grado di rilevare alterazioni mirate e non casuali (vedere la documentazione)
+txt_check: Calcola checksum/hash
+txt_check_select: Checksum/hash da calcolare
+txt_clear: Svuota
+txt_clearlayout: Svuota layout
+txt_pj_hint: Cliccare qui per importare il lavoro dalla GUI e/o resettare le modifiche
+txt_autoclose: Chiudi PeaLauncher quando il lavoro è terminato
+txt_cl: linea di comando:
+txt_compare: Compara file
+txt_compress: Comprimi
+txt_compress_executable: Comprimi eseguibile
+txt_compress_openforwriting: Comprimi file aperti in scrittura
+txt_compression: Compressione
+txt_compmanagement: Gestione del computer
+txt_pw_confirm: Conferma
+txt_console: Console
+txt_console_interface: console: interfaccia nativa
+txt_content: Contenuto
+txt_controlpanel: Pannello di controllo
+txt_convert: Converti disco in NTFS
+txt_copy: Copia
+txt_copyto: Copia in...
+txt_create: Crea
+txt_create_archive: Crea archivio
+txt_title_create: Crea archivi, comprimi, cifra, splitta...
+txt_create_keyfile: Crea file-chiave
+txt_create_folder: Crea nuova cartella
+txt_create_theme: Crea Tema dai parametri correnti
+txt_rr: Crea recovery records
+txt_create_sfx: Crea archivio auto-estraente
+txt_cr_current: Rapporto di compressione del percorso o filtro corrente
+txt_custom: Personalizzato
+txt_type_description_custom: Personalizzato (avanzato): inserire nome e parametri dell'eseguibile
+txt_customapp: Applicazione personalizzata
+txt_custom_parameters: Parametri personalizzati
+txt_customsize: Specifica le dimensioni
+txt_cut: Taglia
+txt_datetime: Data/ora
+txt_default: predefinito
+txt_default_compression: compressione predefinita
+txt_default_format: Formato predefinito
+txt_theme_default: Tema predefinito
+txt_hard_reset_hint: Cancella i preferiti
+txt_desktop: Desktop
+txt_dictionary: Dizionario
+txt_dirs: directory,
+txt_dis: Nota disambigua:
+txt_disk_cleanup: Pulitura disco
+txt_disk_defrag: Deframmentazione
+txt_disk_management: Gestione dischi
+txt_dispaly: Mostra i risultati come
+txt_displayedmnu_obj: visualizzati
+txt_displayedobjects: Oggetti visualizzati
+txt_nocompress: non comprimere
+txt_delete: Cancellare i file selezionati? L'operazione non può essere annullata e i file non saranno recuperabili dal cestino
+txt_wipe: Cancellare i file selezionati in modo sicuro? L'operazione non può essere annullata e i file non saranno più recuperabili
+txt_done: Finito
+txt_edit: Modifica
+txt_elapsed: trascorso:
+txt_error_emptycl: Linea di comando vuota!
+txt_encrypt: Cifra
+txt_encrypted: cifrato
+txt_encryption: Cifratura
+txt_note: Inserire nota/descrizione
+txt_random_keys: Premere tasti a caso
+txt_random_keys_hint: Premere tasti a caso, non è necessario ricordarli
+txt_ent: Valutazione dell'entropia
+txt_ent_tools: Strumenti per raccogliere entropia
+txt_eqorlarger: Maggiore o uguale all'oggetto selezionato
+txt_eqorrecent: Uguale o più recente dell'oggetto selezionato
+txt_eqorolder: Uguale o meno recente dell'oggetto selezionato
+txt_eqorsmaller: Minore o uguale all'oggetto selezionato
+txt_equal: Uguale all'oggetto selezionato
+txt_erase_hint: Cancellazione sicura: sovrascrittura con dati casuali, mascheramento della dimensione, ridenominazione e cancellazione
+txt_extraction_error: Errore di estrazione dell'oggetto selezionato, se l'archivio è protetto da password è necessario fornirla
+txt_exclude_hint: Filtri di esclusione, uno per linea; è possibile usare i caratteri jolly ? e *; " e ' non sono necessari
+txt_exclusion_recourse: Filtri di esclusione ricorsivi
+txt_exclusion: Esclusione:
+txt_exe: Eseguibile
+txt_overwrite_qry: esiste nel percorso di destinazione; sovrascrivere con i dati provenienti dal percorso di origine? (Cancel: salta la copia di questo oggetto)
+txt_confirm_overwrite: esiste; sovrascrivere? (no per saltare)
+txt_explore_outpath: Esplora il percorso di output
+txt_explore_path: Esplora percorso
+txt_ext: Est.
+txt_caption_extract: Estrai
+txt_ext_nopath: Estrai (non mantenere la struttura)
+txt_ext_all: Estrai tutto
+txt_ext_allhere: Estrai tutto qui
+txt_ext_allto: Estrai tutto in
+txt_extopen_custom: Estrai e apri con applicazione personalizzata
+txt_extopen_with: Estrai e apri con...
+txt_ext_disp_here: Estrai oggetti visualizzati qui
+txt_ext_disp: Estrai oggetti visualizzati
+txt_ext_disp_to: Estrai oggetti visualizzati in...
+txt_ext_here: Estrai qui
+txt_ext_sel_here: Estrai oggetti selezionati qui
+txt_ext_sel: Estrai oggetti selezionati
+txt_ext_sel_to: Estrai oggetti selezionati in...
+txt_extobj: Estrai oggetto
+txt_newfoldermenu: Estrai in nuova cartella
+txt_extto: Estrai in...
+txt_level_fast: Veloce
+txt_fastcompr: compressione veloce
+txt_fastopen: Apertura veloce, ferma il browsing di archivi estremamente grandi (usa i filtri)
+txt_level_fastest: Più veloce
+txt_favformats: Formati preferiti (collegamenti)
+txt_file: File
+txt_filebrowser: Browser di file e archivi
+txt_filetools: File tools
+txt_files: file
+txt_nfiles: File
+txt_fs: Filesystem
+txt_filters_recourse: i filtri sono ricorsivi
+txt_filters: Filtri
+txt_flat: Flat (mostra tutto)
+txt_list_flat: Modo flat
+txt_unit_floppy: Floppy disk
+txt_foldername: Nome cartella
+txt_nfolders: Cartelle
+txt_error_input_multi: il formato consente di archiviare un singolo file per volta; è possibile proseguire usando l'opzione "Crea TAR" che archivia preventivamente tutti gli oggetti di input in un unico file TAR
+txt_fwd: Avanti
+txt_list_found: Trovati:
+txt_free: Disponibili
+txt_free2: disponibili
+txt_name_full: Nome completo
+txt_function: Funzione
+txt_general: Generale
+txt_multithreading: multithreading automatico
+txt_go_browser: Vai al browser di file e archivi
+txt_go_path: Esplora percorso (PeaZip)
+txt_guicl: grafica e console
+txt_guipealauncher: grafica: utilizza PeaLauncher
+txt_graphic: Cartella elementi grafici
+txt_gridaltcolor: Colore alternativo della griglia
+txt_gridrowheight: Altezza righe della griglia
+txt_gui: GUI
+txt_type_description_gzip: Gzip: compressione veloce
+txt_here: qui
+txt_list_history: Cronologia
+txt_homeroot: Root del computer o dell'archivio
+txt_quickbrowse_hint: Se l'apertura dell'archivio viene fermata l'utente può ridurre la selezione con filtri o ricerca; le funzioni di estrazione, test, ecc... non sono influenzate in alcun modo
+txt_backupexe_hint: Se qualcosa va storto sarà possibile recuperare l'eseguibile da una copia di backup automatico
+txt_attach: Se il client di posta supporta l'automazione, l'archivio sarà allegato ad un nuovo messaggio di posta
+txt_images: Immagini
+txt_include_hint: Filtri di inclusione, uno per linea; è possibile usare i caratteri jolly ? e *; " e ' non sono necessari
+txt_filters_hint: Filtri di inclusione ed esclusione per l'eseguibile 7z; fare riferimento alla guida di 7-Zip per approfondire il funzionamento di questi filtri
+txt_inclusion_recourse: Filtri di inclusione ricorsivi
+txt_inclusion: Inclusione:
+txt_error_function: E' stata richiesta una funzione non corretta
+txt_info: Informazioni
+txt_infoall: Informazioni su tutto
+txt_infodisp: Informazioni sugli oggetti visualizzati
+txt_infosel: Informazioni sugli oggetti selezionati
+txt_inputinfo: Informazioni sull'input
+txt_input_list: Lista di input:
+txt_iop: input, output, parametri
+txt_ipo: input, parametri, output
+txt_input: input:
+txt_integrity: Controllo di integrità
+txt_chunk_size: Dimensione personalizzata non valida, inserire un valore numerico
+txt_invertsel: Inverti selezione
+txt_type_exe: è un eseguibile per Windows, eseguirlo? (No per aprirlo come un archivio) NOTA: in alcuni casi è necessario estrarre l'intero archivio prima di poter eseguire correttamente gli eseguibili in esso contenuti
+txt_return_to_archive: è attualmente aperto; visualizzarlo?
+txt_not_accessible: non è più accessibile
+txt_type_unsupported: non è un formato di archivio supportato
+txt_checkname_failed: non è un nome valido
+txt_not_accessible_list: non è accessibile; controllare che la lista di file sia corretta ed aggiornata
+txt_theme_create_error: Non è stato possibile creare il tema; scegliere per il tema un nome valido come nome file, e selezionare un percorso accessibile in scrittura
+txt_theme_exists: esiste già; selezionare un percorso diverso
+txt_job_code: codice lavoro:
+txt_job_definition_saved: Definizione del lavoro salvata con successo in
+txt_job_success: Lavoro completato correttamente!
+txt_join: Unisci
+txt_joinfiles: Unisci file
+txt_keyfile: File-chiave
+txt_keyfile_not_found: Il file-chiave non è disponibile. Scegliere un diverso file-chiave
+txt_keyfile_notcreated: File-chiave non creato
+txt_larger: Maggiore dell'oggetto selezionato
+txt_lastused: Ultimo utilizzato
+txt_launch: Lancia lavoro
+txt_layout: Layout
+txt_filelist_savedas: Layout salvato come
+txt_level: Livello
+txt_license: Licenza
+txt_caption_list: Elenco
+txt_list_details: Elenco dettagliato
+txt_list_all: Elenca tutti
+txt_list_disp: Elenca oggetti visualizzati
+txt_list_sel: Elenca oggetti selezionati
+txt_toggle_warning: Elencare il contenuto di un percorso in modo flat può richiedere molto tempo, continuare?
+txt_loadfile: Carica file
+txt_loadlayout: Carica layout
+txt_unit_hd: Disco locale
+txt_localization: Localizzazione
+txt_lpaqver: Versione di LPAQ
+txt_type_description_lpaq: LPAQ: versione veloce di PAQ, ottima compressione
+txt_maininterface: Interfaccia iniziale
+txt_maxcomp: Massima compressione
+txt_level_maximum: Massimo
+txt_restartrequired: Può richiedere il riavvio dell'applicazione per essere applicato
+txt_required_memory: MB di memoria richiesti
+txt_method: Metodo
+txt_misc: Altro
+txt_modify: Modifica
+txt_morecontrols: Altri controlli (cronologia, preferiti, ...)
+txt_morerecent: Più recente dell'oggetto selezionato
+txt_ent_hint: Campionamento di entropia da movimenti del mouse, tasti premuti e file
+txt_moveto: Sposta in...
+txt_mypc: Risorse del computer
+txt_list_na: n/a
+txt_name: Nome
+txt_naming: Policy dei nomi
+txt_unit_remote: Unità di rete
+txt_newarchive: nuovo archivio
+txt_cnewfolder: Nuova cartella
+txt_news: Notizie
+txt_no: No
+txt_noinput: Non è stato ricevuto alcun input accessibile
+txt_nocompress_hint: nessuna compressione (più veloce)
+txt_split_noinput: Nessun input selezionato: selezionare un file da dividere
+txt_open_noinput: Nessun input selezionato: selezionare un archivio (indicare il primo volume per archivi divisi)
+txt_list_nomatch: nessun riscontro
+txt_singlethread: nessun multithreading
+txt_none2: nessuno
+txt_nonsolid: Non solido
+txt_level_normal: Normale
+txt_copy_error: spostamento o copia non riuscita, codice errore:
+txt_description: Nota/descrizione
+txt_compare_second: Selezionare ora il file da comparare
+txt_peaobj: Controllo sugli oggetti
+txt_displayed_obj: oggetti
+txt_olderthan: Meno recente dell'oggetto selezionato
+txt_on: su
+txt_ondblclick: Doppio click
+txt_opacity: Opacità
+txt_open: Apri
+txt_openarchive: Apri archivio
+txt_title_open: Apri archivi, decifra, unisci...
+txt_open_bookmark: Apri preferito
+txt_cphere: Apri linea di comando qui
+txt_open_file: Apri file
+txt_open_files: Apri file
+txt_open_path: Apri percorso
+txt_opensource: Programma di archiviazione Open source
+txt_openwith: Apri con...
+txt_aborted: Operazione interrotta
+txt_unit_cd: Drive ottico
+txt_options: Opzioni
+txt_other: Altro
+txt_otherparams: Altri parametri (editazione libera)
+txt_oip: output, input, parametri
+txt_opi: output,parametri, input
+txt_output: output:
+txt_overwrite: Sovrascrivi file esistenti
+txt_compressed_size: Compresso
+txt_paqver: Versione PAQ
+txt_type_description_paq: PAQ: compressore lento ma estremamente potente
+txt_pio: parametri, input, output
+txt_poi: parametri, output, input
+txt_parameters: Parametri:
+txt_error_partial: Estrazione parziale non implementata per il tipo di archivio corrente
+txt_passes: Passi
+txt_pw: Password
+txt_pwlength: Lunghezza password (4..64 caratteri)
+txt_un7z_browse_pw: può essere richiesta una password
+txt_un7z_browse_pw_other: la password può non essere corretta
+txt_paste: Incolla
+txt_path: Percorso
+txt_pea_appcolor: Colore speciale applicazione
+txt_pea_textcolor: Colore testo Pea
+txt_type_description_pea: PEA: formato orientato alla sicurezza, compressione veloce
+txt_peazip_new: PeaZip (nuova istanza)
+txt_peazip_help: Guida online
+txt_peazip_web: Sito PeaZip
+txt_performall: Tutti gli algoritmi
+txt_name_provide: Non utilizzare i caratteri \ / : * ? ' " < > |
+txt_upxorstrip: Selezionare Strip e/o UPX
+txt_not_removable_file: Chiudere il file in uso per consentire a PeaZip di rimuoverlo:
+txt_not_removable: Chiudere i file in uso per consentire a PeaZip di rimuovere la cartella:
+txt_custom_executable_missing: Indicare l'eseguibile personalizzato
+txt_type_unsupported_select: Selezionare un archivio di tipo supportato:
+txt_no_theme_name: Specificare un nome per il tema
+txt_please_wait: Attendere
+txt_copy_wait: Attendere il completamento dell'operazione di spostamento o copia in corso prima di schedulare altre operazioni di questo tipo
+txt_previewwith: Anteprima con...
+txt_projectadmin: Amministratore del progetto:
+txt_type_description_quad: QUAD: compressore su base LZ ad alta efficienza
+txt_quickdelete: Cancellazione veloce
+txt_quit: Esci
+txt_unit_ram: Disco RAM
+txt_read: Letti:
+txt_recentarchives: Archivi recenti
+txt_rr_hint: I recovery records consentono di tentare la riparazione di archivi corrotti
+txt_search_refine: Filtro di ricerca, accetta i caratteri jolly ? e *
+txt_fefreshf5: Aggiorna (F5)
+txt_release: release:
+txt_unit_removable: Disco rimovibile
+txt_remove_bookmark: Elimina preferito
+txt_remove_external_unit: Rimuovi dispositivi esterni
+txt_removeselected: Rimuovi oggetti selezionati
+txt_rename: Rinomina
+txt_caption_repair: Ripara
+txt_restartrequired2: richiede il riavvio dell'applicazione
+txt_reset: Reset
+txt_reset_archivename: Resetta il nome dell'archivio
+txt_hardreset: Reset preferiti
+txt_reset_theme: Carica tema predefinito
+txt_restore_att: ripristina gli attributi originali
+txt_run_as: Esegui come (solo utenti con password)
+txt_run_as2: Esegui come altro utente
+txt_sample: Campione:
+txt_saveas: Salva come
+txt_savehistory: Salva cronologia
+txt_save_infolder: Salva in cartella (automatico)
+txt_savejob: Salva lavoro
+txt_savejobdefinition: Salva definizione del lavoro
+txt_savejobdefinition_hint: Salva definizione del lavoro come file di testo
+txt_savelayout: Salva layout
+txt_save_winstate: Salva stato della finestra
+txt_search: Ricerca (ricorsiva, può richiedere molto tempo)
+txt_searchanddrag: Cerca e trascina qui
+txt_searchfor: Cerca
+txt_nrsearch: Cerca qui (non ricorsiva)
+txt_search_hint: Cerca nelle sottodirectory dell'archivio secondo i filtri impostati
+txt_search_web: Cerca nel web
+txt_list_searching: Ricerca in corso...
+txt_securedelete: Cancellazione sicura
+txt_default_description: Selezionare una funzione o trascinare qui i file
+txt_selectall: Seleziona tutto
+txt_selectdir: Seleziona directory
+txt_selected_obj: selezionati
+txt_selected_objects: Oggetti selezionati
+txt_sfx: Auto-estraente
+txt_sendbymail: Invia per mail
+txt_set_defaults: Imposta i parametri dell'applicazione
+txt_settings: Impostazioni
+txt_sfx_interface: interfaccia sfx
+txt_showhints: Mostra suggerimenti
+txt_show_messages: Mostra messaggi informativi
+txt_showpw: Mostra il campo password
+txt_singlevol: Singolo volume
+txt_size: Dimensioni
+txt_sizeb: Dimensioni (B)
+txt_skip_existing: Salta file esistenti
+txt_slowercomp: compressione più lenta, ma decompressione ugualmente veloce
+txt_smaller: Minore dell'oggetto selezionato
+txt_solid: Solido
+txt_solid_block: Blocco solido
+txt_solid_auto: Solido, automatico
+txt_solid_extension: Solido, per estensione
+txt_listtest: non sono supportate operazioni di elenco/test per questo formato
+txt_sortbysel: Ordina per stato di selezione
+txt_list_sorting: Ordinamento in corso...
+txt_speed: velocità
+txt_split: Dividi
+txt_type_description_split: Dividi file, con controllo di integrità opzionale
+txt_split_file: Dividi file
+txt_list_nostats: stato non disponibile
+txt_status: Stato
+txt_level_store: Nessuna compressione
+txt_stream_control: Controllo su stream
+txt_strip: Strip prima di UPX (raccomandato)
+txt_keyfile_created: Creato file-chiave:
+txt_suggestpw: Suggerisci password
+txt_noupx: Strip completato, UPX non eseguito
+txt_syntax: Sintassi:
+txt_sysbenchmark: Benchmark
+txt_benchmark: Il benchmark del sistema impegnerà per alcuni minuti tutte le risorse di CPU e memoria della macchina; il sistema può non rispondere durante il benchmark. Eseguire?
+txt_systools: Strumenti di sistema
+txt_tarbefore: Crea TAR
+txt_type_description_tar: TAR: formato di archiviazione diffuso in ambienti UNIX
+txt_taskman: Task manager
+txt_caption_test: Verifica
+txt_testall: Verifica tutto
+txt_testdisp: Verifica oggetti visualizzati
+txt_testpw: Prova password / file-chiave
+txt_testsel: Verifica oggetti selezionati
+txt_col_hint: Il colore dovrebbe essere scelto per integrarsi al meglio con gli altri elementi della GUI
+txt_bookmarks_hint: La lista dei preferiti completa (ed editabile) è disponibile nel browser, cliccando sull'icona "Altri controlli" e "Mostra cronologia/preferiti"
+txt_archive_noinput_tolist: Il layout è vuoto: popolare il layout dell'archivio con Aggiungi file, Aggiungi cartella o Carica layout
+txt_theme: Tema
+txt_icons_found: Tema caricato con successo
+txt_themename: Nome del tema
+txt_icons_not_found: Tema non caricato correttamente, provare a caricare il tema di default o altro tema funzionante
+txt_theme_create_success: tema creato con successo in
+txt_theming: Temi
+txt_extand_error: Questa operazione può essere eseguita su un solo oggetto alla volta
+txt_threads: Thread
+txt_titlescolor: Colore dei titoli
+txt_to: in
+txt_toggle_browseflat: Mostra come browser / flat (mostra tutto)
+txt_toggle_historybookmarks: Mostra cronologia/preferiti
+txt_toolbarscolor: Colore delle barre
+txt_tools: Strumenti
+txt_best: prova impostazioni migliori (lento)
+txt_type: Tipo
+txt_level_ultra: Ultra
+txt_error_openfile: Impossibile aprire il file specificato
+txt_cl_hint: UNACE e UPX girano sempre in modo console; elenco, test e benchmark sempre in modo GUI
+txt_ace_missing: Il plugin UNACE è mancante; per gestire archivi ACE è possibile scaricare gratuitamente il plugin dal sito di PeaZip (essendo UNACE closed source, il plugin non è inserito nella distribuzione di base)
+txt_units: unità
+txt_unit_unknown: Unità di tipo sconosciuto
+txt_un7z_pw_untested: Non verificato
+txt_up: Su
+txt_update: aggiorna (se l'archivio esiste)
+txt_type_description_upx: UPX: compressione di eseguibili
+txt_advfilters: Usa filtri avanzati
+txt_openfiles_hint: Usare questa opzione per archiviare file aperti in scrittura da altre applicazioni (utile per lavori di backup)
+txt_usenet: Usenet
+txt_user_name: Nome utente; se necessario usare la forma user@DOMAIN o DOMAIN\user
+txt_using: Utilizza:
+txt_volumepea: Controllo volumi
+txt_volume_size: Dimensione volumi
+txt_type_ext_uns: è stato estratto con successo
+txt_websearch: Ricerca web
+txt_websites: Siti web
+txt_word: Parola
+txt_write: Scrivi:
+txt_ramdompw_hint: E' possibile copiare la password casuale da qui
+txt_exe_hint: E' possibile scegliere liberamente l'eseguibile da utilizzare, i suoi parametri e la sintassi del comando, che può essere ulteriormente raffinata nel tab "Console"
+txt_pj_hint2: E' possibile importare la definizione del lavoro dalla GUI a questo campo memo, in cui si può modificare liberamente il comando senza influenzare il lavoro definito nella GUI
+txt_type_description_zip: ZIP: archiviazione e compressione rapida, diffuso in ambiente Windows
+txt_zipcrypto_hint: ZipCrypto (legacy)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: rimanente
+txt_6_5_abort: Annulla
+txt_6_5_error: Errore
+txt_6_5_no: No
+txt_6_5_warning: Avviso
+txt_6_5_yes: Si
+txt_6_5_yesall: Si a tutto
+txt_5_6_update: Controlla gli aggiornamenti
+txt_5_6_cml: Lingua del menu contestuale di sistema
+txt_5_6_donations: Donazioni
+txt_5_6_localization: Localizzazione
+txt_5_6_runasadmin: Esegui come amministratore
+txt_5_6_help: Guida online
+txt_5_5_cancelall: Annulla tutto
+txt_5_3_details: Dettagli
+txt_5_3_files: file
+txt_5_3_folders: cartelle
+txt_5_3_info: Informazioni
+txt_5_3_list: Elenco
+txt_5_3_os: Dimensioni originali
+txt_5_3_ps: Dimensioni compresse
+txt_5_3_test: Verifica
+txt_5_0_extract: Estrai
+txt_5_0_from: da
+txt_5_0_in: in
+txt_5_0_to: a
+txt_4_5_search: Cerca
+txt_4_0_drag: Trascinare qui l'archivio da estrarre, o 
+txt_4_0_dragorselect: Trascinare qui o selezionare un file
+txt_4_0_select: selezionare file
+txt_3_6_selectdir: Seleziona cartella
+txt_3_5_close: Chiudi
+txt_3_0_details: Per maggiori dettagli, "Rapporto" contiene il log del lavoro e "Console" la definizione del lavoro come linea di comando
+txt_3_0_hints: Suggerimenti sull'errore
+txt_3_0_arc: Alcuni file di input non sono leggibili (bloccati, non accessibili o corrotti, con parti mancanti)
+txt_3_0_ext: L'archivio può richiedere una password diversa per il lavoro corrente
+txt_2_8_oop: Aprire il percorso di output al termine dell'operazione
+txt_2_7_validatefn: Operazione interrotta, nome file non valido:
+txt_2_7_validatecl: Operazione interrotta, comando potenzialmente pericoloso (es. concatenazione di comandi, non permessa all'interno del programma):
+txt_2_6_open: Apri archivio
+txt_2_5_ace_missing: Il plugin UNACE è mancante; per gestire archivi ACE è possibile scaricare gratuitamente il plugin dal sito di PeaZip (essendo UNACE closed source, il plugin non è inserito nella distribuzione di base)
+txt_2_3_pw_errorchar_gwrap: PeaLauncher non può usare questo carattere apice come parte di una password nel sistema operativo utilizzato; scegliere una password diversa o utilizzare il modo Console in Interfaccia degli eseguibili backend in Opzioni > Impostazioni
+txt_2_3_renameexisting: Rinomina file esistenti
+txt_2_3_renameextracted: Rinomina file estratti
+txt_2_3_cancel: Annulla
+txt_2_3_encryption: Cifratura
+txt_2_3_extinnew: Estrai in una nuova cartella
+txt_2_3_keyfile: File-chiave
+txt_2_3_kf_not_found_gwrap: Il file-chiave non è disponibile. Scegliere un diverso file-chiave
+txt_2_3_moreoptions: Più opzioni...
+txt_2_3_nopaths: Non mantenere la struttura
+txt_2_3_options: Opzioni
+txt_2_3_overexisting: Sovrascrivi file esistenti
+txt_2_3_pw: Password
+txt_2_3_skipexisting: Salta file esistenti
+txt_job_unknown: : Errore sconosciuto
+txt_stdjob: [l'animazione si fermerà al completamento del lavoro]
+txt_benchmarkjob: [il sistema sarà rallentato durante l'esecuzione del benchmark (alcuni minuti)]
+txt_defragjob: [il programma non risponderà durante la deframmentazione, può essere lasciato in background]
+txt_consolejob: [il feedback e lo stato del lavoro sono visibili nella console]
+txt_job1: 1: Errore parziale, es. alcuni file bloccati o non trovati
+txt_job127: 127: Impossibile eseguire l'operazione richiesta
+txt_job2: 2: Errore
+txt_job255: 255: Lavoro interrotto dall'utente
+txt_job7: 7: Linea di comando errata
+txt_job8: 8: Memoria insufficiente per completare l'operazione
+txt_autoclose: Chiudi questa finestra quando il lavoro è completato
+txt_crscale: Rapporto di compressione (minore, migliore):
+txt_console: Console
+txt_benchscale: Velocità in MHz (equivalente a processore Core 2 Duo 6600)
+txt_create: Crea
+txt_done: Finito:
+txt_nocl: Linea di comando vuota
+txt_error: Errore:
+txt_explore: Esplora
+txt_extto: Estrai in
+txt_halt: Arresta il sistema quando il lavoro è completato
+txt_halted: Arrestato:
+txt_hardware: hardware
+txt_high: alta priorità
+txt_idle: priorità idle
+txt_input: Input:
+txt_jpaused: Lavoro in pausa
+txt_jresumed: Lavoro ripreso
+txt_job_started: Lavoro avviato
+txt_jobstatus: Stato del lavoro:
+txt_jstopped: Lavoro interrotto dall'utente
+txt_jobstopped: Lavoro interrotto dall'utente; è possibile analizzare l'esito parziale cliccando il link al percorso di output.
+txt_job_success: Lavoro completato con successo
+txt_lt: Elenca/test
+txt_normal: priorità normale
+txt_ok: OK
+txt_output: Output:
+txt_pause: Pausa
+txt_paused: In pausa,
+txt_p_high: Impostata priorità alta
+txt_p_idle: Impostata priorità idle
+txt_p_normal: Impostata priorità normale
+txt_p_realtime: Impostata priorità real time
+txt_rating: Rating:
+txt_rt: priorità real time
+txt_report: Rapporto
+txt_resume: Riprendi
+txt_priority: Tasto destro per impostare la priorità
+txt_running: In esecuzione,
+txt_isrunning: In esecuzione...
+txt_saveas: Salva come
+txt_savejob: Salva lavoro
+txt_savelog: Salva log
+txt_software: software
+txt_speedscale: Velocità, scala logaritmica (alto, migliore)
+txt_status: Stato
+txt_stop: Stop
+txt_bench: Benchmark del sistema
+txt_threads: Threads:
+txt_time: Tempo:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+ESTRARRE ARCHIVI
+Dal sistema
+- cliccare con il tasto destro su uno o più archivi e nel menu scegliere "Extract here" o "Extract here (in new folder)" per estrarre l'archivio direttamente
+- in alternativa scegliere "Extract..." per avere più opzioni: percorso di output, password, estrarre in una nuova cartella, sovrascrivere, saltare o rinominare file esistenti ecc...
+
+Aprire un archivio con PeaZip, ad esempio con doppio click, o trascinandolo sulla finestra o sull'icona di PeaZip
+- cliccare "Estrai" nella toolbar o nel menu dell'applicazione per estrarre solo i file selezionati attraverso un dialog che propone tutte le opzioni (password, percorso di output, estrazione in una nuova cartella ecc...) 
+- trascinare file o cartelle nella destinazione desiderata (nella guida vedere il capitolo sul drag and drop per maggiori informazioni)
+- cliccare la freccia a destra del pulsante "Estrai" nella toolbar per il menu di estrazione rapida, che consente di estrarre direttamente l'intero archivio nelle destinazioni più comuni e settare/controllare le opzioni più importanti; Ctrl+E (o F12) estrae l'intero archivio nel percorso indicato dall'utente; Ctrl+Alt+E estrae l'archivio nel suo attuale percorso; Ctrl+Shift+E estrae sul desktop; Ctrl+Alt+Shift+E estrae in documenti; Ctrl+0 estrae nell'ultimo percorso; Ctrl+1..8 estrae nel percorso del bookmark 1..8 (se definito)
+
+Aprire PeaZip, selezionare uno o più archivi e premere "Estrai" nella toolbar o nel menu contestuale, o usare l'estrazione rapida come spiegato al punto precedente.
+
+ESRARRE SOLO GLI OGGETTI SELEZIONATI DA UN ARCHIVIO
+Aprire un archivio con PeaZip, ad esempio con doppio click, o trascinandolo sulla finestra o sull'icona di PeaZip
+- cliccare "Estrai" nella toolbar: solo gli oggetti selezionati saranno estratti
+- trascinare file o cartelle nella destinazione desiderata
+- fare click con il tasto destro e nel gruppo "Estrai" selezionare "Estrai oggetti selezionati" (estrae solo i file selezionati) o "Estrai oggetti visualizzati" (estrae tutti i file mostrati nella directory o nel filtro corrente)
+
+INSERIRE UNA PASSWORD PER APRIRE O ESTRARRE UN ARCHIVIO
+Cliccare sull'icona a forma di lucchetto per inserire la password e, opzionalmente, un file chiave.
+L'icona è visibile sia nel browser di PeaZip (nella barra di stato), sia nell'interfaccia di estrazione degli archivi; una volta impostata la password l'icona cambia colore.
+
+CREARE UN ARCHIVIO
+Dal sistema 
+- cliccare sul tasto destro sugli oggetti da archiviare e scegliere "Add to archive" nel menu contestuale o SendTo, apparirà l'interfaccia di creazione degli archivi, altre opzioni sono disponibili nel tab "Avanzate"; cliccare OK per creare l'archivio
+- in alternativa trascinare file e cartelle sulla finestra o sull'icona di PeaZip; sarà mostrata la stessa interfaccia di creazione degli archivi
+
+Da PeaZip 
+- selezionare gli oggetti da archiviare e cliccare sul bottone "Aggiungi"; sarà mostrata la stessa interfaccia di creazione degli archivi
+
+AGGIUNGERE FILE E CARTELLE AD UN ARCHIVIO ESISTENTE
+Aprire l'archivio con PeaZip (ad esempio doppioclic, o trascinare l'archivio sull'icona o sulla finestra di PeaZip), quindi trascinare file e cartelle da aggiungere nell'archivio (o cliccare il bottone "Aggiungi" nella toolbar e usare il menu contestuale dell'applicazione per aggiungere oggetti all'archivio).
+Verrà aperta l'interfaccia di creazione dell'archivio, cliccare OK per confermare e aggiungere gli oggetti indicati all'archivio corrente.
+
+CREARE UN ARCHIVIO SPEZZATO IN FILE PIU' PICCOLI
+Mentre si crea un archivio come spiegato ai punti precedenti, cliccare sul dropdown "Singolo volume" e selezionare una dimensione in cui spezzare le parti dell'archivio.
+L'opzione è supportata dalla maggior parte dei tipi di archivio più comuni.
+
+CREARE UN ARCHIVIO CIFRATO
+Cliccare sull'icona a forma di lucchetto per inserire la password e, opzionalmente, un file chiave.
+L'icona è visibile sia nel browser di PeaZip (nella barra di stato), sia nell'interfaccia di creazione degli archivi.
+Per cifrare i nomi di file e cartelle contenuti nell'archivio selezionare "Cifra anche i nomi file", questa opzione sarà applicata solo per i formati che la supportano, come 7Z e ARC.
+Nell'interfaccia di creazione dell'archivio, di fianco all'icona a forma di lucchetto, è riportato un avviso scritto che informa se è stata settata una password e se la crittografia è supportata dal tipo di archivio corrente.
+
+CREARE ARCHIVI SEPARATI
+Aggiungere gli oggetti da archiviare (con il pulsante "Aggiungi" di PeaZip, o dal menu contestuale di sistema) e prima di confermare con OK flaggare "Archivia separatamente ciascun oggetto".
+
+CONVERTIRE ARCHIVI
+Da PeaZip, selezionare gli archivi da convertire e cliccare sul "Converti" nella toolbar o nel menu contestuale, possono essere aggiunti anche file e cartelle non compressi; gli archivi saranno estratti e in un secondo momento ricompressi.
+Usando l'opzione "Converti archivi" insieme a "Archivia separatamente ciascun oggetto" (come viene proposto di default) viene eseguita la conversione di massa di tutti gli archivi indicati; senza quello switch, invece, la conversione consolida tutti gli oggetti in imput in un unico archivio nel formato richiesto, ottimizzando i risultati della compressione.
+
+CREARE DIRETTAMENTE ARCHIVI IN UN DATO FORMATO CON UN DATO LIVELLO DI COMPRESSIONE
+Usando "Configura integrazione con il sistema" nel menu Opzioni è possibile abilitare voci nel menu contestuale di sistema per aggiungere i file selezionati in formato ZIP, 7Z o archivio autoestraente.
+Per i formati ZIP e 7Z è anche possibile creare nel menu contestuale voci per comprimere a livello fastest, normal o ultra, bypassando il livello di default impostato per quel formato.
+
+PASSWORD MANAGER
+Il Password manager è accessibile dal menu principale, Strumenti > Password manager, o dal menu a discesa a sinistra del campo password nel form Password.
+Le password salvate possono essere scelte dal menu a discesa a sinistra del campo password nel form Password, o copiate dal password manager per essere usate in qualunque applicazione.
+Se non è stata impostata una master password per il password manager, la lista di password è accessibile senza autenticazione, altrimenti le password non saranno visibili fino all'avvenuta autenticazione.
+
+CONFIGURARE L'APPLICAZIONE
+Opzioni > Localizzazione permette di cambiare la lingua dell'applicazione
+Opzioni > Impostazioni consente di modificare le varie opzioni dell'applicazione
+Opzioni > Temi personalizza l'aspetto dell'applicazione
+Opzioni > Configura integrazione con il sistema avvia una procedura per configurare le associazioni dei file e le voci presentate nel menu contestuale e SendTo (su Windows)
+Il menu Organizza consente di personalizzare, abilitare e disabilitare features del browser, come la toolbar, la barra degli indirizzi, la barra di navigazione ecc...
+
+F1 	guida
+F2 	rinomina file(s) / Ctrl+F2 naviga desktop / Shift+F2 naviga risorse del computer (o root)
+F3	ricerca / Ctrl+F3 ricerca non ricorsiva (solo cartella corrente) / Shift+F3 ricerca ricorsiva (anche nelle sottocartelle)
+F4 	menu navigazione / Ctrl+Shift+F4 root / Ctrl+F4 home / Shift+F4 desktop
+F5 	refresh
+F6 	alterna browser/vista piatta (tutti i file/cartelle)
+F7 	aggiungi ai preferiti / Ctrl+F7 apri in una nuova istanza di PeaZip / Shift+F7 apri prompt dei comandi qui / Alt+F7 esplora percorso
+F8 	apri il primo oggetto nei preferiti (Ctrl, il secondo, Shift, il terzo)
+F9 	impostare la password / Ctrl+F9 crea file chiave o password casuale
+F10 	menu / Ctrl+F10 esegui come altro utente / Alt+F10 esegui come amministratore (Windows Vista e sistemi più recenti)
+F11 	impostare filtri avanzati / Ctrl+F11 immersive
+F12 	estrai tutto...
+
+PEAZIP
+
+PeaZip è un programma Open Source per la gestione di file e archivi, con funzioni di cifratura forte; supporta numerosi formati di archiviazione e compressione.
+
+Scrittura: 7Z, 7Z-sfx, ARC, BZ2, GZ, PAQ/LPAQ, PEA, QUAD, split, TAR, UPX, ZIP
+
+Lettura: la lista aggiornata è disponibile su https://peazip.github.io/peazip-free-archiver.html
+
+E' possibile gestire in lettura e scrittura archivi di formato personalizzato specificando l'eseguibile da utilizzare e la relativa sintassi.
+
+Altre funzioni: dividere/unire file, cancellazione sicura, comparazione, calcolo di checksum e hash, benchmark di sistema, generazione di password e file-chiave casuali.
+
+PeaZip permette di modificare, salvare e ricaricare layout di archivi definiti in precedenti sessioni; applicare potenti filtri multipli ai contenuti dell'archivio; gestire la creazione o estrazione di più archivi per volta; esportare la definizione dei lavori come linea di comando; cifrare con AES256 ecc...
+PeaZip_portable è una applicazione portabile con le stesse funzionalità di PeaZip; non richiede installazione, non modifica il sistema su cui gira e può essere usata da unità removibili (memorie USB, percorsi di rete ecc...).
+Le funzioni principali del programma sono raggiungibili dal menu contestuale e "Invia a" di Windows e dai menu di Gnome e KDE in Linux (tramite file .desktop); l'integrazione nel sistema è automatica per i pacchetti installabili, ma può essere estesa customizzata sia per i pacchetti installabili che portabili (vedere documentazione online).
+PeaZip è cross platform e gira su sistemi a 32 e 64 bit, Windows (9x, 2000, XP, Vista, 7, 8), ReactOS, BSD e Linux.
+
+Downloads: https://peazip.github.io
+Informazioni generali: https://peazip.github.io/peazip-free-archiver.html
+Supporto: https://peazip.github.io/peazip-help.html
+FAQ: https://peazip.github.io/peazip-help-faq.html
+
+Grazie mille a tutte le persone che contribuiscono alla crescita del progetto PeaZip, sviluppando i componenti Open Source utilizzati dall'applicazione (la lista completa è nel sito del programma), e grazie a tutti gli utenti che contribuiscono con il loro feedback di consigli ed impressioni.

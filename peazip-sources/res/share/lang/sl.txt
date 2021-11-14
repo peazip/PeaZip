@@ -1,0 +1,1326 @@
+﻿=== PeaZip language file ===
+Slovenski jezik
+8.3
+Prevod: Jadran Rudec, jrudec@gmail.com
+Zadnja revizija:Jadran Rudec 
+Zadnja revizija: 20210913
+
+=== PeaZip text group ===
+
+txt_8_3_mbubin: Binary
+txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
+txt_8_3_temperature: Color temperature
+txt_8_3_mbudec: Decimal
+txt_8_3_htab: Highlight tabs
+txt_8_3_maxarg: Maximum length of arguments
+txt_8_3_mbu: Multiple-byte unit
+txt_8_3_prefalgo: Preferred algorithms
+txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
+txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
+txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_2_slower: (počasneje)
+txt_8_2_df: 7z / p7zip prikaz vsebine map
+txt_8_2_vreport: 7z / p7zip nepoglobljeno poročilo 
+txt_8_2_ta: Dostopan
+txt_8_2_tc: Ustvarjen
+txt_8_2_keep: Obdrži datoteke
+txt_8_2_tm: Spremenjen
+txt_8_2_skipet: Preskoči preizkus šifriranja
+txt_8_2_alltimes: Shrani vse časovne žige 
+txt_8_2_supportedby: Podprt z
+txt_8_1_preparse: Vedno vnaprej razčleni arhive
+txt_8_1_bo: Optimizacija brskalnika
+txt_8_1_bop: Možnosti optimizacije brskalnika lahko nastavite v Možnosti -> Nastavitve, zavihek Splošno, da brskalnik lahko prikaže arhive, ki vsebujejo zelo veliko vnosov.
+txt_8_1_nopreparse: Vnaprej ne analiziraj arhivov
+txt_8_1_ed: zaznanih napak.
+txt_8_1_togglearc: Raven prikaz vsebine arhiva lahko traja dolgo. Vseeno želite nadaljevati?
+txt_8_1_preparsehint: Optimizirajte delovanje, ki omejujejo vnaprejšnjo razčlenitev velikih arhivov. Predrazčlenitev naj bi vnaprej odkrila morebitne težave v vsebini arhiva.
+txt_8_1_slow: Počasi
+txt_8_1_vslow: Zelo počasi
+txt_8_1_volumes: nosilcevi
+txt_8_0_altcol: Nadomestna barva mreže
+txt_8_0_forcebrowse: Brskajte po nekanoničnih vrstah arhivov (vsebniki, slike diska, namestitveni programi...)
+txt_8_0_commonalgo: Pogosti algoritmi
+txt_8_0_forceconvert: Pretvori nekanonične vrste arhivov
+txt_8_0_defaultactionhint: Privzeta akcija dvoklika na datoteko, povezane s programom PeaZip, iz sistema
+txt_8_0_defaultaction: Privzeta akcija ob zagonu
+txt_8_0_enableextand: omogočite podmeni 'Razširi in odpri z'
+txt_8_0_forcetyping: Vsilit interaktivno vnašanje gesel
+txt_8_0_setpwopt: Nastavite možnosti gesla/datoteke s ključi
+txt_8_0_forcetypinghelp: V konzoli bo zagnal zaledne dvojišle datoteke. Ne more brskati po arhivih s šifriranimi imeni datotek. Dovoljuje ustvarjanje skriptov, ki se ne bodo izvajali brez nadzora, temveč bodo uporabnika interaktivno prosili za geslo.
+txt_7_9_spacing: Razmik
+txt_7_9_zooming: Povečava 
+txt_7_8_changelocalization: Spremeni jezik PeaZipa
+txt_7_8_custext: Končnica po meri
+txt_7_8_destexistfile: Cilj že vsebuje obdelane datoteke. Želite zamenjati datoteke z istim imenom?
+txt_7_8_dd: Povleci in spusti
+txt_7_8_priorityhigh: Visoka
+txt_7_8_priorityidle: Nedejavna
+txt_7_8_rel: Interaktivno razširjanje
+txt_7_8_prioritynormal: Običajna
+txt_7_8_priorityrealtime: Stvarnočasovna
+txt_7_8_requirerestart: [zahteva ponovni zagon PeaZipa]
+txt_7_8_tpriority: Prednost opravil
+txt_7_8_update: Posodobi
+txt_7_7_noneall: Brez (brez predogleda, brez razširjanja 'Povleci in spusti')
+txt_7_7_nonetemp: Brez, uporabnikova začasna mapa, če je potrebno 
+txt_7_7_outtemp: Izhod, predogled v uporabnikova začasna 
+txt_7_7_sys7zreq: Zahteva namestitev p7zip-full ali enakovrednega
+txt_7_7_tw: Začasna delovna mapa za ustvarjanje, urejanje, predogled in razširjanje 'Povleci in spusti'. 
+txt_7_7_sys7z: V Linuxu uporabi sistem 7z 
+txt_7_6_zipenc: Kodiranje imen datotek 7z/p7zip ZIP
+txt_7_6_color: Barva
+txt_7_6_custenc: Kodna stran po meri
+txt_7_6_dark: Temna
+txt_7_6_tno: Ne sinkroniziraj drevesa arhivov
+txt_7_6_forcelocalenc: Prisili lokalno
+txt_7_6_forceutf8enc: Prisili UTF-8
+txt_7_6_cpnote: Če izbrana kodna stran po meri ni podprta, se opravila vedno končajo z napako (najverjetneje napaka pri dodeljevanju pomnilnika). V tem primeru spremenite kodno stran ali ponastavite aplikacijo.
+txt_7_6_defaultenc: Lokalno, UTF-8 za posebne simbole
+txt_7_6_dim: Medla svetloba
+txt_7_6_setcurdef: Nastavi trenutno pot kot privzeto izhodno pot
+txt_7_6_setdef: Nastavi privzeto izhodno pot
+txt_7_6_tadvanced: Sinkroniziraj drevo arhiva, obdrži obiskana vozlišča
+txt_7_6_tsimple: Sinkroniziraj drevo arhiva, preprosto
+txt_7_6_tacolor: Poudarek besedila
+txt_7_5_always: Vedno
+txt_7_5_ask: Vprašaj
+txt_7_5_autoclosesingle: Samodejno zapri po razširjanju, če ni bilo nobenega brskanja
+txt_7_5_cutlen: Izreži ime na določeno dolžino
+txt_7_5_cutlenw: Spore poimenovanja zaradi izrezovanja imena pri določeni dolžini (4..255) lahko pozneje roččno popravite
+txt_7_5_dragnone: Ne zakleni cilja
+txt_7_5_specialbrowse: Ali želite razširiti vse, da datoteki zagotovite dodatne podatke, ki jih morda potrebuje?
+txt_7_5_ee: Izvleci vse za posebne vrste datotek
+txt_7_5_draghide: Skrij spustni cilj
+txt_7_5_draglh: Zakleni in skrij cilj
+txt_7_5_draglock: Zakleni spustni cilj
+txt_7_5_never: Nikoli
+txt_7_5_repnascii: Zamenjaj/odstrani ne-ASCII znake
+txt_7_4_comment: Komentar
+txt_7_4_7zfbrotlicomp: Najhitrejše stiskanje, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Najhitrejše stiskanje, 7Z Zstandard
+txt_7_4_presetrar: Močno stiskanje, RAR
+txt_7_4_tkeep: Ohrani izviren časovni žig arhiva
+txt_7_4_lock: Zakleni arhiv
+txt_7_4_locked: zaklenjen
+txt_7_4_lockconfirm: Zaklenjenih arhivov ni mogoče še spremeniti. Nadaljujte z zaklepanjem tega arhiva?
+txt_7_4_recover: Popravi arhiv
+txt_7_4_tcurr: Nastavi časovni žig arhiva na trenutni sistemski čas
+txt_7_4_setarc: Nastavi Možnosti arhiviranja
+txt_7_4_setext: Nastavi Možnosti razširjanja
+txt_7_4_swzipx: Preklopi na končnico zipx za za neodstranljive ZIP arhive
+txt_7_3_archiveerrors: [arhiv lahko vsebuje napake]
+txt_7_3_archiveerrorshint: Arhiv morda ni veljaven (zaradi manjkajočih, poškodovanih ali izven standardnih podatkov), za podrobne informacije lahko zaženete 'Preizkus'. Če je vsebina arhiva šifrirana, je pred brskanjem potrebno geslo.
+txt_7_3_clickextall: Za omogočanje klikni 'Razširi vse'
+txt_7_3_noconfdel: Po arhiviranju/razširjanju zahtevaj potrditve izbrisa
+txt_7_3_profile7zfastest: Hitro stiskanje, 7Z najhitrejše
+txt_7_3_maxbr: Povečaj stiskanje 'Brotli' z uporabo več pomnilnika (morda ni združljivo z nekaterimi razširjevalci)
+txt_7_3_maxzstd: Povečaj 'Zstandard' stiskanje z uporabo več pomnilnika
+txt_7_3_profile7zfast: Srednje stiskanje, 7Z hitro
+txt_7_3_stl: Nastavi časovni žig arhiva iz najnovejše datoteke
+txt_7_2_altcomp: Nadomestno stiskanje, ARC
+txt_7_2_clearnoupdate: Počisti urejane datoteke
+txt_7_2_autoclosepeazip: Zapri PeaZip po dokončanju opravil
+txt_7_2_zpaqall: Razširi vse revizije
+txt_7_2_extcomp: Izjemno stiskanje, ZPAQ
+txt_7_2_extcompultra: Izjemno stiskanje, ZPAQ ultra
+txt_7_2_fbrotlicomp: Najhitrejše stiskanje, Brotli
+txt_7_2_fzstandardcomp: Najhitrejše stiskanje, Zstandard
+txt_7_2_loadcompsettings: Naloži nastavitve stiskanja
+txt_7_2_savecompsettings: Shrani nastavitve stiskanja
+txt_7_2_source: Vir
+txt_7_2_updateclear: Posodobi urejane datoteke v arhivu in počisti urejane datoteke
+txt_7_1_type_description_brotli: Brotli: hiter stiskalnik iz Google, zelo hitro razširjanje
+txt_7_1_new: Razširi vse tukaj, v novo mapo
+txt_7_1_smart: Razširi vse tukaj, pametno
+txt_7_1_profileintermediate: Vmesno stiskanje, hitro ZIP/BZip2
+txt_7_1_renfilesonly: Preimenuj samo datoteke
+txt_7_1_typetosearch: Vnesite za iskanje v trenutni poti
+txt_7_1_type_description_zstd: Zstandard: hiter stiskalnik iz Facebooka, zelo hitro razširjanje
+txt_7_0_af: Analiziraj vsebino map
+txt_7_0_autoopentar: Samodejno odpri arhiv TAR znotraj datotek tar.*
+txt_7_0_exttmppath: Vsebina bo razširjena izven začasne delovne poti, v: 
+txt_6_9_autou: Samodejno posodobi spremenjene datoteke v arhivih
+txt_6_9_forceu: Prisilno posodobi spremenjene datoteke v arhivih
+txt_6_9_opuns: Operacija ni podprta za trenutno vrsto arhiva
+txt_6_9_overarch: Ali želite prepisati datoteke z istim imenom, ki že obstajajo v arhivu?
+txt_6_9_uconf: Predogledana datoteka je bila spremenjena. Posodobim trenutni arhiv?
+txt_6_8_ndrop: Uporabi izvorni način 'Povleci in spusti' v sistemu Windows
+txt_6_7_nop: (brez predogleda)
+txt_6_6_pdupfound: možni najdeni dvojniki (hiter približni preizkus)
+txt_6_6_rsh: Ponastavi zgodovino iskanja
+txt_6_6_pdupfind: Predlagaj možne dvojnike
+txt_6_6_forcemodify: Poskusite urediti vrste, ki niso izrecno podprte
+txt_6_5_mandatory: (obvezno)
+txt_6_5_abort: Prekini
+txt_6_5_askp: Ob zagonu vprašaj za nastavitev gesla
+txt_6_5_chp: Spremeni geslo
+txt_6_5_def: Definicija
+txt_6_5_nop: Ob zagonu ne vprašaj za nastavitev gesla
+txt_6_5_error: Napaka
+txt_6_5_seqerr: Zaznane napake. Izvirne datoteke ne bodo izbrisane
+txt_6_5_sni: Vključi NT varnostne informacije
+txt_6_5_sns: Vključi NTFS nadomestni tok podatkov
+txt_6_5_privacy: Zasebnost
+txt_6_5_showvolatile: Prikaži katere možnosti so spremenljive/odvisne od konteksta
+txt_6_5_force: Poskusi odpreti arhive, ki vsebujejo napake
+txt_6_5_warning: Opozorilo
+txt_6_5_yes: Da
+txt_6_5_yesall: Da za vse
+txt_6_5_np: Zdaj lahko spremenite geslo pretvorjenih arhivov v novo ali pa pustite prazno geslo, da preskočite šifriranje
+txt_6_4_absolute: Absolutne poti
+txt_6_4_appdirn: Dodaj ime mape
+txt_6_4_closeallother: Zapri vse druge zavihke
+txt_6_4_closeright: Zapri zavihke na desni
+txt_6_4_collapse: Strni zavihke
+txt_6_4_expand: Razširi zavihke
+txt_6_4_full: Celotne poti
+txt_6_4_new: Nov
+txt_6_4_openintab: Odpri v novem zavihku
+txt_6_4_paths: Poti
+txt_6_4_prepdirn: Pripni ime mape
+txt_6_4_relative: Relativne poti
+txt_6_4_tabbar: Vrstica z zavihki
+txt_6_3_autoadjust: Samodejno prilagodi stolpce
+txt_6_3_cinfo: Informacije in komentarji
+txt_6_3_syn: Sinkroniziraj arhiv z diskom
+txt_6_3_uar: Posodobi le datoteke, ki so že v arhivu
+txt_6_2_encext: Dodaj pripono '.enc' šifriranim arhivom
+txt_6_2_archive: Vrsta arhivske datoteke
+txt_6_2_container: Vrsta datoteke vsebnika
+txt_6_1_ec: Razširi/Strni drevo arhivov
+txt_6_0_msq: Razvrsti po vrsti datoteke za trdno stiskanje
+txt_5_9_lff: Analiziraj datoteke in mape
+txt_5_9_pff: Analiziraj, prikaži glavo/konec datotek
+txt_5_9_start: Začni od
+txt_5_8_l0: Dovoli katero koli podprto komponento/format
+txt_5_8_l1: Dovoli samo brezplačne programske komponente
+txt_5_8_l2: Dovoli samo odprte formate arhivov
+txt_5_8_ascii: ASCII varno. Skripti so varni v starem okolju
+txt_5_8_cp: Kodna stran varna. Skripte lahko sprožijo težave v starih okoljih z različnimi kodnimi stranmi
+txt_5_8_fs: Skladnost z brezplačnimi programi
+txt_5_8_utf: Skripti potrebujejo polno okolje UTF-8/Unicode
+txt_5_8_fsr: Ta format ni podprt zaradi omejitev skladnosti z brezplačnimi programi (Možnosti -> Napredno)
+txt_5_7_pinstalled: NAMEŠČEN
+txt_5_7_pmissing: MANJKA
+txt_5_7_plugin: Manjka vtičnik. Lahko ga namestite iz menija 'Pomoč -> Preveri vtičnik in dodatek'
+txt_5_6_basic: Osnovno
+txt_5_6_exarc: Razširi arhiv
+txt_5_6_tab: Odpri v novem zavihku
+txt_5_6_rc: Desni klik za možnosti
+txt_5_6_layouts: Shranjene postavitve
+txt_5_6_upexisting: Posodobi obstoječ arhiv
+txt_5_6_verbose: Obsežno
+txt_5_5_case: (občutljivo na V/m črke)
+txt_5_5_add: Dodaj niz na določeno mesto
+txt_5_5_addsel: Dodaj v trenutni izbor
+txt_5_5_ext: Spremeni končnice datotek
+txt_5_5_plugin: Prenesi vtičnike in dodatke
+txt_5_5_copypath: Kopiraj pot
+txt_5_5_delete: Izbriši znake ne določenem mestu
+txt_5_5_halt: Po končanem opravilu izklopi sistem
+txt_5_5_positionw: Namig: 1 dodajte pred prvim znakom, 2 sekundi, itd..., 'z' za konec imena datoteke
+txt_5_5_positionwd: Namig: 1 izbrišite iz prvega vključenega znaka, 2 sekunde, ..., 'z' za konec imena datoteke
+txt_5_5_replaceneww: Namig: podajte prazen nov niz, da preprosto odstranite stari niz
+txt_5_5_lower: male črke
+txt_5_5_replaceoldw: V imenu datoteke spremeni vse pojavitve tega niza ali znaka 
+txt_5_5_newext: Nova končnica
+txt_5_5_new: Nov niz
+txt_5_5_n: Število znakov za brisanje
+txt_5_5_old: Stari niz
+txt_5_5_position: Položaj (število ali 'z' za konec)
+txt_5_5_intdir: Pametna nova mapa
+txt_5_5_replacestr: Zamenjaj/odstrani niz
+txt_5_5_datesameday: Isti dan izbranega predmeta
+txt_5_5_datesamehour: Ista ura izbranega predmeta
+txt_5_5_datesamemonth: Isti mesec izbranega predmeta
+txt_5_5_datesameweek: Isti teden izbranega predmeta
+txt_5_5_datesameyear: Isto leto izbranega predmeta
+txt_5_5_scan: Preišči
+txt_5_5_select: Izberi
+txt_5_5_similar: Podobno izbranemu predmetu
+txt_5_5_starting: Začenši z istim znakom
+txt_5_5_string: Niz za dodajanje
+txt_5_5_subtractsel: Odštej iz trenutne izbire
+txt_5_5_datehour: To uro
+txt_5_5_datemonth: Ta mesec
+txt_5_5_dateweek: Ta teden
+txt_5_5_dateyear: To leto
+txt_5_5_dateday: Danes
+txt_5_5_upper: VELIKE ČRKE
+txt_5_5_extw: Opozorilo: Spreminjanje končnice datoteke lahko postane neuporabno
+txt_5_4_da: Datum dodajanja
+txt_5_4_deletearchives: Izbriši arhive po razširjanju
+txt_5_4_deletefiles: Izbriši datoteke po arhiviranju
+txt_5_4_deleteoriginal: Postopek brisanja, kot je nastavljen na glavnem zaslonu, bo dodan skriptu.
+txt_5_4_lv: Nazadnje obiskano
+txt_5_4_deletearchivesconfirm: Potrjujete brisanje izvirnih arhivov?
+txt_5_4_deletefilesconfirm: Potrjujete brisanje izvirnih datotek?
+txt_5_4_used: Uporabljeno
+txt_5_3_profilebest: Najboljše stiskanje. 7Z format Ultra stopnja
+txt_5_3_profileadvanced: Napredno stiskanje. 7Z format
+txt_5_3_profilenormal: Običajno ZIP stiskanje. Združljivo z večino razširljevalcev
+txt_5_3_profileveryfast: Zelo hitro ZIP stiskanje. Priporočeno za velike večpredstavnostne datoteke
+txt_5_3_profilepassword: Zaščiti z geslom, 7Z format
+txt_5_3_profile10mb: Ohrani izhod pod 25 MB. Za omejitve e-poštnih prilog
+txt_5_3_profilesfx: Samodejno razširjanje. Prejemnik ne bo potreboval programa za razširjanje
+txt_5_3_cml: Jezik sistemskega priročnega menija
+txt_5_3_cmlmessage: Dvokliknite na želen jezik priročnega menija in potrdite združitev registra. To nastavitev je treba ponovno uporabiti, ko je aplikacija nameščena/posodobljena ali po uporabi čarovnika za sistemsko integracijo.
+txt_5_3_exc: Filtri za izključitev prevladajo nad filtri za vključevanje
+txt_5_3_ia: Vključi tudi
+txt_5_3_io: Vključi samo
+txt_5_3_rec: Rekurzivno podmape
+txt_5_3_resetsi: Znova konfiguriram sistemsko integracijo (priročni meni, PošljiV, povezovanje datotek)?
+txt_5_2_oadd: Arhiv v izvirno pot
+txt_5_2_zerodelete: Ali želite izbrisati in prepisati z vseh 0 izbranih datototek? Operacije ni mogoče razveljaviti in datoteke ne bodo obnovljive
+txt_5_2_zfree:Ali želite prepisati z vsem 0 prostim prostorom na tem pogonu?
+txt_5_2_sdfree: Ali želite varno izbrisati prostor na tem pogonu?
+txt_5_2_oext: Razširi v izvirno pot
+txt_5_2_securedeletefree: Varno izbriši prost prostor
+txt_5_2_free: Ta postopek lahko traja nekaj minut in, če se izvaja pogosto, lahko hitro obrabi flash diske
+txt_5_2_zerofiles: Izbriši ničle
+txt_5_2_zerofree: Izbriši ničle v prostem prostoru
+txt_5_1_schedadd: Dodaj Rokovnik
+txt_5_1_schederr: Rokovnika opravil ni mogoče ustvariti
+txt_5_1_daily: Dnevno
+txt_5_1_day: Dan
+txt_5_1_days: Dni
+txt_5_1_enddate: Končni datum
+txt_5_1_every: Vsak
+txt_5_1_w6: Petek
+txt_5_1_hourly: Vsako uro
+txt_5_1_hours: Ur
+txt_5_1_last: Zadnji
+txt_5_1_schedmanage: Rokovnik opravil. Upravlja shranjena opravila v PeaZipovem oddelku 
+txt_5_1_scriptmanage: Upravljaj shranjene skripte z Rokovnikom
+txt_5_1_w2: Ponedeljek
+txt_5_1_monthly: Mesečno
+txt_5_1_months: Mesecev
+txt_5_1_onlogin: Ob prijavi
+txt_5_1_onstart: Ob začetku
+txt_5_1_once: Enkrat
+txt_5_1_w7: Sobota
+txt_5_1_schedule: Rokovnik
+txt_5_1_schedexplain: Ustvari skript z navadnim besedilom iz definicije opravil grafičnega vmesnika in ga razporedi. Skripti načrtovanih opravil se shranijo v mapo 'Scheduled scripts'. Če želite urediti ali izbrisati načrtovana opravila z Rokovnikom, lahko uporabite sistemski Upravitelj opravil. Vsa načrtovane opravila, ki jih ustvari PeaZip, se zbirajo v oddelku knjižnice opravil 'PeaZip.
+txt_5_1_schedok: Rokovnik je uspešno ustvarjen
+txt_5_1_schedscripts: Shranjeni skripti z Rokovnikom
+txt_5_1_startdate: Začetni datum
+txt_5_1_starttime: Začetni čas
+txt_5_1_w1: Nedelja
+txt_5_1_schedname: Ime opravila. Identificira oboje: shranjen načrtovan skript z Rokovnikom, in sistemsko opravilo z Rokovnikom.
+txt_5_1_ts: Rokovnik opravil
+txt_5_1_w5: Četrtek
+txt_5_1_w3: Torek
+txt_5_1_w4: Sreda
+txt_5_1_weekly:Tedensko
+txt_5_1_weeks: Tednov
+txt_5_0_bc: Drobna vrstica podatkov
+txt_5_0_resetpm: Ali potrjujete ponastavitev Upravitelja gesel? Če bo potrejeno, bodo izgubljena vsa shranjena gesla v PeaZipovem Upravitelju gesel.
+txt_5_0_enum: Oštevilči vsebino mape
+txt_5_0_music: Glasba
+txt_5_0_ps: Odpri tukaj PowerShell
+txt_5_0_perf: Izvedba
+txt_5_0_pictures: Slike
+txt_5_0_removeall: Odstrani vse
+txt_5_0_resetbookmarks: Ponastavim zaznamke na privzeto? (Zaznamke lahko nato prilagodite z 'Zaznamki -> Organiziraj')
+txt_5_0_sh: Zgodovina seje
+txt_5_0_skip: Preskoči oštevilčenje vsebine imenikov v postavitvi
+txt_5_0_videos: Videoposnetki
+txt_4_9_frame: Okvir
+txt_4_9_listth: Seznam in sličice
+txt_4_9_shadow: Senca
+txt_4_9_style: Slog
+txt_4_8_attach25: 25 MB priloga
+txt_4_8_crop: Obreži
+txt_4_8_detailsno: Podrobnosti
+txt_4_8_details: Podrobnosti in sličice
+txt_4_8_fit: Prilagodi na
+txt_4_8_fitl: Prilagodi na največjo
+txt_4_8_flip: Zasuči
+txt_4_8_fullscreen: Celozaslonski način
+txt_4_8_fun: Funkcije
+txt_4_8_h: Višina
+txt_4_8_keeparchive: Obdrži arhiv
+txt_4_8_noresize: Obdrži izvirno velikost
+txt_4_8_iconl: Velike slike
+txt_4_8_iconm: Ikone in slike
+txt_4_8_imagemanager: Upravitelj slik
+txt_4_8_immersive: Poglobljeno
+txt_4_8_listno: Seznam
+txt_4_8_aspect: Ohrani razmerje
+txt_4_8_mirror: Zrcali
+txt_4_8_presets: Prednastavitve
+txt_4_8_replace: Zamenjam izvirno velikost slik? 'Ne' uporabi preoblikovanje v novih datotekah.
+txt_4_8_resize: Spremeni velikost
+txt_4_8_rl: Obračaj levo
+txt_4_8_rr: Obračaj desno
+txt_4_8_stop: Ustavi
+txt_4_8_t: Preoblikuj
+txt_4_8_w: Širina
+txt_4_7_pk: Ustvari naključno geslo/datoteko s ključi
+txt_4_7_spchar: Omeji znake na črke in številke
+txt_4_7_recycleask: Premaknem izbrane datoteke v Koš?
+txt_4_7_recycle: Premakni v Koš
+txt_4_7_pcomp: Morebitno stiskanje
+txt_4_6_am: Upravitelj arhivov
+txt_4_6_fm: Upravitelj datotek
+txt_4_6_users: Uporabniki
+txt_4_5_goupdate: Na voljo je nova različica. Odprem PeaZipovo uradno spletno stran za prenos posodobitve?
+txt_4_5_b: Spodaj
+txt_4_5_koupdate: Ni mogoče preveriti, ali so na voljo posodobitve. Ni povezave s strežnikom za posodabljanje
+txt_4_5_update: Preveri obstoj posodobitev
+txt_4_5_dock: Sidraj
+txt_4_5_l: Levo
+txt_4_5_noupdate: PeaZip je posodobljen
+txt_4_5_properties: Lastnosti
+txt_4_5_r: Desno
+txt_4_5_pj: Shranjeni skripti
+txt_4_5_shaddress: Prikaži naslovno vrstico
+txt_4_5_shnav: Prikaži vrstico za krmarjenje
+txt_4_5_shstatus: Prikaži statusno vrstico
+txt_4_5_shtool: Prikaži orodno vrstico
+txt_4_5_upxpj: Žal, ni mogoče izvoziti definicije opravila, ker ta postopek ali možnost zahteva izvedbo več različnih ukazov
+txt_4_5_t: Zgoraj
+txt_4_4_confremoveall: Odstranim vse datoteke za prilagajanje PeaZipa (Aplikacije, Zaznamki, Upravitelj gesel)?
+txt_4_4_confremove: Odstranim konfiguracijo PeaZipa?
+txt_4_3_pwmanhint: Dvoklik za urejanje vnosov na seznamu gesel. Desni klik za Možnosti. Ctrl+C za kopiranje gesel.
+txt_4_3_exppl: Izvozi seznam gesel
+txt_4_3_expple: Šifriran (varnostna kopije Upravitelja gesel)
+txt_4_3_keeppw: Ohrani geslo/datoteko s ključi, za trenutno sejo
+txt_4_3_pwmanpwhint: Priporoča se nastavitev gesla/datoteke z gesli (neobvezno) za šifriranje seznama gesel. Na ta način bo potrebno preverjanje pristnosti za dostop do Upravitelja gesel. Geslo/datoteko s ključi lahko kadarkoli spremenite iz tega obrazca.
+txt_4_3_pwmanmaster: Nastavi/Spremeni glavno geslo
+txt_4_3_pwmanlist: Seznam gesel
+txt_4_3_pwman: Upravitelj gesel
+txt_4_3_pwmancorr: Zdi se, da je Upravitelj gesel spremenjen ali poškodovan. Vseeno obdržim Upravitelja gesel, in poskusim obnoviti trenutni seznam gesel, če mu zaupate? (Ne bo ponastavil Upravitelja gesel. Priporočeno)
+txt_4_3_expplp: Navadno besedilo (vse uporabe)
+txt_4_3_recsrc: Privzeto je rekurzivno iskanje
+txt_4_3_resetpm: Ponastavim Upravitelja gesel? Vsa shranjena gesla bodo izbrisana.
+txt_4_3_breadcrumb: Prikaži naslov kot drobno vrstico podatkov
+txt_4_2_arcabspath: Uporabi absolutne poti
+txt_4_1_duplicateshint: V stolpcu CRC je sporočen niz 'velikost'/'kontrol. vsota' za vse podvojene kandidate najdete v trenutni mapi ali iskalnem filtru
+txt_4_1_adminhint: (NAMIG: Neobvezno, lahko zahtevate zvišan UAC, za delo v zaščitenih poteh, Alt+F10 ali 'Možnosti -> zaženi kot skrbnik')
+txt_4_1_selected: (izbrano)
+txt_4_1_duplicatesfound: najdenih dvojnikov
+txt_4_1_duplicatesfind: Najdi dvojnike
+txt_4_1_runasadmin: Zaženi kot skrbnik
+txt_4_1_simplesearch: Enostavno iskanje
+txt_4_0_thim: Prikaži sličice slik
+txt_3_8_type_description_wim: WIM: Microsoftov format slike diska
+txt_3_8_type_description_xz: XZ: zmogljivo stiskanje datotek na osnovi LZMA2
+txt_3_7_donations: Donacije
+txt_3_7_nameasparent: Ime arhiva kotnadrejena mapa izbranega vnosa, če je dodanih več vnosov
+txt_3_7_tracker: Sledilnik težav
+txt_3_7_sort: Razvrsti po
+txt_3_7_swapbars: Zamenjaj Orodno vrstico/Naslovno vrstico
+txt_3_7_themedbars: Vrstice s temami
+txt_3_6_ignoredd: Vedno prezri poti za razširjanje 'povleci in spusti'
+txt_3_6_close: Zapri
+txt_3_6_resetapps: Ali želite ponastaviti Aplikacije (prilagodljiva skupina programov in skriptov za odpiranje datotek s preglasitvijo povezav datotek)?
+txt_3_6_ethemes: Obstoječe teme
+txt_3_5_td: Prenesi teme
+txt_3_5_managecustomthemes: Upravljaj teme
+txt_3_4_nopaths: Ni poti
+txt_3_4_smallicons: Ikone
+txt_3_3_skipunits: (Windows) Pridobi podatke o količini omrežnih enot. Počasnejši zagon
+txt_3_3_stralt: Nadomestni ukaz, ko ni sprejet noben parameter
+txt_3_3_apps: Aplikacije
+txt_3_3_multi: Večkratni izbor
+txt_3_3_runexp: Odpri program, datoteko, mapo ali spletno stran
+txt_3_3_apppath: PeaZipova mapa
+txt_3_3_run: Zaženi
+txt_3_2_7zutf8nonascii: 7z/p7zip -mcu uporablja UTF8 za imena datotek, ki vsebujejo ne-ASCII simbole znotraj .ZIP datotek
+txt_3_2_alltasks: Vsa opravila
+txt_3_2_conf: Konfiguracija
+txt_3_2_donations: Donirajte dobrodelnim organizacijam
+txt_3_1_sccenc: 7z/p7zip -scc kodiranje znakov
+txt_3_1_downloads: Prenosi
+txt_3_1_lib: Knjižnice
+txt_3_1_more: Več
+txt_3_1_openasarchive: Odpri kot arhiv
+txt_3_1_sendto: Uporabniška mapa menija 'PošljiV'
+txt_3_1_pathexc: Pot presega največjo dovoljeno velikost
+txt_3_1_recent: Nedavno
+txt_3_1_plsmartmin: Zaženi pomanjšan. Prikaži/obdrži odprt samo, če je potrebno
+txt_3_1_src: Iskanje
+txt_3_1_systmp: Sistemska začasna mapa
+txt_3_1_languagetools: Prevedi
+txt_3_1_workingdir: Delovna mapa
+txt_3_0_nonreadableorpw: Arhiv ni berljiv. Ali želite poskusiti z geslom?
+txt_3_0_readablepw: Zdi se, da je arhiv zaščiten z geslom
+txt_3_0_configure: Sistemska integracija in povezovanje datotek
+txt_3_0_resettmp: Ponastavi peazip-tmp
+txt_2_9_address: Naslovna vrstica
+txt_2_9_adv: Napredni filtri se uporabljajo pri upravljanju katere koli datoteke, ki so podprte s 7z ali FreeArc podporo. Glejte dokumentacijo in preglasi osnovne filtre (ki se uporabljajo za iskalne funkcije in so prikazani v podoknih 'Zaznamki' in 'Zgodovina').
+txt_2_9_columns: Stolpci
+txt_2_9_copyhere: Kopiraj tukaj
+txt_2_9_noscan: Ne preglej datotek, ki so dodane postavitvi
+txt_2_9_extconsole: Razširjanje konzole je na voljo samo pri brskanju arhivov
+txt_2_9_thl: Označi gumbe
+txt_2_9_home: Domov
+txt_2_9_lt: Velika
+txt_2_9_mt: Srednja
+txt_2_9_movehere: Premakni tukaj
+txt_2_9_nav: Krmarjenje
+txt_2_9_navbar: Vrstica za krmarjenje
+txt_2_9_none: Brez
+txt_2_9_organize: Organiziraj
+txt_2_9_public: Objavi
+txt_2_9_rec: Recursive: Poišči v podmapah. Lahko traja nekaj časa
+txt_2_9_selected: Izbrano
+txt_2_9_setapps: Organiziraj aplikacije
+txt_2_9_showmenu: Prikaži menijsko vrstico
+txt_2_9_st: Majhna
+txt_2_9_test_pw2G: Preizkusi šifriranje arhivov <2GB
+txt_2_9_vst: Samo besedilo
+txt_2_9_toolbar: Orodna vrstica
+txt_2_9_tree: Drevo
+txt_2_9_views: Prikazi
+txt_2_8_experimental: (eksperimentalno)
+txt_2_8_zcopy: (Windows) Kopiranje datotek v ponovitvenem načinu. Počasnejše kopiranje.
+txt_2_8_addvol: Dodajanje celotnih nosilcev v arhiv lahko traja dlje časa. Vseeno nadaljujem?
+txt_2_8_uniterror: Enota ni dostopna
+txt_2_8_cannotconvert: Izbranih arhivov ni mogoče pretvoriti
+txt_2_8_convertbegin: Nadaljujem s fazo stiskanja, za dokončanje pretvorbe?
+txt_2_8_convert: Pretvori 
+txt_2_8_convertexisting: Pretvori obstoječe arhive
+txt_2_8_convertdelete: Izbrišem začasno ustvarjene datoteke in mape za pretvorbo?
+txt_2_8_details: Podrobnosti
+txt_2_8_parallel: Izvedi vzporedna opravila, kadar je to mogoče
+txt_2_8_convertnote: V vsakem primeru izvirni arhivi niso bili spremenjeni, da bi uporabniku omogočili nadzor nad tem, kako jih obdržati ali odstraniti
+txt_2_8_custom: ni neposredno podprto s PeaZipom, vendar v fazi razširjanja lahko nastavite PeaZip za obdelavo vrst datotek po meri, v zavihku 'Napredno'. Nadaljujem z odpiranjem te datoteke?
+txt_2_8_unitrecommend: Priporočljivo je bodisi razširiti (desni klik z miško -> Razširi izbrane) ali odpreti datotečne sisteme iz korena računalnika (Orodja sistema> Odpri enoto kot arhiv)
+txt_2_8_viewasarchive: Odpri enoto kot arhiv
+txt_2_8_nounit: Nobena enota ni izbrana
+txt_2_8_rowselect: Izbira vrstice
+txt_2_8_statusbar: Statusna vrstica
+txt_2_8_typeunit: Vnesite ime logične ali fizične enote
+txt_2_8_usedefaultoutpath: Uporabi privzeto izhodno pot
+txt_2_7_experimental: (eksperimentalno, glejte dokumentacijo)
+txt_2_7_optional: (neobvezno)
+txt_2_7_list_tryflatorpw: , možne rešitve: poskusite ploski prikaz (F6), zagotovite geslo (F9), dobite svežo kopijo arhiva
+txt_2_7_separate: Dodaj vsak predmet v ločen arhiv
+txt_2_7_pwsupported: Arhiviranje z geslom
+txt_2_7_cancel: Prekliči
+txt_2_7_encfn: Šifriraj tudi imena datotek (če format to podpira)
+txt_2_7_setpw: Vnesi geslo/datoteko s ključi
+txt_2_7_ext: Razširjanje:
+txt_2_7_extfrom: Razširjanje iz arhiva:
+txt_2_7_es: Razširi podprte nearhivske vrste datotek, npr. izvedljive (.EXE), MS Office in OOo datoteke
+txt_2_7_eu: Razširi nepodprte vrste datotek. Določanje pripomočka za razpirjanje, po meri.
+txt_2_7_clipboard: Odložišče
+txt_2_7_goarclayout: Pojdi na postavitev arhiva
+txt_2_7_goextlayout: Pojdi na razširjanje arhiva
+txt_2_7_ok: Vredu
+txt_2_7_drag_archive: Odprem datoteko kot nov arhiv? ('Ne' za dodajanje datoteke v trenutno postavitev arhiviranja)
+txt_2_7_oop: Po končanem opravilu odpri izhodno pot
+txt_2_7_validatefn: Operacija je ustavljena. Odkrito je neveljavno ime datoteke:
+txt_2_7_validatecl: Operacija je ustavljena. Zaznan je bil potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
+txt_2_7_output: Izhod
+txt_2_7_pwnotset: Geslo ni nastavljeno 
+txt_2_7_pwarcset: Geslo je nastavljeno
+txt_2_7_pwextset: Geslo je nastavljeno. Možno je razširiti/narediti seznam/preizkusiti šifrirane arhive
+txt_2_7_archivehint: Povlecite tukaj datoteke in mape v arhiv, ali desni klik, za več možnosti
+txt_2_7_exthint: Povlecite arhive tukaj, da jih razširite ali desni klik, za več možnosti
+txt_2_7_setadvf: Nastavi napredne filtre
+txt_2_7_selpath: Izbrana pot vnosa
+txt_2_7_separateerror: Žal ni mogoče uvoziti ukazne vrstice definicije opravila med uporabo stikala 'Dodaj vsak predmet v ločen arhiv' , ker se opravilo izvaja kot več različnih ukazov
+txt_2_7_noinput: Postavitev je prazna: za dodajanje seznama arhivov, ki jih želite razširiti, uporabite 'Dodaj datoteke' ali 'Naloži postavitev'
+txt_2_7_dirsize: Velikost vsebine map ni označenana za izračun skupne velikosti
+txt_2_7_un7z_browse_flat: poskusi ploski prikaz (F6)
+txt_2_7_updating: Posodabljanje obstoječega arhiva
+txt_2_6_folders: (mape)
+txt_2_6_advanced: Napredno
+txt_2_6_plalways: Vedno obdrži odprto, za pregled poročila opravila
+txt_2_6_plsmart: Obdrži odprto samo, če je potrebno (napaka, seznam ali preizkus poročil)
+txt_2_5_sessionio: (to sejo)
+txt_2_5_advanced: Napredno urejanje: postavite presledke med parameter nizov in imenom datoteke, če je to potrebno
+txt_2_5_basic: Osnovno urejanje: aplikacija in parametri pred imenom vhoda
+txt_2_5_cannotrun: Ni mogoče zagnati
+txt_2_5_custeditors: Urejevalniki po meri, predvajalniki, protivirusni programi itn.... (preglasi povezanost sistemskih datotek)
+txt_2_5_delete: Izbriši
+txt_2_5_delete_fromarchive: Izbriši iz arhiva
+txt_2_5_langflag: Prikaz imena arhiviranega predmeta kot UTF-8 besedila. Počistite, da zamenjate razširjene znake z '?'
+txt_2_5_encpj: Kodiraj definicijo opravila kot UTF-8t
+txt_2_5_execommand: Izvedljiva ali ukaz
+txt_2_5_help: Pomoč
+txt_2_5_langhint: Namig: Zamenjava razširjenih znakov z '?' znakom lahko izboljša sintakso, če ni mogoče uspešno pretvoriti nabora znakov arhiva v trenutnem računalniku
+txt_2_5_mini_help: Lokaliziran Vodič
+txt_2_5_offline_help: Pomoč PeaZip
+txt_2_5_tray: Pomanjšaj v programsko vrstico
+txt_2_5_remove: Odstrani
+txt_2_5_hintpaths: Desni klik za odpiranje sistemske in uporabniških poti
+txt_2_5_selectapp: Izberi aplikacijo
+txt_2_5_strafter: Niz za imenom vhoda
+txt_2_5_strbefore: Niz pred imenom vhoda
+txt_2_5_encoding: Kodiranje besedila
+txt_2_5_nopw: ta vrsta arhiva ne podpira šifriranja
+txt_2_4_draghint: [povleci v Raziskovalec z omogočeno naslovno vrstico]
+txt_2_4_tb: Prilagodi gumbe orodne vrstice (vnovični zagon PeaZipa)
+txt_2_4_adding: Dodajanje
+txt_2_4_advclip: Odložišče ohranja več izbir
+txt_2_4_yanswers: Odgovori
+txt_2_4_itemsheight: Samodejna višina vnosov
+txt_2_4_clearclipboard: Počisti Odložišče (Esc)
+txt_2_4_wcommons: Skupno
+txt_2_4_copyfrom: Kopiraj iz
+txt_2_4_deletebookmarks: Ali želite izbrisati seznam zaznamovanih datotek in map
+txt_2_4_documents: Dokumenti
+txt_2_4_wenc: Enciklopedija
+txt_2_4_extractfrom: Razširi iz
+txt_2_4_hexp: 16-tiški predogled
+txt_2_4_operation: Operacija
+txt_2_4_path: pot ni zapisljiva (npr. samo za branje). Ali želite izbrati zapisljivo izhodno pot?
+txt_2_4_removefromclipboard: Odstrani iz Odložišča
+txt_2_4_stdclip: Standardno: ohrani en sam izbor v odložišču, počisti operacije rezanja pri lepljenju
+txt_2_4_totalmem: skupnega pomnilnika
+txt_2_4_gvideo: Video
+txt_2_4_wbook: Wikibook
+txt_2_4_wnews: Wikinews
+txt_2_4_wsrc: Wikisource
+txt_2_4_wdict: Wiktionary
+txt_2_3_pw_errorchar: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev s PeaZipovim grafičnim vmesnikom v geslih. Spremenite geslo ali izberite način 'Konzola' v podpori binarnih datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
+txt_2_3_envstr: Prikaz spremenljivk okolja
+txt_2_3_never_pw: Ne sprašuj za geslo
+txt_2_3_home: Uporabnikov dom
+txt_2_3_on_pw: Pri operacijah razširi/seznam/preizkusi iz sistemskih menijev:
+txt_2_3_test_pw100: Preizkusi šifriranje arhivov <100 MB
+txt_2_3_test_pw: Preizkusi šifriranje (morda je počasno)
+txt_exclude_recourse: 'izključi' rekurzivne podmape
+txt_action_extopen: akcija 'Razširi in odpri s povezano aplikacijo'
+txt_error_passwordnotmatch: Ne ujemata se polji 'Geslo' in 'Potrdi'. Popravite ju!
+txt_action_preview: akcija 'Predogled s povezano aplikacijo'
+txt_preview_hint: akcija 'Predogled' izvede isto opravilo kot 'Razširi in odpri' vendar v začasni poti v izhodni mapi, ki se samodejno odstrani po zapiranju arhiva.
+txt_better: (boljše)
+txt_default2: (privzeto)
+txt_faster: (hitreje)
+txt_fastermem: (hitreje, manj pomnilnika)
+txt_tempdir: (PeaZipova začasna delovna mapa)
+txt_stream: (nastavi z 'Nadzor pretoka')
+txt_slowermem: (počasneje, več pomnilnika)
+txt_store: (shramba, najhitrejše)
+txt_newfolder: (v novo mapo)
+txt_7z_exitcodeunknown: : Neznana napaka v opravilu
+txt_list_isfolder:  [mapa]
+txt_none: <brez>
+txt_fd: 1.44 MB disketa
+txt_7z_exitcode1: 1: Opozorilo: neusodne napake. Npr. nekatere datoteke manjkajo ali so zaklenjene
+txt_attach10: 10 MB priloga
+txt_7z_exitcode2: 2: Prišlo je do usodne napake
+txt_7z_exitcode255: 255: Opravilo je ustavil sam uporabnik
+txt_fat32: 4 GB FAT32 datoteka
+txt_dvd: 4.7 GB DVD
+txt_attach5: 5 MB priloga
+txt_cd650: 650 MB CD
+txt_7z_exitcode7: 7: Napaka: dobil je napačno ukazno vrstico
+txt_cd700: 700 MB CD
+txt_type_description_7z: 7Z: funkcija bogatega arhivskega formata z visokim razmerjem stiskanja
+txt_dvddl: 8.5 GB DVD DL
+txt_7z_exitcode8: 8: Napaka: za zahtevano operacijo ni dovolj pomnilnika 
+txt_abort: Prekinem načrtovane operacije kopiranj/premika datoteke?
+txt_about: Vizitka
+txt_action: Akcija
+txt_action_hint: Akcija pri odpiranju/predogledu s povezano aplikacijo
+txt_add: Dodaj
+txt_add_existing_archive: Dodaj (če obstaja arhiv)
+txt_add_archive: Dodaj arhiv
+txt_add_files: Dodaj datoteke
+txt_add_folder: Dodaj mapo
+txt_add_path: Dodaj pot
+txt_add_tolayout: Dodaj izbrane datoteke in mape v postavitev arhiva
+txt_add_toarchive: Dodaj v arhiv
+txt_add_tobookmarks: Dodaj med zaznamke
+txt_address_hint: Filter: sprejme nadomestna znaka * in ?
+txt_adv_filters: Napredni filtri
+txt_algo: Algoritem
+txt_all: vse
+txt_all_default: Vse (privzeto)
+txt_all_type: Ista vrsta
+txt_all_date: Datum
+txt_all_psize: Velikost pakirane datoteke
+txt_all_attributes: Isti atributi
+txt_all_size: Velikost datoteke
+txt_error_input_upx: omogoča vnos ene izvedljive datoteke
+txt_always_pw: Vedno vprašaj za geslo
+txt_ignore_ext: Vedno prezri poti za 'Razširi in...'
+txt_ignore_disp: Vedno prezri poti za 'Razširi prikazane...'
+txt_ignore_sel: Vedno prezri poti za 'Razširi izbrane...'
+txt_key_hint: V geslo dodajte hash datoteke s ključi. Arhiv je mogoče dešifrirati s PeaZip in drugimi aplikacije, ki sledijo istemu standardu, ali pa vnesite hash kot del gesla.
+txt_timestamp: Dodaj časovni žig v ime 
+txt_appoptions: Možnosti aplikacije
+txt_type_description_arc: ARC: experimentalni arhiver, zmogljiv, učinkovit in bogat s funkcijami
+txt_archive: Arhiv
+txt_un7z_browse_ok: arhiv je bil uspešno pregledan
+txt_interface: Vmesnik brskalnika arhiva
+txt_archivecreation: Izdelava arhiva
+txt_tarbefore_hint: Arhivirajte podatke v obliki TAR prej kot v določeni vrsti.
+txt_archive_hint: Arhivirajte, stiskajte, delite in hranite zasebne datoteke, mape in nosilce
+txt_compressionratio_hint: Razmerje siskanja arhiva
+txt_archiving: Arhiviranje:
+txt_cl_long: Argumenti se zdijo daljši od največje dovoljene dolžine, ki jih lahko prenesete s PeaZipom. Izberite manj vhodnih datotek (npr. Izberite mape namesto posameznih datotek)
+txt_overwrite_askbefore: Vprašaj pred prepisovanjem (v konzoli)
+txt_associated: Povezane aplikacije
+txt_attributes: Atributi
+txt_author: Avtor
+txt_ren_existing: samodejno preimenujobstoječe datoteke
+txt_ren_extracted: samodejno preimenuj razširjene datoteke
+txt_autofolder: Samodejno ustvarim novo mapo za razširjanje arhiva?
+txt_back: Nazaj
+txt_backend: Uporabniški vmesnik podpira binarne datoteke
+txt_backupexe: Varnostno kopiraj izvedljivo (EXE) datoteko (priporočeno)
+txt_bettercompression: boljše stiskanje
+txt_blogs: Blogi
+txt_blowfish: Blowfish448 (64 bitni bloki)
+txt_bookmarks: Zaznamki
+txt_browse: Prebrskaj
+txt_browser: Brskalnik
+txt_aborted_error: Brskanje arhiva je zaustavljeno. Trajalo bi preveč časa. Izbor lahko zožite z iskanjem (F3) ali izhodom iz načina ploskega prikaza (F6). Težava ne vpliva na operacije razširjanje/seznam/preizkus.
+txt_list_browsing: Brskanje
+txt_archive_root: Brskanje korena arhiva
+txt_type_description_bzip2: BZip2: precej močno stiskanje. Povprečna hitrost
+txt_pw_empty: Prosimo, zagotovite geslo (ali datoteko s ključni)
+txt_add_error: Predmetov ni mogoče dodajati/posodabljati ali brisati. Verjetno je ta vrsta arhiva imela le podprto brskanje/razširjanje ali pa ne more podpreti posamične operacije (npr. je na več nosilcih ali trdni) ali pa PeaZip ne more v celoti upravljati imena arhiva
+txt_un7z_browse_failure: cannot browse arhiv
+txt_list_error: Ni mogoče prikazati seznama arhivske vsebine. Preverite, ali je arhiv zaščiten z geslom ali poškodovan.
+txt_conf_cannotsave: Konfiguracijske datoteke ni mogoče shraniti. Preverite, ali je pot zapisljiva in z nekaj prostega prostora
+txt_check_hint: Preverite, ali je prišlo do občasne okvare podatkov. Hash algoritmi so primerni za zaznavanje celo zlonamernih sprememb podatkov (glejte dokumentacijo)
+txt_check: Datoteke kontrolne vsote/hash datoteke
+txt_check_select: Kontrolna vsota/hash
+txt_clear: Počisti
+txt_clearlayout: Počisti postavitev
+txt_pj_hint: Kliknite za uvoz opravila. Ponastavite spremembe in naložite posodobljeno definicijo opravil iz GUI
+txt_autoclose: Po končanem opravilu zapri PeaLauncher
+txt_cl: ukazna vrstica:
+txt_compare: Primerjaj datoteke
+txt_compress: Stisni
+txt_compress_executable: Stisni izvedljivo datoteko
+txt_compress_openforwriting: Stisni datoteke, odprte za pisanje
+txt_compression: Stiskanje
+txt_compmanagement: Upravljanje računalnika
+txt_pw_confirm: Potrdi
+txt_console: Konzola
+txt_console_interface: Konzola: izvirni vmesnik
+txt_content: Vsebina
+txt_controlpanel: Nadzorna plošča
+txt_convert: Pretvori disk v NTFS
+txt_copy: Kopiraj
+txt_copyto: Kopiraj v...
+txt_create: Ustvari
+txt_create_archive: Ustvari nov arhiv
+txt_title_create: Ustvari arhiv, stisni, šifriraj, razdeli...
+txt_create_keyfile: Ustvari datoteko s ključi
+txt_create_folder: Ustvari nobo mapo
+txt_create_theme: Ustvari temo iz trenutnih nastavitev
+txt_rr: Ustvari obnovitvene zapise
+txt_create_sfx: Ustvari samorazširljiv arhiv
+txt_cr_current: Razmerje stiskanja trenutne poti ali filtra
+txt_custom: Po meri
+txt_type_description_custom: Po meri (napredni uporabniki): vnesite ime izvedljive datoteke in parametre
+txt_customapp: Aplikacija po meri
+txt_custom_parameters: Parametri po meri
+txt_customsize: Velikost po meri
+txt_cut: Izreži
+txt_datetime: Datum/Čas
+txt_default: privzeto
+txt_default_compression: privzeto stiskanje
+txt_default_format: Privzet format
+txt_theme_default: Privzeta tema
+txt_hard_reset_hint: Izbriši datoteko z zaznamki
+txt_desktop: Namizje
+txt_dictionary: Slovar
+txt_dirs: imenikov,
+txt_dis: Razločitev:
+txt_disk_cleanup: Čiščenje diska
+txt_disk_defrag: Defragmentacija diska
+txt_disk_management: Upravljanje diskov
+txt_dispaly: Prikaži rezultate kot
+txt_displayedmnu_obj: prikazan
+txt_displayedobjects: Prikazani predmeti
+txt_nocompress: ne stisni
+txt_delete: Ali želite izbrisati izbrane datoteke? Operacije ni mogoče razveljaviti in datoteke ne bodo obnovljive iz Koša
+txt_wipe: Ali želite varno izbrisati izbrane datoteke? Operacije ni mogoče razveljaviti in datoteke ne bodo obnovljive
+txt_done: Končano
+txt_edit: Uredi
+txt_elapsed: poteklo:
+txt_error_emptycl: Prazna ukazna vrstica!
+txt_encrypt: Šifriraj
+txt_encrypted: šifriran
+txt_encryption: Šifriranje
+txt_note: Vnesite opombo/opis
+txt_random_keys: Vnesite naključne tipke
+txt_random_keys_hint: Vnesite naključne tipke (ne morate si zapomniti)
+txt_ent: Vrednotenje entropije
+txt_ent_tools: Premaknite miško ali uporabite dodatna orodja za vzorčenje entropije
+txt_eqorlarger: Isto ali večje od izbranega predmeta
+txt_eqorrecent: Isto ali novejše od izbranega predmeta
+txt_eqorolder: Isto ali starejše od izbranega predmeta
+txt_eqorsmaller: Isto ali manjše od izbranega predmeta
+txt_equal: Isto kot izbrani predmet
+txt_erase_hint: Varno izbriši: prepiši z naključnimi podatki, velikost maske, preimenuj in končno izbriši
+txt_extraction_error: Napaka pri razširjanju izbranega predmeta. Če je arhiv zaščiten z geslom, ga vpišite
+txt_exclude_hint: Izključi datoteke, eno na vrstico. Uporabite nadomestna znaka * in ?. Ločila " in ' nista potrebna
+txt_exclusion_recourse: Filtri za izključitev rekurzivnih podmap
+txt_exclusion: Izključi
+txt_exe: Izvedljiva datoteka
+txt_overwrite_qry: obstaja v ciljni poti. Jo prepišem z datotekama z istim imenom iz izvirne poti? (Prekliči: Preskoči kopiranje tega predmeta)
+txt_confirm_overwrite: obstaja. Naj jo prepišem? (ne, za preskok)
+txt_explore_outpath: Razišči izhodno pot
+txt_explore_path: Razišči pot
+txt_ext: Končn.:
+txt_caption_extract: Razširi
+txt_ext_nopath: Razširi (brez poti)
+txt_ext_all: Razširi vse
+txt_ext_allhere: Razširi vse tukaj
+txt_ext_allto: Razširi vse v
+txt_extopen_custom: Razširi in odpri s poljubno aplikacijo
+txt_extopen_with: Razširi in odpri z...
+txt_ext_disp_here: Razširi prikazano tukaj
+txt_ext_disp: Razširi prikazane predmete
+txt_ext_disp_to: Razširi prikazane predmete v...
+txt_ext_here: Razširi tukaj
+txt_ext_sel_here: Razširi izbrane tukaj
+txt_ext_sel: Razširi izbrane predmete
+txt_ext_sel_to: Razširi izbrane predmete v...
+txt_extobj: Razširi predmet
+txt_newfoldermenu: Razširi v novo mapo
+txt_extto: Razširi v...
+txt_level_fast: Hitro
+txt_fastcompr: hitro stiskanje
+txt_fastopen: Rutina za hitro odpiranje. Ustavi brskanje izjemno velikih arhivov. Namesto tega uporabite filtre
+txt_level_fastest: Najhitreje
+txt_favformats: Priljubljeni formati
+txt_file: Datoteka
+txt_filebrowser: brskalnik datotek/brskalnik arhivov
+txt_filetools: Orodja za datoteke
+txt_files: datotek,
+txt_nfiles: Datoteke
+txt_fs: Datotečni sistem
+txt_filters_recourse: filtri rekurzivnih podmap
+txt_filters: Filtri
+txt_flat: Flat (prikaži vse)
+txt_list_flat: Ploski prikaz
+txt_unit_floppy: Disketa
+txt_foldername: Ime mape
+txt_nfolders: Mape
+txt_error_input_multi: format dovoljuje le eno vhodno datoteko. Lahko uporabite stikalo 'TAR pred', da shranite vhod v '.TAR' arhiv ali pa lahko izberete drug format. NAMIG: izberite format arhiva po izbranih vhodnih podatkih:: stikalo 'TAR pred' se bo samodejno nastavilo
+txt_fwd: Naprej
+txt_list_found: Najdi
+txt_free: Prosto
+txt_free2: prosto
+txt_name_full: Polno ime
+txt_function: Funkcija
+txt_general: Splošno
+txt_multithreading: Generična večnitnost
+txt_go_browser: Pojdi na brskalnik datotek
+txt_go_path: Razišči pot (PeaZip)
+txt_guicl: Grafično + konzola
+txt_guipealauncher: Grafika: prelom s PeaLauncherjem
+txt_graphic: Mapa z grafiko
+txt_gridaltcolor: Nadomestna barva mrež
+txt_gridrowheight: Višina vrstice mreže
+txt_gui: Grafični vmesnik (GUI)
+txt_type_description_gzip: GZip: hitro stiskanje
+txt_here: tukaj
+txt_list_history: Zgodovina
+txt_homeroot: Korenska raven računalnika/arhiva
+txt_quickbrowse_hint: Če je brskanje ustavljeno, lahko uporabnik zoži izbor z uporabo funkcij iskanja ali filtriranja. Funkcije razširjanje/seznam/preizkus na noben način ne vplivajo.
+txt_backupexe_hint: Če gre kaj narobe in povzroči nefunkcionalen rezultat, lahko izvirno izvedljivo datoteko obnovite iz samodejne varnostne kopije
+txt_attach: Če poštni odjemalec podpira ta ukaz, bo arhiv povezan z novo pošto
+txt_images: Slike
+txt_include_hint: Vključi datoteke, eno na vrstico. Uporaba nadomestnega znaka * in ?. Ločila " in ' niso potrebna
+txt_filters_hint: Fltri za vključitev in izključitev za 7z binarne. Prosimo, pozorno preberite dokumentacijo 7-Zip, da boste razumeli, kako delujejo ti filtri
+txt_inclusion_recourse: Filtri za vključitev rekurzivnih podmap
+txt_inclusion: Vključi
+txt_error_function: Zahtevana je nepravilna funkcija
+txt_info: Informacija
+txt_infoall: Informacije o vseh
+txt_infodisp: Informacije o prikazanih predmetih
+txt_infosel: Informacije o izbranih predmetih
+txt_inputinfo: Vhodne informacije
+txt_input_list: Seznam vnosov:
+txt_iop: vhod, izhod, parametri
+txt_ipo: vhod, parametri, izhod
+txt_input: vhod:
+txt_integrity: Preverjanje celovitosti
+txt_chunk_size: Neveljavna velikost po meri. Popravite jo v numerično vrednost
+txt_invertsel: Obrni izbiro
+txt_type_exe: je Windows izvedljiva (.exe). Ali jo želite zagnati? ('Ne', da jo poskusite odpreti kot arhiv) NAMIG: Nekatere izvedljive datoteke morda ne bodo pravilno zagnane, če pred tem ne boste razširili celotnega arhiva
+txt_return_to_archive: je trenutno odprt. Ali ga želite prebrskati?
+txt_not_accessible: ni več dostopen
+txt_type_unsupported: ni podprta vrsta arhiva
+txt_checkname_failed: ni veljavno ime.
+txt_not_accessible_list: ni dostopen. Preverite, ali je zagotovljen seznam datotek pravilen in posodobljen
+txt_theme_create_error: Teme ni bilo mogoče ustvariti. Poskusite uporabiti ime, ki je veljavno za mapo, kot ime teme in za izbiro zapisljive poti
+txt_theme_exists: že obstaja. Zagotovite drugačno pot
+txt_job_code: koda opravila:
+txt_job_definition_saved: Definicija opravila je uspešno shranjena v
+txt_job_success: Opravilo je uspešno dokončano!
+txt_join: Združi
+txt_joinfiles: Združi datoteke
+txt_keyfile: Datoteka s ključi
+txt_keyfile_not_found: Datoteke s ključi ni mogoče najti ali brati. Izberite drugo datoteko s ključi.
+txt_keyfile_notcreated: Datoteka s ključi ni ustvarjena
+txt_larger: Večje od izbranega predmeta
+txt_lastused: Zadnje uporabljeno
+txt_launch: Zaženi opravilo
+txt_layout: Postavitev
+txt_filelist_savedas: Postavitev shranjena kot
+txt_level: Stopnja
+txt_license: Licenca
+txt_caption_list: Seznam
+txt_list_details: Seznam (s podrobnostmi)
+txt_list_all: Seznam vseh
+txt_list_disp: Seznam prikazanih predmetov
+txt_list_sel: Seznam izbranih predmetov
+txt_toggle_warning: Izpis ploskega prikaza vsebine poti lahko traja dolgo. Vseeno naj nadaljujem?
+txt_loadfile: Naloži datoteko
+txt_loadlayout: Naloži postavitev
+txt_unit_hd: Lokalni disk
+txt_localization: Lokalizacija
+txt_lpaqver: Različica LPAQ
+txt_type_description_lpaq: LPAQ: hitrejša različica PAQ z zelo dobrim stiskanjem
+txt_maininterface: Glavni vmesnik
+txt_maxcomp: Način najmočnejšega stiskanja
+txt_level_maximum: Najmočnejše
+txt_restartrequired: Lahko zahteva ponovni zagon aplikacije
+txt_required_memory: MB potrebnega pomnilnika
+txt_method: Metoda
+txt_misc: Razno
+txt_modify: Spremeni
+txt_morecontrols: Več kontrol (zgodovina, zaznamki, ...)
+txt_morerecent: Novejše od izbranega predmeta
+txt_ent_hint: Premaknite miško, vnesite ključe v polje za urejanje, naložite datoteke, da zbereteo entropijo iz sistema...
+txt_moveto: Premakni v...
+txt_mypc: Koren računalnika
+txt_list_na: ni podatka
+txt_name: Ime
+txt_naming: Politika poimenovanj
+txt_unit_remote: Omrežni pogon
+txt_newarchive: Nov arhiv
+txt_cnewfolder: Nova mapa
+txt_news: Novice
+txt_no: Ne
+txt_noinput: Ni prejetega dostopnega vhoda
+txt_nocompress_hint: brez stiskanja (hitreje)
+txt_split_noinput: Ni izbranega vhoda. Izberite datoteko, ki jo želite razdeliti
+txt_open_noinput: Ni izbranega vhoda. Izberite arhiv (nosilec prvega arhiva za arhive z več nosilci)
+txt_list_nomatch: ni ujemanj
+txt_singlethread: Brez večnitnosti
+txt_none2: brez
+txt_nonsolid: Ne-trdno
+txt_level_normal: Običajno
+txt_copy_error: ni uspešno kopirano ali premaknjeno. Koda napake:
+txt_description: Opombe
+txt_compare_second: Zdaj izberite datoteko, ki jo želite primerjati
+txt_peaobj: Nadzor predmetov
+txt_displayed_obj: predmetov
+txt_olderthan: Starejše od izbranega predmeta
+txt_on: na
+txt_ondblclick: Ob dvokliku naredi:
+txt_opacity: Prosojnost
+txt_open: Odpri
+txt_openarchive: Odpri arhiv
+txt_title_open: Odpri arhiv, šifriraj, združi...
+txt_open_bookmark: Odpri tatnamek
+txt_cphere: Odpri ukazno vrstico tukaj
+txt_open_file: Odpri datoteko
+txt_open_files: Odpri datoteke
+txt_open_path: Odpri pot
+txt_opensource: Odprtokodni prenosni arhiver
+txt_openwith: Odpri z...
+txt_aborted: Postopek je prekinjen
+txt_unit_cd: Optični pogon
+txt_options: Možnosti
+txt_other: Ostalo
+txt_otherparams: Drugi parametri (prosto urejanje)
+txt_oip: izhod, vhod, parametri
+txt_opi: izhod, parametri, vhod
+txt_output: Izhod:
+txt_overwrite: Prepiši obstoječe datoteke
+txt_compressed_size: Pakirana
+txt_paqver: Različica PAQ
+txt_type_description_paq: PAQ: počasen vendar izjemno zmogljiv stiskalec
+txt_pio: parametri, vhod, izhod
+txt_poi: parametri, izhod, vhod
+txt_parameters: Parametri:
+txt_error_partial: Za to vrsto arhiva ni implementirano delno razširjanje
+txt_passes: Prehodov
+txt_pw: Geslo
+txt_pwlength: Dolžina gesla (4..64 znakov)
+txt_un7z_browse_pw: morda bo zahtevano geslo
+txt_un7z_browse_pw_other: geslo je morda napačno
+txt_paste: Prilepi
+txt_path: Pot
+txt_pea_appcolor: Barva aplikacije
+txt_pea_textcolor: Barva besedila Pea
+txt_type_description_pea: PEA: varnostno usmerjen format arhiva s hitrim stiskanjem
+txt_peazip_new: PeaZip (nov primerek)
+txt_peazip_help: Spletna podpora
+txt_peazip_web: PeaZipova spletna stran
+txt_performall: Izvedi vse podprte algoritme
+txt_name_provide: \ / : * ? ' " < > | znaki niso dovoljeni v imenih datotek
+txt_upxorstrip: Prosimo, izberite Odstrani in/ali UPX na binarni
+txt_not_removable_file: Prosimo, zaprite datoteko, ki jo uporabljate, da jo lahko PeaZip odstrani:
+txt_not_removable: Prosimo, zaprite datoteke, ki jih uporabljate, da omogočite PeaZipu odstranjevanje mape:
+txt_custom_executable_missing: Zagotovite ime izvedljive datoteke po meri
+txt_type_unsupported_select: Izberite vrsto podprtega arhiva:
+txt_no_theme_name: Določite ime teme
+txt_please_wait: Prosimo, počakajte!
+txt_copy_wait: Prosimo, počakajte na konec trenutnih načrtovanih postopkov kopiranja/premika datoteke pred nastavljanjem Rokovnika drugim postopkom iste vrste
+txt_previewwith: Predogled z...
+txt_projectadmin: Skrbnik projekta:
+txt_type_description_quad: BALZ/QUAD: visoko zmogljivi stiskalniki datotek na osnovi ROLZ datoteke
+txt_quickdelete: Hitro izbriši
+txt_quit: Končaj
+txt_unit_ram: RAM disk
+txt_read: Bere:
+txt_recentarchives: Nedavni arhivi
+txt_rr_hint: Zapisi obnovitve omogočajo, poskus popravkov arhiva v primeru okvare podatkov
+txt_search_refine: Izboljšaj iskalni filter. Sprejema nadomestna znaka ? in *
+txt_fefreshf5: Osveži (F5)
+txt_release: objava:
+txt_unit_removable: Odstranljiva enota
+txt_remove_bookmark: Odstrani zaznamek
+txt_remove_external_unit: Odstrani zunanje naprave
+txt_removeselected: Odstrani izbrane predmete
+txt_rename: Preimenuj
+txt_caption_repair: Popravi
+txt_restartrequired2: za uporabo je zahtevan ponovni zagon aplikacije
+txt_reset: Ponastavi
+txt_reset_archivename: Ponastavi ime arhiva
+txt_hardreset: Ponastavi zaznamke
+txt_reset_theme: Ponastavi v vgrajeno temo
+txt_restore_att: obnovi izvirne atribute
+txt_run_as: Zaženi kot (ni mogoče preklopiti na uporabnike z praznim geslom)
+txt_run_as2: Zaženi kot drugi uporabnik
+txt_sample: Primer: 
+txt_saveas: Shrani kot
+txt_savehistory: Shrani zgodovino podatkov
+txt_save_infolder: Shrani v mapo (samodejno)
+txt_savejob: Shrani definicijo opravila
+txt_savejobdefinition: Shrani definicijo opravila
+txt_savejobdefinition_hint: Shrani definicijo opravila kot navadno besedilo. Uporabite ga lahko iz vaših skriptov
+txt_savelayout: Shrani postavitev
+txt_save_winstate: Shrani stanje glavnega okna
+txt_search: Poišči (rekurzivno, lahko traja nekaj časa)
+txt_searchanddrag: Poišči in spusti tukaj
+txt_searchfor: Poišči
+txt_nrsearch: Poišči tukaj (ne rekurzivno)
+txt_search_hint: Poišči v podmapah arhiva za ujemanje s filtri
+txt_search_web: Spletno iskanje
+txt_list_searching: Iskanje...
+txt_securedelete: Varno izbriši
+txt_default_description: Izberite funkcijo ali povlecite datoteke tukaj
+txt_selectall: Izberi vse
+txt_selectdir: Izberi mapo
+txt_selected_obj: izbrano
+txt_selected_objects: Izbrani predmeti
+txt_sfx: Samorazširjanje
+txt_sendbymail: Pošlji po e-pošti
+txt_set_defaults: Nastavi privzete parametre aplikacije
+txt_settings: Nastavitve
+txt_sfx_interface: sfx vmesnik
+txt_showhints: Prikaži namige
+txt_show_messages: Prikaži informacijska sporočila
+txt_showpw: Prikaži vsebina polja z geslom
+txt_singlevol: Enojni nosilec. Ne razdeli ga
+txt_size: Velikost
+txt_sizeb: Velikost (B)
+txt_skip_existing: Preskoči obstoječe datoteke
+txt_slowercomp: počasnejše stiskanje vendar ista hitrost razširjanja
+txt_smaller: Manjši kot izbrani predmet
+txt_solid: Trdno
+txt_solid_block: Velikost bloka
+txt_solid_auto: Trdno, samodejno prilagodi
+txt_solid_extension: Trdno, skupine po končnicah
+txt_listtest: žal, za ta format ni še implementiran postopek izdelave seznam/preizkusa
+txt_sortbysel: Razvrsti po stanju izbire
+txt_list_sorting: Razvrščanje...
+txt_speed: hitrost
+txt_split: Razdeli
+txt_type_description_split: Razdeli datoteko z izbirnim preverjanjem celovitosti
+txt_split_file: Razdeli datoteko
+txt_list_nostats: statistika ni na voljo
+txt_status: Stanje
+txt_level_store: Shramba
+txt_stream_control: Nadzor pretoka
+txt_strip: Odstrani pred UPX (priporočeno)
+txt_keyfile_created: Uspešno ustvarjena datoteka s ključi kot:
+txt_suggestpw: Ustvari naključno geslo
+txt_noupx: Opuščeni simboli, izpuščena je stiskanje UPX
+txt_syntax: Sintaksa:
+txt_sysbenchmark: Primerjava sistema
+txt_benchmark: Primerjava sistema bo trajala nekaj minut in bo uporabila vse razpoložljive procesorske in pomnilniške vire. Sistem se med referenčno vrednostjo morda ne bo odzival. Vseeno jo zaženem?
+txt_systools: Sistemska orodja
+txt_tarbefore: TAR pred
+txt_type_description_tar: TAR: Prevladujoč arhivski format v sistemih UNIX
+txt_taskman: Upravitelj opravil
+txt_caption_test: Preizkusi
+txt_testall: Preizkusi vse
+txt_testdisp: Preizkusi prikazane predmete
+txt_testpw: Preizkusi geslo/datoteko s ključi
+txt_testsel: Preizkusi izbrane predmete
+txt_col_hint: Barvo je treba izbrati tako, da se dobro integrira z barvami ikon in drugimi elementi grafičnega vmesnika
+txt_bookmarks_hint: Na voljo je popoln seznam zaznamkov (ki ga je mogoče urejati) v vmesniku brskalnika datotek, s klikom na ikono 'Več kontrol' in v 'Preklopi zgodovino/zaznamke'.
+txt_archive_noinput_tolist: Postavitev je prazna: prosimo, uporabite 'Dodaj datoteke', 'Dodaj mape' ali 'Naloži postavitev', za prikaz postavitve arhiva 
+txt_theme: Tema
+txt_icons_found: Tema je uspešno naložena.
+txt_themename: Ime teme
+txt_icons_not_found: Tema ni pravilno naložena. Poskusite preklopiti na privzeto temo ali eno, ki deluje.
+txt_theme_create_success: tema je uspešno ustvarjena v
+txt_theming: Delo s temami
+txt_extand_error: Ta funkcija se lahko istočasno izvede na enem samem predmetu
+txt_threads: Niti
+txt_titlescolor: Barva naslovov
+txt_to: v
+txt_toggle_browseflat: Preklopi brskanje/ploski prikaz (prikaži vse)
+txt_toggle_historybookmarks: Preklopi zgodovino/zaznamke
+txt_toolbarscolor: Barva vrstic
+txt_tools: Orodja
+txt_best: poskusi najboljše nastavitve (počasi)
+txt_type: Vrsta
+txt_level_ultra: Ultra
+txt_error_openfile: Določene datoteke ni mogoče odpreti
+txt_cl_hint: UNACE in UPX vadno zaženeta način uporabe konzole. Seznami, preizkusi in primerjalna opravila se vedno izvajajo z načinom GUI
+txt_ace_missing: Manjka vtičnik UNACE. Za upravljanje ACE arhivov lahko prenesete vtičnik s PeaZipove spletne strani (če je UNACE zaprt vir, vtičnik ni prikazan v osnovnem paketu)
+txt_units: enote
+txt_unit_unknown: Neznana vrsta pogona
+txt_un7z_pw_untested: Nepreizkušeno
+txt_up: Gor
+txt_update: Posodobi (če obstaja arhiv)
+txt_type_description_upx: UPX: stisni samo izvedljive datoteke
+txt_advfilters: Uporabi napredne filtre
+txt_openfiles_hint: To možnost uporabite za vključitev v arhivske datoteke, ki so odprte za pisanje v drugih aplikacijah (uporabne pri opravilih varnostnega kopiranja)
+txt_usenet: Usenet
+txt_user_name: Uporabniško ime. Uporabite user@DOMAIN ali DOMAIN\obrazec uporabnika ni potreben.
+txt_using: Uporaba:
+txt_volumepea: Nadzor nosilca
+txt_volume_size: Velikost nosilca
+txt_type_ext_uns: je uspešno razširjen
+txt_websearch: Spletno iskanje
+txt_websites: Spletne strani
+txt_word: Beseda
+txt_write: Zapisuje:
+txt_ramdompw_hint: Od tukaj lahko kopirate naključno generirano geslo
+txt_exe_hint: Lahko prosto vnesete ime izvedljive datoteke in parametre stiskanja po meri in izberete konstrukcijo sintakse. Upoštevajte, da lahko tudi ročno spremenite sintakso ukaza v zavihku 'Konzola'.
+txt_pj_hint2: Definicijo opravila lahko uvozite iz grafičnega vmesnika v spodnje 'memo' polje. Nato lahko urejate, zaženete ali shranite datoteko brez spremembe ali izgube opravilo, določeno za grafični vmesnik.
+txt_type_description_zip: ZIP: hiter format za arhiviranje/stiskanje. Prevladuje v sistemih Windows
+txt_zipcrypto_hint: ZipCrypto (zapuščen)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: preostalo
+txt_6_5_abort: Prekini
+txt_6_5_error: Napaka
+txt_6_5_no: Ne
+txt_6_5_warning: Opozorilo
+txt_6_5_yes: Da
+txt_6_5_yesall: Da za vse
+txt_5_6_update: Preveri obstoj posodobitev
+txt_5_6_cml: Jezik sistemskega priročnega menija
+txt_5_6_donations: Donacije
+txt_5_6_localization: Lokalizacija
+txt_5_6_runasadmin: Zaženi kot skrbnik
+txt_5_6_help: Spletna podpora
+txt_5_5_cancelall: Prekliči vse
+txt_5_3_details: Podrobnosti
+txt_5_3_files: datotek
+txt_5_3_folders: map
+txt_5_3_info: Informacija
+txt_5_3_list: Seznam
+txt_5_3_os: Izvirna velikost
+txt_5_3_ps: Pakirana velikost
+txt_5_3_test: Preizkusi
+txt_5_0_extract: Razširi
+txt_5_0_from: iz
+txt_5_0_in: v
+txt_5_0_to: do
+txt_4_5_search: Poišči
+txt_4_0_drag: Povlecite arhiv tukaj, ki ga želite izvleči, ali 
+txt_4_0_dragorselect: Povlecite tukaj ali izberite mapo
+txt_4_0_select: izberi datoteko
+txt_3_6_selectdir: Izberi mapo
+txt_3_5_close: Zapri
+txt_3_0_details: Za več podrobnosti, 'Poročilo' vsebuje dnevnik opravil in 'Konzola' vsebuje definicijo opravila kot ukazno vrstico.
+txt_3_0_hints: Namigi o napaki
+txt_3_0_arc: Nekaterih vhodnih datotek ni mogoče prebrati (morda so zaklenjene, niso dostopne ali so poškodovane)
+txt_3_0_ext: Arhiv lahko zahteva drugačno geslo za trenutno operacijo
+txt_2_8_oop: Po končanem opravilu odpri izhodno pot 
+txt_2_7_validatefn: Operacija je ustavljena. Zaznano je neveljavno ime datoteke:
+txt_2_7_validatecl: Operacija je ustavljena. zaznan potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
+txt_2_6_open: Odpri arhiv
+txt_2_5_ace_missing: Manjka UNACE vtičnik. Za upravljanje ACE arhivov lahko prenesete vtičnik s PeaZipove spletne strani (če je UNACE zaprt vir, vtičnik ni prikazan v osnovnem paketu)
+txt_2_3_pw_errorchar_gwrap: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev za gesla s PeaLauncherjem. Spremenite geslo ali izberite način 'Konzola' v podpori binarnih datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
+txt_2_3_renameexisting: Samodejno preimenuj obstoječe datoteke
+txt_2_3_renameextracted: Samodejno preimenuj razširjene datoteke
+txt_2_3_cancel: Prekliči
+txt_2_3_encryption: Šifriranje
+txt_2_3_extinnew: Razširi v novo mapo
+txt_2_3_keyfile: Datoteka s ključi
+txt_2_3_kf_not_found_gwrap: Datoteke s ključi ni bilo mogoče najti ali prebrati. Izberite drugo datoteko s ključi.
+txt_2_3_moreoptions: Več možnosti...
+txt_2_3_nopaths: Ni poti
+txt_2_3_options: Možnosti
+txt_2_3_overexisting: Prepiši obstoječe datoteke
+txt_2_3_pw: Geslo
+txt_2_3_skipexisting: Preskoči obstoječe datoteke
+txt_job_unknown: : Prišlo je od neznane napake
+txt_stdjob: [animacija bo zaustavljena pri končanem opravilu]
+txt_benchmarkjob: [sistem se bo odzival počasi med izvajanjem primerjave (nekaj minut)]
+txt_defragjob: [se ne bo odzval med defragmentiranjem. Lahko pustite, da se izvaja v ozadju]
+txt_consolejob: [povratne informacije opravila in podroben napredek je na voljo v oknu konzole]
+txt_job1: 1: Opozorilo: ne usodne napake. Npr. nekatere datoteke manjkajo ali so zaklenjene
+txt_job127: 127: zahtevane operacije ni mogoče izvesti
+txt_job2: 2: Prišlo je do usodne napake
+txt_job255: 255: Opravilo je zaustavil uporabnik
+txt_job7: 7: Napaka: dobljena nepravilna ukazna vrstica
+txt_job8: 8: Napaka: za zahtevano operacijo ni dovolj pomnilnika
+txt_autoclose: Zapri to okno po dokončannju opravila
+txt_crscale: Razmerje stiskanja (nižje, boljše):
+txt_console: Konzola
+txt_benchscale: Ocena Core 2 Duo 6600, ekvivalentna hitrost MHz.
+txt_create: Ustvari
+txt_done: Končano:
+txt_nocl: Prazna ukazna vrstica
+txt_error: Napaka:
+txt_explore: Razišči
+txt_extto: Razširi v
+txt_halt: Po končanem opravilu zaustavi sistem
+txt_halted: Ustavljeno:
+txt_hardware: strojna oprema
+txt_high: visoka prioriteta
+txt_idle: mirovanje
+txt_input: Vhod:
+txt_jpaused: Opravilo je začasno ustavljeno
+txt_jresumed: Opravilo je nadaljevano
+txt_job_started: Opravilo je začeto
+txt_jobstatus: Stanje opravila:
+txt_jstopped: Opravilo je ustavil uporabnik
+txt_jobstopped: Opravilo je ustavil uporabnik. Lahko preverite delni rezultats klikom na povezavo izhodne poti.
+txt_job_success: Opravilo je uspešno dokončano
+txt_lt: Seznam/Preizkusi
+txt_normal: običajna prioriteta
+txt_ok: Vredu
+txt_output: Izhod:
+txt_pause: Pavza
+txt_paused: Začasno ustavljeno,
+txt_p_high: Prioriteta je nastavljena na visoko
+txt_p_idle: Prioriteta je nastavljena na mirovanje
+txt_p_normal: Prioritetat je nastavljena na mirovanje
+txt_p_realtime: Prioriteta je nastavljena na stvarnočasovno
+txt_rating: Ocena:
+txt_rt: stvarnočasovna prioriteta
+txt_report: Poročilo
+txt_resume: Nadaljuj
+txt_priority: Klik za nastavitev prioritete opravila
+txt_running: Delovanje,
+txt_isrunning: Delovanje...
+txt_saveas: Shrani kot
+txt_savejob: Shrani definicijo opravila
+txt_savelog: Shrani dnevnik opravila
+txt_software: program
+txt_speedscale: Hitrost, logaritemska lestvica (višja, boljša):
+txt_status: Stanje
+txt_stop: Ustavi
+txt_bench: Primerjava sistema
+txt_threads: Niti:
+txt_time: Čas:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+RAZŠIRI ARHIVE
+Iz sistema 
+- kliknite z desnim gumbom na arhive v priročnem sistemskem meniju, nato kliknite na 'Razširi tukaj' ali 'Razširi tukaj (v novi mapi)', za razširjanje brez nadaljnje interakcije
+- drugače uporabite menijski vnos 'Razširi...', za več možnosti: izhodna pot, geslo, razširjanje datotek v novo mapo, izbira za preskok, preimenovanje ali prepisovanje obstoječe datoteke itd..
+
+Odprite arhiv s PeaZipom, npr. z dvoklikom ali vlečenjem arhiva v okno PeaZipa ali ikono
+- kliknite na 'Razširi' v orodnoi vrstici ali v priročnem meniju, da razširite samo izbrane predmete prek potrditvenega pogovornega okna, ki omogoča nastavitev vseh možnosti (izhodna pot, geslo, politika poimenovanj, razširjanje v novo mapo itd.)
+- povlecite datoteke in mape do želenega cilja, razširili boste samo izbrano vsebino (za več informacij glejte poglavje o vlečenju in spuščanju v programu PeaZip)
+- kliknite spustni gumb za hitro razširjanje na desni strani “Razširi”v orodni vrstici. Ta omogoča neposredno razširjanje celotnega arhiva v najbolj pogoste cilje (preskok potrditvenega pogovornega okna) in nastavitev najbolj pomembnih možnosti. Bližnjice s tipkovnico: Ctrl+E (ali F12) razširi celoten arhiv, vpraša za izhodno mapo; Ctrl+Alt+E razširi archiv v trenutno mapo; Ctrl+Shift+E razširi na Namizju; Ctrl+Alt+Shift+E razširi v Dokumente; Ctrl+0 razširi v prejšnjo pot; Ctrl+1..8 razširi v pot zaznamka 1..8 (če je določen)
+
+Odprite PeaZip, izberite enega ali več arhivov in kliknite na “Razširi”v orodni vrstici ali priročnem meniju, ali pa uporabite hitro razširjanje ciljev, kot je bilo razloženo v prejšnji točki.
+
+RAZŠIRI SAMO IZBRANE PREDMETE IZ ARHIVA
+Odprite arhiv v PeaZipu, npr. z dvoklikom ali vlečenjem arhiva v PeaZipovo okno ali ikono
+- kliknite na 'Razširi' v orodnoi vrstici: razširjeni bodo samo izbrani vnosi
+- povlecite datoteke in mape do želenega cilja. Razširjena bo samo izbrana vsebina
+- desni klik in v skupini “Razširi ”priročnega menija, kliknite na “Razširi izbrane” (za razširjanje samo iznbranih vnosov) or “Razširi prikazane” (za razširjanje vsebine trenutne mape ali trenutnega iskalnega filtra)
+
+VNESITE GESLO ZA BRSKANJE ALI RAZŠIRJANJE ARHIVA
+Kliknite na ikono ključavnice, da vnesete geslo ali datoteko s ključi.
+Ikona je prikazana v statusni vrstici PeaZipovega brskalnika datotek, kot tudi v vmesniku za razširjanje arhiva. Ko je geslo enkrat nastavljeno, bo ikona spremenila barvo.
+
+USTVARI ARHIV
+Iz sistema
+- kliknite z desnim gumbom na arhive, nato v priročnem meniju, ali v meniju PošljiV kliknite na 'Dodaj v arhiv'. To bo odprlo pogovorno okno za potrdite izdelave arhiva. Več možnosti je na voljo pod zavihkom “Napredno”. Kliknite na 'Vredu', da ustvarite archiv.
+- nadomestno, povlecite datoteke/mape v PeaZipovo okno ali bližnjico. Prikazan bo isti vmesnik za ustvarjanje arhiva.
+
+Iz PeaZipa 
+- izberite predmete za arhiviranje in kliknite na gumb 'Dodaj'. Prikazan bo isti vmesnik za ustvarjanje arhiva..
+
+DODAJ DATOTEKE/MAPE ZA POSODOBITEV OBSTOJEČEGA ARHIVA
+Odprite arhiv v PeaZipu (npr. z dvoklikom ali vlečenjem arhiva v PeaZipovo okno ali ikono), nato povlecite datoteke in mape, ki jih želite dodati v arhiv (ali kliknite na gumb 'Dodaj' in uporabite priročni meni aplikacije, za dodajanje predmetov v arhiv).
+To bo odprlo pogovorno okno za ustvarjanje arhiva. Kliknite na 'Vredu', da posodobite obstoječ arhiv.
+
+USTVARI ARHIV, RAZDELJEN V MANJŠE DATOTEKE
+Pri ustvarjanju arhiva, kot je razloženo v prejšnjih točkah, kliknite na spustni meni “Enojni nosilec”, da izberete velikost izhodnih datotek (nosilcev) v katere bo arhiv razdeljen.
+Najpogostejše vrste arhivov podpirajo to možnost.
+
+USTVARI ŠIFRIRAN ARHIV
+Kliknite na ikono ključavnice, da vnesete geslo in po želji, datoteko s ključi. Ikona je prikazana v PeaZipovi statusni vrstici brskalnik datotek, kot tudi v vmesniku za ustvarjanje arhiva.
+Če želite skriti imena datotek in imenikov, ki jih vsebuje arhiv, preverite “Šifriraj tudi imena datotek”. Upoštevajte, da bo to uporabljeno le, če bo arhiv ustvarjen v formatu, ki podpira to funkcijo, kot sta 7Z in ARC.
+Upoštevajte, da v vmesniku za ustvarjanje arhiva, poleg ikone ključavnice, obstaja opozorilo za vizualno obveščanje, če je nastavljeno šifriranje in, če trenutni format arhiva podpira šifriranje.
+
+USTVARI LOČENE ARHIVE
+Dodajte predmete za arhiviranje (s PeaZipovim gumbom 'Dodaj', iz sistemskega priročnega menija ali iz menija PošljiV) in pred potrditvijo z 'Vredu' potrdite možnost 'Dodaj vsak predmet v ločen arhiv'.
+
+PRETVORI ARHIVE
+Iz PeaZipa izberite arhive, ki jih želite pretvoriti, in kliknite na 'Pretvori' v orodni vrstici ali v priročnem meniju, lahko pa dodate tudi ne-arhivske datoteke in mape, pri čemer je razlika v arhivu, ki se razširijo pred fazo stiskanja.
+Z uporabo stikala “Pretvori obstoječe arhive”v povezavi z 'Dodaj vsak predmet v ločen arhiv' (privzeto) se izvede množična pretvorba navedenih arhivov, brez preklopa pretvorbe arhiva, ki naj bi konsolidirala vhodne podatke v enem arhivu in izboljšalo učinkovitost stiskanja, ker omogoča ponovno stiskanje izvirnih podatkov iz nestisnjene oblike.
+
+NEPOSREDNO USTVARI ARHIVE V DOLOČENEM FORMATU IN Z IZBRANO STOPNJO STISKANJA
+Uporaba procedure “Sistemska integracija” v meniju 'Možnosti' dovoljuje, da omogočite vnose v priročnem meniju za neposredno dodajanje izbranih datotek/map v ZIP, 7Z ali samorazširljiv arhiv.
+Za formata Zip in 7Z je tudi možno omogočiti vnose v priročnem meniju za stiskanje na najhitrejšo, normalno ali ultra stopnjo, mimo privzete stopnje stiskanja za izbran format.
+
+UPRAVITELJ GESEL
+Upravitelj gesel je dostopen iz glavnega menija, 'Orodja -> Upravitelj gesel' ali iz obrazca 'Geslo', iz spustnega menija na levi strani polja 'Geslo'.
+Shranjena gesla lahko izberete v spustnem meniju na levi strani gesla, v obrazcu 'Geslo', ali pa jih lahko kopirate iz Upravitelja gesel za uporabo v kateri koli drugi aplikaciji.
+Če glavno geslo ni nastavljeno za Upravitelja gesel, je seznam gesel dostopen, ne da bi bilo potrebno preverjanje pristnosti, sicer gesla ne bodo prikazana, dokler uporabnik ne bo pravilno preveril pristnosti.
+
+KONFIGURIRAJ APLIKACIJO
+'Možnosti -> Lokalizacija' (in v 'Možnosti -> Nastavitve', prvi zavihek) dovoljuje nastavitev jezika aplikacije.
+'Možnosti -> Nastavitve' dovoljuje urejanje nastavitev aplikacije
+'Možnosti -> Tema' dovoljuje spreminjanje videza in ikon aplikacije
+'Možnosti -> Sistmska integracija' zažene proceduro konfiguriranja združitve datotek, priročnega menija in vnosov menija PošljiV (v sistemu Windows)
+'Organiziraj meni' vsebuje vnos za prilagajanje, omogočanje ali onemogočanje funkcij brskalnika, kot so orodna vrstica, naslovna vrstica, navigacijska vrstica itd
+
+F1 	pomoč
+F2 	preimenuj datoteke/Ctrl+F2 kopiraj izbrano v/Shift+F2 premakni izbrano v
+F3	poišči (možnost rekurzivnosti je zapomnjena)/Ctrl+F3 začne kot ne rekurzivno (poišči tukaj)/Shift+F3 rekurzivno/Alt+F3 sistemsko iskanje
+F4 	prikaži pojavni meni za krmarjenje/Ctrl+Shift+F4 prebrskaj koren računalnika/Ctrl+F4 prebrskaj namizje/Shift+F4 prebrskaj Dom
+F5 	osveži
+F6 	preklopi brskanje/ploski prikaz
+F7 	dodaj zaznamke/Ctrl+F7 odpri v novem primerku PeaZipa/Shift+F7 odpri ukazno vrstico v izbrani poti/Alt+F7 razišči izbrano pot
+F8 	prebrskaj prvi vnos na seznamku zaznamkov (Ctrl, drugi, Shift, tretji)
+F9 	nastavi geslo/datoteko s ključi/Shift+F9 Upravitelj gesel/Ctrl+F9 ustvari datoteko s ključi ali naključno geslo/Ctrl+Shift+F9 nastavi napredne filtre
+F10 	meni/Ctrl+F10 zaženi kot drug uporabnik/Alt+F10 zaženi kot skrbnik (Windows Vista in novejši sistemi)
+F11 	preklopi celozaslonski način/Ctrl+F11 poglobljeno
+F12 	razširi vse v...
+
+VIZITKA PEAZIPA
+
+PeaZip je odprtokodna datoteka in upravitelj arhivov: navzkrižna platforma, dostopna kot prenosni in namestljiv program za 32 in 64-bitne Windows (9x, 2k, XP, Vista) in Linux (PeaZip je namizna nevtralna aplikacija).
+
+PeaZip omogoča uporabo močnih več iskalnih filtrov v vsebini arhiva. Ustvarja in razširja več arhivov hkrati. Ustvarja samodejno razširljive arhive. Omogoča izvoz definicije opravila kot ukazne vrstice, shranjevanje postavitve arhiviranja/razširjanja, zaznamovanje arhivov in map, pregled in odpiranje stisnjenih/razširjenih datotek z aplikacijami po meri, itn.
+
+Ostale funkcije: močno šifriranje, robustno kopiranje datotek, delitev/združevanje datotek (razpon datotek), varno brisanje podatkov, primerjava, kontrolna vsota in hash datoteke, sistemska primerjava, ustvarjanje naključnih gesel in ključnih datotek.
+
+Prenos: http://peazip.github.io
+Preberite več: http://peazip.github.io/peazip-free-archiver.html
+Podpora: http://peazip.github.io/peazip-help.html
+Pogosta vprašanja: http://peazip.github.io/peazip-help-faq.html
+
+Najlepša hvala vsem, ki prispevajo k rasti PeaZipovega projekta in razvijajo komponente programske odprte kode, ki se uporabljajo v tej aplikaciji (glejte spletno stran za celoten seznam), in vsem uporabnikom, ki prispevajo povratne informacije, izkušnje in nasvete.

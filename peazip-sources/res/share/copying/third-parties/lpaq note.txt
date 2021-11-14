@@ -1,0 +1,3 @@
+LPAQ is released under GPL and is derived from Matt Mahoney's LPAQ
+
+Reference: http://www.mattmahoney.net/dc/

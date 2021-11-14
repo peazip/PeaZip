@@ -1,0 +1,5 @@
+BCM v1.00 is released under LGPL and Apache 2 by Ilia Muraviev
+
+http://www.encode.su/
+http://sourceforge.net/projects/bcm/
+https://github.com/encode84/bcm

@@ -1,0 +1,1321 @@
+﻿=== PeaZip language file ===
+Slovak
+8.3
+Translated by: Marek Hakl
+Last rev. by: Marek Hakl
+Last rev.: 20121215
+
+=== PeaZip text group ===
+
+txt_8_3_mbubin: Binary
+txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
+txt_8_3_temperature: Color temperature
+txt_8_3_mbudec: Decimal
+txt_8_3_htab: Highlight tabs
+txt_8_3_maxarg: Maximum length of arguments
+txt_8_3_mbu: Multiple-byte unit
+txt_8_3_prefalgo: Preferred algorithms
+txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
+txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
+txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_2_slower: (slower)
+txt_8_2_df: 7z / p7zip display content of folders
+txt_8_2_vreport: 7z / p7zip non-verbose report
+txt_8_2_ta: Accessed
+txt_8_2_tc: Created
+txt_8_2_keep: Keep files
+txt_8_2_tm: Modified
+txt_8_2_skipet: Skip testing for encryption
+txt_8_2_alltimes: Store all timestamps
+txt_8_2_supportedby: Supported by
+txt_8_1_preparse: Always pre-parse archives
+txt_8_1_bo: Browser optimization
+txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_nopreparse: Do not pre-parse archives
+txt_8_1_ed: error(s) detected.
+txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
+txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
+txt_8_1_slow: Slow
+txt_8_1_vslow: Very slow
+txt_8_1_volumes: volumes
+txt_8_0_altcol: Alternate grid color
+txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
+txt_8_0_commonalgo: Common algorithms
+txt_8_0_forceconvert: Convert non-canonical archive types
+txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
+txt_8_0_defaultaction: Default action on start-up
+txt_8_0_enableextand: Enable "Extract and open with" submenu
+txt_8_0_forcetyping: Force typing passwords interactively
+txt_8_0_setpwopt: Set password / keyfile options
+txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_7_9_spacing: Spacing
+txt_7_9_zooming: Zooming
+txt_7_8_changelocalization: Change PeaZip language
+txt_7_8_custext: Custom extension
+txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
+txt_7_8_dd: Drag and Drop
+txt_7_8_priorityhigh: High
+txt_7_8_priorityidle: Idle
+txt_7_8_rel: Interactive extraction
+txt_7_8_prioritynormal: Normal
+txt_7_8_priorityrealtime: Real time
+txt_7_8_requirerestart: [requires restarting PeaZip]
+txt_7_8_tpriority: Tasks priority
+txt_7_8_update: Update
+txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
+txt_7_7_nonetemp: None, User's temp if necessary
+txt_7_7_outtemp: Output, preview in User's temp
+txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
+txt_7_7_sys7z: Use system 7z in Linux
+txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_6_color: Color
+txt_7_6_custenc: Custom code page
+txt_7_6_dark: Dark
+txt_7_6_tno: Do not sync archive tree
+txt_7_6_forcelocalenc: Force local
+txt_7_6_forceutf8enc: Force UTF-8
+txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
+txt_7_6_defaultenc: Local, UTF-8 for extra symbols
+txt_7_6_dim: Low light
+txt_7_6_setcurdef: Set current path as default output path
+txt_7_6_setdef: Set default output path
+txt_7_6_tadvanced: Sync archive tree, keep visited nodes
+txt_7_6_tsimple: Sync archive tree, simple
+txt_7_6_tacolor: Text accent
+txt_7_5_always: Always
+txt_7_5_ask: Ask
+txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
+txt_7_5_cutlen: Cut name at specified length
+txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
+txt_7_5_dragnone: Do not lock target
+txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
+txt_7_5_ee: Extract everything for special file types
+txt_7_5_draghide: Hide drop target
+txt_7_5_draglh: Lock and hide target
+txt_7_5_draglock: Lock drop target
+txt_7_5_never: Never
+txt_7_5_repnascii: Replace/remove non-ASCII characters
+txt_7_4_comment: Comment
+txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
+txt_7_4_presetrar: High compression, RAR
+txt_7_4_tkeep: Keep original archive timestamp
+txt_7_4_lock: Lock archive
+txt_7_4_locked: locked
+txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
+txt_7_4_recover: Repair archive
+txt_7_4_tcurr: Set archive timestamp from current system time
+txt_7_4_setarc: Set archiving options
+txt_7_4_setext: Set extraction options
+txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
+txt_7_3_archiveerrors: [archive may contain errors]
+txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_3_clickextall: Click "Extract all" to enable
+txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
+txt_7_3_profile7zfastest: Fast compression, 7Z fastest
+txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
+txt_7_3_maxzstd: Maximize Zstandard compression using more memory
+txt_7_3_profile7zfast: Medium compression, 7Z fast
+txt_7_3_stl: Set archive timestamp from most recent file
+txt_7_2_altcomp: Alternative compression, ARC
+txt_7_2_clearnoupdate: Clear edited files
+txt_7_2_autoclosepeazip: Close PeaZip when task completes
+txt_7_2_zpaqall: Extract all revisions
+txt_7_2_extcomp: Extreme compression, ZPAQ
+txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
+txt_7_2_fbrotlicomp: Fastest compression, Brotli
+txt_7_2_fzstandardcomp: Fastest compression, Zstandard
+txt_7_2_loadcompsettings: Load compression settings
+txt_7_2_savecompsettings: Save compression settings
+txt_7_2_source: Source
+txt_7_2_updateclear: Update edited files in archive, and clear edited files
+txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
+txt_7_1_new: Extract all here, in new folder
+txt_7_1_smart: Extract all here, smart
+txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
+txt_7_1_renfilesonly: Rename only files
+txt_7_1_typetosearch: Type to search in current path
+txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
+txt_7_0_af: Analyze content of folders
+txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
+txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
+txt_6_9_autou: Auto update modified files in archives
+txt_6_9_forceu: Force update modified files in archives
+txt_6_9_opuns: Operation not supported for current archive type
+txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
+txt_6_9_uconf: Previewed file has been modified. Update the current archive?
+txt_6_8_ndrop: Use native Drag And Drop on Windows
+txt_6_7_nop: (no preview)
+txt_6_6_pdupfound: possible duplicates found (quick approximate test)
+txt_6_6_rsh: Reset search history
+txt_6_6_pdupfind: Suggest possible duplicates
+txt_6_6_forcemodify: Try to edit non explicitly supported file types
+txt_6_5_mandatory: (mandatory)
+txt_6_5_abort: Abort
+txt_6_5_askp: Ask to set password at startup
+txt_6_5_chp: Change password
+txt_6_5_def: Definition
+txt_6_5_nop: Don't ask to set password at startup
+txt_6_5_error: Error
+txt_6_5_seqerr: Error(s) detected, original files will not be deleted
+txt_6_5_sni: Include NT security information
+txt_6_5_sns: Include NTFS Alternate Data Stream
+txt_6_5_privacy: Privacy
+txt_6_5_showvolatile: Show which options are volatile / context depentent
+txt_6_5_force: Try to open archives containing errors
+txt_6_5_warning: Warning
+txt_6_5_yes: Yes
+txt_6_5_yesall: Yes to all
+txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
+txt_6_4_absolute: Absolute paths
+txt_6_4_appdirn: Append directory name
+txt_6_4_closeallother: Close all other tabs
+txt_6_4_closeright: Close tabs on the right
+txt_6_4_collapse: Collapse tabs
+txt_6_4_expand: Expand tabs
+txt_6_4_full: Full paths
+txt_6_4_new: New
+txt_6_4_openintab: Open in a new tab
+txt_6_4_paths: Paths
+txt_6_4_prepdirn: Prepend directory name
+txt_6_4_relative: Relative paths
+txt_6_4_tabbar: Tab bar
+txt_6_3_autoadjust: Auto adjust columns
+txt_6_3_cinfo: Info and comments
+txt_6_3_syn: Synchronize archive with disk
+txt_6_3_uar: Update only files already in archive
+txt_6_2_encext: Add ".enc" suffix to encrypted archives
+txt_6_2_archive: Archive file type
+txt_6_2_container: Container file type
+txt_6_1_ec: Expand / collapse archive tree
+txt_6_0_msq: Sort by file type for solid compression
+txt_5_9_lff: Analyze files and folders
+txt_5_9_pff: Analyze, show files header/EOF
+txt_5_9_start: Start from
+txt_5_8_l0: Allow any supported component/format
+txt_5_8_l1: Allow only Free Software components
+txt_5_8_l2: Allow only open archive formats
+txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
+txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
+txt_5_8_fs: Free Software compliance
+txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
+txt_5_8_fsr: This format is not suported due Free Software compliance restrictions (Options > Advanced)
+txt_5_7_pinstalled: INSTALLED
+txt_5_7_pmissing: MISSING
+txt_5_7_plugin: Plugin missing, can be installed from Help > Check for pulgin and addon
+txt_5_6_basic: Basic
+txt_5_6_exarc: Extract archive
+txt_5_6_tab: Open in new tab
+txt_5_6_rc: Right click for options
+txt_5_6_layouts: Saved layouts
+txt_5_6_upexisting: Update existing archive
+txt_5_6_verbose: Verbose
+txt_5_5_case: (case sensitive)
+txt_5_5_add: Add string at specified position
+txt_5_5_addsel: Add to current selection
+txt_5_5_ext: Change files extension
+txt_5_5_plugin: Check for plugin and addon
+txt_5_5_copypath: Copy path
+txt_5_5_delete: Delete characters at specified position
+txt_5_5_halt: Halt system when task completes
+txt_5_5_positionw: Hint: 1 add before first char, 2 second, etc... "z" for end of file name
+txt_5_5_positionwd: Hint: 1 delete from first char included, 2 second, ... "z" for end of file name
+txt_5_5_replaceneww: Hint: provide an empty new string to simply remove the old string
+txt_5_5_lower: Lowercase
+txt_5_5_replaceoldw: Modify all occurrences of this string or character in the file name
+txt_5_5_newext: New extension
+txt_5_5_new: New string
+txt_5_5_n: Number of characters to delete
+txt_5_5_old: Old string
+txt_5_5_position: Position (number or "z" for end)
+txt_5_5_intdir: Smart new folder
+txt_5_5_replacestr: Replace/remove string
+txt_5_5_datesameday: Same day of selected object
+txt_5_5_datesamehour: Same hour of selected object
+txt_5_5_datesamemonth: Same month of selected object
+txt_5_5_datesameweek: Same week of selected object
+txt_5_5_datesameyear: Same year of selected object
+txt_5_5_scan: Scan
+txt_5_5_select: Select
+txt_5_5_similar: Similar to selected object
+txt_5_5_starting: Starting with same character
+txt_5_5_string: String to add
+txt_5_5_subtractsel: Subtract from current selection
+txt_5_5_datehour: This hour
+txt_5_5_datemonth: This month
+txt_5_5_dateweek: This week
+txt_5_5_dateyear: This year
+txt_5_5_dateday: Today
+txt_5_5_upper: Uppercase
+txt_5_5_extw: Warning: changing file extension the file may become unusable
+txt_5_4_da: Date added
+txt_5_4_deletearchives: Delete archives after extraction
+txt_5_4_deletefiles: Delete files after archiving
+txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
+txt_5_4_lv: Last visited
+txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
+txt_5_4_deletefilesconfirm: Confirm deletion of original files?
+txt_5_4_used: Used
+txt_5_3_profilebest: Best compression, 7Z format Ultra level
+txt_5_3_profileadvanced: Advanced compression, 7Z format
+txt_5_3_profilenormal: Normal ZIP compression, compatible with most extractors
+txt_5_3_profileveryfast: Very fast ZIP compression, recommended for large multimedia files
+txt_5_3_profilepassword: Protect with password, 7Z format
+txt_5_3_profile10mb: Keep output under 25 MB, for mail attachment limitations
+txt_5_3_profilesfx: Auto extracting, recipient will not need an extraction software
+txt_5_3_cml: System context menu language
+txt_5_3_cmlmessage: Double click on desired context menu language and confirm registry merging. This setting needs to be re-applied when the application is installed/updated or after System integration wizard is used.
+txt_5_3_exc: Exclusion filters prevail on inclusion filters
+txt_5_3_ia: Include also
+txt_5_3_io: Include only
+txt_5_3_rec: Recurse subdirs
+txt_5_3_resetsi: Re-configure system integration (context menu, SendTo, file associations)?
+txt_5_2_oadd: Archive to original path
+txt_5_2_zerodelete: Do you want to delete and overwrite with all 0 selected file(s)? The operation can't be undone and files will be not recoverable
+txt_5_2_zfree: Do you want to overwrite with all 0 free space on this drive?
+txt_5_2_sdfree: Do you want to securely delete free space on this drive?
+txt_5_2_oext: Extract to original path
+txt_5_2_securedeletefree: Secure delete free space
+txt_5_2_free: This operation can take some minutes and, if performed often, it can quickly wear flash-based disks
+txt_5_2_zerofiles: Zero delete
+txt_5_2_zerofree: Zero delete free space
+txt_5_1_schedadd: Add schedule
+txt_5_1_schederr: Cannot create schedule
+txt_5_1_daily: Daily
+txt_5_1_day: Day
+txt_5_1_days: Days
+txt_5_1_enddate: End date
+txt_5_1_every: Every
+txt_5_1_w6: Friday
+txt_5_1_hourly: Hourly
+txt_5_1_hours: Hours
+txt_5_1_last: Last
+txt_5_1_schedmanage: Task Scheduler, manage tasks saved in PeaZip branch
+txt_5_1_scriptmanage: Manage saved scheduled scripts
+txt_5_1_w2: Monday
+txt_5_1_monthly: Monthly
+txt_5_1_months: Months
+txt_5_1_onlogin: On login
+txt_5_1_onstart: On start
+txt_5_1_once: Once
+txt_5_1_w7: Saturday
+txt_5_1_schedule: Schedule
+txt_5_1_schedexplain: Create a plain text script from GUI task definition and schedule it. Scheduled tasks' scripts are saved in "Scheduled scripts" folder. To edit or delete scheduled tasks you can use system's Task Scheduler, all scheduled tasks created by PeaZip are collected in "PeaZip" branch of the tasks library.
+txt_5_1_schedok: Schedule created successfully
+txt_5_1_schedscripts: Saved scheduled scripts
+txt_5_1_startdate: Start date
+txt_5_1_starttime: Start time
+txt_5_1_w1: Sunday
+txt_5_1_schedname: Task name, identify both the saved scheduled script and the system's scheduled task
+txt_5_1_ts: Task Scheduler
+txt_5_1_w5: Thursday
+txt_5_1_w3: Tuesday
+txt_5_1_w4: Wednesday
+txt_5_1_weekly: Weekly
+txt_5_1_weeks: Weeks
+txt_5_0_bc: Breadcrumb
+txt_5_0_resetpm: Do you confirm resetting Password Manager? All passwords stored in PeaZip's Password Manager will be lost if confirmed.
+txt_5_0_enum: Enumerate directories' content
+txt_5_0_music: Music
+txt_5_0_ps: Open PowerShell here
+txt_5_0_perf: Performances
+txt_5_0_pictures: Pictures
+txt_5_0_removeall: Remove all
+txt_5_0_resetbookmarks: Reset Bookmarks to default? (Bookmarks can then be customized with Bookmarks > Organize)
+txt_5_0_sh: Session history
+txt_5_0_skip: Skip enumerating directories' content in layout
+txt_5_0_videos: Videos
+txt_4_9_frame: Frame
+txt_4_9_listth: List and thumbnails
+txt_4_9_shadow: Shadow
+txt_4_9_style: Style
+txt_4_8_attach25: 25 MB (attachment limit)
+txt_4_8_crop: Orezať
+txt_4_8_detailsno: Light prehliadač súborov
+txt_4_8_details: Prehliadač súborov s miniatúrami
+txt_4_8_fit: Prispôsobiť
+txt_4_8_fitl: Prispôsobiť najväčšiemu
+txt_4_8_flip: Prepnúť
+txt_4_8_fullscreen: Celá obrazovka
+txt_4_8_fun: Funkcie
+txt_4_8_h: Výška
+txt_4_8_keeparchive: Zachovať archív
+txt_4_8_noresize: Zachovať pôvodnú veľkosť
+txt_4_8_iconl: Veľké obrázky
+txt_4_8_iconm: Ikony a obrázky
+txt_4_8_imagemanager: Správca obrázkov
+txt_4_8_immersive: Immersive
+txt_4_8_listno: Minimálny zoznam
+txt_4_8_aspect: Zachovať pomer strán
+txt_4_8_mirror: Zrkadliť
+txt_4_8_presets: Prednastavenia
+txt_4_8_replace: Nahradiť pôvodný obrázok(ky)? "Nie" použije transformáciu na nový súbor(y).
+txt_4_8_resize: Zmeniť veľkosť
+txt_4_8_rl: Otočiť vľavo
+txt_4_8_rr: Otočiť vpravo
+txt_4_8_stop: Zastaviť
+txt_4_8_t: Transformovať
+txt_4_8_w: Šírka
+txt_4_7_pk: Vytvoriť náhodné heslo/keyfile
+txt_4_7_spchar: Obmedziť znaky len na písmená a číslice
+txt_4_7_recycleask: Prajete si presunúť vybrané súbory do koša?
+txt_4_7_recycle: Presunúť do koša
+txt_4_7_pcomp: Očakávaná kompresia
+txt_4_6_am: Správca archívov
+txt_4_6_fm: Správca súborov
+txt_4_6_users: Užívatelia
+txt_4_5_goupdate: Je dostupná nová verzia. Prajete si otvoriť oficiálnu stránku PeaZipu a stiahnuť aktualizáciu?
+txt_4_5_b: Dole
+txt_4_5_koupdate: Nedá sa skontrolovať aktualizácia, nie je možné sa pripojiť k aktualizačnému serveru
+txt_4_5_update: Kontrola aktualizácií
+txt_4_5_dock: Umiestniť okno
+txt_4_5_l: Vľavo
+txt_4_5_noupdate: PeaZip je aktuálny
+txt_4_5_properties: Vlastnosti
+txt_4_5_r: Vpravo
+txt_4_5_pj: Uložené skripty s definíciou úlohy
+txt_4_5_shaddress: Zobraziť riadok adresy
+txt_4_5_shnav: Zobraziť navigačný panel
+txt_4_5_shstatus: Zobraziť stavový riadok
+txt_4_5_shtool: Zobraziť panel nástrojov
+txt_4_5_upxpj: Prepáčte, nie je možné exportovať definíciu úlohy, pretože táto akcia alebo nastavenie vyžaduje vykonanie viacerých samostatných príkazov
+txt_4_5_t: Hore
+txt_4_4_confremoveall: Zmazať všetky súbory s nastaveniami (Aplikácie, Záložky, Správcu hesiel)?
+txt_4_4_confremove: Odstrániť konfiguráciu PeaZipu?
+txt_4_3_pwmanhint: Dvojklikom zmeníte položky v zozname hesiel, pravým tlačidlom otvoríte možnosti. Ctrl+C skopíruje heslá.
+txt_4_3_exppl: Exportovať zoznam hesiel
+txt_4_3_expple: Šifrované (záloha Správcu hesiel)
+txt_4_3_keeppw: Zapamätať heslo/keyfile pre túto session
+txt_4_3_pwmanpwhint: Nastavenie hesla/keyfile (voliteľne) na zoznam hesiel sa odporúča. V tomto prípade bude pri prístupe k Správcovi hesiel vyžadované overenie pravosti. Heslo/keyfile je možné v tomto formulári kedykoľvek zmeniť.
+txt_4_3_pwmanmaster: Nastaviť/zmeniť hlavné heslo
+txt_4_3_pwmanlist: Zoznam hesiel
+txt_4_3_pwman: Správca hesiel
+txt_4_3_pwmancorr: Zdá sa, že Správca hesiel je porušený alebo poškodený. Prajete si napriek tomu zachovať Správcu hesiel, pokúsiť sa obnoviť súčasný zoznam a považovať ho za dôveryhodný? (Nie vynuluje Správcu hesiel, odporúčané)
+txt_4_3_expplp: Obyčajný text (všeobecné použitie)
+txt_4_3_recsrc: Rekurzívne vyhľadávanie ako predvolené
+txt_4_3_resetpm: Vynulovať správcu hesiel? Všetky uložené heslá budú zmazané
+txt_4_3_breadcrumb: Zobraziť adresu ako breadcrumb
+txt_4_2_arcabspath: Použiť absolútne cesty
+txt_4_1_duplicateshint: Položka "veľkosť"/"kontrolný súčet" je zobrazená v stĺpci pre všetkých kandidátov duplicít nájdených v priečinku alebo vyhľadávacom filtri
+txt_4_1_adminhint: (RADA: môžete tiež zvýšiť užívateľské oprávnenia pre prístup k chráneným objektom, Alt+F10 alebo Možnosti > Spustiť ako správca)
+txt_4_1_selected: (vo výbere)
+txt_4_1_duplicatesfound: nájdených duplicít
+txt_4_1_duplicatesfind: Hľadať duplicity
+txt_4_1_runasadmin: Spustiť ako správca
+txt_4_1_simplesearch: Jednoduché hľadanie
+txt_4_0_thim: Zobraziť náhľady obrázkov
+txt_3_8_type_description_wim: WIM: obraz disku Microsoft
+txt_3_8_type_description_xz: XZ: výkonná kompresia súborov založená na LZMA2
+txt_3_7_donations: Podporte nás
+txt_3_7_nameasparent: Pri ukladaní viacerých položiek pomenovať archív podľa nadradeného priečinka výberu
+txt_3_7_tracker: PeaZip tracker: chyby, požiadavky
+txt_3_7_sort: Usporiadať podľa
+txt_3_7_swapbars: Zameniť panel nástrojov a riadok adresy
+txt_3_7_themedbars: Vzhľad panelov podľa tém
+txt_3_6_ignoredd: Vždy ignorovať cesty súborov pri rozbaľovaní pomocou potiahni a pusť
+txt_3_6_close: Zatvoriť
+txt_3_6_resetapps: Prajete si obnoviť Aplikácie? (Skupina programov a skriptov pre otváranie súborov, nahrádza predvolenú asociáciu)
+txt_3_6_ethemes: Súčasné témy
+txt_3_5_td: Stiahnuť témy
+txt_3_5_managecustomthemes: Spravovať témy
+txt_3_4_nopaths: Bez cesty
+txt_3_4_smallicons: Malé ikony
+txt_3_3_skipunits: (Windows) Získať informácie pre sieťové zväzky, spomaľuje štart
+txt_3_3_stralt: Alternatívny príkaz, ak nie je uvedený parameter
+txt_3_3_apps: Aplikácie
+txt_3_3_multi: Viacnásobný výber
+txt_3_3_runexp: Spustiť program, otvoriť súbor, priečinok alebo web
+txt_3_3_apppath: Otvoriť priečinok PeaZipu
+txt_3_3_run: Spustiť
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu použiť UTF8 pre názvy súborov vo vnútri .zip archívov, ktoré neobsahujú ASCII znaky
+txt_3_2_alltasks: Všetky úlohy
+txt_3_2_conf: Konfigurácia
+txt_3_2_donations: Prispejte na charitu
+txt_3_1_sccenc: 7z / p7zip -scc kódovanie znakov
+txt_3_1_downloads: Prevzaté
+txt_3_1_lib: Knižnice
+txt_3_1_more: Ďalšie
+txt_3_1_openasarchive: Otvoriť ako archív
+txt_3_1_sendto: Otvoriť priečinok užívateľskej ponuky Odoslať kam
+txt_3_1_pathexc: Cesta presahuje maximálnu dĺžku
+txt_3_1_recent: Nedávne
+txt_3_1_plsmartmin: Spustiť minimalizovaný, zobraziť len v prípade potreby
+txt_3_1_src: Vyhľadávanie
+txt_3_1_systmp: Systémový dočasný priečinok
+txt_3_1_languagetools: Preložiť
+txt_3_1_workingdir: Pracovný priečinok
+txt_3_0_nonreadableorpw: Archív je buď nečitateľný alebo chránený heslom
+txt_3_0_readablepw: Archív je zrejme chránený heslom
+txt_3_0_configure: Systémová integrácia
+txt_3_0_resettmp: Obnoviť peazip-tmp
+txt_2_9_address: Riadok adresy
+txt_2_9_adv: Pokročilé filtre sú použité pri súboroch spravovaných pomocou 7z alebo FreeArc backendov (viď dokumentácia) a nahrádzajú základné filtre, ktoré používajú funkcie vyhľadávania a zobrazujú sa v paneloch záložiek a histórie.
+txt_2_9_columns: Stĺpce
+txt_2_9_copyhere: Nakopírovať sem
+txt_2_9_noscan: Neskenovať súbory, ktoré sú pridávané do layoutu
+txt_2_9_extconsole: Konzola pre rozbaľovanie je dostupná len pri prehľadávaní archívov
+txt_2_9_thl: Zvýrazniť tlačidlá
+txt_2_9_home: Domov
+txt_2_9_lt: Veľká
+txt_2_9_mt: Stredná
+txt_2_9_movehere: Presunúť sem
+txt_2_9_nav: Navigácia
+txt_2_9_navbar: Navigačný panel
+txt_2_9_none: Nezobrazovať
+txt_2_9_organize: Zobrazenie
+txt_2_9_public: Verejné
+txt_2_9_rec: Rekurzívne: hľadanie v podpriečinkoch môže chvíľu trvať
+txt_2_9_selected: Označených
+txt_2_9_setapps: Nastavenie predvolených aplikácií
+txt_2_9_showmenu: Zobraziť panel ponuky
+txt_2_9_st: Malá
+txt_2_9_test_pw2G: Testovať šifrovanie pri archívoch <2GB
+txt_2_9_vst: Len text
+txt_2_9_toolbar: Panel nástrojov
+txt_2_9_tree: Strom
+txt_2_9_views: Zobrazenia
+txt_2_8_experimental: (experimentálne)
+txt_2_8_zcopy: Kopírovať súbory v reštartovateľnom móde, pomalšie (Windows)
+txt_2_8_addvol: Pridávanie jedného alebo viacerých zväzkov do archívu môže zabrať mnoho času. Napriek tomu pokračovať?
+txt_2_8_uniterror: Jednotka je nedostupná
+txt_2_8_cannotconvert: Nie je možné skonvertovať vybraný archív
+txt_2_8_convertbegin: Pokračovať v komprimácii, aby sa dokončila konverzia?
+txt_2_8_convert: Konverzia
+txt_2_8_convertexisting: Konverzia existujúcich archívov
+txt_2_8_convertdelete: Zmazať dočasné súbory a priečinky vytvorené pri konverzii?
+txt_2_8_details: Podrobnosti
+txt_2_8_parallel: Úlohy spúšťať súbežne, ak je to možné
+txt_2_8_convertnote: Pokiaľ neboli pôvodné archívy zmenené, užívateľ určí, či ich má ponechať alebo vymazať
+txt_2_8_custom: nie je priamo podporované PeaZipom, ale vo fáze rozbaľovania je možné nastaviť PeaZip pre použitie vlastného kompresného formátu na záložke „Pokročilé nastavenia“. Pokračovať v otváraní súboru?
+txt_2_8_unitrecommend: Odporúča sa buď rozbaliť (pravý klik myši > rozbaliť vybrané) alebo otvoriť súborový systém z koreňového priečinka (Systémové nástroje > Otvoriť jednotku ako archív).
+txt_2_8_viewasarchive: Otvoriť jednotku ako archív
+txt_2_8_nounit: Nie je vybraná žiadna jednotka
+txt_2_8_rowselect: Výber riadka
+txt_2_8_statusbar: Stavový riadok
+txt_2_8_typeunit: Meno logickej alebo fyzickej jednotky
+txt_2_8_usedefaultoutpath: Použiť predvolenú cestu výstupu
+txt_2_7_experimental: (experimentálne, viď dokumentácia)
+txt_2_7_optional: (voliteľné)
+txt_2_7_list_tryflatorpw: , možné riešenia: skúste ploché zobrazenie (F6), vložte heslo (F9) alebo novú kópiu archívu
+txt_2_7_separate: Každý objekt do vlastného archívu
+txt_2_7_pwsupported: archivácia s heslom
+txt_2_7_cancel: Zrušiť
+txt_2_7_encfn: Šifrovať tiež názvy súborov (ak to podporuje formát archívu)
+txt_2_7_setpw: Vložiť heslo / keyfile
+txt_2_7_ext: Rozbaľuje sa:
+txt_2_7_extfrom: Rozbaľuje sa z archívu:
+txt_2_7_es: Rozbaliť aj iné podporované typy súborov (nie archívy), napr. spustiteľné, MS office a OpenOffice
+txt_2_7_eu: Rozbaliť nepodporované typy súborov vlastnou utilitou
+txt_2_7_clipboard: Schránka prieskumníka súborov
+txt_2_7_goarclayout: Prejsť na vytváranie archívu
+txt_2_7_goextlayout: Prejsť na rozbaľovanie archívu
+txt_2_7_ok: OK
+txt_2_7_drag_archive: otvoriť súbor ako nový archív? („Nie“ pridá súbor do práve vytváraného archívu)
+txt_2_7_oop: Otvoriť výstup po ukončení úlohy
+txt_2_7_validatefn: Operácia zastavená, neplatný názov súboru:
+txt_2_7_validatecl: Operácia zastavená, zistený potenciálne nebezpečný príkaz (napr. príkaz zlúčenia nie je povolený vo vnútri programu):
+txt_2_7_output: Výstup
+txt_2_7_pwnotset: Nie je nastavené heslo
+txt_2_7_pwarcset: Heslo je nastavené
+txt_2_7_pwextset: Heslo je nastavené, je možné rozbaliť/vypísať/testovať zašifrované archívy
+txt_2_7_archivehint: Pravým klikom pridáte súbory do archívu a získate prístup k ďalším funkciám. Súbory môžete pridať aj pretiahnutím myši.
+txt_2_7_exthint: Pravým klikom pridáte súbory na rozbalenie a získate prístup k ďalším funkciám. Súbory, ktoré chcete rozbaliť je možné pretiahnuť myšou.
+txt_2_7_setadvf: Nastavenie pokročilého filtra
+txt_2_7_selpath: Cesta k vybranej položke
+txt_2_7_separateerror: Prepáčte, nie je možné načítať príkazový riadok, pokiaľ je aktívna voľba „Každý objekt do vlastného archívu“, pretože úloha je vykonávaná ako viac oddelených príkazov
+txt_2_7_noinput: Layout nie je naplnený: prosím, využite Pridať súbor(y) alebo Načítať layout, aby sa naplnil zoznam archívov, ktoré sa majú rozbaliť
+txt_2_7_dirsize: Veľkosť obsahu priečinkov nie je zarátaná do celkovej veľkosti.
+txt_2_7_un7z_browse_flat: skúsiť ploché zobrazenie (F6)
+txt_2_7_updating: Aktualizácia, pridať do existujúceho archívu:
+txt_2_6_folders: (priečinky)
+txt_2_6_advanced: Pokročilé nastavenia
+txt_2_6_plalways: Vždy nechať otvorený pre kontrolu výsledkov úlohy
+txt_2_6_plsmart: Nezatvárať v prípade potreby (chyby, výpisy alebo výsledky testov)
+txt_2_5_sessionio: (táto session)
+txt_2_5_advanced: Rozšírené úpravy: ak je to potrebné, vložte medzery medzi názov súboru a reťazec parametrov 
+txt_2_5_basic: Základné úpravy: aplikácia a parametre pred názvom vstupného súboru
+txt_2_5_cannotrun: Nie je možné spustiť
+txt_2_5_custeditors: Vlastné editory, prehrávače, vírusové skenery a pod. (Nahradí asociácie súboru v systéme)
+txt_2_5_delete: Zmazať
+txt_2_5_delete_fromarchive: Zmazať z archívu
+txt_2_5_langflag: Zobraziť objekty z archívu ako text UTF-8. Zrušte začiarknutie pre náhradu znakov rozšírenej sady za „?“
+txt_2_5_encpj: Kódovať definíciu úlohy ako text UTF-8
+txt_2_5_execommand: Spustiteľný súbor alebo príkaz
+txt_2_5_help: Pomoc
+txt_2_5_langhint: RADA: náhradou znakov rozšírenej sady pomocou „?“ vám umožní úspešne previesť archív, pokiaľ jeho znaková sada nemôže byť spracovaná na vašom systéme.
+txt_2_5_mini_help: Krátky tutoriál
+txt_2_5_offline_help: Pomoc PeaZipu
+txt_2_5_tray: Skryť do lišty
+txt_2_5_remove: Odstrániť
+txt_2_5_hintpaths: Pravým klikom otvoríte systémové a užívateľské cesty
+txt_2_5_selectapp: Vyberte aplikáciu
+txt_2_5_strafter: Reťazec za názvom vstupného súboru
+txt_2_5_strbefore: Reťazec pred názvom vstupného súboru
+txt_2_5_encoding: Kódovanie textu
+txt_2_5_nopw: tento typ archívu neumožňuje šifrovanie
+txt_2_4_draghint: [pretiahnite do Prieskumníka s panelom Adresa]
+txt_2_4_tb: Upraviť panel nástrojov (reštartuje PeaZip)
+txt_2_4_adding: Pridáva sa
+txt_2_4_advclip: Pokročilé: ponechať v schránke viac výberov (bez duplicít), vymazať po vložení
+txt_2_4_yanswers: Odpovede
+txt_2_4_itemsheight: Automatická výška položiek
+txt_2_4_clearclipboard: Vymazať schránku (Esc)
+txt_2_4_wcommons: Wiki Commons
+txt_2_4_copyfrom: Kopírovať z
+txt_2_4_deletebookmarks: Prajete zmazať záložky?
+txt_2_4_documents: Dokumenty
+txt_2_4_wenc: Encyklopédia
+txt_2_4_extractfrom: Extrahovať z
+txt_2_4_hexp: Hex náhľad
+txt_2_4_operation: Operácia
+txt_2_4_path: cesta je iba načítanie, prosím, zvoľte umiestnenie, do ktorého je možné zapisovať
+txt_2_4_removefromclipboard: Odstrániť zo schránky
+txt_2_4_stdclip: Štandardné: ponechať v schránke jeden výber, vymazať operácie vystrihnúť po vložení
+txt_2_4_totalmem: pamäť celkom
+txt_2_4_gvideo: Video
+txt_2_4_wbook: Wikibook
+txt_2_4_wnews: Wikinews
+txt_2_4_wsrc: Wikisource
+txt_2_4_wdict: Wikislovník
+txt_2_3_pw_errorchar: : tento znak nie je možné vložiť v PeaZip GUI ako súčasť hesla, prosím, zmeňte heslo alebo zvoľte textové rozhranie v Nástroje > Nastavenia
+txt_2_3_envstr: Zobraziť systémové premenné
+txt_2_3_never_pw: Nepýtať sa na heslo
+txt_2_3_home: Domovský priečinok
+txt_2_3_on_pw: Pri rozbaľovaní/teste/výpise z kontextovej ponuky:
+txt_2_3_test_pw100: Testovať zašifrovanie len pri archívoch <100MB
+txt_2_3_test_pw: Test zašifrovania (pomalé)
+txt_exclude_recourse: „vynechať“ platí aj pre podpriečinky
+txt_action_extopen: akcia „Rozbaliť a otvoriť predvolenou aplikáciou“
+txt_error_passwordnotmatch: Položky „Heslo“ a „Potvrďte heslo“ nie sú rovnaké, prosím, opravte
+txt_action_preview: akce „Náhľad predvolenou aplikáciou“
+txt_preview_hint: „Náhľad“ má rovnakú funkciu ako „Rozbaliť a otvoriť“, ale súbory sa ukladajú do dočasného priečinka, ktorý je po uzavretí archívu automaticky vymazaná 
+txt_better: (lepšia)
+txt_default2: (predvolená)
+txt_faster: (rýchlejšia)
+txt_fastermem: (rýchlejšia, menej pamäti)
+txt_tempdir: (Dočasný pracovný priečinok PeaZipu)
+txt_stream: (nastavuje „Riadenie streamu“)
+txt_slowermem: (pomalšia, viac pamäti)
+txt_store: (vložiť, najrýchlejšia)
+txt_newfolder: (do nového priečinka)
+txt_7z_exitcodeunknown: : neznáma chyba pri spracovaní úlohy
+txt_list_isfolder: [priečinok]
+txt_none: <nič>
+txt_fd: 1.44 MB Disketa
+txt_7z_exitcode1: 1: Upozornenie: pri spracovaní sa vyskytla chyba(y); t. j. niektoré súbory chýbajú alebo sú zamknuté
+txt_attach10: 10 MB (limit prílohy)
+txt_7z_exitcode2: 2: Vyskytla sa závažná chyba
+txt_7z_exitcode255: 255: Úloha prerušená užívateľom
+txt_fat32: 4 GB (max veľkosť súboru na FAT32)
+txt_dvd: 4.7 GB DVD
+txt_attach5: 5 MB (limit prílohy)
+txt_cd650: 650 MB CD
+txt_7z_exitcode7: Chyba: nesprávny príkazový riadok
+txt_cd700: 700 MB CD
+txt_type_description_7z: 7Z: formát s mnohými možnosťami a vysokým kompresným pomerom
+txt_dvddl: 8.5 GB DVD DL
+txt_7z_exitcode8: 8: nie je dostatok pamäti na vykonanie požadovanej operácie
+txt_abort: Prerušiť naplánované operácie kopírovanie/presun?
+txt_about: O programe
+txt_action: Akcia
+txt_action_hint: Akcia na otvorenie/náhľad v predvolenej aplikácii
+txt_add: Pridať
+txt_add_existing_archive: pridať (pokiaľ archív existuje)
+txt_add_archive: Pridať archív
+txt_add_files: Pridať súbory
+txt_add_folder: Pridať priečinok
+txt_add_path: Pridať umiestnenie
+txt_add_tolayout: Pridať vybrané súbory a priečinky do layoutu archívu 
+txt_add_toarchive: Pridať do archívu
+txt_add_tobookmarks: Pridať do záložiek
+txt_address_hint: v poli je možné použiť zástupné znaky ? pre písmeno a * pre reťazec; nie sú potrebné oddeľovače " alebo '
+txt_adv_filters: Pokročilé filtre
+txt_algo: Algoritmus
+txt_all: všetko
+txt_all_default: Všetko (predvolené)
+txt_all_type: Všetky objekty tohto typu
+txt_all_date: Všetky objekty s dátumom...
+txt_all_psize: Všetky objekty s komprimovanou veľkosťou...
+txt_all_attributes: Všetky objekty s rovnakým atribútom
+txt_all_size: Všetky objekty s veľkosťou...
+txt_error_input_upx: na vstupe len jeden spustiteľný súbor
+txt_always_pw: Vždy žiadať heslo pri rozbaľovaní/teste/výpise z kontextového menu
+txt_ignore_ext: Vždy ignorovať cesty pre „Rozbaliť a ...“
+txt_ignore_disp: Vždy ignorovať cesty pre „Rozbaliť zobrazené...“
+txt_ignore_sel: Vždy ignorovať cesty pre „Rozbaliť vybrané...“
+txt_key_hint: Pripojiť odtlačok Keyfile k heslu; archív môže byť dešifrovaný PeaZipom i ďalšími aplikáciami, ktoré podporujú rovnaký štandard alebo vložením odtlačku ako súčasť hesla
+txt_timestamp: K názvu súboru pripojiť časové razítko
+txt_appoptions: Možnosti aplikácie
+txt_type_description_arc: ARC: experimentálny archivátor, výkonný, účinný s bohatými možnosťami
+txt_archive: Archív
+txt_un7z_browse_ok: archív úspešne zobrazený
+txt_interface: Rozhranie prehliadača archívov
+txt_archivecreation: Vytváranie archívu
+txt_tarbefore_hint: Vytvorí TAR archív pred archiváciou vo zvolenom formáte.
+txt_archive_hint: Archivuje, komprimuje, rozdeľuje a udržuje súkromné súbory, priečinky a zväzky
+txt_compressionratio_hint: Kompresný pomer archívu
+txt_archiving: Archivovanie
+txt_cl_long: Zdá sa, že bola prekročená maximálna dĺžka argumentu, ktorý môže byť prijatý PeaZipom, prosím, vyberte menej vstupných súborov (t. j. vyberte priečinky namiesto jednotlivých súborov)
+txt_overwrite_askbefore: Pýtať sa pred prepísaním (bude použité v konzole)
+txt_associated: predvolená aplikácia
+txt_attributes: Atribúty
+txt_author: Autor
+txt_ren_existing: Automaticky premenovať existujúce súbory
+txt_ren_extracted: Automaticky premenovať rozbaľované súbory
+txt_autofolder: Automaticky vytvoriť nový priečinok na rozbalenie archívu?
+txt_back: Späť
+txt_backend: Rozhranie pre backend binárky
+txt_backupexe: Zálohovať spustiteľné súbory (odporúčané)
+txt_bettercompression: lepšia kompresia
+txt_blogs: Blogy
+txt_blowfish: Blowfish448 (64 bitové bloky)
+txt_bookmarks: Záložky
+txt_browse: Správca súborov
+txt_browser: Prehliadač
+txt_aborted_error: Zobrazovanie archívu zastavené, trvalo by príliš dlho. Môžete zúžiť výber vyhľadávaním alebo filtrami (alebo zrušením plochého zobrazenia); operácie vystrihnutie/výpis/test nie sú ovplyvnené. 
+txt_list_browsing: Zobrazené:
+txt_archive_root: Prehliada sa
+txt_type_description_bzip2: BZip2: pomerne silná kompresia, priemerná rýchlosť
+txt_pw_empty: Nie je možné použiť prázdne heslo, buď ho zadajte alebo zrušte možnosť „Zašifrovať“
+txt_add_error: Nie je možné pridať/aktualizovať alebo zmazať objekty. Tento typ archívu zrejme umožňuje iba prehliadanie/rozbaľovanie alebo nepodporuje jednotlivé operácie (t. j. je viaczväzkový alebo jednoliaty) alebo PeaZip nevie spracovať názov archívu.
+txt_un7z_browse_failure: Nie je možné prehliadať archív
+txt_list_error: Nie je možné vypísať položky archívu, skontrolujte, či nie je chránený heslom alebo poškodený.
+txt_conf_cannotsave: Nie je možné zapísať konfiguračný súbor, skontrolujte, či nie je jeho umiestnenie chránené proti zápisu a na disku je dostatok miesta
+txt_check_hint: Kontrola náhodného poškodenia údajov, algoritmus odtlačku je schopný odhaliť i úmyselné porušenie údajov (viď dokumentácia)
+txt_check: Kontrolný súčet/odtlačok súboru
+txt_check_select: Spočítať kontrolný súčet/odtlačok
+txt_clear: Vymazať
+txt_clearlayout: Zmazať layout
+txt_pj_hint: Kliknite pre import úlohy, vykonajte zmeny a načítajte aktuálnu definíciu z GUI
+txt_autoclose: Zatvoriť PeaLauncher po dokončení úlohy
+txt_cl: príkazový riadok
+txt_compare: Porovnať súbory
+txt_compress: Komprimovať
+txt_compress_executable: Komprimovať spustiteľné
+txt_compress_openforwriting: vrátane súborov otvorených pre zápis
+txt_compression: Kompresia
+txt_compmanagement: Správa počítača
+txt_pw_confirm: Potvrďte heslo
+txt_console: Konzola
+txt_console_interface: konzola
+txt_content: Obsah
+txt_controlpanel: Ovládací panel
+txt_convert: Konvertovať disk na NTFS
+txt_copy: Kopírovať
+txt_copyto: Kopírovať do...
+txt_create: Vytvoriť
+txt_create_archive: Vytvoriť archív
+txt_title_create: Vytvoriť archív, komprimovať, zašifrovať, rozdeliť...
+txt_create_keyfile: Vytvoriť keyfile
+txt_create_folder: Vytvoriť nový priečinok
+txt_create_theme: Vytvoriť novú tému zo súčasného nastavenia
+txt_rr: Vytvoriť záznamy pre obnovu
+txt_create_sfx: Vytvoriť samorozbaľovací archív
+txt_cr_current: Aktuálna cesta alebo kompresný pomer
+txt_custom: Vlastné
+txt_type_description_custom: Vlastné (pre pokročilých užívateľov)
+txt_customapp: vlastná aplikácia
+txt_custom_parameters: Vlastné parametre
+txt_customsize: Vlastná veľkosť
+txt_cut: Vystrihnúť
+txt_datetime: Dátum/Čas
+txt_default: predvolené
+txt_default_compression: predvolená kompresia
+txt_default_format: Predvolený formát
+txt_theme_default: Predvolená téma
+txt_hard_reset_hint: Zmazať súbor záložiek
+txt_desktop: Plocha
+txt_dictionary: Slovník
+txt_dirs: zložiek,
+txt_dis: Disambiguation:
+txt_disk_cleanup: Upratovanie disku
+txt_disk_defrag: Defragmentácia disku
+txt_disk_management: Správa disku
+txt_dispaly: Zobraziť výsledky ako
+txt_displayedmnu_obj: zobrazené
+txt_displayedobjects: Zobrazené objekty
+txt_nocompress: bez kompresie
+txt_delete: Určite chcete zmazať vybrané súbory? Operáciu nie je možné vrátiť a súbory nie je možné obnoviť z koša
+txt_wipe: Chcete bezpečne zmazať vybrané súbory? Operáciu nie je možné vrátiť a súbory už nebude možné obnoviť
+txt_done: Hotovo
+txt_edit: Upraviť
+txt_elapsed: uplynulo:
+txt_error_emptycl: Prázdny príkazový riadok!
+txt_encrypt: Zašifrovať
+txt_encrypted: zašifrované
+txt_encryption: Šifrovanie
+txt_note: Vložte poznámku / popis
+txt_random_keys: Stlačte náhodné klávesy
+txt_random_keys_hint: Stlačte náhodné klávesy (nemusíte si ich pamätať)
+txt_ent: Vyhodnotenie entropie
+txt_ent_tools: Nástroje na vzorkovanie entropie
+txt_eqorlarger: rovnaké alebo väčšie ako vybraný objekt
+txt_eqorrecent: rovnaké alebo novšie ako vybraný objekt
+txt_eqorolder: rovnaké alebo staršie ako vybraný objekt
+txt_eqorsmaller: rovnaké alebo menšie ako vybraný objekt
+txt_equal: ako vybraný objekt
+txt_erase_hint: Vymazávanie súborov
+txt_extraction_error: Chyba pri rozbaľovaní vybraného objektu. Ak je archív chránený heslom, zadajte ho
+txt_exclude_hint: Vynechať súbor(y), jeden na riadok; použite zástupné znaky * a ?, oddeľovače " a ' nie sú nutné
+txt_exclusion_recourse: Filtre pre vynechanie aplikovať i v podpriečinkoch
+txt_exclusion: Vynechať:
+txt_exe: príkaz
+txt_overwrite_qry: už existuje na cieľovej ceste. Prepísať súborom s rovnakým názvom? (Zrušiť preskočí kopírovanie tohto objektu)
+txt_confirm_overwrite: existuje, chcete ho prepísať? („Nie“ pre preskočenie)
+txt_explore_outpath: Preskúmať výstupnú cestu
+txt_explore_path: Preskúmať cestu
+txt_ext: ext:
+txt_caption_extract: Rozbaliť
+txt_ext_nopath: Rozbaliť (bez cesty)
+txt_ext_all: Rozbaliť všetko
+txt_ext_allhere: Rozbaliť všetko sem
+txt_ext_allto: Rozbaliť všetko
+txt_extopen_custom: Rozbaliť a otvoriť pomocou vlastnej aplikácie
+txt_extopen_with: Rozbaliť a otvoriť pomocou...
+txt_ext_disp_here: Rozbaliť zobrazené objekty sem
+txt_ext_disp: Rozbaliť zobrazené objekty
+txt_ext_disp_to: Rozbaliť zobrazené objekty
+txt_ext_here: Rozbaliť sem
+txt_ext_sel_here: Rozbaliť vybrané sem
+txt_ext_sel: Rozbaliť vybrané objekty
+txt_ext_sel_to: Rozbaliť vybrané objekty
+txt_extobj: Rozbaliť objekt
+txt_newfoldermenu: Do nového priečinka
+txt_extto: Rozbaliť 
+txt_level_fast: rýchla
+txt_fastcompr: rýchla kompresia
+txt_fastopen: Rýchle otvorenie, obmedziť zoznam na
+txt_level_fastest: najrýchlejšia
+txt_favformats: Obľúbené formáty
+txt_file: Súbor
+txt_filebrowser: Prehliadač súborov / archívov
+txt_filetools: Súborové nástroje
+txt_files: súborov,
+txt_nfiles: Súbory
+txt_fs: Súborový systém
+txt_filters_recourse: filter(e) aj v podpriečinkoch
+txt_filters: Filtre
+txt_flat: Ploché zobrazenie (zobraziť všetko)
+txt_list_flat: Ploché zobrazenie
+txt_unit_floppy: Disketa
+txt_foldername: Názov priečinka
+txt_nfolders: Priečinky
+txt_error_input_multi: formát spracuje len jeden súbor; použite možnosť „najskôr do TAR“, ktorá uloží súbory najskôr do .tar archívu alebo vyberte iný formát. Rada
+txt_fwd: Vpred
+txt_list_found: Nájdených:
+txt_free: Voľných
+txt_free2: voľných
+txt_name_full: Celý názov
+txt_function: Funkcia
+txt_general: Všeobecné
+txt_multithreading: predvolený multithreading
+txt_go_browser: Prejsť na Prehliadač súborov
+txt_go_path: Preskúmať cestu (PeaZip)
+txt_guicl: Grafika + konzola
+txt_guipealauncher: Grafika: obsluhuje PeaLauncher
+txt_graphic: Priečinok grafiky
+txt_gridaltcolor: Farba riadkov
+txt_gridrowheight: Výška riadkov
+txt_gui: GUI (Grafické užívateľské rozhranie)
+txt_type_description_gzip: Gzip: rýchla kompresia
+txt_here: sem
+txt_list_history: História
+txt_homeroot: Domov / koreň archívu
+txt_quickbrowse_hint: Ak je prehliadanie zastavené, užívateľ môže zúžiť výber vyhľadávaním alebo filtrami; funkcie rozbalenie / výpis / test nie sú ovplyvnené
+txt_backupexe_hint: Ak sa vyskytne chyba, ktorá vedie k nepoužiteľnému výsledku, môžete obnoviť pôvodný spustiteľný súbor zo záložnej kópie
+txt_attach: Ak to e-mailový klient podporuje, archív bude pripojený ako príloha k novému e-mailu
+txt_images: Obrázky
+txt_include_hint: Pridať súbor(y), jeden na riadok; použite zástupcov znakov * a ?; oddeľovače " a ' nie sú nutné
+txt_filters_hint: Filtre na pridanie a vynechanie súborov pre binárny 7z, prosím, preštudujte, ako filtre pracujú v dokumentácii 7-Zip
+txt_inclusion_recourse: Filtre na pridanie aplikovať v podpriečinkoch
+txt_inclusion: Pridať
+txt_error_function: Požadovaná nesprávna funkcia
+txt_info: Info
+txt_infoall: Info o všetkých
+txt_infodisp: Info o zobrazených objektoch
+txt_infosel: Info o vybraných objektoch
+txt_inputinfo: Vstupné informácie
+txt_input_list: Vstupný zoznam:
+txt_iop: vstup, výstup, parametre
+txt_ipo: vstup, parametre, výstup
+txt_input: vstup:
+txt_integrity: Kontrola integrity
+txt_chunk_size: Nesprávne zadaná veľkosť, prosím, opravte číselnú hodnotu
+txt_invertsel: Invertovať výber
+txt_type_exe: je spustiteľný súbor Windows, chcete ho spustiť? („Nie“ ho otvorí v Prehliadači súborov PeaZipu; takto sa dajú prehliadať iba instalačné balíky NSIS, .MSI a 7-Zip sfx archívy)
+txt_return_to_archive: je už otvorený; chcete ho prehliadať?
+txt_not_accessible: nie je dostupný
+txt_type_unsupported: nie je podporovaný typ archívu
+txt_checkname_failed: nie je platný názov
+txt_not_accessible_list: nie je prístupný, prosím, skontrolujte správnosť a aktuálnosť zoznamu súborov
+txt_theme_create_error: Nebolo možné vytvoriť tému, skúste vložiť platný názov priečinka ako názov témy a vybrať umiestnenie, do ktorého je možné zapisovať. 
+txt_theme_exists: už existuje, prosím, vložte inú cestu
+txt_job_code: kód úlohy:
+txt_job_definition_saved: Definícia úlohy úspešne uložená do
+txt_job_success: Úloha je úspešne dokončená!
+txt_join: Zlúčiť
+txt_joinfiles: Zlúčiť súbory
+txt_keyfile: Keyfile (súbor kľúča)
+txt_keyfile_not_found: Nie je možné načítať/nájsť Keyfile. Prosím, vyberte iný.
+txt_keyfile_notcreated: KeyFile nebol vytvorený
+txt_larger: väčší ako vybraný objekt
+txt_lastused: Posledný použitý
+txt_launch: Spustiť úlohu
+txt_layout: Layout
+txt_filelist_savedas: Layout bol uložený do
+txt_level: Kompresia
+txt_license: Licencia
+txt_caption_list: Stručný zoznam
+txt_list_details: Výpis (podrobný)
+txt_list_all: Vypísať všetko
+txt_list_disp: Výpis zobrazených objektov
+txt_list_sel: Výpis vybraných objektov
+txt_toggle_warning: Výpis súborov v Plochom zobrazení môže trvať dlho, napriek tomu pokračovať?
+txt_loadfile: Otvoriť súbor
+txt_loadlayout: Načítať layout
+txt_unit_hd: Miestny disk
+txt_localization: Lokalizácia
+txt_lpaqver: verzia LPAQ
+txt_type_description_lpaq: LPAQ: rýchlejšia verzia PAQ, veľmi dobrá kompresia
+txt_maininterface: Hlavné rozhranie
+txt_maxcomp: Mód maximálnej kompresie
+txt_level_maximum: maximum
+txt_restartrequired: Môže vyžadovať reštart aplikácie, aby sa prejavili zmeny
+txt_required_memory: MB pamäti je potrebnej
+txt_method: Metóda
+txt_misc: Rôzne
+txt_modify: Upraviť
+txt_morecontrols: Ďalšie nastavenia (história, záložky...)
+txt_morerecent: novším ako vybraný objekt
+txt_ent_hint: Pohybujte myšou, píšte text do vstupného poľa, načítavajte súbory, aby ste získali entropiu zo systému...
+txt_moveto: Presunúť 
+txt_mypc: Tento počítač
+txt_list_na: n/a
+txt_name: Názov
+txt_naming: Režim názvov
+txt_unit_remote: Sieťový priečinok
+txt_newarchive: nový archív
+txt_cnewfolder: Nový priečinok
+txt_news: Novinky
+txt_no: Nie
+txt_noinput: Nedostupné údaje na vstupe
+txt_nocompress_hint: bez kompresie (rýchlejšie)
+txt_split_noinput: Nebol vybraný žiadny vstup. Prosím, vyberte súbor, ktorý chcete rozdeliť
+txt_open_noinput: Nebol vybraný žiadny vstup. Prosím, vyberte archív (prvý zväzok pri viaczväzkových archívoch)
+txt_list_nomatch: žiadna zhoda
+txt_singlethread: jednovláknový
+txt_none2: žiadne
+txt_nonsolid: Nie jednoliaty
+txt_level_normal: normálny
+txt_copy_error: nebol úspešne prekopírovaný alebo presunutý, kód chyby
+txt_description: Poznámky
+txt_compare_second: teraz vyberte súbor na porovnanie
+txt_peaobj: Ovládanie objektu
+txt_displayed_obj: objekt(ov)
+txt_olderthan: starší ako vybraný objekt
+txt_on: na
+txt_ondblclick: Pri dvojkliku:
+txt_opacity: Priehľadnosť
+txt_open: Otvoriť
+txt_openarchive: Otvoriť archív
+txt_title_open: Otvoriť archív, dešifrovať, spojiť...
+txt_open_bookmark: Otvoriť záložky
+txt_cphere: Príkazový riadok
+txt_open_file: Otvoriť súbor
+txt_open_files: Otvoriť súbor(y)
+txt_open_path: Otvoriť cestu
+txt_opensource: Opensource prenosný archivátor
+txt_openwith: Otvoriť pomocou...
+txt_aborted: Operácia prerušená
+txt_unit_cd: Optická jednotka
+txt_options: Možnosti
+txt_other: Iné
+txt_otherparams: Iné parametre (voľne upravovateľné)
+txt_oip: výstup, vstup, parametre
+txt_opi: výstup, parametre, vstup
+txt_output: výstup:
+txt_overwrite: Prepísať existujúce súbory
+txt_compressed_size: Po kompresii
+txt_paqver: verzia PAQ
+txt_type_description_paq: PAQ: pomalá, ale extrémne výkonná kompresia
+txt_pio: parametre, vstup, výstup
+txt_poi: parametre, výstup, vstup
+txt_parameters: Parametre:
+txt_error_partial: Pre tento archív nie je ešte implementovaná čiastočná extrakcia
+txt_passes: Priechodov
+txt_pw: Heslo
+txt_pwlength: Dĺžka hesla v znakoch (4..64)
+txt_un7z_browse_pw: je vyžadované heslo
+txt_un7z_browse_pw_other: heslo je chybné
+txt_paste: Prilepiť
+txt_path: Cesta:
+txt_pea_appcolor: Farba aplikácie Pea
+txt_pea_textcolor: Farba textu Pea
+txt_type_description_pea: PEA: formát s dôrazom na bezpečnosť a rýchlu kompresiu
+txt_peazip_new: PeaZip (nová inštancia)
+txt_peazip_help: PeaZip pomoc (online)
+txt_peazip_web: Webová stránka projektu PeaZip
+txt_performall: Vykonať všetky podporované algoritmy
+txt_name_provide: Nový názov (nepoužívajte znaky \ / : * ? ' " < > |)
+txt_upxorstrip: Vyberte Strip alebo UPX na binárke
+txt_not_removable_file: Prosím, zatvorte používaný súbor, aby ho PeaZip mohol zmazať
+txt_not_removable: Prosím, zatvorte používaný súbor, aby PeaZip mohol zmazať priečinok
+txt_custom_executable_missing: Prosím, vložte názov vášho spustiteľného súboru
+txt_type_unsupported_select: Prosím, vyberte podporovaný typ archívu:
+txt_no_theme_name: Vložte názov súboru s témou vzhľadu
+txt_please_wait: Prosím, čakajte
+txt_copy_wait: Prosím, čakajte na dokončenie práve prebiehajúceho kopírovania/presunu súborov pred naplánovaním ďalšej operácie rovnakého typu
+txt_previewwith: Náhľad s...
+txt_projectadmin: Správca projektu:
+txt_type_description_quad: BALZ/QUAD: vysoko výkonné komprimátory súborov
+txt_quickdelete: Rýchle zmazanie
+txt_quit: Ukončiť
+txt_unit_ram: RAM disk
+txt_read: Načíta:
+txt_recentarchives: Naposledy použité
+txt_rr_hint: Záchranné záznamy vám pomôžu opraviť archívy pri porušení údajov
+txt_search_refine: Filter na vyhľadávanie, môžete použiť zástupné znaky ? a * 
+txt_fefreshf5: Obnoviť (F5)
+txt_release: verzia:
+txt_unit_removable: Vymeniteľná jednotka
+txt_remove_bookmark: Odstrániť záložku
+txt_remove_external_unit: Odstrániť externú jednotku(y)
+txt_removeselected: Odstrániť vybrané objekty
+txt_rename: Premenovať
+txt_caption_repair: Opraviť
+txt_restartrequired2: aby sa prejavili zmeny, musí byť aplikácia reštartovaná
+txt_reset: Vynulovať
+txt_reset_archivename: Vymazať
+txt_hardreset: Vynulovať záložky
+txt_reset_theme: Späť na zabudovanú tému
+txt_restore_att: obnoviť pôvodné atribúty
+txt_run_as: Spustiť ako (nie je možné prepnúť na užívateľa s prázdnym heslom)
+txt_run_as2: Spustiť ako iný užívateľ
+txt_sample: Ukážka:
+txt_saveas: Uložiť ako
+txt_savehistory: Uložiť históriu posledného použitého archívu
+txt_save_infolder: Uložiť do priečinka (auto)
+txt_savejob: Uložiť úlohu
+txt_savejobdefinition: Uložiť definíciu úlohy
+txt_savejobdefinition_hint: Uloží popis úlohy ako textový súbor, ktorý je možné použiť neskôr v skriptoch.
+txt_savelayout: Uložiť layout
+txt_save_winstate: Uložiť stav hlavného okna
+txt_search: Hľadanie (rekurzívne), môže trvať dlhšie
+txt_searchanddrag: Vyhľadať a presunúť sem
+txt_searchfor: Hľadať:
+txt_nrsearch: Hľadať tu (nerekurzívne)
+txt_search_hint: Prehľadáva podpriečinky archívu podľa predvolených filtrov
+txt_search_web: Hľadať na webe
+txt_list_searching: Hľadám...
+txt_securedelete: Bezpečne zmazať (súbory)
+txt_default_description: Vyberte funkciu alebo sem pretiahnite súbory
+txt_selectall: Vybrať všetko
+txt_selectdir: Vybrať priečinok
+txt_selected_obj: vybrané
+txt_selected_objects: Vybrané objekty
+txt_sfx: Samorozbaľ.
+txt_sendbymail: Poslať e-mailom (ak je podporované)
+txt_set_defaults: Nastaviť predvolené parametre aplikácie
+txt_settings: Nastavenia
+txt_sfx_interface: sfx rozhranie
+txt_showhints: Zobrazovať tipy
+txt_show_messages: Zobrazovať informačné správy
+txt_showpw: Zobrazovať heslo
+txt_singlevol: Jeden zväzok
+txt_size: Veľkosť
+txt_sizeb: Veľkosť (B)
+txt_skip_existing: Preskočiť existujúce súbory
+txt_slowercomp: pomalšia kompresia, ale rýchlejšia dekompresia
+txt_smaller: menší ako vybraný objekt
+txt_solid: Jednoliaty
+txt_solid_block: Jednoliaty
+txt_solid_auto: Jednoliaty, autom. zarovnanie
+txt_solid_extension: Jednoliaty, zoskupiť podľa prípony
+txt_listtest: Prepáčte, operácia výpisu/testu nie je pre tento formát ešte implementovaná
+txt_sortbysel: Triediť podľa stavu výberu
+txt_list_sorting: Triedenie...
+txt_speed: rýchlosť
+txt_split: Rozdeliť
+txt_type_description_split: Rozdeliť súbor s voliteľnou kontrolou integrity
+txt_split_file: Rozdeliť súbor
+txt_list_nostats: štatistiky nedostupné
+txt_status: Stav
+txt_level_store: len uložiť
+txt_stream_control: Riadenie streamu
+txt_strip: Strip pred UPX (odporúčané)
+txt_keyfile_created: KeyFile úspešne vytvorený v:
+txt_suggestpw: Vygenerovať heslo
+txt_noupx: Symboly odstránené, UPX kompresia vynechaná
+txt_syntax: Syntax:
+txt_sysbenchmark: Testy výkonu
+txt_benchmark: Test výkonu chvíľu potrvá a využíva všetky dostupné zdroje pamäti a procesorov. Môže sa stať, že systém nebude po dobu testu reagovať. Chcete napriek tomu pokračovať?
+txt_systools: Systémové nástroje
+txt_tarbefore: najskôr do TAR
+txt_type_description_tar: TAR: hlavný archivačný formát pre UNIXové systémy
+txt_taskman: Správca úloh
+txt_caption_test: Testovať
+txt_testall: Testovať všetko
+txt_testdisp: Test zobrazených objektov
+txt_testpw: Test hesla / keyfile
+txt_testsel: Test vybraných objektov
+txt_col_hint: Farbu vyberte tak, aby sa hodila k farbám, ikonám a ostatným prvkom vášho grafického rozhrania
+txt_bookmarks_hint: Úplný zoznam záložiek, ktoré je možné i upravovať, je dostupný v Správcovi súborov, ak kliknete na ikonu „Ďalšie nastavenia“ a možnosť „Zobraziť históriu/záložky“.
+txt_archive_noinput_tolist: layout je prázdny; použite Pridať súbor(y), Pridať priečinky alebo Načítať layout a naplňte layout archívu
+txt_theme: Témy
+txt_icons_found: Téma úspešne načítaná.
+txt_themename: Názov témy
+txt_icons_not_found: Téma nie je správne načítaná. Skúste prepnúť na predvolenú alebo inú, ktorá je v poriadku.
+txt_theme_create_success: téma úspešne vytvorená v
+txt_theming: Úprava vzhľadu
+txt_extand_error: Táto funkcia pracuje naraz iba s jedným objektom
+txt_threads: Vlákna
+txt_titlescolor: Farba titulkov
+txt_to: do
+txt_toggle_browseflat: Prepne stromový pohľad / ploché zobrazenie
+txt_toggle_historybookmarks: Zobraziť históriu/záložky
+txt_toolbarscolor: Farba panela nástrojov
+txt_tools: Nástroje
+txt_best: Vyskúšať najlepšie nastavenie (pomalé)
+txt_type: Typ
+txt_level_ultra: ultra
+txt_error_openfile: Nie je možné otvoriť vybraný súbor
+txt_cl_hint: UNACE a UPX sa vždy spúšťajú v konzole; výpisy, testy a test výkonu vždy prebieha v GUI móde
+txt_ace_missing: Chýba UNACE zásuvný modul; na spracovanie ACE archívov si môžete stiahnuť zásuvnú modul zo stránok projektu PeaZip (pre uzavreté zdrojové kódy nie je zásuvný modul zahrnutý do základného balíčku)
+txt_units: jednotky
+txt_unit_unknown: Neznámy typ jednotky
+txt_un7z_pw_untested: Netestované
+txt_up: O úroveň vyššie
+txt_update: aktualizovať (ak archív existuje)
+txt_type_description_upx: UPX: komprimuje iba spustiteľné súbory
+txt_advfilters: Použiť rozšírené filtre
+txt_openfiles_hint: Použite túto možnosť pre zahrnutie súborov do archívu otvorených pre zápis v iných aplikáciách (užitočné pri zálohovaní)
+txt_usenet: Použiť sieť
+txt_user_name: Užívateľské meno, použite tvar užívateľ@DOMÉNA alebo DOMÉNA\užívateľ podľa potreby.
+txt_using: Využíva:
+txt_volumepea: Kontrola zväzku
+txt_volume_size: Veľkosť zväzku
+txt_type_ext_uns: bol úspešne rozbalený
+txt_websearch: Vyhľadávanie na webe
+txt_websites: Webové stránky
+txt_word: Slovo
+txt_write: Vytvára:
+txt_ramdompw_hint: Odtiaľto môžete skopírovať náhodne vytvorené heslo
+txt_exe_hint: Môžete vložiť názov ľubovoľného spustiteľného súboru a parametre pre vlastný typ kompresie. Tiež môžete ručne pozmeniť syntax príkazu na karte Konzola. 
+txt_pj_hint2: Môžete importovať popis úlohy z GUI rozhrania do poľa nižšie. Potom ho môžete upraviť, spustiť alebo uložiť bez zmien pre ďalšie použitie.
+txt_type_description_zip: ZIP: formát pre rýchlu kompresiu/archiváciu, najpoužívanejší pre Windows
+txt_zipcrypto_hint: ZipCrypto (legacy)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: remaining
+txt_6_5_abort: Abort
+txt_6_5_error: Error
+txt_6_5_no: No
+txt_6_5_warning: Warning
+txt_6_5_yes: Yes
+txt_6_5_yesall: Yes to all
+txt_5_6_update: Check for updates
+txt_5_6_cml: System context menu language
+txt_5_6_donations: Donations
+txt_5_6_localization: Localization
+txt_5_6_runasadmin: Run as administrator
+txt_5_6_help: Online support
+txt_5_5_cancelall: Cancel all
+txt_5_3_details: Details
+txt_5_3_files: files
+txt_5_3_folders: folders
+txt_5_3_info: Info
+txt_5_3_list: List
+txt_5_3_os: Original size
+txt_5_3_ps: Packed size
+txt_5_3_test: Test
+txt_5_0_extract: Extract
+txt_5_0_from: from
+txt_5_0_in: in
+txt_5_0_to: to
+txt_4_5_search: hľadať
+txt_4_0_drag: Pretiahnite sem archív na rozbalenie alebo
+txt_4_0_dragorselect: Pretiahnite sem alebo vyberte súbor
+txt_4_0_select: vyberte súbor
+txt_3_6_selectdir: Priečinok
+txt_3_5_close: Zatvoriť
+txt_3_0_details: Ďalšie podrobnosti: "Správa" obsahuje záznam o ukladaní a "Konzola" definíciu úlohy v príkazovom riadku.
+txt_3_0_hints: Rady k chybe
+txt_3_0_arc: Niektoré súbory nie je možné načítať (môžu byť zamknuté, neprístupné alebo poškodené)
+txt_3_0_ext: Archív môže pre túto operáciu vyžadovať iné heslo
+txt_2_8_oop: Otvoriť výstupnú cestu po ukončení úlohy
+txt_2_7_validatefn: Operácia zastavená, chybný názov súboru:
+txt_2_7_validatecl: Operácia zastavená, zistená potenciálne nebezpečná operácia (napr. spájanie nie je povolené vo vnútri programu):
+txt_2_6_open: Otvoriť archív
+txt_2_5_ace_missing: Nebol nájdený zásuvný modul UNACE. Pre spracovanie archívov ACE je potrebné stiahnuť zásuvný modul zo stránok PeaZipu. (Nie je súčasťou základného balíčka pre uzavretý kód)
+txt_2_3_pw_errorchar_gwrap: : tento znak nie je možné vložiť v PeaZip GUI ako súčasť hesla, prosím, zmeňte heslo alebo vyberte textové rozhranie v Nástroje > Nastavenia
+txt_2_3_renameexisting: Automaticky premenovať existujúce súbory
+txt_2_3_renameextracted: Automaticky premenovať rozbalené súbory
+txt_2_3_cancel: Zrušiť
+txt_2_3_encryption: Šifrovanie
+txt_2_3_extinnew: Rozbaliť do nového priečinka
+txt_2_3_keyfile: Keyfile
+txt_2_3_kf_not_found_gwrap: Nie je možné načítať keyfile. Vyberte iný súbor.
+txt_2_3_moreoptions: Ďalšie možnosti...
+txt_2_3_nopaths: Bez cesty
+txt_2_3_options: Možnosti
+txt_2_3_overexisting: Prepísať existujúce súbory
+txt_2_3_pw: Heslo
+txt_2_3_skipexisting: Preskočiť existujúce súbory
+txt_job_unknown: : Vyskytla sa neznáma chyba
+txt_stdjob: [animácia sa zastaví po dokončení úlohy]
+txt_benchmarkjob: [počas testu bude systém spomalený (chvíľu to potrvá)]
+txt_defragjob: [nebude reagovať počas defragmentácie, môžete nechať bežať na pozadí]
+txt_consolejob: priebeh spracovania môžete sledovať v okne konzoly
+txt_job1: 1: Upozornenie: menej závažná chyba(y); napr. niektoré súbory chýbajú alebo sú uzamknuté
+txt_job127: 127: Nie je možné vykonať požadovanú operáciu
+txt_job2: 2: Vyskytla sa závažná chyba
+txt_job255: 255: Úloha zastavená užívateľom
+txt_job7: 7: Chyba:  chybný príkazový riadok
+txt_job8: 8: Chyba:  nie je dostatok pamäti na požadovanú operáciu
+txt_autoclose: Po dokončení úlohy zatvoriť okno 
+txt_crscale: Kompresný pomer (menší znamená lepší)
+txt_console: Konzola
+txt_benchscale: Porovnanie s Core 2 Duo T6600, ekvivalent rýchlosti MHz.
+txt_create: Vytvoriť
+txt_done: Hotovo:
+txt_nocl: Prázdny príkazový riadok
+txt_error: Chyba
+txt_explore: Preskúmať
+txt_extto: Uložiť do
+txt_halt: Po dokončení úlohy zastaviť systém
+txt_halted: Zastavené
+txt_hardware: hardvérová
+txt_high: vysoká priorita
+txt_idle: nízka priorita
+txt_input: Vstup
+txt_jpaused: Úloha pozastavená
+txt_jresumed: Úloha pokračuje
+txt_job_started: Úloha spustená
+txt_jobstatus: Stav úlohy:
+txt_jstopped: Úloha zastavená užívateľom
+txt_jobstopped: Úloha zastavená užívateľom; môžete si prezrieť čiastočný výsledok pomocou tlačidla „Preskúmať“ alebo prečítať záznam o úlohe
+txt_job_success: Úloha úspešne dokončená
+txt_lt: Výpis/test/oprava archívu
+txt_normal: normálna priorita
+txt_ok: OK
+txt_output: Výstup:
+txt_pause: Pauza
+txt_paused: pozastavené,
+txt_p_high: Priorita nastavená na vysokú
+txt_p_idle: Priorita nastavená na nízku
+txt_p_normal: Priorita nastavená na normálnu
+txt_p_realtime: Priorita nastavená na reálny čas
+txt_rating: Hodnotenie:
+txt_rt: priorita reálneho času
+txt_report: Správa
+txt_resume: Pokračovať
+txt_priority: Prioritu úlohy nastavíte pravým kliknutím
+txt_running: beží,
+txt_isrunning: Beží...
+txt_saveas: Uložiť ako
+txt_savejob: Uložiť definíciu úlohy (môže obsahovať heslo!)
+txt_savelog: uložiť záznam o úlohe
+txt_software: softvérová
+txt_speedscale: Rýchlosť, logaritmická mierka (vyššia je lepšia)
+txt_status: Stav
+txt_stop: Zastaviť
+txt_bench: Test výkonu
+txt_threads: Vlákien:
+txt_time: Čas:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+ROZBAĽOVANIE ARCHÍVOV
+Zo systému 
+- kliknite pravým tlačidlom na archív a z kontextovej ponuky vyberte "Extract here" alebo "Extract here (in new folder)" pre priame rozbalenie
+- inak vyberte "Extract...", ak chcete určiť cieľ uloženia súborov, heslo, uložiť súbory do iného priečinka, preskočiť, premenovať, prepísať existujúce súbory apod.
+
+Otvorte archív PeaZipom, t. j. dvojklikom alebo pretiahnutím do okna alebo na ikonu PeaZipu 
+- kliknite na "Rozbaliť" v paneli nástrojov alebo v menu, ak chcete rozbaliť iba vybrané objekty s upresnením a nastavením ďalších možností (cesta pre uložení súborov, heslo, premenovanie, uloženie do nového priečinka apod.)
+- pretiahnite súbory a priečinky do požadovaného umiestnenia. Rozbalený bude len označený obsah (ďalšie podrobnosti nájdete v kapitole Pretiahni a pusť v PeaZipe).
+- pre rýchle rozbalenie kliknite na menu vpravo od "Rozbaliť" na paneli nástrojov. Môžete priamo rozbaliť celý archív do prednastavených umiestnení (po preskočení potvrdzovacieho dialógu) a nastaviť najdôležitejšie možnosti. Klávesové skratky: Ctrl+E (alebo F12) rozbalí celý archív a bude sa pýtať na cieľový priečinok, Ctrl+Shift+E rozbalí do dokumentov, Ctrl+1..8 rozbalí do umiestnenia prednastavených v Záložkách 1 až 8 (ak sú definované)
+ 
+Spustite PeaZip, vyberte jeden alebo viac archívov a kliknite na "Rozbaliť" v paneli nástrojov alebo kontextovej ponuke alebo použite rýchle rozbalenie ako bolo popísané vyššie.
+
+ROZBAĽOVANIE LEN NIEKTORÝCH OBJEKTOV Z ARCHÍVU
+Otvorte archív v PeaZipe (dvojklikom alebo pretiahnite do okna alebo na ikonu PeaZip)
+- kliknite na "Rozbaliť" v paneli nástrojov. Rozbalia sa iba vybrané objekty
+- pretiahnite súbory alebo priečinky do požadovaného umiestnenia. Rozbalia sa iba vybrané objekty
+- kliknite pravým tlačidlom a v skupine "Rozbaliť" použite "Rozbaliť vybrané objekty" (pre rozbalenie vybraných položiek) alebo "Rozbaliť zobrazené objekty" (pre rozbalenie aktuálneho priečinka alebo aktuálneho filtrovaného obsahu)
+
+PREHLIADANIE ALEBO ROZBAĽOVANIE ARCHÍVOV CHRÁNENÝCH HESLOM
+Kliknite na ikonu zámku a zadajte heslo prípadne keyfile.
+Ikona zámku je v PeaZipe dostupná v stavovom riadku správcu súborov i v rozhraní pre rozbaľovanie súborov. Po vložení hesla sa zmení farba ikony.
+
+VYTVÁRANIE ARCHÍVU
+Zo systému
+- kliknite pravým tlačidlom na objekty, ktoré chcete archivovať a vyberte "Add to archive" v kontextovej ponuke alebo Odoslať kam menu. Otvorí sa dialóg pre vytváranie archívu, podrobnosti je možné nastaviť na záložke "Pokročilé nastavenia". Vytvorenie archívu potvrdíte kliknutím na "OK". 
+- môžete tiež pretiahnuť súbory a priečinky do okna alebo na ikonu PeaZipu. Otvorí sa rozhranie pre vytváranie archívu.
+
+Z PeaZipu
+- vyberte objekty k archivácii a kliknite na tlačidlo "Pridať". Otvorí sa rozhranie pre vytváranie archívu. 
+
+PRIDÁVANIE SÚBOROV A PRIEČINKOV DO EXISTUJÚCEHO ARCHÍVU
+Otvorte archív v PeaZipe (napr. dvojklikom  alebo pretiahnutím na ikonu PeaZipu) a potom pretiahnite pridávané súbory a priečinky do archívu (alebo stlačte tlačidlo "Pridať" a použite pre pridanie objektov do archívu kontextovú ponuku aplikácie). 
+Zobrazí sa potvrdzovací dialóg a po stlačení "OK" bude existujúci archív aktualizovaný.
+
+VYTVÁRANIE ARCHÍVU ROZDELENÉHO DO MENŠÍCH SÚBOROV
+Pri vytváraní archívu, ako už bolo popísané vyššie, kliknite na rozbaľovaciu ponuku "Jeden zväzok", kde je možné vybrať veľkosť vytváraných súborov (zväzkov), na ktoré bude výsledný archív rozdelený.
+Túto možnosť podporuje väčšina archivačných formátov.
+
+VYTVÁRANIE ŠIFROVANÉHO ARCHÍVU
+Kliknite na ikonu zámku a vložte heslo, prípadne keyfile. Ikonu nájdete v stavovom riadku prieskumníka PeaZip a v rozhraní pre vytváranie archívu.
+Pre ukrytie názvov súborov a priečinkov obsiahnutých v archíve použite "Šifrovať tiež názvy súborov". Táto možnosť však bude použitá iba pri typoch archívov, ktoré to umožňujú, ako napríklad 7Z a ARC.
+V rozhraní pre vytváranie archívu nájdete vedľa ikony zámku informáciu o stave šifrovania a šifrovacích možnostiach vybraného formátu. 
+
+VYTVÁRENIE ODDELENÝCH ARCHÍVOV
+Pridajte súbory na archiváciu a pred potvrdením tlačidlom "OK" začiarknite možnosť "Každý objekt do vlastného archívu".
+
+PREVOD ARCHÍVOV
+V PeaZipe vyberte archívy, ktoré chcete konvertovať, kliknite na "Konverzia" v paneli nástrojov alebo v kontextovej ponuke. Môžete pridať aj obyčajné súbory alebo priečinky. Odlišnosť od obyčajného pridania je, že pôvodný archív je najskôr celý rozbalený. 
+Možnosť "Konverzia existujúcich archívov" zároveň s "Každý objekt do vlastného archívu" (predvolené) vykonáva hromadný prevod vypísaných archívov. Bez tejto možnosti má konverzia archívov v úmysle konsolidáciu vstupných údajov do jedného archívu a zvýšenie účinnosti kompresie, pretože to umožňuje znovuskomprimovanie pôvodných údajov z nekomprimovaného tvaru.
+
+PRIAME VYTVÁRANIE ARCHÍVOV V DANOM FORMÁTE A KOMPRESNOM POMERE
+Možnosťou "Systémová integrácia" z ponuky Možnosti je možné povoliť položky kontextovej ponuky pre priame pridávanie súborov a priečinkov do archívov typov ZIP, 7z a samorozbaľovacích archívov.
+Pre formáty ZIP a 7z je tiež možné povoliť položky kontextovej ponuky pre priamu kompresiu s možnosťou najrýchlejšia, ultrarýchla a normálna metóda kompresie bez nutnosti ďalšieho potvrdzovania v dialógu.
+
+KONFIGURÁCIA
+Možnosti > Lokalizácia (tiež Možnosti > Nastavenia, prvá záložka) - nastavuje jazyk aplikácie
+Možnosti > Nastavenia - mení prednastavenia aplikácie
+Možnosti > Témy - mení vzhľad rozhrania a ikon
+Možnosti > Systémová integrácia - spúšťa sprievodcu pre nastavenia asociácií súborov, nastavenia kontextovej ponuky (pre Windows) 
+Zobrazenie - obsahuje položky pre úpravu vlastností prieskumníka ako panel nástrojov, riadok adresy, navigačný panel apod.
+
+F1	pomoc
+F2	prehľadávať plochu / Ctrl+F2 prehľadávať domovský priečinok / Shift+F2 prehľadávať koreň súborového systému / Ctrl+Shift+F2 prehľadávať koreň archívu (len pri prehliadaní archívu, inak koreň súborového systému)
+F3	hľadať (možnosť rekurzie je uložená) / Ctrl+F3 nerekurzívne (vyhľadať tu) / Shift+F3 rekurzívne vyhľadávanie
+F4	o úroveň vyššie
+F5	obnoviť
+F6	prepína pohľady prieskumník/ploché zobrazenie
+F7	prehľadávať najčastejšie prehľadávaný objekt (Ctrl, druhý, Shift, tretí najčastejšie prehľadávaný)
+F8	prehľadávať prvú položku zo zoznamu obľúbených (Ctrl, druhú, Shift, tretiu položku)
+F9	nastaviť heslo/keyfile / Ctrl+F9 vytvoriť keyfile alebo náhodné heslo
+F10	menu
+F11	nastaviť pokročilé filtre
+F12	rozbaliť všetko do...
+
+ABOUT PEAZIP
+
+PeaZip je open source súborový správca a správca archívov: multiplatformový, dostupný ako prenosný a inštalovateľný softvér pre 32 a 64 bitové Windows (9x, 2k, XP, Vista) a Linux (PeaZip je desktopovou neutrálnou aplikáciou).
+
+PeaZip umožňuje použiť výkonné vyhľadávacie filtre na archiváciu obsahu; vytvárať a extrahovať niekoľko súborov naraz; vytvárať samorozbaľovacie archívy; exportovať definíciu úloh ako príkazový riadok; uložiť archiváciu a extrakčný layout; záložky archívov a priečinkov; skenovanie a otváranie vlastnými aplikáciami komprimované a nekomprimované súbory atď...
+
+Ďalšie funkcie: silné šifrovanie, robustné kopírovanie súborov, rozdeľovanie/spájanie súborov (súborový interval), bezpečné odstránenie údajov, porovnávanie, vytváranie kontrolných súčtov a hash súborov, záťažová skúška systému, vytváranie náhodných hesiel a kefile súborov.
+
+Downloads: https://peazip.github.io
+Funkcie a úplný zoznam formátov nájdete na: https://peazip.github.io/peazip-free-archiver.html
+Podpora: https://peazip.github.io/peazip-help.html
+FAQ: https://peazip.github.io/peazip-help-faq.html
+
+Ďakujeme všetkým ľuďom prispievajúcim k rastu projektu projektu PeaZip tým, že vyvíjajú Open Source softvér použitý v tejto aplikácii (navštívte webové stránky projektu pre kompletný zoznam) a všetkým užívateľom, ktorí poskytujú odozvu, skúsenosti a pripomienky.
