@@ -45,14 +45,15 @@ Name: "{group}\{cm:ProgramOnTheWeb,PeaZip}"; Filename: "{app}\peazip.url"
 Name: "{group}\{cm:UninstallProgram,PeaZip}"; Filename: "{uninstallexe}"
 Name: "{userdesktop}\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: quicklaunchicon
-Name: "{group}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 2
-Name: "{group}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
-Name: "{group}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{group}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 2
+Name: "{group}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{group}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
 Name: "{group}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
-Name: "{group}\PeaZip"; Filename: "{app}\res\bin\Configure PeaZip.exe";
-Name: "{app}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 2
-Name: "{app}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
-Name: "{app}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{group}\Configure PeaZip"; Filename: "{app}\res\bin\Configure PeaZip.exe";
+Name: "{group}\PeaZip"; Filename: "{app}\peazip.exe";
+Name: "{app}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 2
+Name: "{app}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{app}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
 Name: "{app}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
 
 [Run]
