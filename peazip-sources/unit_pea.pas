@@ -182,6 +182,8 @@ unit Unit_pea;
  1.02     20210711  G.Tani      Over 2x improved speed of hex preview, now enabled for files up to 64 MB in size
                                 Updated files and free space secure delete functions, new ONE parameter to overwrite all bits with 1
  1.03     20210919  G.Tani      Merged patches for Darwin
+ 1.04     20211102  G.Tani      Pea binary moved to root folder of PeaZip package, modified to support new internal directory structure and new theming
+                                Fixed theming issues
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -292,9 +294,11 @@ type
     MainMenu1: TMainMenu;
     mainmenuhelp: TMenuItem;
     MenuItem1: TMenuItem;
+    PanelUtilsTitle: TPanel;
     Panelsp1: TPanel;
     Panelsp0: TPanel;
     Panelsp2: TPanel;
+    peautilsbtn: TSpeedButton;
     pmupdates: TMenuItem;
     pmdonations: TMenuItem;
     pmhelp: TMenuItem;
@@ -313,7 +317,6 @@ type
     Shape2: TShape;
     ShapeE1: TShape;
     ShapeE2: TShape;
-    peautilsbtn: TSpeedButton;
     SpinEdit1: TSpinEdit;
     Timer1: TTimer;
     procedure ButtonDone1Click(Sender: TObject);
@@ -358,7 +361,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.02'; //declares release version for the whole build
+  P_RELEASE          = '1.04'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -401,8 +404,8 @@ var
    fshown:boolean;
    //theming
    conf:text;
-   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,gridaltcolor:integer;
-   executable_path,resource_path,persistent_source,color1,color2,color3,color4,color5:string;
+   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,gridaltcolor,highlighttabs,temperature:integer;
+   executable_path,resource_path,binpath,sharepath,persistent_source,color1,color2,color3,color4,color5:string;
 
 {
 PEA features can be called using different modes of operation:
@@ -495,7 +498,7 @@ tsout:=datetimetotimestamp(now);
 time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if time<=0 then time:=100000;
 speed:=(size * 1000) div time;
-Form_pea.LabelTime1.Caption:='Processed '+nicenumber(inttostr(size))+' in '+nicetime(inttostr(time))+' @ '+nicenumber(inttostr(speed))+'/s';
+Form_pea.LabelTime1.Caption:='Processed '+nicenumber(inttostr(size),0)+' in '+nicetime(inttostr(time))+' @ '+nicenumber(inttostr(speed),0)+'/s';
 Form_pea.ButtonDone1.Visible:=true;
 end;
 
@@ -4588,7 +4591,7 @@ for j:=3 to paramcount do
       rcountsize((paramstr(j))+directoryseparator,'*',faAnyFile,true,nfiles,ndirs,ctsize);
    tsize:=tsize+ctsize;
    end;
-Form_pea.LabelTools2.Caption:=Form_pea.LabelTools2.Caption+', '+nicenumber(inttostr(tsize));
+Form_pea.LabelTools2.Caption:=Form_pea.LabelTools2.Caption+', '+nicenumber(inttostr(tsize),0);
 end2caption:=Form_pea.LabelTools2.Caption;
 Application.ProcessMessages;
 tsize:=(tsize*nlevel) + paramcount;
@@ -4625,8 +4628,8 @@ for j:=3 to paramcount do
             begin
             rc:=Form_report.StringGrid1.RowCount+1;
             Form_report.StringGrid1.RowCount:=rc;
-            if nlevel>0 then Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize div nlevel))+' deleted'
-            else Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize))+' deleted';
+            if nlevel>0 then Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize div nlevel),0)+' deleted'
+            else Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize),0)+' deleted';
             Form_pea.LabelTools3.Caption:='Processing item '+inttostr(rc-1)+' of '+inttostr(ntotalexp);
             try
                {$IFDEF MSWINDOWS}
@@ -4637,7 +4640,7 @@ for j:=3 to paramcount do
                reset(f);
                srcfilesize(exp_files[k],size);
                closefile(f);
-               Form_pea.LabelTools3.Caption:=Form_pea.LabelTools3.Caption+', '+nicenumber(inttostr(size))+' file';
+               Form_pea.LabelTools3.Caption:=Form_pea.LabelTools3.Caption+', '+nicenumber(inttostr(size),0)+' file';
                setcurrentdir(extractfilepath((exp_files[k])));
                if toolactioncancelled=true then
                   begin
@@ -4801,7 +4804,7 @@ time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if time>0 then
    begin
    speed:=(tsize * 1000) div time;
-   Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed))+'/s';
+   Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed),0)+'/s';
    end
 else Form_pea.LabelTools4.Caption:='';
 Form_report.Label1.Caption:=Form_pea.LabelTools2.Caption;
@@ -4889,7 +4892,7 @@ begin
          else numread:=maxs-total;
          rfree:=diskfree(drivenumber);
          Form_pea.ProgressBar1.Position:=100-((rfree*100) div sizefree);
-         Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree))+' free, '+nicenumber(inttostr(rfree))+' remaining';
+         Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree),0)+' free, '+nicenumber(inttostr(rfree),0)+' remaining';
          tsout:=datetimetotimestamp(now);
          time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
          Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' elapsed';
@@ -4908,7 +4911,7 @@ begin
       end;
    until tok=true;
    recoverfreespace(n);
-   Form_pea.LabelTools2.Caption:='Done drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal))+', pass '+inttostr(j)+' of '+inttostr(nlevel);
+   Form_pea.LabelTools2.Caption:='Done drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal),0)+', pass '+inttostr(j)+' of '+inttostr(nlevel);
    end;
 
 begin
@@ -4963,9 +4966,9 @@ if (winver='nt6+') or (winver='nt5') then
 else fstype:='';
 
    if fstype<>'' then
-      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+' ('+fstype+'), '+nicenumber(inttostr(sizetotal))
+      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+' ('+fstype+'), '+nicenumber(inttostr(sizetotal),0)
    else
-      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal));
+      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal),0);
 Application.ProcessMessages;
 case level of
    'ZERO': //overwrite with zero
@@ -4990,9 +4993,9 @@ case level of
    begin
 
    if fstype<>'' then
-      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+' ('+fstype+'), '+nicenumber(inttostr(sizetotal))+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel)
+      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+' ('+fstype+'), '+nicenumber(inttostr(sizetotal),0)+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel)
    else
-      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal))+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel);
+      Form_pea.LabelTools2.Caption:='Processing drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal),0)+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel);
    Application.ProcessMessages;
 
    tok:=false;
@@ -5010,7 +5013,7 @@ case level of
          else numread:=maxs-total;
          rfree:=diskfree(drivenumber);
          Form_pea.ProgressBar1.Position:=100-((rfree*100) div sizefree);
-         Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree))+' free, '+nicenumber(inttostr(rfree))+' remaining';
+         Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree),0)+' free, '+nicenumber(inttostr(rfree),0)+' remaining';
          tsout:=datetimetotimestamp(now);
          time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
          Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' elapsed';
@@ -5030,7 +5033,7 @@ case level of
       end;
    until tok=true;
    recoverfreespace(n);
-   Form_pea.LabelTools2.Caption:='Done drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal))+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel);
+   Form_pea.LabelTools2.Caption:='Done drive '+(paramstr(3))+', '+nicenumber(inttostr(sizetotal),0)+', pass '+inttostr(j+nlevel-nleveli)+' of '+inttostr(nlevel);
    end;
    end;
 end;
@@ -5042,13 +5045,13 @@ Form_report.StringGrid1.Cells[0,0]:='File';
 Form_report.StringGrid1.Cells[1,0]:='Result';
 Form_report.StringGrid1.AutosizeColumns;
 rfree:=diskfree(drivenumber);
-Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree))+' free when task started, '+nicenumber(inttostr(rfree))+' currently free, temporary work dir '+wrkdir;
+Form_pea.LabelTools3.Caption:=nicenumber(inttostr(sizefree),0)+' free when task started, '+nicenumber(inttostr(rfree),0)+' currently free, temporary work dir '+wrkdir;
 tsout:=datetimetotimestamp(now);
 time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if time>0 then
    begin
    speed:=(sizefree * 1000) div time;
-   Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed))+'/s';
+   Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed),0)+'/s';
    end
 else Form_pea.LabelTools4.Caption:='';
 Form_report.Label1.Caption:=wrktitle;
@@ -5518,7 +5521,7 @@ for k:=0 to nfound-1 do
    Form_report.StringGrid1.Cells[0,t]:=(exp_files[k]);
    Form_report.StringGrid1.Cells[1,t]:=extractfilename((exp_files[k]));
    Form_report.StringGrid1.Cells[2,t]:=extractfileext((exp_files[k]));
-   Form_report.StringGrid1.Cells[3,t]:=nicenumber(inttostr(f_size));
+   Form_report.StringGrid1.Cells[3,t]:=nicenumber(inttostr(f_size),0);
    Form_report.StringGrid1.Cells[4,t]:=inttostr(f_size);
    Form_report.StringGrid1.Cells[5,t]:=FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(exp_ftimes[k]));
    Form_report.StringGrid1.Cells[6,t]:=exp_fattr_dec[k];
@@ -5543,8 +5546,8 @@ for k:=0 to nfound-1 do
       begin closefile(f); end;
       continue;
       end;}
-   Form_pea.LabelTools2.Caption:='Checking ('+moded+') '+inttostr(paramcount-j+1)+' element(s), '+nicenumber(inttostr(tsize))+', '+nicenumber(inttostr(etsize))+' checked';
-   Form_pea.LabelTools3.Caption:='Processing item '+inttostr(t)+' of '+inttostr(ntfiles)+', '+nicenumber(inttostr(f_size))+' file';
+   Form_pea.LabelTools2.Caption:='Checking ('+moded+') '+inttostr(paramcount-j+1)+' element(s), '+nicenumber(inttostr(tsize),0)+', '+nicenumber(inttostr(etsize),0)+' checked';
+   Form_pea.LabelTools3.Caption:='Processing item '+inttostr(t)+' of '+inttostr(ntfiles)+', '+nicenumber(inttostr(f_size),0)+' file';
    Application.ProcessMessages;
    except
    Form_report.StringGrid1.Cells[0,t]:=(exp_files[k]);
@@ -5723,7 +5726,7 @@ for k:=0 to nfound-1 do
     nfiles:=0;
     ndirs:=0;
     rcountsize((exp_files[k]),'*',faAnyFile,true,nfiles,ndirs,ctsize);
-    Form_report.StringGrid1.Cells[28,t]:='('+inttostr(ctsize)+' B) '+(inttostr(ndirs-1))+' dir(s), '+(inttostr(nfiles))+' file(s), '+nicenumber(inttostr(ctsize));
+    Form_report.StringGrid1.Cells[28,t]:='('+inttostr(ctsize)+' B) '+(inttostr(ndirs-1))+' dir(s), '+(inttostr(nfiles))+' file(s), '+nicenumber(inttostr(ctsize),0);
     if tsize>0 then Form_report.StringGrid1.Cells[29,t]:=inttostr((100*ctsize) div tsize)+'%';
     if tsize>0 then Form_report.StringGrid1.Cells[30,t]:=inttostr(length(Form_report.StringGrid1.Cells[27,t]))+Form_report.StringGrid1.Cells[27,t];
     end;
@@ -6221,20 +6224,20 @@ else Form_report.StringGrid1.ColWidths[7]:=0;
 Form_report.StringGrid1.PopupMenu:=Form_report.PopupMenu1;
 Form_pea.ButtonToolsCancel.visible:=false;
 Form_pea.ProgressBar1.Position:=100;
-Form_pea.LabelTools2.Caption:='Checked ('+moded+') '+inttostr(paramcount-j+1)+' element(s), '+nicenumber(inttostr(tsize))+' ['+inttostr(tsize)+' B]';
+Form_pea.LabelTools2.Caption:='Checked ('+moded+') '+inttostr(paramcount-j+1)+' element(s), '+nicenumber(inttostr(tsize),0)+' ['+inttostr(tsize)+' B]';
 Form_pea.LabelTools3.Caption:='Processed '+inttostr(t)+' of '+inttostr(ntotalexp)+' items: '+inttostr(t-td-te)+' files, '+inttostr(td)+' directories, '+inttostr(te)+' errors';
 if t>1 then Form_pea.LabelTools4.Caption:=
-   'Larger '+nicenumber(inttostr(smax))+' smaller '+nicenumber(inttostr(smin))+
+   'Larger '+nicenumber(inttostr(smax),0)+' smaller '+nicenumber(inttostr(smin),0)+
    ', newer '+FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(dmax))+
    ' older '+FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(dmin))
-else Form_pea.LabelTools4.Caption:='Size '+nicenumber(inttostr(smax))+', date '+FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(dmax));
+else Form_pea.LabelTools4.Caption:='Size '+nicenumber(inttostr(smax),0)+', date '+FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(dmax));
 if etsize>0 then Form_pea.LabelTools4.Caption:=Form_pea.LabelTools4.Caption+', potential compression '+inttostr((etsize*100 - compsize) div etsize)+'%';
 tsout:=datetimetotimestamp(now);
 time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if time>0 then
    begin
    speed:=(tsize * 1000) div time;
-   Form_pea.LabelTools5.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed))+'/s';
+   Form_pea.LabelTools5.Caption:=nicetime(inttostr(time))+' total time @ '+nicenumber(inttostr(speed),0)+'/s';
    end
 else Form_pea.LabelTools5.Caption:='';
 Form_report.Label1.Caption:=Form_pea.LabelTools2.Caption;
@@ -6366,7 +6369,7 @@ Form_report.Label4.Caption:='';
 if upcase(mode)='INFO' then
    begin
    try Form_report.Label2.Caption:='Found: '+inttostr(nfound)+' objects (newer: '+datetimetostr(filedatetodatetime(dmax))+', older: '+datetimetostr(filedatetodatetime(dmin))+')'; except Form_report.Label2.Caption:='Found: '+inttostr(nfound)+' objects'; end;
-   Form_report.Label3.Caption:='Total size: '+nicenumber(inttostr(nsize))+' (larger: '+nicenumber(inttostr(smax))+', smaller: '+nicenumber(inttostr(smin))+');';
+   Form_report.Label3.Caption:='Total size: '+nicenumber(inttostr(nsize),0)+' (larger: '+nicenumber(inttostr(smax),0)+', smaller: '+nicenumber(inttostr(smin),0)+');';
    if nsize<>0 then Form_report.Label3.Caption:=Form_report.Label3.Caption+' potential compression: '+inttostr((nsize*100 - compsize) div nsize)+'%';//+nicenumber(inttostr(compsize div 100))+' ('+inttostr(compsize div nsize)+'%)';
    end;
 Form_report.Visible:=true;
@@ -6427,7 +6430,7 @@ if sizea>64*1024*1024 then
   MessageDlg('Hex preview is currently limited to small files, up to 64 MB', mtWarning, [mbOK], 0);
   exit;
   end;
-Form_pea.LabelTools3.Caption:='Size '+nicenumber(inttostr(sizea))+' ('+inttostr(sizea)+' B)';
+Form_pea.LabelTools3.Caption:='Size '+nicenumber(inttostr(sizea),0)+' ('+inttostr(sizea)+' B)';
 Form_report.StringGrid1.RowCount:=(sizea div 16) +2;
 total:=0;
 prows:=1;
@@ -7111,7 +7114,7 @@ if s<>'' then setlength(s,length(s)-1);
 theme_name:=extractfilename(s);
 //default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
 if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC') then thpath:=confpath
-else thpath:=resource_path;
+else thpath:=sharepath;
 end;
 
 procedure load_icons; //load icons from bitmaps
@@ -7161,10 +7164,10 @@ i16res:=(qscaleimages*16) div 100;
       end;
    if (graphicsfolder<>'themes'+directoryseparator+'nographic'+directoryseparator) and (graphicsfolder<>'themes'+directoryseparator+'ten-embedded'+directoryseparator) then
       begin
-      Binfo.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-info.png');
-      Blog.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-paste.png');
-      Bok.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-test.png');
-      Bcancel.LoadFromFile(thpath+graphicsfolder+'16'+directoryseparator+'16-stop.png');
+      getthemedbitmap(Binfo,thpath+graphicsfolder+'16'+directoryseparator+'16-info.png');
+      getthemedbitmap(Blog,thpath+graphicsfolder+'16'+directoryseparator+'16-paste.png');
+      getthemedbitmap(Bok,thpath+graphicsfolder+'16'+directoryseparator+'16-test.png');
+      getthemedbitmap(Bcancel,thpath+graphicsfolder+'16'+directoryseparator+'16-stop.png');
       end;
    setpbitmap(Bfd,i16res);
    setpbitmap(Bmail,i16res);
@@ -7229,8 +7232,22 @@ begin
 for i:=1 to nlines do readln(conf,dummy);
 end;
 
+procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs:integer);
+begin
+if length(s)<2 then
+   begin
+   usealtcolor:=strtoint(s);//use alternate colors in grids
+   highlighttabs:=1;//use alternate color for tabs
+   end
+else
+   begin
+   usealtcolor:=strtoint(s[1]);//use alternate colors in grids
+   highlighttabs:=strtoint(s[2]);//use alternate color for tabs
+   end;
+end;
+
 var
-   dummy:ansistring;
+   s,dummy:ansistring;
 begin
 fshown:=false;
 executable_path:=extractfilepath((paramstr(0)));
@@ -7239,7 +7256,7 @@ setcurrentdir(executable_path);
 {$IFDEF Darwin}
    resource_path:=executable_path+'../Resources/';
 {$ELSE}
-   resource_path:=executable_path;
+   resource_path:=executable_path+'res'+directoryseparator;
 {$ENDIF}
 SetFocusedControl(EditPW1);
 getdesk_env(desk_env,caption_build,delimiter);
@@ -7249,43 +7266,36 @@ Form_pea.Caption:='PEA '+P_RELEASE+' ('+PEAUTILS_RELEASE+') / specs '+inttostr(P
 if (PEA_FILEFORMAT_VER <> pea_utils.PEA_FILEFORMAT_VER) or (PEA_FILEFORMAT_REV <> pea_utils.PEA_FILEFORMAT_REV) then
    Form_pea.Caption:='PEA '+P_RELEASE+' ('+PEAUTILS_RELEASE+') / Warning: inconsistent internal specs level!';
 try
-   {PEA executable must be in the same path of altconf.txt file, otherwise or if
-   theming errors occurs, default theming values will be loaded}
-   assignfile(conf,resource_path+'altconf.txt'); //load alternative configuration path
-   filemode:=0;
-   reset(conf);
-   read_header(conf);
-   readln(conf,dummy);
-   readln(conf,confpath);
-   CloseFile(conf);
-   if (confpath='same') or (confpath='"same"') or (confpath='''same''') or (confpath=' ') or (confpath='') then confpath:=resource_path; //if confpath parameter is set to 'same' or empty use classic conf location (in res folder)
-   {$IFDEF MSWINDOWS}
-   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then
-   if wingetappdata(confpath)<>0 then confpath:=(GetEnvironmentVariable('APPDATA'))+'\PeaZip\'; //if wingetappdata fails use env variables
-   {$ELSE}
-   MenuItem1.visible:=false;
-   pmrunasadmin.visible:=false;
-   {$ENDIF}
-   {$IFDEF LINUX}
-   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
-   {$ENDIF}
-   {$IFDEF FREEBSD}
-   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
-   {$ENDIF}
-   {$IFDEF NETBSD}
-   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
-   {$ENDIF}
-   {$IFDEF DARWIN}
-   if (confpath='appdata') or (confpath='"appdata"') or (confpath='''appdata''') or (confpath='%appdata%') then confpath:=GetEnvironmentVariable('HOME')+'/.PeaZip/';
-   {$ENDIF}
-   if not(directoryexists(confpath)) then mkdir(confpath);
-   if (confpath[1]='.') and (confpath[2]='.') then confpath:='..'+directoryseparator+confpath; //relative path, needs to be adjusted since pea is in a subfolder of peazip path
-   confpath:=expandfilename(confpath);
-   if confpath[length(confpath)]<>directoryseparator then confpath:=confpath+directoryseparator;
-   if not(directoryexists(confpath)) then confpath:=resource_path; //if alternative configuration directory does not exist or is not accessible, use res path
+   if FileExists(resource_path+'portable') then //if file exists, assume portable version
+      begin
+      confpath:=resource_path+'conf'+directoryseparator; //configuration (portable)
+      binpath:=resource_path+'bin'+directoryseparator;//binaries, architecture dependant
+      sharepath:=resource_path+'share'+directoryseparator;//non binaries resources, non-architecture dependant
+      end
+   else
+      begin
+      binpath:=resource_path+'bin'+directoryseparator;//binaries, architecture dependant
+      sharepath:=resource_path+'share'+directoryseparator;//non binaries resources, non-architecture dependant
+      {$IFDEF MSWINDOWS}
+      if wingetappdata(confpath)<>0 then confpath:=(GetEnvironmentVariable('APPDATA'))+'\PeaZip\'; //if wingetappdata fails use env variables
+      {$ELSE}
+      s:=GetEnvironmentVariable('XDG_CONFIG_HOME');
+      if s<>'' then confpath:=s+'/peazip/'
+      else
+         begin
+         get_home_path(s);
+         confpath:=s+'/.config/peazip/';
+         end;
+      {$ENDIF}
+      if not(directoryexists(confpath)) then forcedirectories(confpath);
+      confpath:=ExpandFileName(confpath);
+      if confpath<>'' then
+         if confpath[length(confpath)]<>directoryseparator then confpath:=confpath+directoryseparator;
+      if not(directoryexists(confpath)) then confpath:=resource_path+'conf'+directoryseparator; //if alternative configuration directory does not exist or is not accessible, use res path
+      end;
    persistent_source:=confpath+'rnd';
    {$IFDEF DARWIN}
-   persistent_source:=resource_path+'rnd';
+   persistent_source:=confpath+'rnd';
    {$ENDIF}
    assignfile(conf,(confpath+'conf.txt'));
    filemode:=0;
@@ -7293,16 +7303,18 @@ try
    readln(conf,dummy);
    readln(conf,graphicsfolder);
    if graphicsfolder[1]='r' then graphicsfolder:='themes'+directoryseparator+DEFAULT_THEME+directoryseparator;
+   DoDirSeparators(graphicsfolder);
    readln(conf,dummy); opacity:=strtoint(dummy);
    readln(conf,color1);
    readln(conf,color2);
    readln(conf,color3);
    readln(conf,color4);
    readln(conf,color5);
-   readln(conf,dummy); gridaltcolor:=strtoint(dummy);
+   readln(conf,dummy); decodebintheming(dummy,gridaltcolor,highlighttabs);
    readln(conf,dummy); pzooming:=strtoint(dummy);
    readln(conf,dummy); pspacing:=strtoint(dummy);
-   readconf_relativeline(6,dummy); closepolicy:=strtoint(dummy);
+   readln(conf,dummy); temperature:=strtoint(dummy);
+   readconf_relativeline(5,dummy); closepolicy:=strtoint(dummy);
    CloseFile(conf);
    if opacity<0 then opacity:=0;
    if opacity>100 then opacity:=100;
@@ -7326,6 +7338,7 @@ except
    pzooming:=100;
    pspacing:=4;
    gridaltcolor:=0;
+   highlighttabs:=1;
 end;
 Unit_report.color1:=color1;
 Unit_report.color2:=color2;
@@ -7378,6 +7391,7 @@ tabheight:=36*qscale div 100;
 tabheightl:=48*qscale div 100;
 Form_report.PanelTitleRep.Height:=tabheight;
 Form_report.Panelsp0.Height:=tabheightl;
+PanelUtilsTitle.Height:=tabheight;
 Panelsp0.Height:=tabheightl;
 Panelsp1.Height:=tabheightl;
 Panelsp2.Height:=tabheightl;
@@ -7396,10 +7410,10 @@ if fshown=true then exit;
 fshown:=true;
 Form_pea.Visible:=false;
 set_items_height;
-load_icons;
 if color3='clForm' then color3:=ColorToString(PTACOL);
-getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3));
+getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3),temperature);
 img_utils.relwindowcolor:=stringtocolor(color2);
+load_icons;
 Form_pea.Color:=StringToColor(color2);
 Form_pea.LabelE1.Font.Color:=pgray;
 Form_pea.labelopenfile2.Font.Color:=ptextaccent;
@@ -7409,6 +7423,16 @@ Form_report.ShapeTitleREPb1.Brush.Color:=pvvlblue;
 Form_report.ShapeTitleREPb2.Brush.Color:=pvvlblue;
 Form_report.LabelSaveTxt.Font.Color:=ptextaccent;
 Form_report.LabelSaveTxt1.Font.Color:=ptextaccent;
+if highlighttabs=1 then
+   begin
+   PanelUtilsTitle.Color:=stringtocolor(collow);
+   Form_report.PanelTitleREP.Color:=stringtocolor(collow);
+   end
+else
+   begin
+   PanelUtilsTitle.Color:=stringtocolor(color2);
+   Form_report.PanelTitleREP.Color:=stringtocolor(color2);
+   end;
 if gridaltcolor=1 then
    begin
    Form_report.StringGrid1.AlternateColor:=stringtocolor(collow);

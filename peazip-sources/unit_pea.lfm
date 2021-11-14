@@ -572,338 +572,6 @@ object Form_pea: TForm_pea
       TabOrder = 6
     end
   end
-  object PanelUtils: TPanel
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
-    Left = 0
-    Height = 270
-    Top = 0
-    Width = 560
-    Anchors = [akTop, akLeft, akRight, akBottom]
-    BevelOuter = bvNone
-    ClientHeight = 270
-    ClientWidth = 560
-    ParentFont = False
-    TabOrder = 9
-    object LabelUtilsFun: TLabel
-      AnchorSideLeft.Control = PanelUtils
-      AnchorSideTop.Control = ComboBoxUtils
-      AnchorSideTop.Side = asrCenter
-      Left = 12
-      Height = 15
-      Hint = 'Type a memorizable passphrase, avoiding words either too common or too easy to guess.'#13#10'You should use mixed upcase and lowcase letters, numbers and special characters.'
-      Top = 11
-      Width = 47
-      BorderSpacing.Left = 12
-      Caption = 'Function'
-      ParentColor = False
-      ParentFont = False
-      Visible = False
-    end
-    object ButtonUtilsOK: TBitBtn
-      AnchorSideTop.Control = Panelsp0
-      AnchorSideTop.Side = asrCenter
-      AnchorSideRight.Control = ButtonUtilsCancel
-      AnchorSideBottom.Side = asrBottom
-      Left = 362
-      Height = 26
-      Top = 233
-      Width = 80
-      Anchors = [akTop, akRight]
-      AutoSize = True
-      BorderSpacing.Right = 6
-      Caption = '   OK   '
-      Glyph.Data = {
-        36030000424D3603000000000000360000002800000010000000100000000100
-        18000000000000030000D4000000D40000000000000000000000FFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFF17AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C25CA7917
-        AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFF17AF5C1BC87317BC681ECA7717AF5CFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C1BC67217BC6817BC6A17
-        C06B1BC87317AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        17AF5C17C16C14BB6416C06A16C16D17C36F17C77140C68017AF5CFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C14B25717B86428BA6C3AC37DFFFFFF40
-        CA8625C57723C1731BC57217AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2FBF74
-        2FBF7428C7783ECF87FFFFFFFFFFFFFFFFFF3ED18928C87B26C87926C57617AF
-        5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD28F4AD28DFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFF4BD3902FCA7E2FCA7E33C57A17AF5CFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD59335CC8336CC
-        8440C68017AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFF54D8973ECE893FD18B2ECA7CFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5CDB
-        9D40D38CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      }
-      OnClick = ButtonUtilsOKClick
-      ParentFont = False
-      TabOrder = 0
-    end
-    object ImageUtils: TImage
-      AnchorSideLeft.Control = PanelUtils
-      AnchorSideTop.Control = ButtonUtilsOK
-      AnchorSideTop.Side = asrCenter
-      Cursor = crHandPoint
-      Left = 12
-      Height = 16
-      Top = 238
-      Width = 16
-      AutoSize = True
-      BorderSpacing.Left = 12
-      OnClick = ImageUtilsClick
-      Transparent = True
-    end
-    object ComboBoxUtils: TComboBox
-      AnchorSideLeft.Control = PanelUtils
-      AnchorSideTop.Control = peautilsbtn
-      AnchorSideTop.Side = asrCenter
-      AnchorSideRight.Control = ButtonUtilsReset
-      Left = 12
-      Height = 23
-      Top = 7
-      Width = 438
-      Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 12
-      BorderSpacing.Right = 6
-      DropDownCount = 23
-      ItemHeight = 15
-      ItemIndex = 12
-      Items.Strings = (
-        'CRC32 checksum'
-        'CRC64 checksum'
-        'MD5 hash'
-        'Ripemd160 hash'
-        'SHA1 hash'
-        'Blake2s hash'
-        'SHA256 hash'
-        'SHA3_256 hash'
-        'Blake2b hash'
-        'SHA512 hash'
-        'SHA3_512 hash'
-        'Whirlpool hash'
-        'Checksum/Hash (common algorithms)'
-        'Checksum/Hash (all supported algorithms)'
-        'Analyze files and folders'
-        'Split file // select a single file'
-        'Join spanned file // select a single .001 file'
-        'Compare byte to byte // select one or two files'
-        'Hex preview // select a single file'
-        'Secure delete'
-        'Secure delete free space'
-        'Zero delete free space'
-        'Show environment strings'
-      )
-      OnChange = ComboBoxUtilsChange
-      ParentFont = False
-      Style = csDropDownList
-      TabOrder = 2
-      Text = 'Checksum/Hash (common algorithms)'
-    end
-    object LabelUtilsInput: TLabel
-      AnchorSideLeft.Control = ImageUtils
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Side = asrBottom
-      AnchorSideRight.Control = PanelUtils
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = ButtonUtilsOK
-      AnchorSideBottom.Side = asrCenter
-      Left = 34
-      Height = 15
-      Top = 238
-      Width = 126
-      Anchors = [akLeft, akBottom]
-      BorderSpacing.Left = 6
-      Caption = 'Drag here input files, or '
-      ParentColor = False
-      ParentFont = False
-    end
-    object ListMemo: TMemo
-      AnchorSideLeft.Control = PanelUtils
-      AnchorSideTop.Control = ComboBoxUtils
-      AnchorSideTop.Side = asrBottom
-      AnchorSideRight.Control = PanelUtils
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = Panelsp0
-      Left = 0
-      Height = 186
-      Top = 36
-      Width = 560
-      Anchors = [akTop, akLeft, akRight, akBottom]
-      BorderSpacing.Top = 6
-      ParentColor = True
-      ParentFont = False
-      ScrollBars = ssAutoHorizontal
-      TabOrder = 3
-      WordWrap = False
-    end
-    object ComboBoxUnits: TComboBox
-      AnchorSideLeft.Control = ComboBoxUtils
-      AnchorSideTop.Control = ComboBoxUtils
-      AnchorSideTop.Side = asrBottom
-      Left = 12
-      Height = 23
-      Top = 36
-      Width = 100
-      BorderSpacing.Top = 6
-      DropDownCount = 26
-      ItemHeight = 15
-      ItemIndex = 0
-      Items.Strings = (
-        'Units'
-      )
-      ParentFont = False
-      Style = csDropDownList
-      TabOrder = 4
-      Text = 'Units'
-    end
-    object ButtonUtilsCancel: TBitBtn
-      AnchorSideTop.Control = Panelsp0
-      AnchorSideTop.Side = asrCenter
-      AnchorSideRight.Control = PanelUtils
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Side = asrBottom
-      Left = 448
-      Height = 26
-      Top = 233
-      Width = 100
-      Anchors = [akTop, akRight]
-      AutoSize = True
-      BorderSpacing.Right = 12
-      Caption = '   Cancel   '
-      Glyph.Data = {
-        36030000424D3603000000000000360000002800000010000000100000000100
-        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
-        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
-        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
-        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
-        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
-        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
-        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
-        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
-        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
-        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
-        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      }
-      OnClick = ButtonUtilsCancelClick
-      ParentFont = False
-      TabOrder = 1
-    end
-    object labelopenfile2: TLabel
-      AnchorSideLeft.Control = LabelUtilsInput
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = LabelUtilsInput
-      AnchorSideTop.Side = asrCenter
-      Cursor = crHandPoint
-      Left = 160
-      Height = 15
-      Top = 238
-      Width = 54
-      Caption = 'select files'
-      Font.Color = 13391121
-      ParentColor = False
-      ParentFont = False
-      OnClick = labelopenfile2Click
-    end
-    object labelopenfile3: TLabel
-      AnchorSideLeft.Control = labelopenfile2
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = LabelUtilsInput
-      AnchorSideTop.Side = asrCenter
-      Left = 214
-      Height = 15
-      Top = 238
-      Width = 9
-      Caption = ' | '
-      ParentColor = False
-      ParentFont = False
-    end
-    object labelopenfile0: TLabel
-      AnchorSideLeft.Control = labelopenfile3
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = LabelUtilsInput
-      AnchorSideTop.Side = asrCenter
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Side = asrBottom
-      Cursor = crHandPoint
-      Left = 223
-      Height = 15
-      Top = 238
-      Width = 35
-      BorderSpacing.Bottom = 6
-      Caption = 'Search'
-      Font.Color = 13391121
-      ParentColor = False
-      ParentFont = False
-      OnClick = labelopenfile0Click
-    end
-    object peautilsbtn: TSpeedButton
-      AnchorSideTop.Control = PanelUtils
-      AnchorSideRight.Control = PanelUtils
-      AnchorSideRight.Side = asrBottom
-      Left = 530
-      Height = 24
-      Top = 6
-      Width = 24
-      Anchors = [akTop, akRight]
-      BorderSpacing.Top = 6
-      BorderSpacing.Right = 6
-      Flat = True
-      OnClick = peautilsbtnClick
-      ParentFont = False
-    end
-    object ButtonUtilsReset: TSpeedButton
-      AnchorSideTop.Control = ComboBoxUtils
-      AnchorSideRight.Control = peautilsbtn
-      AnchorSideBottom.Control = ComboBoxUtils
-      AnchorSideBottom.Side = asrBottom
-      Left = 456
-      Height = 23
-      Top = 7
-      Width = 50
-      Anchors = [akTop, akRight, akBottom]
-      AutoSize = True
-      BorderSpacing.Right = 24
-      Caption = 'Reset list'
-      Flat = True
-      OnClick = ButtonUtilsResetClick
-      ParentFont = False
-    end
-    object Panelsp0: TPanel
-      AnchorSideLeft.Control = PanelUtils
-      AnchorSideBottom.Control = PanelUtils
-      AnchorSideBottom.Side = asrBottom
-      Left = 0
-      Height = 48
-      Top = 222
-      Width = 1
-      Anchors = [akLeft, akBottom]
-      BevelOuter = bvNone
-      ParentFont = False
-      TabOrder = 5
-    end
-  end
   object PanelEncrypt1: TPanel
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
@@ -1271,6 +939,348 @@ object Form_pea: TForm_pea
       OnClick = ButtonPeaExitClick
       ParentFont = False
       TabOrder = 0
+    end
+  end
+  object PanelUtils: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 270
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 270
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 9
+    object LabelUtilsFun: TLabel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 15
+      Hint = 'Type a memorizable passphrase, avoiding words either too common or too easy to guess.'#13#10'You should use mixed upcase and lowcase letters, numbers and special characters.'
+      Top = 11
+      Width = 47
+      BorderSpacing.Left = 12
+      Caption = 'Function'
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object ButtonUtilsOK: TBitBtn
+      AnchorSideTop.Control = Panelsp0
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = ButtonUtilsCancel
+      AnchorSideBottom.Side = asrBottom
+      Left = 362
+      Height = 26
+      Top = 233
+      Width = 80
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      Caption = '   OK   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000D4000000D40000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF17AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C25CA7917
+        AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF17AF5C1BC87317BC681ECA7717AF5CFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C1BC67217BC6817BC6A17
+        C06B1BC87317AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        17AF5C17C16C14BB6416C06A16C16D17C36F17C77140C68017AF5CFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C14B25717B86428BA6C3AC37DFFFFFF40
+        CA8625C57723C1731BC57217AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2FBF74
+        2FBF7428C7783ECF87FFFFFFFFFFFFFFFFFF3ED18928C87B26C87926C57617AF
+        5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD28F4AD28DFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFF4BD3902FCA7E2FCA7E33C57A17AF5CFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD59335CC8336CC
+        8440C68017AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF54D8973ECE893FD18B2ECA7CFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5CDB
+        9D40D38CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonUtilsOKClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ImageUtils: TImage
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = ButtonUtilsOK
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 12
+      Height = 16
+      Top = 238
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 12
+      OnClick = ImageUtilsClick
+      Transparent = True
+    end
+    object LabelUtilsInput: TLabel
+      AnchorSideLeft.Control = ImageUtils
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = ButtonUtilsOK
+      AnchorSideBottom.Side = asrCenter
+      Left = 34
+      Height = 15
+      Top = 238
+      Width = 126
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 6
+      Caption = 'Drag here input files, or '
+      ParentColor = False
+      ParentFont = False
+    end
+    object ListMemo: TMemo
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = PanelUtilsTitle
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp0
+      Left = 0
+      Height = 186
+      Top = 36
+      Width = 560
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ParentColor = True
+      ParentFont = False
+      ScrollBars = ssAutoHorizontal
+      TabOrder = 2
+      WordWrap = False
+    end
+    object ComboBoxUnits: TComboBox
+      AnchorSideTop.Control = PanelUtilsTitle
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 48
+      Width = 100
+      BorderSpacing.Top = 12
+      DropDownCount = 26
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Units'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 3
+      Text = 'Units'
+    end
+    object ButtonUtilsCancel: TBitBtn
+      AnchorSideTop.Control = Panelsp0
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 448
+      Height = 26
+      Top = 233
+      Width = 100
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonUtilsCancelClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object labelopenfile2: TLabel
+      AnchorSideLeft.Control = LabelUtilsInput
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 160
+      Height = 15
+      Top = 238
+      Width = 54
+      Caption = 'select files'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = labelopenfile2Click
+    end
+    object labelopenfile3: TLabel
+      AnchorSideLeft.Control = labelopenfile2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      Left = 214
+      Height = 15
+      Top = 238
+      Width = 9
+      Caption = ' | '
+      ParentColor = False
+      ParentFont = False
+    end
+    object labelopenfile0: TLabel
+      AnchorSideLeft.Control = labelopenfile3
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 223
+      Height = 15
+      Top = 238
+      Width = 35
+      BorderSpacing.Bottom = 6
+      Caption = 'Search'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = labelopenfile0Click
+    end
+    object Panelsp0: TPanel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideBottom.Control = PanelUtils
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 48
+      Top = 222
+      Width = 1
+      Anchors = [akLeft, akBottom]
+      BevelOuter = bvNone
+      ParentFont = False
+      TabOrder = 4
+    end
+    object PanelUtilsTitle: TPanel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = PanelUtils
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      Left = 0
+      Height = 36
+      Top = 0
+      Width = 560
+      Anchors = [akTop, akLeft, akRight]
+      BevelOuter = bvNone
+      ClientHeight = 36
+      ClientWidth = 560
+      TabOrder = 5
+      object ComboBoxUtils: TComboBox
+        AnchorSideLeft.Control = PanelUtilsTitle
+        AnchorSideTop.Control = PanelUtilsTitle
+        AnchorSideTop.Side = asrCenter
+        Left = 12
+        Height = 23
+        Top = 7
+        Width = 400
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 6
+        DropDownCount = 23
+        ItemHeight = 15
+        ItemIndex = 12
+        Items.Strings = (
+          'CRC32 checksum'
+          'CRC64 checksum'
+          'MD5 hash'
+          'Ripemd160 hash'
+          'SHA1 hash'
+          'Blake2s hash'
+          'SHA256 hash'
+          'SHA3_256 hash'
+          'Blake2b hash'
+          'SHA512 hash'
+          'SHA3_512 hash'
+          'Whirlpool hash'
+          'Checksum/Hash (common algorithms)'
+          'Checksum/Hash (all supported algorithms)'
+          'Analyze files and folders'
+          'Split file // select a single file'
+          'Join spanned file // select a single .001 file'
+          'Compare byte to byte // select one or two files'
+          'Hex preview // select a single file'
+          'Secure delete'
+          'Secure delete free space'
+          'Zero delete free space'
+          'Show environment strings'
+        )
+        OnChange = ComboBoxUtilsChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'Checksum/Hash (common algorithms)'
+      end
+      object ButtonUtilsReset: TSpeedButton
+        AnchorSideTop.Control = PanelUtilsTitle
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = peautilsbtn
+        AnchorSideBottom.Side = asrBottom
+        Left = 456
+        Height = 19
+        Top = 9
+        Width = 50
+        Anchors = [akTop, akRight]
+        AutoSize = True
+        BorderSpacing.Right = 24
+        Caption = 'Reset list'
+        Flat = True
+        OnClick = ButtonUtilsResetClick
+        ParentFont = False
+      end
+      object peautilsbtn: TSpeedButton
+        AnchorSideTop.Control = PanelUtils
+        AnchorSideRight.Control = PanelUtilsTitle
+        AnchorSideRight.Side = asrBottom
+        Left = 530
+        Height = 24
+        Top = 6
+        Width = 24
+        Anchors = [akTop, akRight]
+        BorderSpacing.Top = 6
+        BorderSpacing.Right = 6
+        Flat = True
+        OnClick = peautilsbtnClick
+        ParentFont = False
+      end
     end
   end
   object PanelPW1: TPanel

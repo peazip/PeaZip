@@ -148,7 +148,8 @@ unit Unit_gwrap;
  1.07     20210305  G.Tani      Supports Windows 7+ progress bar in application's status bar icon
  1.08     20210706  G.Tani      Fixed window stealing focus at each new task, occurring on some Linux machines
                                 Optimized speed for operations on archives containing large number of files
- 1.09     20210919  G.Tani      Merged patches for Darwin support
+ 1.09     20210923  G.Tani      Merged patches for Darwin support
+                                Optimized memory usage for progress and report streams
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -347,18 +348,18 @@ const
 var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
-  pprogbar,pprogbarprev,perrors,ipercp,remtime:integer;
+  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature:integer;
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore:boolean;
   pautoclose:byte;
   Barchive,Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
   Bpriority1,Bpriority2,Bpriority3,Bpriority4,
   Bsuccess,Berror: TBitmap;
-  cl,cl1,outpath,executable_path,resource_path,graphicsfolder,dummy,Color1,Color2,Color3,
+  cl,cl1,outpath,executable_path,resource_path,binpath,sharepath,graphicsfolder,dummy,Color1,Color2,Color3,
   Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver:ansistring;
   modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,
   ws_gw_height,ws_gw_width,pbarh,pbarhsmall:integer;
   insize,progress,pinsize:qword;
-  opacity,desk_env,pcount,optype:byte;
+  opacity,desk_env,pcount,optype,filesizebase:byte;
   iperc:integer;
   T,conf:text;
   f:file of byte;
@@ -710,7 +711,7 @@ var
 begin
 load_texts:=-1;
 try
-   assignfile(t,(resource_path+'lang'+Directoryseparator+lang));
+   assignfile(t,(sharepath+'lang'+Directoryseparator+lang));
    filemode:=0;
    reset(t);
    read_header(t);
@@ -817,7 +818,7 @@ if s<>'' then setlength(s,length(s)-1);
 theme_name:=extractfilename(s);
 //default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
 if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC') then thpath:=confpath
-else thpath:=resource_path;
+else thpath:=sharepath;
 end;
 
 procedure load_icons;
@@ -942,11 +943,11 @@ if umode=0 then
             begin
             Form_gwrap.Labelo.Visible:=true;
             Form_gwrap.LabelInfo2.Visible:=true;
-            if (percentout>0) then Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize))+' ('+inttostr(percentout div 10000)+'%)'
-            else Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize));
+            if (percentout>0) then Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase)+' ('+inttostr(percentout div 10000)+'%)'
+            else Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
             if tdiff<>0 then speed:=outsize div tdiff * 1000;
             if speed>0 then
-               Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed))+'/s';
+               Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed),filesizebase)+'/s';
             end
          else
             begin
@@ -1012,7 +1013,7 @@ else
                begin
                Form_gwrap.Labelo.Visible:=true;
                Form_gwrap.LabelInfo2.Visible:=true;
-               Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize));
+               Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
 
                if pfun='7Z' then
                   if (insize>0) and (iperc>0) then
@@ -1023,7 +1024,7 @@ else
 
                if tdiff<>0 then speed:=outsize div tdiff * 1000;
                if speed>0 then
-                  Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed))+'/s';
+                  Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed),filesizebase)+'/s';
                end
             else
                begin
@@ -1295,7 +1296,7 @@ for i:=l downto 1 do
        begin
        try
        iperc:=strtoint(copy(stri1,i-3,3));
-       if (iperc<=100) and (iperc>=previperc) then break;
+       if (iperc<100) and (iperc>=previperc) then break;
        except
        end;
        end;
@@ -1340,7 +1341,7 @@ if length(dummystr)<2 then break;
 if dummystr[1]=' ' then dummystr:=copy(dummystr,2,length(dummystr)-1)
 else stopinfo:=true;
 end;
-s1:=txt_5_3_os+' '+nicenumber(copy(dummystr,1,pos(' ',dummystr)-1))+char($0A)+char($0D);
+s1:=txt_5_3_os+' '+nicenumber(copy(dummystr,1,pos(' ',dummystr)-1),filesizebase)+char($0A)+char($0D);
 osize:=strtoqword(copy(dummystr,1,pos(' ',dummystr)-1));
 dummystr:=copy(dummystr,pos(' ',dummystr),length(dummystr)-pos(' ',dummystr)+1);
 //packed size
@@ -1351,7 +1352,7 @@ if length(dummystr)<2 then break;
 if dummystr[1]=' ' then dummystr:=copy(dummystr,2,length(dummystr)-1)
 else stopinfo:=true;
 end;
-s1:=s1+txt_5_3_ps+' '+nicenumber(copy(dummystr,1,pos(' ',dummystr)-1));
+s1:=s1+txt_5_3_ps+' '+nicenumber(copy(dummystr,1,pos(' ',dummystr)-1),filesizebase);
 psize:=strtoqword(copy(dummystr,1,pos(' ',dummystr)-1));
 if osize<>0 then
    begin
@@ -1507,9 +1508,9 @@ if cl='' then
 Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
 clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1);
 if insize>0 then
-   if (pinsize>0) and (pinsize<>insize) then Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize))+' / '+nicenumber(inttostr(insize))
-   else Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(insize))
-else Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize));
+   if (pinsize>0) and (pinsize<>insize) then Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize),filesizebase)+' / '+nicenumber(inttostr(insize),filesizebase)
+   else Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(insize),filesizebase)
+else Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize),filesizebase);
 set_form_title;
 if Form_gwrap.Visible=true then Application.ProcessMessages;
 if runelevated=false then
@@ -1521,6 +1522,7 @@ if runelevated=false then
    M.setsize(16*1024*1024);
    M2 := TMemoryStream.Create;
    BytesRead2 := 0;
+   M2.setsize(128);
    if modeofuse=20 then
    else
       {$IFDEF MSWINDOWS}
@@ -1640,8 +1642,14 @@ else
       if i > 0 then Inc(BytesRead, i);
       if P.Stderr.NumBytesAvailable>0 then
          begin
-         M2.SetSize(BytesRead2 + max_l);
-         j := P.Stderr.Read((M2.Memory + BytesRead2)^, max_l);
+         if (pfun='UN7Z') or (pfun='7Z') then
+            M2.SetSize(P.Stderr.NumBytesAvailable)
+         else
+            M2.SetSize(BytesRead2 + max_l);
+         if (pfun='UN7Z') or (pfun='7Z') then
+            j := P.Stderr.Read((M2.Memory)^, P.Stderr.NumBytesAvailable)
+         else
+            j := P.Stderr.Read((M2.Memory + BytesRead2)^, max_l);
          if j>0 then
             if (pfun='UN7Z') or (pfun='7Z') then
                begin
@@ -1656,10 +1664,10 @@ else
          end
       else j:=0;
       if j > 0 then Inc(BytesRead2, j);
-      if (i=0) and (j=0) then Sleep(10);
+      if (i=0) and (j=0) then sleep(100);
       end;
    end;
-   M2.Destroy;
+   M2.Free;
    end;
 Form_gwrap.Timer2.enabled:=false;
 Form_gwrap.l5.caption:='100% ';
@@ -1684,20 +1692,23 @@ if runelevated=false then
       else
          begin
             repeat
-                M.SetSize(BytesRead + max_l);
-                i := P.Output.Read((M.Memory + BytesRead)^, max_l);
-                if i>0 then
-                   begin
-                   astri:=bstri;
-                   SetString(stri, M.Memory, M.Size);
-                   bstri:=stri;
-                   if astri<>bstri then
-                      begin
-                      updatereport(M,stri);
-                      end;
-                   end;
-                if i > 0 then Inc(BytesRead, i)
-                else Sleep(100);
+               if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
+               if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
+               if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
+               if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + max_l);
+               i := P.Output.Read((M.Memory + BytesRead)^, max_l);
+               if i>0 then
+                  begin
+                  astri:=bstri;
+                  SetString(stri, M.Memory, M.Size);
+                  bstri:=stri;
+                  if astri<>bstri then
+                     begin
+                     updatereport(M,stri);
+                     end;
+                  end;
+               if i > 0 then Inc(BytesRead, i)
+               else Sleep(100);
             until i <= 0;
             M.SetSize(BytesRead);
             exit_code:=P.ExitStatus;
@@ -1771,10 +1782,10 @@ if (outsize>0) then
       begin
       cratio:=outsize * 100;
       cratio:=cratio div insize;
-      Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize))+' ('+inttostr(cratio)+'%)';
+      Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase)+' ('+inttostr(cratio)+'%)';
       end
    else
-      Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize));
+      Form_gwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
 Form_gwrap.Imagestatus.Picture.Bitmap:=Binfo;
 //speed
 speed1:=0;
@@ -1782,8 +1793,8 @@ speed2:=0;
 if tdiff<>0 then speed1:=pinsize div tdiff * 1000;
 if tdiff<>0 then speed2:=outsize div tdiff * 1000;
 Form_gwrap.LabelInfo3.Caption:=nicetime(inttostr(tdiff));
-if speed1>0 then Form_gwrap.LabelInfo1.Caption:=Form_gwrap.LabelInfo1.Caption+' @ '+nicenumber(inttostr(speed1))+'/s';
-if speed2>0 then Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed2))+'/s';
+if speed1>0 then Form_gwrap.LabelInfo1.Caption:=Form_gwrap.LabelInfo1.Caption+' @ '+nicenumber(inttostr(speed1),filesizebase)+'/s';
+if speed2>0 then Form_gwrap.LabelInfo2.Caption:=Form_gwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed2),filesizebase)+'/s';
 if modeofuse>=20 then
    begin
    Form_gwrap.StringGrid1.Rowcount:=5;
@@ -2035,7 +2046,7 @@ begin
 apply_theme;
 load_icons;
 if color3='clForm' then color3:=ColorToString(PTACOL);
-getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3));
+getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature);
 Form_gwrap.ShapeTitleb1.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb2.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb3.Brush.Color:=StringToColor(COLLOW);
@@ -2051,17 +2062,8 @@ procedure TForm_gwrap.FormShow(Sender: TObject);
 begin
 if pldesigned=true then exit;
 getdesk_env(desk_env,caption_build,delimiter);
-//executable_path is passed from unit peach prepare_Form_gwrap;
-{executable_path:=extractfilepath((paramstr(0))); //valorize application's paths
-if ((executable_path='') or (executable_path='..\')) then executable_path:=extractfilepath((paramstr(0)));
-if executable_path<>'' then
-   if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;}
+//executable_path, binpath, confpath, sharepath are passed from unit peach prepare_Form_gwrap;
 setcurrentdir(executable_path);
-{$IFDEF DARWIN}
-resource_path:=executable_path+'../Resources/';
-{$ELSE}
-resource_path:=executable_path+'res'+DirectorySeparator;
-{$ENDIF}
 peazippath:=executable_path;
 {$IFDEF MSWINDOWS}getwinenv(wincomspec,winver);{$ENDIF}
 texts(lang_file);
@@ -2326,7 +2328,7 @@ begin
 if winver='nt6+' then
    shellexecutew(Form_gwrap.handle, PWideChar('find'), PWideChar(''), PWideChar(''), PWideChar (''), SW_SHOWNORMAL)
 else
-   cp_open(resource_path+'empty.fnd',desk_env);
+   cp_open(sharepath+'empty.fnd',desk_env);
 {$ENDIF}
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}

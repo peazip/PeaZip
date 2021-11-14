@@ -1,8 +1,9 @@
-﻿Notes to 8.2.0 release
+﻿Notes to 8.3.0 release
+
+Textes moved to (peazip)/res/share/lang subfolder
 
 Pre-existing text string modified:
-txt_7_1_new: Extract all here (in new folder)
-txt_7_1_smart: Extract all here (smart new folder)
+txt_3_0_resettmp: Reset temporary work files
 
 
 = GENERAL NOTES =
@@ -17,7 +18,7 @@ Instead, if you are interested in translating Windows context menu entries (for 
 
 Language files are plain UTF-8 with BOM encoded text files which can be freely edited using any suitable text editor.
 To create a new translation file you can:
-1 - make a copy of default.txt (in PeaZip's path in /res/lang subfolder) or of any other language file if you prefer starting from a language other than English;
+1 - make a copy of default.txt (in PeaZip's path in /res/share/lang subfolder) or of any other language file if you prefer starting from a language other than English;
 2 - edit lines 2 to 6 of the document to enter language name (both in English and in the original language for better readability), PeaZip's version (major.minor) the translation is aimed to, translator's and last last revisor's name and last revision date;
 3 - translate the text after the "variable_name: " part (don't add, move or delete lines, don't change the "variable_name: " part);
 4 - optionally, translate the mini-tutorial after "=== about text group ===" line (free editing, it is loaded and displayed "as is" as application's mini-tutorial); it is very important to improve usability of the program for non-English speaking users.

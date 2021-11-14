@@ -120,6 +120,7 @@ unit list_utils;
                                 Reorganized codes in testext function for containers: 100..199 package formats 200..499 filesystems and others
  0.59     20210727  G.Tani      Added CPU architecture, and widget set strings to info about build
  0.60     20210817  G.Tani      Added support for .lz file extension, and for .apkm, .apks, .aab packages: 225 extensions supported
+ 0.61     20210925  G.Tani      Nicenumber can now display various types of multiple-bytes fomats for file sizes (binary, decimanl, none)
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -172,7 +173,7 @@ const
 function nicetime(s: ansistring): ansistring;
 
 //represent a numeric string with size suffixes
-function nicenumber(s: ansistring): ansistring;
+function nicenumber(s: ansistring; const b: integer): ansistring;
 
 //return the name of first object found in directory, check if dir contains 1 object or more (break if contains more than 1 file, nfiles=2)
 function checksingle(dir, mask: ansistring;
@@ -483,47 +484,56 @@ begin
 end;
 
 //represent a numeric string with size suffixes
-function nicenumber(s: ansistring): ansistring;
+function nicenumber(s: ansistring; const b: integer): ansistring; //b is the base: 0 binary (multiply by 1024), 1 decimal (multiply by 1000), otherwise do not convert byte size
 var
-  fs, ints, decs: qword;
+  fs, ints, decs, bs: qword;
   s1: ansistring;
 begin
-  try
+case b of
+   0:bs:=1024;
+   1:bs:=1000;
+   else //NO
+      begin
+      Result := s;
+      exit;
+      end;
+end;
+try
   fs := strtoqword(s);
-  if fs < 1024 then
+  if fs < bs then
     s1 := s + ' B'
   else
-  if fs < 1024 * 1024 then
+  if fs < bs * bs then
   begin
-    ints := fs div 1024;
-    decs := ((fs * 10) div 1024) - ints * 10;
+    ints := fs div bs;
+    decs := ((fs * 10) div bs) - ints * 10;
     s1 := IntToStr(ints) + '.' + IntToStr(decs) + ' KB';
   end
   else
-  if fs < 1024 * 1024 * 1024 then
+  if fs < bs * bs * bs then
   begin
-    ints := fs div (1024 * 1024);
-    decs := ((fs * 10) div (1024 * 1024)) - ints * 10;
+    ints := fs div (bs * bs);
+    decs := ((fs * 10) div (bs * bs)) - ints * 10;
     s1 := IntToStr(ints) + '.' + IntToStr(decs) + ' MB';
   end
   else
-  if fs < 1024 * 1024 * 1024 * 1024 then
+  if fs < bs * bs * bs * bs then
   begin
-    ints := fs div (1024 * 1024 * 1024);
-    decs := ((fs * 10) div (1024 * 1024 * 1024)) - ints * 10;
+    ints := fs div (bs * bs * bs);
+    decs := ((fs * 10) div (bs * bs * bs)) - ints * 10;
     s1 := IntToStr(ints) + '.' + IntToStr(decs) + ' GB';
   end
   else
   begin
-    ints := fs div (1024 * 1024 * 1024 * 1024);
-    decs := ((fs * 10) div (1024 * 1024 * 1024 * 1024)) - ints * 10;
+    ints := fs div (bs * bs * bs * bs);
+    decs := ((fs * 10) div (bs * bs * bs * bs)) - ints * 10;
     s1 := IntToStr(ints) + '.' + IntToStr(decs) + ' TB';
   end;
   Result := s1;
-  except
-    Result := s;
-    exit;
-  end;
+except
+   Result := s;
+   exit;
+end;
 end;
 
 //optionally recursive function used internally to list files (optionally including dirs) and object details

@@ -28,6 +28,7 @@ unit img_utils;
  0.17     20181206  G.Tani      Can now convert images to ico format
  0.18     20190821  G.Tani      New resize_bitmap function
  0.19     20191125  G.Tani      Improved and extended functions related to load and resize transparent bitmaps
+ 0.20     20211012  G.Tani      Added temperature parameter to modpropcolor to create warmer or colder shades of color
 
 (C) Copyright 2010 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -80,7 +81,7 @@ function save_picturetoimagefile(var apicture:Tpicture; s:ansistring):integer;
 function saveconvert_picturetoimagefile(var apicture:Tpicture; s,convext:ansistring; convopt:integer):integer;
 //GUI theming function: create a darker shade of specified color
 function modcolor(col:TColor; dr,dg,db:Single):TColor; //change each channel multiplying it to an independent modification parameter, until saturation of the channel (255)
-function modpropcolor(col:TColor; prop:integer):TColor; //change all channels of a color porportionally, creating lighter or darker shades of same color
+function modpropcolor(col:TColor; prop,temperature:integer):TColor; //change all channels of a color porportionally, creating lighter or darker, colder or warmer shades of same color
 function evalcolor(col:TColor):byte;//evaluate darkness of a color combining rgb channels 0 darkest 255 lightest
 
 const
@@ -370,14 +371,16 @@ bbitmap.width:=wsize;
 bbitmap.height:=hsize;
 {$IFDEF MSWINDOWS}
 bbitmap.Transparent:=true;
+bbitmap.TransparentColor:=relwindowcolor;
 bbitmap.canvas.Brush.Color:=relwindowcolor;
-bbitmap.canvas.Pen.Color:=clnone;
+bbitmap.canvas.Pen.Color:=relwindowcolor;
 bbitmap.canvas.Rectangle(0,0,wsize,hsize);
 {$ELSE}
 {$IFDEF LCLGTK2}
 bbitmap.Transparent:=true;
+bbitmap.TransparentColor:=relwindowcolor;
 bbitmap.canvas.Brush.Color:=relwindowcolor;
-bbitmap.canvas.Pen.Color:=clnone;
+bbitmap.canvas.Pen.Color:=relwindowcolor;
 bbitmap.canvas.Rectangle(0,0,wsize,hsize);
 {$ENDIF}
 {$ENDIF}
@@ -582,10 +585,11 @@ begin
   result := DWORD(((DWORD(BYTE(r))) or ((DWORD(WORD(g))) shl 8)) or ((DWORD(BYTE(b))) shl 16));
 end;
 
-function modpropcolor(col:TColor; prop:integer):TColor;
+function modpropcolor(col:TColor; prop,temperature:integer):TColor;
 var
   r, g, b: Byte;
-  rr,gg,bb:integer;
+  rint,gint,bint:integer;
+  rr,gg,bb,rprop,gprop,bprop:integer;
 begin
   col := ColorToRGB(col);
   r := BYTE(col);
@@ -593,21 +597,37 @@ begin
   b := BYTE(col shr 16);
   if prop<-255 then prop:=-255;
   if prop>255 then prop:=255;
+  rprop:=prop+temperature;
+  gprop:=prop;
+  bprop:=prop-temperature;
+  if rprop<-255 then rprop:=-255;
+  if rprop>255 then rprop:=255;
+  if bprop<-255 then bprop:=-255;
+  if bprop>255 then bprop:=255;
   if prop>=0 then
      begin
-     rr := (255-r) * prop div 255;
-     gg := (255-g) * prop div 255;
-     bb := (255-b) * prop div 255;
+     rr := (255-r) * rprop div 255;
+     gg := (255-g) * gprop div 255;
+     bb := (255-b) * bprop div 255;
      end
   else
      begin
-     rr := (r) * prop div 255;
-     gg := (g) * prop div 255;
-     bb := (b) * prop div 255;
+     rr := (r) * rprop div 255;
+     gg := (g) * gprop div 255;
+     bb := (b) * bprop div 255;
      end;
-  r:=r+rr;
-  g:=g+gg;
-  b:=b+bb;
+  rint:=r+rr;
+  gint:=g+gg;
+  bint:=b+bb;
+  if rint<0 then rint:=0;
+  if rint>255 then rint:=255;
+  if gint<0 then gint:=0;
+  if gint>255 then gint:=255;
+  if bint<0 then bint:=0;
+  if bint>255 then bint:=255;
+  r:=rint;
+  g:=gint;
+  b:=bint;
   result := DWORD(((DWORD(BYTE(r))) or ((DWORD(WORD(g))) shl 8)) or ((DWORD(BYTE(b))) shl 16));
 end;
 

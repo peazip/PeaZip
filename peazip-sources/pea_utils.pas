@@ -136,7 +136,7 @@ plblue,pblue,pvlblue,pvvvlblue,pvvlblue,pgray,psilver,ptextaccent:tcolor;
 colhigh,colmid,collow,colbtnhigh:string;
 
 // get program's colors
-procedure getpcolors(basappcol,baseformcol,baselinkcol:TColor);
+procedure getpcolors(basappcol,baseformcol,baselinkcol,temperature:TColor);
 
 {
 functions for generating PEA version1 revision1 fields
@@ -462,35 +462,35 @@ function prepend_keyfile(var pw:ansistring; keyfilename:ansistring):integer;
 
 implementation
 
-procedure getpcolors(basappcol,baseformcol,baselinkcol:TColor);
+procedure getpcolors(basappcol,baseformcol,baselinkcol,temperature:TColor);
 begin
 plblue:=basappcol;
 ptextaccent:=baselinkcol;
 if evalcolor(baseformcol)>128 then
    begin
-   pblue:=modpropcolor(basappcol,-60);
-   pvlblue:=modpropcolor(basappcol,80);
-   pvvlblue:=modpropcolor(basappcol,160);
-   pvvvlblue:=modpropcolor(basappcol,200);
-   colhigh:=colortostring(modpropcolor(baseformcol,-28));
-   colmid:=colortostring(modpropcolor(baseformcol,-20));
-   collow:=colortostring(modpropcolor(baseformcol,-12));
-   colbtnhigh:=colortostring(modpropcolor(baseformcol,-32));
-   pgray:=modpropcolor(baseformcol,-128);
-   psilver:=modpropcolor(baseformcol,-64);
+   pblue:=modpropcolor(basappcol,-60,0);
+   pvlblue:=modpropcolor(basappcol,80,0);
+   pvvlblue:=modpropcolor(basappcol,160,0);
+   pvvvlblue:=modpropcolor(basappcol,200,0);
+   colhigh:=colortostring(modpropcolor(baseformcol,-28,temperature));
+   colmid:=colortostring(modpropcolor(baseformcol,-20,temperature));
+   collow:=colortostring(modpropcolor(baseformcol,-10,temperature));
+   colbtnhigh:=colortostring(modpropcolor(baseformcol,-32,temperature));
+   pgray:=modpropcolor(baseformcol,-128,temperature);
+   psilver:=modpropcolor(baseformcol,-64,temperature);
    end
 else
    begin
-   pblue:=modpropcolor(basappcol,80);
-   pvlblue:=modpropcolor(basappcol,-40);
-   pvvlblue:=modpropcolor(basappcol,-80);
-   pvvvlblue:=modpropcolor(basappcol,-100);
-   colhigh:=colortostring(modpropcolor(baseformcol,80));
-   colmid:=colortostring(modpropcolor(baseformcol,60));
-   collow:=colortostring(modpropcolor(baseformcol,40));
-   colbtnhigh:=colortostring(modpropcolor(baseformcol,100));
-   pgray:=modpropcolor(baseformcol,128);
-   psilver:=modpropcolor(baseformcol,64);
+   pblue:=modpropcolor(basappcol,80,0);
+   pvlblue:=modpropcolor(basappcol,-40,0);
+   pvvlblue:=modpropcolor(basappcol,-80,0);
+   pvvvlblue:=modpropcolor(basappcol,-100,0);
+   colhigh:=colortostring(modpropcolor(baseformcol,80,temperature));
+   colmid:=colortostring(modpropcolor(baseformcol,60,temperature));
+   collow:=colortostring(modpropcolor(baseformcol,40,temperature));
+   colbtnhigh:=colortostring(modpropcolor(baseformcol,100,temperature));
+   pgray:=modpropcolor(baseformcol,128,temperature);
+   psilver:=modpropcolor(baseformcol,64,temperature);
    end;
 end;
 
