@@ -1,0 +1,14 @@
+object Formdragdropfilesdll: TFormdragdropfilesdll
+  Left = 78
+  Height = 240
+  Top = 165
+  Width = 320
+  Caption = 'Formdragdropfilesdll'
+  LCLVersion = '1.8.4.0'
+  object DropFileSource1: TDropFileSource
+    DragTypes = [dtCopy, dtMove]
+    OnDrop = DropFileSource1Drop
+    left = 224
+    top = 160
+  end
+end
