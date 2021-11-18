@@ -3,21 +3,21 @@ Norwegian - Norsk
 8.3
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20210924
+Sist revidert: 20211118
 
 === PeaZip text group ===
 
 txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_3_cw: Endre arbeidskatalog? Dette medfører nullstilling av temporære arbeidsfiler og restart av programmet.
+txt_8_3_temperature: Fargetemperatur
+txt_8_3_mbudec: Desimal
+txt_8_3_htab: Uthev tabulatorer
+txt_8_3_maxarg: Maksimum lengde på argumenter
+txt_8_3_mbu: Multippel-byte enhet
+txt_8_3_prefalgo: Foretrukne algoritmer
+txt_8_3_skipdel: Hopp over sletting av låste temporære filer (bruk nullstill for å slette ved behov)
+txt_8_3_lw: Noen filer i arbeidsmappe er låste og kan ikke fjernes automatisk
+txt_8_3_noupx: Denne binærfila kan ikke komprimeres (kan være komprimert allerede)
 txt_8_2_slower: (saktere)
 txt_8_2_df: 7z / p7zip vis innhold i mapper
 txt_8_2_vreport: 7z / p7zip ikke-detaljert rapport
