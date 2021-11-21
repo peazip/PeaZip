@@ -7,17 +7,17 @@ Traduït per: Marc Roca Musach
 
 === PeaZip text group ===
 
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
+txt_8_3_mbubin: Binari
+txt_8_3_cw: Voleu canviar el directori de treball? Aquesta acció reestablirà els fitxers temporals i reiniciarà l'aplicació.
+txt_8_3_temperature: Temperatura de color
 txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
+txt_8_3_htab: Ressalta les pestanyes
+txt_8_3_maxarg: Longitud màxima dels arguments
+txt_8_3_mbu: Unitat multi-byte
+txt_8_3_prefalgo: Algoritmes preferits
+txt_8_3_skipdel: Omet l'eliminació dels fitxers temporals bloquejats (utilitza Reset per suprimir-los un a un)
+txt_8_3_lw: Alguns fitxers del directori de treball estan bloquejats i no es poden eliminar automàticament
+txt_8_3_noupx: Aquest binari no es pot comprimir (ja deu estar comprimit)
 txt_8_2_slower: (més lent)
 txt_8_2_df: 7z / p7zip mostra el contingut de les carpetes
 txt_8_2_vreport: 7z / p7zip non-verbose report
