@@ -3,7 +3,7 @@ Català
 8.3
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
-Última revisió el: 20211008
+Última revisió el: 20211121
 
 === PeaZip text group ===
 
@@ -1297,18 +1297,18 @@ Options > Theme allows to change application’s icons and appearance
 Options > System integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, navigation bar, etc
 
-F1 	help
-F2 	rename file(s) / Ctrl+F2 copy selected to / Shift+F2 move selected to
-F3	search (recursivity option is remembered) / Ctrl+F3 start as non recursive (search here) / Shift+F3 recursive / Alt+F3 system search
-F4 	show navigation popup menu / Ctrl+Shift+F4 browse computer root / Ctrl+F4 browse desktop / Shift+F4 browse home
-F5 	refresh
-F6 	toggle browse/flat view
-F7 	add to bookmarks / Ctrl+F7 open in a new instance of PeaZip / Shift+F7 open command prompt in selected path / Alt+F7 explore selected path
-F8 	browse first item in bookmarks list (Ctrl, second, Shift, third)
-F9 	set password/keyfile / Shift+F9 password manager / Ctrl+F9 create keyfile or random password / Ctrl+Shift+F9 set advanced filters
-F10 	menu / Ctrl+F10 run as different user / Alt+F10 run as administrator (Windows Vista and newer systems)
-F11 	toggle full screen mode / Ctrl+F11 immersive
-F12 	extract all to...
+F1 	ajuda
+F2 	reanomena fitxers / Ctrl+F2 copia els fitxers seleccionats a... / Shift+F2 mou els fitxers seleccionats a...
+F3	cerca (la opció de recursivitat es manté) / Ctrl+F3 cerca aquí de forma no-recursiva / Shift+F3 cerca aquí de forma recursiva / Alt+F3 cerca del sistema
+F4 	mostra el menú emergent de navegació / Ctrl+Maj+F4 navega a l'arrel de l'ordinador / Ctrl+F4 navega a l'escriptori / Shift+F4 navega a casa
+F5 	actualitza
+F6 	communta la visualització de navegació/plana
+F7 	afegeix als preferits / Ctrl+F7 obre en una nova instància del PeaZip / Shift+F7 obre un quadre de comandes a la ubicació seleccionada / Alt+F7 explora la ubicació seleccionada
+F8 	navega al primer element de la llista de preferits (Ctrl pel segon, Shift pel tercer)
+F9 	estableix una contrasenya/fitxer de xifratge / Shift+F9 gestor de contrasenyes / Ctrl+F9 crea un fitxer de xifratge o una contrasenya  aleatòria / Ctrl+Shift+F9 estableix filtres avançats
+F10 	menú / Ctrl+F10 executa com un usuari diferent / Alt+F10 executa com a administrador (Windows Vista o superior)
+F11 	communta la visualització a pantalla completa / Ctrl+F11 communta la visualització a immersiva
+F12 	extreu-ho tot a...
 
 ABOUT PEAZIP
 
