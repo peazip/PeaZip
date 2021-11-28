@@ -3,20 +3,20 @@
 8.3
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
-Ред.: 20211115
+Ред.: 20211128
 
 === PeaZip text group ===
 
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
+txt_8_3_mbubin: Двоичный
+txt_8_3_cw: Изменить рабочий каталог? Это приведет к пересозданию временных рабочих файлов и перезапуску приложения.
 txt_8_3_temperature: Цветовая температура
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Выделить вкладки
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
+txt_8_3_mbudec: Десятичный
+txt_8_3_htab: Выделять вкладки
+txt_8_3_maxarg: Максимальная длина аргументов
+txt_8_3_mbu: Многобайтовый блок
 txt_8_3_prefalgo: Предпочтительные алгоритмы
 txt_8_3_skipdel: Пропустить удаление заблокированных временных файлов (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
+txt_8_3_lw: Некоторые файлы в рабочем каталоге заблокированы и не могут быть удалены автоматически
 txt_8_3_noupx: Этот бинарный файл нельзя сжать (may be already compressed)
 txt_8_2_slower: (медленнее)
 txt_8_2_df: 7z/p7zip показать содержимое каталогов
