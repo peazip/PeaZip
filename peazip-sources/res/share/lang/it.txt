@@ -8,7 +8,7 @@ Ultima rev.: 20210524
 === PeaZip text group ===
 
 txt_8_3_mbubin: Binario
-txt_8_3_cw: Modificare la directory ddi lavoro? L'applicazione sarà riavviate i file temporanei resettati.
+txt_8_3_cw: Modificare la directory di lavoro? L'applicazione sarà riavviate i file temporanei resettati.
 txt_8_3_temperature: Temperatura colore
 txt_8_3_mbudec: Decimale
 txt_8_3_htab: Evidenzia tab
