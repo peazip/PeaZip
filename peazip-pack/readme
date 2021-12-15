@@ -1,4 +1,4 @@
-Contains data  for creation of packages of PeaZip for various packaging systems
+Contains data fto help creation of packages of PeaZip for various packaging systems
 
 DEB
 contains DEB package folders for GTK2 and Qt5 builds
