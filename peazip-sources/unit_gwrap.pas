@@ -1911,7 +1911,16 @@ case pautoclose of
       else
          showandwait;
       end;
-   2: showandhide;
+   2: begin
+      if exit_code=0 then
+         if (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then
+            showandhide
+         else
+            showandwait
+      else
+         showandwait;
+      end;
+   3: showandhide;
    else
       begin
       if exit_code=0 then
@@ -2192,7 +2201,14 @@ iperc:=1;
 if exbackground=false then
    if (pprogfirst=true) or (pprogn='') or (pgook=true) then Form_gwrap.Visible:=True;
 pgook:=false;
-//get job type 0 archive/extract 1 test; 2 benchmark; (3 defrag, unused); 4 info (list and give message); 5 list and verbose list; 20 archive/extract, not using pipes, visible console (mode 10 was removed)
+//get job type
+//0 archive/extract
+//1 test;
+//2 benchmark; (3 defrag, unused);
+//4 info (list and give message);
+//5 list and verbose list;
+//20 archive/extract, not using pipes, visible console (mode 10 was removed)
+//same + 1000 if launched using semaphore (removed in modeofuse)
 modeofuse:=strtoint(pjobtype);
 insize:=0;
 if modeofuse>=1000 then

@@ -1,7 +1,7 @@
 object FormPaths: TFormPaths
-  Left = 1200
+  Left = 921
   Height = 240
-  Top = 768
+  Top = 697
   Width = 480
   Caption = 'FormPaths'
   ClientHeight = 240

@@ -184,6 +184,8 @@ unit Unit_pea;
  1.03     20210919  G.Tani      Merged patches for Darwin
  1.04     20211102  G.Tani      Pea binary moved to root folder of PeaZip package, modified to support new internal directory structure and new theming
                                 Fixed theming issues
+ 1.05     20211212  G.Tani      Added BENCH function: single and multi core integer and floating generic arithmetic performances becnchmark
+                                Optimized performances of PEA, UNPEA, and checksum / hash routines
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -217,7 +219,7 @@ Windows, activex, ShlObj,
   Buttons, ComCtrls, StdCtrls, Menus, strutils, zuncompr, zcompres,
   hash, adler32, CRC16, CRC24, CRC32, CRC64, ED2K, MD4, MD5, RMD160, SHA1, SHA224,
   SHA256, SHA3_256, SHA384, SHA3_384, SHA512, SHA3_512, Whirl512, Blake2s, Blake2b,
-  aes_ctr, AES_Type, AES_EAX, fcrypta, FCAES256,
+  aes_ctr, tf_ctr, sp_ctr, tf_base, sp_base, AES_Type, AES_EAX, fcrypta, FCAES256,
   tf_eax, fcryptt, fctf256,
   sp_eax, fcrypts, fcsp256,
   mem_util, list_utils, img_utils, pea_utils, rfs_utils, ansiutf8_utils, unit_report, types;
@@ -361,11 +363,11 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.04'; //declares release version for the whole build
+  P_RELEASE          = '1.05'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
-  SBUFSIZE           = 32768;
+  SBUFSIZE           = 65535;//32768;
   {32KB of size for reading small buffers, used for ciphers and hashes}
   WBUFSIZE           = 1048576;
   {1MB of size for reading whide buffers, used for compression.
@@ -378,8 +380,9 @@ const
   DEFAULT_THEME = 'ten-embedded';
   EXEEXT        = '';
   {$ENDIF}
-  WS_EX_LAYERED      = $80000;
-  LWA_ALPHA          = $2;
+  BASEBENCH     = 524288;
+  WS_EX_LAYERED = $80000;
+  LWA_ALPHA     = $2;
   FIRSTDOM      = 'https://peazip.github.io/';
   SECONDDOM     = 'https://peazip.sourceforge.io/';
 
@@ -852,7 +855,7 @@ var
    ts_start:TTimeStamp;
    r: TSearchRec;
    f_in,f_out:file of byte;
-   sbuf1,sbuf2:array [0..65535] of byte;
+   sbuf1,sbuf2:array [0..65534] of byte;
    auth_buf:array [0..63] of byte;
    filename_size,pw_len:word;
    err,adler,crc32,adler_obj,crc32_obj,adler_volume,crc32_volume:longint;
@@ -1280,7 +1283,7 @@ end;
 procedure init_control_algo;
 var
   i:integer;
-  sbufx,tsbuf2:array [0..65535] of byte;
+  sbufx,tsbuf2:array [0..65534] of byte;
   tpw_len,verw:Word;
 begin
 case upcase(algo) of
@@ -2114,7 +2117,7 @@ var
    crc64,crc64_obj,crc64_volume:TCRC64;
    ts_start:TTimeStamp;
    f_in,f_out:file of byte;
-   sbuf1,sbuf2:array [0..65535] of byte;
+   sbuf1,sbuf2:array [0..65534] of byte;
    tagbuf,exp_auth:array [0..63] of byte;
    compr_level,headersize,authsize,obj_authsize,volume_authsize,archive_datetimeencoding,storead:byte;
    pw_len,fns:word;
@@ -2275,7 +2278,7 @@ end;
 procedure init_AE256_control_algo;
 var
    i:integer;
-   tsbuf2:array [0..65535] of byte;
+   tsbuf2:array [0..65534] of byte;
    verw:word;
 begin
 case  upcase(algo) of
@@ -3682,7 +3685,7 @@ var
    crc64_volume:TCRC64;
    ts_start:TTimeStamp;
    f_in,f_out,f_check:file of byte;
-   sbuf1:array [0..65535] of byte;
+   sbuf1:array [0..65534] of byte;
    auth_buf:array [0..63] of byte;
    adler_volume,crc32_volume:longint;
    j,ch_number_expected,numread,num_res:dword;
@@ -4111,7 +4114,7 @@ var
    crc64_volume: TCRC64;
    ts_start:TTimeStamp;
    f_in,f_out,f_check:file of byte;
-   sbuf1:array [0..65535] of byte;
+   sbuf1:array [0..65534] of byte;
    tagbuf:array [0..63] of byte;
    volume_authsize:byte;
    adler_volume,crc32_volume:longint;
@@ -4479,7 +4482,7 @@ var
    exp_fattr_dec:TFoundList;
    nfound,size,total,ntotalexp,tsize,etsize,nfiles,ndirs,ctsize,speed,numread:qword;
    i,j,k,errors,dfiles,ddirs,nlevel,nleveli,rc,attr,time,numwritten:integer;
-   buf:array[0..65535]of byte;
+   buf:array[0..65534]of byte;
    aes_ctx:TAESContext;
    aes_iv:array[0..15]of byte;
    randomstring,randomstring2,oldrandomstring,in_param,s,end2caption:ansistring;
@@ -4839,7 +4842,7 @@ var
    f:file of byte;
    total,gtotal,maxs:qword;
    n,i,j,numread,numwritten,nlevel,nleveli,rc,drivenumber,time:integer;
-   buf:array[0..65535]of byte;
+   buf:array[0..65534]of byte;
    aes_ctx:TAESContext;
    aes_iv:array[0..15]of byte;
    wrkfile,wrkdir,wrktitle,fstype,sdrive,wincomspec,winver,majmin:ansistring;
@@ -5080,7 +5083,7 @@ var
    sfile:ansistring;
    sizea,sizeb,sizemin,total:qword;
    i,d,x,numreada,numreadb,numreadmin,continue:integer;
-   bufa,bufb:array[0..65535]of byte;
+   bufa,bufb:array[0..65534]of byte;
    stoppedcomparison:boolean;
 begin
 exitcode:=-1;
@@ -5264,11 +5267,197 @@ Form_pea.LabelLog1.Visible:=true;
 exitcode:=0;
 end;
 
+procedure bench;
+var
+  P:array [1..16] of TProcessUTF8;
+  cl:AnsiString;
+  i:integer;
+  tsin,tsout:TTimestamp;
+  timem,times,pointm,points:qword;
+  pointratio:single;
+begin
+
+{$IFDEF CPU32}
+MessageDlg('PeaZip 32 bit does not support benchmark, use PeaZip 64 bit instead.', mtWarning, [mbOK], 0); exit;
+{$ENDIF}
+
+Form_pea.PanelPW1.height:=2;
+Form_pea.LabelTools2.Caption:='Benchmark started...';
+Form_pea.Image7.Hint:='Benchmark runs arithmetic and logic calculations over an array of 64K 64 bit integers, and one of 64K double precision floating.'+char($0D)+char($0A)+
+'Multi core benchmark runs 16 parallel processes, each with one calculation thread, and up to 5 non-CPU intensive threads for GUI.'+char($0D)+char($0A)+
+'Single core result unit is arbitrarily set, with 100 roughly equivalent to a single core of 2020 MacBook Air M1'+char($0D)+char($0A)+
+'Multi core result shows how faster was the machine to compute the same workload over a single core, with "ratio" value being multi core result / single core result.'+char($0D)+char($0A)+
+'Efficient system scheduler, and spare extra cores for non-intensive threads, helps to improve multi core benchmark results, while thermal throttling degrades performances.';
+cl:=executable_path+'pea'+EXEEXT+' BENCHINT SINGLE 1 1';
+if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
+
+//single
+tsin:=datetimetotimestamp(now);
+P[1]:=TProcessUTF8.Create(nil);
+{$IFDEF MSWINDOWS}
+P[1].Options := [poWaitOnExit,poNoConsole];
+{$ELSE}
+P[1].Options := [poWaitOnExit];
+{$ENDIF}
+P[1].CommandLine:=cl;
+P[1].Execute;
+P[1].Free;
+tsout:=datetimetotimestamp(now);
+times:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
+if times>0 then
+   begin
+   points:=BASEBENCH div times;
+   Form_pea.LabelTools3.Caption:='Single core '+inttostr(points);
+   end;
+
+application.ProcessMessages;
+sleep(1000);
+
+//multi 16
+tsin:=datetimetotimestamp(now);
+for i:=1 to 16 do
+   begin
+   P[i]:=TProcessUTF8.Create(nil);
+   {$IFDEF MSWINDOWS}
+   P[i].Options := [poNoConsole];
+   {$ENDIF}
+   cl:=executable_path+'pea'+EXEEXT+' BENCHINT MULTI '+inttostr(i)+' 16';
+   P[i].CommandLine:=cl;
+   P[i].Execute;
+   end;
+
+while (p[1].Running=true)  or
+      (p[2].Running=true)  or
+      (p[3].Running=true)  or
+      (p[4].Running=true)  or
+      (p[5].Running=true)  or
+      (p[6].Running=true)  or
+      (p[7].Running=true)  or
+      (p[8].Running=true)  or
+      (p[9].Running=true)  or
+      (p[10].Running=true) or
+      (p[11].Running=true) or
+      (p[12].Running=true) or
+      (p[13].Running=true) or
+      (p[14].Running=true) or
+      (p[15].Running=true) or
+      (p[16].Running=true) do
+      begin application.ProcessMessages; sleep(1); end;
+
+for i:=1 to 16 do P[i].Free;
+
+tsout:=datetimetotimestamp(now);
+timem:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
+if (timem>0) and (times>0) then
+   begin
+   pointm:=(16*BASEBENCH) div timem;
+   Form_pea.LabelTools2.Caption:='Arithmetic benchmark completed';
+   Form_pea.LabelTools4.Caption:='Multi core '+inttostr(pointm);
+   pointratio:=pointm/points;
+   Form_pea.LabelTools4.Caption:=Form_pea.LabelTools4.Caption+' | ratio '+FloatToStrF(pointratio,ffFixed,4,2);
+   end
+else Form_pea.LabelTools2.Caption:='Benchmark failed';
+
+end;
+
+//procedure for arithmetic benchmark
+procedure benchar;
+var
+   sbuf64:array [0..65534] of int64;
+   sbufdouble:array [0..65534] of double;
+   max64,i,j,t,tt,biter:int64;
+   bmode:AnsiString;
+   time:qword;
+   tsin,tsout:TTimestamp;
+
+procedure cancelbenchint; //not enabled
+begin
+Form_pea.LabelTools4.Caption:='Operation cancelled by user, terminating...';
+Application.ProcessMessages;
+sleep(1500);
+halt(-4);
+end;
+
+begin
+{$IFDEF CPU64}
+exitcode:=-1;
+tsin:=datetimetotimestamp(now);
+Form_pea.PanelPW1.height:=2;
+t:=1;
+bmode:=UpCase(paramstr(2));
+try t:=strtoint(paramstr(3)); except end;
+try tt:=strtoint(paramstr(4)); except end;
+if bmode='MULTI' then Form_pea.Caption:='Running benchmark segment '+inttostr(t)+'/'+inttostr(tt)
+else Form_pea.Caption:='Running benchmark';
+biter:=900;
+//Form_pea.ButtonToolsCancel.visible:=true;
+Form_pea.LabelTools2.Caption:='Benchmark running...';
+Form_pea.ProgressBar1.Position:=0;
+{$IFDEF MSWINDOWS}Form_report.OutputT.TabVisible:=false;{$ENDIF}Form_report.Notebook1.ShowTabs:=false;
+Randomize;
+max64 := High(Int64);
+for j:=1 to biter do
+   begin
+   for i:=0 to 65534 do sbuf64[i]:=random(max64);
+   for i:=0 to 65534 do sbuf64[i]:=not(sbuf64[i]);
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] xor sbuf64[i+1];
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] or sbuf64[i+1];
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] and sbuf64[i+1];
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] + sbuf64[i+1];
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] - sbuf64[i+1];
+   for i:=0 to 65534 do sbuf64[i]:=sqr(sbuf64[i]);
+   for i:=0 to 65533 do sbuf64[i]:=sbuf64[i] * sbuf64[i+1] + sbuf64[i];
+   for i:=0 to 65533 do if (sbuf64[i+1]<>0) then sbuf64[i]:=(sbuf64[i] div sbuf64[i+1]) + sbuf64[i+1];
+   for i:=0 to 65533 do if (sbuf64[i+1]<>0) then sbuf64[i]:=(sbuf64[i] mod sbuf64[i+1]);
+   for i:=0 to 65534 do sbuf64[i]:=sbuf64[i] shl 1;
+   for i:=0 to 65534 do sbuf64[i]:=sbuf64[i] shr 1;
+
+   for i:=0 to 65534 do sbufdouble[i]:=random;
+   try for i:=0 to 65533 do sbufdouble[i]:=sbufdouble[i] + sbufdouble[i+1]; except end;
+   try for i:=0 to 65533 do sbufdouble[i]:=sbufdouble[i] - sbufdouble[i+1]; except end;
+   try for i:=0 to 65533 do sbufdouble[i]:=sbufdouble[i] * sbufdouble[i+1] + sbufdouble[i]; except end;
+   try for i:=0 to 65533 do if (sbufdouble[i+1]<>0) then sbufdouble[i]:=sbufdouble[i] / sbufdouble[i+1]; except end;
+   try for i:=0 to 65534 do sbufdouble[i]:=sqrt(sbufdouble[i]); except end;
+   try for i:=0 to 65534 do sbufdouble[i]:=sqr(sbufdouble[i]); except end;
+
+   for i:=0 to 65534 do sbufdouble[i]:=random;
+   try for i:=0 to 65534 do sbuf64[i]:=trunc(sbufdouble[i]); except end;
+   try for i:=0 to 65534 do sbuf64[i]:=round(sbufdouble[i]); except end;
+   for i:=0 to 65534 do sbuf64[i]:=random(max64);
+   try for i:=0 to 65534 do sbufdouble[i]:=sqrt(sbuf64[i]); except end;
+   try for i:=0 to 65534 do sbufdouble[i]:=sqr(sbuf64[i]); except end;
+   try for i:=0 to 65534 do if (sbuf64[i]<>0) then sbufdouble[i]:=(sbuf64[i] / sbuf64[i+1]) + sbufdouble[i] - sbuf64[i+1] except end;
+   try for i:=0 to 65534 do if (sbufdouble[i]<>0) then sbufdouble[i]:=sbuf64[i] / sbufdouble[i] except end;
+
+   Form_pea.ProgressBar1.Position:=(100*j) div (biter);
+   tsout:=datetimetotimestamp(now);
+   time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
+   Form_pea.LabelTools5.Caption:=nicetime(inttostr(time))+' elapsed';
+   //if toolactioncancelled=true then begin cancelbenchint; exit; end;
+   Application.ProcessMessages;
+   end;
+//Form_pea.ButtonToolsCancel.visible:=false;
+Form_pea.ProgressBar1.Position:=100;
+tsout:=datetimetotimestamp(now);
+time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
+if time>0 then
+   begin
+   Form_pea.LabelTools2.Caption:='Benchmark completed';
+   Form_pea.LabelTools5.Caption:=nicetime(inttostr(time))+' elapsed (lower, better)';
+   end
+else Form_pea.LabelTools2.Caption:='Benchmark failed';
+//Form_pea.ButtonDone1.Visible:=true;
+exitcode:=0;
+halt;
+{$ENDIF}
+end;
+
 //procedure to checksum/hash files
 procedure check; //ALL: all algorithms, otherwise specify the algorithm to use followed by "on" which marks the input parameters
 var
-   sbuf:array [1..32767] of byte;
-   i,j,n,t,td,te,k,dmax,dmin,x,icount,iver,rc,dup,icol:integer;
+   sbuf:array [1..65535] of byte;
+   n:word;
+   i,j,t,td,te,k,dmax,dmin,x,icount,iver,rc,dup,icol:integer;
    f_size,nfiles,ntfiles,ndirs,ctsize,etsize,tsize,nfound,ntotalexp,time,speed,compest,compsize:qword;
    smax,smin:int64;
    exp_files:TFoundList;
@@ -6384,7 +6573,7 @@ var
    fa:file of byte;
    sizea,total:qword;
    i,x,y,numreada,nrows,prows,noffs,wrbytes:integer;
-   bufa:array[0..65535]of byte;
+   bufa:array[0..65534]of byte;
    bufhex:array[0..15,0..4095]of byte;
 begin
 exitcode:=-1;
@@ -6516,6 +6705,8 @@ case upcase(paramstr(1))of
 'WIPE' : wipe(paramstr(2));
 'SANITIZE' : sanitize(paramstr(2));
 'COMPARE' : compare;
+'BENCH' : bench;
+'BENCHINT' : benchar;
 'CHECK' : check;
 'ENVSTR' : envstr;
 'LIST' : listfiles;
@@ -6653,6 +6844,22 @@ interacting:=false;
 end;
 
 procedure call_compare;
+begin
+Form_pea.Visible:=true;
+Form_pea.PanelRFSinteractive.visible:=false;
+Form_pea.PanelTools.visible:=true;
+interacting:=false;
+end;
+
+procedure call_bench;
+begin
+Form_pea.Visible:=true;
+Form_pea.PanelRFSinteractive.visible:=false;
+Form_pea.PanelTools.visible:=true;
+interacting:=false;
+end;
+
+procedure call_benchint;
 begin
 Form_pea.Visible:=true;
 Form_pea.PanelRFSinteractive.visible:=false;
@@ -7469,6 +7676,8 @@ if paramcount>0 then
          'WIPE' : call_wipe;
          'SANITIZE' : call_sanitize;
          'COMPARE' : call_compare;
+         'BENCH' : call_bench;
+         'BENCHINT' : call_benchint;
          'CHECK' : call_check;
          'ENVSTR' : call_envstr;
          'LIST' : call_list;

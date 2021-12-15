@@ -1,8 +1,8 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TFormPaths','FORMDATA',[
-  'TPF0'#10'TFormPaths'#9'FormPaths'#4'Left'#3#176#4#6'Height'#3#240#0#3'Top'#3
-  +#0#3#5'Width'#3#224#1#7'Caption'#6#9'FormPaths'#12'ClientHeight'#3#240#0#11
+  'TPF0'#10'TFormPaths'#9'FormPaths'#4'Left'#3#153#3#6'Height'#3#240#0#3'Top'#3
+  +#185#2#5'Width'#3#224#1#7'Caption'#6#9'FormPaths'#12'ClientHeight'#3#240#0#11
   +'ClientWidth'#3#224#1#21'Constraints.MinHeight'#3#240#0#20'Constraints.MinWi'
   +'dth'#3#224#1#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.8.4.0'#0
   +#5'TMemo'#9'MemoPaths'#22'AnchorSideLeft.Control'#7#5'Owner'#21'AnchorSideTo'

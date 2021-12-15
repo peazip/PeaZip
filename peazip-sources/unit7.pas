@@ -151,7 +151,7 @@ begin
 stemp:=txt_2_7_ok;
 txt_2_7_ok:=txt_7_8_update;
 FormDlg.bok.hint:=txt_7_2_updateclear;
-result:=pMessageDlg(s, txt_info, true, false, true, true, true, false);
+{$IFDEF DARWIN}result:=pMessageDlg(s, txt_info, false, false, true, true, true, false);{$ELSE}result:=pMessageDlg(s, txt_info, true, false, true, true, true, false);{$ENDIF}
 txt_2_7_ok:=stemp;
 FormDlg.bok.hint:='';
 end;

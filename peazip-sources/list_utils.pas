@@ -1743,14 +1743,15 @@ procedure cp_search_linuxlike(desk_env: byte);
 var
   P: TProcessUTF8;
 begin
-  if (desk_env = 0) or (desk_env = 10) or (desk_env = 20) then
+  if (desk_env = 0) or (desk_env = 10) then
     exit;
   P := TProcessUTF8.Create(nil);
   P.Options := [poWaitOnExit];
-  if desk_env = 1 then
-    P.Executable := 'gnome-search-tool';
-  if desk_env = 2 then
-    P.Executable := 'kfind';
+  case desk_env of
+     1: P.Executable := 'gnome-search-tool';
+     2: P.Executable := 'kfind';
+     20: P.CommandLine := 'open /';
+     end;
   P.Execute;
   P.Free;
 end;

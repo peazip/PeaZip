@@ -1,9 +1,11 @@
-﻿Notes to 8.3.0 release
+﻿Notes to 8.4.0 release
 
-Textes moved to (peazip)/res/share/lang subfolder
+Textes are now in (peazip)/res/share/lang subfolder
 
 Pre-existing text string modified:
-txt_3_0_resettmp: Reset temporary work files
+txt_2_6_plalways: Always stop to inspect task report
+txt_2_6_plsmart: Stop to inspect report for error, list, test
+txt_autoclose: Never stop to inspect task report
 
 
 = GENERAL NOTES =
@@ -46,7 +48,7 @@ https://github.com/peazip/PeaZip-Translations
 
 GIT
 Language files can be updated on Git repository so commits can be evaluated and merged in the online code base
-https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/lang (language files)
-https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/lang-wincontext (W7+ context menu items)
+https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/share/lang (language files)
+https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/share/lang-wincontext (W7+ context menu items)
 
 All translated language files should be considered as released under GFDL, GNU Free Documentation License, as they have to be considered derivate work from the application's language file which is released under GFDL.

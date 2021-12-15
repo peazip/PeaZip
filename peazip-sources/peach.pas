@@ -171,67 +171,44 @@ unit peach;
  1.54     20210720  G.Tani      8.1.0
  1.55     20210909  G.Tani      8.2.0
  1.56     20211111  G.Tani      8.3.0
+ 1.57     20211212  G.Tani      8.4.0
 
 BACKEND
-(Linux) Maximum length of arguments can be customized from 32KB to 2MB from Options > Settings > General, Performances group
-(Linux) szcnick/p7zip regressed from 17.04 to 17.02 due a possible bug handling some zip files
- different versions / branches of p7zip (provided same syntax is employued) can be used simply replacing binaries in (peazip)res/bin/7z path
-Updated to pea 1.04
-To improve portability of PeaZip to multiple operating systems and architectures, app's folder is now structured as follows:
- root folder contains pea and peazip binaries (and dragdropfiles.dll on Windows), architecture-specific, compiled from src package
- /res directory, contains resources divided by type
-  /res/portable (empty) file, marks the package as portable: if missing, the application woks as installable package and rearches for configuration in user's path (depending on the host system)
-  /res/bin directory contains third party architecture specific binaries, should be replaced with binaries for the apporpriate target architecture; on Windows it also contains PeaZip configuration wizard executabòe
-  /res/share directory contains non architecture specific resources such as texts, media, licenses, documentation (license and notes about binaries has been moved here in note subdiorectory), it could be simply copied as is for any PeaZip package on any system
-  /res/conf directory contains user specific configuration files
- On installable packages res/conf is written to appropriate user specific path, and installers take care to replace /res/bin and /res/share with links to directories placed in appropriate paths depending on the target system
+Pea 1.05
+7z 21.06 used by default on Darwin/macOS, Linux, and Windows
+ szcnick's p7zip 17.02 and 17.04 (LGPL, fork of Myspace p7zip, based on Igor Pavlov''s 7z) syntax is fully supported and can be used as alternative replacing (peazip)/res/bin/7z/7z binary
 
 CODE
-(Linux) Improved compliance with Open Desktop specifications: configuration is now saved in $XDG_CONFIG_HOME/peazip directory; if $XDG_CONFIG_HOME is not defined configuration is saved to $HOME/.config/peazip
- To import existing configuration simply copy content of $HOME/.PeaZip directory to the new location
-GitHub: Merged ACTom's "Initial support for MacOS #25"
-Various fixes
- Fixed possible error with progress bar
- Fixed possible error not asking password for some encrypted archives, and reduced false positive cases in which it is suggested to provide a password
- Fixed error reporting information about multi volume archives
- Fixed error in file manager selecting files with same characteristics of selected item
- (Windows) Fixed issue not showing system's file properties dialog in some cases
+Fixed issues when temporary work path is set to user's temp
+ (Windows) Fixed unnecessary confirmation message for non existing output directory
+ Fixed smart extraction not able to remove extra level of nesting
 
 FILE MANAGER
-(Linux) Shortcuts to /media, /run/media, and /mnt (if not empty) are now featured in navigation tree, under filesystem group
-(Linux) Improved searching for automatically configuring XFCE apps alternatives in "Open with" menu (Mousepad, Midori, Parole, Ristretto)
-(Linux) Fixed theming issues with GTK2
-Column header's context menu is now accessible alternatively right-clicking the status bar
-Improved theming
- Added Color temperature option, to adapt application to DE using warmer or colder colors
- Added Highlight tabs option (default on) highlighting rows or columns containing tabs with alternate color
-Options > Settings > General, Privacy / Reset group, Working directory is now set to system's temp by default (consistently with most applications of this type)
- Working directory label can now be clicked to explore path (unless it is set to output, which is variable), in order to make easier for the user to verify if for any reasons there are left orphaned files
- All PeaZip's temporary work files and dirs are now collected in peazip-tmp subdirectory of work path (unless it is set to output) for same reason of making easier to spot and remove orphaned files
- All PeaZip's temporary work files and dirs now contains p*tmp string for making easier to find them regardless the tools employed
-Options > Settings > General, Privacy / Reset group now allows to silently skip deletion of locked temporary work files (default on, consistently with behavior of most applications of this type)
-  Temporary work files can be deleted separately:
-   Automatically from Reset link, and if reset fails the folder is opened for soliciting manual deletion (regardless the option to silently skip locked files during normal operations)
-   Manually clicking on Working directory label
-Options > Settings > File manager now allows to set the multiple-byte unit: binary, 1024 (IEC kibibyte), or decimal, 1000 (IEC kilobyte), or none (exact byte size)
-Options > Settings > File manager now allows to customize the list of preferred algorithms
- Preferred algorithms in the list will be performed in a single step when it is required to checksum / hash files
+Added single and multi core performances benchmark, in main menu Tools > System benchmark (pea)
+ The benchmark performs integer and floating point arithmetic operations
+ Benchmark result unit is arbitrary and only meant to allow comparison between different platforms
+  For reference 2020 MacBook Air M1 score is 100 (single core) and 515 (multi core) for aarm64 build
+(Darwin/macOS, Linux) File manager columns' menu is available righclicking status bar
+(Darwin/macOS) Improved file manager
+ Added links to Volumes, Applications, and System/Applications in navigation treeview
+ Added auto-configured custom apps for "Open with" submenu
+ Added macOS-specific funtions in context menu, File Manager > System tools: Launchpad, Activity monitor, System preferences, Disk utility
+ Open command prompt here function now working
+ PeaUtils launching from PeaZip now working
+ Run function now working
+Language can now be changed from dropdown menu from General settings tab (main menu, Options > Settings)
+ Previous method allowing to manually select the language file is still available from the link before the dropdown menu
 
 EXTRACTION and ARCHIVING
-Added Deflate and Deflate64 compression options to 7z format
-Improved -ext2here, -ext2folder (-alias -ext2smart), and -ext2newfolder functions adding command line options:
- -i ignore delete original archive after extraction settings
- -o output directory in next parameter
- -p password in next parameter
+New option to not stop sequences of archive test tasks unless an error is encountered
+ From main menu, Options > Settings, Advanced tab set "Stop to inspect report for error, list" instead of default value "Stop to inspect report for error, list, test"
+ With this setting, a successful archive test closes on completion unless an error is foud in the archive and test fails, in which case error message (and full report) is shown to user and needs to be dismissed before continuing with following test in sequence
+Improved management of temporary work files
+ 7z work files during compression are now inside peazip-tmp subpath, if work directory is set to Custom or User's temp
 
 WINDOWS & LINUX INSTALLERS
-(Windows) Improved installer
- "Extract here (in new folder)" entry is now featured by default both in context menu and SendTo menu
- Fixed additional extraction entries not showing up on some cases
- Installation folder selection screen is now available also running "Configure PeaZip" wizard from the application, for Portable versions this allows to easily integrate with host system
-(Linux) Improved DEB and RPM installers, separating architecture specific and non-architecture specific resources
 
-225 file extensions supported (224 on Windows)
+225 file extensions supported
 
 Translations updated and replaced in the package
 
@@ -520,6 +497,7 @@ type
      CheckBox7zunrar5: TCheckBox;
      CheckBoxAlttabcol: TCheckBox;
      CheckBoxSkipDel: TCheckBox;
+     ComboBoxLanguage: TComboBox;
      LabelColor4: TLabel;
      labelmaxarg: TLabel;
      CheckBoxSkipenc: TCheckBox;
@@ -792,6 +770,11 @@ type
      mbrowsercmethod: TMenuItem;
      mbrowserccreated: TMenuItem;
      mautoadjust: TMenuItem;
+     mBenchpea: TMenuItem;
+     po_maclaunch: TMenuItem;
+     po_macdisk: TMenuItem;
+     po_macact: TMenuItem;
+     po_macsys: TMenuItem;
      po_browsercaccessed: TMenuItem;
      po_browsercmethod: TMenuItem;
      po_browserccreated: TMenuItem;
@@ -813,7 +796,7 @@ type
      po_linipaddress: TMenuItem;
      po_linid: TMenuItem;
      po_linhistory: TMenuItem;
-     po_lindhsh: TMenuItem;
+     po_lindush: TMenuItem;
      po_lindfh: TMenuItem;
      MenuItem8: TMenuItem;
      po_openunitasarchivelin: TMenuItem;
@@ -3160,6 +3143,7 @@ type
       procedure ComboBoxBrowserChange(Sender: TObject);
       procedure ComboBoxDragChange(Sender: TObject);
       procedure ComboBoxKiBChange(Sender: TObject);
+      procedure ComboBoxLanguageCloseUp(Sender: TObject);
       procedure ComboBoxMaxArgChange(Sender: TObject);
       procedure ComboBoxPriorityChange(Sender: TObject);
       procedure ComboBoxWDChange(Sender: TObject);
@@ -3248,6 +3232,7 @@ type
       procedure lsetdefaultout_arcClick(Sender: TObject);
       procedure lsetdefaultout_extClick(Sender: TObject);
       procedure mautoadjustClick(Sender: TObject);
+      procedure mBenchpeaClick(Sender: TObject);
       procedure mbrowsercaccessedClick(Sender: TObject);
       procedure mbrowserccreatedClick(Sender: TObject);
       procedure mbrowsercmethodClick(Sender: TObject);
@@ -3266,13 +3251,17 @@ type
       procedure po_gnomeswClick(Sender: TObject);
       procedure po_kdesyssettClick(Sender: TObject);
       procedure po_lindfhClick(Sender: TObject);
-      procedure po_lindhshClick(Sender: TObject);
+      procedure po_lindushClick(Sender: TObject);
       procedure po_linhistoryClick(Sender: TObject);
       procedure po_linidClick(Sender: TObject);
       procedure po_linipaddressClick(Sender: TObject);
       procedure po_linnetstatClick(Sender: TObject);
       procedure po_linpsefClick(Sender: TObject);
       procedure po_lintopClick(Sender: TObject);
+      procedure po_macactClick(Sender: TObject);
+      procedure po_macdiskClick(Sender: TObject);
+      procedure po_maclaunchClick(Sender: TObject);
+      procedure po_macsysClick(Sender: TObject);
       procedure po_openunitasarchivelinClick(Sender: TObject);
       procedure po_dispenvstrlinClick(Sender: TObject);
       procedure MenuItemOpen_runClick(Sender: TObject);
@@ -5067,10 +5056,10 @@ procedure populatepcmenu;
 const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  INTVERSION    = '1.56';
-  PEAZIPVERSION = '8.3';
+  INTVERSION    = '1.57';
+  PEAZIPVERSION = '8.4';
   PEAZIPREVISION= '.0';
-  PEAZIPSINTVER = 830;
+  PEAZIPSINTVER = 840;
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   PREFALGOCONST = 'CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256';
   FIRSTDOM      = 'https://peazip.github.io/';
@@ -5117,7 +5106,7 @@ const
   READE_LIST    = '7Z, ACE, ARC/WRC, ARJ, BR, BZ/TBZ, CAB, CHM/CHW/HXS, COMPOUND (MSI, DOC, XLS, PPT), CPIO, GZ/TGZ, ISO, Java (JAR, EAR, WAR), LZH/LHA, Linux (DEB, PET/PUP, RPM, SLP), NSIS, OOo, PAK/PK3/PK4, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ/BCM, RAR, TAR, WIM/SWM, XPI, Z/TZ, ZIP, ZST...';
   WRITEE_LIST   = '7Z, 7Z-sfx, ARC, ARC-sfx, BR, BZ2, GZ, *PAQ, PEA, QUAD/BALZ/BCM, split, TAR, UPX, WIM, XZ, ZIP, ZST';
   APPMAIN       = 'PeaZip';
-  APPLICATION1  = 'Pea 1.04 (LGPLv3, Giorgio Tani);';
+  APPLICATION1  = 'Pea 1.05 (LGPLv3, Giorgio Tani);';
   STR_7Z        = '7Z';
   STR_ARC       = 'ARC';
   STR_BROTLI    = 'Brotli';
@@ -5151,7 +5140,7 @@ const
   {$IFDEF MSWINDOWS}
   EXEEXT        = '.exe';
   UNRARNAME     = 'unrar';
-  APPLICATION2  = '7z 19.00 (LGPL, Igor Pavlov), and Tino Reichardt codecs v1.5.0r1 (LGPL);';
+  APPLICATION2  = '7z 21.06 (LGPL, Igor Pavlov), and Tino Reichardt codecs v1.5.0r1 (LGPL);';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.15 [Matt Mahoney et al. (GPL)];';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.95 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser);';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15 (Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev);';
@@ -5164,7 +5153,7 @@ const
   {$IFDEF LINUX}
   EXEEXT        = '';
   UNRARNAME     = 'unrar-nonfree';
-  APPLICATION2  = 'szcnick/p7zip 17.02 (LGPL, fork of Myspace p7zip, based on Igor Pavlov''s 7z);';
+  APPLICATION2  = 'Linux 7z 21.06 (LGPL, Igor Pavlov);';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.05 [Matt Mahoney et al. (GPL)];';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.96 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser);';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15(Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev);';
@@ -5203,9 +5192,9 @@ const
   {$IFDEF DARWIN}
   EXEEXT        = '';
   UNRARNAME     = '';
-  APPLICATION2  = 'p7zip POSIX 7z 16.02 (LGPL, Myspace, based on Igor Pavlov''s 7z);';
+  APPLICATION2  = 'macOS 7z 21.06 (LGPL, Igor Pavlov);';
   APPLICATION3  = '';
-  APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.96 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser);';
+  APPLICATION4  = 'Strip (GPL, GNU binutils);';
   APPLICATION5  = '';
   APPLICATION6  = '';
   APPLICATION7  = '';
@@ -5396,6 +5385,7 @@ var
 
    lang_file:ansistring;
    //text strings
+   txt_8_4_keepopenerrorslist,
    txt_8_3_prefalgo,txt_8_3_mbubin,txt_8_3_mbudec,txt_8_3_mbu,txt_8_3_maxarg,txt_8_3_skipdel,txt_8_3_cw,txt_8_3_lw,txt_8_3_temperature,txt_8_3_htab,txt_8_3_noupx,
    txt_8_2_slower,txt_8_2_df,txt_8_2_vreport,txt_8_2_alltimes,txt_8_2_supportedby,txt_8_2_keep,txt_8_2_skipet,txt_8_2_ta,txt_8_2_tc,txt_8_2_tm,
    txt_8_1_volumes,txt_8_1_ed,txt_8_1_slow,txt_8_1_preparse,txt_8_1_nopreparse,txt_8_1_preparsehint,txt_8_1_bo,txt_8_1_bop,txt_8_1_togglearc,txt_8_1_vslow,
@@ -5895,6 +5885,7 @@ begin
 valorize_text:=-1;
 try
 readln(t,s);
+readln(t,s); txt_8_4_keepopenerrorslist:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_3_mbubin:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_3_cw:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_8_3_temperature:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
@@ -8094,6 +8085,7 @@ if usr_videos<>'' then
       ImageIndex:=15;
       SelectedIndex:=15;
       end;
+{$IFNDEF DARWIN}
 if checkempty_dir('/media/') = false then
    with treeview1.Items.AddChild(treeview1.selected,'media') do
       begin
@@ -8112,6 +8104,23 @@ if (checkempty_dir('/run/media/') = false) and (checkempty_dir('/media/') = true
       ImageIndex:=11;
       SelectedIndex:=11;
       end;
+{$ELSE}
+with treeview1.Items.AddChild(treeview1.selected,'Volumes') do
+   begin
+   ImageIndex:=11;
+   SelectedIndex:=11;
+   end;
+with treeview1.Items.AddChild(treeview1.selected,'Applications') do
+   begin
+   ImageIndex:=11;
+   SelectedIndex:=11;
+   end;
+with treeview1.Items.AddChild(treeview1.selected,'System Applications') do
+   begin
+   ImageIndex:=11;
+   SelectedIndex:=11;
+   end;
+{$ENDIF}
 if expandfs=1 then TreeView1.Selected.Expand(false) else TreeView1.Selected.Collapse(true);
 end;
 end;
@@ -9820,6 +9829,7 @@ LabelConfigureSendTo.Caption:=txt_3_1_sendto;
 LabelAppPath.Caption:=txt_3_3_apppath;
 LabelLang2.Caption:=txt_localization;
 LabelLang2.Hint:=txt_7_8_changelocalization+' '+txt_7_8_requirerestart;
+ComboBoxLanguage.Hint:=txt_7_8_changelocalization+' '+txt_7_8_requirerestart;
 LabelOpacity.Hint:=txt_restartrequired;
 LabelDefaultOpacity.Hint:=txt_restartrequired2;
 CheckBoxParallelarchiving.Caption:=txt_2_8_parallel;
@@ -9851,7 +9861,8 @@ RadioGroup4.Items.Strings[1]:=txt_guicl;
 RadioGroup4.Items.Strings[2]:=txt_guipealauncher;
 RadioGroup6.Items.Strings[0]:=txt_2_6_plalways;
 RadioGroup6.Items.Strings[1]:=txt_2_6_plsmart;
-RadioGroup6.Items.Strings[2]:=txt_autoclose;
+RadioGroup6.Items.Strings[2]:=txt_8_4_keepopenerrorslist;
+RadioGroup6.Items.Strings[3]:=txt_autoclose;
 cbEncoding1.Items.Strings[0]:=txt_7_6_defaultenc;
 cbEncoding1.Items.Strings[1]:=txt_7_6_forceutf8enc;
 cbEncoding1.Items.Strings[2]:=txt_7_6_forcelocalenc;
@@ -10053,7 +10064,8 @@ mOptionsMenu.Caption:=txt_tools;
 mAdmin.Caption:=txt_4_1_runasadmin;
 mUser.Caption:=txt_run_as2;
 po_alltasks.Caption:=txt_3_2_alltasks;
-mBench.Caption:=txt_sysbenchmark;
+mBenchpea.Caption:=txt_sysbenchmark+' (pea)';
+mBench.Caption:=txt_sysbenchmark+' (7z/p7zip)';
 mLang.Caption:=txt_localization;
 w7contextlang.Caption:=txt_5_3_cml;
 mprofileultra7z.Caption:=txt_5_3_profilebest;
@@ -10476,6 +10488,7 @@ end;
 
 procedure load_default_texts;
 begin
+txt_8_4_keepopenerrorslist:='Stop to inspect report for error, list';
 txt_8_3_mbubin:='Binary';
 txt_8_3_cw:='Change working directory? This will reset temporary work files and restart the application.';
 txt_8_3_temperature:='Color temperature';
@@ -10999,8 +11012,8 @@ txt_2_7_un7z_browse_flat:='try flat view (F6)';
 txt_2_7_updating:='Updating existing archive';
 txt_2_6_folders:='(folders)';
 txt_2_6_advanced:='Advanced';
-txt_2_6_plalways:='Always keep open to inspect task''s report';
-txt_2_6_plsmart:='Keep open only if needed (error, list or test reports)';
+txt_2_6_plalways:='Always stop to inspect task report';
+txt_2_6_plsmart:='Stop to inspect report for error, list, test';
 txt_2_5_sessionio:='(this session)';
 txt_2_5_advanced:='Advanced edit: place spaces between parameter strings and filename if needed';
 txt_2_5_basic:='Basic edit: application and parameters before input name';
@@ -11157,7 +11170,7 @@ txt_check_select:='Checksum/hash';
 txt_clear:='Clear';
 txt_clearlayout:='Clear layout';
 txt_pj_hint:='Click to import task, reset changes and load up to date task definition from GUI';
-txt_autoclose:='Close PeaLauncher when task completes';
+txt_autoclose:='Never stop to inspect task report';
 txt_cl:='command line:';
 txt_compare:='Compare files';
 txt_compress:='Compress';
@@ -14339,7 +14352,7 @@ end;
 procedure check_defaults_failure;
 begin
 //no control on lang_file name
-if (autoclosegwrap>2) then autoclosegwrap:=1;
+if (autoclosegwrap>3) then autoclosegwrap:=1;
 if (enc7zscc>2) then enc7zscc:=0;
 if (browsersd>4) then browsersd:=0;
 if (movetorelativepath>1) then movetorelativepath:=1;
@@ -16527,7 +16540,7 @@ begin
 writeln(conf,'[language]');
 writeln(conf,lang_file);
 writeln(conf,'');
-writeln(conf,'[pealauncher: 0: always keep open for inspection 1: (default) keep open only if errors are detected 2: always close when task ends]');
+writeln(conf,'[pealauncher: 0: always keep open for inspection of reports 1: (default) keep open only for errors, list, test operations 2: keep open only for errors, list 3: never keep open for inspection]');
 writeln(conf,inttostr(autoclosegwrap));
 writeln(conf,'');
 writeln(conf,'[pealauncher: open output directory when job ends]');
@@ -18846,6 +18859,13 @@ if (fileexists('/bin/'+s)) or
    (fileexists('/usr/bin/'+s)) then result:=true;
 end;
 
+function checkmacapp(s:utf8string):boolean;
+begin
+result:=false;
+if (DirectoryExists(stringdelim('/Applications/'+s))) or
+   (DirectoryExists(stringdelim('/System/Applications/'+s))) then result:=true;
+end;
+
 procedure reset_custedit;
 var
    i,ioff,iacro,iooo:integer;
@@ -19191,6 +19211,109 @@ if fileexists(winpfolder+'Mozilla Firefox\firefox.exe') then
    end;
 set_win_antivirus;
 {$ELSE}
+{$IFDEF DARWIN}
+StringGridCustedit.Cells[1,1]:='Text editor';
+custedit1:='open -t';
+StringGridCustedit.Cells[1,2]:='Pages';
+custedit2:='open -a Pages';
+StringGridCustedit.Cells[1,3]:='Numbers';
+custedit3:='open -a Numbers';
+StringGridCustedit.Cells[1,4]:='Preview';
+custedit4:='open -a Preview';
+StringGridCustedit.Cells[1,5]:='Photos';
+custedit5:='open -a Photo';
+StringGridCustedit.Cells[1,6]:='Quick Time Player';
+custedit6:='open -a "QuickTime Player"';
+StringGridCustedit.Cells[1,7]:='Safari';
+custedit7:='open -a Safari';
+StringGridCustedit.Cells[1,8]:='Script Editor';
+custedit8:='open -a "Script Editor"';
+if checkmacapp('Gimp.app')=true then
+   begin
+   StringGridCustedit.Cells[1,9]:='Gimp';
+   custedit9:='open -a Gimp';
+   end
+else
+   if checkmacapp('Inkscape.app')=true then
+      begin
+      StringGridCustedit.Cells[1,9]:='Inkscape';
+      custedit9:='open -a Inkscape';
+      end
+   else
+      if checkmacapp('LibreOffice.app')=true then
+         begin
+         StringGridCustedit.Cells[1,9]:='Draw';
+         custedit9:='open -a lodraw';
+         end
+      else
+         if checkmacapp('OpenOffice.app')=true then
+            begin
+            StringGridCustedit.Cells[1,9]:='Draw';
+            custedit9:='open -a oodraw';
+            end;
+if checkmacapp('VLC.app')=true then
+   begin
+   StringGridCustedit.Cells[1,10]:='VLC';
+   custedit10:='open -a VLC';
+   end;
+if checkmacapp('Firefox')=true then
+   begin
+   StringGridCustedit.Cells[1,11]:='Mozilla Firefox';
+   custedit11:='open -a Firefox';
+   end;
+if checkmacapp('Google Chrome.app')=true then
+   begin
+   StringGridCustedit.Cells[1,12]:='Google Chrome';
+   custedit12:='open -a "Google Chrome"';
+   end;
+
+if checkmacapp('LibreOffice.app')=true then
+   begin
+   StringGridCustedit.Cells[1,13]:='Writer';
+   custedit13:='open -a lowriter';
+   end
+else
+   if checkmacapp('OpenOffice.app')=true then
+      begin
+      StringGridCustedit.Cells[1,13]:='Writer';
+      custedit13:='open -a oowriter';
+      end;
+if checkmacapp('LibreOffice.app')=true then
+   begin
+   StringGridCustedit.Cells[1,14]:='Calc';
+   custedit14:='open -a localc';
+   end
+else
+   if checkmacapp('OpenOffice.app')=true then
+      begin
+      StringGridCustedit.Cells[1,14]:='Calc';
+      custedit14:='open -a oocalc';
+      end;
+if checkmacapp('LibreOffice.app')=true then
+   begin
+   StringGridCustedit.Cells[1,15]:='Base';
+   custedit15:='open -a lobase';
+   end
+else
+   if checkmacapp('OpenOffice.app')=true then
+      begin
+      StringGridCustedit.Cells[1,15]:='Base';
+      custedit15:='open -a oobase';
+      end;
+if checkmacapp('LibreOffice.app')=true then
+   begin
+   StringGridCustedit.Cells[1,16]:='Impress';
+   custedit16:='open -a loimpress';
+   end
+else
+   if checkmacapp('OpenOffice.app')=true then
+      begin
+      StringGridCustedit.Cells[1,16]:='Impress';
+      custedit16:='open -a ooimpress';
+      end;
+
+
+{$ELSE}
 StringGridCustedit.Cells[1,1]:='Text editor';
 if desk_env=1 then custedit1:='gedit'
 else
@@ -19457,6 +19580,7 @@ if checklinapp('maldet')=true then
    advedit2after:='';
    advedit2alt:='';
    end;
+{$ENDIF}
 {$ENDIF}
 end;
 set_custedit_totable;
@@ -22721,7 +22845,7 @@ if Form_peach.OpenDialogList.Execute then
             Form_peach.StringGrid1.AutoSizeColumns;
             updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
             end;
-      Form_peach.StringGrid1.Cursor:=crDefault;
+      Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
       end;
 end;
 
@@ -22779,7 +22903,7 @@ if Form_peach.OpenDialogList.Execute then
             end;
          end;
       updatecontent_ext;
-      Form_peach.StringGrid2.Cursor:=crDefault;
+      Form_peach.StringGrid2.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
       end;
 end;
 
@@ -22836,7 +22960,7 @@ if Form_peach.SelectDirectoryDialog1.Execute then
                      end;
                   end;
       updatecontent_ext;
-      Form_peach.StringGrid2.Cursor:=crDefault;
+      Form_peach.StringGrid2.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
       end;
 end;
 
@@ -22856,7 +22980,7 @@ if Form_peach.SelectDirectoryDialog1.Execute then
          addfolderstr(Form_peach.StringGrid1,Form_peach.SelectDirectoryDialog1.Filename);
          Form_peach.StringGrid1.AutoSizeColumns;
          updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
-         Form_peach.StringGrid1.Cursor:=crDefault;
+         Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
          end;
 Form_peach.Caption:=s;
 end;
@@ -24684,7 +24808,7 @@ browserbusy:=false;
 Form_peach.ProgressBar2.Visible:=false;
 Form_peach.Panel10.Visible:=false;
 Form_peach.ListView1.PopupMenu:=Form_peach.PopupOpen;
-Form_peach.ListView1.Cursor:=crDefault;
+Form_peach.ListView1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 Form_peach.ImageListSearch.Picture.Bitmap:=Bsearch;
 Form_peach.ImageListSearch.Hint:=txt_searchfor;
 refreshstatus:=0;
@@ -24706,7 +24830,7 @@ browserbusy_minor:=false;
 Form_peach.ProgressBar2.Visible:=false;
 Form_peach.Panel10.Visible:=false;
 Form_peach.ListView1.PopupMenu:=Form_peach.PopupOpen;
-Form_peach.ListView1.Cursor:=crDefault;
+Form_peach.ListView1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 Form_peach.ImageListSearch.Picture.Bitmap:=Bsearch;
 refreshstatus:=0;
 end;
@@ -29559,18 +29683,18 @@ procedure settoolbardisp;
 begin
 with Form_peach do
 begin
+{$IFDEF MSWINDOWS}
+{$ELSE}
+ButtonProperties.Visible:=false;
+MenuItemProperties.Visible:=false;
+mProperties.Visible:=false;
+pmProperties.Visible:=false;
+pmbcProperties.Visible:=false;
+{$ENDIF}
 if lasttoolbar=1 then
    begin
    if fun='FILEBROWSER' then ButtonDelete.Caption:=txt_securedelete
    else ButtonDelete.Caption:=txt_2_5_delete_fromarchive;
-   {$IFDEF MSWINDOWS}
-   {$ELSE}
-   ButtonProperties.Visible:=false;
-   MenuItemProperties.Visible:=false;
-   mProperties.Visible:=false;
-   pmProperties.Visible:=false;
-   pmbcProperties.Visible:=false;
-   {$ENDIF}
    end;
 if lasttoolbar=2 then
    if fun<>'FILEBROWSER' then
@@ -30047,7 +30171,7 @@ if az=false then sort_za_stringgridlist(listsortcol);
 update_listview;
 generate_archive_breadcrumb;
 
-Form_Peach.ListView1.Cursor:=crDefault;
+Form_Peach.ListView1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 Form_Peach.ListView1.Items.EndUpdate;
 Form_Peach.StringGridList.EndUpdate;
 end;
@@ -34301,6 +34425,7 @@ case panelname of
    PanelDefaults.Top:=0;
    PanelDefaults.Visible:=true;
    Form_peach.Splitter3.Left:=splitter3size;
+   ComboBoxLanguage.Caption:=lang_file;
    updatepluginstatus;
    if savehistory=1 then Form_peach.LabelResetHistory.enabled:=true else Form_peach.LabelResetHistory.enabled:=false;
    savestatus_defaults;
@@ -35330,8 +35455,8 @@ work_path:='';
 case work_dir of
    0: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output
    1: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output (preview in temp)
-   2: work_path:='-w'; //let 7z determinating appropriated temp folder for all actions
-   3: work_path:=stringdelim('-w'+escapefilename(custom_work_path,desk_env)); //custom for all actions
+   2: work_path:=stringdelim('-w'+escapefilename(peaziptmpdirroot+STR_PZWORKTMP+DirectorySeparator,desk_env));//in peazip-tmp
+   3: work_path:=stringdelim('-w'+escapefilename(custom_work_path+DirectorySeparator+STR_PZWORKTMP+DirectorySeparator,desk_env)); //custom for all actions
    //4: none, preview in temp
    //5: none for all actions (can't perform preview)
    end;
@@ -38442,7 +38567,7 @@ if realtar=true then
       {$ENDIF}
       end;
    end;
-Form_peach.StringGrid1.Cursor:=crDefault;
+Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 Form_peach.StringGrid1.RowCount:=1;
 addfilestr(Form_peach.StringGrid1,outname);
 Form_peach.StringGrid1.AutoSizeColumns;
@@ -40599,6 +40724,7 @@ case desk_env of
    0: begin cl:='xterm'; end;//unknown, not win or osx
    1: begin cl:='gnome-terminal --working-directory='+escapefilenamedelim(s,desk_env); end;//Gnome
    2: begin cl:='konsole --workdir '+escapefilenamedelim(s,desk_env); end;//KDE
+   20: begin cl:='open -a Terminal '+escapefilenamedelim(s,desk_env); end;//macOS
    end;
 {$ENDIF}
 if Form_peach.Visible=true then Application.ProcessMessages;
@@ -40622,6 +40748,11 @@ case desk_env of
    2: begin cl:='konsole -e'; end;
    end;
 cl:=cl+' ''bash -c "'+s+'; read line"''';
+
+{$IFDEF DARWIN}
+cl:='open '+s;
+{$ENDIF}
+
 if Form_peach.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
 P.CommandLine:=cl;
@@ -40707,11 +40838,13 @@ if (mode =1) or (checkempty_dir(peaziptmpdirroot+STR_PZWORKTMP+directoryseparato
    cleardir(s,true,false);
    end;
 if mode=1 then
+   begin
    if (directoryexists(peaziptmpdir)) or (directoryexists(peaziptmpdirroot+STR_PZWORKTMP+directoryseparator)) then
       begin
       pMessageWarningOK(txt_8_3_lw);
       cp_open(peaziptmpdirroot,desk_env);
       end;
+   end;
 end;
 
 procedure on_exit;
@@ -40999,6 +41132,74 @@ case i of
 {$ELSE}
 try
 P:=tprocessutf8.Create(nil);
+{$IFDEF DARWIN}
+case i of
+   1: if isawebservice(custedit1) then
+         cl:=stringdelim(custedit1+extractfilename(s))
+      else
+         cl:=(custedit1)+' '+stringdelim(s);
+   2: if isawebservice(custedit2) then
+         cl:=stringdelim(custedit2+extractfilename(s))
+      else
+         cl:=(custedit2)+' '+stringdelim(s);
+   3: if isawebservice(custedit3) then
+         cl:=stringdelim(custedit3+extractfilename(s))
+      else
+         cl:=(custedit3)+' '+stringdelim(s);
+   4: if isawebservice(custedit4) then
+         cl:=stringdelim(custedit4+extractfilename(s))
+      else
+         cl:=(custedit4)+' '+stringdelim(s);
+   5: if isawebservice(custedit5) then
+         cl:=stringdelim(custedit5+extractfilename(s))
+      else
+         cl:=(custedit5)+' '+stringdelim(s);
+   6: if isawebservice(custedit6) then
+         cl:=stringdelim(custedit6+extractfilename(s))
+      else
+         cl:=(custedit6)+' '+stringdelim(s);
+   7: if isawebservice(custedit7) then
+         cl:=stringdelim(custedit7+extractfilename(s))
+      else
+         cl:=(custedit7)+' '+stringdelim(s);
+   8: if isawebservice(custedit8) then
+         cl:=stringdelim(custedit8+extractfilename(s))
+      else
+         cl:=(custedit8)+' '+stringdelim(s);
+   9: if isawebservice(custedit9) then
+         cl:=stringdelim(custedit9+extractfilename(s))
+      else
+         cl:=(custedit9)+' '+stringdelim(s);
+   10: if isawebservice(custedit10) then
+         cl:=stringdelim(custedit10+extractfilename(s))
+      else
+         cl:=(custedit10)+' '+stringdelim(s);
+   11: if isawebservice(custedit11) then
+         cl:=stringdelim(custedit11+extractfilename(s))
+      else
+         cl:=(custedit11)+' '+stringdelim(s);
+   12: if isawebservice(custedit12) then
+         cl:=stringdelim(custedit12+extractfilename(s))
+      else
+         cl:=(custedit12)+' '+stringdelim(s);
+   13: if isawebservice(custedit13) then
+         cl:=stringdelim(custedit13+extractfilename(s))
+      else
+         cl:=(custedit13)+' '+stringdelim(s);
+   14: if isawebservice(custedit14) then
+         cl:=stringdelim(custedit14+extractfilename(s))
+      else
+         cl:=(custedit14)+' '+stringdelim(s);
+   15: if isawebservice(custedit15) then
+         cl:=stringdelim(custedit15+extractfilename(s))
+      else
+         cl:=(custedit15)+' '+stringdelim(s);
+   16: if isawebservice(custedit16) then
+         cl:=stringdelim(custedit16+extractfilename(s))
+      else
+         cl:=(custedit16)+' '+stringdelim(s);
+   end;
+{$ELSE}
 case i of
    1: if isawebservice(custedit1) then
          cl:=stringdelim(custedit1+extractfilename(s))
@@ -41065,6 +41266,7 @@ case i of
       else
          cl:=stringdelim(custedit16)+' '+stringdelim(s);
    end;
+{$ENDIF}
 P.CommandLine:=cl;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
 P.Execute;
@@ -41972,6 +42174,25 @@ begin
 on_ComboBoxKiBChange;
 end;
 
+procedure TForm_peach.ComboBoxLanguageCloseUp(Sender: TObject);
+var
+   s:AnsiString;
+begin
+if openstarted=false then exit;
+s:=ComboBoxLanguage.Caption;
+if s=lang_file then exit;
+if FileExists(sharepath+'lang'+directoryseparator+s) then
+   begin
+   {$IFDEF MSWINDOWS}
+   peaziplanguage(s);
+   restartclosepeaapp;
+   {$ELSE}
+   lang_file:=s;
+   saverestartclosepeaapp;
+   {$ENDIF}
+   end;
+end;
+
 procedure TForm_peach.ComboBoxMaxArgChange(Sender: TObject);
 begin
 on_CheckBoxmaxarg_click;
@@ -42633,7 +42854,7 @@ if cancontinue=false then //re-generate data
    for i:=0 to rc-1 do Form_Peach.StringGridList.Rows[i].Assign(Form_Peach.StringGridAddress.Rows[i]);
    if Form_peach.EditOpenIn1.Text='' then
       begin
-      Form_Peach.ListView1.Cursor:=crDefault;
+      Form_Peach.ListView1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
       Form_Peach.ListView1.Items.EndUpdate;
       Form_Peach.StringGridList.EndUpdate;
       prevlistfilter:=Form_peach.EditOpenIn1.Text;
@@ -42655,7 +42876,7 @@ while i<=(Form_Peach.ListView1.Items.Count-1) do
 
 if Form_peach.StringGridList.RowCount<2 then Form_peach.StringGridList.RowCount:=2;
 
-Form_Peach.ListView1.Cursor:=crDefault;
+Form_Peach.ListView1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 Form_Peach.ListView1.Items.EndUpdate;
 Form_Peach.StringGridList.EndUpdate;
 prevlistfilter:=Form_peach.EditOpenIn1.Text;
@@ -44304,7 +44525,6 @@ pmbookmarks.visible:=true;
 pmorganizebookmarks.visible:=true;
 pmcommand.visible:=true;
 pmexplore.visible:=true;
-pmproperties.visible:=true;
 pmquickdelete.visible:=true;
 pmzerofree.visible:=true;
 pmsecuredeletefree.visible:=true;
@@ -44313,10 +44533,6 @@ pmmisc.visible:=true;
 MenuItem91.visible:=true;
 MenuItem75.visible:=true;
 pmcut.visible:=false;
-{$IFDEF MSWINDOWS}
-{$ELSE}
-pmproperties.visible:=false;;
-{$ENDIF}
 pmcheck.visible:=true;
 pmpdup.visible:=true;
 pmws.visible:=true;
@@ -44361,7 +44577,6 @@ pmbookmarks.visible:=false;
 pmorganizebookmarks.visible:=false;
 pmcommand.visible:=false;
 pmexplore.visible:=false;
-pmproperties.visible:=false;
 MenuItem14.visible:=false;
 MenuItem79.visible:=false;
 pmcheck.visible:=false;
@@ -45104,6 +45319,8 @@ var
    tmpfto: widestring;
    i:integer;
 begin
+if fto<>'' then
+   if not(DirectoryExists(fto)) then ForceDirectories(fto);
 //file already checked when the function is called
 tmpfnames:='';
 for i:=0 to (length(fnames)-1) do tmpfnames:=tmpfnames+WideString(expandfilename(fnames[i]))+#0;
@@ -45446,7 +45663,7 @@ if namingconflicterror=0 then //try rename (faster) instead of copy
 else
    case pMessageNamingConflict(txt_7_8_destexistfile) of
       6: cl:='cp -p -r -f '+stringdelim(d1+'.')+' '+stringdelim(d2); //overwrite
-      1: cl:='cp -p -r -u '+stringdelim(d1+'.')+' '+stringdelim(d2); //update
+      1: cl:='cp -p -r -u '+stringdelim(d1+'.')+' '+stringdelim(d2); //update (button is disabled on Darwin/macOS because its current implementation of cp does not support update switch)
       7: cl:='cp -p -r -n '+stringdelim(d1+'.')+' '+stringdelim(d2); //do not overwrite
       else exit; //cancel
       end;
@@ -45534,7 +45751,7 @@ if (form_peach.RadioGroupAction.ItemIndex<2) //extraction operations
       {$IFDEF MSWINDOWS}if tonewfolder=0 then SHChangeNotify(SHCNE_RMDIR,SHCNF_PATH,pstring(altdest),nil);{$ENDIF}
    except
    end;
-
+   outname:=altdest;
    willbemoved:=false;
    forcewillbemoved:=false;
    moverelpath:='';
@@ -47065,6 +47282,36 @@ case jumpdest of
    listdir(s,false,false);
    {$ENDIF}
    end;
+   'Volumes':
+   begin
+   {$IFDEF MSWINDOWS}
+   {$ELSE}
+   Form_peach.EditUn7zaFilter.Text:='*';
+   s:='/Volumes/';
+   Form_peach.EditOpenIn.Text:=s;
+   listdir(s,false,false);
+   {$ENDIF}
+   end;
+   'Applications':
+   begin
+   {$IFDEF MSWINDOWS}
+   {$ELSE}
+   Form_peach.EditUn7zaFilter.Text:='*';
+   s:='/Applications/';
+   Form_peach.EditOpenIn.Text:=s;
+   listdir(s,false,false);
+   {$ENDIF}
+   end;
+   'System Applications':
+   begin
+   {$IFDEF MSWINDOWS}
+   {$ELSE}
+   Form_peach.EditUn7zaFilter.Text:='*';
+   s:='/System/Applications/';
+   Form_peach.EditOpenIn.Text:=s;
+   listdir(s,false,false);
+   {$ENDIF}
+   end;
    'dropbox':
    begin
    Form_peach.EditUn7zaFilter.Text:='*';
@@ -48241,7 +48488,7 @@ end;
 
 procedure TForm_peach.TabBarMouseEnter(Sender: TObject);
 begin
-TabBar.Cursor:=crDefault;
+TabBar.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 end;
 
 procedure TForm_peach.TabBarSectionClick(
@@ -50227,11 +50474,7 @@ var
    cl:ansistring;
 begin
 P:=tprocessutf8.Create(nil);
-{$IFDEF DARWIN}
-cl:='open ' + executable_path + 'pea.app';
-{$ELSE}
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
-{$ENDIF}
 P.CommandLine:=cl;
 if Form_peach.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -53264,7 +53507,7 @@ end;
 
 procedure TForm_peach.mLangClick(Sender: TObject);
 begin
-changelanguage;
+showpanel('defaults');//changelanguage;
 end;
 
 procedure TForm_peach.mlistClick(Sender: TObject);
@@ -56068,6 +56311,10 @@ ShellExecuteW(Form_peach.Handle, PWideChar ('open'), PWideChar('"'+w+'"'), PWide
 try
 P:=tprocessutf8.Create(nil);
 cl:=stringdelim(s);
+{$IFDEF DARWIN}
+if s[1] = '/' then cl:='open '+cl
+else cl:='open -a '+cl;
+{$ENDIF}
 P.CommandLine:=cl;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
 P.Execute;
@@ -58986,6 +59233,25 @@ case winver of
    end;
 {$ELSE}
 po_linsystemtools.Visible:=true;
+{$IFDEF DARWIN}
+po_cinnamonsett.visible:=false;
+po_gnomecc.visible:=false;
+po_kdesyssett.visible:=false;
+po_xfcesm.visible:=false;
+po_gnomesw.visible:=false;
+po_synaptic.visible:=false;
+po_linhistory.visible:=false;
+po_linid.visible:=false;
+po_linipaddress.visible:=false;
+po_lindfh.Caption:='df';
+po_lindush.Caption:='du';
+po_linpsef.Caption:='ps';
+{$ELSE}
+po_macsys.visible:=false;
+po_macact.visible:=false;
+po_macdisk.visible:=false;
+po_maclaunch.visible:=false;
+{$ENDIF}
 LabelTitleExtract4.Visible:=false;
 LabelTitleAdd4.Visible:=false;
 po_alltasks.visible:=false;
@@ -59210,7 +59476,7 @@ procedure TForm_peach.ListView1ContextPopup(Sender: TObject; MousePos: TPoint;
   var Handled: Boolean);
 begin
 ListView1.PopupMenu:=PopupOpen;
-if (ListView1.ViewStyle=vsReport) and (MousePos.y<25) then ListView1.PopupMenu:=PopupHeader;
+{$IFDEF MSWINDOWS}if (ListView1.ViewStyle=vsReport) and (MousePos.y<25) then ListView1.PopupMenu:=PopupHeader;{$ENDIF}
 end;
 
 procedure TForm_peach.lsetdefaultout_arcClick(Sender: TObject);
@@ -59305,6 +59571,21 @@ if cdate=true then col5size:=Form_Peach.ListView1.Column[4].Width;
 if cmethod=true then colmethodsize:=Form_Peach.ListView1.Column[7].Width;
 if catt=true then col6size:=Form_Peach.ListView1.Column[8].Width;
 if ccrc=true then col7size:=Form_Peach.ListView1.Column[9].Width;
+end;
+
+procedure TForm_peach.mBenchpeaClick(Sender: TObject);
+var
+   P:tprocessutf8;
+   cl:ansistring;
+begin
+if pMessageInfoYesNo('PEA'+char($0D)+char($0A)+char($0D)+char($0A)+txt_benchmark)=7 then exit;
+P:=tprocessutf8.Create(nil);
+cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' bench';
+P.CommandLine:=cl;
+if Form_peach.Visible=true then Application.ProcessMessages;
+if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+P.Execute;
+P.Free;
 end;
 
 procedure TForm_peach.mbrowsercaccessedClick(Sender: TObject);
@@ -59424,12 +59705,12 @@ end;
 
 procedure TForm_peach.po_lindfhClick(Sender: TObject);
 begin
-linlaunchconsole('df -h');
+linlaunchconsole({$IFDEF DARWIN}'/bin/df'{$ELSE}'df -h'{$ENDIF});
 end;
 
-procedure TForm_peach.po_lindhshClick(Sender: TObject);
+procedure TForm_peach.po_lindushClick(Sender: TObject);
 begin
-linlaunchconsole('du -sh /');
+linlaunchconsole({$IFDEF DARWIN}'/usr/bin/du'{$ELSE}'du -sh /'{$ENDIF});
 end;
 
 procedure TForm_peach.po_linhistoryClick(Sender: TObject);
@@ -59439,7 +59720,7 @@ end;
 
 procedure TForm_peach.po_linidClick(Sender: TObject);
 begin
-linlaunchconsole('id');
+linlaunchconsole({$IFDEF DARWIN}'/usr/bin/id'{$ELSE}'id'{$ENDIF});
 end;
 
 procedure TForm_peach.po_linipaddressClick(Sender: TObject);
@@ -59449,17 +59730,37 @@ end;
 
 procedure TForm_peach.po_linnetstatClick(Sender: TObject);
 begin
-linlaunchconsole('netstat');
+linlaunchconsole({$IFDEF DARWIN}'/usr/sbin/netstat'{$ELSE}'netstat'{$ENDIF});
 end;
 
 procedure TForm_peach.po_linpsefClick(Sender: TObject);
 begin
-linlaunchconsole('ps -ef');
+linlaunchconsole({$IFDEF DARWIN}'/bin/ps'{$ELSE}'ps -ef'{$ENDIF});
 end;
 
 procedure TForm_peach.po_lintopClick(Sender: TObject);
 begin
-linlaunchconsole('top');
+linlaunchconsole({$IFDEF DARWIN}'/usr/bin/top'{$ELSE}'top'{$ENDIF});
+end;
+
+procedure TForm_peach.po_macactClick(Sender: TObject);
+begin
+linlaunch('open "/System/Applications/Utilities/Activity Monitor.app"');
+end;
+
+procedure TForm_peach.po_macdiskClick(Sender: TObject);
+begin
+linlaunch('open "/System/Applications/Utilities/Disk Utility.app"');
+end;
+
+procedure TForm_peach.po_maclaunchClick(Sender: TObject);
+begin
+linlaunch('open "/System/Applications/Launchpad.app"');
+end;
+
+procedure TForm_peach.po_macsysClick(Sender: TObject);
+begin
+linlaunch('open "/System/Applications/Utilities/System Preferences.app');
 end;
 
 procedure TForm_peach.po_openunitasarchivelinClick(Sender: TObject);
@@ -61269,7 +61570,7 @@ for i := 0 to High(FileNames) do
             addfolderstr(Form_peach.StringGrid1,dfn);
             Form_peach.StringGrid1.AutoSizeColumns;
             updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
-            Form_peach.StringGrid1.Cursor:=crDefault;
+            Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
          end;
       Form_peach.Caption:=s;
       end
@@ -61286,7 +61587,7 @@ for i := 0 to High(FileNames) do
             Form_peach.StringGrid1.AutoSizeColumns;
             updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
             end;
-         Form_peach.StringGrid1.Cursor:=crDefault;
+         Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
          end;
       end;
    end;
@@ -62165,7 +62466,7 @@ procedure TForm_peach.mBenchClick(Sender: TObject);
 var
    s,cl,jobcode:ansistring;
 begin
-if pMessageInfoYesNo(txt_benchmark)=7 then exit;
+if pMessageInfoYesNo('7Z/P7ZIP'+char($0D)+char($0A)+char($0D)+char($0A)+txt_benchmark)=7 then exit;
 s:=fun;
 cl:=stringdelim(escapefilename(binpath,desk_env)+'7z'+DirectorySeparator+'7z'+EXEEXT)+' b';
 {$IFDEF LINUX}if sys7zlin=1 then cl:='7z b';{$ENDIF}
@@ -63549,7 +63850,7 @@ for i:=1 to sg.rowcount-1 do
 tmpenumd:=false;
 {$IFDEF MSWINDOWS}if Form_peach.PanelArchiveMain.Visible=true{$ELSE}if Form_peach.PanelArchiveMain.top=0{$ENDIF} then updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true)
 else updatecontent_ext;
-sg.Cursor:=crDefault;
+sg.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
 end;
 
 procedure TForm_peach.CheckBoxEnumdClick(Sender: TObject);
@@ -67411,7 +67712,7 @@ if Key=char(22) then
                   end;
                Form_peach.StringGrid1.AutoSizeColumns;
                updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
-               Form_peach.StringGrid1.Cursor:=crDefault;
+               Form_peach.StringGrid1.Cursor:={$IFDEF DARWIN}crArrow;{$ELSE}crDefault;{$ENDIF}
                end
             else open_archive_fromname(EditOpenIn.Text)
          else open_archive_fromname(EditOpenIn.Text)
@@ -68501,6 +68802,9 @@ if (targetnode.parent<>nil) then
       if TargetNode.Text='media' then begin jumpto('media'); exit; end;
       if TargetNode.Text='mnt' then begin jumpto('mnt'); exit; end;
       if TargetNode.Text='run/media' then begin jumpto('run/media'); exit; end;
+      if TargetNode.Text='Volumes' then begin jumpto('Volumes'); exit; end;
+      if TargetNode.Text='Applications' then begin jumpto('Applications'); exit; end;
+      if TargetNode.Text='System Applications' then begin jumpto('System Applications'); exit; end;
       {$ENDIF}
       if TargetNode.Text=txt_mypc then
          if treeonbutton=true then
@@ -68600,7 +68904,7 @@ else
    end;
 end;
 
-procedure dotreeviewstatus(TargetNode : TTreeNode);
+{procedure dotreeviewstatus(TargetNode : TTreeNode);
 begin
 if TargetNode=nil then
    begin
@@ -68646,6 +68950,53 @@ if targetnode.parent<>nil then
          if TargetNode.Expanded=true then expandroot:=1
          else expandroot:=0;
    end;
+end;}
+
+procedure dotreeviewstatus(TargetNode : TTreeNode);
+var
+   i:integer;
+   n:TTreeNode;
+begin
+n:=form_peach.TreeView1.Items.GetFirstNode;
+for i:=1 to form_peach.TreeView1.Items.Count-1 do
+  begin
+  if (n.parent=nil) then
+     begin
+     if (n.Text=txt_fs) then
+        if n.Expanded=true then expandfs:=1
+        else
+           begin
+           expandfs:=0;
+           expandmore:=0;
+           end;
+     if (n.Text=txt_bookmarks) then
+        if n.Expanded=true then expandbook:=1
+        else expandbook:=0;
+     if (n.Text=txt_list_history) then
+        if n.Expanded=true then expandhistory:=1
+        else expandhistory:=0;
+     if (n.Text=txt_open) then
+        if n.Expanded=true then expandrun:=1
+        else expandrun:=0;
+     end;
+  if (n.parent<>nil) then
+     begin
+     if (n.parent.Text=txt_fs) and (n.Text='...') then
+        if n.Expanded=true then expandmore:=1
+        else expandmore:=0;
+     if (n.parent.Text=txt_fs) and (n.Text=txt_mypc) then
+        if n.Expanded=true then expandroot:=1
+        else expandroot:=0;
+     if (n.parent.Text=txt_open) and (n.Text=txt_3_3_apps) then
+        if n.Expanded=true then expandapps:=1
+        else expandapps:=0;
+     if (n.parent.Text=txt_open) and (n.Text=txt_4_8_fun) then
+        if n.Expanded=true then expandfun:=1
+        else expandfun:=0;
+     end;
+  N := N.GetNext;
+  end;
+if TargetNode=nil then Form_peach.treeview1.selected:=nil;
 end;
 
 procedure TForm_peach.TreeView1MouseDown(Sender: TObject; Button: TMouseButton;
@@ -68892,7 +69243,7 @@ end;
 function TControlDragObject.GetDragCursor(Accepted: Boolean; X, Y: Integer): TCursor;
 begin
 if Accepted=true then
-   Result := crDefault
+   Result := {$IFDEF DARWIN}crArrow{$ELSE}crDefault{$ENDIF}
 else
    Result := crDrag;
 if Form_peach.Timerdrag.Enabled=false then
