@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Català
-8.3
+8.4
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
 Última revisió el: 20211121
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binari
 txt_8_3_cw: Voleu canviar el directori de treball? Aquesta acció reestablirà els fitxers temporals i reiniciarà l'aplicació.
 txt_8_3_temperature: Temperatura de color

@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Hungarian - Magyar
-8.3
+8.4
 Fordító: Zityi's Translator Team
 Last rev. by: Giorgio Tani
 Last rev.: 20210523
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
 txt_8_3_temperature: Color temperature

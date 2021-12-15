@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Français
-8.3
+8.4
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 14.11.2021
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binaire
 txt_8_3_cw: Changer de répertoire de travail ? Cela réinitialisera les fichiers de travail temporaires et redémarrera l’application.
 txt_8_3_temperature: Température de couleur

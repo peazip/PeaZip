@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.3
+8.4
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20210524
+Ultima rev.: 20211205
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Visualizzare report di errori e list
 txt_8_3_mbubin: Binario
 txt_8_3_cw: Modificare la directory di lavoro? L'applicazione sarà riavviate i file temporanei resettati.
 txt_8_3_temperature: Temperatura colore
@@ -530,8 +531,8 @@ txt_2_7_un7z_browse_flat: provare visualizza tutto (F6)
 txt_2_7_updating: Update, aggiunta all'archivio
 txt_2_6_folders: (cartelle)
 txt_2_6_advanced: Avanzate
-txt_2_6_plalways: Lasciare sempre aperto per esaminare il risultato del lavoro
-txt_2_6_plsmart: Lasciare aperto solo quando necessario (errori, report di list o test)
+txt_2_6_plalways: Visualizzare sempre i report dei lavori
+txt_2_6_plsmart: Visualizzare report di errori, list e test
 txt_2_5_sessionio: (per questa sessione)
 txt_2_5_advanced: Configurazione avanzata: mettere gli spazi tra parametri e nome file se necessario
 txt_2_5_basic: Configurazione di base: applicazione e parametri prima del nome file
@@ -688,7 +689,7 @@ txt_check_select: Checksum/hash da calcolare
 txt_clear: Svuota
 txt_clearlayout: Svuota layout
 txt_pj_hint: Cliccare qui per importare il lavoro dalla GUI e/o resettare le modifiche
-txt_autoclose: Chiudi PeaLauncher quando il lavoro è terminato
+txt_autoclose: Non visualizzare i report dei lavori
 txt_cl: linea di comando:
 txt_compare: Compara file
 txt_compress: Comprimi

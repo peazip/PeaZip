@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Русский
-8.3
+8.4
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
 Ред.: 20211128
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Двоичный
 txt_8_3_cw: Изменить рабочий каталог? Это приведет к пересозданию временных рабочих файлов и перезапуску приложения.
 txt_8_3_temperature: Цветовая температура

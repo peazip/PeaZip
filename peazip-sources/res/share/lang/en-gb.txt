@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 English (United Kingdom)
-8.3
+8.4
 Translated by: Robert Readman
 Last rev. by: 
-Last rev.: 20110531
+Last rev.: 20211128
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
 txt_8_3_temperature: Color temperature
@@ -530,8 +531,8 @@ txt_2_7_un7z_browse_flat: try flat view (F6)
 txt_2_7_updating: Updating existing archive
 txt_2_6_folders: (folders)
 txt_2_6_advanced: Advanced
-txt_2_6_plalways: Always keep open to inspect task's report
-txt_2_6_plsmart: Keep open only if needed (error, list or test reports)
+txt_2_6_plalways: Always stop to inspect task report
+txt_2_6_plsmart: Stop to inspect report for error, list, test
 txt_2_5_sessionio: (this session)
 txt_2_5_advanced: Advanced edit: place spaces between parameter strings and filename if needed
 txt_2_5_basic: Basic edit: application and parameters before input name
@@ -688,7 +689,7 @@ txt_check_select: Checksum/hash to perform
 txt_clear: Clear
 txt_clearlayout: Clear layout
 txt_pj_hint: Click to import task, reset changes and load up to date definition from GUI
-txt_autoclose: Close PeaLauncher when task completes
+txt_autoclose: Never stop to inspect task report
 txt_cl: command line:
 txt_compare: Compare files
 txt_compress: Compress

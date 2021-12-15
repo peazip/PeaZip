@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-8.3
+8.4
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
 Sist revidert: 20211118
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Endre arbeidskatalog? Dette medfører nullstilling av temporære arbeidsfiler og restart av programmet.
 txt_8_3_temperature: Fargetemperatur

@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-8.3
+8.4
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
 Last rev.: 20211114
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: 二进制
 txt_8_3_cw: 要更改工作目录吗？这将重置临时文件并重启本应用。
 txt_8_3_temperature: 色温

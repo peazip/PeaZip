@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-8.3
+8.4
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
 Zadnja revizija: 20211121
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Dvojiško
 txt_8_3_cw: Ali želite spremeniti delovno mapo? To bo ponastavilo začasne delovne datoteke in znova zagnalo aplikacijo.
 txt_8_3_temperature: Barvna temperatura

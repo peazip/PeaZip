@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Galician - Galego
-8.3
+8.4
 Traducido por:Antón Méixome, Manuel Cameselle,Nosi_982
 Last rev. by: Nosi_982
 Last rev.: 20120923
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
 txt_8_3_temperature: Color temperature

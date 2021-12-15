@@ -1,12 +1,13 @@
 ﻿=== PeaZip language file ===
 Ukrainian - Українська
-8.3
+8.4
 Перекладено Решетнюк В.В.(IxI_JOKER_IxI), Міщенко О.С., sasha[at]mishchenko.tk, Пилипчук О.П., pilipchukap[at]rambler[dot]ru
 Last rev. by: IxI_JOKER_IxI (Localize.org.ua)
 Last rev.: 20171030
 
 === PeaZip text group ===
 
+txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
 txt_8_3_temperature: Color temperature
