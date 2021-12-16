@@ -49,7 +49,7 @@
 @="Разбить файл"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2convert] 
-@="Конвертировать"
+@="Преобразовать"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2wipe]
 @="Безопасное удаление"
