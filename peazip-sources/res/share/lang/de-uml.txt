@@ -3,42 +3,42 @@ German - Deutsch
 8.4
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20210612
+Last rev.: 20211218
 
 === PeaZip text group ===
 
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
+txt_8_4_keepopenerrorslist: Fehlerbericht und Liste anzeigen
+txt_8_3_mbubin: Binär
+txt_8_3_cw: Arbeitsverzeichnis ändern? Dadurch werden temporäre Arbeitsdateien zurückgesetzt und die Anwendung neu gestartet.
+txt_8_3_temperature: Farbtemperatur
+txt_8_3_mbudec: Dezimal
+txt_8_3_htab: Tab hervorheben
+txt_8_3_maxarg: Maximale Befehlslänge
+txt_8_3_mbu: Multibyte-Zeichenfolge
+txt_8_3_prefalgo: Bevorzugte Algorithmen
+txt_8_3_skipdel: Gesperrte temporäre Dateien nicht löschen (bei Bedarf manuell zurücksetzen)
+txt_8_3_lw: Einige Dateien im Arbeitsverzeichnis sind gesperrt und können nicht automatisch entfernt werden
+txt_8_3_noupx: Diese Binärdatei kann nicht komprimiert werden (möglicherweise bereits komprimiert)
+txt_8_2_slower: (langsamer)
+txt_8_2_df: 7z / p7zip Ordnerinhalte anzeigen
+txt_8_2_vreport: 7z / p7zip ohne ausführlichen Bericht
+txt_8_2_ta: Zugegriffen
+txt_8_2_tc: Erstellt
+txt_8_2_keep: Dateien behalten
+txt_8_2_tm: Modifiziert
+txt_8_2_skipet: Testen auf Verschlüsselung überspringen
+txt_8_2_alltimes: Alle Zeitstempel speichern
+txt_8_2_supportedby: Unterstützt von
+txt_8_1_preparse: Archive immer vorab analysieren
+txt_8_1_bo: Dateibrowser Optimierungen
+txt_8_1_bop: Der Dateibrowser kann unter Optionen > Einstellungen > Allgemein für die Anzeige von Archiven mit sehr vielen Elementen optimiert werden.
+txt_8_1_nopreparse: Archive nicht vorab analysieren
+txt_8_1_ed: Fehler entdeckt.
+txt_8_1_togglearc: Den Archivinhalt als flache Ansicht darzustellen kann lange dauern. Trotzdem fortfahren?
+txt_8_1_preparsehint: Leistung optimieren, indem die Voranalyse großer Archive eingeschränkt wird. Die Voranalyse soll mögliche Probleme im Archivinhalt im Voraus erkennen.
+txt_8_1_slow: Langsam
+txt_8_1_vslow: Sehr langsam
+txt_8_1_volumes: Volumes
 txt_8_0_altcol: Alternative Gitterfarbe
 txt_8_0_forcebrowse: Nicht explizit unterstützte Archivtypen durchsuchen (Container, Disk-Images, Installer,...)
 txt_8_0_commonalgo: Gängige Algorithmen
@@ -69,7 +69,7 @@ txt_7_7_outtemp: Ausgabe, Vorschau in Temp-Ordner des Benutzers
 txt_7_7_sys7zreq: Benötigt p7zip-full oder  to be installed
 txt_7_7_tw: Temporärer Arbeitsordner zur Erstellen, Bearbeiten, Entpacken und Vorschau von Archiven per Drag and Drop.
 txt_7_7_sys7z: Verwende systemeigenes 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP Dateinamenkodierung 
+txt_7_6_zipenc: 7z / p7zip ZIP Dateinamenkodierung 
 txt_7_6_color: Farbe
 txt_7_6_custenc: benutzerdefinierter Zeichensatz
 txt_7_6_dark: Dunkel
@@ -91,7 +91,7 @@ txt_7_5_cutlen: Name bei angegebener Länge ausschneiden
 txt_7_5_cutlenw: Name auf (4..255) Zeichen kürzen. Namenskonflikte können später manuell bereinigt werden.
 txt_7_5_dragnone: Dropziel nicht sperren
 txt_7_5_specialbrowse: Möchten Sie alles entpacken, um weitere Daten für die Datei bereitzustellen?
-txt_7_5_ee: Entpacke alles für spezielle Dateitypen
+txt_7_5_ee: Alles entpacken für spezielle Dateitypen
 txt_7_5_draghide: Dropziel verstecken
 txt_7_5_draglh: Dropziel sperren und verstecken
 txt_7_5_draglock: Dropziel sperren
@@ -107,12 +107,12 @@ txt_7_4_locked: gesperrt
 txt_7_4_lockconfirm: Gesperrte Archive können nicht weiter bearbeitet werden. Soll dieses Archiv gesperrt werden?
 txt_7_4_recover: Archiv reparieren
 txt_7_4_tcurr: Zeitstempel für das Archiv von der Systemzeit übernehmen
-txt_7_4_setarc: Erweiterte Optionen zum Archivieren einstellen
-txt_7_4_setext: Erweiterte Optionen zum Entpacken einstellen
-txt_7_4_swzipx: Verwende ZIPX Erweiterung für ZIP-Archive ohne Deflate
+txt_7_4_setarc: Erweiterte Archivier-Einstellungen
+txt_7_4_setext: Erweiterte Entpack-Einstellungen
+txt_7_4_swzipx: ZIPX Erweiterung für ZIP-Archive ohne Deflate verwenden
 txt_7_3_archiveerrors: [Archiv kann Fehler enthalten]
 txt_7_3_archiveerrorshint: Das Archiv ist möglicherweise nicht gültig (aufgrund fehlender, beschädigter oder nicht standardmäßiger Daten). Für detaillierte Informationen kann eine Prüfung durchgeführt werden. Bei Archiven mit verschlüsseltem Inhaltsverzeichnis ist ein Kennwort zum Durchsuchen erforderlich.
-txt_7_3_clickextall: Klicke "Entpacke alles" zum Aktivieren
+txt_7_3_clickextall: "Alles entpacken" zum Aktivieren klicken
 txt_7_3_noconfdel: Keine Bestätigung zum Löschen nach dem Hinzufügen / Entpacken anzeigen
 txt_7_3_profile7zfastest: Schnelle Komprimierung, 7z fastest
 txt_7_3_maxbr: Maximiere Brotli Komprimierung mit höherem Speicherbedarf (könnte inkompatibel zu einigen Entpackern sein)
@@ -121,8 +121,8 @@ txt_7_3_profile7zfast: Mittlere Komprimierung, 7z fast
 txt_7_3_stl: Übernehme Zeitstempel für das Archiv von der neuesten Datei
 txt_7_2_altcomp: Hohe Komprimierung, ARC
 txt_7_2_clearnoupdate: Verwerfe geänderte Dateien
-txt_7_2_autoclosepeazip: Schließe PeaZip bei Abschluss der Aufgabe
-txt_7_2_zpaqall: Entpacke alle Dateirevisionen
+txt_7_2_autoclosepeazip: PeaZip bei Abschluss der Aufgabe schließen
+txt_7_2_zpaqall: Alle Dateirevisionen entpacken
 txt_7_2_extcomp: Extreme Komprimierung, ZPAQ
 txt_7_2_extcompultra: Extreme Komprimierung, ZPAQ ultra
 txt_7_2_fbrotlicomp: Schnellste Komprimierung, Brotli
@@ -130,23 +130,23 @@ txt_7_2_fzstandardcomp: Schnellste Komprimierung, Zstandard
 txt_7_2_loadcompsettings: Komprimierungseinstellungen laden
 txt_7_2_savecompsettings: Komprimierungseinstellungen speichern
 txt_7_2_source: Quelle
-txt_7_2_updateclear: Aktualisiere geänderte Dateien im Archiv und verwerfe geänderte Dateien
+txt_7_2_updateclear: Geänderte Dateien im Archiv aktualisieren und geänderte Dateien verwerfen
 txt_7_1_type_description_brotli: Brotli: Schneller Kompressor von Google, sehr schnelle Dekomprimierung
-txt_7_1_new: Entpacke alles hier, in neuem Ordner
-txt_7_1_smart: Entpacke alles hier, smart
+txt_7_1_new: Alles hier entpacken, in neuem Ordner
+txt_7_1_smart: Alles hier entpacken, smart
 txt_7_1_profileintermediate: Mittlere Komprimierung, ZIP/BZip2 fast
 txt_7_1_renfilesonly: Nur Dateien umbenennen
-txt_7_1_typetosearch: Tippen, um in aktuellen Pfad zu suchen
+txt_7_1_typetosearch: Tippen, um in aktuellem Pfad zu suchen
 txt_7_1_type_description_zstd: Zstandard: Schneller Kompressor von Facebook, sehr schnelle Dekomprimierung
 txt_7_0_af: Analysiere Ordnerinhalt
-txt_7_0_autoopentar: Öffne automatisch TAR Archive in tar.* Dateien
+txt_7_0_autoopentar: TAR-Archiv in tar.* Dateien automatisch öffnen
 txt_7_0_exttmppath: Inhalt wird außerhalb des temporären Ordners entpackt, in: 
-txt_6_9_autou: Aktualisiere automatisch geänderte Dateien in die Archive
-txt_6_9_forceu: Aktualisiere geänderte Dateien
+txt_6_9_autou: Geänderte Dateien in Archiven automatisch aktualisieren
+txt_6_9_forceu: Geänderte Dateien aktualisieren
 txt_6_9_opuns: Vorgang wird für diesen Archivtyp nicht unterstützt
-txt_6_9_overarch: Überschreibe Dateien mit den gleichen Namen, die im Archiv vorhanden sind?
+txt_6_9_overarch: Dateien mit gleichem Namen, die bereits im Archiv vorhanden sind, überschreiben?
 txt_6_9_uconf: Die geöffnete Datei wurde geändert. Archiv aktualisieren?
-txt_6_8_ndrop: Benutze natives Drag and Drop in Windows
+txt_6_8_ndrop: Natives Drag and Drop unter Windows verwenden
 txt_6_7_nop: (keine Vorschau)
 txt_6_6_pdupfound: Mögliche Duplikate gefunden (schnelle annähernde Prüfung)
 txt_6_6_rsh: Suchverlauf löschen
@@ -163,7 +163,7 @@ txt_6_5_seqerr: Fehler festgestellt, Originaldateien werden nicht gelöscht
 txt_6_5_sni: NT security information erfassen
 txt_6_5_sns: NTFS Alternate Data Stream erfassen
 txt_6_5_privacy: Datenschutz
-txt_6_5_showvolatile: Zeige welche Optionen veränderlich / kontextabhängig sind
+txt_6_5_showvolatile: Veränderliche oder kontextabhängige Optionen anzeigen
 txt_6_5_force: Versuche fehlerhafte Archive zu öffnen
 txt_6_5_warning: Warnung
 txt_6_5_yes: Ja
@@ -212,7 +212,7 @@ txt_5_6_rc: Rechtsklick für Optionen
 txt_5_6_layouts: Gespeicherte Layouts
 txt_5_6_upexisting: Vorhandenes Archiv aktualisieren
 txt_5_6_verbose: Details anzeigen
-txt_5_5_case: (beachtet Groß- und Kleinschreibung)
+txt_5_5_case: (beachtet Groß- / Kleinschreibung)
 txt_5_5_add: Zeichenfolge an angegebener Position hinzufügen
 txt_5_5_addsel: Zur aktuellen Auswahl hinzufügen
 txt_5_5_ext: Dateiendung ändern
@@ -230,17 +230,17 @@ txt_5_5_new: Neue Zeichenfolge
 txt_5_5_n: Anzahl zu löschender Zeichen
 txt_5_5_old: Alte Zeichenfolge
 txt_5_5_position: Position (Nummer oder "z" für das Ende)
-txt_5_5_intdir: Entpacke smart ohne überflüssigen Ordner
-txt_5_5_replacestr: Ersetze/entferne Zeichenfolge
-txt_5_5_datesameday: Gleicher Tag des ausgewählten Objekts
-txt_5_5_datesamehour: Gleiche Stunde des ausgewählten Objekts
-txt_5_5_datesamemonth: Gleicher Monat des ausgewählten Objekts
-txt_5_5_datesameweek: Gleicher Woche des ausgewählten Objekts
-txt_5_5_datesameyear: Gleiches Jahr des ausgewählten Objekts
+txt_5_5_intdir: Smart entpacken ohne überflüssigen Ordner
+txt_5_5_replacestr: Zeichenfolge ersetzen/entfernen
+txt_5_5_datesameday: Gleicher Tag der ausgewählten Datei
+txt_5_5_datesamehour: Gleiche Stunde der ausgewählten Datei
+txt_5_5_datesamemonth: Gleicher Monat der ausgewählten Datei
+txt_5_5_datesameweek: Gleicher Woche der ausgewählten Datei
+txt_5_5_datesameyear: Gleiches Jahr der ausgewählten Datei
 txt_5_5_scan: Scannen
 txt_5_5_select: Auswählen
-txt_5_5_similar: Ähnlich zu ausgewähltem Objekt
-txt_5_5_starting: Beginnend mit dem gleichen Zeichen
+txt_5_5_similar: Ähnlich zu ausgewählter Datei
+txt_5_5_starting: Gleicher Anfangsbuchstabe
 txt_5_5_string: Hinzuzufügende Zeichenfolge
 txt_5_5_subtractsel: Aus aktueller Auswahl entfernen
 txt_5_5_datehour: Diese Stunde
@@ -251,8 +251,8 @@ txt_5_5_dateday: Heute
 txt_5_5_upper: Großbuchstaben
 txt_5_5_extw: Warnung: Das Ändern der Dateiendung kann die Datei unbrauchbar machen
 txt_5_4_da: Datum hinzugefügt
-txt_5_4_deletearchives: Lösche Archive nach dem Entpacken
-txt_5_4_deletefiles: Lösche Quelldateien nach dem Komprimieren
+txt_5_4_deletearchives: Archive nach dem Entpacken löschen
+txt_5_4_deletefiles: Quelldateien nach dem Komprimieren löschen
 txt_5_4_deleteoriginal: Der Löschvorgang, wie im Hauptfenster eingestellt, wird dem Skript hinzugefügt.
 txt_5_4_lv: Zuletzt besucht
 txt_5_4_deletearchivesconfirm: Löschen des Quellarchives bestätigen?
@@ -272,11 +272,11 @@ txt_5_3_ia: Ebenfalls einschließen
 txt_5_3_io: Nur folgende Elemente einschließen
 txt_5_3_rec: Unterordner einschließen
 txt_5_3_resetsi: Systemintegration neu einstellen (Kontextmenü, Senden an, Dateiverknüpfung)?
-txt_5_2_oadd: Archiviere in den Quellpfad
+txt_5_2_oadd: Im Quellpfad archivieren
 txt_5_2_zerodelete: Möchten Sie die gewählten Dateien löschen und den Speicher mit Nullen überschreiben? Dieser Vorgang kann nicht rückgängig gemacht werden und die Dateien sind nicht wiederherstellbar
 txt_5_2_zfree: Möchten Sie den freien Speicher auf dem Laufwerk mit Nullen überschreiben?
 txt_5_2_sdfree: Möchten Sie den freien Speicher auf dem Laufwerk mit einem sicheren Verfahren löschen?
-txt_5_2_oext: Entpacke in den Quellpfad
+txt_5_2_oext: In den Quellpfad entpacken
 txt_5_2_securedeletefree: Freien Speicher sicher löschen
 txt_5_2_free: Dieser Vorgang kann einige Minuten dauern und verkürzt bei häufiger Anwendung die Lebensdauer flashbasierter Speicher
 txt_5_2_zerofiles: Mit Nullen überschreiben
@@ -287,7 +287,7 @@ txt_5_1_daily: Täglich
 txt_5_1_day: Tag
 txt_5_1_days: Tage
 txt_5_1_enddate: Enddatum
-txt_5_1_every: Jeden
+txt_5_1_every: Alle
 txt_5_1_w6: Freitag
 txt_5_1_hourly: Stündlich
 txt_5_1_hours: Stunden
@@ -304,11 +304,11 @@ txt_5_1_w7: Samstag
 txt_5_1_schedule: Zeitplan
 txt_5_1_schedexplain: Erstellt ein Skript im Klartext in der Oberfläche der Aufgabenplanung und plant dessen zeitliche Ausführung. Aufgaben-Skripte werden in einem Unterordner von PeaZip namens "Scheduled scripts" gespeichert. Um geplante Aufgaben zu ändern oder zu löschen kann die Aufgabenplanung des Betriebssystems verwendet werden. Alle geplanten Aufgaben werden im Unterordner "PeaZip" in der Aufgabenplanung abgelegt.
 txt_5_1_schedok: Zeiplan erfolreich angelegt
-txt_5_1_schedscripts: Gespeicherte Aufgaben-Skripte
+txt_5_1_schedscripts: Gespeicherte geplante Aufgaben-Skripte
 txt_5_1_startdate: Startdatum
 txt_5_1_starttime: Startzeitpunkt
 txt_5_1_w1: Sonntag
-txt_5_1_schedname: Name der Aufgabe, kennzeichnet sowohl das gespeicherte Skript als auch die Aufgabenplanung des Betriebssystems
+txt_5_1_schedname: Name der Aufgabe: Kennzeichnet sowohl das gespeicherte Skript als auch die Aufgabenplanung des Betriebssystems
 txt_5_1_ts: Aufgabenplanung
 txt_5_1_w5: Donnerstag
 txt_5_1_w3: Dienstag
@@ -375,7 +375,7 @@ txt_4_5_l: Links
 txt_4_5_noupdate: PeaZip ist aktuell
 txt_4_5_properties: Eigenschaften
 txt_4_5_r: Rechts
-txt_4_5_pj: Aufgaben-Skripte gespeichert
+txt_4_5_pj: Gespeicherte Aufgaben-Skripte
 txt_4_5_shaddress: Adresszeile anzeigen
 txt_4_5_shnav: Navigationsleiste anzeigen
 txt_4_5_shstatus: Statuszeile anzeigen
@@ -401,7 +401,7 @@ txt_4_2_arcabspath: Absolute Pfade verwenden
 txt_4_1_duplicateshint: "Größe"/"Prüfsumme" wird in der CRC-Spalte für wahrscheinlich doppelte Dateien im aktuellen Ordner oder Suchfilter angezeigt
 txt_4_1_adminhint: (HINWEIS: Alternativ kann man über UAC Administratorrechte anfordern, um in geschützten Pfaden zu arbeiten. Alt+F10 oder Optionen > Als Administrator ausführen)
 txt_4_1_selected: (ausgewählt)
-txt_4_1_duplicatesfound: doppelte Datei(en) gefunden
+txt_4_1_duplicatesfound: Doppelte Dateien gefunden
 txt_4_1_duplicatesfind: Doppelte Dateien suchen
 txt_4_1_runasadmin: Als Administrator ausführen
 txt_4_1_simplesearch: Einfache Suche
@@ -448,7 +448,7 @@ txt_3_1_languagetools: Übersetzen
 txt_3_1_workingdir: Arbeitsordner
 txt_3_0_nonreadableorpw: Das Archiv ist nicht lesbar. Das Archiv könnte ungültig oder dessen Inhaltsverzeichnis verschlüsselt sein. Möchten Sie ein Passwort versuchen?
 txt_3_0_readablepw: Archiv scheint passwortgeschützt zu sein
-txt_3_0_configure: Datei-Verknüpfungen, Kontext- und "Senden an"-Menü anpassen
+txt_3_0_configure: Dateiverknüpfungen und Kontextmenü anpassen
 txt_3_0_resettmp: Temporären Ordner von PeaZip zurücksetzen
 txt_2_9_address: Addresszeile
 txt_2_9_adv: Erweiterte Filter werden auf Archive angewendet, die von 7z oder FreeArc unterstützt werden (siehe Dokumentation). Sie überschreiben einfache Filter, die für Suchfunktionen verwendet und in Lesezeichen und Verlauf angezeigt werden.
@@ -457,14 +457,14 @@ txt_2_9_copyhere: Hierher kopieren
 txt_2_9_noscan: Keine Dateien prüfen, die dem Layout hinzugefügt werden
 txt_2_9_extconsole: Die Konsole zum Entpacken ist nur verfügbar, während ein Archiv geöffnet ist
 txt_2_9_thl: Schaltflächen hervorheben
-txt_2_9_home: Benutzer-Ordner
+txt_2_9_home: Benutzerordner
 txt_2_9_lt: Groß
 txt_2_9_mt: Mittel
 txt_2_9_movehere: Hierher verschieben
 txt_2_9_nav: Navigation
 txt_2_9_navbar: Navigationsleiste
 txt_2_9_none: Keine
-txt_2_9_organize: Lesezeichen verwalten
+txt_2_9_organize: Oberfläche
 txt_2_9_public: Öffentlich
 txt_2_9_rec: Rekursiv: in Unterordnern suchen, kann einige Zeit in Anspruch nehmen
 txt_2_9_selected: Ausgewählte
@@ -477,13 +477,13 @@ txt_2_9_toolbar: Werkzeugleiste
 txt_2_9_tree: Ordnerstruktur
 txt_2_9_views: Ansichten
 txt_2_8_experimental: (experimentell)
-txt_2_8_zcopy: (Windows) Kopiere Dateien in wiederaufnehmbarem Modus, langsamer
+txt_2_8_zcopy: (Windows) Dateien in wiederaufnehmbarem Modus kopieren, langsamer
 txt_2_8_addvol: Ganze Laufwerke zu einem Archiv hinzuzufügen viel Zeit in Anspruch nehmen. Trotzdem fortfahren?
 txt_2_8_uniterror: Kann nicht auf die Einheit zugreifen
 txt_2_8_cannotconvert: Kann gewählte(s) Archiv(e) nicht konvertieren
 txt_2_8_convertbegin: Mit gewähltem Komprimierungs-Level fortfahren, um das Archiv zu konvertieren?
 txt_2_8_convert: Konvertieren
-txt_2_8_convertexisting: Konvertiere vorhandene Archive
+txt_2_8_convertexisting: Vorhandene Archive konvertieren
 txt_2_8_convertdelete: Temporäre Dateien und Ordner löschen, die für die Konvertierung angelegt wurden?
 txt_2_8_details: Details
 txt_2_8_parallel: Aufgaben parallel durchführen falls möglich
@@ -499,21 +499,21 @@ txt_2_8_usedefaultoutpath: Standard-Ausgabepfad nutzen
 txt_2_7_experimental: (experimentell, siehe Dokumentation)
 txt_2_7_optional: (optional)
 txt_2_7_list_tryflatorpw: , mögliche Lösungen: rekursive Ansicht (F6), Passwort eingeben (F9), Archiv erneut herunterladen
-txt_2_7_separate: Jedes Objekt zu separatem Archiv hinzufügen
+txt_2_7_separate: Jede Datei zu separatem Archiv hinzufügen
 txt_2_7_pwsupported: Archiviere mit Passwort
 txt_2_7_cancel: Abbrechen
 txt_2_7_encfn: Dateinamen auch verschlüsseln (falls vom Dateityp unterstützt)
 txt_2_7_setpw: Passwort / Schlüsseldatei eingeben
 txt_2_7_ext: Entpacke:
-txt_2_7_extfrom: Entpacke aus Archiv:
-txt_2_7_es: Entpacke unterstützte Dateitypen, die kein Archiv sind, z. B. ausführbare Dateien, MS Office- und LibreOffice-Dokumente
-txt_2_7_eu: Entpacke nicht unterstützte Dateitypen mit benutzerdefiniertem Entpackprogramm
+txt_2_7_extfrom: Aus Archiv entpacken:
+txt_2_7_es: Unterstützte Dateitypen entpacken, die kein Archiv sind, z. B. ausführbare Dateien, MS Office- und LibreOffice-Dokumente
+txt_2_7_eu: Nicht unterstützte Dateitypen mit benutzerdefiniertem Entpackprogramm entpacken
 txt_2_7_clipboard: Zwischenablage
-txt_2_7_goarclayout: Gehe zu Archivierungs-Ansicht
-txt_2_7_goextlayout: Gehe zu Entpacken-Ansicht
+txt_2_7_goarclayout: Zur Archivierungs-Ansicht
+txt_2_7_goextlayout: Zur Entpacken-Ansicht
 txt_2_7_ok: OK
 txt_2_7_drag_archive: Datei als neues Archiv öffnen? ("Nein" öffnet das Archiv in der aktuellen Archivierungs-Ansicht)
-txt_2_7_oop: Öffne Ausgabeordner bei Abschluss der Aufgabe
+txt_2_7_oop: Ausgabeordner bei Abschluss der Aufgabe öffnen
 txt_2_7_validatefn: Vorgang angehalten, ungültiger Dateiname gefunden:
 txt_2_7_validatecl: Vorgang angehalten, ein möglicherweise gefährlicher Befehl wurde gefunden (z. B. ungültige Kommandozeile für das benutzte Programm):
 txt_2_7_output: Ausgabe
@@ -524,14 +524,14 @@ txt_2_7_archivehint: Dateien und Ordner zum Archivieren hierherziehen oder Recht
 txt_2_7_exthint: Archive zum Entpacken hierherziehen oder Rechtsklick für weitere Optionen
 txt_2_7_setadvf: Erweiterte Filter einstellen
 txt_2_7_selpath: Pfad der gewählten Dateien
-txt_2_7_separateerror: Kommandozeile der Aufgabendefinition kann nicht importiert werden, während die Option "Jedes Objekt zu einem separaten Archiv hinzufügen" verwendet wird, da die Aufgabe mit mehreren unterschiedlichen Befehlen ausgeführt wird
-txt_2_7_noinput: Die Ansicht ist leer: Bitte Datei(en) hinzufügen oder Ansicht ändern, um die Liste mit Archiven zum Entpacken zu füllen.
+txt_2_7_separateerror: Kommandozeile der Aufgabendefinition kann nicht importiert werden, während die Option "Jede Datei zu einem separaten Archiv hinzufügen" verwendet wird, da die Aufgabe mit mehreren unterschiedlichen Befehlen ausgeführt wird
+txt_2_7_noinput: Die Ansicht ist leer: Bitte Dateien hinzufügen oder Ansicht ändern, um die Liste mit Archiven zum Entpacken zu füllen.
 txt_2_7_dirsize: Der Inhalt von Ordnern wird nicht überprüft, um die Gesamtgröße zu ermitteln
 txt_2_7_un7z_browse_flat: Rekursive Ansicht versuchen (F6)
 txt_2_7_updating: Aktualisieren, hinzufügen zu vorhandenem Archiv:
 txt_2_6_folders: (Ordner)
 txt_2_6_advanced: Erweitert
-txt_2_6_plalways: Immer offen halten, um den Job-Bericht lesen zu können
+txt_2_6_plalways: Immer offen halten, um den Aufgaben-Bericht lesen zu können
 txt_2_6_plsmart: Nur bei Bedarf offen halten (Fehler-, Auflistungs- oder Prüf-Berichte)
 txt_2_5_sessionio: (diese Sitzung)
 txt_2_5_advanced: Erweiterte Bearbeitung: platziere Leerzeichen zwischen Parametern und Dateinamen falls erforderlich
@@ -540,14 +540,14 @@ txt_2_5_cannotrun: Kann nicht ausgeführt werden
 txt_2_5_custeditors: Selbst definierte Editoren, Player, Antivirus-Scanner, usw... (übergeht die System-Verknüpfungen)
 txt_2_5_delete: Löschen
 txt_2_5_delete_fromarchive: Aus Archiv löschen
-txt_2_5_langflag: Archivierte Objektnamen als UTF-8 Text darstellen. Abwählen, um erweiterte Zeichen als "?" darzustellen.
-txt_2_5_encpj: Speicher Job-Definition als UTF-8 Text
+txt_2_5_langflag: Archivierte Dateinamen als UTF-8 Text darstellen. Abwählen, um erweiterte Zeichen als "?" darzustellen.
+txt_2_5_encpj: Speichere Aufgaben-Definition als UTF-8 Text
 txt_2_5_execommand: Programm oder Befehl
 txt_2_5_help: Hilfe
 txt_2_5_langhint: Hinweis: Erweiterte Zeichen werden durch "?" ersetzt. Platzhalter können die Syntax vereinfachen, wenn der Zeichensatz des Archivs auf der aktuellen Architektur nicht übernommen werden kann.
 txt_2_5_mini_help: Mini-Handbuch
 txt_2_5_offline_help: PeaZip Hilfe
-txt_2_5_tray: In den Tray (neben der Uhr) minimieren
+txt_2_5_tray: In Taskleistenecke minimieren
 txt_2_5_remove: Entfernen
 txt_2_5_hintpaths: Rechtsklick, um das Systemmenü und Benutzerordner zu öffnen
 txt_2_5_selectapp: Anwendung auswählen
@@ -624,10 +624,10 @@ txt_action_hint: Aktion beim Öffnen oder Vorschau mit verknüpfter Anwendung
 txt_add: Hinzufügen
 txt_add_existing_archive: Hinzufügen (wenn das Archiv existiert)
 txt_add_archive: Archiv hinzufügen
-txt_add_files: Datei(en) hinzufügen
+txt_add_files: Dateien hinzufügen
 txt_add_folder: Ordner hinzufügen
 txt_add_path: Pfad hinzufügen
-txt_add_tolayout: Ausgewählte Datei(en) und Ordner zum  Archiv-Layout hinzufügen
+txt_add_tolayout: Ausgewählte Dateien und Ordner zum  Archiv-Layout hinzufügen
 txt_add_toarchive: Zu Archiv hinzufügen
 txt_add_tobookmarks: Zu Lesezeichen hinzufügen
 txt_address_hint: Addresse: Akzeptiert Platzhalter ? für einzelne Zeichen und * für Zeichenfolgen; benötigt keine " oder ' Eingrenzungen
@@ -643,7 +643,7 @@ txt_all_size: Dateigröße
 txt_error_input_upx: Erlaubt die Auswahl einer einzelnen ausführbaren Datei
 txt_always_pw: Passwort zum Entpacken/Testen/Auflisten durch Kontextmenü erfragen
 txt_ignore_ext: Bei "Entpacken und..." immer den Pfad ignorieren
-txt_ignore_disp: Für "Entpacke dargestellte..." immer den Pfad ignorieren
+txt_ignore_disp: Bei "Entpacke dargestellte..." immer den Pfad ignorieren
 txt_ignore_sel: Bei "Entpacke die Auswahl..." immer den Pfad ignorieren
 txt_key_hint: Schlüsseldatei-Hash an Passwort anhängen; Archive von PeaZip und anderen Programmen nach dem gleichen Standard entschlüsselt werden oder durch Eingabe des Hash-Werts als Erweiterung des Passworts
 txt_timestamp: Zeitstempel an Archivnamen anhängen
@@ -679,12 +679,12 @@ txt_list_browsing: Durchsuchen:
 txt_archive_root: Durchsuche: Archiv-Rootordner
 txt_type_description_bzip2: BZip2: ziemlich starke Komprimierung, durchschnittliche Geschwindigkeit
 txt_pw_empty: Leeres Passwort kann nicht akzeptiert werden, bitte entweder Passwort angeben oder "Verschlüsseln"-Option abwählen
-txt_add_error: Objekt(e) können nicht hinzugefügt/aktualisiert oder gelöscht werden. Das Archiv ist nicht beschreibbar oder unterstützt diesen Vorgang nicht (z.B. bei Multi-volume oder soliden Archiven). Die Bearbeitung nicht explizit unterstützter Archivtypen kann in den Einstellungen aktiviert werden.
+txt_add_error: Dateien können nicht hinzugefügt/aktualisiert oder gelöscht werden. Das Archiv ist nicht beschreibbar oder unterstützt diesen Vorgang nicht (z.B. bei Multi-volume oder soliden Archiven). Die Bearbeitung nicht explizit unterstützter Archivtypen kann in den Einstellungen aktiviert werden.
 txt_un7z_browse_failure: Durchsuchen des Archivs nicht möglich
 txt_list_error: Archivinhalt kann nicht aufgelistet werden, bitte überprüfen, ob das Archiv passwortgeschützt oder beschädigt ist.
 txt_conf_cannotsave: Konfigurationsdatei kann nicht gespeichert werden. Bitte prüfen ob der angegebene Pfad schreibgeschützt ist oder kein Platz besteht
 txt_check_hint: Auf mögliche Datenbeschädigungen überprüfen; Hash-Algorithmen können sogar bösartige Veränderungen aufdecken (siehe Dokumentation)
-txt_check: Prüfsumme / Hash aus Datei(en) bilden
+txt_check: Prüfsumme / Hash aus Dateien bilden
 txt_check_select: Prüfsumme / Hash auswählen
 txt_clear: Leeren
 txt_clearlayout: Layout leeren
@@ -735,10 +735,10 @@ txt_disk_defrag: Laufwerk defragmentieren
 txt_disk_management: Laufwerks-Management
 txt_dispaly: Ergebnis darstellen als
 txt_displayedmnu_obj: dargestellt
-txt_displayedobjects: dargestellte Objekte
+txt_displayedobjects: dargestellte Datei
 txt_nocompress: nicht komprimieren
-txt_delete: Soll(en) die ausgewählte(n) Datei(en) wirklich gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden, da die Datei(en) anschließend direkt gelöscht und nicht zum Papierkorb verschoben sind!
-txt_wipe: Soll(en) die ausgewählte(n) Datei(en) auf sichere Art und Weise gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden und die Datei(en) können nicht wieder hergestellt werden!
+txt_delete: Sollen die ausgewählten Dateien wirklich gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden, da die Dateien anschließend direkt gelöscht und nicht zum Papierkorb verschoben werden!
+txt_wipe: Sollen die ausgewählten Dateien mit einem sicheren Verfahren gelöscht werden? Der Vorgang kann nicht rückgängig gemacht werden und die Dateien können nicht wiederhergestellt werden!
 txt_done: Fertig
 txt_edit: Bearbeiten
 txt_elapsed: vergangen:
@@ -751,38 +751,38 @@ txt_random_keys: Zufällige Tastatureingabe machen
 txt_random_keys_hint: Zufällige Tastatureingabe machen (muß später nicht erinnert werden)
 txt_ent: Entropy-Erprobung
 txt_ent_tools: Entropy Sampling-Werkzeuge
-txt_eqorlarger: Gleich oder größer als ausgewählte Objekte
-txt_eqorrecent: Gleich oder aktueller als ausgewählte Objekte
-txt_eqorolder: Gleich oder älter als ausgewählte Objekte
-txt_eqorsmaller: Gleich oder kleiner als ausgewählte Objekte
-txt_equal: Entspricht dem ausgewählten Objekt
+txt_eqorlarger: Gleich oder größer als ausgewählte Datei
+txt_eqorrecent: Gleich oder aktueller als ausgewählte Datei
+txt_eqorolder: Gleich oder älter als ausgewählte Datei
+txt_eqorsmaller: Gleich oder kleiner als ausgewählte Datei
+txt_equal: Entspricht der ausgewählten Datei
 txt_erase_hint: Dateie(en) löschen: mit zufälligen Daten überschreiben, Größe ändern, umbenennen, abschließend löschen
-txt_extraction_error: Fehler beim Entpacken des gewählten Objekts. Falls das Archiv Passwort-geschützt ist, bitte das Passwort eingeben
-txt_exclude_hint: Datei(en) ausschließen, eine pro Zeile; * und ? dienen als Platzhalter; " und ' werden als Eingrenzung nicht benötigt
+txt_extraction_error: Fehler beim Entpacken der gewählten Datei. Falls das Archiv Passwort-geschützt ist, bitte das Passwort eingeben
+txt_exclude_hint: Dateien ausschließen, eine pro Zeile; * und ? dienen als Platzhalter; " und ' werden als Eingrenzung nicht benötigt
 txt_exclusion_recourse: Ausschluss-Filter auch für Unterordner anwenden
 txt_exclusion: Ausschluss:
 txt_exe: Ausführbare Datei
-txt_overwrite_qry: existiert im Zielordner; mit Datei(en) gleichen Namens aus dem Quellpfad überschreiben? (Abbruch: Kopieren dieses Objekts überspringen)
+txt_overwrite_qry: existiert im Zielordner; mit Dateien gleichen Namens aus dem Quellpfad überschreiben? (Abbruch: Kopieren dieser Datei überspringen)
 txt_confirm_overwrite: existiert; überschreiben? (Nein zum Überspringen)
 txt_explore_outpath: Ausgabepfad durchsuchen
 txt_explore_path: Pfad durchsuchen
 txt_ext: Ext:
 txt_caption_extract: Entpacken
 txt_ext_nopath: Entpacken (ohne Pfad)
-txt_ext_all: Entpacke alle
-txt_ext_allhere: Entpacke alles hier
-txt_ext_allto: Entpacke alles nach
+txt_ext_all: Alles entpacken
+txt_ext_allhere: Alles hier entpacken
+txt_ext_allto: Alles entpacken nach
 txt_extopen_custom: Entpacken und mit ausgewählter Anwendung öffnen
 txt_extopen_with: Entpacken und öffnen mit...
-txt_ext_disp_here: Entpacke angezeigte Datei(en) hier
-txt_ext_disp: Entpacke angezeigte(s) Objekt(e)
-txt_ext_disp_to: Entpacke angezeigte(s) Objekt(e) nach...
-txt_ext_here: Entpacke hier
-txt_ext_sel_here: Entpacke ausgewählte Datei(en) hier
-txt_ext_sel: Entpacke ausgewählte(s) objekt(e)
-txt_ext_sel_to: Entpacke ausgewählte(s) Objekt(e) nach...
-txt_extobj: Entpacke das Objekt
-txt_newfoldermenu: Entpacke in neuem Ordner
+txt_ext_disp_here: Angezeigte Dateien hier entpacken
+txt_ext_disp: Angezeigte Dateien entpacken
+txt_ext_disp_to: Angezeigte Dateien entpacken nach...
+txt_ext_here: Hier entpacken
+txt_ext_sel_here: Ausgewählte Dateien hier entpacken
+txt_ext_sel: Ausgewählte Dateien entpacken
+txt_ext_sel_to: Ausgewählte Dateien entpacken nach...
+txt_extobj: Datei entpacken
+txt_newfoldermenu: In neuem Ordner entpacken
 txt_extto: Entpacken nach...
 txt_level_fast: Schnell
 txt_fastcompr: schnelle Komprimierung
@@ -792,8 +792,8 @@ txt_favformats: Bevorzugte Dateitypen
 txt_file: Datei
 txt_filebrowser: Dateibrowser / Archivbrowser
 txt_filetools: Dateiwerkzeuge
-txt_files: Datei(en),
-txt_nfiles: Datei(en)
+txt_files: Dateien,
+txt_nfiles: Dateien
 txt_fs: Dateisystem
 txt_filters_recourse: Filter incl. Unterordner
 txt_filters: Filter
@@ -811,8 +811,8 @@ txt_name_full: ganzer Name
 txt_function: Funktion
 txt_general: Allgemein
 txt_multithreading: generisches Multithreading
-txt_go_browser: Gehe zu Dateibrowser
-txt_go_path: Gehe zum Objekt-Pfad
+txt_go_browser: Zum Dateibrowser
+txt_go_path: Zum Dateipfad
 txt_guicl: Grafik + Konsole
 txt_guipealauncher: GUI: dargestellt durch PeaLauncher
 txt_graphic: Grafik-Ordner
@@ -834,8 +834,8 @@ txt_inclusion: Eingeschlossen:
 txt_error_function: Fehlerhafter Funktionsaufruf
 txt_info: Info
 txt_infoall: Info für alles
-txt_infodisp: Info für dargestellte Objekt(e)
-txt_infosel: Info für ausgewählte Objekt(e)
+txt_infodisp: Info für dargestellte Dateien
+txt_infosel: Info für ausgewählte Dateien
 txt_inputinfo: Eingabeinformation
 txt_input_list: Eingabeliste:
 txt_iop: Eingabe, Ausgabe, Parameter
@@ -860,7 +860,7 @@ txt_joinfiles: Dateien verschmelzen
 txt_keyfile: Schlüsseldatei
 txt_keyfile_not_found: Schlüsseldatei konnte nicht gefunden oder gelesen werden. Bitte eine andere Datei wählen.
 txt_keyfile_notcreated: Schlüsseldatei nicht erstellt
-txt_larger: Größer als das gewählte Objekt
+txt_larger: Größer als die gewählte Datei
 txt_lastused: Zuletzt verwendet
 txt_launch: Aufgabe starten
 txt_layout: Layout
@@ -870,8 +870,8 @@ txt_license: Lizenz
 txt_caption_list: Liste
 txt_list_details: Liste (mit Details)
 txt_list_all: Alle auflisten
-txt_list_disp: Dargestellte(s) Objekt(e)
-txt_list_sel: Ausgewählte Objekt(e) auflisten
+txt_list_disp: Dargestellte Dateien
+txt_list_sel: Ausgewählte Dateien auflisten
 txt_toggle_warning: Die Auflistung des Pfadinhalts kann eine geraume Zeit in Anspruch nehmen, trotzdem fortfahren?
 txt_loadfile: Datei laden
 txt_loadlayout: Layout laden
@@ -888,7 +888,7 @@ txt_method: Methode
 txt_misc: Verschiedenes
 txt_modify: Verändern
 txt_morecontrols: Mehr Kontrolle (Verlauf, Lesezeichen, ...)
-txt_morerecent: Älter als ausgewählte Objekte
+txt_morerecent: Älter als ausgewählte Dateien
 txt_ent_hint: Bewegen Sie die Maus, machen Tastatureingaben im Eingabefeld, laden Sie Dateien um genug (Zufalls-)Werte aus dem System zu sammeln...
 txt_moveto: Verschieben nach...
 txt_mypc: Mein Computer
@@ -912,9 +912,9 @@ txt_level_normal: Normal
 txt_copy_error: Nicht erfolgreich kopiert oder verschoben, Fehlermeldung:
 txt_description: Anmerkungen
 txt_compare_second: Nun die Datei auswählen mit der verglichen werden soll
-txt_peaobj: Objektkontrolle
-txt_displayed_obj: Objekt(e)
-txt_olderthan: Älter als ausgewählte Objekte
+txt_peaobj: Dateikontrolle
+txt_displayed_obj: Dateien
+txt_olderthan: Älter als ausgewählte Dateien
 txt_on: Bei
 txt_ondblclick: Bei Doppelklick ausführen:
 txt_opacity: Durchsichtigkeitsgrad
@@ -924,7 +924,7 @@ txt_title_open: Archiv öffnen, entschlüsseln, zusammenfügen...
 txt_open_bookmark: Lesezeichen öffnen
 txt_cphere: Befehlszeile hier öffnen
 txt_open_file: Datei öffnen
-txt_open_files: Datei(en) öffnen
+txt_open_files: Dateien öffnen
 txt_open_path: Pfad öffnen
 txt_opensource:  Portabler (z. B. USB-Sick) Open source Archiver
 txt_openwith: Öffnen mit...
@@ -936,7 +936,7 @@ txt_otherparams: Andere Parameter (freie Definition)
 txt_oip: Ausgabe, Eingabe, Parameter
 txt_opi: Ausgabe, Parameter, Eingabe
 txt_output: Ausgabe:
-txt_overwrite: Vorhandene Datei(en) überschreiben
+txt_overwrite: Vorhandene Dateien überschreiben
 txt_compressed_size: Gepackt
 txt_paqver: PAQ-Version
 txt_type_description_paq: PAQ: langsamer, aber extrem mächtiger Kompressor
@@ -981,12 +981,12 @@ txt_fefreshf5: Auffrischen (F5)
 txt_release: Version:
 txt_unit_removable: Entfernbare Einheit
 txt_remove_bookmark: Entferne Lesezeichen
-txt_remove_external_unit: Entferne externe Einheit(en)
-txt_removeselected: Entferne ausgewählte(s) Objekt(e)
+txt_remove_external_unit: Entferne externe Einheiten
+txt_removeselected: Entferne ausgewählte Dateien
 txt_rename: Umbenennen
 txt_caption_repair: Repariere
-txt_restartrequired2: Erfordert Neustart des Programms um Einstellung(en) zu übernehmen
-txt_reset: Zurücksetzen
+txt_restartrequired2: Neustart des Programms erforderlich, um Einstellungen zu übernehmen
+txt_reset: Lösche
 txt_reset_archivename: Archivnamen zurücksetzen
 txt_hardreset: Lesezeichen-Reset
 txt_reset_theme: Auf Original-Theme zurücksetzen
@@ -1014,7 +1014,7 @@ txt_default_description: Markiere eine Funktion oder ziehe Dateien hierher
 txt_selectall: Alles auswählen
 txt_selectdir: Wähle Ordner
 txt_selected_obj: ausgewählte
-txt_selected_objects: Ausgewählte Objekte
+txt_selected_objects: Ausgewählte Dateien
 txt_sfx: Selbstentpackendes
 txt_sendbymail: Per E-Mail senden
 txt_set_defaults: Standard-Parameter der Anwendung angeben
@@ -1026,9 +1026,9 @@ txt_showpw: Inhalt des Passwortfeldes anzeigen
 txt_singlevol: Einzelnes Volume
 txt_size: Größe
 txt_sizeb: Größe (B)
-txt_skip_existing: Vorhandene Datei(en) überspringen
+txt_skip_existing: Vorhandene Dateien überspringen
 txt_slowercomp: Langsamere Komprimierung, aber gleiche Dekomprimierung
-txt_smaller: Kleiner als gewählte Objekte
+txt_smaller: Kleiner als gewählte Dateien
 txt_solid: Solide
 txt_solid_block: Solider Block
 txt_solid_auto: Solide, auto-eingestellt
@@ -1050,34 +1050,34 @@ txt_suggestpw: Passwort vorschlagen
 txt_noupx: Symbole entfernt, UPX-Komprimierung weggelassen
 txt_syntax: Syntax:
 txt_sysbenchmark: Systembenchmark
-txt_benchmark: Systembenchmark nimmt einige Minuten in Anspruch und benötigt die komplette Rechnergeschwindigkeit und den ganzen Arbeitsspeicher. Das System wird möglicherweise in dieser Zeit auf Anforderungen nicht reagieren; trotzdem durchführen?
+txt_benchmark: Systembenchmark nimmt einige Minuten in Anspruch und benötigt die komplette Rechnergeschwindigkeit und den ganzen Arbeitsspeicher. Das System wird in dieser Zeit möglicherweise nicht auf Eingaben reagieren. Trotzdem durchführen?
 txt_systools: System-Werkzeuge
-txt_tarbefore: Erstelle zuerst TAR 
-txt_type_description_tar: TAR: Standard-Archivformat auf UNIX-systemen
+txt_tarbefore: TAR zuerst erstellen
+txt_type_description_tar: TAR: Standard-Archivformat auf UNIX-Systemen
 txt_taskman: Taskmanager
 txt_caption_test: Prüfen
-txt_testall: Teste alle
-txt_testdisp: Teste angezeigte(s) Objekt(e)
-txt_testpw: Teste Passwort / Schlüsseldatei
-txt_testsel: Teste ausgewählte Objekt(e)
+txt_testall: Alles prüfen
+txt_testdisp: Angezeigte Dateien prüfen
+txt_testpw: Passwort / Schlüsseldatei prüfen
+txt_testsel: Ausgewählte Dateien prüfen
 txt_col_hint: Die Farbe sollte so ausgesucht werden, dass sie mit der Icon-Farbe und anderen Elementen der GUI harmoniert
 txt_bookmarks_hint: Die Liste der Lesezeichen ist von der Dateibrowser-Oberfläche aus verfügbar, über das "Mehr Einstellungen"-Icon und anschließendem Klick auf "Wechseln zwischen Verlauf / Lesezeichen"
-txt_archive_noinput_tolist: Das Layout ist leer: Bitte "Datei(en) hinzufügen", "Ordner hinzufügen" oder "Layout laden" wählen, um das Archiv zu füllen
+txt_archive_noinput_tolist: Das Layout ist leer: Bitte "Dateien hinzufügen", "Ordner hinzufügen" oder "Layout laden" wählen, um das Archiv zu füllen
 txt_theme: Theme
 txt_icons_found: Theme erfolgreich geladen.
 txt_themename: Theme-Bezeichnung
 txt_icons_not_found: Theme nicht korrekt geladen. Bitte versuchen zum Standard-Theme zu wechseln, oder zu einem Theme das bekanntermaßen funktioniert.
 txt_theme_create_success: Theme erfolgreich erstellt in
 txt_theming: Oberfläche
-txt_extand_error: Diese Funktion kann immer nur für ein Objekt gleichzeitig ausgeführt werden
+txt_extand_error: Diese Funktion kann immer nur für eine Datei gleichzeitig ausgeführt werden
 txt_threads: Threads
 txt_titlescolor: Titelzeilen-Farbe
 txt_to: zu
-txt_toggle_browseflat: Zwischen Durchsuchen / Anzeigen wechseln
+txt_toggle_browseflat: Flache Ansicht umschalten
 txt_toggle_historybookmarks: Wechseln zwischen Verlauf / Lesezeichen
 txt_toolbarscolor: Toolbar-Farbe
 txt_tools: Werkzeuge
-txt_best: Versuche beste Einstellungen (langsam)
+txt_best: beste Einstellungen testen (langsam)
 txt_type: Typ
 txt_level_ultra: Ultra
 txt_error_openfile: Kann die angegebene Datei nicht öffnen
@@ -1238,7 +1238,7 @@ Innerhalb des Systems:
 - ansonsten den Menüeintrag "Entpacken nach ..." benutzen um weitere Optionen zu erhalten: Ausgabeordner, Passwort, entpacken von Dateien in einen neuen Ordner, überspringen von Dateien, umbenennen oder überschreiben von vorhandenen Dateien, usw.
 
 Öffnen von Archiven in PeaZip, z. B. mit Doppelklick, oder ziehen eines Archivs auf das Programmfenster von PeaZip oder dessen Verknüpfungssymbol auf dem Dsektop / im "Senden an..."-Menü
-- klick auf "Entpacken" in der Toolbar oder im Kontextmenü um nur ausgewählte Objekte anhand eines Bestätigungsdialogs zu verarbeiten, der es erlaubt, alle Optionen anzugeben (Ausgabeordner, Passwort, Namensbehandlung, entpacken in einen neuen Ordner, usw.)
+- klick auf "Entpacken" in der Toolbar oder im Kontextmenü, um nur ausgewählte Dateien anhand eines Bestätigungsdialogs zu verarbeiten, der es erlaubt, alle Optionen anzugeben (Ausgabeordner, Passwort, Namensbehandlung, entpacken in einen neuen Ordner, usw.)
 - ziehen von Dateien und Ordnern in ein gewünschtes Zielordner, nur ausgewählter Inhalt wird entpackt (für weitere Informationen siehe das Kapitel über Drag and Drop in der PeaZip-Hilfe)
 - anklicken des Schnell-Entpacken-Schalters rechts neben dem “Entpacken”-Schalter in der Toolbar. Dies ermöglicht das direkte Entpacken des Archivs in häufig benutzte Ordner (und überspringt den Bestätigungsdialog) und wichtigste Optionen zu setzen; Tastatur-Shortcuts: Strg+E (oder F12) entpackt das gesamte Archiv und fragt nach dem Ausgabeordner; Strg+Alt+E entpackt Archive in den Ordner in dem sie sich befinden; Strg+Umschalt+E entpackt auf den Desktop; Strg+Alt+Umschalt+E entpackt in "Eigene Dateien"; Strg+1..8 entpackt in den Favoritenordner 1..8 (falls festgelegt)
 
@@ -1256,11 +1256,11 @@ Auf dieses Symbol wird sowohl in der Statuszeile, als auch im Entpacken-Dialog B
 
 ERSTELLEN VON ARCHIVEN
 Vom System aus
-- Rechtsklick auf Objekte um sie zu archivieren und klicken auf "Hinzufügen zu Archiv" im Kontextmenü oder "Senden an ..."-Menü. Dies öffnet den "Archiv erstellen"-Dialog. Mehr Optionen stehen im “Erweitert”-Reiter zur Verfügung. Ein Klick auf "OK" erstellt das Archiv.
+- Rechtsklick auf Dateien, um sie zu archivieren und klicken auf "Hinzufügen zu Archiv" im Kontextmenü oder "Senden an ..."-Menü. Dies öffnet den "Archiv erstellen"-Dialog. Mehr Optionen stehen im “Erweitert”-Reiter zur Verfügung. Ein Klick auf "OK" erstellt das Archiv.
 - Alternativ können Dateien / Ordner auf das Fenster von PeaZip oder auf seine Verknüpfung auf dem Desktop / im "Senden an ..."-Menü gezogen werden. Es öffnet sich der gleiche Dialog.
 
 INNERHALB VON PeaZip 
-- Wählen Sie die gewünschten Objekte und klicken Sie auf den "Hinzufügen"-Schalter; der gleiche Dialog zum Erstellen eines Archivs öffnet sich.
+- Wählen Sie die gewünschten Dateien und klicken Sie auf den "Hinzufügen"-Schalter; der gleiche Dialog zum Erstellen eines Archivs öffnet sich.
 
 HINZUFÜGEN VON DATEIEN / ORDNERN UM VORHANDENE ARCHIVE AUFZUFRISCHEN
 Öffnen Sie ein Archiv in PeaZip (z. B. mit Doppelklick, oder ziehen Sie ein Archiv in das Fenster von PeaZip oder auf sein Verknüpfungssymbol auf dem Desktop oder im "Senden an ..." Menü), und ziehen Sie dann die gewünschten Dateien oder Ordner darauf (oder klicken Sie auf den "Hinzufügen"-Schalter oder nutzen Sie das Kontextmenü der Anwendung um Dateien zu einem Archiv hinzuzufügen).
@@ -1280,7 +1280,7 @@ Fügen Sie zu archivierende Dateien hinzu (über PeaZips "Hinzufügen"-Schalter,
 
 ARCHIVE KONVERTIEREN
 Wählen Sie im PeaZip-Fenster Archive zum Konvertieren aus und klicken Sie auf "Konvertieren" in der Toolbar oder dem Kontextmenü. Dateien und Ordner, die keine Archive sind, können ebenfalls ausgewählt werden, der Unterschied ist jedoch, dass diese in Archive gepackt werden.
-Wenn Sie den “Konvertiere vorhandene Archive”-Schalter in Verbindung mit “Jedes Objekt in ein eigenes Archiv packen" (Standard) kombinieren, wird eine Massen-Konvertierung aller gewählten Archive gestartet, Ohne diesen Schalter wird nur eine mögliche Optimierung der gewählten Archive durch entpacken und Neukomprimierung gestartet, um die Effizienz durch Nutzung der unkomprimierten Daten zu erhöhen.
+Wenn Sie den “Konvertiere vorhandene Archive”-Schalter in Verbindung mit “Jede Datei in ein eigenes Archiv packen" (Standard) kombinieren, wird eine Massen-Konvertierung aller gewählten Archive gestartet, Ohne diesen Schalter wird nur eine mögliche Optimierung der gewählten Archive durch entpacken und Neukomprimierung gestartet, um die Effizienz durch Nutzung der unkomprimierten Daten zu erhöhen.
 
 DIREKTES ERSTELLEN VON ARCHIVEN IN EINEM VORGEGEBENEN FORMAT UND EINEM BESTIMMTEN KOPRESSIONS-GRAD
 Durch nutzen des “System-Integration”-Prozess im Optionen-Menü ist es möglich per Kontextmenü-Einträge ausgewählte Dateien und / oder Ordner beispielsweise zu einem ZIP, 7z oder selbst-entpackenden Archiv hinzuzufügen.
@@ -1320,20 +1320,20 @@ Vorgang:
 Alternativ, in einem einzigen Durchgang kann man jeden Eintrag (Datei) über das System-Kontextmenü in ein separates Archiv packen und über das "Senden an ..."-Menü mehrere Einträge (Dateien) in ein einziges Archiv packen.
 
 Im Archiv-Layout kann man:
-- Auf ein Objekt doppelklicken um es zu öffnen
+- Auf eine Datei doppelklicken, um es zu öffnen
 - Eine Datei markieren und die "\"-Taste drücken oder "Datei-Werkzeuge > Datei teilen" anklicken um eine Datei in kleinere Stücke aufzuteilen
 - Eine Datei markieren und die "<"-Taste drücken oder "Datei-Werkzeuge > Datei vergeichen" um die Datei Byte für Byte mit einer anderen Datei zu vergleichen
-- Mehrere Objekte markieren und die "?"-Taste drücken oder "Datei-Werkzeuge > Prüfsumme / Hash Datei(en)" anklicken um anhand von Prüfsumme / Hash Werten die Echtheit und Unversehrtheit von Datei(en) überprüfen zu können
-- Mehrere Objekte markieren und die "*"-Taste oder "Datei(en) sicher löschen" anklicken um Dateien so zu löschen, dass sie nicht ohne erheblichen Aufwand wieder hergestellt werden können
+- Mehrere Dateien markieren und die "?"-Taste drücken oder "Datei-Werkzeuge > Prüfsumme / Hash Dateien" anklicken um anhand von Prüfsumme / Hash Werten die Echtheit und Unversehrtheit von Datei(en) überprüfen zu können
+- Mehrere Dateien markieren und die "*"-Taste oder "Datei(en) sicher löschen" anklicken um Dateien so zu löschen, dass sie nicht ohne erheblichen Aufwand wieder hergestellt werden können
 
 
 ARCHIVE ÖFFNEN
 
 1) Archive können durch die Verknüpfung der Archivtypen oder das Kontextmenü des Systems und das "Senden an ..."-Menü oder über PeaZips Schaltflächen und Menüs geöffnet werden
 2a) Durch ein Klick auf "Entpacke alle" wird das ganze Archiv entpackt; wenn "Entpacke alle nach..." gewählt wird, wird nach dem Zielpfad gefragt;
-2b) Durch einen Doppelklick auf ein Objekt in einem Archiv oder durch drücken der "Eingabe"-Taste wird das Objekt in der verknüpften Anwendung geöffnet, oder in PeaZip angezeigt (wenn es sich um ein Archiv handelt), oder in PeaZip aufgelistet falls es ein Ordner in einem Archiv ist;
-2c) ausgewählte Objekte in einem Archiv werden entpackt wenn die mittlere Maustaste oder die "Leertaste" gedrückt wird (der Ausgabepfad wird in einem Dialog abgefragt);
-2d) Innerhalb des PeaZip-Fensters steht durch einen Rechtsklick ein Menü für alle verfügbaren Möglichkeiten zur Verfügung, wie z.B. das Entpacken von Objekten, Vorschau, testen, auflisten, hinzufügen und entfernen von Dateien, etc...
+2b) Durch einen Doppelklick auf eine Datei in einem Archiv oder durch drücken der "Eingabe"-Taste wird die Datei in der verknüpften Anwendung geöffnet, oder in PeaZip angezeigt (wenn es sich um ein Archiv handelt), oder in PeaZip aufgelistet falls es ein Ordner in einem Archiv ist;
+2c) ausgewählte Dateien in einem Archiv werden entpackt wenn die mittlere Maustaste oder die "Leertaste" gedrückt wird (der Ausgabepfad wird in einem Dialog abgefragt);
+2d) Innerhalb des PeaZip-Fensters steht durch einen Rechtsklick ein Menü für alle verfügbaren Möglichkeiten zur Verfügung, wie z.B. das Entpacken von Dateien, Vorschau, testen, auflisten, hinzufügen und entfernen von Dateien, etc...
 Hinweis: wenn das Archiv in einem neuen Ordner entpackt werden soll, steht im Kontext-Menü "Entpacke in neuen Ordner" zur Verfügung (oder I/O Tab), oder es kann die "\"-Taste oder "Strg+N"-Tastenkombination im PeaZip-Fenster gedrückt werden.
 
 Vorgang:
