@@ -9,7 +9,7 @@ PeaZip is a free file archiver utility and rar extractor for Windows and Linux, 
 
 The project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ, PEA, UPX) focused on file and archive management, and security (strong encryption, two factor authentication, encrypted password manager, secure delete).
 
-The program is written in Lazarus / FreePascal (Windows installable packages are scripted with InnoSetup) and offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, and Linux x86/x86-64, with Linux ARM and BSD ports also available.
+The program is written in Lazarus / FreePascal (Windows installable packages are scripted with InnoSetup) and offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, Linux x86/x86-64 (with Linux ARM and BSD ports also available), and Darwin / macOS both Intel x86_64 and aarch64 (e.g. M1 Apple Silicon SoC).
 
 Up to date sources are available in peazip-sources directory, and snapshots of the source code at each x.y.z release are available in Releases as peazip-x.y.z.src.zip archives.
 
