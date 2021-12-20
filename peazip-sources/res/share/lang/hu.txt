@@ -3,32 +3,32 @@ Hungarian - Magyar
 8.4
 Fordító: Zityi's Translator Team
 Last rev. by: Giorgio Tani
-Last rev.: 20210523
+Last rev.: 20211128
 
 === PeaZip text group ===
 
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_4_keepopenerrorslist: A hibajelentés ellenőrzésének leállítása, lista
+txt_8_3_mbubin: Bináris
+txt_8_3_cw: Módosítja a munkakönyvtárat? Ez visszaállítja az ideiglenes munkafájlokat és újraindítja az alkalmazást.
+txt_8_3_temperature: Színhőmérséklet
+txt_8_3_mbudec: Decimális
+txt_8_3_htab: Lapok kiemelése
+txt_8_3_maxarg: Az argumentumok maximális hossza
+txt_8_3_mbu: Többbájtos egység
+txt_8_3_prefalgo: Elsődleges algoritmusok
+txt_8_3_skipdel: A zárolt ideiglenes fájlok törlésének kihagyása (igény szerinti törléshez használja a visszaállítás funkciót)
+txt_8_3_lw: Néhány fájl a munkakönyvtárban zárolt és nem távolítható el automatikusan
+txt_8_3_noupx: Ez a bináris nem tömöríthető (lehet, hogy már tömörítve van)
+txt_8_2_slower: (lassabb)
+txt_8_2_df: 7z / p7zip mappák tartalmának megjelenítése
+txt_8_2_vreport: 7z / p7zip nem részletes jelentés
+txt_8_2_ta: Hozzáférés dátuma
+txt_8_2_tc: Létrehozva
+txt_8_2_keep: Fájlok megőrzése
+txt_8_2_tm: Módosítva
+txt_8_2_skipet: Tesztelés kihagyása a titkosításnál
+txt_8_2_alltimes: Az összes időbélyeg tárolása
+txt_8_2_supportedby: Támogatja:
 txt_8_1_preparse: Mindig végezzen előzetes elemzést az archívumoknál
 txt_8_1_bo: Böngésző optimalizálás
 txt_8_1_bop: A böngésző optimalizálási lehetőségei az Opciók > Beállítások, Általános lapon állíthatók be annak érdekében, hogy a böngésző képes legyen megjeleníteni a nagyon sok elemet tartalmazó archívumokat..
@@ -132,8 +132,8 @@ txt_7_2_savecompsettings: Tömörítési beállítások mentése
 txt_7_2_source: Forrás
 txt_7_2_updateclear: Szerkesztett fájlok frissítése az archívumban, és a szerkesztett fájlok törlése
 txt_7_1_type_description_brotli: Brotli: gyors tömörítő a Google-tól, nagyon gyors kicsomagolás
-txt_7_1_new: Összes kibontása ide, új mappába
-txt_7_1_smart: Összes kibontása ide, intelligens új mappa
+txt_7_1_new: Összes kibontása ide (új mappába)
+txt_7_1_smart: Összes kibontása ide (intelligens új mappa)
 txt_7_1_profileintermediate: Közepes tömörítési arány, ZIP/BZip2 gyors
 txt_7_1_renfilesonly: Csak fájlok átnevezése
 txt_7_1_typetosearch: Keresendő beírása az aktuális helyen
@@ -163,7 +163,7 @@ txt_6_5_seqerr: Hiba észlelhető, az eredeti fájlok nem kerülnek törlésre
 txt_6_5_sni: Tartalmazza az NT biztonsági információkat
 txt_6_5_sns: Tartalmazza az NTFS alternatív adatfolyamot
 txt_6_5_privacy: Adatvédelem
-txt_6_5_showvolatile: Jelenítse meg, hogy mely opciók változékonyak / kontextus függők
+txt_6_5_showvolatile: Jelenítse meg, hogy mely opciók változékonyak / kontextusfüggők
 txt_6_5_force: Kísérlet a hibákat tartalmazó archívumok megnyitására
 txt_6_5_warning: Figyelem
 txt_6_5_yes: Igen
@@ -449,7 +449,7 @@ txt_3_1_workingdir: Munkakönyvtár
 txt_3_0_nonreadableorpw: Az archívum nem olvasható. Előfordulhat, hogy az archívum érvénytelen, hiányoznak a kötetei, vagy a tartalomjegyzék titkosítva van. Szeretné kipróbálni a jelszót?
 txt_3_0_readablepw: Archívum lehet, hogy jelszóval van védve
 txt_3_0_configure: Rendszerintegráció és fájltársítások
-txt_3_0_resettmp: Peazip-tmp visszaállítása
+txt_3_0_resettmp: Ideiglenes munkafájlok visszaállítása
 txt_2_9_address: Címsor
 txt_2_9_adv: A speciális szűrők a 7z vagy a FreeArc háttérrendszeren keresztül támogatott fájlok kezelésekor kerülnek alkalmazásra, tekintse meg a dokumentációt, és bírálja felül az alap szűrőket (amelyeket keresési funkciókhoz használnak és a könyvjelzőkben, illetve az előzményekben lesznek megjelenítve)
 txt_2_9_columns: Oszlopok
@@ -515,7 +515,7 @@ txt_2_7_ok: OK
 txt_2_7_drag_archive: fájl megnyitása új archívumként? ("Nem" fájl hozzáadása a jelenlegi archiválási elrendezéshez)
 txt_2_7_oop: A kimeneti hely megnyitása a művelet befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
 txt_2_7_output: Kimenet
 txt_2_7_pwnotset: Nincs jelszó beállítva
 txt_2_7_pwarcset: Jelszó beállítva
@@ -531,8 +531,8 @@ txt_2_7_un7z_browse_flat: próbálja ki az egyszintű nézetet (F6)
 txt_2_7_updating: Meglévő archívum frissítése
 txt_2_6_folders: (mappák)
 txt_2_6_advanced: Speciális
-txt_2_6_plalways: Mindig tartsa nyitva a feladat jelentések ellenőrzéséhez
-txt_2_6_plsmart: Tartsa nyitva, ha szükséges (hiba, lista vagy teszt jelentések)
+txt_2_6_plalways: Mindig állítsa le a feladatjelentés ellenőrzését
+txt_2_6_plsmart: Állítsa le a hibajelentés ellenőrzését, lista, tesztelés
 txt_2_5_sessionio: (ez a munkamenet)
 txt_2_5_advanced: Speciális szerkesztés: tegyen szóközt a paraméter karakterláncok és a fájlnév közé, ha szükséges
 txt_2_5_basic: Alapvető szerkesztés: alkalmazás és paraméterek a név bevitele előtt
@@ -590,7 +590,7 @@ txt_exclude_recourse: rekurzív alkönyvtárak "kizárása"
 txt_action_extopen: "Kicsomagolás és megnyitás a társított alkalmazással" művelet
 txt_error_passwordnotmatch: A "Jelszó" és "Jelszó megerősítés" mezők nem egyeznek. Javítsa a hibát
 txt_action_preview: "Megtekintés a társított alkalmazással" művelet
-txt_preview_hint: Az "Előnézet" művelet, ugyanazt a feladatot hajtja végre mint a "Kicsomagolás és megnyitás", de ezt a kimeneti könyvtárba lévő ideiglenes helyre teszi, és az archívum bezárásakor automatikusan eltávolításra kerül.
+txt_preview_hint: Az "Előnézet" művelet, ugyanazt a feladatot hajtja végre, mint a "Kicsomagolás és megnyitás", de a kimeneti könyvtárban lévő ideiglenes elérési útvonal automatikusan törlődik az archívum bezárásakor.
 txt_better: (jobb)
 txt_default2: (alapértelmezett)
 txt_faster: (gyorsabb)
@@ -689,7 +689,7 @@ txt_check_select: Ellenőrzőösszeg/hash
 txt_clear: Törlés
 txt_clearlayout: Elrendezés törlése
 txt_pj_hint: Kattintson ide a feladat importálásához, állítsa vissza a módosításokat és töltse be a naprakész feladatdefiníciót a grafikus felhasználói felületről
-txt_autoclose: PeaLauncher bezárása a feladat befejezésekor
+txt_autoclose: Soha ne állítsa le a feladatjelentés ellenőrzését
 txt_cl: parancssor:
 txt_compare: Fájlok összehasonlítása
 txt_compress: Tömörítés
@@ -705,7 +705,7 @@ txt_controlpanel: Vezérlőpult
 txt_convert: Lemez konvertálása NTFS fájlrendszerbe
 txt_copy: Másolás
 txt_copyto: Másolás...
-txt_create: Készítés 
+txt_create: Készítés
 txt_create_archive: Új archívum létrehozása
 txt_title_create: Archívum létrehozása, tömörítés, titkosítás, darabolás...
 txt_create_keyfile: Kulcsfájl készítés
@@ -824,7 +824,7 @@ txt_here: ide
 txt_list_history: Előzmények
 txt_homeroot: Számítógép/archívum gyökér szintje
 txt_quickbrowse_hint: Ha a böngészést leállítja, a felhasználó szűkítheti a választást keresési vagy szűrési funkciók segítségével; ez a kicsomagolás/lista/teszt funkciókat semmilyen módon nem érinti.
-txt_backupexe_hint: Ha valami hiba lépne fel, visszaállíthatja az eredeti végrehajtható fájlt az automatikus biztonsági mentésből
+txt_backupexe_hint: Ha valami hiba lép fel és nem funkcionális eredményhez vezet, visszaállíthatja az eredeti végrehajtható fájlt az automatikus biztonsági mentésből
 txt_attach: Ha a levelezőprogram támogatja ezt a parancsot, az archívum egy új levélhez lesz csatolva.
 txt_images: Képek
 txt_include_hint: Fájl(ok) hozzáadása, soronként egy; használja a * és ? helyettesítő karaktereket; " és " elválasztókra nincs szükség
@@ -1149,7 +1149,7 @@ txt_3_0_arc: Néhány bemeneti fájl nem olvasható (lehet, hogy zárolt, nem ho
 txt_3_0_ext: Előfordulhat, hogy az archívumnál más jelszóra van szükség az aktuális művelethez
 txt_2_8_oop: Kimeneti hely megnyitása a feladat befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
 txt_2_6_open: Archívum megnyitása
 txt_2_5_ace_missing: Az UNACE beépülő modul hiányzik; az ACE archívumok kezeléséhez a beépülő modul letölthető a PeaZip weboldaláról (mivel a UNACE zárt forrású, a beépülő nem szerepel az alapcsomagban)
 txt_2_3_pw_errorchar_gwrap: idézőjel nem használható a PeaLauncher által a jelszavakban a jelenlegi rendszerben. Módosítsa a jelszót vagy használja a PeaZip konzol módot a háttérbináris fájlok felhasználói felületén (Eszközök > Beállítások)
@@ -1181,7 +1181,7 @@ txt_autoclose: Ablak bezárása a művelet végén
 txt_crscale: Tömörítési arány (alacsonyabb, jobb):
 txt_console: Konzol
 txt_benchscale: 2 magos Duo 6600 besorolás, egyenértékű MHz sebesség.
-txt_create: Készítés
+txt_create: Készítés 
 txt_done: Kész:
 txt_nocl: Üres parancssor
 txt_error: Hiba:
@@ -1324,4 +1324,4 @@ További információk: https://peazip.github.io/peazip-free-archiver.html
 Támogatás: https://peazip.github.io/peazip-help.html
 GYIK: https://peazip.github.io/peazip-help-faq.html
 
-Köszönet mindazon személyeknek akik közreműködtek a PeaZip projekt munkálataiban az alkalmazásban használt nyílt forráskódú szoftverösszetevők fejlesztésével (lásd a weblapon a teljes listát), és valamennyi felhasználónak, akik visszajelzésekkel és tanácsokkal láttak el bennünket.
+Köszönet mindazon személyeknek akik közreműködtek a PeaZip projekt munkálataiban az alkalmazásban használt nyílt forráskódú szoftverösszetevők fejlesztésével (lásd a weblapon a teljes listát), és külön köszönet valamennyi felhasználónak, akik visszajelzésekkel és tanácsokkal láttak el bennünket.
