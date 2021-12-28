@@ -7,7 +7,7 @@ Revisto em: 20211205
 
 === PeaZip text group ===
 
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
+txt_8_4_keepopenerrorslist: Ver relatórios e listas de erros
 txt_8_3_mbubin: Binário
 txt_8_3_cw: Mudar o diretório de trabalho? Isto irá repor os ficheiros de trabalho temporários e reiniciar a aplicação.
 txt_8_3_temperature: Temperatura da cor
