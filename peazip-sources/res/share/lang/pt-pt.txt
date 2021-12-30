@@ -7,94 +7,94 @@ Revisto em: 20211205
 
 === PeaZip text group ===
 
-txt_8_4_keepopenerrorslist: Ver relatórios e listas de erros
+txt_8_4_keepopenerrorslist: Parar para analisar o relatório da lista de erros
 txt_8_3_mbubin: Binário
-txt_8_3_cw: Mudar o diretório de trabalho? Isto irá repor os ficheiros de trabalho temporários e reiniciar a aplicação.
+txt_8_3_cw: Tem a certeza de que deseja alterar o diretório de trabalho? Irá repor os ficheiros de trabalho temporários e reiniciar a aplicação.
 txt_8_3_temperature: Temperatura da cor
 txt_8_3_mbudec: Decimal
-txt_8_3_htab: Separador de destaque
+txt_8_3_htab: Destacar separadores
 txt_8_3_maxarg: Comprimento máximo dos argumentos
-txt_8_3_mbu: Unidade de múltiplos-bytes
+txt_8_3_mbu: Unidade 'multiple-byte'
 txt_8_3_prefalgo: Algoritmos preferidos
-txt_8_3_skipdel: Ignorar a eliminação de ficheiros temporários bloqueados (eliminar manualmente com repor)
+txt_8_3_skipdel: Ignorar eliminação de ficheiros temporários bloqueados (utilize Repor para eliminar manualmente)
 txt_8_3_lw: Alguns ficheiros no diretório de trabalho estão bloqueados e não podem ser removidos automaticamente
 txt_8_3_noupx: Este binário não pode ser comprimido (pode já estar comprimido)
 txt_8_2_slower: (mais lento)
-txt_8_2_df: 7z / p7zip mostra o conteúdo das pastas
-txt_8_2_vreport: 7z / p7zip relatório não sumário
+txt_8_2_df: 7z/p7zip: mostrar conteúdo das pastas
+txt_8_2_vreport: 7z/p7zip: relatório não detalhado
 txt_8_2_ta: Acedido
 txt_8_2_tc: Criado
 txt_8_2_keep: Manter ficheiros
 txt_8_2_tm: Modificado
 txt_8_2_skipet: Ignorar testes para encriptação
-txt_8_2_alltimes: Armazenar todas as marcas de tempo
+txt_8_2_alltimes: Guardar todas as marcas temporais
 txt_8_2_supportedby: Suportado por
-txt_8_1_preparse: Pré-analisar sempre os arquivos
-txt_8_1_bo: Optimização do navegador
-txt_8_1_bop: As opções de optimização do navegador podem ser definidas em Opções > Definições, separador Geral, de modo a permitir que o navegador exiba arquivos contendo um número muito grande de itens.
+txt_8_1_preparse: Pré-analisar arquivos
+txt_8_1_bo: Otimização do navegador
+txt_8_1_bop: As opções de otimização do navegador podem ser definidas em Opções > Definições, separador Geral, de modo a permitir que o navegador mostre arquivos que possuam um número muito grande de itens.
 txt_8_1_nopreparse: Não pré-analisar arquivos
 txt_8_1_ed: erro(s) detetado(s).
 txt_8_1_togglearc: Listar o conteúdo de um arquivo de uma forma plana pode ser demorado, continuar?
-txt_8_1_preparsehint: Optimizar os desempenhos limitando a pré-análise de grandes arquivos. A pré-análise destina-se a detetar antecipadamente possíveis problemas no conteúdo dos arquivos.
+txt_8_1_preparsehint: Otimizar desempenho limitando a pré-análise de arquivos grandes. A pré-análise destina-se a detetar possíveis erros no conteúdo dos arquivos.
 txt_8_1_slow: Lento
 txt_8_1_vslow: Muito lento
 txt_8_1_volumes: volumes
 txt_8_0_altcol: Alternar cor da grelha
-txt_8_0_forcebrowse: Navegar por arquivos de tipos não canónicos (contentores, imagens de disco, instaladores, ...)
+txt_8_0_forcebrowse: Explorar tipos de arquivos não canónicos (contentores, imagens de disco, instaladores...)
 txt_8_0_commonalgo: Algoritmos comuns
-txt_8_0_forceconvert: Converter arquivos de tipos não canónicos
-txt_8_0_defaultactionhint: Ação predefinida ao fazer duplo clique num ficheiro associado ao PeaZip a partir do sistema
-txt_8_0_defaultaction: Ação predefinida no arranque
-txt_8_0_enableextand: Ativar o submenu "Extrair e abrir com"
-txt_8_0_forcetyping: Forçar a introdução de palavras-passe de forma interativa
-txt_8_0_setpwopt: Opções de palavra-passe / ficheiro-chave
-txt_8_0_forcetypinghelp: Irá executar binários backend na consola, não pode navegar por arquivos com nomes de ficheiros encriptados. Permite criar scripts que não serão executados sem supervisão, mas sim pedir ao utilizador interativamente uma palavra-passe.
+txt_8_0_forceconvert: Converter tipos de arquivos não canónicos
+txt_8_0_defaultactionhint: Ação padrão com duplo clique em ficheiros associados a PeaZip (a partir do sistema)
+txt_8_0_defaultaction: Ação padrão ao iniciar
+txt_8_0_enableextand: Ativar submenu "Extrair e abrir com"
+txt_8_0_forcetyping: Impor introdução interativa de palavras-passe
+txt_8_0_setpwopt: Definir palavra-passe/ opções para ficheiro-chave
+txt_8_0_forcetypinghelp: Irá executar a infraestrurira binária na consola e não pode explorar arquivos com nomes de ficheiros cifrados. Permite criar scripts que não serão executados sem supervisão, mas sim interativamente com uma palavra-passe.
 txt_7_9_spacing: Espaçamento
 txt_7_9_zooming: Ampliação
-txt_7_8_changelocalization: Alterar o idioma do PeaZip
+txt_7_8_changelocalization: Alterar idioma do PeaZip
 txt_7_8_custext: Extensão personalizada
-txt_7_8_destexistfile: O destino já contém ficheiros processados. Substituir ficheiros com o mesmo nome?
-txt_7_8_dd: Arrastar e Largar
+txt_7_8_destexistfile: O destino já contém os ficheiros processados. Substituir ficheiros com o mesmo nome?
+txt_7_8_dd: Arrastar e largar
 txt_7_8_priorityhigh: Alta
 txt_7_8_priorityidle: Sem prioridade
 txt_7_8_rel: Extração interativa
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: Em tempo real
-txt_7_8_requirerestart: [requer o reinício do PeaZip]
+txt_7_8_requirerestart: [tem que reiniciar PeaZip]
 txt_7_8_tpriority: Prioridade das tarefas
 txt_7_8_update: Atualizar
-txt_7_7_noneall: Nenhuma: desativar a pré-visualização, edição, arastar e largar e extração interativa
-txt_7_7_nonetemp: Nenhuma, temp do utilizador, se necessário
-txt_7_7_outtemp: Saída, pré-visualização no temp do utilizador
-txt_7_7_sys7zreq: Requer a instalação do pacote p7zip-full ou equivalente
-txt_7_7_tw: Pasta de trabalho temporária para criação de arquivos, edição, pré-visualização e extração por arrastar e largar.
+txt_7_7_noneall: Nenhuma: desativar pré-visualização, edição, arastar e largar e extração interativa
+txt_7_7_nonetemp: Nenhuma, ficheiros temporários do utilizador (se necessário)
+txt_7_7_outtemp: Saída, pré-visualização nos ficheiros temporários temp do utilizador
+txt_7_7_sys7zreq: Tem que instalar o pacote p7zip-full ou equivalente
+txt_7_7_tw: Pasta de trabalho temporária para criação, edição, pré-visualização e extração de arquivos
 txt_7_7_sys7z: Usar o sistema 7z no Linux
-txt_7_6_zipenc: 7z/p7zip ZIP codificação de nomes de ficheiros
+txt_7_6_zipenc: 7z/p7zip: codificação para nomes de ficheiros ZIP
 txt_7_6_color: Cor
 txt_7_6_custenc: Página de código personalizada
 txt_7_6_dark: Escuro
 txt_7_6_tno: Não sincronizar árvore de arquivo
-txt_7_6_forcelocalenc: Forçar local
-txt_7_6_forceutf8enc: Forçar UTF-8
-txt_7_6_cpnote: Se a página de código personalizada escolhida não for suportada, as tarefas terminarão sempre em erro (muito provavelmente erro de atribuição de memória). No caso de isso acontecer, altere a página de código ou reinicie a aplicação.
+txt_7_6_forcelocalenc: Impor local
+txt_7_6_forceutf8enc: Impor UTF-8
+txt_7_6_cpnote: Se a página de código personalizada escolhida não for suportada, as tarefas terminarão sempre em erro (muito provavelmente erro de atribuição de memória). Caso isto aconteça, altere a página de código ou reinicie a aplicação.
 txt_7_6_defaultenc: Local, UTF-8 para símbolos extra
 txt_7_6_dim: Luz fraca
 txt_7_6_setcurdef: Definir caminho atual como caminho de saída padrão
 txt_7_6_setdef: Definir caminho de saída padrão
-txt_7_6_tadvanced: Sincronizar a árvore de arquivos, manter os nodes visitados
-txt_7_6_tsimple: Sincronizar árvore de arquivo, simples
-txt_7_6_tacolor: Realce do texto
+txt_7_6_tadvanced: Sincronizar árvore do arquivo, manter 'nodes' visitados
+txt_7_6_tsimple: Sincronizar árvore do arquivo, simples
+txt_7_6_tacolor: Destaque do texto
 txt_7_5_always: Sempre
 txt_7_5_ask: Perguntar
-txt_7_5_autoclosesingle: Fechar automaticamente após a extracção se não se realizarem ações de navegação
-txt_7_5_cutlen: Cortar o nome no comprimento especificado
-txt_7_5_cutlenw: Cortar o nome no comprimento especificado (4..255) os nomes em conflito podem ser corrigidos manualmente mais tarde
+txt_7_5_autoclosesingle: Fechar automaticamente após a extração se não se realizarem ações de navegação
+txt_7_5_cutlen: Impor nome ao comprimento especificado
+txt_7_5_cutlenw: Os conflitos corridos com 'Impor nome ao comprimento especificado (4..255)' podem ser corrigidos manualmente mais tarde
 txt_7_5_dragnone: Não bloquear o destino
-txt_7_5_specialbrowse: Deseja extrair tudo para fornecer ao ficheiro os dados extra de que este possa necessitar?
+txt_7_5_specialbrowse: Deseja extrair tudo para fornecer ao ficheiro os dados extra de que este possa precisar?
 txt_7_5_ee: Extrair tudo para tipos de ficheiros especiais
-txt_7_5_draghide: Ocultar o destino
-txt_7_5_draglh: Bloquear e ocultar o destino
-txt_7_5_draglock: Bloquear o destino
+txt_7_5_draghide: Ocultar destino
+txt_7_5_draglh: Bloquear e ocultar destino
+txt_7_5_draglock: Bloquear destino
 txt_7_5_never: Nunca
 txt_7_5_repnascii: Substituir/remover caracteres não-ASCII
 txt_7_4_comment: Comentário
@@ -112,7 +112,7 @@ txt_7_4_setext: Definir opções de extração
 txt_7_4_swzipx: Trocar para extensão zipx para arquivos zip non-Deflate
 txt_7_3_archiveerrors: [o arquivo pode ter erros]
 txt_7_3_archiveerrorshint: O arquivo pode não ser válido (dados em falta, dados danificados ou em formato não padrão) e deve executar um teste para obter mais informações. Se o conteúdo do arquivo estiver cifrado, terá que introduzir a palavra-passe antes de o poder explorar.
-txt_7_3_clickextall: Clique "Extrair tudo" para ativar
+txt_7_3_clickextall: Clique em "Extrair tudo" para ativar
 txt_7_3_noconfdel: Não pedir confirmação para apagar o ficheiro após arquivamento/extração
 txt_7_3_profile7zfastest: Compressão rápida, 7Z rápido
 txt_7_3_maxbr: Maximizar compressão Brotli utilizando mais memória (pode não ser compatível com algumas aplicações)
@@ -132,8 +132,8 @@ txt_7_2_savecompsettings: Guardar definições de compressão
 txt_7_2_source: Origem
 txt_7_2_updateclear: Atualizar no arquivo os ficheiros editados e eliminar os ficheiros
 txt_7_1_type_description_brotli: Brotli: compressão rápida da Google, descompressão muito rápida
-txt_7_1_new: Extrair tudo aqui, para nova pasta inteligente
-txt_7_1_smart: Extrair tudo aqui, nova pasta inteligente
+txt_7_1_new: Extrair tudo aqui (nova pasta)
+txt_7_1_smart: Extrair tudo aqui (nova pasta inteligente)
 txt_7_1_profileintermediate: Compressão média, ZIP/BZip2 rápido
 txt_7_1_renfilesonly: Apenas mudar o nome
 txt_7_1_typetosearch: Introduza o termo para pesquisar no caminho atual
@@ -446,10 +446,10 @@ txt_3_1_src: Pesquisas
 txt_3_1_systmp: Temporários
 txt_3_1_languagetools: Traduzir
 txt_3_1_workingdir: Diretório de trabalho
-txt_3_0_nonreadableorpw: O arquivo não está legível. Isto pode ocorrer se o arquivo não for válido ou se o seu conteúdo estiver cifrado- Gostaria de tentar com uma palavra-passe?
-txt_3_0_readablepw: Parece que o arquivo está protegido por palavra-passe
+txt_3_0_nonreadableorpw: O arquivo não está legível. Isto pode ocorrer se o arquivo não for válido ou se o seu conteúdo estiver cifrado. Gostaria de tentar com uma palavra-passe?
+txt_3_0_readablepw: O arquivo pode estar protegido por palavra-passe
 txt_3_0_configure: Integração de sistemas e associação de ficheiros
-txt_3_0_resettmp: Repor peazip-tmp
+txt_3_0_resettmp: Repor ficheiros de trabalho temporários
 txt_2_9_address: Barra de endereço
 txt_2_9_adv: Os filtros avançados são aplicados para fazer a gestão de qualquer ficheiro suportado pela infra-estrutura 7z ou FreeArc (ver documentação) e substitui os filtros básicos (aqueles que são utilizados nas pesquisas e mostrados nos painéis Marcadores e Histórico)
 txt_2_9_columns: Colunas
@@ -531,8 +531,8 @@ txt_2_7_un7z_browse_flat: tente a vista plana (F6)
 txt_2_7_updating: Atualização do arquivo existente:
 txt_2_6_folders: (pasta)
 txt_2_6_advanced: Avançado
-txt_2_6_plalways: Manter sempre aberto para inspeccionar o relatório das tarefas
-txt_2_6_plsmart: Manter se necessário (erro, lista ou relatórios de teste)
+txt_2_6_plalways: Parar sempre para analizar o relatório e tarefas
+txt_2_6_plsmart: Parar para analisar o relatório (erros, listas, testes)
 txt_2_5_sessionio: (esta sessão)
 txt_2_5_advanced: Edição avançada: colocar espaços entre parâmetros e nome do ficheiro
 txt_2_5_basic: Edição básica: aplicação e parâmetros antes do nome
@@ -689,7 +689,7 @@ txt_check_select: Checksum/hash
 txt_clear: Limpar
 txt_clearlayout: Limpar disposição
 txt_pj_hint: Clique para importar tarefas, repor alterações e carregar até à data de definição
-txt_autoclose: Fechar PeaLauncher ao terminar a tarefa
+txt_autoclose: Nunca parar para analisar o relatório de tarefas
 txt_cl: linha de comandos:
 txt_compare: Comparar ficheiros
 txt_compress: Comprimir
@@ -1145,7 +1145,7 @@ txt_3_6_selectdir: Selecione o diretório
 txt_3_5_close: Fechar
 txt_3_0_details: Para mais detalhes, o "Relatório" contém o registo da tarefa e a "Consola" contém a definição da tarefa como linha de comandos.
 txt_3_0_hints: Dicas sobre o erro
-txt_3_0_arc: Alguns ficheiros não puderam ser lidos (podem estar bloqueados, não acessíveis ou danificados)
+txt_3_0_arc: Não foi possível ler alguns ficheiros (podem estar bloqueados, não acessíveis ou danificados)
 txt_3_0_ext: Pode ser que o arquivo necessite de uma palavra-passe diferente para esta operação
 txt_2_8_oop: Abrir destino ao concluir a tarefa
 txt_2_7_validatefn: Operação interrompida, nome inválido detetado:
