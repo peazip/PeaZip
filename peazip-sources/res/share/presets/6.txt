@@ -47,13 +47,13 @@ BACKEND OPTIONS: 7z/p7zip
 Method
 1
 Dictionary
-1
+4
 Word
 4
 Passes
 -1
 Solid block size
-8
+11
 Sort by name for solid compression
 1
 Compress files open for writing

@@ -53,7 +53,7 @@ Word
 Passes
 -1
 Solid block size
-12
+13
 Sort by name for solid compression
 1
 Compress files open for writing

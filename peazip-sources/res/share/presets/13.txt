@@ -8,7 +8,7 @@ Type
 7Z
 0
 Compression level
-3
+2
 Action
 0
 Spanning
@@ -47,13 +47,13 @@ BACKEND OPTIONS: 7z/p7zip
 Method
 1
 Dictionary
-8
+4
 Word
 4
 Passes
 -1
 Solid block size
-12
+11
 Sort by name for solid compression
 1
 Compress files open for writing
