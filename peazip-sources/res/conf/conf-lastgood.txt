@@ -13,7 +13,7 @@ clWindowText
 [language]
 default.txt
 
-[pealauncher: 0: always keep open for inspection 1: (default) keep open only if errors are detected 2: always close when task ends]
+[pealauncher: 0: always keep open for inspection of reports 1: (default) keep open only for errors, list, test operations 2: keep open only for errors, list 3: never keep open for inspection]
 1
 
 [pealauncher: open output directory when job ends]
@@ -26,7 +26,7 @@ default.txt
 0
 
 [Initial dir for file/archive browser]
-
+Computer's root
 
 [default archiving format]
 18
@@ -305,7 +305,7 @@ PeaZip
 2
 
 [7z / p7zip text encoding for file names inside .ZIP files]
-0
+1
 
 [(Windows) get volume information of mapped remote units]
 0
@@ -409,7 +409,7 @@ PeaZip
 0
 
 [save history of recent directories]
-
+Computer's root
 
 
 
@@ -634,7 +634,7 @@ PeaZip
 [use system 7z on Linux]
 0
 
-[integractive extraction, two steps: first extract to a fresh folder, then move to relative path in destination directory]
+[interactive extraction, two steps: first extract to a fresh folder, then move to relative path in destination directory]
 1
 
 [tasks priority]
@@ -688,3 +688,13 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 
 [skip deletion of locked files without interactive confirmation]
 1
+
+[ignore interactive extraction option when creating scripts from Console tab]
+1
+
+[apply advanced inclusion and exclusion filters to archive browser]
+0
+
+[load layout at startup]
+0
+
