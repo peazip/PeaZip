@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+; The script assumes PeaZip is installed in C:\Program Files\PeaZip. Change destination if the application is installed in a different path, or if you want to use the script for PeaZip Portable.
+; The script uses whitelisted ID SetDesktopWallpaper: you can use other whitelisted IDs if you prefer, and if made available by Microsoft.
+; The script adds 1 item to Windows 11 mini context menu for all files types and for directories. You can comment (pre-pending ; character) the entries you want to not apply
+; To localize the language of the menu entries change the text in MUIVerb entries.
+; Read PeaZip documentation for the full list of supported functions and please note all commands containing "multi" particle are natively capable to pass multiple items to a single program's instance.
+
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper]
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\SetDesktopWallpaper]
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper]
+"MUIVerb"="PeaZip, extract..."
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper\command]
+@="\"C:\\Program Files\\PeaZip\\PEAZIP.EXE\" \"-ext2multi\" \"%1\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\SetDesktopWallpaper]
+"MUIVerb"="PeaZip, extract..."
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\SetDesktopWallpaper\command]
+@="\"C:\\Program Files\\PeaZip\\PEAZIP.EXE\" \"-ext2multi\" \"%1\""
