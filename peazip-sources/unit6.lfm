@@ -1,15 +1,16 @@
 object FormInput: TFormInput
   Left = 77
-  Height = 200
+  Height = 250
   Top = 547
-  Width = 560
+  Width = 700
   AutoSize = True
   Caption = 'PeaZip'
-  ClientHeight = 200
-  ClientWidth = 560
+  ClientHeight = 250
+  ClientWidth = 700
   Color = clWindow
-  Constraints.MinHeight = 200
-  Constraints.MinWidth = 560
+  Constraints.MinHeight = 250
+  Constraints.MinWidth = 700
+  DesignTimePPI = 120
   Icon.Data = {
     7E0500000000010001001010FF00000000006805000016000000280000001000
     0000200000000100080000000000000000000000000000000000000000000000
@@ -59,7 +60,7 @@ object FormInput: TFormInput
   }
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object PanelInput: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -67,25 +68,25 @@ object FormInput: TFormInput
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = ButtonPanel1
     Left = 0
-    Height = 138
+    Height = 175
     Top = 0
-    Width = 560
+    Width = 700
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Bottom = 24
+    BorderSpacing.Bottom = 30
     BevelOuter = bvNone
-    ClientHeight = 138
-    ClientWidth = 560
+    ClientHeight = 175
+    ClientWidth = 700
     TabOrder = 0
     object CheckBox1: TCheckBox
       AnchorSideLeft.Control = Editinputquery
       AnchorSideTop.Side = asrBottom
       AnchorSideBottom.Control = PanelInput
       AnchorSideBottom.Side = asrBottom
-      Left = 12
-      Height = 19
-      Top = 119
-      Width = 207
+      Left = 15
+      Height = 24
+      Top = 151
+      Width = 257
       Anchors = [akLeft, akBottom]
       Caption = 'Recoursive: search in subdirectories'
       Checked = True
@@ -96,26 +97,24 @@ object FormInput: TFormInput
       AnchorSideLeft.Control = Editinputquery
       AnchorSideTop.Control = Editinputquery
       AnchorSideTop.Side = asrBottom
-      Left = 12
+      Left = 15
       Height = 1
-      Top = 59
+      Top = 73
       Width = 1
-      BorderSpacing.Top = 12
-      ParentColor = False
+      BorderSpacing.Top = 15
     end
     object LabelLow: TLabel
       AnchorSideLeft.Control = Editinputquery
       AnchorSideTop.Control = Editinputquery
       AnchorSideTop.Side = asrBottom
       Cursor = crHandPoint
-      Left = 12
-      Height = 15
-      Top = 71
-      Width = 45
-      BorderSpacing.Top = 24
+      Left = 15
+      Height = 20
+      Top = 88
+      Width = 56
+      BorderSpacing.Top = 30
       Caption = 'Lowcase'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelLowClick
     end
@@ -125,15 +124,14 @@ object FormInput: TFormInput
       AnchorSideTop.Control = Labelspac2
       AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
-      Left = 86
-      Height = 15
-      Top = 71
-      Width = 38
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 24
+      Left = 107
+      Height = 20
+      Top = 88
+      Width = 48
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 30
       Caption = 'Upcase'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelUpClick
     end
@@ -142,15 +140,14 @@ object FormInput: TFormInput
       AnchorSideTop.Control = Labelspac2
       AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
-      Left = 148
-      Height = 15
-      Top = 71
-      Width = 59
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 24
+      Left = 185
+      Height = 20
+      Top = 88
+      Width = 74
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 30
       Caption = 'Timestamp'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelTimestampClick
     end
@@ -159,13 +156,12 @@ object FormInput: TFormInput
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = LabelLow
       AnchorSideTop.Side = asrCenter
-      Left = 69
-      Height = 15
-      Top = 71
-      Width = 5
-      BorderSpacing.Left = 12
+      Left = 86
+      Height = 20
+      Top = 88
+      Width = 6
+      BorderSpacing.Left = 15
       Caption = '/'
-      ParentColor = False
       ParentFont = False
     end
     object Labelappdirn: TLabel
@@ -173,14 +169,13 @@ object FormInput: TFormInput
       AnchorSideTop.Control = LabelTimestamp
       AnchorSideTop.Side = asrBottom
       Cursor = crHandPoint
-      Left = 12
-      Height = 15
-      Top = 98
-      Width = 125
-      BorderSpacing.Top = 12
+      Left = 15
+      Height = 20
+      Top = 123
+      Width = 157
+      BorderSpacing.Top = 15
       Caption = 'Append directory name'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelappdirnClick
     end
@@ -189,13 +184,12 @@ object FormInput: TFormInput
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Labelappdirn
       AnchorSideTop.Side = asrCenter
-      Left = 149
-      Height = 15
-      Top = 98
-      Width = 5
-      BorderSpacing.Left = 12
+      Left = 187
+      Height = 20
+      Top = 123
+      Width = 6
+      BorderSpacing.Left = 15
       Caption = '/'
-      ParentColor = False
       ParentFont = False
     end
     object Labelprepdirn: TLabel
@@ -204,15 +198,14 @@ object FormInput: TFormInput
       AnchorSideTop.Control = LabelTimestamp
       AnchorSideTop.Side = asrBottom
       Cursor = crHandPoint
-      Left = 166
-      Height = 15
-      Top = 98
-      Width = 127
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 12
+      Left = 208
+      Height = 20
+      Top = 123
+      Width = 159
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 15
       Caption = 'Prepend directory name'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelprepdirnClick
     end
@@ -221,13 +214,12 @@ object FormInput: TFormInput
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = LabelLow
       AnchorSideTop.Side = asrCenter
-      Left = 136
-      Height = 15
-      Top = 71
-      Width = 5
-      BorderSpacing.Left = 12
+      Left = 170
+      Height = 20
+      Top = 88
+      Width = 6
+      BorderSpacing.Left = 15
       Caption = '/'
-      ParentColor = False
       ParentFont = False
     end
     object Editinputquery: TComboBox
@@ -235,29 +227,29 @@ object FormInput: TFormInput
       AnchorSideTop.Control = PanelInput
       AnchorSideRight.Control = PanelInput
       AnchorSideRight.Side = asrBottom
-      Left = 12
-      Height = 23
-      Top = 24
-      Width = 536
+      Left = 15
+      Height = 28
+      Top = 30
+      Width = 670
       Anchors = [akTop, akLeft, akRight]
       AutoComplete = True
-      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 24
-      BorderSpacing.Right = 12
-      ItemHeight = 15
+      AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchCaseSensitive, cbactSearchAscending]
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 30
+      BorderSpacing.Right = 15
+      ItemHeight = 20
       OnKeyPress = EditinputqueryKeyPress
       TabOrder = 1
     end
   end
   object ButtonPanel1: TButtonPanel
-    Left = 12
-    Height = 26
-    Top = 162
-    Width = 536
-    BorderSpacing.Left = 12
-    BorderSpacing.Right = 12
-    BorderSpacing.Bottom = 12
+    Left = 15
+    Height = 30
+    Top = 205
+    Width = 670
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
+    BorderSpacing.Bottom = 15
     BorderSpacing.Around = 0
     OKButton.Name = 'OKButton'
     OKButton.DefaultCaption = True
@@ -279,13 +271,12 @@ object FormInput: TFormInput
       AnchorSideRight.Side = asrBottom
       Cursor = crHandPoint
       Left = 0
-      Height = 15
-      Top = 6
-      Width = 28
-      BorderSpacing.Top = 12
+      Height = 20
+      Top = 5
+      Width = 36
+      BorderSpacing.Top = 15
       Caption = 'Reset'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = LabelrenameresetClick
     end
@@ -295,16 +286,16 @@ object FormInput: TFormInput
     AnchorSideTop.Control = ButtonPanel1
     AnchorSideBottom.Control = ButtonPanel1
     AnchorSideBottom.Side = asrCenter
-    Left = 12
-    Height = 25
-    Top = 162
-    Width = 96
+    Left = 15
+    Height = 30
+    Top = 205
+    Width = 120
     Anchors = [akLeft, akBottom]
     AutoSize = True
-    BorderSpacing.Left = 12
-    BorderSpacing.Top = 8
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 10
     Caption = 'Reset'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     ModalResult = 3
     TabOrder = 3
   end
@@ -314,22 +305,22 @@ object FormInput: TFormInput
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Control = ButtonPanel1
     AnchorSideBottom.Side = asrCenter
-    Left = 12
-    Height = 25
-    Top = 162
-    Width = 96
+    Left = 15
+    Height = 30
+    Top = 205
+    Width = 120
     Anchors = [akLeft, akBottom]
     AutoSize = True
-    BorderSpacing.Left = 12
+    BorderSpacing.Left = 15
     Caption = 'Browse'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     OnClick = BitBtn2Click
     TabOrder = 2
   end
   object OpenDialog3: TOpenDialog
     Title = 'Open file'
     FilterIndex = 0
-    left = 144
-    top = 72
+    Left = 180
+    Top = 90
   end
 end

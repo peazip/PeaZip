@@ -1207,6 +1207,15 @@ s:=outpath2;
 if s='' then exit;
 winexplorepath(s);
 {$ELSE}
+{$IFDEF DARWIN}
+outpath2:=outpath;
+if (modeofuse=1) or (modeofuse=4) or (modeofuse=5) then outpath2:=in_name;
+if (optype=1) and (modeofuse=0) then
+   if fileexists(outpath+'.tmp') then outpath2:=outpath+'.tmp';
+s:=outpath2;
+if s='' then exit;
+macexplorepath(s);
+{$ENDIF}
 i:=filegetattr(outpath);
 if (i and faDirectory) = 0 then s:=extractfilepath(outpath)
 else s:=outpath;
@@ -1228,6 +1237,12 @@ if s='' then exit;
 s:=(s);
 winexplorepath(s);
 {$ELSE}
+{$IFDEF DARWIN}
+s:=in_name;
+if s='' then exit;
+s:=(s);
+macexplorepath(s);
+{$ENDIF}
 i:=filegetattr(in_name);
 if (i and faDirectory) = 0 then s:=extractfilepath(in_name)
 else s:=in_name;

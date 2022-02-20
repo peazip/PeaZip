@@ -1,17 +1,15 @@
-﻿Notes to 8.4.0 release
-
-Textes are now in (peazip)/res/share/lang subfolder
+﻿Notes to 8.5.0 release
 
 Pre-existing text string modified:
-txt_2_6_plalways: Always stop to inspect task report
-txt_2_6_plsmart: Stop to inspect report for error, list, test
-txt_autoclose: Never stop to inspect task report
+txt_8_0_defaultaction: Default action on input
+txt_7_8_rel: Interactive, extract then move
 
 
 = GENERAL NOTES =
 
 This package, named peazip-x.y.about_translations.zip, contains data and information for translators. 
 It can be found in "PeaZip translations" download page, and also on other repositories of PeaZip project.
+Texts are in (peazip)/res/share/lang subfolder of packages.
 
 = HOW TO TRANSLATE THE APPLICATION =
 

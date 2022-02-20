@@ -24,6 +24,9 @@ begin
   Application.Title:='PeaZip';
 Application.Initialize;
 Application.CreateForm(TForm_peach, Form_peach);
+{$IFDEF MSWINDOWS}
+Application.MainFormOnTaskBar:=true;
+{$ENDIF}
 Application.CreateForm(TFormDrop, FormDrop);
 Application.CreateForm(TFormInput, FormInput);
 Application.CreateForm(TFormPW, FormPW);

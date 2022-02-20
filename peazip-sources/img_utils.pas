@@ -440,6 +440,10 @@ destbitmap.PixelFormat:=srcbitmap.PixelFormat;
 destbitmap.width:=wsize;
 destbitmap.height:=hsize;
 destbitmap.Transparent:=true;
+{destbitmap.Transparent:=false;
+destbitmap.canvas.Brush.Color:=relwindowcolor;
+destbitmap.canvas.Pen.Color:=relwindowcolor;
+destbitmap.canvas.Rectangle(0,0,wsize,hsize); }
 rect.Left:=0;
 rect.Top:=0;
 rect.Right:=wsize;

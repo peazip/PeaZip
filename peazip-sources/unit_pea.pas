@@ -186,6 +186,8 @@ unit Unit_pea;
                                 Fixed theming issues
  1.05     20211212  G.Tani      Added BENCH function: single and multi core integer and floating generic arithmetic performances becnchmark
                                 Optimized performances of PEA, UNPEA, and checksum / hash routines
+ 1.06     20220120  G.Tani      Recompiled with Lazarus 2.2.0
+                                RECYCLE option of WIPE function ported to macOS, move item(s) to Trash
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -207,6 +209,10 @@ The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
 }
 
 {$mode objfpc}{$H+}
+{$IFDEF DARWIN}
+{$modeswitch ObjectiveC1}
+{$linkframework CoreFoundation}
+{$ENDIF}
 {$INLINE ON}{$UNITPATH ./we}
 
 interface
@@ -215,6 +221,7 @@ uses
 {$IFDEF MSWINDOWS}
 Windows, activex, ShlObj,
 {$ENDIF}
+{$IFDEF DARWIN}MacOSAll, CocoaAll,{$ENDIF}
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, ExtCtrls, Process, UTF8Process, Spin,
   Buttons, ComCtrls, StdCtrls, Menus, strutils, zuncompr, zcompres,
   hash, adler32, CRC16, CRC24, CRC32, CRC64, ED2K, MD4, MD5, RMD160, SHA1, SHA224,
@@ -363,7 +370,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.05'; //declares release version for the whole build
+  P_RELEASE          = '1.06'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -4464,7 +4471,7 @@ end;
 procedure wipe ( level: ansistring);
 //NONE: delete (quick delete: no overwrite, not sent to recycle bin)
 //QUICK: alias for NONE
-//RECYCLE: move to recycle bin (Windows only)
+//RECYCLE: move to recycle bin (Windows and macOS)
 //ZERO: overwrite with zero, flush, delete
 //ONE: overwrite with one, flush, delete
 //VERY_FAST: overwrite with random data, flush, delete
@@ -4548,6 +4555,19 @@ Result:=ShFileOperation(FStruct);
 end;
 {$ENDIF}
 
+{$IFDEF DARWIN}
+procedure mac_movetotrash(itemtodelete:AnsiString);
+var
+  aNSArray : NSMutableArray;
+  aNSURL   : NSURL;
+begin
+  aNSArray := NSMutableArray(NSMutableArray.array_).init;
+  aNSURL   := NSURL.fileURLWithPath(NSSTR(pchar(itemtodelete)));
+  aNSArray.addObject(aNSURL);
+  NSWorkspace.sharedWorkspace.recycleURLs_completionHandler(aNSArray,nil);
+end;
+{$ENDIF}
+
 begin
 exitcode:=-1;
 tsin:=datetimetotimestamp(now);
@@ -4607,9 +4627,9 @@ for j:=3 to paramcount do
    Form_pea.LabelTools4.Caption:=nicetime(inttostr(time))+' elapsed';
    Application.ProcessMessages;
    try
-      if level='RECYCLE' then //recycle (Windows)
+      if level='RECYCLE' then
                begin
-               {$IFDEF MSWINDOWS}
+               {$IFDEF MSWINDOWS}//recycle (Windows)
                in_param:=escapefilename(paramstr(j),desk_env);
                findfirst(in_param, faAnyFile, sr);
                s := StrPas(sr.FindData.cAlternateFileName);
@@ -4617,6 +4637,14 @@ for j:=3 to paramcount do
                s := extractfilepath(in_param) + s;
                FindClose(sr);
                recyclefile_fromname(s);
+               {$ENDIF}
+               {$IFDEF DARWIN}//move to trash (macOS)
+               in_param:=escapefilename(paramstr(j),desk_env);
+               findfirst(in_param, faAnyFile, sr);
+               s:= extractfilename(in_param);
+               s := extractfilepath(in_param) + s;
+               FindClose(sr);
+               mac_movetotrash(s);
                {$ENDIF}
                end
       else

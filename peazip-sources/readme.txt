@@ -62,6 +62,8 @@ In example, in current Linux packages, (peazip) is written to /usr/lib/peazip, w
 This mechanism can be used, on systems not supporting Open Desktop standards, also to redirect configuraton folder, letting (peazip)/res/portable file, which tells the application to write configuration to (peazip)/res/conf which will be, in this case, replaced by a link.
 3) On Windows packages, place "Configure peazip.exe" compiled from InnoSetup script peazip-setup_script_WIN*-configure.iss in (peazip)/res/bin directory
 
+peazip-x.y.z.pack.zip package provides examples of the directory structures used to create DEB and RPM packages for the current release, in order to help developers in assembling packages for distribution with different package managers.
+It is not needed to compile sources, it is only meant as additional help to assemble packages.
 
 DETAILS ABOUT RES/SHARE
 
@@ -69,7 +71,7 @@ DETAILS ABOUT RES/SHARE
 If desired, system dependent resources can be omitted to reduce the size of the package, i.e. in non-Windows packages it can be safely removed sample .bat and .reg files, being of no use.
 This directory should contain (or link to) peazip_help.pdf in its root in order to provide offline help to users.
 
-(peazip)/res/share/batch subfolder contains sample scripts to use PeaZip from command line, .desktop files, SendTo examples for Windows, and freedesktop_integration subpath which contains files for integration in desktop environments compliant with freedesktop standars (i.e. Gnome, KDE, and other common Linux DE)
+(peazip)/res/share/batch subfolder contains sample scripts to use PeaZip from command line scripts, .desktop files, SendTo examples for Windows, macOS .workflow service menus, and freedesktop_integration subpath which contains files for integration in desktop environments compliant with freedesktop standars (i.e. Gnome, KDE, and other common Linux DE)
 
 (peazip)/res/share/copying contains copying.txt (the license file for PeaZip project sources, released under LGPLv3) and third-parties directory containing thir party licenses.
 

@@ -47,8 +47,8 @@ unit pea_utils;
  0.25     20090609  G.Tani      checkfilename and getwinver moved here
                                 added checkfiledirname for sanitization, against nonvalid and reserved characters and reserved filenames, of path+filename strings
                                 added validatecl for sanitization, against nonvalid and command concatenation characters, of all strings passed to any type of execution
- 0.26     20090706  G.Tani      improved cp_open_linuxlike and winexplorepath to handle filenames both within delimiters characters or not
-                                if selected file is not found, winexplorepath try to fallback showing the directory (no file selected) before raising error message
+ 0.26     20090706  G.Tani      improved handling filenames both within delimiters characters or not
+                                if selected file is not found, try to fallback showing the directory (no file selected) before raising error message
                                 90 extensions supported (.xlt, .dot, .pot)
  0.27     20090822  G.Tani      95 extensions supported
  0.28     20091016  G.Tani      filesize replaced by list_utils' srcfilesize

@@ -121,6 +121,7 @@ unit list_utils;
  0.59     20210727  G.Tani      Added CPU architecture, and widget set strings to info about build
  0.60     20210817  G.Tani      Added support for .lz file extension, and for .apkm, .apks, .aab packages: 225 extensions supported
  0.61     20210925  G.Tani      Nicenumber can now display various types of multiple-bytes fomats for file sizes (binary, decimanl, none)
+ 0.62     20220125  G.Tani      Added support for .vhdx format: 226 extensions supported
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -368,8 +369,11 @@ function escapefilenamedelim(s: ansistring; desk_env: byte): ansistring;
 //apply correct quotes (on *x like swap ' and " quotes if needed)
 function stringdelim(s:ansistring): ansistring;
 
-//open Explorer selecting specified file
+//open Windows File Explorer selecting specified file
 procedure winexplorepath(s: ansistring);
+
+//open macOS Finder with reveal option to select specified file
+procedure macexplorepath(s: ansistring);
 
 //open files in *x environments likely using Gnome or KDE as desktop environment (Linux, *BSD)
 function cp_open_linuxlike(s: ansistring; desk_env: byte): integer;
@@ -744,7 +748,7 @@ var
   fattrib: qword;
   r: TSearchRec;
 begin
-result:=false;
+result:=true; //if not found treat as empty
 mask:='*';
 fattrib:=faAnyFile;
 if FindFirst(dir + mask, fattrib, r) = 0 then
@@ -1703,7 +1707,7 @@ begin
   P.Options := [poWaitOnExit];
   if desk_env = 20 then // Darwin=20
     begin
-    P.CommandLine:='open ' + escapefilename(s, desk_env);
+    P.CommandLine:='open ' + escapefilenamedelim(s, desk_env);
     end
   else
     begin
@@ -1737,6 +1741,19 @@ P.CommandLine := cl;
 P.Execute;
 P.Free;
 {$ENDIF}
+end;
+
+procedure macexplorepath(s: ansistring);
+var
+  P: TProcessUTF8;
+begin
+  if s = '' then
+    exit;
+  P := TProcessUTF8.Create(nil);
+  P.Options := [poWaitOnExit];
+  P.CommandLine:='open -R ' + escapefilenamedelim(s, 20);
+  P.Execute;
+  P.Free;
 end;
 
 procedure cp_search_linuxlike(desk_env: byte);
@@ -1911,17 +1928,23 @@ get_usrtmp_path(s);
 result:=s;
 end;
 
-procedure cutextension(var s: ansistring);
+procedure cutextension(var s: ansistring);//uses a small sett of rules to avoid cutting strings which are not really meant as extensions
+var
+   sext:ansistring;
 begin
-  setlength(s, length(s) - length(extractfileext(s)));
+   sext:=extractfileext(s);
+   if sext='' then exit;
+   if pos(' ',sext) <>0 then exit;
+   if length(sext)>6 then exit;
+   setlength(s, length(s) - length(extractfileext(s)));
 end;
 
 function cutext(var s: ansistring):ansistring;
 var s1:ansistring;
 begin
-  s1:=s;
-  setlength(s1, length(s1) - length(extractfileext(s1)));
-  result:=s1;
+   s1:=s;
+   cutextension(s1);
+   result:=s1;
 end;
 
 function checkfilename(s: ansistring): integer;
@@ -2157,7 +2180,7 @@ begin
     '.iso': testext := 200;
     '.udf': testext := 201;
     '.hfs', '.hfsx': testext := 202;
-    '.vhd': testext := 203;//Microsoft Virtual PC Virtual Hard Disk
+    '.vhd', '.vhdx': testext := 203;//Microsoft Virtual PC Virtual Hard Disk
     '.apm': testext := 204; //Apple Partition Map disk images
     '.ima', '.img': testext := 205;
     '.imz': testext := 206;
