@@ -1,12 +1,18 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.4
+8.5
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20211205
 
 === PeaZip text group ===
 
+txt_8_5_advbrowser: Applica filtri al browser
+txt_8_5_detailslarge: Dettagli, grande
+txt_8_5_intext: Estrai in un percorso di lavoro temporaneo, poi sposta nella destinazione (chiedi prima di sovrascrivere)
+txt_8_5_listlarge: Elenco, grande
+txt_8_5_loadlayout: Carica layout all'avvio
+txt_8_5_samplescripts: Scripts di esempio
 txt_8_4_keepopenerrorslist: Visualizzare report di errori e list
 txt_8_3_mbubin: Binario
 txt_8_3_cw: Modificare la directory di lavoro? L'applicazione sarà riavviate i file temporanei resettati.
@@ -57,7 +63,7 @@ txt_7_8_destexistfile: La destinazione contiene già i file estratti. Sovrascriv
 txt_7_8_dd: Drag and Drop
 txt_7_8_priorityhigh: Alta
 txt_7_8_priorityidle: Idle
-txt_7_8_rel: Estrazione interattiva
+txt_7_8_rel: Interattiva, estrai poi sposta
 txt_7_8_prioritynormal: Normale
 txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [richiede riavvio di PeaZip]
