@@ -1809,6 +1809,7 @@ end;
 
 procedure clearcontextlegacy;
 begin
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
@@ -1857,6 +1858,7 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Secure dele
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...');
 //local
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
@@ -1950,8 +1952,10 @@ end;
 procedure clearcontextseven;
 var s3264:integer;
 begin
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\AllFileSystemObjects\shell\PeaZip');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\AllFileSystemObjects\shell\PeaZip');
 if IsWin64 then s3264:=HKLM64 else s3264:=HKLM32;
@@ -2148,6 +2152,8 @@ begin
 
       sall:=sall+s; //*
 
+      RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
+
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'SubCommands', sall);
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'MultiSelectModel', 'player');
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'Icon', ExpandConstant('"{app}\peazip.exe",0'));
@@ -2334,6 +2340,7 @@ begin
 
     if cbcontextbrowse.state = cbChecked then
        begin
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%1"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip', 'MultiSelectModel', 'player');
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip', '', '&Browse path with PeaZip');

@@ -1,8 +1,8 @@
 ﻿[Setup]        
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 8.4.0 (WIN64)
-AppVersion=8.4.0
+AppVerName=PeaZip 8.5.0 (WIN64)
+AppVersion=8.5.0
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,9 +11,9 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-8.4.0.WIN64\res\share\copying\copying.txt
+LicenseFile=C:\input\peazip-8.5.0.WIN64\res\share\copying\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-8.4.0.WIN64
+OutputBaseFilename=peazip-8.5.0.WIN64
 SetupIconFile=C:\input\peazip-icon-green.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -29,10 +29,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-8.4.0.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.4.0.WIN64\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.4.0.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-8.4.0.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-8.5.0.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.5.0.WIN64\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.5.0.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-8.5.0.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -1851,6 +1851,7 @@ end;
 
 procedure clearcontextlegacy;
 begin
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
@@ -1899,6 +1900,7 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Secure dele
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\CRC, hash and file tools');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...');
 //local
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
@@ -1992,8 +1994,10 @@ end;
 procedure clearcontextseven;
 var s3264:integer;
 begin
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\AllFileSystemObjects\shell\PeaZip');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\AllFileSystemObjects\shell\PeaZip');
 if IsWin64 then s3264:=HKLM64 else s3264:=HKLM32;
@@ -2190,6 +2194,8 @@ begin
 
       sall:=sall+s; //*
 
+      RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
+
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'SubCommands', sall);
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'MultiSelectModel', 'player');
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'Icon', ExpandConstant('"{app}\peazip.exe",0'));
@@ -2376,6 +2382,7 @@ begin
 
     if cbcontextbrowse.state = cbChecked then
        begin
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%1"'));
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip', 'MultiSelectModel', 'player');
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Browse path with PeaZip', '', '&Browse path with PeaZip');
