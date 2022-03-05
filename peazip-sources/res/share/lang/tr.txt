@@ -3,38 +3,38 @@ Turkish (Türkçe)
 8.5
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 21 Ağustos 2021
+Son güncelleme: 5 Mart 2022
 
 === PeaZip text group ===
 
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
+txt_8_5_advbrowser: Arşiv tarayıcısına filtreler uygula
+txt_8_5_detailslarge: Ayrıntılar, büyük
+txt_8_5_intext: Geçici çalışma yoluna ayıklayın ve ardından çıktıya geçin (üzerine yazmadan önce sor)
+txt_8_5_listlarge: Liste, büyük
+txt_8_5_loadlayout: Başlangıçta yükleme düzeni
+txt_8_5_samplescripts: Örnek komut dosyaları
+txt_8_4_keepopenerrorslist: Hata raporunu incelemek için durdur, liste
 txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
+txt_8_3_cw: Çalışma dizini değiştirilsin mi? Bu, geçici çalışma dosyalarını sıfırlayacak ve uygulamayı yeniden başlatacaktır.
+txt_8_3_temperature: Renk sıcaklığı
 txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
+txt_8_3_htab: Sekmeleri vurgula
+txt_8_3_maxarg: Maksimum argüman uzunluğu
+txt_8_3_mbu: Çok baytlı birim
+txt_8_3_prefalgo: Tercih edilen algoritmalar
+txt_8_3_skipdel: Kilitli geçici dosyaların silinmesini atlayın (istek üzerine silmek için sıfırlamayı kullanın)
+txt_8_3_lw: Çalışma dizinindeki bazı dosyalar kilitlidir ve otomatik olarak kaldırılamaz
+txt_8_3_noupx: Bu ikili sıkıştırılamaz (zaten sıkıştırılmış olabilir)
+txt_8_2_slower: (Yavaş)
+txt_8_2_df: 7z / p7zip klasörlerin içeriğini görüntüle
+txt_8_2_vreport: 7z / p7zip ayrıntılı olmayan rapor
+txt_8_2_ta: Erişildi
+txt_8_2_tc: Oluşturuldu
+txt_8_2_keep: Dosyaları sakla
+txt_8_2_tm: Değiştirilmiş
+txt_8_2_skipet: Şifreleme testini atla
+txt_8_2_alltimes: Tüm zaman damgalarını sakla
+txt_8_2_supportedby: Tarafından desteklenen
 txt_8_1_preparse: Arşivleri her zaman önceden ayrıştırın
 txt_8_1_bo: Tarayıcı optimizasyonu
 txt_8_1_bop: Tarayıcı optimizasyon seçenekleri, tarayıcının çok sayıda öğe içeren arşivleri görüntülemesine izin vermek için Seçenekler > Ayarlar, Genel sekmesinden ayarlanabilir.
