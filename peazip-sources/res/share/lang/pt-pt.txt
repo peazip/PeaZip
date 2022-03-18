@@ -3,7 +3,7 @@ Portuguese (Portugal)
 8.5
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20220304
+Revisto em: 20220316
 
 === PeaZip text group ===
 
@@ -53,7 +53,7 @@ txt_8_0_defaultactionhint: Ação padrão com duplo clique em ficheiros associad
 txt_8_0_defaultaction: Ação padrão ao iniciar
 txt_8_0_enableextand: Ativar submenu "Extrair e abrir com"
 txt_8_0_forcetyping: Impor introdução interativa de palavras-passe
-txt_8_0_setpwopt: Definir palavra-passe/ opções para ficheiro-chave
+txt_8_0_setpwopt: Definir opções para palavra-passe / ficheiro-chave
 txt_8_0_forcetypinghelp: Irá executar a infraestrurira binária na consola e não pode explorar arquivos com nomes de ficheiros cifrados. Permite criar scripts que não serão executados sem supervisão, mas sim interativamente com uma palavra-passe.
 txt_7_9_spacing: Espaçamento
 txt_7_9_zooming: Ampliação
