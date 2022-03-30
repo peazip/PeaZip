@@ -1,3 +1,0 @@
-﻿ZSTD is released under Dual license BSD / GPLv2 by Yann Collet, Przemysław Skibiński
-
-Reference: https://facebook.github.io/zstd/
