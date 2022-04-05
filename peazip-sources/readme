@@ -16,7 +16,7 @@ SOURCES:
   PeaZip and act as GUI frontend for PEA, 7z and other utilities;
 - project_demo_lib.lpi: a demo application using PEA source as a library.
 
-dragdropfilesdll directory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems, sources in this path requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael Köcher / six (on Lazarus).
+dragdropfilesdll directory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems, sources in this path requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael KÃ¶cher / six (on Lazarus).
 The package is available in Lazarus Online Package Manager or from https://packages.lazarus-ide.org/DragDrop.zip
 
 "installer" path contains InnoSetup script files creating Windows installers with file associations and menu integration for PeaZip.
@@ -40,9 +40,8 @@ Readme_*.txt files contain some hints for the Windows and Linux users.
 
 
 THIRD PARTS:
-
 Units from Wolfgang Ehrhardt's crypto and utilities library, are intellectual 
-property of Wolfgang Ehrhardt, released uner Zlib license.
+property of Wolfgang Ehrhardt, released under the Zlib license.
 The unit FCAES256.PAS is developed with the contribution of both me and, mainly,
 of Wolfgang Ehrhardt.
 
