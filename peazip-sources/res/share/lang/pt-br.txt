@@ -7,11 +7,11 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_6_clear: "Limpar" opção remove arquivos editados temporários, caso contrário, ficam disponíveis para edição adicional.
+txt_8_6_noclear: Descartar todas as alterações sem atualizar o arquivo
+txt_8_6_nosimple: Não atualize o arquivo, mantenha os arquivos editados temporários para edição posterior
+txt_8_6_immediate: Execução imediata
+txt_8_6_yessimple: Atualizar o arquivo, mantenha os arquivos editados temporários para edição adicional
 txt_8_5_advbrowser: Aplicar filtros ao navegador de arquivos
 txt_8_5_detailslarge: Detalhes, grande
 txt_8_5_intext: Extrair para caminho temporário de trabalho e então mover para saída (perguntar antes de sobrescrever)
@@ -1236,7 +1236,7 @@ txt_speedscale: Velocidade, escala logarítmica (Mais alta, melhor):
 txt_status: Status
 txt_stop: Parar
 txt_bench: Benchmark do sistema
-txt_threads: Threads:
+txt_threads: Processos:
 txt_time: Hora:
 
 === end PeaLauncher text group ===
