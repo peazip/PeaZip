@@ -24,6 +24,7 @@ App list, open with, and context menu can be customised using .desktop files pro
 Desired .desktop file(s) needs to be copied to /usr/share/applications or /usr/local/share/applications (system-wide) ~/.local/share/applications/ (user-specific)
 
 Icon .png file(s) needs to be copied to /usr/share/icons or /usr/local/share/icons (system-wide) ~/.local/share/icons/ (user-specific)
+More icon files are available in (peazip)/res/share/icons directory.
 The icons of the app can be modified if desired, and the .desktop files can be edited to use a different icon.
 
 Please note those locations may be different in some distributions and desktop environments, or could have been further configured differently by user's choice [you will need root to write to system-wide directories].
