@@ -1,1 +1,1 @@
-"$(dirname "${BASH_SOURCE[0]}")/../../peazip" -ext2folder %F
+"$(dirname "${BASH_SOURCE[0]}")/../../../peazip" -ext2folder %F

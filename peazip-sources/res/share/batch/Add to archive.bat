@@ -1,1 +1,1 @@
-"%~dp0..\..\peazip.exe" -add2archive %*
+"%~dp0..\..\..\peazip.exe" -add2archive %*

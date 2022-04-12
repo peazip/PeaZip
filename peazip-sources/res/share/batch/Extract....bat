@@ -1,1 +1,1 @@
-"%~dp0..\..\peazip.exe" -ext2main %*
+"%~dp0..\..\..\peazip.exe" -ext2main %*

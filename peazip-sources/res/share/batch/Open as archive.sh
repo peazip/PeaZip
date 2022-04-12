@@ -1,1 +1,1 @@
-"$(dirname "${BASH_SOURCE[0]}")/../../peazip" -ext2openasarchive %f
+"$(dirname "${BASH_SOURCE[0]}")/../../../peazip" -ext2openasarchive %f

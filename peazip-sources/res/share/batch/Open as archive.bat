@@ -1,1 +1,1 @@
-"%~dp0..\..\peazip.exe" -ext2openasarchive %1
+"%~dp0..\..\..\peazip.exe" -ext2openasarchive %1
