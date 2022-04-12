@@ -1,5 +1,5 @@
-﻿themes\ten-embedded\theme.txt
-themes\ten-embedded\
+﻿themes\main-embedded\theme.txt
+themes\main-embedded\
 100
 $00FF9933
 clWindow
@@ -698,3 +698,6 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 [load layout at startup]
 0
 
+
+[immediate execution of custom compression profile or preset]
+0
