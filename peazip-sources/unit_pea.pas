@@ -188,6 +188,7 @@ unit Unit_pea;
                                 Optimized performances of PEA, UNPEA, and checksum / hash routines
  1.06     20220120  G.Tani      Recompiled with Lazarus 2.2.0
                                 RECYCLE option of WIPE function ported to macOS, move item(s) to Trash
+ 1.07     20220402  G.Tani      New UI layout and theme
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -370,7 +371,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.06'; //declares release version for the whole build
+  P_RELEASE          = '1.07'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -381,10 +382,10 @@ const
   Decompression may read arbitrarily sized buffers up to array size used for
   wide buffers -64KB (left for possible data expansion)}
   {$IFDEF MSWINDOWS}
-  DEFAULT_THEME = 'ten-embedded';
+  DEFAULT_THEME = 'main-embedded';
   EXEEXT        = '.exe';
   {$ELSE}
-  DEFAULT_THEME = 'ten-embedded';
+  DEFAULT_THEME = 'main-embedded';
   EXEEXT        = '';
   {$ENDIF}
   BASEBENCH     = 524288;
@@ -7397,7 +7398,7 @@ i16res:=(qscaleimages*16) div 100;
       Form_pea.imagelist1.getbitmap(0,Butils);
       Form_pea.imagelist1.getbitmap(0,Badmin);
       end;
-   if (graphicsfolder<>'themes'+directoryseparator+'nographic'+directoryseparator) and (graphicsfolder<>'themes'+directoryseparator+'ten-embedded'+directoryseparator) then
+   if (graphicsfolder<>'themes'+directoryseparator+'nographic'+directoryseparator) and (graphicsfolder<>'themes'+directoryseparator+'main-embedded'+directoryseparator) then
       begin
       getthemedbitmap(Binfo,thpath+graphicsfolder+'16'+directoryseparator+'16-info.png');
       getthemedbitmap(Blog,thpath+graphicsfolder+'16'+directoryseparator+'16-paste.png');
@@ -7654,8 +7655,8 @@ Form_pea.LabelE1.Font.Color:=pgray;
 Form_pea.labelopenfile2.Font.Color:=ptextaccent;
 Form_pea.labelopenfile0.Font.Color:=ptextaccent;
 Form_report.Color:=StringToColor(color2);
-Form_report.ShapeTitleREPb1.Brush.Color:=pvvlblue;
-Form_report.ShapeTitleREPb2.Brush.Color:=pvvlblue;
+Form_report.ShapeTitleREPb1.Brush.Color:=StringToColor(colhigh);
+Form_report.ShapeTitleREPb2.Brush.Color:=StringToColor(colmid);
 Form_report.LabelSaveTxt.Font.Color:=ptextaccent;
 Form_report.LabelSaveTxt1.Font.Color:=ptextaccent;
 if highlighttabs=1 then
@@ -7678,6 +7679,7 @@ else
    Form_report.StringGrid1.AlternateColor:=stringtocolor(color2);
    Form_report.StringGrid2.AlternateColor:=stringtocolor(color2);
    end;
+clicklabel_rep(Form_report.LabelTitleREP1,Form_report.ShapeTitleREPb1);
 if paramcount>0 then
    begin
    if upcase(paramstr(1))='PEAUTILS' then

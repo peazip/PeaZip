@@ -114,8 +114,7 @@ implementation
 procedure exitlabel_pm(var a: TLabel; var b:TShape);
 begin
 if activelabel_pm=a then exit;
-b.visible:=false;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colmid);
 a.Font.Color:=pgray;
 end;
 
@@ -156,16 +155,14 @@ begin
 activelabel_pm:=a;
 deselectlabels_pm;
 a.Font.Color:=clDefault;
-b.visible:=true;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 setlabelpanel_pm(a);
 end;
 
 procedure enterlabel_pm(var a: TLabel; var b:TShape);
 begin
 if activelabel_pm=a then exit;
-b.visible:=true;
-b.Brush.Color:=pvvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 a.Font.Color:=clDefault;
 end;
 

@@ -1,19 +1,20 @@
 object FormDlg: TFormDlg
   Left = 70
-  Height = 160
+  Height = 200
   Top = 707
-  Width = 560
+  Width = 700
   AutoSize = True
-  ClientHeight = 160
-  ClientWidth = 560
+  ClientHeight = 200
+  ClientWidth = 700
   Color = clWindow
-  Constraints.MaxHeight = 640
-  Constraints.MaxWidth = 640
-  Constraints.MinHeight = 160
-  Constraints.MinWidth = 400
+  Constraints.MaxHeight = 800
+  Constraints.MaxWidth = 800
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 500
+  DesignTimePPI = 120
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object ldlg: TLabel
     AnchorSideLeft.Control = ImageDlg
     AnchorSideLeft.Side = asrBottom
@@ -21,17 +22,16 @@ object FormDlg: TFormDlg
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelal
-    Left = 56
-    Height = 75
-    Top = 24
-    Width = 480
+    Left = 70
+    Height = 95
+    Top = 30
+    Width = 600
     Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Left = 12
-    BorderSpacing.Top = 24
-    BorderSpacing.Right = 24
-    BorderSpacing.Bottom = 24
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 30
+    BorderSpacing.Right = 30
+    BorderSpacing.Bottom = 30
     Caption = ' '
-    ParentColor = False
     WordWrap = True
   end
   object Panelal: TPanel
@@ -40,17 +40,17 @@ object FormDlg: TFormDlg
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 12
-    Height = 37
-    Top = 123
-    Width = 536
+    Left = 15
+    Height = 45
+    Top = 155
+    Width = 670
     Anchors = [akLeft, akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Left = 12
-    BorderSpacing.Right = 12
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
     BevelOuter = bvNone
-    ClientHeight = 37
-    ClientWidth = 536
+    ClientHeight = 45
+    ClientWidth = 670
     TabOrder = 0
     object babort: TBitBtn
       AnchorSideTop.Side = asrCenter
@@ -58,16 +58,16 @@ object FormDlg: TFormDlg
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = 448
-      Height = 25
+      Left = 560
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Left = 6
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
       Caption = 'Abort'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 3
       TabOrder = 0
     end
@@ -76,16 +76,16 @@ object FormDlg: TFormDlg
       AnchorSideRight.Control = babort
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = 354
-      Height = 25
+      Left = 442
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Left = 6
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
       Caption = 'Cancel'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 2
       TabOrder = 1
     end
@@ -94,16 +94,16 @@ object FormDlg: TFormDlg
       AnchorSideRight.Control = bcancel
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = 260
-      Height = 25
+      Left = 324
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Left = 6
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
       Caption = 'No'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 7
       TabOrder = 2
     end
@@ -112,16 +112,16 @@ object FormDlg: TFormDlg
       AnchorSideRight.Control = bno
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = 166
-      Height = 25
+      Left = 206
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Left = 6
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
       Caption = 'Yes'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 6
       TabOrder = 3
     end
@@ -130,15 +130,15 @@ object FormDlg: TFormDlg
       AnchorSideRight.Control = byesall
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = -22
-      Height = 25
+      Left = -30
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Bottom = 15
       Caption = 'OK'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 1
       TabOrder = 4
     end
@@ -147,16 +147,16 @@ object FormDlg: TFormDlg
       AnchorSideRight.Control = byes
       AnchorSideBottom.Control = Panelal
       AnchorSideBottom.Side = asrBottom
-      Left = 72
-      Height = 25
+      Left = 88
+      Height = 30
       Top = 0
-      Width = 88
+      Width = 110
       Anchors = [akRight, akBottom]
       AutoSize = True
-      BorderSpacing.Left = 6
-      BorderSpacing.Bottom = 12
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
       Caption = 'Yes to all'
-      Constraints.MinWidth = 88
+      Constraints.MinWidth = 110
       ModalResult = 10
       TabOrder = 5
     end
@@ -164,11 +164,11 @@ object FormDlg: TFormDlg
   object ImageDlg: TImage
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
-    Left = 12
-    Height = 32
-    Top = 24
-    Width = 32
-    BorderSpacing.Left = 12
-    BorderSpacing.Top = 24
+    Left = 15
+    Height = 40
+    Top = 30
+    Width = 40
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 30
   end
 end

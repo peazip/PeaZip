@@ -75,11 +75,11 @@ This directory should contain (or link to) peazip_help.pdf in its root in order 
 
 (peazip)/res/share/copying contains copying.txt (the license file for PeaZip project sources, released under LGPLv3) and third-parties directory containing thir party licenses.
 
-(peazip)/res/share/icons contains Windows icons (.png icons for non-Windows systems are available in batch/freedesktop_integration forlder)
+(peazip)/res/share/icons contains .ico and .png icons (more .png icons are available in batch/freedesktop_integration directory)
 
 (peazip)/res/share/lang path contains translations of application's text, most of which are contributed by third parties translators
 
-(peazip)/res/share/lang-wincontext path contains .reg files to localize app's context menus in Windows
+(peazip)/res/share/lang-wincontext path (the sole res directory intended only for Windows systems) contains .reg files to localize app's context menus in Windows
 
 (peazip)/res/share/presets contains preset files for PeaZip defining custom compression settings. Those files are editable, but user-defined custom compression settings should be saved in configuration directory consistently with PeaZip's behavior
 
@@ -90,7 +90,7 @@ This directory should contain (or link to) peazip_help.pdf in its root in order 
 
 THIRD PARTIES
 
-The units of crypto and math utilities library used in PeaZip are derived from Wolfgang Ehrhardt's crypto library (originally aes_2017-11-17.zip, crc_hash_2018-01-01.zip, fca_2017-11-17.zip, serpent_2017-11-17.zip, tf_2017-11-17.zip, and util_2018-11-27.zip libraries), released under Zlib license by Wolfgang Ehrhardt.
+The units of crypto and math utilities library used in PeaZip are derived from Wolfgang Ehrhardt's crypto library (originally aes_2017-11-17.zip, crc_hash_2018-01-01.zip, fca_2017-11-17.zip, serpent_2017-11-17.zip, tf_2017-11-17.zip, and util_2018-11-27.zip libraries), released under the Zlib license by Wolfgang Ehrhardt.
 Libraries are kept up to date, in example were patched to allow build on aarch64 architecture.
 
 7z (LGPL), p7zip (LGPL), 7-Zip-zstd codecs (LGPL), Brotli (MIT License), Zstandard (Dual license BSD / GPLv2), ARC (GPL), ZPAQ/LPAQ/PAQ8* (GPL), QUAD (LGPL) / BALZ (public domain) / BCM (Apache v2), strip and UPX (GPL) binaries are needed to support mainstream file formats, they are not included in source package (but are included in the program's precompiled packages) and are intellectual property of respective Authors.

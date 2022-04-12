@@ -42,7 +42,7 @@ object Form_report: TForm_report
   OnCreate = FormCreate
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object Label4: TLabel
     AnchorSideLeft.Control = Label3
     AnchorSideTop.Control = Label3
@@ -54,7 +54,6 @@ object Form_report: TForm_report
     Width = 776
     Anchors = [akLeft, akRight, akBottom]
     Caption = ' '
-    ParentColor = False
   end
   object Label3: TLabel
     AnchorSideLeft.Control = Label2
@@ -68,7 +67,6 @@ object Form_report: TForm_report
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 6
     Caption = ' '
-    ParentColor = False
   end
   object Label2: TLabel
     AnchorSideLeft.Control = Label1
@@ -82,7 +80,6 @@ object Form_report: TForm_report
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 6
     Caption = ' '
-    ParentColor = False
   end
   object Label1: TLabel
     AnchorSideLeft.Control = Notebook1
@@ -99,7 +96,6 @@ object Form_report: TForm_report
     BorderSpacing.Right = 12
     BorderSpacing.Bottom = 6
     Caption = ' '
-    ParentColor = False
   end
   object Button2: TBitBtn
     AnchorSideRight.Control = Owner
@@ -202,7 +198,6 @@ object Form_report: TForm_report
     Width = 76
     BorderSpacing.Left = 12
     Caption = 'Save report to '
-    ParentColor = False
   end
   object LabelSaveTxt: TLabel
     AnchorSideLeft.Control = LabelSave
@@ -216,7 +211,6 @@ object Form_report: TForm_report
     Width = 14
     Caption = 'txt'
     Font.Color = 13391121
-    ParentColor = False
     ParentFont = False
     OnClick = LabelSaveTxtClick
   end
@@ -231,7 +225,6 @@ object Form_report: TForm_report
     Width = 3
     BorderSpacing.Left = 6
     Caption = '|'
-    ParentColor = False
   end
   object LabelSaveTxt1: TLabel
     AnchorSideLeft.Control = LabelSave2
@@ -246,7 +239,6 @@ object Form_report: TForm_report
     BorderSpacing.Left = 6
     Caption = 'csv'
     Font.Color = 13391121
-    ParentColor = False
     ParentFont = False
     OnClick = LabelSaveTxt1Click
   end
@@ -272,10 +264,11 @@ object Form_report: TForm_report
       AnchorSideBottom.Control = PanelTitleREP
       AnchorSideBottom.Side = asrBottom
       Left = 63
-      Height = 36
-      Top = 0
+      Height = 30
+      Top = 6
       Width = 88
       Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Top = 6
       Brush.Color = 16448250
       Pen.Color = clNone
       Pen.Style = psClear
@@ -289,10 +282,11 @@ object Form_report: TForm_report
       AnchorSideBottom.Control = PanelTitleREP
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 36
-      Top = 0
+      Height = 30
+      Top = 6
       Width = 63
       Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Top = 6
       Brush.Color = 16448250
       Pen.Color = clNone
       Pen.Style = psClear
@@ -300,14 +294,13 @@ object Form_report: TForm_report
     end
     object LabelTitleREP1: TLabel
       AnchorSideLeft.Control = PanelTitleREP
-      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideTop.Control = ShapeTitleREPb1
       AnchorSideTop.Side = asrCenter
       Left = 0
       Height = 15
-      Top = 11
+      Top = 14
       Width = 63
       Caption = '      Table      '
-      ParentColor = False
       OnClick = LabelTitleREP1Click
       OnMouseEnter = LabelTitleREP1MouseEnter
       OnMouseLeave = LabelTitleREP1MouseLeave
@@ -315,15 +308,14 @@ object Form_report: TForm_report
     object LabelTitleREP2: TLabel
       AnchorSideLeft.Control = LabelTitleREP1
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideTop.Control = ShapeTitleREPb2
       AnchorSideTop.Side = asrCenter
       Left = 63
       Height = 15
-      Top = 11
+      Top = 14
       Width = 88
       Caption = '      Clipboard      '
       Font.Color = clGray
-      ParentColor = False
       ParentFont = False
       OnClick = LabelTitleREP2Click
       OnMouseEnter = LabelTitleREP2MouseEnter
@@ -342,7 +334,6 @@ object Form_report: TForm_report
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 12
       Caption = '[CASE]'
-      ParentColor = False
       Visible = False
       OnClick = LabelCaseClick
     end
@@ -378,12 +369,12 @@ object Form_report: TForm_report
   end
   object SaveDialog1: TSaveDialog
     Title = 'Save as'
-    left = 156
-    top = 375
+    Left = 156
+    Top = 375
   end
   object PopupMenu1: TPopupMenu
-    left = 234
-    top = 19
+    Left = 234
+    Top = 19
     object MenuItem1: TMenuItem
       Caption = 'Save CRC or hash value'
       OnClick = MenuItem1Click

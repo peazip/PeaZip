@@ -30,7 +30,7 @@ type
 
 var
   FormDlg: TFormDlg;
-  txt_7_8_update,txt_info,txt_7_2_updateclear,txt_6_5_warning,txt_6_5_error,txt_2_7_ok,txt_6_5_yesall,txt_6_5_yes,txt_no,txt_2_7_cancel,txt_6_5_abort,txt_clear:ansistring;
+  txt_7_8_update,txt_info,txt_7_2_updateclear,txt_8_6_noclear,txt_8_6_nosimple,txt_8_6_yessimple,txt_6_5_warning,txt_6_5_error,txt_2_7_ok,txt_6_5_yesall,txt_6_5_yes,txt_no,txt_2_7_cancel,txt_6_5_abort,txt_clear:ansistring;
   binfodlg,bwarningdlg,berrordlg:TBitmap;
 
 function pMessageDlg(const aMsg, aCaption: ansistring; btn1,btn2a,btn2,btn3,btn4,btn5: boolean): TModalResult;
@@ -135,14 +135,23 @@ result:=pMessageDlg(s, txt_info, false, true, true, true, true, false);
 end;
 
 function pMessagePreview(s:ansistring): TModalResult;
-var stemp:ansistring;
+var stemp1,stemp2:ansistring;
 begin
-stemp:=txt_2_7_ok;
+stemp1:=txt_2_7_ok;
+stemp2:=txt_6_5_yesall;
 txt_2_7_ok:=txt_6_5_yes+' / '+txt_clear;
+txt_6_5_yesall:=txt_no+' / '+txt_clear;
 FormDlg.bok.hint:=txt_7_2_updateclear;
-result:=pMessageDlg(s, txt_info, true, false, true, true, false, false);
-txt_2_7_ok:=stemp;
+FormDlg.byesall.hint:=txt_8_6_noclear;
+FormDlg.byes.hint:=txt_8_6_yessimple;
+FormDlg.bno.hint:=txt_8_6_nosimple;
+result:=pMessageDlg(s, txt_info, true, true, true, true, false, false);
+txt_2_7_ok:=stemp1;
+txt_6_5_yesall:=stemp2;
 FormDlg.bok.hint:='';
+FormDlg.byesall.hint:='';
+FormDlg.byes.hint:='';
+FormDlg.bno.hint:='';
 end;
 
 function pMessageNamingConflict(s:ansistring): TModalResult;

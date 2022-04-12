@@ -132,6 +132,7 @@ type
   end;
 
 procedure save_report(s,reptype,modparam,out_path:ansistring);
+procedure clicklabel_rep(var a: TLabel; var b:TShape);
   
 var
   Form_report: TForm_report;
@@ -151,8 +152,7 @@ implementation
 procedure exitlabel_rep(var a: TLabel; var b:TShape);
 begin
 if activelabel_rep=a then exit;
-b.visible:=false;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colmid);
 a.Font.Color:=pgray;
 end;
 
@@ -234,16 +234,14 @@ begin
 activelabel_rep:=a;
 deselectlabels_rep;
 a.Font.Color:=clDefault;
-b.visible:=true;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 setlabelpanel_rep(a);
 end;
 
 procedure enterlabel_rep(var a: TLabel; var b:TShape);
 begin
 if activelabel_rep=a then exit;
-b.visible:=true;
-b.Brush.Color:=pvvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 a.Font.Color:=clDefault;
 end;
 
@@ -360,7 +358,6 @@ grid1index:=0;
 grid2index:=0;
 grid1switch:=true;
 grid2switch:=true;
-clicklabel_rep(LabelTitleREP1,ShapeTitleREPb1);
 end;
 
 procedure TForm_report.LabelCaseClick(Sender: TObject);

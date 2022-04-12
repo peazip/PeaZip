@@ -57,7 +57,7 @@ object FormWeb: TFormWeb
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object ButtonPanel1: TButtonPanel
     AnchorSideLeft.Control = Owner
     AnchorSideRight.Control = Owner
@@ -148,6 +148,7 @@ object FormWeb: TFormWeb
       'DuckDuckGo'
       'eBay'
       'Facebook'
+      'GitHub'
       'Google'
       'Google Maps'
       'Google News'
@@ -163,7 +164,6 @@ object FormWeb: TFormWeb
       'Twitter'
       'Wikipedia'
       'Wiktionary'
-      'Yahoo'
       'YouTube'
     )
     OnItemClick = CheckGroup1ItemClick

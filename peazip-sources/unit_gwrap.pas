@@ -333,11 +333,11 @@ procedure settheme;
 const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  STR_STOPALL   = '.pstopall';
+  STR_STOPALL   = '.pstopalltmp';
   {$IFDEF MSWINDOWS}
-  DEFAULT_THEME = 'ten-embedded';
+  DEFAULT_THEME = 'main-embedded';
   {$ELSE}
-  DEFAULT_THEME = 'ten-embedded';
+  DEFAULT_THEME = 'main-embedded';
   {$ENDIF}
   {$IFDEF MSWINDOWS}
   EXEEXT        = '.exe';
@@ -451,8 +451,7 @@ end;
 procedure exitlabel_launcher(var a: TLabel; var b:TShape);
 begin
 if activelabel_launcher=a then exit;
-b.visible:=false;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colmid);
 a.Font.Color:=pGray;
 end;
 
@@ -483,16 +482,14 @@ begin
 activelabel_launcher:=a;
 deselectlabels_launcher;
 a.Font.Color:=clDefault;
-b.visible:=true;
-b.Brush.Color:=pvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 setlabelpanel_launcher(a);
 end;
 
 procedure enterlabel_launcher(var a: TLabel; var b:TShape);
 begin
 if activelabel_launcher=a then exit;
-b.visible:=true;
-b.Brush.Color:=pvvvlblue;
+b.Brush.Color:=StringToColor(colhigh);
 a.Font.Color:=clDefault;
 end;
 

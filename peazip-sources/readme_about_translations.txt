@@ -1,9 +1,8 @@
-﻿Notes to 8.5.0 release
+﻿Notes to 8.6.0 release
 
-Pre-existing text string modified:
-txt_8_0_defaultaction: Default action on input
-txt_7_8_rel: Interactive, extract then move
-
+Modified existing text
+txt_2_7_updating: [Updating existing archive]
+txt_7_2_updateclear: Update archive, clear temp edited files
 
 = GENERAL NOTES =
 
