@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Dutch - Nederlands
-8.5
+8.6
 Translated by: Koos van Riemsdijk - Stephan Paternotte
 Last rev. by: Stephan Paternotte
 Last rev.: 20160620
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Apply filters to archive browser
 txt_8_5_detailslarge: Details, large
 txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)

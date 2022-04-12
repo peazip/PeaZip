@@ -1,18 +1,23 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-8.5
+8.6
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20211215
+Sist revidert: 20220220
 
 === PeaZip text group ===
 
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_5_advbrowser: Bruk filtre på arkivsøker
+txt_8_5_detailslarge: Detaljer, store
+txt_8_5_intext: Pakk ut til temporær arbeidssti før flytting til utsti (spør før overskriving)
+txt_8_5_listlarge: Liste, stor
+txt_8_5_loadlayout: Last layout ved oppstart
+txt_8_5_samplescripts: Eksempelskript
 txt_8_4_keepopenerrorslist: Stopp for å inspisere feil-rapport, liste
 txt_8_3_mbubin: Binary
 txt_8_3_cw: Endre arbeidskatalog? Dette medfører nullstilling av temporære arbeidsfiler og restart av programmet.

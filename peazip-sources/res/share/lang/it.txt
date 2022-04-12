@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.5
+8.6
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20211205
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Pulisci" rimuove le anteprime, altrimenti disponibili per ulteriori modifiche.
+txt_8_6_noclear: Scartare tutte le modifiche senza aggiornare l'archivio
+txt_8_6_nosimple: Non aggiornare archivio, mantieni le anteprime per altre modifiche
+txt_8_6_immediate: Esecuzione immediata
+txt_8_6_yessimple: Aggiorna archivio, mantieni le anteprime per altre modifiche
 txt_8_5_advbrowser: Applica filtri al browser
 txt_8_5_detailslarge: Dettagli, grande
 txt_8_5_intext: Estrai in un percorso di lavoro temporaneo, poi sposta nella destinazione (chiedi prima di sovrascrivere)
@@ -136,7 +141,7 @@ txt_7_2_fzstandardcomp: Compressione velocissima, Zstandard
 txt_7_2_loadcompsettings: Carica opzioni di compressione
 txt_7_2_savecompsettings: Salva opzioni di compressione
 txt_7_2_source: Sorgente
-txt_7_2_updateclear: Aggiorna i file modificati ed elimina le anteprime
+txt_7_2_updateclear: Aggiorna archivio ed elimina le anteprime
 txt_7_1_type_description_brotli: Brotli: compressore veloce di Google, decompressione molto rapida
 txt_7_1_new: Estrai tutto qui, nuova cartella
 txt_7_1_smart: Estrai tutto qui, smart
@@ -534,7 +539,7 @@ txt_2_7_separateerror: Non è possibile importare la definizione di un lavoro ch
 txt_2_7_noinput: Il layout è vuoto: usare Aggiungi file(s) o Carica Layout per popolare la lista di file da estrarre
 txt_2_7_dirsize: Le dimensioni del contenuto delle cartelle non è calcolato nella dimensione totale
 txt_2_7_un7z_browse_flat: provare visualizza tutto (F6)
-txt_2_7_updating: Update, aggiunta all'archivio
+txt_2_7_updating: [Update archivio]
 txt_2_6_folders: (cartelle)
 txt_2_6_advanced: Avanzate
 txt_2_6_plalways: Visualizzare sempre i report dei lavori
@@ -692,7 +697,7 @@ txt_conf_cannotsave: Impossibile salvare il file di configurazione, controllare 
 txt_check_hint: Controlla l'integrità dei dati; gli algoritmi di hash sono in grado di rilevare alterazioni mirate e non casuali (vedere la documentazione)
 txt_check: Calcola checksum/hash
 txt_check_select: Checksum/hash da calcolare
-txt_clear: Svuota
+txt_clear: Pulisci
 txt_clearlayout: Svuota layout
 txt_pj_hint: Cliccare qui per importare il lavoro dalla GUI e/o resettare le modifiche
 txt_autoclose: Non visualizzare i report dei lavori

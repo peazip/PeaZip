@@ -1,29 +1,34 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-8.5
+8.6
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20211121
+Zadnja revizija: 20220220
 
 === PeaZip text group ===
 
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Dvojiško
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_5_advbrowser: Uporabi filtre za brskalnik arhivov
+txt_8_5_detailslarge: Podrobnosti (veliko)
+txt_8_5_intext: Razširi v začasno delovno pot in se premakni na izhod (vprašaj pred prepisom)
+txt_8_5_listlarge: Seznam (veliko)
+txt_8_5_loadlayout: Naloži postavitev ob zagonu
+txt_8_5_sample scripts: Vzorčni skripti
+txt_8_4_keeponerrorslist: Ustavi za pregled poročila o napakah (seznam)
+txt_8_3_mbubin: binarno
 txt_8_3_cw: Ali želite spremeniti delovno mapo? To bo ponastavilo začasne delovne datoteke in znova zagnalo aplikacijo.
 txt_8_3_temperature: Barvna temperatura
-txt_8_3_mbudec: Decimalka
+txt_8_3_mbudec: Decimalno
 txt_8_3_htab: Označi zavihke
 txt_8_3_maxarg: Največja dolžina argumentov
 txt_8_3_mbu: Večbajtna enota
 txt_8_3_prefalgo: Prednostni algoritmi
 txt_8_3_skipdel: Preskoči brisanje zaklenjenih začasnih datotek (uporabi ponastavitev za brisanje na zahtevo)
-txt_8_3_lw: Nekatere datoteke v delovnem imeniku so zaklenjene in jih ni mogoče samodejno odstraniti
+txt_8_3_lw: Nekatere datoteke v delovni mapi so zaklenjene in jih ni mogoče samodejno odstraniti
 txt_8_3_noupx: Tega dvojiškega zapisa ni mogoče stisniti (morda je že stisnjen) 
 txt_8_2_slower: (počasneje)
 txt_8_2_df: 7z / p7zip prikaz vsebine map
@@ -169,7 +174,7 @@ txt_6_5_seqerr: Zaznane napake. Izvirne datoteke ne bodo izbrisane
 txt_6_5_sni: Vključi NT varnostne informacije
 txt_6_5_sns: Vključi NTFS nadomestni tok podatkov
 txt_6_5_privacy: Zasebnost
-txt_6_5_showvolatile: Prikaži katere možnosti so spremenljive/odvisne od konteksta
+txt_6_5_showvolatile: Prikaži katere možnosti so spremenljive/odvisne od vsebine
 txt_6_5_force: Poskusi odpreti arhive, ki vsebujejo napake
 txt_6_5_warning: Opozorilo
 txt_6_5_yes: Da

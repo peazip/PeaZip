@@ -1,18 +1,23 @@
 ﻿=== PeaZip language file ===
 Français
-8.5
+8.6
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 15.12.2021
+Date du: 20.02.2022
 
 === PeaZip text group ===
 
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_5_advbrowser: Appliquer des filtres au navigateur d’archivage
+txt_8_5_detailslarge: Détails, grand
+txt_8_5_intext: Extraire vers le chemin de travail temporaire puis passer à la sortie (demander avant d’écraser)
+txt_8_5_listlarge: Liste, grande
+txt_8_5_loadlayout: Charger la mise en page au démarrage
+txt_8_5_samplescripts: Exemples de scripts
 txt_8_4_keepopenerrorslist: Arrêter pour inspecter le rapport à la recherche d’une erreur, liste
 txt_8_3_mbubin: Binaire
 txt_8_3_cw: Changer de répertoire de travail ? Cela réinitialisera les fichiers de travail temporaires et redémarrera l’application.
@@ -1325,9 +1330,9 @@ PeaZip permet d'appliquer de multiples critères de recherche de façon très pu
 
 Autres fonctionnalités: chiffrement fort, copie de fichiers robuste, scinde/concatène des fichiers, destruction des données, comparaison, fichiers de checksum et de hash, benchmark du système, generation de mots de passe aléatoires et de fichiers clefs.
 
-Téléchargement et note de livraison: http://www.peazip.org/
-Pour en savoir plus: http://www.peazip.org/peazip-free-archiver.html
-Support: http://www.peazip.org/peazip-help.html
-FAQ: http://www.peazip.org/peazip-help-faq.html
+Téléchargement et note de livraison: http://peazip.github.io
+Pour en savoir plus: http://peazip.github.io/peazip-free-archiver.html
+Support: http://peazip.github.io/peazip-help.html
+FAQ: http://peazip.github.io/peazip-help-faq.html
 
 Un grand merci à toutes les personnes contribuant à la croissance du projet PeaZip par le développement de composants logiciels Open Source utilisés dans cette application (voir le site web pour la liste complète), et à tous les utilisateurs donnant leur retour d'informations, leurs expériences et leurs conseils sur PeaZip.

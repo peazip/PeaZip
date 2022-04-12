@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Japanese - 日本語
-8.5
+8.6
 Translated by: Dan Tanaka
 Last rev. by: Umoxfo
 Last rev.: 2022-03-18
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: アーカイブブラウザにフィルターを適用
 txt_8_5_detailslarge: 詳細・大
 txt_8_5_intext: 一時的な作業パスに展開し、出力に移動（上書き前に確認）

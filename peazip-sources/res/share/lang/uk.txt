@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Ukrainian - Українська
-8.5
+8.6
 Переклад: Решетнюк В.В.(IxI_JOKER_IxI), Міщенко О.С., sasha[at]mishchenko.tk, Пилипчук О.П., pilipchukap[at]rambler[dot]ru, ViktorOn
 Останній раз ред.: IxI_JOKER_IxI (Localize.org.ua)
 Останнє ред.: 28.02.2022
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Apply filters to archive browser
 txt_8_5_detailslarge: Details, large
 txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)

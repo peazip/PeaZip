@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-8.5
+8.6
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
 Son güncelleme: 5 Mart 2022
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Arşiv tarayıcısına filtreler uygula
 txt_8_5_detailslarge: Ayrıntılar, büyük
 txt_8_5_intext: Geçici çalışma yoluna ayıklayın ve ardından çıktıya geçin (üzerine yazmadan önce sor)

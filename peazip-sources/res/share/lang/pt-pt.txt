@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Portuguese (Portugal)
-8.5
+8.6
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
 Revisto em: 20220316
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Aplicar filtros ao navegador de arquivos
 txt_8_5_detailslarge: Detalhes, grande
 txt_8_5_intext: Extrair para o caminho de trabalho temporário e depois mover para a saída (perguntar antes de substituir)

@@ -1,19 +1,24 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-8.5
+8.6
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
-Last rev.: 20211114
+Last rev.: 20220308
 
 === PeaZip text group ===
 
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_5_advbrowser: 将筛选条件应用到归档文件浏览器
+txt_8_5_detailslarge: 详细信息（大图标）
+txt_8_5_intext: 先解压到临时工作目录，再移动到输出目录（覆盖前询问）
+txt_8_5_listlarge: 列出（大图标）
+txt_8_5_loadlayout: 启动时加载布局
+txt_8_5_samplescripts: 示例脚本
+txt_8_4_keepopenerrorslist: 停止以检查错误报告，同时列出
 txt_8_3_mbubin: 二进制
 txt_8_3_cw: 要更改工作目录吗？这将重置临时文件并重启本应用。
 txt_8_3_temperature: 色温
@@ -50,7 +55,7 @@ txt_8_0_forcebrowse: 浏览非规范的归档文件（容器、磁盘镜像、�
 txt_8_0_commonalgo: 通用算法
 txt_8_0_forceconvert: 转换非规范的归档文件类型
 txt_8_0_defaultactionhint: 在系统里双击关联到 PeaZip 的文件时的默认动作
-txt_8_0_defaultaction: 启动时的默认动作
+txt_8_0_defaultaction: 输入时的默认动作
 txt_8_0_enableextand: 启用“解压并以…打开”子菜单
 txt_8_0_forcetyping: 强制交互式输入密码
 txt_8_0_setpwopt: 设置密码或密钥文件选项
@@ -63,7 +68,7 @@ txt_7_8_destexistfile: 目标已经包含处理过的文件。用相同的文件
 txt_7_8_dd: 拖放
 txt_7_8_priorityhigh: 高
 txt_7_8_priorityidle: 空闲
-txt_7_8_rel: 交互式解压
+txt_7_8_rel: 交互式解压并移动
 txt_7_8_prioritynormal: 一般
 txt_7_8_priorityrealtime: 实时
 txt_7_8_requirerestart: 【需要重启 PeaZip】

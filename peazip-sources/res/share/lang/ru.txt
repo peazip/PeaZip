@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Русский
-8.5
+8.6
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
 Посл. ред.: 22.02.2022
 
 === PeaZip text group ===
 
+txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
+txt_8_6_noclear: Discard all changes without updating the archive
+txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
+txt_8_6_immediate: Immediate execution
+txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Применить фильтры как при просмотре архива
 txt_8_5_detailslarge: Таблица, крупная
 txt_8_5_intext: Извлечь во временный рабочий путь, затем перейти к этим данным (спросить перед перезаписью)
