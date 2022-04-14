@@ -548,7 +548,6 @@ txt_2_5_sessionio: (このセッション)
 txt_2_5_advanced: 高度な編集: 必要に応じて、パラメータ文字列とファイル名の間にスペースを入れます
 txt_2_5_basic: 基本的な編集: アプリケーションとパラメータを指定してから表示名を設定
 txt_2_5_cannotrun: 実行できません
-
 txt_2_5_custeditors: カスタムエディター、プレーヤー、アンチウィルススキャナーなど... (システムのファイルの関連付けを上書き）
 txt_2_5_delete: 削除
 txt_2_5_delete_fromarchive: アーカイブから削除
@@ -1120,6 +1119,7 @@ txt_type_description_zip: ZIP: 高速アーカイブ/圧縮形式、Windowsシ�
 txt_zipcrypto_hint: ZipCrypto (従来の方式)
 
 === end PeaZip text group ===
+
 === PeaLauncher text group ===
 
 txt_6_9_remaining: 残り
@@ -1240,6 +1240,7 @@ txt_threads: スレッド:
 txt_time: 時間:
 
 === end PeaLauncher text group ===
+
 === about text group ===
 
 アーカイブを展開
