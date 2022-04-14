@@ -3,15 +3,15 @@ Français
 8.6
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 20.02.2022
+Date du: 14.04.2022
 
 === PeaZip text group ===
 
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_6_clear: "Transparent" supprime les fichiers modifiés temporairement, sinon disponibles pour une modification ultérieure.
+txt_8_6_noclear: Ignorer toutes les modifications sans mettre à jour l’archive
+txt_8_6_nosimple: Ne pas mettre à jour l’archive, conserver les fichiers modifiés temporairement pour d’autres modifications
+txt_8_6_immediate: Exécution immédiate
+txt_8_6_yessimple: Mettre à jour l’archive, conserver les fichiers modifiés temporairement pour une modification ultérieure
 txt_8_5_advbrowser: Appliquer des filtres au navigateur d’archivage
 txt_8_5_detailslarge: Détails, grand
 txt_8_5_intext: Extraire vers le chemin de travail temporaire puis passer à la sortie (demander avant d’écraser)
@@ -1330,7 +1330,7 @@ PeaZip permet d'appliquer de multiples critères de recherche de façon très pu
 
 Autres fonctionnalités: chiffrement fort, copie de fichiers robuste, scinde/concatène des fichiers, destruction des données, comparaison, fichiers de checksum et de hash, benchmark du système, generation de mots de passe aléatoires et de fichiers clefs.
 
-Téléchargement et note de livraison: http://peazip.github.io
+Téléchargement et note de livraison: http://peazip.github.io/
 Pour en savoir plus: http://peazip.github.io/peazip-free-archiver.html
 Support: http://peazip.github.io/peazip-help.html
 FAQ: http://peazip.github.io/peazip-help-faq.html
