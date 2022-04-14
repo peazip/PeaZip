@@ -3,15 +3,15 @@ German - Deutsch
 8.6
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20220223
+Last rev.: 20220414
 
 === PeaZip text group ===
 
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_6_clear: Die Option "Verwerfen" entfernt temporäre Dateien, sodass sie nicht mehr bearbeitet werden können.
+txt_8_6_noclear: Alle Änderungen verwerfen, ohne das Archiv zu aktualisieren
+txt_8_6_nosimple: Archiv aktualisieren, temporäre Dateien zur weiteren Bearbeitung aufbewahren
+txt_8_6_immediate: Sofort ausführen
+txt_8_6_yessimple: Archiv aktualisieren, temporäre Dateien zur weiteren Bearbeitung aufbewahren
 txt_8_5_advbrowser: Filter auf Archivbrowser anwenden
 txt_8_5_detailslarge: Details, groß
 txt_8_5_intext: In den temporären Arbeitsordner extrahieren und anschließend zur Ausgabe verschieben (vor dem Überschreiben fragen)
