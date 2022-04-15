@@ -3,15 +3,15 @@ Japanese - 日本語
 8.6
 Translated by: Dan Tanaka
 Last rev. by: Umoxfo
-Last rev.: 2022-03-18
+Last rev.: 2022-04-15
 
 === PeaZip text group ===
 
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_6_clear: 「クリア」オプションは一時的に編集されたファイルを削除します。それ以外の場合は、今後の編集に利用できます。
+txt_8_6_noclear: アーカイブを更新せず、すべての変更を破棄する
+txt_8_6_nosimple: アーカイブを更新せず、今後の編集のために一時的に編集されたファイルを保持する
+txt_8_6_immediate: すぐに実行
+txt_8_6_yessimple: アーカイブを更新し、今後の編集のために一時的に編集されたファイルを保持する
 txt_8_5_advbrowser: アーカイブブラウザにフィルターを適用
 txt_8_5_detailslarge: 詳細・大
 txt_8_5_intext: 一時的な作業パスに展開し、出力に移動（上書き前に確認）
@@ -20,7 +20,7 @@ txt_8_5_loadlayout: 起動時にレイアウトをロード
 txt_8_5_samplescripts: サンプルスクリプト
 txt_8_4_keepopenerrorslist: レポートのエラーの検査を停止し、リストします
 txt_8_3_mbubin: 2進数
-txt_8_3_cw: 作業ディレクトリを変更しますか？一時的な作業ファイルをリセットし、アプリケーションを再起動します。
+txt_8_3_cw: 作業ディレクトリを変更しますか？ 一時的な作業ファイルをリセットし、アプリケーションを再起動します。
 txt_8_3_temperature: 色温度
 txt_8_3_mbudec: 10進数
 txt_8_3_htab: タブを強調表示
@@ -327,7 +327,7 @@ txt_5_1_w4: 水曜日
 txt_5_1_weekly: 毎週
 txt_5_1_weeks: 週
 txt_5_0_bc: パンくずリスト
-txt_5_0_resetpm: 本当にパスワードマネージャーをリセットしますか？その場合、PeaZipのパスワードマネージャーに保存されているすべてのパスワードが失われます。
+txt_5_0_resetpm: 本当にパスワードマネージャーをリセットしますか？ その場合、PeaZipのパスワードマネージャーに保存されているすべてのパスワードが失われます。
 txt_5_0_enum: フォルダの内容を列挙する
 txt_5_0_music: ミュージック
 txt_5_0_ps: PowerShellをここで開く
@@ -953,7 +953,7 @@ txt_paqver: PAQバージョン
 txt_type_description_paq: PAQ: 低速だが非常に強力な圧縮
 txt_pio: パラメータ、入力、出力
 txt_poi: パラメータ、出力、入力
-txt_parameters: パラメーター:
+txt_parameters: パラメーター: 
 txt_error_partial: 現在のアーカイブ形式には部分展開は実装されていません
 txt_passes: パス
 txt_pw: パスワード
@@ -979,7 +979,7 @@ txt_no_theme_name: テーマ名を指定してください
 txt_please_wait: お待ちください
 txt_copy_wait: 現在スケジュールされているファイルのコピー/移動が完了するのを待ってから、同じ種類の他の操作をスケジュールしてください。
 txt_previewwith: プレビュー...
-txt_projectadmin: プロジェクト管理者:
+txt_projectadmin: プロジェクト管理者: 
 txt_type_description_quad: BALZ/QUAD: 高性能なROLZベースのファイル圧縮
 txt_quickdelete: クイック削除
 txt_quit: 終了
