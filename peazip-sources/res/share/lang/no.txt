@@ -3,15 +3,15 @@ Norwegian - Norsk
 8.6
 Oversatt av: Rune C. Akselsen, Arne Hanssen, og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20220220
+Sist revidert: 20220417
 
 === PeaZip text group ===
 
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_6_clear: "Slett"-valget fjerner midlertidig redigerte filer, ellers tilgjengelig for videre redigering.
+txt_8_6_noclear: Se bort fra alle endringer uten oppdatering av arkivet
+txt_8_6_nosimple: Ikke oppdater arkivet, bevar midlertidig redigerte filer for videre redigering
+txt_8_6_immediate: Umiddelbar utføring
+txt_8_6_yessimple: Oppdater arkivet, bevar midlertidig redigerte filer for videre redigering
 txt_8_5_advbrowser: Bruk filtre på arkivsøker
 txt_8_5_detailslarge: Detaljer, store
 txt_8_5_intext: Pakk ut til temporær arbeidssti før flytting til utsti (spør før overskriving)
