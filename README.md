@@ -5,7 +5,7 @@ PeaZip free archiver
 |     :---:      |     :---:      |
 | ![GitHub all releases](https://img.shields.io/github/downloads/peazip/PeaZip/total)    | ![SourceForge](https://img.shields.io/sourceforge/dt/peazip)     |
 
-PeaZip is a free file archiver utility and rar extractor for Linux, macOS, and Windows, which works with 200+ archive types and variants (7z, ace, arc, bz2, cab, gz, iso, paq, pea, rar, tar, wim, zip, zipx...), handles spanned archives (001, r01, z01...), supports multiple archive encryption standards, file hashing, exporting tasks as scripts.
+PeaZip is a free file archiver utility and rar extractor for Linux, macOS, and Windows, which works with 200+ archive types and variants (7z, ace, arc, bz2, cab, gz, iso, paq, pea, rar, tar, wim, zip, zipx...), handles spanned archives (001, r01, z01...), supports multiple archive encryption standards, file hashing, exports tasks as scripts.
 
 The project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ, PEA, UPX) focused on file and archive management, and security (strong encryption, two factor authentication, encrypted password manager, secure delete).
 
