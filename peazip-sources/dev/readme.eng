@@ -1,0 +1,38 @@
+The archive contains a collection of small units; in the past some of the
+units were available separately. Online help is available as Windows .hlp file
+or as a .tph for BP7 IDE.
+
+* Base2N V0.38: General base 2**N conversion routines (N=1...6)
+* Bitarray V0.17: Bit array context with max. 524160 bits (spin off from
+  mpint 16 bit prime sieve)
+* BTypes V0.12: Common basic type definitions
+* Compvers V0.18: Compiler version as string or symbol
+* Dates V0.33: Implements compiler and OS independent routines for the
+  current date and time (including milliseconds since midnight) and functions
+  for Julian day numbers.
+* Fio V0.15: File IO with $I- and Err variable (without try/finally), simple
+  wrapper calls for system routines.
+* Hrtimer V0.23: Contains a high resolution timer for most Pascal/Delphi
+  compilers using the comp data type. It uses the RDTSC instruction,
+  therefore it will stop on machines that do not support RDTSC (this feature
+  can be turned off via $ifdef). The timer is used by several optimizing test
+  programs.
+* Mem_util V0.94: Implements compiler independent routines for comparing
+  memory blocks and converting memory blocks to HEX and Base64 strings.
+* Ministat V0.43: Statistics unit with accurate "on the fly" statistics
+  routines for one and two variables.
+* Sort V1.18: General QuickSort, HeapSort (standard and bottom-up), CombSort
+  routines using swap/compare functions. Additional pointer versions have a
+  typeless data pointer that is carried through the functions and can be used
+  to access local data etc by the caller.
+* Tsc V0.35: This unit has a more low level access to the Time Stamp Counter
+  than hrtimer and additionally defines a system dependent low resolution
+  counter (GetTickCount, 18.2 Hz Systick, or milliseconds since midnight) if
+  RDTSC support is not available.
+
+Last changes:
+ - FPC 2.2.2 in Compvers V0.18
+ - Code for TP5-7 in Sort V1.18
+
+
+http://home.netsurf.de/wolfgang.ehrhardt
