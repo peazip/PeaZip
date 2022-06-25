@@ -7,17 +7,17 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
+txt_8_7_csvhelp: "," padrão internacional, ";" como em países latinos
+txt_8_7_after: Após arquivamento / extração
+txt_8_7_bintest: binários testados.
+txt_8_7_csv: Separador CSV
+txt_8_7_hok: Soma dos binários usado pelo PeaZip corresponde com os valores esperados
+txt_8_7_mo: Configurar opções do gerenciador de arquivo
+txt_8_7_showhm: Mostrar cabeçalho do menu do navegador de arquivo
+txt_8_7_showsearchbar: Mostrar barra de pesquisa
+txt_8_7_showsm: Mostrar menu de estilo
+txt_8_7_hnotok: Algumas somas dos binários usados pelo PeaZip não correspondem aos valores esperados:
+txt_8_7_verifybin: Checar soma dos binários
 txt_8_6_clear: "Limpar" opção remove arquivos editados temporários, caso contrário, ficam disponíveis para edição adicional.
 txt_8_6_noclear: Descartar todas as alterações sem atualizar o arquivo
 txt_8_6_nosimple: Não atualize o arquivo, mantenha os arquivos editados temporários para edição posterior
@@ -420,7 +420,7 @@ txt_4_3_recsrc: Busca recursiva por padrão
 txt_4_3_resetpm: Redefinir gerente senha? Todas as senhas salvas serão excluídas
 txt_4_3_breadcrumb: Mostrar endereço como breadcrumb
 txt_4_2_arcabspath: Usar diretórios absolutos
-txt_4_1_duplicateshint: “Tamanho”/“checksum” linha é relatado na coluna CRC para todos os candidatos duplicados encontrados no atual diretório ou filtro de busca
+txt_4_1_duplicateshint: “Tamanho”/“Soma” linha é relatado na coluna CRC para todos os candidatos duplicados encontrados no atual diretório ou filtro de busca
 txt_4_1_adminhint: (Dica: alternativamente, você pode pedir a elevação no UAC para trabalhar com diretórios protegidos, Alt+F10 ou Opções > Executar como administrador)
 txt_4_1_selected: (selecionado)
 txt_4_1_duplicatesfound: duplicados encontrados
@@ -667,7 +667,7 @@ txt_always_pw: Sempre perguntar pela senha
 txt_ignore_ext: Sempre ignorar os diretórios para “Extrair e...”
 txt_ignore_disp: Sempre ignorar diretórios para“Extrair exibidos...”
 txt_ignore_sel: Sempre ignorar diretórios para“Extrair selecionados...”
-txt_key_hint: Anexar hash do arquivo-chave a senha; o arquivo pode ser descriptografado pelo Peazip e outro aplicativo seguindo os mesmos padrões, ou entrando com o hash como parte da senha
+txt_key_hint: Anexar soma do arquivo-chave a senha; o arquivo pode ser descriptografado pelo Peazip e outro aplicativo seguindo os mesmos padrões, ou entrando com o hash como parte da senha
 txt_timestamp: Anexar horário no nome do arquivo
 txt_appoptions: Opções de Aplicativo
 txt_type_description_arc: ARC: Formato experimental, poderoso, eficiente e cheio de recursos.
@@ -705,9 +705,9 @@ txt_add_error: Não pode adic/atualizar ou excluir objeto(s); provavelmente o ti
 txt_un7z_browse_failure: Não é possível navegar o arquivo
 txt_list_error: Não foi possível listar o conteúdo do arquivo, verifique se o arquivo é protegido por senha ou está corrompido
 txt_conf_cannotsave: Não foi possível salvar o arquivo de configuração, cheque se o caminho é editável e tem espaço livre
-txt_check_hint: Verifique a existência de corrupção de dados ocasional; algoritmos de hash são adequados para detectar até mesmo dados adulteração (veja a documentação)
-txt_check: Checksum/hash do(s) arquivo(s)
-txt_check_select: Checksum/hash para executar
+txt_check_hint: Verifique a existência de corrupção de dados ocasional; algoritmos de soma são adequados para detectar até mesmo dados adulteração (veja a documentação)
+txt_check: Verificar soma do(s) arquivo(s)
+txt_check_select: Verificar soma para executar
 txt_clear: Limpar
 txt_clearlayout: Limpar layout
 txt_pj_hint: Clique para importar tarefa, reiniciar mudanças e carrega-las para definição da interface
