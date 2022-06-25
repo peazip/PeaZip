@@ -1,0 +1,64 @@
+!bdll.bat            Compile batch file for AES_DLL
+#ca.bat              Generic compile batch file for all console compilers
+#ca_dll.bat          T_AES_WS with AES_DLL compile batch file for win32 compilers
+#times               Times for encrypting 512MB, different compilers and packages
+$log_aes.zip         Archive with log files of final tests done before release
+aes_base.pas         AES basic routines
+aes_cbc.pas          AES CBC functions
+aes_cfb.pas          AES CFB128 functions
+aes_cfb8.pas         AES CFB8 functions
+aes_cmac.pas         AES CMAC routines
+aes_conf.inc         AES configuration include file
+aes_cprf.pas         AES CMAC Pseudo-Random Function-128
+aes_ctr.pas          AES CTR mode functions
+aes_decr.pas         AES decrypt functions (not needed for CFB/CTR/OFB mode)
+aes_dll.dof          Option  file for AES_DLL
+aes_dll.dpr          Project file for AES_DLL
+aes_dll.res          RES     file for AES_DLL
+aes_eax.pas          AES EAX mode functions
+aes_ecb.pas          AES ECB functions
+aes_encr.pas         AES encrypt functions
+aes_intf.pas         Interface unit for AES_DLL
+aes_intv.pas         Interface unit for AES_DLL (VirtualPascal version)
+aes_ofb.pas          AES OFB functions
+aes_omac.pas         AES OMAC1 routines
+aes_type.pas         AES type definitions
+aes_xts.pas          AES XTS mode functions
+comp_speed           Cycles/Block and MB/s for supported (console) compilers
+copying_we.txt       Licence
+dec_*.inc            Include files for aes_decr.pas
+enc_*.inc            Include files for aes_encr.pas
+legal.txt            Legal notice (cryptography, software patents)
+manifest             This file
+mem_util.pas         Utilities for hex dump and memory compare
+options.zip          Archive with optional inc files
+readme.aes           Info about the AES archive
+samples.zip          Additional simple sample programs
+std.inc              Standard definitions and options
+t_aescbc.pas         Test prog for AES CBC
+t_aescf8.pas         Test prog for AES CFB8
+t_aescfb.pas         Test prog for AES CFB
+t_aescrp.pas         Test prog for AES encrypt/decrypt
+t_aesctr.pas         Test prog for AES CTR
+t_aesecb.pas         Test prog for AES ECB
+t_aesofb.pas         Test prog for AES OFB
+t_aestab.pas         Calculate static full AES tables
+t_aes_as.pas         Test prog for associativity of CFB,OFB,CTR modes
+t_aes_ws.pas         Main test prog for AES modes
+t_cbccts.pas         Test prog for AES CBC cipher text stealing
+t_cmac.pas           Test prog for AES CMAC routines
+t_cprf.pas           Test prog for aes_cprf
+t_cyccnt.pas         Test prog for AES enc/dec cycle count
+t_cycenc.pas         Test prog for AES encryption speed (Cyc/Block, MB/s)
+t_decrsp.pas         Test prog for AES decryption speed
+t_eax2.pas           Test prog for AES EAX
+t_ecbcts.pas         Test prog for AES ECB cipher text stealing
+t_encrsp.pas         Test prog for AES encryption speed
+t_fbmodi.pas         Test prog for AES CTR/CFB/OFB with full blocks first
+t_gsp128.pas         Cycle test program for 128 bit keys, alignment info TCe
+t_gspeed.pas         Test prog to compare AES encr/decr speed with Gladmann
+t_mcst.pas           Monte Carlo Self Tests, compares only final results
+t_mctful.pas         Full Monte Carlo Self Tests from AES submission
+t_mkctab.pas         Calculate compressed AES tables
+t_omac.pas           Test prog for AES OMAC
+t_xts.pas            Test prog for AES XTS

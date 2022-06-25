@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------
+Legal Notice
+
+Some of my software/programs contain cryptographic algorithms. There are
+countries that restrict the use, import, export of cryptographic software.
+Before keeping, using, or distributing the software, make sure that you
+comply to these restrictions. If (for any reason) you are unable to do so,
+you are not allowed to download, use, distribute the software.
+
+If you are residing in a country that allows software patents you must
+verify that no part of the software is covered by a patent in your country.
+If (for any reason) you are unable to do so, you are not allowed to use or
+distribute the software.
+
+
+---------------------------------------------------------------------------
+Rechtlicher Hinweis
+
+Einige meiner Software/Programme enthalten kryptographische Algorithmen. Es
+gibt Laender, die den Gebrauch, Import, Export von kryptographischer Software
+einschraenken bzw. verbieten. Vor Besitz, Gebrauch, Verbreitung dieser
+Software/Programme in diese(n) Laendern muss sichergestellt sein, dass
+diesen Beschraenkungen entsprochen wird. Sollte das (aus welchen Gruenden
+auch immer) nicht moeglich sein, darf die Software nicht heruntergeladen,
+benutzt oder verbreitet werden.
+
+Einige Laender erlauben Softwarepatente. Benutzer aus solchen Laendern
+muessen sicherstellen, dass die Software (oder Teile davon) keine Patente
+beruehrt oder verletzt. Sollte das (aus welchen Gruenden auch immer) nicht
+moeglich sein, darf die Software nicht benutzt oder verbreitet werden.
+
+
+---------------------------------------------------------------------------
+http://wolfgang-ehrhardt.de

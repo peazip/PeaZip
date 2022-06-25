@@ -1,0 +1,48 @@
+##c_all.bat        Compile batch that calls the #c_*.bat files
+##c_d10x.bat       Compile batch for Delphi 10.x
+#c_tb2n.bat        Compile batch for t_base2n.pas
+#c_tb2na.bat       Compile batch for t_bas2na.pas
+#c_tb64.bat        Compile batch for t_base64.pas
+#c_tbita.bat       Compile batch for t_bitarr.pas
+#c_tbtyp.bat       Compile batch for t_btypes.pas
+#c_tcv.bat         Compile batch for t_cv.pas
+#c_tdat.bat        Compile batch for t_dates.pas
+#c_thrt.bat        Compile batch for t_hrt.pas
+#c_tsort.bat       Compile batch for t_sort.pas
+#c_tstat.bat       Compile batch for t_mstat.pas
+$log_utl.zip       Archive with log files of final tests done before release
+base2n.pas         Base 2**N conversion, 1 <= N <= 6
+bitarray.pas       Bit array context with max. 524160 bits
+btypes.pas         Common basic type definitions
+compvers.pas       Return compiler version as string or symbol
+copying_we.txt     WE's license
+dates.pas          Current date/time routines, Julian day numbers
+hrtimer.pas        High resolution timer routines with comp data type
+legal.txt          Legal notice (cryptography, software patents)
+manifest.utl       This file
+memh.pas           Basic portable heap memory allocation functions
+mem_util.pas       Utility procedures for Hex/Base64 and memory compare
+ministat.pas       Mini statistics unit: Accurate running values
+readme.utl         Description of the units
+sort.pas           General QuickSort, HeapSort, CombSort routines
+std.inc            Standard definitions and options
+tsc.pas            Access to Time Stamp Counter (RDTSC)
+t_bas2na.pas       32 bit test prog for Base2N/ansistring
+t_base2n.pas       Test prog for Base2N unit
+t_base64.pas       Test prog for mem_util/base64 string routines
+t_bitar3.pas       Test prog for bitarray (16 bit primes via sieving)
+t_btypes.pas       Test prog for BTypes unit
+t_cv.pas           Test prog for compvers unit
+t_dates.pas        Test prog for dates unit
+t_hrt.pas          Test prog for HRTimer/TSC
+t_mstat.pas        Test prog for ministat unit
+t_sort.pas         Test prog for sort unit
+util.cnt           Windows online help
+util.hlp           Windows online help
+util.pas           Program that uses all "util" units, use it for "Make"
+util.tph           BP7 IDE online help
+_tsc.asm           RDTSC helper routines for 16 bit
+_tsc.obj           Compiled _tsc.asm
+_comparm           Compile / log script for Raspberry Pi
+
+

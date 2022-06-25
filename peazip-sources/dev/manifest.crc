@@ -1,0 +1,101 @@
+#ca.bat              Generic compile batch file for all console compilers
+$d25.zip             dproj files for Delphi 25 (Tokyo Starter)
+$log_crc.zip         Archive with log files of some final test done before release
+adler32.pas          Adler32 source
+align.inc            Helper include file for BASM16 dword alignment
+base2n.pas           Base 2**N conversion
+bcrc32.pas           Crc32 without table
+bcrc64.pas           Crc64 without table
+bjl3.pas             Bob Jenkins' 32-bit hash lookup3 / hashlittle
+blakb384.pas         Blake2b-384 - 384 bit Secure Hash Function
+blakb512.pas         Blake2b-512 - 512 bit Secure Hash Function
+blake2b.pas          Blake2B general functions
+blake2s.pas          Blake2S general functions
+blaks224.pas         Blake2s-224 - 224 bit Secure Hash Function
+blaks256.pas         Blake2s-256 - 256 bit Secure Hash Function
+btypes.pas           Common basic type definitions
+copying_we.txt       WE's license
+crc16.pas            Crc16 source
+crc24.pas            Crc24 source
+crc32.pas            Crc32 source
+crc64.pas            Crc64 source
+crcmodel.pas         "Rocksoft^tm Model CRC Algorithm" for up to 32 bits
+crcm_cat.pas         Catalogue of "Rocksoft^tm Model" parameters
+crc_sick.pas         16 bit 'CRC' used in Sick devices
+ed2k.pas             eDonkey/eMule source
+fcrc32.pas           Crc32, fast 4KB table version
+hash.pas             Source for basic Hash unit
+hmac.pas             Source for basic HMAC unit
+hmacs5t.pas        * Source HMAC SHA512/224 and SHA512/256
+hmacsha1.pas       * Source HMAC SHA1
+hmacsha2.pas       * Source HMAC SHA256
+hmacsha5.pas       * Source HMAC SHA512
+hmacwhir.pas       * Source HMAC Whirlpool
+hmac_md5.pas       * Source HMAC MD5
+hotp.pas             HMAC-SHA1 based One-Time Password Algorithm
+intro.txt            More information about the Hash/HMAC routines
+kdf.pas              (Password Based) Key Derivation Functions
+kperm_16.inc         KeccakF[1600] state permutation for 16 bit compilers
+kperm_32.inc         KeccakF[1600] state permutation for 32 bit compilers
+kperm_64.inc         KeccakF[1600] state permutation for 64 bit types/compilers
+kperm_mp.inc         KeccakF[1600] state permutation using MMX for 32 bit compilers, contributed by Anna Kaliszewicz / payl
+kperm_mx.inc         KeccakF[1600] state permutation using MMX for 32 bit compilers, contributed by Eric Grange
+legal.txt            Legal notice (cryptography, software patents)
+manifest.crc         This file
+md4.pas              M45 source
+md5.pas              MD5 source
+memh.pas             Basic portable heap memory allocation functions
+mem_util.pas         Utilities for hex dump and memory compare
+readme.crc           Package description
+rmd160.pas           RIPEMD-160 source
+scrypt.pas           scrypt key derivation functions
+sha1.pas             Sha1 source
+sha224.pas           Sha224 source
+sha256.pas           Sha256 source
+sha3.pas             SHA3 basic functions (including SHAKE) based on Keccak
+sha384.pas           Sha384 source
+sha3_224.pas         SHA3-224 - 224 bit Secure Hash Function
+sha3_256.pas         SHA3-256 - 256 bit Secure Hash Function
+sha3_384.pas         SHA3-384 - 384 bit Secure Hash Function
+sha3_512.pas         SHA3-512 - 512 bit Secure Hash Function
+sha512.pas           Sha512 source
+sha5_224.pas         SHA512/224 source
+sha5_256.pas         SHA512/256 source
+std.inc              Standard definitions and options
+tv_hmac-sha3.txt     Test vectors for HMAC-SHA3
+t_1mio_a.pas         Test program 1000000 'a' for all hashes
+t_512mb.pas          Test program CRC/Hash for 2^29 'a' (512MB)
+t_all.pas            Test program that uses all base units
+t_allxl.pas          Test program that uses all base units with large buffers
+t_by4.pas            Table generation program for FCRC32
+t_cmodel.pas         Test program for crcmodel
+t_crc24c.pas         Test program crc24
+t_ctab24.pas         Program to calculate CRC24 table
+t_ctab64.pas         Program for crc64 table and polynomial calculation
+t_digs               Test file for t_cmodel.pas (9 bytes: '123456789')
+t_ed2kv.pas          Test program for eDonkey/eMule special cases
+t_fnstr.pas          Test program filename type string
+t_hmac.pas           Test program for HMACs
+t_hmacob.pas       * Test program for obsolete HMAC[Hash] units
+t_hotp.pas           Test program for hotp unit
+t_kdf.c              C program to calc kdf test vector, uses LibTomCrypt
+t_kdf.pas            Test program for kdf unit
+t_oid.pas            Test program for OID vectors
+t_scrypt.pas         Test program for scrypt
+t_self1.zip          Archive with single algorithm self tests
+t_sha3_1.pas         Test SHA3 hashes with NIST 0,5,30,1600,1505,1630 bit messages
+t_sha3_2.pas         Test SHA3 hashes, needs ShortMsgKAT test vectors from Keccak team
+t_shak01.pas         Simple test SHAKE128 and SHAKE256 with 250 bit message and 512 byte digest}
+t_shak02.pas         Test SHAKE128 and SHAKE256, needs ShortMsgKAT test vectors from Keccak team
+t_sick.pas           Test program for crc_sick
+t_speed.pas          Single pass test program for cycles/byte and MB/s
+t_speeda.pas         Iterative test program for cycles/byte and MB/s
+t_speedb.ini         Ini file for t_speedb
+t_speedb.pas         Iterative test program for ini-selected tests
+t_whirlb.pas         Test program for Whirlpool, reproduce first part of NESSIE Bit-API test vectors
+whirl512.pas         Whirlpool source
+_comparm             Compile and run test programs on Raspberry Pi / 3
+
+* marks obsolete files
+
+
