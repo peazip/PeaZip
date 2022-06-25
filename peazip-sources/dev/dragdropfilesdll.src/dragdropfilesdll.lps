@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="43" Y="78"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Formdragdropfilesdll"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unitdragdropfilesdll"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="67"/>
+        <CursorPos X="78" Y="10"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="project1.pas"/>
+        <UnitName Value="dragdropfilesdll"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value=""/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit3>
+    </Units>
+    <JumpHistory Count="21" HistoryIndex="20">
+      <Position1>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="73" Column="27" TopLine="38"/>
+      </Position1>
+      <Position2>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="36" Column="51"/>
+      </Position2>
+      <Position3>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="100" Column="8" TopLine="76"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="53" Column="32" TopLine="43"/>
+      </Position4>
+      <Position5>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="88" Column="15" TopLine="57"/>
+      </Position5>
+      <Position6>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="63" Column="34" TopLine="47"/>
+      </Position6>
+      <Position7>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="69" Column="37" TopLine="48"/>
+      </Position7>
+      <Position8>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="76" Column="32" TopLine="53"/>
+      </Position8>
+      <Position9>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="75" Column="13" TopLine="53"/>
+      </Position9>
+      <Position10>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="57" Column="61" TopLine="35"/>
+      </Position10>
+      <Position11>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="74" Column="18" TopLine="52"/>
+      </Position11>
+      <Position12>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="75" Column="45" TopLine="53"/>
+      </Position12>
+      <Position13>
+        <Filename Value="dragdropfilesdll.pas"/>
+        <Caret Line="32" Column="33" TopLine="13"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="18" Column="40"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="17" Column="39"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="10" Column="35"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="62" Column="12" TopLine="40"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="57" Column="13" TopLine="28"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="19" Column="7"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="40" Column="20" TopLine="7"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unitdragdropfilesdll.pas"/>
+        <Caret Line="19" Column="34"/>
+      </Position21>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
