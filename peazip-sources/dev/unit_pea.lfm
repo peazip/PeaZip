@@ -1,0 +1,1887 @@
+object Form_pea: TForm_pea
+  Left = 30
+  Height = 270
+  Top = 50
+  Width = 560
+  ActiveControl = EditPW1
+  AllowDropFiles = True
+  Caption = 'PEA'
+  ClientHeight = 270
+  ClientWidth = 560
+  Color = clForm
+  Icon.Data = {
+    7E03000000000100010010100000010018006803000016000000280000001000
+    0000200000000100180000000000000300006400000064000000000000000000
+    0000009F78009F7200A97700B87F00CD8900E39400E69600E69600E69600E696
+    00E69600E69600E69600E69600E69600E495009E7F00976C00AA4F00B34100A9
+    50009B6F00B87F00DC9100E69600E69600E69600E69600E69600E69600E69600
+    E29500A99400AD4B00BE3900C16700BE3600A85200966E00986F00BE8200E495
+    00E69600E69600E69600E69600E69600DD9400B8AD00B93900C37800C9D200C1
+    6400B53E00966E00966E00966E00A67600DD9100E69600E69600E69600E69600
+    D59300CCD400AF4800BF3E00C37900BE3900AA4F00976B00A25B00A557009968
+    009E7200D98F00E69600E69600E69600CB9200E3FB009C7400AE4A00B83900AD
+    4B009D6300B83900BE3400BE3600BC3500A25B009E7200DD9100E69600E49500
+    C09100E6FF00B7AE00966E00966D00966D00B53E00C05700C7BC00C8C500C275
+    00BC3500996800A67600E49500D69300BF9100E6FF00DCF000987300966E009D
+    6300BD3200C6A200C9D200C9D200C8C500BE3600A65500966E00BD8100C39100
+    BF9100E6FF00E6FF00BDBA00966E009A6700BD3300C59600C9D200C9D200C7BC
+    00BE3400A35900966E008E6E00B78C00BF9100E6FF00E6FF00E4FD00A68E0096
+    6E00B04600BF4400C59800C6A300C05800B83900976B00926D00836C009D7B00
+    BF9100E6FF00E6FF00E6FF00DDF1009E7F00976B00B04600BD3300BD3200B53E
+    009D6300A94F00A940009B4E00876D00BC8F00E6FF00E6FF00E6FF00E6FF00D9
+    EB009E7F00966E009A67009C6400966D00AC4B00B63800B86600B535009A5000
+    AC8500E6FF00E6FF00E6FF00E6FF00E6FF00DDF100A68E00966E00966E00926D
+    00B03800B97700C0D000B76300AA3D009C7B00E6FF00E6FF00E6FF00E6FF00E6
+    FF00E6FF00E4FD00BCB9008D7200836C00A24600B53C00B97700B538009C4D00
+    917400E6FF00E6FF00E6FF00E6FF00E6FF00E2FF00CCFF00B1FF00A6EF0093AB
+    00877100A14800AE3800A04900846A00897000E2FF00DFFF00D8FF00CCFF00BD
+    FF00ADFF00ABFF00ABFF00ABFF00ABFF00A9FB009ED20093AA008C9000877D00
+    8876000009C300007832000023CF00007E490000615C00007D3F00008A0E0000
+    CA190000D80500002AE90000B2A50000F0670000131300001C5E0000A6810000
+    0E78
+  }
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object ButtonRefSize: TButton
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 181
+    Height = 25
+    Top = 270
+    Width = 62
+    AutoSize = True
+    Caption = 'PeaZip'
+    ParentFont = False
+    TabOrder = 10
+  end
+  object ProgressBar1: TProgressBar
+    AnchorSideBottom.Control = Bevel9
+    Left = 8
+    Height = 10
+    Top = 211
+    Width = 544
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 3
+    ParentFont = False
+    Step = 1
+    TabOrder = 8
+  end
+  object LabelTime1: TLabel
+    AnchorSideBottom.Control = ProgressBar1
+    Left = 8
+    Height = 15
+    Top = 193
+    Width = 280
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 3
+    Caption = ' '
+    ParentFont = False
+  end
+  object Bevel9: TBevel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonDone1
+    Left = 12
+    Height = 2
+    Top = 224
+    Width = 536
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    Shape = bsBottomLine
+  end
+  object ButtonDone1: TBitBtn
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 438
+    Height = 26
+    Top = 238
+    Width = 110
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 6
+    Caption = 'Close'
+    OnClick = ButtonDone1Click
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+  end
+  object LabelOpen: TBitBtn
+    AnchorSideRight.Control = ButtonDone1
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 322
+    Height = 26
+    Hint = 'Open output path or file'
+    Top = 238
+    Width = 110
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 6
+    Caption = 'Explore'
+    OnClick = LabelOpenClick
+    ParentFont = False
+    TabOrder = 4
+    Visible = False
+  end
+  object LabelLog1: TBitBtn
+    AnchorSideRight.Control = LabelOpen
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 206
+    Height = 26
+    Hint = 'Display job log'
+    Top = 238
+    Width = 110
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 6
+    BorderSpacing.Bottom = 6
+    Caption = 'Log'
+    OnClick = LabelLog1Click
+    ParentFont = False
+    TabOrder = 5
+    Visible = False
+  end
+  object PanelTools: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = LabelTime1
+    Left = 0
+    Height = 193
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 193
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 7
+    object LabelTools2: TLabel
+      AnchorSideLeft.Control = Image7
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Image7
+      AnchorSideRight.Control = PanelTools
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 24
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Right = 12
+      Caption = 'Input:'
+      ParentFont = False
+    end
+    object Image7: TImage
+      AnchorSideLeft.Control = PanelTools
+      AnchorSideTop.Control = PanelTools
+      Left = 24
+      Height = 16
+      Top = 24
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 24
+      BorderSpacing.Top = 24
+      Transparent = True
+    end
+    object LabelTools3: TLabel
+      AnchorSideLeft.Control = LabelTools2
+      AnchorSideTop.Control = LabelTools2
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelTools
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 1
+      Top = 42
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 12
+      ParentFont = False
+    end
+    object LabelTools4: TLabel
+      AnchorSideLeft.Control = LabelTools2
+      AnchorSideTop.Control = LabelTools3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelTools
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 1
+      Top = 46
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 12
+      ParentFont = False
+    end
+    object ButtonToolsCancel: TBitBtn
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTools
+      AnchorSideBottom.Side = asrBottom
+      Left = 448
+      Height = 26
+      Top = 161
+      Width = 100
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      BorderSpacing.Bottom = 6
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonToolsCancelClick
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+    end
+    object LabelTools5: TLabel
+      AnchorSideLeft.Control = LabelTools2
+      AnchorSideTop.Control = LabelTools4
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelTools
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 1
+      Top = 50
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 12
+      ParentFont = False
+    end
+  end
+  object PanelRFSinteractive: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 270
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 270
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 6
+    Visible = False
+    object Label1: TLabel
+      AnchorSideTop.Control = ComboBox1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = ComboBox1
+      Left = 51
+      Height = 15
+      Top = 28
+      Width = 65
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = 'Volume size:'
+      ParentFont = False
+    end
+    object Label2: TLabel
+      AnchorSideTop.Control = ComboBox3
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = ComboBox1
+      Left = 35
+      Height = 15
+      Top = 57
+      Width = 81
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = 'Integrity check:'
+      ParentFont = False
+    end
+    object ImageSplit: TImage
+      AnchorSideLeft.Control = ComboBox1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ComboBox1
+      AnchorSideTop.Side = asrCenter
+      Left = 362
+      Height = 16
+      Top = 27
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 1
+      Transparent = True
+    end
+    object Bevel11: TBevel
+      AnchorSideLeft.Control = PanelRFSinteractive
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelRFSinteractive
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp2
+      Left = 12
+      Height = 2
+      Top = 220
+      Width = 536
+      Anchors = [akLeft, akRight, akBottom]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 12
+      Shape = bsBottomLine
+    end
+    object ComboBox1: TComboBox
+      AnchorSideTop.Control = PanelRFSinteractive
+      Left = 128
+      Height = 23
+      Top = 24
+      Width = 222
+      BorderSpacing.Top = 24
+      DropDownCount = 9
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Custom size'
+        '1.44 MB Floppy Disk'
+        '5 MB (attachment limit)'
+        '10 MB (attachment limit)'
+        '600 MB CD'
+        '700 MB CD'
+        '4 GB (max FAT32 file size)'
+        '4.7 GB DVD'
+        '8.5 GB DVD DL'
+      )
+      OnChange = ComboBox1Change
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Custom size'
+    end
+    object ComboBox2: TComboBox
+      AnchorSideLeft.Control = SpinEdit1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ComboBox1
+      Left = 462
+      Height = 23
+      Top = 24
+      Width = 72
+      BorderSpacing.Left = 12
+      ItemHeight = 15
+      ItemIndex = 2
+      Items.Strings = (
+        'B'
+        'KB'
+        'MB'
+        'GB'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'MB'
+    end
+    object ComboBox3: TComboBox
+      AnchorSideLeft.Control = ComboBox1
+      AnchorSideTop.Control = ComboBox1
+      AnchorSideTop.Side = asrBottom
+      Left = 128
+      Height = 23
+      Top = 53
+      Width = 222
+      BorderSpacing.Top = 6
+      DropDownCount = 14
+      ItemHeight = 15
+      ItemIndex = 13
+      Items.Strings = (
+        'WHIRLPOOL'
+        'SHA3_512'
+        'SHA512'
+        'Blake2b'
+        'SHA3_256'
+        'SHA256'
+        'Blake2s'
+        'RIPEMD-160'
+        'SHA1'
+        'MD5'
+        'CRC64'
+        'CRC32'
+        'Adler32'
+        'none'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'none'
+    end
+    object SpinEdit1: TSpinEdit
+      AnchorSideLeft.Control = ComboBox1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ComboBox1
+      Left = 362
+      Height = 23
+      Top = 24
+      Width = 88
+      BorderSpacing.Left = 12
+      MaxValue = 1000000000
+      MinValue = 1
+      ParentFont = False
+      TabOrder = 3
+      Value = 100
+    end
+    object ButtonRFSinteractive: TBitBtn
+      AnchorSideRight.Control = ButtonRFSinteractive1
+      AnchorSideBottom.Control = Panelsp2
+      AnchorSideBottom.Side = asrCenter
+      Left = 362
+      Height = 26
+      Top = 233
+      Width = 80
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 12
+      Caption = '   OK   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000D4000000D40000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF17AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C25CA7917
+        AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF17AF5C1BC87317BC681ECA7717AF5CFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C1BC67217BC6817BC6A17
+        C06B1BC87317AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        17AF5C17C16C14BB6416C06A16C16D17C36F17C77140C68017AF5CFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C14B25717B86428BA6C3AC37DFFFFFF40
+        CA8625C57723C1731BC57217AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2FBF74
+        2FBF7428C7783ECF87FFFFFFFFFFFFFFFFFF3ED18928C87B26C87926C57617AF
+        5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD28F4AD28DFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFF4BD3902FCA7E2FCA7E33C57A17AF5CFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD59335CC8336CC
+        8440C68017AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF54D8973ECE893FD18B2ECA7CFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5CDB
+        9D40D38CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonRFSinteractiveClick
+      ParentFont = False
+      TabOrder = 4
+    end
+    object ButtonRFSinteractive1: TBitBtn
+      AnchorSideRight.Control = PanelRFSinteractive
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp2
+      AnchorSideBottom.Side = asrCenter
+      Left = 448
+      Height = 26
+      Top = 233
+      Width = 100
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      BorderSpacing.Bottom = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonRFSinteractive1Click
+      ParentFont = False
+      TabOrder = 5
+    end
+    object Panelsp2: TPanel
+      AnchorSideLeft.Control = PanelRFSinteractive
+      AnchorSideBottom.Control = PanelRFSinteractive
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 48
+      Top = 222
+      Width = 2
+      Anchors = [akLeft, akBottom]
+      BevelOuter = bvNone
+      ParentFont = False
+      TabOrder = 6
+    end
+  end
+  object PanelEncrypt1: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = LabelTime1
+    Left = 0
+    Height = 193
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 193
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 2
+    object LabelEncrypt2: TLabel
+      AnchorSideLeft.Control = Image3
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = PanelEncrypt1
+      AnchorSideRight.Control = PanelEncrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 24
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      Caption = 'Input:'
+      ParentFont = False
+    end
+    object LabelEncrypt3: TLabel
+      AnchorSideLeft.Control = LabelEncrypt2
+      AnchorSideTop.Control = LabelEncrypt2
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 45
+      Width = 500
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      Caption = 'Output:'
+      ParentFont = False
+    end
+    object LabelEncrypt4: TLabel
+      AnchorSideLeft.Control = LabelEncrypt2
+      AnchorSideTop.Control = LabelEncrypt3
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 72
+      Width = 500
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 12
+      Caption = 'Using:'
+      ParentFont = False
+    end
+    object LabelEncrypt5: TLabel
+      AnchorSideLeft.Control = LabelEncrypt2
+      AnchorSideTop.Control = LabelEncrypt4
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 93
+      Width = 500
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      Caption = 'Input details:'
+      ParentFont = False
+    end
+    object LabelEncrypt6: TLabel
+      AnchorSideLeft.Control = LabelEncrypt2
+      AnchorSideTop.Control = LabelEncrypt5
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 114
+      Width = 500
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      Caption = 'Output details:'
+      ParentFont = False
+    end
+    object LabelE1: TLabel
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = LabelEncrypt3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      Cursor = crHandPoint
+      Left = 26
+      Height = 28
+      Top = 72
+      Width = 14
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 12
+      BorderSpacing.Right = 12
+      Caption = '+'
+      Font.Color = clGrayText
+      Font.Height = -20
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = LabelE1Click
+    end
+    object Image3: TImage
+      AnchorSideLeft.Control = PanelEncrypt1
+      AnchorSideTop.Control = LabelEncrypt2
+      AnchorSideTop.Side = asrCenter
+      Left = 24
+      Height = 16
+      Top = 23
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 24
+      Transparent = True
+    end
+    object Panel1: TPanel
+      AnchorSideLeft.Control = LabelEncrypt2
+      AnchorSideTop.Control = LabelEncrypt3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Control = ButtonPeaExit
+      Left = 52
+      Height = 95
+      Top = 72
+      Width = 500
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Top = 12
+      BevelOuter = bvNone
+      ClientHeight = 95
+      ClientWidth = 500
+      ParentFont = False
+      TabOrder = 0
+      object ShapeE1: TShape
+        Left = 0
+        Height = 5
+        Top = 10
+        Width = 200
+      end
+      object ShapeE2: TShape
+        Left = 0
+        Height = 5
+        Top = 10
+        Width = 200
+        Brush.Color = clHighlight
+      end
+      object LabelOut1: TLabel
+        AnchorSideTop.Control = ShapeE1
+        AnchorSideTop.Side = asrBottom
+        Left = 0
+        Height = 15
+        Top = 21
+        Width = 170
+        BorderSpacing.Top = 6
+        Caption = 'Compression ratio: calculating...'
+        ParentFont = False
+      end
+    end
+    object ButtonPeaExit: TBitBtn
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelEncrypt1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelEncrypt1
+      AnchorSideBottom.Side = asrBottom
+      Left = 448
+      Height = 26
+      Top = 167
+      Width = 100
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonPeaExitClick
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object PanelDecrypt1: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = LabelTime1
+    Left = 0
+    Height = 193
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 193
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 1
+    object LabelDecrypt2: TLabel
+      AnchorSideLeft.Control = Image4
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = PanelDecrypt1
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 24
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      Caption = 'Input:'
+      ParentFont = False
+    end
+    object LabelDecrypt3: TLabel
+      AnchorSideLeft.Control = LabelDecrypt2
+      AnchorSideTop.Control = LabelDecrypt2
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 45
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 12
+      Caption = 'Output:'
+      ParentFont = False
+    end
+    object LabelDecrypt4: TLabel
+      AnchorSideLeft.Control = LabelDecrypt2
+      AnchorSideTop.Control = LabelDecrypt3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 84
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      Caption = 'Using:'
+      ParentFont = False
+    end
+    object LabelDecrypt5: TLabel
+      AnchorSideLeft.Control = LabelDecrypt2
+      AnchorSideTop.Control = LabelDecrypt4
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 105
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 12
+      Caption = ' '
+      ParentFont = False
+    end
+    object LabelDecrypt6: TLabel
+      AnchorSideLeft.Control = LabelDecrypt2
+      AnchorSideTop.Control = LabelDecrypt5
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 126
+      Width = 496
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 12
+      Caption = ' '
+      ParentFont = False
+    end
+    object Image4: TImage
+      AnchorSideLeft.Control = PanelDecrypt1
+      AnchorSideTop.Control = LabelDecrypt2
+      AnchorSideTop.Side = asrCenter
+      Left = 24
+      Height = 16
+      Top = 23
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 24
+      Transparent = True
+    end
+    object ButtonPeaExit1: TBitBtn
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDecrypt1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelDecrypt1
+      AnchorSideBottom.Side = asrBottom
+      Left = 448
+      Height = 26
+      Top = 167
+      Width = 100
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonPeaExitClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object PanelUtils: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 270
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 270
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 9
+    object LabelUtilsFun: TLabel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 15
+      Hint = 'Type a memorizable passphrase, avoiding words either too common or too easy to guess.'#13#10'You should use mixed upcase and lowcase letters, numbers and special characters.'
+      Top = 11
+      Width = 47
+      BorderSpacing.Left = 12
+      Caption = 'Function'
+      ParentFont = False
+      Visible = False
+    end
+    object ButtonUtilsOK: TBitBtn
+      AnchorSideTop.Control = Panelsp0
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = ButtonUtilsCancel
+      AnchorSideBottom.Side = asrBottom
+      Left = 362
+      Height = 26
+      Top = 233
+      Width = 80
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      Caption = '   OK   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000D4000000D40000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF17AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C25CA7917
+        AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF17AF5C1BC87317BC681ECA7717AF5CFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C1BC67217BC6817BC6A17
+        C06B1BC87317AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        17AF5C17C16C14BB6416C06A16C16D17C36F17C77140C68017AF5CFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C14B25717B86428BA6C3AC37DFFFFFF40
+        CA8625C57723C1731BC57217AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2FBF74
+        2FBF7428C7783ECF87FFFFFFFFFFFFFFFFFF3ED18928C87B26C87926C57617AF
+        5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD28F4AD28DFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFF4BD3902FCA7E2FCA7E33C57A17AF5CFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD59335CC8336CC
+        8440C68017AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF54D8973ECE893FD18B2ECA7CFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5CDB
+        9D40D38CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonUtilsOKClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ImageUtils: TImage
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = ButtonUtilsOK
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 12
+      Height = 16
+      Top = 238
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 12
+      OnClick = ImageUtilsClick
+      Transparent = True
+    end
+    object LabelUtilsInput: TLabel
+      AnchorSideLeft.Control = ImageUtils
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = ButtonUtilsOK
+      AnchorSideBottom.Side = asrCenter
+      Left = 34
+      Height = 15
+      Top = 238
+      Width = 126
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 6
+      Caption = 'Drag here input files, or '
+      ParentFont = False
+    end
+    object ListMemo: TMemo
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = PanelUtilsTitle
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp0
+      Left = 0
+      Height = 186
+      Top = 36
+      Width = 560
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ParentColor = True
+      ParentFont = False
+      ScrollBars = ssAutoHorizontal
+      TabOrder = 2
+      WordWrap = False
+    end
+    object ComboBoxUnits: TComboBox
+      AnchorSideTop.Control = PanelUtilsTitle
+      AnchorSideTop.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 48
+      Width = 100
+      BorderSpacing.Top = 12
+      DropDownCount = 26
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Units'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 3
+      Text = 'Units'
+    end
+    object ButtonUtilsCancel: TBitBtn
+      AnchorSideTop.Control = Panelsp0
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 448
+      Height = 26
+      Top = 233
+      Width = 100
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonUtilsCancelClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object labelopenfile2: TLabel
+      AnchorSideLeft.Control = LabelUtilsInput
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 160
+      Height = 15
+      Top = 238
+      Width = 54
+      Caption = 'select files'
+      Font.Color = 13391121
+      ParentFont = False
+      OnClick = labelopenfile2Click
+    end
+    object labelopenfile3: TLabel
+      AnchorSideLeft.Control = labelopenfile2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      Left = 214
+      Height = 15
+      Top = 238
+      Width = 9
+      Caption = ' | '
+      ParentFont = False
+    end
+    object labelopenfile0: TLabel
+      AnchorSideLeft.Control = labelopenfile3
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelUtilsInput
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 223
+      Height = 15
+      Top = 238
+      Width = 35
+      BorderSpacing.Bottom = 6
+      Caption = 'Search'
+      Font.Color = 13391121
+      ParentFont = False
+      OnClick = labelopenfile0Click
+    end
+    object Panelsp0: TPanel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideBottom.Control = PanelUtils
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 48
+      Top = 222
+      Width = 1
+      Anchors = [akLeft, akBottom]
+      BevelOuter = bvNone
+      ParentFont = False
+      TabOrder = 4
+    end
+    object PanelUtilsTitle: TPanel
+      AnchorSideLeft.Control = PanelUtils
+      AnchorSideTop.Control = PanelUtils
+      AnchorSideRight.Control = PanelUtils
+      AnchorSideRight.Side = asrBottom
+      Left = 0
+      Height = 36
+      Top = 0
+      Width = 560
+      Anchors = [akTop, akLeft, akRight]
+      BevelOuter = bvNone
+      ClientHeight = 36
+      ClientWidth = 560
+      TabOrder = 5
+      object ComboBoxUtils: TComboBox
+        AnchorSideLeft.Control = PanelUtilsTitle
+        AnchorSideTop.Control = PanelUtilsTitle
+        AnchorSideTop.Side = asrCenter
+        Left = 12
+        Height = 23
+        Top = 7
+        Width = 400
+        BorderSpacing.Left = 12
+        BorderSpacing.Right = 6
+        DropDownCount = 23
+        ItemHeight = 15
+        ItemIndex = 12
+        Items.Strings = (
+          'CRC32 checksum'
+          'CRC64 checksum'
+          'MD5 hash'
+          'Ripemd160 hash'
+          'SHA1 hash'
+          'Blake2s hash'
+          'SHA256 hash'
+          'SHA3_256 hash'
+          'Blake2b hash'
+          'SHA512 hash'
+          'SHA3_512 hash'
+          'Whirlpool hash'
+          'Checksum/Hash (common algorithms)'
+          'Checksum/Hash (all supported algorithms)'
+          'Analyze files and folders'
+          'Split file // select a single file'
+          'Join spanned file // select a single .001 file'
+          'Compare byte to byte // select one or two files'
+          'Hex preview // select a single file'
+          'Secure delete'
+          'Secure delete free space'
+          'Zero delete free space'
+          'Show environment strings'
+        )
+        OnChange = ComboBoxUtilsChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'Checksum/Hash (common algorithms)'
+      end
+      object ButtonUtilsReset: TSpeedButton
+        AnchorSideTop.Control = PanelUtilsTitle
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = peautilsbtn
+        AnchorSideBottom.Side = asrBottom
+        Left = 438
+        Height = 19
+        Top = 9
+        Width = 50
+        Anchors = [akTop, akRight]
+        AutoSize = True
+        BorderSpacing.Right = 24
+        Caption = 'Reset list'
+        Flat = True
+        OnClick = ButtonUtilsResetClick
+        ParentFont = False
+      end
+      object peautilsbtn: TSpeedButton
+        AnchorSideTop.Control = PanelUtilsTitle
+        AnchorSideRight.Control = PanelUtilsTitle
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelUtilsTitle
+        AnchorSideBottom.Side = asrBottom
+        Left = 512
+        Height = 36
+        Top = 0
+        Width = 48
+        Anchors = [akTop, akRight, akBottom]
+        Flat = True
+        OnClick = peautilsbtnClick
+        ParentFont = False
+      end
+    end
+  end
+  object PanelPW1: TPanel
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 270
+    Top = 0
+    Width = 560
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 270
+    ClientWidth = 560
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnMouseMove = PanelPW1MouseMove
+    object LabelHint1: TLabel
+      AnchorSideLeft.Control = Image5
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelPS1
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 144
+      Width = 249
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 12
+      Caption = 'Move the mouse to improve entropy of the salt'
+      ParentFont = False
+      Visible = False
+    end
+    object LabelPW1: TLabel
+      AnchorSideTop.Control = EditPW1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = EditPW1
+      Left = 58
+      Height = 15
+      Hint = 'Type a memorizable passphrase, avoiding words either too common or too easy to guess.'#13#10'You should use mixed upcase and lowcase letters, numbers and special characters.'
+      Top = 55
+      Width = 58
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = 'Passphrase'
+      ParentFont = False
+    end
+    object LabelConfirm1: TLabel
+      AnchorSideTop.Control = EditConfirm1
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = EditConfirm1
+      Left = 72
+      Height = 15
+      Top = 84
+      Width = 44
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = 'Confirm'
+      ParentFont = False
+      Visible = False
+    end
+    object LabelSample1: TLabel
+      AnchorSideLeft.Control = LabelSample2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelHint1
+      AnchorSideTop.Side = asrBottom
+      Left = 100
+      Height = 15
+      Top = 165
+      Width = 46
+      Alignment = taRightJustify
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 6
+      Caption = '[sample]'
+      ParentFont = False
+      Visible = False
+    end
+    object Shape2: TShape
+      AnchorSideTop.Control = EditConfirm1
+      AnchorSideTop.Side = asrBottom
+      Left = 128
+      Height = 5
+      Top = 109
+      Width = 5
+      BorderSpacing.Top = 6
+      Brush.Color = clRed
+    end
+    object LabelPS1: TLabel
+      AnchorSideLeft.Control = Shape2
+      AnchorSideTop.Control = Shape2
+      AnchorSideTop.Side = asrBottom
+      Left = 128
+      Height = 15
+      Hint = 'Esteem of entropy contained in the typed'#13#10'passphrase, has only an informative value'
+      Top = 117
+      Width = 3
+      Alignment = taRightJustify
+      BorderSpacing.Top = 3
+      Caption = ' '
+      ParentFont = False
+    end
+    object LabelKeyFile1: TLabel
+      AnchorSideTop.Control = PanelPW1
+      AnchorSideRight.Control = LabelKeyFileName1
+      Cursor = crHandPoint
+      Left = 78
+      Height = 15
+      Hint = 'You can use a file as key, a randomly generated keyfile is highly recommended'
+      Top = 24
+      Width = 38
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      Caption = 'Key file'
+      Font.Color = clNavy
+      Font.Style = [fsUnderline]
+      ParentFont = False
+      OnClick = LabelKeyFile1Click
+    end
+    object LabelKeyFileName1: TLabel
+      AnchorSideTop.Control = LabelKeyFile1
+      Left = 128
+      Height = 15
+      Top = 24
+      Width = 43
+      Caption = '<none>'
+      ParentFont = False
+    end
+    object Image5: TImage
+      AnchorSideLeft.Control = PanelPW1
+      AnchorSideTop.Control = LabelHint1
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 24
+      Height = 16
+      Top = 143
+      Width = 16
+      AutoSize = True
+      BorderSpacing.Left = 24
+      Transparent = True
+      Visible = False
+    end
+    object LabelSample2: TLabel
+      AnchorSideLeft.Control = LabelHint1
+      AnchorSideTop.Control = LabelHint1
+      AnchorSideTop.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 165
+      Width = 42
+      Alignment = taRightJustify
+      BorderSpacing.Top = 6
+      Caption = 'Sample:'
+      ParentFont = False
+      Visible = False
+    end
+    object Bevel10: TBevel
+      AnchorSideLeft.Control = PanelPW1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelPW1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp1
+      Left = 12
+      Height = 8
+      Top = 214
+      Width = 536
+      Anchors = [akLeft, akRight, akBottom]
+      BorderSpacing.Left = 12
+      BorderSpacing.Right = 12
+      Shape = bsBottomLine
+    end
+    object EditPW1: TEdit
+      AnchorSideLeft.Control = LabelKeyFileName1
+      AnchorSideTop.Control = LabelKeyFileName1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelPW1
+      AnchorSideRight.Side = asrBottom
+      Left = 128
+      Height = 23
+      Top = 51
+      Width = 420
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 12
+      BorderSpacing.Right = 12
+      EchoMode = emPassword
+      OnKeyUp = EditPW1KeyUp
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 0
+    end
+    object EditConfirm1: TEdit
+      AnchorSideLeft.Control = LabelKeyFileName1
+      AnchorSideTop.Control = EditPW1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelPW1
+      AnchorSideRight.Side = asrBottom
+      Left = 128
+      Height = 23
+      Top = 80
+      Width = 420
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      BorderSpacing.Right = 12
+      EchoMode = emPassword
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+      Visible = False
+    end
+    object ButtonPW1: TBitBtn
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = ButtonPW2
+      AnchorSideBottom.Control = Panelsp1
+      AnchorSideBottom.Side = asrCenter
+      Left = 362
+      Height = 26
+      Top = 233
+      Width = 80
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 6
+      Caption = '   OK   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000D4000000D40000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFF17AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C25CA7917
+        AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF17AF5C1BC87317BC681ECA7717AF5CFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C1BC67217BC6817BC6A17
+        C06B1BC87317AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        17AF5C17C16C14BB6416C06A16C16D17C36F17C77140C68017AF5CFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF17AF5C14B25717B86428BA6C3AC37DFFFFFF40
+        CA8625C57723C1731BC57217AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2FBF74
+        2FBF7428C7783ECF87FFFFFFFFFFFFFFFFFF3ED18928C87B26C87926C57617AF
+        5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD28F4AD28DFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFF4BD3902FCA7E2FCA7E33C57A17AF5CFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4DD59335CC8336CC
+        8440C68017AF5CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF54D8973ECE893FD18B2ECA7CFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5CDB
+        9D40D38CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonPW1Click
+      ParentFont = False
+      TabOrder = 2
+    end
+    object ButtonPW2: TBitBtn
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelPW1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelsp1
+      AnchorSideBottom.Side = asrCenter
+      Left = 448
+      Height = 26
+      Top = 233
+      Width = 100
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 12
+      Caption = '   Cancel   '
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000094000000940000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C
+        2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2D2D8C2D2D
+        8C2D2D8CFFFFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF2D2D8C2D2D8C2D2D8C2D2D8CFFFFFFFFFFFFFFFFFFFFFFFF
+        3535A13535A13535A13535A1FFFFFFFFFFFFFFFFFF3535A13535A13535A13535
+        A1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3C3CB33C3CB33C3CB33C3CB3FF
+        FFFF3C3CB33C3CB33C3CB33C3CB3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFF4D4DC64D4DC64D4DC64D4DC64D4DC64D4DC64D4DC6FFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7171D16767D75E
+        5ED16767D77171D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFF7676DF6464D56464D56464D57676DFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6969D86969D86969D869
+        69D86969D86969D86969D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFFFF6F6FDB6F6FDB6F6FDB6F6FDBFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFF
+        FFFFFFFFFF7373DD7373DD7373DD7373DDFFFFFFFFFFFFFFFFFFFFFFFF7676DF
+        7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676
+        DF7676DFFFFFFFFFFFFFFFFFFF7777E07676DF7676DFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFF7676DF7676DF7676DFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      }
+      OnClick = ButtonPW2Click
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Panelsp1: TPanel
+      AnchorSideLeft.Control = PanelPW1
+      AnchorSideBottom.Control = PanelPW1
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 48
+      Top = 222
+      Width = 2
+      Anchors = [akLeft, akBottom]
+      BevelOuter = bvNone
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 192
+    Top = 192
+  end
+  object OpenDialog1: TOpenDialog
+    FilterIndex = 0
+    Left = 282
+    Top = 154
+  end
+  object ImageList1: TImageList
+    Height = 48
+    Width = 48
+    Left = 346
+    Top = 154
+    Bitmap = {
+      4C7A0B0000003000000030000000C51F00000000000078DAED9D676CABD999DF
+      1DC05F361F122448828553B0D80F1B2365E11963ED0083F5CE5E679C78C6F678
+      C6B3EB00BBC9643D9B1D07B3F6CEDAD7C0221E4FBDBDE8165D5DF5DE7BEF5DA4
+      285162157B51A11A4552D2BD776E993EFF3CE750EFD17B6951959248CDF9F003
+      EFA5587ECF39CF73DA4B9000BE04894422914824128944229148245F38BEFAD5
+      AF426137F74B7FE91F8F3B77EE4021156B41FACBFC97FEA93BFE482412894422
+      91482412894422492CBF7EE3375078F9E59F086A7EFE8782B2BFF90315FF3E41
+      6CBE66D5CFFE50F0D397FF4CF017FFF36581F44F4EFFD3BFF80514FEECC77F2E
+      589D991284A73759F1591282FA355755FCD5CB7F2938F5ED6F0BA47F72FA3FFF
+      FCF35078E26B5F137CF629B6E4D34F3E5701159FED89CF3FC396FCF52BAF084E
+      9DFAB640FA27A7FF0B2FBC0885279EFC9A40EDFCD1A347820F1F3EDC3FF7EF0B
+      3EA6FF2B7CFEC9C782577EF25702E99FFCFE2FBEF822149E78F20981DAFFC387
+      1F081ED17BEF9B070F041F3E7C2490FE27DB7FCFF97F5FCDFD2D39CAFC97FE47
+      E3FF24792BA8FDF1D9E79B7CFA6962F8FC73817AFEFD3F7FFD8A40FAA782FF8F
+      A0F0E4D79F104CFB7C02B7CB217039EC02BBCD2670AAB0DB77C6E97408DC4E97
+      E07FFCF8C782FFFACC3302E99F9CFE2F50DE2B7CFDC9270579B9B982EC8CDB82
+      F41B3704F9B7330559B7320479595982FC9C9C4DB2B30585F4BA0AB7AFDF147C
+      F31BDF103CFBECB302E99FA4FE2FBC0005B5BFD7E512980D86C7D08F8D71FC94
+      AF7797439C25DF0CFC530E8ECF41785C9C31CD0826B45AC1D8F030C73A3101B7
+      D5CAF1582C8253A74E09BEFBDDEF0AA4BFCA5FA7E3F86C0E3C08AF71D617833C
+      06250ED7D414474BAEA6C9C928F4DCF1D1518E717C3C21FE3FFCE10FA1F02479
+      2BD8E97515E2F9DB8D06DC5D0A72EE8756790C4A1C1EF31447333824FCD5CF35
+      E9F5B01A8D1CBBC92078FAE9A705D27F7BFF49ED0816BD6ECE9D8D1818779656
+      30EFF6714655F9F3983FE5FF71F92B393CDCD901C7848EB3B01183124724B0C8
+      19D768B7F4371B26613399390ECB264FFFC9D302E9BFBD7F7B4D0D346DAD1C25
+      86CD385638132C57B6F23726C6FF7BDFFF1E149E7CE209C1B4D72B88E75F5B9C
+      8FA6E2028EA6BD4DF405AB8748608133A91BDBD2DF48F5EB76D8387E9A2714BE
+      F5C7DF12BCF4D24B822FB2BFD5647A8C099A7B195505D928C9B8CAE131A87269
+      8ED6DA0CDDC88878FC24CD593A8D86631C1D4B88FFCF5EFB1914BEFFFDEF0B0A
+      0B0A04F979799BE46EF2D63F9C16645DBB2A68AAAA14B437370A3ADBDA05BD1D
+      5D82F6E666C12FFEFEEF05BBB9FE2BFD8FD75F229148241289E48BC6DB6FBF8D
+      5440FA27BFFF271F7F9C5448FFD4F5FFF0830F048F1E3E4C08F72AAF0A3E6EBD
+      25F8ACE5A240FA4BFF783C2C7D4B3074255BF0B0254320FDA57F3C1EE49E163C
+      6CBE2E586BC91748FF93E1FFD1871F0A1E3D7A2478C8F27803B5DB87F438812A
+      F60FE8390A8FD5C2830782FBEFBF2F90FE27C33F1C0A09C6C6C604D3D3D302A3
+      D128507F67D1D4D494E0934F3E11A8E37A70FFBEE02E3D4741FA9F0C7F8BC522
+      585E5E168C530C0A6B6B6B02B3C92408D2E3140C068320128E08EEACAF0B82CB
+      4181F43F19FE72FF2BFDE5F99BF43F6C7F894422914824128944B23FD839944E
+      A7E38C8E8E8A7F33D467587B41792D35EAD755FE1F7B3F73D9AFFB4ECEE3E3E3
+      BB46794E3CFF78EDC560672E7BF1DFCE43AFD773262626E2A23C66ABC7B1FBD4
+      F1A8FB275E3B4D4E4EEECA7F3BA76440FA27AFBF72FEAD3EA7549EA7BE8FA13E
+      2F5713FBB8786C55275BC1F23E969DFC4D26932091CEF162D86E0C507B2BCFDB
+      8B7FACABFAFE9DE2DA2ECE7871C7C6B0DBF657DE83FD5D71349BCD02754C5BDD
+      B7D5DF63897DDC4EF1AA1FA7FC3B5E0CDBF9EFC62D16E57AC176316CE5BAD57B
+      A9FF1E2F87D4FECAE377E3B71DCAE376EA879DFA6FA7F6DFAADFAC56EBA1B09B
+      B863FB2EB6AF6263D8AA1F95F7B3D96C8F715871C5C6B75D9FC5E6D056FEB1DE
+      4711C3767DA1F657B77FAC378B753BF744C6B2D7F751D7BD12436CDBEFD5FFA8
+      88F5DF6AEE51FC1D0E47D2C1AEDFC76BFF4B972EE1F2E5CB9CB4B4348EF2FF44
+      C05E7F3B2E5CB8C0D9E9EF67CE9CE1BCF3CE3BFC96B5BFFA7D14F7BDFAC77BDF
+      9DFEAE78C512FB98B367CF0A7FC55D612FFE6AA7DDB4EB4ECECC4B718B1743AC
+      7F2CB18EFFF8777E27A9618EF1FC93DD5D21D65FC98B54F7FFB75FF95DC1577E
+      F75F0AFED5BFF8E7827FF64FFF8940FD9A5FFEF29713C237CEFE27C153BEEF09
+      D4F7C7F3FFBD7FF315C171F97FB3F49B82A7169E17A8EFDF8DBFBA2FD4FE6A0E
+      C3FFBF74FF89E0A9D00B02F5FD6A7FF558FDFBFFEE5F0B8E2D7FDABE25782AF4
+      4381FA7E651E60A8FD93217FFE28EF8F044FCDFF40A0BE5F7167A8E70AB5FF6E
+      72E630FCBFFEC67F103CE5794EA0BE5FED7F12C6FF93327FA5E2FA419DFF0759
+      FB6EC74E8F55D671CA3A6DAB7F33D4E34EECF8132F86BDFAC6BA28FEEADB788F
+      8F47ECFA5F0DDB03AB5F7BA7368FB7D7D8CE7FA7381597ED6250B7BDDA5D2291
+      4824C9C3D2C20202B3B398F1FB050B745FB2FACEF95DB09B2761331BE1B4DBE1
+      F378B8F3ECF4B4C0E7F5C2ED7261CA6281D56C86D3E138D67882413F5C8E0938
+      ACE398F558B112F06039308D8540008BF3F3607D105C5ADA646111C1F9057ACC
+      3C166666E173BA609934C038AE87DFE53EB25842E10538EC5A6A4F3DB95A110C
+      D8119A776175C143314C0BF7E5C5C5C7FC5754FEF3D33398F5FAB8B77BCA06B3
+      7E827FB7E661C7E1F6DA60771BB1B43C8570C88E48D08ED525075617C97FDE8D
+      F0FCF4A6FBE2D26FF9AF6CF82FCDCE61DE4F79E5F1F2EF2D765AAC70982D30E8
+      C6782C89F69EBF1786DE6D823BE0C0E28A0F4B21178221F25E61FEC4820B9180
+      97FC67105A9843783180D0E202569438388B5826FF45CAAF79CA9F599F1F7EB7
+      076EAA17F6DDC436B30956A30193FA716835230804661312C7747805C36E0B6C
+      A169F823B3980F4F633E44B91E7222B2E2C0DAF286FFBC97F2689AFC67A8ADE7
+      C83F40B70B516F82F50BCBADF9B939CCCDCCF0EF82F7503D337FA7D502BBC5CC
+      FDCD34064C1A2630383400BBD379A018FC2B21689C3658C34BB0AF2FC1BD16C0
+      CC7A00B3611F16C21E84C22E9E439145277953FECFFB88696296EA758EF29D72
+      85DA5C7167B5CDC655361EF9D978447E2EF6FDF31BFE53D40746C3242626F518
+      D56931303808C7016218B6D1784731D8D623985A5F81F3CE32ECE13978233398
+      89501E455C08510E85971DD4DE6EF2F572FF20F9B33E082E30FF79EEAEB4BD32
+      2FB03156F1774D59F9F7C5327F93C9C0DB9FF90F0D0DA1ABAB0BCE7DC43069F6
+      C0341F8273F51EECAB6B70AC85615B0DC21659A2FB02F0AD521E453CBC0E4241
+      0756969CE4EDE1FECB8119CAF5D968FB07A2EDAEB43DCB1DD6F65EB79BC65F07
+      5CB6A8BFBAFDC7C675D06A4730D8DF8F9EEE6EB4B6B460897270B7EE4EEB0CAC
+      8E79D88277600FAEC31DB903673802C76A08F6B520B140B9442EAB3E2C879D58
+      A13E58A13A5859A03E08F8B134E7C7E22C8B83BCE702A2DD59DEB0BC676DCF72
+      9FCD754EAA5D963FAC7E2D94FF7AFD18B4A31A0C0D0F62A0AF0F3DD4FE2D8D8D
+      686F69DD95FFE2D23A343A7AED99BBB02DDEC3D4C21D3896EFF1386C14836D95
+      E553104E8AC1BF3A8340D84D639203CB5407CBE4BF3C3743F313F5CD34C53017
+      1D6BE668BC9F63F330FB0D076A7B1FB5BDC7196D7BE746EED84C469ACF26A0D7
+      8D42333C446DDF8BDE8E0E74B3EF08A5F6AFAFAA8279179FBFEAD74E416B5981
+      DE751746DF1D98A7DF8765EE01AC4BF76159B90B6B641536CA2547846208CFC3
+      1F26B79017F314C322CD030BB33E72F6466360D0381FF045E309F87D98F1B869
+      EE75C0EBB0C36DDB68FB0D77138D9D7AAD069A817E0CF674937F3BF9B7A2A3B9
+      092DF575A8ABACD8D63F1088A0AD7312C3FA207496754C38566170DF85D9FF10
+      561EC3FB348EDEE5FDE0A071D545E3927F759E6A99F26285DCA90E82341FCC4D
+      D3FA666A1CC6B1614C928F49A7E36D3CED7671770FD5ACE26E677943EE86311D
+      CDC123181D1AC4506F0FFABB3AB97B674B33DA1A1BD0545B838AE222FE98B8E3
+      CD8011BDDD53E81B9CC5906E09A3C6454C582906C73D983CF760A69C9A5A20FF
+      E01AEC2B116AFF10BC54D33E8AC1BDE28763867D5EAA91FABE023D1DE5E868AA
+      406B4D055A6AAA515F5D8556F218A77858AD3A949CA77A358C8F4137320CCDE0
+      0086FA7AD1DFDD45CF6F4707736F6A4433B53D7B7E4D45392A4B4BE2FAD75574
+      A0A3558FEE1E1BFA87DC18D27AA01D0F60DC1884C1BE0AA37B95F2690DD6C02A
+      C511817D9908AD509F2C60D06144E7681B06862AD1D49C87A2C2EBC8B97D1559
+      E9D770FB3A71F3068AF3F3505152CCF3C14C6DCEDD59BB534CDA0DF70196379D
+      1DBCEDDBE971AD0DF568AAAB45C3867F414E361C5437B1EE1EA71F6505B568AC
+      EB414BDB10DABAB5E8EA33A06FC84E7178313A4971581630E95886C917866526
+      022BC560590EA1DB6641A57600E59D0D282ECD444363394646FA682C1C8391D7
+      A48EFBE4DECEA0786EA2283707B5E4C2724547B5CA6E47FAFB78CEF7917B4F7B
+      9BC89B66726FA4FE638FAFA2B62F2F2A447B6BCB6FF90FF68FA0AC9062AC6C40
+      5D6333EA5BDAD0DC36888EAE3174F799D0376CC3F0980B5AA30FFAA905E89DCB
+      98F0AF60C0318D2AAD0E85033DC8AC2E8786C6BE29CA6F8FD7032FFBBD185AA3
+      B9DCAC669DB01A0CDCE7DAA58BC8A4FEA8AB288386BC4768AC61EE2CE759CD76
+      915F7B53B466997B7D55256ACACB50497D575658806222D6BFB2BC026545C5F4
+      9832D4575651BD50ECF56D94833DE86C1F4467C708FAFBF518D198303669C7B0
+      7116DDC6300A3B9D286ED723BBB2067A9A3BD9D8CEC678364731D8FFF97D6CBD
+      49B0F54E7B533D6E5C3C8BEC1B97D0525B8691BE0EF477B6A0AFBD153D345676
+      52FBB5D735927B0D77676D5F5D562AFC733232F81E42ED9F939343B9958392FC
+      02541697A0A6AC82E2A0F86B9BD054DF8E96A61E74B40FA1A767946A630C7D3A
+      27AA7B5DB855358E1B25D4E79A31B8BD6EE1CD7294EDB51836AB95E65A178F6B
+      86AD7B6C561464DEC2A5F77E43399B85BE8E66F4B435A1ABA5091D8D4D68ABA3
+      B6ABA9E563BEDA9DE54E09D550E6CD9B346E591EF34F4F4F27FF5C14E7E5D36B
+      164663A03EA9A376ADABAA477D6D331A1B3A682EA738BA7AD1DEA7436E653FAE
+      E6B621AFB2131607CDA91BFE769A53992B5BF74742213EFFBA1D4EBEDE61F397
+      9FC6D1111AE3CFBCF526D2D32ED318534735DD40F95EBF9133D4EE95D4EE34DE
+      57913B1B37B97B413E0AA976B2C87F747048F8CFD2DC7EE33A8D179999C8CFCA
+      46716E1E4A0B0AF8F3AA4A4B791C3514476D7503EAEBA87D283F9B5ABB702BA7
+      1AE7D38AD1D83A44394E39E3F3F2350D5BDBB0EF32515EFFD38F3FE6EB37B6EF
+      657F63B1598C265CBA7011572E5E24CF721A5BA3E34C531DB957B3F72B8BBA53
+      BB9752CE30F7A2BC5CE46767E1F68D1BD4679DE2F57DF47AD7D2D2F86FEAE4DE
+      CE446136E5113DB6BC3097FAAD90F71F8BA1B68A6AA9B68ED6233568ACAFC7CD
+      1B3938FBDE750C525F4C7BFC7C8DC0D634ACDD63EBEBFD3BEBFCF70FBCB467F1
+      B8BD989A72E1DAF50C5CBA78855EBF9C6A8DFAB8A60A753406545796A0B2ACE8
+      B19C29269F421A3BF3326FE356DA35CAB5CDF5909FD6B357AF5CC16DCAA1EC5B
+      19C8CFCC42113D96E56645118BA180DA82F289FAB3AEBA9ADEAB82EABB8AC6F5
+      5B38F3E67968FA340878A631477B2AE6BFB4C55909F377D05AC7ED74D3B83403
+      93C589F48C02A4A5A553BBD4507D3551DB54A3A686E6A84AF22E2FE0EEA5ACDD
+      296714F79C8C5BB879F52A3A9B37C7D039CA4FE67FEBFA0D1A9F6F2197FA213F
+      2B939E9745CFCFA1D7A15C2A2942358D616C0DD2486DD45A578D6CCAC3F7DE78
+      131D0D4D98A3769DA5FCF7B9ED34CE78F0F0FD7B9BF9F3C147B42E9DA7358489
+      72C7050FC5393C6EC5B5EC7A5CBF5D89BABA0E9AF33A5157DF881A9AA758FB57
+      9451CE50DE14E5E5515DB2DF4FCAA0DC4827FF1BB87EE532BA55F9C360FE1937
+      6E526DD3636EB1C7DE4601E51A8B9DB5016B0B367FB0F1A0816268ABAB43098D
+      5767DE7803F9349ECDD27A78C6E32477B627B4F0B5DB6A7005EBA108EDD717E0
+      B2DAF8BA67C6476B4FFF0C9A7A2770ADB00F99253D686E1F4513CD35F58D9DBC
+      BE6AA98FABA8AD4A8A4A5048E3611EB57D6EE66DEE9F7DEB3A2E5F3CCFF7366A
+      FF5B943B37A9066E5DBB8E4C8A239BF503CD974A0C6CDC65F9C86AA1AEAC0C8D
+      343ED49797239D5D4FA318063B3B31E767E3BE87E7B87DCA069BC5466B042BED
+      6BA768BDEC83976AC449F399D6E84071930699357AD474DBD0A775A06BC084D6
+      0E2DF5433FC5D08EAACA4694945423BFA01439D9F934B6E4507D66D23AE426D5
+      FD05FE793EB57F5161212ED3FDE9541B191B3164DD4AE771B33507ABFF72361E
+      917F3DF501F36FADAD45696E2ECEBFF516322827F55A2DE507ED6D092F7972DC
+      EC96DCBDB45FA77D80DEE640D3A01E655D9328EB71A2C7B04873E10CFA756E74
+      0F4DA1ABD788D6361D1AEA075055D58E92D246E4E757510C25C8CAC847FAF5DB
+      48BB720D2CE7D5FE7DBDBD38FBCE3BB871E52AD2AFA62183C6D34C5AABB07AC9
+      A35A60F55FB691434AFB337F06CB9FAB67CFF2DFFEEAEBECA675F114D58297EA
+      D98BC08C8FFA85AD25AC1837E9D0363288E6513DEAB5660CBAC3D0F95731E609
+      4233358F61C32C06753EF40C38D0DE694643F3286A6AFB5156DE41EBC146CAA3
+      6A1A638A2896DF5E3F78698E3F43FE57694CBE4931B031EAF68DEB946FE9BCEE
+      D539544B73424345059A294F591D302A68BEB8453574FDC239EA936C0C75B562
+      6CB807065D3F2646BB693FDB80DE115A0B0FB7A1454FEB4DDA071B96C2985C8A
+      401F0861CC477B0E5A5369CDD41FB4E61D18994667AF1D2DED06AA0B2D2AABFA
+      505AD28E4CAAF7C686F62DD7D099D48E17CF9EC335CAE99BBC0FAEF1F5620ED5
+      41E1460EB139ADBAA484E710F36F6F6840278D7D5DCD343FD37D25ACC6D22E21
+      33ED1C8AB3D2A8AF32693D534C7B82520C8DD6416B1B823548F5B1B648FBE915
+      58C26118682F31496BD9C9D935187CEB18A7B5FA982904AD7E01FD2C8E3E17C5
+      61A6DA18A3B6AF83CDE6D9D2BFA7A727FA99884B97F8787AE31AD533AD13B328
+      8772A98E0B691E29A11C627B08B6AE626BC976DA5FB0F53CA3B7B519BD6C1D40
+      7B96E62A9A972B0B686C2DC3707723A626FBA916C611A07DF24C84D6746BB4A6
+      A0186C9110CCB49F330557615ABC03E3DC5D4CD0BE75DCB586716B18C313215A
+      5BADA06B709EF68616941437C6DDBFB033FA8B349FB3EBAD572E5FC2F534AA05
+      CAA1DB94433954030554036CEDAAF8B33D1DDB5FB0753A8B83ADBF06DA5B30D4
+      D98A91EE56E8063A31A1E981CD308269BB9EEAC084B9452B66432EBEF7F7AE2E
+      D03E7A1956DAC75943B4275AB983A965DA6FCFDF8769F67DDA7FDF85DE7117A3
+      E6758C1923A8AE1B865663DE760FCCCE8BDE7CF34DDE0769344FDCA41CCAA01C
+      CAA61AC8A71A286239443550C7FCA9FD591FB4B018983FAD8BFA69EF31D0D986
+      A1EE766807BAA01BEA86697C101ECB18663D46CC2F4C511FD03C11F1533F501F
+      441660A7181CABEC4C608DEFAFD93EDBBC403104EEC3384D71782806C33C4ACA
+      767786C23EBF7A8EFA40ED9F4535C07288E50F5B17B2F6677B8B46EA03B63F65
+      7B3D76CED1D3D6C6F7507D14C3707F17B4433D98D40DC265D4C1EF984460D682
+      C0A28D62702310F2C31799859BED9FD78204EDA957D73115BE0BF3CA3D1882F7
+      615EBC07EBCC2A6A5BFA313A66DE953FFB5CF43B6FBFCDFD590DA8DB9FF9D76C
+      AC23D89E94C5A0D401F367E7357D1D1D3C86A1BE6EDA93F7403F3AC47F47C837
+      358180DF8C85052B16979D585CF16226ECA73C9A85778DE6688AC1B1C6CE98D6
+      618EDCC144E41E4CA13BE89BB4A0A6B96D4F67886DB45F7DFBCDDFE0DAD52BC2
+      9FE54E295F5397F018D85A42A90356031D340675F3DFA3E9E4674F03BDDD18A6
+      7DE5986610B6B15178CD7A5AE799B010B06069C98620F5C15C886A7995E6B78D
+      7AB6D398645B5B85656D1DFAB5BB189E9E452EED07F6737ECB5CDFA57E60BF4F
+      99CB7E67323F9FEAB790D642459B6B21EA03D6FECC9FEDB9BB297FD81E96ED65
+      D99E76B8AF97F6E703B0E8347099F4987593FF8C052B4B0E84830E2C875D985D
+      F5C2B33603C73AED11D6A89ED723B0AE46609863EED5073A432FA3B1FEC2B973
+      D4FE99DCBF88E6A9D28D7940C92396436C1C626328AB61767EC06218E8EEE231
+      6806FA60D40EC13EC96AC08079BF05A145766E6D4728ECC47C84F6966B3ECAFD
+      593E2FD85783189FF621AFAA82C650F381AF6394D37C7B99C6D52C5A93B27E60
+      FBA0B28D7194C5A0CC05EC7C2A5AC7CDFCBC44E987A13EAA81E17E58C635F04C
+      510EF94C5859B02144391409D17E27EC4020426B6F1A93BC9100862D13C82A2B
+      86DE6A49D8B5A436AACDF7D8FA82E666B61E52AFE7D8B95203AB631A879418D8
+      D95917C5C0CED1FABA3A30DADF437D3008A7598719B7014B735604A98ED74294
+      474490CD698B2E34F73423AFB4E0D0AEE35DA7B1F5C299F7F8BA88ED09D87A48
+      E90356C72D4A0C1BF332CB27D617233D1DD00FF5D25CA681D73E86F9691396E7
+      CD585D716299C6D309433FF28A33D1DAD972E8D752594EA45DBC804B67CFF0F5
+      298B433D9E8A38A826A27134D2BCDC0C6D6F074C6303F0D874B43635C0E7D262
+      64B011652599B43E2B3AF2EBD9FD549B19B43E3AF7DEBBB477384FFB8B0CAA0B
+      363F94F3B31B760EC2E0E353432DBA5B1A31D8CDCE066BA8DFD86FE85E435343
+      79527CAE80ADFD4AC89DADBBAF9C3B8FCBB48EBDF0EE7BB8F8DE19FE6FBEA6BD
+      768DFFF66F33AD59E5E744E46FACA4DAF7EFA5F27708A6F2F7206EF5DCF5F5F5
+      2367BF3124837BBC18F6EA7F9CEE5BC520FDA57FA2FC93614CDCAF7F328DEB7B
+      F54FC6B969AFF34032CE4DFBF14FA6B969AFFEC936B6487FE92FFDA5BFF497FE
+      D25FFA27C23F59D76EBBF14FC675F35E1DB7DBBBA4927F2AECCD77736E28CF46
+      A4BFF43F1967CBA978B6BFD71852E5FA502AB9EFA69653E1B7BDE2F9A7CA6F88
+      6DE59F4ABF7F16EB9F6ABFDD96EABF3B97EABF9997EABFF797EABF5598EABFB3
+      F845FE8DC8974A46F0A3A211F05B8E264ADE005ECAEBA7DBFEA46D13E6BBE91D
+      E5258E867BB318A2245F0C3F2A55DC3551DF52751C1AE1CD7869A32F8EC2EB74
+      CB244EB7C640F7FDAA257ACB782EB30BCF6575F1DB2B338FB6E4AC7B4D70EA72
+      154E5DAAC69F127F5BABC16B351AFC2DF1771BFCBC464BF78DF0FB7F593DB0EF
+      384FB71AB0C9E33108FFD6FDF85773B87F0DF38FFA326F1E436D349ED76A47F8
+      ED4FAB3438987B82FDC95B81F945FB40CBBD7F5ECBFA80E2D98881FB5747D9BD
+      7BD4EF57AD9B8E25FE3B289DBE2B60FF57783EBB4B9036FF40F042FD145E247E
+      5C6FC2AF2D4B8267D21A04AF354C0A7EAD5B12FCE55080B73BE395A29E28853D
+      BB8AE157ACBD5B1E778FE7FF6C462B7977E007CC3FAB63CFFEEA1862FD790CD5
+      239BFE45BBF33FDD62C02F790C86C7DA39D69FB93F97D1C6FD99FB0F62DAFFA5
+      7A0BFEBCDE8CBFA89B8CEF7F653386ADFC19CCFB2745BDBBF6FF1579F3FCA618
+      D4CEEA79F959F27E8EFC9F4D6FE6FF7E36BD15EF5A96F10FAE4782FFE75D17BC
+      66B927F8DFDD4E7C67C3FDD4B932FCE905E27CD963AFFFDFEBED0296373F29E8
+      DD75FE9CDE687B16433C7FEE2E68E3EE7BF167307FE6BD95BF3A86570AF6E6AF
+      B4FDE96DFC799BC7B8EFD59FC1FDCF97E214B1D5BA57F167EEEC7657EDDF4C63
+      0FC16EE3FADF6CDD80F28872E1D9B4467EFB0CDDB27C66F9F11D1AE39FA13192
+      DD72947F5F202E466F4F9DDBE07C55DC3DD3CB391D9CFF95DBB14B7F0377DFD9
+      9FDCD92DF78FA2AECDA86F15BF7DE6F2661CFFED6255D4FF2273A7B9F87C3486
+      EDF67D2F93FBCBB99DBB6EFF9DFD37DCD3A3FEBC0F289FBF7345F16F8CF1AF11
+      7DF0CC8568DB3F7331DAEE3C861DFC19BB6DFF5F368DE134C16EE3F97FF8D147
+      0927F6F5F7BB0FFCE586FB71FBEF37866469FFFDC6F07AC31814B2DD2141BCD7
+      B7D7BFBA238E38ECE4B99FB39CD71BA3EE7F97AAFE27A8FD6FD85704879DFF7B
+      AD91DDB47F4AFAA77AFBD793FF0697AC4141DCFCAF7B7593FAC470B0FC19C7EB
+      75D4FEA9EAAFB47F5D6AFA47CF60A2BC6B5C16A44AFE47CF60B4FC1C2315FDF9
+      194C6DF42C2C15FD95333D7686F4EEC4B2207EFEFF8D8A57B7E608F39F79BFB6
+      11432AFA7FD1DA3FD5F33FD9FC53BEFDABC89D51AD79EC1CF220EBFF23CDFF0D
+      77C6AB559A94F357B7FFABD523F8BF1BFD902AFE8C9F72F768FBBFCAAF238CA4
+      4CFE3F1E43B4FDD9759054F36744DB5F8B9F57F6A7A47F327FF783F44FCDEF3F
+      914824128944B2335F1AFACF504865F7548B612BF75489613BF7648F6137EEC9
+      1AC35EDC932D86FDB8274B0C07713F6EFF83BA6FE77FD8311E95FB61C470D4EE
+      898CE1B8DC1311C371BB1F24866471DF4F0CC9E6BE97180ED3FDB0E78FC3763F
+      CCF7380AF7C37AAFA3744FF47B1E877B226338EEF5582ABB1F670CC9B83E3CEE
+      357C2ABB1F450CA9B44F3AEE7D5F2ABB1FE7BC2ACF3A4ED659D34938EB3B0967
+      AD27E1ACFB245C6B3809D77A241289447232F847FF310035A9E410FBBCE38861
+      BF0EF19E779431ECD761A7E71D450CFB75D8EDF30E33868338ECF5B9898EE1A0
+      EFBF9FE7272A8644BCF77E5FE3A03124F27D8F3A86C378BFA38AE130DFE7B063
+      388A363AACF738CA1C4DF47B1DC71891A8F73CAEF12D11EF7D9CEE8988E1B8DD
+      8F2386E35E1F26A3FB51C470DCFBA354703F8C1892659F9F4AEEC930377D91DB
+      5FD6EEC9193B4FC2DC7512D60E2761ED964C6BE754DFBB9C84BDE349D8BB9F84
+      B3939370767512CE0E4FC2D96DB28C6FA97CFE9FCAD75F92EDFA57AA5F7F3C09
+      D77F4FC2F5F793F0F907894422914824128944229148249244F3FAEBAF632792
+      F975A4BFF497FED25FFA7F31FD2512894422914824128944925AA4EA6FD8A5EA
+      6FF1A5EA6F0AEEC76D7D7D5D705C711CA46DD5FE471D472272632BFFC38E2391
+      B9BD9DFF61C491E8DADC8DFF6EE2380EF7BDFAEF14C751BBEFD77FBB3852C97F
+      AB1852CD3F3606E92FFDA5BFF497FED2FF28FC8F6AAF26FD93C73FD16B2EE9BF
+      F7FC91FE47EB9FC81C3A0EF744F681F44FCC194432F9EFF7FC47FA1FFD1975B2
+      F91FF4FC33D5FD13798E7954D7370E1243B25C9B39ACF3F0A3BCAEB49F1892ED
+      9A58A2AFAB1CC775B0BDC490ACD72213757DEE38AFA3EE268664BF967DD0EBBC
+      C9701D7EBB1852E5B310A9FAF98744C4203F3F832FFD7FE3977BAB
+    }
+  end
+  object OpenDialog2: TOpenDialog
+    Options = [ofAllowMultiSelect, ofEnableSizing, ofViewDetail]
+    Left = 230
+    Top = 154
+  end
+  object peautilsmenu: TPopupMenu
+    Left = 496
+    Top = 17
+    object pmhelp: TMenuItem
+      Caption = 'Online support (F1)'
+      OnClick = pmhelpClick
+    end
+    object pmupdates: TMenuItem
+      Caption = 'Check for updates'
+      OnClick = pmupdatesClick
+    end
+    object pmdonations: TMenuItem
+      Caption = 'Donations'
+      OnClick = pmdonationsClick
+    end
+    object MenuItem1: TMenuItem
+      Caption = '-'
+    end
+    object pmrunasadmin: TMenuItem
+      Caption = 'Run as administrator'
+      OnClick = pmrunasadminClick
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 432
+    Top = 16
+    object mainmenuhelp: TMenuItem
+      Caption = 'Help (F1)'
+      ShortCut = 112
+      Visible = False
+      OnClick = mainmenuhelpClick
+    end
+  end
+end

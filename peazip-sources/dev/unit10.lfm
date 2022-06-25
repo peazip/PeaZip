@@ -1,0 +1,199 @@
+object FormCrop: TFormCrop
+  Left = 1200
+  Height = 220
+  Top = 788
+  Width = 480
+  AutoSize = True
+  Caption = 'Crop'
+  ClientHeight = 220
+  ClientWidth = 480
+  Color = clWindow
+  Constraints.MinHeight = 220
+  Constraints.MinWidth = 480
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.8.4.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 12
+    Height = 33
+    Top = 175
+    Width = 456
+    BorderSpacing.Left = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    BorderSpacing.Around = 0
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    HelpButton.Enabled = False
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.Enabled = False
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+    ShowBevel = False
+    object ImageInfoArchive4: TImage
+      AnchorSideLeft.Control = ButtonPanel1
+      AnchorSideTop.Control = ButtonPanel1
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 0
+      Height = 16
+      Top = 8
+      Width = 16
+      OnClick = ImageInfoArchive4Click
+    end
+  end
+  object PanelCrop: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel1
+    Left = 0
+    Height = 151
+    Top = 0
+    Width = 480
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 24
+    BevelOuter = bvNone
+    ClientHeight = 151
+    ClientWidth = 480
+    TabOrder = 1
+    object LabelL: TLabel
+      AnchorSideLeft.Control = PanelCrop
+      AnchorSideTop.Control = SpinEditL
+      AnchorSideTop.Side = asrCenter
+      Left = 12
+      Height = 17
+      Top = 91
+      Width = 28
+      BorderSpacing.Left = 12
+      Caption = 'Left'
+      ParentColor = False
+    end
+    object SpinEditL: TSpinEdit
+      AnchorSideLeft.Control = LabelL
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditT
+      AnchorSideTop.Side = asrBottom
+      Left = 46
+      Height = 34
+      Top = 82
+      Width = 92
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 24
+      BorderSpacing.Bottom = 24
+      MaxValue = 64000
+      OnChange = SpinEditLChange
+      TabOrder = 0
+      Value = 10
+    end
+    object SpinEditR: TSpinEdit
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditT
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelCrop
+      AnchorSideRight.Side = asrBottom
+      Left = 376
+      Height = 34
+      Top = 82
+      Width = 92
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      MaxValue = 64000
+      TabOrder = 1
+      Value = 10
+    end
+    object LabelR: TLabel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditR
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = SpinEditR
+      Left = 335
+      Height = 17
+      Top = 91
+      Width = 35
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 6
+      Caption = 'Right'
+      ParentColor = False
+    end
+    object SpinEditT: TSpinEdit
+      AnchorSideLeft.Control = PanelCrop
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = PanelCrop
+      Left = 194
+      Height = 34
+      Top = 24
+      Width = 92
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 24
+      MaxValue = 64000
+      TabOrder = 2
+      Value = 10
+    end
+    object LabelT: TLabel
+      AnchorSideTop.Control = SpinEditT
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = SpinEditT
+      Left = 163
+      Height = 17
+      Top = 33
+      Width = 25
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 6
+      Caption = 'Top'
+      ParentColor = False
+    end
+    object CheckBoxPercent: TCheckBox
+      AnchorSideLeft.Control = PanelCrop
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = SpinEditL
+      AnchorSideTop.Side = asrCenter
+      Left = 221
+      Height = 23
+      Top = 88
+      Width = 39
+      Caption = '%'
+      Checked = True
+      OnChange = CheckBoxPercentChange
+      State = cbChecked
+      TabOrder = 3
+    end
+    object SpinEditB: TSpinEdit
+      AnchorSideLeft.Control = PanelCrop
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = SpinEditL
+      AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 194
+      Height = 34
+      Top = 140
+      Width = 92
+      BorderSpacing.Top = 24
+      MaxValue = 64000
+      TabOrder = 4
+      Value = 10
+    end
+    object LabelB: TLabel
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = SpinEditB
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = SpinEditB
+      Left = 136
+      Height = 17
+      Top = 149
+      Width = 52
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 6
+      Caption = 'Bottom'
+      ParentColor = False
+    end
+  end
+end

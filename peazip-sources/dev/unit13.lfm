@@ -1,0 +1,155 @@
+object FormSelect: TFormSelect
+  Left = 844
+  Height = 220
+  Top = 788
+  Width = 480
+  AutoSize = True
+  Caption = 'Select'
+  ClientHeight = 220
+  ClientWidth = 480
+  Color = clWindow
+  Constraints.MinHeight = 220
+  Constraints.MinWidth = 480
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object ButtonPanel1: TButtonPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    Left = 12
+    Height = 26
+    Top = 182
+    Width = 456
+    BorderSpacing.Left = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
+    BorderSpacing.Around = 0
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    HelpButton.Enabled = False
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.Enabled = False
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+    ShowBevel = False
+  end
+  object PanelSelect: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ButtonPanel1
+    Left = 0
+    Height = 158
+    Top = 0
+    Width = 480
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 24
+    BevelOuter = bvNone
+    ClientHeight = 158
+    ClientWidth = 480
+    TabOrder = 1
+    object ComboBox1: TComboBox
+      AnchorSideLeft.Control = ComboBox2
+      AnchorSideTop.Control = ComboBox2
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = ComboBox2
+      AnchorSideRight.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 59
+      Width = 456
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 12
+      DropDownCount = 24
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object ComboBox2: TComboBox
+      AnchorSideLeft.Control = PanelSelect
+      AnchorSideTop.Control = PanelSelect
+      AnchorSideRight.Control = PanelSelect
+      AnchorSideRight.Side = asrBottom
+      Left = 12
+      Height = 23
+      Top = 24
+      Width = 456
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 12
+      BorderSpacing.Top = 24
+      BorderSpacing.Right = 12
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = ComboBox2
+      AnchorSideTop.Control = ComboBox1
+      AnchorSideTop.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 12
+      Height = 15
+      Top = 106
+      Width = 46
+      BorderSpacing.Top = 24
+      Caption = 'Select all'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = Label1Click
+    end
+    object Label3: TLabel
+      AnchorSideLeft.Control = Labelspac2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 87
+      Height = 15
+      Top = 106
+      Width = 80
+      BorderSpacing.Left = 12
+      Caption = 'Invert selection'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = Label3Click
+    end
+    object Labelspac2: TLabel
+      AnchorSideLeft.Control = Label1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrCenter
+      Left = 70
+      Height = 15
+      Top = 106
+      Width = 5
+      BorderSpacing.Left = 12
+      Caption = '/'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      AnchorSideLeft.Control = Label1
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 12
+      Height = 15
+      Top = 133
+      Width = 87
+      BorderSpacing.Top = 12
+      Caption = 'Sort by selection'
+      Font.Color = 13391121
+      ParentColor = False
+      ParentFont = False
+      OnClick = Label5Click
+    end
+  end
+end

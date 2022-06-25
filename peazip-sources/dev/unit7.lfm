@@ -1,0 +1,174 @@
+object FormDlg: TFormDlg
+  Left = 70
+  Height = 200
+  Top = 707
+  Width = 700
+  AutoSize = True
+  ClientHeight = 200
+  ClientWidth = 700
+  Color = clWindow
+  Constraints.MaxHeight = 800
+  Constraints.MaxWidth = 800
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 500
+  DesignTimePPI = 120
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object ldlg: TLabel
+    AnchorSideLeft.Control = ImageDlg
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panelal
+    Left = 70
+    Height = 95
+    Top = 30
+    Width = 600
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 30
+    BorderSpacing.Right = 30
+    BorderSpacing.Bottom = 30
+    Caption = ' '
+    WordWrap = True
+  end
+  object Panelal: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 15
+    Height = 45
+    Top = 155
+    Width = 670
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
+    BevelOuter = bvNone
+    ClientHeight = 45
+    ClientWidth = 670
+    TabOrder = 0
+    object babort: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = Panelal
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = 560
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
+      Caption = 'Abort'
+      Constraints.MinWidth = 110
+      ModalResult = 3
+      TabOrder = 0
+    end
+    object bcancel: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = babort
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = 442
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
+      Caption = 'Cancel'
+      Constraints.MinWidth = 110
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object bno: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = bcancel
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = 324
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
+      Caption = 'No'
+      Constraints.MinWidth = 110
+      ModalResult = 7
+      TabOrder = 2
+    end
+    object byes: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = bno
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = 206
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
+      Caption = 'Yes'
+      Constraints.MinWidth = 110
+      ModalResult = 6
+      TabOrder = 3
+    end
+    object bok: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = byesall
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = -30
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Bottom = 15
+      Caption = 'OK'
+      Constraints.MinWidth = 110
+      ModalResult = 1
+      TabOrder = 4
+    end
+    object byesall: TBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = byes
+      AnchorSideBottom.Control = Panelal
+      AnchorSideBottom.Side = asrBottom
+      Left = 88
+      Height = 30
+      Top = 0
+      Width = 110
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 15
+      Caption = 'Yes to all'
+      Constraints.MinWidth = 110
+      ModalResult = 10
+      TabOrder = 5
+    end
+  end
+  object ImageDlg: TImage
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 15
+    Height = 40
+    Top = 30
+    Width = 40
+    BorderSpacing.Left = 15
+    BorderSpacing.Top = 30
+  end
+end

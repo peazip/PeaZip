@@ -1,0 +1,131 @@
+object FormDrop: TFormDrop
+  Left = 1318
+  Height = 160
+  Top = 848
+  Width = 320
+  AlphaBlend = True
+  AlphaBlendValue = 128
+  BorderStyle = bsNone
+  Caption = 'FormDrop'
+  ClientHeight = 160
+  ClientWidth = 320
+  Position = poScreenCenter
+  LCLVersion = '1.8.4.0'
+  object PanelDrag: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 320
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 160
+    ClientWidth = 320
+    ParentColor = False
+    TabOrder = 0
+    object Shape1: TShape
+      AnchorSideLeft.Control = PanelDrag
+      AnchorSideTop.Control = PanelDrag
+      AnchorSideRight.Control = PanelDrag
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelDrag
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 160
+      Top = 0
+      Width = 320
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Brush.Color = 14405056
+      Pen.Color = 13743258
+    end
+    object Imagedragop: TImage
+      Left = 12
+      Height = 32
+      Top = 12
+      Width = 32
+    end
+    object Labeldragtitle: TLabel
+      AnchorSideLeft.Control = Imagedragop
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Imagedragop
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelDrag
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 15
+      Top = 21
+      Width = 256
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 12
+      Caption = 'Label1'
+      ParentColor = False
+      WordWrap = True
+    end
+    object Imagedragfolder: TImage
+      AnchorSideLeft.Control = Labeldragtitle
+      AnchorSideTop.Control = Labeldragfolder
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = Imagedragop
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 16
+      Top = 51
+      Width = 16
+    end
+    object Imagedragfile: TImage
+      AnchorSideLeft.Control = Labeldragtitle
+      AnchorSideTop.Control = Labeldragfile
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = Imagedragop
+      AnchorSideRight.Side = asrBottom
+      Left = 52
+      Height = 16
+      Top = 74
+      Width = 16
+    end
+    object Labeldragfile: TLabel
+      AnchorSideLeft.Control = Imagedragfile
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Labeldragfolder
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDrag
+      AnchorSideRight.Side = asrBottom
+      Left = 76
+      Height = 15
+      Top = 75
+      Width = 232
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 8
+      BorderSpacing.Right = 12
+      Caption = 'Label1'
+      ParentColor = False
+      WordWrap = True
+    end
+    object Labeldragfolder: TLabel
+      AnchorSideLeft.Control = Imagedragfolder
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Labeldragtitle
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelDrag
+      AnchorSideRight.Side = asrBottom
+      Left = 76
+      Height = 15
+      Top = 52
+      Width = 232
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 16
+      BorderSpacing.Right = 12
+      Caption = 'Label1'
+      ParentColor = False
+      WordWrap = True
+    end
+  end
+end

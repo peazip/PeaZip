@@ -1,0 +1,402 @@
+object Form_report: TForm_report
+  Left = 159
+  Height = 420
+  Top = 156
+  Width = 800
+  Caption = 'Report'
+  ClientHeight = 420
+  ClientWidth = 800
+  Color = clWindow
+  Icon.Data = {
+    7E03000000000100010010100000010018006803000016000000280000001000
+    0000200000000100180000000000000300006400000064000000000000000000
+    0000009F78009F7200A97700B87F00CD8900E39400E69600E69600E69600E696
+    00E69600E69600E69600E69600E69600E495009E7F00976C00AA4F00B34100A9
+    50009B6F00B87F00DC9100E69600E69600E69600E69600E69600E69600E69600
+    E29500A99400AD4B00BE3900C16700BE3600A85200966E00986F00BE8200E495
+    00E69600E69600E69600E69600E69600DD9400B8AD00B93900C37800C9D200C1
+    6400B53E00966E00966E00966E00A67600DD9100E69600E69600E69600E69600
+    D59300CCD400AF4800BF3E00C37900BE3900AA4F00976B00A25B00A557009968
+    009E7200D98F00E69600E69600E69600CB9200E3FB009C7400AE4A00B83900AD
+    4B009D6300B83900BE3400BE3600BC3500A25B009E7200DD9100E69600E49500
+    C09100E6FF00B7AE00966E00966D00966D00B53E00C05700C7BC00C8C500C275
+    00BC3500996800A67600E49500D69300BF9100E6FF00DCF000987300966E009D
+    6300BD3200C6A200C9D200C9D200C8C500BE3600A65500966E00BD8100C39100
+    BF9100E6FF00E6FF00BDBA00966E009A6700BD3300C59600C9D200C9D200C7BC
+    00BE3400A35900966E008E6E00B78C00BF9100E6FF00E6FF00E4FD00A68E0096
+    6E00B04600BF4400C59800C6A300C05800B83900976B00926D00836C009D7B00
+    BF9100E6FF00E6FF00E6FF00DDF1009E7F00976B00B04600BD3300BD3200B53E
+    009D6300A94F00A940009B4E00876D00BC8F00E6FF00E6FF00E6FF00E6FF00D9
+    EB009E7F00966E009A67009C6400966D00AC4B00B63800B86600B535009A5000
+    AC8500E6FF00E6FF00E6FF00E6FF00E6FF00DDF100A68E00966E00966E00926D
+    00B03800B97700C0D000B76300AA3D009C7B00E6FF00E6FF00E6FF00E6FF00E6
+    FF00E6FF00E4FD00BCB9008D7200836C00A24600B53C00B97700B538009C4D00
+    917400E6FF00E6FF00E6FF00E6FF00E6FF00E2FF00CCFF00B1FF00A6EF0093AB
+    00877100A14800AE3800A04900846A00897000E2FF00DFFF00D8FF00CCFF00BD
+    FF00ADFF00ABFF00ABFF00ABFF00ABFF00A9FB009ED20093AA008C9000877D00
+    8876000009C300007832000023CF00007E490000615C00007D3F00008A0E0000
+    CA190000D80500002AE90000B2A50000F0670000131300001C5E0000A6810000
+    0E78
+  }
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '2.2.0.4'
+  object Label4: TLabel
+    AnchorSideLeft.Control = Label3
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Panelsp0
+    Left = 12
+    Height = 15
+    Top = 357
+    Width = 776
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = ' '
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Label2
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Label4
+    Left = 12
+    Height = 15
+    Top = 336
+    Width = 776
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 6
+    Caption = ' '
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Label3
+    Left = 12
+    Height = 15
+    Top = 315
+    Width = 776
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 6
+    Caption = ' '
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Notebook1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Notebook1
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label2
+    Left = 12
+    Height = 15
+    Top = 294
+    Width = 776
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 6
+    Caption = ' '
+  end
+  object Button2: TBitBtn
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panelsp0
+    AnchorSideBottom.Side = asrCenter
+    Left = 715
+    Height = 25
+    Top = 383
+    Width = 73
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 12
+    Caption = '   Close   '
+    OnClick = Button2Click
+    TabOrder = 0
+  end
+  object Notebook1: TPageControl
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PanelTitleREP
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label1
+    Left = 0
+    Height = 246
+    Top = 36
+    Width = 800
+    ActivePage = OutputT
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 12
+    TabIndex = 1
+    TabOrder = 1
+    object InputT: TTabSheet
+      Caption = 'InputT'
+      ClientHeight = 218
+      ClientWidth = 792
+      object StringGrid1: TStringGrid
+        AnchorSideLeft.Control = InputT
+        AnchorSideTop.Control = InputT
+        AnchorSideRight.Control = InputT
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = InputT
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 218
+        Top = 0
+        Width = 792
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderStyle = bsNone
+        ColCount = 2
+        DefaultRowHeight = 18
+        FixedCols = 0
+        Flat = True
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goColSizing, goRowSelect, goDblClickAutoSize, goSmoothScroll]
+        ParentColor = True
+        TabOrder = 0
+        TitleStyle = tsNative
+        OnHeaderClick = StringGrid1HeaderClick
+        OnMouseDown = StringGrid1MouseDown
+      end
+    end
+    object OutputT: TTabSheet
+      Caption = 'OutputT'
+      ClientHeight = 218
+      ClientWidth = 792
+      object StringGrid2: TStringGrid
+        AnchorSideLeft.Control = OutputT
+        AnchorSideTop.Control = OutputT
+        AnchorSideRight.Control = OutputT
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = OutputT
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 218
+        Top = 0
+        Width = 792
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderStyle = bsNone
+        DefaultRowHeight = 18
+        FixedCols = 0
+        Flat = True
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goRowSelect, goSmoothScroll]
+        ParentColor = True
+        TabOrder = 0
+        TitleStyle = tsNative
+        OnHeaderClick = StringGrid2HeaderClick
+      end
+    end
+  end
+  object LabelSave: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Button2
+    AnchorSideTop.Side = asrCenter
+    Left = 12
+    Height = 15
+    Top = 388
+    Width = 76
+    BorderSpacing.Left = 12
+    Caption = 'Save report to '
+  end
+  object LabelSaveTxt: TLabel
+    AnchorSideLeft.Control = LabelSave
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Button2
+    AnchorSideTop.Side = asrCenter
+    Cursor = crHandPoint
+    Left = 88
+    Height = 15
+    Top = 388
+    Width = 14
+    Caption = 'txt'
+    Font.Color = 13391121
+    ParentFont = False
+    OnClick = LabelSaveTxtClick
+  end
+  object LabelSave2: TLabel
+    AnchorSideLeft.Control = LabelSaveTxt
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Button2
+    AnchorSideTop.Side = asrCenter
+    Left = 108
+    Height = 15
+    Top = 388
+    Width = 3
+    BorderSpacing.Left = 6
+    Caption = '|'
+  end
+  object LabelSaveTxt1: TLabel
+    AnchorSideLeft.Control = LabelSave2
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Button2
+    AnchorSideTop.Side = asrCenter
+    Cursor = crHandPoint
+    Left = 117
+    Height = 15
+    Top = 388
+    Width = 17
+    BorderSpacing.Left = 6
+    Caption = 'csv'
+    Font.Color = 13391121
+    ParentFont = False
+    OnClick = LabelSaveTxt1Click
+  end
+  object PanelTitleREP: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 36
+    Top = 0
+    Width = 800
+    Anchors = [akTop, akLeft, akRight]
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 800
+    TabOrder = 3
+    object ShapeTitleREPb2: TShape
+      AnchorSideLeft.Control = LabelTitleREP2
+      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideRight.Control = LabelTitleREP2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitleREP
+      AnchorSideBottom.Side = asrBottom
+      Left = 63
+      Height = 32
+      Top = 6
+      Width = 88
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+    end
+    object ShapeTitleREPb1: TShape
+      AnchorSideLeft.Control = LabelTitleREP1
+      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideRight.Control = LabelTitleREP1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitleREP
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 32
+      Top = 6
+      Width = 63
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 6
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+    end
+    object LabelTitleREP1: TLabel
+      AnchorSideLeft.Control = PanelTitleREP
+      AnchorSideTop.Control = ShapeTitleREPb1
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 15
+      Top = 15
+      Width = 63
+      Caption = '      Table      '
+      OnClick = LabelTitleREP1Click
+      OnMouseEnter = LabelTitleREP1MouseEnter
+      OnMouseLeave = LabelTitleREP1MouseLeave
+    end
+    object LabelTitleREP2: TLabel
+      AnchorSideLeft.Control = LabelTitleREP1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ShapeTitleREPb2
+      AnchorSideTop.Side = asrCenter
+      Left = 63
+      Height = 15
+      Top = 15
+      Width = 88
+      Caption = '      Clipboard      '
+      Font.Color = clGray
+      ParentFont = False
+      OnClick = LabelTitleREP2Click
+      OnMouseEnter = LabelTitleREP2MouseEnter
+      OnMouseLeave = LabelTitleREP2MouseLeave
+    end
+    object LabelCase: TLabel
+      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelTitleREP
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 752
+      Height = 15
+      Top = 11
+      Width = 36
+      Anchors = [akTop, akRight]
+      BorderSpacing.Right = 12
+      Caption = '[CASE]'
+      Visible = False
+      OnClick = LabelCaseClick
+    end
+    object PanelTitleREPTab: TPanel
+      AnchorSideLeft.Control = ShapeTitleREPb2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideRight.Control = PanelTitleREP
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitleREP
+      AnchorSideBottom.Side = asrBottom
+      Left = 151
+      Height = 1
+      Top = 35
+      Width = 649
+      Anchors = [akLeft, akRight, akBottom]
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+  end
+  object Memo1: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PanelTitleREP
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panelsp0
+    Left = 0
+    Height = 336
+    Hint = 'Note for file analysis tool:'#13#10'file header/EOF is binary data and will not be'#13#10'copied in clipboard or output files, unlike'#13#10'other fields.'
+    Top = 36
+    Width = 800
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ParentColor = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 2
+  end
+  object Panelsp0: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 48
+    Top = 372
+    Width = 1
+    Anchors = [akLeft, akBottom]
+    BevelOuter = bvNone
+    TabOrder = 4
+  end
+  object SaveDialog1: TSaveDialog
+    Title = 'Save as'
+    Left = 156
+    Top = 375
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 234
+    Top = 19
+    object MenuItem1: TMenuItem
+      Caption = 'Save CRC or hash value'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Save file info'
+      OnClick = MenuItem2Click
+    end
+  end
+end
