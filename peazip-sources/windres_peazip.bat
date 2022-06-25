@@ -1,1 +1,0 @@
-windres -i peazip.rc -o peazip.res

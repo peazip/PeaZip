@@ -1,3 +1,0 @@
-FreeArc is released under GPL by Bulat Ziganshin
-
-Reference: http://freearc.sourceforge.net/
