@@ -1,0 +1,3 @@
+ZPAQ is released under GPL and is derived from Matt Mahoney's ZPAQ
+
+Reference: http://mattmahoney.net/zpaq/

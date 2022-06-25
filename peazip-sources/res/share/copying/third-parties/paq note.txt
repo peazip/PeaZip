@@ -1,0 +1,3 @@
+PAQ is released under GPL and is derived from Matt Mahoney's PAQ
+
+Reference: http://www.mattmahoney.net/dc/

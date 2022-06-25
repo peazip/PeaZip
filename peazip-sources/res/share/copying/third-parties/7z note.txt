@@ -1,0 +1,9 @@
+7-Zip is released under LGPL by Igor Pavlov.
+p7zip is released under LGPL by Myspace and is derived from Igor Pavlov's 7-Zip.
+Rar29.dll (Rar29.so on Linux systems) brings additional restriction: the unRAR sources cannot be used to re-create the RAR compression algorithm, which is proprietary.
+If you don't need to handle Rar format you can simply remove it.
+
+Reference: http://www.7-zip.org/
+http://sourceforge.net/projects/p7zip/
+https://github.com/szcnick/p7zip
+https://github.com/mcmilk/7-Zip-zstd
