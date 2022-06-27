@@ -3,21 +3,21 @@
 8.7
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
-Посл. ред.: 18.04.2022
+Посл. ред.: 26.06.2022
 
 === PeaZip text group ===
 
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
+txt_8_7_csvhelp: "," международный стандарт, ";" распространено в латинских регионах
+txt_8_7_after: После архивации/извлечения
+txt_8_7_bintest: двоичных файла(ов) протестировано.
+txt_8_7_csv: Разделитель CSV
+txt_8_7_hok: Хэш двоичных файлов, используемых PeaZip, соответствует ожидаемым значениям
+txt_8_7_mo: Установить параметры менеджера архивов
+txt_8_7_showhm: Показать меню просмотра файла
+txt_8_7_showsearchbar: Показать панель поиска
+txt_8_7_showsm: Показать меню стиля
+txt_8_7_hnotok: Некоторые хэши двоичных файлов, используемых PeaZip, не соответствуют ожидаемым значениям:
+txt_8_7_verifybin: Проверить хэш двоичных файлов
 txt_8_6_clear: Опция "Очистить" удаляет временные отредактированные файлы, в противном случае доступные для дальнейшего редактирования.
 txt_8_6_noclear: Отменить все изменения без обновления архива
 txt_8_6_nosimple: Не обновлять архив, сохранить временные отредактированные файлы для дальнейшего редактирования
@@ -207,7 +207,7 @@ txt_6_4_tabbar: Панель вкладок
 txt_6_3_autoadjust: Автоподстройка колонок
 txt_6_3_cinfo: Информация и комментарии
 txt_6_3_syn: Синхронизировать архив с диском
-txt_6_3_uar: Обновить только те файлы, что находятся в архиве
+txt_6_3_uar: Обновить только уже находящиеся в архиве файлы
 txt_6_2_encext: Добавить ".enc" к имени зашифрованного архива
 txt_6_2_archive: Тип архива
 txt_6_2_container: Тип контейнера
@@ -261,10 +261,10 @@ txt_5_5_datesameweek: Та же неделя, что и у выбранного 
 txt_5_5_datesameyear: Тот же год, что и у выбранного объекта
 txt_5_5_scan: Сканировать
 txt_5_5_select: Выбрать
-txt_5_5_similar: Подобный выбранному объекту
+txt_5_5_similar: Подобным выбранному объекту
 txt_5_5_starting: Начать с тем же символом
 txt_5_5_string: Добавляемая строка
-txt_5_5_subtractsel: Вычесть из текущего выделения
+txt_5_5_subtractsel: Убрать из текущего выделения
 txt_5_5_datehour: Этот час
 txt_5_5_datemonth: Этот месяц
 txt_5_5_dateweek: Эта неделя
@@ -305,20 +305,20 @@ txt_5_2_zerofiles: Удаление с затиранием нулями
 txt_5_2_zerofree: Затирание нулями свободного пространства
 txt_5_1_schedadd: Добавить задание
 txt_5_1_schederr: Невозможно создать задание
-txt_5_1_daily: Дни:
+txt_5_1_daily: Ежедневно
 txt_5_1_day: День
-txt_5_1_days: Дни
+txt_5_1_days: Дня(ей)
 txt_5_1_enddate: Окончание
 txt_5_1_every: Раз в
 txt_5_1_w6: Пятница
-txt_5_1_hourly: Часы:
-txt_5_1_hours: Часов
+txt_5_1_hourly: Ежечасно
+txt_5_1_hours: Часа(ов)
 txt_5_1_last: Последний
 txt_5_1_schedmanage: Планировщик заданий, управление заданиями для PeaZip
 txt_5_1_scriptmanage: Управление сохранёнными скриптами заданий
 txt_5_1_w2: Понедельник
-txt_5_1_monthly: Месяцы:
-txt_5_1_months: Месяцы
+txt_5_1_monthly: Ежемесячно
+txt_5_1_months: Месяца(ев)
 txt_5_1_onlogin: При входе
 txt_5_1_onstart: При старте
 txt_5_1_once: Однократно
@@ -661,7 +661,7 @@ txt_all_type: Все объекты данного типа
 txt_all_date: Все объекты с датой...
 txt_all_psize: Все объекты с упакованным размером...
 txt_all_attributes: Все объекты с данными атрибутами
-txt_all_size: Все объекты с размером...
+txt_all_size: Формат файла
 txt_error_input_upx: разрешить одиночные исполняемые файлы на входе
 txt_always_pw: Всегда спрашивать пароль при извлечении/просмотре
 txt_ignore_ext: Всегда игнорировать путь для "Извлечь и..."
@@ -973,11 +973,11 @@ txt_un7z_browse_pw: Пароль может быть востребован
 txt_un7z_browse_pw_other: Возможно неправильный пароль
 txt_paste: Вставить
 txt_path: Путь:
-txt_pea_appcolor: Pea цвет приложения
-txt_pea_textcolor: Pea цвет текста
+txt_pea_appcolor: Цвет приложения
+txt_pea_textcolor: Цвет текста Pea
 txt_type_description_pea: PEA: надёжный формат архива с быстрым сжатием
 txt_peazip_new: PeaZip (новый экземпляр)
-txt_peazip_help: Онлайн помощь по PeaZip
+txt_peazip_help: Онлайн-помощь по PeaZip
 txt_peazip_web: Веб-сайт проекта PeaZip
 txt_performall: Выполнять все поддерживаемые алгоритмы
 txt_name_provide: Пожалуйста, избегайте символов  \ / : * ? ' " < > |
@@ -1064,7 +1064,7 @@ txt_type_description_split: Разделить файл с проверкой ц
 txt_split_file: Разделить файл
 txt_list_nostats: статистика не поддерживается
 txt_status: Статус
-txt_level_store: без сжатия
+txt_level_store: Без сжатия
 txt_stream_control: Контроль потока
 txt_strip: сжать предварительно UPX (рекомендовано)
 txt_keyfile_created: Успешно создан ключевой файл:
@@ -1101,14 +1101,14 @@ txt_toolbarscolor: Цвет панели
 txt_tools: Инструменты
 txt_best: попробуйте лучшие настройки (медленно)
 txt_type: Тип
-txt_level_ultra: ультра
+txt_level_ultra: Ультра
 txt_error_openfile: Невозможно открыть указанный файл
 txt_cl_hint: UNACE и UPX всегда работают в консольном режиме; просмотр, тест и задачи тестирования всегда работают в режиме GUI
 txt_ace_missing: Плагин UNACE отсутствует; для обработки архивов ACE можете загрузить его с веб-сайта PeaZip
 txt_units: блоки
 txt_unit_unknown: Неизвестный тип диска
 txt_un7z_pw_untested: Не проверено
-txt_up: Вверх
+txt_up: Выше
 txt_update: Обновить (если архив существует)
 txt_type_description_upx: UPX: сжатие только исполняемых файлов
 txt_advfilters: Использовать расширенные фильтры
@@ -1324,7 +1324,7 @@ txt_time: Время:
 F1  Помощь
 F2  Переименовать файл(ы)/Ctrl+F2 скопировать выбранное в.../Shift+F2 переместить выбранное в...
 F3  Поиск (настройка рекурсивности запоминается)/Ctrl+F3 начать нерекурсивный поиск (искать здесь)/Shift+F3 начать рекурсивный поиск/Alt+F3 системный поиск
-F4  Вверх на один уровень
+F4  Выше на один уровень
 F5  Обновить
 F6  Переключить просмотр/развёрнутый вид
 F7  Просмотреть последний просмотренный элемент (Ctrl, второй, Shift, третий)
