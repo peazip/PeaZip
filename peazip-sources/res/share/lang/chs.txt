@@ -3,26 +3,26 @@ Simplified Chinese - 简体中文
 8.7
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen
 Last rev. by: Junde Yhi
-Last rev.: 20220308
+Last rev.: 20220626
 
 === PeaZip text group ===
 
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_7_csvhelp: “,”是国际标准，“;”则在拉丁字母环境中使用较多
+txt_8_7_after: 归档或解压之后
+txt_8_7_bintest: 个组件已通过测试。
+txt_8_7_csv: CSV 分隔符
+txt_8_7_hok: PeaZip 组件的散列值均符合预期
+txt_8_7_mo: 设定归档管理器选项
+txt_8_7_showhm: 显示文件浏览器的顶部菜单
+txt_8_7_showsearchbar: 显示搜索栏
+txt_8_7_showsm: 显示样式菜单
+txt_8_7_hnotok: 一些 PeaZip 组件的散列值不符合预期：
+txt_8_7_verifybin: 校验组件的散列值
+txt_8_6_clear: “清除”选项选中的情况下，编辑过的临时文件会被移除；反之，这些文件会被保留，以便继续编辑。
+txt_8_6_noclear: 丢弃所有更改，不要更新归档文件
+txt_8_6_nosimple: 不要更新归档文件，保留编辑过的临时文件以便继续编辑
+txt_8_6_immediate: 立即执行
+txt_8_6_yessimple: 更新归档文件，保留编辑过的临时文件以便继续编辑
 txt_8_5_advbrowser: 将筛选条件应用到归档文件浏览器
 txt_8_5_detailslarge: 详细信息（大图标）
 txt_8_5_intext: 先解压到临时工作目录，再移动到输出目录（覆盖前询问）
@@ -152,7 +152,7 @@ txt_7_2_fzstandardcomp: 最快压缩，Zstandard
 txt_7_2_loadcompsettings: 加载压缩设置
 txt_7_2_savecompsettings: 保存压缩设置
 txt_7_2_source: 源
-txt_7_2_updateclear: 更新编辑过的文件到归档内，然后清除这些文件
+txt_7_2_updateclear: 更新归档文件，清除编辑过的临时文件
 txt_7_1_type_description_brotli: Brotli：来自 Google 的快速压缩算法，具有非常快的解压速度
 txt_7_1_new: 全部解压到此处（新建文件夹）
 txt_7_1_smart: 全部解压到此处（智能创建文件夹）
@@ -550,7 +550,7 @@ txt_2_7_separateerror: 抱歉，使用“添加每个对象到单独的归档文
 txt_2_7_noinput: 布局为空：请使用添加文件或载入布局来填充要解压的归档文件列表
 txt_2_7_dirsize: 计算总体大小时，文件夹的内容大小未被计算入内
 txt_2_7_un7z_browse_flat: 尝试使用平面视图（F6）
-txt_2_7_updating: 正在更新已有的归档文件
+txt_2_7_updating: 【正在更新已有的归档文件】
 txt_2_6_folders: （文件夹）
 txt_2_6_advanced: 高级
 txt_2_6_plalways: 一直打开以便查看任务报告
