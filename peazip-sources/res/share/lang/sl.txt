@@ -3,26 +3,26 @@ Slovenski jezik
 8.7
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20220220
+Zadnja revizija: 20220717
 
 === PeaZip text group ===
 
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
+txt_8_7_csvhelp: "," mednarodni standard, ";" pogost v latinskih krajih
+txt_8_7_after: Po arhiviranju/razširjanju
+txt_8_7_bintest: preizkušene dvojiške datoteke.
+txt_8_7_csv: Ločilo CSV
+txt_8_7_hok: Zgoščena vrednost dvojiških datotek, ki jih uporablja PeaZip, se ujema s pričakovanimi vrednostmi
+txt_8_7_mo: Nastavi možnosti upravitelja arhiva
+txt_8_7_showhm: Prikaži meni glave brskalnika datotek
+txt_8_7_showsearchbar: Prikaži iskalno vrstico
+txt_8_7_showsm: Prikaži meni Slog
+txt_8_7_hnotok: Nekaj zgoščenih dvojiških datotek, ki jih uporablja PeaZip, se ne ujema s pričakovanimi vrednostmi:
+txt_8_7_verifybin: Preveri zgoščenost dvojiških datotek
+txt_8_6_clear: Možnost "Počisti" odstrani začasno urejene datoteke, ki so sicer na voljo za nadaljnje urejanje.
+txt_8_6_noclear: Zavrzi vse spremembe, brez posodabljanja arhiva
+txt_8_6_nosimple: Ne posodabljajte arhiva, shranite začasno urejene datoteke za nadaljnje urejanje
+txt_8_6_immediate: Takojšnja izvedba
+txt_8_6_yessimple: Posodobi arhiv, ohrani začasno urejene datoteke za nadaljnje urejanje
 txt_8_5_advbrowser: Uporabi filtre za brskalnik arhivov
 txt_8_5_detailslarge: Podrobnosti (veliko)
 txt_8_5_intext: Razširi v začasno delovno pot in se premakni na izhod (vprašaj pred prepisom)
@@ -30,7 +30,7 @@ txt_8_5_listlarge: Seznam (veliko)
 txt_8_5_loadlayout: Naloži postavitev ob zagonu
 txt_8_5_sample scripts: Vzorčni skripti
 txt_8_4_keeponerrorslist: Ustavi za pregled poročila o napakah (seznam)
-txt_8_3_mbubin: binarno
+txt_8_3_mbubin: Dvojiško
 txt_8_3_cw: Ali želite spremeniti delovno mapo? To bo ponastavilo začasne delovne datoteke in znova zagnalo aplikacijo.
 txt_8_3_temperature: Barvna temperatura
 txt_8_3_mbudec: Decimalno
@@ -601,7 +601,7 @@ txt_2_4_wbook: Wikibook
 txt_2_4_wnews: Wikinews
 txt_2_4_wsrc: Wikisource
 txt_2_4_wdict: Wiktionary
-txt_2_3_pw_errorchar: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev s PeaZipovim grafičnim vmesnikom v geslih. Spremenite geslo ali izberite način 'Konzola' v podpori binarnih datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
+txt_2_3_pw_errorchar: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev s PeaZipovim grafičnim vmesnikom v geslih. Spremenite geslo ali izberite način 'Konzola' v podpori dvojiških datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
 txt_2_3_envstr: Prikaz spremenljivk okolja
 txt_2_3_never_pw: Ne sprašuj za geslo
 txt_2_3_home: Uporabnikov dom
@@ -688,7 +688,7 @@ txt_ren_existing: samodejno preimenujobstoječe datoteke
 txt_ren_extracted: samodejno preimenuj razširjene datoteke
 txt_autofolder: Samodejno ustvarim novo mapo za razširjanje arhiva?
 txt_back: Nazaj
-txt_backend: Uporabniški vmesnik podpira binarne datoteke
+txt_backend: Uporabniški vmesnik podpira dvojiške datoteke
 txt_backupexe: Varnostno kopiraj izvedljivo (EXE) datoteko (priporočeno)
 txt_bettercompression: boljše stiskanje
 txt_blogs: Blogi
@@ -850,7 +850,7 @@ txt_backupexe_hint: Če gre kaj narobe in povzroči nefunkcionalen rezultat, lah
 txt_attach: Če poštni odjemalec podpira ta ukaz, bo arhiv povezan z novo pošto
 txt_images: Slike
 txt_include_hint: Vključi datoteke, eno na vrstico. Uporaba nadomestnega znaka * in ?. Ločila " in ' niso potrebna
-txt_filters_hint: Fltri za vključitev in izključitev za 7z binarne. Prosimo, pozorno preberite dokumentacijo 7-Zip, da boste razumeli, kako delujejo ti filtri
+txt_filters_hint: Fltri za vključitev in izključitev za 7z dvojiške. Prosimo, pozorno preberite dokumentacijo 7-Zip, da boste razumeli, kako delujejo ti filtri
 txt_inclusion_recourse: Filtri za vključitev rekurzivnih podmap
 txt_inclusion: Vključi
 txt_error_function: Zahtevana je nepravilna funkcija
@@ -981,7 +981,7 @@ txt_peazip_help: Spletna podpora
 txt_peazip_web: PeaZipova spletna stran
 txt_performall: Izvedi vse podprte algoritme
 txt_name_provide: \ / : * ? ' " < > | znaki niso dovoljeni v imenih datotek
-txt_upxorstrip: Prosimo, izberite Odstrani in/ali UPX na binarni
+txt_upxorstrip: Prosimo, izberite Odstrani in/ali UPX na dvojiški
 txt_not_removable_file: Prosimo, zaprite datoteko, ki jo uporabljate, da jo lahko PeaZip odstrani:
 txt_not_removable: Prosimo, zaprite datoteke, ki jih uporabljate, da omogočite PeaZipu odstranjevanje mape:
 txt_custom_executable_missing: Zagotovite ime izvedljive datoteke po meri
@@ -1174,7 +1174,7 @@ txt_2_7_validatefn: Operacija je ustavljena. Zaznano je neveljavno ime datoteke:
 txt_2_7_validatecl: Operacija je ustavljena. zaznan potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
 txt_2_6_open: Odpri arhiv
 txt_2_5_ace_missing: Manjka UNACE vtičnik. Za upravljanje ACE arhivov lahko prenesete vtičnik s PeaZipove spletne strani (če je UNACE zaprt vir, vtičnik ni prikazan v osnovnem paketu)
-txt_2_3_pw_errorchar_gwrap: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev za gesla s PeaLauncherjem. Spremenite geslo ali izberite način 'Konzola' v podpori binarnih datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
+txt_2_3_pw_errorchar_gwrap: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev za gesla s PeaLauncherjem. Spremenite geslo ali izberite način 'Konzola' v podpori dvojiških datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
 txt_2_3_renameexisting: Samodejno preimenuj obstoječe datoteke
 txt_2_3_renameextracted: Samodejno preimenuj razširjene datoteke
 txt_2_3_cancel: Prekliči
