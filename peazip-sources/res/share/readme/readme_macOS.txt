@@ -3,7 +3,7 @@ TO INSTALL PEAZIP ON MACOS
 1) Open PeaZip's DMG and drop peazip.app in Applications directory
 2) Open Terminal, paste and run the following command:
 
-xattr -dr com.apple.quarantine /Applications/peazip.app
+sudo xattr -dr com.apple.quarantine /Applications/peazip.app
 
 Running the aforementioned xattr command is needed to remove the "quarantine" attribute which is automatically applied by Safari to unsigned app packages downloaded from the web; otherwise running PeaZip will result in one of the following error messages:
 
