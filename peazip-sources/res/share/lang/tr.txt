@@ -16,7 +16,7 @@ txt_8_7_mo: Arşiv yöneticisi seçeneklerini ayarla
 txt_8_7_showhm: Dosya tarayıcısını göster Başlık menüsü
 txt_8_7_showsearchbar: Arama çubuğunu göster
 txt_8_7_showsm: Stil Menüsünü göster
-txt_8_7_hnotok: PeaZip tarafından kullanılan bazı Binary dosyalar beklenen değerlerle eşleşmiyor:
+txt_8_7_hnotok: PeaZip tarafından kullanılan bazı binary dosyalar beklenen değerlerle eşleşmiyor:
 txt_8_7_verifybin: Binary dosyalarının hash değerini doğrulayın
 txt_8_6_clear: "Temizle" seçeneği, geçici olarak düzenlenmiş dosyaları kaldırır, aksi takdirde daha fazla düzenleme için kullanılabilir.
 txt_8_6_noclear: Arşivi güncellemeden tüm değişiklikleri atın
