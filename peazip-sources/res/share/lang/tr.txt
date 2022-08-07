@@ -3,21 +3,21 @@ Turkish (Türkçe)
 8.7
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 7 Mayıs 2022
+Son güncelleme: 7 Ağustos 2022
 
 === PeaZip text group ===
 
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
+txt_8_7_csvhelp: "," uluslararası standart ";" Latin yerellerinde yaygın
+txt_8_7_after: Arşivleme / çıkarma işleminden sonra
+txt_8_7_bintest: Binaryler test edildi
+txt_8_7_csv: CSV ayırıcı
+txt_8_7_hok: PeaZip tarafından kullanılan Binary dosyalarının hash'i beklenen değerlerle eşleşiyor
+txt_8_7_mo: Arşiv yöneticisi seçeneklerini ayarla
+txt_8_7_showhm: Dosya tarayıcısını göster Başlık menüsü
+txt_8_7_showsearchbar: Arama çubuğunu göster
+txt_8_7_showsm: Stil Menüsünü göster
+txt_8_7_hnotok: PeaZip tarafından kullanılan bazı ikili dosyalar beklenen değerlerle eşleşmiyor:
+txt_8_7_verifybin: Binary dosyalarının hash değerini doğrulayın
 txt_8_6_clear: "Temizle" seçeneği, geçici olarak düzenlenmiş dosyaları kaldırır, aksi takdirde daha fazla düzenleme için kullanılabilir.
 txt_8_6_noclear: Arşivi güncellemeden tüm değişiklikleri atın
 txt_8_6_nosimple: Arşivi güncelleme, daha fazla düzenleme için geçici olarak düzenlenmiş dosyaları saklayın
