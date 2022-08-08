@@ -1,31 +1,31 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
 8.7
-Translated by: Aerowolf, Junde Yhi, Dingzhong Chen , yangyangdaji
+Translated by: Aerowolf, Junde Yhi, Dingzhong Chen,yangyangdaji
 Last rev. by: yangyangdaji
-Last rev.: 20220731
+Last rev.: 20220808
 
 === PeaZip text group ===
 
 txt_8_7_csvhelp: “,”是国际标准，“;”则在拉丁字母环境中使用较多
-txt_8_7_after: 压缩或解压之后
+txt_8_7_after: 归档或提取之后
 txt_8_7_bintest: 个组件已通过测试。
 txt_8_7_csv: CSV 分隔符
 txt_8_7_hok: PeaZip 组件的散列值均符合预期
-txt_8_7_mo: 设置压缩文件管理器选项
+txt_8_7_mo: 设定归档管理器选项
 txt_8_7_showhm: 显示文件浏览器的顶部菜单
 txt_8_7_showsearchbar: 显示搜索栏
 txt_8_7_showsm: 显示样式菜单
 txt_8_7_hnotok: 一些 PeaZip 组件的散列值不符合预期：
 txt_8_7_verifybin: 校验组件的散列值
 txt_8_6_clear: “清除”选项选中的情况下，编辑过的临时文件会被移除；反之，这些文件会被保留，以便继续编辑。
-txt_8_6_noclear: 丢弃所有更改，不要更新压缩文件
-txt_8_6_nosimple: 不要更新压缩文件，保留编辑过的临时文件以便继续编辑
+txt_8_6_noclear: 丢弃所有更改，不要更新归档文件
+txt_8_6_nosimple: 不要更新归档文件，保留编辑过的临时文件以便继续编辑
 txt_8_6_immediate: 立即执行
-txt_8_6_yessimple: 更新压缩文件，保留编辑过的临时文件以便继续编辑
-txt_8_5_advbrowser: 将筛选条件应用到压缩文件浏览器
+txt_8_6_yessimple: 更新归档文件，保留编辑过的临时文件以便继续编辑
+txt_8_5_advbrowser: 将筛选条件应用到归档文件浏览器
 txt_8_5_detailslarge: 详细信息（大图标）
-txt_8_5_intext: 先解压到临时工作目录，再移动到输出目录（覆盖前询问）
+txt_8_5_intext: 先提取到临时工作目录，再移动到输出目录（覆盖前询问）
 txt_8_5_listlarge: 列出（大图标）
 txt_8_5_loadlayout: 启动时加载布局
 txt_8_5_samplescripts: 示例脚本
@@ -51,26 +51,26 @@ txt_8_2_tm: 修改时间
 txt_8_2_skipet: 跳过加密测试
 txt_8_2_alltimes: 保存所有时间戳
 txt_8_2_supportedby: 支持的文件格式：
-txt_8_1_preparse: 总是预解析压缩文件
+txt_8_1_preparse: 总是预解析归档文件
 txt_8_1_bo: 浏览优化
-txt_8_1_bop: 要显示内含巨量文件的压缩文件，可以在选项 > 设置，常规标签页中选定“浏览优化”。
-txt_8_1_nopreparse: 不要预解析压缩文件
+txt_8_1_bop: 要显示内含巨量文件的归档文件，可以在选项 > 设置，常规标签页中选定“浏览优化”。
+txt_8_1_nopreparse: 不要预解析归档文件
 txt_8_1_ed: 个检测到的错误。
-txt_8_1_togglearc: 以平面视图列出压缩文件的内容可能要很长时间，继续吗？
-txt_8_1_preparsehint: 优化性能会对大体积压缩文件的预解析有限制。预解析用于提前检测压缩文件中可能的问题。
+txt_8_1_togglearc: 以平面视图列出归档文件的内容可能要很长时间，继续吗？
+txt_8_1_preparsehint: 优化性能会对大体积归档文件的预解析有限制。预解析用于提前检测归档文件中可能的问题。
 txt_8_1_slow: 慢
 txt_8_1_vslow: 非常慢
 txt_8_1_volumes: 卷
 txt_8_0_altcol: 另一种网格色彩
-txt_8_0_forcebrowse: 浏览非规范的压缩文件（容器、磁盘镜像、安装程序等）
+txt_8_0_forcebrowse: 浏览非规范的归档文件（容器、磁盘镜像、安装程序等）
 txt_8_0_commonalgo: 通用算法
-txt_8_0_forceconvert: 转换非规范的压缩文件类型
+txt_8_0_forceconvert: 转换非规范的归档文件类型
 txt_8_0_defaultactionhint: 在系统里双击关联到 PeaZip 的文件时的默认动作
 txt_8_0_defaultaction: 输入时的默认动作
-txt_8_0_enableextand: 启用“解压并以…打开”子菜单
+txt_8_0_enableextand: 启用“提取并以…打开”子菜单
 txt_8_0_forcetyping: 强制交互式输入密码
 txt_8_0_setpwopt: 设置密码或密钥文件选项
-txt_8_0_forcetypinghelp: 将在控制台运行后端程序，此时将不能浏览带加密文件名的压缩文件。允许创建交互式询问用户密码而非无人值守的脚本。
+txt_8_0_forcetypinghelp: 将在控制台运行后端程序，此时将不能浏览带加密文件名的归档文件。允许创建交互式询问用户密码而非无人值守的脚本。
 txt_7_9_spacing: 间隔
 txt_7_9_zooming: 缩放
 txt_7_8_changelocalization: 更改 PeaZip 的语言
@@ -79,23 +79,23 @@ txt_7_8_destexistfile: 目标已经包含处理过的文件。用相同的文件
 txt_7_8_dd: 拖放
 txt_7_8_priorityhigh: 高
 txt_7_8_priorityidle: 空闲
-txt_7_8_rel: 交互式解压并移动
+txt_7_8_rel: 交互式提取并移动
 txt_7_8_prioritynormal: 一般
 txt_7_8_priorityrealtime: 实时
 txt_7_8_requirerestart: 【需要重启 PeaZip】
 txt_7_8_tpriority: 任务优先级
 txt_7_8_update: 更新
-txt_7_7_noneall: 无（无预览、无拖放解压）
+txt_7_7_noneall: 无（无预览、无拖放提取）
 txt_7_7_nonetemp: 无，必要时则在用户的临时目录里
 txt_7_7_outtemp: 输出，在用户的临时目录里预览
 txt_7_7_sys7zreq: 需要安装 p7zip-full 或与其兼容的软件
-txt_7_7_tw: 用于压缩文件创建、修改、预览和拖放解压的临时工作文件夹
+txt_7_7_tw: 用于归档文件创建、修改、预览和拖放提取的临时工作文件夹
 txt_7_7_sys7z: 在 Linux 中使用系统 7z
 txt_7_6_zipenc: 7z / p7zip 的 ZIP 文件名编码
 txt_7_6_color: 颜色
 txt_7_6_custenc: 自定义代码页
 txt_7_6_dark: 暗色
-txt_7_6_tno: 不要实时更新压缩文件的目录树
+txt_7_6_tno: 不要实时更新归档文件的目录树
 txt_7_6_forcelocalenc: 强制使用本地编码
 txt_7_6_forceutf8enc: 强制使用 UTF-8
 txt_7_6_cpnote: 如果选择的自定义代码页不受支持，则任务必然会出错（很可能会是内存分配错误）。如果确实发生错误，请更改代码页或重置应用程序。
@@ -103,17 +103,17 @@ txt_7_6_defaultenc: 使用本地编码，对额外的符号则使用 UTF-8
 txt_7_6_dim: 低亮
 txt_7_6_setcurdef: 将当前路径设置为默认输出路径
 txt_7_6_setdef: 设置默认输出路径
-txt_7_6_tadvanced: 实时更新压缩文件的目录树，保留已访问节点
-txt_7_6_tsimple: 实时更新压缩文件的目录树，简单算法
+txt_7_6_tadvanced: 实时更新归档文件的目录树，保留已访问节点
+txt_7_6_tsimple: 实时更新归档文件的目录树，简单算法
 txt_7_6_tacolor: 文字高亮
 txt_7_5_always: 总是
 txt_7_5_ask: 询问
-txt_7_5_autoclosesingle: 如果没有浏览动作，则解压后自动关闭
+txt_7_5_autoclosesingle: 如果没有浏览动作，则提取后自动关闭
 txt_7_5_cutlen: 截断文件名到特定长度
 txt_7_5_cutlenw: 截断文件名到特定长度（4 到 255）文件名冲突可以之后手动解决
 txt_7_5_dragnone: 不要锁定目标
-txt_7_5_specialbrowse: 你想解压一切信息来呈现文件所需的额外数据吗？
-txt_7_5_ee: 解压特殊类型文件的一切信息
+txt_7_5_specialbrowse: 你想提取一切信息来呈现文件所需的额外数据吗？
+txt_7_5_ee: 提取特殊类型文件的一切信息
 txt_7_5_draghide: 隐藏拖放目标
 txt_7_5_draglh: 锁定并隐藏目标
 txt_7_5_draglock: 锁定拖放目标
@@ -123,28 +123,28 @@ txt_7_4_comment: Comment 备注
 txt_7_4_7zfbrotlicomp: 最快压缩，7Z Brotli
 txt_7_4_7zfzstandardcomp: 最快压缩，7Z Zstandard
 txt_7_4_presetrar: 高压缩率，RAR
-txt_7_4_tkeep: 保留原压缩文件的时间戳
-txt_7_4_lock: 锁定压缩文件
+txt_7_4_tkeep: 保留原归档文件的时间戳
+txt_7_4_lock: 锁定归档文件
 txt_7_4_locked: 已锁定
-txt_7_4_lockconfirm: 已锁定的压缩文件不能再被修改，要继续锁定压缩文件吗？
-txt_7_4_recover: 修复压缩文件
-txt_7_4_tcurr: 用当前系统时间来设置压缩文件的时间戳
-txt_7_4_setarc: 设置压缩选项
-txt_7_4_setext: 设置解压选项
-txt_7_4_swzipx: 对不是用 Deflate 算法压缩的 ZIP 压缩文件使用 zipx 扩展名
-txt_7_3_archiveerrors: 【压缩文件可能含有错误】
-txt_7_3_archiveerrorshint: 压缩文件可能（由于文件不存在、文件损坏或基本数据丢失等原因）无效，可以运行测试来获取详细信息。如果压缩文件的目录也被加密了，浏览之前还需要密码。
-txt_7_3_clickextall: 点击“全部解压”来启用
-txt_7_3_noconfdel: 压缩或解压后文件删除不再要求确认
+txt_7_4_lockconfirm: 已锁定的归档文件不能再被修改，要继续锁定归档文件吗？
+txt_7_4_recover: 修复归档文件
+txt_7_4_tcurr: 用当前系统时间来设置归档文件的时间戳
+txt_7_4_setarc: 设置归档选项
+txt_7_4_setext: 设置提取选项
+txt_7_4_swzipx: 对不是用 Deflate 算法压缩的 ZIP 归档文件使用 zipx 扩展名
+txt_7_3_archiveerrors: 【归档文件可能含有错误】
+txt_7_3_archiveerrorshint: 归档文件可能（由于文件不存在、文件损坏或基本数据丢失等原因）无效，可以运行测试来获取详细信息。如果归档文件的目录也被加密了，浏览之前还需要密码。
+txt_7_3_clickextall: 点击“全部提取”来启用
+txt_7_3_noconfdel: 归档或提取后文件删除不再要求确认
 txt_7_3_profile7zfastest: 快速压缩，7Z 最快
-txt_7_3_maxbr: 最高 Brotli 压缩率，使用更多内存（可能和其它解压软件不兼容）
+txt_7_3_maxbr: 最高 Brotli 压缩率，使用更多内存（可能和其它提取软件不兼容）
 txt_7_3_maxzstd: 最高 Zstandard 压缩率，使用更多内存
 txt_7_3_profile7zfast: 中等压缩，7Z 快速
-txt_7_3_stl: 将最近文件的时间戳设到压缩上
+txt_7_3_stl: 将最近文件的时间戳设到归档上
 txt_7_2_altcomp: 另一种压缩，ARC
 txt_7_2_clearnoupdate: 清除编辑过的文件
 txt_7_2_autoclosepeazip: 任务完成后关闭 PeaZip
-txt_7_2_zpaqall: 解压所有版本
+txt_7_2_zpaqall: 提取所有版本
 txt_7_2_extcomp: 极限压缩，ZPAQ
 txt_7_2_extcompultra: 极限压缩，ZPAQ Ultra
 txt_7_2_fbrotlicomp: 最快压缩，Brotli
@@ -152,22 +152,22 @@ txt_7_2_fzstandardcomp: 最快压缩，Zstandard
 txt_7_2_loadcompsettings: 加载压缩设置
 txt_7_2_savecompsettings: 保存压缩设置
 txt_7_2_source: 源
-txt_7_2_updateclear: 更新压缩文件，清除编辑过的临时文件
-txt_7_1_type_description_brotli: Brotli：来自 Google 的快速压缩算法，具有非常快的解压速度
-txt_7_1_new: 全部解压到此处（新建文件夹）
-txt_7_1_smart: 全部解压到此处（智能创建文件夹）
+txt_7_2_updateclear: 更新归档文件，清除编辑过的临时文件
+txt_7_1_type_description_brotli: Brotli：来自 Google 的快速压缩算法，具有非常快的提取速度
+txt_7_1_new: 全部提取到此处（新建文件夹）
+txt_7_1_smart: 全部提取到此处（智能创建文件夹）
 txt_7_1_profileintermediate: 中等压缩率，ZIP / BZip2 快速压缩
 txt_7_1_renfilesonly: 仅对文件重命名
 txt_7_1_typetosearch: 打字以在当前路径搜索
-txt_7_1_type_description_zstd: Zstandard：来自 Facebook 的快速压缩算法，具有非常快的解压速度
+txt_7_1_type_description_zstd: Zstandard：来自 Facebook 的快速压缩算法，具有非常快的提取速度
 txt_7_0_af: 分析文件夹内容
-txt_7_0_autoopentar: 自动打开 tar.* 文件内的单个 TAR 压缩文件
-txt_7_0_exttmppath: 内容将解压到临时路径外：
-txt_6_9_autou: 自动更新压缩内修改过的文件
-txt_6_9_forceu: 更新编辑过的文件到压缩内
-txt_6_9_opuns: 不支持对当前类型的压缩文件执行此操作
-txt_6_9_overarch: 要覆盖压缩内具有相同名称的文件吗？
-txt_6_9_uconf: 预览的文件已被修改。更新当前的压缩文件吗？
+txt_7_0_autoopentar: 自动打开 tar.* 文件内的单个 TAR 归档文件
+txt_7_0_exttmppath: 内容将提取到临时路径外：
+txt_6_9_autou: 自动更新归档内修改过的文件
+txt_6_9_forceu: 更新编辑过的文件到归档内
+txt_6_9_opuns: 不支持对当前类型的归档文件执行此操作
+txt_6_9_overarch: 要覆盖归档内具有相同名称的文件吗？
+txt_6_9_uconf: 预览的文件已被修改。更新当前的归档文件吗？
 txt_6_8_ndrop: 使用 Windows 原生拖放功能
 txt_6_7_nop: （无预览）
 txt_6_6_pdupfound: 找到了可能是重复的文件（快速估算）
@@ -176,21 +176,21 @@ txt_6_6_pdupfind: 提示可能的重复项
 txt_6_6_forcemodify: 尝试编辑未明确支持的文件
 txt_6_5_mandatory: （强制）
 txt_6_5_abort: 异常中止
-txt_6_5_askp: 在启动时请求密码设置
+txt_6_5_askp: 在启动时请求密码设定
 txt_6_5_chp: 更换密码
 txt_6_5_def: 定义
-txt_6_5_nop: 不要在启动时请求密码设置
+txt_6_5_nop: 不要在启动时请求密码设定
 txt_6_5_error: 错误
 txt_6_5_seqerr: 检测到错误，原文件不会被删除
 txt_6_5_sni: 包含 NT 安全信息
 txt_6_5_sns: 包含 NTFS 备用数据流（Alternate Data Stream）
 txt_6_5_privacy: 隐私
 txt_6_5_showvolatile: 显示哪些选项会根据上下文而改变
-txt_6_5_force: 尝试打开有错误的压缩文件
+txt_6_5_force: 尝试打开有错误的归档文件
 txt_6_5_warning: 警告
 txt_6_5_yes: 是
 txt_6_5_yesall: 全部选是
-txt_6_5_np: 你现在可以把转换过的压缩文件密码改成新的，或者留空密码以跳过加密
+txt_6_5_np: 你现在可以把转换过的归档文件密码改成新的，或者留空密码以跳过加密
 txt_6_4_absolute: 绝对路径
 txt_6_4_appdirn: 在后面加上目录名
 txt_6_4_closeallother: 关闭其它标签页
@@ -206,19 +206,19 @@ txt_6_4_relative: 相对路径
 txt_6_4_tabbar: 标签页栏
 txt_6_3_autoadjust: 自动调节列宽
 txt_6_3_cinfo: 信息及备注
-txt_6_3_syn: 同步压缩文件到磁盘上
-txt_6_3_uar: 仅更新压缩文件内已有的文件
-txt_6_2_encext: 为加密的压缩文件添加“.enc”文件名后缀
-txt_6_2_archive: 压缩文件类型
+txt_6_3_syn: 同步归档文件到磁盘上
+txt_6_3_uar: 仅更新归档文件内已有的文件
+txt_6_2_encext: 为加密的归档文件添加“.enc”文件名后缀
+txt_6_2_archive: 归档文件类型
 txt_6_2_container: 容器文件类型
-txt_6_1_ec: 展开 / 折叠压缩文件树
+txt_6_1_ec: 展开 / 折叠归档文件树
 txt_6_0_msq: 对固实压缩文件按其类型排序
 txt_5_9_lff: 分析文件和文件夹
 txt_5_9_pff: 分析并显示文件头 / 文件尾
 txt_5_9_start: 开始于
 txt_5_8_l0: 允许任何支持的组件 / 格式
 txt_5_8_l1: 只允许自由软件组件
-txt_5_8_l2: 只允许开放压缩格式
+txt_5_8_l2: 只允许开放归档格式
 txt_5_8_ascii: ASCII 安全，脚本在旧环境中依然可靠
 txt_5_8_cp: 代码页（Code Page）安全，脚本可能在有不同代码页的旧环境中触发问题
 txt_5_8_fs: 自由软件合规性
@@ -228,11 +228,11 @@ txt_5_7_pinstalled: 已安装
 txt_5_7_pmissing: 缺失
 txt_5_7_plugin: 插件缺失，可以在帮助 > 获取插件和扩展处安装
 txt_5_6_basic: 基本
-txt_5_6_exarc: 解压压缩文件
+txt_5_6_exarc: 提取归档文件
 txt_5_6_tab: 在新标签页中打开
 txt_5_6_rc: 右击显示选项
 txt_5_6_layouts: 保存的布局
-txt_5_6_upexisting: 更新已有的压缩文件
+txt_5_6_upexisting: 更新已有的归档文件
 txt_5_6_verbose: 显示详细信息
 txt_5_5_case: （区分大小写）
 txt_5_5_add: 添加字符串到指定位置
@@ -273,20 +273,20 @@ txt_5_5_dateday: 这天内
 txt_5_5_upper: 大写字母
 txt_5_5_extw: 警告：修改文件后缀名可能导致文件不可用
 txt_5_4_da: 添加日期
-txt_5_4_deletearchives: 解压后删除原压缩文件
-txt_5_4_deletefiles: 压缩后删除原文件
+txt_5_4_deletearchives: 提取后删除原归档文件
+txt_5_4_deletefiles: 归档后删除原文件
 txt_5_4_deleteoriginal: 在主屏幕中设置的删除过程也将添加到脚本中。
 txt_5_4_lv: 最后访问
-txt_5_4_deletearchivesconfirm: 确定要删除原压缩文件吗？
+txt_5_4_deletearchivesconfirm: 确定要删除原归档文件吗？
 txt_5_4_deletefilesconfirm: 确定要删除源文件吗？
 txt_5_4_used: 被使用
 txt_5_3_profilebest: 最大压缩率，7Z 最优
 txt_5_3_profileadvanced: 高压缩率，7Z
-txt_5_3_profilenormal: 中等压缩率，ZIP（兼容大多数解压缩软件）
+txt_5_3_profilenormal: 中等压缩率，ZIP（兼容大多数提取缩软件）
 txt_5_3_profileveryfast: 快速压缩，ZIP 最快
 txt_5_3_profilepassword: 用密码保护，7z 格式
 txt_5_3_profile10mb: 保持输出小于 25MB，以适应电子邮件附件限制
-txt_5_3_profilesfx: 自解压格式，这样他人就不需要解压缩软件来解压它
+txt_5_3_profilesfx: 自提取格式，这样他人就不需要提取缩软件来提取它
 txt_5_3_cml: 系统右键菜单语言
 txt_5_3_cmlmessage: 双击所需的右键菜单语言文件并将它们合并到注册表内。不过，在安装 / 升级应用程序后或使用“系统集成”向导后需要重新进行此设置。
 txt_5_3_exc: 排除筛选器的设置覆盖包含筛选器的
@@ -294,11 +294,11 @@ txt_5_3_ia: 也包括在内
 txt_5_3_io: 只包括
 txt_5_3_rec: 递归子目录
 txt_5_3_resetsi: 重新配置系统集成（右键菜单、“发送到”菜单、文件关联）吗？
-txt_5_2_oadd: 压缩到原始路径
+txt_5_2_oadd: 归档到原始路径
 txt_5_2_zerodelete: 你想要删除所选文件并用 0 全部覆盖吗？该操作无法被撤销，文件将无法被恢复
 txt_5_2_zfree: 你想要用 0 覆盖这个驱动器上的所有未使用空间吗？
 txt_5_2_sdfree: 你想安全擦除这个驱动器上的未使用空间吗？
-txt_5_2_oext: 解压到原始路径
+txt_5_2_oext: 提取到原始路径
 txt_5_2_securedeletefree: 安全擦除未使用空间
 txt_5_2_free: 此操作可能需要几分钟。不过，如果经常这么干，会很快就弄坏 U 盘、固态盘等带有闪存的存储器的。
 txt_5_2_zerofiles: 用 0 填充
@@ -363,7 +363,7 @@ txt_4_8_flip: 翻转
 txt_4_8_fullscreen: 全屏模式
 txt_4_8_fun: 功能
 txt_4_8_h: 高度
-txt_4_8_keeparchive: 保留压缩文件
+txt_4_8_keeparchive: 保留归档文件
 txt_4_8_noresize: 保持原始大小
 txt_4_8_iconl: 较大图像
 txt_4_8_iconm: 图标和图像
@@ -385,7 +385,7 @@ txt_4_7_spchar: 仅限字母和数字
 txt_4_7_recycleask: 移动所选文件到回收站？
 txt_4_7_recycle: 移到回收站
 txt_4_7_pcomp: 预计压缩率
-txt_4_6_am: 压缩管理器
+txt_4_6_am: 归档管理器
 txt_4_6_fm: 文件管理器
 txt_4_6_users: 用户
 txt_4_5_goupdate: 有新版本。访问 PeaZip 官网下载新版吗？
@@ -431,12 +431,12 @@ txt_4_0_thim: 显示图片缩略图
 txt_3_8_type_description_wim: WIM：微软磁盘映像格式
 txt_3_8_type_description_xz: XZ：基于 LZMA2 的强大的文件压缩算法
 txt_3_7_donations: 捐赠
-txt_3_7_nameasparent: 如果添加了多个项目，则以这些项目所在文件夹的名称命名压缩文件
+txt_3_7_nameasparent: 如果添加了多个项目，则以这些项目所在文件夹的名称命名归档文件
 txt_3_7_tracker: 问题跟踪
 txt_3_7_sort: 排序
 txt_3_7_swapbars: 交换工具栏 / 地址栏
 txt_3_7_themedbars: 主题栏
-txt_3_6_ignoredd: 对于拖放解压总是忽略路径
+txt_3_6_ignoredd: 对于拖放提取总是忽略路径
 txt_3_6_close: 关闭
 txt_3_6_resetapps: 要重置应用程序（自定义打开文件的应用程序和脚本，覆盖文件关联）吗？
 txt_3_6_ethemes: 现有主题
@@ -451,7 +451,7 @@ txt_3_3_multi: 多选
 txt_3_3_runexp: 打开程序、文件、文件夹或网站
 txt_3_3_apppath: PeaZip 文件夹
 txt_3_3_run: 运行
-txt_3_2_7zutf8nonascii: 7z / p7zip -mcu 对 .zip 压缩文件内，文件名中含有非 ASCII 字符的文件，使用 UTF-8 编码
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu 对 .zip 归档文件内，文件名中含有非 ASCII 字符的文件，使用 UTF-8 编码
 txt_3_2_alltasks: 全部任务
 txt_3_2_conf: 配置
 txt_3_2_donations: 给慈善机构捐赠
@@ -459,7 +459,7 @@ txt_3_1_sccenc: 7z / p7zip -scc 字符编码
 txt_3_1_downloads: 下载
 txt_3_1_lib: 库
 txt_3_1_more: 更多
-txt_3_1_openasarchive: 作为压缩文件打开
+txt_3_1_openasarchive: 作为归档文件打开
 txt_3_1_sendto: 用户的“发送到”文件夹
 txt_3_1_pathexc: 路径超出允许的最大长度
 txt_3_1_recent: 最近访问
@@ -468,8 +468,8 @@ txt_3_1_src: 搜索
 txt_3_1_systmp: 系统临时文件夹
 txt_3_1_languagetools: 翻译
 txt_3_1_workingdir: 工作目录
-txt_3_0_nonreadableorpw: 压缩文件无法读取。此压缩文件可能失效，或者其目录可能被加密。输入密码试试？
-txt_3_0_readablepw: 压缩文件似乎有密码保护
+txt_3_0_nonreadableorpw: 归档文件无法读取。此归档文件可能失效，或者其目录可能被加密。输入密码试试？
+txt_3_0_readablepw: 归档文件似乎有密码保护
 txt_3_0_configure: 系统集成和文件关联
 txt_3_0_resettmp: 重置 PeaZip 临时文件夹
 txt_2_9_address: 地址栏
@@ -477,7 +477,7 @@ txt_2_9_adv: 管理任何 7z 或 FreeArc 后台支持的文件，都可以使用
 txt_2_9_columns: 列
 txt_2_9_copyhere: 复制到此处
 txt_2_9_noscan: 不要扫描添加到布局中的文件
-txt_2_9_extconsole: 解压控制台仅在浏览压缩文件时可用
+txt_2_9_extconsole: 提取控制台仅在浏览归档文件时可用
 txt_2_9_thl: 高亮按钮
 txt_2_9_home: 用户目录
 txt_2_9_lt: 较大
@@ -493,26 +493,26 @@ txt_2_9_selected: 已选
 txt_2_9_setapps: 组织应用程序
 txt_2_9_showmenu: 显示菜单栏
 txt_2_9_st: 较小
-txt_2_9_test_pw2G: 测试加密小于 2GB 的压缩文件
+txt_2_9_test_pw2G: 测试加密小于 2GB 的归档文件
 txt_2_9_vst: 仅文字
 txt_2_9_toolbar: 工具栏
 txt_2_9_tree: 目录树
 txt_2_9_views: 视图
 txt_2_8_experimental: （试验功能）
 txt_2_8_zcopy: （Windows）以可重启模式复制文件，速度更慢
-txt_2_8_addvol: 整卷添加到压缩文件可能耗时较长，继续吗？
+txt_2_8_addvol: 整卷添加到归档文件可能耗时较长，继续吗？
 txt_2_8_uniterror: 无法访问该设备
-txt_2_8_cannotconvert: 无法转换选择的压缩文件
+txt_2_8_cannotconvert: 无法转换选择的归档文件
 txt_2_8_convertbegin: 要继续压缩、完成转换吗？
 txt_2_8_convert: 转换
-txt_2_8_convertexisting: 转换已有的压缩文件
+txt_2_8_convertexisting: 转换已有的归档文件
 txt_2_8_convertdelete: 删除转换时生成的临时文件和文件夹吗？
 txt_2_8_details: 详细信息
 txt_2_8_parallel: 可能时，并行执行作业
-txt_2_8_convertnote: 压缩文件无法修改时，由用户决定保留或删除
-txt_2_8_custom: 不被 PeaZip 直接支持，但在解压阶段，您可以在“高级”标签页中设置关联自定义的文件类型。打开此文件吗？
-txt_2_8_unitrecommend: 建议解压（右击 > 解压缩选定的项目）或者以管理员身份打开文件系统（系统工具 > 将设备作为压缩打开）
-txt_2_8_viewasarchive: 将设备作为压缩打开
+txt_2_8_convertnote: 归档文件无法修改时，由用户决定保留或删除
+txt_2_8_custom: 不被 PeaZip 直接支持，但在提取阶段，您可以在“高级”标签页中设置关联自定义的文件类型。打开此文件吗？
+txt_2_8_unitrecommend: 建议提取（右击 > 提取缩选定的项目）或者以管理员身份打开文件系统（系统工具 > 将设备作为归档打开）
+txt_2_8_viewasarchive: 将设备作为归档打开
 txt_2_8_nounit: 未选择设备
 txt_2_8_rowselect: 整行选择
 txt_2_8_statusbar: 状态栏
@@ -521,36 +521,36 @@ txt_2_8_usedefaultoutpath: 使用默认输出路径
 txt_2_7_experimental: （试验功能，参见文档）
 txt_2_7_optional: （可选）
 txt_2_7_list_tryflatorpw: ，您也许可以：选择平面视图（F6）、输入密码（F9），或重新复制文件
-txt_2_7_separate: 添加每个对象到单独的压缩文件
-txt_2_7_pwsupported: 压缩支持添加密码
+txt_2_7_separate: 添加每个对象到单独的归档文件
+txt_2_7_pwsupported: 归档支持添加密码
 txt_2_7_cancel: 取消
 txt_2_7_encfn: 加密文件名（如果格式支持）
 txt_2_7_setpw: 输入密码 / 密钥文件
-txt_2_7_ext: 正在解压：
-txt_2_7_extfrom: 正在解压自压缩文件：
-txt_2_7_es: 解压支持的非压缩文件类型，比如可执行文件、微软 Office 和 OpenOffice 文件
-txt_2_7_eu: 解压不支持的文件类型，自定义解压工具
+txt_2_7_ext: 正在提取：
+txt_2_7_extfrom: 正在提取自归档文件：
+txt_2_7_es: 提取支持的非归档文件类型，比如可执行文件、微软 Office 和 OpenOffice 文件
+txt_2_7_eu: 提取不支持的文件类型，自定义提取工具
 txt_2_7_clipboard: 剪贴板
-txt_2_7_goarclayout: 切换到压缩布局
-txt_2_7_goextlayout: 切换到解压布局
+txt_2_7_goarclayout: 切换到归档布局
+txt_2_7_goextlayout: 切换到提取布局
 txt_2_7_ok: 确定
-txt_2_7_drag_archive: 将文件作为新压缩文件打开吗？（选“否”则将文件添加到当前压缩布局）
+txt_2_7_drag_archive: 将文件作为新归档文件打开吗？（选“否”则将文件添加到当前归档布局）
 txt_2_7_oop: 任务完成后打开输出路径
 txt_2_7_validatefn: 操作中止，发现无效文件名：
 txt_2_7_validatecl: 操作中止，发现潜在的危险命令（比如程序不允许的命令连接）：
 txt_2_7_output: 输出
 txt_2_7_pwnotset: 未设密码
 txt_2_7_pwarcset: 已设密码
-txt_2_7_pwextset: 已设密码，现在可以解压、查看、测试已加密的压缩文件
-txt_2_7_archivehint: 拖放文件和文件夹到此处进行压缩，或者右击查看更多选项
-txt_2_7_exthint: 拖放压缩文件到此处进行解压，或者右击查看更多选项
+txt_2_7_pwextset: 已设密码，现在可以提取、查看、测试已加密的归档文件
+txt_2_7_archivehint: 拖放文件和文件夹到此处进行归档，或者右击查看更多选项
+txt_2_7_exthint: 拖放归档文件到此处进行提取，或者右击查看更多选项
 txt_2_7_setadvf: 设置高级筛选器
 txt_2_7_selpath: 所选项目的路径
-txt_2_7_separateerror: 抱歉，使用“添加每个对象到单独的压缩文件”开关时，不能导入任务定义的命令行，因为任务是被作为多个单独的命令执行的
-txt_2_7_noinput: 布局为空：请使用添加文件或载入布局来填充要解压的压缩文件列表
+txt_2_7_separateerror: 抱歉，使用“添加每个对象到单独的归档文件”开关时，不能导入任务定义的命令行，因为任务是被作为多个单独的命令执行的
+txt_2_7_noinput: 布局为空：请使用添加文件或载入布局来填充要提取的归档文件列表
 txt_2_7_dirsize: 计算总体大小时，文件夹的内容大小未被计算入内
 txt_2_7_un7z_browse_flat: 尝试使用平面视图（F6）
-txt_2_7_updating: 【正在更新已有的压缩文件】
+txt_2_7_updating: 【正在更新已有的归档文件】
 txt_2_6_folders: （文件夹）
 txt_2_6_advanced: 高级
 txt_2_6_plalways: 一直打开以便查看任务报告
@@ -561,12 +561,12 @@ txt_2_5_basic: 基本编辑：输入名称前，应用程序和参数
 txt_2_5_cannotrun: 无法运行
 txt_2_5_custeditors: 自定义编辑器、播放器、杀毒软件等等（忽略系统的文件关联设置）
 txt_2_5_delete: 删除
-txt_2_5_delete_fromarchive: 从压缩文件中删除
-txt_2_5_langflag: 以 UTF-8 编码显示压缩对象名称；不选则用“?”替换扩展字符
+txt_2_5_delete_fromarchive: 从归档文件中删除
+txt_2_5_langflag: 以 UTF-8 编码显示归档对象名称；不选则用“?”替换扩展字符
 txt_2_5_encpj: 将任务定义编码为 UTF-8 文本
 txt_2_5_execommand: 可执行文件或命令
 txt_2_5_help: 帮助
-txt_2_5_langhint: 提示：如果在当前机器上无法正确转换压缩文件的字符集，可以用“?”符号替换这些扩展字符来改进语法。
+txt_2_5_langhint: 提示：如果在当前机器上无法正确转换归档文件的字符集，可以用“?”符号替换这些扩展字符来改进语法。
 txt_2_5_mini_help: 简明教程
 txt_2_5_offline_help: PeaZip 帮助
 txt_2_5_tray: 缩小到系统托盘
@@ -576,7 +576,7 @@ txt_2_5_selectapp: 选择应用程序
 txt_2_5_strafter: 输入名称后的字符串
 txt_2_5_strbefore: 输入名称前的字符串
 txt_2_5_encoding: 文本编码
-txt_2_5_nopw: 该压缩格式不支持加密
+txt_2_5_nopw: 该归档格式不支持加密
 txt_2_4_draghint: 【拖拽到启用了地址栏的资源管理器】
 txt_2_4_tb: 适应工具栏按钮（重启 PeaZip）
 txt_2_4_adding: 添加
@@ -589,7 +589,7 @@ txt_2_4_copyfrom: 复制自
 txt_2_4_deletebookmarks: 确定要删除已收藏的文件和文件夹的列表吗？
 txt_2_4_documents: 文档
 txt_2_4_wenc: 百科全书
-txt_2_4_extractfrom: 解压自
+txt_2_4_extractfrom: 提取自
 txt_2_4_hexp: 十六进制预览
 txt_2_4_operation: 操作
 txt_2_4_path: 路径不可写（比如不存在、只读）。要选择一个可写的输入路径吗？
@@ -605,20 +605,20 @@ txt_2_3_pw_errorchar: 在当前系统下 PeaLauncher 无法在密码中使用引
 txt_2_3_envstr: 显示环境变量
 txt_2_3_never_pw: 不再询问密码
 txt_2_3_home: 用户目录
-txt_2_3_on_pw: 在系统菜单的解压 / 列表 / 测试操作上：
-txt_2_3_test_pw100: 测试加密小于 100MB 的压缩文件
+txt_2_3_on_pw: 在系统菜单的提取 / 列表 / 测试操作上：
+txt_2_3_test_pw100: 测试加密小于 100MB 的归档文件
 txt_2_3_test_pw: 测试加密（可能较慢）
 txt_exclude_recourse: “排除”递归子目录
-txt_action_extopen: “解压后使用关联的程序打开”操作
+txt_action_extopen: “提取后使用关联的程序打开”操作
 txt_error_passwordnotmatch: 两次输入的密码不相同，请修改
 txt_action_preview: “使用关联的程序预览”操作
-txt_preview_hint: “预览”操作与“解压并打开”执行的任务相同，但是会在输出目录中创建临时路径，并在关闭压缩文件后自动删除它。
+txt_preview_hint: “预览”操作与“提取并打开”执行的任务相同，但是会在输出目录中创建临时路径，并在关闭归档文件后自动删除它。
 txt_better: （较好）
 txt_default2: （默认）
 txt_faster: （较快）
 txt_fastermem: （较快，内存占用较少）
 txt_tempdir: （PeaZip 临时工作文件夹）
-txt_stream: （由“流控制”设置）
+txt_stream: （由“流控制”设定）
 txt_slowermem: （较慢，占用内存较多）
 txt_store: （仅存储，最快）
 txt_newfolder: （在新文件夹中）
@@ -636,7 +636,7 @@ txt_attach5: 5 MB（附件大小）
 txt_cd650: 650 MB 光盘
 txt_7z_exitcode7: 7：错误：命令行不正确
 txt_cd700: 700 MB 光盘
-txt_type_description_7z: 7Z：功能丰富、压缩率高的压缩格式
+txt_type_description_7z: 7Z：功能丰富、压缩率高的归档格式
 txt_dvddl: 8.5 GB 双层 DVD
 txt_7z_exitcode8: 8：错误：内存不足，无法执行请求的操作
 txt_abort: 是否中止计划的文件复制 / 移动操作？
@@ -644,13 +644,13 @@ txt_about: 关于
 txt_action: 操作
 txt_action_hint: 使用关联程序打开或预览时的操作
 txt_add: 添加
-txt_add_existing_archive: 添加（如果压缩文件存在）
-txt_add_archive: 添加压缩文件
+txt_add_existing_archive: 添加（如果归档文件存在）
+txt_add_archive: 添加归档文件
 txt_add_files: 添加文件
 txt_add_folder: 添加文件夹
 txt_add_path: 添加路径
-txt_add_tolayout: 添加选定的文件和文件夹到压缩布局中
-txt_add_toarchive: 添加到压缩文件
+txt_add_tolayout: 添加选定的文件和文件夹到归档布局中
+txt_add_toarchive: 添加到归档文件
 txt_add_tobookmarks: 添加到书签
 txt_address_hint: 筛选器：允许使用 ? 和 * 通配符
 txt_adv_filters: 高级筛选器
@@ -664,29 +664,29 @@ txt_all_attributes: 相同属性
 txt_all_size: 文件大小
 txt_error_input_upx: 允许单个可执行文件作为输入
 txt_always_pw: 总是询问密码
-txt_ignore_ext: 对“解压并…”，总是忽略路径
-txt_ignore_disp: 对“解压显示的…”，总是忽略路径
-txt_ignore_sel: 对“解压选定的…”，总是忽略路径
-txt_key_hint: 将密钥文件的散列值添加到密码；PeaZip 和其他遵循相同标准的程序都可以解密此压缩文件，或者将散列值作为密码部分来输入
+txt_ignore_ext: 对“提取并…”，总是忽略路径
+txt_ignore_disp: 对“提取显示的…”，总是忽略路径
+txt_ignore_sel: 对“提取选定的…”，总是忽略路径
+txt_key_hint: 将密钥文件的散列值添加到密码；PeaZip 和其他遵循相同标准的程序都可以解密此归档文件，或者将散列值作为密码部分来输入
 txt_timestamp: 附加时间戳到文件名
 txt_appoptions: 程序选项
-txt_type_description_arc: ARC：实验性质的压缩程序，强大、高效且功能丰富
-txt_archive: 压缩文件
-txt_un7z_browse_ok: 压缩文件载入浏览成功
-txt_interface: 压缩文件浏览器界面
-txt_archivecreation: 压缩文件创建
-txt_tarbefore_hint: 先用 TAR 格式压缩，再用选定的格式压缩。
-txt_archive_hint: 压缩、压缩、分割和保密文件、文件夹和卷
-txt_compressionratio_hint: 压缩文件的压缩率
-txt_archiving: 正在压缩：
+txt_type_description_arc: ARC：实验性质的归档程序，强大、高效且功能丰富
+txt_archive: 归档文件
+txt_un7z_browse_ok: 归档文件载入浏览成功
+txt_interface: 归档文件浏览器界面
+txt_archivecreation: 归档文件创建
+txt_tarbefore_hint: 先用 TAR 格式归档，再用选定的格式归档。
+txt_archive_hint: 归档、压缩、分割和保密文件、文件夹和卷
+txt_compressionratio_hint: 归档文件的压缩率
+txt_archiving: 正在归档：
 txt_cl_long: 参数超过了 PeaZip 前端所能接受的最大数量，请少选一些输入文件（比如选择目录而不是单个文件）
 txt_overwrite_askbefore: 覆盖前询问（用于控制台模式）
 txt_associated: 关联的程序
 txt_attributes: 属性
 txt_author: 作者
 txt_ren_existing: 自动重命名已有的文件
-txt_ren_extracted: 自动重命名解压的文件
-txt_autofolder: 自动创建新文件夹用于解压文档？
+txt_ren_extracted: 自动重命名提取的文件
+txt_autofolder: 自动创建新文件夹用于提取文档？
 txt_back: 后退
 txt_backend: 后端程序用户界面
 txt_backupexe: 备份可执行文件（推荐）
@@ -696,14 +696,14 @@ txt_blowfish: Blowfish448（64 位块）
 txt_bookmarks: 书签
 txt_browse: 浏览
 txt_browser: 浏览器
-txt_aborted_error: 压缩文件载入浏览耗时太久，已停止。你可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；解压 / 列表 / 测试操作不受此操作影响。
+txt_aborted_error: 归档文件载入浏览耗时太久，已停止。你可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；提取 / 列表 / 测试操作不受此操作影响。
 txt_list_browsing: 浏览：
-txt_archive_root: 浏览：压缩文件根目录
+txt_archive_root: 浏览：归档文件根目录
 txt_type_description_bzip2: BZip2：十分强大的压缩比，速度一般
 txt_pw_empty: 请提供密码（或密钥文件）
-txt_add_error:不能添加、更新或删除对象；可能仅支持对此类压缩文件的浏览、解压，或不支持特定的操作（比如多卷或固实压缩），或 PeaZip 不能完全处理压缩名称
-txt_un7z_browse_failure: 不能浏览压缩文件
-txt_list_error: 不能列出压缩内容，请检查压缩文件是否有密码保护或者已经损坏。
+txt_add_error:不能添加、更新或删除对象；可能仅支持对此类归档文件的浏览、提取，或不支持特定的操作（比如多卷或固实压缩），或 PeaZip 不能完全处理归档名称
+txt_un7z_browse_failure: 不能浏览归档文件
+txt_list_error: 不能列出归档内容，请检查归档文件是否有密码保护或者已经损坏。
 txt_conf_cannotsave: 不能保存配置文件，请检查路径是否允许写入并且有剩余空间
 txt_check_hint: 检测非故意导致的数据损坏；散列算法也适用于检测恶意数据篡改（参见文档）
 txt_check: 计算文件校验码 / 散列值
@@ -728,13 +728,13 @@ txt_convert: 将磁盘转换成 NTFS 格式
 txt_copy: 复制
 txt_copyto: 复制到…
 txt_create: 创建
-txt_create_archive: 新建压缩文件
-txt_title_create: 创建压缩文件、压缩、加密、分割…
+txt_create_archive: 新建归档文件
+txt_title_create: 创建归档文件、压缩、加密、分割…
 txt_create_keyfile: 创建密钥文件
 txt_create_folder: 新建文件夹
 txt_create_theme: 从当前设置创建新主题
 txt_rr: 创建恢复记录
-txt_create_sfx: 创建自解压压缩
+txt_create_sfx: 创建自提取归档
 txt_cr_current: 当前路径或筛选器压缩率
 txt_custom: 自定义
 txt_type_description_custom: 自定义（高级用户）：输入可执行文件的名称和参数
@@ -779,7 +779,7 @@ txt_eqorolder: 等于或早于选定对象
 txt_eqorsmaller: 等于或小于选定对象
 txt_equal: 等于选定对象
 txt_erase_hint: 安全删除：使用随机数据覆盖、伪造大小、重命名，最终彻底删除
-txt_extraction_error: 解压缩选定对象出错。如果压缩文件有密码，请输入
+txt_extraction_error: 提取缩选定对象出错。如果归档文件有密码，请输入
 txt_exclude_hint: 排除文件，每个一行；可以使用 * 和 ? 通配符；不需要用 " 和 ' 分隔
 txt_exclusion_recourse: 排除筛选递归子目录
 txt_exclusion: 排除
@@ -789,30 +789,30 @@ txt_confirm_overwrite: 已存在；是否覆盖？（按“否”跳过）
 txt_explore_outpath: 浏览输出路径
 txt_explore_path: 浏览路径
 txt_ext: 扩展名：
-txt_caption_extract: 解压
-txt_ext_nopath: 解压（不包含路径）
-txt_ext_all: 全部解压
-txt_ext_allhere: 全部解压到此处
-txt_ext_allto: 全部解压到
-txt_extopen_custom: 解压并使用自定义的程序打开
-txt_extopen_with: 解压并用此程序打开…
-txt_ext_disp_here: 解压显示的对象到此处
-txt_ext_disp: 解压显示的对象
-txt_ext_disp_to: 解压显示的对象到…
-txt_ext_here: 解压到此处
-txt_ext_sel_here: 解压选定的对象到此处
-txt_ext_sel: 解压选定的对象
-txt_ext_sel_to: 解压选定对象到…
-txt_extobj: 解压对象
-txt_newfoldermenu: 解压到新文件夹
-txt_extto: 解压到…
+txt_caption_extract: 提取
+txt_ext_nopath: 提取（不包含路径）
+txt_ext_all: 全部提取
+txt_ext_allhere: 全部提取到此处
+txt_ext_allto: 全部提取到
+txt_extopen_custom: 提取并使用自定义的程序打开
+txt_extopen_with: 提取并用此程序打开…
+txt_ext_disp_here: 提取显示的对象到此处
+txt_ext_disp: 提取显示的对象
+txt_ext_disp_to: 提取显示的对象到…
+txt_ext_here: 提取到此处
+txt_ext_sel_here: 提取选定的对象到此处
+txt_ext_sel: 提取选定的对象
+txt_ext_sel_to: 提取选定对象到…
+txt_extobj: 提取对象
+txt_newfoldermenu: 提取到新文件夹
+txt_extto: 提取到…
 txt_level_fast: 快速
 txt_fastcompr: 快速压缩
-txt_fastopen: 快速打开例程，停止浏览超大的压缩文件，改用筛选器
+txt_fastopen: 快速打开例程，停止浏览超大的归档文件，改用筛选器
 txt_level_fastest: 最快
 txt_favformats: 常用格式
 txt_file: 文件
-txt_filebrowser: 文件浏览器 / 压缩浏览器
+txt_filebrowser: 文件浏览器 / 归档浏览器
 txt_filetools: 文件工具
 txt_files: 文件，
 txt_nfiles: 文件
@@ -824,7 +824,7 @@ txt_list_flat: 平面视图
 txt_unit_floppy: 软盘
 txt_foldername: 文件夹名称
 txt_nfolders: 文件夹
-txt_error_input_multi: 格式仅允许输入单个文件；您可以先使用“先用 TAR 打包”选项将输入保存为 .TAR 压缩，否则可以选择其它格式。提示：选择输入数据后再选择压缩格式，将自动设置“先用 TAR 打包”选项
+txt_error_input_multi: 格式仅允许输入单个文件；您可以先使用“先用 TAR 打包”选项将输入保存为 .TAR 归档，否则可以选择其它格式。提示：选择输入数据后再选择归档格式，将自动设置“先用 TAR 打包”选项
 txt_fwd: 前进
 txt_list_found: 找到
 txt_free: 可用
@@ -844,10 +844,10 @@ txt_gui: 图形界面
 txt_type_description_gzip: GZip：压缩速度快
 txt_here: 到此处
 txt_list_history: 历史记录
-txt_homeroot: 计算机 / 压缩文件根目录
-txt_quickbrowse_hint:如果浏览被停止，用户可以使用搜索和过滤功能缩小选择范围；解压缩 / 列表 / 测试功能不受此影响。
+txt_homeroot: 计算机 / 归档文件根目录
+txt_quickbrowse_hint:如果浏览被停止，用户可以使用搜索和过滤功能缩小选择范围；提取缩 / 列表 / 测试功能不受此影响。
 txt_backupexe_hint: 如果出错，导致非致命性结果，您可以从自动备份中恢复原始的可执行文件
-txt_attach: 如果邮件客户端支持此命令，压缩文件将被添加为新邮件的附件
+txt_attach: 如果邮件客户端支持此命令，归档文件将被添加为新邮件的附件
 txt_images: 图像
 txt_include_hint: 包含文件，每个一行；可使用 * 和 ? 通配符；不需要使用 " 和 ' 分隔
 txt_filters_hint: 用于 7z 程序的包含或排除过滤器，请仔细阅读 7-Zip 文档弄懂如何使用过滤器
@@ -866,10 +866,10 @@ txt_input: 输入：
 txt_integrity: 完整性检查
 txt_chunk_size: 自定义大小无效，请修改为数值
 txt_invertsel: 反选
-txt_type_exe: 是个 Windows 可执行文件，要运行它吗？（选“否”将尝试以压缩文件打开）提示：有些可执行文件在完整提取后才能正常运行
+txt_type_exe: 是个 Windows 可执行文件，要运行它吗？（选“否”将尝试以归档文件打开）提示：有些可执行文件在完整提取后才能正常运行
 txt_return_to_archive: 正在被打开；仍要浏览它吗?
 txt_not_accessible: 已不能访问
-txt_type_unsupported: 不是支持的压缩格式
+txt_type_unsupported: 不是支持的归档格式
 txt_checkname_failed: 名称无效。
 txt_not_accessible_list: 不能访问，请检查提供的文件列表是否正确且已更新
 txt_theme_create_error: 无法创建主题，请为文件夹取个有效名称作为主题名称，并选择一个可写的路径
@@ -918,14 +918,14 @@ txt_list_na: n/a
 txt_name: 名称
 txt_naming: 命名规则
 txt_unit_remote: 网络驱动器
-txt_newarchive: 新建压缩文件
+txt_newarchive: 新建归档文件
 txt_cnewfolder: 新建文件夹
 txt_news: 新闻
 txt_no: 否
 txt_noinput: 未收到可访问的输入
 txt_nocompress_hint: 不压缩（更快）
 txt_split_noinput: 未选定输入；请选择要分割的文件
-txt_open_noinput: 未选定输入；请选择一个压缩文件（多卷压缩文件则选第一个卷）
+txt_open_noinput: 未选定输入；请选择一个归档文件（多卷归档文件则选第一个卷）
 txt_list_nomatch: 不匹配
 txt_singlethread: 单线程
 txt_none2: 无
@@ -941,14 +941,14 @@ txt_on: 位于
 txt_ondblclick: 双击操作：
 txt_opacity: 透明度
 txt_open: 打开
-txt_openarchive: 打开压缩文件
-txt_title_open: 打开压缩文件、解密、合并…
+txt_openarchive: 打开归档文件
+txt_title_open: 打开归档文件、解密、合并…
 txt_open_bookmark: 打开书签
 txt_cphere: 在此打开命令提示符
 txt_open_file: 打开文件
 txt_open_files: 打开文件
 txt_open_path: 打开路径
-txt_opensource: 开源的便携压缩工具
+txt_opensource: 开源的便携归档工具
 txt_openwith: 打开方式…
 txt_aborted: 操作被中止
 txt_unit_cd: 光驱
@@ -965,7 +965,7 @@ txt_type_description_paq: PAQ：速度慢但极为强大的压缩算法
 txt_pio: 参数、输入、输出
 txt_poi: 参数、输出、输入
 txt_parameters: 参数：
-txt_error_partial: 当前压缩类型未实现部分解压功能
+txt_error_partial: 当前归档类型未实现部分提取功能
 txt_passes: 次数
 txt_pw: 密码
 txt_pwlength: 密码长度（4 至 64 个字符）
@@ -975,7 +975,7 @@ txt_paste: 粘贴
 txt_path: 路径：
 txt_pea_appcolor: 应用程序颜色
 txt_pea_textcolor: Pea 文本颜色
-txt_type_description_pea: PEA：注重安全性的压缩格式，压缩速度快
+txt_type_description_pea: PEA：注重安全性的归档格式，压缩速度快
 txt_peazip_new: PeaZip（新实例）
 txt_peazip_help: 在线支持
 txt_peazip_web: PeaZip 网站
@@ -985,7 +985,7 @@ txt_upxorstrip: 对二进制文件，请选择 Strip 和/或 UPX
 txt_not_removable_file: 请关闭正在使用的文件，以便 PeaZip 删除它：
 txt_not_removable: 请关闭正在使用的文件，以便 PeaZip 删除它所在的文件夹：
 txt_custom_executable_missing: 请提供自定义的可执行文件的名称
-txt_type_unsupported_select: 请选择支持的压缩类型：
+txt_type_unsupported_select: 请选择支持的归档类型：
 txt_no_theme_name: 请指定主题名称
 txt_please_wait: 请稍候
 txt_copy_wait: 在执行其他预定的同类型操作之前，请等待当前的预定的文件复制 / 移动操作完成
@@ -996,8 +996,8 @@ txt_quickdelete: 快速删除
 txt_quit: 退出
 txt_unit_ram: RAM 磁盘
 txt_read: 读取：
-txt_recentarchives: 最近访问的压缩文件
-txt_rr_hint: 恢复记录用于在数据损坏时尝试修复压缩文件
+txt_recentarchives: 最近访问的归档文件
+txt_rr_hint: 恢复记录用于在数据损坏时尝试修复归档文件
 txt_search_refine: 在结果中再筛选，支持 ? 和 * 通配符
 txt_fefreshf5: 刷新
 txt_release: 发布：
@@ -1009,7 +1009,7 @@ txt_rename: 重命名
 txt_caption_repair: 修复
 txt_restartrequired2: 需要重启程序才能生效
 txt_reset: 重置
-txt_reset_archivename: 重置压缩名称
+txt_reset_archivename: 重置归档名称
 txt_hardreset: 重置书签
 txt_reset_theme: 重置为内嵌的主题
 txt_restore_att: 恢复原始属性
@@ -1028,7 +1028,7 @@ txt_search: 搜索（递归），比较耗时
 txt_searchanddrag: 搜索并拖到此处
 txt_searchfor: 搜索
 txt_nrsearch: 搜索此处（不递归）
-txt_search_hint: 使用筛选器搜索压缩文件子目录中匹配的文件
+txt_search_hint: 使用筛选器搜索归档文件子目录中匹配的文件
 txt_search_web: 在网络中搜索
 txt_list_searching: 搜索…
 txt_securedelete: 安全删除
@@ -1037,11 +1037,11 @@ txt_selectall: 全选
 txt_selectdir: 选择目录
 txt_selected_obj: 选定
 txt_selected_objects: 选定的对象
-txt_sfx: 自解压
+txt_sfx: 自提取
 txt_sendbymail: 用邮件发送
-txt_set_defaults: 设置程序的默认参数
+txt_set_defaults: 设定程序的默认参数
 txt_settings: 设置
-txt_sfx_interface: 自解压程序界面
+txt_sfx_interface: 自提取程序界面
 txt_showhints: 显示提示
 txt_show_messages: 显示信息
 txt_showpw: 显示密码
@@ -1049,7 +1049,7 @@ txt_singlevol: 单个卷，不分割
 txt_size: 大小
 txt_sizeb: 大小（字节）
 txt_skip_existing: 跳过已有文件
-txt_slowercomp: 压缩较慢，但解压较快
+txt_slowercomp: 压缩较慢，但提取较快
 txt_smaller: 小于选定对象
 txt_solid: 固实
 txt_solid_block: 块大小
@@ -1074,8 +1074,8 @@ txt_syntax: 语法：
 txt_sysbenchmark: 系统基准程序
 txt_benchmark: 系统基准测试将耗用几分钟并使用所有可用的 CPU 和内存资源。在此期间，系统可能没有响应；继续吗？
 txt_systools: 系统工具
-txt_tarbefore: 先用 TAR 压缩
-txt_type_description_tar: TAR：UNIX 系统上的主流压缩格式
+txt_tarbefore: 先用 TAR 归档
+txt_type_description_tar: TAR：UNIX 系统上的主流归档格式
 txt_taskman: 任务管理器
 txt_caption_test: 测试
 txt_testall: 全部测试
@@ -1084,7 +1084,7 @@ txt_testpw: 测试密码 / 密钥文件
 txt_testsel: 测试选定的对象
 txt_col_hint: 应当选择可以和图标以及其它图形界面元素协调较好的颜色
 txt_bookmarks_hint: 在文件浏览器界面中点击“更多控制”和“切换历史记录 / 书签”，可以找到完整的可编辑列表
-txt_archive_noinput_tolist: 布局为空：请使用添加文件、添加文件夹或者载入布局来填充压缩布局
+txt_archive_noinput_tolist: 布局为空：请使用添加文件、添加文件夹或者载入布局来填充归档布局
 txt_theme: 主题
 txt_icons_found: 主题载入成功。
 txt_themename: 主题名称
@@ -1104,21 +1104,21 @@ txt_type: 类型
 txt_level_ultra: 超强
 txt_error_openfile: 无法打开指定的文件
 txt_cl_hint: UNACE 和 UPX 总是运行在控制台模式，列表、测试和基准测试任务总是运行在图形界面模式
-txt_ace_missing: UNACE 插件缺失；要处理 ACE 压缩文件，您可以从 PeaZip 网站下载此插件（因为 UNACE 封闭源代码，插件未被包括在基本安装包中）
+txt_ace_missing: UNACE 插件缺失；要处理 ACE 归档文件，您可以从 PeaZip 网站下载此插件（因为 UNACE 封闭源代码，插件未被包括在基本安装包中）
 txt_units: 设备
 txt_unit_unknown: 未知的驱动器类型
 txt_un7z_pw_untested: 未测试
 txt_up: 向上
-txt_update: 更新（如果压缩文件存在）
+txt_update: 更新（如果归档文件存在）
 txt_type_description_upx: UPX：仅用于压缩可执行文件
 txt_advfilters: 使用高级筛选器
-txt_openfiles_hint: 使用此选项可以将其它程序正在使用的文件强制包含在压缩文件中（在备份时很有用）
+txt_openfiles_hint: 使用此选项可以将其它程序正在使用的文件强制包含在归档文件中（在备份时很有用）
 txt_usenet: Usenet
 txt_user_name: 用户名；需要时格式为 用户名@域 或 域\用户名。
 txt_using: 使用：
 txt_volumepea: 卷控制
 txt_volume_size: 卷大小
-txt_type_ext_uns: 被成功解压
+txt_type_ext_uns: 被成功提取
 txt_websearch: 网络搜索
 txt_websites: 网站
 txt_word: 字
@@ -1126,7 +1126,7 @@ txt_write: 写入：
 txt_ramdompw_hint: 您可以从此处复制随机生成的密码
 txt_exe_hint: 对于自定义压缩，您可以自由输入可执行程序的名称和参数，并选择语法结构。请注意，您也可以在“控制台”标签中手动修改命令的语法。
 txt_pj_hint2: 在下面的备注区域，您可以从图形界面前端导入任务的定义。之后，您可以编辑、启动或保存它，且不会修改或删除任务定义。
-txt_type_description_zip: ZIP：快速的压缩 / 压缩格式， Windows 系统主流格式
+txt_type_description_zip: ZIP：快速的归档 / 压缩格式， Windows 系统主流格式
 txt_zipcrypto_hint: ZipCrypto（已过时）
 
 === end PeaZip text group ===
@@ -1155,12 +1155,12 @@ txt_5_3_list: 列表
 txt_5_3_os: 原始大小
 txt_5_3_ps: 打包后大小
 txt_5_3_test: 测试
-txt_5_0_extract: 解压
+txt_5_0_extract: 提取
 txt_5_0_from: 从
 txt_5_0_in: 在
 txt_5_0_to: 到
 txt_4_5_search: 搜索
-txt_4_0_drag: 拖拽压缩文件到此处解压，或
+txt_4_0_drag: 拖拽归档文件到此处提取，或
 txt_4_0_dragorselect: 拖拽到此处或选择文件
 txt_4_0_select: 选择文件
 txt_3_6_selectdir: 选择目录
@@ -1168,18 +1168,18 @@ txt_3_5_close: 关闭
 txt_3_0_details: 更多详细信息，请参阅“报告”页面中的任务日志，和“控制台”页面中命令行形式的任务定义。
 txt_3_0_hints: 提示错误信息
 txt_3_0_arc: 某些输入文件无法被读取（可能被锁定、无法访问或已损坏）
-txt_3_0_ext: 此压缩文件可能需要另一串密码来执行当前操作
+txt_3_0_ext: 此归档文件可能需要另一串密码来执行当前操作
 txt_2_8_oop: 任务完成时打开输出路径
 txt_2_7_validatefn: 操作停止，发现无效的文件名：
 txt_2_7_validatecl: 操作停止，检测到可能有危害的命令（比如此程序不允许的命令连接）：
-txt_2_6_open: 打开压缩文件
-txt_2_5_ace_missing: 缺失 UNACE 插件；要处理 ACE 压缩文件，您可以从 PeaZip 的网站上下载此插件（由于 UNACE 封闭源代码，此插件不包含在基本软件包中）
+txt_2_6_open: 打开归档文件
+txt_2_5_ace_missing: 缺失 UNACE 插件；要处理 ACE 归档文件，您可以从 PeaZip 的网站上下载此插件（由于 UNACE 封闭源代码，此插件不包含在基本软件包中）
 txt_2_3_pw_errorchar_gwrap: 在当前系统下 PeaLauncher 无法在密码中使用引号，请修改密码或者在选项 > 设置中的后端程序用户界面里选择控制台模式
 txt_2_3_renameexisting: 自动重命名已有文件
-txt_2_3_renameextracted: 自动重命名已解压文件
+txt_2_3_renameextracted: 自动重命名已提取文件
 txt_2_3_cancel: 取消
 txt_2_3_encryption: 加密
-txt_2_3_extinnew: 解压到新文件夹
+txt_2_3_extinnew: 提取到新文件夹
 txt_2_3_keyfile: 密钥文件
 txt_2_3_kf_not_found_gwrap: 找不到或不能读取密钥文件。请选择其它密钥文件。
 txt_2_3_moreoptions: 更多选项…
@@ -1208,7 +1208,7 @@ txt_done: 完成：
 txt_nocl: 空命令行
 txt_error: 错误：
 txt_explore: 浏览
-txt_extto: 解压到
+txt_extto: 提取到
 txt_halt: 任务完成时关闭系统
 txt_halted: 关闭：
 txt_hardware: 硬件
@@ -1254,58 +1254,58 @@ txt_time: 时间：
 
 === about text group ===
 
-【解压缩】
+【提取缩】
 在系统中
-——右击压缩文件，在右键菜单中选择“解压到此处”或“解压到此处（到新文件夹中）”来直接解压缩
-——另外，请使用“解压…”菜单可以有更多选项：输出路径，密码，解压到新文件夹，选择忽略、重命名或覆盖已有的文件等。
+——右击归档文件，在右键菜单中选择“提取到此处”或“提取到此处（到新文件夹中）”来直接提取缩
+——另外，请使用“提取…”菜单可以有更多选项：输出路径，密码，提取到新文件夹，选择忽略、重命名或覆盖已有的文件等。
 
-在 PeaZip 中打开压缩文件，比如双击压缩文件，或者拖拽压缩文件到 PeaZip 窗口或图标上
-——点击工具栏或右键菜单中的“解压”可以解压选定的对象，在确认对话框中可以设置所有选项（输出路径、密码、命名规则、解压到新文件夹等）
-——拖拽文件或文件夹到目标位置，仅解压选定的内容（更多信息详见 PeaZip 中的拖拽章节）
-——点击工具栏中“解压”右侧的快速解压下拉按钮，可以直接解压整个压缩文件到常用的几个位置（且跳过确认对话框）以及设置更多重要选项；使用快捷键：Ctrl+E（或 F12）可以解压整个压缩文件，需要指定输出路径；Ctrl+Alt+E 解压文档到当前文件夹；Ctrl+Shift+E 解压到桌面；Ctrl+Alt+Shift+E 解压到文档文件夹中；Ctrl+1..8 解压到书签中的 1..8 路径（如果已经定义）
+在 PeaZip 中打开归档文件，比如双击归档文件，或者拖拽归档文件到 PeaZip 窗口或图标上
+——点击工具栏或右键菜单中的“提取”可以提取选定的对象，在确认对话框中可以设置所有选项（输出路径、密码、命名规则、提取到新文件夹等）
+——拖拽文件或文件夹到目标位置，仅提取选定的内容（更多信息详见 PeaZip 中的拖拽章节）
+——点击工具栏中“提取”右侧的快速提取下拉按钮，可以直接提取整个归档文件到常用的几个位置（且跳过确认对话框）以及设置更多重要选项；使用快捷键：Ctrl+E（或 F12）可以提取整个归档文件，需要指定输出路径；Ctrl+Alt+E 提取文档到当前文件夹；Ctrl+Shift+E 提取到桌面；Ctrl+Alt+Shift+E 提取到文档文件夹中；Ctrl+1..8 提取到书签中的 1..8 路径（如果已经定义）
 
-直接打开 PeaZip，选择一或多个压缩文件，点击工具栏或右键菜单中的“解压”，或者使用上一点提到的快速解压下拉菜单。
+直接打开 PeaZip，选择一或多个归档文件，点击工具栏或右键菜单中的“提取”，或者使用上一点提到的快速提取下拉菜单。
 
-【仅解压压缩中的选定文件】
-在 PeaZip 中打开压缩文件，比如双击压缩文件，或者拖拽压缩文件到 PeaZip 的窗口或图标上
-——点击工具栏中的“解压”可以只解压选定的项目
-——拖拽选定的文件或文件夹到目标位置，仅解压选定的内容
-——右击弹出右键菜单，点击“解压”菜单组中的“解压选定的项目”（仅解压选定项目）或“解压显示的项目”（解压当前文件夹中或当前搜索筛选出的内容）
+【仅提取归档中的选定文件】
+在 PeaZip 中打开归档文件，比如双击归档文件，或者拖拽归档文件到 PeaZip 的窗口或图标上
+——点击工具栏中的“提取”可以只提取选定的项目
+——拖拽选定的文件或文件夹到目标位置，仅提取选定的内容
+——右击弹出右键菜单，点击“提取”菜单组中的“提取选定的项目”（仅提取选定项目）或“提取显示的项目”（提取当前文件夹中或当前搜索筛选出的内容）
 
-【输入密码以浏览或解压压缩文件】
+【输入密码以浏览或提取归档文件】
 点击挂锁图标来输入密码或选择密钥文档。
-图标存在于 PeaZip 文件浏览器的状态栏和压缩解压界面中； 一旦为压缩文件设置了密码，图标颜色将改变。
+图标存在于 PeaZip 文件浏览器的状态栏和归档提取界面中； 一旦为归档文件设置了密码，图标颜色将改变。
 
-【创建压缩文件】
+【创建归档文件】
 在系统中
-——右击想压缩的对象，点击右键菜单或“发送到”菜单中的“添加到压缩文件”。这将打开创建对话框，在“高级”标签中有更多选项可用；点击“确定”即可完成创建。
-——另外，拖拽文件或文件夹到 PeaZip 窗口或快捷方式上，同样会出现压缩文件创建窗口。
+——右击想归档的对象，点击右键菜单或“发送到”菜单中的“添加到归档文件”。这将打开创建对话框，在“高级”标签中有更多选项可用；点击“确定”即可完成创建。
+——另外，拖拽文件或文件夹到 PeaZip 窗口或快捷方式上，同样会出现归档文件创建窗口。
 
 在 PeaZip 中
-——选择想要压缩的对象，点击“添加”按钮，同样会出现压缩文件创建窗口。
+——选择想要归档的对象，点击“添加”按钮，同样会出现归档文件创建窗口。
 
-【添加文件或文件夹到已有的压缩文件中】
-在 PeaZip 中打开压缩文件（比如双击，或者拖拽压缩文件到 PeaZip 窗口或图标上），然后拖拽文件或文件夹到压缩文件中即可（或者点击“添加”按钮，使用程序的右键菜单来添加对象到压缩文件）。
-这将打开压缩文件创建对话框，点击确定即可完成添加。
+【添加文件或文件夹到已有的归档文件中】
+在 PeaZip 中打开归档文件（比如双击，或者拖拽归档文件到 PeaZip 窗口或图标上），然后拖拽文件或文件夹到归档文件中即可（或者点击“添加”按钮，使用程序的右键菜单来添加对象到归档文件）。
+这将打开归档文件创建对话框，点击确定即可完成添加。
 
-【创建分卷压缩——把一个压缩文件分割成多个小压缩文件】
-在压缩文件创建步骤中，点击对话框中的“单个卷”下拉菜单，可以选择输出文件（卷）的大小以分割压缩文件。
+【创建分卷压缩——把一个归档文件分割成多个小归档文件】
+在归档文件创建步骤中，点击对话框中的“单个卷”下拉菜单，可以选择输出文件（卷）的大小以分割归档文件。
 许多常见的压缩类型都支持此选项。
 
-【创建加密压缩文件】
-点击挂锁图标可以输入密码或密钥文件；PeaZip 文件浏览器的状态栏和压缩文件创建界面都有挂锁图标。
-要隐藏压缩文件中的文件和目录的名称，请勾选“加密文件名”。仅部分压缩格式支持此功能，比如7Z、ARC。
-在压缩文件创建界面，如果设置了加密或者当前选用的压缩格式支持加密，挂锁图标就会出现。
+【创建加密归档文件】
+点击挂锁图标可以输入密码或密钥文件；PeaZip 文件浏览器的状态栏和归档文件创建界面都有挂锁图标。
+要隐藏归档文件中的文件和目录的名称，请勾选“加密文件名”。仅部分压缩格式支持此功能，比如7Z、ARC。
+在归档文件创建界面，如果设置了加密或者当前选用的压缩格式支持加密，挂锁图标就会出现。
 
-【创建单独的压缩文件——每个对象各自生成一个压缩文件】
-添加想要压缩的对象（使用系统的右键菜单或“发送到”菜单，或者在 PeaZip 中点击“添加”按钮），在点击“确定”之前，选择“添加每个对象到单独的压缩文件中”选项。
+【创建单独的归档文件——每个对象各自生成一个归档文件】
+添加想要归档的对象（使用系统的右键菜单或“发送到”菜单，或者在 PeaZip 中点击“添加”按钮），在点击“确定”之前，选择“添加每个对象到单独的归档文件中”选项。
 
-【转换压缩文件】
-从 PeaZip 中选择要转换的压缩文件，选择工具栏或右键菜单中的“转换”，未压缩的文件和文件夹也可以选上，在压缩文件中的内容会在重新压缩之前先解压。
-同时选定“转换已有的压缩文件”选项与“添加每个对象到单独的压缩文件”（默认）选项的话，所选压缩文件将分别转换。去掉第二个选项则表示合并所有输入数据到单个压缩内，可以提高压缩效率，因为它允许原始数据从它未压缩的形式重新压缩。
+【转换归档文件】
+从 PeaZip 中选择要转换的归档文件，选择工具栏或右键菜单中的“转换”，未归档的文件和文件夹也可以选上，在归档文件中的内容会在重新压缩之前先提取。
+同时选定“转换已有的归档文件”选项与“添加每个对象到单独的归档文件”（默认）选项的话，所选归档文件将分别转换。去掉第二个选项则表示合并所有输入数据到单个归档内，可以提高压缩效率，因为它允许原始数据从它未压缩的形式重新压缩。
 
-【直接创建指定格式与压缩率的压缩文件】
-在“选项”菜单中选择“系统集成”以后，就可以在文件或文件夹上右击，直接将其打包成 ZIP、7Z 或自解压格式的压缩文件。
+【直接创建指定格式与压缩率的归档文件】
+在“选项”菜单中选择“系统集成”以后，就可以在文件或文件夹上右击，直接将其打包成 ZIP、7Z 或自提取格式的归档文件。
 对于 ZIP 和 7Z 格式，可以在右键菜单中选择快速、正常或超级压缩，从而忽略该格式的默认压缩率。
 
 【密码管理器】
@@ -1331,13 +1331,13 @@ F8	浏览书签列表中的第一个项目（Ctrl 查看第二个，Shift 查看
 F9	设置密码或密钥文件 / Shift+F9 密码管理器 / Ctrl+F9 创建密钥文件或随机密码  / Ctrl+Shift+F9 设置高级筛选器
 F10	菜单 / Ctrl+F10 以其他用户身份运行 / Alt+F10 以管理员身份运行（Windows Vista 以及更新的系统）
 F11	切换全屏模式 / Ctrl+F11 沉浸模式
-F12	全部解压到…
+F12	全部提取到…
 
 【关于 PeaZip】
 
-PeaZip 是跨平台、开源的开源文件和压缩管理器，提供了便携版、32 和 64 位的 Windows (9x, 2k, XP, Vista) 安装程序和 Linux 安装包（PeaZip 为桌面中立的应用程序）。
+PeaZip 是跨平台、开源的开源文件和归档管理器，提供了便携版、32 和 64 位的 Windows (9x, 2k, XP, Vista) 安装程序和 Linux 安装包（PeaZip 为桌面中立的应用程序）。
 
-PeaZip 拥有可筛选压缩内容的强大的多重刷选器；一次能够处理多个压缩文件；创建自解压压缩；输出以命令行定义的任务；保存压缩和解压布局；添加压缩和文件夹书签；扫描和以自定义的应用程序打开（未）压缩过的文件等等……
+PeaZip 拥有可筛选归档内容的强大的多重刷选器；一次能够处理多个归档文件；创建自提取归档；输出以命令行定义的任务；保存归档和提取布局；添加归档和文件夹书签；扫描和以自定义的应用程序打开（未）压缩过的文件等等……
 
 其他功能：强加密算法、可靠的文件复制、分割 / 合并文件（文件范围）、安全擦除、比较、校验和计算文件散列、系统基准测试、生成随机密码和密钥文件。
 
