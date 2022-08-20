@@ -6,17 +6,17 @@ clWindow
 $00CC5511
 clAppWorkspace
 clWindowText
-01
+00001020
 100
 4
 0
 [language]
 default.txt
 ,
-[pealauncher: 0: always keep open for inspection of reports 1: (default) keep open only for errors, list, test operations 2: keep open only for errors, list 3: never keep open for inspection]
+[0: always keep open task window for inspection of reports 1: (default) keep open only for errors, list, test operations 2: keep open only for errors, list 3: never keep open for inspection]
 1
 
-[pealauncher: open output directory when job ends]
+[open output directory when task ends]
 0
 
 [console binaries interface]
@@ -242,7 +242,7 @@ PeaZip
 72
 144
 48
-144
+72
 0
 
 [extract to new folder]
@@ -675,7 +675,7 @@ Computer's root
 0
 0
 1
-144
+72
 
 [preferred checksum and hash algorithms]
 CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
@@ -708,3 +708,22 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 [show search bar, and position]
 0
 800
+
+[7z backend, propagate Zone.Identifier stream to extracted files (Windows)]
+1
+
+[TAR standard]
+0
+
+[timestamp precision]
+0
+
+[7z backend, store owner/group ids and names in TAR archives (Linux)
+0
+0
+
+[test archives after creation, for supported formats]
+0
+
+[tool bar large icon size]
+1
