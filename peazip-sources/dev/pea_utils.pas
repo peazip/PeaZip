@@ -506,9 +506,9 @@ if evalcolor(baseformcol)>128 then
    begin
    pltextaccent:=modpropcolor(baselinkcol,160,0);
    pblue:=modpropcolor(basappcol,-60,0);
-   pvlblue:=modpropcolor(basappcol,80,0);
+   pvlblue:=modpropcolor(basappcol,100,0);
    pvvlblue:=modpropcolor(basappcol,160,0);
-   pvvvlblue:=modpropcolor(basappcol,200,0);
+   pvvvlblue:=modpropcolor(basappcol,210,0);
    colhigh:=colortostring(modpropcolor(baseformcol,-28,temperature));
    colmid:=colortostring(modpropcolor(baseformcol,-20,temperature));
    collow:=colortostring(modpropcolor(baseformcol,-10,temperature));

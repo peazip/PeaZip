@@ -192,20 +192,18 @@ type
     cbAutoOpen: TCheckBox;
     CheckBoxHalt: TCheckBox;
     ImageButton2: TLabel;
-    Imagefixed: TImage;
     ImageSavePJ: TLabel;
     ImageKeep: TLabel;
-    Imagestatus: TImage;
     Button1: TBitBtn;
     ButtonStop: TBitBtn;
     ButtonPause: TBitBtn;
+    Imagestatus: TImage;
     l1: TLabel;
     l2: TLabel;
     l3: TLabel;
     l4: TLabel;
     l5: TLabel;
     l6: TLabel;
-    l7: TLabel;
     Label1: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -226,6 +224,7 @@ type
     LabelWarning1: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
+    PanelTitlePLTabAlign: TPanel;
     PanelTitlePLTab: TPanel;
     pm2pause: TMenuItem;
     pm2cancel: TMenuItem;
@@ -313,7 +312,6 @@ type
     procedure pmeiClick(Sender: TObject);
     procedure pmeoClick(Sender: TObject);
     procedure pmexploreClick(Sender: TObject);
-    procedure pmkeeperrClick(Sender: TObject);
     procedure pmsearchClick(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure TrayIcon1Click(Sender: TObject);
@@ -349,10 +347,10 @@ const
 var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
-  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature:integer;
+  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature,alttabstyle:integer;
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore:boolean;
   pautoclose:byte;
-  Barchive,Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
+  Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
   Bpriority1,Bpriority2,Bpriority3,Bpriority4,
   Bsuccess,Berror: TBitmap;
   cl,cl1,outpath,executable_path,resource_path,binpath,sharepath,graphicsfolder,dummy,Color1,Color2,Color3,
@@ -401,6 +399,7 @@ var
   txt_crscale,txt_done,txt_halted,txt_error,txt_hardware,txt_software,txt_resume,
   txt_stdjob,txt_benchmarkjob,txt_defragjob,txt_consolejob,lang_file,lver,wincomspec,
   winver:ansistring;
+  tabpencol,tabbrushcol,tabbrushhighcol:tcolor;
   {$IFDEF MSWINDOWS}
   //semaphore
   psem: THandle;
@@ -452,10 +451,11 @@ end;
 procedure exitlabel_launcher(var a: TLabel; var b:TShape);
 begin
 if activelabel_launcher=a then exit;
-b.Brush.Color:=StringToColor(colmid);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 a.Font.Color:=pGray;
+if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_launcher;
@@ -484,9 +484,10 @@ procedure clicklabel_launcher(var a: TLabel; var b:TShape);
 begin
 activelabel_launcher:=a;
 deselectlabels_launcher;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline];
 b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=StringToColor(colhigh);
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 setlabelpanel_launcher(a);
 end;
@@ -494,10 +495,10 @@ end;
 procedure enterlabel_launcher(var a: TLabel; var b:TShape);
 begin
 if activelabel_launcher=a then exit;
-b.Brush.Color:=StringToColor(colhigh);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushhighcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
 end;
 
 ///
@@ -805,6 +806,7 @@ procedure apply_theme;
 begin
    Form_gwrap.Label1.Font.Color:=pGray;//clInactiveCaptionText;
    Form_gwrap.Label5.Font.Color:=pGray;//clInactiveCaptionText;
+   Form_gwrap.l6.Font.Color:=pGray;//clInactiveCaptionText;
    Form_gwrap.Label6.Font.Color:=pGray;//clInactiveCaptionText;
    Form_gwrap.Labeli.Font.Color:=pGray;//clInactiveCaptionText;
    Form_gwrap.Labelo.Font.Color:=pGray;//clInactiveCaptionText;
@@ -831,7 +833,6 @@ var
 begin
 with Form_gwrap do
    try
-   Imagefixed.Picture.Bitmap:=Barchive;
    Imagestatus.Picture.Bitmap:=Bp1;
    except
    end;
@@ -1155,7 +1156,7 @@ case optype of
    Form_gwrap.l1.Caption:=(s1);
    Form_gwrap.l2.Caption:=(s);
    Form_gwrap.l2.Hint:=(extractfilepath(in_name));
-   Form_gwrap.l3.Caption:=txt_5_0_to+' ';
+   Form_gwrap.l3.Caption:=' '+txt_5_0_to+' ';
    Form_gwrap.l4.Caption:=(s2);
    Form_gwrap.l4.Hint:=(extractfilepath(outpath));
    pcapt:=Form_gwrap.l1.Caption+Form_gwrap.l2.Caption+' '+Form_gwrap.l3.Caption+Form_gwrap.l4.Caption;
@@ -1187,11 +1188,12 @@ if pfromnativedrag=true then
    begin
    Form_gwrap.l3.Visible:=false;
    Form_gwrap.l4.Visible:=false;
-   Form_gwrap.l6.Caption:='('+txt_7_8_dd+')';
+   Form_gwrap.l6.Caption:=txt_7_8_dd;
    Form_gwrap.l6.Visible:=true;
    Form_gwrap.pmeo.Visible:=false;
    Form_gwrap.pm2eo.Visible:=false;
    end;
+if Form_gwrap.l6.Caption<>'' then Form_gwrap.l6.visible:=true else Form_gwrap.l6.visible:=false;
 setiomenu;
 end;
 
@@ -1525,6 +1527,7 @@ if cl='' then
    Application.Terminate;
    end;
 Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
+Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
 clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1);
 if insize>0 then
    if (pinsize>0) and (pinsize<>insize) then Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize),filesizebase)+' / '+nicenumber(inttostr(insize),filesizebase)
@@ -1557,7 +1560,7 @@ pcount:=1;
 stri:='';
 astri:='';
 bstri:='';
-Form_gwrap.l5.Caption:=' ';
+if modeofuse<>2 then Form_gwrap.l5.Caption:='0% ' else Form_gwrap.l5.Caption:='';
 Form_gwrap.Caption:=pprogn+' '+pcapt;
 Form_gwrap.TrayIcon1.Hint:=Form_gwrap.Caption;
 Form_gwrap.pm2restore.Caption:=Form_gwrap.Caption;
@@ -1769,6 +1772,7 @@ end;
 tdiff:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if tdiff<=0 then tdiff:=100000;
 if pproglast=true then if exit_code<>0 then Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
+Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
 clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1);
 {$IFNDEF MSWINDOWS}
 if stopped=true then exit_code:=255;
@@ -1917,6 +1921,7 @@ if Form_gwrap.CheckBoxHalt.State=cbChecked then
 if autoopen=1 then
    if (modeofuse<>1) and (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then explore_out;
 Form_gwrap.LabelTitle4.Visible:=false;
+Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width;
 end;
 
 case pautoclose of
@@ -2131,6 +2136,7 @@ if ppause=false then
    Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
    Form_gwrap.pm2pause.Caption:=txt_pause;
    Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
+   Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
    Form_gwrap.ShapeProgress.Color:=PGREEN;
    Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
    end
@@ -2146,6 +2152,7 @@ else
    Form_gwrap.ButtonPause.Caption:='   '+txt_resume+'   ';
    Form_gwrap.pm2pause.Caption:=txt_resume;
    Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
+   Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
    Form_gwrap.ShapeProgress.Color:=PYELLOW;
    Form_gwrap.ShapeGlobalProgress.Color:=PYELLOW;
    end;
@@ -2528,11 +2535,6 @@ end;
 procedure TForm_gwrap.pmexploreClick(Sender: TObject);
 begin
 do_explorepath;
-end;
-
-procedure TForm_gwrap.pmkeeperrClick(Sender: TObject);
-begin
-
 end;
 
 procedure TForm_gwrap.pmsearchClick(Sender: TObject);

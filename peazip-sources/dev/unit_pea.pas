@@ -190,6 +190,7 @@ unit Unit_pea;
                                 RECYCLE option of WIPE function ported to macOS, move item(s) to Trash
  1.07     20220402  G.Tani      New UI layout and theme
  1.08     20220620  G.Tani      Updated theme, can now use custom CSV separator, fixes
+ 1.09     20220808  G.Tani      Updated theming engine
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -416,7 +417,7 @@ var
    fshown:boolean;
    //theming
    conf:text;
-   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,gridaltcolor,highlighttabs,temperature:integer;
+   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,alttabstyle,ensmall,gridaltcolor,highlighttabs,temperature:integer;
    executable_path,resource_path,binpath,sharepath,persistent_source,color1,color2,color3,color4,color5:string;
    csvsep:ansistring;
 
@@ -7477,22 +7478,35 @@ begin
 for i:=1 to nlines do readln(conf,dummy);
 end;
 
-procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs:integer);
+procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall:integer);
 begin
-if length(s)<2 then
+if length(s)<8 then
    begin
-   usealtcolor:=strtoint(s);//use alternate colors in grids
-   highlighttabs:=1;//use alternate color for tabs
+   usealtcolor:=0;
+   highlighttabs:=0;
+   accenttoolbar:=0;
+   toolcentered:=0;
+   altaddressstyle:=1;
+   solidaddressstyle:=0;
+   alttabstyle:=2;
+   ensmall:=0;
    end
 else
    begin
    usealtcolor:=strtoint(s[1]);//use alternate colors in grids
    highlighttabs:=strtoint(s[2]);//use alternate color for tabs
+   accenttoolbar:=strtoint(s[3]);//use accent color in tool bar
+   toolcentered:=strtoint(s[4]);//centered buttons in tool bar
+   altaddressstyle:=strtoint(s[5]);//use alternative address bar style
+   solidaddressstyle:=strtoint(s[6]);//solid address bar style
+   alttabstyle:=strtoint(s[7]);//use alternative tabs style
+   ensmall:=strtoint(s[8]);//enlarge small icons
    end;
 end;
 
 var
    s,dummy:ansistring;
+   dummyint:integer;
 begin
 fshown:=false;
 executable_path:=extractfilepath((paramstr(0)));
@@ -7555,7 +7569,7 @@ try
    readln(conf,color3);
    readln(conf,color4);
    readln(conf,color5);
-   readln(conf,dummy); decodebintheming(dummy,gridaltcolor,highlighttabs);
+   readln(conf,dummy); decodebintheming(dummy,gridaltcolor,highlighttabs,dummyint,dummyint,dummyint,dummyint,alttabstyle,ensmall);
    readln(conf,dummy); pzooming:=strtoint(dummy);
    readln(conf,dummy); pspacing:=strtoint(dummy);
    readln(conf,dummy); temperature:=strtoint(dummy);
@@ -7584,11 +7598,14 @@ except
    pzooming:=100;
    pspacing:=4;
    gridaltcolor:=0;
-   highlighttabs:=1;
+   highlighttabs:=0;
+   alttabstyle:=2;
+   ensmall:=0;
 end;
 Unit_report.color1:=color1;
 Unit_report.color2:=color2;
 Unit_report.csvsep:=csvsep;
+Unit_report.alttabstyle:=alttabstyle;
 Form_pea.LabelOpen.visible:=false;
 if (opacity<100) then
    begin
@@ -7635,7 +7652,9 @@ Form_report.Width:=800*qscale div 100;
 Form_report.Height:=420*qscale div 100;
 //tabs
 tabheight:=36*qscale div 100;
-tablabelheight:=32*qscale div 100;
+if alttabstyle=2 then tablabelheight:=32
+else tablabelheight:=24;
+tablabelheight:=(tablabelheight*qscale) div 100;//32 or 24
 tabheightl:=48*qscale div 100;
 Form_report.PanelTitleRep.Height:=tabheight;
 Form_report.ShapeTitleRepb1.Height:=tablabelheight;
@@ -7674,15 +7693,28 @@ Form_report.ShapeTitleREPb2.Brush.Color:=StringToColor(colmid);
 Form_report.PanelTitleREPTab.Color:=StringToColor(colhigh);
 Form_report.LabelSaveTxt.Font.Color:=ptextaccent;
 Form_report.LabelSaveTxt1.Font.Color:=ptextaccent;
-if highlighttabs=1 then
-   begin
-   PanelUtilsTitle.Color:=stringtocolor(collow);
-   Form_report.PanelTitleREP.Color:=stringtocolor(collow);
-   end
-else
-   begin
-   PanelUtilsTitle.Color:=stringtocolor(color2);
-   Form_report.PanelTitleREP.Color:=stringtocolor(color2);
+case highlighttabs of
+   0: begin
+      PanelUtilsTitle.Color:=stringtocolor(color2);
+      Form_report.PanelTitleREP.Color:=stringtocolor(color2);
+      Unit_report.tabpencol:=StringToColor(colhigh);
+      Unit_report.tabbrushcol:=StringToColor(colmid);
+      Unit_report.tabbrushhighcol:=StringToColor(colhigh);
+      end;
+   1: begin
+      PanelUtilsTitle.Color:=stringtocolor(collow);
+      Form_report.PanelTitleREP.Color:=stringtocolor(collow);
+      Unit_report.tabpencol:=StringToColor(colhigh);
+      Unit_report.tabbrushcol:=StringToColor(colmid);
+      Unit_report.tabbrushhighcol:=StringToColor(colhigh);
+      end;
+   2: begin
+      PanelUtilsTitle.Color:=pvvlblue;
+      Form_report.PanelTitleREP.Color:=pvvlblue;
+      Unit_report.tabpencol:=pvvlblue;
+      Unit_report.tabbrushcol:=pvvvlblue;
+      Unit_report.tabbrushhighcol:=pvlblue;
+      end;
    end;
 if gridaltcolor=1 then
    begin

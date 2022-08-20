@@ -1,12 +1,13 @@
 object Form_report: TForm_report
   Left = 159
-  Height = 420
+  Height = 525
   Top = 156
-  Width = 800
+  Width = 1000
   Caption = 'Report'
-  ClientHeight = 420
-  ClientWidth = 800
+  ClientHeight = 525
+  ClientWidth = 1000
   Color = clWindow
+  DesignTimePPI = 120
   Icon.Data = {
     7E03000000000100010010100000010018006803000016000000280000001000
     0000200000000100180000000000000300006400000064000000000000000000
@@ -40,6 +41,7 @@ object Form_report: TForm_report
   }
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poScreenCenter
   ShowHint = True
   LCLVersion = '2.2.0.4'
@@ -48,10 +50,10 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Label3
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = Panelsp0
-    Left = 12
-    Height = 15
-    Top = 357
-    Width = 776
+    Left = 15
+    Height = 20
+    Top = 445
+    Width = 970
     Anchors = [akLeft, akRight, akBottom]
     Caption = ' '
   end
@@ -60,12 +62,12 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Label2
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = Label4
-    Left = 12
-    Height = 15
-    Top = 336
-    Width = 776
+    Left = 15
+    Height = 20
+    Top = 417
+    Width = 970
     Anchors = [akLeft, akRight, akBottom]
-    BorderSpacing.Bottom = 6
+    BorderSpacing.Bottom = 8
     Caption = ' '
   end
   object Label2: TLabel
@@ -73,12 +75,12 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Label1
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = Label3
-    Left = 12
-    Height = 15
-    Top = 315
-    Width = 776
+    Left = 15
+    Height = 20
+    Top = 389
+    Width = 970
     Anchors = [akLeft, akRight, akBottom]
-    BorderSpacing.Bottom = 6
+    BorderSpacing.Bottom = 8
     Caption = ' '
   end
   object Label1: TLabel
@@ -87,14 +89,14 @@ object Form_report: TForm_report
     AnchorSideRight.Control = Notebook1
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Label2
-    Left = 12
-    Height = 15
-    Top = 294
-    Width = 776
+    Left = 15
+    Height = 20
+    Top = 361
+    Width = 970
     Anchors = [akLeft, akRight, akBottom]
-    BorderSpacing.Left = 12
-    BorderSpacing.Right = 12
-    BorderSpacing.Bottom = 6
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
+    BorderSpacing.Bottom = 8
     Caption = ' '
   end
   object Button2: TBitBtn
@@ -102,13 +104,13 @@ object Form_report: TForm_report
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelsp0
     AnchorSideBottom.Side = asrCenter
-    Left = 715
-    Height = 25
-    Top = 383
-    Width = 73
+    Left = 899
+    Height = 30
+    Top = 480
+    Width = 86
     Anchors = [akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Right = 12
+    BorderSpacing.Right = 15
     Caption = '   Close   '
     OnClick = Button2Click
     TabOrder = 0
@@ -121,18 +123,18 @@ object Form_report: TForm_report
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Label1
     Left = 0
-    Height = 246
-    Top = 36
-    Width = 800
+    Height = 301
+    Top = 45
+    Width = 1000
     ActivePage = OutputT
     Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Bottom = 12
+    BorderSpacing.Bottom = 15
     TabIndex = 1
     TabOrder = 1
     object InputT: TTabSheet
       Caption = 'InputT'
-      ClientHeight = 218
-      ClientWidth = 792
+      ClientHeight = 268
+      ClientWidth = 992
       object StringGrid1: TStringGrid
         AnchorSideLeft.Control = InputT
         AnchorSideTop.Control = InputT
@@ -141,13 +143,13 @@ object Form_report: TForm_report
         AnchorSideBottom.Control = InputT
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 218
+        Height = 268
         Top = 0
-        Width = 792
+        Width = 992
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderStyle = bsNone
         ColCount = 2
-        DefaultRowHeight = 18
+        DefaultRowHeight = 22
         FixedCols = 0
         Flat = True
         GridLineWidth = 0
@@ -161,8 +163,8 @@ object Form_report: TForm_report
     end
     object OutputT: TTabSheet
       Caption = 'OutputT'
-      ClientHeight = 218
-      ClientWidth = 792
+      ClientHeight = 268
+      ClientWidth = 992
       object StringGrid2: TStringGrid
         AnchorSideLeft.Control = OutputT
         AnchorSideTop.Control = OutputT
@@ -171,12 +173,12 @@ object Form_report: TForm_report
         AnchorSideBottom.Control = OutputT
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 218
+        Height = 268
         Top = 0
-        Width = 792
+        Width = 992
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderStyle = bsNone
-        DefaultRowHeight = 18
+        DefaultRowHeight = 22
         FixedCols = 0
         Flat = True
         GridLineWidth = 0
@@ -192,11 +194,11 @@ object Form_report: TForm_report
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
-    Left = 12
-    Height = 15
-    Top = 388
-    Width = 76
-    BorderSpacing.Left = 12
+    Left = 15
+    Height = 20
+    Top = 485
+    Width = 98
+    BorderSpacing.Left = 15
     Caption = 'Save report to '
   end
   object LabelSaveTxt: TLabel
@@ -205,10 +207,10 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
     Cursor = crHandPoint
-    Left = 88
-    Height = 15
-    Top = 388
-    Width = 14
+    Left = 113
+    Height = 20
+    Top = 485
+    Width = 17
     Caption = 'txt'
     Font.Color = 13391121
     ParentFont = False
@@ -219,11 +221,11 @@ object Form_report: TForm_report
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
-    Left = 108
-    Height = 15
-    Top = 388
-    Width = 3
-    BorderSpacing.Left = 6
+    Left = 138
+    Height = 20
+    Top = 485
+    Width = 4
+    BorderSpacing.Left = 8
     Caption = '|'
   end
   object LabelSaveTxt1: TLabel
@@ -232,11 +234,11 @@ object Form_report: TForm_report
     AnchorSideTop.Control = Button2
     AnchorSideTop.Side = asrCenter
     Cursor = crHandPoint
-    Left = 117
-    Height = 15
-    Top = 388
-    Width = 17
-    BorderSpacing.Left = 6
+    Left = 150
+    Height = 20
+    Top = 485
+    Width = 20
+    BorderSpacing.Left = 8
     Caption = 'csv'
     Font.Color = 13391121
     ParentFont = False
@@ -248,13 +250,13 @@ object Form_report: TForm_report
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 0
-    Height = 36
+    Height = 45
     Top = 0
-    Width = 800
+    Width = 1000
     Anchors = [akTop, akLeft, akRight]
     BevelOuter = bvNone
-    ClientHeight = 36
-    ClientWidth = 800
+    ClientHeight = 45
+    ClientWidth = 1000
     TabOrder = 3
     object ShapeTitleREPb2: TShape
       AnchorSideLeft.Control = LabelTitleREP2
@@ -263,12 +265,12 @@ object Form_report: TForm_report
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitleREP
       AnchorSideBottom.Side = asrBottom
-      Left = 63
-      Height = 32
-      Top = 6
-      Width = 88
+      Left = 388
+      Height = 40
+      Top = 8
+      Width = 114
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Top = 6
+      BorderSpacing.Top = 8
       Brush.Color = 16448250
       Pen.Color = clNone
       Pen.Style = psClear
@@ -281,25 +283,25 @@ object Form_report: TForm_report
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitleREP
       AnchorSideBottom.Side = asrBottom
-      Left = 0
-      Height = 32
-      Top = 6
-      Width = 63
+      Left = 305
+      Height = 40
+      Top = 8
+      Width = 83
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Top = 6
+      BorderSpacing.Top = 8
       Brush.Color = 16448250
       Pen.Color = clNone
       Pen.Style = psClear
       Pen.Width = 0
     end
     object LabelTitleREP1: TLabel
-      AnchorSideLeft.Control = PanelTitleREP
+      AnchorSideLeft.Control = PanelTitleREPTabAlign
       AnchorSideTop.Control = ShapeTitleREPb1
       AnchorSideTop.Side = asrCenter
-      Left = 0
-      Height = 15
-      Top = 15
-      Width = 63
+      Left = 305
+      Height = 20
+      Top = 18
+      Width = 83
       Caption = '      Table      '
       OnClick = LabelTitleREP1Click
       OnMouseEnter = LabelTitleREP1MouseEnter
@@ -310,10 +312,10 @@ object Form_report: TForm_report
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = ShapeTitleREPb2
       AnchorSideTop.Side = asrCenter
-      Left = 63
-      Height = 15
-      Top = 15
-      Width = 88
+      Left = 388
+      Height = 20
+      Top = 18
+      Width = 114
       Caption = '      Clipboard      '
       Font.Color = clGray
       ParentFont = False
@@ -327,12 +329,12 @@ object Form_report: TForm_report
       AnchorSideRight.Control = PanelTitleREP
       AnchorSideRight.Side = asrBottom
       Cursor = crHandPoint
-      Left = 752
-      Height = 15
-      Top = 11
-      Width = 36
+      Left = 940
+      Height = 20
+      Top = 12
+      Width = 45
       Anchors = [akTop, akRight]
-      BorderSpacing.Right = 12
+      BorderSpacing.Right = 15
       Caption = '[CASE]'
       Visible = False
       OnClick = LabelCaseClick
@@ -344,13 +346,26 @@ object Form_report: TForm_report
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitleREP
       AnchorSideBottom.Side = asrBottom
-      Left = 151
+      Left = 502
       Height = 1
-      Top = 35
-      Width = 649
+      Top = 44
+      Width = 498
       Anchors = [akLeft, akRight, akBottom]
       BevelOuter = bvNone
       TabOrder = 0
+    end
+    object PanelTitleREPTabAlign: TPanel
+      AnchorSideLeft.Control = PanelTitleREP
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = PanelTitleREP
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 305
+      Height = 1
+      Top = 0
+      Width = 391
+      BevelOuter = bvNone
+      TabOrder = 1
     end
   end
   object Memo1: TMemo
@@ -361,10 +376,10 @@ object Form_report: TForm_report
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelsp0
     Left = 0
-    Height = 336
+    Height = 420
     Hint = 'Note for file analysis tool:'#13#10'file header/EOF is binary data and will not be'#13#10'copied in clipboard or output files, unlike'#13#10'other fields.'
-    Top = 36
-    Width = 800
+    Top = 45
+    Width = 1000
     Anchors = [akTop, akLeft, akRight, akBottom]
     ParentColor = True
     ScrollBars = ssAutoVertical
@@ -375,8 +390,8 @@ object Form_report: TForm_report
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 48
-    Top = 372
+    Height = 60
+    Top = 465
     Width = 1
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
@@ -384,12 +399,12 @@ object Form_report: TForm_report
   end
   object SaveDialog1: TSaveDialog
     Title = 'Save as'
-    Left = 156
-    Top = 375
+    Left = 195
+    Top = 469
   end
   object PopupMenu1: TPopupMenu
-    Left = 234
-    Top = 19
+    Left = 293
+    Top = 24
     object MenuItem1: TMenuItem
       Caption = 'Save CRC or hash value'
       OnClick = MenuItem1Click

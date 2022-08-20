@@ -38,6 +38,7 @@ type
     MenuItem1: TMenuItem;
     PageControl1: TPanel;
     PanelPWMaster: TPanel;
+    PanelTitlePMTabAlign: TPanel;
     PanelTitlePMTab: TPanel;
     PanelTitlePM: TPanel;
     pmexpenc: TMenuItem;
@@ -101,11 +102,12 @@ procedure clicklabel_pm(var a: TLabel; var b:TShape);
 var
   FormPM: TFormPM;
   txt_edit,caption_build,delimiter,wincomspec,winver,validate_txt,local_desktop,confpath,color2:ansistring;
-  Column,Row:integer;
+  Column,Row,alttabstyle:integer;
   desk_env:byte;
   pmfilet:text;
   txt_5_0_resetpm:AnsiString;
   activelabel_pm:TLabel;
+  tabpencol,tabbrushcol,tabbrushhighcol:tcolor;
 
 implementation
 
@@ -115,10 +117,11 @@ implementation
 procedure exitlabel_pm(var a: TLabel; var b:TShape);
 begin
 if activelabel_pm=a then exit;
-b.Brush.Color:=StringToColor(colmid);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 a.Font.Color:=pgray;
+if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_pm;
@@ -157,9 +160,10 @@ procedure clicklabel_pm(var a: TLabel; var b:TShape);
 begin
 activelabel_pm:=a;
 deselectlabels_pm;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline];
 b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=StringToColor(colhigh);
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 setlabelpanel_pm(a);
 end;
@@ -167,10 +171,10 @@ end;
 procedure enterlabel_pm(var a: TLabel; var b:TShape);
 begin
 if activelabel_pm=a then exit;
-b.Brush.Color:=StringToColor(colhigh);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushhighcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
 end;
 
 ///

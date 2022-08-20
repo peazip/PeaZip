@@ -1,7 +1,10 @@
-﻿Notes to 8.7.0 release
+﻿Notes to 8.8.0 release
 
 Modified existing text
-txt_7_8_rel: Interactive extraction, extract then move to destination
+txt_7_6_dark: Darker
+txt_7_6_dim: Dark
+txt_naming: Naming
+txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field above. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
 
 = GENERAL NOTES =
 
@@ -38,13 +41,13 @@ For languages spoken in different ways in different countries (i.e. English, Spa
 
 = HOW TO CONTRIBUTE TRANSLATIONS =
 
-MAIL
+EMAIL
 Language files can be sent to giorgio.tani.software@gmail.com, to be evaluated for inclusion in future updates or publication in Translations repository
 https://github.com/peazip/PeaZip-Translations
 
 GIT
 Language files can be updated on Git repository so commits can be evaluated and merged in the online code base
-https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/share/lang (language files)
-https://github.com/peazip/PeaZip/tree/welcome/peazip-sources/res/share/lang-wincontext (W7+ context menu items)
+https://github.com/peazip/PeaZip/tree/sources/peazip-sources/res/share/lang (language files)
+https://github.com/peazip/PeaZip/tree/sources/peazip-sources/res/share/lang-wincontext (W7+ context menu items)
 
 All translated language files should be considered as released under GFDL, GNU Free Documentation License, as they have to be considered derivate work from the application's language file which is released under GFDL.

@@ -98,6 +98,7 @@ type
     InputT: TTabSheet;
     OutputT: TTabSheet;
     Panelsp0: TPanel;
+    PanelTitleREPTabAlign: TPanel;
     PanelTitleREPTab: TPanel;
     PanelTitleREP: TPanel;
     PopupMenu1: TPopupMenu;
@@ -109,6 +110,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure LabelCaseClick(Sender: TObject);
     procedure LabelSaveTxt1Click(Sender: TObject);
     procedure LabelSaveTxtClick(Sender: TObject);
@@ -140,12 +142,13 @@ var
    t:text;
    //theming
    conf:text;
-   opacity,grid1index,grid2index:integer;
+   opacity,grid1index,grid2index,alttabstyle:integer;
    confpath,csvsep:ansistring;
    grid1switch,grid2switch:boolean;
    executable_path,dummy,color1,color2,color3,color4,color5:string;
    Binfo,Bloadlayout:TBitmap;
    activelabel_rep:TLabel;
+   tabpencol,tabbrushcol,tabbrushhighcol:TColor;
    
 implementation
 
@@ -153,10 +156,11 @@ implementation
 procedure exitlabel_rep(var a: TLabel; var b:TShape);
 begin
 if activelabel_rep=a then exit;
-b.Brush.Color:=StringToColor(colmid);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 a.Font.Color:=pgray;
+if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_rep;
@@ -236,9 +240,10 @@ procedure clicklabel_rep(var a: TLabel; var b:TShape);
 begin
 activelabel_rep:=a;
 deselectlabels_rep;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline];
 b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=StringToColor(colhigh);
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
 setlabelpanel_rep(a);
 end;
@@ -246,10 +251,10 @@ end;
 procedure enterlabel_rep(var a: TLabel; var b:TShape);
 begin
 if activelabel_rep=a then exit;
-b.Brush.Color:=StringToColor(colhigh);
-b.Pen.Color:=StringToColor(colhigh);
+b.Brush.Color:=tabbrushhighcol;
+b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-a.Font.Color:=clDefault;
+if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
 end;
 
 ///
@@ -365,6 +370,35 @@ grid1index:=0;
 grid2index:=0;
 grid1switch:=true;
 grid2switch:=true;
+end;
+
+procedure TForm_report.FormShow(Sender: TObject);
+begin
+Form_report.PanelTitleREPTabAlign.Width:=Form_report.ShapeTitleREPb1.Width+Form_report.ShapeTitleREPb2.Width;
+if alttabstyle=2 then
+   begin
+   Form_report.PanelTitleREPTabAlign.AnchorSideLeft.Side:=asrleft;
+   Form_report.PanelTitleREPTab.Visible:=true;
+   end
+else
+   begin
+   Form_report.PanelTitleREPTabAlign.AnchorSideLeft.Side:=asrCenter;
+   Form_report.PanelTitleREPTab.Visible:=false;
+   end;
+if alttabstyle=1 then
+   begin
+   Form_report.LabelTitleREP1.AnchorSideTop.Control:=Form_report.PanelTitleREP;
+   Form_report.ShapeTitleREPb1.visible:=false;
+   Form_report.LabelTitleREP2.AnchorSideTop.Control:=Form_report.PanelTitleREP;
+   Form_report.ShapeTitleREPb2.visible:=false;
+   end
+else
+   begin
+   Form_report.LabelTitleREP1.AnchorSideTop.Control:=Form_report.ShapeTitleREPb1;
+   Form_report.ShapeTitleREPb1.visible:=true;
+   Form_report.LabelTitleREP2.AnchorSideTop.Control:=Form_report.ShapeTitleREPb2;
+   Form_report.ShapeTitleREPb2.visible:=true;
+   end;
 end;
 
 procedure TForm_report.LabelCaseClick(Sender: TObject);

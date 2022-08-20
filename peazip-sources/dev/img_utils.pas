@@ -29,6 +29,7 @@ unit img_utils;
  0.18     20190821  G.Tani      New resize_bitmap function
  0.19     20191125  G.Tani      Improved and extended functions related to load and resize transparent bitmaps
  0.20     20211012  G.Tani      Added temperature parameter to modpropcolor to create warmer or colder shades of color
+ 0.21     20220810  G.Tani      Modified color temperature scaling
 
 (C) Copyright 2010 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -601,9 +602,9 @@ begin
   b := BYTE(col shr 16);
   if prop<-255 then prop:=-255;
   if prop>255 then prop:=255;
-  rprop:=prop+temperature;
+  rprop:=prop+temperature*2;
   gprop:=prop;
-  bprop:=prop-temperature;
+  bprop:=prop;//-temperature;
   if rprop<-255 then rprop:=-255;
   if rprop>255 then rprop:=255;
   if bprop<-255 then bprop:=-255;
