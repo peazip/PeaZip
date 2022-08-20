@@ -3,26 +3,26 @@ Slovenski jezik
 8.8
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20220717
+Zadnja revizija: 20220820
 
 === PeaZip text group ===
 
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
+txt_8_8_ca: Barva poudarka
+txt_8_8_btn: Gumb
+txt_8_8_cb: Barva gumba
+txt_8_8_centered: Sredinski gumbi
+txt_8_8_light: Svetl
+txt_8_8_lnk: Povezava
+txt_8_8_intnote: Upoštevajte, da je možnost 'Interaktivno razširjanje' (v Možnostih -> Nastavitve -> Upravitelj arhivov) prezrta pri sestavljanju ukazne vrstice na zavihku 'Konzola'.
+txt_8_8_snz: Razširi tok Zone.Identifier (Windows)
+txt_8_8_sm: Majhna velikost ikon
+txt_8_8_solcol: Polna vrstica
+txt_8_8_snoi: ID-ji lastnika trgovine/skupine (TAR, Linux)
+txt_8_8_snon: imena lastnikov trgovin/skupine (TAR, Linux)
+txt_8_8_tab: Zavihek
+txt_8_8_altt: Slog zavihkov
+txt_8_8_autotest: Preizkusi arhive po ustvarjanju, če format to podpira
+txt_8_8_cw: Barva okna
 txt_8_7_csvhelp: "," mednarodni standard, ";" pogost v latinskih krajih
 txt_8_7_after: Po arhiviranju/razširjanju
 txt_8_7_bintest: preizkušene dvojiške datoteke.
