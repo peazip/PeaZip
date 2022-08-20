@@ -1,12 +1,28 @@
 ﻿=== PeaZip language file ===
 English
-8.7
+8.8
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20220522
+Last rev.: 20220812
 
 === PeaZip text group ===
 
+txt_8_8_ca: Accent color
+txt_8_8_btn: Button
+txt_8_8_cb: Button color
+txt_8_8_centered: Centered buttons
+txt_8_8_light: Light
+txt_8_8_lnk: Link
+txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
+txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
+txt_8_8_sm: Small icons size
+txt_8_8_solcol: Solid bar
+txt_8_8_snoi: Store owner/group ids (TAR, Linux)
+txt_8_8_snon: Store owner/group names (TAR, Linux)
+txt_8_8_tab: Tab
+txt_8_8_altt: Tabs style
+txt_8_8_autotest: Test archives after creation, if supported by the format
+txt_8_8_cw: Window color
 txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
 txt_8_7_after: After archiving / extraction
 txt_8_7_bintest: binaries tested.
@@ -94,13 +110,13 @@ txt_7_7_sys7z: Use system 7z in Linux
 txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
 txt_7_6_color: Color
 txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
+txt_7_6_dark: Darker
 txt_7_6_tno: Do not sync archive tree
 txt_7_6_forcelocalenc: Force local
 txt_7_6_forceutf8enc: Force UTF-8
 txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
 txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
+txt_7_6_dim: Dark
 txt_7_6_setcurdef: Set current path as default output path
 txt_7_6_setdef: Set default output path
 txt_7_6_tadvanced: Sync archive tree, keep visited nodes
@@ -916,7 +932,7 @@ txt_moveto: Move to...
 txt_mypc: Computer's root
 txt_list_na: n/a
 txt_name: Name
-txt_naming: Naming policy
+txt_naming: Naming
 txt_unit_remote: Network drive
 txt_newarchive: New archive
 txt_cnewfolder: New folder
@@ -1125,7 +1141,7 @@ txt_word: Word
 txt_write: Write:
 txt_ramdompw_hint: You can copy the random generated password from here
 txt_exe_hint: You can freely enter executable name and parameters for custom compression, and chose syntax's construction. Please note that you can also manually change command's syntax in "Console" tab.
-txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field below. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
+txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field above. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
 txt_type_description_zip: ZIP: fast archiving/compression format, mainstream on Windows systems
 txt_zipcrypto_hint: ZipCrypto (legacy)
 

@@ -1,12 +1,28 @@
 ﻿=== PeaZip language file ===
 Slovak
-8.7
+8.8
 Translated by: Marek Hakl
 Last rev. by: Marek Hakl
 Last rev.: 20121215
 
 === PeaZip text group ===
 
+txt_8_8_ca: Accent color
+txt_8_8_btn: Button
+txt_8_8_cb: Button color
+txt_8_8_centered: Centered buttons
+txt_8_8_light: Light
+txt_8_8_lnk: Link
+txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
+txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
+txt_8_8_sm: Small icons size
+txt_8_8_solcol: Solid bar
+txt_8_8_snoi: Store owner/group ids (TAR, Linux)
+txt_8_8_snon: Store owner/group names (TAR, Linux)
+txt_8_8_tab: Tab
+txt_8_8_altt: Tabs style
+txt_8_8_autotest: Test archives after creation, if supported by the format
+txt_8_8_cw: Window color
 txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
 txt_8_7_after: After archiving / extraction
 txt_8_7_bintest: binaries tested.

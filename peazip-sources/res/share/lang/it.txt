@@ -1,12 +1,28 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.7
+8.8
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20200614
+Ultima rev.: 20220812
 
 === PeaZip text group ===
 
+txt_8_8_ca: Colore speciale
+txt_8_8_btn: Pulsanti
+txt_8_8_cb: Colore pulsanti
+txt_8_8_centered: Pulsanti allineati al centro
+txt_8_8_light: Chiaro
+txt_8_8_lnk: Link
+txt_8_8_intnote: L'opzione "Estrazione interattiva" (in Opzioni > Impostazioni > Archive manager) è ignorata per la composizione del comando nel tab Console.
+txt_8_8_snz: Applica Zone.Identifier stream (Windows)
+txt_8_8_sm: Dimensione icone piccole
+txt_8_8_solcol: Barra delimitata
+txt_8_8_snoi: Archivia ids owner/group (TAR, Linux)
+txt_8_8_snon: Archivia nomi owner/group (TAR, Linux)
+txt_8_8_tab: Tab
+txt_8_8_altt: Stile dei tab
+txt_8_8_autotest: Test archivio dopo la creazione, se supportato dal formato
+txt_8_8_cw: Colore finestra
 txt_8_7_csvhelp: "," standard internazionale, ";" Italia e paesi latini
 txt_8_7_after: Dopo archiviazione / estrazione
 txt_8_7_bintest: eseguibili verificati.
@@ -94,13 +110,13 @@ txt_7_7_sys7z: Usa 7z di sistema in Linux
 txt_7_6_zipenc: 7z/p7zip ZIP encoding dei nomi file
 txt_7_6_color: Colore
 txt_7_6_custenc: Code page personalizzato
-txt_7_6_dark: Scuro
+txt_7_6_dark: Più scuro
 txt_7_6_tno: Non sincronizzare treeview
 txt_7_6_forcelocalenc: Forzare locale
 txt_7_6_forceutf8enc: Forzare UTF-8
 txt_7_6_cpnote: Se il code page personalizzato scelto non è supportato, i lavori termineranno in errore (probabilmente di memory allocation). In questo caso cambiare il code page o resettare l'applicazione.
 txt_7_6_defaultenc: Locale, UTF-8 per caratteri extra
-txt_7_6_dim: Meno luminoso
+txt_7_6_dim: Scuro
 txt_7_6_setcurdef: Settare questo percorso come output predefinito
 txt_7_6_setdef: Scegliere il percorso di output predefinito
 txt_7_6_tadvanced: Sincronizza treeview, avanzato
@@ -916,7 +932,7 @@ txt_moveto: Sposta in...
 txt_mypc: Risorse del computer
 txt_list_na: n/a
 txt_name: Nome
-txt_naming: Policy dei nomi
+txt_naming: Nomi
 txt_unit_remote: Unità di rete
 txt_newarchive: nuovo archivio
 txt_cnewfolder: Nuova cartella
