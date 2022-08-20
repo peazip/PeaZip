@@ -182,3 +182,15 @@ Custom archive extension
 8.2.0 EXTENSION
 Store Created and Last access timestamps in archive types supporting it
 0
+
+8.8.0 EXTENSION
+TAR standard
+0
+Timestamp precision
+0
+TAR, Linux save owner/group ids
+0
+TAR, Linux save owner/group names
+0
+Test archives after creation
+0
