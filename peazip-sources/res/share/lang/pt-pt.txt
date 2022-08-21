@@ -1,4 +1,4 @@
-=== PeaZip language file ===
+﻿=== PeaZip language file ===
 Portuguese (Portugal)
 8.8
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
