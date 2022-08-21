@@ -1,28 +1,28 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
 8.8
-Translated by: Aerowolf, Junde Yhi, Dingzhong Chen,yangyangdaji
-Last rev. by: yangyangdaji
-Last rev.: 20220808
+Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
+Last rev. by: Junde Yhi
+Last rev.: 20220820
 
 === PeaZip text group ===
 
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
+txt_8_8_ca: 强调色
+txt_8_8_btn: 按钮
+txt_8_8_cb: 按钮色
+txt_8_8_centered: 居中按钮
+txt_8_8_light: 亮色
+txt_8_8_lnk: 链接
+txt_8_8_intnote: 请注意，如果在控制台中编辑了命令行，那么“交互式提取”选项（于选项 > 设置 > 归档管理器中）会被忽略。
+txt_8_8_snz: 传播 Zone.Identifier 流（Windows）
+txt_8_8_sm: 小图标尺寸
+txt_8_8_solcol: 实心标题栏
+txt_8_8_snoi: 储存所有者 / 所有组的 ID（TAR，Linux）
+txt_8_8_snon: 储存所有者 / 所有组的名字（TAR，Linux）
+txt_8_8_tab: 标签页
+txt_8_8_altt: 标签页样式
+txt_8_8_autotest: 如果归档文件格式支持，则在创建之后测试它们
+txt_8_8_cw: 窗口色
 txt_8_7_csvhelp: “,”是国际标准，“;”则在拉丁字母环境中使用较多
 txt_8_7_after: 归档或提取之后
 txt_8_7_bintest: 个组件已通过测试。
@@ -110,13 +110,13 @@ txt_7_7_sys7z: 在 Linux 中使用系统 7z
 txt_7_6_zipenc: 7z / p7zip 的 ZIP 文件名编码
 txt_7_6_color: 颜色
 txt_7_6_custenc: 自定义代码页
-txt_7_6_dark: 暗色
+txt_7_6_dark: 更暗
 txt_7_6_tno: 不要实时更新归档文件的目录树
 txt_7_6_forcelocalenc: 强制使用本地编码
 txt_7_6_forceutf8enc: 强制使用 UTF-8
 txt_7_6_cpnote: 如果选择的自定义代码页不受支持，则任务必然会出错（很可能会是内存分配错误）。如果确实发生错误，请更改代码页或重置应用程序。
 txt_7_6_defaultenc: 使用本地编码，对额外的符号则使用 UTF-8
-txt_7_6_dim: 低亮
+txt_7_6_dim: 暗色
 txt_7_6_setcurdef: 将当前路径设置为默认输出路径
 txt_7_6_setdef: 设置默认输出路径
 txt_7_6_tadvanced: 实时更新归档文件的目录树，保留已访问节点
@@ -169,13 +169,13 @@ txt_7_2_loadcompsettings: 加载压缩设置
 txt_7_2_savecompsettings: 保存压缩设置
 txt_7_2_source: 源
 txt_7_2_updateclear: 更新归档文件，清除编辑过的临时文件
-txt_7_1_type_description_brotli: Brotli：来自 Google 的快速压缩算法，具有非常快的提取速度
+txt_7_1_type_description_brotli: Brotli：来自 Google 的快速压缩算法，具有非常快的解压速度
 txt_7_1_new: 全部提取到此处（新建文件夹）
 txt_7_1_smart: 全部提取到此处（智能创建文件夹）
 txt_7_1_profileintermediate: 中等压缩率，ZIP / BZip2 快速压缩
 txt_7_1_renfilesonly: 仅对文件重命名
 txt_7_1_typetosearch: 打字以在当前路径搜索
-txt_7_1_type_description_zstd: Zstandard：来自 Facebook 的快速压缩算法，具有非常快的提取速度
+txt_7_1_type_description_zstd: Zstandard：来自 Facebook 的快速压缩算法，具有非常快的解压速度
 txt_7_0_af: 分析文件夹内容
 txt_7_0_autoopentar: 自动打开 tar.* 文件内的单个 TAR 归档文件
 txt_7_0_exttmppath: 内容将提取到临时路径外：
@@ -570,7 +570,7 @@ txt_2_7_updating: 【正在更新已有的归档文件】
 txt_2_6_folders: （文件夹）
 txt_2_6_advanced: 高级
 txt_2_6_plalways: 一直打开以便查看任务报告
-txt_2_6_plsmart: 仅在必要时打开（出错、列表或测试报告时）
+txt_2_6_plsmart: 仅在必要时打开（出错、列出或测试报告时）
 txt_2_5_sessionio: （当前会话）
 txt_2_5_advanced: 高级编辑：按需要在参数和文件名之间添加空格
 txt_2_5_basic: 基本编辑：输入名称前，应用程序和参数
@@ -621,7 +621,7 @@ txt_2_3_pw_errorchar: 在当前系统下 PeaLauncher 无法在密码中使用引
 txt_2_3_envstr: 显示环境变量
 txt_2_3_never_pw: 不再询问密码
 txt_2_3_home: 用户目录
-txt_2_3_on_pw: 在系统菜单的提取 / 列表 / 测试操作上：
+txt_2_3_on_pw: 在系统菜单的提取 / 列出 / 测试操作上：
 txt_2_3_test_pw100: 测试加密小于 100MB 的归档文件
 txt_2_3_test_pw: 测试加密（可能较慢）
 txt_exclude_recourse: “排除”递归子目录
@@ -712,7 +712,7 @@ txt_blowfish: Blowfish448（64 位块）
 txt_bookmarks: 书签
 txt_browse: 浏览
 txt_browser: 浏览器
-txt_aborted_error: 归档文件载入浏览耗时太久，已停止。你可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；提取 / 列表 / 测试操作不受此操作影响。
+txt_aborted_error: 归档文件载入浏览耗时太久，已停止。你可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；提取 / 列出 / 测试操作不受此操作影响。
 txt_list_browsing: 浏览：
 txt_archive_root: 浏览：归档文件根目录
 txt_type_description_bzip2: BZip2：十分强大的压缩比，速度一般
@@ -861,7 +861,7 @@ txt_type_description_gzip: GZip：压缩速度快
 txt_here: 到此处
 txt_list_history: 历史记录
 txt_homeroot: 计算机 / 归档文件根目录
-txt_quickbrowse_hint:如果浏览被停止，用户可以使用搜索和过滤功能缩小选择范围；提取缩 / 列表 / 测试功能不受此影响。
+txt_quickbrowse_hint:如果浏览被停止，用户可以使用搜索和过滤功能缩小选择范围；提取缩 / 列出 / 测试功能不受此影响。
 txt_backupexe_hint: 如果出错，导致非致命性结果，您可以从自动备份中恢复原始的可执行文件
 txt_attach: 如果邮件客户端支持此命令，归档文件将被添加为新邮件的附件
 txt_images: 图像
@@ -905,8 +905,8 @@ txt_layout: 布局
 txt_filelist_savedas: 布局已存为
 txt_level: 级别
 txt_license: 许可证
-txt_caption_list: 列表
-txt_list_details: 列表（带详细资料）
+txt_caption_list: 列出
+txt_list_details: 列出（带详细资料）
 txt_list_all: 全部列出
 txt_list_disp: 列出所显示对象
 txt_list_sel: 列出所选定对象
@@ -932,7 +932,7 @@ txt_moveto: 移动到…
 txt_mypc: 计算机根目录
 txt_list_na: n/a
 txt_name: 名称
-txt_naming: 命名规则
+txt_naming: 命名
 txt_unit_remote: 网络驱动器
 txt_newarchive: 新建归档文件
 txt_cnewfolder: 新建文件夹
@@ -1065,13 +1065,13 @@ txt_singlevol: 单个卷，不分割
 txt_size: 大小
 txt_sizeb: 大小（字节）
 txt_skip_existing: 跳过已有文件
-txt_slowercomp: 压缩较慢，但提取较快
+txt_slowercomp: 压缩较慢，但解压较快
 txt_smaller: 小于选定对象
 txt_solid: 固实
 txt_solid_block: 块大小
 txt_solid_auto: 固实，自动调节
 txt_solid_extension: 固实，按扩展名分组
-txt_listtest: 抱歉，暂不支持对此格式进行列表 / 测试操作
+txt_listtest: 抱歉，暂不支持对此格式进行列出 / 测试操作
 txt_sortbysel: 按所选项目状态排序
 txt_list_sorting: 排序…
 txt_speed: 速度
@@ -1119,7 +1119,7 @@ txt_best: 尝试最佳设置（慢）
 txt_type: 类型
 txt_level_ultra: 超强
 txt_error_openfile: 无法打开指定的文件
-txt_cl_hint: UNACE 和 UPX 总是运行在控制台模式，列表、测试和基准测试任务总是运行在图形界面模式
+txt_cl_hint: UNACE 和 UPX 总是运行在控制台模式，列出、测试和基准测试任务总是运行在图形界面模式
 txt_ace_missing: UNACE 插件缺失；要处理 ACE 归档文件，您可以从 PeaZip 网站下载此插件（因为 UNACE 封闭源代码，插件未被包括在基本安装包中）
 txt_units: 设备
 txt_unit_unknown: 未知的驱动器类型
@@ -1141,7 +1141,7 @@ txt_word: 字
 txt_write: 写入：
 txt_ramdompw_hint: 您可以从此处复制随机生成的密码
 txt_exe_hint: 对于自定义压缩，您可以自由输入可执行程序的名称和参数，并选择语法结构。请注意，您也可以在“控制台”标签中手动修改命令的语法。
-txt_pj_hint2: 在下面的备注区域，您可以从图形界面前端导入任务的定义。之后，您可以编辑、启动或保存它，且不会修改或删除任务定义。
+txt_pj_hint2: 在上面的备注区域，您可以从图形界面前端导入任务的定义。之后，您可以编辑、启动或保存它，且不会修改或删除任务定义。
 txt_type_description_zip: ZIP：快速的归档 / 压缩格式， Windows 系统主流格式
 txt_zipcrypto_hint: ZipCrypto（已过时）
 
@@ -1167,7 +1167,7 @@ txt_5_3_details: 详细信息
 txt_5_3_files: 文件
 txt_5_3_folders: 文件夹
 txt_5_3_info: 信息
-txt_5_3_list: 列表
+txt_5_3_list: 列出
 txt_5_3_os: 原始大小
 txt_5_3_ps: 打包后大小
 txt_5_3_test: 测试
@@ -1238,7 +1238,7 @@ txt_jobstatus: 任务状态：
 txt_jstopped: 任务被用户中止
 txt_jobstopped: 任务被用户中止；您仍可点击输出路径的链接来查看部分成果。
 txt_job_success: 任务成功完成
-txt_lt: 列表或测试
+txt_lt: 列出或测试
 txt_normal: 正常优先级
 txt_ok: 确定
 txt_output: 输出：
