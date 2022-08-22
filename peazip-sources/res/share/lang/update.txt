@@ -1,0 +1,15 @@
+Hi, I'm the author of PeaZip, I've noticed CNET download directory lists a very old release of my software 7.4.2 (which was released over two years ago), while the new release is 8.8.0 is now available.
+
+I would like to kindly ask you to update the listing of the software:
+
+https://download.cnet.com/PeaZip-64-bit/3000-2250_4-75179694.html
+
+https://download.cnet.com/PeaZip-32-bit/3000-2250_4-10602256.html
+
+https://download.cnet.com/PeaZip-Portable-64-bit/3000-2250_4-75212648.html
+
+https://download.cnet.com/PeaZip-Portable-32-bit/3000-2250_4-76414845.html
+
+All information and downloads of the up to date version are now available on PeaZip's project page on GitHub https://github.com/peazip/PeaZip
+
+Please don't hesitate to contact me on my email giorgio.tani.software@gmail.com for any question regarding my software.
