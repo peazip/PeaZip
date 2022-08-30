@@ -69,7 +69,7 @@ txt_8_2_alltimes: Store all timestamps
 txt_8_2_supportedby: Supported by
 txt_8_1_preparse: Always pre-parse archives
 txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
+txt_8_1_bop: Browser optimization options can be set from Options > Settings > General tab, in order to allow browser to display archives containing a very large number of items.
 txt_8_1_nopreparse: Do not pre-parse archives
 txt_8_1_ed: error(s) detected.
 txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
@@ -239,7 +239,7 @@ txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
 txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
 txt_5_8_fs: Free Software compliance
 txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
-txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Advanced)
+txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Settings > Advanced)
 txt_5_7_pinstalled: INSTALLED
 txt_5_7_pmissing: MISSING
 txt_5_7_plugin: Plugin missing, can be installed from Help > Check for plugin and addon
@@ -527,7 +527,7 @@ txt_2_8_details: Details
 txt_2_8_parallel: Execute tasks in parallel when possible
 txt_2_8_convertnote: In any case original archives were not modified, to let the user in control about keeping or removing them
 txt_2_8_custom: is not directly supported by PeaZip, but in extraction stage you can set PeaZip to handle custom file types in "Advanced" tab. Proceed opening this file?
-txt_2_8_unitrecommend: It is recommended either to extract (rightclick > extract selected) or to open filesystems from computer's root (system tools > Open unit as archive)
+txt_2_8_unitrecommend: It is recommended either to extract (rightclick > extract selected) or to open filesystems from computer's root (System tools > Open unit as archive)
 txt_2_8_viewasarchive: Open unit as archive
 txt_2_8_nounit: No unit selected
 txt_2_8_rowselect: Row select
@@ -575,7 +575,7 @@ txt_2_5_sessionio: (this session)
 txt_2_5_advanced: Advanced edit: place spaces between parameter strings and filename if needed
 txt_2_5_basic: Basic edit: application and parameters before input name
 txt_2_5_cannotrun: Cannot run
-txt_2_5_custeditors: Custom editors, players, antivirus scanners etc... (override system's file associations)
+txt_2_5_custeditors: Custom editors, players, antivirus scanners, etc... (override system's file associations)
 txt_2_5_delete: Delete
 txt_2_5_delete_fromarchive: Delete from archive
 txt_2_5_langflag: Display archived object's name as UTF-8 text; uncheck to replace extended characters with "?"
