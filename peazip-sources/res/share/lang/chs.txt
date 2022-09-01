@@ -69,7 +69,7 @@ txt_8_2_alltimes: 保存所有时间戳
 txt_8_2_supportedby: 支持的文件格式：
 txt_8_1_preparse: 总是预解析归档文件
 txt_8_1_bo: 浏览优化
-txt_8_1_bop: 要显示内含巨量文件的归档文件，可以在选项 > 设置，常规标签页中选定“浏览优化”。
+txt_8_1_bop: 要显示内含巨量文件的归档文件，可以在选项 > 设置 > 常规标签页中选定“浏览优化”。
 txt_8_1_nopreparse: 不要预解析归档文件
 txt_8_1_ed: 个检测到的错误。
 txt_8_1_togglearc: 以平面视图列出归档文件的内容可能要很长时间，继续吗？
@@ -239,7 +239,7 @@ txt_5_8_ascii: ASCII 安全，脚本在旧环境中依然可靠
 txt_5_8_cp: 代码页（Code Page）安全，脚本可能在有不同代码页的旧环境中触发问题
 txt_5_8_fs: 自由软件合规性
 txt_5_8_utf: 脚本需要完整的 UTF-8 / Unicode 环境
-txt_5_8_fsr: 由于自由软件合规性限制，这个格式不被支持（参见：选项 > 高级）
+txt_5_8_fsr: 由于自由软件合规性限制，这个格式不被支持（参见：选项 > 设置 > 高级）
 txt_5_7_pinstalled: 已安装
 txt_5_7_pmissing: 缺失
 txt_5_7_plugin: 插件缺失，可以在帮助 > 获取插件和扩展处安装
@@ -575,7 +575,7 @@ txt_2_5_sessionio: （当前会话）
 txt_2_5_advanced: 高级编辑：按需要在参数和文件名之间添加空格
 txt_2_5_basic: 基本编辑：输入名称前，应用程序和参数
 txt_2_5_cannotrun: 无法运行
-txt_2_5_custeditors: 自定义编辑器、播放器、杀毒软件等等（忽略系统的文件关联设置）
+txt_2_5_custeditors: 自定义编辑器、播放器、杀毒软件、等等（忽略系统的文件关联设置）
 txt_2_5_delete: 删除
 txt_2_5_delete_fromarchive: 从归档文件中删除
 txt_2_5_langflag: 以 UTF-8 编码显示归档对象名称；不选则用“?”替换扩展字符
