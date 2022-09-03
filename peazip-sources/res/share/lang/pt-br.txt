@@ -7,22 +7,22 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
+txt_8_8_ca: Cor de destaque
+txt_8_8_btn: Botão
+txt_8_8_cb: Cor do botão
+txt_8_8_centered: Botões centralizados
+txt_8_8_light: Claro
 txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
+txt_8_8_intnote: Observe que a opção "Extração interativa" (em Opções > Configurações > Gerenciador de arquivos) é ignorada para compor a linha de comando na aba Console.
+txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
+txt_8_8_sm: Tamanho de ícones pequenos
+txt_8_8_solcol: Barra sólida
+txt_8_8_snoi: IDs do proprietário/grupo de ids (TAR, Linux)
+txt_8_8_snon: Nomes do proprietário/grupo de ids (TAR, Linux)
+txt_8_8_tab: Aba
+txt_8_8_altt: Estilo das Abas
+txt_8_8_autotest: Teste os arquivos após a criação, se compatível com o formato
+txt_8_8_cw: Cor da janela
 txt_8_7_csvhelp: "," padrão internacional, ";" como em países latinos
 txt_8_7_after: Após arquivamento / extração
 txt_8_7_bintest: binários testados.
