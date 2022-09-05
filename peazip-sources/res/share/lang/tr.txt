@@ -3,37 +3,37 @@ Turkish (Türkçe)
 8.8
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 7 Mayıs 2022
+Son güncelleme: 5 Eylül 2022
 
 === PeaZip text group ===
 
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
+txt_8_8_ca: Vurgu rengi
+txt_8_8_btn: Buton
+txt_8_8_cb: Buton rengi
+txt_8_8_centered: Merkezi butonlar
+txt_8_8_light: Aydınlık
+txt_8_8_lnk: Bağlantı
+txt_8_8_intnote: Konsol sekmesinde komut satırını oluşturmak için "Etkileşimli çıkarma" seçeneğinin (Seçenekler > Ayarlar > Arşiv yöneticisinde) yoksayıldığını lütfen unutmayın.
+txt_8_8_snz: Zone.Identifier akışını yay (Windows)
+txt_8_8_sm: Küçük simgelerin boyutu
+txt_8_8_solcol: Katı çubuk
+txt_8_8_snoi: Mağaza sahibi/grup kimlikleri (TAR, Linux)
+txt_8_8_snon: Mağaza sahibi/grup adları (TAR, Linux)
+txt_8_8_tab: Sekme
+txt_8_8_altt: Sekme stili
+txt_8_8_autotest: Biçim tarafından destekleniyorsa, arşivleri oluşturulduktan sonra test et
+txt_8_8_cw: Pencere rengi
+txt_8_7_csvhelp: uluslararası standart "," Latin yerellerinde yaygın ";"
+txt_8_7_after: Arşivleme / çıkarma işleminden sonra
+txt_8_7_bintest: binaryler test edildi
+txt_8_7_csv: CSV ayırıcı
+txt_8_7_hok: PeaZip tarafından kullanılan binary dosyalarının hash'i beklenen değerlerle eşleşiyor
+txt_8_7_mo: Arşiv yöneticisi seçeneklerini ayarla
+txt_8_7_showhm: Dosya tarayıcısını göster Başlık menüsü
+txt_8_7_showsearchbar: Arama çubuğunu göster
+txt_8_7_showsm: Stil Menüsünü göster
+txt_8_7_hnotok: PeaZip tarafından kullanılan bazı Binary dosyalar beklenen değerlerle eşleşmiyor:
+txt_8_7_verifybin: Binary dosyalarının hash değerini doğrulayın
 txt_8_6_clear: "Temizle" seçeneği, geçici olarak düzenlenmiş dosyaları kaldırır, aksi takdirde daha fazla düzenleme için kullanılabilir.
 txt_8_6_noclear: Arşivi güncellemeden tüm değişiklikleri atın
 txt_8_6_nosimple: Arşivi güncelleme, daha fazla düzenleme için geçici olarak düzenlenmiş dosyaları saklayın
