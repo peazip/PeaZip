@@ -13,7 +13,7 @@ txt_8_8_cb: Cor do botão
 txt_8_8_centered: Centrar botões
 txt_8_8_light: Claro
 txt_8_8_lnk: Ligação
-txt_8_8_intnote: Tenha em atenção que a opção "Extração interativa" (Opções > Definições > Gestor de arquivos) é ignorada na linha de comenado do separador Consola.
+txt_8_8_intnote: Tenha em atenção que a opção "Extração interativa" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola.
 txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
 txt_8_8_sm: Ícones pequenos
 txt_8_8_solcol: Barra sólida
@@ -1141,7 +1141,7 @@ txt_word: Palavra
 txt_write: Escrita:
 txt_ramdompw_hint: Pode copiar a palavra-passe gerada a partir daqui
 txt_exe_hint: Pode indicar livremente o nome e os parâmetros do executável para compressão personalizada e escolher a sintaxe. Tenha em atenção que também pode alterar manualmente a sintaxe do comando no separador "Consola".
-txt_pj_hint2: Pode importar a definição das tarefas a partir da interface gráfica através do campo acima. Posteriormente, pode editar, executar ou guardar sem alterar ou perder a tarefa definida para a interface gráfica.
+txt_pj_hint2: Pode importar a definição das tarefas a partir da interface gráfica no campo acima. Posteriormente, pode editar, executar ou guardar sem alterar ou perder a tarefa definida para a interface gráfica.
 txt_type_description_zip: ZIP: formato de arquivo/compressão rápido, utilizado principalmente em sistemas Windows
 txt_zipcrypto_hint: ZipCrypto (legacy)
 
