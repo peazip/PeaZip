@@ -1,13 +1,20 @@
-﻿Notes to 8.8.0 release
+﻿Notes to 8.9.0 release
 
 Modified existing text
-txt_7_6_dark: Darker
-txt_7_6_dim: Dark
-txt_naming: Naming
-txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field above. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
+txt_8_8_solcol: Address field
+txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks)?
+txt_2_7_separate: Add to separate archives
+txt_2_7_setpw: Set password / keyfile
+txt_add_files: Add files
+txt_displayedobjects: Displayed items
+txt_input: Input
+txt_fefreshf5: Refresh
+txt_selected_objects: Selected items
+txt_toggle_historybookmarks: Toggle status bar, bookmarks, history, clipboard
 
 = GENERAL NOTES =
 
+Language files needs top be saved as "UTF-8 with BOM" txt files.
 This package, named peazip-x.y.about_translations.zip, contains data and information for translators. 
 It can be found in "PeaZip translations" download page, and also on other repositories of PeaZip project.
 Texts are in (peazip)/res/share/lang subfolder of packages.

@@ -1,15 +1,14 @@
 object FormPM: TFormPM
   Left = 214
-  Height = 500
+  Height = 400
   Top = 513
-  Width = 750
+  Width = 600
   Caption = 'Password manager'
-  ClientHeight = 500
-  ClientWidth = 750
+  ClientHeight = 400
+  ClientWidth = 600
   Color = clWindow
-  Constraints.MinHeight = 500
-  Constraints.MinWidth = 750
-  DesignTimePPI = 120
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 600
   OnCreate = FormCreate
   Position = poScreenCenter
   ShowHint = True
@@ -19,14 +18,14 @@ object FormPM: TFormPM
     AnchorSideLeft.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideBottom.Control = Owner
-    Left = 15
-    Height = 30
-    Top = 455
-    Width = 720
-    BorderSpacing.Left = 15
-    BorderSpacing.Top = 15
-    BorderSpacing.Right = 15
-    BorderSpacing.Bottom = 15
+    Left = 12
+    Height = 26
+    Top = 362
+    Width = 576
+    BorderSpacing.Left = 12
+    BorderSpacing.Top = 12
+    BorderSpacing.Right = 12
+    BorderSpacing.Bottom = 12
     BorderSpacing.Around = 0
     OKButton.Name = 'OKButton'
     OKButton.DefaultCaption = True
@@ -47,9 +46,9 @@ object FormPM: TFormPM
       AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
       Left = 0
-      Height = 20
+      Height = 16
       Top = 5
-      Width = 20
+      Width = 16
       OnClick = ImageInfoPM1Click
       Transparent = True
     end
@@ -60,12 +59,12 @@ object FormPM: TFormPM
       AnchorSideTop.Side = asrCenter
       AnchorSideRight.Side = asrBottom
       Cursor = crHandPoint
-      Left = 35
-      Height = 20
-      Top = 5
-      Width = 28
-      BorderSpacing.Left = 15
-      BorderSpacing.Right = 8
+      Left = 28
+      Height = 15
+      Top = 6
+      Width = 22
+      BorderSpacing.Left = 12
+      BorderSpacing.Right = 6
       Caption = 'Add'
       Font.Color = 13391121
       ParentFont = False
@@ -79,13 +78,13 @@ object FormPM: TFormPM
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Cursor = crHandPoint
-      Left = 78
-      Height = 20
-      Top = 5
-      Width = 54
-      BorderSpacing.Left = 15
-      BorderSpacing.Right = 11
-      BorderSpacing.Bottom = 8
+      Left = 62
+      Height = 15
+      Top = 6
+      Width = 43
+      BorderSpacing.Left = 12
+      BorderSpacing.Right = 9
+      BorderSpacing.Bottom = 6
       Caption = 'Remove'
       Font.Color = 13391121
       ParentFont = False
@@ -100,13 +99,13 @@ object FormPM: TFormPM
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 0
-    Height = 395
-    Top = 45
-    Width = 750
+    Height = 316
+    Top = 36
+    Width = 600
     Anchors = [akTop, akLeft, akRight, akBottom]
     BevelOuter = bvNone
-    ClientHeight = 395
-    ClientWidth = 750
+    ClientHeight = 316
+    ClientWidth = 600
     ParentFont = False
     TabOrder = 1
     object TabSheetMasterPW: TPanel
@@ -117,13 +116,13 @@ object FormPM: TFormPM
       AnchorSideBottom.Control = PageControl1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 395
+      Height = 316
       Top = 0
-      Width = 750
+      Width = 600
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 395
-      ClientWidth = 750
+      ClientHeight = 316
+      ClientWidth = 600
       ParentFont = False
       TabOrder = 0
       object PanelPWMaster: TPanel
@@ -134,25 +133,25 @@ object FormPM: TFormPM
         AnchorSideBottom.Control = TabSheetMasterPW
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 395
+        Height = 316
         Top = 0
-        Width = 750
+        Width = 600
         Anchors = [akTop, akLeft, akRight, akBottom]
         BevelOuter = bvNone
-        ClientHeight = 395
-        ClientWidth = 750
+        ClientHeight = 316
+        ClientWidth = 600
         ParentFont = False
         TabOrder = 0
         object LableListPath1: TLabel
           AnchorSideTop.Control = EditUn7zaPW
           AnchorSideTop.Side = asrCenter
           AnchorSideRight.Control = EditUn7zaPW
-          Left = 121
-          Height = 20
-          Top = 159
-          Width = 64
+          Left = 95
+          Height = 15
+          Top = 128
+          Width = 53
           Anchors = [akTop, akRight]
-          BorderSpacing.Right = 15
+          BorderSpacing.Right = 12
           Caption = 'Password:'
           ParentFont = False
         end
@@ -160,12 +159,12 @@ object FormPM: TFormPM
           AnchorSideTop.Control = EditName3
           AnchorSideTop.Side = asrCenter
           AnchorSideRight.Control = EditUn7zaPW
-          Left = 137
-          Height = 20
-          Top = 231
-          Width = 48
+          Left = 110
+          Height = 15
+          Top = 186
+          Width = 38
           Anchors = [akTop, akRight]
-          BorderSpacing.Right = 15
+          BorderSpacing.Right = 12
           Caption = 'Keyfile:'
           ParentFont = False
         end
@@ -174,12 +173,12 @@ object FormPM: TFormPM
           AnchorSideTop.Control = EditUn7zaPW1
           AnchorSideTop.Side = asrCenter
           AnchorSideRight.Control = EditUn7zaPW
-          Left = 129
-          Height = 20
-          Top = 195
-          Width = 56
+          Left = 101
+          Height = 15
+          Top = 157
+          Width = 47
           Anchors = [akTop, akRight]
-          BorderSpacing.Right = 15
+          BorderSpacing.Right = 12
           Caption = 'Confirm:'
           ParentFont = False
         end
@@ -188,12 +187,12 @@ object FormPM: TFormPM
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = LablePMHint
           AnchorSideRight.Side = asrBottom
-          Left = 200
-          Height = 28
-          Top = 155
-          Width = 535
+          Left = 160
+          Height = 23
+          Top = 124
+          Width = 428
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 30
+          BorderSpacing.Top = 24
           EchoMode = emPassword
           ParentFont = False
           PasswordChar = '*'
@@ -204,12 +203,12 @@ object FormPM: TFormPM
           AnchorSideTop.Control = EditUn7zaPW1
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = ButtonEditName3
-          Left = 200
-          Height = 28
-          Top = 227
-          Width = 503
+          Left = 160
+          Height = 23
+          Top = 182
+          Width = 402
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 8
+          BorderSpacing.Top = 6
           ParentFont = False
           TabOrder = 3
         end
@@ -219,12 +218,12 @@ object FormPM: TFormPM
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = EditName3
           AnchorSideBottom.Side = asrBottom
-          Left = 703
-          Height = 28
-          Top = 227
-          Width = 32
+          Left = 562
+          Height = 23
+          Top = 182
+          Width = 26
           Anchors = [akTop, akRight, akBottom]
-          BorderSpacing.InnerBorder = 5
+          BorderSpacing.InnerBorder = 4
           Caption = '...'
           OnClick = ButtonEditName3Click
           ParentFont = False
@@ -237,12 +236,12 @@ object FormPM: TFormPM
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = LablePMHint
           AnchorSideRight.Side = asrBottom
-          Left = 200
-          Height = 28
-          Top = 191
-          Width = 535
+          Left = 160
+          Height = 23
+          Top = 153
+          Width = 428
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 8
+          BorderSpacing.Top = 6
           EchoMode = emPassword
           ParentFont = False
           PasswordChar = '*'
@@ -253,15 +252,15 @@ object FormPM: TFormPM
           AnchorSideTop.Control = PanelPWMaster
           AnchorSideRight.Control = PanelPWMaster
           AnchorSideRight.Side = asrBottom
-          Left = 15
-          Height = 95
-          Top = 30
-          Width = 720
+          Left = 12
+          Height = 76
+          Top = 24
+          Width = 576
           Anchors = [akTop, akLeft, akRight]
           AutoSize = False
-          BorderSpacing.Left = 15
-          BorderSpacing.Top = 30
-          BorderSpacing.Right = 15
+          BorderSpacing.Left = 12
+          BorderSpacing.Top = 24
+          BorderSpacing.Right = 12
           Caption = 'It is recommended to set a password (and optionally a keyfile) to encrypt password list, in this way authentication will be required before opening the password manager.'
           ParentFont = False
           WordWrap = True
@@ -271,12 +270,12 @@ object FormPM: TFormPM
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = LablePMHint
           AnchorSideRight.Side = asrBottom
-          Left = 200
-          Height = 28
-          Top = 155
-          Width = 535
+          Left = 160
+          Height = 23
+          Top = 124
+          Width = 428
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 30
+          BorderSpacing.Top = 24
           EchoMode = emPassword
           ParentFont = False
           PasswordChar = '*'
@@ -288,12 +287,12 @@ object FormPM: TFormPM
           AnchorSideTop.Control = EditUn7zaPW1
           AnchorSideTop.Side = asrBottom
           AnchorSideRight.Control = ButtonEditName3
-          Left = 200
-          Height = 28
-          Top = 227
-          Width = 503
+          Left = 160
+          Height = 23
+          Top = 182
+          Width = 402
           Anchors = [akTop, akLeft, akRight]
-          BorderSpacing.Top = 8
+          BorderSpacing.Top = 6
           ParentFont = False
           TabOrder = 5
           Visible = False
@@ -308,13 +307,13 @@ object FormPM: TFormPM
       AnchorSideBottom.Control = PageControl1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 395
+      Height = 316
       Top = 0
-      Width = 750
+      Width = 600
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 395
-      ClientWidth = 750
+      ClientHeight = 316
+      ClientWidth = 600
       ParentFont = False
       TabOrder = 1
       object StringGridPM1: TStringGrid
@@ -323,13 +322,13 @@ object FormPM: TFormPM
         AnchorSideRight.Control = TabSheetPWlist
         AnchorSideRight.Side = asrBottom
         Left = 0
-        Height = 355
+        Height = 284
         Top = 0
-        Width = 750
+        Width = 600
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderStyle = bsNone
         ColCount = 4
-        DefaultRowHeight = 22
+        DefaultRowHeight = 18
         Flat = True
         GridLineWidth = 0
         Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goSmoothScroll]
@@ -353,12 +352,12 @@ object FormPM: TFormPM
         AnchorSideBottom.Control = TabSheetPWlist
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 395
+        Height = 316
         Top = 0
-        Width = 750
+        Width = 600
         Anchors = [akTop, akLeft, akRight, akBottom]
         ColCount = 4
-        DefaultRowHeight = 22
+        DefaultRowHeight = 18
         Flat = True
         GridLineWidth = 0
         Options = [goFixedVertLine, goFixedHorzLine, goColSizing, goRowMoving, goSmoothScroll]
@@ -380,11 +379,11 @@ object FormPM: TFormPM
         AnchorSideBottom.Control = StringGridPM
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 38
-        Top = 349
-        Width = 750
+        Height = 30
+        Top = 280
+        Width = 600
         Anchors = [akLeft, akRight, akBottom]
-        BorderSpacing.Bottom = 8
+        BorderSpacing.Bottom = 6
         ParentFont = False
         TabOrder = 2
         Visible = False
@@ -398,13 +397,13 @@ object FormPM: TFormPM
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 45
+    Height = 36
     Top = 0
-    Width = 750
+    Width = 600
     Anchors = [akTop, akLeft, akRight]
     BevelOuter = bvNone
-    ClientHeight = 45
-    ClientWidth = 750
+    ClientHeight = 36
+    ClientWidth = 600
     ParentFont = False
     TabOrder = 2
     object ShapeTitlePMb2: TShape
@@ -414,12 +413,12 @@ object FormPM: TFormPM
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitlePM
       AnchorSideBottom.Side = asrBottom
-      Left = 312
-      Height = 40
-      Top = 8
-      Width = 160
+      Left = 248
+      Height = 32
+      Top = 6
+      Width = 125
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Top = 8
+      BorderSpacing.Top = 6
       Brush.Color = clNone
       Pen.Color = clNone
       Pen.Style = psClear
@@ -432,12 +431,12 @@ object FormPM: TFormPM
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitlePM
       AnchorSideBottom.Side = asrBottom
-      Left = 180
-      Height = 40
-      Top = 8
-      Width = 132
+      Left = 144
+      Height = 32
+      Top = 6
+      Width = 104
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Top = 8
+      BorderSpacing.Top = 6
       Brush.Color = clNone
       Pen.Color = clNone
       Pen.Style = psClear
@@ -448,10 +447,10 @@ object FormPM: TFormPM
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = ShapeTitlePMb2
       AnchorSideTop.Side = asrCenter
-      Left = 312
-      Height = 20
-      Top = 18
-      Width = 160
+      Left = 248
+      Height = 15
+      Top = 15
+      Width = 125
       Caption = '      Master password      '
       Font.Color = clGray
       ParentFont = False
@@ -463,10 +462,10 @@ object FormPM: TFormPM
       AnchorSideLeft.Control = PanelTitlePMTabAlign
       AnchorSideTop.Control = ShapeTitlePMb1
       AnchorSideTop.Side = asrCenter
-      Left = 180
-      Height = 20
-      Top = 18
-      Width = 132
+      Left = 144
+      Height = 15
+      Top = 15
+      Width = 104
       Caption = '      Password list      '
       ParentFont = False
       OnClick = LabelTitlePM1Click
@@ -479,29 +478,14 @@ object FormPM: TFormPM
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = PanelTitlePM
       AnchorSideBottom.Side = asrBottom
-      Left = 690
-      Height = 45
+      Left = 552
+      Height = 36
       Top = 0
-      Width = 60
+      Width = 48
       Anchors = [akTop, akRight, akBottom]
       Flat = True
       OnClick = ctrlpmClick
       ParentFont = False
-    end
-    object PanelTitlePMTab: TPanel
-      AnchorSideLeft.Control = ShapeTitlePMb2
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideRight.Control = PanelTitlePM
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = PanelTitlePM
-      AnchorSideBottom.Side = asrBottom
-      Left = 472
-      Height = 1
-      Top = 44
-      Width = 278
-      Anchors = [akLeft, akRight, akBottom]
-      BevelOuter = bvNone
-      TabOrder = 0
     end
     object PanelTitlePMTabAlign: TPanel
       AnchorSideLeft.Control = PanelTitlePM
@@ -509,17 +493,17 @@ object FormPM: TFormPM
       AnchorSideTop.Control = PanelTitlePM
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
-      Left = 180
+      Left = 144
       Height = 1
       Top = 0
-      Width = 391
+      Width = 313
       BevelOuter = bvNone
-      TabOrder = 1
+      TabOrder = 0
     end
   end
   object pmPM: TPopupMenu
-    Left = 160
-    Top = 140
+    Left = 128
+    Top = 112
     object mnew: TMenuItem
       Caption = 'New'
       OnClick = mnewClick
@@ -565,8 +549,8 @@ object FormPM: TFormPM
     end
   end
   object PopupMenupwm: TPopupMenu
-    Left = 210
-    Top = 430
+    Left = 168
+    Top = 344
     object mpwreset: TMenuItem
       Caption = 'Reset keyfile'
       OnClick = mpwresetClick
@@ -579,14 +563,14 @@ object FormPM: TFormPM
   object OpenDialogKFM: TOpenDialog
     Title = 'Open file'
     FilterIndex = 0
-    Left = 430
-    Top = 430
+    Left = 344
+    Top = 344
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
     Title = ' '
     FilterIndex = 0
     Options = [ofCreatePrompt, ofEnableSizing, ofViewDetail]
-    Left = 460
-    Top = 260
+    Left = 368
+    Top = 208
   end
 end

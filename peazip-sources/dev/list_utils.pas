@@ -1569,7 +1569,7 @@ begin
     exit;
   if pos('|', s) <> 0 then
     exit;
-  if pos('     ', s) <> 0 then
+  if pos('       ', s) <> 0 then
     exit;
   sf := extractfilename(s);
   //reserved characters, filename only (others are checked for the full name)
@@ -1989,7 +1989,7 @@ begin
   if pos('<', s) <> 0 then exit;
   if pos('>', s) <> 0 then exit;
   if pos('|', s) <> 0 then exit;
-  if pos('     ', s) <> 0 then exit;
+  if pos('       ', s) <> 0 then exit;
   //reserved filenames (Windows)
 {$IFDEF MSWINDOWS}
   s1 := extractfilename(s);
@@ -2068,7 +2068,7 @@ if (pos('bin'+directoryseparator+'pea',s)<>0) then
 {if pos('<',s1)<>0 then exit;
 if pos('>',s1)<>0 then exit;}
 if pos('|', s1) <> 0 then exit;
-if pos('     ', s1) <> 0 then exit; //more than 4 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
+if pos('       ', s1) <> 0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
 validatecl := 0;
 end;
 

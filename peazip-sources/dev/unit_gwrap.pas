@@ -204,6 +204,7 @@ type
     l4: TLabel;
     l5: TLabel;
     l6: TLabel;
+    l7spc: TLabel;
     Label1: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -224,8 +225,9 @@ type
     LabelWarning1: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
+    pmet: TMenuItem;
+    pm2et: TMenuItem;
     PanelTitlePLTabAlign: TPanel;
-    PanelTitlePLTab: TPanel;
     pm2pause: TMenuItem;
     pm2cancel: TMenuItem;
     pm2cancelall: TMenuItem;
@@ -304,6 +306,7 @@ type
     procedure pm2cancelClick(Sender: TObject);
     procedure pm2eiClick(Sender: TObject);
     procedure pm2eoClick(Sender: TObject);
+    procedure pm2etClick(Sender: TObject);
     procedure pm2exploreClick(Sender: TObject);
     procedure pm2pauseClick(Sender: TObject);
     procedure pm2restoreClick(Sender: TObject);
@@ -311,6 +314,7 @@ type
     procedure pmbackgroundClick(Sender: TObject);
     procedure pmeiClick(Sender: TObject);
     procedure pmeoClick(Sender: TObject);
+    procedure pmetClick(Sender: TObject);
     procedure pmexploreClick(Sender: TObject);
     procedure pmsearchClick(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
@@ -328,6 +332,8 @@ type
 
 procedure gwraplaunch;
 procedure settheme;
+procedure deselectlabels_launcher;
+procedure explore_out(pt:ansistring);
 
 const
   WS_EX_LAYERED = $80000;
@@ -346,8 +352,8 @@ const
 
 var
   Form_gwrap: TForm_gwrap;
-  pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
-  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature,alttabstyle:integer;
+  pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,poutnamet,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
+  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature,alttabstyle,highlighttabs:integer;
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore:boolean;
   pautoclose:byte;
   Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
@@ -359,7 +365,7 @@ var
   ws_gw_height,ws_gw_width,pbarh,pbarhsmall:integer;
   insize,progress,pinsize:qword;
   opacity,desk_env,pcount,optype,filesizebase:byte;
-  iperc:integer;
+  iperc,pperc:integer;
   T,conf:text;
   f:file of byte;
   launched,stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall,
@@ -454,7 +460,7 @@ if activelabel_launcher=a then exit;
 b.Brush.Color:=tabbrushcol;
 b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-a.Font.Color:=pGray;
+if (highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5) then a.Font.Color:=clDefault else a.Font.Color:=pGray;
 if alttabstyle=1 then a.Font.Style:=[];
 end;
 
@@ -1076,16 +1082,18 @@ end;
 
 procedure setiomenu;
 begin
-Form_gwrap.pmei.caption:=Form_gwrap.l2.caption;
-Form_gwrap.pmeo.caption:=Form_gwrap.l4.caption;
-if Form_gwrap.pmei.caption='' then Form_gwrap.pmei.visible:=false;
-if Form_gwrap.pmeo.caption='' then Form_gwrap.pmeo.visible:=false;
+if Form_gwrap.l2.caption='' then Form_gwrap.pmei.visible:=false else Form_gwrap.pmei.visible:=true;
+if poutnamet='' then Form_gwrap.pmet.visible:=false else Form_gwrap.pmet.visible:=true;
+if Form_gwrap.l4.caption='' then Form_gwrap.pmeo.visible:=false else Form_gwrap.pmeo.visible:=true;
+Form_gwrap.pm2ei.visible:=Form_gwrap.pmei.visible;
+Form_gwrap.pm2et.visible:=Form_gwrap.pmet.visible;
+Form_gwrap.pm2eo.visible:=Form_gwrap.pmeo.visible;
 Form_gwrap.pmei.caption:=txt_explore+' '+Form_gwrap.l2.caption;
+Form_gwrap.pmet.caption:=txt_explore+' TMP';
 Form_gwrap.pmeo.caption:=txt_explore+' '+Form_gwrap.l4.caption;
 Form_gwrap.pm2ei.caption:=Form_gwrap.pmei.caption;
+Form_gwrap.pm2et.caption:=Form_gwrap.pmet.caption;
 Form_gwrap.pm2eo.caption:=Form_gwrap.pmeo.caption;
-Form_gwrap.pm2ei.visible:=Form_gwrap.pmei.visible;
-Form_gwrap.pm2eo.visible:=Form_gwrap.pmeo.visible;
 end;
 
 procedure set_form_title;
@@ -1197,13 +1205,15 @@ if Form_gwrap.l6.Caption<>'' then Form_gwrap.l6.visible:=true else Form_gwrap.l6
 setiomenu;
 end;
 
-procedure explore_out;
+procedure explore_out(pt:ansistring);
 var
-   s,outpath2:ansistring;
+   s,outpath2,inoutpath:ansistring;
    {$IFNDEF MSWINDOWS}
    i:integer;
    {$ENDIF}
 begin
+inoutpath:=outpath;
+if pt<>'' then outpath:=pt;
 {$IFDEF MSWINDOWS}
 outpath2:=outpath;
 if (modeofuse=1) or (modeofuse=4) or (modeofuse=5) then outpath2:=in_name;
@@ -1228,6 +1238,7 @@ else s:=outpath;
 if s='' then exit;
 cp_open(s,desk_env);
 {$ENDIF}
+outpath:=inoutpath;
 end;
 
 procedure explore_in;
@@ -1919,7 +1930,8 @@ if Form_gwrap.CheckBoxHalt.State=cbChecked then
    P.Free;
    end;
 if autoopen=1 then
-   if (modeofuse<>1) and (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then explore_out;
+   if (modeofuse<>1) and (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then
+      if (psubfun<>'extract') and (psubfun<>'convert') then explore_out(''); //deferred (in peach unit) to let run move after extraction operations if needed
 Form_gwrap.LabelTitle4.Visible:=false;
 Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width;
 end;
@@ -1937,6 +1949,15 @@ case pautoclose of
       end;
    2: begin
       if exit_code=0 then
+         if (modeofuse<>1) and (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then
+            showandhide
+         else
+            showandwait
+      else
+         showandwait;
+      end;
+   3: begin
+      if exit_code=0 then
          if (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then
             showandhide
          else
@@ -1944,7 +1965,7 @@ case pautoclose of
       else
          showandwait;
       end;
-   3: showandhide;
+   4: showandhide;
    else
       begin
       if exit_code=0 then
@@ -2084,7 +2105,6 @@ Form_gwrap.ShapeTitleb1.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb2.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb3.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb4.Brush.Color:=StringToColor(COLLOW);
-Form_gwrap.PanelTitlePLTab.Color:=StringToColor(colhigh);
 if (opacity<100) then
    begin
    Form_gwrap.AlphaBlend:=true;
@@ -2342,7 +2362,7 @@ end;
 
 procedure TForm_gwrap.l4Click(Sender: TObject);
 begin
-explore_out;
+explore_out('');
 end;
 
 procedure TForm_gwrap.Label4Click(Sender: TObject);
@@ -2478,7 +2498,12 @@ end;
 
 procedure TForm_gwrap.pm2eoClick(Sender: TObject);
 begin
-explore_out;
+explore_out('');
+end;
+
+procedure TForm_gwrap.pm2etClick(Sender: TObject);
+begin
+explore_out(poutnamet);
 end;
 
 procedure do_explorepath;
@@ -2529,7 +2554,12 @@ end;
 
 procedure TForm_gwrap.pmeoClick(Sender: TObject);
 begin
-explore_out;
+explore_out('');
+end;
+
+procedure TForm_gwrap.pmetClick(Sender: TObject);
+begin
+explore_out(poutnamet);
 end;
 
 procedure TForm_gwrap.pmexploreClick(Sender: TObject);

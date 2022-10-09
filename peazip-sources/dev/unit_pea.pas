@@ -191,6 +191,7 @@ unit Unit_pea;
  1.07     20220402  G.Tani      New UI layout and theme
  1.08     20220620  G.Tani      Updated theme, can now use custom CSV separator, fixes
  1.09     20220808  G.Tani      Updated theming engine
+ 1.10     20221003  G.Tani      Updated theming engine
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -373,7 +374,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.08'; //declares release version for the whole build
+  P_RELEASE          = '1.10'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -7606,6 +7607,7 @@ Unit_report.color1:=color1;
 Unit_report.color2:=color2;
 Unit_report.csvsep:=csvsep;
 Unit_report.alttabstyle:=alttabstyle;
+Unit_report.highlighttabs:=highlighttabs;
 Form_pea.LabelOpen.visible:=false;
 if (opacity<100) then
    begin
@@ -7652,9 +7654,9 @@ Form_report.Width:=800*qscale div 100;
 Form_report.Height:=420*qscale div 100;
 //tabs
 tabheight:=36*qscale div 100;
-if alttabstyle=2 then tablabelheight:=32
+if alttabstyle=2 then tablabelheight:=30
 else tablabelheight:=24;
-tablabelheight:=(tablabelheight*qscale) div 100;//32 or 24
+tablabelheight:=(tablabelheight*qscale) div 100;
 tabheightl:=48*qscale div 100;
 Form_report.PanelTitleRep.Height:=tabheight;
 Form_report.ShapeTitleRepb1.Height:=tablabelheight;
@@ -7690,30 +7692,50 @@ Form_pea.labelopenfile0.Font.Color:=ptextaccent;
 Form_report.Color:=StringToColor(color2);
 Form_report.ShapeTitleREPb1.Brush.Color:=StringToColor(colhigh);
 Form_report.ShapeTitleREPb2.Brush.Color:=StringToColor(colmid);
-Form_report.PanelTitleREPTab.Color:=StringToColor(colhigh);
 Form_report.LabelSaveTxt.Font.Color:=ptextaccent;
 Form_report.LabelSaveTxt1.Font.Color:=ptextaccent;
 case highlighttabs of
    0: begin
       PanelUtilsTitle.Color:=stringtocolor(color2);
       Form_report.PanelTitleREP.Color:=stringtocolor(color2);
-      Unit_report.tabpencol:=StringToColor(colhigh);
+      Unit_report.tabpencol:=StringToColor(color2);
       Unit_report.tabbrushcol:=StringToColor(colmid);
-      Unit_report.tabbrushhighcol:=StringToColor(colhigh);
+      Unit_report.tabbrushhighcol:=StringToColor(colvlow);
       end;
    1: begin
-      PanelUtilsTitle.Color:=stringtocolor(collow);
-      Form_report.PanelTitleREP.Color:=stringtocolor(collow);
-      Unit_report.tabpencol:=StringToColor(colhigh);
-      Unit_report.tabbrushcol:=StringToColor(colmid);
-      Unit_report.tabbrushhighcol:=StringToColor(colhigh);
+      PanelUtilsTitle.Color:=stringtocolor(color2);
+      Form_report.PanelTitleREP.Color:=stringtocolor(color2);
+      Unit_report.tabpencol:=StringToColor(color2);
+      Unit_report.tabbrushcol:=pvvlblue;
+      Unit_report.tabbrushhighcol:=pvvvlblue;
       end;
    2: begin
+      PanelUtilsTitle.Color:=stringtocolor(collow);
+      Form_report.PanelTitleREP.Color:=stringtocolor(collow);
+      Unit_report.tabpencol:=StringToColor(collow);
+      Unit_report.tabbrushcol:=StringToColor(colmid);
+      Unit_report.tabbrushhighcol:=StringToColor(colvlow);
+      end;
+   3: begin
+      PanelUtilsTitle.Color:=stringtocolor(colmid);
+      Form_report.PanelTitleREP.Color:=stringtocolor(colmid);
+      Unit_report.tabpencol:=StringToColor(colmid);
+      Unit_report.tabbrushcol:=StringToColor(colhigh);
+      Unit_report.tabbrushhighcol:=StringToColor(collow);
+      end;
+   4: begin
+      PanelUtilsTitle.Color:=pvvvlblue;
+      Form_report.PanelTitleREP.Color:=pvvvlblue;
+      Unit_report.tabpencol:=pvvvlblue;
+      Unit_report.tabbrushcol:=pvvlblue;
+      Unit_report.tabbrushhighcol:=pvvvvlblue;
+      end;
+   5: begin
       PanelUtilsTitle.Color:=pvvlblue;
       Form_report.PanelTitleREP.Color:=pvvlblue;
       Unit_report.tabpencol:=pvvlblue;
-      Unit_report.tabbrushcol:=pvvvlblue;
-      Unit_report.tabbrushhighcol:=pvlblue;
+      Unit_report.tabbrushcol:=pvlblue;
+      Unit_report.tabbrushhighcol:=pvvvlblue;
       end;
    end;
 if gridaltcolor=1 then

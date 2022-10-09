@@ -39,7 +39,6 @@ type
     PageControl1: TPanel;
     PanelPWMaster: TPanel;
     PanelTitlePMTabAlign: TPanel;
-    PanelTitlePMTab: TPanel;
     PanelTitlePM: TPanel;
     pmexpenc: TMenuItem;
     pmexpplain: TMenuItem;
@@ -98,14 +97,15 @@ type
   end;
 
 procedure clicklabel_pm(var a: TLabel; var b:TShape);
+procedure deselectlabels_pm;
 
 var
   FormPM: TFormPM;
   txt_edit,caption_build,delimiter,wincomspec,winver,validate_txt,local_desktop,confpath,color2:ansistring;
-  Column,Row,alttabstyle:integer;
+  Column,Row,alttabstyle,highlighttabs:integer;
   desk_env:byte;
   pmfilet:text;
-  txt_5_0_resetpm:AnsiString;
+  txt_clear:AnsiString;
   activelabel_pm:TLabel;
   tabpencol,tabbrushcol,tabbrushhighcol:tcolor;
 
@@ -120,7 +120,7 @@ if activelabel_pm=a then exit;
 b.Brush.Color:=tabbrushcol;
 b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-a.Font.Color:=pgray;
+if (highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5) then a.Font.Color:=clDefault else a.Font.Color:=pGray;
 if alttabstyle=1 then a.Font.Style:=[];
 end;
 
@@ -374,7 +374,7 @@ end;
 
 procedure TFormPM.mresetClick(Sender: TObject);
 begin
-if pMessageWarningYesNo(txt_5_0_resetpm)=6 then
+if pMessageWarningYesNo(txt_clear)=6 then
    StringGridPM.RowCount:=1;
 end;
 
