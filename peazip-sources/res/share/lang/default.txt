@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 English
-8.8
+8.9
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20220812
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Accent color
 txt_8_8_btn: Button
 txt_8_8_cb: Button color
@@ -16,7 +21,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
 txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
 txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
+txt_8_8_solcol: Address field
 txt_8_8_snoi: Store owner/group ids (TAR, Linux)
 txt_8_8_snon: Store owner/group names (TAR, Linux)
 txt_8_8_tab: Tab
@@ -420,7 +425,7 @@ txt_4_5_shstatus: Show status bar
 txt_4_5_shtool: Show tool bar
 txt_4_5_upxpj: Sorry, cannot export task definition since this action or option requires performing multiple distinct commands
 txt_4_5_t: Top
-txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks, Password Manager)?
+txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks)?
 txt_4_4_confremove: Remove PeaZip configuration?
 txt_4_3_pwmanhint: Double click to edit items in password list, rightclick for options, Ctrl+C to copy passwords
 txt_4_3_exppl: Export password list
@@ -537,11 +542,11 @@ txt_2_8_usedefaultoutpath: Always use default output path
 txt_2_7_experimental: (experimental, see documentation)
 txt_2_7_optional: (optional)
 txt_2_7_list_tryflatorpw: , possible solutions: try flat view (F6), provide password (F9), get a fresh copy of the archive
-txt_2_7_separate: Add each object to a separate archive
+txt_2_7_separate: Add to separate archives
 txt_2_7_pwsupported: archiving with password
 txt_2_7_cancel: Cancel
 txt_2_7_encfn: Encrypt also file names (if supported by the format)
-txt_2_7_setpw: Enter password / keyfile
+txt_2_7_setpw: Set password / keyfile
 txt_2_7_ext: Extracting:
 txt_2_7_extfrom: Extracting from archive:
 txt_2_7_es: Extract supported non-archive file types, i.e. executables, MS Office and OOo files
@@ -562,7 +567,7 @@ txt_2_7_archivehint: Drag here files and folders to archive, or right-click for 
 txt_2_7_exthint: Drag here archives to extract, or right-click for more options
 txt_2_7_setadvf: Set advanced filters
 txt_2_7_selpath: Selected item's path
-txt_2_7_separateerror: Sorry, cannot import task definition's command line while using "Add each object to a separate archive" switch, since the task is performed as multiple distinct commands
+txt_2_7_separateerror: Sorry, cannot import task definition's command line while using "Add to a separate archives" switch, since the task is performed as multiple distinct commands
 txt_2_7_noinput: The layout is empty: please use Add file(s) or Load Layout to populate the list of archives to be extracted
 txt_2_7_dirsize: The size of the content of folders is not checked for calculating the total size
 txt_2_7_un7z_browse_flat: try flat view (F6)
@@ -662,7 +667,7 @@ txt_action_hint: Action on open or preview with associated application
 txt_add: Add
 txt_add_existing_archive: Add (if archive exists)
 txt_add_archive: Add archive
-txt_add_files: Add file(s)
+txt_add_files: Add files
 txt_add_folder: Add folder
 txt_add_path: Add path
 txt_add_tolayout: Add selected files and folders to archive's layout
@@ -773,7 +778,7 @@ txt_disk_defrag: Disk defrag
 txt_disk_management: Disk management
 txt_dispaly: Display results as
 txt_displayedmnu_obj: displayed
-txt_displayedobjects: Displayed objects
+txt_displayedobjects: Displayed items
 txt_nocompress: do not compress
 txt_delete: Do you want to delete selected file(s)? The operation can't be undone and files will be not recoverable from recycle bin
 txt_wipe: Do you want to securely delete selected file(s)? The operation can't be undone and files will be not recoverable
@@ -878,7 +883,7 @@ txt_inputinfo: Input information
 txt_input_list: Input list:
 txt_iop: input, output, parameters
 txt_ipo: input, parameters, output
-txt_input: input:
+txt_input: Input
 txt_integrity: Integrity check
 txt_chunk_size: Invalid custom size, please correct it in a numerical value
 txt_invertsel: Invert selection
@@ -1015,7 +1020,7 @@ txt_read: Read:
 txt_recentarchives: Recent archives
 txt_rr_hint: Recovery records allows to try to correct archives in case of data corruption
 txt_search_refine: Refine search filter, accepts ? and * wildcards
-txt_fefreshf5: Refresh (F5)
+txt_fefreshf5: Refresh
 txt_release: release:
 txt_unit_removable: Removable unit
 txt_remove_bookmark: Remove bookmark
@@ -1052,7 +1057,7 @@ txt_default_description: Select a function or drag files here
 txt_selectall: Select all
 txt_selectdir: Select directory
 txt_selected_obj: selected
-txt_selected_objects: Selected objects
+txt_selected_objects: Selected items
 txt_sfx: Self-extracting
 txt_sendbymail: Send by mail
 txt_set_defaults: Set application's default parameters
@@ -1112,7 +1117,7 @@ txt_threads: Threads
 txt_titlescolor: Titles color
 txt_to: to
 txt_toggle_browseflat: Toggle browse / flat view (show all)
-txt_toggle_historybookmarks: Toggle history/bookmarks
+txt_toggle_historybookmarks: Toggle status bar, bookmarks, history, clipboard
 txt_toolbarscolor: Bars color
 txt_tools: Tools
 txt_best: try best settings (slow)
@@ -1314,11 +1319,11 @@ To hide names of files and directories contained in the archive check “Encrypt
 Note that in archive creation interface, alongside the padlock icon, there is a warning to visually inform if encryption is set and if the current archive format supports encryption.
 
 CREATE SEPARATE ARCHIVES
-Add objects to be archived (with PeaZip’s "Add" button, or from system’s context menu or SendTo menu) and before confirming with "Ok" check "Add each object to a separate archive" option.
+Add objects to be archived (with PeaZip’s "Add" button, or from system’s context menu or SendTo menu) and before confirming with "Ok" check "Add to separate archives" option.
 
 CONVERT ARCHIVES
 From PeaZip select archives to be converted and click on "Convert" on toolbar or context menu, non-archive files and folders can be added as well, the difference being in archives being extracted before compression stage.
-Using the “Convert existing archives” switch in conjunction with “Add each object to a separate archive" (default) it performs a mass conversion of listed archives, without that switch archive conversion is meant to consolidate input data in a single archive, improving compression efficiency because it allows recompression of the original data from its uncompressed form.
+Using the “Convert existing archives” switch in conjunction with “Add to a separate archives" (default) it performs a mass conversion of listed archives, without that switch archive conversion is meant to consolidate input data in a single archive, improving compression efficiency because it allows recompression of the original data from its uncompressed form.
 
 DIRECTLY CREATE ARCHIVES IN A SPECIFIED FORMAT AND WITH A CHOSEN COMPRESSION LEVEL
 Using “System integration” procedure in Options menu it is possible to enable context menu entries to directly add selected files/folders to a ZIP, 7Z or self extracting archive.

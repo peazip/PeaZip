@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-8.8
+8.9
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: yangyangdaji
 Last rev.: 20220901
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: 强调色
 txt_8_8_btn: 按钮
 txt_8_8_cb: 按钮色

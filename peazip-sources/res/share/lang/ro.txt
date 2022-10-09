@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Romanian - Română
-8.8
+8.9
 Translated by: Vik Thor
 Last rev. by: Vik Thor
 Last rev.: 20111225
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Accent color
 txt_8_8_btn: Button
 txt_8_8_cb: Button color

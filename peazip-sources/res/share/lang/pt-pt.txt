@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Portuguese (Portugal)
-8.8
+8.9
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
 Revisto em: 20220912
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
 txt_8_8_cb: Cor do botão

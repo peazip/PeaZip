@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.8
+8.9
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20220812
 
 === PeaZip text group ===
 
+txt_8_9_empty: L'archivio sembra essere vuoto
+txt_8_9_disp: Mostra contenuto dell'archivio
+txt_8_9_parsing: Lettura del contenuto dell'archivio
+txt_8_9_stoptest: Visualizzare report di errori, list, test e auto-test
+txt_8_9_ttb: Rotazione barra degli strumenti
 txt_8_8_ca: Colore speciale
 txt_8_8_btn: Pulsanti
 txt_8_8_cb: Colore pulsanti
@@ -16,7 +21,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: L'opzione "Estrazione interattiva" (in Opzioni > Impostazioni > Archive manager) è ignorata per la composizione del comando nel tab Console.
 txt_8_8_snz: Applica Zone.Identifier stream (Windows)
 txt_8_8_sm: Dimensione icone piccole
-txt_8_8_solcol: Barra delimitata
+txt_8_8_solcol: Campo indirizzo
 txt_8_8_snoi: Archivia ids owner/group (TAR, Linux)
 txt_8_8_snon: Archivia nomi owner/group (TAR, Linux)
 txt_8_8_tab: Tab
@@ -1112,7 +1117,7 @@ txt_threads: Thread
 txt_titlescolor: Colore dei titoli
 txt_to: in
 txt_toggle_browseflat: Mostra come browser / flat (mostra tutto)
-txt_toggle_historybookmarks: Mostra cronologia/preferiti
+txt_toggle_historybookmarks: Mostra barra preferiti, cronologia, clipboard
 txt_toolbarscolor: Colore delle barre
 txt_tools: Strumenti
 txt_best: prova impostazioni migliori (lento)

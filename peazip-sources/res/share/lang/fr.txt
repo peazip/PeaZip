@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Français
-8.8
+8.9
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 20.08.2022
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Couleur d’accentuation
 txt_8_8_btn: Bouton
 txt_8_8_cb: Couleur du bouton

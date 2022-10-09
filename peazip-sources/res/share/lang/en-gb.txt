@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 English (United Kingdom)
-8.8
+8.9
 Translated by: Robert Readman
 Last rev. by: 
 Last rev.: 20211128
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Accent color
 txt_8_8_btn: Button
 txt_8_8_cb: Button color
@@ -16,7 +21,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
 txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
 txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
+txt_8_8_solcol: Address field
 txt_8_8_snoi: Store owner/group ids (TAR, Linux)
 txt_8_8_snon: Store owner/group names (TAR, Linux)
 txt_8_8_tab: Tab
@@ -541,7 +546,7 @@ txt_2_7_separate: Add each object to a separate archive
 txt_2_7_pwsupported: archiving with password
 txt_2_7_cancel: Cancel
 txt_2_7_encfn: Encrypt also file names (if supported by the format)
-txt_2_7_setpw: Enter password / keyfile
+txt_2_7_setpw: Set password / keyfile
 txt_2_7_ext: Extracting:
 txt_2_7_extfrom: Extracting from archive:
 txt_2_7_es: Extract supported non-archive file types, i.e. executables, MS Office and OOo files
@@ -563,7 +568,7 @@ txt_2_7_exthint: Drag here archives to extract, or right-click for more selectio
 txt_2_7_setadvf: Set advanced filters
 txt_2_7_selpath: Selected item's path
 txt_2_7_separateerror: Sorry, cannot import task definition's command line while using "Add each object to a separate archive" switch, since the task is performed as multiple distinct commands
-txt_2_7_noinput: The layout is empty: please use Add file(s) or Load Layout to populate the list of archives to be extracted
+txt_2_7_noinput: The layout is empty: please use Add files or Load Layout to populate the list of archives to be extracted
 txt_2_7_dirsize: The size of the content of folders is not checked for calculating the total size
 txt_2_7_un7z_browse_flat: try flat view (F6)
 txt_2_7_updating: [Updating existing archive]
@@ -662,7 +667,7 @@ txt_action_hint: Action on open or preview with associated application
 txt_add: Add
 txt_add_existing_archive: add (if archive exists)
 txt_add_archive: Add archive
-txt_add_files: Add file(s)
+txt_add_files: Add files
 txt_add_folder: Add folder
 txt_add_path: Add path
 txt_add_tolayout: Add selected files and folders to archive's layout
@@ -773,7 +778,7 @@ txt_disk_defrag: Disk defrag
 txt_disk_management: Disk management
 txt_dispaly: Display results as
 txt_displayedmnu_obj: displayed
-txt_displayedobjects: Displayed objects
+txt_displayedobjects: Displayed items
 txt_nocompress: do not compress
 txt_delete: Do you want to delete selected file(s)? The operation can't be undone and files will be not recoverable from recycle bin
 txt_wipe: Do you want to securely delete selected file(s)? The operation can't be undone and files will be not recoverable.
@@ -1052,7 +1057,7 @@ txt_default_description: Select a function or drag files here
 txt_selectall: Select all
 txt_selectdir: Select directory
 txt_selected_obj: selected
-txt_selected_objects: Selected objects
+txt_selected_objects: Selected items
 txt_sfx: Self-extracting
 txt_sendbymail: Send by mail
 txt_set_defaults: Set application's default parameters
@@ -1100,7 +1105,7 @@ txt_testpw: Test password / keyfile
 txt_testsel: Test selected object(s)
 txt_col_hint: The colour should be chosen in order to integrate well with icon colours and to other GUI's elements
 txt_bookmarks_hint: The complete and editable list of bookmarks is available in the file browser interface, clicking on the "More controls" icon and on "Toggle history/bookmarks"
-txt_archive_noinput_tolist: The layout is empty: please use Add file(s), Add folder(s) or Load Layout to populate the archive's layout
+txt_archive_noinput_tolist: The layout is empty: please use Add files, Add folder(s) or Load Layout to populate the archive's layout
 txt_theme: Theme
 txt_icons_found: Theme loaded successfully.
 txt_themename: Theme name
@@ -1112,7 +1117,7 @@ txt_threads: Threads
 txt_titlescolor: Titles colour
 txt_to: to
 txt_toggle_browseflat: Toggle browse/flat view
-txt_toggle_historybookmarks: Toggle history/bookmarks
+txt_toggle_historybookmarks: Toggle status bar
 txt_toolbarscolor: Toolbars colour
 txt_tools: Tools
 txt_best: try best settings (slow)

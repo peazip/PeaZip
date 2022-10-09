@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Ukrainian - Українська
-8.8
+8.9
 Переклад: Решетнюк В.В.(IxI_JOKER_IxI), Міщенко О.С., sasha[at]mishchenko.tk, Пилипчук О.П., pilipchukap[at]rambler[dot]ru, ViktorOn
 Останній раз ред.: IxI_JOKER_IxI (Localize.org.ua)
 Останнє ред.: 28.02.2022
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Accent color
 txt_8_8_btn: Button
 txt_8_8_cb: Button color

@@ -1,12 +1,17 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-8.8
+8.9
 Prevod: Jadran Rudec, jrudec@gmail.com
 Zadnja revizija:Jadran Rudec 
 Zadnja revizija: 20220820
 
 === PeaZip text group ===
 
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Barva poudarka
 txt_8_8_btn: Gumb
 txt_8_8_cb: Barva gumba
