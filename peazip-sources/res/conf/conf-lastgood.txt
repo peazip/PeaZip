@@ -14,7 +14,7 @@ clWindowText
 default.txt
 ,
 [0: always keep open task window for inspection of reports 1: (default) keep open only for errors, list, test operations 2: keep open only for errors, list 3: never keep open for inspection]
-1
+2
 
 [open output directory when task ends]
 0
@@ -726,4 +726,4 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 0
 
 [tool bar large icon size]
-1
+0
