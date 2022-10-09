@@ -3,15 +3,15 @@ Français
 8.9
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 20.08.2022
+Date du: 9.10.2022
 
 === PeaZip text group ===
 
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_8_9_empty: L’archive semble vide
+txt_8_9_disp: Affichage du contenu de l’archive
+txt_8_9_parsing: Analyse du contenu de l’archive
+txt_8_9_stoptest: Arrêter pour inspecter le rapport pour détecter les erreurs, les listes, les tests et les tests automatiques
+txt_8_9_ttb: Basculer la barre d’outils
 txt_8_8_ca: Couleur d’accentuation
 txt_8_8_btn: Bouton
 txt_8_8_cb: Couleur du bouton
