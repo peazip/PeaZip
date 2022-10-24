@@ -1351,7 +1351,7 @@ F7	adicionar aos marcadores / Ctrl+F7 abrir nova instância do PeaZip / Shift+F7
 F8	procurar o primeiro item na lista de marcadores (Ctrl, segundo, Shift, terceiro)
 F9	definir palavra-passe ou ficheiro-chave / Ctrl+F9 criar ficheiro-chave ou palavra-passe aleatória / Shift+F9 definir filtros avançados
 F10		menu / Ctrl+F10 executar com outro utilizador / Alt+F10 executar como administrator (Windows Vista e mais recentes)
-F11		alternar entre acrã inteiro/janela
+F11		alternar entre ecrã inteiro/janela
 F12		extrair tudo para...
 
 ACERCA O PEAZIP
