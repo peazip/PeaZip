@@ -3,15 +3,15 @@ Portuguese (Portugal)
 8.9
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20220912
+Revisto em: 20221024
 
 === PeaZip text group ===
 
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_8_9_empty: O arquivo parece estar vazio
+txt_8_9_disp: Mostrar conteúdo do arquivo
+txt_8_9_parsing: Analisar o conteúdo do arquivo
+txt_8_9_stoptest: Parar para analisar o relatório (erros, listas, testes, autotestes)
+txt_8_9_ttb: Alternar entre barras de ferramentas
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
 txt_8_8_cb: Cor do botão
@@ -79,8 +79,8 @@ txt_8_1_nopreparse: Não pré-analisar arquivos
 txt_8_1_ed: erro(s) detetado(s).
 txt_8_1_togglearc: Listar o conteúdo de um arquivo de uma forma plana pode ser demorado, continuar?
 txt_8_1_preparsehint: Otimizar desempenho limitando a pré-análise de arquivos grandes. A pré-análise destina-se a detetar possíveis erros no conteúdo dos arquivos.
-txt_8_1_slow: Lento
-txt_8_1_vslow: Muito lento
+txt_8_1_slow: Lenta
+txt_8_1_vslow: Muito lenta
 txt_8_1_volumes: volumes
 txt_8_0_altcol: Alternar cor da grelha
 txt_8_0_forcebrowse: Explorar tipos de arquivos não canónicos (contentores, imagens de disco, instaladores...)
@@ -477,7 +477,7 @@ txt_3_2_alltasks: Todas as tarefas
 txt_3_2_conf: Configuração
 txt_3_2_donations: Doações a instituições de caridade
 txt_3_1_sccenc: 7z / p7zip -scc codificação de caracteres
-txt_3_1_downloads: Descargas
+txt_3_1_downloads: Transferências
 txt_3_1_lib: Bibliotecas
 txt_3_1_more: Mais
 txt_3_1_openasarchive: Abrir como arquivo
@@ -1000,7 +1000,7 @@ txt_type_description_pea: PEA: formato orientado para segurança com compressão
 txt_peazip_new: PeaZip (nova instância)
 txt_peazip_help: Suporte online
 txt_peazip_web: Site do PeaZip
-txt_performall: Executar todos os algoritmos suportados
+txt_performall: Todos os algoritmos suportados
 txt_name_provide: Os caracteres \ / : * ? ' " < > | não são permitidos para nome de ficheiro
 txt_upxorstrip: Por favor escolha Remoção e/ou UPX no executável
 txt_not_removable_file: Por favor feche o ficheiro em utilização para permitir a remoção:
@@ -1346,12 +1346,12 @@ F2	mudar nome / Ctrl+F2 copiar seleção para / Shift+F2 mover seleção para
 F3	pesquisa (a opção recursiva é memorizada) / Ctrl+F3 inicia como não recursiva (pesquisar aqui) / Shift+F3 recursiva / Alt+F3 pesquisa do sistema
 F4	subir um nível / Ctrl+F4 explorar arquivos de root / Shift+F4 explorar ambiente de trabalho
 F5	atualizar
-F6	trocar entre vista plana/navegador
+F6	alternar entre vista plana/navegador
 F7	adicionar aos marcadores / Ctrl+F7 abrir nova instância do PeaZip / Shift+F7 abrir linha de comandos no caminho selecionado / Alt+F7 explorar caminho selecionado
 F8	procurar o primeiro item na lista de marcadores (Ctrl, segundo, Shift, terceiro)
 F9	definir palavra-passe ou ficheiro-chave / Ctrl+F9 criar ficheiro-chave ou palavra-passe aleatória / Shift+F9 definir filtros avançados
 F10		menu / Ctrl+F10 executar com outro utilizador / Alt+F10 executar como administrator (Windows Vista e mais recentes)
-F11		trocar entre acrã inteiro/janela
+F11		alternar entre ecrã inteiro/janela
 F12		extrair tudo para...
 
 ACERCA O PEAZIP
@@ -1362,7 +1362,7 @@ O PeaZip permite-lhe aplicar diversos filtros de pesquisa ao conteúdo dos arqui
 
 Outras funcionalidades: cifra de ficheiros, copiar/separar/unir ficheiros, eliminação permanente, comparações, validação de códigos "hash" e "checksum", análises de desempenho, geração de palavras-passe e ficheiros-chave.
 
-Descargas: https://peazip.github.io
+Transferências: https://peazip.github.io
 Saber mais: https://peazip.github.io/peazip-free-archiver.html
 Suporte: https://peazip.github.io/peazip-help.html
 FAQ: https://peazip.github.io/peazip-help-faq.html
