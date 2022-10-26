@@ -3,15 +3,15 @@ German - Deutsch
 8.9
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20220822
+Last rev.: 20221025
 
 === PeaZip text group ===
 
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_8_9_empty: Archiv scheint leer zu sein
+txt_8_9_disp: Zeige Archivinhalt an
+txt_8_9_parsing: Lese Archivinhalt ein
+txt_8_9_stoptest: Anhalten, um den Bericht auf Fehler, Liste, Test, Autotest zu überprüfen
+txt_8_9_ttb: Werkzeugleiste umschalten
 txt_8_8_ca: Akzentfarbe
 txt_8_8_btn: Schaltfläche
 txt_8_8_cb: Schaltflächenfarbe
@@ -21,7 +21,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: Bitte beachten, dass die Option "Interaktives Entpacken" (in Optionen > Einstellungen > Archivverwaltung) beim Erstellen der Befehlszeile auf der Registerkarte "Konsole" ignoriert wird.
 txt_8_8_snz: Zone.Identifier-Stream setzen (Windows)
 txt_8_8_sm: Kleine Symbolgröße
-txt_8_8_solcol: einfarbige Leiste
+txt_8_8_solcol: Einfarbige Leiste
 txt_8_8_snoi: Benutzer-/Gruppen-ID speichern (TAR, Linux)
 txt_8_8_snon: Benutzer-/Gruppenname speichern (TAR, Linux)
 txt_8_8_tab: Tab
@@ -49,7 +49,7 @@ txt_8_5_detailslarge: Details, groß
 txt_8_5_intext: In den temporären Arbeitsordner entpacken und anschließend zur Ausgabe verschieben (vor dem Überschreiben fragen)
 txt_8_5_listlarge: Liste, groß
 txt_8_5_loadlayout: Layout beim Starten laden
-txt_8_5_samplescripts: Beispiel Skripte
+txt_8_5_samplescripts: Beispiel-Skripte
 txt_8_4_keepopenerrorslist: Fehlerbericht und Liste anzeigen
 txt_8_3_mbubin: Binär
 txt_8_3_cw: Arbeitsverzeichnis ändern? Dadurch werden temporäre Arbeitsdateien zurückgesetzt und die Anwendung neu gestartet.
@@ -121,10 +121,10 @@ txt_7_6_forcelocalenc: Erzwinge lokal
 txt_7_6_forceutf8enc: Erzwinge UTF-8
 txt_7_6_cpnote: Wird der ausgewählte benutzerdefinierte Zeichensatz nicht unterstützt, enden Aufgaben mit einem Fehler (höchstwahrscheinlich Speicherzuweisungsfehler). Ändern Sie in diesem Fall den Zeichensatz oder setzen Sie die Anwendung zurück. 
 txt_7_6_defaultenc: Lokal, UTF-8 für mehr Symbole
-txt_7_6_dim: Geringere Helligkeit
+txt_7_6_dim: gedimmt
 txt_7_6_setcurdef: Aktuellen Pfad als Standard-Ausgabepfad festlegen
 txt_7_6_setdef: Standard-Ausgabepfad festlegen
-txt_7_6_tadvanced: Baumansicht synchronisieren, behalte besuchte Knotenpunkte
+txt_7_6_tadvanced: Baumansicht synchron., besuchte Knoten behalten
 txt_7_6_tsimple: Baumansicht synchronisieren, einfach
 txt_7_6_tacolor: Textfarbe
 txt_7_5_always: Immer
@@ -139,7 +139,7 @@ txt_7_5_draghide: Dropziel verstecken
 txt_7_5_draglh: Dropziel sperren und verstecken
 txt_7_5_draglock: Dropziel sperren
 txt_7_5_never: Nie
-txt_7_5_repnascii: Ersetze/Entferne Nicht-ASCII Zeichen
+txt_7_5_repnascii: Nicht-ASCII Zeichen ersetzen / entfernen
 txt_7_4_comment: Kommentar
 txt_7_4_7zfbrotlicomp: Schnelle Komprimierung, 7z Brotli
 txt_7_4_7zfzstandardcomp: Schnelle Komprimierung, 7z Zstandard
@@ -224,7 +224,7 @@ txt_6_4_openintab: In neuem Tab öffnen
 txt_6_4_paths: Pfade
 txt_6_4_prepdirn: Ordnername voranstellen
 txt_6_4_relative: Relative Pfade
-txt_6_4_tabbar: Tableiste
+txt_6_4_tabbar: Tableiste anzeigen
 txt_6_3_autoadjust: Spalten automatisch anpassen
 txt_6_3_cinfo: Info und Kommentare
 txt_6_3_syn: Archiv mit Disc synchronisieren
@@ -234,8 +234,8 @@ txt_6_2_archive: Archiv Dateityp
 txt_6_2_container: Container Dateityp
 txt_6_1_ec: Erweitere / Reduziere Baumstruktur
 txt_6_0_msq: Nach Dateityp bei solider Komprimierung sortieren
-txt_5_9_lff: Analysiere Dateien und Ordner
-txt_5_9_pff: Analysiere und zeige Kopfzeile/EOF
+txt_5_9_lff: Dateien und Ordner analysieren
+txt_5_9_pff: Dateikopf/EOF analysieren und anzeigen
 txt_5_9_start: Starte von
 txt_5_8_l0: Alle unterstützten Komponenten und Dateitypen erlauben
 txt_5_8_l1: Nur freie Softwarekomponenten erlauben
@@ -248,7 +248,7 @@ txt_5_8_fsr: Dieser Archivtyp wird wegen der Einschränkung auf freie Software n
 txt_5_7_pinstalled: INSTALLIERT
 txt_5_7_pmissing: NICHT VORHANDEN
 txt_5_7_plugin: Plugin nicht vorhanden, kann unter Hilfe > Plugins und Addons heruntergeladen werden
-txt_5_6_basic: Basis
+txt_5_6_basic: Einfach
 txt_5_6_exarc: Archiv entpacken
 txt_5_6_tab: In neuem Tab öffnen
 txt_5_6_rc: Rechtsklick für Optionen
@@ -278,7 +278,7 @@ txt_5_5_replacestr: Zeichenfolge ersetzen/entfernen
 txt_5_5_datesameday: Gleicher Tag der ausgewählten Datei
 txt_5_5_datesamehour: Gleiche Stunde der ausgewählten Datei
 txt_5_5_datesamemonth: Gleicher Monat der ausgewählten Datei
-txt_5_5_datesameweek: Gleicher Woche der ausgewählten Datei
+txt_5_5_datesameweek: Gleiche Woche der ausgewählten Datei
 txt_5_5_datesameyear: Gleiches Jahr der ausgewählten Datei
 txt_5_5_scan: Scannen
 txt_5_5_select: Auswählen
@@ -437,7 +437,7 @@ txt_4_3_pwmanlist: Passwort-Liste
 txt_4_3_pwman: Passwort-Manager
 txt_4_3_pwmancorr: Der Passwort-Manager scheint manipuliert oder beschädigt zu sein. Passwort-Manager dennoch öffnen und versuchen, die aktuelle Passwort-Liste wiederherzustellen? ("Nein" setzt den Passwort-Manager zurück, empfohlene Auswahl)
 txt_4_3_expplp: Klartext (für alle Zwecke)
-txt_4_3_recsrc: Rekursive Suche als Standard
+txt_4_3_recsrc: Immer rekursiv suchen
 txt_4_3_resetpm: Soll der Passwort-Manager zurückgesetzt werden? Alle gespeicherten Passwörter werden gelöscht
 txt_4_3_breadcrumb: Adresszeile im Brotkrumen-Stil anzeigen
 txt_4_2_arcabspath: Absolute Pfade verwenden
@@ -448,7 +448,7 @@ txt_4_1_duplicatesfound: Doppelte Dateien gefunden
 txt_4_1_duplicatesfind: Doppelte Dateien suchen
 txt_4_1_runasadmin: Als Administrator ausführen
 txt_4_1_simplesearch: Einfache Suche
-txt_4_0_thim: Zeige Miniaturansicht
+txt_4_0_thim: Miniaturansicht anzeigen
 txt_3_8_type_description_wim: WIM: Disk-Image Dateityp von Microsoft
 txt_3_8_type_description_xz: XZ: Mächtige Dateikomprimierung, die auf LZMA2 basiert
 txt_3_7_donations: Spenden
@@ -459,7 +459,7 @@ txt_3_7_swapbars: Werkzeugleiste / Adresszeile tauschen
 txt_3_7_themedbars: Individualisierte Toolbars
 txt_3_6_ignoredd: Pfade immer ignorieren bei Drag and Drop-Vorgängen
 txt_3_6_close: Schließen
-txt_3_6_resetapps: Anwendungen zurücksetzen (anpassbare Gruppe von Anwendungen und Skripten zum Öffnen von Dateien, Standard-Apps werden umgangen)?
+txt_3_6_resetapps: Einstellungen zurücksetzen (Zurückgesetzt werden anpassbare Gruppen von Programmen und Skripten zum Öffnen von Dateien, Überschreiben von Dateizuordnungen)?
 txt_3_6_ethemes: Gespeicherte Themes
 txt_3_5_td: Themes herunterladen
 txt_3_5_managecustomthemes: Themes verwalten
@@ -535,7 +535,7 @@ txt_2_8_custom: wird nicht direkt von PeaZip unterstützt, aber beim Entpacken k
 txt_2_8_unitrecommend: Es wird empfohlen zu Entpacken (Rechtsklick > Ausgewählte Dateien entpacken) oder Dateisysteme aus dem Root-Ordner des Systems zu öffnen (System-Tools > Einheit als Archiv öffnen)
 txt_2_8_viewasarchive: Einheit als Archiv öffnen
 txt_2_8_nounit: Keine Einheit ausgewählt
-txt_2_8_rowselect: Zeile ausgewählt
+txt_2_8_rowselect: Ganze Zeile auswählen
 txt_2_8_statusbar: Statuszeile
 txt_2_8_typeunit: Trage Namen der logischen oder physikalischen Einheit ein
 txt_2_8_usedefaultoutpath: Standard-Ausgabepfad nutzen
@@ -577,14 +577,14 @@ txt_2_6_advanced: Erweitert
 txt_2_6_plalways: Immer offen halten, um den Aufgaben-Bericht lesen zu können
 txt_2_6_plsmart: Nur bei Bedarf offen halten (Fehler-, Auflistungs- oder Prüf-Berichte)
 txt_2_5_sessionio: (diese Sitzung)
-txt_2_5_advanced: Erweiterte Bearbeitung: platziere Leerzeichen zwischen Parametern und Dateinamen falls erforderlich
-txt_2_5_basic: Einfache Bearbeitung: Anwendung und Parameter vor dem Namen der Ausgangsdatei
+txt_2_5_advanced: Erweiterte Einstellung: Leerzeichen zwischen Parametern und Dateinamen eingeben, falls erforderlich
+txt_2_5_basic: Einfache Einstellung: Anwendung und Parameter vor dem Dateinamen eingeben
 txt_2_5_cannotrun: Kann nicht ausgeführt werden
 txt_2_5_custeditors: Selbst definierte Editoren, Player, Antivirus-Scanner, usw... (übergeht die System-Verknüpfungen)
 txt_2_5_delete: Löschen
 txt_2_5_delete_fromarchive: Aus Archiv löschen
 txt_2_5_langflag: Archivierte Dateinamen als UTF-8 Text darstellen. Abwählen, um erweiterte Zeichen als "?" darzustellen.
-txt_2_5_encpj: Speichere Aufgaben-Definition als UTF-8 Text
+txt_2_5_encpj: Aufgaben-Definition als UTF-8 Text speichern
 txt_2_5_execommand: Programm oder Befehl
 txt_2_5_help: Hilfe
 txt_2_5_langhint: Hinweis: Erweiterte Zeichen werden durch "?" ersetzt. Platzhalter können die Syntax vereinfachen, wenn der Zeichensatz des Archivs auf der aktuellen Architektur nicht übernommen werden kann.
@@ -702,7 +702,7 @@ txt_compressionratio_hint: Komprimierungsverhältnis des Archivs
 txt_archiving: Archiviere:
 txt_cl_long: Mehr Argumente als die maximale Anzahl die PeaZip an den Packer weitergeben kann, bitte weniger Dateien angeben (d.h. besser Ordner statt einzelner Dateien auswählen)
 txt_overwrite_askbefore: Vor dem Überschreiben fragen (im Konsolen-Modus)
-txt_associated: verknüpfte Anwendung
+txt_associated: Verknüpfter Anwendung
 txt_attributes: Attribute
 txt_author: Autor
 txt_ren_existing: Vorhandene Dateien automatisch umbenennen
@@ -747,7 +747,7 @@ txt_content: Inhalt
 txt_controlpanel: Systemsteuerung
 txt_convert: Laufwerk in NTFS umformatieren (kann nicht ohne Weiteres rückgängig gemacht werden!)
 txt_copy: Kopieren
-txt_copyto: Kopiere nach...
+txt_copyto: Kopieren nach...
 txt_create: Erstellen
 txt_create_archive: Archiv erstellen
 txt_title_create: Archiv erstellen, komprimieren, verschlüsseln, teilen...
@@ -759,7 +759,7 @@ txt_create_sfx: Selbstentpackendes Archiv erstellen (SFX)
 txt_cr_current: Aktueller Pfad oder Komprimierungsstärke filtern
 txt_custom: Benutzerdefiniert
 txt_type_description_custom: Erweitert (für Erfahrene): Oben auf dieser Seite kann man über den Reiter "Erweitert" den Namen des gewünschten Programms und dessen Parameter angeben
-txt_customapp: Gewünschtes Programm
+txt_customapp: Benutzerdefinierter Anwendung
 txt_custom_parameters: gewünschte Parameter
 txt_customsize: Benutzerdefinierte Größe
 txt_cut: Ausschneiden
@@ -899,16 +899,16 @@ txt_job_code: Aufgabe-Code:
 txt_job_definition_saved: Aufgabe-Definition erfolgreich gespeichert in
 txt_job_success: Aufgabe erfolgreich abgeschlossen!
 txt_join: Verschmelzen
-txt_joinfiles: Dateien verschmelzen
+txt_joinfiles: Dateien verbinden
 txt_keyfile: Schlüsseldatei
 txt_keyfile_not_found: Schlüsseldatei konnte nicht gefunden oder gelesen werden. Bitte eine andere Datei wählen.
 txt_keyfile_notcreated: Schlüsseldatei nicht erstellt
-txt_larger: Größer als die gewählte Datei
+txt_larger: Größer als ausgewählte Datei
 txt_lastused: Zuletzt verwendet
 txt_launch: Aufgabe starten
 txt_layout: Layout
 txt_filelist_savedas: Layout gespeichert als
-txt_level: Level
+txt_level: Stufe
 txt_license: Lizenz
 txt_caption_list: Liste
 txt_list_details: Liste (mit Details)
@@ -931,13 +931,13 @@ txt_method: Methode
 txt_misc: Verschiedenes
 txt_modify: Verändern
 txt_morecontrols: Mehr Kontrolle (Verlauf, Lesezeichen, ...)
-txt_morerecent: Älter als ausgewählte Dateien
-txt_ent_hint: Bewegen Sie die Maus, machen Tastatureingaben im Eingabefeld, laden Sie Dateien um genug (Zufalls-)Werte aus dem System zu sammeln...
+txt_morerecent: Neuer als ausgewählte Datei
+txt_ent_hint: Bewegen Sie die Maus, machen Tastatureingaben im Eingabefeld oder laden Sie Dateien, um genug Zufallswerte vom System zu sammeln...
 txt_moveto: Verschieben nach...
 txt_mypc: Mein Computer
 txt_list_na: n/a
 txt_name: Name
-txt_naming: Regeln der Namensgebung
+txt_naming: Dateinamen
 txt_unit_remote: Netzwerk-Laufwerk
 txt_newarchive: Neues Archiv
 txt_cnewfolder: Neuer Ordner
@@ -957,7 +957,7 @@ txt_description: Anmerkungen
 txt_compare_second: Nun die Datei auswählen mit der verglichen werden soll
 txt_peaobj: Dateikontrolle
 txt_displayed_obj: Dateien
-txt_olderthan: Älter als ausgewählte Dateien
+txt_olderthan: Älter als ausgewählte Datei
 txt_on: Bei
 txt_ondblclick: Bei Doppelklick ausführen:
 txt_opacity: Durchsichtigkeitsgrad
@@ -994,7 +994,7 @@ txt_un7z_browse_pw: Passwort wird vielleicht benötigt
 txt_un7z_browse_pw_other: Passwort möglicherweise falsch
 txt_paste: Einfügen
 txt_path: Pfad:
-txt_pea_appcolor: Pea - Fensterfarbe
+txt_pea_appcolor: Fensterfarbe
 txt_pea_textcolor: Pea - Schriftfarbe
 txt_type_description_pea: PEA: Sicherheits-orientiertes Archivformat mit schneller Komprimierung
 txt_peazip_new: PeaZip (neue Instanz)
@@ -1020,7 +1020,7 @@ txt_read: Lesen:
 txt_recentarchives: Letzte Archive   
 txt_rr_hint: Wiederherstellungsdaten erlauben möglicherweise die Korrektur von Archiven bei Datenbeschädigung
 txt_search_refine: Suchfilter verfeinern, akzeptiert ? und * als Platzhalter
-txt_fefreshf5: Auffrischen (F5)
+txt_fefreshf5: Auffrischen
 txt_release: Version:
 txt_unit_removable: Entfernbare Einheit
 txt_remove_bookmark: Entferne Lesezeichen
@@ -1071,7 +1071,7 @@ txt_size: Größe
 txt_sizeb: Größe (B)
 txt_skip_existing: Vorhandene Dateien überspringen
 txt_slowercomp: Langsamere Komprimierung, aber gleiche Dekomprimierung
-txt_smaller: Kleiner als gewählte Dateien
+txt_smaller: Kleiner als ausgewählte Datei
 txt_solid: Solide
 txt_solid_block: Solider Block
 txt_solid_auto: Solide, auto-eingestellt
@@ -1116,7 +1116,7 @@ txt_extand_error: Diese Funktion kann immer nur für eine Datei gleichzeitig aus
 txt_threads: Threads
 txt_titlescolor: Titelzeilen-Farbe
 txt_to: zu
-txt_toggle_browseflat: Flache Ansicht umschalten
+txt_toggle_browseflat: Durchsuchen / flache Ansicht umschalten
 txt_toggle_historybookmarks: Wechseln zwischen Verlauf / Lesezeichen
 txt_toolbarscolor: Toolbar-Farbe
 txt_tools: Werkzeuge
@@ -1124,7 +1124,7 @@ txt_best: beste Einstellungen testen (langsam)
 txt_type: Typ
 txt_level_ultra: Ultra
 txt_error_openfile: Kann die angegebene Datei nicht öffnen
-txt_cl_hint: UNACE und UPX arbeiten im Konsolenmodus; Auflisten, Testen und Benchmark-Aufgaben laufen im GUI-Modus ab
+txt_cl_hint: UNACE und UPX arbeiten im Konsolenmodus. Auflisten, Testen und Benchmark-Aufgaben laufen im GUI-Modus ab.
 txt_ace_missing: UNACE-Plugin ist nicht vorhanden; um ACE-Archive zu handhaben kann das Plugin von PeaZips Website (weil UNACE nicht OpenSource ist, wird das PlugIn nicht standardmäßig mit in das PeaZip-Paket integriert) heruntergeladen werden.
 txt_units: Einheiten
 txt_unit_unknown: Unbekannter Laufwerkstyp
@@ -1146,7 +1146,7 @@ txt_word: Wort
 txt_write: Schreiben:
 txt_ramdompw_hint: Das zufällig erzeugte Passwort kann von hier kopiert werden
 txt_exe_hint: Für benutzerdefinierte Komprimierung können hier beliebige ausführbare Dateien und Parameter angegeben werden, mit eigener Syntax. Bitte beachten, dass die Kommando-Syntax in dem "Konsole"-Tab ebenfalls angepasst werden kann.
-txt_pj_hint2: Aufgaben-Definition können über die GUI-Oberfläche in das Memofeld unten importiert werden. Danach können sie bearbeitet, gestartet oder gespeichert werden, ohne dass die für die GUI definierte Aufgabe beeinflusst wird.
+txt_pj_hint2: Aufgaben-Definitionen können über die GUI-Oberfläche in das Memofeld unten importiert werden. Danach können sie bearbeitet, gestartet oder gespeichert werden, ohne dass die für die GUI definierte Aufgabe beeinflusst wird.
 txt_type_description_zip: ZIP: schnelles Archivierungs-/Komprimierungsformat, Standard auf Windows-Systemen
 txt_zipcrypto_hint: ZipCrypto (legacy)
 
@@ -1175,12 +1175,12 @@ txt_5_3_info: Info
 txt_5_3_list: Liste
 txt_5_3_os: Originalgröße
 txt_5_3_ps: Komprimierte Größe
-txt_5_3_test: Prüfen
+txt_5_3_test: Prüfe
 txt_5_0_extract: Entpacken
 txt_5_0_from: von
 txt_5_0_in: in
 txt_5_0_to: zu
-txt_4_5_search: suchen
+txt_4_5_search: Suchen
 txt_4_0_drag: Zum Entpacken das Archiv hierherziehen, oder 
 txt_4_0_dragorselect: Hierherziehen oder Datei auswählen
 txt_4_0_select: Datei auswählen
