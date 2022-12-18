@@ -57,5 +57,5 @@ LazarusResources.Add('TFormDlg','FORMDATA',[
   +#2'n'#11'ModalResult'#2#10#8'TabOrder'#2#5#0#0#0#6'TImage'#8'ImageDlg'#22'An'
   +'chorSideLeft.Control'#7#5'Owner'#21'AnchorSideTop.Control'#7#5'Owner'#4'Lef'
   +'t'#2#15#6'Height'#2'('#3'Top'#2#30#5'Width'#2'('#18'BorderSpacing.Left'#2#15
-  +#17'BorderSpacing.Top'#2#30#0#0#0
+  +#17'BorderSpacing.Top'#2#30#11'Transparent'#9#0#0#0
 ]);

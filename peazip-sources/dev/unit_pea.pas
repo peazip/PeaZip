@@ -192,6 +192,7 @@ unit Unit_pea;
  1.08     20220620  G.Tani      Updated theme, can now use custom CSV separator, fixes
  1.09     20220808  G.Tani      Updated theming engine
  1.10     20221003  G.Tani      Updated theming engine
+ 1.11     20221208  G.Tani      Minor fixes
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -374,7 +375,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.10'; //declares release version for the whole build
+  P_RELEASE          = '1.11'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -4665,8 +4666,9 @@ for j:=3 to paramcount do
             rc:=Form_report.StringGrid1.RowCount+1;
             Form_report.StringGrid1.RowCount:=rc;
             if nlevel>0 then Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize div nlevel),0)+' deleted'
-            else Form_pea.LabelTools2.Caption:=end2caption+', '+nicenumber(inttostr(etsize),0)+' deleted';
-            Form_pea.LabelTools3.Caption:='Processing item '+inttostr(rc-1)+' of '+inttostr(ntotalexp);
+            else Form_pea.LabelTools2.Caption:=end2caption;
+            Form_pea.LabelTools3.Caption:='Processing item '+inttostr(rc-1)+' of '+inttostr(ntotalexp)+' found';
+            application.ProcessMessages;
             try
                {$IFDEF MSWINDOWS}
                upredeletefile(exp_files[k]);

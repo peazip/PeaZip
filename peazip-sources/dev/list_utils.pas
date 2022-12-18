@@ -122,6 +122,7 @@ unit list_utils;
  0.60     20210817  G.Tani      Added support for .lz file extension, and for .apkm, .apks, .aab packages: 225 extensions supported
  0.61     20210925  G.Tani      Nicenumber can now display various types of multiple-bytes fomats for file sizes (binary, decimanl, none)
  0.62     20220125  G.Tani      Added support for .vhdx format: 226 extensions supported
+ 0.63     20221209  G.Tani      Added support for .pmdx, .pmvx, .tmdx, .prdx SoftMaker Office files, 230 extensions supported
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -2056,7 +2057,9 @@ if (pos('bin'+directoryseparator+'arc',s)<>0) or (pos('Rar.exe',s)<>0) then
       s1:=copy(s,1,pos(' -hp',s))+s1;
       end;
 
-if (pos('bin'+directoryseparator+'pea',s)<>0) then
+if (pos(directoryseparator+'pea',s)<>0) and
+   (pos('bin'+directoryseparator+'7z',s)=0) and
+   (pos('bin'+directoryseparator+'arc',s)=0) then
    if pos('BATCH',s)<>0 then
       begin
       s1:=copy(s,pos('BATCH',s)+6,length(s)-pos('BATCH',s)-5);
@@ -2223,6 +2226,7 @@ begin
     '.sxc', '.sxd', '.sxi', '.sxw', '.stc', '.std', '.sti', '.stw', '.sxg', '.sxm': testext := 501; //OOo 1.x legacy filetypes
     '.ods', '.ots', '.odm', '.oth', '.oxt', '.odb', '.odf', '.odg', '.otg', '.odp', '.otp', '.odt', '.ott': testext := 501; //OOo filetypes
     '.gnm': testext := 501; //Gnumeric spreadsheet
+    '.pmdx', '.pmvx', '.tmdx', '.prdx': testext := 501; //SoftMaker Office compressed formats
     '.doc', '.dot', '.xls', '.xlt', '.ppt', '.pps', '.pot': testext := 502; //non executable COMPOUND files
     '.docx', '.dotx', '.xlsx', '.xltx', '.pptx': testext := 502; //OPC MS Office 2007 compressed formats, treated as othes MS Office formats
     '.mpp': testext := 502; //misc MS formats

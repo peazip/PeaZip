@@ -875,6 +875,7 @@ object Form_gwrap: TForm_gwrap
             Top = 129
             Width = 16
             BorderSpacing.Top = 16
+            Transparent = True
           end
         end
       end

@@ -353,23 +353,20 @@ const
 var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,poutnamet,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
-  pprogbar,pprogbarprev,perrors,ipercp,remtime,temperature,alttabstyle,highlighttabs:integer;
-  pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore:boolean;
-  pautoclose:byte;
-  Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,
-  Bpriority1,Bpriority2,Bpriority3,Bpriority4,
+  pprogbar,pprogbarprev,perrors,iperc,ipercp,remtime,temperature,alttabstyle,highlighttabs,
+  modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,ws_gw_height,ws_gw_width,
+  pbarh,pbarhsmall:integer;
+  pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore,launched,
+  stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall, needinteraction,
+  exbackground,pldesigned,okseven:boolean;
+  Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,Bpriority1,Bpriority2,Bpriority3,Bpriority4,
   Bsuccess,Berror: TBitmap;
   cl,cl1,outpath,executable_path,resource_path,binpath,sharepath,graphicsfolder,dummy,Color1,Color2,Color3,
   Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver:ansistring;
-  modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,
-  ws_gw_height,ws_gw_width,pbarh,pbarhsmall:integer;
   insize,progress,pinsize:qword;
-  opacity,desk_env,pcount,optype,filesizebase:byte;
-  iperc,pperc:integer;
+  opacity,desk_env,pcount,optype,filesizebase,pautoclose:byte;
   T,conf:text;
   f:file of byte;
-  launched,stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall,
-  needinteraction,exbackground,pldesigned,okseven:boolean;
   tsin:TTimestamp;
   activelabel_launcher :TLabel;
   //imported strings
@@ -1323,20 +1320,18 @@ previperc:=iperc;
 l:=length(stri1);
 for i:=l downto 1 do
     begin
-    if i<(l-32000) then break;
+    if i<(l-16000) then break;
     if stri1[i]='%' then
        begin
        try
        iperc:=strtoint(copy(stri1,i-3,3));
-       if (iperc<100) and (iperc>=previperc) then break;
+       if (iperc<100) then break;
        except
        end;
        end;
     end;
 if iperc<0 then iperc:=previperc;
 if iperc>100 then iperc:=previperc;
-if iperc<previperc then
-   if previperc<100 then iperc:=previperc;
 end;
 end;
 
@@ -2472,8 +2467,8 @@ if (modeofuse=1) or (modeofuse=4) or (modeofuse=5) then s:=txt_3_0_arc+char($0D)
 else
    if extractfilename(outpath)='' then s:=txt_3_0_arc+char($0D)+char($0A)+txt_3_0_ext
    else s:=txt_3_0_arc;
-s:=s+char($0D)+char($0A)+txt_3_0_details;
-if stopped=true then s:=txt_jobstopped+char($0D)+char($0A)+txt_3_0_details;
+s:=s+char($0D)+char($0A)+char($0D)+char($0A)+txt_3_0_details;
+if stopped=true then s:=txt_jobstopped+char($0D)+char($0A)+char($0D)+char($0A)+txt_3_0_details;
 pMessageWarningOK(s);
 end;
 

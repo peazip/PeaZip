@@ -98,8 +98,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit_pea"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="178"/>
-        <CursorPos X="56" Y="194"/>
+        <TopLine Value="181"/>
+        <CursorPos X="44" Y="195"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -408,7 +408,7 @@
         <UsageCount Value="10"/>
       </Unit51>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit_pea.pas"/>
         <Caret Line="7658" Column="49" TopLine="7638"/>
@@ -525,6 +525,10 @@
         <Filename Value="unit_pea.pas"/>
         <Caret Line="194" Column="19" TopLine="178"/>
       </Position29>
+      <Position30>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="181" Column="17" TopLine="178"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

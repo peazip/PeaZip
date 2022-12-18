@@ -170,5 +170,6 @@ object FormDlg: TFormDlg
     Width = 40
     BorderSpacing.Left = 15
     BorderSpacing.Top = 30
+    Transparent = True
   end
 end

@@ -1,16 +1,17 @@
 object FormDrop: TFormDrop
   Left = 1318
-  Height = 160
+  Height = 200
   Top = 848
-  Width = 320
+  Width = 400
   AlphaBlend = True
   AlphaBlendValue = 128
   BorderStyle = bsNone
   Caption = 'FormDrop'
-  ClientHeight = 160
-  ClientWidth = 320
+  ClientHeight = 200
+  ClientWidth = 400
+  DesignTimePPI = 120
   Position = poScreenCenter
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object PanelDrag: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -19,13 +20,13 @@ object FormDrop: TFormDrop
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 160
+    Height = 200
     Top = 0
-    Width = 320
+    Width = 400
     Anchors = [akTop, akLeft, akRight, akBottom]
     BevelOuter = bvNone
-    ClientHeight = 160
-    ClientWidth = 320
+    ClientHeight = 200
+    ClientWidth = 400
     ParentColor = False
     TabOrder = 0
     object Shape1: TShape
@@ -36,18 +37,19 @@ object FormDrop: TFormDrop
       AnchorSideBottom.Control = PanelDrag
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 160
+      Height = 200
       Top = 0
-      Width = 320
+      Width = 400
       Anchors = [akTop, akLeft, akRight, akBottom]
       Brush.Color = 14405056
       Pen.Color = 13743258
     end
     object Imagedragop: TImage
-      Left = 12
-      Height = 32
-      Top = 12
-      Width = 32
+      Left = 15
+      Height = 40
+      Top = 15
+      Width = 40
+      Transparent = True
     end
     object Labeldragtitle: TLabel
       AnchorSideLeft.Control = Imagedragop
@@ -56,15 +58,14 @@ object FormDrop: TFormDrop
       AnchorSideTop.Side = asrCenter
       AnchorSideRight.Control = PanelDrag
       AnchorSideRight.Side = asrBottom
-      Left = 52
-      Height = 15
-      Top = 21
-      Width = 256
+      Left = 65
+      Height = 20
+      Top = 25
+      Width = 320
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 8
-      BorderSpacing.Right = 12
+      BorderSpacing.Left = 10
+      BorderSpacing.Right = 15
       Caption = 'Label1'
-      ParentColor = False
       WordWrap = True
     end
     object Imagedragfolder: TImage
@@ -73,10 +74,11 @@ object FormDrop: TFormDrop
       AnchorSideTop.Side = asrCenter
       AnchorSideRight.Control = Imagedragop
       AnchorSideRight.Side = asrBottom
-      Left = 52
-      Height = 16
-      Top = 51
-      Width = 16
+      Left = 65
+      Height = 20
+      Top = 65
+      Width = 20
+      Transparent = True
     end
     object Imagedragfile: TImage
       AnchorSideLeft.Control = Labeldragtitle
@@ -84,10 +86,11 @@ object FormDrop: TFormDrop
       AnchorSideTop.Side = asrCenter
       AnchorSideRight.Control = Imagedragop
       AnchorSideRight.Side = asrBottom
-      Left = 52
-      Height = 16
-      Top = 74
-      Width = 16
+      Left = 65
+      Height = 20
+      Top = 95
+      Width = 20
+      Transparent = True
     end
     object Labeldragfile: TLabel
       AnchorSideLeft.Control = Imagedragfile
@@ -96,16 +99,15 @@ object FormDrop: TFormDrop
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = PanelDrag
       AnchorSideRight.Side = asrBottom
-      Left = 76
-      Height = 15
-      Top = 75
-      Width = 232
+      Left = 95
+      Height = 20
+      Top = 95
+      Width = 290
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 8
-      BorderSpacing.Top = 8
-      BorderSpacing.Right = 12
+      BorderSpacing.Left = 10
+      BorderSpacing.Top = 10
+      BorderSpacing.Right = 15
       Caption = 'Label1'
-      ParentColor = False
       WordWrap = True
     end
     object Labeldragfolder: TLabel
@@ -115,16 +117,15 @@ object FormDrop: TFormDrop
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = PanelDrag
       AnchorSideRight.Side = asrBottom
-      Left = 76
-      Height = 15
-      Top = 52
-      Width = 232
+      Left = 95
+      Height = 20
+      Top = 65
+      Width = 290
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 8
-      BorderSpacing.Top = 16
-      BorderSpacing.Right = 12
+      BorderSpacing.Left = 10
+      BorderSpacing.Top = 20
+      BorderSpacing.Right = 15
       Caption = 'Label1'
-      ParentColor = False
       WordWrap = True
     end
   end

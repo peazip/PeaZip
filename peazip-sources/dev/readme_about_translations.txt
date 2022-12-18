@@ -1,16 +1,15 @@
-﻿Notes to 8.9.0 release
+﻿Notes to 9.0.0 release
 
 Modified existing text
-txt_8_8_solcol: Address field
-txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks)?
-txt_2_7_separate: Add to separate archives
-txt_2_7_setpw: Set password / keyfile
-txt_add_files: Add files
-txt_displayedobjects: Displayed items
-txt_input: Input
-txt_fefreshf5: Refresh
-txt_selected_objects: Selected items
-txt_toggle_historybookmarks: Toggle status bar, bookmarks, history, clipboard
+txt_8_7_showhm: Open Browser header menu
+txt_8_7_showsm: Open Style menu
+txt_7_0_autoopentar: Auto open TAR archive inside compressed TAR.* files
+txt_4_5_shnav: Show Side bar
+txt_2_9_navbar: Side bar
+in === PeaLauncher text group ===
+txt_3_0_details: For more details please see "Report" tab for the full task's log, and "Console" tab for task definition as command line.
+txt_3_0_arc: Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.
+txt_3_0_ext: The archive may require a different password for the current operation.
 
 = GENERAL NOTES =
 
