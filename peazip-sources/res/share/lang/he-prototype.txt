@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 English
-8.9
+9.0
 Translated by: user-contributed
 Last rev. by: Giorgio Tani
 Last rev.: 20191107
 
 === PeaZip text group ===
 
+txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
+txt_9_0_accesstime: Do not change last access time
+txt_9_0_mem: Maximum memory usage
+txt_9_0_showmainmenu: Open Main menu
+txt_9_0_navmenu: Open Navigation menu
+txt_9_0_plugind: Open binaries and Plugin directory
+txt_9_0_df: Sort dirs before files
+txt_9_0_hl: Store hard links as links
+txt_9_0_sl: Store symbolic links as links
+txt_9_0_tnav: Toggle side bar, treeview, none
 txt_8_9_empty: Archive seems empty
 txt_8_9_disp: Displaying archive content
 txt_8_9_parsing: Parsing archive content
@@ -1186,10 +1196,10 @@ txt_4_0_dragorselect: Drag here or select file
 txt_4_0_select: בחר קובץ
 txt_3_6_selectdir: בחר תיקיה
 txt_3_5_close: סגור
-txt_3_0_details: For more details, "Report" contains the task's log, and "Console" contains the task definition as command line.
+txt_3_0_details: For more details please see "Report" tab for the full task's log, and "Console" tab for task definition as command line.
 txt_3_0_hints: Hints about the error
-txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted)
-txt_3_0_ext: The archive may require a different password for the current operation
+txt_3_0_arc: Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.
+txt_3_0_ext: The archive may require a different password for the current operation.
 txt_2_8_oop: Open output path when task completes
 txt_2_7_validatefn: Operation stopped, invalid file name detected:
 txt_2_7_validatecl: Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program):

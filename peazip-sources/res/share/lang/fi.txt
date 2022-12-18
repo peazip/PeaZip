@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Finnish
-8.9
+9.0
 Translated by: Veikko M.
 Last rev. by: Giorgio Tani
 Last rev.: 20141220
 
 === PeaZip text group ===
 
+txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
+txt_9_0_accesstime: Do not change last access time
+txt_9_0_mem: Maximum memory usage
+txt_9_0_showmainmenu: Open Main menu
+txt_9_0_navmenu: Open Navigation menu
+txt_9_0_plugind: Open binaries and Plugin directory
+txt_9_0_df: Sort dirs before files
+txt_9_0_hl: Store hard links as links
+txt_9_0_sl: Store symbolic links as links
+txt_9_0_tnav: Toggle side bar, treeview, none
 txt_8_9_empty: Archive seems empty
 txt_8_9_disp: Displaying archive content
 txt_8_9_parsing: Parsing archive content

@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 English
-8.9
+9.0
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20220812
+Last rev.: 20221207
 
 === PeaZip text group ===
 
+txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
+txt_9_0_accesstime: Do not change last access time
+txt_9_0_mem: Maximum memory usage
+txt_9_0_showmainmenu: Open Main menu
+txt_9_0_navmenu: Open Navigation menu
+txt_9_0_plugind: Open binaries and Plugin directory
+txt_9_0_df: Sort dirs before files
+txt_9_0_hl: Store hard links as links
+txt_9_0_sl: Store symbolic links as links
+txt_9_0_tnav: Toggle side bar, treeview, none
 txt_8_9_empty: Archive seems empty
 txt_8_9_disp: Displaying archive content
 txt_8_9_parsing: Parsing archive content
@@ -34,9 +44,9 @@ txt_8_7_bintest: binaries tested.
 txt_8_7_csv: CSV separator
 txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
 txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
+txt_8_7_showhm: Open Browser header menu
 txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
+txt_8_7_showsm: Open Style menu
 txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
 txt_8_7_verifybin: Verify hash of binaries
 txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
@@ -182,7 +192,7 @@ txt_7_1_renfilesonly: Rename only files
 txt_7_1_typetosearch: Type to search in current path
 txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
 txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
+txt_7_0_autoopentar: Auto open TAR archive inside compressed TAR.* files
 txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
 txt_6_9_autou: Auto update modified files in archives
 txt_6_9_forceu: Update edited files in archive
@@ -419,10 +429,10 @@ txt_4_5_noupdate: PeaZip is up to date
 txt_4_5_properties: Properties
 txt_4_5_r: Right
 txt_4_5_pj: Saved scripts
-txt_4_5_shaddress: Show address bar
-txt_4_5_shnav: Show navigation bar
-txt_4_5_shstatus: Show status bar
-txt_4_5_shtool: Show tool bar
+txt_4_5_shaddress: Show Address bar
+txt_4_5_shnav: Show Side bar
+txt_4_5_shstatus: Show Status bar
+txt_4_5_shtool: Show Tool bar
 txt_4_5_upxpj: Sorry, cannot export task definition since this action or option requires performing multiple distinct commands
 txt_4_5_t: Top
 txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks)?
@@ -505,14 +515,14 @@ txt_2_9_lt: Large
 txt_2_9_mt: Medium
 txt_2_9_movehere: Move here
 txt_2_9_nav: Navigation
-txt_2_9_navbar: Navigation bar
+txt_2_9_navbar: Side bar
 txt_2_9_none: None
 txt_2_9_organize: Organize
 txt_2_9_public: Public
 txt_2_9_rec: Recursive: search in subdirectories, may take some time
 txt_2_9_selected: Selected
 txt_2_9_setapps: Organize Applications
-txt_2_9_showmenu: Show menu bar
+txt_2_9_showmenu: Show Menu bar
 txt_2_9_st: Small
 txt_2_9_test_pw2G: Test for encryption <2GB archives
 txt_2_9_vst: Text only
@@ -1186,10 +1196,10 @@ txt_4_0_dragorselect: Drag here or select file
 txt_4_0_select: select file
 txt_3_6_selectdir: Select directory
 txt_3_5_close: Close
-txt_3_0_details: For more details, "Report" contains the task's log, and "Console" contains the task definition as command line.
+txt_3_0_details: For more details please see "Report" tab for the full task's log, and "Console" tab for task definition as command line.
 txt_3_0_hints: Hints about the error
-txt_3_0_arc: Some input files cannot be read (may be locked, not accessible or corrupted, volumes in multipart archive may be missing)
-txt_3_0_ext: The archive may require a different password for the current operation
+txt_3_0_arc: Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.
+txt_3_0_ext: The archive may require a different password for the current operation.
 txt_2_8_oop: Open output path when task completes
 txt_2_7_validatefn: Operation stopped, invalid file name detected:
 txt_2_7_validatecl: Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program):
@@ -1339,7 +1349,7 @@ Options > Localization (and in Options > Settings, first tab) allows to set appl
 Options > Settings allows to edit applications’ settings
 Options > Theme allows to change application’s icons and appearance
 Options > System integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
-Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, navigation bar, etc
+Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, side bar, etc
 
 F1 	help
 F2 	rename file(s) / Ctrl+F2 copy selected to / Shift+F2 move selected to

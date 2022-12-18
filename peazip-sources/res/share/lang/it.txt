@@ -1,12 +1,22 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-8.9
+9.0
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20220812
+Ultima rev.: 20221207
 
 === PeaZip text group ===
 
+txt_9_0_autoexttar: Estrazione automatica TAR da file TAR.* compressi
+txt_9_0_accesstime: Non cambiare la data di ultimo accesso
+txt_9_0_mem: Utilizzo massimo di memoria
+txt_9_0_showmainmenu: Apri il menu principale
+txt_9_0_navmenu: Apri il menu di navigazione
+txt_9_0_plugind: Apri la directory di eseguibili e Plugin
+txt_9_0_df: Mostra le directory prima dei file
+txt_9_0_hl: Archiviare gli hard links come collegamenti
+txt_9_0_sl: Archiviare i symbolic links come collegamenti
+txt_9_0_tnav: Mostra barra laterale, treeview, nascondi
 txt_8_9_empty: L'archivio sembra essere vuoto
 txt_8_9_disp: Mostra contenuto dell'archivio
 txt_8_9_parsing: Lettura del contenuto dell'archivio
@@ -1186,10 +1196,10 @@ txt_4_0_dragorselect: Trascinare qui o selezionare un file
 txt_4_0_select: selezionare file
 txt_3_6_selectdir: Seleziona cartella
 txt_3_5_close: Chiudi
-txt_3_0_details: Per maggiori dettagli, "Rapporto" contiene il log del lavoro e "Console" la definizione del lavoro come linea di comando
+txt_3_0_details: Per maggiori dettagli il tab "Rapporto" contiene il log completo del lavoro e il tab "Console" la definizione del lavoro come linea di comando.
 txt_3_0_hints: Suggerimenti sull'errore
-txt_3_0_arc: Alcuni file di input non sono leggibili (bloccati, non accessibili o corrotti, con parti mancanti)
-txt_3_0_ext: L'archivio può richiedere una password diversa per il lavoro corrente
+txt_3_0_arc: Possibili cause dell'errore sono file di input non leggibili (bloccati, non accessibili, corrotti, con parti mancanti), o percorso di destinazione pieno o non accessibile.
+txt_3_0_ext: L'archivio può richiedere una password diversa per il lavoro corrente.
 txt_2_8_oop: Aprire il percorso di output al termine dell'operazione
 txt_2_7_validatefn: Operazione interrotta, nome file non valido:
 txt_2_7_validatecl: Operazione interrotta, comando potenzialmente pericoloso (es. concatenazione di comandi, non permessa all'interno del programma):

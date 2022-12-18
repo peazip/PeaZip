@@ -1,17 +1,27 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-8.9
+9.0
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20221010
+Sist revidert: 20220910
 
 === PeaZip text group ===
 
-txt_8_9_empty: Arkivet synes tomt
-txt_8_9_disp: Viser arkivinnhold
-txt_8_9_parsing: Behandler arkivinnhold
-txt_8_9_stoptest: Stopp for å inspisere rapport for feil, liste, test, auto-test
-txt_8_9_ttb: Veksle verktøy linje
+txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
+txt_9_0_accesstime: Do not change last access time
+txt_9_0_mem: Maximum memory usage
+txt_9_0_showmainmenu: Open Main menu
+txt_9_0_navmenu: Open Navigation menu
+txt_9_0_plugind: Open binaries and Plugin directory
+txt_9_0_df: Sort dirs before files
+txt_9_0_hl: Store hard links as links
+txt_9_0_sl: Store symbolic links as links
+txt_9_0_tnav: Toggle side bar, treeview, none
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: Aksent farge
 txt_8_8_btn: Knapp
 txt_8_8_cb: Knapp-farge

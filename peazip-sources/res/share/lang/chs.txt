@@ -1,17 +1,27 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-8.9
+9.0
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: yangyangdaji
-Last rev.: 20221011
+Last rev.: 20220901
 
 === PeaZip text group ===
 
-txt_8_9_empty: 归档似乎是空的
-txt_8_9_disp: 显示归档内容
-txt_8_9_parsing: 解析归档内容
-txt_8_9_stoptest: 停止以检查报告是否存在错误、列表、测试、自动测试
-txt_8_9_ttb: 切换工具栏
+txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
+txt_9_0_accesstime: Do not change last access time
+txt_9_0_mem: Maximum memory usage
+txt_9_0_showmainmenu: Open Main menu
+txt_9_0_navmenu: Open Navigation menu
+txt_9_0_plugind: Open binaries and Plugin directory
+txt_9_0_df: Sort dirs before files
+txt_9_0_hl: Store hard links as links
+txt_9_0_sl: Store symbolic links as links
+txt_9_0_tnav: Toggle side bar, treeview, none
+txt_8_9_empty: Archive seems empty
+txt_8_9_disp: Displaying archive content
+txt_8_9_parsing: Parsing archive content
+txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
+txt_8_9_ttb: Toggle tool bar
 txt_8_8_ca: 强调色
 txt_8_8_btn: 按钮
 txt_8_8_cb: 按钮色
