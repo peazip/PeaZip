@@ -1,22 +1,22 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
 9.0
-Prevod: Jadran Rudec, jrudec@gmail.com
-Zadnja revizija:Jadran Rudec 
-Zadnja revizija: 20221009
+Prevod:          Jadran Rudec, jrudec@gmail.com
+Zadnja revizija: Jadran Rudec 
+Zadnja revizija: 20221218
 
 === PeaZip text group ===
 
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
+txt_9_0_autoexttar: Samodejno razširi arhiv TAR iz stisnjenih datotek TAR.*
+txt_9_0_accesstime: Ne spreminjaj zadnjega časa dostopa
+txt_9_0_mem: Največja uporaba pomnilnika
+txt_9_0_showmainmenu: Odpri glavni meni
+txt_9_0_navmenu: Odpri navigacijski meni
+txt_9_0_plugind: Odpri binarne datoteke in imenik vtičnikov
+txt_9_0_df: Razvrsti imenike pred datotekami
+txt_9_0_hl: Shrani trde povezave kot povezave
+txt_9_0_sl: Shrani simbolne povezave kot povezave
+txt_9_0_tnav: Preklopi stransko vrstico, drevesni pogled, brez
 txt_8_9_empty: Arhiv se zdi prazen
 txt_8_9_disp: Prikaz arhivske vsebine
 txt_8_9_parsing: Razčlenjevanje arhivske vsebine
