@@ -194,3 +194,13 @@ TAR, Linux save owner/group names
 0
 Test archives after creation
 0
+
+9.0.0 EXTENSION
+7z/p7zip do not change last access time
+0
+Store hard links as links (WIM, TAR)
+0
+Store symbolic links as links (WIM, TAR)
+0
+7z/p7zip max memory usage
+0
