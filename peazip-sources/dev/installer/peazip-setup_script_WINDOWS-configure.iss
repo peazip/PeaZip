@@ -2152,7 +2152,7 @@ begin
 
       sall:=sall+s; //*
 
-      RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
+      if cbcontextbrowse.state = cbChecked then RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2browsepath" "%V"'));
 
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'SubCommands', sall);
       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\PeaZip', 'MultiSelectModel', 'player');
