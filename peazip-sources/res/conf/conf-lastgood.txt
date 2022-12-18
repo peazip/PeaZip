@@ -519,7 +519,7 @@ Computer's root
 [automatically sync archives if previewed files are updated]
 1
 
-[automatically open single tar archive in tar.* files]
+[automatically open TAR archive in TAR.* files]
 1
 
 [default Brotli compression level]
@@ -727,3 +727,25 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 
 [tool bar large icon size]
 0
+
+[7z/p7zip do not change last access time]
+0
+
+[WIM, TAR store hard links as links]
+0
+
+[WIM, TAR store symbolic links as links]
+0
+
+[7z max memory usage %, 0 default]
+0
+
+[automatically extract TAR archive from TAR.* files, for extract and convert]
+1
+0
+
+[ZPAQ rebuild full paths]
+0
+
+[sort dirs before files]
+1
