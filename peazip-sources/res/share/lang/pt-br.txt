@@ -7,16 +7,16 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
+txt_9_0_autoexttar: Extraia automaticamente o arquivo TAR de arquivos TAR.* compactados
+txt_9_0_accesstime: Não alterar o horário do último acesso
+txt_9_0_mem: Uso máximo de memória
+txt_9_0_showmainmenu: Abrir o menu principal
+txt_9_0_navmenu: Abrir o menu de navegação
+txt_9_0_plugind: Binários abertos e diretório de plugins
+txt_9_0_df: Ordenar diretórios antes dos arquivos
+txt_9_0_hl: Armazenar links rígidos como links
+txt_9_0_sl: Armazenar links simbólicos como links
+txt_9_0_tnav: Alternar barra lateral, visualização em árvore, nenhum
 txt_8_9_empty: Arquivo parece vazio
 txt_8_9_disp: Mostrando conteúdo do arquivo
 txt_8_9_parsing: Analisando conteúdo do arquivo

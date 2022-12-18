@@ -3,19 +3,19 @@ German - Deutsch
 9.0
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20221025
+Last rev.: 20221218
 
 === PeaZip text group ===
 
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
+txt_9_0_autoexttar: TAR-Archiv aus komprimierten TAR.*-Dateien automatisch extrahieren
+txt_9_0_accesstime: Letzte Zugriffszeit nicht ändern
+txt_9_0_mem: Maximale Speicherauslastung
+txt_9_0_showmainmenu: Hauptmenü öffnen
+txt_9_0_navmenu: Navigationsmenü öffnen
+txt_9_0_plugind: Binär- und Plugin-Verzeichnis
+txt_9_0_df: Ordner vor Dateien sortieren
+txt_9_0_hl: Hardlinks als Links speichern
+txt_9_0_sl: Symbolische Verknüpfungen als Links speichern
 txt_9_0_tnav: Toggle side bar, treeview, none
 txt_8_9_empty: Archiv scheint leer zu sein
 txt_8_9_disp: Zeige Archivinhalt an
@@ -62,7 +62,7 @@ txt_8_5_loadlayout: Layout beim Starten laden
 txt_8_5_samplescripts: Beispiel-Skripte
 txt_8_4_keepopenerrorslist: Fehlerbericht und Liste anzeigen
 txt_8_3_mbubin: Binär
-txt_8_3_cw: Arbeitsverzeichnis ändern? Dadurch werden temporäre Arbeitsdateien zurückgesetzt und die Anwendung neu gestartet.
+txt_8_3_cw: Arbeitsordner ändern? Dadurch werden temporäre Arbeitsdateien zurückgesetzt und die Anwendung neu gestartet.
 txt_8_3_temperature: Farbtemperatur
 txt_8_3_mbudec: Dezimal
 txt_8_3_htab: Tab hervorheben
@@ -70,7 +70,7 @@ txt_8_3_maxarg: Maximale Befehlslänge
 txt_8_3_mbu: Multibyte-Zeichenfolge
 txt_8_3_prefalgo: Bevorzugte Algorithmen
 txt_8_3_skipdel: Gesperrte temporäre Dateien nicht löschen (bei Bedarf manuell zurücksetzen)
-txt_8_3_lw: Einige Dateien im Arbeitsverzeichnis sind gesperrt und können nicht automatisch entfernt werden
+txt_8_3_lw: Einige Dateien im Arbeitsordner sind gesperrt und können nicht automatisch entfernt werden
 txt_8_3_noupx: Diese Binärdatei kann nicht komprimiert werden (möglicherweise bereits komprimiert)
 txt_8_2_slower: (langsamer)
 txt_8_2_df: 7z / p7zip Ordnerinhalte anzeigen
