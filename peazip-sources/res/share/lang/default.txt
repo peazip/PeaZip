@@ -1348,7 +1348,7 @@ CONFIGURE THE APPLICATION
 Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
 Options > Settings allows to edit applications’ settings
 Options > Theme allows to change application’s icons and appearance
-Options > System integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
+Options > System integration (File associations and system menu integration) starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, side bar, etc
 
 F1 	help
@@ -1366,7 +1366,7 @@ F12 	extract all to...
 
 ABOUT PEAZIP
 
-PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for 32 and 64 bit Windows (9x, 2k, XP, Vista) and Linux (PeaZip is a desktop neutral application).
+PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for 32 and 64 bit Windows (9x, 2k, XP, Vista, 10, 11) and Linux (PeaZip is a desktop neutral application).
 
 PeaZip allows to apply powerful multiple search filters to archive's content; create and extract multiple archives at once; create self-extracting archives; export task definition as command line; save archiving and extraction layouts; bookmark archives and folders; scan and open with custom applications compressed and uncompressed files etc...
 
