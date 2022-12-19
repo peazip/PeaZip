@@ -454,7 +454,7 @@ txt_4_2_arcabspath: Utilizar caminhos absolutos
 txt_4_1_duplicateshint: Linha "tamanho/checksum" reportada na coluna CRC para todos os duplicados encontrados no diretório atual ou no filtro de pesquisa
 txt_4_1_adminhint: (Dica: alternativamente, pode solicitar a palavra-passe UAC para trabalhar em caminhos protegidos, Alt+F10 ou Opções > Executar como administrador)
 txt_4_1_selected: (seleção)
-txt_4_1_duplicatesfound: encontrados duplicados
+txt_4_1_duplicatesfound: duplicados encontrados
 txt_4_1_duplicatesfind: Localizar duplicados
 txt_4_1_runasadmin: Executar como administrador
 txt_4_1_simplesearch: Pesquisa simples
