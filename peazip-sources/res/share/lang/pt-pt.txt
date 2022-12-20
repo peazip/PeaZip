@@ -3,20 +3,20 @@ Portuguese (Portugal)
 9.0
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20221024
+Revisto em: 20221219
 
 === PeaZip text group ===
 
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
+txt_9_0_autoexttar: Extrair arquivo TAR automaticamente a partir de ficheiros TAR.*
+txt_9_0_accesstime: Não alterar hora do último acesso
+txt_9_0_mem: Utilização máxima de memória
+txt_9_0_showmainmenu: Abrir menu principal
+txt_9_0_navmenu: Abrir menu de navegação
+txt_9_0_plugind: Abrir pasta de binários e de plugins
+txt_9_0_df: Mostrar pastas antes dos ficheiros
+txt_9_0_hl: Guardar "hard links" como ligações
+txt_9_0_sl: Guardar ligações simbólicas como ligações
+txt_9_0_tnav: Comutar barra lateral, vista em árvore, nada
 txt_8_9_empty: O arquivo parece estar vazio
 txt_8_9_disp: Mostrar conteúdo do arquivo
 txt_8_9_parsing: Analisar o conteúdo do arquivo
@@ -44,9 +44,9 @@ txt_8_7_bintest: binários testados.
 txt_8_7_csv: Separador para CSV
 txt_8_7_hok: As 'hashes' dos binários utilizados por PeaZip coincidem com os valores esperados
 txt_8_7_mo: Definir opções do gestor de arquivos
-txt_8_7_showhm: Mostrar cabeçalho de menu no navegador de ficheiros
+txt_8_7_showhm: Abrir menu de título do explorador de ficheiros
 txt_8_7_showsearchbar: Mostrar barra de pesquisa
-txt_8_7_showsm: Mostrar menu Estilo
+txt_8_7_showsm: Abrir menu Estilo
 txt_8_7_hnotok: Algumas 'hashes' dos binários utilizados por PeaZip não coincidem com os valores esperados:
 txt_8_7_verifybin: Verificar 'hash' dos binários
 txt_8_6_clear: A opção "Limpar" remove ficheiros editados temporariamente que, de outra forma, estariam disponíveis para posterior edição
@@ -54,7 +54,7 @@ txt_8_6_noclear: Descartar todas as alterações sem atualizar o arquivo
 txt_8_6_nosimple: Não atualizar arquivo, manter ficheiros editados temporariamente para posterior edição
 txt_8_6_immediate: Execução imediata
 txt_8_6_yessimple: Atualizar arquivo, manter ficheiros editados temporariamente para posterior edição
-txt_8_5_advbrowser: Aplicar filtros ao navegador de arquivos
+txt_8_5_advbrowser: Aplicar filtros ao explorador de arquivos
 txt_8_5_detailslarge: Detalhes, grande
 txt_8_5_intext: Extrair para o caminho de trabalho temporário e depois mover para a saída (perguntar antes de substituir)
 txt_8_5_listlarge: Lista, grande
@@ -83,8 +83,8 @@ txt_8_2_skipet: Ignorar testes para encriptação
 txt_8_2_alltimes: Guardar todas as marcas temporais
 txt_8_2_supportedby: Suportado por
 txt_8_1_preparse: Pré-analisar arquivos
-txt_8_1_bo: Otimização do navegador
-txt_8_1_bop: As opções de otimização do navegador podem ser definidas em Opções > Definições, separador Geral, de modo a permitir que o navegador mostre arquivos que possuam um número muito grande de itens.
+txt_8_1_bo: Otimização do explorador
+txt_8_1_bop: As opções de otimização do explorador podem ser definidas em Opções > Definições, separador Geral, de modo a permitir que o explorador mostre arquivos que possuam um número muito grande de itens.
 txt_8_1_nopreparse: Não pré-analisar arquivos
 txt_8_1_ed: erro(s) detetado(s).
 txt_8_1_togglearc: Listar o conteúdo de um arquivo de uma forma plana pode ser demorado, continuar?
@@ -192,7 +192,7 @@ txt_7_1_renfilesonly: Apenas mudar o nome
 txt_7_1_typetosearch: Introduza o termo para pesquisar no caminho atual
 txt_7_1_type_description_zstd: Zstandard: compressão rápida do Facebook, descompressão muito rápida
 txt_7_0_af: Analisar conteúdo das pastas
-txt_7_0_autoopentar: Abrir automaticamente o arquivo tar existente nos ficheiros tar.*
+txt_7_0_autoopentar: Abrir automaticamente o arquivo TAR existente nos ficheiros TAR.*
 txt_7_0_exttmppath: O conteúdo será extraído para fora do diretório temporário, em: 
 txt_6_9_autou: Atualização automática dos ficheiros modificados em arquivos
 txt_6_9_forceu: Atualizar no arquivo os ficheiros editados
@@ -430,7 +430,7 @@ txt_4_5_properties: Propriedades
 txt_4_5_r: À direita
 txt_4_5_pj: Scripts guardados
 txt_4_5_shaddress: Mostrar barra de endereço
-txt_4_5_shnav: Mostrar barra de navegação
+txt_4_5_shnav: Mostrar barra lateral
 txt_4_5_shstatus: Mostrar barra de estado
 txt_4_5_shtool: Mostrar barra de ferramentas
 txt_4_5_upxpj: Não pode exportar as definições da tarefa, uma vez que esta ação ou opção requer comandos distintos
@@ -454,7 +454,7 @@ txt_4_2_arcabspath: Utilizar caminhos absolutos
 txt_4_1_duplicateshint: Linha "tamanho/checksum" reportada na coluna CRC para todos os duplicados encontrados no diretório atual ou no filtro de pesquisa
 txt_4_1_adminhint: (Dica: alternativamente, pode solicitar a palavra-passe UAC para trabalhar em caminhos protegidos, Alt+F10 ou Opções > Executar como administrador)
 txt_4_1_selected: (seleção)
-txt_4_1_duplicatesfound: encontrados duplicados
+txt_4_1_duplicatesfound: duplicados encontrados
 txt_4_1_duplicatesfind: Localizar duplicados
 txt_4_1_runasadmin: Executar como administrador
 txt_4_1_simplesearch: Pesquisa simples
@@ -515,7 +515,7 @@ txt_2_9_lt: Grande
 txt_2_9_mt: Médio
 txt_2_9_movehere: Mover para aqui
 txt_2_9_nav: Navegação
-txt_2_9_navbar: Barra de navegação
+txt_2_9_navbar: Barra lateral
 txt_2_9_none: Nenhum
 txt_2_9_organize: Organizar
 txt_2_9_public: Público
@@ -726,7 +726,7 @@ txt_blogs: Blogues
 txt_blowfish: Blowfish448 (blocos de 64 bits)
 txt_bookmarks: Marcadores
 txt_browse: Explorar
-txt_browser: Navegador
+txt_browser: Explorador
 txt_aborted_error: A exploração do arquivo foi parada pois levaria muito tempo. Pode reduzir a seleção utilizando (F3) ou saindo do modo vista plana (F6); As operações extrair/lista/testar não são afetadas por esta situação.
 txt_list_browsing: A explorar
 txt_archive_root: A explorar: arquivos de root
@@ -1196,10 +1196,10 @@ txt_4_0_dragorselect: Arraste para aqui ou selecione o ficheiro
 txt_4_0_select: Selecione o ficheiro
 txt_3_6_selectdir: Selecione o diretório
 txt_3_5_close: Fechar
-txt_3_0_details: Para mais detalhes, o "Relatório" contém o registo da tarefa e a "Consola" contém a definição da tarefa como linha de comandos.
+txt_3_0_details: Para mais detalhes, consulte o separador "Relatório" para ver o registo das tarefas ou o separador "Consola" para ver a definição da tarefa na linha de comandos.
 txt_3_0_hints: Dicas sobre o erro
-txt_3_0_arc: Não foi possível ler alguns ficheiros (podem estar bloqueados, não acessíveis ou danificados)
-txt_3_0_ext: Pode ser que o arquivo necessite de uma palavra-passe diferente para esta operação
+txt_3_0_arc: As causas possíveis para o erro podem ser: incapacidade de ler o ficheiro de entrada (bloquado, não acessível, danificado...) ou caminho de saída cheio/não acessível.
+txt_3_0_ext: Pode ser que o arquivo necessite de uma palavra-passe para esta operação.
 txt_2_8_oop: Abrir destino ao concluir a tarefa
 txt_2_7_validatefn: Operação interrompida, nome inválido detetado:
 txt_2_7_validatecl: Operação interrompida, comando perigoso detetado (i.e., a concatenação de comandos não é permitida):
@@ -1305,7 +1305,7 @@ Abrir um arquivo no PeaZip, i.e. com duplo clique ou arrastando um arquivo para 
 
 INDICAR A PALAVRA-PASSE PARA EXPLORAR OU EXTRAIR UM ARQUIVO
 Clique no ícone para introduzir a palavra-passe e , opcionalmente, um ficheiro-chave.
-O ícone está presente tanto no navegador de ficheiros do PeaZip como na interface de extração; assim que definir uma palavra-passe, o ícone muda de cor.
+O ícone está presente tanto no explorador de ficheiros do PeaZip como na interface de extração; assim que definir uma palavra-passe, o ícone muda de cor.
 
 CRIAR UM ARQUIVO
 Do sistema
@@ -1349,14 +1349,14 @@ Opções > Idioma (e nas opções > Definições, 1.º separador) permite-lhe de
 Opções > Definições permite-lhe alterar as definições da aplicação
 Opções > Tema permite-lhe alterar a aparência da aplicação
 Opções > Integração de sistema inicia um processo para configurar a associação de ficheiros e as entradas do menu de contexto e menu SendTo (no Windows)
-A organização do menu contém as entradas a personalizar e permite-lhe ativar ou inativar algumas funcionalidades do navegador (ex: barra de ferramentas, endereço, navegação etc...)
+A organização do menu contém as entradas a personalizar e permite-lhe ativar ou inativar algumas funcionalidades do explorador (ex: barra de ferramentas, endereço, navegação etc...)
 
 F1	ajuda
 F2	mudar nome / Ctrl+F2 copiar seleção para / Shift+F2 mover seleção para
 F3	pesquisa (a opção recursiva é memorizada) / Ctrl+F3 inicia como não recursiva (pesquisar aqui) / Shift+F3 recursiva / Alt+F3 pesquisa do sistema
 F4	subir um nível / Ctrl+F4 explorar arquivos de root / Shift+F4 explorar ambiente de trabalho
 F5	atualizar
-F6	alternar entre vista plana/navegador
+F6	alternar entre vista plana/explorador
 F7	adicionar aos marcadores / Ctrl+F7 abrir nova instância do PeaZip / Shift+F7 abrir linha de comandos no caminho selecionado / Alt+F7 explorar caminho selecionado
 F8	procurar o primeiro item na lista de marcadores (Ctrl, segundo, Shift, terceiro)
 F9	definir palavra-passe ou ficheiro-chave / Ctrl+F9 criar ficheiro-chave ou palavra-passe aleatória / Shift+F9 definir filtros avançados
