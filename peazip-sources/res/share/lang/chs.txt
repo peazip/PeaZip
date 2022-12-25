@@ -2,26 +2,26 @@
 Simplified Chinese - 简体中文
 9.0
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
-Last rev. by: yangyangdaji
-Last rev.: 20220901
+Last rev. by: Junde Yhi
+Last rev.: 20221224
 
 === PeaZip text group ===
 
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_9_0_autoexttar: 自动从已压缩的 TAR.* 文件中再提取 TAR 归档文件
+txt_9_0_accesstime: 不要改变最后更改时间
+txt_9_0_mem: 最大化内存利用
+txt_9_0_showmainmenu: 打开主菜单
+txt_9_0_navmenu: 打开导航菜单
+txt_9_0_plugind: 打开可执行文件及插件目录
+txt_9_0_df: 将目录排在文件之前
+txt_9_0_hl: 将硬链接存储为链接
+txt_9_0_sl: 将符号链接存储为链接
+txt_9_0_tnav: 切换显示：侧边栏、树状图、都不显示
+txt_8_9_empty: 归档文件好像是空的
+txt_8_9_disp: 展示归档文件内容
+txt_8_9_parsing: 解析归档文件内容
+txt_8_9_stoptest: 停止后可检查错误、列出、测试和自动测试的报告
+txt_8_9_ttb: 切换工具栏
 txt_8_8_ca: 强调色
 txt_8_8_btn: 按钮
 txt_8_8_cb: 按钮色
@@ -31,7 +31,7 @@ txt_8_8_lnk: 链接
 txt_8_8_intnote: 请注意，如果在控制台中编辑了命令行，那么“交互式提取”选项（于选项 > 设置 > 归档管理器中）会被忽略。
 txt_8_8_snz: 传播 Zone.Identifier 流（Windows）
 txt_8_8_sm: 小图标尺寸
-txt_8_8_solcol: 实心标题栏
+txt_8_8_solcol: 地址栏
 txt_8_8_snoi: 储存所有者 / 所有组的 ID（TAR，Linux）
 txt_8_8_snon: 储存所有者 / 所有组的名字（TAR，Linux）
 txt_8_8_tab: 标签页
@@ -46,7 +46,7 @@ txt_8_7_hok: PeaZip 组件的散列值均符合预期
 txt_8_7_mo: 设定归档管理器选项
 txt_8_7_showhm: 显示文件浏览器的顶部菜单
 txt_8_7_showsearchbar: 显示搜索栏
-txt_8_7_showsm: 显示样式菜单
+txt_8_7_showsm: 打开样式菜单
 txt_8_7_hnotok: 一些 PeaZip 组件的散列值不符合预期：
 txt_8_7_verifybin: 校验组件的散列值
 txt_8_6_clear: “清除”选项选中的情况下，编辑过的临时文件会被移除；反之，这些文件会被保留，以便继续编辑。
@@ -192,7 +192,7 @@ txt_7_1_renfilesonly: 仅对文件重命名
 txt_7_1_typetosearch: 打字以在当前路径搜索
 txt_7_1_type_description_zstd: Zstandard：来自 Facebook 的快速压缩算法，具有非常快的解压速度
 txt_7_0_af: 分析文件夹内容
-txt_7_0_autoopentar: 自动打开 tar.* 文件内的单个 TAR 归档文件
+txt_7_0_autoopentar: 自动从压缩的 TAR.* 文件中打开 TAR 归档文件
 txt_7_0_exttmppath: 内容将提取到临时路径外：
 txt_6_9_autou: 自动更新归档内修改过的文件
 txt_6_9_forceu: 更新编辑过的文件到归档内
@@ -430,12 +430,12 @@ txt_4_5_properties: 属性
 txt_4_5_r: 右侧
 txt_4_5_pj: 保存的脚本
 txt_4_5_shaddress: 显示地址栏
-txt_4_5_shnav: 显示导航栏
+txt_4_5_shnav: 显示侧边栏
 txt_4_5_shstatus: 显示状态栏
 txt_4_5_shtool: 显示工具栏
 txt_4_5_upxpj: 抱歉，不能导出任务定义，因为此操作或选项需要执行多个独立的命令。
 txt_4_5_t: 顶部
-txt_4_4_confremoveall: 移除所有 PeaZip 自定义文件（应用程序、书签、密码管理器）？
+txt_4_4_confremoveall: 移除所有 PeaZip 自定义文件（应用程序和书签）？
 txt_4_4_confremove: 移除 PeaZip 配置信息吗？
 txt_4_3_pwmanhint: 在密码列表中，双击编辑项目，右击查看选项，Ctrl+C 复制密码
 txt_4_3_exppl: 导出密码列表
@@ -515,7 +515,7 @@ txt_2_9_lt: 较大
 txt_2_9_mt: 中等
 txt_2_9_movehere: 移动到此处
 txt_2_9_nav: 导航
-txt_2_9_navbar: 导航栏
+txt_2_9_navbar: 侧边栏
 txt_2_9_none: 无
 txt_2_9_organize: 组织
 txt_2_9_public: 公用
@@ -552,11 +552,11 @@ txt_2_8_usedefaultoutpath: 使用默认输出路径
 txt_2_7_experimental: （试验功能，参见文档）
 txt_2_7_optional: （可选）
 txt_2_7_list_tryflatorpw: ，您也许可以：选择平面视图（F6）、输入密码（F9），或重新复制文件
-txt_2_7_separate: 添加每个对象到单独的归档文件
+txt_2_7_separate: 添加到单独的归档文件
 txt_2_7_pwsupported: 归档支持添加密码
 txt_2_7_cancel: 取消
 txt_2_7_encfn: 加密文件名（如果格式支持）
-txt_2_7_setpw: 输入密码 / 密钥文件
+txt_2_7_setpw: 设置密码 / 密钥文件
 txt_2_7_ext: 正在提取：
 txt_2_7_extfrom: 正在提取自归档文件：
 txt_2_7_es: 提取支持的非归档文件类型，比如可执行文件、微软 Office 和 OpenOffice 文件
@@ -577,7 +577,7 @@ txt_2_7_archivehint: 拖放文件和文件夹到此处进行归档，或者右�
 txt_2_7_exthint: 拖放归档文件到此处进行提取，或者右击查看更多选项
 txt_2_7_setadvf: 设置高级筛选器
 txt_2_7_selpath: 所选项目的路径
-txt_2_7_separateerror: 抱歉，使用“添加每个对象到单独的归档文件”开关时，不能导入任务定义的命令行，因为任务是被作为多个单独的命令执行的
+txt_2_7_separateerror: 抱歉，使用“添加到单独的归档文件”开关时，不能导入任务定义的命令行，因为任务是被作为多个单独的命令执行的
 txt_2_7_noinput: 布局为空：请使用添加文件或载入布局来填充要提取的归档文件列表
 txt_2_7_dirsize: 计算总体大小时，文件夹的内容大小未被计算入内
 txt_2_7_un7z_browse_flat: 尝试使用平面视图（F6）
@@ -788,7 +788,7 @@ txt_disk_defrag: 磁盘碎片整理
 txt_disk_management: 磁盘管理
 txt_dispaly: 结果显示为
 txt_displayedmnu_obj: 显示的
-txt_displayedobjects: 显示的对象
+txt_displayedobjects: 显示的项目
 txt_nocompress: 不压缩
 txt_delete: 删除选定的文件吗？此操作不能撤销，文件无法从回收站中恢复。
 txt_wipe: 安全删除选定的文件吗？此操作不能撤销，文件将无法恢复。
@@ -893,7 +893,7 @@ txt_inputinfo: 输入信息
 txt_input_list: 输入列表：
 txt_iop: 输入、输出、参数
 txt_ipo: 输入、参数、输出
-txt_input: 输入：
+txt_input: 输入
 txt_integrity: 完整性检查
 txt_chunk_size: 自定义大小无效，请修改为数值
 txt_invertsel: 反选
@@ -1067,7 +1067,7 @@ txt_default_description: 选择某个功能或拖动文件到此处
 txt_selectall: 全选
 txt_selectdir: 选择目录
 txt_selected_obj: 选定
-txt_selected_objects: 选定的对象
+txt_selected_objects: 选定的项目
 txt_sfx: 自提取
 txt_sendbymail: 用邮件发送
 txt_set_defaults: 设定程序的默认参数
@@ -1127,7 +1127,7 @@ txt_threads: 线程
 txt_titlescolor: 标题颜色
 txt_to: 到
 txt_toggle_browseflat: 切换浏览 / 平面视图（全部显示）
-txt_toggle_historybookmarks: 切换历史记录 / 书签
+txt_toggle_historybookmarks: 切换显示：状态栏、书签、历史记录、剪贴板、都不显示
 txt_toolbarscolor: 工具栏颜色
 txt_tools: 工具
 txt_best: 尝试最佳设置（慢）
@@ -1196,10 +1196,10 @@ txt_4_0_dragorselect: 拖拽到此处或选择文件
 txt_4_0_select: 选择文件
 txt_3_6_selectdir: 选择目录
 txt_3_5_close: 关闭
-txt_3_0_details: 更多详细信息，请参阅“报告”页面中的任务日志，和“控制台”页面中命令行形式的任务定义。
+txt_3_0_details: 更多详细信息，请参阅“报告”标签页中的完整任务日志以及“控制台”标签页中的命令行任务定义。
 txt_3_0_hints: 提示错误信息
-txt_3_0_arc: 某些输入文件无法被读取（可能被锁定、无法访问或已损坏）
-txt_3_0_ext: 此归档文件可能需要另一串密码来执行当前操作
+txt_3_0_arc: 错误可能是无法读取的输入文件导致的（例如：被锁定、无法访问、损坏、丢失的分卷，等等），也可能是存储空间已满或无法访问的输出路径导致的。
+txt_3_0_ext: 此归档文件可能需要另一串密码来执行当前操作。
 txt_2_8_oop: 任务完成时打开输出路径
 txt_2_7_validatefn: 操作停止，发现无效的文件名：
 txt_2_7_validatecl: 操作停止，检测到可能有危害的命令（比如此程序不允许的命令连接）：
@@ -1329,11 +1329,11 @@ txt_time: 时间：
 在归档文件创建界面，如果设置了加密或者当前选用的压缩格式支持加密，挂锁图标就会出现。
 
 【创建单独的归档文件——每个对象各自生成一个归档文件】
-添加想要归档的对象（使用系统的右键菜单或“发送到”菜单，或者在 PeaZip 中点击“添加”按钮），在点击“确定”之前，选择“添加每个对象到单独的归档文件中”选项。
+添加想要归档的对象（使用系统的右键菜单或“发送到”菜单，或者在 PeaZip 中点击“添加”按钮），在点击“确定”之前，选择“添加到单独的归档文件”选项。
 
 【转换归档文件】
 从 PeaZip 中选择要转换的归档文件，选择工具栏或右键菜单中的“转换”，未归档的文件和文件夹也可以选上，在归档文件中的内容会在重新压缩之前先提取。
-同时选定“转换已有的归档文件”选项与“添加每个对象到单独的归档文件”（默认）选项的话，所选归档文件将分别转换。去掉第二个选项则表示合并所有输入数据到单个归档内，可以提高压缩效率，因为它允许原始数据从它未压缩的形式重新压缩。
+同时选定“转换已有的归档文件”选项与“添加到单独的归档文件”（默认）选项的话，所选归档文件将分别转换。去掉第二个选项则表示合并所有输入数据到单个归档内，可以提高压缩效率，因为它允许原始数据从它未压缩的形式重新压缩。
 
 【直接创建指定格式与压缩率的归档文件】
 在“选项”菜单中选择“系统集成”以后，就可以在文件或文件夹上右击，直接将其打包成 ZIP、7Z 或自提取格式的归档文件。
@@ -1349,7 +1349,7 @@ txt_time: 时间：
 在选项 > 设置中，可以进行设置
 在选项 > 主题中，可以更改程序的图标和外观
 在选项 > 系统集成中，可以设置文件关联、右键和“发送到”菜单项（仅在 Windows 中有效）
-“组织”菜单含有自定义、开启或关闭浏览器的菜单项，比如说工具栏、地址栏、导航栏，等等。
+“组织”菜单含有自定义、开启或关闭浏览器的菜单项，比如说工具栏、地址栏、侧边栏，等等。
 
 F1	帮助
 F2	重命名文件 / Ctrl+F2 复制选中项到 / Shift+F2 移动选中项到
