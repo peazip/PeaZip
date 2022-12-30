@@ -50,7 +50,7 @@ To customise context menu use Service menus .desktop files from KDE(version) sub
 Copy .desktop files from KDE(version) subfolders into, usually:
 KDE 3 (kde directory)/share/apps/konqueror/servicemenus (kde directry usually being /opt/kde3)
 KDE 4 /usr/share/kde4/services/ServiceMenus
-KDE 5 /usr/share/kservices5/ServiceMenus or ~/.local/share/kservices5/ServiceMenus
+KDE 5 /usr/share/kio/servicemenus or ~/.local/share/kio/servicemenus
 
 2c) Xfce, LXDE 
 
