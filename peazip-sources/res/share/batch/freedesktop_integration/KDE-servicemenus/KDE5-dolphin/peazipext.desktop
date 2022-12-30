@@ -1,7 +1,7 @@
 [Desktop Action peazipext]
 Exec=peazip -ext2full %F
 Icon=peazip
-Name=Extract (PeaZip)
+Name=Extract...
 
 [Desktop Entry]
 Type=Service
@@ -11,3 +11,5 @@ Encoding=UTF-8
 Name=peazipext
 Name[en_US]=peazipext
 ServiceTypes=KonqPopupMenu/Plugin,all/all
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=PeaZip
