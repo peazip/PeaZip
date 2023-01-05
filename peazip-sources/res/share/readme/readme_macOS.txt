@@ -25,7 +25,7 @@ MORE INFORMATION
 
 PeaZip is available built for aarch64 and Intel architectures on https://peazip.github.io/peazip-macos.html
 The application's binaries are not signed by a registered Apple developer account: M1 version is simply ad-hoc signed, Intel version is not signed.
-M1 SoC can run bot aarch64 (native) and Intel (using Rosetta 2 emulation layer), Intel-based Macintosh systems can only run Intel version.
+M1 SoC can run both aarch64 (native) and Intel (using Rosetta 2 emulation layer), Intel-based Macintosh systems can only run Intel version.
 
 PeaZip sources https://peazip.github.io/peazip-sources.html can be built with Lazarus for macOS, sources are tested for Cocoa widget set.
 To manually select the target architecture open main menu, Project > Project Options, Configuration and Target, set Darwin as destination OS, and aarch64 as destination CPU family if compiling for machines with M1 Apple Silicon chip, or x86_64 if compiling for Intel-based Apple machines.
