@@ -8,7 +8,9 @@ HOW TO CONTRIBUTE A NEW TRANSLATION OR MAINTAIN AN EXISTING ONE:
 
 Option 1)
 With a plain text editor, translate the quoted texts after the @= sign.
-Save the file as ANSI text, or Unicode if extended characters are featured (UTF8 encoding is not currently supported by Windows .reg scripts) - the text editor software should prompt a message if this condition is applicable, or an encoding selection control should be featured in "Save as" dialog for most editors.
+Save the file as ANSI text, or UTF-16 LE if extended characters are used.
+Please note that UTF8 encoding is not currently supported by Windows for .reg scripts.
+Most text editors show an encoding selection control in "Save as" dialog.
 You can send the translated script to giorgio.tani.software@gmail.com to share the translation with the community under LGPL license.
 
 Option 2)
