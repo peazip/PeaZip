@@ -302,7 +302,7 @@ PeaZip
 0
 
 [working directory]
-2
+1
 
 [7z / p7zip text encoding for file names inside .ZIP files]
 1
@@ -564,7 +564,7 @@ Computer's root
 [maximize Brotli compression using larger memory --large_window=27 (may be incompatible with some Brotli extractors)]
 0
 
-[maximize Zstandard compression using larger memory window --long=27]
+[maximize Zstandard compression using larger memory window]
 0
 
 [do not ask confirmation to delete after extraction / archiving]
@@ -631,7 +631,7 @@ Computer's root
 [update archive tree when browsing: 0 no 1 simple 2 full, keep visited nodes]
 2
 
-[use system 7z on Linux]
+[use system 7z]
 0
 
 [interactive extraction, two steps: first extract to a fresh folder, then move to relative path in destination directory]
@@ -748,4 +748,19 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 0
 
 [sort dirs before files]
+1
+
+[7z / p7zip syntax level 0 latest tested for the app, 1 21.07]
+0
+
+[archive converion scripts allow user's interaction]
+1
+
+[7z / p7zip exclude empty folders]
+0
+
+[enlarge file browser icons]
+0
+
+[Use quick deduplication routine]
 1
