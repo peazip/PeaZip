@@ -1,12 +1,19 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-9.0
+9.1
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: Junde Yhi
 Last rev.: 20221224
 
 === PeaZip text group ===
 
+txt_9_1_7zs: 7z / p7zip syntax level
+txt_9_1_ac: Archive conversion scripts allow user's interaction
+txt_9_1_closeall: Close all
+txt_9_1_enlargeicons: Enlarge file browser icons
+txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
+txt_9_1_nw: Open in a new window
+txt_9_1_qdup: Use quick deduplication routine
 txt_9_0_autoexttar: 自动从已压缩的 TAR.* 文件中再提取 TAR 归档文件
 txt_9_0_accesstime: 不要改变最后更改时间
 txt_9_0_mem: 最大化内存利用

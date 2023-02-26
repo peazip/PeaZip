@@ -1,12 +1,19 @@
 ﻿=== PeaZip language file ===
 Català
-9.0
+9.1
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
 Última revisió el: 20211121
 
 === PeaZip text group ===
 
+txt_9_1_7zs: 7z / p7zip syntax level
+txt_9_1_ac: Archive conversion scripts allow user's interaction
+txt_9_1_closeall: Close all
+txt_9_1_enlargeicons: Enlarge file browser icons
+txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
+txt_9_1_nw: Open in a new window
+txt_9_1_qdup: Use quick deduplication routine
 txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
 txt_9_0_accesstime: Do not change last access time
 txt_9_0_mem: Maximum memory usage

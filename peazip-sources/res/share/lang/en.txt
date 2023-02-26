@@ -1,12 +1,19 @@
 ﻿=== PeaZip language file ===
 English
-9.0
+9.1
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20221207
+Last rev.: 20230212
 
 === PeaZip text group ===
 
+txt_9_1_7zs: 7z / p7zip syntax level
+txt_9_1_ac: Archive conversion scripts allow user's interaction
+txt_9_1_closeall: Close all
+txt_9_1_enlargeicons: Enlarge file browser icons
+txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
+txt_9_1_nw: Open in a new window
+txt_9_1_qdup: Use quick deduplication routine
 txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
 txt_9_0_accesstime: Do not change last access time
 txt_9_0_mem: Maximum memory usage
@@ -28,7 +35,7 @@ txt_8_8_cb: Button color
 txt_8_8_centered: Centered buttons
 txt_8_8_light: Light
 txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
+txt_8_8_intnote: Please note that "Extract then move" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
 txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
 txt_8_8_sm: Small icons size
 txt_8_8_solcol: Address field
@@ -56,7 +63,7 @@ txt_8_6_immediate: Immediate execution
 txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Apply filters to archive browser
 txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
+txt_8_5_intext: Extract to temporary working directory then move to output destination, interactively ask before overwriting
 txt_8_5_listlarge: List, large
 txt_8_5_loadlayout: Load layout at startup
 txt_8_5_samplescripts: Sample scripts
@@ -110,7 +117,7 @@ txt_7_8_destexistfile: Destination already contains processed files. Replace fil
 txt_7_8_dd: Drag and Drop
 txt_7_8_priorityhigh: High
 txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction, extract then move to destination
+txt_7_8_rel: Extract then move to destination
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [requires restarting PeaZip]
@@ -119,10 +126,10 @@ txt_7_8_update: Update
 txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
 txt_7_7_nonetemp: None, user's temp if necessary
 txt_7_7_outtemp: Output, preview in user's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_sys7zreq: Requires 7z, 7-Zip, or p7zip, or equivalent package to be installed
 txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_7_sys7z: Use system 7z if available
+txt_7_6_zipenc: 7z / p7zip ZIP filenames encoding
 txt_7_6_color: Color
 txt_7_6_custenc: Custom code page
 txt_7_6_dark: Darker
@@ -203,7 +210,7 @@ txt_6_8_ndrop: Use native Drag and Drop on Windows
 txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possible duplicates found (quick approximate test)
 txt_6_6_rsh: Reset search history
-txt_6_6_pdupfind: Suggest possible duplicates
+txt_6_6_pdupfind: Suggest duplicates
 txt_6_6_forcemodify: Edit non-canonical archive types
 txt_6_5_mandatory: (mandatory)
 txt_6_5_abort: Abort
@@ -486,7 +493,7 @@ txt_3_2_7zutf8nonascii: 7z / p7zip -mcu use UTF8 for file names containing non-A
 txt_3_2_alltasks: All tasks
 txt_3_2_conf: Configuration
 txt_3_2_donations: Donate to charitable organizations
-txt_3_1_sccenc: 7z/p7zip CONSOLE character encoding
+txt_3_1_sccenc: 7z / p7zip CONSOLE character encoding
 txt_3_1_downloads: Downloads
 txt_3_1_lib: Libraries
 txt_3_1_more: More
@@ -719,7 +726,7 @@ txt_ren_existing: Auto rename existing files
 txt_ren_extracted: Auto rename extracted files
 txt_autofolder: Automatically create new folder to extract the archive in?
 txt_back: Back
-txt_backend: Backend binaries user interface
+txt_backend: Backend binaries
 txt_backupexe: Backup executable (recommended)
 txt_bettercompression: better compression
 txt_blogs: Blogs
@@ -843,7 +850,7 @@ txt_fastopen: Fast open routine, stop browsing extremely large archives, use fil
 txt_level_fastest: Fastest
 txt_favformats: Favorite formats shortcuts
 txt_file: File
-txt_filebrowser: File browser / archive browser
+txt_filebrowser: File browser
 txt_filetools: File tools
 txt_files: file(s),
 txt_nfiles: Files
@@ -1050,8 +1057,8 @@ txt_sample: Sample:
 txt_saveas: Save as
 txt_savehistory: Save history data
 txt_save_infolder: Save in folder (auto)
-txt_savejob: Save task definition
-txt_savejobdefinition: Save task definition
+txt_savejob: Save task definition as script
+txt_savejobdefinition: Save task definition as script
 txt_savejobdefinition_hint: Save task definition as plain text; you can use it from your scripts
 txt_savelayout: Save layout
 txt_save_winstate: Save main window state
@@ -1271,7 +1278,7 @@ txt_priority: Click to set task's priority
 txt_running: Running,
 txt_isrunning: Running...
 txt_saveas: Save as
-txt_savejob: Save task definition
+txt_savejob: Save task definition as script
 txt_savelog: Save task's log
 txt_software: software
 txt_speedscale: Speed, logarithmic scale (higher, better):
@@ -1346,9 +1353,8 @@ If no master password is set for the password manager, the password list is acce
 
 CONFIGURE THE APPLICATION
 Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
+Options > File associations and system integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Options > Settings allows to edit applications’ settings
-Options > Theme allows to change application’s icons and appearance
-Options > System integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, side bar, etc
 
 F1 	help
@@ -1366,7 +1372,7 @@ F12 	extract all to...
 
 ABOUT PEAZIP
 
-PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for 32 and 64 bit Windows (9x, 2k, XP, Vista) and Linux (PeaZip is a desktop neutral application).
+PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for Linux (desktop neutral application), macOS, and 32 and 64 bit Windows.
 
 PeaZip allows to apply powerful multiple search filters to archive's content; create and extract multiple archives at once; create self-extracting archives; export task definition as command line; save archiving and extraction layouts; bookmark archives and folders; scan and open with custom applications compressed and uncompressed files etc...
 

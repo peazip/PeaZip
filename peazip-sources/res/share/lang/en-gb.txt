@@ -1,12 +1,19 @@
 ﻿=== PeaZip language file ===
 English (United Kingdom)
-9.0
+9.1
 Translated by: Robert Readman
 Last rev. by: 
 Last rev.: 20211128
 
 === PeaZip text group ===
 
+txt_9_1_7zs: 7z / p7zip syntax level
+txt_9_1_ac: Archive conversion scripts allow user's interaction
+txt_9_1_closeall: Close all
+txt_9_1_enlargeicons: Enlarge file browser icons
+txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
+txt_9_1_nw: Open in a new window
+txt_9_1_qdup: Use quick deduplication routine
 txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
 txt_9_0_accesstime: Do not change last access time
 txt_9_0_mem: Maximum memory usage
@@ -119,9 +126,9 @@ txt_7_8_update: Update
 txt_7_7_noneall: None: disable preview, edit, drag&drop and interactive extraction
 txt_7_7_nonetemp: None, user's temp if necessary
 txt_7_7_outtemp: Output, preview in user's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
+txt_7_7_sys7zreq: Requires 7z, 7-Zip, or p7zip, or equivalent package to be installed
 txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
-txt_7_7_sys7z: Use system 7z in Linux
+txt_7_7_sys7z: Use system 7z if available
 txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
 txt_7_6_color: Colour
 txt_7_6_custenc: Custom code page
@@ -719,7 +726,7 @@ txt_ren_existing: Auto rename existing files
 txt_ren_extracted: Auto rename extracted files
 txt_autofolder: Automatically create new folder to extract the archive in?
 txt_back: Back
-txt_backend: Backend binaries user interface
+txt_backend: Backend binaries
 txt_backupexe: Backup executable (recommended)
 txt_bettercompression: better compression
 txt_blogs: Blogs

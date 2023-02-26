@@ -1,12 +1,19 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.0
+9.1
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20221207
+Ultima rev.: 20230217
 
 === PeaZip text group ===
 
+txt_9_1_7zs: Livello della sintassi di 7z / p7zip
+txt_9_1_ac: Gli script di conversione archivi consentono interazione
+txt_9_1_closeall: Chiudi tutto
+txt_9_1_enlargeicons: Ingrandire le icone del browser file
+txt_9_1_ef: Ignorare le cartelle vuote nelle operazioni di archiviazione ed estrazione (7z / p7zip)
+txt_9_1_nw: Apri in una nuova finestra
+txt_9_1_qdup: Usare la deduplicazione file veloce
 txt_9_0_autoexttar: Estrazione automatica TAR da file TAR.* compressi
 txt_9_0_accesstime: Non cambiare la data di ultimo accesso
 txt_9_0_mem: Utilizzo massimo di memoria
@@ -28,7 +35,7 @@ txt_8_8_cb: Colore pulsanti
 txt_8_8_centered: Pulsanti allineati al centro
 txt_8_8_light: Chiaro
 txt_8_8_lnk: Link
-txt_8_8_intnote: L'opzione "Estrazione interattiva" (in Opzioni > Impostazioni > Archive manager) è ignorata per la composizione del comando nel tab Console.
+txt_8_8_intnote: L'opzione "Estrai poi sposta" (in Opzioni > Impostazioni > Archive manager) è ignorata per la composizione del comando nel tab Console.
 txt_8_8_snz: Applica Zone.Identifier stream (Windows)
 txt_8_8_sm: Dimensione icone piccole
 txt_8_8_solcol: Campo indirizzo
@@ -56,7 +63,7 @@ txt_8_6_immediate: Esecuzione immediata
 txt_8_6_yessimple: Aggiorna archivio, mantieni le anteprime per altre modifiche
 txt_8_5_advbrowser: Applica filtri al browser
 txt_8_5_detailslarge: Dettagli, grande
-txt_8_5_intext: Estrai in un percorso di lavoro temporaneo, poi sposta nella destinazione (chiedi prima di sovrascrivere)
+txt_8_5_intext: Estrai in un percorso di lavoro temporaneo, poi sposta nella destinazione (chiedi interattivamente prima di sovrascrivere)
 txt_8_5_listlarge: Elenco, grande
 txt_8_5_loadlayout: Carica layout all'avvio
 txt_8_5_samplescripts: Scripts di esempio
@@ -110,7 +117,7 @@ txt_7_8_destexistfile: La destinazione contiene già i file estratti. Sovrascriv
 txt_7_8_dd: Drag and Drop
 txt_7_8_priorityhigh: Alta
 txt_7_8_priorityidle: Idle
-txt_7_8_rel: Estrazione interattiva, estrai poi sposta nella destinazione
+txt_7_8_rel: Eestrai poi sposta nella destinazione
 txt_7_8_prioritynormal: Normale
 txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [richiede riavvio di PeaZip]
@@ -119,9 +126,9 @@ txt_7_8_update: Update
 txt_7_7_noneall: Nessuna: disabilita preview, edit, estrazione drag&drop e interattiva
 txt_7_7_nonetemp: Nessuna, temp dell'utente se necessario
 txt_7_7_outtemp: Output, preview nella temp dell'utente
-txt_7_7_sys7zreq: Richiede l'installazione del pacchetto p7zip-full o equivalente
+txt_7_7_sys7zreq: Richiede l'installazione del pacchetto 7z, 7-Zip, p7zip o equivalente
 txt_7_7_tw: Directory di lavoro temporanea per creazione archivi, editing, preview ed estrazione drag&drop
-txt_7_7_sys7z: Usa 7z di sistema in Linux
+txt_7_7_sys7z: Usa 7z di sistema se disponibile
 txt_7_6_zipenc: 7z/p7zip ZIP encoding dei nomi file
 txt_7_6_color: Colore
 txt_7_6_custenc: Code page personalizzato
@@ -203,7 +210,7 @@ txt_6_8_ndrop: Usa Drag And Drop nativo in Windows
 txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possibili duplicati trovati (test veloce approssimato)
 txt_6_6_rsh: Cancella cronologia ricerche
-txt_6_6_pdupfind: Suggerisci possibili duplicati
+txt_6_6_pdupfind: Suggerisci duplicati
 txt_6_6_forcemodify: Consenti modifica per archivi di tipi non canonici
 txt_6_5_mandatory: (obbligatorio)
 txt_6_5_abort: Annulla
@@ -719,7 +726,7 @@ txt_ren_existing: Rinomina file esistenti
 txt_ren_extracted: Rinomina file estratti
 txt_autofolder: Creare automaticamente una nuova cartella in cui estrarre l'archivio?
 txt_back: Indietro
-txt_backend: Interfaccia degli eseguibili backend
+txt_backend: Eseguibili backend
 txt_backupexe: Backup dell'eseguibile (raccomandato)
 txt_bettercompression: compressione migliore
 txt_blogs: Blog
@@ -843,7 +850,7 @@ txt_fastopen: Apertura veloce, ferma il browsing di archivi estremamente grandi 
 txt_level_fastest: Più veloce
 txt_favformats: Formati preferiti (collegamenti)
 txt_file: File
-txt_filebrowser: Browser di file e archivi
+txt_filebrowser: Browser file
 txt_filetools: File tools
 txt_files: file
 txt_nfiles: File
@@ -1050,8 +1057,8 @@ txt_sample: Campione:
 txt_saveas: Salva come
 txt_savehistory: Salva cronologia
 txt_save_infolder: Salva in cartella (automatico)
-txt_savejob: Salva lavoro
-txt_savejobdefinition: Salva definizione del lavoro
+txt_savejob: Salva definizione lavoro come script
+txt_savejobdefinition: Salva definizione lavoro come script
 txt_savejobdefinition_hint: Salva definizione del lavoro come file di testo
 txt_savelayout: Salva layout
 txt_save_winstate: Salva stato della finestra
@@ -1271,7 +1278,7 @@ txt_priority: Tasto destro per impostare la priorità
 txt_running: In esecuzione,
 txt_isrunning: In esecuzione...
 txt_saveas: Salva come
-txt_savejob: Salva lavoro
+txt_savejob: Salva definzione lavoro come script
 txt_savelog: Salva log
 txt_software: software
 txt_speedscale: Velocità, scala logaritmica (alto, migliore)
