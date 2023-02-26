@@ -1,26 +1,26 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-9.1
-Prevod:          Jadran Rudec, jrudec@gmail.com
+9.1.0
+Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
-Zadnja revizija: 20221218
+Zadnja revizija: 20230226
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_1_7zs: Raven sintakse 7z/p7zip
+txt_9_1_ac: Skripti za pretvorbo arhiva omogočajo interakcijo uporabnika
+txt_9_1_closeall: Zapri vse
+txt_9_1_enlargeicons: Povečaj ikone brskalnika datotek
+txt_9_1_ef: Izključi prazne mape iz arhiviranja in razširjanja (7z/p7zip)
+txt_9_1_nw: Odpri v novem oknu
+txt_9_1_qdup: Uporabi rutino za hitro odstranjevanje dvojnikov
 txt_9_0_autoexttar: Samodejno razširi arhiv TAR iz stisnjenih datotek TAR.*
 txt_9_0_accesstime: Ne spreminjaj zadnjega časa dostopa
 txt_9_0_mem: Največja uporaba pomnilnika
 txt_9_0_showmainmenu: Odpri glavni meni
 txt_9_0_navmenu: Odpri navigacijski meni
-txt_9_0_plugind: Odpri binarne datoteke in imenik vtičnikov
-txt_9_0_df: Razvrsti imenike pred datotekami
+txt_9_0_plugind: Odpri dvojiške datoteke in mapo z vtičniki
+txt_9_0_df: Razvrsti mape pred datotekami
 txt_9_0_hl: Shrani trde povezave kot povezave
 txt_9_0_sl: Shrani simbolne povezave kot povezave
 txt_9_0_tnav: Preklopi stransko vrstico, drevesni pogled, brez
@@ -164,7 +164,7 @@ txt_7_4_presetrar: Močno stiskanje, RAR
 txt_7_4_tkeep: Ohrani izviren časovni žig arhiva
 txt_7_4_lock: Zakleni arhiv
 txt_7_4_locked: zaklenjen
-txt_7_4_lockconfirm: Zaklenjenih arhivov ni mogoče še spremeniti. Nadaljujte z zaklepanjem tega arhiva?
+txt_7_4_lockconfirm: Zaklenjenih arhivov ni mogoče nadalje spreminjati. Želite nadaljevati z zaklepanjem tega arhiva?
 txt_7_4_recover: Popravi arhiv
 txt_7_4_tcurr: Nastavi časovni žig arhiva na trenutni sistemski čas
 txt_7_4_setarc: Nastavi Možnosti arhiviranja
@@ -205,7 +205,7 @@ txt_6_9_autou: Samodejno posodobi spremenjene datoteke v arhivih
 txt_6_9_forceu: Prisilno posodobi spremenjene datoteke v arhivih
 txt_6_9_opuns: Operacija ni podprta za trenutno vrsto arhiva
 txt_6_9_overarch: Ali želite prepisati datoteke z istim imenom, ki že obstajajo v arhivu?
-txt_6_9_uconf: Predogledana datoteka je bila spremenjena. Posodobim trenutni arhiv?
+txt_6_9_uconf: Predogledana datoteka je bila spremenjena. Želite posodobiti trenutni arhiv?
 txt_6_8_ndrop: Uporabi izvorni način 'Povleci in spusti' v sistemu Windows
 txt_6_7_nop: (brez predogleda)
 txt_6_6_pdupfound: možni najdeni dvojniki (hiter približni preizkus)
@@ -315,8 +315,8 @@ txt_5_4_deletearchives: Izbriši arhive po razširjanju
 txt_5_4_deletefiles: Izbriši datoteke po arhiviranju
 txt_5_4_deleteoriginal: Postopek brisanja, kot je nastavljen na glavnem zaslonu, bo dodan skriptu.
 txt_5_4_lv: Nazadnje obiskano
-txt_5_4_deletearchivesconfirm: Potrjujete brisanje izvirnih arhivov?
-txt_5_4_deletefilesconfirm: Potrjujete brisanje izvirnih datotek?
+txt_5_4_deletearchivesconfirm: Želite potrditi  izvirnih arhivov?
+txt_5_4_deletefilesconfirm: Želite potrditi  izvirnih datotek?
 txt_5_4_used: Uporabljeno
 txt_5_3_profilebest: Najboljše stiskanje. 7Z format Ultra stopnja
 txt_5_3_profileadvanced: Napredno stiskanje. 7Z format
@@ -331,7 +331,7 @@ txt_5_3_exc: Filtri za izključitev prevladajo nad filtri za vključevanje
 txt_5_3_ia: Vključi tudi
 txt_5_3_io: Vključi samo
 txt_5_3_rec: Rekurzivno podmape
-txt_5_3_resetsi: Znova konfiguriram sistemsko integracijo (priročni meni, PošljiV, povezovanje datotek)?
+txt_5_3_resetsi: Želite znova nastaviti sistemsko integracijo (priročni meni, PošljiV, povezovanje datotek)?
 txt_5_2_oadd: Arhiv v izvirno pot
 txt_5_2_zerodelete: Ali želite izbrisati in prepisati z vseh 0 izbranih datototek? Operacije ni mogoče razveljaviti in datoteke ne bodo obnovljive
 txt_5_2_zfree:Ali želite prepisati z vsem 0 prostim prostorom na tem pogonu?
@@ -383,9 +383,9 @@ txt_5_0_ps: Odpri tukaj PowerShell
 txt_5_0_perf: Izvedba
 txt_5_0_pictures: Slike
 txt_5_0_removeall: Odstrani vse
-txt_5_0_resetbookmarks: Ponastavim zaznamke na privzeto? (Zaznamke lahko nato prilagodite z 'Zaznamki -> Organiziraj')
+txt_5_0_resetbookmarks: Želite ponastaviti zaznamke na privzeto? (Zaznamke lahko nato prilagodite z 'Zaznamki -> Organiziraj')
 txt_5_0_sh: Zgodovina seje
-txt_5_0_skip: Preskoči oštevilčenje vsebine imenikov v postavitvi
+txt_5_0_skip: Preskoči oštevilčenje vsebine map v postavitvi
 txt_5_0_videos: Videoposnetki
 txt_4_9_frame: Okvir
 txt_4_9_listth: Seznam in sličice
@@ -411,7 +411,7 @@ txt_4_8_listno: Seznam
 txt_4_8_aspect: Ohrani razmerje
 txt_4_8_mirror: Zrcali
 txt_4_8_presets: Prednastavitve
-txt_4_8_replace: Zamenjam izvirno velikost slik? 'Ne' uporabi preoblikovanje v novih datotekah.
+txt_4_8_replace: Želite zamenjati izvirno velikost slik? 'Ne' uporabi preoblikovanje v novih datotekah.
 txt_4_8_resize: Spremeni velikost
 txt_4_8_rl: Obračaj levo
 txt_4_8_rr: Obračaj desno
@@ -420,13 +420,13 @@ txt_4_8_t: Preoblikuj
 txt_4_8_w: Širina
 txt_4_7_pk: Ustvari naključno geslo/datoteko s ključi
 txt_4_7_spchar: Omeji znake na črke in številke
-txt_4_7_recycleask: Premaknem izbrane datoteke v Koš?
+txt_4_7_recycleask: Želite premakniti izbrane datoteke v Koš?
 txt_4_7_recycle: Premakni v Koš
 txt_4_7_pcomp: Morebitno stiskanje
 txt_4_6_am: Upravitelj arhivov
 txt_4_6_fm: Upravitelj datotek
 txt_4_6_users: Uporabniki
-txt_4_5_goupdate: Na voljo je nova različica. Odprem PeaZipovo uradno spletno stran za prenos posodobitve?
+txt_4_5_goupdate: Na voljo je nova različica. Želite odpreti PeaZipovo uradno spletno stran za prenos posodobitve?
 txt_4_5_b: Spodaj
 txt_4_5_koupdate: Ni mogoče preveriti, ali so na voljo posodobitve. Ni povezave s strežnikom za posodabljanje
 txt_4_5_update: Preveri obstoj posodobitev
@@ -442,9 +442,9 @@ txt_4_5_shstatus: Prikaži statusno vrstico
 txt_4_5_shtool: Prikaži orodno vrstico
 txt_4_5_upxpj: Žal, ni mogoče izvoziti definicije opravila, ker ta postopek ali možnost zahteva izvedbo več različnih ukazov
 txt_4_5_t: Zgoraj
-txt_4_4_confremoveall: Odstranim vse datoteke za prilagajanje PeaZipa (Aplikacije, Zaznamki, Upravitelj gesel)?
-txt_4_4_confremove: Odstranim konfiguracijo PeaZipa?
-txt_4_3_pwmanhint: Dvoklik za urejanje vnosov na seznamu gesel. Desni klik za Možnosti. Ctrl+C za kopiranje gesel.
+txt_4_4_confremoveall: Želite odstraniti vse datoteke za prilagajanje PeaZipa (Aplikacije, Zaznamki, Upravitelj gesel)?
+txt_4_4_confremove: Želite odstraniti nastavitve PeaZipa?
+txt_4_3_pwmanhint: Dvoklik za urejanje vnosov na seznamu gesel. Desni klik za 'Možnosti'. Ctrl+C za kopiranje gesel.
 txt_4_3_exppl: Izvozi seznam gesel
 txt_4_3_expple: Šifriran (varnostna kopije Upravitelja gesel)
 txt_4_3_keeppw: Ohrani geslo/datoteko s ključi, za trenutno sejo
@@ -455,7 +455,7 @@ txt_4_3_pwman: Upravitelj gesel
 txt_4_3_pwmancorr: Zdi se, da je Upravitelj gesel spremenjen ali poškodovan. Vseeno obdržim Upravitelja gesel, in poskusim obnoviti trenutni seznam gesel, če mu zaupate? (Ne bo ponastavil Upravitelja gesel. Priporočeno)
 txt_4_3_expplp: Navadno besedilo (vse uporabe)
 txt_4_3_recsrc: Privzeto je rekurzivno iskanje
-txt_4_3_resetpm: Ponastavim Upravitelja gesel? Vsa shranjena gesla bodo izbrisana.
+txt_4_3_resetpm: Želite ponastaviti Upravitelja gesel? Vsa shranjena gesla bodo izbrisana.
 txt_4_3_breadcrumb: Prikaži naslov kot drobno vrstico podatkov
 txt_4_2_arcabspath: Uporabi absolutne poti
 txt_4_1_duplicateshint: V stolpcu CRC je sporočen niz 'velikost'/'kontrol. vsota' za vse podvojene kandidate najdete v trenutni mapi ali iskalnem filtru
@@ -541,14 +541,14 @@ txt_2_8_zcopy: (Windows) Kopiranje datotek v ponovitvenem načinu. Počasnejše 
 txt_2_8_addvol: Dodajanje celotnih nosilcev v arhiv lahko traja dlje časa. Vseeno nadaljujem?
 txt_2_8_uniterror: Enota ni dostopna
 txt_2_8_cannotconvert: Izbranih arhivov ni mogoče pretvoriti
-txt_2_8_convertbegin: Nadaljujem s fazo stiskanja, za dokončanje pretvorbe?
+txt_2_8_convertbegin: Želite nadaljevati s fazo stiskanja, za dokončanje pretvorbe?
 txt_2_8_convert: Pretvori 
 txt_2_8_convertexisting: Pretvori obstoječe arhive
-txt_2_8_convertdelete: Izbrišem začasno ustvarjene datoteke in mape za pretvorbo?
+txt_2_8_convertdelete: Želite izbrisati začasno ustvarjene datoteke in mape za pretvorbo?
 txt_2_8_details: Podrobnosti
 txt_2_8_parallel: Izvedi vzporedna opravila, kadar je to mogoče
 txt_2_8_convertnote: V vsakem primeru izvirni arhivi niso bili spremenjeni, da bi uporabniku omogočili nadzor nad tem, kako jih obdržati ali odstraniti
-txt_2_8_custom: ni neposredno podprto s PeaZipom, vendar v fazi razširjanja lahko nastavite PeaZip za obdelavo vrst datotek po meri, v zavihku 'Napredno'. Nadaljujem z odpiranjem te datoteke?
+txt_2_8_custom: ni neposredno podprto s PeaZipom, vendar v fazi razširjanja lahko nastavite PeaZip za obdelavo vrst datotek po meri, v zavihku 'Napredno'. Želite nadaljevati z odpiranjem te datoteke?
 txt_2_8_unitrecommend: Priporočljivo je bodisi razširiti (desni klik z miško -> Razširi izbrane) ali odpreti datotečne sisteme iz korena računalnika (Orodja sistema> Odpri enoto kot arhiv)
 txt_2_8_viewasarchive: Odpri enoto kot arhiv
 txt_2_8_nounit: Nobena enota ni izbrana
@@ -572,7 +572,7 @@ txt_2_7_clipboard: Odložišče
 txt_2_7_goarclayout: Pojdi na postavitev arhiva
 txt_2_7_goextlayout: Pojdi na razširjanje arhiva
 txt_2_7_ok: Vredu
-txt_2_7_drag_archive: Odprem datoteko kot nov arhiv? ('Ne' za dodajanje datoteke v trenutno postavitev arhiviranja)
+txt_2_7_drag_archive: Želite odpreti datoteko kot nov arhiv? ('Ne' za dodajanje datoteke v trenutno postavitev arhiviranja)
 txt_2_7_oop: Po končanem opravilu odpri izhodno pot
 txt_2_7_validatefn: Operacija je ustavljena. Odkrito je neveljavno ime datoteke:
 txt_2_7_validatecl: Operacija je ustavljena. Zaznan je bil potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
@@ -584,7 +584,7 @@ txt_2_7_archivehint: Povlecite tukaj datoteke in mape v arhiv, ali desni klik, z
 txt_2_7_exthint: Povlecite arhive tukaj, da jih razširite ali desni klik, za več možnosti
 txt_2_7_setadvf: Nastavi napredne filtre
 txt_2_7_selpath: Izbrana pot vnosa
-txt_2_7_separateerror: Žal ni mogoče uvoziti ukazne vrstice definicije opravila med uporabo stikala 'Dodaj vsak predmet v ločen arhiv' , ker se opravilo izvaja kot več različnih ukazov
+txt_2_7_separateerror: Žal, ni mogoče uvoziti ukazne vrstice definicije opravila med uporabo stikala 'Dodaj vsak predmet v ločen arhiv' , ker se opravilo izvaja kot več različnih ukazov
 txt_2_7_noinput: Postavitev je prazna: za dodajanje seznama arhivov, ki jih želite razširiti, uporabite 'Dodaj datoteke' ali 'Naloži postavitev'
 txt_2_7_dirsize: Velikost vsebine map ni označenana za izračun skupne velikosti
 txt_2_7_un7z_browse_flat: poskusi ploski prikaz (F6)
@@ -621,7 +621,7 @@ txt_2_4_adding: Dodajanje
 txt_2_4_advclip: Odložišče ohranja več izbir
 txt_2_4_yanswers: Odgovori
 txt_2_4_itemsheight: Samodejna višina vnosov
-txt_2_4_clearclipboard: Počisti Odložišče (Esc)
+txt_2_4_clearclipboard: Počisti odložišče (Esc)
 txt_2_4_wcommons: Skupno
 txt_2_4_copyfrom: Kopiraj iz
 txt_2_4_deletebookmarks: Ali želite izbrisati seznam zaznamovanih datotek in map
@@ -631,7 +631,7 @@ txt_2_4_extractfrom: Razširi iz
 txt_2_4_hexp: 16-tiški predogled
 txt_2_4_operation: Operacija
 txt_2_4_path: pot ni zapisljiva (npr. samo za branje). Ali želite izbrati zapisljivo izhodno pot?
-txt_2_4_removefromclipboard: Odstrani iz Odložišča
+txt_2_4_removefromclipboard: Odstrani iz odložišča
 txt_2_4_stdclip: Standardno: ohrani en sam izbor v odložišču, počisti operacije rezanja pri lepljenju
 txt_2_4_totalmem: skupnega pomnilnika
 txt_2_4_gvideo: Video
@@ -677,7 +677,7 @@ txt_cd700: 700 MB CD
 txt_type_description_7z: 7Z: funkcija bogatega arhivskega formata z visokim razmerjem stiskanja
 txt_dvddl: 8.5 GB DVD DL
 txt_7z_exitcode8: 8: Napaka: za zahtevano operacijo ni dovolj pomnilnika 
-txt_abort: Prekinem načrtovane operacije kopiranj/premika datoteke?
+txt_abort: Želite prekiniti načrtovana kopiranja/premike datoteke?
 txt_about: Vizitka
 txt_action: Akcija
 txt_action_hint: Akcija pri odpiranju/predogledu s povezano aplikacijo
@@ -724,7 +724,7 @@ txt_attributes: Atributi
 txt_author: Avtor
 txt_ren_existing: samodejno preimenujobstoječe datoteke
 txt_ren_extracted: samodejno preimenuj razširjene datoteke
-txt_autofolder: Samodejno ustvarim novo mapo za razširjanje arhiva?
+txt_autofolder: Želite samodejno ustvariti novo mapo za razširjanje arhiva?
 txt_back: Nazaj
 txt_backend: Uporabniški vmesnik podpira dvojiške datoteke
 txt_backupexe: Varnostno kopiraj izvedljivo (EXE) datoteko (priporočeno)
@@ -788,7 +788,7 @@ txt_theme_default: Privzeta tema
 txt_hard_reset_hint: Izbriši datoteko z zaznamki
 txt_desktop: Namizje
 txt_dictionary: Slovar
-txt_dirs: imenikov,
+txt_dirs: map,
 txt_dis: Razločitev:
 txt_disk_cleanup: Čiščenje diska
 txt_disk_defrag: Defragmentacija diska
@@ -823,7 +823,7 @@ txt_exclusion_recourse: Filtri za izključitev rekurzivnih podmap
 txt_exclusion: Izključi
 txt_exe: Izvedljiva datoteka
 txt_overwrite_qry: obstaja v ciljni poti. Jo prepišem z datotekama z istim imenom iz izvirne poti? (Prekliči: Preskoči kopiranje tega predmeta)
-txt_confirm_overwrite: obstaja. Naj jo prepišem? (ne, za preskok)
+txt_confirm_overwrite: obstaja. Želite jo prepisati? (ne, za preskok)
 txt_explore_outpath: Razišči izhodno pot
 txt_explore_path: Razišči pot
 txt_ext: Končn.:
@@ -1332,7 +1332,7 @@ Najpogostejše vrste arhivov podpirajo to možnost.
 
 USTVARI ŠIFRIRAN ARHIV
 Kliknite na ikono ključavnice, da vnesete geslo in po želji, datoteko s ključi. Ikona je prikazana v PeaZipovi statusni vrstici brskalnik datotek, kot tudi v vmesniku za ustvarjanje arhiva.
-Če želite skriti imena datotek in imenikov, ki jih vsebuje arhiv, preverite “Šifriraj tudi imena datotek”. Upoštevajte, da bo to uporabljeno le, če bo arhiv ustvarjen v formatu, ki podpira to funkcijo, kot sta 7Z in ARC.
+Če želite skriti imena datotek in map, ki jih vsebuje arhiv, preverite “Šifriraj tudi imena datotek”. Upoštevajte, da bo to uporabljeno le, če bo arhiv ustvarjen v formatu, ki podpira to funkcijo, kot sta 7Z in ARC.
 Upoštevajte, da v vmesniku za ustvarjanje arhiva, poleg ikone ključavnice, obstaja opozorilo za vizualno obveščanje, če je nastavljeno šifriranje in, če trenutni format arhiva podpira šifriranje.
 
 USTVARI LOČENE ARHIVE
@@ -1351,12 +1351,11 @@ Upravitelj gesel je dostopen iz glavnega menija, 'Orodja -> Upravitelj gesel' al
 Shranjena gesla lahko izberete v spustnem meniju na levi strani gesla, v obrazcu 'Geslo', ali pa jih lahko kopirate iz Upravitelja gesel za uporabo v kateri koli drugi aplikaciji.
 Če glavno geslo ni nastavljeno za Upravitelja gesel, je seznam gesel dostopen, ne da bi bilo potrebno preverjanje pristnosti, sicer gesla ne bodo prikazana, dokler uporabnik ne bo pravilno preveril pristnosti.
 
-KONFIGURIRAJ APLIKACIJO
-'Možnosti -> Lokalizacija' (in v 'Možnosti -> Nastavitve', prvi zavihek) dovoljuje nastavitev jezika aplikacije.
-'Možnosti -> Nastavitve' dovoljuje urejanje nastavitev aplikacije
-'Možnosti -> Tema' dovoljuje spreminjanje videza in ikon aplikacije
-'Možnosti -> Sistmska integracija' zažene proceduro konfiguriranja združitve datotek, priročnega menija in vnosov menija PošljiV (v sistemu Windows)
-'Organiziraj meni' vsebuje vnos za prilagajanje, omogočanje ali onemogočanje funkcij brskalnika, kot so orodna vrstica, naslovna vrstica, navigacijska vrstica itd
+NASTAVI APLIKACIJO
+Možnosti > Lokalizacija (in v Možnostih > Nastavitve, prvi zavihek) omogoča nastavitev jezika aplikacije.
+Možnosti > Povezave datotek in sistemska integracija zažene čarovnika za nastavitve povezav datotek, pr4iročnega menija in vnosov menija 'Pošlji' (v sistemu Windows)
+Možnosti > Nastavitve omogoča urejanje nastavitev aplikacij
+Meni 'Organiziraj' vsebuje vnos za prilagajanje, omogočanje ali onemogočanje funkcij brskalnika, kot so orodna vrstica, naslovna vrstica, navigacijska vrstica itd
 
 F1 	pomoč
 F2 	preimenuj datoteke/Ctrl+F2 kopiraj izbrano v/Shift+F2 premakni izbrano v
@@ -1383,5 +1382,4 @@ Prenos: http://peazip.github.io
 Preberite več: http://peazip.github.io/peazip-free-archiver.html
 Podpora: http://peazip.github.io/peazip-help.html
 Pogosta vprašanja: http://peazip.github.io/peazip-help-faq.html
-
 Najlepša hvala vsem, ki prispevajo k rasti PeaZipovega projekta in razvijajo komponente programske odprte kode, ki se uporabljajo v tej aplikaciji (glejte spletno stran za celoten seznam), in vsem uporabnikom, ki prispevajo povratne informacije, izkušnje in nasvete.
