@@ -7,13 +7,13 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_1_7zs: Nível de sintaxe 7z / p7zip
+txt_9_1_ac: Os scripts de conversão de arquivos permitem a interação do usuário
+txt_9_1_closeall: Fechar tudo
+txt_9_1_enlargeicons: Ampliar ícones do navegador de arquivos
+txt_9_1_ef: Excluir pastas vazias de operações de arquivamento e extração (7z / p7zip)
+txt_9_1_nw: Abrir em uma nova janela
+txt_9_1_qdup: Use a rotina de desduplicação rápida
 txt_9_0_autoexttar: Extraia automaticamente o arquivo TAR de arquivos TAR.* compactados
 txt_9_0_accesstime: Não alterar o horário do último acesso
 txt_9_0_mem: Uso máximo de memória
@@ -28,7 +28,7 @@ txt_8_9_empty: Arquivo parece vazio
 txt_8_9_disp: Mostrando conteúdo do arquivo
 txt_8_9_parsing: Analisando conteúdo do arquivo
 txt_8_9_stoptest: Pare para inspecionar o relatório de erro, lista, teste, teste automático
-txt_8_9_ttb: Alternar barra de feerramenta
+txt_8_9_ttb: Alternar barra de ferramenta
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
 txt_8_8_cb: Cor do botão
