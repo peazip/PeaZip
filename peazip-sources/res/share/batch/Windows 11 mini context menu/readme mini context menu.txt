@@ -20,7 +20,10 @@ For quick reference, most relevant PeaZip commands are:
 -add2multi Add item(s) to archive allowing to set format, options, password, etc
 -add2multi7z Add item(s) to 7Z archive and immediately starts compression
 -add2multizip Add item(s) to ZIP archive and immediately starts compression
+-add2multiconvert Add item(s) to archive conversion screen
+
 -ext2openasarchive Try to open a file of arbitrary type as archive; if input is a directory, open PeaZip in that directory 
+
 -ext2multi Extract item(s) allowing to set destination, options, password, etc
 -ext2multihere Extract item(s) in current directory
 -ext2multismart Extract item(s) in current directory, creating a new folder if needed
