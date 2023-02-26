@@ -359,8 +359,7 @@ var
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore,launched,
   stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall, needinteraction,
   exbackground,pldesigned,okseven:boolean;
-  Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,Bpriority1,Bpriority2,Bpriority3,Bpriority4,
-  Bsuccess,Berror: TBitmap;
+  Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,Bsuccess,Berror: TBitmap;
   cl,cl1,outpath,executable_path,resource_path,binpath,sharepath,graphicsfolder,dummy,Color1,Color2,Color3,
   Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver:ansistring;
   insize,progress,pinsize:qword;
@@ -802,6 +801,7 @@ if cp_open<33 then
 {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
 {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 {$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+{$IFDEF OPENBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
@@ -1526,6 +1526,7 @@ ipercp:=0;
 iperc:=0;
 remtime:=0;
 ppause:=false;
+Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
 prevpause:=false;
 if cl='' then
    begin
@@ -2042,6 +2043,11 @@ procedure gostopall;
 var
   pstopfile:file of byte;
 begin
+Form_gwrap.ButtonStopAll.visible:=false;
+Form_gwrap.Button1.visible:=true;
+Form_gwrap.ButtonPause.Visible:=false;
+Form_gwrap.ButtonStop.Visible:=false;
+Form_gwrap.ButtonStop1.AnchorSideRight.Control:=Form_gwrap.Button1;
 assignfile(pstopfile,fget_usrtmp_path+STR_STOPALL);
 rewrite(pstopfile);
 closefile(pstopfile);
@@ -2391,6 +2397,7 @@ else
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
 {$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
+{$IFDEF OPENBSD}cp_search_linuxlike(desk_env);{$ENDIF}
 {$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 

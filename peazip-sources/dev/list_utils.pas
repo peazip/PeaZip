@@ -1673,6 +1673,9 @@ begin
 {$IFDEF NETBSD}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
 {$ENDIF}
+{$IFDEF OPENBSD}
+  escapefilename := escapefilenamelinuxlike(s, desk_env);
+{$ENDIF}
 {$IFDEF DARWIN}
   escapefilename := escapefilenamelinuxlike(s, desk_env);
 {$ENDIF}
@@ -1800,7 +1803,7 @@ if pos('''',s)<>0 then result := '"';
 end;
 
 procedure getdesk_env(var bytedesk: byte; var caption_build, delimiter: ansistring);
-//0 unknown, 1 Gnome, 2 KDE, 10 MS Windows, 20 Darwin, 30 OSX
+//0 unknown, 1 Gnome, 2 KDE, 10 MS Windows, 20 Darwin
 begin
   caption_build := 'Unknown OS Build';
   delimiter := '''';
@@ -1823,6 +1826,10 @@ begin
 {$ENDIF}
 {$IFDEF NETBSD}
   caption_build := 'NetBSD Build';
+  delimiter := '''';
+{$ENDIF}
+{$IFDEF OPENBSD}
+  caption_build := 'OpenBSD Build';
   delimiter := '''';
 {$ENDIF}
 {$IFDEF DARWIN}
@@ -1882,6 +1889,9 @@ begin
 {$IFDEF NETBSD}
   s := GetEnvironmentVariable('HOME');
 {$ENDIF}
+{$IFDEF OPENBSD}
+  s := GetEnvironmentVariable('HOME');
+{$ENDIF}
 {$IFDEF DARWIN}
   s := GetEnvironmentVariable('HOME');
 {$ENDIF}
@@ -1918,6 +1928,9 @@ begin
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
 {$ENDIF}
 {$IFDEF NETBSD}
+  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+{$ENDIF}
+{$IFDEF OPENBSD}
   s := GetEnvironmentVariable('HOME') + '/Desktop/';
 {$ENDIF}
 {$IFDEF DARWIN}

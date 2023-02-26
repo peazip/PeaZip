@@ -420,8 +420,8 @@ begin
                               if qscale<880 then qscale:=800 //128
                               else qscale:=1000; //160
 qscaleimages:=qscale;
-case qscaleimages of //avoid some multiples that usually does not scale well, falling back to nearest smaller scaling factor
-   125: qscaleimages:=100;
+case qscaleimages of //avoid some multiples that usually does not scale well, falling back to alternative similar scaling factor
+   125: qscaleimages:=115;
    250: qscaleimages:=200;
 end;
 end;

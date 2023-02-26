@@ -1,15 +1,19 @@
-﻿Notes to 9.0.0 release
+﻿Notes to 9.1.0 release
 
-Modified existing text
-txt_8_7_showhm: Open Browser header menu
-txt_8_7_showsm: Open Style menu
-txt_7_0_autoopentar: Auto open TAR archive inside compressed TAR.* files
-txt_4_5_shnav: Show Side bar
-txt_2_9_navbar: Side bar
-in === PeaLauncher text group ===
-txt_3_0_details: For more details please see "Report" tab for the full task's log, and "Console" tab for task definition as command line.
-txt_3_0_arc: Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.
-txt_3_0_ext: The archive may require a different password for the current operation.
+Modified existing text:
+txt_8_8_intnote: Please note that "Extract then move" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
+txt_8_5_intext: Extract to temporary working directory then move to output destination, interactively ask before overwriting
+txt_7_8_rel: Extract then move to destination
+txt_7_7_sys7zreq: Requires 7z, 7-Zip, or p7zip, or equivalent package to be installed
+txt_7_7_sys7z: Use system 7z if available
+txt_6_6_pdupfind: Suggest duplicates
+txt_backend: Backend binaries
+txt_filebrowser: File browser
+txt_savejob: Save task definition as script
+txt_savejobdefinition: Save task definition as script
+
+Modified existing text in === PeaLauncher text group ===:
+txt_savejob: Save task definition as script
 
 = GENERAL NOTES =
 

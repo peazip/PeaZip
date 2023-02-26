@@ -1520,6 +1520,9 @@ code:=$31;
 {$IFDEF NETBSD}
 code:=$32;
 {$ENDIF}
+{$IFDEF OPENBSD}
+code:=$38;
+{$ENDIF}
 {$IFDEF LINUX}
 code:=$33;
 {$ENDIF}

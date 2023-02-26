@@ -193,6 +193,7 @@ unit Unit_pea;
  1.09     20220808  G.Tani      Updated theming engine
  1.10     20221003  G.Tani      Updated theming engine
  1.11     20221208  G.Tani      Minor fixes
+ 1.12     20230218  G.Tani      Fixes, added conditional compilation sections for non-Windows systems
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -375,7 +376,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.11'; //declares release version for the whole build
+  P_RELEASE          = '1.12'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -611,6 +612,7 @@ var
    in_file:ansistring;
    f_in:file of byte;
 begin
+try
 j:=1;
 ind:=0;
 chunks_ok:=true;
@@ -624,7 +626,7 @@ while ((chunks_ok=true) and (ind<byte_to_read)) do
          chunks_ok:=true;
          assignfile(f_in,in_folder+in_file);
          filemode:=0;
-         reset(f_in);
+         {$I-}reset(f_in);{$I+}
          if IOResult<>0 then internal_error('IO error opening '+in_folder+in_file);
          srcfilesize(in_folder+in_file,total);
          total:=total-volume_tag_size;
@@ -632,19 +634,25 @@ while ((chunks_ok=true) and (ind<byte_to_read)) do
          while ((total>0) and (ind<byte_to_read)) do
             begin
             if total>maxsize then i:=maxsize else i:=total;
+            //try
             blockread (f_in,tmp_buf,i,numread);
-            if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+            //except
+            //internal_error('IO error reading from '+in_folder+in_file);
+            //end;
             dec(total,numread);
             for k:=0 to numread-1 do buf[ind+k]:=tmp_buf[k];
             inc(ind,numread);
             end;
-         close(f_in);
+         {$I-}close(f_in);{$I+}
          if IOResult<>0 then internal_error('IO error closing '+in_folder+in_file);
          j:=j+1;
          end
       else check_chunk(in_folder,j,chunks_ok);
    until chunks_ok=true;
    end;
+except
+internal_error('IO error reading from '+in_folder+in_file);
+end;
 end;
 
 procedure gen_rand(var arr: array of byte);
@@ -1245,8 +1253,11 @@ while num_res>0 do
    begin
    if num_res<=ch_res then
       begin
+      try
       blockwrite (f_out,buf_data,num_res,numwritten);
-      if IOResult<>0 then internal_error('IO error writing to volume '+inttostr(i));
+      except
+      internal_error('IO error writing to volume '+inttostr(i));
+      end;
       ci:=0;
       while ci<numwritten do
          begin
@@ -1262,8 +1273,11 @@ while num_res>0 do
    else
       begin
       SetLength(volume_tags,length(volume_tags)+1);
+      try
       blockwrite (f_out,buf_data,ch_res,numwritten);
-      if IOResult<>0 then internal_error('IO error writing to volume '+inttostr(i));
+      except
+      internal_error('IO error writing to volume '+inttostr(i));
+      end;
       ci:=0;
       while ci<numwritten do
          begin
@@ -1273,15 +1287,18 @@ while num_res>0 do
          inc(ci,cj);
          end;
       finish_volume_control_algo;
+      try
       write_volume_check;
-      if IOResult<>0 then internal_error('IO error writing volume control tag to volume '+inttostr(i));
-      close(f_out);
+      except
+      internal_error('IO error writing volume control tag to volume '+inttostr(i));
+      end;
+      {$I-}close(f_out);{$I+}
       if IOResult<>0 then internal_error('IO error closing volume '+inttostr(i));
       i:=i+1;
       update_pea_filename(out_name,i,out_file);
       checkspacepea(out_path,ch_size,volume_authsize);
       assignfile(f_out,out_path+out_file);
-      rewrite(f_out); //it will overwrite orphaned files with same name to preserve name coherence
+      {$I-}rewrite(f_out);{$I+} //it will overwrite orphaned files with same name to preserve name coherence
       if IOResult<>0 then internal_error('IO error opening volume '+inttostr(i));
       init_volume_control_algo;
       num_res:=num_res-numwritten;
@@ -1794,7 +1811,7 @@ if ch_size=1024*1024*1024*1024*1024-volume_authsize then
    assignfile(f_out,out_file+'.pea')
 else
    assignfile(f_out,out_file+'.000001.pea');//current dir was jet set to out_path
-rewrite(f_out);
+{$I-}rewrite(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error opening first volume');
 SetLength(volume_tags,length(volume_tags)+1);
 init_volume_control_algo;
@@ -1986,7 +2003,7 @@ else s:='no control tag';
 SetLength(volume_tags,length(volume_tags)+1);
 finish_volume_control_algo;
 write_volume_check;
-closefile(f_out);
+{$I-}closefile(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error closing last volume');
 //give final job information to the GUI
 last_gui_output;
@@ -2139,7 +2156,7 @@ var
    total,wrk_space,exp_space,cent_size,fs,out_size,qw0,qw1,qw2,qw3,qw4,qw5,qw6,qw7:qword;
    nobj:int64;
    stream_error,obj_error,volume_error,end_of_archive,pwneeded,chunks_ok,filenamed,out_created,no_more_files,readingstream,readingheader,readingfns,readingtrigger,readingfn,readingfs,readingfage,readingfattrib,readingcompsize,fassigned,readingf,readingcompblock,readingobjauth,readingauth,singlevolume:boolean;
-   subroot,basedir,s,in_file,in_name,in_folder,out_path,out_file,algo,obj_algo,volume_algo,compr,fn:ansistring;
+   subroot,basedir,s,in_file,in_name,in_folder,out_path,out_file,algo,obj_algo,volume_algo,compr,fn,finpre:ansistring;
 label 1;
 
 procedure clean_variables;
@@ -2242,8 +2259,8 @@ if afn[length(afn)]=DirectorySeparator then
       s:='';
       end;
    try
-      if s<>'' then mkdir(aout_path+aout_file+directoryseparator+s+directoryseparator+fnname)
-      else mkdir(aout_path+aout_file+directoryseparator+fnname);
+      {$I-}if s<>'' then mkdir(aout_path+aout_file+directoryseparator+s+directoryseparator+fnname)
+      else mkdir(aout_path+aout_file+directoryseparator+fnname);{$I+}
    except
       if IOResult<>0 then internal_error('IO error creating dir '+ansitoutf8(fnname));
    end;
@@ -2275,9 +2292,13 @@ else
             else filenamed:=true;
       until filenamed = true;
       if h>0 then fnname:=fnname+' - '+inttostr(h)+extractfileext(afn);
+      try
       assignfile(f_out,aout_path+aout_file+directoryseparator+s+directoryseparator+fnname);
       setcurrentdir(aout_path+aout_file);
-      rewrite(f_out);
+      {$I-}rewrite(f_out);{$I+}
+      except
+      internal_error('IO error creating '+ansitoutf8(fnname));
+      end;
       if IOResult<>0 then internal_error('IO error creating '+ansitoutf8(fnname));
       {$IFDEF MSWINDOWS}
       if attr_param='SETATTR' then filesetattr(aout_path+aout_file+directoryseparator+s+directoryseparator+fnname,fattrib);
@@ -2961,9 +2982,9 @@ to make UnPEA able to blockread the archive header and calculate the volume tag
 size}
 assignfile(f_in,in_qualified_name);
 filemode:=0;
-reset(f_in);
-blockread (f_in,sbuf1,10,numread);
+{$I-}reset(f_in);{$I+}
 if IOResult<>0 then internal_error('IO error reading from '+in_qualified_name);
+blockread (f_in,sbuf1,10,numread);
 close(f_in);
 test_pea_error('parsing archive header',pea_parse_archive_header(sbuf1,volume_algo,archive_datetimeencoding));
 decode_volume_control_algo (volume_algo,volume_authsize);
@@ -3121,6 +3142,7 @@ if compr<>'PCOMPRESS0' then
    begin
    update_control_algo(sbuf1,4);
    buf_size:=sbuf1[0] + (sbuf1[1] shl 8) + (sbuf1[2] shl 16) + (sbuf1[3] shl 24);
+   if buf_size<>WBUFSIZE then internal_error(inttostr(buf_size)+' is not a valid compression buffer size. Stream header is probably corrupted.')
    end;
 // process the data
 uncompsize:=0;
@@ -3149,6 +3171,7 @@ n_input_files:=0;
 out_size:=0;
 wrk_space:=0;
 nobj:=-1;
+finpre:='';
 init_volume_control_algo;
 while (chunks_ok=true) and (end_of_archive=false) do
    begin
@@ -3158,9 +3181,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
          begin
          try
       chunks_ok:=true;
+      if in_folder+in_file=finpre then internal_error('End Of Archive tag seems missing, the archive is probably corrupted.');
+      finpre:=in_folder+in_file;
       assignfile(f_in,in_folder+in_file);
       filemode:=0;
-      reset(f_in);
+      {$I-}reset(f_in);{$I+}
       if IOResult<>0 then internal_error('IO error opening '+in_folder+in_file);
       srcfilesize(in_folder+in_file,total);
       total:=total-volume_authsize;
@@ -3168,8 +3193,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingheader=true)) do //read and discard archive and stream headers
          begin
          if total>headersize-addr then i:=headersize-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3185,8 +3213,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingfns=true)) do //read filename size;
          begin
          if total>2-addr then i:=2-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3218,8 +3249,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingtrigger=true)) do //read 4 byte trigger;
          begin
          if total>4-addr then i:=4-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3241,8 +3275,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingfn=true)) do //read object name;
          begin
          if total>fns-addr then i:=fns-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3271,8 +3308,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingfage=true)) do //read file date and time of last modification;
          begin
          if total>4-addr then i:=4-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3292,8 +3332,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingfattrib=true)) do //read file attributes;
          begin
          if total>4-addr then i:=4-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3328,8 +3371,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while ((total>0) and (readingfs=true)) do //read file size;
          begin
          if total>8-addr then i:=8-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3377,8 +3423,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
          while ((total>0) and (readingcompsize=true)) do
             begin
             if total>4-addr then i:=4-addr else i:=total;
+            try
             blockread (f_in,sbuf2,i,numread);
-            if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+            except
+            internal_error('IO error reading from '+in_folder+in_file);
+            end;
             update_volume_control_algo(sbuf2,numread);
             dec(total,numread);
             inc(wrk_space,numread);
@@ -3400,8 +3449,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
                begin
                readingcompblock:=true;
                if total>compsize+4-addr then i:=compsize+4-addr else i:=total;
+               try
                blockread (f_in,wbuf2,i,numread);
-               if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+               except
+               internal_error('IO error reading from '+in_folder+in_file);
+               end;
                ci:=0;
                while ci<numread do
                   begin
@@ -3440,8 +3492,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
                   update_obj_control_algo(sbuf1,cj);
                   inc(ci,cj);
                   end;
+               try
                blockwrite (f_out,wbuf2,uncompsize,numwritten);
-               if IOResult<>0 then internal_error('IO error writing data');
+               except
+               internal_error('IO error writing data');
+               end;
                dec(fs,numwritten);
                compsize:=wbuf1[compsize]+(wbuf1[compsize+1] shl 8)+(wbuf1[compsize+2] shl 16)+(wbuf1[compsize+3] shl 24);
                if compsize>WBUFSIZE then internal_error('Decompression error, declared compsize bigger than compression buffer');
@@ -3465,16 +3520,22 @@ while (chunks_ok=true) and (end_of_archive=false) do
             begin
             if total>SBUFSIZE then i:=SBUFSIZE else i:=total;
             if fs>i then else i:=fs;
+            try
             blockread (f_in,sbuf1,i,numread);
-            if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+            except
+            internal_error('IO error reading from '+in_folder+in_file);
+            end;
             update_volume_control_algo(sbuf1,numread);
             dec(total,numread);
             inc(wrk_space,numread);
             dec(fs,numread);
             update_control_algo(sbuf1,numread);
             update_obj_control_algo(sbuf1,numread);
+            try
             blockwrite (f_out,sbuf1,numread,numwritten);
-            if IOResult<>0 then internal_error('IO error writing data');
+            except
+            internal_error('IO error writing data');
+            end;
             Form_pea.ProgressBar1.Position:=(wrk_space) div cent_size;
             Application.ProcessMessages;
             if fs=0 then
@@ -3496,8 +3557,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
             if total>0 then goto 1;
             end;
          if total>obj_authsize-addr then i:=obj_authsize-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3518,8 +3582,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
       while (total>0) and (readingauth=true) do
          begin
          if total>authsize-addr then i:=authsize-addr else i:=total;
+         try
          blockread (f_in,sbuf2,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
@@ -3540,15 +3607,18 @@ while (chunks_ok=true) and (end_of_archive=false) do
          SetLength(status_volumes,length(status_volumes)+1);
          SetLength(volume_tags,length(status_volumes)+1);
          SetLength(exp_volume_tags,length(status_volumes)+1);
+         try
          blockread (f_in,tagbuf,volume_authsize,numread);
-         if IOResult<>0 then internal_error('IO error reading from '+in_folder+in_file);
+         except
+         internal_error('IO error reading from '+in_folder+in_file);
+         end;
          finish_volume_control_algo;
          check_volume;
          dec(total,numread);
          inc(wrk_space,numread);
          init_volume_control_algo;
          end;
-      close(f_in);
+      {$I-}close(f_in);{$I+}
       if IOResult<>0 then internal_error('IO error closing volume '+inttostr(j));
       j:=j+1;
       except
@@ -3826,8 +3896,11 @@ while num_res>0 do
    begin
    if num_res<=ch_res then
       begin
+      try
       blockwrite (f_out,sbuf1,num_res,numwritten);
-      if IOResult<>0 then internal_error('IO error writing to volume '+inttostr(i));
+      except
+      internal_error('IO error writing to volume '+inttostr(i));
+      end;
       update_volume_control_algo(sbuf1,numwritten);
       num_res:=num_res-numwritten;
       ch_res:=ch_res-numwritten;
@@ -3836,19 +3909,25 @@ while num_res>0 do
    else
       begin
       SetLength(volume_tags,length(volume_tags)+1);
+      try
       blockwrite (f_out,sbuf1,ch_res,numwritten);
-      if IOResult<>0 then internal_error('IO error writing to volume '+inttostr(i));
+      except
+      internal_error('IO error writing to volume '+inttostr(i));
+      end;
       update_volume_control_algo(sbuf1,numwritten);
       finish_volume_control_algo;
+      try
       write_volume_check;
-      if IOResult<>0 then internal_error('IO error writing volume control tag to volume '+inttostr(i));
-      close(f_out);
+      except
+      internal_error('IO error writing volume control tag to volume '+inttostr(i));
+      end;
+      {$I-}close(f_out);{$I+}
       if IOResult<>0 then internal_error('IO error closing volume '+inttostr(i));
       i:=i+1;
       update_rfs_filename(out_name,i,out_file);
       checkspace(out_path,ch_size);
       assignfile(f_out,out_path+out_file);
-      rewrite(f_out); //it will overwrite orphaned files with same name to preserve name coherence
+      {$I-}rewrite(f_out);{$I+} //it will overwrite orphaned files with same name to preserve name coherence
       if IOResult<>0 then internal_error('IO error opening volume '+inttostr(i));
       init_volume_control_algo;
       num_res:=num_res-numwritten;
@@ -3864,8 +3943,11 @@ procedure nocompress_file;
 begin
 while ((numread<>0) and (total<file_size)) do
    begin
+   try
    blockread (f_in,sbuf1,SBUFSIZE,numread);
-   if IOResult<>0 then internal_error('IO error reading from '+in_qualified_name);
+   except
+   internal_error('IO error reading from '+in_qualified_name);
+   end;
    inc(total,numread);
    inc(prog_size,numread);
    num_res:=numread;
@@ -3988,7 +4070,7 @@ ts_start:=datetimetotimestamp(now);
 first_gui_output;
 assignfile(f_in,in_qualified_name);
 filemode:=0;
-reset(f_in);
+{$I-}reset(f_in);{$I+}
 if IOResult<>0 then internal_error('IO error opening '+in_qualified_name);
 srcfilesize(in_qualified_name,file_size);
 //file_size:=system.filesize(f_in);
@@ -4008,16 +4090,19 @@ checkspace(out_path,ch_size);
 //start the actual operation routine
 out_name:=out_file;
 assignfile(f_out,out_file+'.001');//current dir was jet set to out_path
-rewrite(f_out);
+{$I-}rewrite(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error creating first output volume');
 if upcase(volume_algo)<>'NOALGO' then
    begin
    assignfile(f_check,out_file+'.check');
-   rewrite(f_check);
+   {$I-}rewrite(f_check);{$I+}
    if IOResult<>0 then internal_error('IO error creating .check file');
    rfs_create_checkfile_hdr(volume_algo,sbuf1);
+   try
    blockwrite(f_check,sbuf1,4);
-   if IOResult<>0 then internal_error('IO error writing to .check file');
+   except
+   internal_error('IO error writing to .check file');
+   end;
    check_size:=4;
    init_volume_control_algo;
    end;
@@ -4032,13 +4117,13 @@ SetLength(volume_tags,length(volume_tags)+1);
 finish_volume_control_algo;
 write_volume_check;
 if IOResult<>0 then internal_error('IO error writing last volume check');
-closefile(f_in);
+{$I-}closefile(f_in);{$I+}
 if IOResult<>0 then internal_error('IO error closing '+in_qualified_name);
-closefile(f_out);
+{$I-}closefile(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error closing last output volume');
 if upcase(volume_algo)<>'NOALGO' then
    begin
-   closefile(f_check);
+   {$I-}closefile(f_check);{$I+}
    if IOResult<>0 then internal_error('IO error closing .check file');
    end;
 //give final job information to the GUI
@@ -4386,17 +4471,20 @@ repeat //avoid to overwrite files
    until filenamed = true;
 if j>0 then out_file:=out_file+' - '+inttostr(j)+extractfileext(out_file);
 assignfile(f_out,out_path+out_file);
-rewrite(f_out);
+{$I-}rewrite(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error creating output file '+out_path+out_file);
 Form_pea.LabelDecrypt3.Caption:='Output: '+out_path+out_file;
 j:=1;
 try
    assignfile(f_check,in_folder+in_name+'.check');
    filemode:=0;
-   reset(f_check);
+   {$I-}reset(f_check);{$I+}
    if IOResult<>0 then internal_error('IO error opening check file '+in_folder+in_name+'.check');
+   try
    blockread (f_check,sbuf1,4,numread);
-   if IOResult<>0 then internal_error('IO error reading from check file '+in_folder+in_name+'.check');
+   except
+   internal_error('IO error reading from check file '+in_folder+in_name+'.check');
+   end;
    if rfs_parse_archive_header (sbuf1,volume_algo)<>0 then volume_algo:='NOALGO';
 except
    volume_algo:='NOALGO';
@@ -4417,22 +4505,28 @@ while chunks_ok=true do
       chunks_ok:=true;
       assignfile(f_in,in_folder+in_file);
       filemode:=0;
-      reset(f_in);
+      {$I-}reset(f_in);{$I+}
       if IOResult<>0 then internal_error('IO error opening input file '+in_folder+in_file);
       srcfilesize(in_folder+in_file,total);
       //total:=system.filesize(f_in);
       while (total>0) do
          begin
          if total>SBUFSIZE then i:=SBUFSIZE else i:=total;
+         try
          blockread (f_in,sbuf1,i,numread);
-         if IOResult<>0 then internal_error('IO error reading from input file '+in_folder+in_file);
+         except
+         internal_error('IO error reading from input file '+in_folder+in_file);
+         end;
          update_volume_control_algo(sbuf1,numread);
          dec(total,numread);
          inc(wrk_space,numread);
+         try
          blockwrite (f_out,sbuf1,numread,numwritten);
-         if IOResult<>0 then internal_error('IO error writing to output file '+out_path+out_file);
+         except
+         internal_error('IO error writing to output file '+out_path+out_file);
          end;
-      close(f_in);
+         end;
+      {$I-}close(f_in);{$I+}
       if IOResult<>0 then internal_error('IO error closing input file '+in_folder+in_file);
       //check volume
       SetLength(status_volumes,length(status_volumes)+1);
@@ -4447,11 +4541,11 @@ while chunks_ok=true do
       end
    else chunks_ok:=false;
    end;
-close(f_out);
+{$I-}close(f_out);{$I+}
 if IOResult<>0 then internal_error('IO error closing output file '+out_path+out_file);
 if upcase(volume_algo)<>'NOALGO' then
    begin
-   closefile(f_check);
+   {$I-}closefile(f_check);{$I+}
    if IOResult<>0 then internal_error('IO error closing check file '+in_folder+in_name+'.check');
    end;
 Form_pea.LabelDecrypt2.Caption:='Input: '+in_name+'.*, got '+inttostr(j-1)+' volume(s), total '+inttostr(wrk_space)+' B';
@@ -6817,8 +6911,11 @@ size}
 assignfile(f_in,in_qualified_name);
 filemode:=0;
 reset(f_in);
+try
 blockread (f_in,buf,10,numread);
-if IOResult<>0 then internal_error('IO error reading from '+in_qualified_name);
+except
+internal_error('IO error reading from '+in_qualified_name);
+end;
 close(f_in);
 test_pea_error('parsing archive header',pea_parse_archive_header(buf,volume_algo,archive_datetimeencoding));
 decode_volume_control_algo (volume_algo,volume_authsize);
@@ -7682,6 +7779,10 @@ begin
 if fshown=true then exit;
 fshown:=true;
 Form_pea.Visible:=false;
+{$IFNDEF MSWINDOWS}
+menuitem1.visible:=false;
+pmrunasadmin.visible:=false;
+{$ENDIF}
 set_items_height;
 if color3='clForm' then color3:=ColorToString(PTACOL);
 getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3),temperature);
@@ -7830,6 +7931,8 @@ if s<>'' then
    {$IFDEF LINUX}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}//try to open via Gnome or KDE
    {$IFDEF FREEBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
    {$IFDEF NETBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+   {$IFDEF OPENBSD}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
+   {$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
 procedure cp_search(desk_env:byte);
@@ -7840,6 +7943,8 @@ shellexecutew(Form_pea.handle, PWideChar('find'), PWideChar(''), PWideChar(''), 
 {$IFDEF LINUX}cp_search_linuxlike(desk_env);{$ENDIF}//try to search via Gnome or KDE
 {$IFDEF FREEBSD}cp_search_linuxlike(desk_env);{$ENDIF}
 {$IFDEF NETBSD}cp_search_linuxlike(desk_env);{$ENDIF}
+{$IFDEF OPENBSD}cp_search_linuxlike(desk_env);{$ENDIF}
+{$IFDEF DARWIN}cp_search_linuxlike(desk_env);{$ENDIF}
 end;
 
 procedure TForm_pea.LabelOpenClick(Sender: TObject);
