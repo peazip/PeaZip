@@ -3,17 +3,17 @@ Norwegian - Norsk
 9.1
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20230107
+Sist revidert: 20230227
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_1_7zs: 7z / p7zip syntaks nivå
+txt_9_1_ac: Arkiv konvertering skript tillater brukerinngrep
+txt_9_1_closeall: Lukk alle
+txt_9_1_enlargeicons: Forstørr filvisning-ikon
+txt_9_1_ef: Utelat tomme mapper fra arkiverings- og utpakkingsoperasjoner (7z / p7zip)
+txt_9_1_nw: Åpne i et nytt vindu
+txt_9_1_qdup: Bruk hurtig dedupliseringsrutine
 txt_9_0_autoexttar: Auto-uttrekk TAR arkiver fra komprimerte TAR.* filer
 txt_9_0_accesstime: Ikke endre siste aksess-tidspunkt
 txt_9_0_mem: Maksimum minneforbruk
