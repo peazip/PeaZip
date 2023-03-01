@@ -1,4 +1,4 @@
-=== PeaZip language file ===
+﻿=== PeaZip language file ===
 Русский
 9.1
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
