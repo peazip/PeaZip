@@ -3,17 +3,17 @@ Simplified Chinese - 简体中文
 9.1
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: Junde Yhi
-Last rev.: 20221224
+Last rev.: 20230312
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_1_7zs: 7z / p7zip 语法等级
+txt_9_1_ac: 允许归档文件转换脚本和用户交互
+txt_9_1_closeall: 全部关闭
+txt_9_1_enlargeicons: 放大文件浏览器的图标
+txt_9_1_ef: 归档或提取的时候排除空文件夹（7z / p7zip）
+txt_9_1_nw: 在新窗口中打开
+txt_9_1_qdup: 使用快速去重
 txt_9_0_autoexttar: 自动从已压缩的 TAR.* 文件中再提取 TAR 归档文件
 txt_9_0_accesstime: 不要改变最后更改时间
 txt_9_0_mem: 最大化内存利用
@@ -35,7 +35,7 @@ txt_8_8_cb: 按钮色
 txt_8_8_centered: 居中按钮
 txt_8_8_light: 亮色
 txt_8_8_lnk: 链接
-txt_8_8_intnote: 请注意，如果在控制台中编辑了命令行，那么“交互式提取”选项（于选项 > 设置 > 归档管理器中）会被忽略。
+txt_8_8_intnote: 请注意，如果在控制台中编辑了命令行，那么“提取后移动”选项（于选项 > 设置 > 归档管理器中）会被忽略。
 txt_8_8_snz: 传播 Zone.Identifier 流（Windows）
 txt_8_8_sm: 小图标尺寸
 txt_8_8_solcol: 地址栏
@@ -63,7 +63,7 @@ txt_8_6_immediate: 立即执行
 txt_8_6_yessimple: 更新归档文件，保留编辑过的临时文件以便继续编辑
 txt_8_5_advbrowser: 将筛选条件应用到归档文件浏览器
 txt_8_5_detailslarge: 详细信息（大图标）
-txt_8_5_intext: 先提取到临时工作目录，再移动到输出目录（覆盖前询问）
+txt_8_5_intext: 先提取到临时工作目录，再移动到输出位置，覆盖前询问用户
 txt_8_5_listlarge: 列出（大图标）
 txt_8_5_loadlayout: 启动时加载布局
 txt_8_5_samplescripts: 示例脚本
@@ -117,7 +117,7 @@ txt_7_8_destexistfile: 目标已经包含处理过的文件。用相同的文件
 txt_7_8_dd: 拖放
 txt_7_8_priorityhigh: 高
 txt_7_8_priorityidle: 空闲
-txt_7_8_rel: 交互式提取并移动
+txt_7_8_rel: 提取后移动
 txt_7_8_prioritynormal: 一般
 txt_7_8_priorityrealtime: 实时
 txt_7_8_requirerestart: 【需要重启 PeaZip】
@@ -126,9 +126,9 @@ txt_7_8_update: 更新
 txt_7_7_noneall: 无（无预览、无拖放提取）
 txt_7_7_nonetemp: 无，必要时则在用户的临时目录里
 txt_7_7_outtemp: 输出，在用户的临时目录里预览
-txt_7_7_sys7zreq: 需要安装 p7zip-full 或与其兼容的软件
+txt_7_7_sys7zreq: 需要安装 7z、7-Zip，或 p7zip，或与其兼容的软件包
 txt_7_7_tw: 用于归档文件创建、修改、预览和拖放提取的临时工作文件夹
-txt_7_7_sys7z: 在 Linux 中使用系统 7z
+txt_7_7_sys7z: 使用系统 7z（如有）
 txt_7_6_zipenc: 7z / p7zip 的 ZIP 文件名编码
 txt_7_6_color: 颜色
 txt_7_6_custenc: 自定义代码页
@@ -210,7 +210,7 @@ txt_6_8_ndrop: 使用 Windows 原生拖放功能
 txt_6_7_nop: （无预览）
 txt_6_6_pdupfound: 找到了可能是重复的文件（快速估算）
 txt_6_6_rsh: 重置搜索历史
-txt_6_6_pdupfind: 提示可能的重复项
+txt_6_6_pdupfind: 提示重复项
 txt_6_6_forcemodify: 尝试编辑未明确支持的文件
 txt_6_5_mandatory: （强制）
 txt_6_5_abort: 异常中止
@@ -493,7 +493,7 @@ txt_3_2_7zutf8nonascii: 7z / p7zip -mcu 对 .zip 归档文件内，文件名中�
 txt_3_2_alltasks: 全部任务
 txt_3_2_conf: 配置
 txt_3_2_donations: 给慈善机构捐赠
-txt_3_1_sccenc: 7z / p7zip -scc 字符编码
+txt_3_1_sccenc: 7z / p7zip 终端字符编码
 txt_3_1_downloads: 下载
 txt_3_1_lib: 库
 txt_3_1_more: 更多
@@ -726,7 +726,7 @@ txt_ren_existing: 自动重命名已有的文件
 txt_ren_extracted: 自动重命名提取的文件
 txt_autofolder: 自动创建新文件夹用于提取文档？
 txt_back: 后退
-txt_backend: 后端程序用户界面
+txt_backend: 后端程序
 txt_backupexe: 备份可执行文件（推荐）
 txt_bettercompression: 更好的压缩
 txt_blogs: 博客
@@ -850,7 +850,7 @@ txt_fastopen: 快速打开例程，停止浏览超大的归档文件，改用筛
 txt_level_fastest: 最快
 txt_favformats: 常用格式
 txt_file: 文件
-txt_filebrowser: 文件浏览器 / 归档浏览器
+txt_filebrowser: 文件浏览器
 txt_filetools: 文件工具
 txt_files: 文件，
 txt_nfiles: 文件
@@ -1057,8 +1057,8 @@ txt_sample: 示例：
 txt_saveas: 另存为
 txt_savehistory: 保存最近的访问历史数据
 txt_save_infolder: 保存在文件夹（自动）
-txt_savejob: 保存任务
-txt_savejobdefinition: 保存任务定义
+txt_savejob: 保存任务到脚本
+txt_savejobdefinition: 保存任务定义到脚本
 txt_savejobdefinition_hint: 保存任务定义为纯文本；您可以在脚本中使用它
 txt_savelayout: 保存布局
 txt_save_winstate: 保存主窗口状态
@@ -1278,7 +1278,7 @@ txt_priority: 点击设置任务优先级
 txt_running: 正在运行，
 txt_isrunning: 正在运行…
 txt_saveas: 另存为
-txt_savejob: 保存任务定义
+txt_savejob: 保存任务定义为脚本
 txt_savelog: 保存任务日志
 txt_software: 软件
 txt_speedscale: 速度，对数刻度（越高越快）：
@@ -1352,10 +1352,9 @@ txt_time: 时间：
 如果没有为密码管理器设置主密码，那么任何人不需任何认证即可访问密码列表；否则，在用户输入正确的主密码后才会显示保存的密码。
 
 【配置应用程序】
-在选项 > 本地化（或者选项 > 设置，第一个标签）中，可以选择本地语言。
+在选项 > 本地化（以及选项 > 设置，第一个标签）中，可以选择应用程序的语言。
+在选项 > 系统集成和文件关联中，一个向导将会打开，用来设置文件关联、右键菜单和“发送到…”菜单（在 Windows 上）
 在选项 > 设置中，可以进行设置
-在选项 > 主题中，可以更改程序的图标和外观
-在选项 > 系统集成中，可以设置文件关联、右键和“发送到”菜单项（仅在 Windows 中有效）
 “组织”菜单含有自定义、开启或关闭浏览器的菜单项，比如说工具栏、地址栏、侧边栏，等等。
 
 F1	帮助
@@ -1373,9 +1372,9 @@ F12	全部提取到…
 
 【关于 PeaZip】
 
-PeaZip 是跨平台、开源的开源文件和归档管理器，提供了便携版、32 和 64 位的 Windows (9x, 2k, XP, Vista) 安装程序和 Linux 安装包（PeaZip 为桌面中立的应用程序）。
+PeaZip 是一款开源的文件及归档管理器。它跨平台，并可用于 Linux（不论何种桌面）、macOS，和 32 位或 64 位 Windows。可以安装到系统，也可以作为便携程序双击运行。
 
-PeaZip 拥有可筛选归档内容的强大的多重刷选器；一次能够处理多个归档文件；创建自提取归档；输出以命令行定义的任务；保存归档和提取布局；添加归档和文件夹书签；扫描和以自定义的应用程序打开（未）压缩过的文件等等……
+PeaZip 拥有可筛选归档内容的强大的多重筛选器；一次能够处理多个归档文件；创建自提取归档；输出以命令行定义的任务；保存归档和提取布局；添加归档和文件夹书签；扫描和以自定义的应用程序打开（未）压缩过的文件等等……
 
 其他功能：强加密算法、可靠的文件复制、分割 / 合并文件（文件范围）、安全擦除、比较、校验和计算文件散列、系统基准测试、生成随机密码和密钥文件。
 
