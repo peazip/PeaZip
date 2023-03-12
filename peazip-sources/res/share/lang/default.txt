@@ -1142,7 +1142,7 @@ txt_type: Type
 txt_level_ultra: Ultra
 txt_error_openfile: Unable to open the specified file
 txt_cl_hint: UNACE and UPX always run using console mode; list, test and benchmark tasks always run using GUI mode
-txt_ace_missing: UNACE plugin is missing; for handling ACE archives you can download the plugin form PeaZip's website (being UNACE closed source, the plugin is not featured in base package)
+txt_ace_missing: UNACE plugin is missing; for handling ACE archives you can download the plugin from PeaZip's website (being UNACE closed source, the plugin is not featured in base package)
 txt_units: units
 txt_unit_unknown: Unknown drive type
 txt_un7z_pw_untested: Untested
