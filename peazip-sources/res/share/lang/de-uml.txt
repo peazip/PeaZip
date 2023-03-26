@@ -3,17 +3,17 @@ German - Deutsch
 9.1
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20221218
+Last rev.: 20230309
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_1_7zs: 7z / p7zip Syntaxebene
+txt_9_1_ac: Skripte zum Konvertieren von Archiven ermöglichen die Interaktion des Benutzers
+txt_9_1_closeall: Alle schließen
+txt_9_1_enlargeicons: Dateibrowser-Symbole vergrößern
+txt_9_1_ef: Leere Ordner von Archivierungs- und Entpackvorgängen ausschließen (7z / p7zip)
+txt_9_1_nw: In neuem Fenster öffnen
+txt_9_1_qdup: Schnelles Deduplizierungsverfahren verwenden
 txt_9_0_autoexttar: TAR-Archiv aus komprimierten TAR.*-Dateien automatisch extrahieren
 txt_9_0_accesstime: Letzte Zugriffszeit nicht ändern
 txt_9_0_mem: Maximale Speicherauslastung
