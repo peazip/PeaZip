@@ -3,7 +3,7 @@ Portuguese (Portugal)
 9.1
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20230227
+Revisto em: 20230330
 
 === PeaZip text group ===
 
@@ -829,9 +829,9 @@ txt_explore_path: Explorar destino
 txt_ext: Ext:
 txt_caption_extract: Extrair
 txt_ext_nopath: Extrair (sem destino)
-txt_ext_all: Extrair todos
-txt_ext_allhere: Extrair todos aqui
-txt_ext_allto: Extrair todos para
+txt_ext_all: Extrair tudo
+txt_ext_allhere: Extrair tudo aqui
+txt_ext_allto: Extrair tudo para
 txt_extopen_custom: Extrair e abrir com a aplicação personalizada
 txt_extopen_with: Extrair e abrir com...
 txt_ext_disp_here: Extrair exibidos para aqui
@@ -951,7 +951,7 @@ txt_morecontrols: Mais controlos (histórico, marcadores, ...)
 txt_morerecent: mais recente do que objeto selecionado
 txt_ent_hint: Mova o rato, indique as teclas no campo de edição, carregue  ficheiros para recolher entropia a partir do sistema...
 txt_moveto: Mover para...
-txt_mypc: Root
+txt_mypc: Computador
 txt_list_na: n/d
 txt_name: Nome
 txt_naming: Nomeação
@@ -1071,7 +1071,7 @@ txt_search_web: Pesquisar na web
 txt_list_searching: A pesquisar...
 txt_securedelete: Eliminação permanente
 txt_default_description: Selecione uma função ou arraste para aqui os ficheiros
-txt_selectall: Selecionar todos
+txt_selectall: Selecionar tudo
 txt_selectdir: Selecione o diretório
 txt_selected_obj: selecionado(s)
 txt_selected_objects: Objeto(s) selecionado(s)
@@ -1146,7 +1146,7 @@ txt_ace_missing: O "plugin" UNACE não está instalado; para manipular arquivos 
 txt_units: unidades
 txt_unit_unknown: Tipo de unidade desconhecido
 txt_un7z_pw_untested: Não testado
-txt_up: Cima
+txt_up: Subir
 txt_update: atualizar (se existir arquivo)
 txt_type_description_upx: UPX: comprimir os ficheiros executáveis
 txt_advfilters: Utilizar filtros avançados
