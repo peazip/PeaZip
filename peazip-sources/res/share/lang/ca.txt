@@ -3,71 +3,71 @@ Català
 9.1
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
-Última revisió el: 20211121
+Última revisió el: 20230413
 
 === PeaZip text group ===
 
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
+txt_9_1_7zs: Nivell de sintaxi del 7z / p7zip
+txt_9_1_ac: Permetre la interacció de l'usuari en els scripts de conversió d'arxius
+txt_9_1_closeall: Tanca-ho tot
+txt_9_1_enlargeicons: Augmenta les icones del navegador de fitxers
+txt_9_1_ef: Exclou les carpetes buides de les operacions d'arxiu i extracció (7z / p7zip)
+txt_9_1_nw: Obre en una finestra nova
+txt_9_1_qdup: Utilitza la rutina de desduplicació ràpida
+txt_9_0_autoexttar: Autoextreu els arxius TAR dels fitxers comprimits TAR.*
+txt_9_0_accesstime: No canviïs l'hora d'últim accés
+txt_9_0_mem: Utilització màxima de memòria
+txt_9_0_showmainmenu: Obre el menú principal
+txt_9_0_navmenu: Obre el menú de Navegació
+txt_9_0_plugind: Obre el directori de binaris i connectors
+txt_9_0_df: Ordena els directoris abans que els fitxers
+txt_9_0_hl: Desa els enllaços durs (hard links) com a enllaços
+txt_9_0_sl: Desa els enllaços simbòlics (symlinks) com a enllaços
+txt_9_0_tnav: Commuta entre la barra lateral, l'arbre de fitxers o res
+txt_8_9_empty: L'arxiu sembla buit
+txt_8_9_disp: Mostrant el contingut de l'arxiu
+txt_8_9_parsing: Processant el contingut de l'arxiu
+txt_8_9_stoptest: Atura't per inspeccionar l'informe d'errors, la llista, la comprovació i la comprovació automàtica
+txt_8_9_ttb: Commuta la barra d'eines
+txt_8_8_ca: Color destacat
+txt_8_8_btn: Botó
+txt_8_8_cb: Color del botó
+txt_8_8_centered: Botons centrats
+txt_8_8_light: Clar
+txt_8_8_lnk: Enllaç
+txt_8_8_intnote: Si us plau, sigues conscient que l'"Extracció interactiva" (dins d'Opcions > Configuració > Gestor d'arxius) s'ignora quan s'utilitza la línia d'ordres de la pestanya de Consola
+txt_8_8_snz: Propaga el flux de Zone.Identifier (Windows)
+txt_8_8_sm: Mida de les icones petites
+txt_8_8_solcol: Barra sòlida
+txt_8_8_snoi: Emmagatzema les ID del propietari/grup (TAR, Linux)
+txt_8_8_snon: Emmagatzema el nom del propietari/grup (TAR, Linux)
+txt_8_8_tab: Pestanya
+txt_8_8_altt: Estil de pestanya
+txt_8_8_autotest: Comprova els arxius després de la seva creació, si ho permet el format
+txt_8_8_cw: Color de la finestra
+txt_8_7_csvhelp: "," estàndard internacional, ";" comú en llengües Llatines
+txt_8_7_after: Després d'arxivar o d'extreure
+txt_8_7_bintest: binaris comprovats.
+txt_8_7_csv: Separador dels CSV 
+txt_8_7_hok: El valor hash dels binaris utilitzats pel PeaZip coincideix amb els valors esperats
+txt_8_7_mo: Estableix les opcions del gestor d'arxius
+txt_8_7_showhm: Mostra el menú de la capçalera del navegador de fitxers
+txt_8_7_showsearchbar: Mostra la barra de cerca
+txt_8_7_showsm: Mostra el menú Estil
+txt_8_7_hnotok: Alguns valors hash dels binaris utilitzats pel PeaZip no coincideixen amb els valors esperats:
+txt_8_7_verifybin: Verifica el hash als binaris
+txt_8_6_clear: L'opció "Clar" elimina els fitxers editats temporalment, si no els manté disponibles per editar-los més tard.
+txt_8_6_noclear: Descarta tots els canvis sense actualitzar l'arxiu
+txt_8_6_nosimple: No actualitzis l'arxiu, manté els fitxers editats temporalment per editar-los més tard
+txt_8_6_immediate: Execució immediata
+txt_8_6_yessimple: Actualitza l'arxiu, manté els fitxers editats temporalment per editar-los més tard
+txt_8_5_advbrowser: Aplica filtres al navegador d'arxius
+txt_8_5_detailslarge: Detalls, gran
+txt_8_5_intext: Extreu-los a un directori temporal i després mou-los al directori de sortida (pregunta'm abans de sobreescriure)
+txt_8_5_listlarge: Llista, gran
+txt_8_5_loadlayout: Carrega una plantilla a l'inici
+txt_8_5_samplescripts: Scripts d'exemple
+txt_8_4_keepopenerrorslist: Atura't per inspeccionar l'informe d'errors i la llista
 txt_8_3_mbubin: Binari
 txt_8_3_cw: Voleu canviar el directori de treball? Aquesta acció reestablirà els fitxers temporals i reiniciarà l'aplicació.
 txt_8_3_temperature: Temperatura de color
