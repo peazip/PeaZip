@@ -1,0 +1,13 @@
+[Desktop Action peazipconvert]
+Exec=peazip -add2convert %F
+Icon=peazip
+Name=Convert archives with PeaZip
+
+[Desktop Entry]
+Type=Service
+Actions=peazipconvert;
+Encoding=UTF-8
+Name=peazipconvert
+Name[en_US]=peazipconvert
+Icon=peazip
+ServiceTypes=KonqPopupMenu/Plugin,all/all
