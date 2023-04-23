@@ -1,8 +1,8 @@
 ﻿[Setup]        
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 9.0.0 (WIN64)
-AppVersion=9.0.0
+AppVerName=PeaZip 9.2.0 (WIN64)
+AppVersion=9.2.0
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,9 +11,9 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-9.0.0.WIN64\res\share\copying\copying.txt
+LicenseFile=C:\input\peazip-9.2.0.WIN64\res\share\copying\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-9.0.0.WIN64
+OutputBaseFilename=peazip-9.2.0.WIN64
 SetupIconFile=C:\input\peazip-icon-green.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -29,10 +29,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-9.0.0.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.0.0.WIN64\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.0.0.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.0.0.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-9.2.0.WIN64\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.2.0.WIN64\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.2.0.WIN64\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.2.0.WIN64\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -47,13 +47,13 @@ Name: "{userdesktop}\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\PeaZip"; Filename: "{app}\peazip.exe"; Tasks: quicklaunchicon
 Name: "{group}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 2
 Name: "{group}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
-Name: "{group}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{group}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 14
 Name: "{group}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
 Name: "{group}\Configure PeaZip"; Filename: "{app}\res\bin\Configure PeaZip.exe";
 Name: "{group}\PeaZip"; Filename: "{app}\peazip.exe";
 Name: "{app}\Add to archive"; Filename: "{app}\peazip.exe"; Parameters: "-add2archive";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 2
 Name: "{app}\Extract..."; Filename: "{app}\peazip.exe"; Parameters: "-ext2main";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
-Name: "{app}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 4
+Name: "{app}\Extract here (smart new folder)"; Filename: "{app}\peazip.exe"; Parameters: "-ext2folder";  IconFilename: "{app}\res\share\icons\peazip_seven.icl"; IconIndex: 14
 Name: "{app}\Open as archive"; Filename: "{app}\peazip.exe"; Parameters: "-ext2openasarchive";
 
 [Run]
@@ -415,11 +415,11 @@ begin
     Items.Add('BG - Bulgarian');
     Items.Add('BY-CR - Belarusian (Cyrillic)');
     Items.Add('BY-LT - Belarusian (Latin)');
+    Items.Add('CA - Català');   
     Items.Add('CHS - Chinese Simplified');
     Items.Add('CHT - Chinese Traditional');
     Items.Add('CZ - Czech');
     Items.Add('DE-UML - German');
-    Items.Add('DE-UML-ALT - German (alternative)');
     Items.Add('Default / Do not change current language');
     Items.Add('EN - English');
     Items.Add('EN-GB - British English');
@@ -435,6 +435,7 @@ begin
     Items.Add('IT - Italian');
     Items.Add('JA - Japanese');
     Items.Add('KO - Korean');
+    Items.Add('LV - Latviski');
     Items.Add('NL - Dutch');
     Items.Add('NO - Norwegian');
     Items.Add('PL - Polish');
@@ -463,10 +464,11 @@ begin
   'BG': i:=1;
   'BY-CR','BY': i:=2;
   'BY-LT': i:=3;
-  'CHS','CH': i:=4; 
-  'CHT': i:=5;
-  'CZ': i:=6;
-  'DE-UML','DE': i:=7;
+  'CA': i:=4;
+  'CHS','CH': i:=5; 
+  'CHT': i:=6;
+  'CZ': i:=7;
+  'DE-UML','DE': i:=8;
   'DEFAULT': i:=9;
   'EN': i:=10;
   'EN-GB': i:=11;
@@ -482,22 +484,23 @@ begin
   'IT': i:=21;
   'JA': i:=22;
   'KO': i:=23;
-  'NL': i:=24;
-  'NO': i:=25;
-  'PL': i:=26;
-  'PT-BR': i:=27;
-  'PT-PT','PT': i:=28;
-  'RO': i:=29;
-  'RU': i:=30;
-  'SI': i:=31;
-  'SK': i:=32;
-  'SL': i:=33;
-  'SV': i:=34;
-  'TJ': i:=35;
-  'TR': i:=36;
-  'UK': i:=37;
-  'UZ': i:=38;
-  'VN': i:=39;
+  'LV': i:=24;
+  'NL': i:=25;
+  'NO': i:=26;
+  'PL': i:=27;
+  'PT-BR': i:=28;
+  'PT-PT','PT': i:=29;
+  'RO': i:=30;
+  'RU': i:=31;
+  'SI': i:=32;
+  'SK': i:=33;
+  'SL': i:=34;
+  'SV': i:=35;
+  'TJ': i:=36;
+  'TR': i:=37;
+  'UK': i:=38;
+  'UZ': i:=39;
+  'VN': i:=40;
   else i:=9;
   end;
   if i>=0 then 
@@ -2274,10 +2277,10 @@ begin
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2here', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",4'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2here\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2multihere" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart', '', 'Extract here (&smart new folder)');
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",4'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",14'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2smart\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2multismart" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder', '', 'Extract here (in &new folder)');
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",4'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",14'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2folder\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-ext2multifolder" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2main', '', '&Extract...');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.ext2main', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",4'));
@@ -2510,7 +2513,7 @@ begin
       '-ext2folder',
       '',
       ExpandConstant('{app}\res\share\icons\peazip_seven.icl'),//icon filename
-      4,//icon index
+      14,//icon index
       SW_SHOWNORMAL);
       end;
 
@@ -2524,7 +2527,7 @@ begin
       '-ext2newfolder',
       '',
       ExpandConstant('{app}\res\share\icons\peazip_seven.icl'),//icon filename
-      4,//icon index
+      14,//icon index
       SW_SHOWNORMAL);
       end;
 
@@ -3127,11 +3130,11 @@ case combobox1.itemindex of
  1: slang:='bg.txt';
  2: slang:='by-cr.txt';
  3: slang:='by-lt.txt';
- 4: slang:='chs.txt';
- 5: slang:='cht.txt';
- 6: slang:='cz.txt';
- 7: slang:='de-uml.txt';
- 8: slang:='de-uml-alt.txt';
+ 4: slang:='ca.txt';
+ 5: slang:='chs.txt';
+ 6: slang:='cht.txt';
+ 7: slang:='cz.txt';
+ 8: slang:='de-uml.txt';
  9: slang:='*nochange';//do not change
  10: slang:='en.txt';
  11: slang:='en-gb.txt';
@@ -3147,22 +3150,23 @@ case combobox1.itemindex of
  21: slang:='it.txt';
  22: slang:='ja.txt';
  23: slang:='ko.txt';
- 24: slang:='nl.txt';
- 25: slang:='no.txt';
- 26: slang:='pl.txt';
- 27: slang:='pt-br.txt';
- 28: slang:='pt-pt.txt';
- 29: slang:='ro.txt';
- 30: slang:='ru.txt';
- 31: slang:='si.txt';
- 32: slang:='sk.txt';
- 33: slang:='sl.txt';
- 34: slang:='sv.txt';
- 35: slang:='tj.txt';
- 36: slang:='tr.txt';
- 37: slang:='uk.txt';
- 38: slang:='uz.txt';
- 39: slang:='vn.txt';
+ 24: slang:='lv.txt';
+ 25: slang:='nl.txt';
+ 26: slang:='no.txt';
+ 27: slang:='pl.txt';
+ 28: slang:='pt-br.txt';
+ 29: slang:='pt-pt.txt';
+ 30: slang:='ro.txt';
+ 31: slang:='ru.txt';
+ 32: slang:='si.txt';
+ 33: slang:='sk.txt';
+ 34: slang:='sl.txt';
+ 35: slang:='sv.txt';
+ 36: slang:='tj.txt';
+ 37: slang:='tr.txt';
+ 38: slang:='uk.txt';
+ 39: slang:='uz.txt';
+ 40: slang:='vn.txt';
  else slang:='';
 end;
 if slang<>'' then
