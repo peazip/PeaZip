@@ -3,25 +3,25 @@ Français
 9.2
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20230226
+Last rev.: 20230423
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
+txt_9_2_7za: 7z/alias p7zip
+txt_9_2_changelog: Journal des modifications
+txt_9_2_tfaq: Traductions
 txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
+txt_9_2_swt: Permuter outils/barre d'adresse
+txt_9_2_tos: CGU, confidentialité
+txt_9_2_doc: À propos de la documentation, des bugs...
+txt_9_2_updates: À propos des mises à jour, exécutables, extensions...
+txt_9_1_7zs: Version de syntaxe 7z/p7zip
+txt_9_1_ac: L'interaction avec l'utilisateur est possible pour la conversion d'archives via scripts
+txt_9_1_closeall: Tout fermer
+txt_9_1_enlargeicons: Agrandir les icônes du navigateur de fichiers
+txt_9_1_ef: Exclure les dossiers vides des opérations d'archivage et extraction (7z/p7zip)
+txt_9_1_nw: Ouvrir dans une nouvelle fenêtre
+txt_9_1_qdup: Utiliser une routine rapide de recherche de doublons
 txt_9_0_autoexttar: Extraire automatiquement les archives TAR des fichiers compressés TAR.*
 txt_9_0_accesstime: Ne pas modifier la date du dernier accès
 txt_9_0_mem: Mémoire maximum utilisée
@@ -43,7 +43,7 @@ txt_8_8_cb: Couleur de bouton
 txt_8_8_centered: Boutons centrés
 txt_8_8_light: Clair
 txt_8_8_lnk: Liens
-txt_8_8_intnote: L'« extraction interactive » (Options > Paramètres > Gestionnaire d'archives) n'est pas traduite en ligne de commande dans l'onglet Console.
+txt_8_8_intnote: « Extraire puis déplacer » (Options > Paramètres > Gestionnaire d'archives) n'est pas traduite en ligne de commande dans l'onglet Console.
 txt_8_8_snz: Diffuser le flux Zone.Identifier (Windows)
 txt_8_8_sm: Taille des icônes
 txt_8_8_solcol: Champ d'adresse
@@ -125,7 +125,7 @@ txt_7_8_destexistfile: La cible contient déjà des fichiers en cours de traitem
 txt_7_8_dd: Glisser-Déposer
 txt_7_8_priorityhigh: Haute
 txt_7_8_priorityidle: Inactivité
-txt_7_8_rel: Extraction interactive : extrait et déplace vers la destination finale
+txt_7_8_rel: Extraire puis déplacer vers la destination finale
 txt_7_8_prioritynormal: Normale
 txt_7_8_priorityrealtime: Temps réel
 txt_7_8_requirerestart: [nécessite le redémarrage de PeaZip]
@@ -134,9 +134,9 @@ txt_7_8_update: Mise à jour
 txt_7_7_noneall: Aucun : pas d'aperçu, modification, glisser-déposer ou d'extraction interactive
 txt_7_7_nonetemp: Aucun : dossier temporaire de l'utilisateur si nécessaire
 txt_7_7_outtemp: Destination finale, aperçu dans le dossier temporaire de l'utilisateur
-txt_7_7_sys7zreq: Nécessite p7zip-full ou équivalent
+txt_7_7_sys7zreq: Nécessite 7z, 7-Zip, p7zip ou équivalent
 txt_7_7_tw: Dossier actuel pour la création, la modification, l'aperçu et le glisser-déposer
-txt_7_7_sys7z: Utiliser 7z sous Linux
+txt_7_7_sys7z: Utiliser 7z si disponible
 txt_7_6_zipenc: Encodage des noms de fichiers 7z/p7zip ZIP
 txt_7_6_color: Couleur
 txt_7_6_custenc: Page de code personnalisée
@@ -359,7 +359,7 @@ txt_5_1_every: Tou·te·s les
 txt_5_1_w6: Vendredi
 txt_5_1_hourly: Horaire
 txt_5_1_hours: Heures
-txt_5_1_last: Dernier
+txt_5_1_last: Dernière
 txt_5_1_schedmanage: Gérer les planifications de PeaZip dans le gestionnaire de tâches système
 txt_5_1_scriptmanage: Gérer les scripts planifiés existants
 txt_5_1_w2: Lundi
@@ -686,7 +686,7 @@ txt_type_description_7z: 7z : format d'archive répandu à haut niveau de compre
 txt_dvddl: DVD double-couche 8,5 Go
 txt_7z_exitcode8: 8 : mémoire insuffisante pour l'opération demandée
 txt_abort: Annuler les opérations de copie/déplacement planifiées ?
-txt_about: À propos de...
+txt_about: À propos de
 txt_action: Action
 txt_action_hint: Ouvrir ou visualiser avec l'application associée
 txt_add: Ajouter
@@ -733,7 +733,7 @@ txt_author: Auteur
 txt_ren_existing: Renommer automatiquement les fichiers existants
 txt_ren_extracted: Renommer automatiquement les fichiers extraits
 txt_autofolder: Créer automatiquement un nouveau dossier dans lequel extraire l'archive ?
-txt_back: Retour
+txt_back: Retour aux programmes
 txt_backend: Programmes de l'interface utilisateur en arrière-plan
 txt_backupexe: Copie de sauvegarde exécutable (recommandé)
 txt_bettercompression: meilleure compression
@@ -858,7 +858,7 @@ txt_fastopen: Ouverture rapide, archives très volumineuses impossibles à parco
 txt_level_fastest: Très rapide
 txt_favformats: Raccourcis des formats favoris
 txt_file: Fichier
-txt_filebrowser: Navigateur de fichiers/archives
+txt_filebrowser: Navigateur de fichiers
 txt_filetools: Outils de fichiers
 txt_files: fichier·s,
 txt_nfiles: Fichiers
@@ -976,7 +976,7 @@ txt_list_nomatch: aucune correspondance
 txt_singlethread: Pas de multi-threading
 txt_none2: aucun
 txt_nonsolid: Non-flash
-txt_level_normal: Normale
+txt_level_normal: Normal
 txt_copy_error: n'a pu être copié ou déplacé, code erreur :
 txt_description: Notes
 txt_compare_second: Sélectionner à présent un fichier à comparer avec
@@ -1065,8 +1065,8 @@ txt_sample: Aperçu :
 txt_saveas: Enregistrer sous
 txt_savehistory: Enregistrer les données de l'historique
 txt_save_infolder: Enregistrer dans un dossier (automatique)
-txt_savejob: Enregistrer la tâche
-txt_savejobdefinition: Enregistrer la tâche
+txt_savejob: Enregistrer la tâche comme script
+txt_savejobdefinition: Enregistrer la tâche comme script
 txt_savejobdefinition_hint: Enregistrer la tâche en texte brut ; peut être utilisé pour vos scripts
 txt_savelayout: Enregistrer la session
 txt_save_winstate: Enregistrer l'état de la fenêtre principale
