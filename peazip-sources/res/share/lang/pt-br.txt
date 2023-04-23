@@ -7,14 +7,14 @@ Last rev.: 20190818
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_2_7za: Apelido 7z/p7zip
+txt_9_2_changelog: Registro de alterações
+txt_9_2_tfaq: Verifique se há traduções
+txt_9_2_compact: Compacto
+txt_9_2_swt: Ferramenta de Troca / Barra de endereço
+txt_9_2_tos: Termos de Serviço, Privacidade
+txt_9_2_doc: Verifique a documentação, rastreador de problemas...
+txt_9_2_updates: Verifique atualizações, binários, Plugins...
 txt_9_1_7zs: Nível de sintaxe 7z / p7zip
 txt_9_1_ac: Os scripts de conversão de arquivos permitem a interação do usuário
 txt_9_1_closeall: Fechar tudo
@@ -383,7 +383,7 @@ txt_5_1_w3: Terça-feira
 txt_5_1_w4: Quarta-feira
 txt_5_1_weekly: Semanalmente
 txt_5_1_weeks: Semanas
-txt_5_0_bc: Breadcrumb
+txt_5_0_bc: Barra de Trilha
 txt_5_0_resetpm: Você confirmar que quer restaurar Gerenciador de Senhas? Todas as senhas armazenadas no Peazip irão ser perdidas.
 txt_5_0_enum: Enumerar conteúdos dos diretórios
 txt_5_0_music: Música
@@ -464,7 +464,7 @@ txt_4_3_pwmancorr: Gerenciador de senhas parece adulterado ou corrompidos. Mante
 txt_4_3_expplp: Texto simples (todos os usos)
 txt_4_3_recsrc: Busca recursiva por padrão
 txt_4_3_resetpm: Redefinir gerente senha? Todas as senhas salvas serão excluídas
-txt_4_3_breadcrumb: Mostrar endereço como breadcrumb
+txt_4_3_breadcrumb: Mostrar endereço como barra de trilha
 txt_4_2_arcabspath: Usar diretórios absolutos
 txt_4_1_duplicateshint: “Tamanho”/“Soma” linha é relatado na coluna CRC para todos os candidatos duplicados encontrados no atual diretório ou filtro de busca
 txt_4_1_adminhint: (Dica: alternativamente, você pode pedir a elevação no UAC para trabalhar com diretórios protegidos, Alt+F10 ou Opções > Executar como administrador)
@@ -478,7 +478,7 @@ txt_3_8_type_description_wim: WIM: Formato de imagem de disco da Microsoft
 txt_3_8_type_description_xz: XZ: poderoso compressor de arquivos baseado no LZMA2
 txt_3_7_donations: Doações
 txt_3_7_nameasparent: Nome do arquivo como pasta pai do item selecionado, se vários itens são adicionados
-txt_3_7_tracker: PeaZip tracker: bugs, solicitações de recursos
+txt_3_7_tracker: Rastreador PeaZiz: problemas, solicitações de recursos
 txt_3_7_sort: Classificar por
 txt_3_7_swapbars: Trocar Barra de Ferramentas / Barra de endereços
 txt_3_7_themedbars: Barras temáticas
@@ -747,7 +747,7 @@ txt_list_browsing: Navegando:
 txt_archive_root: Navegando: raiz do arquivo
 txt_type_description_bzip2: BZip2: Compressão bastante poderosa, a velocidade média
 txt_pw_empty: Não pode aceitar senha vazia, por favor entre com uma senha ou desmarque a opção “Criptografar”.
-txt_add_error: Não pode adic/atualizar ou excluir objeto(s); provavelmente o tipo de arquivo tem suporte só para navegação/extração, ou não pode suportar operação em particular (i.e. é multivolume ou sólido), ou o Peazip não lida bem com o nome do arquivo
+txt_add_error: Não pode adicionar/atualizar ou excluir objeto(s); provavelmente o tipo de arquivo tem suporte só para navegação/extração, ou não pode suportar operação em particular (i.e. é multivolume ou sólido), ou o Peazip não lida bem com o nome do arquivo
 txt_un7z_browse_failure: Não é possível navegar o arquivo
 txt_list_error: Não foi possível listar o conteúdo do arquivo, verifique se o arquivo é protegido por senha ou está corrompido
 txt_conf_cannotsave: Não foi possível salvar o arquivo de configuração, cheque se o caminho é editável e tem espaço livre
