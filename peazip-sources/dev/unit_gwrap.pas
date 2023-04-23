@@ -933,6 +933,8 @@ if tdiff<=0 then tdiff:=100000;
 if (pfun<>'UN7Z') and (pfun<>'7Z') then umode:=0 else umode:=1;
 if runelevated=true then umode:=0;
 
+//On external drives NTFS seems not updating output file size, even using SHChangeNotify
+
 if umode=0 then
    begin
    tpath:=outpath;

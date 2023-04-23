@@ -132,8 +132,8 @@ PAPPCOL       = $00ff9933;
 PTACOL        = $00CC5511;
 
 var
-plblue,pblue,pvlblue,pvvvvlblue,pvvvlblue,pvvlblue,pgray,psilver,ptextaccent,pltextaccent:tcolor;
-colhigh,colmid,collow,colvlow,colbtnhigh:string;
+plblue,pblue,pvlblue,pvmlblue,pvvvmlblue,pvvvvlblue,pvvvlblue,pvvmlblue,pvvlblue,pgray,psilver,ptextaccent,pltextaccent:tcolor;
+colhigh,colmid,collow,colvlow,colbtnhigh,colalert:string;
 
 //get SHA256 hash of file from name
 function getchash(fname:ansistring):ansistring;
@@ -507,14 +507,18 @@ if evalcolor(baseformcol)>128 then
    pltextaccent:=modpropcolor(baselinkcol,160,0);
    pblue:=modpropcolor(basappcol,-60,0);
    pvlblue:=modpropcolor(basappcol,100,0);
+   pvmlblue:=modpropcolor(basappcol,140,0);
    pvvlblue:=modpropcolor(basappcol,160,0);
+   pvvmlblue:=modpropcolor(basappcol,185,0);
    pvvvlblue:=modpropcolor(basappcol,210,0);
+   pvvvmlblue:=modpropcolor(basappcol,225,0);
    pvvvvlblue:=modpropcolor(basappcol,240,0);
    colhigh:=colortostring(modpropcolor(baseformcol,-30,temperature));
    colmid:=colortostring(modpropcolor(baseformcol,-22,temperature));
    collow:=colortostring(modpropcolor(baseformcol,-13,temperature));
    colvlow:=colortostring(modpropcolor(baseformcol,-7,temperature));
    colbtnhigh:=colortostring(modpropcolor(baseformcol,-40,temperature));
+   colalert:=colortostring(modpropcolor(baseformcol,-55,temperature));
    pgray:=modpropcolor(baseformcol,-128,temperature);
    psilver:=modpropcolor(baseformcol,-64,temperature);
    end
@@ -523,14 +527,18 @@ else
    pltextaccent:=modpropcolor(baselinkcol,-80,0);
    pblue:=modpropcolor(basappcol,80,0);
    pvlblue:=modpropcolor(basappcol,-40,0);
+   pvmlblue:=modpropcolor(basappcol,-60,0);
    pvvlblue:=modpropcolor(basappcol,-80,0);
+   pvvmlblue:=modpropcolor(basappcol,-90,0);
    pvvvlblue:=modpropcolor(basappcol,-100,0);
+   pvvvmlblue:=modpropcolor(basappcol,-110,0);
    pvvvvlblue:=modpropcolor(basappcol,-120,0);
    colhigh:=colortostring(modpropcolor(baseformcol,30,temperature));
    colmid:=colortostring(modpropcolor(baseformcol,20,temperature));
    collow:=colortostring(modpropcolor(baseformcol,10,temperature));
    colvlow:=colortostring(modpropcolor(baseformcol,5,temperature));
    colbtnhigh:=colortostring(modpropcolor(baseformcol,40,temperature));
+   colalert:=colortostring(modpropcolor(baseformcol,55,temperature));
    pgray:=modpropcolor(baseformcol,128,temperature);
    psilver:=modpropcolor(baseformcol,64,temperature);
    end;

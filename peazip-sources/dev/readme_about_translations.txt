@@ -1,19 +1,13 @@
-﻿Notes to 9.1.0 release
+﻿Notes to 9.2.0 release
 
 Modified existing text:
-txt_8_8_intnote: Please note that "Extract then move" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_5_intext: Extract to temporary working directory then move to output destination, interactively ask before overwriting
-txt_7_8_rel: Extract then move to destination
-txt_7_7_sys7zreq: Requires 7z, 7-Zip, or p7zip, or equivalent package to be installed
-txt_7_7_sys7z: Use system 7z if available
-txt_6_6_pdupfind: Suggest duplicates
-txt_backend: Backend binaries
-txt_filebrowser: File browser
-txt_savejob: Save task definition as script
-txt_savejobdefinition: Save task definition as script
-
-Modified existing text in === PeaLauncher text group ===:
-txt_savejob: Save task definition as script
+txt_8_8_solcol: Breadcrumb bar
+txt_6_6_forcemodify: Edit non-canonical archive types as
+txt_6_5_privacy: Privacy and Security
+txt_5_7_plugin: Plugin missing, can be installed from Help > Check for Plugins
+txt_5_5_plugin: Check for Plugins
+txt_4_3_pwmanmaster: Set/change PM master password
+txt_3_5_td: Check for Themes
 
 = GENERAL NOTES =
 
