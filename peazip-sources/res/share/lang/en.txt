@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 English
-9.1
+9.2
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20230212
+Last rev.: 20230413
 
 === PeaZip text group ===
 
+txt_9_2_7za: 7z / p7zip alias
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Check for Translations
+txt_9_2_compact: Compact
+txt_9_2_swt: Swap Tool / Address bar
+txt_9_2_tos: TOS, Privacy
+txt_9_2_doc: Verify documentation, Issue Tracker...
+txt_9_2_updates: Verify updates, binaries, Plugins...
 txt_9_1_7zs: 7z / p7zip syntax level
 txt_9_1_ac: Archive conversion scripts allow user's interaction
 txt_9_1_closeall: Close all
@@ -38,7 +46,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: Please note that "Extract then move" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
 txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
 txt_8_8_sm: Small icons size
-txt_8_8_solcol: Address field
+txt_8_8_solcol: Breadcrumb bar
 txt_8_8_snoi: Store owner/group ids (TAR, Linux)
 txt_8_8_snon: Store owner/group names (TAR, Linux)
 txt_8_8_tab: Tab
@@ -211,7 +219,7 @@ txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possible duplicates found (quick approximate test)
 txt_6_6_rsh: Reset search history
 txt_6_6_pdupfind: Suggest duplicates
-txt_6_6_forcemodify: Edit non-canonical archive types
+txt_6_6_forcemodify: Edit non-canonical archive types as
 txt_6_5_mandatory: (mandatory)
 txt_6_5_abort: Abort
 txt_6_5_askp: Ask to set password at startup
@@ -222,7 +230,7 @@ txt_6_5_error: Error
 txt_6_5_seqerr: Error(s) detected, original files will not be deleted
 txt_6_5_sni: Include NT security information
 txt_6_5_sns: Include NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
+txt_6_5_privacy: Privacy and Security
 txt_6_5_showvolatile: Show which options are volatile / context dependent
 txt_6_5_force: Try to open archives containing errors
 txt_6_5_warning: Warning
@@ -264,7 +272,7 @@ txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
 txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Settings > Advanced)
 txt_5_7_pinstalled: INSTALLED
 txt_5_7_pmissing: MISSING
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for plugin and addon
+txt_5_7_plugin: Plugin missing, can be installed from Help > Check for Plugins
 txt_5_6_basic: Basic
 txt_5_6_exarc: Extract archive
 txt_5_6_tab: Open in new tab
@@ -276,7 +284,7 @@ txt_5_5_case: (case sensitive)
 txt_5_5_add: Add string at specified position
 txt_5_5_addsel: Add to current selection
 txt_5_5_ext: Change files extension
-txt_5_5_plugin: Check for plugin and addon
+txt_5_5_plugin: Check for Plugins
 txt_5_5_copypath: Copy path
 txt_5_5_delete: Delete characters at specified position
 txt_5_5_halt: Halt system when task completes
@@ -449,7 +457,7 @@ txt_4_3_exppl: Export password list
 txt_4_3_expple: Encrypted (backup Password Manager)
 txt_4_3_keeppw: Keep password/keyfile for current session
 txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
-txt_4_3_pwmanmaster: Set/change master password
+txt_4_3_pwmanmaster: Set/change PM master password
 txt_4_3_pwmanlist: Password list
 txt_4_3_pwman: Password Manager
 txt_4_3_pwmancorr: Password Manager seems tampered or corrupted. Keep Password Manager anyway and try to recover current password list, if you trust it? (No will reset Password Manager, recommended)
@@ -478,7 +486,7 @@ txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
 txt_3_6_close: Close
 txt_3_6_resetapps: Do you want to reset Applications (customizable group of programs and scripts to open files with, overriding file associations)?
 txt_3_6_ethemes: Existing Themes
-txt_3_5_td: Download Themes
+txt_3_5_td: Check for Themes
 txt_3_5_managecustomthemes: Manage Themes
 txt_3_4_nopaths: No paths
 txt_3_4_smallicons: Icons

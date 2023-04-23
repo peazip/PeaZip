@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-9.1
+9.2
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: Junde Yhi
 Last rev.: 20230312
 
 === PeaZip text group ===
 
+txt_9_2_7za: 7z / p7zip alias
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Check for Translations
+txt_9_2_compact: Compact
+txt_9_2_swt: Swap Tool / Address bar
+txt_9_2_tos: TOS, Privacy
+txt_9_2_doc: Verify documentation, Issue Tracker...
+txt_9_2_updates: Verify updates, binaries, Plugins...
 txt_9_1_7zs: 7z / p7zip 语法等级
 txt_9_1_ac: 允许归档文件转换脚本和用户交互
 txt_9_1_closeall: 全部关闭

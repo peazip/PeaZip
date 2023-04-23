@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 български / Bulgarian
-9.0
+9.2
 Превод: Любомир Симеонов
 Корекция: Живко Жеков
 Последна корекция: 19/02/2023
 
 === PeaZip text group ===
 
+txt_9_2_7za: 7z / p7zip alias
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Check for Translations
+txt_9_2_compact: Compact
+txt_9_2_swt: Swap Tool / Address bar
+txt_9_2_tos: TOS, Privacy
+txt_9_2_doc: Verify documentation, Issue Tracker...
+txt_9_2_updates: Verify updates, binaries, Plugins...
 txt_9_1_7zs: ниво на синтаксис 7z / p7zip
 txt_9_1_ac: Скриптовете за преобразуване на архив позволяват взаимодействие с потребителя
 txt_9_1_closeall: Затваряне на всички

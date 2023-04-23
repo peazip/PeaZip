@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 English (United Kingdom)
-9.1
+9.2
 Translated by: Robert Readman
 Last rev. by: 
 Last rev.: 20211128
 
 === PeaZip text group ===
 
+txt_9_2_7za: 7z / p7zip alias
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Check for Translations
+txt_9_2_compact: Compact
+txt_9_2_swt: Swap Tool / Address bar
+txt_9_2_tos: TOS, Privacy
+txt_9_2_doc: Verify documentation, Issue Tracker...
+txt_9_2_updates: Verify updates, binaries, Plugins...
 txt_9_1_7zs: 7z / p7zip syntax level
 txt_9_1_ac: Archive conversion scripts allow user's interaction
 txt_9_1_closeall: Close all

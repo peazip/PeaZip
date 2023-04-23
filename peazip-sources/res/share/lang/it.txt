@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.1
+9.2
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20230217
 
 === PeaZip text group ===
 
+txt_9_2_7za: 7z / p7zip alias
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Download Traduzioni
+txt_9_2_compact: Compatta
+txt_9_2_swt: Scambia barra degli strumenti / barra dell'indirizzo
+txt_9_2_tos: TOS, Privacy
+txt_9_2_doc: Verifica documentazione, Issue Tracker...
+txt_9_2_updates: Verifica aggiornamenti, eseguibili, Plugin...
 txt_9_1_7zs: Livello della sintassi di 7z / p7zip
 txt_9_1_ac: Gli script di conversione archivi consentono interazione
 txt_9_1_closeall: Chiudi tutto
@@ -38,7 +46,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: L'opzione "Estrai poi sposta" (in Opzioni > Impostazioni > Archive manager) è ignorata per la composizione del comando nel tab Console.
 txt_8_8_snz: Applica Zone.Identifier stream (Windows)
 txt_8_8_sm: Dimensione icone piccole
-txt_8_8_solcol: Campo indirizzo
+txt_8_8_solcol: Barra indirizzo
 txt_8_8_snoi: Archivia ids owner/group (TAR, Linux)
 txt_8_8_snon: Archivia nomi owner/group (TAR, Linux)
 txt_8_8_tab: Tab
@@ -211,7 +219,7 @@ txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possibili duplicati trovati (test veloce approssimato)
 txt_6_6_rsh: Cancella cronologia ricerche
 txt_6_6_pdupfind: Suggerisci duplicati
-txt_6_6_forcemodify: Consenti modifica per archivi di tipi non canonici
+txt_6_6_forcemodify: Consenti modifica archivi non canonici come
 txt_6_5_mandatory: (obbligatorio)
 txt_6_5_abort: Annulla
 txt_6_5_askp: Chiedi di settare una password all'avvio
@@ -222,7 +230,7 @@ txt_6_5_error: Errore
 txt_6_5_seqerr: Rilevati errori, i file originali non saranno cancellati
 txt_6_5_sni: Includere NT security information
 txt_6_5_sns: Includere NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
+txt_6_5_privacy: Privacy e Sicurezza
 txt_6_5_showvolatile: Mostra quali sono le opzioni volatili / dipendenti dal contesto
 txt_6_5_force: Tenta l'apertura di archivi con errori
 txt_6_5_warning: Avviso
@@ -264,7 +272,7 @@ txt_5_8_utf: Richiede ambienti completamente compatibili con UTF-8 / Unicode
 txt_5_8_fsr: Questo formato non è supportato causa impostazione delle policy riguardo il Software Libero (Opzioni > Avanzate)
 txt_5_7_pinstalled: INSTALLATO
 txt_5_7_pmissing: MANCANTE
-txt_5_7_plugin: Plugin mancante, può essere installato da Aiuto > Pulgin e addon
+txt_5_7_plugin: Plugin mancante, può essere installato da Aiuto > Download Pulgin
 txt_5_6_basic: Di base
 txt_5_6_exarc: Estrai archivio
 txt_5_6_tab: Apri in nuovo tab
@@ -276,7 +284,7 @@ txt_5_5_case: (case sensitive)
 txt_5_5_add: Aggiungi stringa alla posizione specificata
 txt_5_5_addsel: Aggiungi alla selezione
 txt_5_5_ext: Cambia l'estensione
-txt_5_5_plugin: Plugin e addon
+txt_5_5_plugin: Download Plugin
 txt_5_5_copypath: Copia percorso
 txt_5_5_delete: Cancella caratteri alla posizione specificata
 txt_5_5_halt: Arresta il sistema quando il lavoro è completato
@@ -449,7 +457,7 @@ txt_4_3_exppl: Esporta elenco password
 txt_4_3_expple: Cifrato (backup del Password manager)
 txt_4_3_keeppw: Mantieni password/keyfile per la sessione corrente
 txt_4_3_pwmanpwhint: Si raccomanda di usare password/keyfile (optional) per cifrare l'elenco password, in questo modo sarà richiesta l'autenticazione per accedere al password manager. Password/keyfile possono essere cambiati in qualunque momento da questo form.
-txt_4_3_pwmanmaster: Inserire/modificare la master password
+txt_4_3_pwmanmaster: Inserire/modificare la master password del Password Manager
 txt_4_3_pwmanlist: Elenco password
 txt_4_3_pwman: Password manager
 txt_4_3_pwmancorr: Il Password manager sembra essere corrotto o manomesso. Aprire comunque il Password manager per cercare di recuperare l'attuale lista di password? (No resetterà il password manager, scelta raccomandata)
