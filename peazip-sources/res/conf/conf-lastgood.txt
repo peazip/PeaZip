@@ -762,5 +762,17 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 [enlarge file browser icons]
 0
 
-[Use quick deduplication routine]
+[use quick deduplication routine]
 1
+
+[alias for 7z / p7zip binary name]
+7z
+
+[swap position of Tab and Address bar]
+0
+
+[try to edit non-canonical archive formats as derivate of 0 ZIP 1 7Z 2 TAR 3 WIM]
+0
+
+[toolbar style]
+2
