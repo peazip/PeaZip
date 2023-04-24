@@ -3,18 +3,18 @@ Català
 9.2
 Traduït per: Marc Roca Musach
 Última revisió per: Marc Roca Musach
-Última revisió el: 20230413
+Última revisió el: 20230424
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_2_7za: Àlies 7z / p7zip
+txt_9_2_changelog: Registre de canvis
+txt_9_2_tfaq: Comprova si hi ha traduccions noves
+txt_9_2_compact: Compacte
+txt_9_2_swt: Intercambia la barra de pestanyes i la barra d'adreça
+txt_9_2_tos: Condicions d'ús i privacitat
+txt_9_2_doc: Visualitza la documentació, seguiment d'incidències...
+txt_9_2_updates: Comprova les actualitzacions, binaris, complements...
 txt_9_1_7zs: Nivell de sintaxi del 7z / p7zip
 txt_9_1_ac: Permetre la interacció de l'usuari en els scripts de conversió d'arxius
 txt_9_1_closeall: Tanca-ho tot
@@ -133,7 +133,7 @@ txt_7_8_tpriority: Prioritat de tasques
 txt_7_8_update: Actualitza
 txt_7_7_noneall: Cap: desactiva la previsualització, l'edició, la funcionalitat d'"arrossega i deixa anar" i l'extracció interactiva
 txt_7_7_nonetemp: Cap, el directori temporal de l'usuari si és necessari
-txt_7_7_outtemp: Sortida, previsualitza a la carpeta temporal de l'usuari
+txt_7_7_outtemp: Carpeta de sortida, previsualitza a la carpeta temporal de l'usuari
 txt_7_7_sys7zreq: Requereix tenir instal·lat el p7zip-full o equivalent
 txt_7_7_tw: Carpeta de treball temporal per crear arxius, editar-los, previsualitzar-los i extreure'ls amb la funcionalitat "arrossega i deixa anar"
 txt_7_7_sys7z: Utilitza el 7z del sistema del Linux
@@ -480,7 +480,7 @@ txt_3_7_donations: Donacions
 txt_3_7_nameasparent: Anomena l'arxiu igual que la carpeta on es troba l'element seleccionat, si s'afegeixen diversos elements
 txt_3_7_tracker: Suggeriments, errors, sol·licituds
 txt_3_7_sort: Ordena per
-txt_3_7_swapbars: Intercanvia la barra d'eines i la barra d'adreces
+txt_3_7_swapbars: Intercanvia la barra d'eines i la barra d'adreça
 txt_3_7_themedbars: Barres temàtiques
 txt_3_6_ignoredd: Ignora sempre els camins per a l'extracció d'arrossegar i deixar anar
 txt_3_6_close: Tanca
@@ -518,7 +518,7 @@ txt_3_0_nonreadableorpw: L'arxiu no es pot llegir. És possible que l’arxiu no
 txt_3_0_readablepw: L'arxiu pot estar protegit amb contrasenya
 txt_3_0_configure: Associació de fitxers i integració del menú del sistema
 txt_3_0_resettmp: Reestableix peazip-tmp
-txt_2_9_address: Barra d'adreces
+txt_2_9_address: Barra d'adreça
 txt_2_9_adv: Els filtres avançats s'apliquen quan es gestiona qualsevol fitxer compatible amb els backends 7z o FreeArc, vegeu la documentació, i substitueix els filtres bàsics (que s'utilitzen per a funcions de cerca i que es mostren als panells de Preferits i Historial)
 txt_2_9_columns: Columnes
 txt_2_9_copyhere: Copia aquí
@@ -584,7 +584,7 @@ txt_2_7_drag_archive: voleu obrir el fitxer com a nou arxiu? (feu clic a "No" pe
 txt_2_7_oop: Obra la ubicació d'extracció quan finalitzi el procés
 txt_2_7_validatefn: L'operació s'ha aturat, s'ha detectat un nom de fitxer no vàlid:
 txt_2_7_validatecl:  L'operació s'ha aturat, s'ha detectat una ordre potencialment perillosa (p. ex. concatenació d'ordres prohibides dins del programa):
-txt_2_7_output: Sortida
+txt_2_7_output: Carpeta de sortida
 txt_2_7_pwnotset: Contrasenya no definida
 txt_2_7_pwarcset: Contrasenya definida
 txt_2_7_pwextset: Contrasenya definida, és possible extreure, llistar i verificar arxius xifrats
@@ -623,7 +623,7 @@ txt_2_5_strafter: Cadena alfanumèrica després del nom d'entrada
 txt_2_5_strbefore: Cadena alfanumèrica abans del nom d'entrada
 txt_2_5_encoding: Codificació del text
 txt_2_5_nopw: aquest tipus d'arxius no suporten l'encriptació
-txt_2_4_draghint: [arrossega a l'Explorador amb la barra d'adreces activa]
+txt_2_4_draghint: [arrossega a l'Explorador amb la barra d'adreça activa]
 txt_2_4_tb: Adapta els botons de la barra d'eines (requereix reiniciar el PeaZip)
 txt_2_4_adding: Afegint
 txt_2_4_advclip: Desar diverses seleccions al porta-retalls, es neteja en enganxar
