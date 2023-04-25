@@ -3,18 +3,18 @@
 9.2
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
-Посл. ред.: 01.03.2023
+Посл. ред.: 25.04.2023
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
+txt_9_2_7za: Псивдоним 7z/p7zip
+txt_9_2_changelog: Журнал изменений
+txt_9_2_tfaq: Проверить наличие переводов
+txt_9_2_compact: Свернуть
 txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_2_tos: TOS, Конфиденциальность
+txt_9_2_doc: Проверка документации, трекер вопросов...
+txt_9_2_updates: Проверка обновлений, двоичных файлов, плагинов...
 txt_9_1_7zs: Уровень синтаксиса 7z/p7zip
 txt_9_1_ac: Archive conversion scripts allow user's interaction
 txt_9_1_closeall: Закрыть все
