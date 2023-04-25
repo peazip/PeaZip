@@ -3,18 +3,18 @@ Simplified Chinese - 简体中文
 9.2
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: Junde Yhi
-Last rev.: 20230312
+Last rev.: 20230424
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_2_7za: 7z / p7zip 别名
+txt_9_2_changelog: 更新日志
+txt_9_2_tfaq: 检查翻译
+txt_9_2_compact: 紧凑
+txt_9_2_swt: 交换工具栏和地址栏的位置
+txt_9_2_tos: 服务条款、隐私声明
+txt_9_2_doc: 查看文档、工单系统…
+txt_9_2_updates: 查看更新、可执行文件、插件…
 txt_9_1_7zs: 7z / p7zip 语法等级
 txt_9_1_ac: 允许归档文件转换脚本和用户交互
 txt_9_1_closeall: 全部关闭
@@ -46,7 +46,7 @@ txt_8_8_lnk: 链接
 txt_8_8_intnote: 请注意，如果在控制台中编辑了命令行，那么“提取后移动”选项（于选项 > 设置 > 归档管理器中）会被忽略。
 txt_8_8_snz: 传播 Zone.Identifier 流（Windows）
 txt_8_8_sm: 小图标尺寸
-txt_8_8_solcol: 地址栏
+txt_8_8_solcol: 地址块
 txt_8_8_snoi: 储存所有者 / 所有组的 ID（TAR，Linux）
 txt_8_8_snon: 储存所有者 / 所有组的名字（TAR，Linux）
 txt_8_8_tab: 标签页
@@ -230,7 +230,7 @@ txt_6_5_error: 错误
 txt_6_5_seqerr: 检测到错误，原文件不会被删除
 txt_6_5_sni: 包含 NT 安全信息
 txt_6_5_sns: 包含 NTFS 备用数据流（Alternate Data Stream）
-txt_6_5_privacy: 隐私
+txt_6_5_privacy: 隐私及安全
 txt_6_5_showvolatile: 显示哪些选项会根据上下文而改变
 txt_6_5_force: 尝试打开有错误的归档文件
 txt_6_5_warning: 警告
@@ -457,7 +457,7 @@ txt_4_3_exppl: 导出密码列表
 txt_4_3_expple: 已加密（备份密码管理器）
 txt_4_3_keeppw: 此次会话中不再询问密码 / 密钥文件
 txt_4_3_pwmanpwhint: 建议设置密码 / 密钥文件来加密密码列表（并非必须）。设置之后，需要验证才能访问密码管理器。您可以随时在此窗口中修改密码/密钥文件。
-txt_4_3_pwmanmaster: 设置 / 更改主密码
+txt_4_3_pwmanmaster: 设置 / 更改密码管理器的主密码
 txt_4_3_pwmanlist: 密码列表
 txt_4_3_pwman: 密码管理器
 txt_4_3_pwmancorr: 密码管理器似乎已损坏或被篡改。如果您确定它没有问题，那么保持密码管理器，并尝试恢复当前的密码列表。（建议选择“否”来重置密码管理器）
@@ -486,7 +486,7 @@ txt_3_6_ignoredd: 对于拖放提取总是忽略路径
 txt_3_6_close: 关闭
 txt_3_6_resetapps: 要重置应用程序（自定义打开文件的应用程序和脚本，覆盖文件关联）吗？
 txt_3_6_ethemes: 现有主题
-txt_3_5_td: 下载主题
+txt_3_5_td: 检查主题
 txt_3_5_managecustomthemes: 管理主题
 txt_3_4_nopaths: 无路径
 txt_3_4_smallicons: 图标
