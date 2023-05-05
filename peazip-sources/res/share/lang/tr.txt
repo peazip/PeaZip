@@ -3,40 +3,40 @@ Turkish (Türkçe)
 9.2
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 5 Eylül 2022
+Son güncelleme: 5 Mayıs 2023
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_9_2_7za: 7z / p7zip takma adı
+txt_9_2_changelog: Değişiklik günlüğü
+txt_9_2_tfaq: Çevirileri Kontrol Et
+txt_9_2_compact: Kompakt
+txt_9_2_swt: Değiştirme Aracı / Adres çubuğu
+txt_9_2_tos: TOS, Gizlilik
+txt_9_2_doc: Belgeleri, sorun izleyiciyi doğrula...
+txt_9_2_updates: Güncellemeleri, binary dosyaları, eklentileri doğrula...
+txt_9_1_7zs: 7z / p7zip sözdizimi seviyesi
+txt_9_1_ac: Arşiv dönüştürme komut dosyaları kullanıcının etkileşimine izin verir
+txt_9_1_closeall: Tümünü kapat
+txt_9_1_enlargeicons: Dosya tarayıcı simgelerini büyüt
+txt_9_1_ef: Boş klasörleri arşivleme ve çıkarma işlemlerinden hariç tut (7z / p7zip)
+txt_9_1_nw: Yeni pencere aç
+txt_9_1_qdup: Hızlı tekilleştirme yordamını kullan
+txt_9_0_autoexttar: Sıkıştırılmış TAR.* dosyalarından TAR arşivini otomatik ayıkla
+txt_9_0_accesstime: Son erişim zamanını değiştirme
+txt_9_0_mem: Maksimum bellek kullanımı
+txt_9_0_showmainmenu: Ana menüyü aç
+txt_9_0_navmenu: Navigasyon menüsünü aç
+txt_9_0_plugind: Binary dosyaları ve Eklenti dizinini aç
+txt_9_0_df: Dirleri dosyalardan önce sırala
+txt_9_0_hl: Sabit bağlantıları bağlantı olarak sakla
+txt_9_0_sl: Sembolik bağlantıları bağlantı olarak sakla
+txt_9_0_tnav: Kenar çubuğu, ağaç görünümü, hiçbiri arasında geçiş yap
+txt_8_9_empty: Arşiv içeriği boş
+txt_8_9_disp: Arşiv içeriğini görüntüle
+txt_8_9_parsing: Arşiv içeriğini ayrıştır
+txt_8_9_stoptest: Raporu hata, liste, test, otomatik test açısından incelemek için durdur
+txt_8_9_ttb: Araç çubuğunu değiştir
 txt_8_8_ca: Vurgu rengi
 txt_8_8_btn: Buton
 txt_8_8_cb: Buton rengi
