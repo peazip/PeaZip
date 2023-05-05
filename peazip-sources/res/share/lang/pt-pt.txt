@@ -1,20 +1,20 @@
 ﻿=== PeaZip language file ===
-Portuguese (Portugal)
+Portuguese (Portugal) - Português
 9.2
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20230330
+Revisto em: 20230505
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_2_7za: 7z / p7zip pseudónimo
+txt_9_2_changelog: Registo de alterações
+txt_9_2_tfaq: Verificar traduções
+txt_9_2_compact: Compacto
+txt_9_2_swt: Trocar a barra de separadores / Barra de endereços
+txt_9_2_tos: TOS, Privacidade
+txt_9_2_doc: Verificar documentação, rastreador de problemas...
+txt_9_2_updates: Procurar atualizações, binários, Plugins...
 txt_9_1_7zs: Nível de sintaxe 7z / p7zip
 txt_9_1_ac: Os scripts de conversão de arquivos permitem a interação do utilizador
 txt_9_1_closeall: Fechar tudo
@@ -46,7 +46,7 @@ txt_8_8_lnk: Ligação
 txt_8_8_intnote: Tenha em atenção que a opção "Extração interativa" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola.
 txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
 txt_8_8_sm: Ícones pequenos
-txt_8_8_solcol: Barra sólida
+txt_8_8_solcol: Barra de navegação
 txt_8_8_snoi: Guardar ID do dono/grupo (TAR, Linux)
 txt_8_8_snon: Guardar nome do dono/grupo (TAR, Linux)
 txt_8_8_tab: Separador
@@ -128,7 +128,7 @@ txt_7_8_priorityidle: Sem prioridade
 txt_7_8_rel: Extração interativa. Extrair e, depois, mover para o destino
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: Em tempo real
-txt_7_8_requirerestart: [tem que reiniciar PeaZip]
+txt_7_8_requirerestart: [requer o reinício do PeaZip]
 txt_7_8_tpriority: Prioridade das tarefas
 txt_7_8_update: Atualizar
 txt_7_7_noneall: Nenhuma: desativar pré-visualização, edição, arastar e largar e extração interativa
@@ -383,7 +383,7 @@ txt_5_1_w3: Sexta
 txt_5_1_w4: Quarta
 txt_5_1_weekly: Semanal
 txt_5_1_weeks: Semanas
-txt_5_0_bc: Breadcrumb
+txt_5_0_bc: Barra de endereços de navegação
 txt_5_0_resetpm: Confirma a reposição do Gestor de palavras-passe? Todas as palavras-passe guardadas no Gestor de palavras-passe serão perdidas.
 txt_5_0_enum: Enumerar conteúdo da pasta
 txt_5_0_music: Música
@@ -464,7 +464,7 @@ txt_4_3_pwmancorr: Parece que o gestor de palavras-passe foi modificado ou está
 txt_4_3_expplp: Texto simples
 txt_4_3_recsrc: Pesquisa recursiva por definição
 txt_4_3_resetpm: Repor gestor de palavras-passe? Todas as palavras-passe gravadas serão eliminadas
-txt_4_3_breadcrumb: Mostrar endereço como "breadcrumb"
+txt_4_3_breadcrumb: Barra de endereços de navegação
 txt_4_2_arcabspath: Utilizar caminhos absolutos
 txt_4_1_duplicateshint: Linha "tamanho/checksum" reportada na coluna CRC para todos os duplicados encontrados no diretório atual ou no filtro de pesquisa
 txt_4_1_adminhint: (Dica: alternativamente, pode solicitar a palavra-passe UAC para trabalhar em caminhos protegidos, Alt+F10 ou Opções > Executar como administrador)
@@ -478,9 +478,9 @@ txt_3_8_type_description_wim: WIM: formato de imagem de disco da Microsoft
 txt_3_8_type_description_xz: XZ: poderosa compressão de ficheiros com base no algoritmo LZMA2
 txt_3_7_donations: Doações
 txt_3_7_nameasparent: Ao adicionar vários itens, nomear o arquivo com o nome da pasta superior selecionada
-txt_3_7_tracker: PeaZip: reporte de erros e pedidos de funcionalidades
+txt_3_7_tracker: Rastreador de problemas
 txt_3_7_sort: Ordenar por
-txt_3_7_swapbars: Trocar entre barra de ferramentas/endereço
+txt_3_7_swapbars: Trocar a barra de ferramentas / Barra de endereços
 txt_3_7_themedbars: Barras do tema
 txt_3_6_ignoredd: Ignorar caminhos para a extração via arrastar e largar
 txt_3_6_close: Fechar
@@ -571,7 +571,7 @@ txt_2_7_separate: Adicionar cada objeto a arquivos distintos
 txt_2_7_pwsupported: arquivar com palavra-passe
 txt_2_7_cancel: Cancelar
 txt_2_7_encfn: Cifrar nome do ficheiro (se suportado pelo formato)
-txt_2_7_setpw: Introduzir palavra-passe/ficheiro-chave
+txt_2_7_setpw: Definir palavra-passe / ficheiro-chave
 txt_2_7_ext: A extrair:
 txt_2_7_extfrom: A extrair do arquivo:
 txt_2_7_es: Extrair ficheiros que não são arquivos, i.e. executáveis, MS Office e ficheiros OOo
