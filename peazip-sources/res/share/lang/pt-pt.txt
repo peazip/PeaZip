@@ -3,25 +3,25 @@ Portuguese (Portugal) - Português
 9.2
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20230505
+Revisto em: 20230506
 
 === PeaZip text group ===
 
-txt_9_2_7za: 7z / p7zip pseudónimo
+txt_9_2_7za: Pseudónimo 7z / p7zip
 txt_9_2_changelog: Registo de alterações
-txt_9_2_tfaq: Verificar traduções
-txt_9_2_compact: Compacto
-txt_9_2_swt: Trocar a barra de separadores / Barra de endereços
+txt_9_2_tfaq: Procurar traduções
+txt_9_2_compact: Modo compacto
+txt_9_2_swt: Alternar entre barra de separadores/barra de endereço
 txt_9_2_tos: TOS, Privacidade
-txt_9_2_doc: Verificar documentação, rastreador de problemas...
-txt_9_2_updates: Procurar atualizações, binários, Plugins...
+txt_9_2_doc: Analisar documentação, rastreador de problemas...
+txt_9_2_updates: Procurar atualizações, binários, plugins...
 txt_9_1_7zs: Nível de sintaxe 7z / p7zip
 txt_9_1_ac: Os scripts de conversão de arquivos permitem a interação do utilizador
 txt_9_1_closeall: Fechar tudo
 txt_9_1_enlargeicons: Ampliar ícones do explorador de ficheiros
 txt_9_1_ef: Excluir pastas vazias das operações de arquivamento e extração (7z / p7zip)
 txt_9_1_nw: Abrir numa nova janela
-txt_9_1_qdup: Usar rotina de desduplicação rápida
+txt_9_1_qdup: Usar rotina de deduplicação rápida
 txt_9_0_autoexttar: Extrair arquivo TAR automaticamente a partir de ficheiros TAR.*
 txt_9_0_accesstime: Não alterar hora do último acesso
 txt_9_0_mem: Utilização máxima de memória
@@ -219,7 +219,7 @@ txt_6_7_nop: (sem pré-visualização)
 txt_6_6_pdupfound: potenciais duplicados encontrados (teste rápido)
 txt_6_6_rsh: Repor histórico de pesquisa
 txt_6_6_pdupfind: Sugerir potenciais duplicados
-txt_6_6_forcemodify: Tentar editar tipos de ficheiros não explicitamente suportados
+txt_6_6_forcemodify: Editar tipos de arquivos não canónicos como
 txt_6_5_mandatory: (obrigatório)
 txt_6_5_abort: Abortar
 txt_6_5_askp: Pedir para definir uma palavra-passe ao iniciar
@@ -230,7 +230,7 @@ txt_6_5_error: Erro
 txt_6_5_seqerr: Foram detetados erros e os ficheiros originais não serão apagados
 txt_6_5_sni: Incluir informação de segurança NT
 txt_6_5_sns: Incluir fluxo alternativo de dados NTFS
-txt_6_5_privacy: Privacidade
+txt_6_5_privacy: Privacidade e segurança
 txt_6_5_showvolatile: Mostrar quais as opções que são voláteis ou dependentes do contexto
 txt_6_5_force: Tentar abrir os arquivos que possuam erros
 txt_6_5_warning: Aviso
@@ -272,7 +272,7 @@ txt_5_8_utf: Os scripts necessitam de um ambiente total UTF-8/Unicode
 txt_5_8_fsr: Este formato não é suportado devido às restrições de conformidade Free Software (Opções > Avançado)
 txt_5_7_pinstalled: Instalado
 txt_5_7_pmissing: Não instalado
-txt_5_7_plugin: Plugin não instalado. Pode instalar o plugin em Ajuda > Procurar plugins e addons
+txt_5_7_plugin: Plugin em falta. Pode instalar o plugin em Ajuda > Procurar plugins
 txt_5_6_basic: Básico
 txt_5_6_exarc: Extrair arquivo
 txt_5_6_tab: Abrir em novo separador
@@ -284,7 +284,7 @@ txt_5_5_case: (diferenciar maiúsculas/minúsculas)
 txt_5_5_add: Adicionar texto na posição especificada
 txt_5_5_addsel: Adicionar à seleção atual
 txt_5_5_ext: Mudar extensão dos ficheiros
-txt_5_5_plugin: Procurar plugins e addons
+txt_5_5_plugin: Procurar plugins
 txt_5_5_copypath: Copiar caminho
 txt_5_5_delete: Eliminar caracteres na posição especificada
 txt_5_5_halt: Desligar sistema ao terminar a tarefa
@@ -486,7 +486,7 @@ txt_3_6_ignoredd: Ignorar caminhos para a extração via arrastar e largar
 txt_3_6_close: Fechar
 txt_3_6_resetapps: Pretende repor as Aplicações (grupo de programas e "scripts" utilizados para abrir os ficheiros, substituindo as associações de ficheiros)?
 txt_3_6_ethemes: Temas existentes
-txt_3_5_td: Descarregar temas
+txt_3_5_td: Procurar temas
 txt_3_5_managecustomthemes: Gestão de temas
 txt_3_4_nopaths: Sem caminhos
 txt_3_4_smallicons: Ícones
