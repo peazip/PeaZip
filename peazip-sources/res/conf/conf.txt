@@ -6,7 +6,7 @@ clWindow
 $00CC5511
 clAppWorkspace
 clWindowText
-00001020
+000010204
 100
 4
 0
@@ -234,15 +234,15 @@ PeaZip
 
 [browser's style and settings]
 0
-12
+13
 1
 240
-72
-72
-72
-144
-48
-72
+80
+80
+80
+160
+60
+100
 0
 
 [extract to new folder]
@@ -675,7 +675,7 @@ Computer's root
 0
 0
 1
-72
+160
 
 [preferred checksum and hash algorithms]
 CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
@@ -776,3 +776,10 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 
 [toolbar style]
 2
+
+[extended columns, comments]
+0
+100
+
+[Manually set RAR binary]
+0
