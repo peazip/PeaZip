@@ -1,17 +1,25 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.2
+9.3
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20230217
+Ultima rev.: 20230614
 
 === PeaZip text group ===
 
+txt_9_3_continue: Continuare comunque?
+txt_9_3_contrast: Contrasto
+txt_9_3_fsd: Lo spazio disponibile nel percorso di destinazione potrebbe non essere sufficiente
+txt_9_3_fsw: Lo spazio disponibile nel percorso di lavoro temporaneo potrebbe non essere sufficiente
+txt_9_3_mrar: Settare manualmente l'eseguibile RAR
+txt_9_3_canedit: Questo tipo di archivio può essere editato
+txt_9_3_canforce: Questo tipo di archivio può essere editato (forzato)
+txt_9_3_cannotedit: Questo tipo di archivio non può essere editato
 txt_9_2_7za: 7z / p7zip alias
 txt_9_2_changelog: Change log
 txt_9_2_tfaq: Download Traduzioni
 txt_9_2_compact: Compatta
-txt_9_2_swt: Scambia barra degli strumenti / barra dell'indirizzo
+txt_9_2_swt: Scambia barra dei tab / barra dell'indirizzo
 txt_9_2_tos: TOS, Privacy
 txt_9_2_doc: Verifica documentazione, Issue Tracker...
 txt_9_2_updates: Verifica aggiornamenti, eseguibili, Plugin...
@@ -444,7 +452,7 @@ txt_4_5_noupdate: PeaZip è aggiornato
 txt_4_5_properties: Proprietà
 txt_4_5_r: Destra
 txt_4_5_pj: Script lavori salvati
-txt_4_5_shaddress: Mostra la barra degli indirizzi
+txt_4_5_shaddress: Mostra la barra dell'indirizzo
 txt_4_5_shnav: Mostra la barra di navigazione
 txt_4_5_shstatus: Mostra la barra di stato
 txt_4_5_shtool: Mostra la barra degli strumenti
@@ -480,7 +488,7 @@ txt_3_7_donations: Donazioni
 txt_3_7_nameasparent: Nomina l'archivio come la cartella che contiene l'oggetto selezionato
 txt_3_7_tracker: Tracker
 txt_3_7_sort: Ordina per
-txt_3_7_swapbars: Scambia barra degli strumenti / barra degli indirizzi
+txt_3_7_swapbars: Scambia barra degli strumenti / barra dell'indirizzo
 txt_3_7_themedbars: Barre decorate secondo il tema
 txt_3_6_ignoredd: Ignora la struttura per le operazioni drag and drop
 txt_3_6_close: Chiudi
@@ -518,7 +526,7 @@ txt_3_0_nonreadableorpw: Archivio non leggibile. L'archivio potrebbe essere non 
 txt_3_0_readablepw: Archivio protetto da password
 txt_3_0_configure: Configura associazione file e integrazione con il sistema
 txt_3_0_resettmp: Reset file temporanei di lavoro
-txt_2_9_address: Barra degli indirizzi
+txt_2_9_address: Barra dell'indirizzo
 txt_2_9_adv: I filtri avanzati sono applicati solo agli archivi gestiti attraverso 7z o FreeArc, vedi documentazione, e sostituiscono i filtri semplici (che sono usati per le funzioni di ricerca e sono visualizzati in Preferiti e Cronologia)
 txt_2_9_columns: Colonne
 txt_2_9_copyhere: Copia qui
@@ -1365,7 +1373,7 @@ Opzioni > Localizzazione permette di cambiare la lingua dell'applicazione
 Opzioni > Impostazioni consente di modificare le varie opzioni dell'applicazione
 Opzioni > Temi personalizza l'aspetto dell'applicazione
 Opzioni > Configura integrazione con il sistema avvia una procedura per configurare le associazioni dei file e le voci presentate nel menu contestuale e SendTo (su Windows)
-Il menu Organizza consente di personalizzare, abilitare e disabilitare features del browser, come la toolbar, la barra degli indirizzi, la barra di navigazione ecc...
+Il menu Organizza consente di personalizzare, abilitare e disabilitare features del browser, come la toolbar, la barra dell'indirizzo, la barra di navigazione ecc...
 
 F1 	guida
 F2 	rinomina file(s) / Ctrl+F2 naviga desktop / Shift+F2 naviga risorse del computer (o root)

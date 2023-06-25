@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Swedish - Svenska
-9.2
+9.3
 Översatt av: Mikael Hiort af Ornäs
 Senast rev. av: M. HafO
 Senast rev.: 20140413
 
 === PeaZip text group ===
 
+txt_9_3_continue: Continue anyway?
+txt_9_3_contrast: Contrast
+txt_9_3_fsd: Free space on destination may not be enough
+txt_9_3_fsw: Free space on temporary work path may not be enough
+txt_9_3_mrar: Manually set RAR binary
+txt_9_3_canedit: This archive type can be edited
+txt_9_3_canforce: This archive type can be edited (forced)
+txt_9_3_cannotedit: This archive type cannot be edited
 txt_9_2_7za: 7z / p7zip alias
 txt_9_2_changelog: Change log
 txt_9_2_tfaq: Check for Translations

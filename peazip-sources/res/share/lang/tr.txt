@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-9.2
+9.3
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
 Son güncelleme: 5 Mayıs 2023
 
 === PeaZip text group ===
 
+txt_9_3_continue: Continue anyway?
+txt_9_3_contrast: Contrast
+txt_9_3_fsd: Free space on destination may not be enough
+txt_9_3_fsw: Free space on temporary work path may not be enough
+txt_9_3_mrar: Manually set RAR binary
+txt_9_3_canedit: This archive type can be edited
+txt_9_3_canforce: This archive type can be edited (forced)
+txt_9_3_cannotedit: This archive type cannot be edited
 txt_9_2_7za: 7z / p7zip takma adı
 txt_9_2_changelog: Değişiklik günlüğü
 txt_9_2_tfaq: Çevirileri Kontrol Et
