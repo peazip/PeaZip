@@ -180,42 +180,35 @@ unit peach;
  1.63     20221215  G.Tani      9.0.0
  1.64     20230221  G.Tani      9.1.0
  1.65     20230415  G.Tani      9.2.0
+ 1.66     20230623  G.Tani      9.3.0
 
 BACKEND
-(Windows) updated McMilk 7z codecs v1.5.4r4: Zstandard v1.5.4, Brotli v.1.0.9, LZ4 v1.9.4, LZ5 v1.5, Lizard v1.0, Fast LZMA2 v1.0.1
-(Windows) updated 7z sfx modules using ones from McMilk's 7z fork v1.5.4r4, supporting extra compression methods
-Can now use zpaqfranz https://github.com/fcorbelli/zpaqfranz as alternative backend for .zpaq format
- To use an alternative zpaq fork rename the binary as zpaq and replace the zpaq binary in (peazip)/res/bin/zpaq/ directory
+7z 23.01 (Windows, Linux, macOS)
+Pea 1.13
 
 CODE
-Fixed open custom applications in macOS
-Fixed compression method is now saved accordingly for 7z sfx format and 7z format
-Re-organized Help section with quicker access to online updates, Plugins, Themes, and Translations
-Privacy and Security section in main Settings tab, collecting all relevant functions, including Updates
-Various fixes
 
 FILE MANAGER
-Minor modification to themes and icons
- Address filed can now set window color plus button color (new), window color plus accent color, button color (default), and accent color
- New Compact mode for the tool bar, tool bar icons (for archive manager, file manager, and image manager) are showm on the right of the address bar while the tool bar is hidden
- Themes were updated
- In (peazip)/res/share/icons are now available alternative Windows icons with extensions, can be useful if file extensions are hidden on the host system
-New options in Main menu, Organize
- Tab bar can now be swapped with Address bar to be shown on the top (as common on Windows file managers) or on the bottom (as common on Linux and macOS file managers)
- Breadcrumb bar can be shown as plain text address field, KDE/Windows file managers -like breadcrumb (default), classic Gnome Files -like, Gnome 4 -like, and macOS Finder -like.
+(macOS) Fixed conditional startup actions on input (open, extract, extract here...)
+Added column to display file-level comment in archives (default hidden)
+While browsing an archive, the information popup (clicking on status bar) shows if the archive type can be edited in PeaZip
+Updated Themes
+ Added contrast setting to Themes
+ Theme packages now contains customizable, 32 bit PNG icons for archive file types
+  Alternative themes with different icons for archive types are available selecting Custom in Theme dropdown menu
+  New system icons packages are available to change system icons accordingly to themes, anyway icon files from theme packages can be used for system integration on Operating Systems accepting icons in PNG format
 
 EXTRACTION and ARCHIVING
-Can now set a custom alias name for 7z / p7zip binary, to make easier to use an alternative backend, in Options > Settings, Advanced tab
-Improved "Edit non-canonical archive types" (Options > Settings, Archive manager tab), provided the target file structure can be actually read/write supported
- Can now edit existing files in non-canonical archives
- Can now keep browsing files opened as archives after edits
- Fixed: adding/updating files in non-canonical archives now targets the intended subfolder inside the archives
- Fixed: (Windows) non-canonical archives without extension can now be edited
- The option is now applied to unknow file types only, to avoid editing known formats not supporting the operation
- The option now allows to treat non-canonical archives as 7Z, ZIP (default), TAR, or WIM files, to support even more derivate container formats
+Added checkbox to manually set RAR binary for Custom / RAR compression format
+ This setting will allow Windows users to locate WinRar Rar.exe executable more flexibly than automatic search, and non-Windows users to set up RAR compression using Wine or other alternatives
+(Windows) Work path free space is reported in archiving and extraction screens info box, clicking on the status bar
+(Windows) Free space on output path and work path (if applicable) is checked before starting archiving and extraction operation, and user is warned if free space may not be enough
+Fixes
+ Fixed crash if the app is forced to extract to a read only path
+ Working directory for ARC compression is now changed accordingly to 7z/p7zip backend working directory
+ Correct handling of .tar extension in extraction to new folder, if destination with same name exists
 
 INSTALLERS
-Added Convert scripts and context menu entries for all platforms in (peazip)/res/share/batch path
 
 230 file extensions supported
 
@@ -515,6 +508,7 @@ type
      cbensmall: TComboBox;
      cbExtEvForHow: TComboBox;
      cbRAR: TCheckBox;
+     cbRARmanual: TCheckBox;
      cbRARBLAKE2: TCheckBox;
      cbRARlastmodtime: TComboBox;
      cbRARlock: TCheckBox;
@@ -621,6 +615,7 @@ type
      ImOpt8: TImage;
      Label11: TLabel;
      Label12: TLabel;
+     LabelColor5: TLabel;
      LabelUpdates: TLabel;
      LabelDoc: TLabel;
      LabelAddFolder: TLabel;
@@ -917,6 +912,10 @@ type
      mbgnome: TMenuItem;
      mbgnome4: TMenuItem;
      mbmac: TMenuItem;
+     mccomment: TMenuItem;
+     mbrowserccomment: TMenuItem;
+     po_browserccomment: TMenuItem;
+     pmccomment: TMenuItem;
      mpeachangelog: TMenuItem;
      mpeatos: TMenuItem;
      pmmoreextract: TMenuItem;
@@ -1676,6 +1675,7 @@ type
      Subtitle7zaopt1: TLabel;
      Subtitle7zaopt2: TLabel;
      TabBar: THeaderControl;
+     tbcontrast: TTrackBar;
      themesave_label: TLabel;
      theme_label1: TImage;
      Timer4: TTimer;
@@ -3158,6 +3158,7 @@ type
       procedure cbExtEvForWhenChange(Sender: TObject);
       procedure cbforcetypeChange(Sender: TObject);
       procedure cbRAR5Click(Sender: TObject);
+      procedure cbRARmanualClick(Sender: TObject);
       procedure cbRARBLAKE2Click(Sender: TObject);
       procedure cbRARClick(Sender: TObject);
       procedure cbRARlastmodtimeChange(Sender: TObject);
@@ -3390,11 +3391,13 @@ type
       procedure mbkdeClick(Sender: TObject);
       procedure mbmacClick(Sender: TObject);
       procedure mbrowsercaccessedClick(Sender: TObject);
+      procedure mbrowserccommentClick(Sender: TObject);
       procedure mbrowserccreatedClick(Sender: TObject);
       procedure mbrowsercmethodClick(Sender: TObject);
       procedure mbtextClick(Sender: TObject);
       procedure mcaccessedClick(Sender: TObject);
       procedure marcoptClick(Sender: TObject);
+      procedure mccommentClick(Sender: TObject);
       procedure mccreatedClick(Sender: TObject);
       procedure mdefarcsetClick(Sender: TObject);
       procedure mdefextsetClick(Sender: TObject);
@@ -3418,6 +3421,7 @@ type
       procedure pmbccpClick(Sender: TObject);
       procedure pmbcnwClick(Sender: TObject);
       procedure pmbcpsClick(Sender: TObject);
+      procedure pmccommentClick(Sender: TObject);
       procedure pmclipClick(Sender: TObject);
       procedure pmembf1Click(Sender: TObject);
       procedure pmembf2Click(Sender: TObject);
@@ -3515,6 +3519,7 @@ type
       procedure pmsaveascsvClick(Sender: TObject);
       procedure pmshowsearchClick(Sender: TObject);
       procedure powRunClick(Sender: TObject);
+      procedure po_browserccommentClick(Sender: TObject);
       procedure po_cinnamonsettClick(Sender: TObject);
       procedure po_clipClick(Sender: TObject);
       procedure po_dedupClick(Sender: TObject);
@@ -5016,6 +5021,7 @@ type
         aRect: TRect; aState: TGridDrawState);
       procedure StringGridRecentHeaderSized(Sender: TObject; IsColumn: Boolean;
         Index: Integer);
+      procedure tbcontrastChange(Sender: TObject);
       procedure theme_label1Click(Sender: TObject);
       procedure themesave_labelClick(Sender: TObject);
       procedure Timer1Timer(Sender: TObject);
@@ -5221,11 +5227,12 @@ procedure updatelayout(enumdir:ansistring);
 procedure untarafter(outname, inname:ansistring; var cl:ansistring; realuntar:boolean; optype:ansistring);
 procedure set_dirbeforefiles(dmode:integer);
 procedure update_addressbar(apath:ansistring);
+function isarchiveeditable:integer;
 
 const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  PEAZIPVERSION = '9.2';
+  PEAZIPVERSION = '9.3';
   PEAZIPREVISION= '.0';
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   PREFALGOCONST = 'CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256';
@@ -5260,7 +5267,7 @@ const
   READE_LIST    = '7Z, ACE, ARC/WRC, ARJ, BR, BZ/TBZ, CAB, CHM/CHW/HXS, COMPOUND (MSI, DOC, XLS, PPT), CPIO, GZ/TGZ, ISO, Java (JAR, EAR, WAR), LZH/LHA, Linux (DEB, PET/PUP, RPM, SLP), NSIS, OOo, PAK/PK3/PK4, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ/BCM, RAR, TAR, WIM/SWM, XPI, Z/TZ, ZIP, ZST...';
   WRITEE_LIST   = '7Z, 7Z-sfx, ARC, ARC-sfx, BR, BZ2, GZ, *PAQ, PEA, QUAD/BALZ/BCM, split, TAR, UPX, WIM, XZ, ZIP, ZST';
   APPMAIN       = 'PeaZip';
-  APPLICATION1  = 'Pea 1.12 (LGPLv3, Giorgio Tani)';
+  APPLICATION1  = 'Pea 1.13 (LGPLv3, Giorgio Tani)';
   STR_7Z        = '7Z';
   STR_ARC       = 'ARC';
   STR_BROTLI    = 'Brotli';
@@ -5294,7 +5301,7 @@ const
   {$IFDEF MSWINDOWS}
   EXEEXT        = '.exe';
   UNRARNAME     = 'unrar';
-  APPLICATION2  = '7z 22.01 (LGPL, Igor Pavlov), and Tino Reichardt sfx modules and codecs v1.5.4r4 (LGPL)';
+  APPLICATION2  = '7z 23.01 (LGPL, Igor Pavlov), and Tino Reichardt sfx modules and codecs v1.5.4r4 (LGPL)';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.15 [Matt Mahoney et al. (GPL)]';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.95 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser)';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15 (Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev)';
@@ -5307,7 +5314,7 @@ const
   {$IFDEF LINUX}
   EXEEXT        = '';
   UNRARNAME     = 'unrar-nonfree';
-  APPLICATION2  = 'Linux 7z 22.01 (LGPL, Igor Pavlov)';
+  APPLICATION2  = 'Linux 7z 23.01 (LGPL, Igor Pavlov)';
   APPLICATION3  = 'PAQ8F/JD/L/O, LPAQ1/5/8, ZPAQ 7.05 [Matt Mahoney et al. (GPL)]';
   APPLICATION4  = 'Strip (GPL, GNU binutils), UPX 3.96 (GPL, Markus F.X.J. Oberhumer, Laszlo Molnar and John F. Reiser)';
   APPLICATION5  = 'QUAD 1.12 (LGPL) / BALZ 1.15(Public Domain), BCM 1.0 (Public Domain) (Ilia Muraviev)';
@@ -5359,7 +5366,7 @@ const
   {$IFDEF DARWIN}
   EXEEXT        = '';
   UNRARNAME     = '';
-  APPLICATION2  = 'macOS 7z 21.07 (LGPL, Igor Pavlov)';
+  APPLICATION2  = 'macOS 7z 23.01 (LGPL, Igor Pavlov)';
   APPLICATION3  = 'ZPAQ 7.15 [Matt Mahoney et al. (GPL)]';
   APPLICATION4  = 'Strip (GPL, GNU binutils)';
   APPLICATION5  = '';
@@ -5402,7 +5409,7 @@ var
    epdopt,vexpaths,epsni,epsns,epsnz,epzall,epzfull,epzabs,epzfor:integer;
 
    //status archiver
-   apdefault,apformat,apfilters,apenum,apencext,apappend,apcustext,apsplit,apspin,apsize,apdelete,apverbose,appw,apdopt,aprar,aprar5,aprardict,aprarblake2,
+   apdefault,apformat,apfilters,apenum,apencext,apappend,apcustext,apsplit,apspin,apsize,apdelete,apverbose,appw,apdopt,aprar,aprar5,aprardict,aprarmanual,aprarblake2,
    aprarsfx,aprarsolid,apprarrr,aprarrr,aprarsaveopen,aprarsavesecurity,aprarsavestreams,aprarlastmodtime,aprarlock:integer;
    apdefaultarchivepath,apextcapt:ansistring;
    v7z1,v7z2,v7z3,v7z4,v7z5,v7z6,v7z7,v7snoi,v7snon,v7z7b,v7z8,v7z9,v7z10,v7z11,v7z11b,v7z13,v7z13b,v7z14,v7z15,v7z16,v7z16a,v7z16b,v7z17,v7z18,v7z17c,vtartype,vtartime,v7zpaths,vlevel_7z,vlevel_bzip2,vlevel_gz,vlevel_zip,vlevel_xz,v9b,v9z,v9r,vbr1,vzst1:integer;
@@ -5474,7 +5481,7 @@ var
    advedit8after,advedit1alt,advedit2alt,advedit3alt,advedit4alt,advedit5alt,advedit6alt,
    advedit7alt,advedit8alt,
    winpfolder,winpfolder32,winsysfolder,winappdatafolder,fun_status,lastoutpath,lastextractionpath,
-   status0,status1,status_curfilesystem,status_curarchive,statuss,statust,statusr,
+   status0,status1,status_curfilesystem,status_curarchive,statuss,statusw,statust,statusr,
    checkver,extsel,defaultextractpath,defaultarchivepath,dn,dn1,
    prevrun,titlestring,sortstatusstring,updateid,prevupdateid,prevarchive,inputfile,
    peaziptmpdir,peaziptmpdirroot,peaziptmpdir_tmp,basedragtitle,unacepluginstatus,unrar5pluginstatus,addformatspluginstatus,
@@ -5484,6 +5491,7 @@ var
    prefixd,prefixf,prefixdaz,prefixdza,prefixfaz,alias7z:ansistring;
 
    tvolumes,tdirs,tfiles,psize,tvol,tsize:qword;
+   sizefreeout,sizefreewrk,sizefreeint: int64;
 
    devtype:array [1..26] of integer;
    appdb:array [1..16] of integer;
@@ -5492,7 +5500,7 @@ var
    listrow,listsortcol,listsortcol1,listsortcol2,listsortbook,title_lines_7z,
    currow1,browsingmode7z,splittersize,splitter2size,lastbar,lasttoolbar,prevbar,splitter3size,splitsearchsize,
    barheight,mbarheight,mmbarheight,intcellhw,expandfs,expandroot,expandbook,expandhistory,expandmore,expandrun,expandapps,expandfun,
-   secgroupheight,listcol,ares,esna,euns,col1size,col2size,col3size,col4size,col5size,col6size,col7size,colmethodsize,
+   secgroupheight,listcol,ares,esna,euns,col1size,col2size,col3size,col4size,col5size,col6size,col7size,colmethodsize,colcommentsize,
    toolsize,ptoolsize,navbar,addressbar,ptabbar,work_dir,prebrowse_dirs,prebrowse_records,rootdirrecord,mappeddrivesinfo,session_mappeddrivesinfo,
    appentries1,pcount,refreshstatus,usealtcolor,altaddressstyle,altbread,macbread,solidaddressstyle,toolcentered,alttabstyle,accenttoolbar,highlighttabs,altaddressstyled,toolcenteredd,solidaddressstyled,alttabstyled,accenttoolbard,usealtcolord,highlighttabsd,ws_top,ws_left,ws_height,ws_width,ws_gw_top,ws_gw_left,ws_gw_height,ws_gw_width,
    archive_type_selected,prebrowsesize,smalliconsize,mediconsize,largeiconsize,browsersize,browsertype,
@@ -5502,7 +5510,7 @@ var
    doptadd,doptext,privacy_mode,showvolatile,tryopenwerrors,forcecanbechanged,forcetype,excludeef,euns1,
    autosync,sys7zlin,i16res,i32res,i48res,i96res,tabheight,tablabelheight,tabheightl,pbarh,autoopentar,spansize,advopdictionary,
    advopword,advoppasses,advopblocksize,noconfdel,specialmoderar,pforceconsole,closeonsingleextract,movetorelativepath,
-   forcebrowse,forceconvert,forcelayout,nitems,storecreated,max_cl,temperature,temperatured,lsize,ntoolstyle,pperc,dirbeforefiles:integer;
+   forcebrowse,forceconvert,forcelayout,nitems,storecreated,max_cl,temperature,temperatured,contrast,contrastd,lsize,ntoolstyle,pperc,dirbeforefiles:integer;
 
    ltime,stime:longint;
 
@@ -5521,7 +5529,7 @@ var
    customsyntax1,erasepasses,filesizebase,extopt7z,extoptarc,extaction7z,extactionarc,extactionace,
    clipmode,jobdefenc,
    archivenameenc,tonewfolder,parallelarchive,zcopy,mcuzip,nameaspartent,spchar,enumd,addencext,repcustext,addtstext,swzipx,
-   defaulttabsmenu,multi_option,memuse_option,nonverboselog,skipdel,disableintscript,use7zunrar5,useextrac32,sort7zbytype,browsersd,userar,userar5,userarblake2,
+   defaulttabsmenu,multi_option,memuse_option,nonverboselog,skipdel,disableintscript,use7zunrar5,useextrac32,sort7zbytype,browsersd,userar,userar5,setrarmanual,userarblake2,
    userardict,userarsfx,userarsolid,userarrr,puserarrr,userarsaveopen,userarsavesecurity,userarsavestreams,userarlastmodtime,
    userarlock,tmpremoveintdir,renselonly,renfilesonly,defaultspanning,spanunit,zpaqall,zpaqfull,zpaqabsolute,zpaqforce,
    dragtargetprotect,whenspecialopen,howspecialopen,ptsync,taskpriority,defaultactionst,displayfoldercontent,filterbrowser,
@@ -5533,14 +5541,14 @@ var
    settingvalues,archiveopened,browsinghistory,filecopying,openstarted,dragcancelled,
    listingdir,control_listingdir,done_listingexe,waitdrawok,needwaitupdating,updatingarchive_inarchive,goarchiving,updatingarchive_sync,
    stayopen,completeshowpea,savetype,pcmenupopulated,updatinglistview,updatingsel,rowselect,showmenu,enlargeicons,
-   thighlight,ccreated,caccessed,cmethod,ctype,csize,cpacked,cdate,catt,ccrc,cfree,cfs,multiaddupdating,dontsavecustom7z,
+   thighlight,ccreated,caccessed,cmethod,ctype,csize,cpacked,cdate,catt,ccomment,ccrc,cfree,cfs,multiaddupdating,dontsavecustom7z,
    dontsavecustomzip,forceopenasarchive,skipapstatus,browserbusy,fromtree,spinchanged,
    swapbars,swaptab,treeonbutton,rightdropbutton,popupclosed,done_quickfunctions,contextconvert_switch,
    funflag,endflag,setbs,launchwithsemaphore,disable_twofactor,extselall,tmpenumd,uacneeded,
    cancellingarchive,nffromdrag,unrar5shown,unaceshown,restartingapp,needsave,is_searching,
    h_folders,nomatch,set_archivetree,aisexpanded,setsequenceerror,tmpextnf,settmpextnf,
    keeppreview,loadadvdefaults,havewinrar,singleextract,specialopen,pclicked,
-   willbemoved,forcewillbemoved,forcenotwillbemoved,pdrop,prebrowsing,imported_tarbeforejob:boolean;
+   willbemoved,forcewillbemoved,forcenotwillbemoved,pdrop,prebrowsing,imported_tarbeforejob,darwinsimulatedrop:boolean;
 
    activelabel_options,activelabel_add,activelabel_extract,activelabel_apps:TLabel;
 
@@ -5560,6 +5568,7 @@ var
 
    lang_file:ansistring;
    //text strings
+   txt_9_3_contrast,txt_9_3_continue,txt_9_3_fsd,txt_9_3_fsw,txt_9_3_canedit,txt_9_3_canforce,txt_9_3_cannotedit,txt_9_3_mrar,
    txt_9_2_7za,txt_9_2_swt,txt_9_2_tfaq,txt_9_2_doc,txt_9_2_updates,txt_9_2_compact,txt_9_2_changelog,txt_9_2_tos,
    txt_9_1_7zs,txt_9_1_ac,txt_9_1_ef,txt_9_1_enlargeicons,txt_9_1_nw,txt_9_1_qdup,txt_9_1_closeall,
    txt_9_0_tnav,txt_9_0_showmainmenu,txt_9_0_navmenu,txt_9_0_accesstime,txt_9_0_hl,txt_9_0_sl,txt_9_0_mem,txt_9_0_autoexttar,txt_9_0_plugind,txt_9_0_df,
@@ -6123,6 +6132,14 @@ begin
 valorize_text:=-1;
 try
 readln(t,s);
+readln(t,s); txt_9_3_continue:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_contrast:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_fsd:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_fsw:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_mrar:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_canedit:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_canforce:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_3_cannotedit:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_2_7za:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_2_changelog:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_2_tfaq:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
@@ -8975,7 +8992,7 @@ if (Form_Peach.StringGridAddress1.rowcount<2) or (Form_Peach.StringGridAddress1.
    exit;
    end;
 
-if Form_Peach.StringGridAddress1.Cells[11,1]='' then
+if Form_Peach.StringGridAddress1.Cells[12,1]='' then
    begin
    Form_peach.treeview1.Items.Add(nil,'');
    exit;
@@ -8983,9 +9000,9 @@ if Form_Peach.StringGridAddress1.Cells[11,1]='' then
 
 Form_Peach.StringGridAddress1.Beginupdate;
 Form_Peach.StringGridAddress1.SortColRow(true,11);
-with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.selected,Form_Peach.StringGridAddress1.Cells[11,1]) do
+with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.selected,Form_Peach.StringGridAddress1.Cells[12,1]) do
    begin
-   Form_Peach.StringGridAddress1.Cells[12,1]:='1';
+   Form_Peach.StringGridAddress1.Cells[13,1]:='1';
    Selected:=true;
    ImageIndex:=3;
    SelectedIndex:=3;
@@ -8997,19 +9014,19 @@ for i:=2 to Form_Peach.StringGridAddress1.RowCount-1 do
    nodefound:=false;
    for j:=1 to Form_Peach.treeview1.Items.Count-1 do
       begin
-      if pos(Form_peach.treeview1.Items[j].Text+directoryseparator,Form_Peach.StringGridAddress1.Cells[11,i]+directoryseparator)=1 then//<>0 then
+      if pos(Form_peach.treeview1.Items[j].Text+directoryseparator,Form_Peach.StringGridAddress1.Cells[12,i]+directoryseparator)=1 then//<>0 then
          begin
          nodenotfinalized:=false;
          for k:=j+1 to Form_Peach.treeview1.Items.Count-1 do
              begin
-             if pos(Form_peach.treeview1.Items[k].Text+directoryseparator,Form_Peach.StringGridAddress1.Cells[11,i]+directoryseparator)<>0 then
+             if pos(Form_peach.treeview1.Items[k].Text+directoryseparator,Form_Peach.StringGridAddress1.Cells[12,i]+directoryseparator)<>0 then
                 begin
                 nodenotfinalized:=true;
                 break;
                 end;
              end;
          if nodenotfinalized=false then
-         with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.Items[j],Form_Peach.StringGridAddress1.Cells[11,i]) do
+         with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.Items[j],Form_Peach.StringGridAddress1.Cells[12,i]) do
             begin
             Selected:=true;
             ImageIndex:=3;
@@ -9020,7 +9037,7 @@ for i:=2 to Form_Peach.StringGridAddress1.RowCount-1 do
          end;
       end;
    if nodefound=false then
-      with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.Items[0],Form_Peach.StringGridAddress1.Cells[11,i]) do
+      with Form_peach.TreeView1.Items.AddChild(Form_peach.treeview1.Items[0],Form_Peach.StringGridAddress1.Cells[12,i]) do
          begin
          Selected:=true;
          ImageIndex:=3;
@@ -9032,7 +9049,7 @@ Form_Peach.TreeView1.visible:=true;
 Form_Peach.StringGridAddress1.clear;
 Form_Peach.StringGridAddress1.rowcount:=Form_Peach.treeview1.Items.Count;
 for i:=1 to Form_Peach.treeview1.Items.Count-1 do
-   Form_Peach.StringGridAddress1.Cells[11,i]:=Form_peach.treeview1.Items[i].text;
+   Form_Peach.StringGridAddress1.Cells[12,i]:=Form_peach.treeview1.Items[i].text;
 for j:=1 to Form_Peach.treeview1.Items.Count-1 do
    Form_peach.treeview1.Items[j].Text:=dirextractfilename(Form_peach.treeview1.Items[j].Text);
 Form_Peach.StringGridAddress1.EndUpdate;
@@ -9086,31 +9103,53 @@ end;
 
 procedure testwinrar;
 begin
-{$IFDEF MSWINDOWS}
 if libre_directive=2 then
    begin
    havewinrar:=false;
    exit;
    end;
-havewinrar:=true;
-if fileexists(GetEnvironmentVariable('ProgramFiles')+'\WinRAR\Rar.exe') then Form_peach.EditNameCustom.Caption:=GetEnvironmentVariable('ProgramFiles')+'\WinRAR\Rar.exe'
+if setrarmanual=1 then
+   begin
+   havewinrar:=true;
+   Form_peach.EditNameCustom.Caption:=Form_peach.pcustom1.caption;
+   end
 else
-   if fileexists(GetEnvironmentVariable('ProgramW6432')+'\WinRAR\Rar.exe') then Form_peach.EditNameCustom.Caption:=GetEnvironmentVariable('ProgramW6432')+'\WinRAR\Rar.exe'
+   begin
+   {$IFDEF MSWINDOWS}
+   havewinrar:=true;
+   if fileexists(GetEnvironmentVariable('ProgramFiles')+'\WinRAR\Rar.exe') then Form_peach.EditNameCustom.Caption:=GetEnvironmentVariable('ProgramFiles')+'\WinRAR\Rar.exe'
    else
-      if fileexists(executable_path+'Rar.exe') then Form_peach.EditNameCustom.Caption:=executable_path+'Rar.exe'
+      if fileexists(GetEnvironmentVariable('ProgramW6432')+'\WinRAR\Rar.exe') then Form_peach.EditNameCustom.Caption:=GetEnvironmentVariable('ProgramW6432')+'\WinRAR\Rar.exe'
       else
-         if fileexists(binpath+'Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'Rar.exe'
+         if fileexists(executable_path+'Rar.exe') then Form_peach.EditNameCustom.Caption:=executable_path+'Rar.exe'
          else
-            if fileexists(binpath+'rar\Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'rar\Rar.exe'
+            if fileexists(binpath+'Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'Rar.exe'
             else
-               if fileexists(binpath+'unrar\Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'unrar\Rar.exe'
+               if fileexists(binpath+'rar\Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'rar\Rar.exe'
                else
-                  havewinrar:=false;
-if havewinrar=true then Form_peach.EditExtCustom.Caption:='rar';
-//syntax is fixed so it is not needed to change it
-{$ELSE}
-havewinrar:=false;
-{$ENDIF}
+                  if fileexists(binpath+'unrar\Rar.exe') then Form_peach.EditNameCustom.Caption:=binpath+'unrar\Rar.exe'
+                  else
+                     havewinrar:=false;
+   //syntax is fixed so it is not needed to change it
+   {$ELSE}
+   havewinrar:=false;
+   {$ENDIF}
+   end;
+if havewinrar=true then
+   begin
+   Form_peach.EditExtCustom.Caption:='rar';
+   Form_peach.cbRARmanual.Hint:=Form_peach.EditNameCustom.Caption;
+   end;
+if havewinrar=false then
+   begin
+   form_peach.cbType.Items[4]:=txt_custom;
+   form_peach.mprofilerar.visible:=false;
+   end
+else
+   begin
+   form_peach.cbType.Items[4]:=txt_custom+'/RAR';
+   form_peach.mprofilerar.visible:=true;
+   end;
 end;
 
 procedure assign_guitext; //set text
@@ -9121,6 +9160,7 @@ Form_peach.Caption:=APPMAIN;
 with Form_peach do
 begin
 try
+cbRARmanual.caption:=txt_9_3_mrar;
 Labelsetwork.caption:=txt_settings+' > '+txt_3_1_workingdir;
 pmtoolsmall.Caption:=txt_2_9_st;
 labelCheckBoxSolidAddress.Caption:=txt_2_9_address;
@@ -9681,17 +9721,6 @@ cbType.Items[0]:=STR_7Z;
 cbType.Items[1]:=STR_ARC;
 cbType.Items[2]:=STR_BROTLI;
 cbType.Items[3]:=STR_BZIP2;
-testwinrar;
-if havewinrar=false then
-   begin
-   cbType.Items[4]:=txt_custom;
-   mprofilerar.visible:=false;
-   end
-else
-   begin
-   cbType.Items[4]:=txt_custom+'/RAR';
-   mprofilerar.visible:=true;
-   end;
 cbType.Items[5]:=STR_GZIP;
 cbType.Items[6]:=STR_PEA;
 cbType.Items[7]:=STR_QUAD;
@@ -10162,6 +10191,7 @@ LabelTheme2.Caption:=txt_author;
 LabelTheme3.Caption:=txt_license;
 themesave_label.Caption:=txt_create_theme;
 labelcolor4.Caption:=txt_8_3_temperature;
+labelcolor5.Caption:=txt_9_3_contrast;
 LabelColor1.Caption:=txt_pea_appcolor;
 LabelColor2.Caption:=txt_7_6_color;
 tbtemperature.hint:=txt_8_3_temperature;
@@ -10297,10 +10327,12 @@ mbtext.Caption:=txt_2_9_vst;
 po_sortby.Caption:=txt_3_7_sort;
 mbrowserccreated.Caption:=txt_8_2_tc;
 mbrowsercaccessed.Caption:=txt_8_2_ta;
-mbrowsercmethod.Caption:=txt_8_2_tm;
+mbrowsercmethod.Caption:=txt_method;
+mbrowserccomment.Caption:=txt_7_4_comment;
+po_browserccomment.Caption:=txt_7_4_comment;
 po_browserccreated.Caption:=txt_8_2_tc;
 po_browsercaccessed.Caption:=txt_8_2_ta;
-po_browsercmethod.Caption:=txt_8_2_tm;
+po_browsercmethod.Caption:=txt_method;
 mbrowsercname.Caption:=txt_name;
 mbrowserctype.Caption:=txt_type;
 mbrowsercsize.Caption:=txt_size;
@@ -10765,6 +10797,14 @@ end;
 
 procedure load_default_texts;
 begin
+txt_9_3_continue:='Continue anyway?';
+txt_9_3_contrast:='Contrast';
+txt_9_3_fsd:='Free space on destination may not be enough';
+txt_9_3_fsw:='Free space on temporary work path may not be enough';
+txt_9_3_mrar:='Manually set RAR binary';
+txt_9_3_canedit:='This archive type can be edited';
+txt_9_3_canforce:='This archive type can be edited (forced)';
+txt_9_3_cannotedit:='This archive type cannot be edited';
 txt_9_2_7za:='7z / p7zip alias';
 txt_9_2_changelog:='Change log';
 txt_9_2_tfaq:='Check for Translations';
@@ -10931,7 +10971,7 @@ txt_7_4_tkeep:='Keep original archive timestamp';
 txt_7_4_lock:='Lock archive';
 txt_7_4_locked:='locked';
 txt_7_4_lockconfirm:='Locked archives cannot be further modified, proceed locking this archive?';
-txt_7_4_comment:='Recover archive';
+txt_7_4_recover:='Recover archive';
 txt_7_4_tcurr:='Set archive timestamp from current system time';
 txt_7_4_setarc:='Set advanced archiving options';
 txt_7_4_setext:='Set advanced extraction options';
@@ -11396,7 +11436,7 @@ txt_2_4_wenc:='Encyclopedia';
 txt_2_4_extractfrom:='Extract from';
 txt_2_4_hexp:='Hex preview';
 txt_2_4_operation:='Operation';
-txt_2_4_path:='path is not writeable (i.e. read-only). Do you want to select a writeable output path?';
+txt_2_4_path:='path is not writeable (i.e. full, or read-only). Do you want to select a writeable output path?';
 txt_2_4_removefromclipboard:='Remove from clipboard';
 txt_2_4_stdclip:='Standard: keep a single selection in clipboard, clear cut operations on paste';
 txt_2_4_totalmem:='total memory';
@@ -13537,6 +13577,29 @@ with Form_peach do
    end;
    if (upcase(theme_name)<>'NOGRAPHIC-EMBEDDED') and (upcase(theme_name)<>'MAIN-EMBEDDED') then
    begin
+   try
+   getthemedbitmap(BArchiveSupported,thpath+graphicsfolder+'16'+directoryseparator+'16-archive.png');
+   getthemedbitmap(Barc7z,thpath+graphicsfolder+'16'+directoryseparator+'16-7z.png');
+   getthemedbitmap(Barcrar,thpath+graphicsfolder+'16'+directoryseparator+'16-rar.png');
+   getthemedbitmap(Barczip,thpath+graphicsfolder+'16'+directoryseparator+'16-zip.png');
+   getthemedbitmap(Barcblock,thpath+graphicsfolder+'16'+directoryseparator+'16-spanned.png');
+   getthemedbitmap(Barcdisk,thpath+graphicsfolder+'16'+directoryseparator+'16-diskimage.png');
+   getthemedbitmap(Barcinstaller,thpath+graphicsfolder+'16'+directoryseparator+'16-package.png');
+   getthemedbitmap(BArchiveSupported48,thpath+graphicsfolder+'48'+directoryseparator+'48-archive.png');
+   getthemedbitmap(Barc7z48,thpath+graphicsfolder+'48'+directoryseparator+'48-7z.png');
+   getthemedbitmap(Barcrar48,thpath+graphicsfolder+'48'+directoryseparator+'48-rar.png');
+   getthemedbitmap(Barczip48,thpath+graphicsfolder+'48'+directoryseparator+'48-zip.png');
+   getthemedbitmap(Barcblock48,thpath+graphicsfolder+'48'+directoryseparator+'48-spanned.png');
+   getthemedbitmap(Barcdisk48,thpath+graphicsfolder+'48'+directoryseparator+'48-diskimage.png');
+   getthemedbitmap(Barcinstaller48,thpath+graphicsfolder+'48'+directoryseparator+'48-package.png');
+   getthemedbitmap(BArchiveSupported96,thpath+graphicsfolder+'96'+directoryseparator+'96-archive.png');
+   getthemedbitmap(Barc7z96,thpath+graphicsfolder+'96'+directoryseparator+'96-7z.png');
+   getthemedbitmap(Barcrar96,thpath+graphicsfolder+'96'+directoryseparator+'96-rar.png');
+   getthemedbitmap(Barczip96,thpath+graphicsfolder+'96'+directoryseparator+'96-zip.png');
+   getthemedbitmap(Barcblock96,thpath+graphicsfolder+'96'+directoryseparator+'96-spanned.png');
+   getthemedbitmap(Barcdisk96,thpath+graphicsfolder+'96'+directoryseparator+'96-diskimage.png');
+   getthemedbitmap(Barcinstaller96,thpath+graphicsfolder+'96'+directoryseparator+'96-package.png');
+   except end;//9.3 theme update
    getthemedbitmap(Bhomefolder,thpath+graphicsfolder+'16'+directoryseparator+'16-home.png');
    getthemedbitmap(Bdownloadfolder,thpath+graphicsfolder+'16'+directoryseparator+'16-downloads.png');
    getthemedbitmap(Bcloudfolder,thpath+graphicsfolder+'16'+directoryseparator+'16-cloud.png');
@@ -14140,6 +14203,7 @@ userar:=1;//use winrar's rar.exe for rar compression if installed
 userar5:=1;//create rar5 instead of rar4
 userardict:=5;//(rar5 only) user dictionary size of 1..1024 MB, not implemented for legacy RAR4 format
 userarblake2:=0;//(rar5 only) use BLAKE2 hash instead of CRC
+setrarmanual:=0;
 userarsfx:=0;
 userarsolid:=0;
 userarrr:=0;
@@ -14256,6 +14320,7 @@ mcuzip:=1; //encode non ascii chars as utf8 in 7z77zip for ZIP filenames
 syntaxlevel7z:=1; //for generic OS use the oldest syntax level supported 7z 21.07
 {$IFDEF MSWINDOWS}syntaxlevel7z:=0;{$ENDIF}
 {$IFDEF LINUX}syntaxlevel7z:=0;{$ENDIF}
+{$IFDEF DARWIN}syntaxlevel7z:=0;{$ENDIF}
 ptsync:=2; //sync archive tree in navigation panel
 defaultactionst:=0;//by default open input file
 mappeddrivesinfo:=0; //(Windows) 0 skip, 1 get volume information for mapped network units
@@ -14271,7 +14336,7 @@ euns1:=1;
 checkver:='unchecked';//it make configuration fall back to defaults if conf is not read correctly, i.e. because of I/O errors or because it is found incompatible version's configuration (different number of lines)
 browsertype:=0;
 browsersize:=0;
-listsortcol:=12;
+listsortcol:=13;
 az:=true;
 col1size:=COL1D;
 col2size:=COL2D;
@@ -14280,7 +14345,8 @@ col4size:=COL4D;
 col5size:=COL5D;
 col6size:=COL6D;
 col7size:=COL7D;
-colmethodsize:=COL5D;
+colmethodsize:=COL7D;
+colcommentsize:=COL7D;
 tonewfolder:=0;
 immediate_execution:=0;
 parallelarchive:=0;
@@ -14293,6 +14359,7 @@ thighlight:=false;
 ccreated:=false;
 caccessed:=false;
 cmethod:=true;
+ccomment:=false;
 ctype:=true;
 csize:=true;
 cpacked:=true;
@@ -14874,6 +14941,7 @@ if (userar>1) then userar:=1;
 if (userar5>1) then userar5:=1;
 if (userardict<0) or (userardict>10) then userardict:=5;
 if (userarblake2>1) then userarblake2:=0;
+if (setrarmanual>1) then setrarmanual:=0;
 if (userarsfx>1) then userarsfx:=0;
 if (userarsolid>1) then userarsolid:=0;
 if (userarrr>1) then userarrr:=0;
@@ -15009,7 +15077,7 @@ if (euns<0) or (euns>1) then euns:=0;
 if (euns1<0) or (euns1>1) then euns1:=1;
 if (browsertype<0) or (browsertype>2) then browsertype:=0;
 if (browsersize<0) or (browsersize>2) then browsersize:=0;
-if (listsortcol<1) or (listsortcol>16) then listsortcol:=12;
+if (listsortcol<1) or (listsortcol>17) then listsortcol:=13;
 if (col1size<26) or (col1size>1024) then col1size:=COL1D; //on Windows listview column size is currently fixed to 25 in Lazarus 0.9.26.2
 if (col2size<26) or (col2size>1024) then col2size:=COL2D;
 if (col3size<26) or (col3size>1024) then col3size:=COL3D;
@@ -15017,7 +15085,8 @@ if (col4size<26) or (col4size>1024) then col4size:=COL4D;
 if (col5size<26) or (col5size>1024) then col5size:=COL5D;
 if (col6size<26) or (col6size>1024) then col6size:=COL6D;
 if (col7size<26) or (col7size>1024) then col7size:=COL7D;
-if (colmethodsize<26) or (colmethodsize>1024) then colmethodsize:=COL5D;
+if (colmethodsize<26) or (colmethodsize>1024) then colmethodsize:=COL7D;
+if (colcommentsize<26) or (colcommentsize>1024) then colcommentsize:=COL7D;
 if (tonewfolder>1) then tonewfolder:=0;
 if (immediate_execution>1) then immediate_execution:=0;
 if (parallelarchive>1) then parallelarchive:=1;
@@ -15509,7 +15578,7 @@ procedure apply_theme; //apply colors but not opacity
 var sepcol:TColor;
 begin
 if color3='clForm' then color3:=ColorToString(PTACOL);
-getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature);
+getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature,contrast);
 img_utils.relwindowcolor:=stringtocolor(color2);
 Form_peach.Color:=stringtocolor(color2);
 //Form_peach.Font.Color:=stringtocolor(color5);
@@ -15951,6 +16020,7 @@ Form_peach.ColorButton1.ButtonColor:=stringtocolor(color1);
 Form_peach.ColorButton2.Color:=stringtocolor(color2);
 Form_peach.ColorButton2.ButtonColor:=stringtocolor(color2);
 Form_peach.tbtemperature.Position:=temperature;
+Form_peach.tbcontrast.Position:=contrast-4;
 Form_peach.ColorButton3.Color:=stringtocolor(color3);
 Form_peach.ColorButton3.ButtonColor:=stringtocolor(color3);
 case pspacing of
@@ -15999,32 +16069,6 @@ if prevpanel='open' then
    end;
 end;
 
-procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall:integer);
-begin
-if length(s)<8 then
-   begin
-   usealtcolor:=0;
-   highlighttabs:=0;
-   accenttoolbar:=0;
-   toolcentered:=0;
-   altaddressstyle:=1;
-   solidaddressstyle:=0;
-   alttabstyle:=2;
-   ensmall:=0;
-   end
-else
-   begin
-   usealtcolor:=strtoint(s[1]);//use alternate colors in grids
-   highlighttabs:=strtoint(s[2]);//use alternate color for tabs
-   accenttoolbar:=strtoint(s[3]);//use accent color in tool bar
-   toolcentered:=strtoint(s[4]);//centered tool bar buttons
-   altaddressstyle:=strtoint(s[5]);//use alternative address bar style
-   solidaddressstyle:=strtoint(s[6]);//solid address bar style
-   alttabstyle:=strtoint(s[7]);//use alternative tabs style
-   ensmall:=strtoint(s[8]);//enlarge small icons
-   end;
-end;
-
 procedure readconf_colors;
 var
    s:ansistring;
@@ -16037,7 +16081,7 @@ readln(conf,color2);//background color, used to derivate grayed colors
 readln(conf,color3);//accent text color
 readln(conf,color4);//unused
 readln(conf,color5);//text, currently unsupported
-readln(conf,s); decodebintheming(s,usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall);
+readln(conf,s); decodebintheming(s,usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall,contrast);
 readln(conf,s); pzooming:=strtoint(s); //icons zooming
 readln(conf,s); pspacing:=strtoint(s); //icons spacing
 readln(conf,s); temperature:=strtoint(s); //color temperature
@@ -16057,7 +16101,7 @@ readln(conf,color2d);
 readln(conf,color3d);
 readln(conf,color4d);
 readln(conf,color5d);
-readln(conf,s); decodebintheming(s,usealtcolord,highlighttabsd,accenttoolbard,toolcenteredd,altaddressstyled,solidaddressstyled,alttabstyled,ensmalld);
+readln(conf,s); decodebintheming(s,usealtcolord,highlighttabsd,accenttoolbard,toolcenteredd,altaddressstyled,solidaddressstyled,alttabstyled,ensmalld,contrastd);
 readln(conf,s); pzoomingd:=strtoint(s);
 readln(conf,s); pspacingd:=strtoint(s);
 readln(conf,s); temperatured:=strtoint(s);
@@ -17695,6 +17739,14 @@ readln(conf,s); forcetype:=strtoint(s);
 readln(conf,s);
 readln(conf,s);
 readln(conf,s); ntoolstyle:=strtoint(s);
+readln(conf,s);
+readln(conf,s);
+readln(conf,s); if strtoint(s)=1 then ccomment:=true else ccomment:=false;
+readln(conf,s); colcommentsize:=strtoint(s);
+readln(conf,s);
+readln(conf,s);
+readln(conf,s); setrarmanual:=strtoint(s);
+testwinrar;
 end;
 
 procedure writeconf_colors;
@@ -17706,7 +17758,7 @@ writeln(conf,color2);
 writeln(conf,color3);
 writeln(conf,color4);
 writeln(conf,color5);
-writeln(conf,inttostr(usealtcolor)+inttostr(highlighttabs)+inttostr(accenttoolbar)+inttostr(toolcentered)+inttostr(altaddressstyle)+inttostr(solidaddressstyle)+inttostr(alttabstyle)+inttostr(ensmall));
+writeln(conf,inttostr(usealtcolor)+inttostr(highlighttabs)+inttostr(accenttoolbar)+inttostr(toolcentered)+inttostr(altaddressstyle)+inttostr(solidaddressstyle)+inttostr(alttabstyle)+inttostr(ensmall)+inttostr(contrast));
 writeln(conf,inttostr(pzooming));
 writeln(conf,inttostr(pspacing));
 writeln(conf,inttostr(temperature));
@@ -17721,7 +17773,7 @@ writeln(conf,color2d);
 writeln(conf,color3d);
 writeln(conf,color4d);
 writeln(conf,color5d);
-writeln(conf,inttostr(usealtcolord)+inttostr(highlighttabsd)+inttostr(accenttoolbard)+inttostr(toolcenteredd)+inttostr(altaddressstyled)+inttostr(solidaddressstyled)+inttostr(alttabstyled)+inttostr(ensmalld));
+writeln(conf,inttostr(usealtcolord)+inttostr(highlighttabsd)+inttostr(accenttoolbard)+inttostr(toolcenteredd)+inttostr(altaddressstyled)+inttostr(solidaddressstyled)+inttostr(alttabstyled)+inttostr(ensmalld)+inttostr(contrast));
 writeln(conf,inttostr(pzoomingd));
 writeln(conf,inttostr(pspacingd));
 writeln(conf,inttostr(temperatured));
@@ -17975,8 +18027,8 @@ if (browsertype=0) and (Form_Peach.EditOpenIn.Caption<>txt_mypc) then
    if csize=false then writeln(conf,inttostr(col3size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[2].Width));
    if cpacked=false then writeln(conf,inttostr(col4size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[3].Width));
    if cdate=false then writeln(conf,inttostr(col5size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[4].Width));
-   if catt=false then writeln(conf,inttostr(col6size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[8].Width));
-   if ccrc=false then writeln(conf,inttostr(col7size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[9].Width));
+   if catt=false then writeln(conf,inttostr(col6size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[9].Width));
+   if ccrc=false then writeln(conf,inttostr(col7size)) else writeln(conf,inttostr(Form_Peach.ListView1.Column[10].Width));
    end
 else
    begin
@@ -18440,10 +18492,10 @@ if caccessed=true then writeln(conf,'1') else writeln(conf,'0');
 if cmethod=true then writeln(conf,'1') else writeln(conf,'0');
 if (browsertype=0) and (Form_Peach.EditOpenIn.Caption<>txt_mypc) and (fun='UN7Z') then
    if cmethod=false then
-      writeln(conf,inttostr(col7size))
+      writeln(conf,inttostr(col5size))
    else
       writeln(conf,inttostr(Form_Peach.ListView1.Column[7].Width))
-else writeln(conf,inttostr(col7size));
+else writeln(conf,inttostr(col5size));
 writeln(conf,'');
 writeln(conf,'[preferred checksum and hash algorithms]');
 writeln(conf,Form_peach.Editcommonalgo.Caption);
@@ -18545,6 +18597,18 @@ writeln(conf,inttostr(forcetype));
 writeln(conf,'');
 writeln(conf,'[toolbar style]');
 writeln(conf,inttostr(ntoolstyle));
+writeln(conf,'');
+writeln(conf,'[extended columns, comments]');
+if ccomment=true then writeln(conf,'1') else writeln(conf,'0');
+if (browsertype=0) and (Form_Peach.EditOpenIn.Caption<>txt_mypc) and (fun='UN7Z') then
+   if ccomment=false then
+      writeln(conf,inttostr(col7size))
+   else
+      writeln(conf,inttostr(Form_Peach.ListView1.Column[8].Width))
+else writeln(conf,inttostr(col7size));
+writeln(conf,'');
+writeln(conf,'[Manually set RAR binary]');
+writeln(conf,inttostr(setrarmanual));
 end;
 
 function geticon(fullname,fulltype:ansistring; pc:boolean):integer;
@@ -19519,6 +19583,7 @@ if userar=1 then Form_peach.cbRAR.State:=cbChecked else Form_peach.cbRAR.State:=
 if userar5=1 then Form_peach.cbRAR5.State:=cbChecked else Form_peach.cbRAR5.State:=cbUnChecked;
 Form_peach.comboRARdict.Itemindex:=userardict;
 if userarblake2=1 then Form_peach.cbRARBLAKE2.State:=cbChecked else Form_peach.cbRARBLAKE2.State:=cbUnChecked;
+if setrarmanual=1 then Form_peach.cbRARmanual.State:=cbChecked else Form_peach.cbRARmanual.State:=cbUnChecked;
 if userarsfx=1 then Form_peach.cbRARsfx.State:=cbChecked else Form_peach.cbRARsfx.State:=cbUnChecked;
 if userarsolid=1 then Form_peach.cbRARsolid.State:=cbChecked else Form_peach.cbRARsolid.State:=cbUnChecked;
 if userarrr=1 then Form_peach.cbRARrr.State:=cbChecked else Form_peach.cbRARrr.State:=cbUnChecked;
@@ -19714,6 +19779,7 @@ if (upcase(theme_name)=upcase(DEFAULT_THEME)) then
    ensmalld:=0;
    pspacingd:=4;
    temperatured:=0;
+   contrastd:=4;
    end;
 if (upcase(theme_name)=upcase('nographic-embedded')) then
    begin
@@ -19735,6 +19801,7 @@ if (upcase(theme_name)=upcase('nographic-embedded')) then
    ensmalld:=0;
    pspacingd:=4;
    temperatured:=0;
+   contrastd:=4;
    end;
 if upcase(theme_name)='MAIN-EMBEDDED' then Form_peach.ComboBoxTheme.ItemIndex:=0
 else
@@ -20924,22 +20991,22 @@ if Form_peach.visible=true then
       if (Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder) then
          begin
          if mode='selected' then
-            if Form_peach.StringGridList.Cells[15,i]='0' then
+            if Form_peach.StringGridList.Cells[16,i]='0' then
                begin
-               Form_peach.StringGridList.Cells[10,i]:='';
+               Form_peach.StringGridList.Cells[11,i]:='';
                continue;
                end;
          filemode:=0;
          try
-         assignfile(f,Form_peach.StringGridList.Cells[11,i]);
+         assignfile(f,Form_peach.StringGridList.Cells[12,i]);
          filemode:=0;
          reset(f);
          except
-         Form_peach.StringGridList.Cells[10,i]:='';
+         Form_peach.StringGridList.Cells[11,i]:='';
          continue;
          end;
-         if mode='selected' then Form_peach.Caption:=Form_Peach.ListView1.Column[9].Caption+' ('+inttostr(t+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...'
-         else Form_peach.Caption:=Form_Peach.ListView1.Column[9].Caption+' ('+inttostr(i)+'/'+inttostr(rc)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
+         if mode='selected' then Form_peach.Caption:=Form_Peach.ListView1.Column[10].Caption+' ('+inttostr(t+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...'
+         else Form_peach.Caption:=Form_Peach.ListView1.Column[10].Caption+' ('+inttostr(i)+'/'+inttostr(rc)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
          k:=0;
          t:=t+1;
          case browserch of
@@ -21017,31 +21084,31 @@ if Form_peach.visible=true then
          case browserch of
             1: Adler := (Adler shr 24) or ((Adler shr 8) and $FF00) or ((Adler shl 8) and $FF0000) or (Adler shl 24);
             2: CRC16 := swap(CRC16);
-            3: Form_peach.StringGridList.Cells[10,i]:=hexstr(@pgpsig,sizeof(pgpsig));
+            3: Form_peach.StringGridList.Cells[11,i]:=hexstr(@pgpsig,sizeof(pgpsig));
             4: CRC32 := (CRC32 shr 24) or ((CRC32 shr 8) and $FF00) or ((CRC32 shl 8) and $FF0000) or (CRC32 shl 24);
             end;
          case browserch of
-            1: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@adler,sizeof(Adler)));
-            2: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC16,sizeof(CRC16)));
-            4: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
-            5: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC64,sizeof(CRC64)));
+            1: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@adler,sizeof(Adler)));
+            2: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC16,sizeof(CRC16)));
+            4: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
+            5: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC64,sizeof(CRC64)));
             6: begin
-               Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
+               Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
                if ED2KRes.differ then Form_peach.StringGridList.Cells[7,i]:=Form_peach.StringGridList.Cells[7,i]+' / eMule: '+upcase(hexstr(@ED2KRes.eMule, sizeof(ED2KRes.eMule)));
                end;
-            7: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@MD4Digest,sizeof(MD4Digest)));
-            8: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@MD5Digest,sizeof(MD5Digest)));
-            9: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
-           10: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
-           11: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));
-           12: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
-           13: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
-           14: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));
-           15: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
-           16: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
-           17: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
+            7: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@MD4Digest,sizeof(MD4Digest)));
+            8: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@MD5Digest,sizeof(MD5Digest)));
+            9: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
+           10: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
+           11: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));
+           12: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
+           13: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
+           14: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));
+           15: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
+           16: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
+           17: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
             end;
-         Form_Peach.ListView1.Items[i-1].SubItems[8]:=Form_Peach.StringGridList.Cells[10,i];
+         Form_Peach.ListView1.Items[i-1].SubItems[9]:=Form_Peach.StringGridList.Cells[11,i];
          end;
       end;
    exit_busy_status;
@@ -21081,31 +21148,31 @@ result:=0;
 //test for identical checksums
 for i:=1 to Form_peach.StringGridList.Rowcount-1 do
    begin
-   s:=Form_peach.StringGridList.Cells[10,i];
+   s:=Form_peach.StringGridList.Cells[11,i];
    duplicate:=false;
    for j:=1 to Form_peach.StringGridList.Rowcount-1 do
-      if (Form_peach.StringGridList.Cells[10,j]<>'')
-      and (s=Form_peach.StringGridList.Cells[10,j])
+      if (Form_peach.StringGridList.Cells[11,j]<>'')
+      and (s=Form_peach.StringGridList.Cells[11,j])
       and (i<>j) then
          begin
          duplicate:=true;
          break;
          end;
-   if duplicate=false then Form_peach.StringGridList.Cells[10,i]:=''
+   if duplicate=false then Form_peach.StringGridList.Cells[11,i]:=''
    else
       result:=result+1;
-   Form_Peach.ListView1.Items[i-1].SubItems[8]:=Form_Peach.StringGridList.Cells[10,i];
+   Form_Peach.ListView1.Items[i-1].SubItems[9]:=Form_Peach.StringGridList.Cells[11,i];
    end;
 //mark duplicate all copies but one (last found)
 for i:=1 to Form_peach.StringGridList.Rowcount-2 do
    begin
-   s:=Form_peach.StringGridList.Cells[10,i];
+   s:=Form_peach.StringGridList.Cells[11,i];
    for j:=i+1 to Form_peach.StringGridList.Rowcount-1 do
-      if (Form_peach.StringGridList.Cells[10,j]<>'')
-      and (s=Form_peach.StringGridList.Cells[10,j]) then
+      if (Form_peach.StringGridList.Cells[11,j]<>'')
+      and (s=Form_peach.StringGridList.Cells[11,j]) then
          begin
          Form_peach.StringGridList.Cells[4,i]:='D';
-         Form_peach.StringGridList.Cells[14,i]:='D';
+         Form_peach.StringGridList.Cells[15,i]:='D';
          Form_Peach.ListView1.Items[i-1].SubItems[2]:=Form_Peach.StringGridList.Cells[4,i];
          end;
    end;
@@ -21117,7 +21184,7 @@ var
 begin
 result:=0;
 for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-  if Form_peach.StringGridList.Cells[10,i]<>'' then result:=result+1;
+  if Form_peach.StringGridList.Cells[11,i]<>'' then result:=result+1;
 end;
 
 //procedure to deduplicate files, mode displayed: all in current folder / search filter; selected: all selected
@@ -21180,22 +21247,22 @@ if Form_peach.visible=true then
       if (Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder) and (Form_peach.StringGridList.Cells[3,i]<>'0') then
          begin
          if mode='selected' then
-            if Form_peach.StringGridList.Cells[15,i]='0' then
+            if Form_peach.StringGridList.Cells[16,i]='0' then
                begin
-               Form_peach.StringGridList.Cells[10,i]:='';
+               Form_peach.StringGridList.Cells[11,i]:='';
                continue;
                end;
          if countsize(Form_peach.StringGridList.Cells[3,i])<2 then continue;
          filemode:=0;
          try
-         assignfile(f,Form_peach.StringGridList.Cells[11,i]);
+         assignfile(f,Form_peach.StringGridList.Cells[12,i]);
          filemode:=0;
          reset(f);
          except
          continue;
          end;
-         if mode='selected' then Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[9].Caption+' ('+inttostr(t+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...'
-         else Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[9].Caption+' ('+inttostr(i)+'/'+inttostr(rc)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
+         if mode='selected' then Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[10].Caption+' ('+inttostr(t+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...'
+         else Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[10].Caption+' ('+inttostr(i)+'/'+inttostr(rc)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
          k:=0;
          t:=t+1;
          case browserch of
@@ -21273,34 +21340,34 @@ if Form_peach.visible=true then
          case browserch of
             1: Adler := (Adler shr 24) or ((Adler shr 8) and $FF00) or ((Adler shl 8) and $FF0000) or (Adler shl 24);
             2: CRC16 := swap(CRC16);
-            3: Form_peach.StringGridList.Cells[10,i]:=hexstr(@pgpsig,sizeof(pgpsig));
+            3: Form_peach.StringGridList.Cells[11,i]:=hexstr(@pgpsig,sizeof(pgpsig));
             4: CRC32 := (CRC32 shr 24) or ((CRC32 shr 8) and $FF00) or ((CRC32 shl 8) and $FF0000) or (CRC32 shl 24);
             end;
          case browserch of
-            1: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@adler,sizeof(Adler)));
-            2: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC16,sizeof(CRC16)));
-            4: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
-            5: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC64,sizeof(CRC64)));
+            1: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@adler,sizeof(Adler)));
+            2: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC16,sizeof(CRC16)));
+            4: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
+            5: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC64,sizeof(CRC64)));
             6: begin
-               Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
+               Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
                if ED2KRes.differ then Form_peach.StringGridList.Cells[7,i]:=Form_peach.StringGridList.Cells[7,i]+' / eMule: '+upcase(hexstr(@ED2KRes.eMule, sizeof(ED2KRes.eMule)));
                end;
-            7: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@MD4Digest,sizeof(MD4Digest)));
-            8: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@MD5Digest,sizeof(MD5Digest)));
-            9: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
-           10: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
-           11: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));
-           12: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
-           13: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
-           14: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));
-           15: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
-           16: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
-           17: Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
+            7: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@MD4Digest,sizeof(MD4Digest)));
+            8: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@MD5Digest,sizeof(MD5Digest)));
+            9: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
+           10: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
+           11: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));
+           12: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
+           13: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
+           14: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));
+           15: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
+           16: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
+           17: Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
             end;
-         Form_peach.StringGridList.Cells[10,i]:=Form_peach.StringGridList.Cells[3,i]+'/'+Form_peach.StringGridList.Cells[10,i];
-         Form_Peach.ListView1.Items[i-1].SubItems[8]:=Form_Peach.StringGridList.Cells[10,i];
+         Form_peach.StringGridList.Cells[11,i]:=Form_peach.StringGridList.Cells[3,i]+'/'+Form_peach.StringGridList.Cells[11,i];
+         Form_Peach.ListView1.Items[i-1].SubItems[9]:=Form_Peach.StringGridList.Cells[11,i];
          end;
-   Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[9].Caption+' '+s+'...';
+   Form_peach.Caption:=txt_4_1_duplicatesfind+', '+Form_Peach.ListView1.Column[10].Caption+' '+s+'...';
    dup:=checkduplicates;
    exit_busy_status;
    Form_peach.Caption:=s;
@@ -21341,15 +21408,15 @@ if Form_peach.visible=true then
       if (Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder) and (Form_peach.StringGridList.Cells[3,i]<>'0') then
          begin
          if mode='selected' then
-            if Form_peach.StringGridList.Cells[15,i]='0' then
+            if Form_peach.StringGridList.Cells[16,i]='0' then
                begin
-               Form_peach.StringGridList.Cells[10,i]:='';
+               Form_peach.StringGridList.Cells[11,i]:='';
                continue;
                end;
          if countsize2(Form_peach.StringGridList.Cells[3,i])<2 then continue;
          filemode:=0;
          try
-         assignfile(f,Form_peach.StringGridList.Cells[11,i]);
+         assignfile(f,Form_peach.StringGridList.Cells[12,i]);
          filemode:=0;
          reset(f);
          except
@@ -21386,9 +21453,9 @@ if Form_peach.visible=true then
          close(f);
          CRC32Final(CRC32);
          CRC32 := (CRC32 shr 24) or ((CRC32 shr 8) and $FF00) or ((CRC32 shl 8) and $FF0000) or (CRC32 shl 24);
-         Form_peach.StringGridList.Cells[10,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
-         Form_peach.StringGridList.Cells[10,i]:=Form_peach.StringGridList.Cells[3,i]+'/'+Form_peach.StringGridList.Cells[10,i];
-         Form_Peach.ListView1.Items[i-1].SubItems[8]:=Form_Peach.StringGridList.Cells[10,i];
+         Form_peach.StringGridList.Cells[11,i]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
+         Form_peach.StringGridList.Cells[11,i]:=Form_peach.StringGridList.Cells[3,i]+'/'+Form_peach.StringGridList.Cells[11,i];
+         Form_Peach.ListView1.Items[i-1].SubItems[9]:=Form_Peach.StringGridList.Cells[11,i];
          end;
    Form_peach.Caption:=txt_6_6_pdupfind+' '+s+'...';
    dup:=checkduplicates;
@@ -21435,9 +21502,9 @@ if Form_peach.visible=true then
       if (Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder) then
          begin
          if mode='selected' then
-            if Form_peach.StringGridList.Cells[15,i]='0' then
+            if Form_peach.StringGridList.Cells[16,i]='0' then
                begin
-               Form_peach.StringGridList.Cells[10,i]:='';
+               Form_peach.StringGridList.Cells[11,i]:='';
                continue;
                end;
          if mode='selected' then Form_peach.Caption:=txt_7_0_af+', ('+inttostr(t+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...'
@@ -21445,13 +21512,13 @@ if Form_peach.visible=true then
          nfiles:=0;
          ndirs:=0;
          ctsize:=0;
-         rcountsize(Form_peach.StringGridList.Cells[11,i]+directoryseparator,'*',faAnyFile,true,nfiles,ndirs,ctsize);
-         Form_peach.StringGridList.Cells[10,i]:=inttostr(ndirs-1)+' '+txt_dirs+' '+inttostr(nfiles)+' '+txt_files+' '+nicenumber(inttostr(ctsize),filesizebase);
-         Form_Peach.ListView1.Items[i-1].SubItems[8]:=Form_Peach.StringGridList.Cells[10,i];
+         rcountsize(Form_peach.StringGridList.Cells[12,i]+directoryseparator,'*',faAnyFile,true,nfiles,ndirs,ctsize);
+         Form_peach.StringGridList.Cells[11,i]:=inttostr(ndirs-1)+' '+txt_dirs+' '+inttostr(nfiles)+' '+txt_files+' '+nicenumber(inttostr(ctsize),filesizebase);
+         Form_Peach.ListView1.Items[i-1].SubItems[9]:=Form_Peach.StringGridList.Cells[11,i];
          if ndirs-1+nfiles=0 then //mark empty folders
             begin
             Form_Peach.StringGridList.Cells[4,i]:='E';
-            Form_peach.StringGridList.Cells[14,i]:='E';
+            Form_peach.StringGridList.Cells[15,i]:='E';
             Form_Peach.ListView1.Items[i-1].SubItems[2]:=Form_Peach.StringGridList.Cells[4,i];
             end;
          t:=t+1;
@@ -21854,6 +21921,7 @@ begin
    solidaddressstyle:=solidaddressstyled;
    alttabstyle:=alttabstyled;
    temperature:=temperatured;
+   contrast:=contrastd;
    imgloaded:=false;
    apply_theme;
    try
@@ -21904,6 +21972,7 @@ altaddressstyle:=altaddressstyled;
 solidaddressstyle:=solidaddressstyled;
 alttabstyle:=alttabstyled;
 temperature:=temperatured;
+contrast:=contrastd;
 //imgloaded:=false;
 //apply_theme;
 texts('volatile');
@@ -23969,9 +24038,12 @@ begin
   try
     //check for valid path, else set executable path as path
     if length(path) = 0 then
-      dir := extractfilepath(ParamStr(0))
+       begin
+       result := 4;
+       exit;
+       end
     else
-      dir := path;
+       dir := path;
     //check for directoryseparator at the end of the path (needed)
     if dir<>'' then
       if dir[length(dir)] <> DirectorySeparator then
@@ -24179,6 +24251,7 @@ tdirs:=0;
 tvolumes:=0;
 tsize:=0;
 tpcompsize:=0;
+sizefreeint:=0;
 //hint overlay for add
 if sg=Form_peach.StringGrid1 then
    if sg.RowCount>1 then hide_panelhintadd
@@ -24231,6 +24304,7 @@ if upsort=true then
    Form_peach.StringGrid1.Cells[11,1]:='1';
    Form_peach.StringGrid1.Row:=1;
    end;
+sizefreeint:=tsize;
 status1:=inttostr(tdirs)+' '+txt_dirs+' '+inttostr(tfiles)+' '+txt_files+' '+nicenumber(inttostr(tsize),filesizebase);
 if updatingarchive_inarchive=false then
    begin
@@ -24315,6 +24389,7 @@ begin
 tfiles:=0;
 tdirs:=0;
 tsize:=0;
+sizefreeint:=0;
 //set hint overlay for extraction
    if Form_peach.StringGrid2.RowCount>1 then hide_panelhintextract
    else Form_peach.PanelHintExtract.Visible:=true;
@@ -24348,7 +24423,7 @@ Form_peach.labelstatusEx.Visible:=false;
 Form_peach.labelstatusEx.Caption:=txt_3_1_workingdir+' '+Form_peach.ComboBoxWD.Caption+' '+Form_peach.Labelcwd.Caption;
 autosize_stringgrid2;
 if Form_peach.StringGrid2.RowCount>1 then Form_peach.StringGrid2.Cells[11,1]:='1';
-
+sizefreeint:=tsize;
 case fun of
    'UNZPAQ': setextzpaqext(1);//zpaq extended options
    'UNBROTLI': setextzpaqext(3);//br zst extended options only
@@ -24523,7 +24598,7 @@ begin
 if Form_peach.SelectDirectoryDialog1.Execute then
    if Form_peach.SelectDirectoryDialog1.FileName<>'' then
       begin
-      addfilefolder_ext_fromname(Form_peach.SelectDirectoryDialog1.FileName);
+      addfilefolder_ext_fromname(Form_peach.SelectDirectoryDialog1.FileName+DirectorySeparator);
       end;
 end;
 
@@ -25013,7 +25088,7 @@ s1:=LowerCase(extractfilename(Form_peach.pcustom1.caption));
 cutextension(s1);
 Form_peach.EditExtCustom.Caption:=s1;
 Form_peach.ComboBoxArchive1.ItemIndex:=customsyntax;
-if LowerCase(Form_peach.pcustom1.caption)='makecab.exe' then Form_peach.pcustmakecabClick(nil);//
+if LowerCase(Form_peach.pcustom1.caption)='makecab.exe' then Form_peach.pcustmakecabClick(nil);
 end;
 
 procedure archive_type_select(s:ansistring);
@@ -25117,9 +25192,8 @@ if (s=txt_custom) or (s=txt_custom+'/RAR') then
    typehint:=txt_type_description_custom;
    getarccaption(s);
    Form_peach.CheckBoxConvert.Enabled:=true;
-   if (havewinrar=true) and (userar=1) then
+   if userar=1 then
       begin
-      Form_peach.cbRAR.Enabled:=true;
       Form_peach.CompressionCustom.Visible:=false;
       Form_peach.PanelRar.Visible:=true;
       Form_peach.EditExtCustom.Caption:='rar';
@@ -25135,7 +25209,6 @@ if (s=txt_custom) or (s=txt_custom+'/RAR') then
       end
    else
       begin
-      if havewinrar=false then Form_peach.cbRAR.Enabled:=false;
       Form_peach.CompressionCustom.Visible:=true;
       Form_peach.PanelRar.Visible:=false;
       setnonrarcust;
@@ -25540,13 +25613,13 @@ if length(lastobjarch)>1 then
    if lastobjarch[length(lastobjarch)]=directoryseparator then setlength(lastobjarch,length(lastobjarch)-1);
 if lastobjarch<>'' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_Peach.StringGridList.Cells[11,i]=lastobjarch then
+      if Form_Peach.StringGridList.Cells[12,i]=lastobjarch then
          begin
          lastobjfound:=true;
          break;
          end;
 if lastobjfound=false then i:=1;
-Form_peach.StringGridList.Cells[15,i]:='1';
+Form_peach.StringGridList.Cells[16,i]:='1';
 Form_peach.StringGridList.Row:=i;
 end;
 
@@ -25565,9 +25638,9 @@ if rc>1 then
       else
          s:=prefixfaz+Form_peach.StringGridList.Cells[c,i]+' '+Form_peach.StringGridList.Cells[1,i];
       if length(s)>256 then setlength(s,256);
-      Form_peach.StringGridList.Cells[16,i]:=s;
+      Form_peach.StringGridList.Cells[17,i]:=s;
       end;
-Form_peach.StringGridList.SortColRow(true,16);
+Form_peach.StringGridList.SortColRow(true,17);
 az:=true;
 end;
 
@@ -25585,9 +25658,9 @@ if rc>1 then
       else
          s:=prefixfaz+Form_peach.StringGridList.Cells[c,i]+' '+Form_peach.StringGridList.Cells[1,i];
       if length(s)>256 then setlength(s,256);
-      Form_peach.StringGridList.Cells[16,i]:=s;
+      Form_peach.StringGridList.Cells[17,i]:=s;
       end;
-Form_peach.StringGridList.SortColRow(true,16);
+Form_peach.StringGridList.SortColRow(true,17);
 end;
 
 procedure sort_za_stringgridlist(c:integer);
@@ -25608,10 +25681,10 @@ if c=2 then //for column = type sort folder always on top
             begin
             s:=prefixdza+Form_peach.StringGridList.Cells[c,i]+'  '+Form_peach.StringGridList.Cells[1,i];
             if length(s)>256 then setlength(s,256);
-            Form_peach.StringGridList.Cells[16,i]:=s;
+            Form_peach.StringGridList.Cells[17,i]:=s;
             end;
          end;
-      Form_peach.StringGridList.SortColRow(true,16);
+      Form_peach.StringGridList.SortColRow(true,17);
       end;
    end;
 
@@ -25767,8 +25840,8 @@ if (Form_peach.StringGridList.RowCount<searchsize) or (prebrowse=0) then
 begin
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
    begin
-   s:=Form_peach.StringGridList.Cells[11,i];
-   if dirExtractFilePath(Form_peach.StringGridList.Cells[11,i])=dirExtractFilePath(Form_peach.StringGridList.Cells[11,i-1]) then
+   s:=Form_peach.StringGridList.Cells[12,i];
+   if dirExtractFilePath(Form_peach.StringGridList.Cells[12,i])=dirExtractFilePath(Form_peach.StringGridList.Cells[12,i-1]) then
    else
       repeat
       s:=dirExtractFilePath(s);
@@ -25778,8 +25851,8 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
          found:=false;
          sle:=Length(s);
          for j:=1 to Form_peach.StringGridAddress1.RowCount-1 do
-            if sle=length(Form_peach.StringGridAddress1.Cells[11,j]) then
-            if s=Form_peach.StringGridAddress1.Cells[11,j] then
+            if sle=length(Form_peach.StringGridAddress1.Cells[12,j]) then
+            if s=Form_peach.StringGridAddress1.Cells[12,j] then
                begin
                found:=true;
                break;
@@ -25796,14 +25869,14 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
                end;
             Form_peach.StringGridAddress1.Cells[1,rc]:=dirextractfilename(s);
             Form_peach.StringGridAddress1.Cells[2,rc]:=txt_list_isfolder;
-            Form_peach.StringGridAddress1.Cells[11,rc]:=s;
-            Form_peach.StringGridAddress1.Cells[12,rc]:=prefixd+smartsortable(dirextractfilename(s));
+            Form_peach.StringGridAddress1.Cells[12,rc]:=s;
+            Form_peach.StringGridAddress1.Cells[13,rc]:=prefixd+smartsortable(dirextractfilename(s));
             Form_peach.StringGridAddress1.Cells[3,rc]:='0';
-            Form_peach.StringGridAddress1.Cells[13,rc]:='110';
-            Form_peach.StringGridAddress1.Cells[4,rc]:='0';
             Form_peach.StringGridAddress1.Cells[14,rc]:='110';
-            Form_peach.StringGridAddress1.Cells[9,rc]:='D';
-            Form_peach.StringGridAddress1.Cells[15,rc]:='0';
+            Form_peach.StringGridAddress1.Cells[4,rc]:='0';
+            Form_peach.StringGridAddress1.Cells[15,rc]:='110';
+            Form_peach.StringGridAddress1.Cells[10,rc]:='D';
+            Form_peach.StringGridAddress1.Cells[16,rc]:='0';
             Form_peach.StringGridAddress2.Rows[rc2].Assign(Form_peach.StringGridAddress1.Rows[rc]);
             nfolders:=nfolders+1;
             rc:=rc+1;
@@ -25845,9 +25918,9 @@ for i:=1 to Form_peach.StringGridAddress3.RowCount-1 do
    tsize:=0;
    tcsize:=0;
    rc:=Form_peach.StringGridList.RowCount-1;
-   st:=Form_peach.StringGridAddress3.Cells[11,i]+directoryseparator;
+   st:=Form_peach.StringGridAddress3.Cells[12,i]+directoryseparator;
    for j:=1 to rc do
-      if pos(st,Form_peach.StringGridList.Cells[11,j])=1 then
+      if pos(st,Form_peach.StringGridList.Cells[12,j])=1 then
          begin
          if Form_peach.StringGridList.Cells[2,j] =txt_list_isfolder then
             dc:=dc+1
@@ -25858,14 +25931,14 @@ for i:=1 to Form_peach.StringGridAddress3.RowCount-1 do
          end;
    rc:=Form_peach.StringGridAddress2.RowCount-1;
    for j:=1 to rc do
-      if pos(st,Form_peach.StringGridAddress2.Cells[11,j])=1 then
+      if pos(st,Form_peach.StringGridAddress2.Cells[12,j])=1 then
          dc:=dc+1;
    Form_peach.StringGridAddress3.Cells[3,i]:=inttostr(tsize);
    Form_peach.StringGridAddress3.Cells[4,i]:=inttostr(tcsize);
-   Form_peach.StringGridAddress3.Cells[10,i]:=inttostr(dc)+' '+txt_dirs+' '+inttostr(dc2)+' '+txt_files;
-   if length(Form_peach.StringGridAddress3.Cells[10,i])>1 then
-      if Form_peach.StringGridAddress3.Cells[10,i][length(Form_peach.StringGridAddress3.Cells[10,i])]=',' then
-         Form_peach.StringGridAddress3.Cells[10,i]:=copy(Form_peach.StringGridAddress3.Cells[10,i],1,length(Form_peach.StringGridAddress3.Cells[10,i])-1);
+   Form_peach.StringGridAddress3.Cells[11,i]:=inttostr(dc)+' '+txt_dirs+' '+inttostr(dc2)+' '+txt_files;
+   if length(Form_peach.StringGridAddress3.Cells[11,i])>1 then
+      if Form_peach.StringGridAddress3.Cells[11,i][length(Form_peach.StringGridAddress3.Cells[11,i])]=',' then
+         Form_peach.StringGridAddress3.Cells[11,i]:=copy(Form_peach.StringGridAddress3.Cells[11,i],1,length(Form_peach.StringGridAddress3.Cells[11,i])-1);
    end;
 Form_Peach.StringGridAddress3.EndUpdate;
 end;
@@ -25900,8 +25973,8 @@ if (mode='browse') or (mode='flat') then
       begin
       if Form_peach.MemoList.Lines[i]=ZSTRINGL then break;
       k:=i-title_lines_7z+1;
-      Form_peach.StringGridList.Cells[9,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
-      if Form_peach.StringGridList.Cells[9,k]<>'     ' then
+      Form_peach.StringGridList.Cells[10,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
+      if Form_peach.StringGridList.Cells[10,k]<>'     ' then
       begin
       s:=copy(Form_peach.MemoList.Lines[i],54,length(Form_peach.MemoList.Lines[i])-53);
       tempcharcodefix(s);
@@ -25909,25 +25982,25 @@ if (mode='browse') or (mode='flat') then
       if copy(Form_peach.MemoList.Lines[i],21,1)='D' then
          begin
          Form_peach.StringGridList.Cells[2,k]:=txt_list_isfolder;
-         Form_peach.StringGridList.Cells[11,k]:=s;
-         Form_peach.StringGridList.Cells[12,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         Form_peach.StringGridList.Cells[12,k]:=s;
+         Form_peach.StringGridList.Cells[13,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
          nfolders:=nfolders+1;
          end
       else
          begin
          Form_peach.StringGridList.Cells[2,k]:=extractfileext(Form_peach.StringGridList.Cells[1,k]);
-         Form_peach.StringGridList.Cells[11,k]:=s;
-         Form_peach.StringGridList.Cells[12,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         Form_peach.StringGridList.Cells[12,k]:=s;
+         Form_peach.StringGridList.Cells[13,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
          nfiles:=nfiles+1;
          end;
       Form_peach.StringGridList.Cells[3,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],27,12));
       try size:=size+strtoqword(Form_peach.StringGridList.Cells[3,k]); except end;
-      Form_peach.StringGridList.Cells[13,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_peach.StringGridList.Cells[3,k];
+      Form_peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_peach.StringGridList.Cells[3,k];
       Form_peach.StringGridList.Cells[4,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],40,12));
       try csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,k]); except end;
-      Form_peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
+      Form_peach.StringGridList.Cells[15,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
       Form_peach.StringGridList.Cells[5,k]:=copy(Form_peach.MemoList.Lines[i],1,19);
-      Form_peach.StringGridList.Cells[15,k]:='0';
+      Form_peach.StringGridList.Cells[16,k]:='0';
       end;
       if i and (16*1024)-1 = 0 then Application.ProcessMessages;
       end;
@@ -25940,8 +26013,8 @@ if (mode='silent') then //optimized for pre-parsing
       begin
       if Form_peach.MemoList.Lines[i]=ZSTRINGL then break;
       k:=i-title_lines_7z+1;
-      Form_peach.StringGridList.Cells[9,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
-      if Form_peach.StringGridList.Cells[9,k]<>'     ' then
+      Form_peach.StringGridList.Cells[10,k]:=copy(Form_peach.MemoList.Lines[i],21,5);
+      if Form_peach.StringGridList.Cells[10,k]<>'     ' then
       begin
       s:=copy(Form_peach.MemoList.Lines[i],54,length(Form_peach.MemoList.Lines[i])-53);
       tempcharcodefix(s);
@@ -25949,25 +26022,25 @@ if (mode='silent') then //optimized for pre-parsing
       if copy(Form_peach.MemoList.Lines[i],21,1)='D' then
          begin
          Form_peach.StringGridList.Cells[2,k]:=txt_list_isfolder;
-         Form_peach.StringGridList.Cells[11,k]:=s;
-         //Form_peach.StringGridList.Cells[12,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         Form_peach.StringGridList.Cells[12,k]:=s;
+         //Form_peach.StringGridList.Cells[13,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
          nfolders:=nfolders+1;
          end
       else
          begin
          Form_peach.StringGridList.Cells[2,k]:=extractfileext(Form_peach.StringGridList.Cells[1,k]);
-         Form_peach.StringGridList.Cells[11,k]:=s;
-         //Form_peach.StringGridList.Cells[12,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         Form_peach.StringGridList.Cells[12,k]:=s;
+         //Form_peach.StringGridList.Cells[13,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
          nfiles:=nfiles+1;
          end;
       Form_peach.StringGridList.Cells[3,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],27,12));
       try size:=size+strtoqword(Form_peach.StringGridList.Cells[3,k]); except end;
-      //Form_peach.StringGridList.Cells[13,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_peach.StringGridList.Cells[3,k];
+      //Form_peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_peach.StringGridList.Cells[3,k];
       Form_peach.StringGridList.Cells[4,k]:=trimleft(copy(Form_peach.MemoList.Lines[i],40,12));
       try csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,k]); except end;
-      //Form_peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
+      //Form_peach.StringGridList.Cells[15,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
       //Form_peach.StringGridList.Cells[5,k]:=copy(Form_peach.MemoList.Lines[i],1,19);
-      //Form_peach.StringGridList.Cells[15,k]:='0';
+      //Form_peach.StringGridList.Cells[16,k]:='0';
       end;
       if i and (32*1024)-1 = 0 then Application.ProcessMessages;
       end;
@@ -26180,23 +26253,23 @@ repeat
          tempcharcodefix(s3);
          Form_peach.StringGridList.Cells[1,j]:=dirExtractFileName(s3);
          Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);//overridden if "Folder" parameter is provided
-         Form_peach.StringGridList.Cells[11,j]:=s3;
+         Form_peach.StringGridList.Cells[12,j]:=s3;
          end;
          'Folder':
          if copy(s1,length(s1),1)=ZCHAR then
             begin
             Form_peach.StringGridList.Cells[2,j]:=txt_list_isfolder;
-            Form_peach.StringGridList.Cells[12,j]:=prefixd+smartsortable(dirExtractFileName(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixd+smartsortable(dirExtractFileName(s3));
             end
          else
             begin
             Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);
-            Form_peach.StringGridList.Cells[12,j]:=prefixf+smartsortable(dirExtractFileName(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixf+smartsortable(dirExtractFileName(s3));
             end;
          'Size':
          begin
          Form_peach.StringGridList.Cells[3,j]:=copy(s1,8,length(s1)-7);
-         Form_peach.StringGridList.Cells[13,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,j]))))+inttostr(length(Form_peach.StringGridList.Cells[3,j]))+Form_peach.StringGridList.Cells[3,j];
+         Form_peach.StringGridList.Cells[14,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,j]))))+inttostr(length(Form_peach.StringGridList.Cells[3,j]))+Form_peach.StringGridList.Cells[3,j];
          try
             size:=size+strtoqword(Form_peach.StringGridList.Cells[3,j]);
          except
@@ -26205,7 +26278,7 @@ repeat
          'Packed Size':
          begin
          Form_peach.StringGridList.Cells[4,j]:=copy(s1,15,length(s1)-14);
-         Form_peach.StringGridList.Cells[14,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,j]))))+inttostr(length(Form_peach.StringGridList.Cells[4,j]))+Form_peach.StringGridList.Cells[4,j];
+         Form_peach.StringGridList.Cells[15,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,j]))))+inttostr(length(Form_peach.StringGridList.Cells[4,j]))+Form_peach.StringGridList.Cells[4,j];
          try
             csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,j]);
          except
@@ -26214,21 +26287,21 @@ repeat
          'Modified': Form_peach.StringGridList.Cells[5,j]:=copy(s1,12,length(s1)-11);
          'Created': Form_peach.StringGridList.Cells[6,j]:=copy(s1,11,length(s1)-10);
          'Accessed': Form_peach.StringGridList.Cells[7,j]:=copy(s1,12,length(s1)-11);
-         'CRC': Form_peach.StringGridList.Cells[10,j]:=copy(s1,7,length(s1)-6);
-         'SHA-1': if Form_peach.StringGridList.Cells[10,j]='' then Form_peach.StringGridList.Cells[10,j]:=copy(s1,12,length(s1)-11);
-         'Checksum': if Form_peach.StringGridList.Cells[10,j]='' then Form_peach.StringGridList.Cells[10,j]:=copy(s1,12,length(s1)-11);
+         'CRC': Form_peach.StringGridList.Cells[11,j]:=copy(s1,7,length(s1)-6);
+         'SHA-1': if Form_peach.StringGridList.Cells[11,j]='' then Form_peach.StringGridList.Cells[11,j]:=copy(s1,12,length(s1)-11);
+         'Checksum': if Form_peach.StringGridList.Cells[11,j]='' then Form_peach.StringGridList.Cells[11,j]:=copy(s1,12,length(s1)-11);
          'Attributes':
          begin
-         Form_peach.StringGridList.Cells[9,j]:=copy(s1,14,length(s1)-13);
-         if pos('D',Form_peach.StringGridList.Cells[9,j])<>0 then
+         Form_peach.StringGridList.Cells[10,j]:=copy(s1,14,length(s1)-13);
+         if pos('D',Form_peach.StringGridList.Cells[10,j])<>0 then
             begin
             Form_peach.StringGridList.Cells[2,j]:=txt_list_isfolder;
-            Form_peach.StringGridList.Cells[12,j]:=prefixd+smartsortable(dirExtractFileName(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixd+smartsortable(dirExtractFileName(s3));
             end
          else
             begin
             Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);
-            Form_peach.StringGridList.Cells[12,j]:=prefixf+smartsortable(dirExtractFileName(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixf+smartsortable(dirExtractFileName(s3));
             end;
          end;
          'Encrypted':
@@ -26248,6 +26321,7 @@ repeat
             set_pw;
             end;
          end;
+         'Comment': Form_peach.StringGridList.Cells[9,j]:=copy(s1,11,length(s1)-10);
       end;
       i:=i+1;
       if i>=k-1 then s2:='new_record';
@@ -26258,9 +26332,9 @@ repeat
       else
          begin
          nfolders:=nfolders+1;
-         if pos(directoryseparator,Form_peach.StringGridList.Cells[11,j])=0 then rootdirrecord:=1;
+         if pos(directoryseparator,Form_peach.StringGridList.Cells[12,j])=0 then rootdirrecord:=1;
          end;
-      Form_peach.StringGridList.Cells[15,j]:='0';
+      Form_peach.StringGridList.Cells[16,j]:='0';
       j:=j+1;
       end
    else
@@ -26283,16 +26357,16 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
   if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then
      begin
      for j:=1 to Form_peach.StringGridAddress3.RowCount-1 do
-       if Form_peach.StringGridAddress3.Cells[11,j]<>Form_peach.StringGridList.Cells[11,i] then
+       if Form_peach.StringGridAddress3.Cells[12,j]<>Form_peach.StringGridList.Cells[12,i] then
        else
           begin
           Form_peach.StringGridList.Cells[3,i]:=Form_peach.StringGridAddress3.Cells[3,j];
           Form_peach.StringGridList.Cells[4,i]:=Form_peach.StringGridAddress3.Cells[4,j];
-          Form_peach.StringGridList.Cells[10,i]:=Form_peach.StringGridAddress3.Cells[10,j];
+          Form_peach.StringGridList.Cells[11,i]:=Form_peach.StringGridAddress3.Cells[11,j];
           size:=size+strtoqword(Form_peach.StringGridList.Cells[3,i]);
           csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,i]);
-          Form_peach.StringGridList.Cells[13,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_peach.StringGridList.Cells[3,i];
-          Form_peach.StringGridList.Cells[14,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i]))+Form_peach.StringGridList.Cells[4,i];
+          Form_peach.StringGridList.Cells[14,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_peach.StringGridList.Cells[3,i];
+          Form_peach.StringGridList.Cells[15,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i]))+Form_peach.StringGridList.Cells[4,i];
           end;
      end;
 end;
@@ -26378,23 +26452,23 @@ repeat
          tempcharcodefix(s3);
          Form_peach.StringGridList.Cells[1,j]:=extractfilename(s3);
          Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);//overridden if "Folder" parameter is provided
-         Form_peach.StringGridList.Cells[11,j]:=s3;
+         Form_peach.StringGridList.Cells[12,j]:=s3;
          end;
          'Type':
          if rar5str='Directory' then
             begin
             Form_peach.StringGridList.Cells[2,j]:=txt_list_isfolder;
-            Form_peach.StringGridList.Cells[12,j]:=prefixd+smartsortable(extractfilename(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixd+smartsortable(extractfilename(s3));
             end
          else
             begin
             Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);
-            Form_peach.StringGridList.Cells[12,j]:=prefixf+smartsortable(extractfilename(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixf+smartsortable(extractfilename(s3));
             end;
          'Size':
          begin
          Form_peach.StringGridList.Cells[3,j]:=rar5str;
-         Form_peach.StringGridList.Cells[13,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,j]))))+inttostr(length(Form_peach.StringGridList.Cells[3,j]))+Form_peach.StringGridList.Cells[3,j];
+         Form_peach.StringGridList.Cells[14,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,j]))))+inttostr(length(Form_peach.StringGridList.Cells[3,j]))+Form_peach.StringGridList.Cells[3,j];
          try
             size:=size+strtoqword(Form_peach.StringGridList.Cells[3,j]);
          except
@@ -26403,26 +26477,26 @@ repeat
          'Packed size':
          begin
          Form_peach.StringGridList.Cells[4,j]:=rar5str;
-         Form_peach.StringGridList.Cells[14,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,j]))))+inttostr(length(Form_peach.StringGridList.Cells[4,j]))+Form_peach.StringGridList.Cells[4,j];
+         Form_peach.StringGridList.Cells[15,j]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,j]))))+inttostr(length(Form_peach.StringGridList.Cells[4,j]))+Form_peach.StringGridList.Cells[4,j];
          try
             csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,j]);
          except
          end;
          end;
          'mtime': Form_peach.StringGridList.Cells[5,j]:=rar5str;
-         'CRC32 MAC': Form_peach.StringGridList.Cells[10,j]:=rar5str;
+         'CRC32 MAC': Form_peach.StringGridList.Cells[11,j]:=rar5str;
          'Attributes':
          begin
-         Form_peach.StringGridList.Cells[9,j]:=rar5str;
-         if pos('D',Form_peach.StringGridList.Cells[9,j])<>0 then
+         Form_peach.StringGridList.Cells[10,j]:=rar5str;
+         if pos('D',Form_peach.StringGridList.Cells[10,j])<>0 then
             begin
             Form_peach.StringGridList.Cells[2,j]:=txt_list_isfolder;
-            Form_peach.StringGridList.Cells[12,j]:=prefixd+smartsortable(extractfilename(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixd+smartsortable(extractfilename(s3));
             end
          else
             begin
             Form_peach.StringGridList.Cells[2,j]:=extractfileext(s3);
-            Form_peach.StringGridList.Cells[12,j]:=prefixf+smartsortable(extractfilename(s3));
+            Form_peach.StringGridList.Cells[13,j]:=prefixf+smartsortable(extractfilename(s3));
             end;
          end;
          'Flags':
@@ -26442,9 +26516,9 @@ repeat
       else
          begin
          nfolders:=nfolders+1;
-         if pos(directoryseparator,Form_peach.StringGridList.Cells[11,j])=0 then rootdirrecord:=1;
+         if pos(directoryseparator,Form_peach.StringGridList.Cells[12,j])=0 then rootdirrecord:=1;
          end;
-      Form_peach.StringGridList.Cells[15,j]:='0';
+      Form_peach.StringGridList.Cells[16,j]:='0';
       j:=j+1;
       end
    else
@@ -26686,7 +26760,7 @@ if execute_cl=0 then
       end;
    if mode='flat' then
       begin
-      Form_peach.StringGridList.Cells[15,1]:='1';
+      Form_peach.StringGridList.Cells[16,1]:='1';
       Form_peach.StringGridList.Row:=1;
       status0:=txt_list_flat;
       update_listview;
@@ -28793,7 +28867,7 @@ case s of
    begin
    if fun='FILEBROWSER' then
       if checklistsel<>0 then s:=Form_peach.EditOpenIn.Text
-      else s:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+      else s:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
    else
       begin
       s:='*current';
@@ -29196,7 +29270,7 @@ begin
 result:=5;
 if (Form_peach.EditOpenIn.Text<>txt_mypc) then pc:=false
 else pc:=true;
-fullname:=Form_peach.StringGridList.Cells[11,arow];
+fullname:=Form_peach.StringGridList.Cells[12,arow];
 fulltype:=Form_peach.StringGridList.Cells[2,arow];
 if Form_peach.StringGridList.Cells[1,arow]<>'' then
    result:=geticon(fullname,fulltype,pc);
@@ -29210,7 +29284,7 @@ begin
 result:=5;
 if (Form_peach.EditOpenIn.Text<>txt_mypc) then pc:=false
 else pc:=true;
-fullname:=Form_peach.StringGridList.Cells[11,arow];
+fullname:=Form_peach.StringGridList.Cells[12,arow];
 fulltype:=lowercase(Form_peach.StringGridList.Cells[2,arow]);
 if Form_peach.StringGridList.Cells[1,arow]<>'' then
    begin
@@ -29365,6 +29439,10 @@ Form_Peach.mbrowserctype.Checked:=false;
 Form_Peach.mbrowsercsize.Checked:=false;
 Form_Peach.mbrowsercpacked.Checked:=false;
 Form_Peach.mbrowsercdate.Checked:=false;
+Form_Peach.mbrowserccreated.Checked:=false;
+Form_Peach.mbrowsercaccessed.Checked:=false;
+Form_Peach.mbrowsercmethod.Checked:=false;
+Form_Peach.mbrowserccomment.Checked:=false;
 Form_Peach.mbrowsercatt.Checked:=false;
 Form_Peach.mbrowserccrc.Checked:=false;
 Form_Peach.mbrowsercname.Caption:=Form_Peach.ListView1.Column[0].Caption;
@@ -29372,22 +29450,34 @@ Form_Peach.mbrowserctype.Caption:=Form_Peach.ListView1.Column[1].Caption;
 Form_Peach.mbrowsercsize.Caption:=Form_Peach.ListView1.Column[2].Caption;
 Form_Peach.mbrowsercpacked.Caption:=Form_Peach.ListView1.Column[3].Caption;
 Form_Peach.mbrowsercdate.Caption:=Form_Peach.ListView1.Column[4].Caption;
-Form_Peach.mbrowsercatt.Caption:=Form_Peach.ListView1.Column[8].Caption;
-Form_Peach.mbrowserccrc.Caption:=Form_Peach.ListView1.Column[9].Caption;
+Form_Peach.mbrowserccreated.Caption:=Form_Peach.ListView1.Column[5].Caption;
+Form_Peach.mbrowsercaccessed.Caption:=Form_Peach.ListView1.Column[6].Caption;
+Form_Peach.mbrowsercmethod.Caption:=Form_Peach.ListView1.Column[7].Caption;
+Form_Peach.mbrowserccomment.Caption:=Form_Peach.ListView1.Column[8].Caption;
+Form_Peach.mbrowsercatt.Caption:=Form_Peach.ListView1.Column[9].Caption;
+Form_Peach.mbrowserccrc.Caption:=Form_Peach.ListView1.Column[10].Caption;
 case c of
    0: begin Form_Peach.mbrowsercname.Checked:=true; end;
    1: begin Form_Peach.mbrowserctype.Checked:=true; end;
    2: begin Form_Peach.mbrowsercsize.Checked:=true; end;
    3: begin Form_Peach.mbrowsercpacked.Checked:=true; end;
    4: begin Form_Peach.mbrowsercdate.Checked:=true; end;
-   5: begin Form_Peach.mbrowsercatt.Checked:=true; end;
-   6: begin Form_Peach.mbrowserccrc.Checked:=true; end;
+   5: begin Form_Peach.mbrowserccreated.Checked:=true; end;
+   6: begin Form_Peach.mbrowsercaccessed.Checked:=true; end;
+   7: begin Form_Peach.mbrowsercmethod.Checked:=true; end;
+   8: begin Form_Peach.mbrowserccomment.Checked:=true; end;
+   9: begin Form_Peach.mbrowsercatt.Checked:=true; end;
+   10: begin Form_Peach.mbrowserccrc.Checked:=true; end;
    end;
 Form_Peach.po_browsercname.Checked:=Form_Peach.mbrowsercname.Checked;
 Form_Peach.po_browserctype.Checked:=Form_Peach.mbrowserctype.Checked;
 Form_Peach.po_browsercsize.Checked:=Form_Peach.mbrowsercsize.Checked;
 Form_Peach.po_browsercpacked.Checked:=Form_Peach.mbrowsercpacked.Checked;
 Form_Peach.po_browsercdate.Checked:=Form_Peach.mbrowsercdate.Checked;
+Form_Peach.po_browserccreated.Checked:=Form_Peach.mbrowserccreated.Checked;
+Form_Peach.po_browsercaccessed.Checked:=Form_Peach.mbrowsercaccessed.Checked;
+Form_Peach.po_browsercmethod.Checked:=Form_Peach.mbrowsercmethod.Checked;
+Form_Peach.po_browserccomment.Checked:=Form_Peach.mbrowserccomment.Checked;
 Form_Peach.po_browsercatt.Checked:=Form_Peach.mbrowsercatt.Checked;
 Form_Peach.po_browserccrc.Checked:=Form_Peach.mbrowserccrc.Checked;
 Form_Peach.po_browsercname.Caption:=Form_Peach.mbrowsercname.Caption;
@@ -29395,6 +29485,10 @@ Form_Peach.po_browserctype.Caption:=Form_Peach.mbrowserctype.Caption;
 Form_Peach.po_browsercsize.Caption:=Form_Peach.mbrowsercsize.Caption;
 Form_Peach.po_browsercpacked.Caption:=Form_Peach.mbrowsercpacked.Caption;
 Form_Peach.po_browsercdate.Caption:=Form_Peach.mbrowsercdate.Caption;
+Form_Peach.po_browserccreated.Caption:=Form_Peach.mbrowserccreated.Caption;
+Form_Peach.po_browsercaccessed.Caption:=Form_Peach.mbrowsercaccessed.Caption;
+Form_Peach.po_browsercmethod.Caption:=Form_Peach.mbrowsercmethod.Caption;
+Form_Peach.po_browserccomment.Caption:=Form_Peach.mbrowserccomment.Caption;
 Form_Peach.po_browsercatt.Caption:=Form_Peach.mbrowsercatt.Caption;
 Form_Peach.po_browserccrc.Caption:=Form_Peach.mbrowserccrc.Caption;
 end;
@@ -29403,13 +29497,17 @@ procedure get_statuss(s:ansistring);
 var
    d:char;
    j:integer;
-   sizefree,sizetotal,perfree: qword;
+   sizefree,sizetotal,perfree: int64;
+   wp:ansistring;
 begin
 sizefree:=0;
 perfree:=0;
+sizefreeout:=-1;
+sizefreewrk:=-1;
+statuss:='';
+statusw:='';
 with Form_peach do
 begin
-statuss:='';
 {$IFDEF MSWINDOWS}
 if s='' then exit;
 if extractfilepath(s)='' then exit;
@@ -29424,7 +29522,78 @@ if d<>directoryseparator then
       sizetotal:=disksize(j);
       if sizetotal<>0 then perfree:=(sizefree*100) div sizetotal;
       end;
+   sizefreeout:=sizefree;
    statuss:=nicenumber(inttostr(sizefree),filesizebase)+' '+txt_free2+' ('+inttostr(perfree)+'%)';
+   end;
+
+
+//sizefreewrk extimation should be more accurate if calculated separately in case of multiple inputs
+if work_dir = 5 then exit;
+
+if Form_peach.PanelArchiveMain.visible=true then
+   case fun of
+   '7Z', 'ARC': //used only for 7z and arc backends
+      begin
+      end;
+   else //also needed when TAR before is in use
+      if Form_peach.CheckBoxTarBefore.State=cbChecked then else exit;
+   end;
+
+if Form_peach.PanelExtract.visible=true then
+case fun of
+   'UN7Z', 'FILEBROWSER'://used only for 7z backend, assume it is needed also in case of mixed formats
+      begin
+      if (form_peach.CheckBoxrelative.Checked=true) and (form_peach.CheckBoxrelative.Enabled=true) then
+      else exit;
+      end;
+   else exit;
+   end;
+
+//if Form_peach.PanelOpen.visible=true then begin end; //always used for drag and drop extraction
+
+if work_dir > 1 then wp:=peaziptmpdirroot else wp:=s;
+if wp='' then exit;
+if extractfilepath(wp)='' then exit;
+if (wp=txt_mypc) or (wp='Compter''s root') then exit;
+d:=wp[1];
+if d<>directoryseparator then
+   begin
+   j:=ord(upcase(d))-64;
+   if j>2 then
+      begin
+      sizefree:=diskfree(j);
+      sizetotal:=disksize(j);
+      if sizetotal<>0 then perfree:=(sizefree*100) div sizetotal;
+      end;
+   sizefreewrk:=sizefree;
+   statusw:=nicenumber(inttostr(sizefree),filesizebase)+' '+txt_free2+' ('+inttostr(perfree)+'%)';
+   end;
+{$ENDIF}
+end;
+end;
+
+procedure get_statussdrag(dragdest:ansistring);
+var
+   d:char;
+   j:integer;
+   sizefree: int64;
+begin
+sizefree:=0;
+with Form_peach do
+begin
+{$IFDEF MSWINDOWS}
+if dragdest='' then exit;
+if extractfilepath(dragdest)='' then exit;
+if (dragdest=txt_mypc) or (dragdest='Compter''s root') then exit;
+d:=dragdest[1];
+if d<>directoryseparator then
+   begin
+   j:=ord(upcase(d))-64;
+   if j>2 then
+      begin
+      sizefree:=diskfree(j);
+      end;
+   sizefreeout:=sizefree;
    end;
 {$ENDIF}
 end;
@@ -29512,9 +29681,9 @@ if Form_peach.EditOpenIn.Text=txt_mypc then
    Form_Peach.ListView1.Column[2].Caption:=txt_size;
    Form_Peach.ListView1.Column[3].Caption:=txt_free;
    Form_Peach.ListView1.Column[4].Caption:=txt_fs;
-   Form_Peach.ListView1.Column[8].Caption:=txt_attributes;
-   Form_Peach.ListView1.Column[9].Caption:=txt_check_select;
-   Form_Peach.ListView1.Column[10].Caption:=txt_name_full;
+   Form_Peach.ListView1.Column[9].Caption:=txt_attributes;
+   Form_Peach.ListView1.Column[10].Caption:=txt_check_select;
+   Form_Peach.ListView1.Column[11].Caption:=txt_name_full;
    end
 else
    begin
@@ -29526,15 +29695,16 @@ else
    Form_Peach.ListView1.Column[5].Caption:=txt_8_2_tc;
    Form_Peach.ListView1.Column[6].Caption:=txt_8_2_ta;
    Form_Peach.ListView1.Column[7].Caption:=txt_method;
-   Form_Peach.ListView1.Column[8].Caption:=txt_attributes;
-   if fun<>'FILEBROWSER' then Form_Peach.ListView1.Column[9].Caption:=txt_check_select else Form_Peach.ListView1.Column[9].Caption:=chstr;
-   Form_Peach.ListView1.Column[10].Caption:=txt_name_full;
+   Form_Peach.ListView1.Column[8].Caption:=txt_7_4_comment;
+   Form_Peach.ListView1.Column[9].Caption:=txt_attributes;
+   if fun<>'FILEBROWSER' then Form_Peach.ListView1.Column[10].Caption:=txt_check_select else Form_Peach.ListView1.Column[10].Caption:=chstr;
+   Form_Peach.ListView1.Column[11].Caption:=txt_name_full;
    end;
 c:=listsortcol;
-if c=12 then c:=1;
-if c=13 then c:=3;
-if c=14 then c:=4;
-if c>11 then c:=1;
+if c=13 then c:=1;
+if c=14 then c:=3;
+if c=15 then c:=4;
+if c>12 then c:=1;
 c:=c-1;
 if c>=0 then
    if az=true then Form_Peach.ListView1.Column[c].Caption:=Form_Peach.ListView1.Column[c].Caption+' <'
@@ -29560,6 +29730,7 @@ if Form_peach.EditOpenIn.Text=txt_mypc then
    Form_Peach.ListView1.Column[6].Width:=0;
    Form_Peach.ListView1.Column[7].Width:=0;
    Form_Peach.ListView1.Column[8].Width:=0;
+   Form_Peach.ListView1.Column[9].Width:=0;
    end
 else
    begin
@@ -29567,8 +29738,8 @@ else
    if csize=false then begin Form_Peach.ListView1.Column[2].Width:=0; end;
    if cpacked=false then begin Form_Peach.ListView1.Column[3].Width:=0; end;
    if cdate=false then begin Form_Peach.ListView1.Column[4].Width:=0; end;
-   if catt=false then begin Form_Peach.ListView1.Column[8].Width:=0; end;
-   if ccrc=false then begin Form_Peach.ListView1.Column[9].Width:=0; end;
+   if catt=false then begin Form_Peach.ListView1.Column[9].Width:=0; end;
+   if ccrc=false then begin Form_Peach.ListView1.Column[10].Width:=0; end;
    if fun<>'UN7Z' then
       begin
       Form_Peach.ListView1.Column[5].Width:=0;
@@ -29577,21 +29748,26 @@ else
       Form_peach.mccreated.Enabled:=False;
       Form_peach.mcaccessed.Enabled:=False;
       Form_peach.mcmethod.Enabled:=False;
+      Form_peach.mccomment.Enabled:=False;
       Form_peach.pmccreated.Enabled:=False;
       Form_peach.pmcaccessed.Enabled:=False;
       Form_peach.pmcmethod.Enabled:=False;
+      Form_peach.pmccomment.Enabled:=False;
       end
    else
       begin
       if ccreated=false then begin Form_Peach.ListView1.Column[5].Width:=0; end;
       if caccessed=false then begin Form_Peach.ListView1.Column[6].Width:=0; end;
       if cmethod=false then begin Form_Peach.ListView1.Column[7].Width:=0; end;
+      if ccomment=false then begin Form_Peach.ListView1.Column[8].Width:=0; end;
       Form_peach.mccreated.Enabled:=True;
       Form_peach.mcaccessed.Enabled:=True;
       Form_peach.mcmethod.Enabled:=True;
+      Form_peach.mccomment.Enabled:=True;
       Form_peach.pmccreated.Enabled:=True;
       Form_peach.pmcaccessed.Enabled:=True;
       Form_peach.pmcmethod.Enabled:=True;
+      Form_peach.pmccomment.Enabled:=True;
       end;
    end;
 end;
@@ -29614,6 +29790,7 @@ if Form_peach.EditOpenIn.Text=txt_mypc then
    Form_Peach.ListView1.Column[8].Width:=0;
    Form_Peach.ListView1.Column[9].Width:=0;
    Form_Peach.ListView1.Column[10].Width:=0;
+   Form_Peach.ListView1.Column[11].Width:=0;
    end
 else
    begin
@@ -29627,8 +29804,9 @@ else
       Form_Peach.ListView1.Column[5].Width:=0;
       Form_Peach.ListView1.Column[6].Width:=0;
       Form_Peach.ListView1.Column[7].Width:=0;
-      Form_Peach.ListView1.Column[8].Width:=col6size;
-      Form_Peach.ListView1.Column[9].Width:=col7size;
+      Form_Peach.ListView1.Column[8].Width:=0;
+      Form_Peach.ListView1.Column[9].Width:=col6size;
+      Form_Peach.ListView1.Column[10].Width:=col7size;
       end
    else
       begin
@@ -29640,15 +29818,16 @@ else
       Form_Peach.ListView1.Column[5].Width:=col5size;
       Form_Peach.ListView1.Column[6].Width:=col5size;
       Form_Peach.ListView1.Column[7].Width:=colmethodsize;
-      Form_Peach.ListView1.Column[8].Width:=col6size;
-      Form_Peach.ListView1.Column[9].Width:=col7size;
+      Form_Peach.ListView1.Column[8].Width:=colcommentsize;
+      Form_Peach.ListView1.Column[9].Width:=col6size;
+      Form_Peach.ListView1.Column[10].Width:=col7size;
       end;
    {$IFDEF MSWINDOWS}
-   if status0=txt_list_browsing then Form_Peach.ListView1.Column[10].Width:=0
-   else Form_Peach.ListView1.Column[10].Width:=384;
+   if status0=txt_list_browsing then Form_Peach.ListView1.Column[11].Width:=0
+   else Form_Peach.ListView1.Column[11].Width:=384;
    {$ELSE}
-   if status0=txt_list_browsing then Form_Peach.ListView1.Column[10].Visible:=false
-   else begin Form_Peach.ListView1.Column[10].Visible:=true; Form_Peach.ListView1.Column[10].Width:=384; end;
+   if status0=txt_list_browsing then Form_Peach.ListView1.Column[11].Visible:=false
+   else begin Form_Peach.ListView1.Column[11].Visible:=true; Form_Peach.ListView1.Column[11].Width:=384; end;
    {$ENDIF}
    end;
 set_listview_visiblecol;
@@ -29666,6 +29845,7 @@ Form_Peach.ListView1.Column[7].Width:=0;
 Form_Peach.ListView1.Column[8].Width:=0;
 Form_Peach.ListView1.Column[9].Width:=0;
 Form_Peach.ListView1.Column[10].Width:=0;
+Form_Peach.ListView1.Column[11].Width:=0;
 end;
 {$ENDIF}
 end;
@@ -29835,7 +30015,7 @@ selper:=0;
 if Form_peach.EditOpenIn.Text<>txt_mypc then
    if rc>1 then
       for i:=1 to rc-1 do
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             begin
             if Form_peach.StringGridList.Cells[1,i]='' then Break;
             if Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder then selfiles:=selfiles+1
@@ -30430,6 +30610,21 @@ case sl of
 end;
 end;
 
+function checkfreespace:integer;
+var
+   s:ansistring;
+begin
+result:=0;
+if sizefreeint<=0 then exit;
+s:='';
+if sizefreeout>=0 then
+   if sizefreeint>sizefreeout then s:=txt_9_3_fsd+' ('+nicenumber(inttostr(sizefreeout),filesizebase)+')'+char($0D)+char($0A);
+if sizefreewrk>=0 then
+   if sizefreeint>sizefreewrk then s:=txt_9_3_fsw+' ('+nicenumber(inttostr(sizefreewrk),filesizebase)+')'+char($0D)+char($0A);
+if s<>'' then
+   if pMessageWarningYesNo(s+txt_9_3_continue)<>6 then result:=1; //do not continue
+end;
+
 function dragtowinh(lpPoint: TPoint):integer;
 {$IFDEF MSWINDOWS}
 var
@@ -30542,6 +30737,9 @@ else //drag on itself
    end;
 Form_peach.EditOpenOut.Text:=vpath2+'virtual\';
 calcseltsize;
+sizefreeint:=tsize;
+get_statussdrag(dragdest);
+if checkfreespace<>0 then exit;
 totrow:=Form_peach.StringGridList.Rowcount;
 if totrow<2 then exit;
 if totrow>=3 then
@@ -30614,7 +30812,7 @@ if fres=0 then
       end;
    if status0=txt_list_browsing then
       begin
-      relpath:=StringReplace(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row],':','_',[rfReplaceAll]);
+      relpath:=StringReplace(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row],':','_',[rfReplaceAll]);
       relpath:=extractfilepath(relpath);
       end
    else
@@ -30738,7 +30936,7 @@ for i:=1 to Form_Peach.StringGridList.rowcount-1 do
          try
             abitmap:=Tbitmap.Create;
             icon:=TIcon.Create;
-            s:=Form_Peach.StringGridList.Cells[11,i];
+            s:=Form_Peach.StringGridList.Cells[12,i];
             k:=0;
             if eisize<48 then k:=SHGetFileInfo(pchar(s), 0, fileinfo, sizeof(fileinfo), SHGFI_ICON or SHGFI_SMALLICON)
             else k:=SHGetFileInfo(pchar(s), 0, fileinfo, sizeof(fileinfo), SHGFI_ICON or SHGFI_LARGEICON);
@@ -30821,7 +31019,7 @@ end;
 
 procedure TMyThread1.ReadStatus;
 begin
-fread:=Form_Peach.StringGridList.Cells[11,imlistindex[fi]];
+fread:=Form_Peach.StringGridList.Cells[12,imlistindex[fi]];
 end;
 
 procedure TMyThread1.ShowStatus;
@@ -30857,13 +31055,13 @@ if prevupdateid<>updateid then
 Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=50+imtodo[fi];
 Form_Peach.ListView1.Items[imlistindex[fi]-1].SubItems.Strings[2]:=fs;
 Form_Peach.StringGridList.Cells[4,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[14,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[17,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
+Form_Peach.StringGridList.Cells[15,imlistindex[fi]]:=fs;
+Form_Peach.StringGridList.Cells[18,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
 //for sorting for column of image details, it needs the threads to complete before having data to sort
    end
 else
    begin
-   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[17,imlistindex[fi]]);
+   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[18,imlistindex[fi]]);
    end;
 end;
 
@@ -30927,7 +31125,7 @@ end;
 
 procedure TMyThread2.ReadStatus;
 begin
-fread:=Form_Peach.StringGridList.Cells[11,imlistindex[fi]];
+fread:=Form_Peach.StringGridList.Cells[12,imlistindex[fi]];
 end;
 
 procedure TMyThread2.ShowStatus;
@@ -30963,13 +31161,13 @@ if prevupdateid<>updateid then
 Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=50+imtodo[fi];
 Form_Peach.ListView1.Items[imlistindex[fi]-1].SubItems.Strings[2]:=fs;
 Form_Peach.StringGridList.Cells[4,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[14,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[17,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
+Form_Peach.StringGridList.Cells[15,imlistindex[fi]]:=fs;
+Form_Peach.StringGridList.Cells[18,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
 //for sorting for column of image details, it needs the threads to complete before having data to sort
    end
 else
    begin
-   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[17,imlistindex[fi]]);
+   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[18,imlistindex[fi]]);
    end;
 end;
 
@@ -31033,7 +31231,7 @@ end;
 
 procedure TMyThread3.ReadStatus;
 begin
-fread:=Form_Peach.StringGridList.Cells[11,imlistindex[fi]];
+fread:=Form_Peach.StringGridList.Cells[12,imlistindex[fi]];
 end;
 
 procedure TMyThread3.ShowStatus;
@@ -31069,13 +31267,13 @@ if prevupdateid<>updateid then
 Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=50+imtodo[fi];
 Form_Peach.ListView1.Items[imlistindex[fi]-1].SubItems.Strings[2]:=fs;
 Form_Peach.StringGridList.Cells[4,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[14,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[17,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
+Form_Peach.StringGridList.Cells[15,imlistindex[fi]]:=fs;
+Form_Peach.StringGridList.Cells[18,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
 //for sorting for column of image details, it needs the threads to complete before having data to sort
    end
 else
    begin
-   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[17,imlistindex[fi]]);
+   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[18,imlistindex[fi]]);
    end;
 end;
 
@@ -31139,7 +31337,7 @@ end;
 
 procedure TMyThread4.ReadStatus;
 begin
-fread:=Form_Peach.StringGridList.Cells[11,imlistindex[fi]];
+fread:=Form_Peach.StringGridList.Cells[12,imlistindex[fi]];
 end;
 
 procedure TMyThread4.ShowStatus;
@@ -31175,13 +31373,13 @@ if prevupdateid<>updateid then
 Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=50+imtodo[fi];
 Form_Peach.ListView1.Items[imlistindex[fi]-1].SubItems.Strings[2]:=fs;
 Form_Peach.StringGridList.Cells[4,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[14,imlistindex[fi]]:=fs;
-Form_Peach.StringGridList.Cells[17,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
+Form_Peach.StringGridList.Cells[15,imlistindex[fi]]:=fs;
+Form_Peach.StringGridList.Cells[18,imlistindex[fi]]:=inttostr(50+imtodo[fi]);
 //for sorting for column of image details, it needs the threads to complete before having data to sort
    end
 else
    begin
-   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[17,imlistindex[fi]]);
+   Form_Peach.ListView1.Items[imlistindex[fi]-1].ImageIndex:=strtoint(Form_Peach.StringGridList.Cells[18,imlistindex[fi]]);
    end;
 end;
 
@@ -31253,7 +31451,7 @@ begin
       if Form_peach.StringGridList.Rowcount<2 then exit;
       if Form_peach.StringGridList.Cells[1,1]='' then exit;
       for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-         Form_peach.StringGridList.Cells[15,i]:='0';
+         Form_peach.StringGridList.Cells[16,i]:='0';
       end;
 end;
 
@@ -31431,7 +31629,8 @@ if rc>1 then
       Form_Peach.ListView1.Items[i-1].SubItems.Add(Form_Peach.StringGridList.Cells[9,i]);
       Form_Peach.ListView1.Items[i-1].SubItems.Add(Form_Peach.StringGridList.Cells[10,i]);
       Form_Peach.ListView1.Items[i-1].SubItems.Add(Form_Peach.StringGridList.Cells[11,i]);
-      if Form_Peach.StringGridList.Cells[15,i]='0' then
+      Form_Peach.ListView1.Items[i-1].SubItems.Add(Form_Peach.StringGridList.Cells[12,i]);
+      if Form_Peach.StringGridList.Cells[16,i]='0' then
       else
          try
          Form_peach.ListView1.Items[i-1].Selected:=true;
@@ -31525,7 +31724,7 @@ if (rc>1) and (Form_Peach.StringGridList.Cells[1,1]<>'') then
       begin
       if Form_peach.StringGridList.Cells[0,i]='' then Form_Peach.ListView1.Items[i-1].Cut:=false
       else Form_Peach.ListView1.Items[i-1].Cut:=true; //cut raises update_listview_sel instead of update_listview
-      if Form_Peach.StringGridList.Cells[15,i]='0' then
+      if Form_Peach.StringGridList.Cells[16,i]='0' then
          begin
          try
          Form_peach.ListView1.Items[i-1].Selected:=false;
@@ -31571,14 +31770,14 @@ var
    lastobjfound:boolean;
 begin
 for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='0' then
-   else Form_peach.StringGridList.Cells[15,i]:='0';
+   if Form_peach.StringGridList.Cells[16,i]='0' then
+   else Form_peach.StringGridList.Cells[16,i]:='0';
 lastobjfound:=false;
 if length(lastobj)>1 then
    if lastobj[length(lastobj)]=directoryseparator then setlength(lastobj,length(lastobj)-1);
 if lastobj<>'' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_Peach.StringGridList.Cells[11,i]=lastobj then
+      if Form_Peach.StringGridList.Cells[12,i]=lastobj then
          begin
          lastobjfound:=true;
          break;
@@ -31586,7 +31785,7 @@ if lastobj<>'' then
 if lastobjfound=false then //i:=1;
 else
    begin
-   Form_peach.StringGridList.Cells[15,i]:='1';
+   Form_peach.StringGridList.Cells[16,i]:='1';
    Form_peach.StringGridList.Row:=i;
    end;
 end;
@@ -31598,19 +31797,19 @@ var
 begin
 {$IFDEF MSWINDOWS}
 for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='0' then
-   else Form_peach.StringGridList.Cells[15,i]:='0';
+   if Form_peach.StringGridList.Cells[16,i]='0' then
+   else Form_peach.StringGridList.Cells[16,i]:='0';
 lastobjfound:=false;
 lastobj:=ExtractFileDrive(lastobj)+directoryseparator;
 if lastobj<>'' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_Peach.StringGridList.Cells[11,i]=lastobj then
+      if Form_Peach.StringGridList.Cells[12,i]=lastobj then
          begin
          lastobjfound:=true;
          break;
          end;
 if lastobjfound=false then i:=1;
-Form_peach.StringGridList.Cells[15,i]:='1';
+Form_peach.StringGridList.Cells[16,i]:='1';
 Form_peach.StringGridList.Row:=i;
 {$ENDIF}
 end;
@@ -31814,7 +32013,7 @@ listingdir:=true;
 keeppreview:=false;
 selnode:=0;
 beingpreviewed:='';
-singleextract:=false;
+if form_peach.StringGridSessionHistory.rowcount>1 then singleextract:=false;
 specialopen:=false;
 for k := 1 to 4 do abcrs[k] :='';
 recpmem;
@@ -31839,8 +32038,8 @@ if Form_peach.EditOpenIn.Text<>txt_mypc then
    if csize=true then col3size:=Form_Peach.ListView1.Column[2].Width;
    if cpacked=true then col4size:=Form_Peach.ListView1.Column[3].Width;
    if cdate=true then col5size:=Form_Peach.ListView1.Column[4].Width;
-   if catt=true then col6size:=Form_Peach.ListView1.Column[8].Width;
-   if ccrc=true then col7size:=Form_Peach.ListView1.Column[9].Width;
+   if catt=true then col6size:=Form_Peach.ListView1.Column[9].Width;
+   if ccrc=true then col7size:=Form_Peach.ListView1.Column[10].Width;
    end;
 prepare_filebrowser;
 status0:=txt_list_browsing;
@@ -31902,12 +32101,12 @@ repeat
             Form_peach.StringGridList.Cells[2,k]:=txt_unit_floppy;
             Form_peach.StringGridList.Cells[3,k]:='0';
             Form_peach.StringGridList.Cells[4,k]:='0';
-            Form_Peach.StringGridList.Cells[13,k]:='';
-            Form_peach.StringGridList.Cells[14,k]:='';
+            Form_Peach.StringGridList.Cells[14,k]:='';
+            Form_peach.StringGridList.Cells[15,k]:='';
             Form_peach.StringGridList.Cells[5,k]:='';
-            Form_peach.StringGridList.Cells[11,k]:=s1+directoryseparator;
-            Form_peach.StringGridList.Cells[12,k]:=Form_peach.StringGridList.Cells[1,k];
-            Form_peach.StringGridList.Cells[15,k]:='0';
+            Form_peach.StringGridList.Cells[12,k]:=s1+directoryseparator;
+            Form_peach.StringGridList.Cells[13,k]:=Form_peach.StringGridList.Cells[1,k];
+            Form_peach.StringGridList.Cells[16,k]:='0';
             continue;
             end;
          finally
@@ -31961,14 +32160,14 @@ repeat
          Form_peach.StringGridList.Cells[4,k]:=inttostr(sz1);
          sizefree:=sizefree+sz1;
          end;
-      Form_Peach.StringGridList.Cells[13,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_Peach.StringGridList.Cells[3,k];
-      Form_peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
+      Form_Peach.StringGridList.Cells[14,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,k]))))+inttostr(length(Form_peach.StringGridList.Cells[3,k]))+Form_Peach.StringGridList.Cells[3,k];
+      Form_peach.StringGridList.Cells[15,k]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,k]))))+inttostr(length(Form_peach.StringGridList.Cells[4,k]))+Form_peach.StringGridList.Cells[4,k];
       if fsname<>'' then
          if sz<>0 then
             Form_peach.StringGridList.Cells[5,k]:=fsname+', '+inttostr((sz1*100) div sz)+'% '+txt_free2;
-      Form_peach.StringGridList.Cells[11,k]:=s1+directoryseparator;
-      Form_peach.StringGridList.Cells[12,k]:=Form_peach.StringGridList.Cells[1,k];
-      Form_peach.StringGridList.Cells[15,k]:='0';
+      Form_peach.StringGridList.Cells[12,k]:=s1+directoryseparator;
+      Form_peach.StringGridList.Cells[13,k]:=Form_peach.StringGridList.Cells[1,k];
+      Form_peach.StringGridList.Cells[16,k]:='0';
       end;
 until length(s)=0;
 Form_peach.StringGridList.RowCount:=k+1;
@@ -31995,8 +32194,8 @@ if (browsertype=0) and (Form_Peach.EditOpenIn.Caption<>txt_mypc) then
    if csize=false then else col3size:=Form_Peach.ListView1.Column[2].Width;
    if cpacked=false then else col4size:=Form_Peach.ListView1.Column[3].Width;
    if cdate=false then else col5size:=Form_Peach.ListView1.Column[4].Width;
-   if catt=false then else col6size:=Form_Peach.ListView1.Column[8].Width;
-   if ccrc=false then else col7size:=Form_Peach.ListView1.Column[9].Width;
+   if catt=false then else col6size:=Form_Peach.ListView1.Column[9].Width;
+   if ccrc=false then else col7size:=Form_Peach.ListView1.Column[10].Width;
    end;
 end;
 
@@ -32025,7 +32224,7 @@ if (length(Form_peach.EditUn7zaFilter.Text)>2) and (Form_peach.cbtree.ItemIndex>
       begin
       Form_peach.TreeView1.Items.BeginUpdate;
       for i:=1 to Form_peach.StringGridAddress1.RowCount-1 do
-      if Form_peach.StringGridAddress1.Cells[11,i]=tstr then
+      if Form_peach.StringGridAddress1.Cells[12,i]=tstr then
          begin
          if Form_peach.cbtree.ItemIndex=1 then
             begin
@@ -32071,7 +32270,7 @@ begin
 i:=rc-1;
 while i<(Form_Peach.StringGridList.RowCount-1) do
    begin
-   sfilterf:=lowercase(Form_Peach.StringGridList.Cells[11,i+1]);
+   sfilterf:=lowercase(Form_Peach.StringGridList.Cells[12,i+1]);
    {$IFDEF MSWINDOWS}
    if pos('/', sfilter)<>0 then
       begin
@@ -32094,7 +32293,7 @@ begin
 i:=rc-1;
 while i<(Form_Peach.StringGridList.RowCount-1) do
    begin
-   stemp:=Form_Peach.StringGridList.Cells[11,i+1];
+   stemp:=Form_Peach.StringGridList.Cells[12,i+1];
    stempf:=Form_peach.EditUn7zaFilter.Text;
    if not(MatchesMask(stemp,stempf,false)) then Form_Peach.StringGridList.DeleteRow(i+1)
    else i:=i+1;
@@ -32108,7 +32307,7 @@ begin
 i:=rc-1;
 while i<(Form_Peach.StringGridList.RowCount-1) do
    begin
-   stemp:=Form_Peach.StringGridList.Cells[11,i+1];
+   stemp:=Form_Peach.StringGridList.Cells[12,i+1];
    if pos('\\', stemp)=1 then stemp:=copy(stemp,3,length(stemp)-2);
    stempf:=Form_peach.EditUn7zaFilterExclude.Text;
    if pos('\\', stempf)=1 then stempf:=copy(stempf,3,length(stempf)-2);
@@ -32168,9 +32367,9 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
   if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then
      begin
      for j:=1 to Form_peach.StringGridAddress3.RowCount-1 do
-       if Form_peach.StringGridAddress3.Cells[11,j]<>Form_peach.StringGridList.Cells[11,i] then
+       if Form_peach.StringGridAddress3.Cells[12,j]<>Form_peach.StringGridList.Cells[12,i] then
        else
-          Form_peach.StringGridList.Cells[10,i]:=Form_peach.StringGridAddress3.Cells[10,j];
+          Form_peach.StringGridList.Cells[11,i]:=Form_peach.StringGridAddress3.Cells[11,j];
      end;
 end;
 
@@ -32200,7 +32399,7 @@ begin
 if autoopentar=0 then exit;
 if (Form_peach.StringGridList.RowCount=2) and (lowercase(Form_peach.StringGridList.Cells[2,1])='.tar') then
    begin
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    grid_obj_open;
    end;
 end;
@@ -32331,13 +32530,13 @@ end;
 Form_peach.StringGridList.Cells[3,1]:=inttostr(size); //expressed in B
 Form_peach.StringGridList.Cells[4,1]:=inttostr(csize); //expressed in B
 Form_peach.StringGridList.Cells[5,1]:='';
-Form_peach.StringGridList.Cells[9,1]:='';
-Form_peach.StringGridList.Cells[11,1]:=s;
-Form_peach.StringGridList.Cells[12,1]:='';
+Form_peach.StringGridList.Cells[10,1]:='';
+Form_peach.StringGridList.Cells[12,1]:=s;
 Form_peach.StringGridList.Cells[13,1]:='';
 Form_peach.StringGridList.Cells[14,1]:='';
-Form_peach.StringGridList.Cells[15,1]:='1';
-if Form_peach.StringGridList.RowCount>1 then Form_peach.StringGridList.Cells[15,1]:='1';
+Form_peach.StringGridList.Cells[15,1]:='';
+Form_peach.StringGridList.Cells[16,1]:='1';
+if Form_peach.StringGridList.RowCount>1 then Form_peach.StringGridList.Cells[16,1]:='1';
 Form_peach.StringGridList.Row:=1;
 ratio_info_reduced(0,1,size,csize);
 if fun='UNPEA' then
@@ -32395,18 +32594,18 @@ repeat
    i:=i+1;
    Form_peach.StringGridList.RowCount:=Form_peach.StringGridList.RowCount+1;
    Form_peach.StringGridList.Cells[3,i]:=copy(s,1,pos(char($09),s)-1);
-   Form_peach.StringGridList.Cells[13,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_peach.StringGridList.Cells[3,i];
+   Form_peach.StringGridList.Cells[14,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_peach.StringGridList.Cells[3,i];
    size:=size+strtoqword(Form_peach.StringGridList.Cells[3,i]);
-   Form_peach.StringGridList.Cells[11,i]:=ansitoutf8(copy(s,pos(char($09),s)+1,length(s)));
-   Form_peach.StringGridList.Cells[1,i]:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+   Form_peach.StringGridList.Cells[12,i]:=ansitoutf8(copy(s,pos(char($09),s)+1,length(s)));
+   Form_peach.StringGridList.Cells[1,i]:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
    Form_peach.StringGridList.Cells[2,i]:=extractfileext(Form_peach.StringGridList.Cells[1,i]);
-   Form_peach.StringGridList.Cells[15,i]:='0';
+   Form_peach.StringGridList.Cells[16,i]:='0';
    blockread(f,b,1);
 until end_browse=true;
 closefile(f);
 if Form_peach.StringGridList.RowCount>1 then
    begin
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    end;
 ratio_info_reduced(0,i,size,csize);
@@ -32444,26 +32643,26 @@ for i:=0 to Form_peach.MemoList.Lines.Count-1 do
          s2:=copy(Form_peach.MemoList.Lines[i],23,12+vparam);//size
          s4:=copy(Form_peach.MemoList.Lines[i],3,19);//datetime
          s5:=copy(Form_peach.MemoList.Lines[i],36+vparam,6);//attributes
-         Form_peach.StringGridList.Cells[11,k]:=s;
+         Form_peach.StringGridList.Cells[12,k]:=s;
          Form_peach.StringGridList.Cells[1,k]:=extractfilename(s);
          Form_peach.StringGridList.Cells[2,k]:=s1;
-         Form_peach.StringGridList.Cells[12,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+         Form_peach.StringGridList.Cells[13,k]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,k]);
          Form_peach.StringGridList.Cells[3,k]:=s2;
          Form_peach.StringGridList.Cells[4,k]:='';//s3;
          Form_peach.StringGridList.Cells[5,k]:=s4;
-         Form_peach.StringGridList.Cells[9,k]:=s5;
-         Form_peach.StringGridList.Cells[15,k]:='0';
+         Form_peach.StringGridList.Cells[10,k]:=s5;
+         Form_peach.StringGridList.Cells[16,k]:='0';
          if s5='D     ' then
             begin
             s:=copy(Form_peach.MemoList.Lines[i],42+vparam,length(Form_peach.MemoList.Lines[i])-41+vparam);
             if s<>'' then
                if s[length(s)]='/' then setlength(s,length(s)-1);
             s1:=txt_list_isfolder;
-            Form_peach.StringGridList.Cells[11,k]:=s;
+            Form_peach.StringGridList.Cells[12,k]:=s;
             Form_peach.StringGridList.Cells[1,k]:=extractfilename(s);
             Form_peach.StringGridList.Cells[2,k]:=s1;
             Form_peach.StringGridList.Cells[3,k]:='';
-            Form_peach.StringGridList.Cells[12,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
+            Form_peach.StringGridList.Cells[13,k]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,k]);
             end;
          try
          size:=size+strtoqword(Form_peach.StringGridList.Cells[3,k]);
@@ -32479,7 +32678,7 @@ sort_az_stringgridlist_special(listsortcol);
 if az=false then sort_za_stringgridlist(listsortcol);
 if Form_peach.StringGridList.RowCount>1 then
    begin
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    end;
 i:=Form_peach.StringGridList.Rowcount-1;
@@ -32519,11 +32718,11 @@ for i:=title_lines_ace to Form_peach.MemoList.Lines.Count-3 do
    s:=copy(Form_peach.MemoList.Lines[i],9,length(Form_peach.MemoList.Lines[i])-8);
    k:=pos('  (',s);//theorically it's not an univocous marker!
    s:=copy(s,1,k-1);
-   Form_peach.StringGridList.Cells[11,i-title_lines_ace+1]:=s;
+   Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=s;
    Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]:=extractfilename(s);
    Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]:=extractfileext(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
    nfiles:=nfiles+1;
-   Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
+   Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
    s:=copy(Form_peach.MemoList.Lines[i],9,length(Form_peach.MemoList.Lines[i])-8);
    k:=pos('  (',s);
    k2:=pos(' byte uncompressed, ',s);
@@ -32533,7 +32732,7 @@ for i:=title_lines_ace to Form_peach.MemoList.Lines.Count-3 do
     size:=size+strtoqword(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]);
    except
    end;
-   Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[3,i-title_lines_ace+1];
+   Form_peach.StringGridList.Cells[14,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[3,i-title_lines_ace+1];
    s:=copy(Form_peach.MemoList.Lines[i],9,length(Form_peach.MemoList.Lines[i])-8);
    k:=pos(' byte uncompressed, ',s);
    k2:=pos(' byte compressed)',s);
@@ -32543,7 +32742,7 @@ for i:=title_lines_ace to Form_peach.MemoList.Lines.Count-3 do
     csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]);
    except
    end;
-   Form_peach.StringGridList.Cells[14,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[4,i-title_lines_ace+1];
+   Form_peach.StringGridList.Cells[15,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[4,i-title_lines_ace+1];
    //try to guess if it's a folder (there is no univocous marker): no extension and size 0 (may be an empty file without extension!)
    if (Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]='') and
       (Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]='0') then
@@ -32551,17 +32750,17 @@ for i:=title_lines_ace to Form_peach.MemoList.Lines.Count-3 do
       Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]:=txt_list_isfolder;
       nfiles:=nfiles-1;
       nfolders:=nfolders+1;
-      Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
+      Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
       end;
    Form_peach.StringGridList.Cells[5,i-title_lines_ace+1]:='';//date/time (not featured by the executable)
-   Form_peach.StringGridList.Cells[9,i-title_lines_ace+1]:='';//attributes (not featured by the executable)
+   Form_peach.StringGridList.Cells[10,i-title_lines_ace+1]:='';//attributes (not featured by the executable)
    {$ENDIF}
    {$IFDEF LINUX}
    s:=copy(Form_peach.MemoList.Lines[i],45,length(Form_peach.MemoList.Lines[i])-44);
-   Form_peach.StringGridList.Cells[11,i-title_lines_ace+1]:=s;
+   Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=s;
    Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]:=extractfilename(s);
    Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]:=extractfileext(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
-   Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
+   Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
    //date/time
    Form_peach.StringGridList.Cells[5,i-title_lines_ace+1]:=copy(Form_peach.MemoList.Lines[i],1,8)+' '+copy(Form_peach.MemoList.Lines[i],10,5);
    //size
@@ -32570,24 +32769,24 @@ for i:=title_lines_ace to Form_peach.MemoList.Lines.Count-3 do
     size:=size+strtoqword(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]);
    except
    end;
-   Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[3,i-title_lines_ace+1];
+   Form_peach.StringGridList.Cells[14,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[3,i-title_lines_ace+1];
    //packed
    Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]:=copy(Form_peach.MemoList.Lines[i],16,11);
    try
     csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]);
    except
    end;
-   Form_peach.StringGridList.Cells[14,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[4,i-title_lines_ace+1];
+   Form_peach.StringGridList.Cells[15,i-title_lines_ace+1]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))))+inttostr(length(Form_peach.StringGridList.Cells[4,i-title_lines_ace+1]))+Form_peach.StringGridList.Cells[4,i-title_lines_ace+1];
    //try to guess if it's a folder (there is no univocous marker): no extension and size 0 (may be an empty file without extension!)
    if (Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]='') and
       (Form_peach.StringGridList.Cells[3,i-title_lines_ace+1]='0') then
       begin
       Form_peach.StringGridList.Cells[2,i-title_lines_ace+1]:=txt_list_isfolder;
-      Form_peach.StringGridList.Cells[12,i-title_lines_ace+1]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
+      Form_peach.StringGridList.Cells[13,i-title_lines_ace+1]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,i-title_lines_ace+1]);
       end;
-   Form_peach.StringGridList.Cells[9,i-title_lines_ace+1]:='';//attributes (not featured by the executable)
+   Form_peach.StringGridList.Cells[10,i-title_lines_ace+1]:='';//attributes (not featured by the executable)
    {$ENDIF}
-   Form_peach.StringGridList.Cells[15,i-title_lines_ace+1]:='0';
+   Form_peach.StringGridList.Cells[16,i-title_lines_ace+1]:='0';
    end;
 try
 Form_peach.StringGridList.SortColRow(true,listsortcol);
@@ -32595,7 +32794,7 @@ sort_az_stringgridlist_special(listsortcol);
 if az=false then sort_za_stringgridlist(listsortcol);
 if Form_peach.StringGridList.RowCount>1 then
    begin
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    end;
 ratio_info_reduced(nfolders,nfiles,size,csize);
@@ -32643,31 +32842,31 @@ else
          if seemencrypted=true then Form_peach.StringGridList.Cells[1,h]:=Form_peach.StringGridList.Cells[1,h]+' *';
          if copy(Form_peach.MemoList.Lines[i],22,1)='D' then
             begin
-            Form_peach.StringGridList.Cells[11,h]:=s;
+            Form_peach.StringGridList.Cells[12,h]:=s;
             Form_peach.StringGridList.Cells[2,h]:=txt_list_isfolder;
             nfolders:=nfolders+1;
-            Form_peach.StringGridList.Cells[12,h]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,h]);
+            Form_peach.StringGridList.Cells[13,h]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,h]);
             end
          else
             begin
-            Form_peach.StringGridList.Cells[11,h]:=s;
-            Form_peach.StringGridList.Cells[2,h]:=extractfileext(Form_peach.StringGridList.Cells[11,h]);
+            Form_peach.StringGridList.Cells[12,h]:=s;
+            Form_peach.StringGridList.Cells[2,h]:=extractfileext(Form_peach.StringGridList.Cells[12,h]);
             nfiles:=nfiles+1;
-            Form_peach.StringGridList.Cells[12,h]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,h]);
+            Form_peach.StringGridList.Cells[13,h]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,h]);
             end;
          Form_peach.StringGridList.Cells[3,h]:=trimleft(copy(Form_peach.MemoList.Lines[i],29,15));
-         Form_peach.StringGridList.Cells[13,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,h]))))+inttostr(length(Form_peach.StringGridList.Cells[3,h]))+Form_peach.StringGridList.Cells[3,h];
+         Form_peach.StringGridList.Cells[14,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,h]))))+inttostr(length(Form_peach.StringGridList.Cells[3,h]))+Form_peach.StringGridList.Cells[3,h];
          Form_peach.StringGridList.Cells[4,h]:=trimleft(copy(Form_peach.MemoList.Lines[i],45,15));
-         Form_peach.StringGridList.Cells[14,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,h]))))+inttostr(length(Form_peach.StringGridList.Cells[4,h]))+Form_peach.StringGridList.Cells[4,h];
+         Form_peach.StringGridList.Cells[15,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,h]))))+inttostr(length(Form_peach.StringGridList.Cells[4,h]))+Form_peach.StringGridList.Cells[4,h];
          try
             size:=size+strtoqword(Form_peach.StringGridList.Cells[3,h]);
             csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,h]);
          except
          end;
          Form_peach.StringGridList.Cells[5,h]:=copy(Form_peach.MemoList.Lines[i],1,19);
-         Form_peach.StringGridList.Cells[9,h]:=copy(Form_peach.MemoList.Lines[i],21,7);
-         Form_peach.StringGridList.Cells[10,h]:=copy(Form_peach.MemoList.Lines[i],61,8);
-         Form_peach.StringGridList.Cells[15,h]:='0';
+         Form_peach.StringGridList.Cells[10,h]:=copy(Form_peach.MemoList.Lines[i],21,7);
+         Form_peach.StringGridList.Cells[11,h]:=copy(Form_peach.MemoList.Lines[i],61,8);
+         Form_peach.StringGridList.Cells[16,h]:='0';
          end;
       end;
    end;
@@ -32676,7 +32875,7 @@ if Form_peach.StringGridList.RowCount>1 then
    Form_peach.StringGridList.SortColRow(true,listsortcol);
    sort_az_stringgridlist_special(listsortcol);
    if az=false then sort_za_stringgridlist(listsortcol);
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    end;
 if csize=0 then
@@ -32742,31 +32941,31 @@ else
          if seemencrypted=true then Form_peach.StringGridList.Cells[1,h]:=Form_peach.StringGridList.Cells[1,h]+' *';
          if copy(Form_peach.MemoList.Lines[i],22,1)='D' then
             begin
-            Form_peach.StringGridList.Cells[11,h]:=s;
+            Form_peach.StringGridList.Cells[12,h]:=s;
             Form_peach.StringGridList.Cells[2,h]:=txt_list_isfolder;
             nfolders:=nfolders+1;
-            Form_peach.StringGridList.Cells[12,h]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,h]);
+            Form_peach.StringGridList.Cells[13,h]:=prefixd+smartsortable(Form_peach.StringGridList.Cells[1,h]);
             end
          else
             begin
-            Form_peach.StringGridList.Cells[11,h]:=s;
-            Form_peach.StringGridList.Cells[2,h]:=extractfileext(Form_peach.StringGridList.Cells[11,h]);
+            Form_peach.StringGridList.Cells[12,h]:=s;
+            Form_peach.StringGridList.Cells[2,h]:=extractfileext(Form_peach.StringGridList.Cells[12,h]);
             nfiles:=nfiles+1;
-            Form_peach.StringGridList.Cells[12,h]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,h]);
+            Form_peach.StringGridList.Cells[13,h]:=prefixf+smartsortable(Form_peach.StringGridList.Cells[1,h]);
             end;
          Form_peach.StringGridList.Cells[3,h]:=trimleft(copy(Form_peach.MemoList.Lines[i],29,15));
-         Form_peach.StringGridList.Cells[13,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,h]))))+inttostr(length(Form_peach.StringGridList.Cells[3,h]))+Form_peach.StringGridList.Cells[3,h];
+         Form_peach.StringGridList.Cells[14,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,h]))))+inttostr(length(Form_peach.StringGridList.Cells[3,h]))+Form_peach.StringGridList.Cells[3,h];
          Form_peach.StringGridList.Cells[4,h]:=trimleft(copy(Form_peach.MemoList.Lines[i],45,15));
-         Form_peach.StringGridList.Cells[14,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,h]))))+inttostr(length(Form_peach.StringGridList.Cells[4,h]))+Form_peach.StringGridList.Cells[4,h];
+         Form_peach.StringGridList.Cells[15,h]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[4,h]))))+inttostr(length(Form_peach.StringGridList.Cells[4,h]))+Form_peach.StringGridList.Cells[4,h];
          try
             size:=size+strtoqword(Form_peach.StringGridList.Cells[3,h]);
             csize:=csize+strtoqword(Form_peach.StringGridList.Cells[4,h]);
          except
          end;
          Form_peach.StringGridList.Cells[5,h]:=copy(Form_peach.MemoList.Lines[i],1,19);
-         Form_peach.StringGridList.Cells[9,h]:=copy(Form_peach.MemoList.Lines[i],21,7);
-         Form_peach.StringGridList.Cells[10,h]:=copy(Form_peach.MemoList.Lines[i],61,8);
-         Form_peach.StringGridList.Cells[15,h]:='0';
+         Form_peach.StringGridList.Cells[10,h]:=copy(Form_peach.MemoList.Lines[i],21,7);
+         Form_peach.StringGridList.Cells[11,h]:=copy(Form_peach.MemoList.Lines[i],61,8);
+         Form_peach.StringGridList.Cells[16,h]:='0';
          end;
       end;
    end;
@@ -32775,7 +32974,7 @@ if Form_peach.StringGridList.RowCount>1 then
    Form_peach.StringGridList.SortColRow(true,listsortcol);
    sort_az_stringgridlist_special(listsortcol);
    if az=false then sort_za_stringgridlist(listsortcol);
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    end;
 if csize=0 then
@@ -33679,7 +33878,7 @@ selnode:=0;
 beingpreviewed:='';
 wasselected:=-1;
 wasselectedp:=-1;
-singleextract:=false;
+if form_peach.StringGridSessionHistory.rowcount>1 then singleextract:=false;
 specialopen:=false;
 for k := 1 to 4 do abcrs[k] :='';
 {$IFNDEF MSWINDOWS}checkpatherrors(s);{$ENDIF}
@@ -33755,15 +33954,15 @@ for i:=1 to (nfiles) do
          begin
          Form_Peach.StringGridList.Cells[2,i]:=txt_list_isfolder;
          setlength(fname,length(fname)-1);
-         Form_Peach.StringGridList.Cells[12,i]:=prefixd+smartsortable(extractfilename(fname));
+         Form_Peach.StringGridList.Cells[13,i]:=prefixd+smartsortable(extractfilename(fname));
          end
       else
          begin
          Form_Peach.StringGridList.Cells[2,i]:=extractfileext(fname);
-         Form_Peach.StringGridList.Cells[12,i]:=prefixf+smartsortable(extractfilename(fname));
+         Form_Peach.StringGridList.Cells[13,i]:=prefixf+smartsortable(extractfilename(fname));
          end;
    Form_Peach.StringGridList.Cells[1,i]:=extractfilename(fname);
-   Form_Peach.StringGridList.Cells[11,i]:=(fname);
+   Form_Peach.StringGridList.Cells[12,i]:=(fname);
    Form_Peach.StringGridList.Cells[3,i]:=inttostr(fsizes[i-1]);
    size:=size+fsizes[i-1];
    iext:=testext(fname);
@@ -33772,12 +33971,12 @@ for i:=1 to (nfiles) do
          Form_Peach.StringGridList.Cells[4,i]:='.'
       else
          Form_Peach.StringGridList.Cells[4,i]:='+';
-   Form_Peach.StringGridList.Cells[13,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_Peach.StringGridList.Cells[3,i];
-   Form_Peach.StringGridList.Cells[14,i]:=Form_Peach.StringGridList.Cells[4,i];
+   Form_Peach.StringGridList.Cells[14,i]:=inttostr(length(inttostr(length(Form_peach.StringGridList.Cells[3,i]))))+inttostr(length(Form_peach.StringGridList.Cells[3,i]))+Form_Peach.StringGridList.Cells[3,i];
+   Form_Peach.StringGridList.Cells[15,i]:=Form_Peach.StringGridList.Cells[4,i];
    try Form_Peach.StringGridList.Cells[5,i]:=FormatDateTime('yyyy-mm-dd hh:mm:ss', filedatetodatetime(ftimes[i-1])); except Form_Peach.StringGridList.Cells[5,i]:=''; end;
    dword2decodedFileAttributes(fattr[i-1],fname);
-   Form_Peach.StringGridList.Cells[9,i]:=fname;
-   Form_peach.StringGridList.Cells[15,i]:='0';
+   Form_Peach.StringGridList.Cells[10,i]:=fname;
+   Form_peach.StringGridList.Cells[16,i]:='0';
    end;
 if Form_peach.StringGridList.Rowcount<2 then Form_peach.StringGridList.Rowcount:=2;
 status0:=txt_list_sorting;
@@ -34452,6 +34651,7 @@ unit_gwrap.color3:=color3;
 unit_gwrap.color4:=color4;
 unit_gwrap.color5:=color5;
 unit_gwrap.temperature:=temperature;
+unit_gwrap.contrast:=contrast;
 unit_gwrap.filesizebase:=filesizebase;
 unit_gwrap.pbackground:=txt_2_5_tray;
 unit_gwrap.pfromnativedrag:=false;
@@ -34702,6 +34902,7 @@ if cbRAR.State=cbchecked then aprar:=1 else aprar:=0;
 if cbRAR5.State=cbchecked then aprar5:=1 else aprar5:=0;
 aprardict:=comboRARdict.ItemIndex;
 if cbRARBLAKE2.State=cbchecked then aprarblake2:=1 else aprarblake2:=0;
+//if cbRARmanual.State=cbchecked then aprarmanual:=1 else aprarmanual:=0;
 if cbRARsfx.State=cbchecked then aprarsfx:=1 else aprarsfx:=0;
 if cbRARsolid.State=cbchecked then aprarsolid:=1 else aprarsolid:=0;
 if cbRARrr.State=cbchecked then aprarrr:=1 else aprarrr:=0;
@@ -35393,6 +35594,7 @@ if aprar=1 then cbRAR.State:=cbchecked else cbRAR.State:=cbunchecked; cbRARClick
 if aprar5=1 then cbRAR5.State:=cbchecked else cbRAR5.State:=cbunchecked; cbRAR5Click(nil);
 comboRARdict.ItemIndex:=aprardict; comboRARdictChange(nil);
 if aprarblake2=1 then cbRARBLAKE2.State:=cbchecked else cbRARBLAKE2.State:=cbunchecked; cbRARBLAKE2Click(nil);
+//if aprarmanual=1 then cbRARmanual.State:=cbchecked else cbRARmanual.State:=cbunchecked;
 if aprarsfx=1 then cbRARsfx.State:=cbchecked else cbRARsfx.State:=cbunchecked; cbRARsfxClick(nil);
 if aprarsolid=1 then cbRARsolid.State:=cbchecked else cbRARsolid.State:=cbunchecked; cbRARsolidClick(nil);
 if aprarrr=1 then cbRARrr.State:=cbchecked else cbRARrr.State:=cbunchecked; cbRARrrClick(nil);
@@ -36854,11 +37056,24 @@ else
    end;
 end;
 
+procedure getworkpath(var work_path:ansistring; out_param:ansistring);
+begin
+work_path:='';
+case work_dir of
+   0: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output
+   1: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output (preview in temp)
+   2: work_path:='-w'; //let 7z determinating appropriated temp folder for all actions
+   3: work_path:=stringdelim('-w'+escapefilename(custom_work_path,desk_env)); //custom for all actions
+   //4: none, preview in temp
+   //5: none for all actions (can't perform preview)
+   end;
+end;
+
 function compose_arc_cl(var cl,jobcode,outname,sel:ansistring):integer;
 var
    i:integer;
    s,out_param,in_param,exclude_param,include_param,archive_function,solid_option,sfx_option,pw_option,pw,
-   bin_name,compression_level,encalgo,recovery_option:ansistring;
+   bin_name,compression_level,encalgo,recovery_option,work_path:ansistring;
 begin
 compose_arc_cl:=-1;
 fun:='ARC';
@@ -36965,6 +37180,8 @@ if intpw=1 then
 if pw<>'' then cl:=cl+' '+pw;
 if encalgo<>'' then cl:=cl+' '+encalgo;
 if Form_peach.EditOParc.Text<>'' then cl:=cl+' '+Form_peach.EditOParc.Text;
+getworkpath(work_path,out_param);
+if work_path<>'' then cl:=cl+' '+work_path;
 cl:=cl+' '+out_param+' '+in_param+' '+exclude_param;//+' '+include_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 compose_arc_cl:=0;
@@ -37253,6 +37470,7 @@ if Form_peach.CheckBoxFolder.State=cbChecked then
          cutenddelim(s1,in_param);
          if (extractfileext(s1)='.001') or (extractfileext(s1)='.001'+delimiter) then cutextension(s1);
          if extractfileext(s1)<>'' then cutextension(s1) else cutendforbid(s1);
+         if upcase(extractfileext(s1))='.TAR' then cutextension(s1) else cutendforbid(s1);
          cutendspaces(s1);
          cutenddot(s1);
          s0:=out_param;
@@ -37444,7 +37662,7 @@ if (archive_function='x') and (status0<>txt_list_flat) then //set optional ignor
       i:=1;
       while (i<Form_peach.StringGridList.Rowcount) and (contains_folder=false) do
          begin
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then contains_folder:=true;
          i:=i+1;
          end;
@@ -37455,22 +37673,22 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
    begin
    if archive_function='e' then //extract without paths
       begin
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end
    else
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if ignorepathextand=1 then //option ignore archived paths for Extract and... override standard path policy; checking it it's possible ignoring paths only for Extract and... functions
       begin
       archive_function:='e';
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end;
    if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then //if the object is a directory, paths are always preserved (this rule override all other rules)
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    //if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    if fileexists((out_param+tempstring)) then
@@ -37480,7 +37698,7 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
 if mode='preview' then //preview special feature, replaces archive function and overwrite policy as 'extract and...' but never ignores paths
    begin
    archive_function:='x';
-   tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    //if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    {$IFDEF MSWINDOWS}tempstring:=StringReplace(tempstring,':','_', [rfReplaceAll]);{$ENDIF}
    overwrite_policy:='-o+';
@@ -37523,10 +37741,10 @@ if selection='selected' then //extract object in the range of selection
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.top=0{$ENDIF} then
    begin
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         filter1:=Form_peach.StringGridList.Cells[11,i];
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         filter1:=Form_peach.StringGridList.Cells[12,i];
          //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
          cl:=cl+' '+stringdelim(escapefilename(filter1,desk_env));
          checksel:=true;
@@ -37545,26 +37763,13 @@ if selection='selected' then //extract object in the range of selection
    end;
 if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extract a single object
    begin
-   if checkfiledirname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]); exit; end;
-   filter1:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   if checkfiledirname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]); exit; end;
+   filter1:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
    cl:=cl+' -- '+stringdelim(escapefilename(filter1,desk_env));
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 compose_unarc_cl:=0;
-end;
-
-procedure getworkpath(var work_path:ansistring; out_param:ansistring);
-begin
-work_path:='';
-case work_dir of
-   0: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output
-   1: work_path:=stringdelim('-w'+escapefilename(extractfilepath(out_param),desk_env)); //output (preview in temp)
-   2: work_path:='-w'; //let 7z determinating appropriated temp folder for all actions
-   3: work_path:=stringdelim('-w'+escapefilename(custom_work_path,desk_env)); //custom for all actions
-   //4: none, preview in temp
-   //5: none for all actions (can't perform preview)
-   end;
 end;
 
 function compose_custom_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -37801,10 +38006,10 @@ if archive_function='r' then cl:=cl+' '+stringdelim(escapefilename(extractfilepa
 if archive_function='d' then
 {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.top=0{$ENDIF} then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         filter1:=Form_peach.StringGridList.Cells[11,i];
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         filter1:=Form_peach.StringGridList.Cells[12,i];
          //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
          cl:=cl+' '+stringdelim(escapefilename(filter1,desk_env));
          end;
@@ -38068,17 +38273,19 @@ if not(FileExists(fs)) then exit;
 result:=false; //only existing files raise errors
 hs:=getchash(fs);
 case hs of
- //pea 1.12
-'A3E7FCE5A3342A98A51981616206E512A9E3E2D44A82B2A7D9E07590F00962F6', //win64
-'2EE228AD621AD0769A0C1C249FB1ED2BD5FA9B2D1B0B9A74FD31E436E9041BCD', //win32
-'AEED8E091F7DCD4B74BF07F6E55B455CFD18FC4F5318845396F6036A8A61CF37', //lin x86_64 GTK2
-'42565C863AC68E1C2D3B291709F7D6FAC090894DE60D4A01F4EC6FD0A598E5E6', //lin x86_64 Qt5
-'6A2810033F011644A9B16CA0471794471A110C6AF382564935E1EBB16FED5A6E', //macos aarch64
-'98FB5B4D554915FC08D1E66297A489A7C4E9A941AB1AC73D1602AE1B4014516D', //macos x86_64
-'D753512F4B303C17D60B2A744E12F347E3BED30DE5F701E0EAE896C87200364B', //BSD x86_64
+ //pea 1.13
+'E14C142D377060CD0C3BEC0932A50DD40773E2FE51839806B8FA1EB58ACC885E', //win64
+'1BE1B22EF5A69AD86619E544EBC2C23A874400A6465F51113E5FEEE3EC7938C1', //win32
+'702F4BBB54D560637BF8888C3C4E8E66C01AFCBEB48ECF70582F4F03C1C58F84', //lin x86_64 GTK2
+'12690A6A8371A429084F0514E205F1DA2A708FE39A90FFFEFD4A81B8F2077142', //lin x86_64 Qt5
+'1E40A2B6A2C172809C1A4DF50FAC8509612B0E0E88E51B8529B15C493DFB60BF', //macos aarch64
+'A5E6D7EC1F6ED10C734F1BFF925429F6F0C078435D61D4744F876332593203B7', //macos Intel
+'A4505EDBD61CE3B76EE13CE6AFC2479CE6E1798728D6B1557F1A57FBDA2FD167', //BSD x86_64
 {$IFDEF MSWINDOWS}
-'183820E5CA48CAAE5B393780115390F2621C222472B5FA540671A56042FF6BB3',//Configure PeaZip 9.2 64 bit
-'288B4A40F0BDD9DCFC3F28FD1ED8C5B825ADA71971CBA7513F688D9F16B31444',//Configure PeaZip 9.2 32 bit
+'183820E5CA48CAAE5B393780115390F2621C222472B5FA540671A56042FF6BB3',//Configure PeaZip 9.2+ 64 bit
+'288B4A40F0BDD9DCFC3F28FD1ED8C5B825ADA71971CBA7513F688D9F16B31444',//Configure PeaZip 9.2+ 32 bit
+'8CEBB25E240DB3B6986FCAED6BC0B900FA09DAD763A56FB71273529266C5C525',//7z 23.01 64 bit
+'3092F736F9F4FC0ECC00A4D27774F9E09B6F1D6EEE8ACC1B45667FE1808646A6',//7z 23.01 32 bit
 '254CF6411D38903B2440819F7E0A847F0CFEE7F8096CFAD9E90FEA62F42B0C23',//7z 22.01 64 bit
 '59CBFBA941D3AC0238219DAA11C93969489B40F1E8B38FABDB5805AC3DD72BFA',//7z 22.01 32 bit
 '7135E78794C5CEACB094AFCADCA57755CC3801591552776F1A717BBDD65605A7',//7z 22.00 64 bit
@@ -38110,6 +38317,7 @@ case hs of
 '824E2D777C96D5CFEBD1AF15775B5D95711A8F62EC4C2567477D8AEBB32F3C95'//zstd 1.5.2 32 bit
 {$ELSE}
 {$IFDEF DARWIN}
+'FE4F31D6FFBD31DB042456A76544746EF647379E3AEC0A59F2A98A2EAC244C2F',//7z 23.01
 'C194CD5B88D5CF5842DF4F6E5B082AC593780AABC221DE01558A4FA58850C43E',//7z 21.07
 '0048D4C9BB80A07905B8ED74227348C58FF22D66A719B51B3DB2B8C020C70CE1',//brotli aarch64
 '7A36C92389CB1A3121F110D95141C667F2EA9FC76A71C1D6C98FF496C0731A26',//zpaq aarch64
@@ -38124,6 +38332,7 @@ case hs of
 '989DFF2DC096C4D5A88B6850120038FFE095D18CFF3206D15F82FD63FE8D1B8C',//zstd x86_64
 {$ENDIF}
 //x86_64
+'B81C37ACA9B7AF945916D84235DCB27BEAEF519417130A594915B6583A5B1710',//7z 23.01
 '3ED12371D214C49F990CD705E6C773BA56A68480ED5CCDBECAFF9BAB4E3F79E4',//7z 22.01
 'E8433C46FDFA207D5864E34B4C4D2C586BCBFA70F8929656B4BF142EA6453FCE',//7z 22.00
 '758629C3D78A37B8A5524C2A9E08E5D1E210564FFACF1BD366B25B2993C017BA',//7z 21.07
@@ -38787,7 +38996,7 @@ if (archive_function='x') and (status0<>txt_list_flat) then //set optional ignor
       i:=1;
       while (i<Form_peach.StringGridList.Rowcount) and (contains_folder=false) do
          begin
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then contains_folder:=true;
          i:=i+1;
          end;
@@ -38798,22 +39007,22 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
    begin
    if archive_function='e' then //extract without paths
       begin
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end
    else
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if ignorepathextand=1 then //option ignore archived paths for Extract and... override standard path policy; checking it it's possible ignoring paths only for Extract and... functions
       begin
       archive_function:='e';
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end;
    if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then //if the object is a directory, paths are always preserved (this rule override all other rules)
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    if fileexists((out_param+tempstring)) then
@@ -38823,7 +39032,7 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
 if mode='preview' then //preview special feature, replaces archive function and overwrite policy as 'extract and...' but never ignores paths
    begin
    archive_function:='x';
-   tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    {$IFDEF MSWINDOWS}tempstring:=StringReplace(tempstring,':','_', [rfReplaceAll]);{$ENDIF}
    overwrite_policy:='-o+';
@@ -38866,10 +39075,10 @@ if selection='selected' then //extract object in the range of selection
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.top=0{$ENDIF} then
    begin
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         filter1:=Form_peach.StringGridList.Cells[11,i];
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         filter1:=Form_peach.StringGridList.Cells[12,i];
          //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
          cl:=cl+' '+stringdelim(escapefilename(filter1,desk_env));
          checksel:=true;
@@ -38888,8 +39097,8 @@ if selection='selected' then //extract object in the range of selection
    end;
 if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extract a single object
    begin
-   if checkfiledirname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]); exit; end;
-   filter1:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   if checkfiledirname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]); exit; end;
+   filter1:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
    cl:=cl+' -- '+stringdelim(escapefilename(filter1,desk_env));
    end;
@@ -38970,7 +39179,7 @@ if specialopen=false then
       if nffromdrag=true then set_output_folder(out_param,in_param,real_extract,Form_peach.RadioGroupAction.ItemIndex);
 if (mode='ext') and (specialopen=true) then //specialopen switches to extract entire directory for some file types (exe, bat, html...)
    begin
-   alt_tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   alt_tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    {$IFDEF MSWINDOWS}alt_tempstring:=StringReplace(alt_tempstring,':','_', [rfReplaceAll]);{$ENDIF}
    if pstmpdir<>'' then if DirectoryExists(pstmpdir) then else CreateDir(pstmpdir);
    filesetattr(pstmpdir, faHidden);
@@ -39087,7 +39296,7 @@ if (archive_function='x') and (status0<>txt_list_flat) then //set optional ignor
       i:=1;
       while (i<Form_peach.StringGridList.Rowcount) and (contains_folder=false) do
          begin
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then contains_folder:=true;
          i:=i+1;
          end;
@@ -39098,22 +39307,22 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
    begin
    if archive_function='e' then //extract without paths
       begin
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end
    else
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if ignorepathextand=1 then //option ignore archived paths for Extract and... override standard path policy; checking it it's possible ignoring paths only for Extract and... functions
       begin
       archive_function:='e';
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end;
    if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then //if the object is a directory, paths are always preserved (this rule override all other rules)
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    if fileexists((out_param+tempstring)) or directoryexists((out_param+tempstring)) then
@@ -39123,7 +39332,7 @@ if mode='extandrun' then //extandrun special feature, replaces archive function 
 if mode='preview' then //preview special feature, replaces archive function and overwrite policy as 'extract and...' but never ignores paths
    begin
    archive_function:='x';
-   tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
    {$IFDEF MSWINDOWS}tempstring:=StringReplace(tempstring,':','_', [rfReplaceAll]);{$ENDIF}
    overwrite_policy:='-aos';//do not overwrite previewed data
@@ -39188,10 +39397,10 @@ if selection='selected' then //extract object in the range of selection
    {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.top=0{$ENDIF} then
    begin
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         filter1:=Form_peach.StringGridList.Cells[11,i];
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         filter1:=Form_peach.StringGridList.Cells[12,i];
          if archive_function='d' then if copy(filter1,1,1)='.' then filter1:='?'+copy(filter1,2,length(filter1)-1);
          if archive_function='d' then if copy(filter1,2,1)=':' then filter1:=copy(filter1,1,1)+'?'+copy(filter1,3,length(filter1)-2);
          //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
@@ -39212,8 +39421,8 @@ if selection='selected' then //extract object in the range of selection
    end;
 if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extract a single object
    begin
-   if checkfiledirname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]); exit; end;
-   filter1:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+   if checkfiledirname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]); exit; end;
+   filter1:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
    //if copy(filter1,1,1)='.' then filter1:='*'+copy(filter1,2,length(filter1)-1);
    cl:=cl+' '+stringdelim('-i!'+escapefilename(filter1,desk_env));
    end;
@@ -40281,22 +40490,22 @@ case mode of
    begin
    if archive_function='e' then //extract without paths
       begin
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end
    else
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if Form_peach.CheckBox4.State=cbChecked then //option ignore archived paths for Extract and... override standard path policy; checking it it's possible ignoring paths only for Extract and... functions
       begin
       archive_function:='e';
-      tempstring:=extractfilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+      tempstring:=extractfilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
       end;
    if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then //if the object is a directory, paths are always preserved (this rule override all other rules)
       begin
       archive_function:='x';
-      tempstring:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+      tempstring:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
       end;
    if fileexists((out_param+tempstring)) then
          if pMessageWarningYesNo(out_param+tempstring+' '+txt_confirm_overwrite)<>6 then exit;
@@ -40518,18 +40727,23 @@ var
    P.Options:=[poNewConsole,poWaitOnExit];
    {$ELSE}
    if ((subfun='extract') or (subfun='convert')) and (movetorelativepath=1) and (Form_peach.CheckBoxrelative.enabled=true) then //workaround for Linux
-      P.Options:=[poWaitOnExit]
+   P.Options:=[poWaitOnExit]
    else
       P.Options:=[poNewConsole,poWaitOnExit];
    {$ENDIF}
    cl:=P.Commandline;
    if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
-
    keepopen:=false;
-   if (subfun='list') or (subfun='test') or (subfun='bench') then
+
+   if (subfun='list') or (subfun='test') or (subfun='bench') then //unused
       begin
       {$IFDEF MSWINDOWS}
       P.Commandline:='cmd /k "'+cl+'"';
+      {$ELSE}
+      P.Commandline:='bash -c "'+cl+'; read line"';
+      {$IFDEF DARWIN}
+      P.Commandline:='open '+cl;
+      {$ENDIF}
       {$ENDIF}
       keepopen:=true;
       end;
@@ -45206,139 +45420,139 @@ saddr2:=saddr+'*'+directoryseparator+'*';
 
 for i:=1 to Form_peach.StringGridAddress1.RowCount-1 do
   begin
-  if (pos(saddr,Form_Peach.StringGridAddress1.Cells[11,i])=1) or (saddr='') then
-     if not(MatchesMask(Form_Peach.StringGridAddress1.Cells[11,i],saddr2,false)) then
+  if (pos(saddr,Form_Peach.StringGridAddress1.Cells[12,i])=1) or (saddr='') then
+     if not(MatchesMask(Form_Peach.StringGridAddress1.Cells[12,i],saddr2,false)) then
         begin
         if Form_peach.pmbcd1.visible=false then
            begin
            Form_peach.pmbcd1.visible:=true;
-           Form_peach.pmbcd1.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd1.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd1.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd2.visible=false then
            begin
            Form_peach.pmbcd2.visible:=true;
-           Form_peach.pmbcd2.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd2.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd2.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd3.visible=false then
            begin
            Form_peach.pmbcd3.visible:=true;
-           Form_peach.pmbcd3.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd3.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd3.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd4.visible=false then
            begin
            Form_peach.pmbcd4.visible:=true;
-           Form_peach.pmbcd4.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd4.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd4.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd5.visible=false then
            begin
            Form_peach.pmbcd5.visible:=true;
-           Form_peach.pmbcd5.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd5.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd5.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd6.visible=false then
            begin
            Form_peach.pmbcd6.visible:=true;
-           Form_peach.pmbcd6.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd6.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd6.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd7.visible=false then
            begin
            Form_peach.pmbcd7.visible:=true;
-           Form_peach.pmbcd7.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd7.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd7.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd8.visible=false then
            begin
            Form_peach.pmbcd8.visible:=true;
-           Form_peach.pmbcd8.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd8.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd8.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd9.visible=false then
            begin
            Form_peach.pmbcd9.visible:=true;
-           Form_peach.pmbcd9.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd9.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd9.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd10.visible=false then
            begin
            Form_peach.pmbcd10.visible:=true;
-           Form_peach.pmbcd10.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd10.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd10.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd11.visible=false then
            begin
            Form_peach.pmbcd11.visible:=true;
-           Form_peach.pmbcd11.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd11.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd11.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd12.visible=false then
            begin
            Form_peach.pmbcd12.visible:=true;
-           Form_peach.pmbcd12.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd12.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd12.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd13.visible=false then
            begin
            Form_peach.pmbcd13.visible:=true;
-           Form_peach.pmbcd13.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd13.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd13.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd14.visible=false then
            begin
            Form_peach.pmbcd14.visible:=true;
-           Form_peach.pmbcd14.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd14.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd14.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd15.visible=false then
            begin
            Form_peach.pmbcd15.visible:=true;
-           Form_peach.pmbcd15.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd15.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd15.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd16.visible=false then
            begin
            Form_peach.pmbcd16.visible:=true;
-           Form_peach.pmbcd16.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd16.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd16.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd17.visible=false then
            begin
            Form_peach.pmbcd17.visible:=true;
-           Form_peach.pmbcd17.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd17.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd17.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd18.visible=false then
            begin
            Form_peach.pmbcd18.visible:=true;
-           Form_peach.pmbcd18.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd18.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd18.bitmap:=BFolder;
            end
         else
         if Form_peach.pmbcd19.visible=false then
            begin
            Form_peach.pmbcd19.visible:=true;
-           Form_peach.pmbcd19.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[11,i]);
+           Form_peach.pmbcd19.caption:=dirextractfilename(Form_peach.StringGridAddress1.Cells[12,i]);
            Form_peach.pmbcd19.bitmap:=BFolder;
            end
         else Form_peach.pmbcd0.visible:=true;
@@ -46025,10 +46239,10 @@ if fun<>'FILEBROWSER' then
    end;
 k:=0;
 for i:=1 to rc-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       if Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder then  //no folders
          begin
-         test_extfile(Form_peach.StringGridList.Cells[11,i],okfile);
+         test_extfile(Form_peach.StringGridList.Cells[12,i],okfile);
          if okfile=true then k:=k+1;
          end;
 if k>0 then result:=true;
@@ -46047,7 +46261,7 @@ rc:=Form_peach.StringGridList.RowCount;
 if rc=1 then exit;
 k:=0;
 for i:=1 to rc-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
       k:=k+1;
       if k>1 then break;
@@ -46060,7 +46274,7 @@ case Form_peach.cbType.Text of
 containfolder:=false;
 if result=false then //allow single file input
    for i:=1 to rc-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then
             begin
             containfolder:=true;
@@ -46086,10 +46300,10 @@ if fun<>'FILEBROWSER' then
    end;
 k:=0;
 for i:=1 to rc-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       if Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder then  //no folders
          begin
-         test_extfile_noduplicatecheck(Form_peach.StringGridList.Cells[11,i],okfile);
+         test_extfile_noduplicatecheck(Form_peach.StringGridList.Cells[12,i],okfile);
          if okfile=true then k:=k+1;
          end;
 if k>0 then result:=true;
@@ -46245,7 +46459,7 @@ s_files:=0;
 name_file:='';
 name_folder:='';
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then
          begin
          t_folders:=t_folders+1;
@@ -46651,7 +46865,7 @@ Form_peach.Caption:=txt_2_7_updating+' 1/4 '+txt_please_wait;
 application.ProcessMessages;
 if status0=txt_list_browsing then
    begin
-   try inpath:=extractfilepath(Form_peach.StringGridList.Cells[11,1]); except inpath:=''; end;
+   try inpath:=extractfilepath(Form_peach.StringGridList.Cells[12,1]); except inpath:=''; end;
    if inpath='' then inpath:=extractfilepath(Form_peach.EditUn7zaFilter.Text);//allow adding to empty folders
    end
 else
@@ -46662,7 +46876,7 @@ namecollisionfound:=false;
 if (fextl='.7Z') or (fextl='.TAR') or (fextl='.ZIP') or (fextl='.WIM') or (fextl='.RAR') or (test_forceeditunsupported(s)=1) then
    for i:=1 to Form_peach.StringGridArchive.Rowcount-1 do
       for j:=1 to Form_peach.StringGrid1.RowCount-1 do
-         if Form_peach.StringGridArchive.Cells[11,i]=inpath+Form_peach.StringGrid1.Cells[1,j] then
+         if Form_peach.StringGridArchive.Cells[12,i]=inpath+Form_peach.StringGrid1.Cells[1,j] then
             begin
             namecollisionfound:=true;
             break;
@@ -46686,7 +46900,7 @@ if inpath<>'' then
    if (fextl='.7Z') or (fextl='.TAR') or (fextl='.ZIP') or (fextl='.WIM') or (fextl='.RAR') or (test_forceeditunsupported(s)=1) then
       for i:=1 to Form_peach.StringGridArchive.Rowcount-1 do
          for j:=1 to Form_peach.StringGrid1.RowCount-1 do
-            if Form_peach.StringGridArchive.Cells[11,i]=Form_peach.StringGrid1.Cells[1,j] then
+            if Form_peach.StringGridArchive.Cells[12,i]=Form_peach.StringGrid1.Cells[1,j] then
                begin
                Form_peach.StringGridArchive.Cells[0,i]:='1';
                renamefileinarchive(Form_peach.StringGrid1.Cells[1,j],tempaddinarchive+DirectorySeparator+Form_peach.StringGrid1.Cells[1,j],false);
@@ -46711,7 +46925,7 @@ Form_peach.Shape3.Width:=(Form_peach.Width*80) div 100;
 application.ProcessMessages;
 if status0=txt_list_browsing then
    begin
-   try inpath:=extractfilepath(Form_peach.StringGridList.Cells[11,1]); except inpath:=''; end;
+   try inpath:=extractfilepath(Form_peach.StringGridList.Cells[12,1]); except inpath:=''; end;
    if inpath='' then inpath:=extractfilepath(Form_peach.EditUn7zaFilter.Text);//allow adding to empty folders
    end
 else
@@ -46736,7 +46950,7 @@ if inpath<>'' then
          if Form_peach.StringGridArchive.Cells[0,i]='1' then
             begin
             Form_peach.StringGridArchive.Cells[0,i]:='';
-            renamefileinarchive(tempaddinarchive+DirectorySeparator+Form_peach.StringGridArchive.Cells[11,i],Form_peach.StringGridArchive.Cells[11,i],false);
+            renamefileinarchive(tempaddinarchive+DirectorySeparator+Form_peach.StringGridArchive.Cells[12,i],Form_peach.StringGridArchive.Cells[12,i],false);
             application.ProcessMessages;
             end;
       end;
@@ -47127,7 +47341,6 @@ begin
 end;
 
 procedure checkhaltsystem_fromA;
-
 begin
 if Form_peach.CheckBoxAutoHaltA.State=cbChecked then phalstsystem_fromapp;
 end;
@@ -47138,6 +47351,7 @@ if goarchiving=true then exit;
 goarchiving:=true;
 Form_peach.Enabled:=false;
 endmultimode;
+if checkfreespace<>0 then Form_peach.StringGrid1.RowCount:=1;
 if Form_peach.StringGrid1.RowCount=1 then
    begin
    if skipapstatus=true then
@@ -47280,7 +47494,7 @@ function checkfdwin:integer;//under Windows systems prevents adding a floppy vol
 begin
 checkfdwin:=-1;
 {$IFDEF MSWINDOWS}
-if (Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]='A:\') or (Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]='B:\') then exit;
+if (Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]='A:\') or (Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]='B:\') then exit;
 {$ENDIF}
 checkfdwin:=0;
 end;
@@ -47290,7 +47504,7 @@ begin
 checkfdwin_row:=-1;
 {$IFDEF MSWINDOWS}
 if i>0 then
-   if (Form_peach.StringGridList.Cells[11,i]='A:\') or (Form_peach.StringGridList.Cells[11,i]='B:\') then exit;
+   if (Form_peach.StringGridList.Cells[12,i]='A:\') or (Form_peach.StringGridList.Cells[12,i]='B:\') then exit;
 {$ENDIF}
 checkfdwin_row:=0;
 end;
@@ -47698,7 +47912,7 @@ var
 begin
 tsize:=0;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       try
       tsize:=tsize+strtoqword(Form_peach.StringGridList.Cells[3,i]);
       except
@@ -47773,7 +47987,7 @@ var
    P:tprocessutf8;
    s,cl,jobcode,outname,strsel,funct1:ansistring;
    i,j,k,nsel:integer;
-   scheduleclip:array of array [0..17] of ansistring;
+   scheduleclip:array of array [0..18] of ansistring;
 begin
 if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
@@ -47793,9 +48007,9 @@ s:=Form_peach.EditOpenIn.Text;
 k:=0;
 setlength(scheduleclip,1);
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
       for j:=0 to Form_peach.StringGridList.ColCount-1 do
          scheduleclip[k,j]:=Form_peach.StringGridList.Cells[j,i];
       setlength(scheduleclip,length(scheduleclip)+1);
@@ -47803,7 +48017,7 @@ for i:=1 to Form_peach.StringGridList.RowCount-1 do
       end;
 for i:=0 to k-1 do
    begin
-   Form_peach.EditOpenIn.Text:=scheduleclip[i,11];
+   Form_peach.EditOpenIn.Text:=scheduleclip[i,12];
    tsize:=strtoqword(scheduleclip[i,3]);//not exact for multivolumes
    testarctype(Form_peach.EditOpenIn.Text,j,fun);
    if (funct='test') and (fun='FILEBROWSER') then fun:='UN7Z'; //test inside directories
@@ -47854,17 +48068,17 @@ begin
 Application.ProcessMessages;
 resetminimizedlauncher;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
-      if Form_peach.StringGridList.Cells[11,i]<>'' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
+      if Form_peach.StringGridList.Cells[12,i]<>'' then
          if checkfdwin_row(i)=0 then
-            if testname(Form_peach.StringGridList.Cells[11,i], Form_peach.StringGrid1)=0 then
+            if testname(Form_peach.StringGridList.Cells[12,i], Form_peach.StringGrid1)=0 then
                begin
-               Form_peach.Caption:=txt_2_4_adding+' '+Form_peach.StringGridList.Cells[11,i];
+               Form_peach.Caption:=txt_2_4_adding+' '+Form_peach.StringGridList.Cells[12,i];
                Application.ProcessMessages;
-               if filegetattr(Form_peach.StringGridList.Cells[11,i]) > 0 then
-                  if filegetattr(Form_peach.StringGridList.Cells[11,i]) and faDirectory =0 then begin addfilestr(Form_peach.StringGrid1,Form_peach.StringGridList.Cells[11,i]); end
-                  else addfolderstr(Form_peach.StringGrid1,Form_peach.StringGridList.Cells[11,i])
-               else msg_not_accessible_list(Form_peach.StringGridList.Cells[11,i]);
+               if filegetattr(Form_peach.StringGridList.Cells[12,i]) > 0 then
+                  if filegetattr(Form_peach.StringGridList.Cells[12,i]) and faDirectory =0 then begin addfilestr(Form_peach.StringGrid1,Form_peach.StringGridList.Cells[12,i]); end
+                  else addfolderstr(Form_peach.StringGrid1,Form_peach.StringGridList.Cells[12,i])
+               else msg_not_accessible_list(Form_peach.StringGridList.Cells[12,i]);
                end;
 Form_peach.StringGrid1.AutoSizeColumns;
 showpanel('archive');
@@ -47893,7 +48107,7 @@ if GroupBoxCreateOut1.Visible = true then
    begin
    if status0=txt_list_browsing then
       begin
-      try labelstatus9.caption:=extractfilepath(Form_peach.StringGridList.Cells[11,1]); except labelstatus9.caption:=''; end;
+      try labelstatus9.caption:=extractfilepath(Form_peach.StringGridList.Cells[12,1]); except labelstatus9.caption:=''; end;
       if labelstatus9.caption='' then labelstatus9.caption:=extractfilepath(Form_peach.EditUn7zaFilter.Text);//allow adding to empty folders
       end
    else
@@ -47913,6 +48127,35 @@ ImagePassword3.Visible:=Form_peach.ImagePassword1.Visible;
 ImagePassword3.Glyph:=ImagePassword1.Glyph;
 ComboBoxArchiveAct1.ItemIndex:=ComboBoxArchiveAct.ItemIndex;
 //ComboBoxArchiveAct1.Enabled:=ComboBoxArchiveAct.Enabled;
+end;
+end;
+
+function isarchiveeditable:integer;//-1 not an archive 0 can edit 1 will try to edited (forced) 2 cannot edit
+var
+   s,fextl:ansistring;
+begin
+result:=-1;
+if fun='FILEBROWSER' then exit;
+result:=0;
+s:=Form_peach.EditOpenIn.Text;
+fextl:=upcase(extractfileext(s));
+//set type, set action to update
+case fextl of
+'.7Z','.TAR','.WIM','.ZIP','.ZIPX','.ARC','.ZPAQ','.EXE': begin end;
+'.RAR' :
+   begin
+   if (havewinrar=true) and (userar=1) then
+      begin end
+   else
+      result:=2;
+   end;
+else
+   begin
+   if test_forceeditunsupported(s)=1 then //try only for unknown file types, avoid knwon file types not supporting this operation
+      result:=1
+   else
+      result:=2;
+   end;
 end;
 end;
 
@@ -48591,7 +48834,7 @@ if (form_peach.RadioGroupAction.ItemIndex<2) //extraction operations
       begin
       if (status0=txt_list_browsing) then
          begin
-         relpath:=StringReplace(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row],':','_',[rfReplaceAll]);
+         relpath:=StringReplace(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row],':','_',[rfReplaceAll]);
          relpath:=extractfilepath(relpath);
          end
       else
@@ -48875,7 +49118,7 @@ end;
 
 procedure goextract;
 var
-   i,k,nsel:integer;
+   i,k,nsel,el:integer;
    isize,ksize:qword;
    cl,dummycl,jobcode,outname,strsel,s_in,s_ext,dummytitle:ansistring;
    goup:boolean;
@@ -48884,6 +49127,7 @@ clearstopsequencefile;
 setsequenceerror:=false;
 unit_gwrap.perrors:=0;
 psize:=0;
+el:=0;
 if check_extraction_input<>0 then exit;
    if length(Form_peach.EditOpenOut.Text)>16383 then
       begin
@@ -48955,9 +49199,13 @@ if fun='FILEBROWSER' then
       application.ProcessMessages;
       if testencrypted_fromname(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row],'closed')=2 then
       else
-         if extract_finalize_bytype(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row],'neutral',cl,jobcode,outname,extsel,true)=0 then launch_cl(cl,jobcode,outname);//'ext'
+         begin
+         el:=extract_finalize_bytype(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row],'neutral',cl,jobcode,outname,extsel,true);
+         if el=0 then launch_cl(cl,jobcode,outname);//'ext'
+         end;
       fun:='FILEBROWSER';
       if i=k-1 then if stayopen=true then Form_peach.visible:=True;
+      if el<>0 then exit;
       if i=k-1 then if stayopen=true then form_peach.Enabled:=false;
       untarafter(outname,Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row],dummycl,true,'');
       if i=k-1 then if stayopen=true then form_peach.Enabled:=true;
@@ -48979,7 +49227,8 @@ else
    if (fun='UNARC') or (fun='UN7Z') then
       if testencrypted=0 then
          begin
-         if extract_finalize_bytype(Form_peach.EditOpenIn.Text,'neutral',cl,jobcode,outname,extsel,true)=0 then launch_cl(cl,jobcode,outname);//'ext'
+         el:=extract_finalize_bytype(Form_peach.EditOpenIn.Text,'neutral',cl,jobcode,outname,extsel,true);
+         if el=0 then launch_cl(cl,jobcode,outname);//'ext'
          end
       else
          begin
@@ -48987,8 +49236,12 @@ else
          else tobrowser_fromextractor;
          end
    else
-      if extract_finalize_bytype(Form_peach.EditOpenIn.Text,'neutral',cl,jobcode,outname,extsel,true)=0 then launch_cl(cl,jobcode,outname);//'ext'
+      begin
+      el:=extract_finalize_bytype(Form_peach.EditOpenIn.Text,'neutral',cl,jobcode,outname,extsel,true);
+      if el=0 then launch_cl(cl,jobcode,outname);//'ext'
+      end;
    if stayopen=true then Form_peach.visible:=True;
+   if el<>0 then exit;
    form_peach.Enabled:=false;
    untarafter(outname,Form_peach.EditOpenIn.Text,dummycl,true,'');
    form_peach.Enabled:=true;
@@ -49100,6 +49353,7 @@ procedure on_buttonextokclick;
 begin
 Form_peach.Enabled:=false;
 endmultimode;
+if checkfreespace<>0 then Form_peach.StringGrid2.RowCount:=1;
 if Form_peach.StringGrid2.RowCount=1 then
    begin
    Form_peach.RadioGroupAction.ItemIndex:=0; on_radiogroupactionchange;
@@ -49216,7 +49470,7 @@ nsel:=0;
 strsel:='';
 rc:=Form_peach.StringGridList.Rowcount;
 for i:=1 to rc-1 do
-   if (Form_peach.ListView1.Items[i-1].Selected=true) and (checkimgsupported(Form_peach.StringGridList.Cells[11,i])) then
+   if (Form_peach.ListView1.Items[i-1].Selected=true) and (checkimgsupported(Form_peach.StringGridList.Cells[12,i])) then
       begin
       nsel:=nsel+1;
       case nsel of
@@ -49239,7 +49493,7 @@ var
    i,j,k,nsel:integer;
    s,s1,strsel,stitle,sfun,rfunl:ansistring;
    reporig:boolean;
-   scheduleclip:array of array [0..17] of ansistring;
+   scheduleclip:array of array [0..18] of ansistring;
 begin
 if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
@@ -49253,9 +49507,9 @@ if fun='FILEBROWSER' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
       begin
       if Form_peach.EditOpenIn.Text<>s1 then break;
-      if (Form_peach.StringGridList.Cells[15,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[11,i])) then
+      if (Form_peach.StringGridList.Cells[16,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[12,i])) then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
          for j:=0 to Form_peach.StringGridList.ColCount-1 do
             scheduleclip[k,j]:=Form_peach.StringGridList.Cells[j,i];
          setlength(scheduleclip,length(scheduleclip)+1);
@@ -49282,7 +49536,7 @@ if fun='FILEBROWSER' then
    for i:=0 to k-1 do
       begin
       if endflag=true then exit;
-      s:=scheduleclip[i,11];
+      s:=scheduleclip[i,12];
       Form_peach.Caption:=sfun+' ('+inttostr(i+1)+'/'+inttostr(k)+') '+s;
       browser_imgrotate(s,reporig,rfun);
       Application.ProcessMessages;
@@ -49378,7 +49632,7 @@ var
    i,j,k,nsel:integer;
    s,s1,strsel,stitle,sfun:ansistring;
    reporig:boolean;
-   scheduleclip:array of array [0..17] of ansistring;
+   scheduleclip:array of array [0..18] of ansistring;
 begin
 if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
@@ -49392,9 +49646,9 @@ if fun='FILEBROWSER' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
       begin
       if Form_peach.EditOpenIn.Text<>s1 then break;
-      if (Form_peach.StringGridList.Cells[15,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[11,i])) then
+      if (Form_peach.StringGridList.Cells[16,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[12,i])) then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
          for j:=0 to Form_peach.StringGridList.ColCount-1 do
             scheduleclip[k,j]:=Form_peach.StringGridList.Cells[j,i];
          setlength(scheduleclip,length(scheduleclip)+1);
@@ -49422,7 +49676,7 @@ if fun='FILEBROWSER' then
    for i:=0 to k-1 do
       begin
       if endflag=true then exit;
-      s:=scheduleclip[i,11];
+      s:=scheduleclip[i,12];
       Form_peach.Caption:=sfun+' ('+inttostr(i+1)+'/'+inttostr(k)+') '+s;
       browser_imgtransform(s,reporig,percentw,percenth,w,h,resfun,convext,convopt);
       Application.ProcessMessages;
@@ -49507,8 +49761,8 @@ convext:='no';
 unit9.origw:=simgw;
 unit9.origh:=simgh;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if (Form_peach.StringGridList.Cells[15,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[11,i])) then
-      if load_imagefiletopicture(apicture,Form_peach.StringGridList.Cells[11,i])=0 then
+   if (Form_peach.StringGridList.Cells[16,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[12,i])) then
+      if load_imagefiletopicture(apicture,Form_peach.StringGridList.Cells[12,i])=0 then
          begin
          unit9.origw:=apicture.Bitmap.Width;
          unit9.origh:=apicture.Bitmap.Height;
@@ -49587,7 +49841,7 @@ var
    i,j,k,nsel:integer;
    s,s1,strsel,stitle,sfun:ansistring;
    reporig:boolean;
-   scheduleclip:array of array [0..17] of ansistring;
+   scheduleclip:array of array [0..18] of ansistring;
 begin
 if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
@@ -49601,9 +49855,9 @@ if fun='FILEBROWSER' then
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
       begin
       if Form_peach.EditOpenIn.Text<>s1 then break;
-      if (Form_peach.StringGridList.Cells[15,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[11,i])) then
+      if (Form_peach.StringGridList.Cells[16,i]='1') and (checkimgsupported(Form_peach.StringGridList.Cells[12,i])) then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
          for j:=0 to Form_peach.StringGridList.ColCount-1 do
             scheduleclip[k,j]:=Form_peach.StringGridList.Cells[j,i];
          setlength(scheduleclip,length(scheduleclip)+1);
@@ -49623,7 +49877,7 @@ if fun='FILEBROWSER' then
    for i:=0 to k-1 do
       begin
       if endflag=true then exit;
-      s:=scheduleclip[i,11];
+      s:=scheduleclip[i,12];
       Form_peach.Caption:=sfun+' ('+inttostr(i+1)+'/'+inttostr(k)+') '+s;
       browser_imgcrop(s,reporig,ct,cb,cl,cr,percent);
       Application.ProcessMessages;
@@ -49961,7 +50215,7 @@ if (Form_peach.EditOpenIn.Caption=Form_peach.EditOpenIn1.Caption) and //no displ
       allselected:=true;
       rc:=Form_peach.StringGridList.RowCount;
       for i:=1 to rc-1 do
-         if Form_peach.StringGridList.Cells[15,i]='0' then
+         if Form_peach.StringGridList.Cells[16,i]='0' then
             begin
             allselected:=false;
             Break;
@@ -49985,17 +50239,18 @@ case act of
    rc:=Form_peach.StringGridList.RowCount;
    k:=Form_peach.StringGrid2.RowCount;
    for i:=1 to rc-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          if Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder then  //files
             begin
-            test_extfile(Form_peach.StringGridList.Cells[11,i],okfile);
+            test_extfile(Form_peach.StringGridList.Cells[12,i],okfile);
             if okfile=true then
                begin
-               if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+               if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
                Form_peach.StringGrid2.RowCount:=k+1;
                for c:=1 to 13 do
                  begin
                  if c<6 then d:=c else d:=c+3;
+                 if d>=9 then d:=d+1;
                  Form_peach.StringGrid2.Cells[c,k]:=Form_peach.StringGridList.Cells[d,i];
                  end;
                Form_peach.StringGrid2.Cells[12,k]:=Form_Peach.StringGridList.Cells[3,i];
@@ -50006,7 +50261,7 @@ case act of
             end
          else //folders (expand recursively)
             begin
-            expand(Form_peach.StringGridList.Cells[11,i],exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
+            expand(Form_peach.StringGridList.Cells[12,i],exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
             for j:=0 to nfound-1 do
                if pos('D',exp_fattr_dec[j])=0 then
                   begin
@@ -50073,11 +50328,12 @@ case act of
    k:=1;
    for i:=1 to rc-1 do
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
       Form_peach.StringGrid2.RowCount:=k+1;
       for c:=1 to 13 do
         begin
         if c<6 then d:=c else d:=c+3;
+        if d>=9 then d:=d+1;
         Form_peach.StringGrid2.Cells[c,k]:=Form_peach.StringGridList.Cells[d,i];
         end;
       Form_peach.StringGrid2.Cells[12,k]:=Form_Peach.StringGridList.Cells[3,i];
@@ -50101,13 +50357,14 @@ case act of
    Form_peach.StringGrid2.RowCount:=rc;
    k:=1;
    for i:=1 to rc-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
          Form_peach.StringGrid2.RowCount:=k+1;
          for c:=1 to 13 do
             begin
             if c<6 then d:=c else d:=c+3;
+            if d>=9 then d:=d+1;
             Form_peach.StringGrid2.Cells[c,k]:=Form_peach.StringGridList.Cells[d,i];
             end;
          Form_peach.StringGrid2.Cells[12,k]:=Form_Peach.StringGridList.Cells[3,i];
@@ -51280,10 +51537,10 @@ begin
    savecol;
    c:=Column.Index+1;
    listcol:=c;
-   if c=1 then c:=12;
-   if c=3 then c:=13;
-   if c=4 then c:=14;
-   if c=16 then c:=11;
+   if c=1 then c:=13;
+   if c=3 then c:=14;
+   if c=4 then c:=15;
+   if c=17 then c:=12;
    if c=listsortcol then
       if az=true then sort_za_stringgridlist(c)
       else sort_az_stringgridlist(c)
@@ -51789,8 +52046,8 @@ begin
    sg:=Form_peach.StringGridList;
    sr:=Form_peach.StringGridList.Row;
    rc:=Form_peach.StringGridList.Rowcount;
-   wsel:=15;
-   wa:=6;
+   wsel:=16;
+   wa:=10;
    wd:=5;
    wsz:=3;
    wpsz:=4;
@@ -52543,6 +52800,13 @@ else
    end;
 end;
 
+procedure TForm_peach.cbRARmanualClick(Sender: TObject);
+begin
+if Form_peach.cbRARmanual.State=cbChecked then setrarmanual:=1 else setrarmanual:=0;
+if setrarmanual=1 then ButtonEditNameCustomClick(nil);
+testwinrar;
+end;
+
 procedure TForm_peach.cbRARBLAKE2Click(Sender: TObject);
 begin
 if Form_peach.cbRARBLAKE2.State=cbChecked then userarblake2:=1 else userarblake2:=0;
@@ -53004,12 +53268,12 @@ end;
 
 procedure TForm_peach.mbrowsercattClick(Sender: TObject);
 begin
-sortbrowser(9);
+sortbrowser(10);
 end;
 
 procedure TForm_peach.mbrowserccrcClick(Sender: TObject);
 begin
-sortbrowser(10);
+sortbrowser(11);
 end;
 
 procedure TForm_peach.mbrowsercdateClick(Sender: TObject);
@@ -53019,17 +53283,17 @@ end;
 
 procedure TForm_peach.mbrowsercnameClick(Sender: TObject);
 begin
-sortbrowser(12);
+sortbrowser(13);
 end;
 
 procedure TForm_peach.mbrowsercpackedClick(Sender: TObject);
 begin
-sortbrowser(14);
+sortbrowser(15);
 end;
 
 procedure TForm_peach.mbrowsercsizeClick(Sender: TObject);
 begin
-sortbrowser(13);
+sortbrowser(14);
 end;
 
 procedure TForm_peach.mbrowserctypeClick(Sender: TObject);
@@ -54381,7 +54645,7 @@ if s_in<>'' then
    if s_in<>txt_mypc then spars.Add((s_in))
    else
       if checklistsel=0 then
-         spars.Add((StringGridList.Cells[11,StringGridList.Row]))
+         spars.Add((StringGridList.Cells[12,StringGridList.Row]))
       else
          begin
          ShellExecuteW(Form_peach.Handle, PWideChar ('open'), PWideChar('systempropertiescomputername'), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
@@ -54398,7 +54662,7 @@ if fun='FILEBROWSER' then
       begin
       if checklistsel=0 then
          begin
-         spars.Add((StringGridList.Cells[11,StringGridList.Row]));
+         spars.Add((StringGridList.Cells[12,StringGridList.Row]));
          ShowFileProperties(spars, 0);
          end
       else
@@ -54407,9 +54671,9 @@ if fun='FILEBROWSER' then
       exit;
       end;
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         spars.Add((StringGridList.Cells[11,i]));
+         spars.Add((StringGridList.Cells[12,i]));
          end;
    if checklistsel=0 then ShowFileProperties(spars, 0)
    else
@@ -54430,7 +54694,7 @@ spars.Free;
 else
    if fun='FILEBROWSER' then
       if ListView1.Selected<>nil then
-         sdest:=StringGridList.Cells[11,ListView1.Selected.Index+1]
+         sdest:=StringGridList.Cells[12,ListView1.Selected.Index+1]
       else
          sdest:=s_in
    else
@@ -54953,7 +55217,7 @@ begin
 if Form_peach.EditOpenIn.Text=txt_mypc then
    if checklistsel<>0 then exit;
 if fun='FILEBROWSER' then
-   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[11, Form_peach.StringGridList.Row], 1, 2)
+   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[12, Form_peach.StringGridList.Row], 1, 2)
    else s:=copy(Form_peach.EditOpenIn.Text, 1, 2)
 else s:=copy(Form_peach.EditOpenIn.Text, 1, 2);
 case smode of
@@ -55208,11 +55472,11 @@ else
       FormPaths.MemoPaths.Lines.Add('');
       end;
    for i:=1 to rc-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          if Form_peach.StringGridList.Cells[2,i]=txt_list_isfolder then
-            FormPaths.MemoPaths.Lines.Add(Form_peach.StringGridList.Cells[11,i]+directoryseparator)
+            FormPaths.MemoPaths.Lines.Add(Form_peach.StringGridList.Cells[12,i]+directoryseparator)
          else
-            FormPaths.MemoPaths.Lines.Add(Form_peach.StringGridList.Cells[11,i]);
+            FormPaths.MemoPaths.Lines.Add(Form_peach.StringGridList.Cells[12,i]);
    end;
 end;
 FormPaths.Visible:=true;
@@ -55306,17 +55570,17 @@ begin
 case listcol of
 1: sortbrowser(2);
 12: sortbrowser(2);
-2: sortbrowser(13);
-3: sortbrowser(14);
-13: sortbrowser(14);
+2: sortbrowser(14);
+3: sortbrowser(15);
+13: sortbrowser(15);
 4: sortbrowser(5);
 14: sortbrowser(5);
 5: sortbrowser(6);
 6: sortbrowser(7);
 7: sortbrowser(8);
-8: sortbrowser(9);
-9: sortbrowser(10);
-10: sortbrowser(12);
+8: sortbrowser(10);
+9: sortbrowser(11);
+10: sortbrowser(13);
 end;
 end;
 
@@ -55357,7 +55621,7 @@ if updatinglistview=true then exit;
 if Form_peach.StringGridList.Rowcount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
 if Form_peach.ListView1.SelCount<>1 then exit;
-if Form_peach.StringGridList.Cells[15,Form_peach.StringGridList.Row]<>'1' then exit;
+if Form_peach.StringGridList.Cells[16,Form_peach.StringGridList.Row]<>'1' then exit;
 try
    wasselected:=Form_peach.ListView1.ItemFocused.Index+1;
 except
@@ -55511,8 +55775,8 @@ if checklistanysel<>0 then
    exit;
    end;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
-      open_custedit(n,Form_peach.StringGridList.Cells[11,i])
+   if Form_peach.StringGridList.Cells[16,i]='1' then
+      open_custedit(n,Form_peach.StringGridList.Cells[12,i])
 end;
 
 procedure TForm_peach.owcustom_10Click(Sender: TObject);
@@ -56275,7 +56539,7 @@ if fun='FILEBROWSER' then
             end;
          end
       else
-         s:=copy(Form_peach.StringGridList.Cells[11, Form_peach.StringGridList.Row], 1, 2);
+         s:=copy(Form_peach.StringGridList.Cells[12, Form_peach.StringGridList.Row], 1, 2);
       end
    else
       begin
@@ -56521,7 +56785,7 @@ begin
 if Form_peach.EditOpenIn.Text=txt_mypc then
    if checklistsel<>0 then exit;
 if fun='FILEBROWSER' then
-   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[11, Form_peach.StringGridList.Row], 1, 2)
+   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[12, Form_peach.StringGridList.Row], 1, 2)
    else s:=copy(Form_peach.EditOpenIn.Text, 1, 2)
 else s:=copy(Form_peach.EditOpenIn.Text, 1, 2);
 P:=tprocessutf8.Create(nil);
@@ -56545,7 +56809,7 @@ begin
 if Form_peach.EditOpenIn.Text=txt_mypc then
    if checklistsel<>0 then exit;
 if fun='FILEBROWSER' then
-   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[11, Form_peach.StringGridList.Row], 1, 2)
+   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[12, Form_peach.StringGridList.Row], 1, 2)
    else s:=copy(Form_peach.EditOpenIn.Text, 1, 2)
 else s:=copy(Form_peach.EditOpenIn.Text, 1, 2);
 P:=tprocessutf8.Create(nil);
@@ -56588,7 +56852,7 @@ begin
 if Form_peach.EditOpenIn.Text=txt_mypc then
    if checklistsel<>0 then exit;
 if fun='FILEBROWSER' then
-   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[11, Form_peach.StringGridList.Row], 1, 2)
+   if Form_peach.EditOpenIn.Text=txt_mypc then s:=copy(Form_peach.StringGridList.Cells[12, Form_peach.StringGridList.Row], 1, 2)
    else s:=copy(Form_peach.EditOpenIn.Text, 1, 2)
 else s:=copy(Form_peach.EditOpenIn.Text, 1, 2);
 if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
@@ -56743,7 +57007,7 @@ checklistsel:=-1;
 if updatinglistview=true then exit;
 if Form_peach.StringGridList.Rowcount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
-if Form_peach.StringGridList.Cells[15,Form_peach.StringGridList.Row]<>'1' then exit;
+if Form_peach.StringGridList.Cells[16,Form_peach.StringGridList.Row]<>'1' then exit;
 checklistsel:=0;
 end;
 
@@ -56795,14 +57059,14 @@ if s_in<>'' then
    begin
    s:=s_in;
    if s=txt_mypc then
-      if checklistsel=0 then s:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+      if checklistsel=0 then s:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
       else {$IFDEF MSWINDOWS}s:='C:\';{$ELSE}s:=directoryseparator;{$ENDIF}
    end
 else
 begin
 if fun='FILEBROWSER' then
    if Form_peach.EditOpenIn.Text=txt_mypc then
-      if checklistsel=0 then s:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+      if checklistsel=0 then s:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
       else {$IFDEF MSWINDOWS}s:='C:\'{$ELSE}s:=directoryseparator{$ENDIF}
    else
       begin
@@ -56810,10 +57074,10 @@ if fun='FILEBROWSER' then
       else
          if checklistsel<>0 then s:=extractfilepath(Form_peach.EditOpenIn.Text)
          else
-            if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then s:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+            if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then s:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
             else
                begin
-               s:=extractfilepath(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+               s:=extractfilepath(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
                if s='' then s:=Form_peach.EditOpenIn.Text;
                end
       end
@@ -56934,10 +57198,10 @@ if fun<>'FILEBROWSER' then
    end;
 if checklistanysel<>0 then exit;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-      in_param:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env));
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+      in_param:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[12,i],desk_env));
       cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' HEXPREVIEW '+in_param;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
@@ -57196,7 +57460,7 @@ else
       PanelTabBar.AnchorSideTop.Side:=asrBottom;
       PanelBarOpen.AnchorSideTop.Control:=PanelTabBar;
       PanelBarOpen.AnchorSideTop.Side:=asrBottom;
-      mswaptab.checked:=false;
+      mswaptab.checked:=true;
       end;
    PanelFilters.AnchorSideTop.Control:=PanelBarOpen;
    PanelFilters.AnchorSideTop.Side:=asrBottom;
@@ -57822,8 +58086,8 @@ if checklistanysel<>0 then
    exit;
    end;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
-      open_advcustedit(n,Form_peach.StringGridList.Cells[11,i])
+   if Form_peach.StringGridList.Cells[16,i]='1' then
+      open_advcustedit(n,Form_peach.StringGridList.Cells[12,i])
 end;
 
 procedure TForm_peach.owcustom10Click(Sender: TObject);
@@ -58240,10 +58504,10 @@ if rc>0 then
 begin
    for i:=1 to rc-1 do
       begin
-      Form_peach.StringGridList.Cells[15,i]:='0';
+      Form_peach.StringGridList.Cells[16,i]:='0';
       Form_peach.StringGridList.Cells[0,i]:='';
       end;
-   Form_peach.StringGridList.Cells[15,1]:='1';
+   Form_peach.StringGridList.Cells[16,1]:='1';
    Form_peach.StringGridList.Row:=1;
    Form_peach.Refresh;
    end;
@@ -58273,10 +58537,10 @@ begin
 if Form_peach.StringGridClipboard.Rowcount<2 then exit;
 if Form_peach.StringGridClipboard.Row=0 then exit;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[11,i]=Form_peach.StringGridClipboard.Cells[3,Form_peach.StringGridClipboard.Row] then
+   if Form_peach.StringGridList.Cells[12,i]=Form_peach.StringGridClipboard.Cells[3,Form_peach.StringGridClipboard.Row] then
       begin
       Form_peach.StringGridList.Cells[0,i]:='';
-      Form_peach.StringGridList.Cells[15,i]:='0';
+      Form_peach.StringGridList.Cells[16,i]:='0';
       end;
 Form_peach.Refresh;
 //remove clipboard item
@@ -58570,7 +58834,7 @@ begin
       if Form_peach.StringGridList.Rowcount<2 then exit;
       if Form_peach.StringGridList.Cells[1,1]='' then exit;
       for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-         Form_peach.StringGridList.Cells[15,i]:='1';
+         Form_peach.StringGridList.Cells[16,i]:='1';
       update_listview_sel;
       end;
 end;
@@ -58647,7 +58911,7 @@ if iscontext=0 then
       s:=Form_peach.EditOpenIn1.Text;
       {$IFDEF MSWINDOWS}
       if s=txt_mypc then
-         if checklistsel=0 then s:=StringGridList.Cells[11,StringGridList.Row]
+         if checklistsel=0 then s:=StringGridList.Cells[12,StringGridList.Row]
          else
             begin
             explorewinroot;
@@ -58665,17 +58929,17 @@ if fun='FILEBROWSER' then
    {$IFDEF MSWINDOWS}
    if StringGridSessionHistory.Cells[2,StringGridSessionHistory.Row]=txt_mypc then
       begin
-      if checklistsel=0 then cp_open(StringGridList.Cells[11,StringGridList.Row],desk_env)
+      if checklistsel=0 then cp_open(StringGridList.Cells[12,StringGridList.Row],desk_env)
       else explorewinroot;
       exit;
       end;
    {$ENDIF}
    if checklistsel=0 then
    if StringGridList.Cells[2,StringGridList.Row]=txt_list_isfolder then
-      cp_open(StringGridList.Cells[11,StringGridList.Row],desk_env) //open folder
+      cp_open(StringGridList.Cells[12,StringGridList.Row],desk_env) //open folder
    else //go to object's path
       begin
-      s:=(StringGridList.Cells[11,StringGridList.Row]);
+      s:=(StringGridList.Cells[12,StringGridList.Row]);
       if s='' then s:=Form_peach.EditOpenIn.Text;
       if checkfiledirname(s)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s); exit; end;
       cp_explorepath(s, desk_env);
@@ -59115,7 +59379,7 @@ var
    {$ENDIF}
 begin
 if tmpprevrun='' then
-   if checklistsel=0 then tmpprevrun:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+   if checklistsel=0 then tmpprevrun:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
    else tmpprevrun:=prevrun;
 if not pInputQuery(txt_3_3_run, txt_3_3_runexp, '', tmpprevrun, false) then exit;
 s:=tmpprevrun;
@@ -59139,7 +59403,7 @@ P.Free;
 except
 end;
 {$ENDIF}
-if s<>Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row] then prevrun:=s;
+if s<>Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row] then prevrun:=s;
 end;
 
 procedure TForm_peach.pnb10Click(Sender: TObject);
@@ -60270,7 +60534,7 @@ if ((s<>'') and (theme_path<>'')) then
       writeln(conf,color3d);
       writeln(conf,color4d);
       writeln(conf,color5d);
-      writeln(conf,inttostr(usealtcolord)+inttostr(highlighttabsd)+inttostr(accenttoolbard)+inttostr(toolcenteredd)+inttostr(altaddressstyled)+inttostr(solidaddressstyled)+inttostr(alttabstyled)+inttostr(ensmalld));
+      writeln(conf,inttostr(usealtcolord)+inttostr(highlighttabsd)+inttostr(accenttoolbard)+inttostr(toolcenteredd)+inttostr(altaddressstyled)+inttostr(solidaddressstyled)+inttostr(alttabstyled)+inttostr(ensmalld)+inttostr(contrastd));
       writeln(conf,pzoomingd);
       writeln(conf,pspacingd);
       writeln(conf,temperatured);
@@ -60300,6 +60564,7 @@ altaddressstyle:=altaddressstyled;
 solidaddressstyle:=solidaddressstyled;
 alttabstyle:=alttabstyled;
 temperature:=temperatured;
+contrast:=contrastd;
 imgloaded:=false;
 apply_theme;
 setbrowsertype(browsertype);
@@ -60669,8 +60934,9 @@ beingpreviewed:='';
 setbs:=false;
 endflag:=false;
 browserbusy:=false;
-executable_path:=extractfilepath((paramstr(0))); //valorize application's paths
-if ((executable_path='') or (executable_path='..\')) then executable_path:=extractfilepath((paramstr(0)));
+executable_path:=Programdirectory;//valorize application's paths
+if executable_path='' then executable_path:=Application.location;
+if executable_path='' then extractfilepath(paramstr(0));
 if executable_path<>'' then
    if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
@@ -60947,6 +61213,112 @@ procedure peaziplanguage(s: ansistring);
 begin
 peaziplanguagenc(s);
 Form_peach.Close;
+end;
+
+procedure condopenaction(s:utf8string);
+var
+   j,sf:integer;
+   s0:ansistring;
+   okfile,dirpresent,nf:boolean;
+   exp_files:TFoundList;
+   exp_fsizes:TFoundListSizes;
+   exp_ftimes:TFoundListAges;
+   exp_fattr:TFoundListAttrib;
+   exp_fattr_dec:TFoundList;
+   nfound:qword;
+begin
+case Form_peach.cbdefaultaction.ItemIndex of
+               0: begin
+                  open_noinput; Form_peach.ListView1.Clear;
+                  Form_peach.visible:=true;
+                  open_singleinput(s);//open
+                  end;
+               1://open as archive
+                  begin
+                  open_noinput; Form_peach.ListView1.Clear;
+                  Form_peach.visible:=true;
+                  forceopenasarchive:=true;
+                  open_archive_fromname(s);
+                  //forceopenasarchive:=false;
+                  end;
+               2,3,4,5://2 extract full ui, 3 extract here 4 extract here smart new folder, 5 extract here new folder
+                  begin
+                  Form_peach.EditOpenOut.Text:=local_desktop;
+                  list_toextractor('none','full');
+                  dirpresent:=false;
+                  if directoryexists(escapefilename(ExpandFileName(s),desk_env)) then
+                     begin
+                     dirpresent:=true;
+                     s0:=extractfilepath(escapefilename(ExpandFileName(s),desk_env));
+                     expand(escapefilename(ExpandFileName(s),desk_env),exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
+                     for j:=0 to nfound-1 do
+                     if pos('D',exp_fattr_dec[j])=0 then
+                        begin
+                        test_extfile(exp_files[j],okfile);
+                        if okfile=true then
+                           begin
+                           if checkfiledirname(exp_files[j])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+exp_files[j]); exit; end;
+                           deselectingrid(Form_peach.StringGrid2);
+                           addfilestr(Form_peach.StringGrid2,exp_files[j]);
+                           end;
+                        end;
+                     end
+                  else
+                      begin
+                      test_extfile(escapefilename(ExpandFileName(s),desk_env),okfile);
+                      if okfile=true then
+                         begin
+                         if checkfiledirname(escapefilename(ExpandFileName(s),desk_env))<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+escapefilename(ExpandFileName(s),desk_env)); exit; end;
+                         Form_peach.Caption:=txt_2_4_adding+' '+escapefilename(ExpandFileName(s),desk_env);
+                         Application.ProcessMessages;
+                         deselectingrid(Form_peach.StringGrid2);
+                         addfilestr(Form_peach.StringGrid2,escapefilename(ExpandFileName(s),desk_env));
+                         end;
+                      end;
+                  if Form_peach.StringGrid2.Rowcount>1 then
+                     if dirpresent=false then
+                        Form_peach.EditOpenOut.Text:=extractfilepath(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row])
+                     else
+                         Form_peach.EditOpenOut.Text:=s0//(last) directory's path
+                  else
+                     Form_peach.EditOpenOut.Text:=local_desktop;
+                  updatecontent_ext;
+                  stayopen:=false;
+                  case Form_peach.cbdefaultaction.ItemIndex of
+                     3:
+                     begin
+                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
+                     Form_peach.CheckBoxFolder.State:=cbUnChecked;
+                     on_buttonextokclick;
+                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
+                     save_conf;
+                     end;
+                     4:
+                     begin
+                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
+                     sf:=removeintdir;
+                     Form_peach.CheckBoxFolder.State:=cbChecked;
+                     removeintdir:=1;
+                     on_buttonextokclick;
+                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
+                     removeintdir:=sf;
+                     save_conf;
+                     end;
+                     5:
+                     begin
+                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
+                     sf:=removeintdir;
+                     Form_peach.CheckBoxFolder.State:=cbChecked;
+                     removeintdir:=0;
+                     on_buttonextokclick;
+                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
+                     removeintdir:=sf;
+                     save_conf;
+                     end;
+                  end;
+                  exit;
+                  end;
+               end;
 end;
 
 procedure openstart;
@@ -61374,98 +61746,7 @@ else
          else
             begin
             //input is a single item
-            case Form_peach.cbdefaultaction.ItemIndex of
-               0: begin
-                  open_noinput; Form_peach.ListView1.Clear;
-                  Form_peach.visible:=true;
-                  open_singleinput(paramstr(1));//open
-                  end;
-               1://open as archive
-                  begin
-                  open_noinput; Form_peach.ListView1.Clear;
-                  Form_peach.visible:=true;
-                  forceopenasarchive:=true;
-                  open_archive_fromname((paramstr(1)));
-                  //forceopenasarchive:=false;
-                  end;
-               2,3,4,5://2 extract full ui, 3 extract here 4 extract here smart new folder, 5 extract here new folder
-                  begin
-                  Form_peach.EditOpenOut.Text:=local_desktop;
-                  list_toextractor('none','full');
-                  dirpresent:=false;
-                  if directoryexists(escapefilename(ExpandFileName((paramstr(1))),desk_env)) then
-                     begin
-                     dirpresent:=true;
-                     s0:=extractfilepath(escapefilename(ExpandFileName((paramstr(1))),desk_env));
-                     expand(escapefilename(ExpandFileName((paramstr(1))),desk_env),exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
-                     for j:=0 to nfound-1 do
-                     if pos('D',exp_fattr_dec[j])=0 then
-                        begin
-                        test_extfile(exp_files[j],okfile);
-                        if okfile=true then
-                           begin
-                           if checkfiledirname(exp_files[j])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+exp_files[j]); exit; end;
-                           deselectingrid(Form_peach.StringGrid2);
-                           addfilestr(Form_peach.StringGrid2,exp_files[j]);
-                           end;
-                        end;
-                     end
-                  else
-                      begin
-                      test_extfile(escapefilename(ExpandFileName((paramstr(1))),desk_env),okfile);
-                      if okfile=true then
-                         begin
-                         if checkfiledirname(escapefilename(ExpandFileName((paramstr(1))),desk_env))<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+escapefilename(ExpandFileName((paramstr(1))),desk_env)); exit; end;
-                         Form_peach.Caption:=txt_2_4_adding+' '+escapefilename(ExpandFileName((paramstr(1))),desk_env);
-                         Application.ProcessMessages;
-                         deselectingrid(Form_peach.StringGrid2);
-                         addfilestr(Form_peach.StringGrid2,escapefilename(ExpandFileName((paramstr(1))),desk_env));
-                         end;
-                      end;
-                  if Form_peach.StringGrid2.Rowcount>1 then
-                     if dirpresent=false then
-                        Form_peach.EditOpenOut.Text:=extractfilepath(Form_peach.StringGrid2.Cells[8,Form_peach.StringGrid2.Row])
-                     else
-                         Form_peach.EditOpenOut.Text:=s0//(last) directory's path
-                  else
-                     Form_peach.EditOpenOut.Text:=local_desktop;
-                  updatecontent_ext;
-                  stayopen:=false;
-                  case Form_peach.cbdefaultaction.ItemIndex of
-                     3:
-                     begin
-                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
-                     Form_peach.CheckBoxFolder.State:=cbUnChecked;
-                     on_buttonextokclick;
-                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
-                     save_conf;
-                     end;
-                     4:
-                     begin
-                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
-                     sf:=removeintdir;
-                     Form_peach.CheckBoxFolder.State:=cbChecked;
-                     removeintdir:=1;
-                     on_buttonextokclick;
-                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
-                     removeintdir:=sf;
-                     save_conf;
-                     end;
-                     5:
-                     begin
-                     if Form_peach.CheckBoxFolder.State=cbChecked then nf:=true else nf:=false;
-                     sf:=removeintdir;
-                     Form_peach.CheckBoxFolder.State:=cbChecked;
-                     removeintdir:=0;
-                     on_buttonextokclick;
-                     if nf=true then Form_peach.CheckBoxFolder.State:=cbChecked else Form_peach.CheckBoxFolder.State:=cbUnChecked;
-                     removeintdir:=sf;
-                     save_conf;
-                     end;
-                  end;
-                  exit;
-                  end;
-               end;
+            condopenaction(paramstr(1));
             end;
          end;
       end
@@ -62212,7 +62493,10 @@ menuitemopenhome.ShortCut := ($3000) + Ord('H');
 menuitemopendownloads.ShortCut := ($3000) + Ord('L');
 menuitemopendocuments.ShortCut := ($3000) + Ord('O');
 //simulate drop event to handle some events not supporting passing paramstr on macOS (double click, open with, and drag on app)
-if length(dfilenames)>0 then FormDropFiles(self,dfilenames); {$ENDIF}
+darwinsimulatedrop:=true;
+if length(dfilenames)>0 then FormDropFiles(self,dfilenames);
+darwinsimulatedrop:=false;
+{$ENDIF}
 {$ENDIF}
 if showthumbnails=1 then do_forcerefresh;//to correctly display thumbnails on startup
 end;
@@ -62366,9 +62650,10 @@ end;
 
 procedure do_calcstatusar;
 begin
-statushintar:=form_peach.Caption+char($0D)+char($0A)+typehint+char($0D)+char($0A)+form_peach.LabelStatusAr.Caption+char($0D)+char($0A)+char($0D)+char($0A);
+statushintar:=form_peach.Caption+char($0D)+char($0A)+typehint+char($0D)+char($0A)+char($0D)+char($0A);
 statushintar:=statushintar+txt_input+' '+form_peach.LabelStatusAr2.Caption+char($0D)+char($0A)+char($0D)+char($0A);
-statushintar:=statushintar+txt_2_7_output+' '+form_peach.Edit5.Caption+char($0D)+char($0A)+statuss;
+statushintar:=statushintar+txt_2_7_output+' '+form_peach.Edit5.Caption+char($0D)+char($0A)+statuss+char($0D)+char($0A)+char($0D)+char($0A);
+statushintar:=statushintar+form_peach.LabelStatusAr.Caption+char($0D)+char($0A)+statusw;
 if form_peach.LabelStatusAr.Caption<>'' then statushintar:=statushintar;
 do_fixpipechar(statushintar);
 end;
@@ -62390,9 +62675,13 @@ procedure do_calcstatusex;
 begin
 statushintex:=form_peach.Caption+char($0D)+char($0A);
 if (form_peach.CheckBoxrelative.Checked=true) and (form_peach.CheckBoxrelative.Enabled=true) then
-   statushintex:=statushintex+form_peach.CheckBoxrelative.Caption+char($0D)+char($0A)+form_peach.LabelStatusEx.Caption+char($0D)+char($0A)+char($0D)+char($0A);
+   statushintex:=statushintex+form_peach.CheckBoxrelative.Caption+char($0D)+char($0A)+char($0D)+char($0A)
+else
+   statushintex:=statushintex+char($0D)+char($0A);
 statushintex:=statushintex+txt_input+' '+form_peach.LabelStatusEx2.Caption+char($0D)+char($0A)+char($0D)+char($0A);
-statushintex:=statushintex+txt_2_7_output+' '+form_peach.EditOpenOut.Caption+char($0D)+char($0A)+statuss;
+statushintex:=statushintex+txt_2_7_output+' '+form_peach.EditOpenOut.Caption+char($0D)+char($0A)+statuss+char($0D)+char($0A)+char($0D)+char($0A);
+if (form_peach.CheckBoxrelative.Checked=true) and (form_peach.CheckBoxrelative.Enabled=true) then
+   statushintex:=statushintex+form_peach.LabelStatusEx.Caption+char($0D)+char($0A)+statusw;
 do_fixpipechar(statushintex);
 end;
 
@@ -62442,6 +62731,11 @@ if count_clipboard<>'' then
          end;
    end;
 end;
+case isarchiveeditable of
+   0: statushint:=statushint+char($0D)+char($0A)+txt_9_3_canedit+char($0D)+char($0A);
+   1: statushint:=statushint+char($0D)+char($0A)+txt_9_3_canforce+char($0D)+char($0A);
+   2: statushint:=statushint+char($0D)+char($0A)+txt_9_3_cannotedit+char($0D)+char($0A);
+   end;
 if length(statushint)>2 then SetLength(statushint,length(statushint)-2);
 do_fixpipechar(statushint);
 end;
@@ -62573,6 +62867,7 @@ Listview1.Column[7].AutoSize:=true;
 Listview1.Column[8].AutoSize:=true;
 Listview1.Column[9].AutoSize:=true;
 Listview1.Column[10].AutoSize:=true;
+Listview1.Column[11].AutoSize:=true;
 Listview1.Column[0].AutoSize:=false;
 Listview1.Column[1].AutoSize:=false;
 Listview1.Column[2].AutoSize:=false;
@@ -62584,6 +62879,7 @@ Listview1.Column[7].AutoSize:=false;
 Listview1.Column[8].AutoSize:=false;
 Listview1.Column[9].AutoSize:=false;
 Listview1.Column[10].AutoSize:=false;
+Listview1.Column[11].AutoSize:=false;
 if EditOpenIn.Text=txt_mypc then
    begin
    ListView1.Column[0].Width:=COL1D;
@@ -62594,9 +62890,10 @@ if EditOpenIn.Text=txt_mypc then
    Listview1.Column[5].Width:=0;
    Listview1.Column[6].Width:=0;
    Listview1.Column[7].Width:=0;
-   ListView1.Column[8].Width:=0;
+   Listview1.Column[8].Width:=0;
    ListView1.Column[9].Width:=0;
    ListView1.Column[10].Width:=0;
+   ListView1.Column[11].Width:=0;
    end
 else
    begin
@@ -62610,8 +62907,9 @@ else
       ListView1.Column[5].Width:=0;
       ListView1.Column[6].Width:=0;
       ListView1.Column[7].Width:=0;
-      ListView1.Column[8].Width:=COL6D;
-      ListView1.Column[9].Width:=COL7D;
+      ListView1.Column[8].Width:=0;
+      ListView1.Column[9].Width:=COL6D;
+      ListView1.Column[10].Width:=COL7D;
       end
    else
       begin
@@ -62623,15 +62921,16 @@ else
       ListView1.Column[5].Width:=COL5D;
       ListView1.Column[6].Width:=COL5D;
       ListView1.Column[7].Width:=COL7D;
-      ListView1.Column[8].Width:=COL6D;
-      ListView1.Column[9].Width:=COL7D;
+      ListView1.Column[8].Width:=COL7D;
+      ListView1.Column[9].Width:=COL6D;
+      ListView1.Column[10].Width:=COL7D;
       end;
    {$IFDEF MSWINDOWS}
-   if status0=txt_list_browsing then Form_Peach.ListView1.Column[10].Width:=0
-   else Form_Peach.ListView1.Column[10].Width:=384;
+   if status0=txt_list_browsing then Form_Peach.ListView1.Column[11].Width:=0
+   else Form_Peach.ListView1.Column[11].Width:=384;
    {$ELSE}
-   if status0=txt_list_browsing then Form_Peach.ListView1.Column[10].Visible:=false
-   else begin Form_Peach.ListView1.Column[10].Visible:=true; Form_Peach.ListView1.Column[10].Width:=384; end;
+   if status0=txt_list_browsing then Form_Peach.ListView1.Column[11].Visible:=false
+   else begin Form_Peach.ListView1.Column[11].Visible:=true; Form_Peach.ListView1.Column[11].Width:=384; end;
    {$ENDIF}
    end;
 col1size:=Form_Peach.ListView1.Column[0].Width;
@@ -62640,8 +62939,9 @@ if csize=true then col3size:=Form_Peach.ListView1.Column[2].Width;
 if cpacked=true then col4size:=Form_Peach.ListView1.Column[3].Width;
 if cdate=true then col5size:=Form_Peach.ListView1.Column[4].Width;
 if cmethod=true then colmethodsize:=Form_Peach.ListView1.Column[7].Width;
-if catt=true then col6size:=Form_Peach.ListView1.Column[8].Width;
-if ccrc=true then col7size:=Form_Peach.ListView1.Column[9].Width;
+if ccomment=true then colcommentsize:=Form_Peach.ListView1.Column[8].Width;
+if catt=true then col6size:=Form_Peach.ListView1.Column[9].Width;
+if ccrc=true then col7size:=Form_Peach.ListView1.Column[10].Width;
 end;
 
 procedure TForm_peach.mBenchpeaClick(Sender: TObject);
@@ -62684,6 +62984,11 @@ begin
 sortbrowser(7);
 end;
 
+procedure TForm_peach.mbrowserccommentClick(Sender: TObject);
+begin
+sortbrowser(9);
+end;
+
 procedure TForm_peach.mbrowserccreatedClick(Sender: TObject);
 begin
 sortbrowser(6);
@@ -62711,7 +63016,7 @@ procedure selnone;
 var
    i:integer;
 begin
-for i:=0 to Form_peach.StringGridList.RowCount-1 do Form_peach.StringGridList.Cells[15,i]:='0';
+for i:=0 to Form_peach.StringGridList.RowCount-1 do Form_peach.StringGridList.Cells[16,i]:='0';
 end;
 
 procedure TForm_peach.marcoptClick(Sender: TObject);
@@ -62719,6 +63024,14 @@ begin
 if fun<>'FILEBROWSER' then navgoup;
 selnone;
 do_add;
+end;
+
+procedure TForm_peach.mccommentClick(Sender: TObject);
+begin
+ccomment:=not(ccomment);
+mccomment.Checked:=ccomment;
+pmccomment.Checked:=ccomment;
+set_listview_col;
 end;
 
 procedure TForm_peach.mccreatedClick(Sender: TObject);
@@ -62961,6 +63274,14 @@ end;
 procedure TForm_peach.pmbcpsClick(Sender: TObject);
 begin
 browser_commandprompt(1,1,'');
+end;
+
+procedure TForm_peach.pmccommentClick(Sender: TObject);
+begin
+ccomment:=not(ccomment);
+mccomment.Checked:=ccomment;
+pmccomment.Checked:=ccomment;
+set_listview_col;
 end;
 
 procedure toggleclip;
@@ -63638,6 +63959,11 @@ end;
 procedure TForm_peach.powRunClick(Sender: TObject);
 begin
 openwith_cust('preview','run',0);
+end;
+
+procedure TForm_peach.po_browserccommentClick(Sender: TObject);
+begin
+sortbrowser(9);
 end;
 
 procedure TForm_peach.po_cinnamonsettClick(Sender: TObject);
@@ -64686,7 +65012,7 @@ dummyfun:=fun;
 dummysubfun:=subfun;
 dummyinf:=Form_peach.EditOpenIn.Text;
 if fun='FILEBROWSER' then
-   s:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]
+   s:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]
 else
    s:=Form_peach.EditOpenIn.Text;
 Form_peach.EditOpenIn.Text:=s;
@@ -65599,6 +65925,13 @@ if (PanelOpen.Visible=true)  and (PanelOpen.Top<10000) then
    {$ENDIF}
    if High(FileNames)=0 then
       begin
+      {$IFDEF DARWIN}
+      if darwinsimulatedrop=true then
+         begin
+         condopenaction(FileNames[0]);
+         exit;
+         end;
+      {$ENDIF}
       i:=testext(escapefilename(FileNames[0],desk_env));
       if (i<0) //not a PeaZip supported filetype
          or (i=503)
@@ -66554,7 +66887,7 @@ procedure deleteselected_frombrowser;
 var
    i,j,k,nsel:integer;
    s,s1,cl,jobcode,outname,strsel:ansistring;
-   scheduleclip:array of array [0..17] of ansistring;
+   scheduleclip:array of array [0..18] of ansistring;
 begin
 if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
@@ -66570,9 +66903,9 @@ if fun='FILEBROWSER' then
       for i:=1 to Form_peach.StringGridList.RowCount-1 do
          begin
          if Form_peach.EditOpenIn.Text<>s1 then break;
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             begin
-            if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+            if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
             for j:=0 to Form_peach.StringGridList.ColCount-1 do
                scheduleclip[k,j]:=Form_peach.StringGridList.Cells[j,i];
             setlength(scheduleclip,length(scheduleclip)+1);
@@ -66582,7 +66915,7 @@ if fun='FILEBROWSER' then
       for i:=0 to k-1 do
          begin
          if endflag=true then exit;
-         s:=scheduleclip[i,11];
+         s:=scheduleclip[i,12];
          if scheduleclip[i,2]=txt_list_isfolder then cleardirsimple(s)
          else clearfile(s);
          end;
@@ -66883,9 +67216,9 @@ if fun='FILEBROWSER' then
    begin
    if checklistsel<>0 then exit;
    if StringGridList.Cells[2,StringGridList.Row]=txt_list_isfolder then //open folder
-      s:=StringGridList.Cells[11,StringGridList.Row]
+      s:=StringGridList.Cells[12,StringGridList.Row]
    else //go to object's path
-      s:=extractfilepath(StringGridList.Cells[11,StringGridList.Row]);
+      s:=extractfilepath(StringGridList.Cells[12,StringGridList.Row]);
    listdir(s,false,false);
    addtohistory;
    end;
@@ -66894,14 +67227,14 @@ if fun='UN7Z' then
    if checklistsel<>0 then exit;
    if StringGridList.Cells[2,StringGridList.Row]=txt_list_isfolder then //open folder
       begin
-      EditUn7zaFilter.Text:=StringGridList.Cells[11,StringGridList.Row]+directoryseparator+'*';
-      EditUn7zaFilterExclude.Text:=StringGridList.Cells[11,StringGridList.Row]+directoryseparator+'*'+directoryseparator+'*';
+      EditUn7zaFilter.Text:=StringGridList.Cells[12,StringGridList.Row]+directoryseparator+'*';
+      EditUn7zaFilterExclude.Text:=StringGridList.Cells[12,StringGridList.Row]+directoryseparator+'*'+directoryseparator+'*';
       listun7z_go;
       end
    else //go to object's path
       begin
-      EditUn7zaFilter.Text:=extractfilepath(StringGridList.Cells[11,StringGridList.Row])+'*';
-      EditUn7zaFilterExclude.Text:=extractfilepath(StringGridList.Cells[11,StringGridList.Row])+'*'+directoryseparator+'*';
+      EditUn7zaFilter.Text:=extractfilepath(StringGridList.Cells[12,StringGridList.Row])+'*';
+      EditUn7zaFilterExclude.Text:=extractfilepath(StringGridList.Cells[12,StringGridList.Row])+'*'+directoryseparator+'*';
       listun7z_go;
       end;
    end;
@@ -66979,7 +67312,7 @@ if checklistanysel<>0 then
             s:=outname;
             if s<>'' then
                if s[length(s)]<>directoryseparator then s:=s+directoryseparator;
-            s:=s+extractfilepath(Form_peach.StringGridList.Cells[11,1]);
+            s:=s+extractfilepath(Form_peach.StringGridList.Cells[12,1]);
             case custmode of
                'cust': open_custedit(j, s);
                'run': run_custom(s);
@@ -66995,7 +67328,7 @@ if checklistanysel<>0 then
             s:=outname;
             if s<>'' then
                if s[length(s)]<>directoryseparator then s:=s+directoryseparator;
-            s:=s+Form_peach.StringGridList.Cells[11,1];
+            s:=s+Form_peach.StringGridList.Cells[12,1];
             case custmode of
                'cust': open_custedit(j, s);
                'run': run_custom(s);
@@ -67009,7 +67342,7 @@ else
    begin
    sel:='single';
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-       if Form_peach.StringGridList.Cells[15,i]='1' then
+       if Form_peach.StringGridList.Cells[16,i]='1' then
           begin
           Form_peach.StringGridList.Row:=i;
           if fun='UN7Z' then
@@ -67019,7 +67352,7 @@ else
                    s:=outname;
                    if s<>'' then
                       if s[length(s)]<>directoryseparator then s:=s+directoryseparator;
-                   s:=s+Form_peach.StringGridList.Cells[11,i];
+                   s:=s+Form_peach.StringGridList.Cells[12,i];
                    case custmode of
                       'cust': open_custedit(j, s);
                       'run': run_custom(s);
@@ -67035,7 +67368,7 @@ else
                    s:=outname;
                    if s<>'' then
                       if s[length(s)]<>directoryseparator then s:=s+directoryseparator;
-                   s:=s+Form_peach.StringGridList.Cells[11,i];
+                   s:=s+Form_peach.StringGridList.Cells[12,i];
                    case custmode of
                       'cust': open_custedit(j, s);
                       'run': run_custom(s);
@@ -67086,7 +67419,7 @@ else
    begin
    sel:='single';
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
          Form_peach.StringGridList.Row:=i;
          if fun='UN7Z' then
@@ -67164,10 +67497,10 @@ if fun<>'FILEBROWSER' then
    end;
 if checklistanysel<>0 then exit;
 for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-      in_param:=in_param+stringdelim(escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env))+' ';
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+      in_param:=in_param+stringdelim(escapefilename(Form_peach.StringGridList.Cells[12,i],desk_env))+' ';
       end;
 check_files(in_param,cl,oper);
 P:=tprocessutf8.Create(nil);
@@ -67264,13 +67597,13 @@ var
    P:tprocessutf8;
 begin
 if Form_peach.StringGridList.Row=0 then exit;
-if Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]='' then exit;
+if Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]='' then exit;
 if checklistsel<>0 then exit;
-if checkfiledirname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]); exit; end;
+if checkfiledirname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]); exit; end;
 if Form_peach.OpenDialogArchive.Execute then
    if Form_peach.OpenDialogArchive.FileName<>'' then
       begin
-      filea:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row],desk_env));
+      filea:=stringdelim(escapefilename(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row],desk_env));
       fileb:=stringdelim(escapefilename(Form_peach.OpenDialogArchive.Filename,desk_env));
       P:=tprocessutf8.Create(nil);
       bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
@@ -67324,10 +67657,10 @@ if Form_peach.visible=true then
    P:=tprocessutf8.Create(nil);
    bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         in_param:=in_param+stringdelim(escapefilename((Form_peach.StringGridList.Cells[11,i]),desk_env))+' ';
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         in_param:=in_param+stringdelim(escapefilename((Form_peach.StringGridList.Cells[12,i]),desk_env))+' ';
          end;
    case erasepasses of
       0: eraselevel:='VERY_FAST';
@@ -67405,10 +67738,10 @@ if Form_peach.visible=true then
    j:=0;
    setlength(s,0);
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         in_param:=escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env);
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         in_param:=escapefilename(Form_peach.StringGridList.Cells[12,i],desk_env);
          setlength(s,length(s)+1);
          s[j] := in_param;
          j:=j+1;
@@ -67425,10 +67758,10 @@ if checklisttotsel(nsel,strsel)<>0 then exit;
 if Form_peach.visible=true then
    begin
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         in_param:=Form_peach.StringGridList.Cells[11,i];//in_param:=escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env);
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         in_param:=Form_peach.StringGridList.Cells[12,i];//in_param:=escapefilename(Form_peach.StringGridList.Cells[12,i],desk_env);
          mac_movetotrash(in_param);
          end;
    end;
@@ -67616,8 +67949,8 @@ begin
       if Form_peach.StringGridList.Rowcount<2 then exit;
       if Form_peach.StringGridList.Cells[1,1]='' then exit;
       for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-         if Form_peach.StringGridList.Cells[15,i]='0' then Form_peach.StringGridList.Cells[15,i]:='1'
-         else Form_peach.StringGridList.Cells[15,i]:='0';
+         if Form_peach.StringGridList.Cells[16,i]='0' then Form_peach.StringGridList.Cells[16,i]:='1'
+         else Form_peach.StringGridList.Cells[16,i]:='0';
       update_listview_sel;
       end;
 end;
@@ -67742,7 +68075,7 @@ if (allnone<>'1') and (allnone<>'0') then exit;
       if Form_peach.StringGridList.Rowcount<2 then exit;
       if Form_peach.StringGridList.Cells[1,1]='' then exit;
       for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-         Form_peach.StringGridList.Cells[15,i]:=allnone;
+         Form_peach.StringGridList.Cells[16,i]:=allnone;
       update_listview_sel;
       end;
 end;
@@ -67997,12 +68330,12 @@ begin
 {$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=true{$ELSE}if Form_peach.PanelOpen.top=0{$ENDIF} then
    if Form_peach.ListView1.Visible=true then
       begin
-      Column:=15;
+      Column:=16;
       if Column=listsortcol then
          if az=true then sort_za_stringgridlist(Column)
          else sort_az_stringgridlist(Column)
       else sort_az_stringgridlist(Column);
-      listsortcol:=15;
+      listsortcol:=16;
       update_listview;
       if fun='UN7Z' then generate_archive_breadcrumb;
       end;
@@ -68476,15 +68809,15 @@ begin
       if clipmode=0 then setlength(clipcontent,0);
       k:=length(clipcontent);
       for i:=1 to Form_peach.StringGridList.RowCount-1 do
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             begin
             if clipmode=1 then
-               if test_clip(Form_peach.StringGridList.Cells[11,i])=1 then
+               if test_clip(Form_peach.StringGridList.Cells[12,i])=1 then
                else
                   begin
                   Form_peach.StringGridList.Cells[0,i]:='';
                   setlength(clipcontent,length(clipcontent)+1);
-                  clipcontent[k,0]:=Form_peach.StringGridList.Cells[11,i];
+                  clipcontent[k,0]:=Form_peach.StringGridList.Cells[12,i];
                   clipcontent[k,1]:=Form_peach.StringGridList.Cells[1,i];
                   clipcontent[k,2]:=Form_peach.StringGridList.Cells[2,i];
                   if fun='UN7Z' then clipcontent[k,3]:=txt_caption_extract
@@ -68499,7 +68832,7 @@ begin
                begin
                Form_peach.StringGridList.Cells[0,i]:='';
                setlength(clipcontent,length(clipcontent)+1);
-               clipcontent[k,0]:=Form_peach.StringGridList.Cells[11,i];
+               clipcontent[k,0]:=Form_peach.StringGridList.Cells[12,i];
                clipcontent[k,1]:=Form_peach.StringGridList.Cells[1,i];
                clipcontent[k,2]:=Form_peach.StringGridList.Cells[2,i];
                if fun='UN7Z' then clipcontent[k,3]:=txt_caption_extract
@@ -68538,15 +68871,15 @@ begin
       if clipmode=0 then setlength(clipcontent,0);
       k:=length(clipcontent);
       for i:=1 to Form_peach.StringGridList.RowCount-1 do
-         if Form_peach.StringGridList.Cells[15,i]='1' then
+         if Form_peach.StringGridList.Cells[16,i]='1' then
             begin
             if clipmode=1 then
-               if test_clip(Form_peach.StringGridList.Cells[11,i])=1 then
+               if test_clip(Form_peach.StringGridList.Cells[12,i])=1 then
                else
                   begin
                   Form_peach.StringGridList.Cells[0,i]:=' ';
                   setlength(clipcontent,length(clipcontent)+1);
-                  clipcontent[k,0]:=Form_peach.StringGridList.Cells[11,i];
+                  clipcontent[k,0]:=Form_peach.StringGridList.Cells[12,i];
                   clipcontent[k,1]:=Form_peach.StringGridList.Cells[1,i];
                   clipcontent[k,2]:=Form_peach.StringGridList.Cells[2,i];
                   if fun='UN7Z' then clipcontent[k,3]:=txt_caption_extract
@@ -68561,7 +68894,7 @@ begin
                begin
                Form_peach.StringGridList.Cells[0,i]:=' ';
                setlength(clipcontent,length(clipcontent)+1);
-               clipcontent[k,0]:=Form_peach.StringGridList.Cells[11,i];
+               clipcontent[k,0]:=Form_peach.StringGridList.Cells[12,i];
                clipcontent[k,1]:=Form_peach.StringGridList.Cells[1,i];
                clipcontent[k,2]:=Form_peach.StringGridList.Cells[2,i];
                if fun='UN7Z' then clipcontent[k,3]:=txt_caption_extract
@@ -68656,8 +68989,8 @@ if Form_peach.StringGridList.RowCount<2 then exit;
 if Form_peach.StringGridList.Row=0 then exit;
 if Form_peach.StringGridList.Cells[1,1]='' then exit;
 if checklistsel<>0 then exit;
-if checkfiledirname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]); exit; end;
-fname:=Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row];
+if checkfiledirname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]); exit; end;
+fname:=Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row];
 direct_join(fname);
 end;
 
@@ -68767,10 +69100,10 @@ if checklistanysel<>0 then
    exit;
    end;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       case optype of
-      'custom': openw_obj(StringGridList.Cells[11,i]);
-      'associated': execute_obj(4,Form_peach.StringGridList.Cells[11,i]);
+      'custom': openw_obj(StringGridList.Cells[12,i]);
+      'associated': execute_obj(4,Form_peach.StringGridList.Cells[12,i]);
       end;
 end;
 end;
@@ -68810,9 +69143,9 @@ else
       if checklistanysel<>0 then execute_obj(2,Form_peach.EditOpenIn1.Caption)
       else
          for i:=1 to Form_peach.StringGridList.RowCount-1 do
-            if Form_peach.StringGridList.Cells[15,i]='1' then
+            if Form_peach.StringGridList.Cells[16,i]='1' then
                begin
-               execute_obj(2,Form_peach.StringGridList.Cells[11,i]);
+               execute_obj(2,Form_peach.StringGridList.Cells[12,i]);
                end;
       end
    else
@@ -69433,8 +69766,8 @@ rc:=Form_peach.StringGridList.RowCount;
 namecollisionfound:=false;
 for i:=1 to Form_peach.StringGridArchive.Rowcount-1 do
    for j:=1 to rc-1 do
-      if Form_peach.StringGridList.Cells[15,j]='1' then
-         if Form_peach.StringGridArchive.Cells[11,i]=s+Form_peach.StringGridList.Cells[1,j] then
+      if Form_peach.StringGridList.Cells[16,j]='1' then
+         if Form_peach.StringGridArchive.Cells[12,i]=s+Form_peach.StringGridList.Cells[1,j] then
             begin
             namecollisionfound:=true;
             break;
@@ -69444,9 +69777,9 @@ if namecollisionfound=true then
 
 for i:=1 to rc-1 do
    begin
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
-      renamefileinarchive(Form_peach.StringGridList.Cells[11,i],s+Form_peach.StringGridList.Cells[1,i],true);
+      renamefileinarchive(Form_peach.StringGridList.Cells[12,i],s+Form_peach.StringGridList.Cells[1,i],true);
       Application.ProcessMessages;
       end;
    end;
@@ -69711,7 +70044,7 @@ if Form_peach.StringGridList.Cells[1,1]='' then exit;
 if Form_peach.StringGridList.Cells[2,Form_peach.StringGridList.Row]=txt_list_isfolder then exit;
 if checklistanysel<>0 then exit;
 forceopenasarchive:=true;
-open_archive_fromname(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+open_archive_fromname(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
 //forceopenasarchive:=false;
 end;
 
@@ -69820,15 +70153,15 @@ s:=Form_peach.StringGridList.Cells[1,Form_peach.StringGridList.Row];
 {$ELSE}
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
    begin
-   if Form_peach.StringGridList.Cells[15,i]='1' then s:=Form_peach.StringGridList.Cells[1,i];
+   if Form_peach.StringGridList.Cells[16,i]='1' then s:=Form_peach.StringGridList.Cells[1,i];
    end;
 {$ENDIF}
 if s[Length(s)]='*' then SetLength(s,length(s)-2);
 if mode='rename' then //replace entire file name string
 begin
 sextorig:='';
-if not directoryexists(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]) then
-   sextorig:=extractfileext(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+if not directoryexists(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]) then
+   sextorig:=extractfileext(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
 if not pInputQuery(txt_rename, txt_name_provide, '', s, false) then exit;
 if checkfilename(s)<>0 then
    begin
@@ -69844,7 +70177,7 @@ k:=0;
 s1:=Form_peach.EditOpenIn.Text;
 s0:=s;
 sextchanged:='';
-if not directoryexists(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]) then
+if not directoryexists(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]) then
    begin
    if sextorig<>extractfileext(s) then sextchanged:=extractfileext(s);
    cutextension(s0);
@@ -69856,8 +70189,8 @@ namecollisionfound:=false;
 if fun='UN7Z' then
    for i:=1 to Form_peach.StringGridArchive.Rowcount-1 do
      for j:=1 to rc-2 do
-        if Form_peach.StringGridList.Cells[15,j]='1' then
-            if Form_peach.StringGridArchive.Cells[11,i]=extractfilepath(Form_peach.StringGridList.Cells[11,j])+s then
+        if Form_peach.StringGridList.Cells[16,j]='1' then
+            if Form_peach.StringGridArchive.Cells[12,i]=extractfilepath(Form_peach.StringGridList.Cells[12,j])+s then
                begin
                namecollisionfound:=true;
                break;
@@ -69868,21 +70201,21 @@ if namecollisionfound=true then
 for i:=1 to rc-1 do
    begin
    if (Form_peach.EditOpenIn.Text<>s1) or (endflag=true) then break;//break if no longer in the original directory
-   if (Form_peach.StringGridList.Cells[15,i]='1') or (renselonly=0) then
+   if (Form_peach.StringGridList.Cells[16,i]='1') or (renselonly=0) then
       if (Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder) or (renfilesonly=0) then
       begin
       Form_peach.Caption:=txt_rename+' ('+inttostr(k+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin exit_busy_status; pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); navrefresh; exit; end;
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin exit_busy_status; pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); navrefresh; exit; end;
       k:=k+1;
       sext:='';
-      if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+      if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
          if sextchanged<>'' then sext:=sextchanged //if original object was a file, and extension was changed, apply the new extension to all files scheduled to be renamed
-         else sext:=extractfileext(Form_peach.StringGridList.Cells[11,i]);
+         else sext:=extractfileext(Form_peach.StringGridList.Cells[12,i]);
       if nsel>1 then s:=s0+NAMEVARSTR+numstr(k,nsel)+sext;
       if s<>Form_peach.StringGridList.Cells[1,i] then
          begin
-         if fun='FILEBROWSER' then renamefile(Form_peach.StringGridList.Cells[11,i],extractfilepath(Form_peach.StringGridList.Cells[11,i])+s);
-         if fun='UN7Z' then renamefileinarchive(Form_peach.StringGridList.Cells[11,i],extractfilepath(Form_peach.StringGridList.Cells[11,i])+s,true);
+         if fun='FILEBROWSER' then renamefile(Form_peach.StringGridList.Cells[12,i],extractfilepath(Form_peach.StringGridList.Cells[12,i])+s);
+         if fun='UN7Z' then renamefileinarchive(Form_peach.StringGridList.Cells[12,i],extractfilepath(Form_peach.StringGridList.Cells[12,i])+s,true);
          end;
       Application.ProcessMessages;
       end;
@@ -70012,7 +70345,7 @@ case mode of
    'dirappend':
    begin
    sti:=txt_6_4_appdirn;
-   st0:=extractfilepath(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+   st0:=extractfilepath(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
    if length(st0)>3 then
       begin
       if st0[length(st0)]=directoryseparator then setlength(st0,length(st0)-1);
@@ -70024,7 +70357,7 @@ case mode of
    'dirprepend':
    begin
    sti:=txt_6_4_prepdirn;
-   st0:=extractfilepath(Form_peach.StringGridList.Cells[11,Form_peach.StringGridList.Row]);
+   st0:=extractfilepath(Form_peach.StringGridList.Cells[12,Form_peach.StringGridList.Row]);
    if length(st0)>3 then
       begin
       if st0[length(st0)]=directoryseparator then setlength(st0,length(st0)-1);
@@ -70046,13 +70379,13 @@ rc:=Form_peach.StringGridList.RowCount;
 for i:=1 to rc-1 do
    begin
    if (Form_peach.EditOpenIn.Text<>s1) or (endflag=true) then break;//break if no longer in the original directory
-   if (Form_peach.StringGridList.Cells[15,i]='1') or (renselonly=0) then
+   if (Form_peach.StringGridList.Cells[16,i]='1') or (renselonly=0) then
       if (Form_peach.StringGridList.Cells[2,i]<>txt_list_isfolder) or (renfilesonly=0) then
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then
          begin
          exit_busy_status;
-         pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]);
+         pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]);
          navrefresh;
          exit;
          end;
@@ -70060,12 +70393,12 @@ for i:=1 to rc-1 do
       else fmode:='file';
       Form_peach.Caption:=txt_rename+' '+sti+' ('+inttostr(k+1)+'/'+inttostr(nsel)+') '+Form_peach.StringGridList.Cells[1,i]+'...';
       if mode='uppercase' then
-         s:=upcase(extractfilename(Form_peach.StringGridList.Cells[11,i]));
+         s:=upcase(extractfilename(Form_peach.StringGridList.Cells[12,i]));
       if mode='lowercase' then
-         s:=lowercase(extractfilename(Form_peach.StringGridList.Cells[11,i]));
+         s:=lowercase(extractfilename(Form_peach.StringGridList.Cells[12,i]));
       if mode='keepascii' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          str:='';
          for z:=1 to length(s) do
             if ord(s[z])<=127 then str:=str+char(s[z]) else str:=str+snew;
@@ -70074,26 +70407,26 @@ for i:=1 to rc-1 do
          end;
       if mode='timestamp' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          apply_timestamptoname(s,0,1,fmode);
          end;
       if mode='123' then
-         begin s:=numstrext(i,rc-1)+' '+extractfilename(Form_peach.StringGridList.Cells[11,i]); end;
+         begin s:=numstrext(i,rc-1)+' '+extractfilename(Form_peach.StringGridList.Cells[12,i]); end;
       if mode='dirappend' then
          begin
-         s:=Form_peach.StringGridList.Cells[11,i];
+         s:=Form_peach.StringGridList.Cells[12,i];
          apply_dirnametoname(s,'append',fmode);
          end;
       if mode='dirprepend' then
          begin
-         s:=Form_peach.StringGridList.Cells[11,i];
+         s:=Form_peach.StringGridList.Cells[12,i];
          apply_dirnametoname(s,'prepend',fmode);
          end;
       if mode='cutlen' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          sext:='';
-         if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+         if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
             begin //it is a file
             sext:=extractfileext(s);
             cutextension(s);
@@ -70103,9 +70436,9 @@ for i:=1 to rc-1 do
          end;
       if mode='add' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          sext:='';
-         if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+         if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
             begin //it is a file
             sext:=extractfileext(s);
             cutextension(s);
@@ -70129,9 +70462,9 @@ for i:=1 to rc-1 do
          end;
       if mode='delete' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          sext:='';
-         if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+         if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
             begin //it is a file
             sext:=extractfileext(s);
             cutextension(s);
@@ -70157,9 +70490,9 @@ for i:=1 to rc-1 do
          end;
       if (mode='replace') or (mode='replacecase') then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          sext:='';
-         if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+         if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
             begin //it is a file
             sext:=extractfileext(s);
             cutextension(s);
@@ -70173,27 +70506,27 @@ for i:=1 to rc-1 do
          end;
       if mode='extension' then
          begin
-         s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
-         if not directoryexists(Form_peach.StringGridList.Cells[11,i]) then
+         s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
+         if not directoryexists(Form_peach.StringGridList.Cells[12,i]) then
             begin //it is a file
             cutextension(s);
             if snew<>'' then s:=s+'.'+snew;
             end;
-         if s='' then s:=extractfilename(Form_peach.StringGridList.Cells[11,i]);
+         if s='' then s:=extractfilename(Form_peach.StringGridList.Cells[12,i]);
          end;
       //check if name is unique
-      if Form_peach.StringGridList.Cells[11,i]<>(extractfilepath(Form_peach.StringGridList.Cells[11,i])+s) then
+      if Form_peach.StringGridList.Cells[12,i]<>(extractfilepath(Form_peach.StringGridList.Cells[12,i])+s) then
          begin
          {$IFDEF MSWINDOWS}if (mode<>'uppercase') and (mode<>'lowercase') then{$ENDIF}
-         if (fileexists(extractfilepath(Form_peach.StringGridList.Cells[11,i])+s)) or (directoryexists(extractfilepath(Form_peach.StringGridList.Cells[11,i])+s)) then
+         if (fileexists(extractfilepath(Form_peach.StringGridList.Cells[12,i])+s)) or (directoryexists(extractfilepath(Form_peach.StringGridList.Cells[12,i])+s)) then
             begin
-            s:=extractfilepath(Form_peach.StringGridList.Cells[11,i])+s;
+            s:=extractfilepath(Form_peach.StringGridList.Cells[12,i])+s;
             get_new_archive_name(s);
             s:=extractfilename(s);
             end;
          k:=k+1;
-         if fun='FILEBROWSER' then renamefile(Form_peach.StringGridList.Cells[11,i],extractfilepath(Form_peach.StringGridList.Cells[11,i])+s);
-         if fun='UN7Z' then renamefileinarchive(Form_peach.StringGridList.Cells[11,i],extractfilepath(Form_peach.StringGridList.Cells[11,i])+s,true);
+         if fun='FILEBROWSER' then renamefile(Form_peach.StringGridList.Cells[12,i],extractfilepath(Form_peach.StringGridList.Cells[12,i])+s);
+         if fun='UN7Z' then renamefileinarchive(Form_peach.StringGridList.Cells[12,i],extractfilepath(Form_peach.StringGridList.Cells[12,i])+s,true);
          end;
       Application.ProcessMessages;
       end;
@@ -71224,6 +71557,15 @@ if index=3 then StringGridRecent.ColWidths[3]:=0;
 if index=4 then StringGridRecent.ColWidths[4]:=0;
 end;
 
+procedure TForm_peach.tbcontrastChange(Sender: TObject);
+begin
+if openstarted=true then
+   begin
+   contrast:=4+tbcontrast.Position;
+   apply_theme;
+   end;
+end;
+
 procedure grid_dir_open;
 begin
 with Form_peach do
@@ -71233,7 +71575,7 @@ if ListRow=0 then exit;
 {$IFDEF MSWINDOWS}
 if Form_peach.EditOpenIn.Text=txt_mypc then
    begin
-   listdir(StringGridList.Cells[11,StringGridList.Row],false,false);
+   listdir(StringGridList.Cells[12,StringGridList.Row],false,false);
    addtohistory;
    exit;
    end;
@@ -71243,14 +71585,14 @@ if StringGridList.Cells[2,StringGridList.Row]=txt_list_isfolder then
    if fun='UN7Z' then
       begin
       if (FormAdvf.CheckBoxAdvFilters.State=cbChecked) and (filterbrowser=1) then exit;
-      EditUn7zaFilter.Text:=StringGridList.Cells[11,StringGridList.Row]+directoryseparator+'*';
-      EditUn7zaFilterExclude.Text:=StringGridList.Cells[11,StringGridList.Row]+directoryseparator+'*'+directoryseparator+'*';
+      EditUn7zaFilter.Text:=StringGridList.Cells[12,StringGridList.Row]+directoryseparator+'*';
+      EditUn7zaFilterExclude.Text:=StringGridList.Cells[12,StringGridList.Row]+directoryseparator+'*'+directoryseparator+'*';
       listun7z_go;
       end;
    if fun='FILEBROWSER' then
       begin
       EditUn7zaFilter.Text:='*';
-      listdir(StringGridList.Cells[11,StringGridList.Row],false,false);
+      listdir(StringGridList.Cells[12,StringGridList.Row],false,false);
       addtohistory;
       end;
    end;
@@ -71273,7 +71615,7 @@ if checklistsel<>0 then exit;
 {$IFDEF MSWINDOWS}
 if Form_peach.EditOpenIn.Text=txt_mypc then
    begin
-   listdir(StringGridList.Cells[11,StringGridList.Row],false,false);
+   listdir(StringGridList.Cells[12,StringGridList.Row],false,false);
    addtohistory;
    exit;
    end;
@@ -71313,7 +71655,7 @@ else
    i:=StringGridList.Row;
    if i>0 then
       begin
-      if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
+      if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
       case fun of
          'UNLPAQ' :
          begin
@@ -71438,19 +71780,19 @@ else
          end;
         'FILEBROWSER' :
          begin
-         j:=testext(StringGridList.Cells[11,StringGridList.Row]);//browse or open by type
+         j:=testext(StringGridList.Cells[12,StringGridList.Row]);//browse or open by type
          if forcebrowse=0 then if ((j>=100) and (j<500)) then j:=-1;//non-canonical archive types are opened with associated application rather than browsed in PeaZip as archives if this option is not set
          if (j<0) //not a PeaZip supported filetype
             or (j=503)
             or (j=502)
             or (j=501) //file types usually not handled as archives
-         then cp_open(StringGridList.Cells[11,StringGridList.Row],desk_env)
+         then cp_open(StringGridList.Cells[12,StringGridList.Row],desk_env)
          else
             begin
             {$IFDEF MSWINDOWS}//if it's a Windows executable, offer the possibility to run it instead of open it in PeaZip (Windows only)
             if j=500 then
             begin
-            s:=StringGridList.Cells[11,StringGridList.Row];
+            s:=StringGridList.Cells[12,StringGridList.Row];
             dodirseparators(s);
             mri:=pMessageWarningYesNoCancel(txt_dis+' '+s+' '+txt_type_exe);
             if mri=6 then
@@ -71463,7 +71805,7 @@ else
             else if mri<>7 then exit;
             end;
             {$ENDIF}
-            open_archive_fromname(StringGridList.Cells[11,StringGridList.Row]);
+            open_archive_fromname(StringGridList.Cells[12,StringGridList.Row]);
             end;
          exit;
          end;
@@ -71473,8 +71815,8 @@ else
          begin
             if length(Form_peach.EditOpenIn.Caption)>=17 then
                if copy(Form_peach.EditOpenIn.Caption,1,17)='\\.\PhysicalDrive' then
-                  if (lowercase(extractfileext(StringGridList.Cells[11,StringGridList.Row]))='.fat')
-                  or (lowercase(extractfileext(StringGridList.Cells[11,StringGridList.Row]))='.ntfs') then
+                  if (lowercase(extractfileext(StringGridList.Cells[12,StringGridList.Row]))='.fat')
+                  or (lowercase(extractfileext(StringGridList.Cells[12,StringGridList.Row]))='.ntfs') then
                      begin
                      pMessageInfoOK(txt_2_8_unitrecommend);
                      exit;
@@ -71646,7 +71988,7 @@ wasselected:=-1;
 ListView1.begindrag(false);
 dragcancelled:=true;
 if set_grid=false then exit;
-singleextract:=false;
+//singleextract:=false;
 listrow:=StringgridList.Row;
 grid_obj_open;
 end;
@@ -71698,7 +72040,7 @@ if Key=13 then
          for i:=1 to Form_peach.StringGridList.RowCount-1 do
             begin
             if Form_peach.EditOpenIn.Text<>sref then begin k:=0; break; end;
-            if Form_peach.StringGridList.Cells[15,i]='1' then
+            if Form_peach.StringGridList.Cells[16,i]='1' then
                begin
                if StringGridList.Cells[2,i]=txt_list_isfolder then
                   begin
@@ -71706,7 +72048,7 @@ if Key=13 then
                   end
                else
                   begin
-                  j:=testext(StringGridList.Cells[11,i]);
+                  j:=testext(StringGridList.Cells[12,i]);
                   if (j<0) //not a PeaZip supported filetype
                      or (j=503)
                      or (j=502)
@@ -71891,10 +72233,10 @@ if fun='FILEBROWSER' then
    setlength(sarr,0);
    j:=0;
    for i:=1 to Form_peach.StringGridList.RowCount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
          setlength(sarr,length(sarr)+1);
-         sarr[j]:=Form_peach.StringGridList.Cells[11,i];
+         sarr[j]:=Form_peach.StringGridList.Cells[12,i];
          j:=j+1;
          end;
    disdrag:=true;
@@ -72022,7 +72364,7 @@ if i>-1 then
            else
               s:=s+char($0D)+char($0A)+ListView1.Column[3].Caption+' - '+ListView1.Items[i].SubItems[2];
            end;
-        if ListView1.Items[i].SubItems[8]<>'' then s:=s+char($0D)+char($0A)+ListView1.Column[9].Caption+' - '+ListView1.Items[i].SubItems[8];
+        if ListView1.Items[i].SubItems[8]<>'' then s:=s+char($0D)+char($0A)+ListView1.Column[10].Caption+' - '+ListView1.Items[i].SubItems[9];
         if ListView1.Items[i].SubItems[3]<>'' then s:=s+char($0D)+char($0A)+ListView1.Column[4].Caption+' - '+ListView1.Items[i].SubItems[3];
         end;
      end;
@@ -72069,11 +72411,11 @@ if browserbusy=true then exit;
 updatingsel:=true;
 {$IFDEF MSWINDOWS} //selectitem is raised to uncheck each selected object and check each new one, so for an iteration it is enough to ScheduleAdd one change of state in the underlying stringgrid
 i:=Item.index+1;
-if ListView1.Items[i-1].Selected<>true then StringGridList.Cells[15,i]:='0' else StringGridList.Cells[15,i]:='1';
+if ListView1.Items[i-1].Selected<>true then StringGridList.Cells[16,i]:='0' else StringGridList.Cells[16,i]:='1';
 {$ELSE} //the previous code doesn't currently work on Qt, making necessary to update the whole grid
 rc:=StringGridList.Rowcount;
 for i:=1 to rc-1 do
-   if ListView1.Items[i-1].Selected<>true then StringGridList.Cells[15,i]:='0' else StringGridList.Cells[15,i]:='1';
+   if ListView1.Items[i-1].Selected<>true then StringGridList.Cells[16,i]:='0' else StringGridList.Cells[16,i]:='1';
 {$ENDIF}
 //set_grid; //Lazarus 0.9.30: no longer needed, selection is always updated before action is launched
 //update_selstatus; associated to onmouseup and onkeyup
@@ -72147,10 +72489,10 @@ prev_destdir:='';
 setlength(clipcontent1,0);
 j:=0;
 for i:=1 to Form_peach.StringGridList.RowCount-1 do
-   if Form_peach.StringGridList.Cells[15,i]='1' then
+   if Form_peach.StringGridList.Cells[16,i]='1' then
       begin
       setlength(clipcontent1,length(clipcontent1)+1);
-      clipcontent1[j,0]:=Form_peach.StringGridList.Cells[11,i];
+      clipcontent1[j,0]:=Form_peach.StringGridList.Cells[12,i];
       clipcontent1[j,1]:=Form_peach.StringGridList.Cells[1,i];
       clipcontent1[j,2]:=Form_peach.StringGridList.Cells[2,i];
       clipcontent1[j,3]:=cpact;
@@ -72401,6 +72743,8 @@ begin
    Form_peach.pmccreated.checked:=ccreated;
    Form_peach.pmcaccessed.checked:=caccessed;
    Form_peach.pmcmethod.checked:=cmethod;
+   Form_peach.mccomment.checked:=ccomment;
+   Form_peach.pmccomment.checked:=ccomment;
    Form_peach.ListView1.Rowselect:=rowselect;
    Form_peach.mrowselect.checked:=rowselect;
    Form_peach.mlargeicons.checked:=enlargeicons;
@@ -72947,11 +73291,11 @@ if (targetnode.parent<>nil) then
                 exit;
                 end;
              for i:=1 to Form_peach.StringGridList.RowCount-1 do
-                if Form_peach.StringGridList.Cells[15,i]='1' then
+                if Form_peach.StringGridList.Cells[16,i]='1' then
                    if TargetNode.Index<=appentries1+appsnodes then
-                      open_custedit(appdb[TargetNode.Index-appsnodes],Form_peach.StringGridList.Cells[11,i])
+                      open_custedit(appdb[TargetNode.Index-appsnodes],Form_peach.StringGridList.Cells[12,i])
                    else
-                      open_advcustedit(appdb2[TargetNode.Index-appentries1-appsnodes],Form_peach.StringGridList.Cells[11,i]);
+                      open_advcustedit(appdb2[TargetNode.Index-appentries1-appsnodes],Form_peach.StringGridList.Cells[12,i]);
              end;
           end;
           exit;
@@ -72980,8 +73324,8 @@ if (targetnode.parent<>nil) then
    if fun='UN7Z' then
       begin
       if (FormAdvf.CheckBoxAdvFilters.State=cbChecked) and (filterbrowser=1) then exit;
-      Form_peach.EditUn7zaFilter.Text:=Form_peach.StringGridAddress1.Cells[11,TargetNode.AbsoluteIndex]+directoryseparator+'*';
-      Form_peach.EditUn7zaFilterExclude.Text:=Form_peach.StringGridAddress1.Cells[11,TargetNode.AbsoluteIndex]+directoryseparator+'*'+directoryseparator+'*';
+      Form_peach.EditUn7zaFilter.Text:=Form_peach.StringGridAddress1.Cells[12,TargetNode.AbsoluteIndex]+directoryseparator+'*';
+      Form_peach.EditUn7zaFilterExclude.Text:=Form_peach.StringGridAddress1.Cells[12,TargetNode.AbsoluteIndex]+directoryseparator+'*'+directoryseparator+'*';
       listun7z_go;
       end;
    end
@@ -73374,6 +73718,9 @@ if (lpPoint.x<Form_peach.left-8) or (lpPoint.y<Form_peach.top-8) or (lpPoint.x>F
    if Form_peach.EditOpenOut.Text<>'' then
       if Form_peach.EditOpenOut.Text[length(Form_peach.EditOpenOut.Text)] <> directoryseparator then Form_peach.EditOpenOut.Text:=Form_peach.EditOpenOut.Text+directoryseparator;
    calcseltsize;
+
+   sizefreeint:=tsize;
+   if checkfreespace<>0 then exit;
    Form_peach.Visible:=false;
    case fun of
       'RFJ' :
@@ -73474,12 +73821,12 @@ if (lpPoint.y>0) and (Form_peach.stringgridbookmarks.visible=true) then
    if Form_peach.stringgridbookmarks.visible=false then showbar('bookmarks');
    j:=0;
    for i:=1 to Form_peach.StringGridList.Rowcount-1 do
-      if Form_peach.StringGridList.Cells[15,i]='1' then
+      if Form_peach.StringGridList.Cells[16,i]='1' then
          begin
          j:=j+1;
          if j>100 then break;//prevent adding too many bookmarks by error, may be improved (ask confirmation)
-         if checkfiledirname(Form_peach.StringGridList.Cells[11,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[11,i]); exit; end;
-         if fun='FILEBROWSER' then addtobookmarks(escapefilename(Form_peach.StringGridList.Cells[11,i],desk_env))
+         if checkfiledirname(Form_peach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+Form_peach.StringGridList.Cells[12,i]); exit; end;
+         if fun='FILEBROWSER' then addtobookmarks(escapefilename(Form_peach.StringGridList.Cells[12,i],desk_env))
          else addtobookmarks('*current');
          end;
    end;

@@ -1160,9 +1160,12 @@ begin
   ndirs := 0;
   size := 0;
   try
-    //check for valid path, else set executable path as path
+    //check for valid path
     if length(path) = 0 then
-      dir := extractfilepath(ParamStr(0))
+      begin
+      result := CALL_ERROR;
+      exit;
+      end
     else
       dir := path;
     //check for directoryseparator at the end of the path (needed)
@@ -1381,7 +1384,10 @@ begin
   try
     //check for valid path, else set executable path as path
     if length(path) = 0 then
-      dir := extractfilepath(ParamStr(0))
+       begin
+       result := CALL_ERROR;
+       exit;
+       end
     else
       dir := path;
     //check for directoryseparator at the end of the path (needed)
@@ -2373,7 +2379,10 @@ begin
   try
     //check for valid path, else set executable path as path
     if length(path) = 0 then
-      dir := extractfilepath(ParamStr(0))
+       begin
+       result := CALL_ERROR;
+       exit;
+       end
     else
       dir := path;
     //check for directoryseparator at the end of the path (needed)

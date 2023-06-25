@@ -353,7 +353,7 @@ const
 var
   Form_gwrap: TForm_gwrap;
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,poutnamet,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
-  pprogbar,pprogbarprev,perrors,iperc,ipercp,remtime,temperature,alttabstyle,highlighttabs,
+  pprogbar,pprogbarprev,perrors,iperc,ipercp,remtime,temperature,contrast,alttabstyle,highlighttabs,
   modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,ws_gw_height,ws_gw_width,
   pbarh,pbarhsmall:integer;
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore,launched,
@@ -2103,7 +2103,7 @@ begin
 apply_theme;
 load_icons;
 if color3='clForm' then color3:=ColorToString(PTACOL);
-getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature);
+getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature,contrast);
 Form_gwrap.ShapeTitleb1.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb2.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb3.Brush.Color:=StringToColor(COLLOW);

@@ -67,6 +67,7 @@ unit pea_utils;
  0.41     20200905  G.Tani      Multiple encryption cascading AES, Twofish and Serpent, all in 256 bit EAX mode
                                 Improved password strength test
  0.42     20201206  G.Tani      Updated theming
+ 0.43     20230427  G.Tani      Updated theming, added contrast level
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -138,8 +139,11 @@ colhigh,colmid,collow,colvlow,colbtnhigh,colalert:string;
 //get SHA256 hash of file from name
 function getchash(fname:ansistring):ansistring;
 
+//decode PeaZip binary theme string
+procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall,contrast:integer);
+
 // get program's colors
-procedure getpcolors(basappcol,baseformcol,baselinkcol,temperature:TColor);
+procedure getpcolors(basappcol,baseformcol,baselinkcol:TColor; temperature,contrast:integer);
 
 {
 functions for generating PEA version1 revision1 fields
@@ -498,10 +502,41 @@ SHA256Final(SHA256Context,SHA256Digest);
 result:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
 end;
 
-procedure getpcolors(basappcol,baseformcol,baselinkcol,temperature:TColor);
+procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall,contrast:integer);
+begin
+if length(s)<9 then
+   begin
+   usealtcolor:=0;
+   highlighttabs:=0;
+   accenttoolbar:=0;
+   toolcentered:=0;
+   altaddressstyle:=1;
+   solidaddressstyle:=0;
+   alttabstyle:=2;
+   ensmall:=0;
+   contrast:=0;
+   end
+else
+   begin
+   usealtcolor:=strtoint(s[1]);//use alternate colors in grids
+   highlighttabs:=strtoint(s[2]);//use alternate color for tabs
+   accenttoolbar:=strtoint(s[3]);//use accent color in tool bar
+   toolcentered:=strtoint(s[4]);//centered tool bar buttons
+   altaddressstyle:=strtoint(s[5]);//use alternative address bar style
+   solidaddressstyle:=strtoint(s[6]);//solid address bar style
+   alttabstyle:=strtoint(s[7]);//use alternative tabs style
+   ensmall:=strtoint(s[8]);//enlarge small icons
+   contrast:=strtoint(s[9]);//contrast level
+   end;
+end;
+
+procedure getpcolors(basappcol,baseformcol,baselinkcol:Tcolor; temperature,contrast:integer);
+var cmod:integer;
 begin
 plblue:=basappcol;
 ptextaccent:=baselinkcol;
+if contrast<4 then cmod:=7+contrast-4
+else cmod:=7+(contrast-4)*2;
 if evalcolor(baseformcol)>128 then
    begin
    pltextaccent:=modpropcolor(baselinkcol,160,0);
@@ -513,12 +548,12 @@ if evalcolor(baseformcol)>128 then
    pvvvlblue:=modpropcolor(basappcol,210,0);
    pvvvmlblue:=modpropcolor(basappcol,225,0);
    pvvvvlblue:=modpropcolor(basappcol,240,0);
-   colhigh:=colortostring(modpropcolor(baseformcol,-30,temperature));
-   colmid:=colortostring(modpropcolor(baseformcol,-22,temperature));
-   collow:=colortostring(modpropcolor(baseformcol,-13,temperature));
-   colvlow:=colortostring(modpropcolor(baseformcol,-7,temperature));
-   colbtnhigh:=colortostring(modpropcolor(baseformcol,-40,temperature));
-   colalert:=colortostring(modpropcolor(baseformcol,-55,temperature));
+   colalert:=colortostring(modpropcolor(baseformcol,-cmod*8,temperature));
+   colbtnhigh:=colortostring(modpropcolor(baseformcol,-cmod*6,temperature));
+   colhigh:=colortostring(modpropcolor(baseformcol,-cmod*4,temperature));
+   colmid:=colortostring(modpropcolor(baseformcol,-cmod*3,temperature));
+   collow:=colortostring(modpropcolor(baseformcol,-cmod*2,temperature));
+   colvlow:=colortostring(modpropcolor(baseformcol,-cmod,temperature));
    pgray:=modpropcolor(baseformcol,-128,temperature);
    psilver:=modpropcolor(baseformcol,-64,temperature);
    end
@@ -533,12 +568,12 @@ else
    pvvvlblue:=modpropcolor(basappcol,-100,0);
    pvvvmlblue:=modpropcolor(basappcol,-110,0);
    pvvvvlblue:=modpropcolor(basappcol,-120,0);
-   colhigh:=colortostring(modpropcolor(baseformcol,30,temperature));
-   colmid:=colortostring(modpropcolor(baseformcol,20,temperature));
-   collow:=colortostring(modpropcolor(baseformcol,10,temperature));
-   colvlow:=colortostring(modpropcolor(baseformcol,5,temperature));
-   colbtnhigh:=colortostring(modpropcolor(baseformcol,40,temperature));
-   colalert:=colortostring(modpropcolor(baseformcol,55,temperature));
+   colalert:=colortostring(modpropcolor(baseformcol,24+cmod*8,temperature));
+   colbtnhigh:=colortostring(modpropcolor(baseformcol,24+cmod*6,temperature));
+   colhigh:=colortostring(modpropcolor(baseformcol,24+cmod*4,temperature));
+   colmid:=colortostring(modpropcolor(baseformcol,24+cmod*3,temperature));
+   collow:=colortostring(modpropcolor(baseformcol,24+cmod*2,temperature));
+   colvlow:=colortostring(modpropcolor(baseformcol,24+cmod,temperature));
    pgray:=modpropcolor(baseformcol,128,temperature);
    psilver:=modpropcolor(baseformcol,64,temperature);
    end;

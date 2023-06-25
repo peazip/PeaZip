@@ -194,6 +194,7 @@ unit Unit_pea;
  1.10     20221003  G.Tani      Updated theming engine
  1.11     20221208  G.Tani      Minor fixes
  1.12     20230218  G.Tani      Fixes, added conditional compilation sections for non-Windows systems
+ 1.13     20230620  G.Tani      Fixes, updated theming engine to support Contrast setting
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -376,7 +377,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.12'; //declares release version for the whole build
+  P_RELEASE          = '1.13'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -420,7 +421,7 @@ var
    fshown:boolean;
    //theming
    conf:text;
-   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,alttabstyle,ensmall,gridaltcolor,highlighttabs,temperature:integer;
+   opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,alttabstyle,ensmall,gridaltcolor,highlighttabs,temperature,contrast:integer;
    executable_path,resource_path,binpath,sharepath,persistent_source,color1,color2,color3,color4,color5:string;
    csvsep:ansistring;
 
@@ -7578,39 +7579,16 @@ begin
 for i:=1 to nlines do readln(conf,dummy);
 end;
 
-procedure decodebintheming(s: ansistring; var usealtcolor,highlighttabs,accenttoolbar,toolcentered,altaddressstyle,solidaddressstyle,alttabstyle,ensmall:integer);
-begin
-if length(s)<8 then
-   begin
-   usealtcolor:=0;
-   highlighttabs:=0;
-   accenttoolbar:=0;
-   toolcentered:=0;
-   altaddressstyle:=1;
-   solidaddressstyle:=0;
-   alttabstyle:=2;
-   ensmall:=0;
-   end
-else
-   begin
-   usealtcolor:=strtoint(s[1]);//use alternate colors in grids
-   highlighttabs:=strtoint(s[2]);//use alternate color for tabs
-   accenttoolbar:=strtoint(s[3]);//use accent color in tool bar
-   toolcentered:=strtoint(s[4]);//centered buttons in tool bar
-   altaddressstyle:=strtoint(s[5]);//use alternative address bar style
-   solidaddressstyle:=strtoint(s[6]);//solid address bar style
-   alttabstyle:=strtoint(s[7]);//use alternative tabs style
-   ensmall:=strtoint(s[8]);//enlarge small icons
-   end;
-end;
-
 var
    s,dummy:ansistring;
    dummyint:integer;
 begin
 fshown:=false;
-executable_path:=extractfilepath((paramstr(0)));
-if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
+//valorize application's paths
+executable_path:=Application.location;
+if executable_path='' then extractfilepath(paramstr(0));
+if executable_path<>'' then
+   if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
 {$IFDEF Darwin}
    resource_path:=executable_path+'../Resources/';
@@ -7669,7 +7647,7 @@ try
    readln(conf,color3);
    readln(conf,color4);
    readln(conf,color5);
-   readln(conf,dummy); decodebintheming(dummy,gridaltcolor,highlighttabs,dummyint,dummyint,dummyint,dummyint,alttabstyle,ensmall);
+   readln(conf,dummy); decodebintheming(dummy,gridaltcolor,highlighttabs,dummyint,dummyint,dummyint,dummyint,alttabstyle,ensmall,contrast);
    readln(conf,dummy); pzooming:=strtoint(dummy);
    readln(conf,dummy); pspacing:=strtoint(dummy);
    readln(conf,dummy); temperature:=strtoint(dummy);
@@ -7785,7 +7763,7 @@ pmrunasadmin.visible:=false;
 {$ENDIF}
 set_items_height;
 if color3='clForm' then color3:=ColorToString(PTACOL);
-getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3),temperature);
+getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3),temperature,contrast);
 img_utils.relwindowcolor:=stringtocolor(color2);
 load_icons;
 Form_pea.Color:=StringToColor(color2);

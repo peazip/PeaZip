@@ -1,13 +1,8 @@
-﻿Notes to 9.2.0 release
+﻿Notes to 9.3.0 release
 
 Modified existing text:
-txt_8_8_solcol: Breadcrumb bar
-txt_6_6_forcemodify: Edit non-canonical archive types as
-txt_6_5_privacy: Privacy and Security
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for Plugins
-txt_5_5_plugin: Check for Plugins
-txt_4_3_pwmanmaster: Set/change PM master password
-txt_3_5_td: Check for Themes
+txt_9_2_swt: Swap Tab bar / Address bar
+txt_2_4_path: path is not writeable (i.e. full, or read-only). Do you want to select a writeable output path?
 
 = GENERAL NOTES =
 
