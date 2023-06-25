@@ -3,18 +3,18 @@ Français
 9.3
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 21.04.2023
+Date du: 25.06.2023
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_3_continue: Continuer quand même ?
+txt_9_3_contrast: Contraste
+txt_9_3_fsd: L’espace libre à destination peut ne pas être suffisant
+txt_9_3_fsw: L’espace libre sur le chemin de travail temporaire peut ne pas suffire
+txt_9_3_mrar: Définir manuellement le binaire RAR
+txt_9_3_canedit: Ce type d’archive peut être modifié
+txt_9_3_canforce: Ce type d’archive peut être modifié (forcé)
+txt_9_3_cannotedit: Ce type d’archive ne peut pas être modifié
 txt_9_2_7za: Alias 7z/p7zip
 txt_9_2_changelog: Journal des modifications
 txt_9_2_tfaq: Vérifier les traductions

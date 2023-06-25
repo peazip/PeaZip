@@ -3,27 +3,27 @@ Français
 9.3
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20230423
+Last rev.: 20230625
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_3_continue: Continuer quand même ?
+txt_9_3_contrast: Contraste
+txt_9_3_fsd: L'espace disponible sur le support de destination peut être insuffisant
+txt_9_3_fsw: L'espace disponible dans le répertoire de travail peut être insuffisant
+txt_9_3_mrar: Définir manuellement l'exécutable RAR
+txt_9_3_canedit: Ce type d'archive est modifiable
+txt_9_3_canforce: Ce type d'archive est modifiable (mode contraint)
+txt_9_3_cannotedit: Ce type d'archive n'est pas modifiable
 txt_9_2_7za: 7z/alias p7zip
-txt_9_2_changelog: Journal des modifications
-txt_9_2_tfaq: Traductions
+txt_9_2_changelog: Change log
+txt_9_2_tfaq: Mise à jour des traductions
 txt_9_2_compact: Compact
-txt_9_2_swt: Permuter outils/barre d'adresse
+txt_9_2_swt: Permuter barre d'onglets/barre d'adresse
 txt_9_2_tos: CGU, confidentialité
-txt_9_2_doc: À propos de la documentation, des bugs...
-txt_9_2_updates: À propos des mises à jour, exécutables, extensions...
-txt_9_1_7zs: Version de syntaxe 7z/p7zip
+txt_9_2_doc: Consulter la documentation, les bugs...
+txt_9_2_updates: Vérifier les mises à jour, exécutables, extensions...
+txt_9_1_7zs: Niveau de syntaxe 7z/p7zip
 txt_9_1_ac: L'interaction avec l'utilisateur est possible pour la conversion d'archives via scripts
 txt_9_1_closeall: Tout fermer
 txt_9_1_enlargeicons: Agrandir les icônes du navigateur de fichiers
@@ -367,7 +367,7 @@ txt_5_1_every: Tou·te·s les
 txt_5_1_w6: Vendredi
 txt_5_1_hourly: Horaire
 txt_5_1_hours: Heures
-txt_5_1_last: Dernière
+txt_5_1_last: Dernier
 txt_5_1_schedmanage: Gérer les planifications de PeaZip dans le gestionnaire de tâches système
 txt_5_1_scriptmanage: Gérer les scripts planifiés existants
 txt_5_1_w2: Lundi
@@ -646,7 +646,7 @@ txt_2_4_wenc: Encyclopedia
 txt_2_4_extractfrom: Extraire à partir de
 txt_2_4_hexp: Prévisualisation hexadécimale
 txt_2_4_operation: Opération
-txt_2_4_path: chemin protégé en écriture (ex. : lecture seule). Sélectionner un chemin de destination non protégé en écriture ?
+txt_2_4_path: chemin protégé en écriture (ex. : espace insuffisant ou en lecture seule). Sélectionner un autre chemin de destination ?
 txt_2_4_removefromclipboard: Effacer du presse-papiers
 txt_2_4_stdclip: Standard : conserver une seule sélection dans le presse-papiers, effacer les couper-coller
 txt_2_4_totalmem: mémoire totale
@@ -984,7 +984,7 @@ txt_list_nomatch: aucune correspondance
 txt_singlethread: Pas de multi-threading
 txt_none2: aucun
 txt_nonsolid: Non-flash
-txt_level_normal: Normal
+txt_level_normal: Normale
 txt_copy_error: n'a pu être copié ou déplacé, code erreur :
 txt_description: Notes
 txt_compare_second: Sélectionner à présent un fichier à comparer avec
