@@ -3,26 +3,26 @@ German - Deutsch
 9.3
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20230309
+Last rev.: 20230626
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
+txt_9_3_continue: Dennoch fortsetzen?
+txt_9_3_contrast: Kontrast
+txt_9_3_fsd: Der freie Speicherplatz beim Zielpfad reicht möglicherweise nicht aus
+txt_9_3_fsw: Der freie Speicherplatz auf dem temporären Arbeitspfad reicht möglicherweise nicht aus
+txt_9_3_mrar: RAR-Binärdatei manuell festlegen
+txt_9_3_canedit: Dieser Archivtyp kann nicht bearbeitet werden
+txt_9_3_canforce: Dieser Archivtyp kann nicht bearbeitet werden (erzwungen)
+txt_9_3_cannotedit: Dieser Archivtyp kann nicht bearbeitet werden
+txt_9_2_7za: 7z / p7zip Alias
+txt_9_2_changelog: Änderungshistorie
+txt_9_2_tfaq: Nach Übersetzungen suchen
+txt_9_2_compact: Kompakt
+txt_9_2_swt: Werkzeug- / Adressleiste wechseln
+txt_9_2_tos: AGB, Datenschutz
+txt_9_2_doc: Dokumentation, Issue Tracker überprüfen...
+txt_9_2_updates: Updates, Binärdateien, Plugins überprüfen...
 txt_9_1_7zs: 7z / p7zip Syntaxebene
 txt_9_1_ac: Skripte zum Konvertieren von Archiven ermöglichen die Interaktion des Benutzers
 txt_9_1_closeall: Alle schließen
