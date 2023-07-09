@@ -9,12 +9,12 @@ Last rev.: 20230424
 
 txt_9_3_continue: Continue anyway?
 txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
+txt_9_3_fsd: 目标位置的空间可能不足
 txt_9_3_fsw: Free space on temporary work path may not be enough
 txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_3_canedit: 这种类型的归档文件可以被编辑
+txt_9_3_canforce: 这种类型的归档文件可以被编辑 (forced)
+txt_9_3_cannotedit: 这种类型的归档文件不可以被编辑
 txt_9_2_7za: 7z / p7zip 别名
 txt_9_2_changelog: 更新日志
 txt_9_2_tfaq: 检查翻译
@@ -519,7 +519,7 @@ txt_3_1_pathexc: 路径超出允许的最大长度
 txt_3_1_recent: 最近访问
 txt_3_1_plsmartmin: 最小化运行，仅在需要时显示或保持打开
 txt_3_1_src: 搜索
-txt_3_1_systmp: 系统临时文件夹
+txt_3_1_systmp: 用户临时文件夹
 txt_3_1_languagetools: 翻译
 txt_3_1_workingdir: 工作目录
 txt_3_0_nonreadableorpw: 归档文件无法读取。此归档文件可能失效，或者其目录可能被加密。输入密码试试？
