@@ -519,7 +519,7 @@ txt_3_1_pathexc: 路径超出允许的最大长度
 txt_3_1_recent: 最近访问
 txt_3_1_plsmartmin: 最小化运行，仅在需要时显示或保持打开
 txt_3_1_src: 搜索
-txt_3_1_systmp: 系统临时文件夹
+txt_3_1_systmp: 用户临时文件夹
 txt_3_1_languagetools: 翻译
 txt_3_1_workingdir: 工作目录
 txt_3_0_nonreadableorpw: 归档文件无法读取。此归档文件可能失效，或者其目录可能被加密。输入密码试试？
