@@ -9,12 +9,12 @@ Last rev.: 20230424
 
 txt_9_3_continue: Continue anyway?
 txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
+txt_9_3_fsd: 目标位置的空间可能不足
 txt_9_3_fsw: Free space on temporary work path may not be enough
 txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_3_canedit: 这种类型的归档文件可以被编辑
+txt_9_3_canforce: 这种类型的归档文件可以被编辑 (forced)
+txt_9_3_cannotedit: 这种类型的归档文件不可以被编辑
 txt_9_2_7za: 7z / p7zip 别名
 txt_9_2_changelog: 更新日志
 txt_9_2_tfaq: 检查翻译
