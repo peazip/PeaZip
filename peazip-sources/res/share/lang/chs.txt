@@ -139,7 +139,7 @@ txt_7_8_priorityrealtime: 实时
 txt_7_8_requirerestart: 【需要重启 PeaZip】
 txt_7_8_tpriority: 任务优先级
 txt_7_8_update: 更新
-txt_7_7_noneall: 无（无预览、无拖放提取）
+txt_7_7_noneall: 无 (无预览、无编辑、无拖放提取、无互动提取)
 txt_7_7_nonetemp: 无，必要时则在用户的临时目录里
 txt_7_7_outtemp: 输出，在用户的临时目录里预览
 txt_7_7_sys7zreq: 需要安装 7z、7-Zip，或 p7zip，或与其兼容的软件包
