@@ -3,7 +3,7 @@ Simplified Chinese - 简体中文
 9.3
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
 Last rev. by: Junde Yhi
-Last rev.: 20230424
+Last rev.: 20230710
 
 === PeaZip text group ===
 
