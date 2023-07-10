@@ -43,7 +43,7 @@ txt_9_0_tnav: 切换显示：侧边栏、树状图、都不显示
 txt_8_9_empty: 归档文件好像是空的
 txt_8_9_disp: 展示归档文件内容
 txt_8_9_parsing: 解析归档文件内容
-txt_8_9_stoptest: 停止后可检查错误、列出、测试和自动测试的报告
+txt_8_9_stoptest: 以下情况暂停来检查报告 error, list, test, auto-test
 txt_8_9_ttb: 切换工具栏
 txt_8_8_ca: 强调色
 txt_8_8_btn: 按钮
@@ -83,7 +83,7 @@ txt_8_5_intext: 先提取到临时工作目录，再移动到输出位置，覆�
 txt_8_5_listlarge: 列出（大图标）
 txt_8_5_loadlayout: 启动时加载布局
 txt_8_5_samplescripts: 示例脚本
-txt_8_4_keepopenerrorslist: 停止以检查错误报告，同时列出
+txt_8_4_keepopenerrorslist: 以下情况暂停来检查报告 error, list
 txt_8_3_mbubin: 二进制
 txt_8_3_cw: 要更改工作目录吗？这将重置临时文件并重启本应用。
 txt_8_3_temperature: 色温
@@ -607,8 +607,8 @@ txt_2_7_un7z_browse_flat: 尝试使用平面视图（F6）
 txt_2_7_updating: 【正在更新已有的归档文件】
 txt_2_6_folders: （文件夹）
 txt_2_6_advanced: 高级
-txt_2_6_plalways: 一直打开以便查看任务报告
-txt_2_6_plsmart: 仅在必要时打开（出错、列出或测试报告时）
+txt_2_6_plalways: 总是打开以查看任务报告
+txt_2_6_plsmart: 以下情况暂停来检查报告 error, list, test
 txt_2_5_sessionio: （当前会话）
 txt_2_5_advanced: 高级编辑：按需要在参数和文件名之间添加空格
 txt_2_5_basic: 基本编辑：输入名称前，应用程序和参数
@@ -765,7 +765,7 @@ txt_check_select: 计算校验码 / 散列值
 txt_clear: 清除
 txt_clearlayout: 清除布局
 txt_pj_hint: 点此导入任务，重置修改，并从用户界面载入日期任务定义
-txt_autoclose: 任务完成时关闭 PeaLauncher
+txt_autoclose: 从不暂停并检查任务报告
 txt_cl: 命令行：
 txt_compare: 比较文件
 txt_compress: 压缩
