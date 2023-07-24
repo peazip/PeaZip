@@ -1,25 +1,25 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
 9.3
-Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji
+Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye
 Last rev. by: Junde Yhi
-Last rev.: 20230424
+Last rev.: 20230716
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: 目标位置的空间可能不足
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: 这种类型的归档文件可以被编辑
-txt_9_3_canforce: 这种类型的归档文件可以被编辑 (forced)
-txt_9_3_cannotedit: 这种类型的归档文件不可以被编辑
+txt_9_3_continue: 还要继续吗？
+txt_9_3_contrast: 对比度
+txt_9_3_fsd: 目标路径的可用空间可能不够
+txt_9_3_fsw: 临时工作路径的可用空间可能不够
+txt_9_3_mrar: 手动设置 RAR 可执行文件
+txt_9_3_canedit: 可以编辑这个类型的归档文件
+txt_9_3_canforce: 可以编辑这个类型的归档文件（强制）
+txt_9_3_cannotedit: 不能编辑这个类型的归档文件
 txt_9_2_7za: 7z / p7zip 别名
 txt_9_2_changelog: 更新日志
 txt_9_2_tfaq: 检查翻译
 txt_9_2_compact: 紧凑
-txt_9_2_swt: 交换工具栏和地址栏的位置
+txt_9_2_swt: 交换标签页栏和地址栏的位置
 txt_9_2_tos: 服务条款、隐私声明
 txt_9_2_doc: 查看文档、工单系统…
 txt_9_2_updates: 查看更新、可执行文件、插件…
@@ -43,7 +43,7 @@ txt_9_0_tnav: 切换显示：侧边栏、树状图、都不显示
 txt_8_9_empty: 归档文件好像是空的
 txt_8_9_disp: 展示归档文件内容
 txt_8_9_parsing: 解析归档文件内容
-txt_8_9_stoptest: 停止后可检查错误、列出、测试和自动测试的报告
+txt_8_9_stoptest: 停下来检查关于错误、列出、测试和自动测试的报告
 txt_8_9_ttb: 切换工具栏
 txt_8_8_ca: 强调色
 txt_8_8_btn: 按钮
@@ -83,7 +83,7 @@ txt_8_5_intext: 先提取到临时工作目录，再移动到输出位置，覆�
 txt_8_5_listlarge: 列出（大图标）
 txt_8_5_loadlayout: 启动时加载布局
 txt_8_5_samplescripts: 示例脚本
-txt_8_4_keepopenerrorslist: 停止以检查错误报告，同时列出
+txt_8_4_keepopenerrorslist: 停下来检查关于错误和列出的报告
 txt_8_3_mbubin: 二进制
 txt_8_3_cw: 要更改工作目录吗？这将重置临时文件并重启本应用。
 txt_8_3_temperature: 色温
@@ -139,7 +139,7 @@ txt_7_8_priorityrealtime: 实时
 txt_7_8_requirerestart: 【需要重启 PeaZip】
 txt_7_8_tpriority: 任务优先级
 txt_7_8_update: 更新
-txt_7_7_noneall: 无（无预览、无拖放提取）
+txt_7_7_noneall: 无：禁用预览、编辑、拖放及交互式提取
 txt_7_7_nonetemp: 无，必要时则在用户的临时目录里
 txt_7_7_outtemp: 输出，在用户的临时目录里预览
 txt_7_7_sys7zreq: 需要安装 7z、7-Zip，或 p7zip，或与其兼容的软件包
@@ -607,8 +607,8 @@ txt_2_7_un7z_browse_flat: 尝试使用平面视图（F6）
 txt_2_7_updating: 【正在更新已有的归档文件】
 txt_2_6_folders: （文件夹）
 txt_2_6_advanced: 高级
-txt_2_6_plalways: 一直打开以便查看任务报告
-txt_2_6_plsmart: 仅在必要时打开（出错、列出或测试报告时）
+txt_2_6_plalways: 总是停下来检查任务报告
+txt_2_6_plsmart: 停下来检查关于错误、列出和测试的报告
 txt_2_5_sessionio: （当前会话）
 txt_2_5_advanced: 高级编辑：按需要在参数和文件名之间添加空格
 txt_2_5_basic: 基本编辑：输入名称前，应用程序和参数
@@ -646,7 +646,7 @@ txt_2_4_wenc: 百科全书
 txt_2_4_extractfrom: 提取自
 txt_2_4_hexp: 十六进制预览
 txt_2_4_operation: 操作
-txt_2_4_path: 路径不可写（比如不存在、只读）。要选择一个可写的输入路径吗？
+txt_2_4_path: 路径不可写（也就是说已经满了或者只读）。你想要选择一个可以写入的输出路径吗？
 txt_2_4_removefromclipboard: 从剪贴板中移除
 txt_2_4_stdclip: Standard：仅在剪贴板中保留一个选择项，粘贴后即删除剪切项
 txt_2_4_totalmem: 内存总计
@@ -765,7 +765,7 @@ txt_check_select: 计算校验码 / 散列值
 txt_clear: 清除
 txt_clearlayout: 清除布局
 txt_pj_hint: 点此导入任务，重置修改，并从用户界面载入日期任务定义
-txt_autoclose: 任务完成时关闭 PeaLauncher
+txt_autoclose: 不要停下来检查任务报告
 txt_cl: 命令行：
 txt_compare: 比较文件
 txt_compress: 压缩
