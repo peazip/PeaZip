@@ -3,19 +3,19 @@
 9.3
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
-Посл. ред.: 25.04.2023
+Посл. ред.: 31.07.2023
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
-txt_9_2_7za: Псивдоним 7z/p7zip
+txt_9_3_continue: Все равно продолжить?
+txt_9_3_contrast: Контраст
+txt_9_3_fsd: Свободного пространства в месте назначения может быть недостаточно
+txt_9_3_fsw: Свободного мпространства на временном рабочем пути может быть недостаточно
+txt_9_3_mrar: Вручную установить двоичный RAR
+txt_9_3_canedit: Этот тип архива можно редактировать
+txt_9_3_canforce: Этот тип архива можно редактировать (принудительно)
+txt_9_3_cannotedit: Этот тип архива нельзя редактировать
+txt_9_2_7za: Псевдоним 7z/p7zip
 txt_9_2_changelog: Журнал изменений
 txt_9_2_tfaq: Проверить наличие переводов
 txt_9_2_compact: Свернуть
