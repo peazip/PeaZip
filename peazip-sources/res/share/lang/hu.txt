@@ -3,58 +3,58 @@ Hungarian - Magyar
 9.3
 Fordító: Zityi's Translator Team
 Last rev. by: Giorgio Tani
-Last rev.: 20220812
+Last rev.: 20230612
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
+txt_9_3_continue: Mindenképp folytatja?
+txt_9_3_contrast: Kontraszt
+txt_9_3_fsd: Előfordulhat, hogy a célmappában nincs elegendő szabad hely
+txt_9_3_fsw: Előfordulhat, hogy az ideiglenes munkakönyvtárban nincs elegendő szabad hely
+txt_9_3_mrar: RAR bináris manuális beállítása
+txt_9_3_canedit: Ez az archívumtípus szerkeszthető
+txt_9_3_canforce: Ez az archívumtípus szerkeszthető (kényszeríthető)
+txt_9_3_cannotedit: Ez az archívumtípus nem szerkeszthető
+txt_9_2_7za: 7z / p7zip más néven
+txt_9_2_changelog: Változásnapló
+txt_9_2_tfaq: Fordítások ellenőrzése
+txt_9_2_compact: Kompakt
+txt_9_2_swt: Fülsáv / címsor felcserélése
+txt_9_2_tos: TOS, Adatvédelem
+txt_9_2_doc: Dokumentáció ellenőrzése, Problémakövető...
+txt_9_2_updates: Frissítések, binárisok, bővítmények ellenőrzése...
+txt_9_1_7zs: 7z / p7zip szintaxis szint
+txt_9_1_ac: Az archívum átalakítási szkriptek lehetővé teszik a felhasználói interakciót
+txt_9_1_closeall: Összes bezárása
+txt_9_1_enlargeicons: Fájlböngésző ikonok nagyítása
+txt_9_1_ef: Az üres mappák kizárása az archiválási és kibontási műveletekből (7z / p7zip)
+txt_9_1_nw: Megnyitás új ablakban
+txt_9_1_qdup: Gyors deduplikációs rutin használata
+txt_9_0_autoexttar: TAR-archívum automatikus kibontása tömörített TAR-fájlokból
+txt_9_0_accesstime: Ne módosítsa az utolsó hozzáférési időt
+txt_9_0_mem: Maximális memóriahasználat
+txt_9_0_showmainmenu: Fő menü megnyitása
+txt_9_0_navmenu: Navigációs menü megnyitása
+txt_9_0_plugind: Binárisok és bővítmény könyvtár megnyitása
+txt_9_0_df: Könyvtárak rendezése a fájlok előtt
+txt_9_0_hl: Rögzített linkek tárolása hivatkozásként
+txt_9_0_sl: Szimbolikus linkek tárolása hivatkozásként
+txt_9_0_tnav: Oldalsáv, fanézet, nincs kapcsoló
+txt_8_9_empty: Az archívum üresnek tűnik
+txt_8_9_disp: Archívumtartalom megjelenítése
+txt_8_9_parsing: Archívumtartalom elemzése
+txt_8_9_stoptest: Leállítás a hibajelentés, a lista, a tesztelés és az automatikus tesztelés vizsgálatához
+txt_8_9_ttb: Eszköztár váltása
 txt_8_8_ca: Kiemelés színe
 txt_8_8_btn: Gomb
 txt_8_8_cb: Gomb színe
 txt_8_8_centered: Középre helyezett gombok
 txt_8_8_light: Világos
 txt_8_8_lnk: Hivatkozás
-txt_8_8_intnote: Felhívjuk figyelmét, hogy az "Interaktív kibontás" opció (az Opciók > Beállítások > Archívumkezelő menüpontban) figyelmen kívül lesz hagyva a parancssor összeállításánál a Konzol lapon.
+txt_8_8_intnote: Felhívjuk figyelmét, hogy a "Kibontás, majd áthelyezés" opció (Opciók > Beállítások > Archívumkezelő menüpont) figyelmen kívül lesz hagyva a parancssor összeállításánál a Konzol lapon.
 txt_8_8_snz: Zónaazonosító adatfolyam származtatása (Windows)
 txt_8_8_sm: Kis ikonok mérete
-txt_8_8_solcol: Tömör sáv
+txt_8_8_solcol: Címsor
 txt_8_8_snoi: Tártulajdonos/csoportazonosítók (TAR, Linux)
 txt_8_8_snon: Tártulajdonos/csoportnevek (TAR, Linux)
 txt_8_8_tab: Lap
@@ -67,9 +67,9 @@ txt_8_7_bintest: binárisok tesztelve.
 txt_8_7_csv: CSV elválasztó
 txt_8_7_hok: A PeaZip által használt binárisok kivonata megegyezik a várt értékekkel
 txt_8_7_mo: Az archívumkezelő beállításainak megadása
-txt_8_7_showhm: Fájlböngésző fejléc menüjének megjelenítése
+txt_8_7_showhm: Böngésző fejlécmenü megnyitása
 txt_8_7_showsearchbar: Keresősáv megjelenítése
-txt_8_7_showsm: Stílus menü megjelenítése
+txt_8_7_showsm: Stílus menü megnyitása
 txt_8_7_hnotok: A PeaZip által használt bináris fájlok egyes kivonatai nem egyeznek meg a várt értékekkel:
 txt_8_7_verifybin: Binárisok kivonatának ellenőrzése
 txt_8_6_clear: A "Törlés" opció eltávolítja az ideiglenesen szerkesztett fájlokat, amelyek egyébként további szerkesztésre elérhetők.
@@ -79,7 +79,7 @@ txt_8_6_immediate: Azonnali végrehajtás
 txt_8_6_yessimple: Archívum frissítése, ideiglenes szerkesztett fájlok megtartása további szerkesztésre
 txt_8_5_advbrowser: Szűrők alkalmazása az archív böngészőre
 txt_8_5_detailslarge: Részletek, nagy
-txt_8_5_intext: Kicsomagolás ideiglenes helyre, majd ugrás a kimenetre (felülírás előtt kérdezzen rá)
+txt_8_5_intext: Kibontás ideiglenes munkakönyvtárba, majd a kimeneti célhely megnyitása, és interaktív rákérdezés felülírás előtt
 txt_8_5_listlarge: Lista, nagy
 txt_8_5_loadlayout: Elrendezés betöltése indításkor
 txt_8_5_samplescripts: Minta szkriptek
@@ -107,7 +107,7 @@ txt_8_2_alltimes: Az összes időbélyeg tárolása
 txt_8_2_supportedby: Támogatja:
 txt_8_1_preparse: Mindig végezzen előzetes elemzést az archívumoknál
 txt_8_1_bo: Böngésző optimalizálás
-txt_8_1_bop: A böngésző optimalizálási lehetőségei az Opciók > Beállítások, Általános lapon állíthatók be annak érdekében, hogy a böngésző képes legyen megjeleníteni a nagyon sok elemet tartalmazó archívumokat..
+txt_8_1_bop: A böngésző optimalizálási lehetőségei az Opciók > Beállítások, Általános lapon állíthatók be annak érdekében, hogy a böngésző képes legyen megjeleníteni a nagyon sok elemet tartalmazó archívumokat.
 txt_8_1_nopreparse: Ne végezzen előzetes elemzést az archívumoknál
 txt_8_1_ed: hiba észlelve.
 txt_8_1_togglearc: Az archív tartalmak egyszintű listázása hosszú időt vehet igénybe, folytatja mindenképp?
@@ -133,7 +133,7 @@ txt_7_8_destexistfile: A cél már tartalmaz feldolgozott fájlokat. Lecseréli 
 txt_7_8_dd: Húzás egérrel
 txt_7_8_priorityhigh: Magas
 txt_7_8_priorityidle: Inaktív
-txt_7_8_rel: Interaktív kibontás, kibontás, majd áthelyezés a rendeltetési helyre
+txt_7_8_rel: Kibontás, majd a célmappába ugrás
 txt_7_8_prioritynormal: Normál
 txt_7_8_priorityrealtime: Valós idejű
 txt_7_8_requirerestart: [a PeaZip újraindítását igényli]
@@ -142,10 +142,10 @@ txt_7_8_update: Frissítés
 txt_7_7_noneall: Nincs: előnézet, szerkesztés, fogd és vidd mód és interaktív kibontás letiltása
 txt_7_7_nonetemp: Nincs, a felhasználó ideiglenes mappája, ha szükséges
 txt_7_7_outtemp: Kimenet, előnézet a felhasználó ideiglenes mappájában
-txt_7_7_sys7zreq: A p7zip teljes vagy azzal egyenértékű telepítését igényli
+txt_7_7_sys7zreq: 7z, 7-Zip, vagy p7zip, vagy ezzel egyenértékű csomag telepítése szükséges
 txt_7_7_tw: Ideiglenes munkamappa az archívumok létrehozásához, szerkesztéséhez, előnézetéhez és húzással történő kibontásához.
-txt_7_7_sys7z: A 7z rendszer használata Linuxon
-txt_7_6_zipenc: 7z/p7zip ZIP fájlnevek kódolása
+txt_7_7_sys7z: 7z rendszer használata, ha elérhető
+txt_7_6_zipenc: 7z / p7zip ZIP fájlnevek kódolása
 txt_7_6_color: Szín
 txt_7_6_custenc: Egyéni kódlap
 txt_7_6_dark: Sötét
@@ -215,7 +215,7 @@ txt_7_1_renfilesonly: Csak fájlok átnevezése
 txt_7_1_typetosearch: Keresendő beírása az aktuális helyen
 txt_7_1_type_description_zstd: Zstandard: gyors tömörítő a Facebook-tól, nagyon gyors kicsomagolás
 txt_7_0_af: Mappák tartalmának elemzése
-txt_7_0_autoopentar: Az egyedülálló tar archívum megnyitása a tar.* fájlokon belül
+txt_7_0_autoopentar: TAR archívum automatikus megnyitása a tömörített TAR.* fájlokon belül
 txt_7_0_exttmppath: A tartalom az ideiglenes munkaterületen kívül kerül kibontásra a következő helyen:
 txt_6_9_autou: Módosított fájlok automatikus frissítése az archívumokban
 txt_6_9_forceu: Szerkesztett fájlok frissítése az archívumban
@@ -226,7 +226,7 @@ txt_6_8_ndrop: Natív fogd és vidd mód használata a Windows-ban
 txt_6_7_nop: (nincs előnézet)
 txt_6_6_pdupfound: lehetséges másolatok észlelése (gyors hozzávetőleges teszt)
 txt_6_6_rsh: Keresési előzmények visszaállítása
-txt_6_6_pdupfind: Lehetséges másolatok ajánlása
+txt_6_6_pdupfind: Másodpéldányok ajánlása
 txt_6_6_forcemodify: A nem kifejezetten támogatott archívumtípusok szerkesztése
 txt_6_5_mandatory: (kötelező)
 txt_6_5_abort: Megszakít
@@ -238,7 +238,7 @@ txt_6_5_error: Hiba
 txt_6_5_seqerr: Hiba észlelhető, az eredeti fájlok nem kerülnek törlésre
 txt_6_5_sni: Tartalmazza az NT biztonsági információkat
 txt_6_5_sns: Tartalmazza az NTFS alternatív adatfolyamot
-txt_6_5_privacy: Adatvédelem
+txt_6_5_privacy: Adatvédelem és biztonság
 txt_6_5_showvolatile: Jelenítse meg, hogy mely opciók változékonyak / kontextusfüggők
 txt_6_5_force: Kísérlet a hibákat tartalmazó archívumok megnyitására
 txt_6_5_warning: Figyelem
@@ -277,10 +277,10 @@ txt_5_8_ascii: Biztonságos ASCII, a parancsfájlok biztonságban vannak az ör�
 txt_5_8_cp: Biztonságos kódlap, a parancsfájlok problémákat okozhatnak az örökölt környezetekben az eltérő kódlapoknál
 txt_5_8_fs: Ingyenes szoftver megfelelőség
 txt_5_8_utf: A parancsfájloknak teljes UTF-8 / Unicode környezetre van szükségük
-txt_5_8_fsr: Ez a formátum nem támogatott az ingyenes szoftver megfelelőségi korlátozások miatt (Opciók > Speciális)
+txt_5_8_fsr: Ez a formátum nem támogatott az ingyenes szoftver megfelelőségi korlátozások miatt (Opciók > Beállítások > Speciális)
 txt_5_7_pinstalled: TELEPÍTVE
 txt_5_7_pmissing: HIÁNYZIK
-txt_5_7_plugin: A beépülő modul hiányzik, a Súgó > Beépülő és bővítmény keresése menüpontból telepíthető
+txt_5_7_plugin: A hiányzó beépülő modul telepíthető a Súgó > Beépülő modulok keresése menüpontból
 txt_5_6_basic: Alapvető
 txt_5_6_exarc: Archívum kicsomagolása
 txt_5_6_tab: Megnyitás új lapon
@@ -292,7 +292,7 @@ txt_5_5_case: (kis-és nagybetű megkülönböztetése)
 txt_5_5_add: Karakterlánc hozzáadása a megadott pozíciónál
 txt_5_5_addsel: Hozzáadás a jelenlegi kijelöléshez
 txt_5_5_ext: Fájlok kiterjesztésének módosítása
-txt_5_5_plugin: Beépülő és bővítmény keresése
+txt_5_5_plugin: Beépülő modulok ellenőrzése
 txt_5_5_copypath: Útvonal másolása
 txt_5_5_delete: Karakterek törlése a megadott pozícióban
 txt_5_5_halt: Rendszer leállítása a feladat befejezésekor
@@ -453,19 +453,19 @@ txt_4_5_properties: Tulajdonságok
 txt_4_5_r: Jobbra
 txt_4_5_pj: Mentett parancsfájlok
 txt_4_5_shaddress: Címsor megjelenítése
-txt_4_5_shnav: Navigációs sáv megjelenítése
+txt_4_5_shnav: Oldalsáv megjelenítése
 txt_4_5_shstatus: Állapotsor megjelenítése
 txt_4_5_shtool: Eszköztár megjelenítése
 txt_4_5_upxpj: Sajnáljuk, de nem lehet exportálni a feladatdefiníciót, mivel ez a művelet vagy opció több különböző parancs végrehajtását igényli
 txt_4_5_t: Fent
-txt_4_4_confremoveall: Eltávolítja az összes PeaZip konfigurációs fájlt (Alkalmazások, Könyvjelzők, Jelszókezelő)?
+txt_4_4_confremoveall: Eltávolítja az összes PeaZip testreszabási fájlt (alkalmazások, könyvjelzők)?
 txt_4_4_confremove: Eltávolítja a PeaZip konfigurációját?
 txt_4_3_pwmanhint: Dupla kattintás a jelszólistában lévő elemek szerkesztéséhez,jobb kattintás az opciók eléréséhez, Ctrl+C a jelszavak másolásához
 txt_4_3_exppl: Jelszólista exportálása
 txt_4_3_expple: Titkosított (Jelszókezelő biztonsági mentése)
 txt_4_3_keeppw: Az aktuális munkafolyamat jelszavainak/kulcsfájljainak megtartása
 txt_4_3_pwmanpwhint: Egy jelszó/kulcsfájl beállítása javasolt (nem kötelező) a jelszólista titkosításához, ily módon hitelesítési jelszóra lesz szükség a jelszókezelőhöz elérésénél. A jelszó/kulcsfájl bármikor módosítható.
-txt_4_3_pwmanmaster: Elsődleges jelszó megadása/módosítása
+txt_4_3_pwmanmaster: A PM elsődleges jelszó megadása/módosítása
 txt_4_3_pwmanlist: Jelszólista
 txt_4_3_pwman: Jelszókezelő
 txt_4_3_pwmancorr: Úgy tűnik, hogy a jelszókezelő hamis vagy sérült. Mindenképpen tartsa meg a jelszókezelőt és próbálja meg visszaállítani a jelenlegi jelszólistát, megbízik benne? (Nem állítja vissza a jelszókezelőt, ajánlott)
@@ -494,7 +494,7 @@ txt_3_6_ignoredd: Mindig hagyja figyelmen kívül az útvonalakat a húzd és ej
 txt_3_6_close: Bezárás
 txt_3_6_resetapps: Visszaállítja az alkalmazásokat (testreszabható programcsoportok és parancsfájlok az állományok megnyitásához a fájltársítások felülbírálásával)?
 txt_3_6_ethemes: Létező témák
-txt_3_5_td: Témák letöltése
+txt_3_5_td: Témák ellenőrzése
 txt_3_5_managecustomthemes: Témák kezelése
 txt_3_4_nopaths: Nincsenek útvonalak
 txt_3_4_smallicons: Ikonok
@@ -509,7 +509,7 @@ txt_3_2_7zutf8nonascii: 7z / p7zip -mcu használata UTF8-fájlneveket tartalmaz�
 txt_3_2_alltasks: Összes feladat
 txt_3_2_conf: Konfiguráció
 txt_3_2_donations: Adományok a jótékonysági szervezeteknek
-txt_3_1_sccenc: 7z / p7zip -scc karakterkódolás
+txt_3_1_sccenc: 7z / p7zip CONSOLE karakterkódolás
 txt_3_1_downloads: Letöltések
 txt_3_1_lib: Könyvtárak
 txt_3_1_more: Továbbiak
@@ -538,7 +538,7 @@ txt_2_9_lt: Nagy
 txt_2_9_mt: Közepes
 txt_2_9_movehere: Áthelyezés ide
 txt_2_9_nav: Navigáció
-txt_2_9_navbar: Navigációs sáv
+txt_2_9_navbar: Oldalsáv
 txt_2_9_none: Nincs
 txt_2_9_organize: Rendszerezés
 txt_2_9_public: Nyilvános
@@ -575,11 +575,11 @@ txt_2_8_usedefaultoutpath: Alapértelmezett kimeneti hely használata
 txt_2_7_experimental: (kisérleti, tekintse meg a dokumentációt)
 txt_2_7_optional: (nem kötelező)
 txt_2_7_list_tryflatorpw: , lehetséges megoldások: próbálja ki az egyszintű nézetet (F6), adja meg a jelszót (F9), szerezzen egy friss másolatot az archívumból
-txt_2_7_separate: Elemek hozzáadása különálló archívumba
+txt_2_7_separate: Hozzáadás különálló archívumokhoz
 txt_2_7_pwsupported: archiválás jelszóval
 txt_2_7_cancel: Mégse
 txt_2_7_encfn: Titkosítsa a fájlneveket is (ha a formátum támogatja)
-txt_2_7_setpw: Kulcsfájl / jelszó megadása
+txt_2_7_setpw: Kulcsfájl / jelszó beállítása
 txt_2_7_ext: Kicsomagolás:
 txt_2_7_extfrom: Kicsomagolás archívumból:
 txt_2_7_es: A támogatott nem-archívum fájltípusok kicsomagolása, például végrehajtható fájlok, MS Office és OOo állományok
@@ -591,7 +591,7 @@ txt_2_7_ok: OK
 txt_2_7_drag_archive: fájl megnyitása új archívumként? ("Nem" fájl hozzáadása a jelenlegi archiválási elrendezéshez)
 txt_2_7_oop: A kimeneti hely megnyitása a művelet befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
 txt_2_7_output: Kimenet
 txt_2_7_pwnotset: Nincs jelszó beállítva
 txt_2_7_pwarcset: Jelszó beállítva
@@ -600,11 +600,11 @@ txt_2_7_archivehint: Húzza ide a fájlokat és mappákat az archiváláshoz, va
 txt_2_7_exthint: Húzza ide az archívumokat a kibontáshoz, vagy kattintson jobb egérgombbal a további lehetőségekért
 txt_2_7_setadvf: Speciális szűrők beállítása
 txt_2_7_selpath: Kiválasztott elemek helye
-txt_2_7_separateerror: Sajnáljuk, de nem importálható a feladatdefiníció parancssora, míg használatban van a "Minden elem hozzáadása egy különálló archívumhoz" kapcsoló, mivel a feladat több különböző parancs szerint van végrehajtva
+txt_2_7_separateerror: Sajnáljuk, de nem importálható a feladatdefiníció parancssora, míg használatban van a "Hozzáadás egy különálló archívumhoz" kapcsoló, mivel a feladat több különböző parancs szerint van végrehajtva
 txt_2_7_noinput: Az elrendezés üres: használja a Fájl(ok) hozzáadása vagy Elrendezés betöltése opciót a kibontandó archívumok listájának feltöltéséhez
 txt_2_7_dirsize: A mappák tartalmának mérete nincs ellenőrizve a teljes méret kiszámításánál
 txt_2_7_un7z_browse_flat: próbálja ki az egyszintű nézetet (F6)
-txt_2_7_updating: Meglévő archívum frissítése
+txt_2_7_updating: [Létező archívum frissítése]
 txt_2_6_folders: (mappák)
 txt_2_6_advanced: Speciális
 txt_2_6_plalways: Mindig álljon meg a feladatjelentés ellenőrzéséhez
@@ -646,7 +646,7 @@ txt_2_4_wenc: Enciklopédia
 txt_2_4_extractfrom: Kicsomagolás innen
 txt_2_4_hexp: Hex előnézet
 txt_2_4_operation: Művelet
-txt_2_4_path: hely nem írható (pl. csak-olvasható). Szeretne kiválasztani egy írható kimeneti útvonalat?
+txt_2_4_path: hely nem írható (pl. megtelt vagy csak-olvasható). Szeretne kiválasztani egy írható kimeneti útvonalat?
 txt_2_4_removefromclipboard: Eltávolítás a vágólapról
 txt_2_4_stdclip: Standard: egyetlen kiválasztás megtartása a vágólapon, a kivágási műveletek törlése beillesztéskor
 txt_2_4_totalmem: összes memória
@@ -700,7 +700,7 @@ txt_action_hint: Megnyitás vagy megtekintés a társított alkalmazással
 txt_add: Hozzáadás
 txt_add_existing_archive: Hozzáadás (ha létezik az archívum)
 txt_add_archive: Archívum hozzáadása
-txt_add_files: Fájl(ok) hozzáadása
+txt_add_files: Fájlok hozzáadása
 txt_add_folder: Mappa hozzáadása
 txt_add_path: Hely hozzáadása
 txt_add_tolayout: Kijelölt fájlok és mappák hozzáadása az archívum elrendezéshez
@@ -742,7 +742,7 @@ txt_ren_existing: Meglévő fájlok automatikus átnevezése
 txt_ren_extracted: Kicsomagolt fájlok automatikus átnevezése
 txt_autofolder: Automatikusan létrehoz egy új mappát az archívum kibontásához?
 txt_back: Vissza
-txt_backend: Háttérbináris fájlok felhasználói felülete
+txt_backend: Háttérbinárisok
 txt_backupexe: Végrehajtható állomány mentése (ajánlott)
 txt_bettercompression: jobb tömörítés
 txt_blogs: Blogok
@@ -781,7 +781,7 @@ txt_controlpanel: Vezérlőpult
 txt_convert: Lemez konvertálása NTFS fájlrendszerbe
 txt_copy: Másolás
 txt_copyto: Másolás...
-txt_create: Készítés 
+txt_create: Készítés
 txt_create_archive: Új archívum létrehozása
 txt_title_create: Archívum létrehozása, tömörítés, titkosítás, darabolás...
 txt_create_keyfile: Kulcsfájl készítés
@@ -811,7 +811,7 @@ txt_disk_defrag: Lemez töredezettségmentesítés
 txt_disk_management: Lemezkezelés
 txt_dispaly: Eredmények megjelenítési módja
 txt_displayedmnu_obj: megjelenített
-txt_displayedobjects: Megjelenített elem(ek)
+txt_displayedobjects: Megjelenített elemek
 txt_nocompress: ne tömörítse
 txt_delete: Valóban törli a kiválasztott fájl(oka)t? A műveletet nem vonható vissza és a fájlokat nem lehet visszaállítani utólag a lomtárból
 txt_wipe: Valóban véglegesen törli a kiválasztott fájl(oka)t? A műveletet nem vonható vissza és a fájlokat nem lehet visszaállítani.
@@ -866,7 +866,7 @@ txt_fastopen: Gyors megnyitási gyakorlat, a rendkívül nagy archívumok böng�
 txt_level_fastest: Leggyorsabb
 txt_favformats: Kedvenc formátumok parancsikonjai
 txt_file: Fájl
-txt_filebrowser: Fájlböngésző / archívum böngésző
+txt_filebrowser: Fájlböngésző
 txt_filetools: Fájleszközök
 txt_files: fájl,
 txt_nfiles: Fájl
@@ -916,7 +916,7 @@ txt_inputinfo: Bemeneti információ
 txt_input_list: Bemeneti lista:
 txt_iop: bemenet, kimenet, paraméterek
 txt_ipo: bemenet, paraméterek, kimenet
-txt_input: bemenet:
+txt_input: Bemenet
 txt_integrity: Adatsértetlenség ellenőrzése
 txt_chunk_size: Érvénytelen egyéni méret. Javítsa ki egy számbeli értékre
 txt_invertsel: Kijelölés megfordítása
@@ -1053,7 +1053,7 @@ txt_read: Olvasás:
 txt_recentarchives: Legutóbbi archívumok 
 txt_rr_hint: A helyreállítási rekordok lehetővé teszik az archívumok kijavítását adatsérülés esetén
 txt_search_refine: Keresési szűrő finomítása, ? és * helyettesítő karakterek elfogadása
-txt_fefreshf5: Frissítés (F5)
+txt_fefreshf5: Frissítés
 txt_release: kiadás:
 txt_unit_removable: Eltávolítható egység
 txt_remove_bookmark: Könyvjelző eltávolítása
@@ -1073,8 +1073,8 @@ txt_sample: Minta:
 txt_saveas: Mentés másként
 txt_savehistory: Előzményadatok mentése
 txt_save_infolder: Mentés mappába (automatikus)
-txt_savejob: Feladatdefiníció mentése
-txt_savejobdefinition: Feladatdefiníció mentése
+txt_savejob: Feladatdefiníció mentése parancsfájlként
+txt_savejobdefinition: Feladatdefiníció mentése parancsfájlként
 txt_savejobdefinition_hint: Feladatdefiníció mentése egyszerű szövegként; parancsfájlokból is használhatja
 txt_savelayout: Elrendezés mentése
 txt_save_winstate: A főablak állapotának mentése
@@ -1150,7 +1150,7 @@ txt_threads: Végrehajtási szálak
 txt_titlescolor: Feliratok színe
 txt_to: ide:
 txt_toggle_browseflat: Tallózás/egyszintű nézet kapcsoló (összes megjelenítése)
-txt_toggle_historybookmarks: Előzmények/könyvjelzők kapcsoló
+txt_toggle_historybookmarks: Állapotsor, könyvjelzők, előzmények, vágólap kapcsoló
 txt_toolbarscolor: Sávok színe
 txt_tools: Eszközök
 txt_best: próbálja ki a legjobb beállításokat (lassú)
@@ -1219,13 +1219,13 @@ txt_4_0_dragorselect: Húzza ide vagy válasszon fájlt
 txt_4_0_select: válasszon fájlt
 txt_3_6_selectdir: Könyvtár kiválasztása
 txt_3_5_close: Bezárás
-txt_3_0_details: További részletekért, a "Jelentés" tartalmazza a feladatnaplót, illetve a "Konzol" tartalmazza a feladatdefiníciót parancssorként.
+txt_3_0_details: További részletekért tekintse meg a "Jelentés" fület a teljes feladatnaplóhoz, és a "Konzol" fület a feladatmeghatározáshoz parancssorként.
 txt_3_0_hints: Információk a hibáról
-txt_3_0_arc: Néhány bemeneti fájl nem olvasható (lehet, hogy zárolt, nem hozzáférhető vagy sérült, a többrészes archívumban lévő kötetek hiányozhatnak)
+txt_3_0_arc: A hiba okai lehetnek a nem olvasható bemeneti fájlok (zárolt, nem hozzáférhető, sérült, hiányzó kötetek a többrészes archívumban...), vagy a teljes vagy nem elérhető kimeneti útvonal.
 txt_3_0_ext: Előfordulhat, hogy az archívumnál más jelszóra van szükség az aktuális művelethez
 txt_2_8_oop: Kimeneti hely megnyitása a feladat befejezésekor
 txt_2_7_validatefn: Művelet leállítva, érvénytelen fájlnév észlelve:
-txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programon belül):
+txt_2_7_validatecl: Művelet leállítva, potenciálisan veszélyes parancs észlelve (például a parancsösszefűzés nem engedélyezett a programban belül):
 txt_2_6_open: Archívum megnyitása
 txt_2_5_ace_missing: Az UNACE beépülő modul hiányzik; az ACE archívumok kezeléséhez a beépülő modul letölthető a PeaZip weboldaláról (mivel a UNACE zárt forrású, a beépülő nem szerepel az alapcsomagban)
 txt_2_3_pw_errorchar_gwrap: idézőjel nem használható a PeaLauncher által a jelszavakban a jelenlegi rendszerben. Módosítsa a jelszót vagy használja a PeaZip konzol módot a háttérbináris fájlok felhasználói felületén (Eszközök > Beállítások)
@@ -1257,7 +1257,7 @@ txt_autoclose: Ablak bezárása a művelet végén
 txt_crscale: Tömörítési arány (alacsonyabb, jobb):
 txt_console: Konzol
 txt_benchscale: 2 magos Duo 6600 besorolás, egyenértékű MHz sebesség.
-txt_create: Készítés
+txt_create: Készítés 
 txt_done: Kész:
 txt_nocl: Üres parancssor
 txt_error: Hiba:
@@ -1294,7 +1294,7 @@ txt_priority: Kattintson a feladatprioritás beállításához
 txt_running: Futtatás,
 txt_isrunning: Futtatás...
 txt_saveas: Mentés másként
-txt_savejob: Feladatdefiníció mentése
+txt_savejob: Feladatdefiníció mentése parancsfájlként
 txt_savelog: Feladatnapló mentése
 txt_software: szoftver
 txt_speedscale: Sebesség, logaritmikus skála (magasabb, jobb):
@@ -1352,11 +1352,11 @@ Az archívumban található fájlok és könyvtárak nevének elrejtéséhez, ak
 Vegye figyelembe az archívum létrehozási felületén a lakat ikon melletti figyelmeztetést, amely vizuálisan tájékoztatja, ha a titkosítás be van állítva, és ha az aktuális archívum formátum támogatja a titkosítást.
 
 KÜLÖNÁLLÓ ARCHÍVUMOK LÉTREHOZÁSA
-Adja hozzá az archíválandó elemeket (a PeaZip "Hozzáadás" gombjával, vagy a rendszer szövegkörnyezeti és/vagy Küldés menüjéből) és mielőtt jóváhagyná az "Ok" gombbal, aktiválja a "Minden archívum hozzáadása különálló archívumként" opciót.
+Adja hozzá az archíválandó elemeket (a PeaZip "Hozzáadás" gombjával, vagy a rendszer szövegkörnyezeti és/vagy Küldés menüjéből) és mielőtt jóváhagyná az "Ok" gombbal, aktiválja a "Hozzáadás különálló archívumként" opciót.
 
 ARCHÍVUMOK KONVERTÁLÁSA
 Válassza ki a konvertálni kívánt archívumokat a PeaZip-ből, majd kattintson a "Konvertálás" menüelemre az eszköztáron vagy a szövegkörnyezeti menüben. Nem archivált fájlok/mappák is hozzáadhatók, mivel az archívumok a tömörítés előtt kicsomagolásra kerülnek.
-Használja a “Létező archívumok konvertálása” kapcsolót a “Minden archívum hozzáadása különálló archívumként" opcióval együtt (alapértelmezett), amely végrehajtja a felsorolt archívumok csoportos konvertálását, célja az archívum konverzió átváltása nélkül a bemeneti adatok egyetlen archívumba való összevonása, mely növeli a tömörítés hatékonyságát, mivel lehetővé teszi az eredeti adat újratömörítését, annak tömörítetlen formájából.
+Használja a “Létező archívumok konvertálása” kapcsolót a “Hozzáadás különálló archívumként" opcióval együtt (alapértelmezett), amely végrehajtja a felsorolt archívumok csoportos konvertálását, célja az archívum konverzió átváltása nélkül a bemeneti adatok egyetlen archívumba való összevonása, mely növeli a tömörítés hatékonyságát, mivel lehetővé teszi az eredeti adat újratömörítését, annak tömörítetlen formájából.
 
 ARCHÍVUMOK KÖZVETLEN LÉTREHOZÁSA EGY MEGADOTT FORMÁTUMBA A KIVÁLASZTOTT TÖMÖRÍTÉSI SZINT HASZNÁLATÁVAL
 Használja a “Rendszer integráció” módot az Opciók menüben a szövegkörnyezeti menü bejegyzések engedélyezéséhez, amellyel közvetlenül hozzáadhatóak a kiválasztott fájlok/mappák egy ZIP, 7Z vagy önkicsomagoló archívumhoz.
@@ -1369,10 +1369,9 @@ Ha nincs fő jelszó beállítva a jelszókezelő számára, a jelszólista mind
 
 ALKALMAZÁS KONFIGURÁLÁSA
 Az Opciók > Lokalizáció (Opciók > Beállítások első fül) lehetőséget ad az alkalmazás nyelvének beállítására.
+A Beállítások > Fájltársítások és rendszerintegráció elindít egy varázslót a fájltársítások, a helyi menü és a Küldés menü bejegyzéseinek konfigurálásához (Windows-on).
 Az Opciók > Beállítások menü lehetőséget ad az alkalmazás beállításainak szerkesztésére
-Az Opciók > Téma menü lehetőséget ad az alkalmazás ikonjainak és megjelenésének módosítására
-Az Opciók > Rendszerintegráció elindít egy varázslót a fájltársítások, a szövegkörnyezeti menü és a Küldés menüpontok konfigurálásához (Windows-on).
-A Rendszerezés menü bejegyzést tartalmaz a böngésző olyan funkcióinak testreszabásához, engedélyezéséhez vagy letiltásához, mint például az eszköztár, a címsor, a navigációs sáv, stb.
+A rendezés menü bejegyzést tartalmaz a böngésző funkcióinak testreszabásához, engedélyezéséhez vagy letiltásához, például eszköztár, címsor, oldalsáv stb.
 
 F1 	súgó
 F2 	fájl(ok) átnevezése / Ctrl+F2 kiválasztott másolása... / Shift+F2 kiválasztott áthelyezése...
@@ -1389,7 +1388,7 @@ F12 	összes kibontása...
 
 A PEAZIP-RŐL
 
-A PeaZip egy ingyenes, hordozható, nyílt forrású fájl és archívum kezelő: kereszt-platformos alkalmazás, elérhető hordozható és telepítős változatban 32 és 64 bites Windows (9x, 2k, XP, Vista) és Linux rendszerekhez (a PeaZip egy asztal semleges alkalmazás).
+A PeaZip egy nyílt forráskódú fájl- és archívumkezelő: többplatformos, hordozható és telepíthető szoftver Linuxra (asztali semleges alkalmazás), macOS-re, valamint 32 és 64 bites Windowsra.
 
 A PeaZip lehetőséget ad összetett keresési szűrők alkalmazására az archívum tartalmához; több archívum készítése és kicsomagolása egy időben; önkicsomagoló archívumok létrehozása; feladatdefinició exportálása parancssorként; archiválási és kicsomagolási elrendezések mentése; archívum és mappa könyvjelzők; vizsgálat és a tömörített/kicsomagolt fájlok megnyitása egyéni alkalmazásokkal, stb...
 
