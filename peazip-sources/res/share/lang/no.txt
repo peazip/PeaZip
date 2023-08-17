@@ -3,18 +3,18 @@ Norwegian - Norsk
 9.3
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20230424
+Sist revidert: 20230817
 
 === PeaZip text group ===
 
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_3_continue: Fortsette likevel?
+txt_9_3_contrast: Kontrast
+txt_9_3_fsd: Det kan bli for lite plass på lagringsmålet
+txt_9_3_fsw: Det kan bli for lite plass på midlertidig område
+txt_9_3_mrar: Angi RAR program manuelt
+txt_9_3_canedit: Dette arkivet kan redigeres
+txt_9_3_canforce: Dette arkivet kan (tvangs-) redigeres
+txt_9_3_cannotedit: Dette arkivet kan ikke redigeres
 txt_9_2_7za: 7z / p7zip alias
 txt_9_2_changelog: Endringslogg
 txt_9_2_tfaq: Se etter oversettinger
