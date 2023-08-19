@@ -3,14 +3,14 @@ Français
 9.4
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20230625
+Last rev.: 20230819
 
 === PeaZip text group ===
 
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
+txt_9_4_r: lecture
+txt_9_4_rw: lecture/écriture
+txt_9_4_savecomment: Enregistrer le commentaire
+txt_9_4_hintcomment: Saisir ou coller le commentaire, charger ou déplacer ici un fichier de commentaire.
 txt_9_3_continue: Continuer quand même ?
 txt_9_3_contrast: Contraste
 txt_9_3_fsd: L'espace disponible sur le support de destination peut être insuffisant
