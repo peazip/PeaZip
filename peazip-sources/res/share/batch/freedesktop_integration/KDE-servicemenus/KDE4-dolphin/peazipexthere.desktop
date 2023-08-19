@@ -1,0 +1,13 @@
+[Desktop Action peazipexthere]
+Exec=peazip -ext2here %F
+Icon=peazip
+Name=Extract here (PeaZip)
+
+[Desktop Entry]
+Type=Service
+Actions=peazipexthere;
+Encoding=UTF-8
+Icon=peazip
+Name=peazipexthere
+Name[en_US]=peazipexthere
+ServiceTypes=KonqPopupMenu/Plugin,all/all

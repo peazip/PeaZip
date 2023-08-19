@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=PeaZip, add to WIM
+Comment=Add files and folders to WIM image file with PeaZip
+Exec=peazip -add2wim %F
+TryExec=peazip
+Icon=peazip_cd
+Type=Application
+Terminal=false
+Categories=Utility;Archiving;Compression;
+Keywords=zip;rar;tar;extract;unpack;
+MimeType=all/all;

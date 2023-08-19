@@ -1,0 +1,1 @@
+"$(dirname "${BASH_SOURCE[0]}")/../../../../peazip" -setcommentf ~/commentfile.txt %F

@@ -1,0 +1,15 @@
+[Desktop Action peazipadd]
+Exec=peazip -add2archive %F
+Icon=peazip
+Name=Archive...
+
+[Desktop Entry]
+Type=Service
+Actions=peazipadd;
+Encoding=UTF-8
+Name=peazipadd
+Name[en_US]=peazipadd
+Icon=peazip
+ServiceTypes=KonqPopupMenu/Plugin,all/all
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=PeaZip

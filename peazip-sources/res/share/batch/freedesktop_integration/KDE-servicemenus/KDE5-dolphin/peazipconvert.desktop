@@ -1,0 +1,15 @@
+[Desktop Action peazipconvert]
+Exec=peazip -add2convert %F
+Icon=peazip
+Name=Convert...
+
+[Desktop Entry]
+Type=Service
+Actions=peazipconvert;
+Encoding=UTF-8
+Name=peazipconvert
+Name[en_US]=peazipconvert
+Icon=peazip
+ServiceTypes=KonqPopupMenu/Plugin,all/all
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=PeaZip

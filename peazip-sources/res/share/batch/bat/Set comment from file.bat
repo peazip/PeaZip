@@ -1,0 +1,1 @@
+"%~dp0..\..\..\..\peazip.exe" -setcommentf C:\commentfile.txt %*

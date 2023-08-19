@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=PeaZip, add to BZip2
+Comment=Add files and folders to BZip2 archive with PeaZip
+Exec=peazip -add2bzip2 %F
+TryExec=peazip
+Icon=peazip_add
+Type=Application
+Terminal=false
+Categories=Utility;Archiving;Compression;
+Keywords=zip;rar;tar;extract;unpack;
+MimeType=all/all;

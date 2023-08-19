@@ -1,0 +1,15 @@
+[Desktop Action peazipextfolder]
+Exec=peazip -ext2folder %F
+Icon=peazip
+Name=Extract here to a new folder
+
+[Desktop Entry]
+Type=Service
+Actions=peazipextfolder;
+Encoding=UTF-8
+Icon=peazip
+Name=peazipextfolder
+Name[en_US]=peazipextfolder
+ServiceTypes=KonqPopupMenu/Plugin,all/all
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=PeaZip

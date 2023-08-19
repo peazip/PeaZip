@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=PeaZip, add to Zpaq
+Comment=Add files and folders to Zpaq archive with PeaZip
+Exec=peazip -add2zpaq %F
+TryExec=peazip
+Icon=peazip_add
+Type=Application
+Terminal=false
+Categories=Utility;Archiving;Compression;
+Keywords=zip;rar;tar;extract;unpack;
+MimeType=all/all;

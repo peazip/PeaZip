@@ -1,0 +1,11 @@
+[Desktop Action peazipconvert]
+Exec=peazip -add2convert %F
+Icon=tar
+Name=Convert archives with PeaZip
+
+[Desktop Entry]
+Actions=peazipconvert;
+Encoding=UTF-8
+Name=peazipconvert
+Name[en_US]=peazipconvert
+ServiceTypes=all/all
