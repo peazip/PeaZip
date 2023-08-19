@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; Remove the entries of whitelisted ID set by "add PeaZip *.reg" scripts in Windows 11 mini context menu.
+; You can comment any of the lines with ; character if you prefer to not remove specific entries.
+; If you change the "add PeaZip *.reg" script using different whitelisted IDs please remember to update this script accordingly.
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper]
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\SetDesktopWallpaper]
