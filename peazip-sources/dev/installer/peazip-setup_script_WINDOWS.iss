@@ -1,8 +1,8 @@
 [Setup]                          
 AppId={{5A2BC38A-406C-4A5B-BF45-6991F9A05325}
 AppName=PeaZip
-AppVerName=PeaZip 9.3.0
-AppVersion=9.3.0
+AppVerName=PeaZip 9.4.0
+AppVersion=9.4.0
 AppPublisher=Giorgio Tani
 AppPublisherURL=https://peazip.github.io
 AppSupportURL=https://peazip.github.io
@@ -11,9 +11,9 @@ DefaultDirName={pf}\PeaZip
 DisableDirPage=no
 DefaultGroupName=PeaZip
 DisableProgramGroupPage=yes
-LicenseFile=C:\input\peazip-9.3.0.WINDOWS\res\share\copying\copying.txt
+LicenseFile=C:\input\peazip-9.4.0.WINDOWS\res\share\copying\copying.txt
 OutputDir=C:\output\
-OutputBaseFilename=peazip-9.3.0.WINDOWS
+OutputBaseFilename=peazip-9.4.0.WINDOWS
 SetupIconFile=C:\input\peazip-icon-green.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -27,10 +27,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\input\peazip-9.3.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.3.0.WINDOWS\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.3.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\input\peazip-9.3.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\input\peazip-9.4.0.WINDOWS\peazip.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.4.0.WINDOWS\pea.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.4.0.WINDOWS\dragdropfilesdll.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\input\peazip-9.4.0.WINDOWS\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [INI]
@@ -105,10 +105,10 @@ context_cbcontextwipe_Caption0=Secure delete
 context_cbcontextadd2archive_Caption0=Add to archive
 context_cbcontextadd2archiveseparate_Caption0=Add to separate archive(s)
 context_cbcontextsfx_Caption0=Add to self extracting
-context_CheckBox3f_Caption0=Add to 7Z, fastest
-context_CheckBox3_Caption0=Add to 7Z, ultra
+context_CheckBox3f_Caption0=Add to GZ
+context_CheckBox3_Caption0=Add to XZ
 context_cbcontext7zsenc_Caption0=Encrypt (7Z)
-context_CheckBox4_Caption0=Add to ZIP, fastest
+context_CheckBox4_Caption0=Add to Zstd
 context_cbcascaded_Caption0=Cascaded menu
 context_cbcontextzipmail_Caption0=Zip and mail
 context_cbcontextbrowse_Caption0=Browse path with PeaZip
@@ -1854,6 +1854,9 @@ procedure clearcontextlegacy;
 begin
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to GZ');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to XZ');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to Zstd');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -1880,6 +1883,9 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Extract here (smart
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Extract here (in new folder)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\*\shell\Test archive(s)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to GZ');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to XZ');
+RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to Zstd');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, fastest');
@@ -1903,6 +1909,9 @@ RegDeleteKeyIncludingSubkeys(HKLM, 'SOFTWARE\Classes\Directory\shell\Extract...'
 //local
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\Background\shell\Browse path with PeaZip');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to GZ');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to XZ');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to Zstd');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest');
@@ -1929,6 +1938,9 @@ RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Extract here (smart
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Extract here (in new folder)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\*\shell\Test archive(s)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to archive');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to GZ');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to XZ');
+RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to Zstd');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Encrypt (7Z)');
 RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, fastest');
@@ -2004,6 +2016,9 @@ RegDeleteKeyIncludingSubkeys(HKCU, 'SOFTWARE\Classes\AllFileSystemObjects\shell\
 if IsWin64 then s3264:=HKLM64 else s3264:=HKLM32;
    RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate');
    RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle');
+   RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separategz');
+   RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatexz');
+   RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezstd');
    RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7z');
    RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zencrypt');
    RegDeleteKeyIncludingSubkeys(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest');
@@ -2149,10 +2164,10 @@ begin
       if cbcontextadd2archiveseparate.state = cbChecked then s:=s+'PeaZip.add2separatesingle; ';
       if cbcontextsfx.state = cbChecked then s:=s+'PeaZip.add2separatesfx; ';
       if cbcontext7zs.state = cbChecked then s:=s+'PeaZip.add2separate7z; ';
-      if checkbox3f.state = cbChecked then s:=s+'PeaZip.add2separate7zfastest; ';
-      if checkbox3.state = cbChecked then s:=s+'PeaZip.add2separate7zultra; ';
+      if checkbox3f.state = cbChecked then s:=s+'PeaZip.add2separategz; ';
+      if checkbox3.state = cbChecked then s:=s+'PeaZip.add2separatexz; ';
       if cbcontextzips.state = cbChecked then s:=s+'PeaZip.add2separatezip; ';
-      if checkbox4.state = cbChecked then s:=s+'PeaZip.add2separatezipfastest; ';
+      if checkbox4.state = cbChecked then s:=s+'PeaZip.add2separatezstd; ';
       if cbcontext7zsenc.state = cbChecked then s:=s+'PeaZip.add2separate7zencrypt; ';
       if cbcontextzipmail.state = cbChecked then s:=s+'PeaZip.add2separatezipmail; ';
       if cbcontextsplit.state = cbChecked then s:=s+'PeaZip.add2split; ';      
@@ -2166,13 +2181,13 @@ begin
             else
                if cbcontext7zs.state = cbChecked then smenuadd:='PeaZip.add2separate7z'
                else
-                  if checkbox3f.state = cbChecked then smenuadd:='PeaZip.add2separate7zfastest'
+                  if checkbox3f.state = cbChecked then smenuadd:='PeaZip.add2separategz'
                   else
-                     if checkbox3.state = cbChecked then smenuadd:='PeaZip.add2separate7zultra'
+                     if checkbox3.state = cbChecked then smenuadd:='PeaZip.add2separatexz'
                      else
                         if cbcontextzips.state = cbChecked then smenuadd:='PeaZip.add2separatezip'
                         else
-                           if checkbox4.state = cbChecked then smenuadd:='PeaZip.add2separatezipfastest'
+                           if checkbox4.state = cbChecked then smenuadd:='PeaZip.add2separatezstd'
                            else
                               if cbcontext7zsenc.state = cbChecked then smenuadd:='PeaZip.add2separate7zencrypt'
                               else
@@ -2216,7 +2231,16 @@ begin
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle', '', 'Add to separate archive(s)');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",2'));
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multiseparate" "%1"'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multiseparate" "%1"'));    
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separategz', '', '&Add to GZ');
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separategz', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",2'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separategz\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multigz" "%1"'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatexz', '', '&Add to XZ');
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatexz', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",2'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatexz\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multixz" "%1"'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezstd', '', '&Add to Zstd');
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezstd', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",2'));
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatezstd\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multizstd" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7z', '', 'Add to &7Z');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7z', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",10'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7z\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7z" "%1"'));
@@ -2225,10 +2249,7 @@ begin
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zfastest" "%1"'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal', '', 'Add to 7Z, normal');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",10'));
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7znormal" "%1"'));
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest', '', 'Add to 7Z, fastest');
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",10'));
-        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zfastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zfastest" "%1"'));  
+        RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7znormal\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7znormal" "%1"'));  
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zultra', '', 'Add to 7Z, ultra');
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zultra', 'Icon', ExpandConstant('"{app}\res\share\icons\peazip_seven.icl",10'));
         RegWriteStringValue(s3264, 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate7zultra\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zultra" "%1"'));           
@@ -2318,19 +2339,19 @@ begin
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z', 'MultiSelectModel', 'player');
        RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z', '', 'Add to &7Z');
        end;
-    if CheckBox3.state = cbChecked then
+    if CheckBox3f.state = cbChecked then
        begin
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zfastest" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, fastest', 'MultiSelectModel', 'player');
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, fastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zfastest" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, fastest', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to GZ\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multigz" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to GZ', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to GZ\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multigz" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to GZ', 'MultiSelectModel', 'player');
        end;
     if CheckBox3.state = cbChecked then
        begin
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, ultra\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zultra" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to 7Z, ultra', 'MultiSelectModel', 'player');
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, ultra\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multi7zultra" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to 7Z, ultra', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to XZ\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multixz" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to XZ', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to XZ\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multixz" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to XZ', 'MultiSelectModel', 'player');
        end; 
     if cbcontextzips.state = cbChecked then
        begin
@@ -2343,10 +2364,10 @@ begin
        end;
     if CheckBox4.state = cbChecked then
        begin
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to ZIP, fastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multizipfastest" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to ZIP, fastest', 'MultiSelectModel', 'player');
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to ZIP, fastest\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multizipfastest" "%1"'));
-       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to ZIP, fastest', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to Zstd\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multizstd" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\*\shell\Add to Zstd', 'MultiSelectModel', 'player');
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to Zstd\command', '', ExpandConstant('"{app}\PEAZIP.EXE" "-add2multizstd" "%1"'));
+       RegWriteStringValue(sLMCU, 'SOFTWARE\Classes\Directory\shell\Add to Zstd', 'MultiSelectModel', 'player');
        end;
     if cbcontext7zsenc.state = cbChecked then
        begin
