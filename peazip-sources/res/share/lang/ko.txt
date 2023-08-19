@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
-9.3
+9.4
 번역자: Sleepy
 최근 교정: (please update translation)
 교정 일자: 20110531
 
 === PeaZip text group ===
 
+txt_9_4_r: read
+txt_9_4_rw: read/write
+txt_9_4_savecomment: Save comment
+txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
 txt_9_3_continue: Continue anyway?
 txt_9_3_contrast: Contrast
 txt_9_3_fsd: Free space on destination may not be enough

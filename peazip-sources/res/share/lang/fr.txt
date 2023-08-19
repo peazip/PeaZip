@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Français
-9.3
+9.4
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 25.06.2023
 
 === PeaZip text group ===
 
+txt_9_4_r: read
+txt_9_4_rw: read/write
+txt_9_4_savecomment: Save comment
+txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
 txt_9_3_continue: Continuer quand même ?
 txt_9_3_contrast: Contraste
 txt_9_3_fsd: L’espace libre à destination peut ne pas être suffisant

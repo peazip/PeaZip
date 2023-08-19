@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.3
+9.4
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20230614
 
 === PeaZip text group ===
 
+txt_9_4_r: lettura
+txt_9_4_rw: lettura/scrittura
+txt_9_4_savecomment: Salva commento
+txt_9_4_hintcomment: Scrivi o incolla commento, oppure carica o trascina qui un file di commento.
 txt_9_3_continue: Continuare comunque?
 txt_9_3_contrast: Contrasto
 txt_9_3_fsd: Lo spazio disponibile nel percorso di destinazione potrebbe non essere sufficiente

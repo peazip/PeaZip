@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-9.3
+9.4
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
 Sist revidert: 20230817
 
 === PeaZip text group ===
 
+txt_9_4_r: read
+txt_9_4_rw: read/write
+txt_9_4_savecomment: Save comment
+txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
 txt_9_3_continue: Fortsette likevel?
 txt_9_3_contrast: Kontrast
 txt_9_3_fsd: Det kan bli for lite plass på lagringsmålet

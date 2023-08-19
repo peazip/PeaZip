@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Latviski
-9.3
+9.4
 Translated by: Viesturs Eihentals
 Last rev. by: Viesturs Eihentals
 Last rev.: 20200505
 
 === PeaZip text group ===
 
+txt_9_4_r: read
+txt_9_4_rw: read/write
+txt_9_4_savecomment: Save comment
+txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
 txt_9_3_continue: Continue anyway?
 txt_9_3_contrast: Contrast
 txt_9_3_fsd: Free space on destination may not be enough

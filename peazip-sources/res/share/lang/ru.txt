@@ -1,12 +1,16 @@
 ﻿=== PeaZip language file ===
 Русский
-9.3
+9.4
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
 Посл. ред.: 31.07.2023
 
 === PeaZip text group ===
 
+txt_9_4_r: read
+txt_9_4_rw: read/write
+txt_9_4_savecomment: Save comment
+txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
 txt_9_3_continue: Все равно продолжить?
 txt_9_3_contrast: Контраст
 txt_9_3_fsd: Свободного пространства в месте назначения может быть недостаточно
