@@ -181,36 +181,48 @@ unit peach;
  1.64     20230221  G.Tani      9.1.0
  1.65     20230415  G.Tani      9.2.0
  1.66     20230623  G.Tani      9.3.0
+ 1.67     20230808  G.Tani      9.4.0
 
 BACKEND
-7z 23.01 (Windows, Linux, macOS)
-Pea 1.13
+Pea 1.14
 
 CODE
+Expanded and re-organized (peazip)/res/share/batch directory with scripting and system integration examples
+ New sample scripts and system integration items are now available for directly creating archives in main supported formats, and for adding/removing comments to archive
+ Scripts are now sorted in "bat" and "sh" subfolders
+ Windows Sendto links and .reg files for context menu entries are now collected in "Windows" subfolder
 
 FILE MANAGER
-(macOS) Fixed conditional startup actions on input (open, extract, extract here...)
-Added column to display file-level comment in archives (default hidden)
-While browsing an archive, the information popup (clicking on status bar) shows if the archive type can be edited in PeaZip
-Updated Themes
- Added contrast setting to Themes
- Theme packages now contains customizable, 32 bit PNG icons for archive file types
-  Alternative themes with different icons for archive types are available selecting Custom in Theme dropdown menu
-  New system icons packages are available to change system icons accordingly to themes, anyway icon files from theme packages can be used for system integration on Operating Systems accepting icons in PNG format
+Added support to Apple iWork IWA file formats, .numbers, .pages, .key (Keynote)
+When "Try to open archives with errors" flag is set, errors are suppressed only for listing operations, so the app can now display error messages when previewing a file (e.g. wrong password)
 
 EXTRACTION and ARCHIVING
-Added checkbox to manually set RAR binary for Custom / RAR compression format
- This setting will allow Windows users to locate WinRar Rar.exe executable more flexibly than automatic search, and non-Windows users to set up RAR compression using Wine or other alternatives
-(Windows) Work path free space is reported in archiving and extraction screens info box, clicking on the status bar
-(Windows) Free space on output path and work path (if applicable) is checked before starting archiving and extraction operation, and user is warned if free space may not be enough
-Fixes
- Fixed crash if the app is forced to extract to a read only path
- Working directory for ARC compression is now changed accordingly to 7z/p7zip backend working directory
- Correct handling of .tar extension in extraction to new folder, if destination with same name exists
+Added pre-set split size for Blu-Ray DL, XL3, XL4
+Added function to add, edit, remove archive-level comment in RAR and ZIP/ZIPX files, keyboard shortcut for comment editor is Alt+M
+ Comment can be set for the archive being browsed, or for one or multiple archives at once (even of mixed types), in this case the same comment is set for all the selected archives
+ Comment can be manually edited or loaded from text file (selected from dialog or dragged on the form), and can be saved to text file for future use
+ Comment con contain UTF8 characters and are limited to 64 KB for all formats (RAR standard would allow 256KB comments but some Rar.exe versions does not support 64K+ comments), please note some other archive managers may not support UTF8 comments, or such large comments
+ RAR comments limitations
+  Writing comments to RAR archive requires Rar.exe or equivalent installed on the system, reading comments does not require Rar.exe
+  Cannot currently read comment from multi volume RAR archives, and from legacy RAR4 archives (but new comment can be written)
+ ZIP/ZIPX comments limitations
+  Consistently with 7-Zip and WinRar, comments are not supported for spanned multi-volumes ZIP/ZIPX archives
+ It is possible to set comment from command line scripts with following syntax:
+  peazip -setcomment commentstring archive1..n
+  peazip -setcommentf commentfile archive1..n
+  peazip -removecomment archive1..n
+New switches to directly add files and folders to Brotli, BZip2, GZip, TAR, WIM, XZ, Zstd, and Zpaq format archive, with latest options saved for selected format
+ Directly add files and folders to archive in the specified format, with latest options used for that format (-add2zpaq switch sets last used *PAQ format), TAR is automatically applied when folders and/or multiple files are sent to formats which supports single file compression (Brotli, BZip2, Gzip, XZ, Zstd)
+ Syntax: peazip (-add2brotli -add2bzip2 -add2gzip -add2tar -add2wim -add2xz -add2zstd -add2zpaq) file1..n
+ If no input file or folder is provided after the switch, the archive creation screen remains open for input
+ The switches can be used in scripts, and for system integration (links, .desktop files, Automator scripts)
+ Same switches in -add2multi* form can be used to integration with Windows registry
 
 INSTALLERS
+(Windows) Add to GZ, XZ, and Zstd are now available as choices in Context menu entries screen
+(Windows) A single re-configuration wizard now works for Win32 and Win64 packages
 
-230 file extensions supported
+234 file extensions supported
 
 Translations updated and replaced in the package
 
@@ -350,7 +362,7 @@ StdCtrls, Buttons, ExtCtrls, ComCtrls, Grids, Menus, Spin, ShellCtrls, Masks,
 hash, adler32, CRC16, CRC24, CRC32, CRC64, ED2K, MD4, MD5, RMD160, SHA1, SHA3_256,
 SHA256, SHA3_512, SHA512, Whirl512, Blake2s, Blake2b, mem_util, AES_EAX, FCAES256,
 list_utils,pea_utils,ansiutf8_utils,img_utils,
-unit_gwrap,unit1,unit2,unit3,unit5,unit6,Unit7,Unit8,Unit9,Unit10,Unit11,Unit12,Unit13,
+unit_gwrap,unit1,unit2,unit3,unit5,unit6,Unit7,Unit8,Unit9,Unit10,Unit11,Unit12,Unit13,Unit14,
 Classes, SysUtils, Process, UTF8Process, dateutils, fileutil, Types;
 
 type
@@ -889,6 +901,7 @@ type
      lightsenape: TMenuItem;
      lightgraphite: TMenuItem;
      lightplum: TMenuItem;
+     MainMenu2: TMainMenu;
      mConsoleCreate: TMemo;
      mConsoleCreate1: TMemo;
      MemoList: TMemo;
@@ -914,6 +927,10 @@ type
      mbmac: TMenuItem;
      mccomment: TMenuItem;
      mbrowserccomment: TMenuItem;
+     mcomment: TMenuItem;
+     pmadvf: TMenuItem;
+     po_commentzip: TMenuItem;
+     pmmorecommentzip: TMenuItem;
      po_browserccomment: TMenuItem;
      pmccomment: TMenuItem;
      mpeachangelog: TMenuItem;
@@ -1254,8 +1271,6 @@ type
      po_lock: TMenuItem;
      po_rr: TMenuItem;
      po_recover: TMenuItem;
-     po_comment: TMenuItem;
-     pmmorecomment: TMenuItem;
      pmmorerecover: TMenuItem;
      pmmorerr: TMenuItem;
      pmmorelock: TMenuItem;
@@ -3399,6 +3414,8 @@ type
       procedure marcoptClick(Sender: TObject);
       procedure mccommentClick(Sender: TObject);
       procedure mccreatedClick(Sender: TObject);
+      procedure mcommentClick(Sender: TObject);
+      procedure mcommentrarClick(Sender: TObject);
       procedure mdefarcsetClick(Sender: TObject);
       procedure mdefextsetClick(Sender: TObject);
       procedure mcmethodClick(Sender: TObject);
@@ -3418,6 +3435,7 @@ type
       procedure Panelnav4Click(Sender: TObject);
       procedure Panelnav4MouseDown(Sender: TObject; Button: TMouseButton;
         Shift: TShiftState; X, Y: Integer);
+      procedure pmadvfClick(Sender: TObject);
       procedure pmbccpClick(Sender: TObject);
       procedure pmbcnwClick(Sender: TObject);
       procedure pmbcpsClick(Sender: TObject);
@@ -3440,6 +3458,7 @@ type
       procedure pmemrf7Click(Sender: TObject);
       procedure pmemrf8Click(Sender: TObject);
       procedure pmmoreaddClick(Sender: TObject);
+      procedure pmmorecommentzipClick(Sender: TObject);
       procedure pmmoreconvertClick(Sender: TObject);
       procedure pmmoreextractClick(Sender: TObject);
       procedure pmmoretestClick(Sender: TObject);
@@ -3522,6 +3541,7 @@ type
       procedure po_browserccommentClick(Sender: TObject);
       procedure po_cinnamonsettClick(Sender: TObject);
       procedure po_clipClick(Sender: TObject);
+      procedure po_commentzipClick(Sender: TObject);
       procedure po_dedupClick(Sender: TObject);
       procedure po_gnomeccClick(Sender: TObject);
       procedure po_gnomeswClick(Sender: TObject);
@@ -3584,7 +3604,6 @@ type
       procedure PanelClickAddressMouseEnter(Sender: TObject);
       procedure pcustmakecabClick(Sender: TObject);
       procedure pmhtabsClick(Sender: TObject);
-      procedure pmmorecommentClick(Sender: TObject);
       procedure pmmorelockClick(Sender: TObject);
       procedure pmmorerecoverClick(Sender: TObject);
       procedure pmmorerrClick(Sender: TObject);
@@ -3624,7 +3643,6 @@ type
       procedure pob_blake2bClick(Sender: TObject);
       procedure pob_blake2sClick(Sender: TObject);
       procedure po_analyzefoldersClick(Sender: TObject);
-      procedure po_commentClick(Sender: TObject);
       procedure po_hostnameClick(Sender: TObject);
       procedure po_ipconfigClick(Sender: TObject);
       procedure po_lockClick(Sender: TObject);
@@ -5228,11 +5246,12 @@ procedure untarafter(outname, inname:ansistring; var cl:ansistring; realuntar:bo
 procedure set_dirbeforefiles(dmode:integer);
 procedure update_addressbar(apath:ansistring);
 function isarchiveeditable:integer;
+procedure setcommentcl;
 
 const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
-  PEAZIPVERSION = '9.3';
+  PEAZIPVERSION = '9.4';
   PEAZIPREVISION= '.0';
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   PREFALGOCONST = 'CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256';
@@ -5267,7 +5286,7 @@ const
   READE_LIST    = '7Z, ACE, ARC/WRC, ARJ, BR, BZ/TBZ, CAB, CHM/CHW/HXS, COMPOUND (MSI, DOC, XLS, PPT), CPIO, GZ/TGZ, ISO, Java (JAR, EAR, WAR), LZH/LHA, Linux (DEB, PET/PUP, RPM, SLP), NSIS, OOo, PAK/PK3/PK4, PAQ/LPAQ/ZPAQ, PEA, QUAD/BALZ/BCM, RAR, TAR, WIM/SWM, XPI, Z/TZ, ZIP, ZST...';
   WRITEE_LIST   = '7Z, 7Z-sfx, ARC, ARC-sfx, BR, BZ2, GZ, *PAQ, PEA, QUAD/BALZ/BCM, split, TAR, UPX, WIM, XZ, ZIP, ZST';
   APPMAIN       = 'PeaZip';
-  APPLICATION1  = 'Pea 1.13 (LGPLv3, Giorgio Tani)';
+  APPLICATION1  = 'Pea 1.14 (LGPLv3, Giorgio Tani)';
   STR_7Z        = '7Z';
   STR_ARC       = 'ARC';
   STR_BROTLI    = 'Brotli';
@@ -5488,7 +5507,7 @@ var
    prevlistfilter,browsersdir,custom_work_path,tempaddinarchive,beingpreviewed,moverelpath,
    move_out_param,lcmethod,langstrhint,plistfile,statushint,infocpu,inforam,infomem,
    statushintar,statushintex,typehint,csvsep,origout,origoutnf,origouttf,origoutmf,
-   prefixd,prefixf,prefixdaz,prefixdza,prefixfaz,alias7z:ansistring;
+   prefixd,prefixf,prefixdaz,prefixdza,prefixfaz,alias7z,rarcommentfilename:ansistring;
 
    tvolumes,tdirs,tfiles,psize,tvol,tsize:qword;
    sizefreeout,sizefreewrk,sizefreeint: int64;
@@ -5568,6 +5587,7 @@ var
 
    lang_file:ansistring;
    //text strings
+   txt_9_4_savecomment,txt_9_4_hintcomment,txt_9_4_r,txt_9_4_rw,
    txt_9_3_contrast,txt_9_3_continue,txt_9_3_fsd,txt_9_3_fsw,txt_9_3_canedit,txt_9_3_canforce,txt_9_3_cannotedit,txt_9_3_mrar,
    txt_9_2_7za,txt_9_2_swt,txt_9_2_tfaq,txt_9_2_doc,txt_9_2_updates,txt_9_2_compact,txt_9_2_changelog,txt_9_2_tos,
    txt_9_1_7zs,txt_9_1_ac,txt_9_1_ef,txt_9_1_enlargeicons,txt_9_1_nw,txt_9_1_qdup,txt_9_1_closeall,
@@ -6132,6 +6152,10 @@ begin
 valorize_text:=-1;
 try
 readln(t,s);
+readln(t,s); txt_9_4_r:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_4_rw:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_4_savecomment:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
+readln(t,s); txt_9_4_hintcomment:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_3_continue:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_3_contrast:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
 readln(t,s); txt_9_3_fsd:=copy(s,pos(':',s)+2,length(s)-pos(':',s));
@@ -9135,20 +9159,27 @@ else
    havewinrar:=false;
    {$ENDIF}
    end;
-if havewinrar=true then
-   begin
-   Form_peach.EditExtCustom.Caption:='rar';
-   Form_peach.cbRARmanual.Hint:=Form_peach.EditNameCustom.Caption;
-   end;
-if havewinrar=false then
+if (havewinrar=false) or (userar<>1) then
    begin
    form_peach.cbType.Items[4]:=txt_custom;
    form_peach.mprofilerar.visible:=false;
+   form_peach.pmmorerecover.Caption:=txt_7_4_recover+' (ARC)';
+   form_peach.po_recover.Caption:=txt_7_4_recover+' (ARC)';
+   form_peach.mcomment.Caption:=txt_7_4_comment+' (RAR '+txt_9_4_r+', ZIP, ZIPX)';
+   form_peach.po_commentzip.Caption:=txt_7_4_comment+' (RAR '+txt_9_4_r+', ZIP, ZIPX)';
+   form_peach.pmmorecommentzip.Caption:=txt_7_4_comment+' (RAR '+txt_9_4_r+', ZIP, ZIPX)';
    end
 else
    begin
    form_peach.cbType.Items[4]:=txt_custom+'/RAR';
    form_peach.mprofilerar.visible:=true;
+   form_peach.pmmorerecover.Caption:=txt_7_4_recover+' (ARC, RAR)';
+   form_peach.po_recover.Caption:=txt_7_4_recover+' (ARC, RAR)';
+   form_peach.mcomment.Caption:=txt_7_4_comment+' (RAR, ZIP, ZIPX)';
+   form_peach.po_commentzip.Caption:=txt_7_4_comment+' (RAR, ZIP, ZIPX)';
+   form_peach.pmmorecommentzip.Caption:=txt_7_4_comment+' (RAR, ZIP, ZIPX)';
+   Form_peach.EditExtCustom.Caption:='rar';
+   Form_peach.cbRARmanual.Hint:=Form_peach.EditNameCustom.Caption;
    end;
 end;
 
@@ -9216,14 +9247,8 @@ eowrun.Caption:=txt_3_3_run;
 powrun.Caption:=txt_3_3_run;
 pmmorelock.Caption:=txt_7_4_lock;
 pmmorerr.Caption:=txt_rr;
-if (havewinrar=false) or (userar<>1) then pmmorerecover.Caption:=txt_7_4_recover+' (ARC)'
-else pmmorerecover.Caption:=txt_7_4_recover+' (ARC, RAR)';
-pmmorecomment.Caption:=txt_7_4_comment;
 po_lock.Caption:=txt_7_4_lock;
 po_rr.Caption:=txt_rr;
-if (havewinrar=false) or (userar<>1) then po_recover.Caption:=txt_7_4_recover+' (ARC)'
-else po_recover.Caption:=txt_7_4_recover+' (ARC, RAR)';
-po_comment.Caption:=txt_7_4_comment;
 cbRARlock.Caption:=txt_7_4_lock;
 CheckBoxNoConf.Caption:=txt_7_3_noconfdel;
 CheckBoxzipxswitch.Caption:=txt_7_4_swzipx;
@@ -9765,6 +9790,9 @@ ComboBoxArchive1.Items.Strings[7]:=txt_fat32;
 ComboBoxArchive1.Items.Strings[8]:=txt_dvd;
 ComboBoxArchive1.Items.Strings[9]:=txt_dvddl;
 ComboBoxArchive1.Items.Strings[10]:='25 GB Blu-Ray';
+ComboBoxArchive1.Items.Strings[11]:='50 GB Blu-Ray DL';
+ComboBoxArchive1.Items.Strings[12]:='100 GB Blu-Ray XL3';
+ComboBoxArchive1.Items.Strings[13]:='128 GB Blu-Ray XL4';
 CheckBoxTarBefore.Caption:=txt_tarbefore;
 CheckBoxTarBefore.Hint:=txt_tarbefore_hint;
 cbadvf1.Caption:=txt_advfilters;
@@ -10437,9 +10465,9 @@ MenuItemOpen_info_displayed.Caption:=txt_list_disp;
 MenuItemOpen_info_selected.Caption:=txt_list_sel;
 po_info.Caption:=txt_list_details;
 pmmorefun_info.Caption:=txt_list_details;
-pmmorefun_details.Caption:=txt_6_3_cinfo;
+pmmorefun_details.Caption:=txt_info;
 pmmoretest.Caption:=txt_caption_test;
-po_details.Caption:=txt_6_3_cinfo;
+po_details.Caption:=txt_info;
 pmcpyto.Caption:=txt_copyto;
 pmmvto.Caption:=txt_moveto;
 pmexplore.Caption:=txt_explore_path;
@@ -10539,6 +10567,7 @@ menupw.Caption:=txt_2_7_setpw;
 msetpw.Caption:=txt_2_7_setpw;
 pmqesetpw.Caption:=txt_2_7_setpw;
 madvfilters.caption:=txt_advfilters;
+pmadvf.caption:=txt_advfilters;
 mfilterbrowser.caption:=txt_8_5_advbrowser;
 mOptions.Caption:=txt_options;
 sbBrowse.Caption:=txt_browse;
@@ -10594,6 +10623,7 @@ OpenDialogLang.Title:=txt_open_file;
 OpenDialogList.Title:=txt_open_files;
 OpenDialogArchive.Title:=txt_open_file;
 OpenDialogTheme.Title:=txt_open_file;
+OpenDialogApps1.Title:=txt_open_file;
 SelectDirectoryDialog1.Title:=txt_selectdir;
 SelectDirectoryDialog2.Title:=txt_selectdir;
 SaveDialogPJ.Title:=txt_savejobdefinition;
@@ -10797,6 +10827,10 @@ end;
 
 procedure load_default_texts;
 begin
+txt_9_4_r:='read';
+txt_9_4_rw:='read/write';
+txt_9_4_savecomment:='Save comment';
+txt_9_4_hintcomment:='Type or paste comment, load or drag here comment file.';
 txt_9_3_continue:='Continue anyway?';
 txt_9_3_contrast:='Contrast';
 txt_9_3_fsd:='Free space on destination may not be enough';
@@ -15594,6 +15628,7 @@ FormPM.Color:=Form_peach.Color;
 FormPW.Color:=Form_peach.Color;
 FormSelect.Color:=Form_peach.Color;
 FormWeb.Color:=Form_peach.Color;
+FormComment.Color:=Form_peach.Color;
 Form_gwrap.Color:=Form_peach.Color;
 Form_peach.Panelnav5.Color:=StringToColor(colbtnhigh);
 Form_peach.Splitter2.Color:=StringToColor(colmid);
@@ -16000,6 +16035,9 @@ Form_peach.LabelAddFolder.Font.Color:=ptextaccent;
 FormPW.LableListPath2.Font.Color:=ptextaccent;
 FormPM.Button1.Font.Color:=ptextaccent;
 FormPM.Button2.Font.Color:=ptextaccent;
+FormComment.LabelReset.Font.Color:=ptextaccent;
+FormComment.LabelLoadfromfile.Font.Color:=ptextaccent;
+FormComment.LabelSavetofile.Font.Color:=ptextaccent;
 FormInput.LabelLow.Font.Color:=ptextaccent;
 FormInput.LabelUp.Font.Color:=ptextaccent;
 FormInput.LabelTimestamp.Font.Color:=ptextaccent;
@@ -18632,12 +18670,12 @@ if (ext=lowercase(txt_list_isfolder)) or (ext=' [folder]') then begin result:=3;
 case ext of
 '.lnk': result:=4;
 '.txt','asc','.rtf','.wri','.ini','.log': result:=14;
-'.doc','.dot','.docx','.dotx','.odt','.sxw','.wpd','.wps','.wpt','.gdoc','.tmdx': result:=2;
+'.doc','.dot','.docx','.dotx','.odt','.sxw','.wpd','.wps','.wpt','.gdoc','.tmdx','.pages': result:=2;
 '.xls','.xlt','.xlsx','.xltm','.xltx','.ods','.gnm','.gnumeric','.csv','.123',
 '.sxc','.gsheet','.numbers','.numbers-tef','.dif','.pmdx','.pmvx': result:=13;
-'.pps','.ppt','.pot','.pptx','.ppsx','.potx','.odp','.gslides','.prdx': result:=18;
+'.pps','.ppt','.pot','.pptx','.ppsx','.potx','.odp','.gslides','.prdx','.key': result:=18;
 '.db','.dbf','.mdb','.adp','.mdf','.nsf','.dat','.fp','.fp3','.fp5','.fp7',
-'.frm','.odb','.ora','.sql','.sqlite','.wdb','.rpt': result:=24;
+'.frm','.odb','.ora','.sql','.sqlite','.wdb','.rpt','.iwa': result:=24;
 '.eml': result:=23;
 '.bat','.pif','.scr','.vbs','.cmd','.reg','.sh','.command','.csh': result:=20;
 '.dll','.sys','.so': result:=22;
@@ -22164,6 +22202,123 @@ updateconf;
 Form_peach.LabelConf.Caption:=confpath;
 end;
 
+function readzipcomment(sfile:AnsiString; var commpos,commsize:int64; var commcontent:ansistring):integer;
+var
+   fs:file of byte;
+   len:qword;
+   sbuf:array [1..65558] of byte;//65536 max comment size + 22 footer size
+   i,j,n,commarraysize:integer;
+   commarraystart:int64;
+   footerfound:boolean;
+begin
+result:=-1; //incomplete function
+footerfound:=false;
+commsize:=0;
+commcontent:='';
+if (LowerCase(extractfileext(sfile))<>'.zip') and
+   (LowerCase(extractfileext(sfile))<>'.zipx') then exit;
+if not(fileexists(sfile)) then exit;
+try
+assignfile(fs,sfile);//consistently with 7-Zip and WinrRar tis function does not work on multi-volume archives
+filemode:=0;
+reset(fs);
+srcfilesize(sfile,len);
+commarraystart:=len-65558;
+if commarraystart<0 then
+   begin
+   commarraystart:=0;
+   commarraysize:=len;
+   end
+else commarraysize:=65558;
+seek(fs,commarraystart);
+blockread(fs,sbuf,commarraysize,n);
+for i:=1 to n-3 do  //4 byte footer tag
+   begin
+   if (sbuf[i]=80) and (sbuf[i+1]=75) and (sbuf[i+2]=5) and (sbuf[i+3]=6) then
+      begin
+      footerfound:=true;
+      break;
+      end;
+   end;
+except
+result:=-2; //file error
+try CloseFile(fs); except end;
+exit;
+end;
+result:=-3; //testing footer tag
+if footerfound=false then exit; //no valid footer tag found
+result:=-4; //testing footer size
+if n<i+21 then exit; //incomplete footer
+commsize:= word(sbuf[i+21]) shl 8 or sbuf[i+20];
+result:=-5; //testing comment size
+if n<>commsize+i+21 then exit; //invalid comment size
+commpos:=commarraystart+i+19;
+if commsize<>0 then SetString(commcontent, PChar(@sbuf[i+22]), commsize);
+result:=0; //valid comment read
+CloseFile(fs);
+end;
+
+function writezipcomment(sfile:AnsiString; var commpos,oldcommsize:int64; oldcommcontent,newcommcontent:ansistring): integer;
+var
+   fs:file of byte;
+   testcommsize,newcommsize:int64;
+   testcommcontent:ansistring;
+   sbuf:array [1..65536] of byte;//65536 max comment size
+   n,i:integer;
+   bytes: TBytes;
+begin
+result:=-1; //incomplete function
+if newcommcontent=oldcommcontent then
+   begin
+   result:=2; //does not need to update comment
+   exit;
+   end;
+if (LowerCase(extractfileext(sfile))<>'.zip') and
+   (LowerCase(extractfileext(sfile))<>'.zipx') then exit;
+if not(fileexists(sfile)) then exit;
+try
+assignfile(fs,sfile);
+filemode:=2;
+reset(fs);
+seek(fs,commpos);
+blockread(fs,sbuf,2,n);
+testcommsize:= word(sbuf[2]) shl 8 or sbuf[1];
+blockread(fs,sbuf,65536,n);
+except
+result:=-2; //file error
+try CloseFile(fs); except end;
+exit;
+end;
+result:=-3; //testing comment size
+if testcommsize<>oldcommsize then exit; //comment size not matching, file may have been changed
+result:=-4; //testing comment content
+if testcommsize<>0 then SetString(testcommcontent, PChar(@sbuf[1]), testcommsize);
+if testcommcontent<>oldcommcontent then exit; //comment content not matching, file may have been changed
+result:=1; //valid comment found
+newcommsize:=length(newcommcontent);
+if newcommsize>65535 then
+   begin
+   SetLength(newcommcontent,65535);
+   newcommsize:=65535;
+   end;
+try
+seek(fs,commpos);
+sbuf[1] := Byte(newcommsize);
+sbuf[2] := Byte(Word(newcommsize) shr 8);
+blockwrite(fs,sbuf,2,n);
+for i:=1 to newcommsize do sbuf[i]:=ord(newcommcontent[i]);
+blockwrite(fs,sbuf,newcommsize,n);
+seek(fs,commpos+2+newcommsize);
+Truncate(fs);
+except
+result:=-5; //file write error
+try CloseFile(fs); except end;
+exit;
+end;
+result:=0; //comment updated successfully
+CloseFile(fs);
+end;
+
 procedure set_multi(s:ansistring); //sets multithreading option for 7za
 begin
 if s='on' then //allow multithread selection for Compression (LZMA/2 and BZip2), may be replaced by code more oriented toward processors number
@@ -23796,6 +23951,9 @@ begin
       8: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
       9: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
       10: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
+      11: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
+      12: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
+      13: Form_peach.ImageSplit.Picture.Bitmap:=Bdvd_supported;
       end;
 end;
 
@@ -25087,7 +25245,7 @@ Form_peach.EditNameCustom.Caption:=Form_peach.pcustom1.caption;
 s1:=LowerCase(extractfilename(Form_peach.pcustom1.caption));
 cutextension(s1);
 Form_peach.EditExtCustom.Caption:=s1;
-Form_peach.ComboBoxArchive1.ItemIndex:=customsyntax;
+Form_peach.ComboBoxArchiveCustom.ItemIndex:=customsyntax;
 if LowerCase(Form_peach.pcustom1.caption)='makecab.exe' then Form_peach.pcustmakecabClick(nil);
 end;
 
@@ -26677,7 +26835,15 @@ if (mode<>'extandrun') and (mode<>'delete') and (mode<>'add')  and (mode<>'previ
 M.SetSize(BytesRead);
 if fun<>'UNARC' then
    begin
-   if tryopenwerrors=0 then execute_cl:=P.ExitStatus else execute_cl:=0;
+   if tryopenwerrors=0 then
+      execute_cl:=P.ExitStatus
+   else
+      begin
+      case fun of
+         'silent','list','flat': execute_cl:=0;
+         else execute_cl:=P.ExitStatus;
+      end;
+      end;
    end
 else
    execute_cl:=P.ExitStatus;
@@ -29082,11 +29248,9 @@ pmmorefun_info.Enabled:=true;
 pmmorelock.Visible:=false;
 pmmorerr.Visible:=false;
 if (havewinrar=true) and (userar=1) then pmmorerecover.Visible:=true;
-pmmorecomment.Visible:=false;
 po_lock.Visible:=false;
 po_rr.Visible:=false;
 if (havewinrar=true) and (userar=1) then po_recover.Visible:=true;
-po_comment.Visible:=false;
 end;
 end;
 
@@ -29111,11 +29275,9 @@ pmmorefun_info.Enabled:=true;
 pmmorelock.Visible:=false;
 pmmorerr.Visible:=false;
 pmmorerecover.Visible:=false;
-pmmorecomment.Visible:=false;
 po_lock.Visible:=false;
 po_rr.Visible:=false;
 po_recover.Visible:=false;
-po_comment.Visible:=false;
 end;
 end;
 
@@ -31470,8 +31632,6 @@ case i of //RAR revision already reported in status1 as method
 case i of
    -1: //not rar
       begin
-      {ext:=extractfileext(Form_peach.EditOpenIn.Text);
-      if upcase(ext)='.ZIP' then Form_peach.pmmorecomment.Visible:=true;}
       end;
    else //rar
       if (havewinrar=true) and (userar=1) then
@@ -31479,11 +31639,9 @@ case i of
       Form_peach.pmmorelock.Visible:=true;
       Form_peach.pmmorerr.Visible:=true;
       Form_peach.pmmorerecover.Visible:=true;
-      Form_peach.pmmorecomment.Visible:=true;
       Form_peach.po_lock.Visible:=true;
       Form_peach.po_rr.Visible:=true;
       Form_peach.po_recover.Visible:=true;
-      Form_peach.po_comment.Visible:=true;
       end;
    end;
 end;
@@ -34771,6 +34929,18 @@ FormPM.ctrlpm.Glyph:=Bnonthemed8;
 loadpm;
 end;
 
+procedure prepare_FormComment;
+begin
+FormComment.Caption:=txt_7_4_comment;
+FormComment.MemoComment.Hint:=txt_9_4_hintcomment;
+FormComment.LabelReset.Caption:=txt_reset;
+FormComment.LabelLoadfromfile.Caption:=txt_loadfile;
+FormComment.button1.Caption:=txt_9_4_savecomment;
+FormComment.OpenDialogFC.Title:=txt_open_file;
+FormComment.SaveDialogFC.Title:=txt_saveas;
+Unit14.pdesk:=local_desktop;
+end;
+
 procedure prepare_FormKF;
 begin
 with FormKF do
@@ -37898,6 +38068,9 @@ if (havewinrar=true) and (userar=1) then
    8: vol_size:=4480*1024*1024;//size DVD+R
    9: vol_size:=8128*1024*1024;//size for DVD-R DL
    10: vol_size:=23040*1024*1024;//size for Blu-Ray
+   11: vol_size:=23040*1024*1024*2;//size for Blu-Ray DL
+   12: vol_size:=23040*1024*1024*4;//size for Blu-Ray XL3
+   13: vol_size:=23040*1024*1024*5;//size for Blu-Ray XL4
    end;
    if vol_size<>0 then Form_peach.EditOPcustom.Caption:=Form_peach.EditOPcustom.Caption+' -v'+inttostr(vol_size)+'b';
    //peazip's work path
@@ -38273,17 +38446,16 @@ if not(FileExists(fs)) then exit;
 result:=false; //only existing files raise errors
 hs:=getchash(fs);
 case hs of
- //pea 1.13
-'E14C142D377060CD0C3BEC0932A50DD40773E2FE51839806B8FA1EB58ACC885E', //win64
-'1BE1B22EF5A69AD86619E544EBC2C23A874400A6465F51113E5FEEE3EC7938C1', //win32
-'702F4BBB54D560637BF8888C3C4E8E66C01AFCBEB48ECF70582F4F03C1C58F84', //lin x86_64 GTK2
-'12690A6A8371A429084F0514E205F1DA2A708FE39A90FFFEFD4A81B8F2077142', //lin x86_64 Qt5
-'1E40A2B6A2C172809C1A4DF50FAC8509612B0E0E88E51B8529B15C493DFB60BF', //macos aarch64
-'A5E6D7EC1F6ED10C734F1BFF925429F6F0C078435D61D4744F876332593203B7', //macos Intel
-'A4505EDBD61CE3B76EE13CE6AFC2479CE6E1798728D6B1557F1A57FBDA2FD167', //BSD x86_64
+ //pea 1.14
+'A0961DF5339D9281EA9B3D51B51ADC5C9F1848F2960B60740BF87CCF744951D6', //win64
+'BC8878F934527753834CD27E3EADED483CDC4145E51AFA37D61A81FBFED53DE6', //win32
+'3D8B84528B236131735097749A500BD7ADD97E0A544C16D4C51E4417C438AE13', //lin x86_64 GTK2
+'6CEAD21E88BD23CDBE0087FD19870939B767E907F210357099F4A9025BF39651', //lin x86_64 Qt5
+'1A6BF5679635BFF21A0FD28A373057CE2939EAD90B3B93BFEDC827EEDFD31026', //macos aarch64
+'B74C24D233C7E1FBCC09603251BD74CA937FCF7BAE22CFE9AB0066337D643E2B', //macos Intel
+'85C37EC0F936BFA6D0B5304169EC510020297CB12EC7034D3BA79F2D06047E0F', //BSD x86_64
 {$IFDEF MSWINDOWS}
-'183820E5CA48CAAE5B393780115390F2621C222472B5FA540671A56042FF6BB3',//Configure PeaZip 9.2+ 64 bit
-'288B4A40F0BDD9DCFC3F28FD1ED8C5B825ADA71971CBA7513F688D9F16B31444',//Configure PeaZip 9.2+ 32 bit
+'3CB5D9FD619CDBF5B2C4B3C260BF974E5BBA4CB7968ED39F04D1CEFFFEAF9452',//Configure PeaZip 9.4+ 32 and 64 bit
 '8CEBB25E240DB3B6986FCAED6BC0B900FA09DAD763A56FB71273529266C5C525',//7z 23.01 64 bit
 '3092F736F9F4FC0ECC00A4D27774F9E09B6F1D6EEE8ACC1B45667FE1808646A6',//7z 23.01 32 bit
 '254CF6411D38903B2440819F7E0A847F0CFEE7F8096CFAD9E90FEA62F42B0C23',//7z 22.01 64 bit
@@ -38633,6 +38805,9 @@ case Form_peach.ComboBoxArchive1.ItemIndex of
    8: vol_size:=4480*1024*1024;//size DVD+R
    9: vol_size:=8128*1024*1024;//size for DVD-R DL
    10: vol_size:=23040*1024*1024;//size for Blu-Ray
+   11: vol_size:=23040*1024*1024*2;//size for Blu-Ray DL
+   12: vol_size:=23040*1024*1024*4;//size for Blu-Ray XL3
+   13: vol_size:=23040*1024*1024*5;//size for Blu-Ray XL4
    end;
 //sfx (generate self extracting Windows executable)
 if (Form_peach.CheckBoxArchive6.State=cbChecked) then
@@ -39466,6 +39641,9 @@ if check_input<>0 then exit;
       8: vol_size:=4480*1024*1024;//size DVD+R
       9: vol_size:=8128*1024*1024;//size for DVD-R DL
       10: vol_size:=23040*1024*1024;//size for Blu-Ray
+      11: vol_size:=23040*1024*1024*2;//size for Blu-Ray DL
+      12: vol_size:=23040*1024*1024*4;//size for Blu-Ray XL3
+      13: vol_size:=23040*1024*1024*5;//size for Blu-Ray XL4
    end;
    if vol_size=0 then p_ext:='.pea' else p_ext:='.000001.pea';
    //out_param
@@ -39661,6 +39839,9 @@ fun:='RFS';
       8: vol_size:=4480*1024*1024;//size DVD+R
       9: vol_size:=8128*1024*1024;//size for DVD-R DL
       10: vol_size:=23040*1024*1024;//size for Blu-Ray
+      11: vol_size:=23040*1024*1024*2;//size for Blu-Ray DL
+      12: vol_size:=23040*1024*1024*4;//size for Blu-Ray XL3
+      13: vol_size:=23040*1024*1024*5;//size for Blu-Ray XL4
       end;
    case Form_peach.ComboBoxSplit3.ItemIndex of //stream checks
       0: vol_algo:='WHIRLPOOL';
@@ -40735,6 +40916,18 @@ var
    if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
    keepopen:=false;
 
+   if (subfun='rarcomment') then
+      begin
+      {$IFDEF MSWINDOWS}
+      P.Commandline:='cmd /c "'+cl+'"';
+      {$ELSE}
+      P.Commandline:='bash -c "'+cl+'"';
+      {$IFDEF DARWIN}
+      P.Commandline:='open '+cl;
+      {$ENDIF}
+      {$ENDIF}
+      end;
+
    if (subfun='list') or (subfun='test') or (subfun='bench') then //unused
       begin
       {$IFDEF MSWINDOWS}
@@ -41599,6 +41792,23 @@ stayopen:=false;
 go_semaphorearchive;
 end;
 
+procedure add2archivemultigeneric;
+var
+   archtype:ansistring;
+begin
+showpanel('archive');
+showpanel_trick;
+multiaddupdating:=false;
+archtype:=paramstr(2);
+Form_peach.cbType.Text:=archtype;
+archive_type_select(Form_peach.cbType.Text);
+dn:=(paramstr(3));
+getarccaption(archtype);
+Form_peach.timer3.enabled:=true;
+stayopen:=false;
+go_semaphorearchive;
+end;
+
 procedure add2archivemultizip;
 var
    level:ansistring;
@@ -41754,6 +41964,23 @@ getmulti('add7z',s);
 if s='' then exit;
 P:=tprocessutf8.Create(nil);
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemulti7z '+level+' '+s;
+P.Options := [poNoConsole];
+P.CommandLine:=cl;
+if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+runmulti(P);
+{$ENDIF}
+end;
+
+procedure add2multigeneric(archtype:ansistring);
+var
+   s,cl:ansistring;
+   P:tprocessutf8;
+begin
+{$IFDEF MSWINDOWS}
+getmulti('addarchive',s);
+if s='' then exit;
+P:=tprocessutf8.Create(nil);
+cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultigeneric '+archtype+' '+s;
 P.Options := [poNoConsole];
 P.CommandLine:=cl;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
@@ -47945,6 +48172,44 @@ begin
 if directoryexists(confpath+'.minimized') then removedir(confpath+'.minimized');
 end;
 
+procedure readrarcomment(inname:ansistring);
+var
+   cl,jobcode,out_param,bin_name,prevfun,prevsubfun:ansistring;
+begin
+unit_gwrap.pjobcommentrar:=1;
+unit_gwrap.pjobuserar:=0;
+prevfun:=fun;
+prevsubfun:=subfun;
+fun:='UN7Z';
+fun_status:=fun;
+subfun:='list';
+out_param:='';
+jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
+inname:=stringdelim(escapefilename(inname,desk_env));
+{if (havewinrar=true) and (userar=1) then //unused, localized Rar.exe does not allow to easily detect "Comment not present" case
+   begin
+   unit_gwrap.pjobuserar:=1;
+   bin_name:=stringdelim(escapefilename(Form_peach.EditnameCustom.Text,desk_env));
+   cl:=bin_name+' cw';
+   end
+else
+   begin
+   bin_name:=stringdelim(escapefilename(binpath,desk_env)+'7z'+DirectorySeparator+alias7z+EXEEXT);
+   cl:=bin_name+' l';
+   if nonverboselog=1 then cl:=cl+' -bb0 -bse0 -bsp2' else cl:=cl+' -bb1 -bse1 -bsp2';//requires v15.x
+   end;}
+bin_name:=stringdelim(escapefilename(binpath,desk_env)+'7z'+DirectorySeparator+alias7z+EXEEXT);
+cl:=bin_name+' l';
+if nonverboselog=1 then cl:=cl+' -bb0 -bse0 -bsp2' else cl:=cl+' -bb1 -bse1 -bsp2';//requires v15.x
+cl:=cl+' '+inname;
+launch_cl(cl,jobcode,out_param);
+fun:=prevfun;
+fun_status:=prevfun;
+subfun:=prevsubfun;
+unit_gwrap.pjobuserar:=0;
+unit_gwrap.pjobcommentrar:=0;
+end;
+
 procedure archive_funsel(funct,select:ansistring);
 var
    cl,jobcode,outname:ansistring;
@@ -52908,7 +53173,7 @@ end;
 procedure TForm_peach.madvfiltersClick(Sender: TObject);
 begin
 try
-if Form_peach.madvfilters.checked=false then
+if madvfilters.checked=false then
    begin
    set_advfilters;
    end
@@ -52917,10 +53182,11 @@ else
    FormAdvf.Checkboxadvfilters.state:=cbunchecked;
    set_advfilters_enabled(false);
    setfiltericon(false);
-   Form_peach.cbadvf1.state:=cbunchecked;
-   Form_peach.cbadvf2.state:=cbunchecked;
+   cbadvf1.state:=cbunchecked;
+   cbadvf2.state:=cbunchecked;
    advfiltersupdate;
    end;
+pmadvf.Checked:=madvfilters.Checked;
 except
 end;
 end;
@@ -61663,6 +61929,19 @@ case lowercase(paramstr(1)) of
    Form_peach.Visible:=false;
    ext2commandprompt;
    end;
+   //set coments
+   '-setcomment': //commentstring archive1..n
+   begin
+   setcommentcl;
+   end;
+   '-setcommentf': //commentfile archive1..n
+   begin
+   setcommentcl;
+   end;
+   '-removecomment': //archive1..n
+   begin
+   setcommentcl;
+   end;
    '-peaziplanguage' :
    begin
    peaziplanguage(paramstr(2));
@@ -61731,6 +62010,26 @@ else
          status1:='0 '+txt_dirs+' 0 '+txt_files+' 0 B';
          stayopen:=false;
          savetype:=true;
+         exit;
+         end;
+         '-add2brotli','-add2bzip2','-add2gzip','-add2tar','-add2wim','-add2xz','-add2zstd','-add2zpaq':
+         begin
+         showpanel('archive');
+         showpanel_trick;
+         case paramstr(1) of
+            '-add2brotli':Form_peach.cbType.Text:=STR_BROTLI;
+            '-add2bzip2':Form_peach.cbType.Text:=STR_BZIP2;
+            '-add2gzip':Form_peach.cbType.Text:=STR_GZIP;
+            '-add2tar':Form_peach.cbType.Text:=STR_TAR;
+            '-add2wim':Form_peach.cbType.Text:=STR_WIM;
+            '-add2xz':Form_peach.cbType.Text:=STR_XZ;
+            '-add2zstd':Form_peach.cbType.Text:=STR_ZSTD;
+            '-add2zpaq':Form_peach.cbType.Text:=STR_ZPAQ;
+         end;
+         archive_type_select(Form_peach.cbType.Text);
+         updatelayout('');
+         stayopen:=false;
+         savetype:=false;
          exit;
          end;
          '-ext2main','-ext2full'://'-ext2here','-ext2smart','-ext2folder','-ext2newfolder':
@@ -61965,6 +62264,11 @@ else
          add2archivemulti7z;
          exit;
          end;
+         '-add2archivemultigeneric' :
+         begin
+         add2archivemultigeneric;
+         exit;
+         end;
          '-add2archivemultizip' :
          begin
          add2archivemultizip;
@@ -62004,8 +62308,9 @@ else
       showpanel('archive'); //otherwise, add to archive
       showpanel_trick;
       for i:=1 to paramcount do
-         begin
-         if (paramstr(i)='-add2archive') or (paramstr(i)='-add2split') or (paramstr(i)='-add2archive-add') or (paramstr(i)='-add2archive-update') or (paramstr(i)='-add2convert') or (paramstr(i)='-add2convimm') then
+         case paramstr(i) of
+         '-add2archive','-add2split','-add2archive-add','-add2archive-update','-add2convert','-add2convimm',
+         '-add2brotli','-add2bzip2','-add2gzip','-add2tar','-add2wim','-add2xz','-add2zstd','-add2zpaq': begin end;
          else
             if testname(escapefilename(ExpandFileName((paramstr(i))),desk_env), StringGrid1)=0 then
                if filegetattr(escapefilename(ExpandFileName((paramstr(i))),desk_env)) > 0 then
@@ -62013,24 +62318,45 @@ else
                   else addfolderstr(Form_peach.StringGrid1,escapefilename(ExpandFileName((paramstr(i))),desk_env))
                else msg_not_accessible(i);
          end;
-      if paramstr(1)='-add2archive-add' then
+      case paramstr(1) of
+         '-add2brotli','-add2bzip2','-add2gzip','-add2tar','-add2wim','-add2xz','-add2zstd','-add2zpaq':
+         begin
+         case paramstr(1) of
+            '-add2brotli':Form_peach.cbType.Text:=STR_BROTLI;
+            '-add2bzip2':Form_peach.cbType.Text:=STR_BZIP2;
+            '-add2gzip':Form_peach.cbType.Text:=STR_GZIP;
+            '-add2tar':Form_peach.cbType.Text:=STR_TAR;
+            '-add2wim':Form_peach.cbType.Text:=STR_WIM;
+            '-add2xz':Form_peach.cbType.Text:=STR_XZ;
+            '-add2zstd':Form_peach.cbType.Text:=STR_ZSTD;
+            '-add2zpaq':Form_peach.cbType.Text:=STR_ZPAQ;
+         end;
+         archive_type_select(Form_peach.cbType.Text);
+         updatelayout('');
+         on_buttonarchiveclick;
+         exit_nosave;
+         exit;
+         end;
+      end;
+      case paramstr(1) of
+         '-add2archive-add':
          begin
          ComboBoxArchive7.ItemIndex:=1;
          ComboBoxArchiveAct.Itemindex:=ComboboxArchive7.Itemindex;
          on_ComboBoxArchive7Change;
          end;
-      if paramstr(1)='-add2archive-update' then
+         '-add2archive-update':
          begin
          ComboBoxArchive7.ItemIndex:=2;
          ComboBoxArchiveAct.Itemindex:=ComboboxArchive7.Itemindex;
          on_ComboBoxArchive7Change;
          end;
-      if paramstr(1)='-add2convert' then
+         '-add2convert':
          begin
          Form_peach.CheckBoxConvert.State:=cbChecked; Form_peach.CheckBoxConvertChange(nil);
          Form_peach.CheckBoxSeparate.State:=cbChecked;
          end;
-      if paramstr(1)='-add2convimm' then
+         '-add2convimm':
          begin
          Form_peach.CheckBoxConvert.State:=cbChecked; Form_peach.CheckBoxConvertChange(nil);
          Form_peach.CheckBoxSeparate.State:=cbChecked;
@@ -62038,11 +62364,12 @@ else
          exit_nosave;
          exit;
          end;
-      if paramstr(1)='-add2split' then
+         '-add2split':
          begin
          Form_peach.cbType.ItemIndex:=10;
          archive_type_select(txt_split);
          end;
+      end;
       StringGrid1.AutoSizeColumns;
       updatecontent(Form_peach.StringGrid1,tvolumes,tdirs,tfiles,tsize,true);
       if completeshowpea=true then if enumd=1 then begin Form_peach.visible:=true; updatelayout(''); end;
@@ -62113,6 +62440,53 @@ case paramstr(1) of
    add2multi7z('7zencrypt');
    halt;
    end;
+   //multigeneric
+   '-add2multibrotli' :
+   begin
+   add2multigeneric(STR_BROTLI);
+   halt;
+   end;
+   '-add2multibzip2' :
+   begin
+   add2multigeneric(STR_BZIP2);
+   halt;
+   end;
+   '-add2multigzip' :
+   begin
+   add2multigeneric(STR_GZIP);
+   halt;
+   end;
+   '-add2multipea' :
+   begin
+   add2multigeneric(STR_PEA);
+   halt;
+   end;
+   '-add2multitar' :
+   begin
+   add2multigeneric(STR_TAR);
+   halt;
+   end;
+   '-add2multiwim' :
+   begin
+   add2multigeneric(STR_WIM);
+   halt;
+   end;
+   '-add2multixz' :
+   begin
+   add2multigeneric(STR_XZ);
+   halt;
+   end;
+   '-add2multizstd' :
+   begin
+   add2multigeneric(STR_ZSTD);
+   halt;
+   end;
+   '-add2multizpaq' :
+   begin
+   add2multigeneric(STR_ZPAQ);
+   halt;
+   end;
+   //end multigeneric
    '-add2multizip' :
    begin
    add2multizip('default');
@@ -62257,6 +62631,7 @@ apply_conf;
 //showpanel_prepare;
 prepare_GUI; //give starting positions to panels (that in the RAD may be misplaced)
 if pimmersive=1 then set_pimmersive;
+prepare_FormComment;
 prepare_FormPW;
 prepare_FormPM;
 prepare_FormKF;
@@ -63042,6 +63417,183 @@ pmccreated.Checked:=ccreated;
 set_listview_col;
 end;
 
+procedure wrirerarcomment(in_param:ansistring);
+var
+   cl,jobcode,outname,dummyfun,dummysubfun,dummyinf:ansistring;
+begin
+dummyfun:=fun;
+dummysubfun:=subfun;
+dummyinf:=Form_peach.EditOpenIn.Text;
+Form_peach.EditOpenIn.Text:=in_param;
+fun:='UPX';
+subfun:='rarcomment';
+case upcase(extractfileext(in_param)) of
+   '.RAR':
+   if compose_rarspecfun_cl(cl,jobcode,outname,'c')=0 then
+      begin
+      try
+      rarcommentfilename:=peaziptmpdirroot+STR_PZWORKTMP+directoryseparator+'rarcomment.txt';
+      assignfile(t,rarcommentfilename);
+      rewrite(t);
+      write(t,FormComment.MemoComment.Caption);
+      closefile(t);
+      except
+      try closefile(t); except end;
+      end;
+      cl:=cl+' < '+stringdelim(escapefilename(rarcommentfilename,desk_env));
+      launch_cl(cl,jobcode,outname);
+      end;
+end;
+fun:=dummyfun;
+subfun:=dummysubfun;
+Form_peach.EditOpenIn.Text:=dummyinf;
+end;
+
+procedure setcomment_list; //edit single multiple file-level comments for selected archives
+var
+   commpos,commsize:int64;
+   s,in_param,strsel:ansistring;
+   i,nsel:integer;
+   firstfile:boolean;
+begin
+in_param:='';
+if Form_peach.StringGridList.RowCount<2 then exit;
+if Form_peach.StringGridList.Row=0 then exit;
+if Form_peach.StringGridList.Cells[1,1]='' then exit;
+if checklisttotsel(nsel,strsel)<>0 then exit;
+if Form_peach.EditOpenIn.Text=txt_mypc then exit;
+firstfile:=true;
+if Form_peach.visible=true then
+   begin
+   for i:=1 to Form_peach.StringGridList.Rowcount-1 do
+      if Form_peach.StringGridList.Cells[16,i]='1' then
+         begin
+         if firstfile=true then
+            begin
+            in_param:=Form_peach.StringGridList.Cells[12,i];
+            if (upcase(ExtractFileExt(in_param))<>'.RAR') and (upcase(ExtractFileExt(in_param))<>'.ZIP') and (upcase(ExtractFileExt(in_param))<>'.ZIPX') then continue;
+            firstfile:=false;
+            if (upcase(ExtractFileExt(in_param))<>'.RAR') then readzipcomment(in_param,commpos,commsize,s)
+            else
+               begin
+               readrarcomment(in_param);
+               s:=unit_gwrap.rarcomment;
+               end;
+            FormComment.Caption:=txt_7_4_comment+' | '+inttostr(nsel)+' '+txt_selected_obj+' | '+ExtractFileName(in_param);
+            FormComment.MemoComment.Text:=s;
+            Unit14.incomment:=s;
+            FormComment.Showmodal;
+            if FormComment.ModalResult=mrOK then
+               begin
+               if (upcase(ExtractFileExt(in_param))<>'.RAR') then writezipcomment(in_param,commpos,commsize,s,FormComment.MemoComment.Text)
+               else wrirerarcomment(in_param);
+               end
+            else
+               exit;
+            end
+         else
+            begin
+            in_param:=Form_peach.StringGridList.Cells[12,i];
+            if (upcase(ExtractFileExt(in_param))<>'.RAR') and (upcase(ExtractFileExt(in_param))<>'.ZIP') and (upcase(ExtractFileExt(in_param))<>'.ZIPX') then continue;
+            if (upcase(ExtractFileExt(in_param))<>'.RAR') then readzipcomment(in_param,commpos,commsize,s);//need to find starting position suitable for the comment
+            if (upcase(ExtractFileExt(in_param))<>'.RAR') then writezipcomment(in_param,commpos,commsize,s,FormComment.MemoComment.Text)
+            else wrirerarcomment(in_param);
+            end;
+         end;
+   end;
+end;
+
+procedure setcomment;
+var
+   s:AnsiString;
+   commpos,commsize:int64;
+begin
+{$IFDEF MSWINDOWS}if Form_peach.PanelOpen.Visible=false{$ELSE}if Form_peach.PanelOpen.top<>0{$ENDIF} then exit;
+case fun of
+   'UN7Z':
+   begin
+   if (upcase(ExtractFileExt(Form_peach.EditOpenIn.Caption))<>'.RAR') and (upcase(ExtractFileExt(Form_peach.EditOpenIn.Caption))<>'.ZIP') and (upcase(ExtractFileExt(Form_peach.EditOpenIn.Caption))<>'.ZIPX') then exit;
+   if (upcase(ExtractFileExt(Form_peach.EditOpenIn.Caption))<>'.RAR') then readzipcomment(Form_peach.EditOpenIn.Caption,commpos,commsize,s)
+   else
+      begin
+      readrarcomment(Form_peach.EditOpenIn.Caption);
+      s:=unit_gwrap.rarcomment;
+      end;
+   FormComment.Caption:=txt_7_4_comment+' | '+ExtractFileName(Form_peach.EditOpenIn.Caption);
+   FormComment.MemoComment.Text:=s;
+   Unit14.incomment:=s;
+   FormComment.Showmodal;
+   if FormComment.ModalResult=mrOK then
+      begin
+      if (upcase(ExtractFileExt(Form_peach.EditOpenIn.Caption))<>'.RAR') then writezipcomment(Form_peach.EditOpenIn.Caption,commpos,commsize,s,FormComment.MemoComment.Text)
+      else wrirerarcomment(Form_peach.EditOpenIn.Caption);
+      end;
+   end;
+   'FILEBROWSER': setcomment_list;
+   end;
+end;
+
+procedure setcommentcl;
+var
+   i,firstfile:integer;
+   in_param,newcomment,s,dummy,commentfile:AnsiString;
+   commpos,commsize:int64;
+   fcomment: text;
+   fsize:qword;
+begin
+case paramstr(1) of
+   '-setcomment':
+   begin
+   firstfile:=3;
+   newcomment:=paramstr(2);
+   end;
+   '-setcommentf':
+   begin
+   firstfile:=3;
+   newcomment:='';
+   commentfile:=paramstr(2);
+   if commentfile<>'' then
+      begin
+      try
+      srcfilesize(commentfile,fsize);
+      if fsize=0 then exit;
+      assignfile(fcomment,commentfile);
+      filemode:=0;
+      reset(fcomment);
+      repeat
+         readln(fcomment,dummy);
+         newcomment:=newcomment+dummy+char($0D)+char($0A);
+      until eof(fcomment);
+      closefile(fcomment);
+      if length(newcomment)>2 then SetLength(newcomment,length(newcomment)-2);
+      if length(newcomment)>64*1024-16 then SetLength(newcomment,64*1024-16);//full 64K does not work with Rar.exe backend
+      except
+      try closefile(fcomment); except end;
+      end;
+      end;
+   end;
+   '-removecomment':
+   begin
+   firstfile:=2;
+   newcomment:='';
+   end;
+end;
+for i:=firstfile to ParamCount do
+   begin
+   in_param:=ExpandFileName((paramstr(i)));
+   if (upcase(ExtractFileExt(in_param))<>'.RAR') and (upcase(ExtractFileExt(in_param))<>'.ZIP') and (upcase(ExtractFileExt(in_param))<>'.ZIPX') then continue;
+   if (upcase(ExtractFileExt(in_param))<>'.RAR') then readzipcomment(in_param,commpos,commsize,s);
+   FormComment.MemoComment.Text:=newcomment;
+   if (upcase(ExtractFileExt(in_param))<>'.RAR') then writezipcomment(in_param,commpos,commsize,s,FormComment.MemoComment.Text)
+   else wrirerarcomment(in_param);
+   end;
+end;
+
+procedure TForm_peach.mcommentClick(Sender: TObject);
+begin
+setcomment;
+end;
+
 procedure TForm_peach.mdefarcsetClick(Sender: TObject);
 begin
 set_arcout_current;
@@ -63393,6 +63945,11 @@ end;
 procedure TForm_peach.pmmoreaddClick(Sender: TObject);
 begin
 do_add;
+end;
+
+procedure TForm_peach.pmmorecommentzipClick(Sender: TObject);
+begin
+setcomment;
 end;
 
 procedure TForm_peach.pmmoreconvertClick(Sender: TObject);
@@ -63846,6 +64403,11 @@ begin
 if filterbrowser=1 then setfilterbrowser(0) else setfilterbrowser(1);
 end;
 
+procedure TForm_peach.pmadvfClick(Sender: TObject);
+begin
+madvfiltersClick(Self);
+end;
+
 procedure TForm_peach.MenuItemColBeosClick(Sender: TObject);
 begin
 color3:=ColorToString($00005060);
@@ -63974,6 +64536,11 @@ end;
 procedure TForm_peach.po_clipClick(Sender: TObject);
 begin
 toggleclip;
+end;
+
+procedure TForm_peach.po_commentzipClick(Sender: TObject);
+begin
+setcomment;
 end;
 
 procedure TForm_peach.po_dedupClick(Sender: TObject);
@@ -65044,6 +65611,11 @@ subfun:=dummysubfun;
 Form_peach.EditOpenIn.Text:=dummyinf;
 end;
 
+procedure TForm_peach.mcommentrarClick(Sender: TObject);
+begin
+dospecfun('c');
+end;
+
 procedure rarspeclock;
 var
    cl,jobcode,outname:ansistring;
@@ -65060,11 +65632,6 @@ if upcase(extractfileext(Form_peach.EditOpenIn.Text))='.RAR' then
          P.Free;
          do_forcerefresh;
          end;
-end;
-
-procedure TForm_peach.pmmorecommentClick(Sender: TObject);
-begin
-dospecfun('c');
 end;
 
 procedure TForm_peach.pmmorelockClick(Sender: TObject);
@@ -65281,11 +65848,6 @@ end;
 procedure TForm_peach.po_analyzefoldersClick(Sender: TObject);
 begin
 analyzefolders('displayed');
-end;
-
-procedure TForm_peach.po_commentClick(Sender: TObject);
-begin
-dospecfun('c');
 end;
 
 procedure TForm_peach.po_hostnameClick(Sender: TObject);

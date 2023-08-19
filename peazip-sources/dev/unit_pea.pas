@@ -195,6 +195,7 @@ unit Unit_pea;
  1.11     20221208  G.Tani      Minor fixes
  1.12     20230218  G.Tani      Fixes, added conditional compilation sections for non-Windows systems
  1.13     20230620  G.Tani      Fixes, updated theming engine to support Contrast setting
+ 1.14     20230807  G.Tani      Added Blue-Ray pre-sets for file split
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -377,7 +378,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.13'; //declares release version for the whole build
+  P_RELEASE          = '1.14'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -7102,6 +7103,9 @@ begin
       7: vol_size:=4480*1024*1024;//size DVD+R
       8: vol_size:=8128*1024*1024;//size for DVD-R DL
       9: vol_size:=23040*1024*1024;//size for Blu-Ray
+      10: vol_size:=23040*1024*1024*2;//size for Blu-Ray DL
+      11: vol_size:=23040*1024*1024*4;//size for Blu-Ray XL3
+      12: vol_size:=23040*1024*1024*5;//size for Blu-Ray XL4
       end;
    case ComboBox3.ItemIndex of //volume checks
       0: vol_algo:='WHIRLPOOL';
@@ -7278,6 +7282,9 @@ with Form_pea do
       7: ImageSplit.Picture.Bitmap:=Bdvd;
       8: ImageSplit.Picture.Bitmap:=Bdvd;
       9: ImageSplit.Picture.Bitmap:=Bdvd;
+      10: ImageSplit.Picture.Bitmap:=Bdvd;
+      11: ImageSplit.Picture.Bitmap:=Bdvd;
+      12: ImageSplit.Picture.Bitmap:=Bdvd;
       end;
    end;
 end;

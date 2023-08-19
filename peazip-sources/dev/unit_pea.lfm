@@ -370,19 +370,23 @@ object Form_pea: TForm_pea
       Top = 24
       Width = 222
       BorderSpacing.Top = 24
-      DropDownCount = 9
+      DropDownCount = 15
       ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Custom size'
         '1.44 MB Floppy Disk'
-        '5 MB (attachment limit)'
         '10 MB (attachment limit)'
-        '600 MB CD'
+        '25 MB (attachment limit)'
+        '650 MB CD'
         '700 MB CD'
         '4 GB (max FAT32 file size)'
         '4.7 GB DVD'
         '8.5 GB DVD DL'
+        '25 GB Blu-Ray'
+        '50 GB Blu-Ray DL'
+        '100 GB Blu-Ray XL3'
+        '128 GB Blu-Ray XL4'
       )
       OnChange = ComboBox1Change
       ParentFont = False

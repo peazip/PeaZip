@@ -2247,8 +2247,8 @@ begin
     '.gnm': testext := 501; //Gnumeric spreadsheet
     '.pmdx', '.pmvx', '.tmdx', '.prdx': testext := 501; //SoftMaker Office compressed formats
     '.doc', '.dot', '.xls', '.xlt', '.ppt', '.pps', '.pot': testext := 502; //non executable COMPOUND files
-    '.docx', '.dotx', '.xlsx', '.xltx', '.pptx': testext := 502; //OPC MS Office 2007 compressed formats, treated as othes MS Office formats
-    '.mpp': testext := 502; //misc MS formats
+    '.docx', '.dotx', '.xlsx', '.xltx', '.pptx','.mpp': testext := 502; //MS compressed formats, treated as othes MS Office formats
+    '.iwa','.numbers','.pages','.key': testext := 502; //Apple iWork compressed IWA file types
     //misc formats to be handled primarily as non-archive:
     '.flv', //flash videos
     '.epub', //EPUB ebook (.zip variant)
@@ -2326,8 +2326,9 @@ case ext of
    '.db','.dbf','.mdb','.nsf': begin result:=50; exit; end;
    '.pps','.ppt','.odp': begin result:=50; exit; end;
    '.gif': begin result:=70; exit; end;
-   '.xlsx','.ods': begin result:=80; exit; end;
-   '.docx','.odt': begin result:=80; exit; end;
+   '.xlsx','.ods','.numbers': begin result:=80; exit; end;
+   '.docx','.odt','.pages': begin result:=80; exit; end;
+   '.pptx','.key': begin result:=80; exit; end;
    '.svg','.ps','.eps','.cdr','.ai','.psd','.psp': begin result:=80; exit; end;
    '.pdf': begin result:=90; exit; end;
    '.png': begin result:=90; exit; end;

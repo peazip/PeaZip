@@ -1,27 +1,59 @@
 object FormSelect: TFormSelect
-  Left = 844
-  Height = 220
-  Top = 788
-  Width = 480
+  Left = 819
+  Height = 275
+  Top = 655
+  Width = 600
   AutoSize = True
   Caption = 'Select'
-  ClientHeight = 220
-  ClientWidth = 480
+  ClientHeight = 275
+  ClientWidth = 600
   Color = clWindow
-  Constraints.MinHeight = 220
-  Constraints.MinWidth = 480
+  Constraints.MinHeight = 275
+  Constraints.MinWidth = 600
+  DesignTimePPI = 120
+  Icon.Data = {
+    7E03000000000100010010100000010018006803000016000000280000001000
+    0000200000000100180000000000000300006400000064000000000000000000
+    0000009F78009F7200A97700B87F00CD8900E39400E69600E69600E69600E696
+    00E69600E69600E69600E69600E69600E495009E7F00976C00AA4F00B34100A9
+    50009B6F00B87F00DC9100E69600E69600E69600E69600E69600E69600E69600
+    E29500A99400AD4B00BE3900C16700BE3600A85200966E00986F00BE8200E495
+    00E69600E69600E69600E69600E69600DD9400B8AD00B93900C37800C9D200C1
+    6400B53E00966E00966E00966E00A67600DD9100E69600E69600E69600E69600
+    D59300CCD400AF4800BF3E00C37900BE3900AA4F00976B00A25B00A557009968
+    009E7200D98F00E69600E69600E69600CB9200E3FB009C7400AE4A00B83900AD
+    4B009D6300B83900BE3400BE3600BC3500A25B009E7200DD9100E69600E49500
+    C09100E6FF00B7AE00966E00966D00966D00B53E00C05700C7BC00C8C500C275
+    00BC3500996800A67600E49500D69300BF9100E6FF00DCF000987300966E009D
+    6300BD3200C6A200C9D200C9D200C8C500BE3600A65500966E00BD8100C39100
+    BF9100E6FF00E6FF00BDBA00966E009A6700BD3300C59600C9D200C9D200C7BC
+    00BE3400A35900966E008E6E00B78C00BF9100E6FF00E6FF00E4FD00A68E0096
+    6E00B04600BF4400C59800C6A300C05800B83900976B00926D00836C009D7B00
+    BF9100E6FF00E6FF00E6FF00DDF1009E7F00976B00B04600BD3300BD3200B53E
+    009D6300A94F00A940009B4E00876D00BC8F00E6FF00E6FF00E6FF00E6FF00D9
+    EB009E7F00966E009A67009C6400966D00AC4B00B63800B86600B535009A5000
+    AC8500E6FF00E6FF00E6FF00E6FF00E6FF00DDF100A68E00966E00966E00926D
+    00B03800B97700C0D000B76300AA3D009C7B00E6FF00E6FF00E6FF00E6FF00E6
+    FF00E6FF00E4FD00BCB9008D7200836C00A24600B53C00B97700B538009C4D00
+    917400E6FF00E6FF00E6FF00E6FF00E6FF00E2FF00CCFF00B1FF00A6EF0093AB
+    00877100A14800AE3800A04900846A00897000E2FF00DFFF00D8FF00CCFF00BD
+    FF00ADFF00ABFF00ABFF00ABFF00ABFF00A9FB009ED20093AA008C9000877D00
+    8876000031350000302300003023000030230000323300003135000030230000
+    302300003023000032330000313500003023000030230000302300000A200000
+    2332
+  }
   Position = poScreenCenter
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.2.0.4'
   object ButtonPanel1: TButtonPanel
     AnchorSideLeft.Control = Owner
     AnchorSideRight.Control = Owner
-    Left = 12
-    Height = 26
-    Top = 182
-    Width = 456
-    BorderSpacing.Left = 12
-    BorderSpacing.Right = 12
-    BorderSpacing.Bottom = 12
+    Left = 15
+    Height = 30
+    Top = 230
+    Width = 570
+    BorderSpacing.Left = 15
+    BorderSpacing.Right = 15
+    BorderSpacing.Bottom = 15
     BorderSpacing.Around = 0
     OKButton.Name = 'OKButton'
     OKButton.DefaultCaption = True
@@ -44,15 +76,15 @@ object FormSelect: TFormSelect
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = ButtonPanel1
     Left = 0
-    Height = 158
+    Height = 200
     Top = 0
-    Width = 480
+    Width = 600
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Bottom = 24
+    BorderSpacing.Bottom = 30
     BevelOuter = bvNone
-    ClientHeight = 158
-    ClientWidth = 480
+    ClientHeight = 200
+    ClientWidth = 600
     TabOrder = 1
     object ComboBox1: TComboBox
       AnchorSideLeft.Control = ComboBox2
@@ -60,14 +92,14 @@ object FormSelect: TFormSelect
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = ComboBox2
       AnchorSideRight.Side = asrBottom
-      Left = 12
-      Height = 23
-      Top = 59
-      Width = 456
+      Left = 15
+      Height = 28
+      Top = 73
+      Width = 570
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Top = 12
+      BorderSpacing.Top = 15
       DropDownCount = 24
-      ItemHeight = 15
+      ItemHeight = 20
       Style = csDropDownList
       TabOrder = 0
     end
@@ -76,15 +108,15 @@ object FormSelect: TFormSelect
       AnchorSideTop.Control = PanelSelect
       AnchorSideRight.Control = PanelSelect
       AnchorSideRight.Side = asrBottom
-      Left = 12
-      Height = 23
-      Top = 24
-      Width = 456
+      Left = 15
+      Height = 28
+      Top = 30
+      Width = 570
       Anchors = [akTop, akLeft, akRight]
-      BorderSpacing.Left = 12
-      BorderSpacing.Top = 24
-      BorderSpacing.Right = 12
-      ItemHeight = 15
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 30
+      BorderSpacing.Right = 15
+      ItemHeight = 20
       Style = csDropDownList
       TabOrder = 1
     end
@@ -93,14 +125,13 @@ object FormSelect: TFormSelect
       AnchorSideTop.Control = ComboBox1
       AnchorSideTop.Side = asrBottom
       Cursor = crHandPoint
-      Left = 12
-      Height = 15
-      Top = 106
-      Width = 46
-      BorderSpacing.Top = 24
+      Left = 15
+      Height = 20
+      Top = 131
+      Width = 60
+      BorderSpacing.Top = 30
       Caption = 'Select all'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = Label1Click
     end
@@ -110,14 +141,13 @@ object FormSelect: TFormSelect
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
-      Left = 87
-      Height = 15
-      Top = 106
-      Width = 80
-      BorderSpacing.Left = 12
+      Left = 111
+      Height = 20
+      Top = 131
+      Width = 100
+      BorderSpacing.Left = 15
       Caption = 'Invert selection'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = Label3Click
     end
@@ -126,13 +156,12 @@ object FormSelect: TFormSelect
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrCenter
-      Left = 70
-      Height = 15
-      Top = 106
-      Width = 5
-      BorderSpacing.Left = 12
+      Left = 90
+      Height = 20
+      Top = 131
+      Width = 6
+      BorderSpacing.Left = 15
       Caption = '/'
-      ParentColor = False
       ParentFont = False
     end
     object Label5: TLabel
@@ -140,14 +169,13 @@ object FormSelect: TFormSelect
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrBottom
       Cursor = crHandPoint
-      Left = 12
-      Height = 15
-      Top = 133
-      Width = 87
-      BorderSpacing.Top = 12
+      Left = 15
+      Height = 20
+      Top = 166
+      Width = 110
+      BorderSpacing.Top = 15
       Caption = 'Sort by selection'
       Font.Color = 13391121
-      ParentColor = False
       ParentFont = False
       OnClick = Label5Click
     end

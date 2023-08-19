@@ -355,13 +355,13 @@ var
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,poutnamet,pcl,paction,pcapt,pbackground,psubfun,pfun:ansistring;
   pprogbar,pprogbarprev,perrors,iperc,ipercp,remtime,temperature,contrast,alttabstyle,highlighttabs,
   modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,ws_gw_height,ws_gw_width,
-  pbarh,pbarhsmall:integer;
+  pbarh,pbarhsmall,pjobcommentrar,pjobuserar:integer;
   pproglast,pprogfirst,pfromnativedrag,runelevated,pgook,perrignore,pcanignore,launched,
   stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall, needinteraction,
   exbackground,pldesigned,okseven:boolean;
   Binfo,Bp1,Bp2,Bp3,Bp4,Bp5,Bp6,Bp7,Bp8,Bsuccess,Berror: TBitmap;
   cl,cl1,outpath,executable_path,resource_path,binpath,sharepath,graphicsfolder,dummy,Color1,Color2,Color3,
-  Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver:ansistring;
+  Color4,Color5,caption_build,delimiter,confpath,peazippath,in_name,peazipver,rarcomment:ansistring;
   insize,progress,pinsize:qword;
   opacity,desk_env,pcount,optype,filesizebase,pautoclose:byte;
   T,conf:text;
@@ -1350,16 +1350,39 @@ begin
 try
 //details (not localized)
 stopinfo:=false;
-i:=8;
+s:='';
+if pjobuserar=1 then i:=2 else i:=8;
 rc:=Form_gwrap.StringGrid1.Rowcount;
 while stopinfo=false do
 begin
 i:=i+1;
-if i>=rc-1 then break;
+if i>=rc-1 then stopinfo:=true;
 dummystr:=Form_gwrap.StringGrid1.Cells[0,i];
-if length(dummystr)=0 then stopinfo:=true
-else s:=s+dummystr+char($0A)+char($0D);
+if pjobuserar=0 then
+   if dummystr='------------------- ----- ------------ ------------  ------------------------' then stopinfo:=true
+   else s:=s+dummystr+char($0D)//char($0A)+char($0D)
+else s:=s+dummystr+char($0D);
 end;
+//comment
+if pjobuserar=1 then  //unused, localized Rar.exe does not allow to easily detect "Comment not present" case
+   begin
+   rarcomment:=copy(s,1,Length(s)-2);
+   end
+else
+   begin
+   if length(s)>58 then s:=copy(s,1,Length(s)-1-58);
+   i:=pos('Comment',s)+10;
+   rarcomment:='';
+   if i>10 then rarcomment:=copy(s,i,Length(s)-i);
+   if length(rarcomment)>4 then
+      if (rarcomment[1]=char($0D)) and (rarcomment[2]='{') then rarcomment:=copy(rarcomment,4,Length(rarcomment)-5);
+   end;
+if pjobcommentrar=1 then
+   begin
+   gocancelall:=false;
+   Form_gwrap.Close;
+   exit;
+   end;
 //original size
 stopinfo:=false;
 dummystr:=Form_gwrap.StringGrid1.Cells[0,rc-2];
@@ -1415,7 +1438,17 @@ end;
 //presentation
 s:=extractfilename(in_name)+char($0A)+char($0D)+char($0A)+char($0D)+s1+char($0A)+char($0D)+txt_5_3_details+char($0A)+char($0D)+'------'+char($0A)+char($0D)+s;
 end
-else s:=exit_string;
+else
+   begin
+   if pjobcommentrar=1 then
+      begin
+      rarcomment:='';
+      gocancelall:=false;
+      Form_gwrap.Close;
+      exit;
+      end;
+   s:=exit_string;
+   end;
 pMessageInfoOK(s);
 gocancelall:=false;
 Form_gwrap.Close;

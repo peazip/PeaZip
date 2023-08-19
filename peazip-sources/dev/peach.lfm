@@ -73,9 +73,9 @@ object Form_peach: TForm_peach
     AnchorSideRight.Control = Options
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = GroupBoxCreateOut
-    Left = 1230
+    Left = 1393
     Height = 320
-    Top = 371
+    Top = 415
     Width = 1280
     Anchors = []
     BorderSpacing.Bottom = 22
@@ -419,9 +419,9 @@ object Form_peach: TForm_peach
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelnav
     AnchorSideBottom.Side = asrBottom
-    Left = 788
+    Left = 819
     Height = 411
-    Top = 1386
+    Top = 1438
     Width = 250
     Anchors = []
     BorderStyle = bsNone
@@ -1855,7 +1855,7 @@ object Form_peach: TForm_peach
             AnchorSideBottom.Side = asrCenter
             Left = 968
             Height = 20
-            Top = 1615278389
+            Top = 1143620448
             Width = 4
             Anchors = []
             BorderSpacing.Left = 10
@@ -11039,13 +11039,12 @@ object Form_peach: TForm_peach
               Top = 181
               Width = 325
               BorderSpacing.Top = 8
-              DropDownCount = 12
+              DropDownCount = 16
               ItemHeight = 20
               Items.Strings = (
                 'Single volume'
                 'Custom size'
                 '1.44 MB Floppy Disk'
-                '5 MB (attachment limit)'
                 '10 MB (attachment limit)'
                 '25 MB (attachment limit)'
                 '650 MB CD'
@@ -11053,6 +11052,10 @@ object Form_peach: TForm_peach
                 '4 GB (max FAT32 file size)'
                 '4.7 GB DVD'
                 '8.5 GB DVD DL'
+                '25 GB Blu-Ray'
+                '50 GB Blu-Ray DL'
+                '100 GB Blu-Ray XL3'
+                '128 GB Blu-Ray XL4 '
               )
               OnChange = ComboBoxArchive1Change
               ParentFont = False
@@ -14757,8 +14760,8 @@ object Form_peach: TForm_peach
     Title = ' '
     FilterIndex = 0
     Options = [ofCreatePrompt, ofEnableSizing, ofViewDetail]
-    Left = 593
-    Top = 633
+    Left = 624
+    Top = 593
   end
   object PopupMenu1: TPopupMenu
     Left = 570
@@ -15129,9 +15132,9 @@ object Form_peach: TForm_peach
         Caption = 'Save job'
         OnClick = mJobClick
       end
-      object pmCopyPath: TMenuItem
-        Caption = 'Copy path'
-        OnClick = pmCopyPathClick
+      object pmadvf: TMenuItem
+        Caption = 'pmadvf'
+        OnClick = pmadvfClick
       end
     end
     object MenuItem3: TMenuItem
@@ -15267,6 +15270,10 @@ object Form_peach: TForm_peach
       object MenuItemBookmarks: TMenuItem
         Caption = 'Add to bookmarks'
         OnClick = MenuItemBookmarksClick
+      end
+      object pmCopyPath: TMenuItem
+        Caption = 'Copy path'
+        OnClick = pmCopyPathClick
       end
       object MenuItemNavigate: TMenuItem
         Caption = 'Explore path (PeaZip)'
@@ -16508,6 +16515,11 @@ object Form_peach: TForm_peach
       object MenuItem32: TMenuItem
         Caption = '-'
       end
+      object mcomment: TMenuItem
+        Caption = 'Comment'
+        ShortCut = 32845
+        OnClick = mcommentClick
+      end
       object madvfilters: TMenuItem
         Caption = 'Set advanced filters'
         ShortCut = 24696
@@ -16819,6 +16831,10 @@ object Form_peach: TForm_peach
         Caption = 'Test'
         OnClick = po_testClick
       end
+      object po_commentzip: TMenuItem
+        Caption = 'Comment zip'
+        OnClick = po_commentzipClick
+      end
       object po_lock: TMenuItem
         Caption = 'Lock archive'
         Visible = False
@@ -16833,13 +16849,8 @@ object Form_peach: TForm_peach
         Caption = 'Recover archive'
         OnClick = po_recoverClick
       end
-      object po_comment: TMenuItem
-        Caption = 'Comment'
-        Visible = False
-        OnClick = po_commentClick
-      end
       object po_details: TMenuItem
-        Caption = 'Details'
+        Caption = 'Info and comments'
         OnClick = po_detailsClick
       end
       object MenuItemOpen_list: TMenuItem
@@ -16862,7 +16873,7 @@ object Form_peach: TForm_peach
         OnClick = po_listClick
       end
       object MenuItemOpen_info: TMenuItem
-        Caption = 'Info'
+        Caption = 'List with details'
         object MenuItemOpen_info_all: TMenuItem
           Caption = 'Info on all'
           OnClick = MenuItemOpen_info_allClick
@@ -16877,7 +16888,7 @@ object Form_peach: TForm_peach
         end
       end
       object po_info: TMenuItem
-        Caption = 'Info'
+        Caption = 'List with details'
         OnClick = po_infoClick
       end
       object MenuItem120: TMenuItem
@@ -17962,8 +17973,8 @@ object Form_peach: TForm_peach
   end
   object SaveDialog2: TSaveDialog
     Title = 'Save as'
-    Left = 1024
-    Top = 480
+    Left = 1016
+    Top = 456
   end
   object pmOpenPJ: TPopupMenu
     Left = 424
@@ -21093,7 +21104,7 @@ object Form_peach: TForm_peach
   object il_dtheme_tool32: TImageList
     Height = 96
     Width = 96
-    Left = 1048
+    Left = 1050
     Top = 220
     Bitmap = {
       4C7A120000006000000060000000060E00000000000078DAEDDDBD6F1B651CC0
@@ -21352,6 +21363,10 @@ object Form_peach: TForm_peach
       Caption = 'Test'
       OnClick = pmmoretestClick
     end
+    object pmmorecommentzip: TMenuItem
+      Caption = 'Comment zip'
+      OnClick = pmmorecommentzipClick
+    end
     object pmmorelock: TMenuItem
       Caption = 'Lock archive'
       Visible = False
@@ -21366,13 +21381,8 @@ object Form_peach: TForm_peach
       Caption = 'Recover archive'
       OnClick = pmmorerecoverClick
     end
-    object pmmorecomment: TMenuItem
-      Caption = 'Comment'
-      Visible = False
-      OnClick = pmmorecommentClick
-    end
     object pmmorefun_details: TMenuItem
-      Caption = 'Info'
+      Caption = 'Info and comments'
       OnClick = pmmorefun_detailsClick
     end
     object pmmorefun_list: TMenuItem
@@ -21582,8 +21592,8 @@ object Form_peach: TForm_peach
     Top = 20
   end
   object PopupMenuRename: TPopupMenu
-    Left = 544
-    Top = 33
+    Left = 560
+    Top = 10
     object pmr_lowercase: TMenuItem
       Caption = 'Lowercase'
       OnClick = pmr_lowercaseClick
@@ -24324,5 +24334,9 @@ object Form_peach: TForm_peach
   object pmmain: TPopupMenu
     Left = 16
     Top = 10
+  end
+  object MainMenu2: TMainMenu
+    Left = 701
+    Top = 139
   end
 end
