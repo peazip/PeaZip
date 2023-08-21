@@ -2,23 +2,23 @@
 Portuguese (Brazil) - Português
 9.4
 Translated by: Havokdan
-Last rev. by: 20190818
-Last rev.: 20190818
+Last rev. by: Giorgio Tani
+Last rev.: 20230723
 
 === PeaZip text group ===
 
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_4_r: ler
+txt_9_4_rw: ler/escrever
+txt_9_4_savecomment: Salvar comentário
+txt_9_4_hintcomment: Digite ou cole o comentário, carregue ou arraste o arquivo de comentário aqui.
+txt_9_3_continue: Continuar mesmo assim?
+txt_9_3_contrast: Contraste
+txt_9_3_fsd: O espaço livre no destino pode não ser suficiente
+txt_9_3_fsw: O espaço livre no caminho de trabalho temporário pode não ser suficiente
+txt_9_3_mrar: Definir manualmente o binário RAR
+txt_9_3_canedit: Este tipo de arquivo pode ser editado
+txt_9_3_canforce: Este tipo de arquivo pode ser editado (forçado)
+txt_9_3_cannotedit: Este tipo de arquivo não pode ser editado
 txt_9_2_7za: Apelido 7z/p7zip
 txt_9_2_changelog: Registro de alterações
 txt_9_2_tfaq: Verifique se há traduções
@@ -611,7 +611,7 @@ txt_2_7_un7z_browse_flat: tentar visualização plana (F6)
 txt_2_7_updating: Atualizando, adicionando ao arquivo existente:
 txt_2_6_folders: (Pastas)
 txt_2_6_advanced: Avançado
-txt_2_6_plalways: Sempre manter aberto para inspecionar o relatório da tarefa 
+txt_2_6_plalways: Sempre manter aberto para inspecionar o relatório da tarefa
 txt_2_6_plsmart: Manter aberto somente se necessário (erro, lista ou relatórios de teste)
 txt_2_5_sessionio: (nesta sessão)
 txt_2_5_advanced: Edição Avançada: colocar espaços entre as linhas de parâmetro e o nome do arquivo, se necessário
@@ -646,7 +646,7 @@ txt_2_4_wcommons: Comuns
 txt_2_4_copyfrom: Copiar de
 txt_2_4_deletebookmarks: Quer apagar a lista de arquivos e pastas dos marcadores?
 txt_2_4_documents: Meus Documentos
-txt_2_4_wenc: Enciclopédia 
+txt_2_4_wenc: Enciclopédia
 txt_2_4_extractfrom: Extrair de
 txt_2_4_hexp: Pré-visualização em Hex
 txt_2_4_operation: Operação
@@ -731,7 +731,7 @@ txt_appoptions: Opções de Aplicativo
 txt_type_description_arc: ARC: Formato experimental, poderoso, eficiente e cheio de recursos.
 txt_archive: Arquivo
 txt_un7z_browse_ok: Arquivo navegado com sucesso
-txt_interface: Interface navegador de arquivo 
+txt_interface: Interface navegador de arquivo
 txt_archivecreation: Criação de arquivo
 txt_tarbefore_hint: Arquivar dados no formato TAR antes do tipo especificado
 txt_archive_hint: Arquivar, comprimir, dividir e manter arquivos, pastas e volumes privados.
@@ -1313,7 +1313,7 @@ txt_time: Hora:
 === about text group ===
 
 EXTRAIR DE ARQUIVO (S)
-A partir do sistema
+A partir do sistema 
 - Clique direito do mouse sobre o arquivo (s) e no menu de contexto do sistema, clique em "Extrair aqui" ou "Extrair aqui (em nova pasta)" para extrair, sem interação mais
 - Utilizar de outra forma "Extrair..." entrada de menu para ter mais opções: saída caminho, senha, extrair os arquivos para um novo diretório, preferiu pular, renomear ou substituir arquivos existentes etc
 
@@ -1339,7 +1339,7 @@ A partir do sistema
 - Clique direito do mouse em objetos para ser arquivado e clique em "Adicionar ao arquivo" no menu de contexto ou no menu SendTo. Ele vai abrir o arquivo de diálogo de confirmação de criação, há mais opções disponíveis na aba "Avançado", clique em OK para criar o arquivo.
 - Em alternativa, arrastar os arquivos / pastas a janela PeaZip ou atalho, a interface de criação mesmo arquivo será mostrado.
 
-De PeaZip
+De PeaZip 
 - Selecionar os objetos a serem arquivados e clique no botão "Adicionar", a interface de criação mesmo arquivo será mostrado.
 
 Incluir arquivos / pastas PARA ATUALIZAR arquivo existente
@@ -1370,13 +1370,13 @@ Configurar o aplicativo
 Opções de localização> (e em Opções> Configurações guia, primeiro) permite definir o idioma do aplicativo.
 Opções> Configurações permite editar as configurações das aplicações
 Opções> Tema permite alterar os ícones de aplicativos e a aparência
-Opções de integração do Sistema> inicia um procedimento para configurar associações de arquivo, menu de contexto e as entradas do menu SendTo (no Windows)
+
 Organizar menu contém entrada para personalizar, ativar ou desativar recursos do navegador, como barra de ferramentas barra de endereços, barra de navegação, etc
 
 Ajuda F1
 F2 navegar no desktop / Ctrl + F2 navegar home / Shift + F2 navegar na raiz computador / Ctrl + Shift + F2 navegar raiz do arquivo, se estiver navegando dentro de um arquivo (caso contrário, procure raiz do computador)
 F3 pesquisa (opção recursividade é lembrado) / Ctrl + F3 início como não recursiva (pesquisa aqui) Shift / + F3 recursiva
-F4-se um nível
+
 F5 atualização
 F6 navegar vista / plana alternância
 F7 item a procurar mais recentemente visitados (Ctrl, segundo, Shift, terceiro)
@@ -1389,60 +1389,18 @@ F12 extrair tudo para ...
 CRIAR ARQUIVOS
 
 1) Adicionar itens a um layout de arquivo a partir do menu contexto do sistema e menu “Enviar para”, pelo arrastar e soltar ou botões e menus da aplicação;
-2) Clique em “Criar” para iniciar a criação de arquivo (caso contrário, você pode salvar o layout do arquivo para uso futuro).
 
-Uso:
-- Aba “Opções” ara personalizar o formato de arquivo e compressão, e encriptação de parâmetros relacionados; 
-- Aba "I/O" para as opções de entrada / saída;
+
+
+- Aba “Opções” ara personalizar o formato de arquivo e compressão, e encriptação de parâmetros relacionados;
+
 - Aba "Filtros" para a utilização de filtros de exclusão avançadas, se disponível para o formato de arquivo escolhido;
-- Aba "terminal"  para análise e personalização da sintaxe da tarefa, ou exportar a tarefa como linha de comando.
 
-Alternativamente, em uma única passagem você pode adicionar cada item de entrada para um arquivo separado pelo menu de contexto do sistema, e no menu “Enviar para” você pode adicionar vários itens para um único arquivo.
+
+
 
 No layout de arquivo que você pode também:
 - Duplo clique em um objeto para abri-lo
 - Selecione um arquivo e pressione "\" ou "ferramentas de arquivo> dividir arquivo" para dividi-los.
-- Selecione um arquivo e pressione "<" ou "ferramentas de arquivo> Compare arquivos" byte a byte para compará-lo com outro arquivo.
+
 - Selecione vários objetos e pressione "?" ou "Ferramentas de arquivo File> Checksum / hash do arquivo(s)" para checar a integridade dos arquivos
-- Selecione vários objetos e pressione "*" ou "Apagar Seguro (arquivos)" para exclusão de arquivos de forma segura
-
-
-ABRIR/EXTRAIR ARQUIVOS
-
-1) Abra o(s) arquivo(s) pelo menu contexto e/ou pelo menu “Enviar Para”, ou para associação do arquivo, ou selecione um ou mais arquivos pelo navegador do Peazip.
-2a) Clique em “Extrair tudo” para extrair o arquivo, ou “Extrair tudo para” para ser perguntado sobre o caminho de saída;
-2b) Clique duas vezes ou pressione “Enter” sob um arquivo para ver ele com o aplicativo associado, ou abra ele no Peazip se for um arquivo comprimido suportado, ou explore ele se for um diretório;
-2c) Selecione os objetos arquivados e pressione o botão do meio do mouse ou a barra de espaço para extraí-los (para ser perguntado sobre o caminho de saída);
-2d) Clique com botão direito do mouse no navegador do Peazip para usar itens do menu de contexto para executar todas as funções disponíveis, como extrair arquivos selecionados ou exibidos, prever, testar, listar, adicionar ou apagar arquivos etc...
-Dica: se você quiser extrair um arquivo para um novo diretório, use o comando “Extrair em uma nova pasta” no menu contexto (ou aba I/O ), ou pressione \ ou Ctrl+N enquanto no navegador de arquivo.
-
-Uso:
-- Aba “Opções” para personalizar o formato com parâmetros específicos;
-- Aba "I/O" para entrada / saída de opções, incluindo o comando "Extrair em uma nova pasta" (disponível também no menu de contexto);
-- Aba "Filtros" para a utilização de filtros avançados de inclusão e exclusão, se disponível para o formato de arquivo;
-- Aba "terminal" para análise da sintaxe e personalização de tarefa, ou exportação da tarefa como a linha de comando.
-
-Você pode extrair vários arquivos de uma só vez a partir do menu de contexto do sistema ou a partir do navegador PeaZip.
-
-Tipos de arquivos desconhecidos do PeaZip podem ser suportados (para criação e extração) através de um executável apropriado personalizado, selecionando formato “Personalizado” na aba “Opções”.
-
-
-MUDAR IDIOMA
-Interface de usuário está disponível em diferentes línguas: Ferramentas> Configurações> Localização
-
-
-SOBRE PEAZIP
-
-PeaZip é um aplicativo de código aberto e gerenciador de arquivos: multiplataforma, disponível como software portátil e instaláveis para 32 e 64 bits do Windows (9x, 2k, XP, Vista) e Linux (PeaZip é uma aplicação para desktop neutro).
-
-PeaZip permite aplicar vários poderosos filtros de pesquisa para o conteúdo do arquivo, criar e extrair arquivos de uma só vez, para criar arquivos auto-extraíveis, a definição de exportação trabalho como linha de comando; salvar layouts arquivar; arquivos favoritos e pastas; digitalizar e abrir com aplicações personalizadas comprimido e arquivos descompactados etc ..
-
-Outros Recursos: Forte criptografia, copia de arquivos robusta, dividir/juntar arquivos (file span), apagar seguro de dados, comparar, checksum e hash de arquivos, benchmark do sistema, geração randômica de senhas e arquivos chaves.
-
-Downloads: https://peazip.github.io
-Recursos e a lista completa de arquivos suportados: https://peazip.github.io/peazip-free-archiver.html
-Suporte: https://peazip.github.io/peazip-help.html
-FAQ: https://peazip.github.io/peazip-help-faq.html 
-
-Muito obrigado a todas as pessoas que contribuem para o crescimento projeto PeaZip, desenvolvendo componentes de software Open Source utilizados nesta aplicação (veja a lista completa site), e para todos os usuários contribuíram com comentários, experiências e conselhos.
-
