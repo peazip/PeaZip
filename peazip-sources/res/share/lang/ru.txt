@@ -7,10 +7,10 @@
 
 === PeaZip text group ===
 
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
+txt_9_4_r: чтение
+txt_9_4_rw: чтение/запись
+txt_9_4_savecomment: Сохранить комментарий
+txt_9_4_hintcomment: Введите или вставьте комментарий, загрузите или перетащите сюда файл комментария.
 txt_9_3_continue: Все равно продолжить?
 txt_9_3_contrast: Контраст
 txt_9_3_fsd: Свободного пространства в месте назначения может быть недостаточно
