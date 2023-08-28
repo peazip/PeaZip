@@ -3,22 +3,22 @@ Portuguese (Portugal) - Português
 9.4
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20230506
+Revisto em: 20230828
 
 === PeaZip text group ===
 
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_4_r: leitura
+txt_9_4_rw: leitura/escrita
+txt_9_4_savecomment: Guardar comentário
+txt_9_4_hintcomment: Escrever ou colar comentário, carregar ou arrastar um ficheiro de comentário para aqui.
+txt_9_3_continue: Continuar mesmo assim?
+txt_9_3_contrast: Contraste
+txt_9_3_fsd: O espaço livre no destino pode não ser suficiente
+txt_9_3_fsw: O espaço livre no caminho de trabalho temporário pode não ser suficiente
+txt_9_3_mrar: Definir manualmente o binário RAR
+txt_9_3_canedit: Este tipo de arquivo pode ser editado
+txt_9_3_canforce: Este tipo de arquivo pode ser editado (forçado)
+txt_9_3_cannotedit: Este tipo de arquivo não pode ser editado
 txt_9_2_7za: Pseudónimo 7z / p7zip
 txt_9_2_changelog: Registo de alterações
 txt_9_2_tfaq: Procurar traduções
