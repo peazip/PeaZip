@@ -2,15 +2,15 @@
 Simplified Chinese - 简体中文
 9.4
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye
-Last rev. by: Junde Yhi
-Last rev.: 20230716
+Last rev. by: yangyangdaji
+Last rev.: 20230901
 
 === PeaZip text group ===
 
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
+txt_9_4_r: 读取
+txt_9_4_rw: 读取/写入
+txt_9_4_savecomment: 保存注释
+txt_9_4_hintcomment: 在此处输入或粘贴注释，加载或拖拽注释文件到此处。
 txt_9_3_continue: 还要继续吗？
 txt_9_3_contrast: 对比度
 txt_9_3_fsd: 目标路径的可用空间可能不够
