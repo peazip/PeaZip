@@ -60,11 +60,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="181"/>
-        <CursorPos X="92" Y="190"/>
+        <TopLine Value="178"/>
+        <CursorPos Y="193"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
-          <Item0 X="9" Y="40023" ID="8"/>
+          <Item0 X="9" Y="40413" ID="8"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -72,8 +72,8 @@
       <Unit2>
         <Filename Value="list_utils.pas"/>
         <EditorIndex Value="16"/>
-        <TopLine Value="2227"/>
-        <CursorPos X="85" Y="2251"/>
+        <TopLine Value="1612"/>
+        <CursorPos Y="1617"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -138,7 +138,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit2"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="11" Y="35"/>
+        <TopLine Value="31"/>
+        <CursorPos X="33" Y="33"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1237,8 +1238,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit_gwrap"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="1807"/>
-        <CursorPos X="64" Y="1826"/>
+        <TopLine Value="1571"/>
+        <CursorPos X="13" Y="1594"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1490,123 +1491,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="peach.pas"/>
-        <Caret Line="41794" Column="35" TopLine="41762"/>
+        <Caret Line="10301" Column="60" TopLine="10280"/>
       </Position1>
       <Position2>
         <Filename Value="peach.pas"/>
-        <Caret Line="41973" Column="49" TopLine="41941"/>
+        <Caret Line="10302" Column="60" TopLine="10280"/>
       </Position2>
       <Position3>
         <Filename Value="peach.pas"/>
-        <Caret Line="62015" Column="16" TopLine="61983"/>
+        <Caret Line="10973" Column="27" TopLine="10952"/>
       </Position3>
       <Position4>
         <Filename Value="peach.pas"/>
-        <Caret Line="62320" Column="27" TopLine="62288"/>
+        <Caret Line="11152" Column="29" TopLine="11120"/>
       </Position4>
       <Position5>
         <Filename Value="peach.pas"/>
-        <Caret Line="62442" Column="18" TopLine="62410"/>
+        <Caret Line="11153" Column="32" TopLine="11121"/>
       </Position5>
       <Position6>
         <Filename Value="peach.pas"/>
-        <Caret Line="63535" Column="25" TopLine="63503"/>
+        <Caret Line="11168" Column="32" TopLine="11136"/>
       </Position6>
       <Position7>
         <Filename Value="peach.pas"/>
-        <Caret Line="38448" Column="15" TopLine="38428"/>
+        <Caret Line="11179" Column="27" TopLine="11147"/>
       </Position7>
       <Position8>
         <Filename Value="peach.pas"/>
-        <Caret Line="172" Column="40" TopLine="166"/>
+        <Caret Line="11180" Column="30" TopLine="11148"/>
       </Position8>
       <Position9>
         <Filename Value="peach.pas"/>
-        <Caret Line="176" Column="43" TopLine="166"/>
+        <Caret Line="11315" Column="31" TopLine="11283"/>
       </Position9>
       <Position10>
         <Filename Value="peach.pas"/>
-        <Caret Line="18670" Column="39" TopLine="18651"/>
+        <Caret Line="11837" Column="32" TopLine="11815"/>
       </Position10>
       <Position11>
         <Filename Value="peach.pas"/>
-        <Caret Line="19526" Column="24" TopLine="19494"/>
+        <Caret Line="3551" Column="95" TopLine="3548"/>
       </Position11>
       <Position12>
         <Filename Value="peach.pas"/>
-        <Caret Line="18214" Column="66" TopLine="18198"/>
+        <Caret Line="5718" Column="65" TopLine="5688"/>
       </Position12>
       <Position13>
         <Filename Value="peach.pas"/>
-        <Caret Line="18703" Column="21" TopLine="18671"/>
+        <Caret Line="6284" Column="45" TopLine="6257"/>
       </Position13>
       <Position14>
         <Filename Value="peach.pas"/>
-        <Caret Line="18671" Column="68" TopLine="18649"/>
+        <Caret Line="9423" Column="30" TopLine="9391"/>
       </Position14>
       <Position15>
         <Filename Value="peach.pas"/>
-        <Caret Line="18674" Column="38" TopLine="18649"/>
+        <Caret Line="10173" Column="27" TopLine="10147"/>
       </Position15>
       <Position16>
         <Filename Value="peach.pas"/>
-        <Caret Line="18650" Column="13" TopLine="18649"/>
+        <Caret Line="10174" Column="28" TopLine="10147"/>
       </Position16>
       <Position17>
         <Filename Value="peach.pas"/>
-        <Caret Line="18653" Column="22" TopLine="18649"/>
+        <Caret Line="10177" Column="33" TopLine="10147"/>
       </Position17>
       <Position18>
         <Filename Value="peach.pas"/>
-        <Caret Line="18673" Column="21" TopLine="18649"/>
+        <Caret Line="10298" Column="59" TopLine="10271"/>
       </Position18>
       <Position19>
         <Filename Value="peach.pas"/>
-        <Caret Line="18657" Column="50" TopLine="18649"/>
+        <Caret Line="11066" Column="64" TopLine="11058"/>
       </Position19>
       <Position20>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2250" Column="24" TopLine="2231"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="5717" Column="61" TopLine="5691"/>
       </Position20>
       <Position21>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2140" Column="24" TopLine="2130"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="6294" Column="52" TopLine="6269"/>
       </Position21>
       <Position22>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2250" Column="29" TopLine="2218"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="9436" Column="52" TopLine="9412"/>
       </Position22>
       <Position23>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2329" Column="10" TopLine="2297"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="10173" Column="27" TopLine="10141"/>
       </Position23>
       <Position24>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2250" Column="24" TopLine="2237"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="10174" Column="28" TopLine="10142"/>
       </Position24>
       <Position25>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2307" Column="15" TopLine="2297"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="10177" Column="33" TopLine="10145"/>
       </Position25>
       <Position26>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2309" Column="23" TopLine="2300"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="292" Column="56" TopLine="280"/>
       </Position26>
       <Position27>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2310" Column="38" TopLine="2300"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="5711" Column="11" TopLine="5679"/>
       </Position27>
       <Position28>
-        <Filename Value="list_utils.pas"/>
-        <Caret Line="2147" Column="35" TopLine="2140"/>
+        <Filename Value="peach.pas"/>
+        <Caret Line="5719" Column="53" TopLine="5703"/>
       </Position28>
       <Position29>
         <Filename Value="peach.pas"/>
-        <Caret Line="199" Column="31" TopLine="184"/>
+        <Caret Line="187" Column="20" TopLine="172"/>
       </Position29>
       <Position30>
         <Filename Value="peach.pas"/>
-        <Caret Line="38434" Column="27" TopLine="38417"/>
+        <Caret Line="10297" Column="73" TopLine="10283"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

@@ -1,13 +1,13 @@
 object FormWeb: TFormWeb
   Left = 133
-  Height = 400
+  Height = 320
   Top = 571
   Width = 600
   Caption = 'FormWeb'
-  ClientHeight = 400
+  ClientHeight = 320
   ClientWidth = 600
   Color = clWindow
-  Constraints.MinHeight = 400
+  Constraints.MinHeight = 320
   Constraints.MinWidth = 600
   Icon.Data = {
     7E0500000000010001001010FF00000000006805000016000000280000001000
@@ -64,7 +64,7 @@ object FormWeb: TFormWeb
     AnchorSideBottom.Control = Owner
     Left = 12
     Height = 26
-    Top = 362
+    Top = 282
     Width = 576
     BorderSpacing.Left = 12
     BorderSpacing.Top = 12
@@ -120,7 +120,7 @@ object FormWeb: TFormWeb
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = ButtonPanel1
     Left = 12
-    Height = 297
+    Height = 217
     Top = 53
     Width = 576
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -135,8 +135,8 @@ object FormWeb: TFormWeb
     ChildSizing.ShrinkHorizontal = crsScaleChilds
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclTopToBottomThenLeftToRight
-    ChildSizing.ControlsPerLine = 8
-    ClientHeight = 277
+    ChildSizing.ControlsPerLine = 6
+    ClientHeight = 197
     ClientWidth = 572
     ColumnLayout = clVerticalThenHorizontal
     Columns = 3
@@ -146,22 +146,16 @@ object FormWeb: TFormWeb
       'Bing'
       'Britannica'
       'DuckDuckGo'
-      'eBay'
-      'Facebook'
       'GitHub'
       'Google'
-      'Google Maps'
-      'Google News'
       'Google Translate'
       'IMDB'
-      'Instagram'
       'LinkedIn'
-      'OSDN'
-      'Pinterest'
       'Reddit'
+      'Repology'
       'SourceForge'
       'Stackoverflow'
-      'Twitter'
+      'Wikibooks'
       'Wikipedia'
       'Wiktionary'
       'YouTube'
@@ -169,7 +163,7 @@ object FormWeb: TFormWeb
     OnItemClick = CheckGroup1ItemClick
     TabOrder = 2
     Data = {
-      18000000020202020202020202020202020202020202020202020202
+      12000000020202020202020202020202020202020202
     }
   end
 end

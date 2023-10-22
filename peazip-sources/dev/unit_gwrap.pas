@@ -1560,13 +1560,21 @@ Form_gwrap.LabelTitle4.Visible:=true;
 ipercp:=0;
 iperc:=0;
 remtime:=0;
-ppause:=false;
-Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
-prevpause:=false;
 if cl='' then
    begin
    pMessageErrorOK(txt_nocl);
    Application.Terminate;
+   end;
+if pprogfirst=true then
+   begin
+   ppause:=false;
+   Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
+   prevpause:=false;
+   end;
+if ppause=false then
+   begin
+   Form_gwrap.ShapeProgress.Color:=PGREEN;
+   Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
    end;
 Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
 Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
@@ -1583,7 +1591,7 @@ if runelevated=false then
    P.CommandLine:=(cl);
    M := TMemoryStream.Create;
    BytesRead := 0;
-   M.setsize(16*1024*1024);
+   M.setsize(32*1024);
    M2 := TMemoryStream.Create;
    BytesRead2 := 0;
    M2.setsize(128);
@@ -1696,10 +1704,7 @@ else
       begin
       if P.output.NumBytesAvailable>0 then
          begin
-         if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
-         if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
-         if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
-         if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + max_l);
+         if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + 8*1024*1024);
          i := P.Output.Read((M.Memory + BytesRead)^, max_l);
          end
       else i:=0;
@@ -1756,10 +1761,7 @@ if runelevated=false then
       else
          begin
             repeat
-               if (BytesRead<(32*1024*1024)) then if BytesRead+4*1024>=16*1024*1024 then M.SetSize(32*1024*1024);
-               if (BytesRead>=(32*1024*1024)) and (BytesRead<(64*1024*1024)) then if BytesRead+4*1024>=32*1024*1024 then M.SetSize(64*1024*1024);
-               if (BytesRead>=(64*1024*1024)) and (BytesRead<(192*1024*1024)) then if BytesRead+4*1024>=64*1024*1024 then M.SetSize(192*1024*1024);
-               if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + max_l);
+               if BytesRead+max_l>=M.Size then M.SetSize(BytesRead + 8*1024*1024);
                i := P.Output.Read((M.Memory + BytesRead)^, max_l);
                if i>0 then
                   begin
@@ -1873,8 +1875,6 @@ if modeofuse>=20 then
 if exit_code=0 then
    begin
    Form_gwrap.Imagestatus.Picture.Bitmap:=Bsuccess;
-   Form_gwrap.ShapeProgress.Color:=PGREEN;
-   Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
    end
 else
    begin
@@ -2337,8 +2337,6 @@ if okseven=true then
    except
    end;
 {$ENDIF}
-Form_gwrap.ShapeProgress.Color:=PGREEN;
-Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
 if insize=0 then
    begin
    Form_gwrap.Labeli.Visible:=false;

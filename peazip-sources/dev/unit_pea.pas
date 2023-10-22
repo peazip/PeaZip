@@ -196,6 +196,7 @@ unit Unit_pea;
  1.12     20230218  G.Tani      Fixes, added conditional compilation sections for non-Windows systems
  1.13     20230620  G.Tani      Fixes, updated theming engine to support Contrast setting
  1.14     20230807  G.Tani      Added Blue-Ray pre-sets for file split
+ 1.15     20231020  G.Tani      Added context menu item to chacksum/hash screen to save selected CRC or hash value for all listed files, compatible with Coreutils sha256sum and similar utilities
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -378,7 +379,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.14'; //declares release version for the whole build
+  P_RELEASE          = '1.15'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)

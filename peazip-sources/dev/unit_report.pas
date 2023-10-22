@@ -94,6 +94,7 @@ type
     Memo1: TMemo;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
     Notebook1: TPageControl;
     InputT: TTabSheet;
     OutputT: TTabSheet;
@@ -121,6 +122,7 @@ type
     procedure LabelTitleREP2MouseLeave(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
     procedure StringGrid1HeaderClick(Sender: TObject; IsColumn: Boolean;
       Index: Integer);
     procedure StringGrid1MouseDown(Sender: TObject; Button: TMouseButton;
@@ -338,6 +340,30 @@ closefile(t);
 end;
 end;
 
+procedure save_hashfn;
+var
+x,y:dword;
+s,p:ansistring;
+begin
+{$IFDEF MSWINDOWS}wingetdesk(p);{$ELSE}get_desktop_path(p);{$ENDIF}
+if p[length(p)]=directoryseparator then setlength(p,length(p)-1);
+s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+extractfilename(p)+'.txt';
+p:=p+DirectorySeparator;
+
+if s<>'' then
+begin
+assignfile(t,s);
+rewrite(t);
+write_header(t);
+for x:=1 to Form_report.StringGrid1.RowCount-1 do //***
+   begin
+   if Form_report.StringGrid1.Cells[0,x]='* Digest *' then break;
+   writeln(t,Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,x]+'  '+Form_report.StringGrid1.Cells[1,x]);
+   end;
+closefile(t);
+end;
+end;
+
 { TForm_report }
 
 procedure conditional_stop;
@@ -500,6 +526,11 @@ if StringGrid1.Row>0 then
    end;
 end;
 
+procedure TForm_report.MenuItem3Click(Sender: TObject);
+begin
+save_hashfn;
+end;
+
 procedure TForm_report.StringGrid1HeaderClick(Sender: TObject;
   IsColumn: Boolean; Index: Integer);
 var i:integer;
@@ -515,6 +546,7 @@ end;
 
 procedure crcmenuenable(en:boolean);
 begin
+Form_report.MenuItem3.Enabled:=en;
 Form_report.MenuItem1.Enabled:=en;
 Form_report.MenuItem2.Enabled:=en;
 end;
@@ -528,13 +560,16 @@ StringGrid1.Col:=col;
 if (StringGrid1.Col>7) and (StringGrid1.Col<25) then
    begin
    crcmenuenable(true);
-   MenuItem1.Caption:='Save '+StringGrid1.Cells[StringGrid1.Col,0]+' value';
+   MenuItem1.Caption:='Save '+StringGrid1.Cells[StringGrid1.Col,0]+' value of this file';
+   MenuItem3.Caption:='Save '+StringGrid1.Cells[StringGrid1.Col,0]+' values and file names';
    end
 else
    begin
    crcmenuenable(true);
-   MenuItem1.Caption:='Save selected CRC or hash value';
+   MenuItem1.Caption:='Save selected CRC or hash value of this file';
+   MenuItem3.Caption:='Save selected CRC or hash values and file names';
    MenuItem1.Enabled:=false;
+   MenuItem3.Enabled:=false;
    end;
 if StringGrid1.Cells[0,StringGrid1.Row]='* Digest *' then crcmenuenable(false);
 end;

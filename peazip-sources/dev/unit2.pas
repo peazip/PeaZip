@@ -36,7 +36,7 @@ procedure clearcb;
 var
    i:integer;
 begin
-for i:=0 to 23 do FormWeb.CheckGroup1.Checked[i]:=false;
+for i:=0 to 17 do FormWeb.CheckGroup1.Checked[i]:=false;
 end;
 
 procedure TFormWeb.CheckBox1Click(Sender: TObject);
@@ -46,7 +46,7 @@ begin
 if CheckBox1.State=cbUnchecked then
    begin
    j:=10;
-   for i:=0 to 23 do
+   for i:=0 to 17 do
       if FormWeb.CheckGroup1.Checked[i]=true then
       begin
       j:=i;

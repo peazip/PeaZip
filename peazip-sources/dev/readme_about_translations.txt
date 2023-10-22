@@ -1,15 +1,16 @@
-﻿Notes to 9.3.0 release
+﻿Notes to 9.5.0 release
 
-Modified existing text:
-txt_9_2_swt: Swap Tab bar / Address bar
-txt_2_4_path: path is not writeable (i.e. full, or read-only). Do you want to select a writeable output path?
+Modified existing text strings:
+txt_8_0_forcetypinghelp: If supported by the backend, the task will prompt interactively for password. LIMITATIONS: task will run in console, will not run unattended, and cannot browse archives with encrypted filenames. 
+txt_7_6_zipenc: ZIP filenames encoding
+
 
 = GENERAL NOTES =
 
-Language files needs top be saved as "UTF-8 with BOM" txt files.
+Language files needs to be saved as "UTF-8 with BOM" txt files, and can be found in (peazip)/res/share/lang subfolder of PeaZip application.
+If you see untransalted strings in the app or in the language file, most likely newly added text lines, it means the language needs a translator to take care updating the language file: your help is always welcome!
 This package, named peazip-x.y.about_translations.zip, contains data and information for translators. 
 It can be found in "PeaZip translations" download page, and also on other repositories of PeaZip project.
-Texts are in (peazip)/res/share/lang subfolder of packages.
 
 = HOW TO TRANSLATE THE APPLICATION =
 
