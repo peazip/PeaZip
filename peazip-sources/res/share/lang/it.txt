@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.4
+9.5
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20230614
 
 === PeaZip text group ===
 
+txt_9_5_all: Tutti
+txt_9_5_precond: Analizza gli archivi con errori in apertura
+txt_9_5_largea: Analizza gli archivi (grandi) all'apertura
+txt_9_5_mediuma: Analizza gli archivi (medi) all'apertura
+txt_9_5_smalla: Analizza gli archivi (piccoli) all'apertura
+txt_9_5_reopentab: Riapri ultimo tab
+txt_9_5_savetabs: Salva tab
+txt_9_5_sb: Usa i binari nei percorsi di sistema
 txt_9_4_r: lettura
 txt_9_4_rw: lettura/scrittura
 txt_9_4_savecomment: Salva commento
@@ -109,7 +117,7 @@ txt_8_2_tm: Modifica
 txt_8_2_skipet: Non testare cifratura
 txt_8_2_alltimes: Salva tutte le date
 txt_8_2_supportedby: Supportato da
-txt_8_1_preparse: Analizza gli archivi all'apertura
+txt_8_1_preparse: Analizza tutti gli archivi all'apertura
 txt_8_1_bo: Ottimizzazione del browser
 txt_8_1_bop: E' possibile mostrare più files regolando l'ottimizzazione del browser in Opzioni > Impostazioni, tab Generale.
 txt_8_1_nopreparse: Non analizzare gli archivi all'apertura

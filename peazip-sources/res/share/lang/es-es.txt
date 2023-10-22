@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Spanish - Español
-9.4
+9.5
 Traducido por: Francisco Javier F. Serrador, Mario López, Nosi_982, Anonymous, José M. Ciordia
 Last rev. by: José M. Ciordia
 Last rev.: 20180510
 
 === PeaZip text group ===
 
+txt_9_5_all: All
+txt_9_5_precond: Pre-parse if errors are detected
+txt_9_5_largea: Pre-parse large archives
+txt_9_5_mediuma: Pre-parse medium archives
+txt_9_5_smalla: Pre-parse small archives
+txt_9_5_reopentab: Reopen last tab
+txt_9_5_savetabs: Save tabs
+txt_9_5_sb: Use binaries in system paths
 txt_9_4_r: read
 txt_9_4_rw: read/write
 txt_9_4_savecomment: Save comment

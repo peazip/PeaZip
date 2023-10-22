@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
-9.4
+9.5
 번역자: Sleepy
 최근 교정: (please update translation)
 교정 일자: 20110531
 
 === PeaZip text group ===
 
+txt_9_5_all: All
+txt_9_5_precond: Pre-parse if errors are detected
+txt_9_5_largea: Pre-parse large archives
+txt_9_5_mediuma: Pre-parse medium archives
+txt_9_5_smalla: Pre-parse small archives
+txt_9_5_reopentab: Reopen last tab
+txt_9_5_savetabs: Save tabs
+txt_9_5_sb: Use binaries in system paths
 txt_9_4_r: read
 txt_9_4_rw: read/write
 txt_9_4_savecomment: Save comment
