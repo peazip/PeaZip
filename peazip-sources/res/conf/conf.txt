@@ -237,12 +237,12 @@ PeaZip
 13
 1
 240
-72
-72
-72
-144
-48
-72
+80
+80
+80
+160
+60
+100
 0
 
 [extract to new folder]
@@ -540,7 +540,7 @@ Computer's root
 100
 2
 
-[advanced 7z/p7zip compression settings]
+[advanced 7z / p7zip compression settings]
 0
 4
 0
@@ -554,11 +554,11 @@ Computer's root
 0
 0
 
-[Custom other parameters for 7z/p7zip and Arc]
+[Custom other parameters for 7z / p7zip and Arc]
 
 
 
-[set 7z/p7zip archive time from most recent file time]
+[set 7z / p7zip archive time from most recent file time]
 0
 
 [maximize Brotli compression using larger memory --large_window=27 (may be incompatible with some Brotli extractors)]
@@ -675,7 +675,7 @@ Computer's root
 0
 0
 1
-144
+160
 
 [preferred checksum and hash algorithms]
 CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
@@ -728,7 +728,7 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 [tool bar large icon size]
 0
 
-[7z/p7zip do not change last access time]
+[7z / p7zip do not change last access time]
 0
 
 [WIM, TAR store hard links as links]
@@ -779,7 +779,10 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 
 [extended columns, comments]
 0
-72
+100
 
 [Manually set RAR binary]
+0
+
+[Save open tabs on exit]
 0
