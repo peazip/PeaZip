@@ -3,18 +3,18 @@ Portuguese (Brazil) - Português
 9.5
 Translated by: Havokdan
 Last rev. by: Giorgio Tani
-Last rev.: 20230723
+Last rev.: 20231009
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_all: Todos
+txt_9_5_precond: Pré-analisar se erros forem detectados
+txt_9_5_largea: Pré-analisar arquivos grandes
+txt_9_5_mediuma: Pré-analisar arquivos médios
+txt_9_5_smalla: Pré-analisar arquivos pequenos
+txt_9_5_reopentab: Reabrir a última aba
+txt_9_5_savetabs: Salvar abas
+txt_9_5_sb: Use binários em caminhos do sistema
 txt_9_4_r: ler
 txt_9_4_rw: ler/escrever
 txt_9_4_savecomment: Salvar comentário
@@ -136,7 +136,7 @@ txt_8_0_defaultaction: Ação padrão ao iniciar
 txt_8_0_enableextand: Ativar "Extrair e abrir com" submenu
 txt_8_0_forcetyping: Forçar digitar senhas interativamente
 txt_8_0_setpwopt: Definir opções de senha / arquivo-chave
-txt_8_0_forcetypinghelp: Executará binários de backend no console, não pode procurar arquivos com nomes de arquivos criptografados. Permite criar scripts que não serão executados sem supervisão, mas solicitar usuário interativamente para senha.
+txt_8_0_forcetypinghelp: Se for compatível com o backend, a tarefa solicitará a senha de forma interativa. LIMITAÇÕES: a tarefa será executada no console, não será executada de forma autônoma e não poderá navegar em arquivos com nomes de arquivos criptografados.
 txt_7_9_spacing: Espaçamento
 txt_7_9_zooming: Ampliação
 txt_7_8_changelocalization: Mudar idioma do PeaZip
@@ -157,7 +157,7 @@ txt_7_7_outtemp: Saída, prévia em temp do Usuário
 txt_7_7_sys7zreq: Requer p7zip-full ou equivalente para ser instalado
 txt_7_7_tw: Pasta de trabalho temporária para criação de arquivo, edição, visualização e extração de arrastar e soltar.
 txt_7_7_sys7z: Usar o sistema 7z no Linux
-txt_7_6_zipenc: Codificação de nomes de arquivos ZIP 7z/p7zip
+txt_7_6_zipenc: Codificação de nomes de arquivos ZIP
 txt_7_6_color: Cor
 txt_7_6_custenc: Página de código personalizada
 txt_7_6_dark: Escuro
@@ -721,7 +721,7 @@ txt_add_tobookmarks: Adicionar para os favoritos
 txt_address_hint: Endereço: aceitar coringas ? para caractere e * para linhas, não precisa de delimitadores   " ou '
 txt_adv_filters: Filtros avançados
 txt_algo: Algoritmo
-txt_all: Tudo
+txt_all: todos
 txt_all_default: Tudo (padrão)
 txt_all_type: Todos os objetos do tipo
 txt_all_date: Todos os objetos com data...
