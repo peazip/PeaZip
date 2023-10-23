@@ -3,18 +3,18 @@ Norwegian - Norsk
 9.5
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20230821
+Sist revidert: 20231023
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_all: Alt
+txt_9_5_precond: Forhåndsanalyser hvis feil oppdages
+txt_9_5_largea: Forhåndsanalyser store arkiv
+txt_9_5_mediuma: Forhåndsanalyser mellomstore arkiv
+txt_9_5_smalla: Forhåndsanalyser små arkiv
+txt_9_5_reopentab: Gjenåpne siste fane
+txt_9_5_savetabs: Lagre faner
+txt_9_5_sb: Bruk binærfiler i systemstier
 txt_9_4_r: les
 txt_9_4_rw: les/skriv
 txt_9_4_savecomment: Lagre kommentar
@@ -49,8 +49,8 @@ txt_9_0_showmainmenu: åpne hovedmeny
 txt_9_0_navmenu: åpne navigasjonsmeny
 txt_9_0_plugind: åpne program og plugin katalog
 txt_9_0_df: sorter mapper foran filer
-txt_9_0_hl: lagre 'hard links' som 'links'
-txt_9_0_sl: lagre 'symbolic links' som 'links'
+txt_9_0_hl: Lagre 'hard links' som 'links'
+txt_9_0_sl: Lagre 'symbolic links' som 'links'
 txt_9_0_tnav: veksle sidestolpe, tre-vising, ingen
 txt_8_9_empty: arkivet virker tomt
 txt_8_9_disp: viser arkiv-innhold
