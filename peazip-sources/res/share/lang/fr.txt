@@ -3,18 +3,18 @@ Français
 9.5
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 19.08.2023
+Date du: 23.10.2023
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_all: Tous
+txt_9_5_precond: Pré-analyse si des erreurs sont détectées
+txt_9_5_largea: Pré-analyse d’archives volumineuses
+txt_9_5_mediuma: Pré-analyse des archives de supports
+txt_9_5_smalla: Pré-analyse des petites archives
+txt_9_5_reopentab: Rouvrir le dernier onglet
+txt_9_5_savetabs: Onglets d’enregistrement
+txt_9_5_sb: Utiliser des fichiers binaires dans les chemins au système
 txt_9_4_r: lecture
 txt_9_4_rw: lecture/écriture
 txt_9_4_savecomment: Enregistrer un commentaire
