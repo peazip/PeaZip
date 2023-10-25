@@ -2,19 +2,19 @@
 Simplified Chinese - 简体中文
 9.5
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye
-Last rev. by: yangyangdaji
-Last rev.: 20230901
+Last rev. by: Junde Yhi
+Last rev.: 20231025
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_all: 全部
+txt_9_5_precond: 检测到错误时再预解析
+txt_9_5_largea: 预解析大的归档文件
+txt_9_5_mediuma: 预解析中等大小的归档文件
+txt_9_5_smalla: 预解析小归档文件
+txt_9_5_reopentab: 重新打开上一个标签页
+txt_9_5_savetabs: 保存标签页
+txt_9_5_sb: 使用系统路径中的可执行文件
 txt_9_4_r: 读取
 txt_9_4_rw: 读取/写入
 txt_9_4_savecomment: 保存注释
@@ -136,7 +136,7 @@ txt_8_0_defaultaction: 输入时的默认动作
 txt_8_0_enableextand: 启用“提取并以…打开”子菜单
 txt_8_0_forcetyping: 强制交互式输入密码
 txt_8_0_setpwopt: 设置密码或密钥文件选项
-txt_8_0_forcetypinghelp: 将在控制台运行后端程序，此时将不能浏览带加密文件名的归档文件。允许创建交互式询问用户密码而非无人值守的脚本。
+txt_8_0_forcetypinghelp: 如果后端支持，此任务将交互式地询问密码。受到的限制：任务将在控制台中运行，不能无人值守，也不能浏览带加密文件名的归档文件。
 txt_7_9_spacing: 间隔
 txt_7_9_zooming: 缩放
 txt_7_8_changelocalization: 更改 PeaZip 的语言
@@ -157,7 +157,7 @@ txt_7_7_outtemp: 输出，在用户的临时目录里预览
 txt_7_7_sys7zreq: 需要安装 7z、7-Zip，或 p7zip，或与其兼容的软件包
 txt_7_7_tw: 用于归档文件创建、修改、预览和拖放提取的临时工作文件夹
 txt_7_7_sys7z: 使用系统 7z（如有）
-txt_7_6_zipenc: 7z / p7zip 的 ZIP 文件名编码
+txt_7_6_zipenc: ZIP 文件名编码
 txt_7_6_color: 颜色
 txt_7_6_custenc: 自定义代码页
 txt_7_6_dark: 更暗
