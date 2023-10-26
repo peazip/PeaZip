@@ -1,20 +1,20 @@
-﻿=== PeaZip language file ===
+=== PeaZip language file ===
 Portuguese (Portugal) - Português
 9.5
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Hugo Carvalho 
-Revisto em: 20230828
+Revisto em: 20231026
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_all: Tudo
+txt_9_5_precond: Pré-análise se forem detetados erros
+txt_9_5_largea: Pré-análise de arquivos grandes
+txt_9_5_mediuma: Pré-análise de arquivos normais
+txt_9_5_smalla: Pré-análise de arquivos pequenos
+txt_9_5_reopentab: Reabrir último separador
+txt_9_5_savetabs: Guardar separadores
+txt_9_5_sb: Utilizar binários nos caminhos do sistema
 txt_9_4_r: leitura
 txt_9_4_rw: leitura/escrita
 txt_9_4_savecomment: Guardar comentário
@@ -30,17 +30,17 @@ txt_9_3_cannotedit: Este tipo de arquivo não pode ser editado
 txt_9_2_7za: Pseudónimo 7z / p7zip
 txt_9_2_changelog: Registo de alterações
 txt_9_2_tfaq: Procurar traduções
-txt_9_2_compact: Modo compacto
-txt_9_2_swt: Alternar entre barra de separadores/barra de endereço
-txt_9_2_tos: TOS, Privacidade
-txt_9_2_doc: Analisar documentação, rastreador de problemas...
+txt_9_2_compact: Compacto
+txt_9_2_swt: Comutar entre barra de separadores/barra de endereço
+txt_9_2_tos: Termos do serviço e privacidade
+txt_9_2_doc: Ver documentação, acompanhar resolução de problemas...
 txt_9_2_updates: Procurar atualizações, binários, plugins...
-txt_9_1_7zs: Nível de sintaxe 7z / p7zip
-txt_9_1_ac: Os scripts de conversão de arquivos permitem a interação do utilizador
+txt_9_1_7zs: Nível de sintaxe 7z/p7zip
+txt_9_1_ac: Os scripts de conversão de arquivos permitem interação com o utilizador
 txt_9_1_closeall: Fechar tudo
 txt_9_1_enlargeicons: Ampliar ícones do explorador de ficheiros
-txt_9_1_ef: Excluir pastas vazias das operações de arquivamento e extração (7z / p7zip)
-txt_9_1_nw: Abrir numa nova janela
+txt_9_1_ef: Excluir pastas vazias das operações de arquivo e extração (7z/p7zip)
+txt_9_1_nw: Abrir em nova janela
 txt_9_1_qdup: Usar rotina de deduplicação rápida
 txt_9_0_autoexttar: Extrair arquivo TAR automaticamente a partir de ficheiros TAR.*
 txt_9_0_accesstime: Não alterar hora do último acesso
@@ -48,22 +48,22 @@ txt_9_0_mem: Utilização máxima de memória
 txt_9_0_showmainmenu: Abrir menu principal
 txt_9_0_navmenu: Abrir menu de navegação
 txt_9_0_plugind: Abrir pasta de binários e de plugins
-txt_9_0_df: Mostrar pastas antes dos ficheiros
+txt_9_0_df: Mostrar pastas acima dos ficheiros
 txt_9_0_hl: Guardar "hard links" como ligações
 txt_9_0_sl: Guardar ligações simbólicas como ligações
-txt_9_0_tnav: Comutar barra lateral, vista em árvore, nada
-txt_8_9_empty: O arquivo parece estar vazio
+txt_9_0_tnav: Comutar entre barra lateral, vista em árvore, nada
+txt_8_9_empty: Parece que o arquivo está vazio
 txt_8_9_disp: Mostrar conteúdo do arquivo
-txt_8_9_parsing: Analisar o conteúdo do arquivo
+txt_8_9_parsing: Analisar conteúdo do arquivo
 txt_8_9_stoptest: Parar para analisar o relatório (erros, listas, testes, autotestes)
-txt_8_9_ttb: Alternar entre barras de ferramentas
+txt_8_9_ttb: Comutar barras de ferramentas
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
 txt_8_8_cb: Cor do botão
 txt_8_8_centered: Centrar botões
 txt_8_8_light: Claro
 txt_8_8_lnk: Ligação
-txt_8_8_intnote: Tenha em atenção que a opção "Extração interativa" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola.
+txt_8_8_intnote: Tenha em atenção que a opção "Extrair e mover para o destino" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola.
 txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
 txt_8_8_sm: Ícones pequenos
 txt_8_8_solcol: Barra de navegação
@@ -74,15 +74,15 @@ txt_8_8_altt: Estilo dos separadores
 txt_8_8_autotest: Testar arquivos após criação (se suportado pelo formato)
 txt_8_8_cw: Cor da janela
 txt_8_7_csvhelp: "," padrão internacional, ";" utilizado nos idiomas latinos
-txt_8_7_after: Após extrair/arquivar
+txt_8_7_after: Após arquivar/extrair
 txt_8_7_bintest: binários testados.
 txt_8_7_csv: Separador para CSV
-txt_8_7_hok: As 'hashes' dos binários utilizados por PeaZip coincidem com os valores esperados
+txt_8_7_hok: As 'hash' dos binários utilizados por PeaZip coincidem com os valores esperados
 txt_8_7_mo: Definir opções do gestor de arquivos
 txt_8_7_showhm: Abrir menu de título do explorador de ficheiros
 txt_8_7_showsearchbar: Mostrar barra de pesquisa
 txt_8_7_showsm: Abrir menu Estilo
-txt_8_7_hnotok: Algumas 'hashes' dos binários utilizados por PeaZip não coincidem com os valores esperados:
+txt_8_7_hnotok: Algumas 'hash' dos binários utilizados por PeaZip não coincidem com os valores esperados:
 txt_8_7_verifybin: Verificar 'hash' dos binários
 txt_8_6_clear: A opção "Limpar" remove ficheiros editados temporariamente que, de outra forma, estariam disponíveis para posterior edição
 txt_8_6_noclear: Descartar todas as alterações sem atualizar o arquivo
@@ -136,7 +136,7 @@ txt_8_0_defaultaction: Ação padrão ao iniciar
 txt_8_0_enableextand: Ativar submenu "Extrair e abrir com"
 txt_8_0_forcetyping: Impor introdução interativa de palavras-passe
 txt_8_0_setpwopt: Definir opções para palavra-passe / ficheiro-chave
-txt_8_0_forcetypinghelp: Irá executar a infraestrurira binária na consola e não pode explorar arquivos com nomes de ficheiros cifrados. Permite criar scripts que não serão executados sem supervisão, mas sim interativamente com uma palavra-passe.
+txt_8_0_forcetypinghelp: Se suportado pela infraestrutura, a tarefa pedirá a palavra-passe. LIMITAÇÕES: a tarefa será executada na consola e não será possível eplorar arquivos se o nome dos ficheiros estiver cifrado. 
 txt_7_9_spacing: Espaçamento
 txt_7_9_zooming: Ampliação
 txt_7_8_changelocalization: Alterar idioma do PeaZip
@@ -145,7 +145,7 @@ txt_7_8_destexistfile: O destino já contém os ficheiros processados. Substitui
 txt_7_8_dd: Arrastar e largar
 txt_7_8_priorityhigh: Alta
 txt_7_8_priorityidle: Sem prioridade
-txt_7_8_rel: Extração interativa. Extrair e, depois, mover para o destino
+txt_7_8_rel: Extrair e mover para o destino
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: Em tempo real
 txt_7_8_requirerestart: [requer o reinício do PeaZip]
@@ -157,7 +157,7 @@ txt_7_7_outtemp: Saída, pré-visualização nos ficheiros temporários temp do 
 txt_7_7_sys7zreq: Tem que instalar o pacote p7zip-full ou equivalente
 txt_7_7_tw: Pasta de trabalho temporária para criação, edição, pré-visualização e extração de arquivos
 txt_7_7_sys7z: Usar o sistema 7z no Linux
-txt_7_6_zipenc: 7z/p7zip: codificação para nomes de ficheiros ZIP
+txt_7_6_zipenc: Codificação para nomes de ficheiros ZIP
 txt_7_6_color: Cor
 txt_7_6_custenc: Página de código personalizada
 txt_7_6_dark: Mais escuro
@@ -517,11 +517,11 @@ txt_3_3_multi: Seleção múltipla
 txt_3_3_runexp: Abrir um programa, ficheiro, pasta ou site
 txt_3_3_apppath: Pasta do PeaZip
 txt_3_3_run: Executar
-txt_3_2_7zutf8nonascii: 7z / p7zip -mcu utiliza UTF8 para nomes que contêm símbolos não-ASCII dentro de ficheiros .zip
+txt_3_2_7zutf8nonascii: 7z/p7zip -mcu utiliza UTF8 para nomes que contêm símbolos não-ASCII dentro de ficheiros .zip
 txt_3_2_alltasks: Todas as tarefas
 txt_3_2_conf: Configuração
 txt_3_2_donations: Doações a instituições de caridade
-txt_3_1_sccenc: 7z / p7zip -scc codificação de caracteres
+txt_3_1_sccenc: 7z/p7zip -scc codificação de caracteres
 txt_3_1_downloads: Transferências
 txt_3_1_lib: Bibliotecas
 txt_3_1_more: Mais
@@ -1344,11 +1344,11 @@ O ícone está presente tanto no explorador de ficheiros do PeaZip como na inter
 
 CRIAR UM ARQUIVO
 Do sistema
-- clique com o botão direito do rato no(s) objeto(s) a arquivar e no menu de contexto/SendTo, escolha "Adicionar ao arquivo". Será aberta uma janela de confirmação e as opções estão disponíveis no separador "Avançado"; clique Aceitar para criar o arquivo.
+- clique com o botão direito do rato no(s) objeto(s) a arquivar e no menu de contexto, escolha "Adicionar ao arquivo". Será aberta uma janela de confirmação e as opções estão disponíveis no separador "Avançado"; clique Aceitar para criar o arquivo.
 - alternativamente, arraste os ficheiros e/ou pastas para a janela ou atalho do PeaZip; ser-lhe-á exibida a mesma janela de confirmação.
 
-Do PeaZip 
-- selecione o(s) objeto(s) a arquivar e clique em "Adicionar"; ser-lhe-á exibida a mesma janela de confirmação.
+DE PEAZIP 
+- selecione o(s) objeto(s) a arquivar e clique em "Adicionar"; aparecerá a mesma janela de confirmação.
 
 ADICIONAR FICHEIROS/PASTAS PARA ATUALIZAR O ARQUIVO EXISTENTE
 Abrir um arquivo no PeaZip (i.e. com duplo clique ou arrastando um arquivo para a janela ou ícone PeaZip) e arraste os ficheiros e/ou as pastas adicionar ao arquivo (ou então clique no botão "Adicionar" e utilize o menu de contexto para adicionar o(s) objeto(s) ao arquivo).
@@ -1395,9 +1395,9 @@ F6	alternar entre vista plana/explorador
 F7	adicionar aos marcadores / Ctrl+F7 abrir nova instância do PeaZip / Shift+F7 abrir linha de comandos no caminho selecionado / Alt+F7 explorar caminho selecionado
 F8	procurar o primeiro item na lista de marcadores (Ctrl, segundo, Shift, terceiro)
 F9	definir palavra-passe ou ficheiro-chave / Ctrl+F9 criar ficheiro-chave ou palavra-passe aleatória / Shift+F9 definir filtros avançados
-F10		menu / Ctrl+F10 executar com outro utilizador / Alt+F10 executar como administrator (Windows Vista e mais recentes)
-F11		alternar entre ecrã inteiro/janela
-F12		extrair tudo para...
+F10	menu / Ctrl+F10 executar com outro utilizador / Alt+F10 executar como administrator (Windows Vista e mais recentes)
+F11	alternar entre ecrã inteiro/janela
+F12	extrair tudo para...
 
 ACERCA O PEAZIP
 
@@ -1407,7 +1407,7 @@ O PeaZip permite-lhe aplicar diversos filtros de pesquisa ao conteúdo dos arqui
 
 Outras funcionalidades: cifra de ficheiros, copiar/separar/unir ficheiros, eliminação permanente, comparações, validação de códigos "hash" e "checksum", análises de desempenho, geração de palavras-passe e ficheiros-chave.
 
-Transferências: https://peazip.github.io
+Descargas: https://peazip.github.io
 Saber mais: https://peazip.github.io/peazip-free-archiver.html
 Suporte: https://peazip.github.io/peazip-help.html
 FAQ: https://peazip.github.io/peazip-help-faq.html
