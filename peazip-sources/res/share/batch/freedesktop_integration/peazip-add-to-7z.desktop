@@ -1,5 +1,7 @@
 [Desktop Entry]
 Name=PeaZip, add to 7Z
+
+NoDisplay=true
 Comment=Add files and folders to 7Z archive with PeaZip
 Exec=peazip -add27z %F
 TryExec=peazip
@@ -8,4 +10,4 @@ Type=Application
 Terminal=false
 Categories=Utility;Archiving;Compression;
 Keywords=zip;rar;tar;extract;unpack;
-MimeType=all/all;
+MimeType=application/octet-stream;
