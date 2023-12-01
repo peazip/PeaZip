@@ -1,6 +1,5 @@
 [Desktop Entry]
 Name=PeaZip, add to 7Z
-
 NoDisplay=true
 Comment=Add files and folders to 7Z archive with PeaZip
 Exec=peazip -add27z %F
