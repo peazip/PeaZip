@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=PeaZip, extract here
+NoDisplay=true
 Comment=Extract archives here with PeaZip
 Exec=peazip -ext2here %F
 TryExec=peazip

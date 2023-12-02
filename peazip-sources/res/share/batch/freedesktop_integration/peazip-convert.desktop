@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=PeaZip, convert
+NoDisplay=true
 Comment=Convert archives with PeaZip
 Exec=peazip -add2convert %F
 TryExec=peazip
@@ -8,4 +9,4 @@ Type=Application
 Terminal=false
 Categories=Utility;Archiving;Compression;
 Keywords=zip;rar;tar;extract;unpack;
-MimeType=all/all;
+MimeType=application/octet-stream;
