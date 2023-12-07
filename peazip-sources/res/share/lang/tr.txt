@@ -3,30 +3,30 @@ Turkish (Türkçe)
 9.5
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 5 Mayıs 2023
+Son güncelleme: 7 Aralık 2023
 
 === PeaZip text group ===
 
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_5_all: Tümü
+txt_9_5_precond: Hata tespit edilirse ön ayrıştır
+txt_9_5_largea: Büyük arşivleri önceden ayrıştır
+txt_9_5_mediuma: Ortam arşivlerini önceden ayrıştır
+txt_9_5_smalla: Küçük arşivleri önceden ayrıştır
+txt_9_5_reopentab: Son sekmeyi yeniden aç
+txt_9_5_savetabs: Sekmeleri kaydet
+txt_9_5_sb: Sistem yollarındaki binary dosyaları kullan
+txt_9_4_r: oku
+txt_9_4_rw: oku/yaz
+txt_9_4_savecomment: Yorum kaydet
+txt_9_4_hintcomment: Yorum yazın veya yapıştırın, yorum dosyasını yükleyin veya buraya sürükleyin.
+txt_9_3_continue: Yine de devam edelim mi?
+txt_9_3_contrast: Kontrast
+txt_9_3_fsd: Hedefte boş alan yeterli olmayabilir
+txt_9_3_fsw: Geçici çalışma yolundaki boş alan yeterli olmayabilir
+txt_9_3_mrar: RAR binary dosyasını manuel olarak ayarla
+txt_9_3_canedit: Bu arşiv türü düzenlenebilir
+txt_9_3_canforce: Bu arşiv türü düzenlenebilir (zorunlu)
+txt_9_3_cannotedit: Bu arşiv türü düzenlenemez
 txt_9_2_7za: 7z / p7zip takma adı
 txt_9_2_changelog: Değişiklik günlüğü
 txt_9_2_tfaq: Çevirileri Kontrol Et
