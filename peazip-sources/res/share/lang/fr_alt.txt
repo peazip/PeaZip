@@ -3,18 +3,18 @@ Français
 9.6
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20231022
+Last rev.: 20231216
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_6_centered: Centré
+txt_9_6_cside: Barre latérale compacte
+txt_9_6_loadpconfirm: Voulez-vous charger ce profil ? Toutes les données du profil actuel seront remplacées, y compris les scripts enregistrés et le gestionnaire de mots de passe.
+txt_9_6_loadp: Charger un profil
+txt_9_6_saveppw: OPTIONNEL : protéger ce profil avec un mot de passe/fichier clé ?
+txt_9_6_savepoverwrite: Remplacer le profil existant ? Toutes les données du profil actuel seront remplacées, y compris les scripts enregistrés et le gestionnaire de mots de passe.
+txt_9_6_savep: Enregistrer le profil
+txt_9_6_scside: Afficher la barre latérale compacte
 txt_9_5_all: Tous
 txt_9_5_precond: Pré-analyser en cas d'erreur
 txt_9_5_largea: Volumineuses seulement
@@ -325,7 +325,7 @@ txt_5_5_newext: Nouvelle extension
 txt_5_5_new: Nouvelle chaîne
 txt_5_5_n: Nombre de caractères à supprimer
 txt_5_5_old: Chaîne précédente
-txt_5_5_position: Position (nombre ou "z" pour la fin)g
+txt_5_5_position: Position (nombre ou "z" pour la fin)
 txt_5_5_intdir: Nouveau dossier adaptatif
 txt_5_5_replacestr: Remplacer/Effacer la chaîne
 txt_5_5_datesameday: Même jour que l'élément sélectionné
@@ -336,7 +336,7 @@ txt_5_5_datesameyear: Même année que l'élément sélectionné
 txt_5_5_scan: Analyser
 txt_5_5_select: Sélectionner
 txt_5_5_similar: Similaire à l'élément sélectionné
-txt_5_5_starting: Commencer avec le même caractère
+txt_5_5_starting: Commençant par le même caractère
 txt_5_5_string: Chaîne à ajouter
 txt_5_5_subtractsel: Retirer de la sélection actuelle
 txt_5_5_datehour: Actuellement
@@ -734,7 +734,7 @@ txt_all_default: Tout (par défaut)
 txt_all_type: Même type
 txt_all_date: Date
 txt_all_psize: Taille compressée
-txt_all_attributes: Même attributs
+txt_all_attributes: Mêmes attributs
 txt_all_size: Taille
 txt_error_input_upx: autoriser un seul fichier exécutable
 txt_always_pw: Toujours demander un mot de passe
