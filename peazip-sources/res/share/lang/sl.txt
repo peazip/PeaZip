@@ -3,41 +3,41 @@ Slovenski jezik
 9.6
 Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
-Zadnja revizija: 20230226
+Zadnja revizija: 20231216
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_6_centered: Na sredini
+txt_9_6_cside: Kompaktna stranska vrstica
+txt_9_6_loadpconfirm: Ali želite naložiti ta profil? Vsi podatki trenutnega profila bodo prepisani, vključno s shranjenimi skripti in upraviteljem gesel.
+txt_9_6_loadp: Naloži profil
+txt_9_6_saveppw: NEOBVEZNO: Želite zaščititi ta profil z geslom/datoteko ključev?
+txt_9_6_savepoverwrite: Želite prepisati obstoječi profil? Vsi podatki obstoječega profila bodo prepisani, vključno s shranjenimi skripti in upraviteljem gesel.
+txt_9_6_savep: Shrani profil
+txt_9_6_scside: Prikaži kompaktno stransko vrstico
+txt_9_5_all: Vse
+txt_9_5_precond: Predrazčleni, če so odkrite napake
+txt_9_5_largea: Predrazčleni velie arhive
+txt_9_5_mediuma: Predrazčleni srednje arhive
+txt_9_5_smalla: Predrazčleni majhne arhive
+txt_9_5_reopentab: Znova odpri zadnji zavihek
+txt_9_5_savetabs: Shrani zavihke
+txt_9_5_sb: Uporabi dvojiške datoteke v sistemskih poteh
+txt_9_4_r: branje
+txt_9_4_rw: branje/pisanje
+txt_9_4_savecomment: Shrani komentar
+txt_9_4_hintcomment: Vnesite ali prilepite komentar, naložite ali povlecite sem datoteko komentarja.
+txt_9_3_continue: Želite vseeno nadaljevati?
+txt_9_3_contrast: Kontrast
+txt_9_3_fsd: prosti prostor na cilju morda ne bo dovolj
+txt_9_3_fsw: prosti prostor na začasni delovni poti morda ne bo dovolj
+txt_9_3_mrar: Ročno nastavi dvojiško datoteko RAR
+txt_9_3_canedit: To vrsto arhiva je mogoče urejati
+txt_9_3_canforce: To vrsto arhiva je mogoče urejati (vsiljeno)
+txt_9_3_cannotedit: Te vrste arhiva ni mogoče urejati
 txt_9_2_7za: Kratko ime 7z/p7zip
 txt_9_2_changelog: Dnevnik sprememb
-txt_9_2_tfaq: Preverite prevode
+txt_9_2_tfaq: Preveri prevode
 txt_9_2_compact: Kompaktno
 txt_9_2_swt: Orodje za zamenjavo/naslovna vrstica
 txt_9_2_tos: TOS, Zasebnost
@@ -128,7 +128,7 @@ txt_8_2_supportedby: Podprt z
 txt_8_1_preparse: Vedno vnaprej razčleni arhive
 txt_8_1_bo: Optimizacija brskalnika
 txt_8_1_bop: Možnosti optimizacije brskalnika lahko nastavite v Možnosti -> Nastavitve, zavihek Splošno, da brskalnik lahko prikaže arhive, ki vsebujejo zelo veliko vnosov.
-txt_8_1_nopreparse: Vnaprej ne analiziraj arhivov
+txt_8_1_nopreparse: Ne predrazčleni arhive
 txt_8_1_ed: zaznanih napak.
 txt_8_1_togglearc: Raven prikaz vsebine arhiva lahko traja dolgo. Vseeno želite nadaljevati?
 txt_8_1_preparsehint: Optimizirajte delovanje, ki omejujejo vnaprejšnjo razčlenitev velikih arhivov. Predrazčlenitev naj bi vnaprej odkrila morebitne težave v vsebini arhiva.
