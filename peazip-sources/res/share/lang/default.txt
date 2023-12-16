@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 English
-9.5
+9.6
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20231009
 
 === PeaZip text group ===
 
+txt_9_6_centered: Centered
+txt_9_6_cside: Compact side bar
+txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_loadp: Load profile
+txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
+txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_savep: Save profile
+txt_9_6_scside: Show Compact side bar
 txt_9_5_all: All
 txt_9_5_precond: Pre-parse if errors are detected
 txt_9_5_largea: Pre-parse large archives
@@ -787,7 +795,7 @@ txt_compression: Compression
 txt_compmanagement: Computer management
 txt_pw_confirm: Confirm
 txt_console: Console
-txt_console_interface: Console: native interface
+txt_console_interface: Console
 txt_content: Content
 txt_controlpanel: Control panel
 txt_convert: Convert disk to NTFS
@@ -901,8 +909,8 @@ txt_general: General
 txt_multithreading: Generic multithreading
 txt_go_browser: Go to file browser
 txt_go_path: Explore path (PeaZip)
-txt_guicl: Graphic + console
-txt_guipealauncher: Graphic: wrapped by PeaLauncher
+txt_guicl: GUI + Console
+txt_guipealauncher: GUI
 txt_graphic: Graphic's folder
 txt_gridaltcolor: Grids alternate color
 txt_gridrowheight: Grids row height

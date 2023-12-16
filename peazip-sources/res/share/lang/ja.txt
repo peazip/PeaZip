@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Japanese - 日本語
-9.5
+9.6
 Translated by: Dan Tanaka
 Last rev. by: Umoxfo
 Last rev.: 2022-04-15
 
 === PeaZip text group ===
 
+txt_9_6_centered: Centered
+txt_9_6_cside: Compact side bar
+txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_loadp: Load profile
+txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
+txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_savep: Save profile
+txt_9_6_scside: Show Compact side bar
 txt_9_5_all: All
 txt_9_5_precond: Pre-parse if errors are detected
 txt_9_5_largea: Pre-parse large archives

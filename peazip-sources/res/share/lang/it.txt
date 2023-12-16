@@ -1,12 +1,20 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.5
+9.6
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20230614
+Ultima rev.: 20231208
 
 === PeaZip text group ===
 
+txt_9_6_centered: Centrato
+txt_9_6_cside: Barra laterale compatta
+txt_9_6_loadpconfirm: Caricare questo profilo? Tutti i dati del profilo corrente verrano sovrascitti, compresi gli script salvati e il Password Manager.
+txt_9_6_loadp: Carica profilo
+txt_9_6_saveppw: OPZIONALE: proteggere questo profilo con password / keyfile?
+txt_9_6_savepoverwrite: Sovrascrivere il profilo esistente? Tutti i dati del profilo esistente verrano sovrascitti, compresi gli script salvati e il Password Manager.
+txt_9_6_savep: Salva profilo
+txt_9_6_scside: Mostra Barra laterale compatta
 txt_9_5_all: Tutti
 txt_9_5_precond: Analizza gli archivi con errori in apertura
 txt_9_5_largea: Analizza gli archivi (grandi) all'apertura
@@ -157,7 +165,7 @@ txt_7_7_outtemp: Output, preview nella temp dell'utente
 txt_7_7_sys7zreq: Richiede l'installazione del pacchetto 7z, 7-Zip, p7zip o equivalente
 txt_7_7_tw: Directory di lavoro temporanea per creazione archivi, editing, preview ed estrazione drag&drop
 txt_7_7_sys7z: Usa 7z di sistema se disponibile
-txt_7_6_zipenc: 7z/p7zip ZIP encoding dei nomi file
+txt_7_6_zipenc: 7z/p7zip ZIP codifica dei nomi file
 txt_7_6_color: Colore
 txt_7_6_custenc: Code page personalizzato
 txt_7_6_dark: Più scuro
@@ -521,7 +529,7 @@ txt_3_2_7zutf8nonascii: 7z / p7zip -mcu usa UTF8 per i simboli non ASCII all'int
 txt_3_2_alltasks: Tutte le attività
 txt_3_2_conf: Configurazione
 txt_3_2_donations: Donazioni ad associazioni umanitarie
-txt_3_1_sccenc: 7z/p7zip encoding caratteri CONSOLE
+txt_3_1_sccenc: 7z/p7zip codifica caratteri CONSOLE
 txt_3_1_downloads: Downloads
 txt_3_1_lib: Raccolte
 txt_3_1_more: Altro
@@ -787,7 +795,7 @@ txt_compression: Compressione
 txt_compmanagement: Gestione del computer
 txt_pw_confirm: Conferma
 txt_console: Console
-txt_console_interface: console: interfaccia nativa
+txt_console_interface: Console
 txt_content: Contenuto
 txt_controlpanel: Pannello di controllo
 txt_convert: Converti disco in NTFS
@@ -901,8 +909,8 @@ txt_general: Generale
 txt_multithreading: multithreading automatico
 txt_go_browser: Vai al browser di file e archivi
 txt_go_path: Esplora percorso (PeaZip)
-txt_guicl: grafica e console
-txt_guipealauncher: grafica: utilizza PeaLauncher
+txt_guicl: GUI + Console
+txt_guipealauncher: GUI
 txt_graphic: Cartella elementi grafici
 txt_gridaltcolor: Colore alternativo della griglia
 txt_gridrowheight: Altezza righe della griglia

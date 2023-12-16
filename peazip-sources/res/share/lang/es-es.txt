@@ -1,12 +1,20 @@
-=== PeaZip language file ===
+﻿=== PeaZip language file ===
 Spanish - Español
-9.5
+9.6
 Traducido por: Francisco Javier F. Serrador, Mario López, Nosi_982, Anonymous, José M. Ciordia, ChrisTVH
 Última rev. Por: ChrisTVH
 Última rev.: 8/12/2023
 
 === PeaZip text group ===
 
+txt_9_6_centered: Centered
+txt_9_6_cside: Compact side bar
+txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_loadp: Load profile
+txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
+txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
+txt_9_6_savep: Save profile
+txt_9_6_scside: Show Compact side bar
 txt_9_5_all: Todos
 txt_9_5_precond: Análisis previo si hay errores
 txt_9_5_largea: Análisis previo de archivos grandes
