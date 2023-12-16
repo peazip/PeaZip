@@ -352,6 +352,40 @@ object Form_report: TForm_report
       BevelOuter = bvNone
       TabOrder = 0
     end
+    object Shapelinkrep1: TShape
+      AnchorSideLeft.Control = LabelTitleREP1
+      AnchorSideRight.Control = LabelTitleREP1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitleREP
+      AnchorSideBottom.Side = asrBottom
+      Left = 305
+      Height = 8
+      Top = 37
+      Width = 83
+      Anchors = [akLeft, akRight, akBottom]
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+      Visible = False
+    end
+    object Shapelinkrep2: TShape
+      AnchorSideLeft.Control = LabelTitleREP2
+      AnchorSideRight.Control = LabelTitleREP2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitleREP
+      AnchorSideBottom.Side = asrBottom
+      Left = 388
+      Height = 8
+      Top = 37
+      Width = 114
+      Anchors = [akLeft, akRight, akBottom]
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+      Visible = False
+    end
   end
   object Memo1: TMemo
     AnchorSideLeft.Control = Owner

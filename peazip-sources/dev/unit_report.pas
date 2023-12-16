@@ -42,6 +42,7 @@ unit Unit_report;
  0.23     20101105  G.Tani      Updated look and feel
  0.24     20200414  G.Tani      New function to save crc/hash value(s) to file
  0.25     20210502  G.Tani      Batch and hidden *_report modes now save report to output path without requiring user interaction
+ 0.26     20231206  G.Tani      Updated theming
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -103,6 +104,8 @@ type
     PanelTitleREP: TPanel;
     PopupMenu1: TPopupMenu;
     SaveDialog1: TSaveDialog;
+    Shapelinkrep1: TShape;
+    Shapelinkrep2: TShape;
     ShapeTitleREPb1: TShape;
     ShapeTitleREPb2: TShape;
     StringGrid1: TStringGrid;
@@ -149,7 +152,7 @@ var
    executable_path,dummy,color1,color2,color3,color4,color5:string;
    Binfo,Bloadlayout:TBitmap;
    activelabel_rep:TLabel;
-   tabpencol,tabbrushcol,tabbrushhighcol:TColor;
+   tablowcol,tabpencol,tabbrushcol,tabbrushhighcol:TColor;
    
 implementation
 
@@ -157,19 +160,35 @@ implementation
 procedure exitlabel_rep(var a: TLabel; var b:TShape);
 begin
 if activelabel_rep=a then exit;
-b.Brush.Color:=tabbrushcol;
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=tabbrushcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tabpencol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
 if (highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5) then a.Font.Color:=clDefault else a.Font.Color:=pGray;
-if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_rep;
 begin
 with Form_report do
 begin
-exitlabel_rep(LabelTitleREP1,ShapeTitleREPb1);
-exitlabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   exitlabel_rep(LabelTitleREP1,ShapeTitleREPb1);
+   exitlabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+   end
+else
+   begin
+   exitlabel_rep(LabelTitleREP1,ShapeLinkREP1);
+   exitlabel_rep(LabelTitleREP2,ShapeLinkREP2);
+   end;
 end;
 end;
 
@@ -241,11 +260,19 @@ procedure clicklabel_rep(var a: TLabel; var b:TShape);
 begin
 activelabel_rep:=a;
 deselectlabels_rep;
-if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline];
-b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=StringToColor(color2);
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tablowcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
+if ((alttabstyle=1) or (alttabstyle=4)) and ((highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5)) then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
 setlabelpanel_rep(a);
 end;
 
@@ -255,7 +282,7 @@ if activelabel_rep=a then exit;
 b.Brush.Color:=tabbrushhighcol;
 b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
+a.Font.Color:=clDefault;
 end;
 
 ///
@@ -343,25 +370,19 @@ end;
 procedure save_hashfn;
 var
 x,y:dword;
-s,p:ansistring;
+fname,p:ansistring;
 begin
-{$IFDEF MSWINDOWS}wingetdesk(p);{$ELSE}get_desktop_path(p);{$ENDIF}
-if p[length(p)]=directoryseparator then setlength(p,length(p)-1);
-s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+extractfilename(p)+'.txt';
-p:=p+DirectorySeparator;
-
-if s<>'' then
-begin
-assignfile(t,s);
+if Form_report.StringGrid1.Cells[0,Form_report.StringGrid1.Row]='* Digest *' then exit;
+fname:=Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,0]+'.txt';
+assignfile(t,fname);
 rewrite(t);
 write_header(t);
-for x:=1 to Form_report.StringGrid1.RowCount-1 do //***
+for x:=1 to Form_report.StringGrid1.RowCount-1 do
    begin
    if Form_report.StringGrid1.Cells[0,x]='* Digest *' then break;
    writeln(t,Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,x]+'  '+Form_report.StringGrid1.Cells[1,x]);
    end;
 closefile(t);
-end;
 end;
 
 { TForm_report }
@@ -400,23 +421,27 @@ end;
 procedure TForm_report.FormShow(Sender: TObject);
 begin
 Form_report.PanelTitleREPTabAlign.Width:=Form_report.ShapeTitleREPb1.Width+Form_report.ShapeTitleREPb2.Width;
-if alttabstyle=2 then
+if alttabstyle<=2 then
    Form_report.PanelTitleREPTabAlign.AnchorSideLeft.Side:=asrleft
 else
    Form_report.PanelTitleREPTabAlign.AnchorSideLeft.Side:=asrCenter;
-if alttabstyle=1 then
+if (alttabstyle=1) or (alttabstyle=4) then
    begin
    Form_report.LabelTitleREP1.AnchorSideTop.Control:=Form_report.PanelTitleREP;
    Form_report.ShapeTitleREPb1.visible:=false;
+   Form_report.ShapeLinkREP1.visible:=true;
    Form_report.LabelTitleREP2.AnchorSideTop.Control:=Form_report.PanelTitleREP;
    Form_report.ShapeTitleREPb2.visible:=false;
+   Form_report.ShapeLinkREP2.visible:=true;
    end
 else
    begin
    Form_report.LabelTitleREP1.AnchorSideTop.Control:=Form_report.ShapeTitleREPb1;
    Form_report.ShapeTitleREPb1.visible:=true;
+   Form_report.ShapeLinkREP1.visible:=false;
    Form_report.LabelTitleREP2.AnchorSideTop.Control:=Form_report.ShapeTitleREPb2;
    Form_report.ShapeTitleREPb2.visible:=true;
+   Form_report.ShapeLinkREP2.visible:=false;
    end;
 end;
 
@@ -458,32 +483,32 @@ end;
 
 procedure TForm_report.LabelTitleREP1Click(Sender: TObject);
 begin
-clicklabel_rep(LabelTitleREP1,ShapeTitleREPb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_rep(LabelTitleREP1,ShapeTitleREPb1) else clicklabel_rep(LabelTitleREP1,ShapeLinkREP1);
 end;
 
 procedure TForm_report.LabelTitleREP1MouseEnter(Sender: TObject);
 begin
-enterlabel_rep(LabelTitleREP1,ShapeTitleREPb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_rep(LabelTitleREP1,ShapeTitleREPb1) else enterlabel_rep(LabelTitleREP1,ShapeLinkREP1);
 end;
 
 procedure TForm_report.LabelTitleREP1MouseLeave(Sender: TObject);
 begin
-exitlabel_rep(LabelTitleREP1,ShapeTitleREPb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_rep(LabelTitleREP1,ShapeTitleREPb1) else exitlabel_rep(LabelTitleREP1,ShapeLinkREP1);
 end;
 
 procedure TForm_report.LabelTitleREP2Click(Sender: TObject);
 begin
-clicklabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_rep(LabelTitleREP2,ShapeTitleREPb2) else clicklabel_rep(LabelTitleREP2,ShapeLinkREP2);
 end;
 
 procedure TForm_report.LabelTitleREP2MouseEnter(Sender: TObject);
 begin
-enterlabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_rep(LabelTitleREP2,ShapeTitleREPb2) else enterlabel_rep(LabelTitleREP2,ShapeLinkREP2);
 end;
 
 procedure TForm_report.LabelTitleREP2MouseLeave(Sender: TObject);
 begin
-exitlabel_rep(LabelTitleREP2,ShapeTitleREPb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_rep(LabelTitleREP2,ShapeTitleREPb2) else exitlabel_rep(LabelTitleREP2,ShapeLinkREP2);
 end;
 
 procedure TForm_report.MenuItem1Click(Sender: TObject);

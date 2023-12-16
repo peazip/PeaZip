@@ -154,23 +154,36 @@ LazarusResources.Add('TForm_report','FORMDATA',[
   +'REP'#19'AnchorSideLeft.Side'#7#9'asrCenter'#21'AnchorSideTop.Control'#7#13
   +'PanelTitleREP'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorSideBottom.'
   +'Side'#7#9'asrBottom'#4'Left'#3'1'#1#6'Height'#2#1#3'Top'#2#0#5'Width'#3#135
-  +#1#10'BevelOuter'#7#6'bvNone'#8'TabOrder'#2#0#0#0#0#5'TMemo'#5'Memo1'#22'Anc'
-  +'horSideLeft.Control'#7#5'Owner'#21'AnchorSideTop.Control'#7#13'PanelTitleRE'
-  +'P'#18'AnchorSideTop.Side'#7#9'asrBottom'#23'AnchorSideRight.Control'#7#5'Ow'
-  +'ner'#20'AnchorSideRight.Side'#7#9'asrBottom'#24'AnchorSideBottom.Control'#7
-  +#8'Panelsp0'#4'Left'#2#0#6'Height'#3#164#1#4'Hint'#6#136'Note for file analy'
-  +'sis tool:'#13#10'file header/EOF is binary data and will not be'#13#10'copi'
-  +'ed in clipboard or output files, unlike'#13#10'other fields.'#3'Top'#2'-'#5
-  +'Width'#3#232#3#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#11
-  +'ParentColor'#9#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOrder'#2#2#0#0#6'TP'
-  +'anel'#8'Panelsp0'#22'AnchorSideLeft.Control'#7#5'Owner'#24'AnchorSideBottom'
-  +'.Control'#7#5'Owner'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#2#0#6
-  +'Height'#2'<'#3'Top'#3#209#1#5'Width'#2#1#7'Anchors'#11#6'akLeft'#8'akBottom'
-  +#0#10'BevelOuter'#7#6'bvNone'#8'TabOrder'#2#4#0#0#11'TSaveDialog'#11'SaveDia'
-  +'log1'#5'Title'#6#7'Save as'#4'Left'#3#195#0#3'Top'#3#213#1#0#0#10'TPopupMen'
-  +'u'#10'PopupMenu1'#4'Left'#3'%'#1#3'Top'#2#24#0#9'TMenuItem'#9'MenuItem3'#7
-  +'Caption'#6#31'Save hash values and file names'#7'OnClick'#7#14'MenuItem3Cli'
-  +'ck'#0#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6#22'Save CRC or hash value'#7
-  +'OnClick'#7#14'MenuItem1Click'#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#14
-  +'Save file info'#7'OnClick'#7#14'MenuItem2Click'#0#0#0#0
+  +#1#10'BevelOuter'#7#6'bvNone'#8'TabOrder'#2#0#0#0#6'TShape'#13'Shapelinkrep1'
+  +#22'AnchorSideLeft.Control'#7#14'LabelTitleREP1'#23'AnchorSideRight.Control'
+  +#7#14'LabelTitleREP1'#20'AnchorSideRight.Side'#7#9'asrBottom'#24'AnchorSideB'
+  +'ottom.Control'#7#13'PanelTitleREP'#21'AnchorSideBottom.Side'#7#9'asrBottom'
+  +#4'Left'#3'1'#1#6'Height'#2#8#3'Top'#2'%'#5'Width'#2'S'#7'Anchors'#11#6'akLe'
+  +'ft'#7'akRight'#8'akBottom'#0#11'Brush.Color'#4#250#250#250#0#9'Pen.Color'#7
+  +#6'clNone'#9'Pen.Style'#7#7'psClear'#9'Pen.Width'#2#0#7'Visible'#8#0#0#6'TSh'
+  +'ape'#13'Shapelinkrep2'#22'AnchorSideLeft.Control'#7#14'LabelTitleREP2'#23'A'
+  +'nchorSideRight.Control'#7#14'LabelTitleREP2'#20'AnchorSideRight.Side'#7#9'a'
+  +'srBottom'#24'AnchorSideBottom.Control'#7#13'PanelTitleREP'#21'AnchorSideBot'
+  +'tom.Side'#7#9'asrBottom'#4'Left'#3#132#1#6'Height'#2#8#3'Top'#2'%'#5'Width'
+  +#2'r'#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#11'Brush.Color'#4#250
+  +#250#250#0#9'Pen.Color'#7#6'clNone'#9'Pen.Style'#7#7'psClear'#9'Pen.Width'#2
+  +#0#7'Visible'#8#0#0#0#5'TMemo'#5'Memo1'#22'AnchorSideLeft.Control'#7#5'Owner'
+  +#21'AnchorSideTop.Control'#7#13'PanelTitleREP'#18'AnchorSideTop.Side'#7#9'as'
+  +'rBottom'#23'AnchorSideRight.Control'#7#5'Owner'#20'AnchorSideRight.Side'#7#9
+  +'asrBottom'#24'AnchorSideBottom.Control'#7#8'Panelsp0'#4'Left'#2#0#6'Height'
+  +#3#164#1#4'Hint'#6#136'Note for file analysis tool:'#13#10'file header/EOF i'
+  +'s binary data and will not be'#13#10'copied in clipboard or output files, u'
+  +'nlike'#13#10'other fields.'#3'Top'#2'-'#5'Width'#3#232#3#7'Anchors'#11#5'ak'
+  +'Top'#6'akLeft'#7'akRight'#8'akBottom'#0#11'ParentColor'#9#10'ScrollBars'#7
+  +#14'ssAutoVertical'#8'TabOrder'#2#2#0#0#6'TPanel'#8'Panelsp0'#22'AnchorSideL'
+  +'eft.Control'#7#5'Owner'#24'AnchorSideBottom.Control'#7#5'Owner'#21'AnchorSi'
+  +'deBottom.Side'#7#9'asrBottom'#4'Left'#2#0#6'Height'#2'<'#3'Top'#3#209#1#5'W'
+  +'idth'#2#1#7'Anchors'#11#6'akLeft'#8'akBottom'#0#10'BevelOuter'#7#6'bvNone'#8
+  +'TabOrder'#2#4#0#0#11'TSaveDialog'#11'SaveDialog1'#5'Title'#6#7'Save as'#4'L'
+  +'eft'#3#195#0#3'Top'#3#213#1#0#0#10'TPopupMenu'#10'PopupMenu1'#4'Left'#3'%'#1
+  +#3'Top'#2#24#0#9'TMenuItem'#9'MenuItem3'#7'Caption'#6#31'Save hash values an'
+  +'d file names'#7'OnClick'#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'MenuItem1'
+  +#7'Caption'#6#22'Save CRC or hash value'#7'OnClick'#7#14'MenuItem1Click'#0#0
+  +#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#14'Save file info'#7'OnClick'#7#14'M'
+  +'enuItem2Click'#0#0#0#0
 ]);

@@ -1,8 +1,9 @@
-﻿Notes to 9.5.0 release
+﻿Notes to 9.6.0 release
 
 Modified existing text strings:
-txt_8_0_forcetypinghelp: If supported by the backend, the task will prompt interactively for password. LIMITATIONS: task will run in console, will not run unattended, and cannot browse archives with encrypted filenames. 
-txt_7_6_zipenc: ZIP filenames encoding
+txt_console_interface: Console
+txt_guicl: GUI + Console
+txt_guipealauncher: GUI
 
 
 = GENERAL NOTES =

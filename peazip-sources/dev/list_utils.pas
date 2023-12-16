@@ -2319,7 +2319,7 @@ case ext of
    '.ani','.cur','.ico','.icl': begin result:=35; exit; end;
    '.eml': begin result:=40; exit; end;
    '.doc','.dot': begin result:=40; exit; end;
-   '.dll','.sys','.so': begin result:=40; exit; end;
+   '.dll','.sys','.so','.dylib': begin result:=40; exit; end;
    '.bmp','.tga','.tif','.tiff': begin result:=40; exit; end;
    '.wav': begin result:=45; exit; end;
    '.exe': begin result:=50; exit; end;

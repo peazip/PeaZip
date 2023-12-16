@@ -197,6 +197,7 @@ unit Unit_pea;
  1.13     20230620  G.Tani      Fixes, updated theming engine to support Contrast setting
  1.14     20230807  G.Tani      Added Blue-Ray pre-sets for file split
  1.15     20231020  G.Tani      Added context menu item to chacksum/hash screen to save selected CRC or hash value for all listed files, compatible with Coreutils sha256sum and similar utilities
+ 1.16     20231209  G.Tani      Fixes, updated theming
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -379,7 +380,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.15'; //declares release version for the whole build
+  P_RELEASE          = '1.16'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -7725,7 +7726,7 @@ end;
 
 procedure set_items_height;
 var
-   refsize,rowheight,tabheightl,tabheight,tablabelheight:integer;
+   refsize,rowheight,tabheightl,tabheight,tablabelheight,pbarhsmall:integer;
 begin
 with Form_pea do
 begin
@@ -7739,7 +7740,7 @@ Form_report.Width:=800*qscale div 100;
 Form_report.Height:=420*qscale div 100;
 //tabs
 tabheight:=36*qscale div 100;
-if alttabstyle=2 then tablabelheight:=30
+if (alttabstyle=2) or (alttabstyle=5) then tablabelheight:=30
 else tablabelheight:=24;
 tablabelheight:=(tablabelheight*qscale) div 100;
 tabheightl:=48*qscale div 100;
@@ -7751,6 +7752,9 @@ PanelUtilsTitle.Height:=tabheight;
 Panelsp0.Height:=tabheightl;
 Panelsp1.Height:=tabheightl;
 Panelsp2.Height:=tabheightl;
+pbarhsmall:=4*qscale div 100;
+Form_report.Shapelinkrep1.Height:=pbarhsmall+2;
+Form_report.Shapelinkrep2.Height:=pbarhsmall+2;
 //grid
 rowheight:=((16+2+pspacing) * qscale) div 100;
 Form_report.StringGrid1.DefaultRowHeight:=rowheight;
@@ -7788,6 +7792,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=stringtocolor(color2);
       Form_report.PanelTitleREP.Color:=stringtocolor(color2);
       Unit_report.tabpencol:=StringToColor(color2);
+      Unit_report.tablowcol:=psilver;
       Unit_report.tabbrushcol:=StringToColor(colmid);
       Unit_report.tabbrushhighcol:=StringToColor(colvlow);
       end;
@@ -7795,6 +7800,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=stringtocolor(color2);
       Form_report.PanelTitleREP.Color:=stringtocolor(color2);
       Unit_report.tabpencol:=StringToColor(color2);
+      Unit_report.tablowcol:=plblue;
       Unit_report.tabbrushcol:=pvvlblue;
       Unit_report.tabbrushhighcol:=pvvvlblue;
       end;
@@ -7802,6 +7808,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=stringtocolor(collow);
       Form_report.PanelTitleREP.Color:=stringtocolor(collow);
       Unit_report.tabpencol:=StringToColor(collow);
+      Unit_report.tablowcol:=psilver;
       Unit_report.tabbrushcol:=StringToColor(colmid);
       Unit_report.tabbrushhighcol:=StringToColor(colvlow);
       end;
@@ -7809,6 +7816,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=stringtocolor(colmid);
       Form_report.PanelTitleREP.Color:=stringtocolor(colmid);
       Unit_report.tabpencol:=StringToColor(colmid);
+      Unit_report.tablowcol:=psilver;
       Unit_report.tabbrushcol:=StringToColor(colhigh);
       Unit_report.tabbrushhighcol:=StringToColor(collow);
       end;
@@ -7816,6 +7824,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=pvvvlblue;
       Form_report.PanelTitleREP.Color:=pvvvlblue;
       Unit_report.tabpencol:=pvvvlblue;
+      Unit_report.tablowcol:=plblue;
       Unit_report.tabbrushcol:=pvvlblue;
       Unit_report.tabbrushhighcol:=pvvvvlblue;
       end;
@@ -7823,6 +7832,7 @@ case highlighttabs of
       PanelUtilsTitle.Color:=pvvlblue;
       Form_report.PanelTitleREP.Color:=pvvlblue;
       Unit_report.tabpencol:=pvvlblue;
+      Unit_report.tablowcol:=plblue;
       Unit_report.tabbrushcol:=pvlblue;
       Unit_report.tabbrushhighcol:=pvvvlblue;
       end;
@@ -7837,7 +7847,7 @@ else
    Form_report.StringGrid1.AlternateColor:=stringtocolor(color2);
    Form_report.StringGrid2.AlternateColor:=stringtocolor(color2);
    end;
-clicklabel_rep(Form_report.LabelTitleREP1,Form_report.ShapeTitleREPb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_rep(Form_report.LabelTitleREP1,Form_report.ShapeTitleREPb1) else clicklabel_rep(Form_report.LabelTitleREP1,Form_report.ShapeLinkREP1);
 if paramcount>0 then
    begin
    if upcase(paramstr(1))='PEAUTILS' then

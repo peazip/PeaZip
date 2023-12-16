@@ -532,6 +532,40 @@ object FormPM: TFormPM
       BevelOuter = bvNone
       TabOrder = 0
     end
+    object Shapelinkpm1: TShape
+      AnchorSideLeft.Control = LabelTitlePM1
+      AnchorSideRight.Control = LabelTitlePM1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitlePM
+      AnchorSideBottom.Side = asrBottom
+      Left = 180
+      Height = 8
+      Top = 37
+      Width = 132
+      Anchors = [akLeft, akRight, akBottom]
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+      Visible = False
+    end
+    object Shapelinkpm2: TShape
+      AnchorSideLeft.Control = LabelTitlePM2
+      AnchorSideRight.Control = LabelTitlePM2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTitlePM
+      AnchorSideBottom.Side = asrBottom
+      Left = 312
+      Height = 8
+      Top = 37
+      Width = 160
+      Anchors = [akLeft, akRight, akBottom]
+      Brush.Color = 16448250
+      Pen.Color = clNone
+      Pen.Style = psClear
+      Pen.Width = 0
+      Visible = False
+    end
   end
   object pmPM: TPopupMenu
     Left = 160

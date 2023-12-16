@@ -1,15 +1,17 @@
-Translated system's context menu for PeaZip, works for cascaded context menu entries on W7 or more recent systems.
+The .reg scripts in lang-wincontext folder translates system's context menu entries for PeaZip, works for cascaded context menu on W7 or more recent systems.
 
 HOW TO APPLY TRANSLATION TO CONTEXT MENU:
-From PeaZip 6.9.2 release, changing language in application also apply corresponding translation to context menu entries, if suitable .reg file is found.
-To manually change context menu translation, doubleclick the .reg file (Windows registry script) for the desired language and confirm merging the entries in the registry.
+Changing language in app also apply corresponding translation to context menu entries, if a suitable .reg file is found.
+To manually change context menu translation, doubleclick the .reg file (Windows registry script) in (peazip)\res\share\lang-wincontext folder for the desired language, and confirm merging the entries in the registry.
+
+LEGACY SYSTEMS
+"lang-wincontext ANSI LEGACY.zip" archive contains ANSI encoded .reg files for legacy systems.
 
 HOW TO CONTRIBUTE A NEW TRANSLATION OR MAINTAIN AN EXISTING ONE:
 
 Option 1)
 With a plain text editor, translate the quoted texts after the @= sign.
-Save the file as ANSI text, or UTF-16 LE if extended characters are used.
-Please note that UTF8 encoding is not currently supported by Windows for .reg scripts.
+Save the file with UTF-16 LE encoding.
 Most text editors show an encoding selection control in "Save as" dialog.
 You can send the translated script to giorgio.tani.software@gmail.com to share the translation with the community under LGPL license.
 

@@ -57,6 +57,8 @@ type
     pmPM: TPopupMenu;
     PopupMenupwm: TPopupMenu;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
+    Shapelinkpm1: TShape;
+    Shapelinkpm2: TShape;
     ShapeTitlePMb1: TShape;
     ShapeTitlePMb2: TShape;
     StringGridPM: TStringGrid;
@@ -107,7 +109,7 @@ var
   pmfilet:text;
   txt_clear:AnsiString;
   activelabel_pm:TLabel;
-  tabpencol,tabbrushcol,tabbrushhighcol:tcolor;
+  tabpencol,tablowcol,tabbrushcol,tabbrushhighcol:tcolor;
 
 implementation
 
@@ -117,19 +119,35 @@ implementation
 procedure exitlabel_pm(var a: TLabel; var b:TShape);
 begin
 if activelabel_pm=a then exit;
-b.Brush.Color:=tabbrushcol;
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=tabbrushcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tabpencol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
 if (highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5) then a.Font.Color:=clDefault else a.Font.Color:=pGray;
-if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_pm;
 begin
 with FormPM do
 begin
-exitlabel_pm(LabelTitlePM1,ShapeTitlePMb1);
-exitlabel_pm(LabelTitlePM2,ShapeTitlePMb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   exitlabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+   exitlabel_pm(LabelTitlePM2,ShapeTitlePMb2);
+   end
+else
+   begin
+   exitlabel_pm(LabelTitlePM1,Shapelinkpm1);
+   exitlabel_pm(LabelTitlePM2,Shapelinkpm2)
+   end;
 end;
 end;
 
@@ -160,11 +178,19 @@ procedure clicklabel_pm(var a: TLabel; var b:TShape);
 begin
 activelabel_pm:=a;
 deselectlabels_pm;
-if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline];
-b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=StringToColor(color2);
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tablowcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
+if ((alttabstyle=1) or (alttabstyle=4)) and ((highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5)) then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
 setlabelpanel_pm(a);
 end;
 
@@ -174,7 +200,7 @@ if activelabel_pm=a then exit;
 b.Brush.Color:=tabbrushhighcol;
 b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
+a.Font.Color:=clDefault;
 end;
 
 ///
@@ -261,32 +287,32 @@ end;
 
 procedure TFormPM.LabelTitlePM1Click(Sender: TObject);
 begin
-clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1) else clicklabel_pm(LabelTitlePM1,Shapelinkpm1);
 end;
 
 procedure TFormPM.LabelTitlePM1MouseEnter(Sender: TObject);
 begin
-enterlabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_pm(LabelTitlePM1,ShapeTitlePMb1) else enterlabel_pm(LabelTitlePM1,Shapelinkpm1);
 end;
 
 procedure TFormPM.LabelTitlePM1MouseLeave(Sender: TObject);
 begin
-exitlabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_pm(LabelTitlePM1,ShapeTitlePMb1) else exitlabel_pm(LabelTitlePM1,Shapelinkpm1);
 end;
 
 procedure TFormPM.LabelTitlePM2Click(Sender: TObject);
 begin
-clicklabel_pm(LabelTitlePM2,ShapeTitlePMb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_pm(LabelTitlePM2,ShapeTitlePMb2) else clicklabel_pm(LabelTitlePM2,Shapelinkpm2);
 end;
 
 procedure TFormPM.LabelTitlePM2MouseEnter(Sender: TObject);
 begin
-enterlabel_pm(LabelTitlePM2,ShapeTitlePMb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_pm(LabelTitlePM2,ShapeTitlePMb2) else enterlabel_pm(LabelTitlePM2,Shapelinkpm2);
 end;
 
 procedure TFormPM.LabelTitlePM2MouseLeave(Sender: TObject);
 begin
-exitlabel_pm(LabelTitlePM2,ShapeTitlePMb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_pm(LabelTitlePM2,ShapeTitlePMb2) else exitlabel_pm(LabelTitlePM2,Shapelinkpm2);
 end;
 
 procedure TFormPM.ButtonEditName3Click(Sender: TObject);
@@ -311,7 +337,7 @@ end;
 
 procedure TFormPM.Button1Click(Sender: TObject);
 begin
-clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1) else clicklabel_pm(LabelTitlePM1,Shapelinkpm1);
 new_pm;
 end;
 
@@ -319,7 +345,7 @@ procedure TFormPM.Button2Click(Sender: TObject);
 var
    i:integer;
 begin
-clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_pm(LabelTitlePM1,ShapeTitlePMb1) else clicklabel_pm(LabelTitlePM1,Shapelinkpm1);
 if StringGridPM.RowCount<2 then exit;
 StringGridPM.DeleteColRow(false,Row);
 for i:=1 to (StringGridPM.RowCount-1) do StringGridPM.Cells[0,i]:=inttostr(i);

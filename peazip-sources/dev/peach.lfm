@@ -94,9 +94,9 @@ object Form_peach: TForm_peach
     AnchorSideRight.Control = Options
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = GroupBoxCreateOut
-    Left = 1116
+    Left = 1298
     Height = 256
-    Top = 334
+    Top = 384
     Width = 1024
     Anchors = []
     BorderSpacing.Bottom = 18
@@ -441,9 +441,9 @@ object Form_peach: TForm_peach
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelnav
     AnchorSideBottom.Side = asrBottom
-    Left = 655
+    Left = 690
     Height = 329
-    Top = 1153
+    Top = 1212
     Width = 200
     Anchors = []
     BorderStyle = bsNone
@@ -2506,6 +2506,78 @@ object Form_peach: TForm_peach
           BevelOuter = bvNone
           TabOrder = 0
         end
+        object Shapelinkextract1: TShape
+          AnchorSideLeft.Control = LabelTitleExtract1
+          AnchorSideTop.Control = PanelTitleExtract
+          AnchorSideRight.Control = LabelTitleExtract1
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleExtract
+          AnchorSideBottom.Side = asrBottom
+          Left = 356
+          Height = 6
+          Top = 30
+          Width = 72
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkextract2: TShape
+          AnchorSideLeft.Control = LabelTitleExtract2
+          AnchorSideTop.Control = PanelTitleExtract
+          AnchorSideRight.Control = LabelTitleExtract2
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleExtract
+          AnchorSideBottom.Side = asrBottom
+          Left = 428
+          Height = 6
+          Top = 30
+          Width = 78
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkextract3: TShape
+          AnchorSideLeft.Control = LabelTitleExtract3
+          AnchorSideTop.Control = PanelTitleExtract
+          AnchorSideRight.Control = LabelTitleExtract3
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleExtract
+          AnchorSideBottom.Side = asrBottom
+          Left = 506
+          Height = 6
+          Top = 30
+          Width = 79
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkextract4: TShape
+          AnchorSideLeft.Control = LabelTitleExtract4
+          AnchorSideTop.Control = PanelTitleExtract
+          AnchorSideRight.Control = LabelTitleExtract4
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleExtract
+          AnchorSideBottom.Side = asrBottom
+          Left = 585
+          Height = 6
+          Top = 30
+          Width = 84
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
       end
       object PanelActExt: TPanel
         AnchorSideLeft.Control = PanelExtract
@@ -3001,6 +3073,74 @@ object Form_peach: TForm_peach
           ParentFont = False
           Visible = False
           OnClick = LabelAddFolderClick
+        end
+        object Shapelinkadd1: TShape
+          AnchorSideLeft.Control = LabelTitleAdd1
+          AnchorSideRight.Control = LabelTitleAdd1
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleAdd
+          AnchorSideBottom.Side = asrBottom
+          Left = 356
+          Height = 6
+          Top = 30
+          Width = 58
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkadd2: TShape
+          AnchorSideLeft.Control = LabelTitleAdd2
+          AnchorSideRight.Control = LabelTitleAdd2
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleAdd
+          AnchorSideBottom.Side = asrBottom
+          Left = 414
+          Height = 6
+          Top = 30
+          Width = 78
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkadd3: TShape
+          AnchorSideLeft.Control = LabelTitleAdd3
+          AnchorSideRight.Control = LabelTitleAdd3
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleAdd
+          AnchorSideBottom.Side = asrBottom
+          Left = 492
+          Height = 6
+          Top = 30
+          Width = 79
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
+        end
+        object Shapelinkadd4: TShape
+          AnchorSideLeft.Control = LabelTitleAdd4
+          AnchorSideRight.Control = LabelTitleAdd4
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelTitleAdd
+          AnchorSideBottom.Side = asrBottom
+          Left = 571
+          Height = 6
+          Top = 30
+          Width = 84
+          Anchors = [akLeft, akRight, akBottom]
+          Brush.Color = 16448250
+          Pen.Color = clNone
+          Pen.Style = psClear
+          Pen.Width = 0
+          Visible = False
         end
       end
       object NotebookAdd: TPanel
@@ -7491,339 +7631,6 @@ object Form_peach: TForm_peach
             Transparent = True
           end
         end
-        object PageOpt5: TScrollBox
-          AnchorSideLeft.Control = Splitter3
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = Notebook1
-          AnchorSideRight.Control = Notebook1
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = PanelActDefaults
-          Left = 181
-          Height = 532
-          Top = 0
-          Width = 843
-          HorzScrollBar.Page = 1
-          VertScrollBar.Page = 271
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderStyle = bsNone
-          ClientHeight = 532
-          ClientWidth = 843
-          ParentFont = False
-          TabOrder = 3
-          object PanelTitleApps: TPanel
-            AnchorSideLeft.Control = PanelLine5
-            AnchorSideTop.Control = BevelTitleOpt5
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = PanelLine5
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Side = asrBottom
-            Left = 121
-            Height = 36
-            Top = 80
-            Width = 600
-            Anchors = [akTop, akLeft, akRight]
-            BorderSpacing.Top = 32
-            BevelOuter = bvNone
-            ClientHeight = 36
-            ClientWidth = 600
-            ParentFont = False
-            TabOrder = 0
-            object ShapeTitleAppsb2: TShape
-              AnchorSideLeft.Control = LabelTitleApps2
-              AnchorSideTop.Control = PanelTitleApps
-              AnchorSideRight.Control = LabelTitleApps2
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Control = PanelTitleApps
-              AnchorSideBottom.Side = asrBottom
-              Left = 207
-              Height = 32
-              Top = 6
-              Width = 89
-              Anchors = [akTop, akLeft, akRight]
-              BorderSpacing.Top = 6
-              Brush.Color = 16448250
-              Pen.Color = clNone
-              Pen.Style = psClear
-              Pen.Width = 0
-            end
-            object ShapeTitleAppsb1: TShape
-              AnchorSideLeft.Control = LabelTitleApps1
-              AnchorSideTop.Control = PanelTitleApps
-              AnchorSideRight.Control = LabelTitleApps1
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Control = PanelTitleApps
-              AnchorSideBottom.Side = asrBottom
-              Left = 144
-              Height = 32
-              Top = 6
-              Width = 63
-              Anchors = [akTop, akLeft, akRight]
-              BorderSpacing.Top = 6
-              Brush.Color = 16448250
-              Pen.Color = clNone
-              Pen.Style = psClear
-              Pen.Width = 0
-            end
-            object LabelTitleApps2: TLabel
-              AnchorSideLeft.Control = LabelTitleApps1
-              AnchorSideLeft.Side = asrBottom
-              AnchorSideTop.Control = ShapeTitleAppsb2
-              AnchorSideTop.Side = asrCenter
-              Left = 207
-              Height = 15
-              Top = 15
-              Width = 89
-              Caption = '      Advanced      '
-              Font.Color = clGray
-              ParentFont = False
-              OnClick = LabelTitleApps2Click
-              OnMouseEnter = LabelTitleApps2MouseEnter
-              OnMouseLeave = LabelTitleApps2MouseLeave
-            end
-            object LabelTitleApps1: TLabel
-              AnchorSideLeft.Control = PanelTitleAppsTabAlign
-              AnchorSideTop.Control = ShapeTitleAppsb1
-              AnchorSideTop.Side = asrCenter
-              Left = 144
-              Height = 15
-              Top = 15
-              Width = 63
-              Caption = '      Basic      '
-              ParentFont = False
-              OnClick = LabelTitleApps1Click
-              OnMouseEnter = LabelTitleApps1MouseEnter
-              OnMouseLeave = LabelTitleApps1MouseLeave
-            end
-            object PanelTitleAppsTabAlign: TPanel
-              AnchorSideLeft.Control = PanelTitleApps
-              AnchorSideLeft.Side = asrCenter
-              AnchorSideTop.Control = PanelTitleApps
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Side = asrBottom
-              Left = 144
-              Height = 1
-              Top = 0
-              Width = 313
-              BevelOuter = bvNone
-              TabOrder = 0
-            end
-          end
-          object PanelLine5: TPanel
-            AnchorSideLeft.Control = PageOpt5
-            AnchorSideLeft.Side = asrCenter
-            AnchorSideTop.Control = PageOpt5
-            Left = 121
-            Height = 1
-            Top = 0
-            Width = 600
-            BevelOuter = bvNone
-            ParentFont = False
-            TabOrder = 4
-          end
-          object PanelApps1: TPanel
-            AnchorSideLeft.Control = PanelLine5
-            AnchorSideTop.Control = PanelTitleApps
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = PanelLine5
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Control = LabelResetApp1
-            Left = 121
-            Height = 389
-            Top = 128
-            Width = 600
-            Anchors = [akTop, akLeft, akRight, akBottom]
-            BorderSpacing.Top = 12
-            BevelOuter = bvNone
-            ClientHeight = 389
-            ClientWidth = 600
-            ParentFont = False
-            TabOrder = 2
-            object Labelcbbasic: TLabel
-              AnchorSideLeft.Control = PanelApps1
-              AnchorSideTop.Control = PanelApps1
-              AnchorSideRight.Side = asrBottom
-              Left = 0
-              Height = 15
-              Top = 0
-              Width = 27
-              Caption = 'Basic'
-              ParentFont = False
-            end
-            object StringGridCustEdit: TStringGrid
-              AnchorSideLeft.Control = Labelcbbasic
-              AnchorSideTop.Control = Labelcbbasic
-              AnchorSideTop.Side = asrBottom
-              AnchorSideRight.Control = PanelApps1
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Control = PanelApps1
-              AnchorSideBottom.Side = asrBottom
-              Left = 0
-              Height = 338
-              Top = 27
-              Width = 600
-              Anchors = [akTop, akLeft, akRight, akBottom]
-              BorderSpacing.Top = 12
-              BorderSpacing.Bottom = 24
-              ColCount = 3
-              DefaultRowHeight = 18
-              Flat = True
-              GridLineWidth = 0
-              Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goRowSelect, goSmoothScroll]
-              ParentColor = True
-              ParentFont = False
-              PopupMenu = pmCustEditApps
-              RowCount = 17
-              TabOrder = 0
-              TitleStyle = tsNative
-              OnColRowMoved = StringGridCustEditColRowMoved
-              OnDblClick = StringGridCustEditDblClick
-              OnMouseDown = StringGridCustEditMouseDown
-            end
-          end
-          object PanelApps2: TPanel
-            AnchorSideLeft.Control = PanelLine5
-            AnchorSideTop.Control = PanelTitleApps
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = PanelLine5
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Control = LabelResetApp1
-            Left = 121
-            Height = 389
-            Top = 128
-            Width = 600
-            Anchors = [akTop, akLeft, akRight, akBottom]
-            BorderSpacing.Top = 12
-            BevelOuter = bvNone
-            ClientHeight = 389
-            ClientWidth = 600
-            ParentFont = False
-            TabOrder = 1
-            object Labelcbadvanced: TLabel
-              AnchorSideLeft.Control = PanelApps2
-              AnchorSideTop.Control = PanelApps2
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Side = asrBottom
-              Left = 0
-              Height = 15
-              Top = 0
-              Width = 53
-              Caption = 'Advanced'
-              ParentFont = False
-            end
-            object Labelcbsampleadvanced: TLabel
-              AnchorSideLeft.Control = Labelcbsample
-              AnchorSideLeft.Side = asrBottom
-              AnchorSideTop.Control = StringGridCustEdit1
-              AnchorSideTop.Side = asrBottom
-              AnchorSideBottom.Control = PanelApps2
-              AnchorSideBottom.Side = asrBottom
-              Left = 45
-              Height = 15
-              Top = 350
-              Width = 53
-              Anchors = [akLeft, akBottom]
-              BorderSpacing.Bottom = 24
-              Caption = 'Advanced'
-              ParentFont = False
-            end
-            object StringGridCustEdit1: TStringGrid
-              AnchorSideLeft.Control = PanelApps2
-              AnchorSideTop.Control = Labelcbadvanced
-              AnchorSideTop.Side = asrBottom
-              AnchorSideRight.Control = PanelApps2
-              AnchorSideRight.Side = asrBottom
-              AnchorSideBottom.Control = Labelcbsample
-              Left = 0
-              Height = 311
-              Top = 27
-              Width = 600
-              Anchors = [akTop, akLeft, akRight, akBottom]
-              BorderSpacing.Top = 12
-              BorderSpacing.Bottom = 12
-              DefaultRowHeight = 18
-              Flat = True
-              GridLineWidth = 0
-              Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goRowSelect, goSmoothScroll]
-              ParentColor = True
-              ParentFont = False
-              PopupMenu = pmCustEditApps1
-              RowCount = 9
-              TabOrder = 0
-              TitleStyle = tsNative
-              OnColRowMoved = StringGridCustEdit1ColRowMoved
-              OnDblClick = StringGridCustEdit1DblClick
-              OnMouseDown = StringGridCustEdit1MouseDown
-              OnSelectCell = StringGridCustEdit1SelectCell
-            end
-            object Labelcbsample: TLabel
-              AnchorSideLeft.Control = StringGridCustEdit1
-              AnchorSideTop.Control = StringGridCustEdit1
-              AnchorSideTop.Side = asrBottom
-              AnchorSideBottom.Control = PanelApps2
-              AnchorSideBottom.Side = asrBottom
-              Left = 0
-              Height = 15
-              Top = 350
-              Width = 45
-              Anchors = [akLeft, akBottom]
-              BorderSpacing.Bottom = 24
-              Caption = 'Sample: '
-              ParentFont = False
-            end
-          end
-          object LabelResetApp1: TLabel
-            AnchorSideLeft.Control = PanelLine5
-            AnchorSideTop.Side = asrCenter
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Control = PageOpt5
-            AnchorSideBottom.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 121
-            Height = 15
-            Top = 517
-            Width = 97
-            Anchors = [akLeft, akBottom]
-            Caption = 'Reset Applications'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelResetAppClick
-          end
-          object BevelTitleOpt5: TPanel
-            AnchorSideLeft.Control = PanelLine5
-            AnchorSideTop.Control = Labelo5
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = PanelLine5
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Side = asrBottom
-            Left = 121
-            Height = 1
-            Top = 47
-            Width = 600
-            Anchors = [akTop, akLeft, akRight]
-            BorderSpacing.Top = 12
-            BevelOuter = bvNone
-            Color = 553621811
-            Constraints.MaxWidth = 800
-            ParentColor = False
-            ParentFont = False
-            TabOrder = 3
-          end
-          object Labelo5: TLabel
-            AnchorSideLeft.Control = BevelTitleOpt5
-            AnchorSideTop.Control = PageOpt5
-            Left = 121
-            Height = 23
-            Top = 12
-            Width = 100
-            BorderSpacing.Top = 12
-            BorderSpacing.Right = 128
-            BorderSpacing.Bottom = 12
-            Caption = 'Applications'
-            Font.Height = -17
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-        end
         object PageOpt4: TScrollBox
           AnchorSideLeft.Control = Splitter3
           AnchorSideLeft.Side = asrBottom
@@ -10024,6 +9831,7 @@ object Form_peach: TForm_peach
             OnClick = CheckBoxJobEncodingClick
             ParentFont = False
             TabOrder = 4
+            Visible = False
           end
           object CheckBoxEncoding: TCheckBox
             AnchorSideLeft.Control = PanelLine2
@@ -10083,7 +9891,7 @@ object Form_peach: TForm_peach
             AnchorSideBottom.Side = asrCenter
             Left = 775
             Height = 15
-            Top = -1858777161
+            Top = 1723595399
             Width = 3
             Anchors = []
             BorderSpacing.Left = 8
@@ -10125,7 +9933,7 @@ object Form_peach: TForm_peach
             Left = 113
             Height = 23
             Top = 697
-            Width = 300
+            Width = 160
             BorderSpacing.Top = 6
             Constraints.MaxWidth = 600
             ItemHeight = 15
@@ -10149,7 +9957,7 @@ object Form_peach: TForm_peach
             Left = 113
             Height = 23
             Top = 726
-            Width = 400
+            Width = 360
             BorderSpacing.Top = 6
             Constraints.MaxWidth = 600
             ItemHeight = 15
@@ -10172,7 +9980,7 @@ object Form_peach: TForm_peach
             Left = 113
             Height = 23
             Top = 755
-            Width = 350
+            Width = 320
             BorderSpacing.Top = 6
             ItemHeight = 15
             ItemIndex = 0
@@ -10842,6 +10650,373 @@ object Form_peach: TForm_peach
             Flat = True
             Spacing = 3
             OnClick = babouttosClick
+            ParentFont = False
+          end
+        end
+        object PageOpt5: TScrollBox
+          AnchorSideLeft.Control = Splitter3
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = Notebook1
+          AnchorSideRight.Control = Notebook1
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelActDefaults
+          Left = 181
+          Height = 532
+          Top = 0
+          Width = 843
+          HorzScrollBar.Page = 1
+          VertScrollBar.Page = 271
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderStyle = bsNone
+          ClientHeight = 532
+          ClientWidth = 843
+          ParentFont = False
+          TabOrder = 3
+          object PanelTitleApps: TPanel
+            AnchorSideLeft.Control = PanelLine5
+            AnchorSideTop.Control = BevelTitleOpt5
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = PanelLine5
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 121
+            Height = 36
+            Top = 80
+            Width = 600
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 32
+            BevelOuter = bvNone
+            ClientHeight = 36
+            ClientWidth = 600
+            ParentFont = False
+            TabOrder = 0
+            object ShapeTitleAppsb2: TShape
+              AnchorSideLeft.Control = LabelTitleApps2
+              AnchorSideTop.Control = PanelTitleApps
+              AnchorSideRight.Control = LabelTitleApps2
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = PanelTitleApps
+              AnchorSideBottom.Side = asrBottom
+              Left = 207
+              Height = 32
+              Top = 6
+              Width = 89
+              Anchors = [akTop, akLeft, akRight]
+              BorderSpacing.Top = 6
+              Brush.Color = 16448250
+              Pen.Color = clNone
+              Pen.Style = psClear
+              Pen.Width = 0
+            end
+            object ShapeTitleAppsb1: TShape
+              AnchorSideLeft.Control = LabelTitleApps1
+              AnchorSideTop.Control = PanelTitleApps
+              AnchorSideRight.Control = LabelTitleApps1
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = PanelTitleApps
+              AnchorSideBottom.Side = asrBottom
+              Left = 144
+              Height = 32
+              Top = 6
+              Width = 63
+              Anchors = [akTop, akLeft, akRight]
+              BorderSpacing.Top = 6
+              Brush.Color = 16448250
+              Pen.Color = clNone
+              Pen.Style = psClear
+              Pen.Width = 0
+            end
+            object LabelTitleApps2: TLabel
+              AnchorSideLeft.Control = LabelTitleApps1
+              AnchorSideLeft.Side = asrBottom
+              AnchorSideTop.Control = ShapeTitleAppsb2
+              AnchorSideTop.Side = asrCenter
+              Left = 207
+              Height = 15
+              Top = 15
+              Width = 89
+              Caption = '      Advanced      '
+              Font.Color = clGray
+              ParentFont = False
+              OnClick = LabelTitleApps2Click
+              OnMouseEnter = LabelTitleApps2MouseEnter
+              OnMouseLeave = LabelTitleApps2MouseLeave
+            end
+            object LabelTitleApps1: TLabel
+              AnchorSideLeft.Control = PanelTitleAppsTabAlign
+              AnchorSideTop.Control = ShapeTitleAppsb1
+              AnchorSideTop.Side = asrCenter
+              Left = 144
+              Height = 15
+              Top = 15
+              Width = 63
+              Caption = '      Basic      '
+              ParentFont = False
+              OnClick = LabelTitleApps1Click
+              OnMouseEnter = LabelTitleApps1MouseEnter
+              OnMouseLeave = LabelTitleApps1MouseLeave
+            end
+            object PanelTitleAppsTabAlign: TPanel
+              AnchorSideLeft.Control = PanelTitleApps
+              AnchorSideLeft.Side = asrCenter
+              AnchorSideTop.Control = PanelTitleApps
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Side = asrBottom
+              Left = 144
+              Height = 1
+              Top = 0
+              Width = 313
+              BevelOuter = bvNone
+              TabOrder = 0
+            end
+            object Shapelinkapps1: TShape
+              AnchorSideLeft.Control = LabelTitleApps1
+              AnchorSideRight.Control = LabelTitleApps1
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = PanelTitleApps
+              AnchorSideBottom.Side = asrBottom
+              Left = 144
+              Height = 6
+              Top = 30
+              Width = 63
+              Anchors = [akLeft, akRight, akBottom]
+              Brush.Color = 16448250
+              Pen.Color = clNone
+              Pen.Style = psClear
+              Pen.Width = 0
+              Visible = False
+            end
+            object Shapelinkapps2: TShape
+              AnchorSideLeft.Control = LabelTitleApps2
+              AnchorSideRight.Control = ShapeTitleAppsb2
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = PanelTitleApps
+              AnchorSideBottom.Side = asrBottom
+              Left = 207
+              Height = 6
+              Top = 30
+              Width = 89
+              Anchors = [akLeft, akRight, akBottom]
+              Brush.Color = 16448250
+              Pen.Color = clNone
+              Pen.Style = psClear
+              Pen.Width = 0
+              Visible = False
+            end
+          end
+          object PanelLine5: TPanel
+            AnchorSideLeft.Control = PageOpt5
+            AnchorSideLeft.Side = asrCenter
+            AnchorSideTop.Control = PageOpt5
+            Left = 121
+            Height = 1
+            Top = 0
+            Width = 600
+            BevelOuter = bvNone
+            ParentFont = False
+            TabOrder = 4
+          end
+          object PanelApps1: TPanel
+            AnchorSideLeft.Control = PanelLine5
+            AnchorSideTop.Control = PanelTitleApps
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = PanelLine5
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = LabelResetApp1
+            Left = 121
+            Height = 389
+            Top = 128
+            Width = 600
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Top = 12
+            BevelOuter = bvNone
+            ClientHeight = 389
+            ClientWidth = 600
+            ParentFont = False
+            TabOrder = 2
+            object Labelcbbasic: TLabel
+              AnchorSideLeft.Control = PanelApps1
+              AnchorSideTop.Control = PanelApps1
+              AnchorSideRight.Side = asrBottom
+              Left = 0
+              Height = 15
+              Top = 0
+              Width = 27
+              Caption = 'Basic'
+              ParentFont = False
+            end
+            object StringGridCustEdit: TStringGrid
+              AnchorSideLeft.Control = Labelcbbasic
+              AnchorSideTop.Control = Labelcbbasic
+              AnchorSideTop.Side = asrBottom
+              AnchorSideRight.Control = PanelApps1
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = PanelApps1
+              AnchorSideBottom.Side = asrBottom
+              Left = 0
+              Height = 338
+              Top = 27
+              Width = 600
+              Anchors = [akTop, akLeft, akRight, akBottom]
+              BorderSpacing.Top = 12
+              BorderSpacing.Bottom = 24
+              ColCount = 3
+              DefaultRowHeight = 18
+              Flat = True
+              GridLineWidth = 0
+              Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goRowSelect, goSmoothScroll]
+              ParentColor = True
+              ParentFont = False
+              PopupMenu = pmCustEditApps
+              RowCount = 17
+              TabOrder = 0
+              TitleStyle = tsNative
+              OnColRowMoved = StringGridCustEditColRowMoved
+              OnDblClick = StringGridCustEditDblClick
+              OnMouseDown = StringGridCustEditMouseDown
+            end
+          end
+          object PanelApps2: TPanel
+            AnchorSideLeft.Control = PanelLine5
+            AnchorSideTop.Control = PanelTitleApps
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = PanelLine5
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = LabelResetApp1
+            Left = 121
+            Height = 389
+            Top = 128
+            Width = 600
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Top = 12
+            BevelOuter = bvNone
+            ClientHeight = 389
+            ClientWidth = 600
+            ParentFont = False
+            TabOrder = 1
+            object Labelcbadvanced: TLabel
+              AnchorSideLeft.Control = PanelApps2
+              AnchorSideTop.Control = PanelApps2
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Side = asrBottom
+              Left = 0
+              Height = 15
+              Top = 0
+              Width = 53
+              Caption = 'Advanced'
+              ParentFont = False
+            end
+            object Labelcbsampleadvanced: TLabel
+              AnchorSideLeft.Control = Labelcbsample
+              AnchorSideLeft.Side = asrBottom
+              AnchorSideTop.Control = StringGridCustEdit1
+              AnchorSideTop.Side = asrBottom
+              AnchorSideBottom.Control = PanelApps2
+              AnchorSideBottom.Side = asrBottom
+              Left = 45
+              Height = 15
+              Top = 350
+              Width = 53
+              Anchors = [akLeft, akBottom]
+              BorderSpacing.Bottom = 24
+              Caption = 'Advanced'
+              ParentFont = False
+            end
+            object StringGridCustEdit1: TStringGrid
+              AnchorSideLeft.Control = PanelApps2
+              AnchorSideTop.Control = Labelcbadvanced
+              AnchorSideTop.Side = asrBottom
+              AnchorSideRight.Control = PanelApps2
+              AnchorSideRight.Side = asrBottom
+              AnchorSideBottom.Control = Labelcbsample
+              Left = 0
+              Height = 311
+              Top = 27
+              Width = 600
+              Anchors = [akTop, akLeft, akRight, akBottom]
+              BorderSpacing.Top = 12
+              BorderSpacing.Bottom = 12
+              DefaultRowHeight = 18
+              Flat = True
+              GridLineWidth = 0
+              Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goRowSelect, goSmoothScroll]
+              ParentColor = True
+              ParentFont = False
+              PopupMenu = pmCustEditApps1
+              RowCount = 9
+              TabOrder = 0
+              TitleStyle = tsNative
+              OnColRowMoved = StringGridCustEdit1ColRowMoved
+              OnDblClick = StringGridCustEdit1DblClick
+              OnMouseDown = StringGridCustEdit1MouseDown
+              OnSelectCell = StringGridCustEdit1SelectCell
+            end
+            object Labelcbsample: TLabel
+              AnchorSideLeft.Control = StringGridCustEdit1
+              AnchorSideTop.Control = StringGridCustEdit1
+              AnchorSideTop.Side = asrBottom
+              AnchorSideBottom.Control = PanelApps2
+              AnchorSideBottom.Side = asrBottom
+              Left = 0
+              Height = 15
+              Top = 350
+              Width = 45
+              Anchors = [akLeft, akBottom]
+              BorderSpacing.Bottom = 24
+              Caption = 'Sample: '
+              ParentFont = False
+            end
+          end
+          object LabelResetApp1: TLabel
+            AnchorSideLeft.Control = PanelLine5
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = PageOpt5
+            AnchorSideBottom.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 121
+            Height = 15
+            Top = 517
+            Width = 97
+            Anchors = [akLeft, akBottom]
+            Caption = 'Reset Applications'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelResetAppClick
+          end
+          object BevelTitleOpt5: TPanel
+            AnchorSideLeft.Control = PanelLine5
+            AnchorSideTop.Control = Labelo5
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = PanelLine5
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 121
+            Height = 1
+            Top = 47
+            Width = 600
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 12
+            BevelOuter = bvNone
+            Color = 553621811
+            Constraints.MaxWidth = 800
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 3
+          end
+          object Labelo5: TLabel
+            AnchorSideLeft.Control = BevelTitleOpt5
+            AnchorSideTop.Control = PageOpt5
+            Left = 121
+            Height = 23
+            Top = 12
+            Width = 100
+            BorderSpacing.Top = 12
+            BorderSpacing.Right = 128
+            BorderSpacing.Bottom = 12
+            Caption = 'Applications'
+            Font.Height = -17
+            Font.Style = [fsBold]
             ParentFont = False
           end
         end
@@ -11539,7 +11714,7 @@ object Form_peach: TForm_peach
             Left = 313
             Height = 23
             Top = 512
-            Width = 100
+            Width = 160
             BorderSpacing.Top = 12
             ItemHeight = 15
             ItemIndex = 2
@@ -11547,6 +11722,9 @@ object Form_peach: TForm_peach
               'Buttons'
               'Links'
               'Tabs'
+              'Buttons / Centered'
+              'Links / Centered'
+              'Tabs / Centered'
             )
             OnChange = CheckBoxAltTabChange
             ParentFont = False
@@ -12818,18 +12996,19 @@ object Form_peach: TForm_peach
           OnStartDrag = ListView1StartDrag
         end
         object Panelnav: TPanel
-          AnchorSideLeft.Control = PanelFilters
+          AnchorSideLeft.Control = Panelside
+          AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = PanelFilters
           AnchorSideRight.Control = Splitter2
           AnchorSideBottom.Control = Splitter1
-          Left = 0
+          Left = 48
           Height = 288
           Top = 0
-          Width = 200
+          Width = 152
           Anchors = [akTop, akLeft, akRight, akBottom]
           BevelOuter = bvNone
           ClientHeight = 288
-          ClientWidth = 200
+          ClientWidth = 152
           ParentFont = False
           TabOrder = 5
           object TreeView2: TTreeView
@@ -12842,7 +13021,7 @@ object Form_peach: TForm_peach
             Left = 0
             Height = 272
             Top = 16
-            Width = 200
+            Width = 152
             Anchors = [akTop, akLeft, akRight, akBottom]
             BorderSpacing.Top = 16
             BorderStyle = bsNone
@@ -12870,7 +13049,7 @@ object Form_peach: TForm_peach
             Left = 0
             Height = 272
             Top = 16
-            Width = 200
+            Width = 152
             Anchors = [akTop, akLeft, akRight, akBottom]
             BorderSpacing.Top = 16
             BorderStyle = bsNone
@@ -12903,7 +13082,7 @@ object Form_peach: TForm_peach
             Left = 0
             Height = 272
             Top = 16
-            Width = 200
+            Width = 152
             Anchors = [akTop, akLeft, akRight, akBottom]
             BorderSpacing.Top = 16
             BorderStyle = bsNone
@@ -13184,6 +13363,187 @@ object Form_peach: TForm_peach
             BorderSpacing.Left = 12
             Caption = 'Clip'
             ParentFont = False
+          end
+        end
+        object Panelside: TPanel
+          AnchorSideLeft.Control = PanelFilters
+          AnchorSideTop.Control = PanelFilters
+          AnchorSideRight.Control = Panelnav
+          AnchorSideBottom.Control = Splitter1
+          Left = 0
+          Height = 288
+          Top = 0
+          Width = 48
+          Anchors = [akTop, akLeft, akBottom]
+          BevelOuter = bvNone
+          ClientHeight = 288
+          ClientWidth = 48
+          ParentFont = False
+          PopupMenu = pmbreadcrumb
+          TabOrder = 10
+          object csbroot: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = Panelside
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 0
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbrootClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbhome: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbroot
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 32
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbhomeClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbdesk: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbhome
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 64
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbdeskClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbdownloads: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbdesk
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 96
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbdownloadsClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbdoc: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbdownloads
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 128
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbdocClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbmusic: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbdoc
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 160
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbmusicClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbpic: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbmusic
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 192
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbpicClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object csbvid: TSpeedButton
+            AnchorSideLeft.Control = Panelside
+            AnchorSideTop.Control = csbpic
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 8
+            Height = 32
+            Top = 224
+            Width = 32
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Left = 8
+            BorderSpacing.Right = 8
+            Flat = True
+            OnClick = csbvidClick
+            ParentFont = False
+            PopupMenu = pmbreadcrumb
+          end
+          object Shapecsb: TShape
+            AnchorSideTop.Control = Panelside
+            AnchorSideRight.Control = Panelside
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = Panelside
+            AnchorSideBottom.Side = asrBottom
+            Left = 47
+            Height = 288
+            Top = 0
+            Width = 1
+            Anchors = [akTop, akRight, akBottom]
+            Pen.Color = clSilver
           end
         end
       end
@@ -16275,6 +16635,10 @@ object Form_peach: TForm_peach
         Caption = 'Tab bar'
         OnClick = mtabsClick
       end
+      object mshowsidebar: TMenuItem
+        Caption = 'mshowsidebar'
+        OnClick = mshowsidebarClick
+      end
       object mshownavbar: TMenuItem
         Caption = 'mshownavbar'
         OnClick = mshownavbarClick
@@ -16735,6 +17099,17 @@ object Form_peach: TForm_peach
         OnClick = mUserClick
       end
       object MenuItem33: TMenuItem
+        Caption = '-'
+      end
+      object mloadprofile: TMenuItem
+        Caption = 'mloadprofile'
+        OnClick = mloadprofileClick
+      end
+      object msaveprofile: TMenuItem
+        Caption = 'msaveprofile'
+        OnClick = msaveprofileClick
+      end
+      object Separator26: TMenuItem
         Caption = '-'
       end
       object mLang: TMenuItem
@@ -18551,9 +18926,9 @@ object Form_peach: TForm_peach
   end
   object OpenDialogTheme: TOpenDialog
     Title = 'Open file'
-    Filter = 'Theme|*.theme.7z;*.theme.zip|.7z|*.7z|.zip|*.zip'
-    Left = 384
-    Top = 506
+    Filter = 'Theme|*.theme.7z|*|*'
+    Left = 250
+    Top = 474
   end
   object Timer2: TTimer
     OnTimer = Timer2Timer
@@ -20519,6 +20894,14 @@ object Form_peach: TForm_peach
     object MenuItem48: TMenuItem
       Caption = '-'
     end
+    object pmsoppath: TMenuItem
+      Caption = 'pmsoppath'
+      OnClick = pmsoppathClick
+    end
+    object pmsoparch: TMenuItem
+      Caption = 'pmsoparch'
+      OnClick = pmsoparchClick
+    end
     object pmsearchdrag: TMenuItem
       Caption = 'Search and drag here'
       OnClick = pmsearchdragClick
@@ -22304,6 +22687,13 @@ object Form_peach: TForm_peach
       OnClick = pmtabClick
     end
     object MenuItem83: TMenuItem
+      Caption = '-'
+    end
+    object msidebar: TMenuItem
+      Caption = 'msidebar'
+      OnClick = msidebarClick
+    end
+    object Separator27: TMenuItem
       Caption = '-'
     end
     object pmsnav: TMenuItem
@@ -24696,8 +25086,10 @@ object Form_peach: TForm_peach
     Left = 13
     Top = 8
   end
-  object MainMenu2: TMainMenu
-    Left = 561
-    Top = 111
+  object OpenDialogProfile: TOpenDialog
+    Title = 'Open file'
+    Filter = 'Profile|*.profile.7z|*|*'
+    Left = 365
+    Top = 474
   end
 end

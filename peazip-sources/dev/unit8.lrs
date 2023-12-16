@@ -224,24 +224,36 @@ LazarusResources.Add('TFormPM','FORMDATA',[
   +'AnchorSideTop.Control'#7#12'PanelTitlePM'#20'AnchorSideRight.Side'#7#9'asrB'
   +'ottom'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#180#0#6'Height'#2
   +#1#3'Top'#2#0#5'Width'#3#135#1#10'BevelOuter'#7#6'bvNone'#8'TabOrder'#2#0#0#0
-  +#0#10'TPopupMenu'#4'pmPM'#4'Left'#3#160#0#3'Top'#3#140#0#0#9'TMenuItem'#4'mn'
-  +'ew'#7'Caption'#6#3'New'#7'OnClick'#7#9'mnewClick'#0#0#9'TMenuItem'#9'MenuIt'
-  +'em8'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#3'mpw'#7'Caption'#6#8'Password'#7'O'
-  +'nClick'#7#8'mpwClick'#0#0#9'TMenuItem'#5'mnote'#7'Caption'#6#16'Note/descri'
-  +'ption'#7'OnClick'#7#10'mnoteClick'#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'
-  +#6#1'-'#0#0#9'TMenuItem'#5'pmexp'#7'Caption'#6#20'Export password list'#0#9
-  +'TMenuItem'#8'pmexpenc'#7'Caption'#6#9'Encrypted'#7'OnClick'#7#13'pmexpencCl'
-  +'ick'#0#0#9'TMenuItem'#10'pmexpplain'#7'Caption'#6#10'Plain text'#7'OnClick'
-  +#7#15'pmexpplainClick'#0#0#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6#1'-'#0#0
-  +#9'TMenuItem'#7'mremove'#7'Caption'#6#6'Remove'#7'OnClick'#7#12'mremoveClick'
-  +#0#0#9'TMenuItem'#9'MenuItem5'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#6'mreset'#7
-  +'Caption'#6#5'Reset'#7'OnClick'#7#11'mresetClick'#0#0#0#10'TPopupMenu'#12'Po'
-  +'pupMenupwm'#4'Left'#3#210#0#3'Top'#3#174#1#0#9'TMenuItem'#8'mpwreset'#7'Cap'
-  +'tion'#6#13'Reset keyfile'#7'OnClick'#7#13'mpwresetClick'#0#0#9'TMenuItem'#10
-  +'mpwexplore'#7'Caption'#6#12'Explore path'#7'OnClick'#7#15'mpwexploreClick'#0
-  +#0#0#11'TOpenDialog'#13'OpenDialogKFM'#5'Title'#6#9'Open file'#11'FilterInde'
-  +'x'#2#0#4'Left'#3#174#1#3'Top'#3#174#1#0#0#22'TSelectDirectoryDialog'#22'Sel'
-  +'ectDirectoryDialog1'#5'Title'#6#1' '#11'FilterIndex'#2#0#7'Options'#11#14'o'
-  +'fCreatePrompt'#14'ofEnableSizing'#12'ofViewDetail'#0#4'Left'#3#204#1#3'Top'
-  +#3#4#1#0#0#0
+  +#6'TShape'#12'Shapelinkpm1'#22'AnchorSideLeft.Control'#7#13'LabelTitlePM1'#23
+  +'AnchorSideRight.Control'#7#13'LabelTitlePM1'#20'AnchorSideRight.Side'#7#9'a'
+  +'srBottom'#24'AnchorSideBottom.Control'#7#12'PanelTitlePM'#21'AnchorSideBott'
+  +'om.Side'#7#9'asrBottom'#4'Left'#3#180#0#6'Height'#2#8#3'Top'#2'%'#5'Width'#3
+  +#132#0#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#11'Brush.Color'#4#250
+  +#250#250#0#9'Pen.Color'#7#6'clNone'#9'Pen.Style'#7#7'psClear'#9'Pen.Width'#2
+  +#0#7'Visible'#8#0#0#6'TShape'#12'Shapelinkpm2'#22'AnchorSideLeft.Control'#7
+  +#13'LabelTitlePM2'#23'AnchorSideRight.Control'#7#13'LabelTitlePM2'#20'Anchor'
+  +'SideRight.Side'#7#9'asrBottom'#24'AnchorSideBottom.Control'#7#12'PanelTitle'
+  +'PM'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3'8'#1#6'Height'#2#8#3
+  +'Top'#2'%'#5'Width'#3#160#0#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0
+  +#11'Brush.Color'#4#250#250#250#0#9'Pen.Color'#7#6'clNone'#9'Pen.Style'#7#7'p'
+  +'sClear'#9'Pen.Width'#2#0#7'Visible'#8#0#0#0#10'TPopupMenu'#4'pmPM'#4'Left'#3
+  +#160#0#3'Top'#3#140#0#0#9'TMenuItem'#4'mnew'#7'Caption'#6#3'New'#7'OnClick'#7
+  +#9'mnewClick'#0#0#9'TMenuItem'#9'MenuItem8'#7'Caption'#6#1'-'#0#0#9'TMenuIte'
+  +'m'#3'mpw'#7'Caption'#6#8'Password'#7'OnClick'#7#8'mpwClick'#0#0#9'TMenuItem'
+  +#5'mnote'#7'Caption'#6#16'Note/description'#7'OnClick'#7#10'mnoteClick'#0#0#9
+  +'TMenuItem'#9'MenuItem2'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#5'pmexp'#7'Capti'
+  +'on'#6#20'Export password list'#0#9'TMenuItem'#8'pmexpenc'#7'Caption'#6#9'En'
+  +'crypted'#7'OnClick'#7#13'pmexpencClick'#0#0#9'TMenuItem'#10'pmexpplain'#7'C'
+  +'aption'#6#10'Plain text'#7'OnClick'#7#15'pmexpplainClick'#0#0#0#9'TMenuItem'
+  +#9'MenuItem1'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#7'mremove'#7'Caption'#6#6'R'
+  +'emove'#7'OnClick'#7#12'mremoveClick'#0#0#9'TMenuItem'#9'MenuItem5'#7'Captio'
+  +'n'#6#1'-'#0#0#9'TMenuItem'#6'mreset'#7'Caption'#6#5'Reset'#7'OnClick'#7#11
+  +'mresetClick'#0#0#0#10'TPopupMenu'#12'PopupMenupwm'#4'Left'#3#210#0#3'Top'#3
+  +#174#1#0#9'TMenuItem'#8'mpwreset'#7'Caption'#6#13'Reset keyfile'#7'OnClick'#7
+  +#13'mpwresetClick'#0#0#9'TMenuItem'#10'mpwexplore'#7'Caption'#6#12'Explore p'
+  +'ath'#7'OnClick'#7#15'mpwexploreClick'#0#0#0#11'TOpenDialog'#13'OpenDialogKF'
+  +'M'#5'Title'#6#9'Open file'#11'FilterIndex'#2#0#4'Left'#3#174#1#3'Top'#3#174
+  +#1#0#0#22'TSelectDirectoryDialog'#22'SelectDirectoryDialog1'#5'Title'#6#1' '
+  +#11'FilterIndex'#2#0#7'Options'#11#14'ofCreatePrompt'#14'ofEnableSizing'#12
+  +'ofViewDetail'#0#4'Left'#3#204#1#3'Top'#3#4#1#0#0#0
 ]);

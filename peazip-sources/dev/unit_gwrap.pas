@@ -263,6 +263,10 @@ type
     SaveDialog2: TSaveDialog;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
     ShapeGlobalProgress: TPanel;
+    Shapelink1: TShape;
+    Shapelink2: TShape;
+    Shapelink3: TShape;
+    Shapelink4: TShape;
     ShapeProgress: TPanel;
     ShapeTitleb1: TShape;
     ShapeTitleb2: TShape;
@@ -401,7 +405,7 @@ var
   txt_crscale,txt_done,txt_halted,txt_error,txt_hardware,txt_software,txt_resume,
   txt_stdjob,txt_benchmarkjob,txt_defragjob,txt_consolejob,lang_file,lver,wincomspec,
   winver:ansistring;
-  tabpencol,tabbrushcol,tabbrushhighcol:tcolor;
+  tabpencol,tablowcol,tabbrushcol,tabbrushhighcol:tcolor;
   {$IFDEF MSWINDOWS}
   //semaphore
   psem: THandle;
@@ -453,21 +457,39 @@ end;
 procedure exitlabel_launcher(var a: TLabel; var b:TShape);
 begin
 if activelabel_launcher=a then exit;
-b.Brush.Color:=tabbrushcol;
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=tabbrushcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tabpencol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
 if (highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5) then a.Font.Color:=clDefault else a.Font.Color:=pGray;
-if alttabstyle=1 then a.Font.Style:=[];
 end;
 
 procedure deselectlabels_launcher;
 begin
 with Form_gwrap do
 begin
-exitlabel_launcher(LabelTitle1,ShapeTitleb1);
-exitlabel_launcher(LabelTitle2,ShapeTitleb2);
-exitlabel_launcher(LabelTitle3,ShapeTitleb3);
-exitlabel_launcher(LabelTitle4,ShapeTitleb4);
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   exitlabel_launcher(LabelTitle1,ShapeTitleb1);
+   exitlabel_launcher(LabelTitle2,ShapeTitleb2);
+   exitlabel_launcher(LabelTitle3,ShapeTitleb3);
+   exitlabel_launcher(LabelTitle4,ShapeTitleb4);
+   end
+else
+   begin
+   exitlabel_launcher(LabelTitle1,Shapelink1);
+   exitlabel_launcher(LabelTitle2,Shapelink2);
+   exitlabel_launcher(LabelTitle3,Shapelink3);
+   exitlabel_launcher(LabelTitle4,Shapelink4);
+   end;
 end;
 end;
 
@@ -486,11 +508,19 @@ procedure clicklabel_launcher(var a: TLabel; var b:TShape);
 begin
 activelabel_launcher:=a;
 deselectlabels_launcher;
-if alttabstyle=1 then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline];
-b.Brush.Color:=StringToColor(color2);
-b.Pen.Color:=tabpencol;
-b.Pen.Style:=psSolid;
+if (alttabstyle<>1) and (alttabstyle<>4) then
+   begin
+   b.Brush.Color:=StringToColor(color2);
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end
+else
+   begin
+   b.Brush.Color:=tablowcol;
+   b.Pen.Color:=tabpencol;
+   b.Pen.Style:=psSolid;
+   end;
+if ((alttabstyle=1) or (alttabstyle=4)) and ((highlighttabs=1) or (highlighttabs=4) or (highlighttabs=5)) then a.Font.Color:=ptextaccent else a.Font.Color:=clDefault;
 setlabelpanel_launcher(a);
 end;
 
@@ -500,7 +530,7 @@ if activelabel_launcher=a then exit;
 b.Brush.Color:=tabbrushhighcol;
 b.Pen.Color:=tabpencol;
 b.Pen.Style:=psSolid;
-if alttabstyle=1 then a.Font.Style:=[fsUnderline] else a.Font.Color:=clDefault;
+a.Font.Color:=clDefault;
 end;
 
 ///
@@ -1578,7 +1608,7 @@ if ppause=false then
    end;
 Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
 Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
-clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1) else clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.Shapelink1);
 if insize>0 then
    if (pinsize>0) and (pinsize<>insize) then Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize),filesizebase)+' / '+nicenumber(inttostr(insize),filesizebase)
    else Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(insize),filesizebase)
@@ -1817,7 +1847,7 @@ tdiff:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if tdiff<=0 then tdiff:=100000;
 if pproglast=true then if exit_code<>0 then Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
 Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
-clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1) else clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.Shapelink1);
 {$IFNDEF MSWINDOWS}
 if stopped=true then exit_code:=255;
 {$ENDIF}
@@ -1911,7 +1941,8 @@ case modeofuse of
    0: begin
       end;
    1,4,5: begin
-      if (pfun<>'UNBROTLI') and (pfun<>'UNZSTD') then clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.ShapeTitleb2);
+      if (pfun<>'UNBROTLI') and (pfun<>'UNZSTD') then
+            if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.ShapeTitleb2) else clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.Shapelink2);
       end;
    2: begin
       Form_gwrap.Panel2.Visible:=false;
@@ -1925,7 +1956,7 @@ case modeofuse of
       end;
       end;
    3: begin
-      clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.ShapeTitleb2);
+      if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.ShapeTitleb2) else clicklabel_launcher(Form_gwrap.LabelTitle2,Form_gwrap.Shapelink2);
       end;
    end;
 Form_gwrap.ShapeProgress.Width:=Form_gwrap.Width;
@@ -2441,68 +2472,68 @@ end;
 
 procedure TForm_gwrap.LabelTitle1Click(Sender: TObject);
 begin
-clicklabel_launcher(LabelTitle1,ShapeTitleb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(LabelTitle1,ShapeTitleb1) else clicklabel_launcher(LabelTitle1,Shapelink1);
 end;
 
 procedure TForm_gwrap.LabelTitle1MouseEnter(Sender: TObject);
 begin
-enterlabel_launcher(LabelTitle1,ShapeTitleb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_launcher(LabelTitle1,ShapeTitleb1) else enterlabel_launcher(LabelTitle1,Shapelink1);
 end;
 
 procedure TForm_gwrap.LabelTitle1MouseLeave(Sender: TObject);
 begin
-exitlabel_launcher(LabelTitle1,ShapeTitleb1);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_launcher(LabelTitle1,ShapeTitleb1) else exitlabel_launcher(LabelTitle1,Shapelink1);
 end;
 
 procedure TForm_gwrap.LabelTitle2Click(Sender: TObject);
 begin
-clicklabel_launcher(LabelTitle2,ShapeTitleb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(LabelTitle2,ShapeTitleb2) else clicklabel_launcher(LabelTitle2,Shapelink2);
 end;
 
 procedure TForm_gwrap.LabelTitle2MouseEnter(Sender: TObject);
 begin
-enterlabel_launcher(LabelTitle2,ShapeTitleb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_launcher(LabelTitle2,ShapeTitleb2) else enterlabel_launcher(LabelTitle2,Shapelink2);
 end;
 
 procedure TForm_gwrap.LabelTitle2MouseLeave(Sender: TObject);
 begin
-exitlabel_launcher(LabelTitle2,ShapeTitleb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_launcher(LabelTitle2,ShapeTitleb2) else exitlabel_launcher(LabelTitle2,Shapelink2);
 end;
 
 procedure TForm_gwrap.LabelTitle3Click(Sender: TObject);
 begin
-clicklabel_launcher(LabelTitle3,ShapeTitleb3);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(LabelTitle3,ShapeTitleb3) else clicklabel_launcher(LabelTitle3,Shapelink3);
 end;
 
 procedure TForm_gwrap.LabelTitle3MouseEnter(Sender: TObject);
 begin
-enterlabel_launcher(LabelTitle3,ShapeTitleb3);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_launcher(LabelTitle3,ShapeTitleb3) else enterlabel_launcher(LabelTitle3,Shapelink3);
 end;
 
 procedure TForm_gwrap.LabelTitle3MouseLeave(Sender: TObject);
 begin
-exitlabel_launcher(LabelTitle3,ShapeTitleb3);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_launcher(LabelTitle3,ShapeTitleb3) else exitlabel_launcher(LabelTitle3,Shapelink3);
 end;
 
 procedure TForm_gwrap.LabelTitle4Click(Sender: TObject);
 begin
-clicklabel_launcher(LabelTitle4,ShapeTitleb4);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(LabelTitle4,ShapeTitleb4) else clicklabel_launcher(LabelTitle4,Shapelink4);
 end;
 
 procedure TForm_gwrap.LabelTitle4MouseEnter(Sender: TObject);
 begin
-enterlabel_launcher(LabelTitle4,ShapeTitleb4);
+if (alttabstyle<>1) and (alttabstyle<>4) then enterlabel_launcher(LabelTitle4,ShapeTitleb4) else enterlabel_launcher(LabelTitle4,Shapelink4);
 end;
 
 procedure TForm_gwrap.LabelTitle4MouseLeave(Sender: TObject);
 begin
-exitlabel_launcher(LabelTitle4,ShapeTitleb4);
+if (alttabstyle<>1) and (alttabstyle<>4) then exitlabel_launcher(LabelTitle4,ShapeTitleb4) else exitlabel_launcher(LabelTitle4,Shapelink4);
 end;
 
 procedure TForm_gwrap.LabelWarning1Click(Sender: TObject);
 var s:ansistring;
 begin
-clicklabel_launcher(LabelTitle2,ShapeTitleb2);
+if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(LabelTitle2,ShapeTitleb2) else clicklabel_launcher(LabelTitle2,Shapelink2);
 if (modeofuse=1) or (modeofuse=4) or (modeofuse=5) then s:=txt_3_0_arc+char($0D)+char($0A)+txt_3_0_ext
 else
    if extractfilename(outpath)='' then s:=txt_3_0_arc+char($0D)+char($0A)+txt_3_0_ext

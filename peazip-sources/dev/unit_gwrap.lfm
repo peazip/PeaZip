@@ -396,6 +396,74 @@ object Form_gwrap: TForm_gwrap
         BevelOuter = bvNone
         TabOrder = 0
       end
+      object Shapelink1: TShape
+        AnchorSideLeft.Control = LabelTitle1
+        AnchorSideRight.Control = LabelTitle1
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTitle
+        AnchorSideBottom.Side = asrBottom
+        Left = 205
+        Height = 8
+        Top = 37
+        Width = 88
+        Anchors = [akLeft, akRight, akBottom]
+        Brush.Color = 16448250
+        Pen.Color = clNone
+        Pen.Style = psClear
+        Pen.Width = 0
+        Visible = False
+      end
+      object Shapelink2: TShape
+        AnchorSideLeft.Control = LabelTitle2
+        AnchorSideRight.Control = LabelTitle2
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTitle
+        AnchorSideBottom.Side = asrBottom
+        Left = 293
+        Height = 8
+        Top = 37
+        Width = 93
+        Anchors = [akLeft, akRight, akBottom]
+        Brush.Color = 16448250
+        Pen.Color = clNone
+        Pen.Style = psClear
+        Pen.Width = 0
+        Visible = False
+      end
+      object Shapelink3: TShape
+        AnchorSideLeft.Control = LabelTitle3
+        AnchorSideRight.Control = LabelTitle3
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTitle
+        AnchorSideBottom.Side = asrBottom
+        Left = 386
+        Height = 8
+        Top = 37
+        Width = 101
+        Anchors = [akLeft, akRight, akBottom]
+        Brush.Color = 16448250
+        Pen.Color = clNone
+        Pen.Style = psClear
+        Pen.Width = 0
+        Visible = False
+      end
+      object Shapelink4: TShape
+        AnchorSideLeft.Control = LabelTitle4
+        AnchorSideRight.Control = LabelTitle4
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTitle
+        AnchorSideBottom.Side = asrBottom
+        Left = 487
+        Height = 8
+        Top = 37
+        Width = 100
+        Anchors = [akLeft, akRight, akBottom]
+        Brush.Color = 16448250
+        Pen.Color = clNone
+        Pen.Style = psClear
+        Pen.Width = 0
+        Visible = False
+      end
     end
     object Page3: TPanel
       AnchorSideLeft.Control = Notebook1
