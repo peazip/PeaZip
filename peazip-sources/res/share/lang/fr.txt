@@ -3,18 +3,18 @@ Français
 9.6
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 23.10.2023
+Date du: 16.12.2023
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_6_centered: Centré
+txt_9_6_cside: Barre latérale compacte
+txt_9_6_loadpconfirm: Voulez-vous charger ce profil ? Toutes les données du profil actuel seront écrasées, y compris les scripts enregistrés et le gestionnaire de mots de passe.
+txt_9_6_loadp: Chargement du profil
+txt_9_6_saveppw: OPTIONAL: Protéger ce profil avec un mot de passe/fichier clé ?
+txt_9_6_savepoverwrite: Écraser le profil existant ? Toutes les données du profil existant seront écrasées, y compris les scripts enregistrés et le gestionnaire de mots de passe.
+txt_9_6_savep: Enregistrer le profil
+txt_9_6_scside: Afficher la barre latérale compacte
 txt_9_5_all: Tous
 txt_9_5_precond: Pré-analyse si des erreurs sont détectées
 txt_9_5_largea: Pré-analyse d’archives volumineuses
