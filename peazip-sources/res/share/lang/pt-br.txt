@@ -7,14 +7,14 @@ Last rev.: 20231009
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_6_centered: Centralizado
+txt_9_6_cside: Barra lateral compacta
+txt_9_6_loadpconfirm: Deseja carregar este perfil? Todos os dados do perfil atual serão substituídos, incluindo scripts salvos e Gerenciador de Senhas.
+txt_9_6_loadp: Carregar perfil
+txt_9_6_saveppw: OPCIONAL: proteger este perfil com senha/arquivo-chave?
+txt_9_6_savepoverwrite: Substituir o perfil existente? Todos os dados do perfil existente serão substituídos, incluindo scripts salvos e Gerenciador de Senhas.
+txt_9_6_savep: Salvar perfil
+txt_9_6_scside: Exibir barra lateral compacta
 txt_9_5_all: Todos
 txt_9_5_precond: Pré-analisar se erros forem detectados
 txt_9_5_largea: Pré-analisar arquivos grandes
@@ -463,10 +463,10 @@ txt_4_6_am: Gerenciador de Arquivos
 txt_4_6_fm: Editor de Arquivos
 txt_4_6_users: Usuários
 txt_4_5_goupdate: Uma nova versão está disponível. Abra o sítio oficial do Peazip na web para baixar a atualização?
-txt_4_5_b: Embaixo
+txt_4_5_b: Inferior
 txt_4_5_koupdate: Não foi possível checar por atualizações, não há conexão com servidor da atualização
 txt_4_5_update: Checar por atualizações
-txt_4_5_dock: Docar
+txt_4_5_dock: Encaixar
 txt_4_5_l: Esquerda
 txt_4_5_noupdate: PeaZip está atualizado
 txt_4_5_properties: Propriedades
@@ -477,7 +477,7 @@ txt_4_5_shnav: Exibir barra de navegação
 txt_4_5_shstatus: Exibir barra de status
 txt_4_5_shtool: Exibir barra de ferramentas
 txt_4_5_upxpj: Desculpe, não foi possível exportar as definições da tarefa desde que essa ação ou opção requer que sejam realizados múltiplos comandos distintos
-txt_4_5_t: Encima
+txt_4_5_t: Superior
 txt_4_4_confremoveall: Remover todos arquivos de personalização do PeaZip (Aplicativos, Favoritos, Gerenciador de Senha)?
 txt_4_4_confremove: Remover configuração do PeaZip?
 txt_4_3_pwmanhint: Dê um duplo clique para editar itens em lista de senhas, clique botão direito do mouse para opções, Ctrl+C para copiar senhas
@@ -565,7 +565,7 @@ txt_2_9_public: Público
 txt_2_9_rec: Recursivo: pesquisa em subdiretórios, pode demorar algum tempo
 txt_2_9_selected: Selecionados
 txt_2_9_setapps: Definir aplicativos preferidos
-txt_2_9_showmenu: Mostrar a barra de menu
+txt_2_9_showmenu: Exibir barra de menu
 txt_2_9_st: Pequeno
 txt_2_9_test_pw2G: Teste para criptografia <2GB arquivos
 txt_2_9_vst: Só texto
@@ -588,7 +588,7 @@ txt_2_8_custom: não é diretamente suportado pelo Peazip, mas na fase de extra�
 txt_2_8_unitrecommend: Recomenda-se, que extrair (clique direito do mouse> extrair selecionado) ou para abrir arquivos da raiz do computador (ferramentas de sistema> Abrir como unidade de arquivo)
 txt_2_8_viewasarchive: Abrir unidade como arquivo
 txt_2_8_nounit: Nenhuma unidade selecionada
-txt_2_8_rowselect: Selecione linha
+txt_2_8_rowselect: Linha selecionada
 txt_2_8_statusbar: Barra de Status
 txt_2_8_typeunit: Digite o nome de unidade lógica ou física
 txt_2_8_usedefaultoutpath: Usar caminho de saída padrão
@@ -795,7 +795,7 @@ txt_compression: Compressão
 txt_compmanagement: Gerenciamento do Computador
 txt_pw_confirm: Confirmar senha
 txt_console: Terminal
-txt_console_interface: terminal: interface nativa
+txt_console_interface: Terminal
 txt_content: Conteúdo
 txt_controlpanel: Painel de Controle
 txt_convert: Converter disco para NTFS
@@ -909,8 +909,8 @@ txt_general: Geral
 txt_multithreading: multithreading genérico
 txt_go_browser: Ir para o navegador de arquivo
 txt_go_path: Explorar Diretório (PeaZip)
-txt_guicl: Gráfico + terminal
-txt_guipealauncher: Gráfico: envolto por PeaLauncher
+txt_guicl: GUI + Console
+txt_guipealauncher: GUI
 txt_graphic: Pasta dos gráficos
 txt_gridaltcolor: Cores Alternadas das grades
 txt_gridrowheight: Altura das linhas da grade
@@ -1004,7 +1004,7 @@ txt_list_nomatch: sem correspondente
 txt_singlethread: Sem multithreading
 txt_none2: vazio
 txt_nonsolid: Não-sólido
-txt_level_normal: normal
+txt_level_normal: Normal
 txt_copy_error: copiado ou movido sem sucesso, código de erro:
 txt_description: Nota/descrição
 txt_compare_second: Agora selecione arquivo para ser comparado com
@@ -1025,7 +1025,7 @@ txt_open_path: Abrir diretório
 txt_opensource: Compressor portátil de Código Aberto
 txt_openwith: Abrir com...
 txt_aborted: Operação abortada
-txt_unit_cd: Drive óptico
+txt_unit_cd: Unidade óptica
 txt_options: Opções
 txt_other: Outros
 txt_otherparams: Outros parâmetros (livre edição)
@@ -1275,7 +1275,7 @@ txt_job7: 7: Erro: há erro(s) na linha de comando
 txt_job8: 8: Erro: não há memória suficiente para executar a operação requisitada
 txt_autoclose: Fechar esta janela quando a tarefa estiver completa
 txt_crscale: Nível de compressão (menor, melhor):
-txt_console: Terminal
+txt_console: Console
 txt_benchscale: Core 2 Duo 6600 rating, velocidade equivalente em MHz.
 txt_create: Criar
 txt_done: Concluída:
