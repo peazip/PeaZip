@@ -70,7 +70,7 @@ Computer's root
 [ignore archived path structure when performing extraction of selected objects]
 0
 
-[archive browser speed optimization: 0 no optimization 1..4 slower to faster optimization (3 default) 5 do not pre-parse archives, may non correctly list some out of standard archives]
+[archive browser speed optimization: 0 no optimization 1..3 slower to faster optimization (3 default) 4 pre-parse if errors are detected 5 do not pre-parse archives: 4,5 may non correctly list some out of standard archives]
 3
 
 [(obsolete) don't pre-parse archives over this in-memory size]
@@ -208,7 +208,7 @@ Deflate
 [desktop path]
 
 
-[job definition encoding]
+[scripts encoding, legacy parameter (now always UTF-8) ]
 0
 
 [archived object's name encoding]
@@ -785,4 +785,7 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 0
 
 [Save open tabs on exit]
+0
+
+[Side bar]
 0
