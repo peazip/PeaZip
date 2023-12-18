@@ -1,20 +1,20 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
 9.6
-Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye
+Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
 Last rev. by: Junde Yhi
-Last rev.: 20231025
+Last rev.: 20231218
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_6_centered: 居中
+txt_9_6_cside: 紧凑型侧边栏
+txt_9_6_loadpconfirm: 您想加载此配置文件吗？当前配置文件的所有数据都将被覆盖，包括保存的脚本和密码管理器。
+txt_9_6_loadp: 加载配置文件
+txt_9_6_saveppw: 可选：使用密码/密钥文件保护此配置文件？
+txt_9_6_savepoverwrite: 覆盖现有的配置文件？现有配置文件的所有数据都将被覆盖，包括保存的脚本和密码管理器。
+txt_9_6_savep: 保存配置文件
+txt_9_6_scside: 显示紧凑型侧边栏
 txt_9_5_all: 全部
 txt_9_5_precond: 检测到错误时再预解析
 txt_9_5_largea: 预解析大的归档文件
