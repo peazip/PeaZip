@@ -1,359 +1,359 @@
 ﻿=== PeaZip language file ===
 Swedish - Svenska
 9.6
-Översatt av: Mikael Hiort af Ornäs
-Senast rev. av: M. HafO
-Senast rev.: 20140413
+Översatt av: FX (old translation: Mikael Hiort af Ornäs 20140413)
+Senast rev. av: FX
+Senast rev.: 2023-12-29
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
+txt_9_6_centered: Centrerad
+txt_9_6_cside: Kompakt sidopanel
+txt_9_6_loadpconfirm: Vill du ladda denna profil? All data i den befintliga profilen kommer att skrivas över, inklusive sparade skript och lösenords hanteraren.
+txt_9_6_loadp: Ladda profil
+txt_9_6_saveppw: OPTIONAL: skydda denna profil med ett lösenord/nyckelfil?
+txt_9_6_savepoverwrite: Skriv över befintlig profil? All data i den befintliga profilen kommer att skrivas över, inklusive sparade skript och lösenords hanteraren.
+txt_9_6_savep: Spara profil
+txt_9_6_scside: Visa kompakt sidopanel
+txt_9_5_all: Alla
+txt_9_5_precond: Förbered om fel upptäcks
+txt_9_5_largea: Förbered stora arkiv
+txt_9_5_mediuma: Förbered medium arkiv
+txt_9_5_smalla: Förbered små arkiv
+txt_9_5_reopentab: Återöppna senaste flik
+txt_9_5_savetabs: Spara flikar
+txt_9_5_sb: Använd binärfiler i systemsökvägar
+txt_9_4_r: läs
+txt_9_4_rw: läs/skriv
+txt_9_4_savecomment: Spara kommentar
+txt_9_4_hintcomment: Skriv eller klistra in kommentar, ladda eller drag här fil kommenterar.
+txt_9_3_continue: Fortsätt ändå?
+txt_9_3_contrast: Kontrast
+txt_9_3_fsd: Ledigt utrymme på destinationen kanske inte räcker till
+txt_9_3_fsw: Ledigt utrymme på tillfällig arbetsväg kanske inte räcker till
+txt_9_3_mrar: Ställ in RAR-binärfil manuellt
+txt_9_3_canedit: Den här arkivtypen kan redigeras
+txt_9_3_canforce: Den här arkivtypen kan redigeras (tvingad)
+txt_9_3_cannotedit: Den här arkivtypen kan inte redigeras
 txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
+txt_9_2_changelog: Ändra logg
+txt_9_2_tfaq: Kontrollera om det finns översättningar
+txt_9_2_compact: Komprimera
+txt_9_2_swt: Byt verktyg / Adressfält
+txt_9_2_tos: TOS, Sekretess
+txt_9_2_doc: Verifiera dokumentation, Problemspårare...
+txt_9_2_updates: Verifiera uppdateringar, binärer, Plugins...
+txt_9_1_7zs: 7z / p7zip syntaxnivå
+txt_9_1_ac: Arkivets konverteringsskript tillåter användarens interaktion
+txt_9_1_closeall: Stäng alla
+txt_9_1_enlargeicons: Förstora filhanterarens ikoner
+txt_9_1_ef: Uteslut tomma mappar från arkivering och extraherings operationer (7z / p7zip)
+txt_9_1_nw: Öppna i ett nytt fönster
+txt_9_1_qdup: Använd snabb dedupliceringsrutin
+txt_9_0_autoexttar: Extrahera automatiskt TAR-arkiv från komprimerade TAR.* filer
+txt_9_0_accesstime: Ändra inte senaste åtkomsttid
+txt_9_0_mem: Maximalt minnes användande
+txt_9_0_showmainmenu: Öppna Huvud menyn
+txt_9_0_navmenu: Öppna Navigations menyn
+txt_9_0_plugind: Öppna binär och Plugin mappen
+txt_9_0_df: Sortera mappar före filer
+txt_9_0_hl: Spara hårda länkar som länkar
+txt_9_0_sl: Spara symboliska länkar som länkar
+txt_9_0_tnav: Växla sidopanel, trädvy, ingen
+txt_8_9_empty: Arkivet verkar vara tomt
+txt_8_9_disp: Visar arkivets innehåll
+txt_8_9_parsing: Analyserar arkivets innehåll
+txt_8_9_stoptest: Stoppa för att inspektera rapporten för fel, lista, testa, auto-testa
+txt_8_9_ttb: Växla verktygs panel
+txt_8_8_ca: Accent färg
+txt_8_8_btn: Knapp
+txt_8_8_cb: Knapp färg
+txt_8_8_centered: Centrerade knappar
+txt_8_8_light: Ljus
+txt_8_8_lnk: Länk
+txt_8_8_intnote: Observera att alternativet "Interaktiv extraktion" (i Alternativ > Inställningar > Arkiv hanteraren) ignoreras för skapandet genom konsolfliken.
+txt_8_8_snz: Sprid Zone.Identifier strömmen (Windows)
+txt_8_8_sm: Liten ikon storlek
+txt_8_8_solcol: Solid panel
+txt_8_8_snoi: Lagra ägare/grupp ids (TAR, Linux)
+txt_8_8_snon: Lagra ägare/grupp namn (TAR, Linux)
+txt_8_8_tab: Flik
+txt_8_8_altt: Flikars stil
+txt_8_8_autotest: Testa arkiv efter skapandet, Om det stöds av formatet
+txt_8_8_cw: Fönster färg
+txt_8_7_csvhelp: "," internationell standard, ";" vanligt i latinska språk
+txt_8_7_after: Efter arkivering / extraktion
+txt_8_7_bintest: Binärer testade.
 txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
+txt_8_7_hok: Hash av binärer använda av PeaZip matchar med förväntade värden
+txt_8_7_mo: Ställ in arkiv hanterar alternativ
+txt_8_7_showhm: Visa rubrikmenyn för filbläddraren
+txt_8_7_showsearchbar: Visa sökpanelen
+txt_8_7_showsm: Visa Utseende menyn
+txt_8_7_hnotok: Vissa hash av binärer använda av PeaZip matchar ej med förväntade värden:
+txt_8_7_verifybin: Verifiera hash av binärfiler
+txt_8_6_clear: "Klar" val tar bort temporära datafiler, annars behålls dom för ytterligare redigering.
+txt_8_6_noclear: Ignorera alla ändringar utan att uppdatera arkivet
+txt_8_6_nosimple: Uppdatera ej arkiv, behåll temporära filer för ytterligare redigering
+txt_8_6_immediate: Utför omedelbart
+txt_8_6_yessimple: Uppdatera arkiv, behåll temporära filer för ytterligare redigering
+txt_8_5_advbrowser: Tillämpa filter i arkiv bläddraren
+txt_8_5_detailslarge: Detaljer, stor
+txt_8_5_intext: Extrahera till tempmappen, flytta sedan till utdatamappen (fråga innan överskrivning)
+txt_8_5_listlarge: Lista, stor
+txt_8_5_loadlayout: Ladda layout vid start
+txt_8_5_samplescripts: Exempel på skript
+txt_8_4_keepopenerrorslist: Stoppa för att inspektera rapport för fel, lista
+txt_8_3_mbubin: Binär
+txt_8_3_cw: Ändra arbetskatalog? Detta kommer att återställa tillfälliga arbetsfiler och starta om programmet.
+txt_8_3_temperature: Färg temperatur
 txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
+txt_8_3_htab: Markera flikar
+txt_8_3_maxarg: Maximal längd av argument
+txt_8_3_mbu: Enhet med flera byte
+txt_8_3_prefalgo: Föredragna algoritmer
+txt_8_3_skipdel: Skippa radering av låsta temp filer (använd resett för att radera)
+txt_8_3_lw: Några filer i arbets mappen är låsta och kan inte bli automatiskt raderade
+txt_8_3_noupx: Denna binära kan inte komprimeras (kan redan vara komprimerad)
+txt_8_2_slower: (långsammare)
+txt_8_2_df: 7z / p7zip visa innehåll av mappar
+txt_8_2_vreport: 7z / p7zip Icke-utförlig rapport
+txt_8_2_ta: Åtkomst
+txt_8_2_tc: Skapad
+txt_8_2_keep: Behåll filer
+txt_8_2_tm: Modifierad
+txt_8_2_skipet: Skippa test för kryptering
+txt_8_2_alltimes: Lagra alla tidsstämplar
+txt_8_2_supportedby: Stöds av
+txt_8_1_preparse: Föranalysera alltid arkiv
+txt_8_1_bo: Optimering av webbläsare
+txt_8_1_bop: Optimering av webbläsare alternativ kan ställas från Alternativ > Inställningar, Allmän flik, för att tillåta bläddraren att visa arkiv innehållande mycket stort mängd av data.
+txt_8_1_nopreparse: Förhandsanalysera inte arkiv
+txt_8_1_ed: fel(s) upptäckta.
+txt_8_1_togglearc: Lista platt vy av arkivinnehåll kan ta lång tid, fortsätt ändå?
+txt_8_1_preparsehint: Optimera prestanda som begränsar förhandsbehandling av stor arkiv. Förhandsbehandling är tänkt att detektera eventuella problem med arkivets innehåll.
+txt_8_1_slow: Långsamt
+txt_8_1_vslow: Väldigt långsamt
+txt_8_1_volumes: volymer
+txt_8_0_altcol: Alternativ mönster färg
+txt_8_0_forcebrowse: Bläddra bland icke-kanoniska arkivtyper (behållare, disk avbilder, installerare,...)
+txt_8_0_commonalgo: Vanliga algoritmer
+txt_8_0_forceconvert: Konvertera icke-kanoniska arkivtyper
+txt_8_0_defaultactionhint: Standardåtgärd för dubbelklick på en fil som är associerad med PeaZip från systemet
+txt_8_0_defaultaction: Standardåtgärd vid start
+txt_8_0_enableextand: Aktivera undermenyn "Extrahera och öppna med"
+txt_8_0_forcetyping: Tvinga att skriva lösenord interaktivt
+txt_8_0_setpwopt: Ställ lösenords / nyckelfils alternativ
+txt_8_0_forcetypinghelp: Kör backend-binärfil i konsolen, det går inte att bläddra i arkivet med krypterade filnamn. Gör det möjligt att skapa skript som inte körs obevakade utan snarare frågar användaren interaktivt för lösenord.
+txt_7_9_spacing: Avstånd
+txt_7_9_zooming: Zooma
+txt_7_8_changelocalization: Ändra PeaZips språk
+txt_7_8_custext: Anpassat tillägg
+txt_7_8_destexistfile: Målet innehåller redan bearbetade filer. Ersätt filer med samma namn?
+txt_7_8_dd: Dra och släpp
+txt_7_8_priorityhigh: Hög
+txt_7_8_priorityidle: Overksam
+txt_7_8_rel: Interaktiv extraktion
 txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
-txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
-txt_7_6_setcurdef: Set current path as default output path
-txt_7_6_setdef: Set default output path
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
+txt_7_8_priorityrealtime: Realtid
+txt_7_8_requirerestart: [kräver omstart av PeaZip]
+txt_7_8_tpriority: Prioritet för uppgifter
+txt_7_8_update: Uppdatera
+txt_7_7_noneall: Ingen (ingen förhandsvy, ingen Dra och släpp extraktion)
+txt_7_7_nonetemp: Ingen, Användarens temp mapp om nödvändigt
+txt_7_7_outtemp: Utdata, förhandsvisa i användarens temp
+txt_7_7_sys7zreq: Kräver p7zip-full eller motsvarande för att installeras
+txt_7_7_tw: Temporär arbetsmapp för arkiv skapande, editerande, förhandsvy och dra och släpp extraktion.
+txt_7_7_sys7z: Använd system 7z i Linux
+txt_7_6_zipenc: 7z/p7zip ZIP kodning av filnamn
+txt_7_6_color: Färg
+txt_7_6_custenc: Anpassad kodsida
+txt_7_6_dark: Mörk
+txt_7_6_tno: Synkronisera inte arkiv träd
+txt_7_6_forcelocalenc: Tvinga lokal
+txt_7_6_forceutf8enc: Tvinga UTF-8
+txt_7_6_cpnote: Om den valda anpassade kodsidan inte stöds, uppgifter kommer alltid att sluta med fel (Mest troligt minnesallokeringsfel). Om det händer, byt kodsida eller återställ applikationen.
+txt_7_6_defaultenc: Lokal, UTF-8 för extra symboler
+txt_7_6_dim: Lågt ljus
+txt_7_6_setcurdef: Ställ nuvarande sökväg som standard för utdata
+txt_7_6_setdef: Ställ standard sökväg för utdata
+txt_7_6_tadvanced: Synkronisera arkivträd, behåll besökta noder
+txt_7_6_tsimple: Synkronisera arkivträd, enkelt
 txt_7_6_tacolor: Text accent
-txt_7_5_always: Always
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Cut name at specified length
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
-txt_7_5_never: Never
-txt_7_5_repnascii: Replace/remove non-ASCII characters
-txt_7_4_comment: Comment
-txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
-txt_7_4_presetrar: High compression, RAR
-txt_7_4_tkeep: Keep original archive timestamp
-txt_7_4_lock: Lock archive
-txt_7_4_locked: locked
-txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
-txt_7_4_recover: Repair archive
-txt_7_4_tcurr: Set archive timestamp from current system time
-txt_7_4_setarc: Set archiving options
-txt_7_4_setext: Set extraction options
-txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
-txt_7_3_archiveerrors: [archive may contain errors]
-txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
-txt_7_3_clickextall: Click "Extract all" to enable
-txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
-txt_7_3_profile7zfastest: Fast compression, 7Z fastest
-txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
-txt_7_3_maxzstd: Maximize Zstandard compression using more memory
-txt_7_3_profile7zfast: Medium compression, 7Z fast
-txt_7_3_stl: Set archive timestamp from most recent file
-txt_7_2_altcomp: Alternative compression, ARC
-txt_7_2_clearnoupdate: Clear edited files
-txt_7_2_autoclosepeazip: Close PeaZip when task completes
-txt_7_2_zpaqall: Extract all revisions
-txt_7_2_extcomp: Extreme compression, ZPAQ
-txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
-txt_7_2_fbrotlicomp: Fastest compression, Brotli
-txt_7_2_fzstandardcomp: Fastest compression, Zstandard
-txt_7_2_loadcompsettings: Load compression settings
-txt_7_2_savecompsettings: Save compression settings
-txt_7_2_source: Source
-txt_7_2_updateclear: Update edited files in archive, and clear edited files
-txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here, in new folder
-txt_7_1_smart: Extract all here, smart
-txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
-txt_7_1_renfilesonly: Rename only files
-txt_7_1_typetosearch: Type to search in current path
-txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
-txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
-txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
-txt_6_9_autou: Auto update modified files in archives
-txt_6_9_forceu: Force update modified files in archives
-txt_6_9_opuns: Operation not supported for current archive type
-txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
-txt_6_9_uconf: Previewed file has been modified. Update the current archive?
-txt_6_8_ndrop: Use native Drag And Drop on Windows
-txt_6_7_nop: (no preview)
-txt_6_6_pdupfound: possible duplicates found (quick approximate test)
-txt_6_6_rsh: Reset search history
-txt_6_6_pdupfind: Suggest possible duplicates
-txt_6_6_forcemodify: Try to edit non explicitly supported file types
-txt_6_5_mandatory: (mandatory)
-txt_6_5_abort: Abort
-txt_6_5_askp: Ask to set password at startup
-txt_6_5_chp: Change password
+txt_7_5_always: Alltid
+txt_7_5_ask: Fråga
+txt_7_5_autoclosesingle: Automatisk stängning efter extraktion om inga bläddringsåtgärder har utförts
+txt_7_5_cutlen: Klipp namn vid angiven längd
+txt_7_5_cutlenw: Klipp namn vid angiven längd (4..255) namnkonflikter kan åtgärdas manuellt senare
+txt_7_5_dragnone: Lås inte målet
+txt_7_5_specialbrowse: Vill du extrahera allt för att förse filen med den extra data den kan behöva?
+txt_7_5_ee: Extrahera allt för speciella fil typer
+txt_7_5_draghide: Dölj släppmål
+txt_7_5_draglh: Lås och dölj mål
+txt_7_5_draglock: Lås släppmål
+txt_7_5_never: Aldrig
+txt_7_5_repnascii: Ersätt/ta bort icke-ASCII tecken
+txt_7_4_comment: Kommentar
+txt_7_4_7zfbrotlicomp: Snabbast komprimering, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Snabbast komprimering, 7Z Zstandard
+txt_7_4_presetrar: Hög komprimering, RAR
+txt_7_4_tkeep: Behåll orginal arkivs tidsstämpel
+txt_7_4_lock: Lås arkiv
+txt_7_4_locked: låst
+txt_7_4_lockconfirm: Låst arkiv kan inte ändras ytterligare, fortsätter du att låsa detta arkiv?
+txt_7_4_recover: Reparera arkiv
+txt_7_4_tcurr: Ställ arkiv tidsstämpel från aktuell systemtid
+txt_7_4_setarc: Ställ arkiverings alternativ
+txt_7_4_setext: Ställ extraktions alternativ
+txt_7_4_swzipx: Växla till zipx tillägg för non-Deflate zip arkiv
+txt_7_3_archiveerrors: [arkiv kan innehålla fel]
+txt_7_3_archiveerrorshint: Arkivet kanske inte är giltigt (på grund av saknad, felaktig, eller utanför standard data), det är möjligt att köra test för detaljerad information. Om arkivet är krypterat behövs lösenordet för att bläddra i det.
+txt_7_3_clickextall: Klicka "Extrahera alla" för att aktivera
+txt_7_3_noconfdel: Be inte om bekräftelse för att radera efter arkivering / extraktion
+txt_7_3_profile7zfastest: Snabb komprimering, 7Z snabbast
+txt_7_3_maxbr: Maximera Brotli komprimering genom mera minne (kan vara inkompatibel med vissa extraktorer)
+txt_7_3_maxzstd: Maximera Zstandard komprimering genom mera minne
+txt_7_3_profile7zfast: Medium komprimering, 7Z snabb
+txt_7_3_stl: Ställ arkiv tidsstämpel från den senaste filen
+txt_7_2_altcomp: Alternativ komprimering, ARC
+txt_7_2_clearnoupdate: Rensa redigerade filer
+txt_7_2_autoclosepeazip: Stäng PeaZip när uppgiften har slutförts
+txt_7_2_zpaqall: Extrahera alla revisioner
+txt_7_2_extcomp: Extrem komprimering, ZPAQ
+txt_7_2_extcompultra: Extrem komprimering, ZPAQ ultra
+txt_7_2_fbrotlicomp: Snabbast komprimering, Brotli
+txt_7_2_fzstandardcomp: Snabbast komprimering, Zstandard
+txt_7_2_loadcompsettings: Ladda komprimering inställningar
+txt_7_2_savecompsettings: Spara komprimering inställningar
+txt_7_2_source: Källa
+txt_7_2_updateclear: Uppdatera redigerade filer i arkiv, och rensa redigerade filer
+txt_7_1_type_description_brotli: Brotli: snabb komprimerare från Google, väldigt snabb uppackning
+txt_7_1_new: Extrahera alla här, i ny mapp
+txt_7_1_smart: Extrahera alla här, smart
+txt_7_1_profileintermediate: Medelsnabb komprimering, ZIP/BZip2 fast
+txt_7_1_renfilesonly: Namnbyt endast filer
+txt_7_1_typetosearch: Skriv för att söka i aktuell sökväg
+txt_7_1_type_description_zstd: Zstandard: snabb komprimerare från Facebook, väldigt snabb uppackning
+txt_7_0_af: Analysera innehåll av mappar
+txt_7_0_autoopentar: Auto öppna ensamt tar arkiv inuti tar.* filer
+txt_7_0_exttmppath: Innehållet kommer att extraheras utanför den tillfälliga arbetssökvägen
+txt_6_9_autou: Auto uppdatera modifierade filer i arkivet
+txt_6_9_forceu: Tvinga uppdatering av modifierade filer i arkivet
+txt_6_9_opuns: Åtgärden stöds inte för aktuella arkiv typen
+txt_6_9_overarch: Skriv över fil(er) med samma namn som redan existerar i arkivet?
+txt_6_9_uconf: Förhandsgranskad fil har blivit modifierad. Uppdatera det nuvarande arkivet?
+txt_6_8_ndrop: Använd inbyggd dra och släpp på fönster
+txt_6_7_nop: (ingen förhandsgranskning)
+txt_6_6_pdupfound: möjliga dubbletter hittades (snabbt ungefärligt test)
+txt_6_6_rsh: Återställ sökhistoriken
+txt_6_6_pdupfind: Föreslå möjliga dubbletter
+txt_6_6_forcemodify: Försök att redigera filtyper som inte uttryckligen stöds
+txt_6_5_mandatory: (obligatorisk)
+txt_6_5_abort: Avbryt
+txt_6_5_askp: Fråga att sätta lösenord vid uppstart
+txt_6_5_chp: Byt lösenord
 txt_6_5_def: Definition
-txt_6_5_nop: Don't ask to set password at startup
-txt_6_5_error: Error
-txt_6_5_seqerr: Error(s) detected, original files will not be deleted
-txt_6_5_sni: Include NT security information
-txt_6_5_sns: Include NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
-txt_6_5_showvolatile: Show which options are volatile / context depentent
-txt_6_5_force: Try to open archives containing errors
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
-txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
-txt_6_4_absolute: Absolute paths
-txt_6_4_appdirn: Append directory name
-txt_6_4_closeallother: Close all other tabs
-txt_6_4_closeright: Close tabs on the right
-txt_6_4_collapse: Collapse tabs
-txt_6_4_expand: Expand tabs
-txt_6_4_full: Full paths
-txt_6_4_new: New
-txt_6_4_openintab: Open in a new tab
-txt_6_4_paths: Paths
-txt_6_4_prepdirn: Prepend directory name
-txt_6_4_relative: Relative paths
-txt_6_4_tabbar: Tab bar
-txt_6_3_autoadjust: Auto adjust columns
-txt_6_3_cinfo: Info and comments
-txt_6_3_syn: Synchronize archive with disk
-txt_6_3_uar: Update only files already in archive
-txt_6_2_encext: Add ".enc" suffix to encrypted archives
-txt_6_2_archive: Archive file type
-txt_6_2_container: Container file type
-txt_6_1_ec: Expand / collapse archive tree
-txt_6_0_msq: Sort by file type for solid compression
-txt_5_9_lff: Analyze files and folders
-txt_5_9_pff: Analyze, show files header/EOF
-txt_5_9_start: Start from
-txt_5_8_l0: Allow any supported component/format
-txt_5_8_l1: Allow only Free Software components
-txt_5_8_l2: Allow only open archive formats
-txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
-txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
-txt_5_8_fs: Free Software compliance
-txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
-txt_5_8_fsr: This format is not suported due Free Software compliance restrictions (Options > Advanced)
-txt_5_7_pinstalled: INSTALLED
-txt_5_7_pmissing: MISSING
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for pulgin and addon
-txt_5_6_basic: Basic
-txt_5_6_exarc: Extract archive
-txt_5_6_tab: Open in new tab
-txt_5_6_rc: Right click for options
-txt_5_6_layouts: Saved layouts
-txt_5_6_upexisting: Update existing archive
-txt_5_6_verbose: Verbose
-txt_5_5_case: (case sensitive)
-txt_5_5_add: Add string at specified position
-txt_5_5_addsel: Add to current selection
-txt_5_5_ext: Change files extension
-txt_5_5_plugin: Check for plugin and addon
-txt_5_5_copypath: Copy path
-txt_5_5_delete: Delete characters at specified position
-txt_5_5_halt: Halt system when task completes
-txt_5_5_positionw: Hint: 1 add before first char, 2 second, etc... "z" for end of file name
-txt_5_5_positionwd: Hint: 1 delete from first char included, 2 second, ... "z" for end of file name
-txt_5_5_replaceneww: Hint: provide an empty new string to simply remove the old string
-txt_5_5_lower: Lowercase
-txt_5_5_replaceoldw: Modify all occurrences of this string or character in the file name
-txt_5_5_newext: New extension
-txt_5_5_new: New string
-txt_5_5_n: Number of characters to delete
-txt_5_5_old: Old string
-txt_5_5_position: Position (number or "z" for end)
-txt_5_5_intdir: Smart new folder
-txt_5_5_replacestr: Replace/remove string
-txt_5_5_datesameday: Same day of selected object
-txt_5_5_datesamehour: Same hour of selected object
-txt_5_5_datesamemonth: Same month of selected object
-txt_5_5_datesameweek: Same week of selected object
-txt_5_5_datesameyear: Same year of selected object
-txt_5_5_scan: Scan
-txt_5_5_select: Select
-txt_5_5_similar: Similar to selected object
-txt_5_5_starting: Starting with same character
-txt_5_5_string: String to add
-txt_5_5_subtractsel: Subtract from current selection
-txt_5_5_datehour: This hour
-txt_5_5_datemonth: This month
-txt_5_5_dateweek: This week
-txt_5_5_dateyear: This year
-txt_5_5_dateday: Today
-txt_5_5_upper: Uppercase
-txt_5_5_extw: Warning: changing file extension the file may become unusable
-txt_5_4_da: Date added
-txt_5_4_deletearchives: Delete archives after extraction
-txt_5_4_deletefiles: Delete files after archiving
-txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
-txt_5_4_lv: Last visited
-txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
-txt_5_4_deletefilesconfirm: Confirm deletion of original files?
-txt_5_4_used: Used
+txt_6_5_nop: Fråga inte att sätta lösenord vid uppstart
+txt_6_5_error: Fel
+txt_6_5_seqerr: Fel(s) upptäckta, orginal filer kommer ej att raderas
+txt_6_5_sni: Inkludera NT säkerhets information
+txt_6_5_sns: Inkludera NTFS Alternativ Data Ström
+txt_6_5_privacy: Sekretess
+txt_6_5_showvolatile: Visa vilka alternativ som är flyktiga / kontextberoende
+txt_6_5_force: Försök öppna arkiv som har felaktigheter
+txt_6_5_warning: Varning
+txt_6_5_yes: Ja
+txt_6_5_yesall: Ja till alla
+txt_6_5_np: Du kan nu byta lösenord av konverterade arkiv till ett nytt, eller blankt för att skippa kryptering
+txt_6_4_absolute: Absoluta sökvägar
+txt_6_4_appdirn: Lägg till katalognamn
+txt_6_4_closeallother: Stäng alla andra flikar
+txt_6_4_closeright: Stäng flikar till höger
+txt_6_4_collapse: Komprimera flikar
+txt_6_4_expand: Expandera flikar
+txt_6_4_full: Fulla sökvägar
+txt_6_4_new: Ny
+txt_6_4_openintab: Öppna in a ny flik
+txt_6_4_paths: Sökvägar
+txt_6_4_prepdirn: Namn på tilläggskatalog
+txt_6_4_relative: Relativa sökvägar
+txt_6_4_tabbar: Flik panel
+txt_6_3_autoadjust: Justera kolumner automatiskt
+txt_6_3_cinfo: Info och kommentarer
+txt_6_3_syn: Synkronisera arkiv med disk
+txt_6_3_uar: Uppdatera endast filer redan i arkiv
+txt_6_2_encext: Lägg till ".enc" filändelse till krypterat arkiv
+txt_6_2_archive: Arkiv filtyp
+txt_6_2_container: Behållare för filtyp
+txt_6_1_ec: Expandera/komprimera arkiv träd
+txt_6_0_msq: Sorta efter filtyp för solid komprimering
+txt_5_9_lff: Analysera filer och mappar
+txt_5_9_pff: Analysera, visa fil huvud/EOF
+txt_5_9_start: Starta från
+txt_5_8_l0: Tillåt alla supporterade komponenter/format
+txt_5_8_l1: Tillåt endast fri programvara komponenter
+txt_5_8_l2: Tillåt endast öppna arkiv format
+txt_5_8_ascii: ASCII-säker, skript är säkra i äldre miljöer
+txt_5_8_cp: Teckentabellssäkert, skript kan utlösa problem i äldre miljöer med olika teckentabeller
+txt_5_8_fs: Överensstämmelse med fri programvara
+txt_5_8_utf: Skript behöver fullständig UTF-8 / Unicode-miljö
+txt_5_8_fsr: Detta format stöds inte på grund av begränsningar i fråga om fri programvara (Alternativ > Avancerat)
+txt_5_7_pinstalled: INSTALLERAD
+txt_5_7_pmissing: SAKNAD
+txt_5_7_plugin: Plugin saknas, kan installeras från Hjälp > Sök efter plugin och tillägg
+txt_5_6_basic: Grundläggande
+txt_5_6_exarc: Extrahera arkiv
+txt_5_6_tab: Öppna i ny flik
+txt_5_6_rc: Höger klicka för alternativ
+txt_5_6_layouts: Sparade layouter
+txt_5_6_upexisting: Uppdatera existerande arkiv
+txt_5_6_verbose: Mångordig
+txt_5_5_case: (skiftlägeskänslig)
+txt_5_5_add: Lägg till sträng vid angiven position
+txt_5_5_addsel: Lägg till i aktuell markering
+txt_5_5_ext: Ändra filtillägg
+txt_5_5_plugin: Sök efter plugin och tillägg
+txt_5_5_copypath: Kopiera sökväg
+txt_5_5_delete: Radera tecken vid angiven position
+txt_5_5_halt: Stoppa systemet när uppgiften är klar
+txt_5_5_positionw: Tips: 1 lägg till före första tecknet, 2 andra, etc... "z" för slut av fil namn
+txt_5_5_positionwd: Tips: 1 radera från första tecknet, 2 andra, ... "z" för slut av fil namn
+txt_5_5_replaceneww: Tips: Ge en tom ny sträng för att helt enkelt ta bort den gamla strängen
+txt_5_5_lower: Gemen
+txt_5_5_replaceoldw: Modifiera alla förekomster av denna sträng eller tecken i filnamnet
+txt_5_5_newext: Nytt tillägg
+txt_5_5_new: Ny sträng
+txt_5_5_n: Nummer av tecken att radera
+txt_5_5_old: Gammal sträng
+txt_5_5_position: Position (nummer eller "z" för avslut)
+txt_5_5_intdir: Smart ny mapp
+txt_5_5_replacestr: Byt/ta bort sträng
+txt_5_5_datesameday: Samma dag av markerat objekt
+txt_5_5_datesamehour: Samma timme av markerat objekt
+txt_5_5_datesamemonth: Samma månad av markerat objekt
+txt_5_5_datesameweek: Samma vecka av markerat objekt
+txt_5_5_datesameyear: Samma år av markerat objekt
+txt_5_5_scan: Avsök
+txt_5_5_select: Välj
+txt_5_5_similar: Liknande till markerat objekt
+txt_5_5_starting: Börjar med samma tecken
+txt_5_5_string: Sträng att lägga till
+txt_5_5_subtractsel: Tag bort från aktuell markering
+txt_5_5_datehour: Denna timme
+txt_5_5_datemonth: Denna månad
+txt_5_5_dateweek: Denna vecka
+txt_5_5_dateyear: Det här året
+txt_5_5_dateday: Idag
+txt_5_5_upper: Versal
+txt_5_5_extw: Varning: byte av filändelsen, filen kan bli obrukbar
+txt_5_4_da: Datum tillagt
+txt_5_4_deletearchives: Radera arkiv efter extraktion
+txt_5_4_deletefiles: Radera filer efter arkivering
+txt_5_4_deleteoriginal: Raderingsproceduren, som ställs in på huvudskärmen, kommer att läggas till i skriptet.
+txt_5_4_lv: Senast besökt
+txt_5_4_deletearchivesconfirm: Bekräfta radering av orginal arkiv?
+txt_5_4_deletefilesconfirm: Bekräfta radering av orginal filer?
+txt_5_4_used: Använd
 txt_5_3_profilebest: Bästa komprimering, 7Z-format, nivå: Ultra
 txt_5_3_profileadvanced: Avancerad komprimering, 7Z-format
 txt_5_3_profilenormal: Normal ZIP-komprimering, kompatibel med de flesta arkivuppackare
@@ -1146,7 +1146,7 @@ txt_suggestpw: Föreslå lösenord
 txt_noupx: Symboler strimlade, UPX-komprimering utgick
 txt_syntax: Syntax:
 txt_sysbenchmark: Systemprestandakontroll
-txt_benchmark: Systemprestandakontroll (benchmarking) kommer att ta några minuter och kommer att ta all tillgänglig CPU och minnesutrymme i anspråk. Systemet kanske inte kommer att svara under prestandakontrollen; vill du ändå köra den?
+txt_benchmark: Systemprestandakontroll (benchmarking) kommer att ta några minuter och kommer att ta alla tillgänglig CPU och minnesutrymme i anspråk. Systemet kanske inte kommer att svara under prestandakontrollen; vill du ändå köra den?
 txt_systools: Systemverktyg
 txt_tarbefore: Först TAR
 txt_type_description_tar: TAR: Huvudsakligt arkiveringsformat i UNIX-system
@@ -1207,20 +1207,20 @@ txt_zipcrypto_hint: ZipCrypto (bakåtkompatibel)
 
 === PeaLauncher text group ===
 
-txt_6_9_remaining: remaining
-txt_6_5_abort: Abort
-txt_6_5_error: Error
-txt_6_5_no: No
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
-txt_5_6_update: Check for updates
-txt_5_6_cml: System context menu language
-txt_5_6_donations: Donations
-txt_5_6_localization: Localization
-txt_5_6_runasadmin: Run as administrator
+txt_6_9_remaining: återstående
+txt_6_5_abort: Avbryt
+txt_6_5_error: Fel
+txt_6_5_no: Nej
+txt_6_5_warning: Varning
+txt_6_5_yes: Ja
+txt_6_5_yesall: Ja till alla
+txt_5_6_update: Sök efter uppdateringar
+txt_5_6_cml: Språk för systemkontextmeny
+txt_5_6_donations: Donationer
+txt_5_6_localization: Lokalisering
+txt_5_6_runasadmin: Kör som administratör
 txt_5_6_help: Online support
-txt_5_5_cancelall: Cancel all
+txt_5_5_cancelall: Avbryt alla
 txt_5_3_details: Information
 txt_5_3_files: filer
 txt_5_3_folders: mappar
@@ -1330,8 +1330,8 @@ txt_time: Tid:
 
 PACKA UPP ARKIV
 Från systemet
-- Högerklicka på arkivet/arkiven och välj "Extract here" (Packa upp här) eller "Extract here (in new folder)" (Packa upp här (i ny mapp)) i datorns snabbmeny för att packa upp utan någon ytterligare interaktion
-- Annars använder du menyobjektet "Extract…" (Packa upp …) för att få fler alternativ: Målsökväg, lösenord, packa upp filerna till en ny mapp, välja att hoppa över, byta namn på eller ersätta befintliga filer etc.
+- Högerklicka på arkivet/arkiven och välj "Extrahera here" (Packa upp här) eller "Extrahera here (in ny folder)" (Packa upp här (i ny mapp)) i datorns snabbmeny för att packa upp utan någon ytterligare interaktion
+- Annars använder du menyobjektet "Extrahera…" (Packa upp …) för att få fler alternativ: Målsökväg, lösenord, packa upp filerna till en ny mapp, välja att hoppa över, byta namn på eller ersätta befintliga filer etc.
 
 Öppna ett arkiv i PeaZip, d.v.s. med dubbelklick, eller dra ett arkiv till PeaZips fönster eller genvägsikon
 - Klicka på "Packa upp" i verktygsfältet eller i snabbmenyn för att endast packa upp utvalda objekt genom bekräftelsedialogen, där du kan ställa in alla alternativ (målsökväg, lösenord, namngivningspolicy, packa upp till en ny mapp etc.)
@@ -1382,12 +1382,16 @@ SKAPA ARKIV DIREKT I ETT SÄRSKILT FORMAT OCH AV EN BESTÄMD KOMPRIMERINGSNIVÅ
 Om du använder funktionen "Systemintegrering" i Inställningar-menyn, är det möjligt att aktivera snabbmenyposter för att direkt lägga till markerade filer/mappar i ett ZIP-, 7Z- eller självuppackande arkiv.
 För ZIP- och 7Z-formaten är det även möjligt att aktivera snabbmenyposter för att komprimera till snabbaste-, normal- eller ultranivån och därmed kringgå standardkomprimeringsnivån för det valda formatet.
 
+PASSWORD MANAGER
+Password manager is accessible from main menyn, Tools > Password manager or from Password form, from drop down menyn on the left av Password field.
+Saved passwords can be selected from the dropdown menyn on the left av lösenord filed in Password form, or can be copied from lösenord manager to be använd in any andra application.
+If no master lösenord is set för the lösenord manager, the lösenord list is accessible without prompting för authentication, otherwise passwords will not be displayed until the user correctly authenticates.
+
 KONFIGURERA PROGRAMMET
 Inställningar > Språk (och i Inställningar > Inställningar > Allmänt (1), första fliken) gör det möjligt att ställa in programmets användarspråk.
-Inställningar > Inställningar låter dig hantera programmets inställningar
-Inställningar > Tema låter dig ändra programmets ikoner och utseende
 Inställningar > Systemintegrering startar en procedur för att konfigurera filassociationer, snabbmenyn och Skicka till-menyn (i Windows)
 Visa-menyn innehåller poster för att anpassa, aktivera eller inaktivera filbläddrarens funktioner, t.ex. verktygsfältet, adressfältet, navigeringsfältet etc.
+Inställningar > Inställningar låter dig hantera programmets inställningar
 
 F1 	Hjälp
 F2 	Byt namn på fil(er) / Bläddra i skrivbordet / Ctrl+F2 Bläddra i användarens hemmapp / Skift+F2 Bläddra i datorns rotkatalog / Ctrl+Skift+F2 Bläddra i arkivets rotkatalog, vid bläddring inuti ett arkiv (i annat fall bläddras i datorns rotkatalog)
@@ -1402,59 +1406,13 @@ F10 	Meny
 F11 	Ställ in avancerade filter
 F12 	Packa upp alla till …
 
-SKAPA ARKIV
-
-1) Lägg till objekt till arkivets layout från datorns snabb- och Skicka till-menyer, genom att dra och släppa eller från PeaZips knappar och menyer;
-2) Klicka på "Skapa"-knappen för att påbörja skapandet av ett nytt arkiv.
-
-Använd:
-- "Inställningar"-fliken för att ställa in arkivformat samt komprimerings- och krypteringsrelaterade parametrar; 
-- "I/O"-fliken för indata- och utdatainställningar;
-- "Filter"-fliken för att använda avancerade undantagsfilter, om det är tillgängligt för det valda arkivformatet;
-- "Konsol"-fliken för att analysera och ställa in jobbets syntax, eller exportera jobbet som en kommandorad.
-
-Alternativt, med ett enkelt handgrepp kan du lägga till varje enskilt indataobjekt till ett separat arkiv från datorns snabbmeny, och från Skicka till-menyn kan du lägga till flera objekt till ett enda arkiv.
-
-I arkivlayouten kan du även:
-- Dubbelklicka på ett objekt för att öppna det;
-- Markera en fil och trycka "\" eller "Högerklicka el. Arkiv > Filverktyg > Klyv fil" för att klyva den;
-- Markera en fil och trycka "<" eller "Högerklicka el. Arkiv > Filverktyg > Jämför filer" för att byte för byte jämföra den med en annan fil;
-- Markera flera objekt och trycka "?" eller "Högerklicka el. Arkiv > Filverktyg > Kontrollsumme-/hashfil(er)" för kontrollsumme- och hashfiler;
-- Markera flera objekt och trycka "*" eller "(Arkiv > Filverktyg >) el. högerklicka > Säker borttagning (filer)" för säker filborttagning.
-
-
-ÖPPNA ARKIV
-
-1) Öppna arkiv genom filassociation, eller från datorns snabbmeny- och Skicka till-menyval, eller från PeaZips knappar och menyer
-2a) Klicka "Packa upp alla" för att packa upp arkivet, eller "Packa upp alla till" för att få välja målsökväg;
-2b) Dubbelklicka eller tryck Enter på ett arkiverat objekt för att förhandsgranska det med associerat program, eller öppna det i PeaZip om det är ett arkiv, eller utforska det om det är en mapp/katalog;
-2c) Markera arkiverade objekt och mittenklicka eller tryck mellanslag för att packa upp dem (och tillfrågas om målsökväg);
-2d) Högerklicka för att använda snabbmenyvalen och utföra alla tillgängliga funktioner, som att packa upp markerade eller visade objekt, förhandsgranska, testa, lista, lägga till eller ta bort filer etc.
-Tips: Om du vill packa upp arkivet till en helt ny mapp, använd "Packa upp till ny mapp"-väljaren (ON/OFF = PÅ/AV) i snabbmenyn (eller under "I/O"-fliken), eller tryck \ eller Ctrl+N när du är i arkivbläddraren.
-
-Använd:
-- "Inställningar"-fliken för att ställa in formatspecifika parametrar;
-- "I/O"-fliken för indata- och utdatainställningar, inklusive "Packa upp till ny mapp"-väljaren (även tillgänglig i snabbmenyn);
-- "Filter"-fliken för att använda avancerade inkluderings- och undantagsfilter, om det är tillgängligt för arkivformatet;
-- "Konsol"-fliken för att analysera och ställa in jobbets syntax, eller exportera jobbet som en kommandorad.
-
-Alternativt kan du packa upp flera arkiv samtidigt från datorns snabbmeny.
-
-
 OM PEAZIP
 
-PeaZip Free Archiver är ett portabelt arkiverings-, krypterings- och filklyvningsverktyg med öppen källkod (Open Source), som stöder och hanterar ett stort urval arkiv- och komprimeringsformat.
+PeaZip is an open source fil och arkiv manager: cross platform, available as portable och installable software för Linux (desktop neutral application), macOS, och 32 och 64 bit Windows.
 
-Skriver: 7Z, 7Z-sfx, ARC, BZ2, GZ, PAQ/LPAQ, PEA, QUAD, klyvning, TAR, UPX, ZIP
+PeaZip allows to apply powerful multiple search filters to arkiv's innehåll; create och extract multiple arkiv at once; create self-extracting arkiv; export task definition as command line; save arkivering och extraktion layouts; bookmark arkiv och mappar; scan och open with anpassad applications compressed och uncompressed filer etc...
 
-Andra/anpassade arkivtyper kan hanteras för skrivning och läsning genom att specificera anpassade körbara filer och syntax under "Inställningar"-fliken.
-
-Andra funktioner: klyva/sammanfoga filer genom filsträckning (file spanning), radera filer (säker filborttagning), jämförelser, kontrollsumme- och hashfiler, systemprestandakontroll (benchmarking), skapa slumpade lösenord och nyckelfiler.
-
-I PeaZip kan du redigera, spara och återställa arkivens layouter; applicera kraftfulla, multipla filter på arkivens innehåll; hantera flera arkiv samtidigt; exportera jobbdefinitioner som kommandorader; kryptera med AES256 etc.
-PeaZip_portable är ett självständigt program med samma funktioner som PeaZip; det behöver inte installeras och kan användas från flyttbara enheter (USB-minnen, fjärrkontrollerade sökvägar etc.) utan att påverka eller förändra värddatorn.
-De vanligast använda funktionerna är integrerade i snabb- och Skicka till-menyerna (på Windows) och som .desktop-filer för snabbmenyer (på Linux); systemintegreringen utförs automatiskt med installationspaketen och kan anpassas av användare både när det gäller installationspaket och portabla paket (se dokumentationen på Internet, på engelska).
-PeaZip kan användas av flera plattformar och kan köras på 32- och 64-bitars Windows (9x, 2000, XP, Vista) och Linux.
+Other features: strong encryption, robust fil kopiera, split/join filer (fil span), secure data radering, compare, checksum och hash filer, system benchmark, generate random passwords och keyfiles.
 
 Hämtningsbara filer: https://peazip.github.io
 Läs mer: https://peazip.github.io/peazip-free-archiver.html
