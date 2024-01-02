@@ -13,4 +13,4 @@ packages), and further support is available at https://peazip.github.io/peazip-m
 
 To report a vulnerability, please read https://peazip.github.io/peazip-more.html fo the CVE list, link to the Issue Tracker, and for contacting the developer.
 
-It is recommende to periodically browse a CVE database as https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=peazip in order to stay informed about the published current and past vulnerabilities.
+It is recommende to periodically browse a public CVE database like https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=peazip in order to stay informed about the current and past vulnerabilities of the application.
