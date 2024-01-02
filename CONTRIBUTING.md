@@ -30,3 +30,8 @@ If you are not familiar nor interested in Pascal, there are other ways to contri
 
 PORTING AND PACKAGE BUILDING
 
+PeaZip aims to be a cross-platform application, and is currently available for BSD, Linux (compiled for various widget-sets and for aarch64 and x86_64 architectures), macOS (both aarch64 and Intel architectures), and Windows/ReactOS.
+
+Lazarus/FPC can target many more combinations of architectures, Operating Systems, and widget-sets, and any help is welcome in order to port PeaZip on them.
+
+Also, it is very welcome any help for improving existing packages (Portable, DEB, RPM, DMG, Windows installers), and for creating and/or maintaining new packages, like distribution-specific Linux installers working in accordance with repository maintainers - Debian DEB repository and Ubuntu Snap repository are two prominent examples.
