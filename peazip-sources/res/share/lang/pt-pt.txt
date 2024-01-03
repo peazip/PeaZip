@@ -2,19 +2,19 @@
 Portuguese (Portugal) - Português
 9.6
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
-Revisão: Hugo Carvalho 
-Revisto em: 20231026
+Revisão: Sérgio Marques
+Revisto em: 20240102
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_6_centered: Centrado
+txt_9_6_cside: Barra lateral compacta
+txt_9_6_loadpconfirm: Tem a certeza de que deseja carregar este perfil? Todos os dados do perfil atual serão substituídos, incluindo os scripts e palavras-passe guardadas.
+txt_9_6_loadp: Carregar perfil
+txt_9_6_saveppw: OPCIONAL: proteger este perfil com palavra-passe/ficheiro-chave?
+txt_9_6_savepoverwrite: Deseja substituir o perfil existente? Todos os dados do perfil atual serão substituídos, incluindo os scripts e palavras-passe guardadas.
+txt_9_6_savep: Guardar perfil
+txt_9_6_scside: Mostrar barra lateral compacta
 txt_9_5_all: Tudo
 txt_9_5_precond: Pré-análise se forem detetados erros
 txt_9_5_largea: Pré-análise de arquivos grandes
@@ -26,7 +26,7 @@ txt_9_5_sb: Utilizar binários nos caminhos do sistema
 txt_9_4_r: leitura
 txt_9_4_rw: leitura/escrita
 txt_9_4_savecomment: Guardar comentário
-txt_9_4_hintcomment: Escrever ou colar comentário, carregar ou arrastar um ficheiro de comentário para aqui.
+txt_9_4_hintcomment: Escrever ou colar comentário, carregar ou arrastar um ficheiro de comentário para aqui
 txt_9_3_continue: Continuar mesmo assim?
 txt_9_3_contrast: Contraste
 txt_9_3_fsd: O espaço livre no destino pode não ser suficiente
@@ -51,7 +51,7 @@ txt_9_1_ef: Excluir pastas vazias das operações de arquivo e extração (7z/p7
 txt_9_1_nw: Abrir em nova janela
 txt_9_1_qdup: Usar rotina de deduplicação rápida
 txt_9_0_autoexttar: Extrair arquivo TAR automaticamente a partir de ficheiros TAR.*
-txt_9_0_accesstime: Não alterar hora do último acesso
+txt_9_0_accesstime: Não alterar data/hora do último acesso
 txt_9_0_mem: Utilização máxima de memória
 txt_9_0_showmainmenu: Abrir menu principal
 txt_9_0_navmenu: Abrir menu de navegação
@@ -63,7 +63,7 @@ txt_9_0_tnav: Comutar entre barra lateral, vista em árvore, nada
 txt_8_9_empty: Parece que o arquivo está vazio
 txt_8_9_disp: Mostrar conteúdo do arquivo
 txt_8_9_parsing: Analisar conteúdo do arquivo
-txt_8_9_stoptest: Parar para analisar o relatório (erros, listas, testes, autotestes)
+txt_8_9_stoptest: Parar e analisar o relatório (erros, listas, testes, autotestes)
 txt_8_9_ttb: Comutar barras de ferramentas
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
@@ -71,7 +71,7 @@ txt_8_8_cb: Cor do botão
 txt_8_8_centered: Centrar botões
 txt_8_8_light: Claro
 txt_8_8_lnk: Ligação
-txt_8_8_intnote: Tenha em atenção que a opção "Extrair e mover para o destino" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola.
+txt_8_8_intnote: Tenha em atenção que a opção "Extrair e mover para o destino" (Opções > Definições > Gestor de arquivos) é ignorada ao criar a linha de comandos no separador Consola
 txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
 txt_8_8_sm: Ícones pequenos
 txt_8_8_solcol: Barra de navegação
@@ -795,7 +795,7 @@ txt_compression: Compressão
 txt_compmanagement: Gestão de computador
 txt_pw_confirm: Confirmação
 txt_console: Consola
-txt_console_interface: Consola: interface nativa
+txt_console_interface: Consola
 txt_content: Conteúdo
 txt_controlpanel: Painel de controlo
 txt_convert: Converter disco para NTFS
@@ -909,8 +909,8 @@ txt_general: Geral
 txt_multithreading: multiprocessamento genérico
 txt_go_browser: Ir para o explorador de ficheiros
 txt_go_path: Explorar caminho (Peazip)
-txt_guicl: Gráfico + consola
-txt_guipealauncher: Gráfico: PeaLauncher
+txt_guicl: Interface + consola
+txt_guipealauncher: Interface
 txt_graphic: Pasta de gráficos
 txt_gridaltcolor: Cor de alternância das grelhas
 txt_gridrowheight: Altura das linhas da grelha
