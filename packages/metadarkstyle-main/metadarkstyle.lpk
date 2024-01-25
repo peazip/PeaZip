@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="MetaDarkStyle"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Andrey Zubarev (zamtmn@yandex.ru) Alexander Koblov (alexx2000@mail.ru)"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Dark (or custom colored) theme for LCL applications"/>
+    <License Value="GNU Lesser General Public License as published by the Free Software Foundation either version 2.1 of the License, or (at your option) any later version."/>
+    <Version Minor="9"/>
+    <Files>
+      <Item>
+        <Filename Value="src\umetadarkstyle.pas"/>
+        <UnitName Value="uMetaDarkStyle"/>
+      </Item>
+      <Item>
+        <Filename Value="src\udarkstyleparams.pas"/>
+        <UnitName Value="uDarkStyleParams"/>
+      </Item>
+      <Item>
+        <Filename Value="src\udarkstyleschemesadditional.pas"/>
+        <UnitName Value="uDarkStyleSchemesAdditional"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCLBase"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

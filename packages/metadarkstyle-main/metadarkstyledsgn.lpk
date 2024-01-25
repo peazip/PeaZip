@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="metadarkstyledsgn"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Andrey Zubarev (zamtmn@yandex.ru)"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Dark (or custom colored) theme for Lazarus IDE"/>
+    <License Value="GNU Lesser General Public License as published by the Free Software Foundation either version 2.1 of the License, or (at your option) any later version."/>
+    <Version Minor="9"/>
+    <Files>
+      <Item>
+        <Filename Value="src\registermetadarkstyledsgn.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="registerMetaDarkStyleDSGN"/>
+      </Item>
+      <Item>
+        <Filename Value="src\metadarkstyledsgnoptionsframe.pas"/>
+        <UnitName Value="MetaDarkStyleDSGNOptionsFrame"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="IdeConfig"/>
+      </Item>
+      <Item>
+        <PackageName Value="IDEIntf"/>
+      </Item>
+      <Item>
+        <PackageName Value="MetaDarkStyle"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

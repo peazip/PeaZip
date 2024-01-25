@@ -10,7 +10,8 @@ uses
   Forms
   { add your units here },
   peach, Unit3, Unit5, Unit6, Unit2, Unit1, Unit8, Unit9, Unit10,
-  Unit11, Unit12, Unit13, Unit7, Unit_gwrap, Unit14;
+  Unit11, Unit12, Unit13, Unit7, Unit_gwrap, Unit14
+  {$IfDef WINDOWS}, uMetaDarkStyle, uDarkStyleParams, uDarkStyleSchemes{$EndIf};
 
 {$IFDEF MSWINDOWS}
 {$R peazip.res}
@@ -20,6 +21,12 @@ uses
 {$R *.res}
 
 begin
+{$IfDef WINDOWS}
+RequireDerivedFormResource:=True;
+Application.Scaled:=True;
+PreferredAppMode:=pamAllowDark;
+uMetaDarkStyle.ApplyMetaDarkStyle(DefaultDark);
+{$EndIf}
 Application.Scaled:=True;
 Application.Title:='PeaZip';
 Application.Initialize;

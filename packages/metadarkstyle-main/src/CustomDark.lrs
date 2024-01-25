@@ -1,0 +1,5 @@
+LazarusResources.Add('CustomDark','DARKSTYLECOLORS',[
+  'begin'#13#10'  Scheme:=DefaultDark;'#13#10'  CustomDrawScrollbars:=true;'#13
+  +#10'  CustomDrawPushButtons:=true;'#13#10'  CustomDrawComboBoxs:=true;'#13#10
+  +'  CustomDrawTreeViews:=true;'#13#10'end.'
+]);

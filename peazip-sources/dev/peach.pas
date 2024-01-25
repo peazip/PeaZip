@@ -369,7 +369,7 @@ hash, adler32, CRC16, CRC24, CRC32, CRC64, ED2K, MD4, MD5, RMD160, SHA1, SHA3_25
 SHA256, SHA3_512, SHA512, Whirl512, Blake2s, Blake2b, mem_util, AES_EAX, FCAES256,
 list_utils,pea_utils,ansiutf8_utils,img_utils,
 unit_gwrap,unit1,unit2,unit3,unit5,unit6,Unit7,Unit8,Unit9,Unit10,Unit11,Unit12,Unit13,Unit14,
-Classes, SysUtils, Process, UTF8Process, dateutils, fileutil, Types;
+Classes, SysUtils, Process, UTF8Process, dateutils, fileutil, Types, LazFileUtils;
 
 type
 
