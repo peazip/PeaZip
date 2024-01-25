@@ -1,0 +1,6 @@
+*.o
+*.ppu
+*.exe
+*.compiled
+*.obj
+*.a
