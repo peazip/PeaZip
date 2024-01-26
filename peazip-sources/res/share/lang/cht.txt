@@ -1,270 +1,270 @@
 ﻿=== PeaZip language file ===
 Chinese Traditional - 繁體中文
 9.6
-譯者: Sophina Liu, Hsiu-Ming Chang
-Last rev. by: Hsiu-Ming Chang
-Last rev.: 20170711
+譯者: Sophina Liu, Hsiu-Ming Chang, @ifloppy
+Last rev. by: @ifloppy
+Last rev.: 20240126
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
-txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
-txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
-txt_7_6_setcurdef: Set current path as default output path
-txt_7_6_setdef: Set default output path
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
-txt_7_6_tacolor: Text accent
-txt_7_5_always: Always
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Cut name at specified length
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
-txt_7_5_never: Never
-txt_7_5_repnascii: Replace/remove non-ASCII characters
-txt_7_4_comment: Comment
-txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
-txt_7_4_presetrar: High compression, RAR
-txt_7_4_tkeep: Keep original archive timestamp
-txt_7_4_lock: Lock archive
-txt_7_4_locked: locked
-txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
-txt_7_4_recover: Repair archive
-txt_7_4_tcurr: Set archive timestamp from current system time
-txt_7_4_setarc: Set archiving options
-txt_7_4_setext: Set extraction options
-txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
-txt_7_3_archiveerrors: [archive may contain errors]
-txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
-txt_7_3_clickextall: Click "Extract all" to enable
-txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
-txt_7_3_profile7zfastest: Fast compression, 7Z fastest
-txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
-txt_7_3_maxzstd: Maximize Zstandard compression using more memory
-txt_7_3_profile7zfast: Medium compression, 7Z fast
-txt_7_3_stl: Set archive timestamp from most recent file
-txt_7_2_altcomp: Alternative compression, ARC
-txt_7_2_clearnoupdate: Clear edited files
-txt_7_2_autoclosepeazip: Close PeaZip when task completes
-txt_7_2_zpaqall: Extract all revisions
-txt_7_2_extcomp: Extreme compression, ZPAQ
-txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
-txt_7_2_fbrotlicomp: Fastest compression, Brotli
-txt_7_2_fzstandardcomp: Fastest compression, Zstandard
-txt_7_2_loadcompsettings: Load compression settings
-txt_7_2_savecompsettings: Save compression settings
-txt_7_2_source: Source
-txt_7_2_updateclear: Update edited files in archive, and clear edited files
-txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here, in new folder
-txt_7_1_smart: Extract all here, smart
-txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
-txt_7_1_renfilesonly: Rename only files
-txt_7_1_typetosearch: Type to search in current path
-txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
-txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
-txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
-txt_6_9_autou: Auto update modified files in archives
-txt_6_9_forceu: Force update modified files in archives
-txt_6_9_opuns: Operation not supported for current archive type
-txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
-txt_6_9_uconf: Previewed file has been modified. Update the current archive?
-txt_6_8_ndrop: Use native Drag And Drop on Windows
-txt_6_7_nop: (no preview)
-txt_6_6_pdupfound: possible duplicates found (quick approximate test)
-txt_6_6_rsh: Reset search history
-txt_6_6_pdupfind: Suggest possible duplicates
-txt_6_6_forcemodify: Try to edit non explicitly supported file types
-txt_6_5_mandatory: (mandatory)
-txt_6_5_abort: Abort
-txt_6_5_askp: Ask to set password at startup
-txt_6_5_chp: Change password
-txt_6_5_def: Definition
-txt_6_5_nop: Don't ask to set password at startup
-txt_6_5_error: Error
-txt_6_5_seqerr: Error(s) detected, original files will not be deleted
-txt_6_5_sni: Include NT security information
-txt_6_5_sns: Include NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
-txt_6_5_showvolatile: Show which options are volatile / context depentent
-txt_6_5_force: Try to open archives containing errors
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
-txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
+txt_9_6_centered: 居中
+txt_9_6_cside: 緊湊型側邊欄
+txt_9_6_loadpconfirm: 您想載入此設定檔嗎？ 目前設定檔的所有資料都將被覆寫，包括已儲存的腳本和密碼管理器。
+txt_9_6_loadp: 載入設定檔
+txt_9_6_saveppw: 可選：使用密碼/金鑰檔案保護此設定檔？
+txt_9_6_savepoverwrite: 覆蓋現有的設定檔？ 現有設定檔的所有資料都將被覆寫，包括已儲存的腳本和密碼管理器。
+txt_9_6_savep: 儲存設定檔
+txt_9_6_scside: 顯示緊湊側邊欄
+txt_9_5_all: 全部
+txt_9_5_precond: 偵測到錯誤時進行預解析
+txt_9_5_largea: 預解析大型壓縮檔
+txt_9_5_mediuma: 預解析中等大小壓縮檔
+txt_9_5_smalla: 預解析小型壓縮檔
+txt_9_5_reopentab: 重新打開最後一個選項卡
+txt_9_5_savetabs: 儲存選項卡
+txt_9_5_sb: 在系統路徑中使用執行檔
+txt_9_4_r: 讀
+txt_9_4_rw: 讀/寫
+txt_9_4_savecomment: 儲存注解
+txt_9_4_hintcomment: 輸入或貼上注解，載入或拖曳注解檔案。
+txt_9_3_continue: 還是繼續嗎？
+txt_9_3_contrast: 對比
+txt_9_3_fsd: 目標路徑的剩餘空間可能不夠
+txt_9_3_fsw: 暫存資料夾上的可用空間可能不夠
+txt_9_3_mrar: 手動設定 RAR 執行檔
+txt_9_3_canedit: 此壓縮檔類型可以編輯
+txt_9_3_canforce: 此壓縮檔類型可以編輯（强制）
+txt_9_3_cannotedit: 此存檔類型無法編輯
+txt_9_2_7za: 7z / p7zip 別名
+txt_9_2_changelog: 變更日誌
+txt_9_2_tfaq: 檢查翻譯
+txt_9_2_compact: 緊凑
+txt_9_2_swt: 交換工具/網址列
+txt_9_2_tos: 服務條款、隱私聲明
+txt_9_2_doc: 驗證文檔、問題追蹤器...
+txt_9_2_updates: 驗證更新、執行檔、外掛程式...
+txt_9_1_7zs: 7z / p7zip 文法級別
+txt_9_1_ac: 允許存檔轉換腳本與用戶交互	
+txt_9_1_closeall: 關閉所有
+txt_9_1_enlargeicons: 放大文件瀏覽器圖標
+txt_9_1_ef: 從壓縮和解壓縮操作中排除空資料夾 (7z / p7zip)
+txt_9_1_nw: 在新視窗中開啟
+txt_9_1_qdup: 使用快速除去重複資料
+txt_9_0_autoexttar: 從壓縮的 TAR.* 檔案中自動提取 TAR 檔案
+txt_9_0_accesstime: 不要更改上次訪問時間
+txt_9_0_mem: 最大記憶體使用量
+txt_9_0_showmainmenu: 開啟主選單
+txt_9_0_navmenu: 開啟導覽選單
+txt_9_0_plugind: 開啟二進位檔案和插件目錄
+txt_9_0_df: 把目錄排在檔案前
+txt_9_0_hl: 將硬連結儲存為連結
+txt_9_0_sl: 將符號連結儲存為連結
+txt_9_0_tnav: 切換 側邊欄、樹視圖、無
+txt_8_9_empty: 存檔似乎是空的
+txt_8_9_disp: 顯示壓縮檔內容
+txt_8_9_parsing: 解析壓縮檔內容
+txt_8_9_stoptest: 停止以檢查報告是否有錯誤、清單、測試、自動測試
+txt_8_9_ttb: 切換工具列
+txt_8_8_ca: 強調色
+txt_8_8_btn: 按鈕
+txt_8_8_cb: 按鈕顔色
+txt_8_8_centered: 居中按鈕
+txt_8_8_light: 亮色
+txt_8_8_lnk: 連結
+txt_8_8_intnote: 請注意，如果在控制台中編輯了命令列，那麼「交互式解壓縮」選項（於選項 > 設定 > 壓縮檔管理員中）會被忽略。
+txt_8_8_snz: 傳播 Zone.Identifier 串流 (Windows)
+txt_8_8_sm: 小圖示尺寸
+txt_8_8_solcol: 地址塊
+txt_8_8_snoi: 儲存所有者/群組 ID（TAR、Linux）
+txt_8_8_snon: 儲存所有者/群組名稱（TAR、Linux）
+txt_8_8_tab: 標籤
+txt_8_8_altt: 標簽樣式
+txt_8_8_autotest: 建立後測試壓縮檔（如果格式支援）
+txt_8_8_cw: 視窗顏色
+txt_8_7_csvhelp: “,” 是國際標準， ”;” 常見於拉丁字母環境
+txt_8_7_after: 壓縮/解壓縮後
+txt_8_7_bintest: 個執行檔已測試。
+txt_8_7_csv: CSV 分隔符
+txt_8_7_hok: PeaZip 使用的二進位檔案的雜湊值與預期值匹配
+txt_8_7_mo: 設定壓縮檔管理器選項
+txt_8_7_showhm: 顯示文件瀏覽器頂部選單
+txt_8_7_showsearchbar: 顯示搜尋欄
+txt_8_7_showsm: 顯示風格選單
+txt_8_7_hnotok: PeaZip 使用的一些執行檔的雜湊值與預期值不符：
+txt_8_7_verifybin: 驗證執行檔的雜湊值
+txt_8_6_clear: 在「清除」選項啓用的情況下，編輯過的暫存檔案會被移除；反之，這些檔案會被保留，以便繼續編輯。
+txt_8_6_noclear: 放棄所有更改而不更新壓縮檔
+txt_8_6_nosimple: 不要更新壓縮檔，保留編輯過的暫存檔案以便繼續編輯
+txt_8_6_immediate: 立即執行
+txt_8_6_yessimple: 更新壓縮檔，保留暫存編輯的檔案以供繼續編輯
+txt_8_5_advbrowser: 將過濾器應用於壓縮檔瀏覽器
+txt_8_5_detailslarge: 詳細資訊（大圖示）
+txt_8_5_intext: 提取到暫存資料夾，然後移至輸出（覆蓋前詢問）
+txt_8_5_listlarge: 列表（大圖示）
+txt_8_5_loadlayout: 啟動時載入佈局
+txt_8_5_samplescripts: 範例腳本
+txt_8_4_keepopenerrorslist: 停下檢查錯誤和列出的报告
+txt_8_3_mbubin: 二進位
+txt_8_3_cw: 更改工作目錄？ 這將重置暫存檔案並重新啟動應用程式。
+txt_8_3_temperature: 色溫
+txt_8_3_mbudec: 十進位
+txt_8_3_htab: 突出顯示選項卡
+txt_8_3_maxarg: 參數的最大長度
+txt_8_3_mbu: 多位元組單元
+txt_8_3_prefalgo: 首選演算法
+txt_8_3_skipdel: 跳過刪除鎖定的暫存檔案（使用重置以按需刪除）
+txt_8_3_lw: 工作目錄中的某些檔案被鎖定，無法自動刪除
+txt_8_3_noupx: 此二進位檔案無法壓縮（可能已經壓縮）
+txt_8_2_slower: (較慢)
+txt_8_2_df: 7z / p7zip 顯示資料夾內容
+txt_8_2_vreport: 7z / p7zip 非詳細報告
+txt_8_2_ta: 訪問時間
+txt_8_2_tc: 創建時間
+txt_8_2_keep: 保留檔案
+txt_8_2_tm: 修改時間
+txt_8_2_skipet: 跳過加密測試
+txt_8_2_alltimes: 儲存所有時間戳
+txt_8_2_supportedby: 支援提供：
+txt_8_1_preparse: 總是預解析壓縮檔
+txt_8_1_bo: 瀏覽優化
+txt_8_1_bop: 可從「選項」>「設定」的「一般」標籤設定瀏覽優化選項，以便允許瀏覽器顯示包含大量項目的檔案。
+txt_8_1_nopreparse: 不預先解析檔案
+txt_8_1_ed: 個偵測到的錯誤
+txt_8_1_togglearc: 列出壓縮檔內容的平面視圖可能需要很長時間，是否繼續？
+txt_8_1_preparsehint: 優化限制大型檔案預解析的效能。 預解析旨在提前檢測存檔內容中可能存在的問題。
+txt_8_1_slow: 緩慢
+txt_8_1_vslow: 非常緩慢
+txt_8_1_volumes: 卷
+txt_8_0_altcol: 替代網格顏色
+txt_8_0_forcebrowse: 瀏覽非規範壓縮檔類型（容器、磁碟映像、安裝程式等）
+txt_8_0_commonalgo: 常用演算法
+txt_8_0_forceconvert: 轉換非規範壓縮檔類型
+txt_8_0_defaultactionhint: 雙擊系統中與 PeaZip 關聯的文件的預設操作
+txt_8_0_defaultaction: 啟動時的預設操作
+txt_8_0_enableextand: 啟用“解壓縮並開啟方式”子選單
+txt_8_0_forcetyping: 強制互動式輸入密碼
+txt_8_0_setpwopt: 設定密碼/金鑰檔案選項
+txt_8_0_forcetypinghelp: 如果後端支援，此任務將互動式地詢問密碼。 受到的限制：任務將在控制台中運行，不能無人值守，也不能瀏覽帶有加密檔案名稱的壓縮檔。
+txt_7_9_spacing: 間距
+txt_7_9_zooming: 縮放
+txt_7_8_changelocalization: 更改 PeaZip 語言
+txt_7_8_custext: 自訂副檔名
+txt_7_8_destexistfile: 目標已包含已處理的檔案。 是否替換同名檔案？
+txt_7_8_dd: 拖放
+txt_7_8_priorityhigh: 高
+txt_7_8_priorityidle: 空閑
+txt_7_8_rel: 互動式解壓縮
+txt_7_8_prioritynormal: 一般
+txt_7_8_priorityrealtime: 即時
+txt_7_8_requirerestart: [需要重新啟動 PeaZip]
+txt_7_8_tpriority: 任務優先級
+txt_7_8_update: 更新
+txt_7_7_noneall: 無（無預覽，無拖放提取）
+txt_7_7_nonetemp: 無，必要時使用使用者資料夾的偺存檔資料夾
+txt_7_7_outtemp: 輸出，以使用者資料夾的偺存檔預覽
+txt_7_7_sys7zreq: 需安裝 p7zip-full 或同等軟體
+txt_7_7_tw: 用於壓縮檔建立、編輯、預覽和拖放提取的暫存資料夾。
+txt_7_7_sys7z: 在 Linux 中使用系統 7z
+txt_7_6_zipenc: 7z/p7zip ZIP 檔案名稱編碼
+txt_7_6_color: 顔色
+txt_7_6_custenc: 自訂代碼頁
+txt_7_6_dark: 黑暗的
+txt_7_6_tno: 不要同步存檔樹
+txt_7_6_forcelocalenc: 強製使用本地編碼
+txt_7_6_forceutf8enc: 强制使用 UTF-8
+txt_7_6_cpnote: 如果不支援所選的自訂代碼頁，任務將始終以錯誤結束（很可能是記憶體分配錯誤）。 如果發生這種情況，請變更程式碼頁面或重設應用程式。
+txt_7_6_defaultenc: 本地，額外符號使用UTF-8
+txt_7_6_dim: 暗色
+txt_7_6_setcurdef: 將目前路徑設定為預設輸出路徑
+txt_7_6_setdef: 設定預設輸出路徑
+txt_7_6_tadvanced: 同步歸檔樹，保留造訪過的節點
+txt_7_6_tsimple: 同步歸檔樹，簡單
+txt_7_6_tacolor: 文字突出顯示
+txt_7_5_always: 總是
+txt_7_5_ask: 詢問
+txt_7_5_autoclosesingle: 如果沒有發生瀏覽操作，解壓縮後自動關閉
+txt_7_5_cutlen: 按指定長度截斷名稱
+txt_7_5_cutlenw: 以特定長度 (4..255) 剪切名稱 命名衝突可以稍後手動修復
+txt_7_5_dragnone: 不鎖定目標
+txt_7_5_specialbrowse: 您是否想解壓縮所有內容，以便為文件提供它可能需要的額外資料？
+txt_7_5_ee: 解壓縮特殊檔案類型的所有內容
+txt_7_5_draghide: 隱藏拖曳目標
+txt_7_5_draglh: 鎖定並隱藏目標
+txt_7_5_draglock: 鎖定拖曳目標
+txt_7_5_never: 從不
+txt_7_5_repnascii: 替換/刪除非 ASCII 字符
+txt_7_4_comment: 注解
+txt_7_4_7zfbrotlicomp: 最快壓縮，7Z Brotli
+txt_7_4_7zfzstandardcomp: 最快壓縮，7Z Zstandard
+txt_7_4_presetrar: 高壓縮率，RAR
+txt_7_4_tkeep: 保留原始壓縮檔的時間戳
+txt_7_4_lock: 鎖定壓縮檔
+txt_7_4_locked: 已鎖定
+txt_7_4_lockconfirm: 鎖定的檔案無法進一步修改，是否繼續鎖定該檔案？
+txt_7_4_recover: 修復壓縮檔
+txt_7_4_tcurr: 使用目前系統時間設定存檔時間戳
+txt_7_4_setarc: 設定壓縮選項
+txt_7_4_setext: 設定解壓縮選項
+txt_7_4_swzipx: 為非 Deflate zip 壓縮檔切換到 zipx 副檔名
+txt_7_3_archiveerrors: [壓縮檔可能包含錯誤]
+txt_7_3_archiveerrorshint: 壓縮檔可能無效（由於遺失、損壞或不符合標準的資料），可以執行測試以取得詳細資訊。 如果檔案的目錄已加密，則在瀏覽之前需要密碼。
+txt_7_3_clickextall: 點擊“全部解壓縮”以啟用
+txt_7_3_noconfdel: 歸檔/提取後不要求確認刪​​除
+txt_7_3_profile7zfastest: 快速壓縮，7Z 最快
+txt_7_3_maxbr: 使用更多記憶體最大化 Brotli 壓縮（可能與某些提取器不相容）
+txt_7_3_maxzstd: 使用更多記憶體最大化 Zstandard 壓縮
+txt_7_3_profile7zfast: 中等壓縮，7Z 快
+txt_7_3_stl: 將最近檔案的時間戳設定在壓縮檔上
+txt_7_2_altcomp: 替代壓縮，ARC
+txt_7_2_clearnoupdate: 清除已編輯的文件
+txt_7_2_autoclosepeazip: 任務完成後關閉 PeaZip
+txt_7_2_zpaqall: 解壓縮所有修訂版本
+txt_7_2_extcomp: 極限壓縮，ZPAQ
+txt_7_2_extcompultra: 極限壓縮，ZPAQ ultra
+txt_7_2_fbrotlicomp: 最快的壓縮，Brotli
+txt_7_2_fzstandardcomp: 最快壓縮，Zstandard
+txt_7_2_loadcompsettings: 載入壓縮設定
+txt_7_2_savecompsettings: 儲存壓縮設定
+txt_7_2_source: 來源
+txt_7_2_updateclear: 更新存檔中已編輯的文件，並清除已編輯的文件
+txt_7_1_type_description_brotli: Brotli：來自 Google 的快速壓縮器，解壓縮速度非常快
+txt_7_1_new: 全部解壓縮到這裏，新資料夾裏
+txt_7_1_smart: 全部解壓縮到這裏，智能
+txt_7_1_profileintermediate: 中級壓縮，ZIP/BZip2 快速
+txt_7_1_renfilesonly: 僅重命名文件
+txt_7_1_typetosearch: 輸入要在目前路徑中搜尋的內容
+txt_7_1_type_description_zstd: Zstandard：來自 Facebook 的快速壓縮器，解壓縮速度非常快
+txt_7_0_af: 分析資料夾內容
+txt_7_0_autoopentar: 自動開啟 tar.* 檔案中的單一 tar 檔案
+txt_7_0_exttmppath: 內容將在暫存資料夾之外提取，位於：
+txt_6_9_autou: 自動更新壓縮檔中修改的文件
+txt_6_9_forceu: 強制更新壓縮檔中已修改的文件
+txt_6_9_opuns: 目前壓縮檔類型不支援該操作
+txt_6_9_overarch: 要覆蓋壓縮檔中已存在的同名檔案嗎？
+txt_6_9_uconf: 預覽文件已被修改。 要更新目前壓縮檔嗎？
+txt_6_8_ndrop: 在Windows上使用原生拖放
+txt_6_7_nop: (沒有預覽)
+txt_6_6_pdupfound: 找到可能的重複項（快速近似測試）
+txt_6_6_rsh: 重置搜尋記錄
+txt_6_6_pdupfind: 建議可能的重複項
+txt_6_6_forcemodify: 嘗試編輯非明確支援的文件類型
+txt_6_5_mandatory: (強制)
+txt_6_5_abort: 中止
+txt_6_5_askp: 啟動時要求設定密碼
+txt_6_5_chp: 更改密碼
+txt_6_5_def: 定義
+txt_6_5_nop: 啟動時不要求設定密碼
+txt_6_5_error: 錯誤
+txt_6_5_seqerr: 偵測到錯誤，原始檔案不會被刪除
+txt_6_5_sni: 包含 NT 安全資訊
+txt_6_5_sns: 包括 NTFS 備用資料流（Alternate Data Stream）
+txt_6_5_privacy: 隱私
+txt_6_5_showvolatile: 顯示哪些選項會根據上下文而改變
+txt_6_5_force: 嘗試開啟包含錯誤的檔案
+txt_6_5_warning: 警告
+txt_6_5_yes: 是
+txt_6_5_yesall: 全部選是
+txt_6_5_np: 現在您可以將轉換後的存檔的密碼變更為新密碼，或將密碼留空以跳過加密
 txt_6_4_absolute: 絕對路徑
 txt_6_4_appdirn: 在後面加上目錄名稱
 txt_6_4_closeallother: 關閉所有其他分頁
