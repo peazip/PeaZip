@@ -17,12 +17,16 @@ In case of issues with installation (step 1) or use (step 2) of Lazarus, its com
 
 2) COMPILE AND BUILD
 
+Add additional packages to vanilla Lazarus:
+lazbuild --add-package (peazip sources)/dev/metadarkstyle/metadarkstyle.lpk
+
 Run:
 lazbuild (peazip sources)/dev/project_peach.lpi
 lazbuild (peazip sources)/dev/project_pea.lpi
 lazbuild (peazip sources)/dev/dragdropfilesdll/dragdropfilesdll.lpi (only needed for Windows systems)
 
-Replace lazbuild with full qualified path to lazbuild binary if needed.
+Please note:
+Replace lazbuild with full qualified path to lazbuild binary if needed; usually on windows it is C:\lazarus\lazbuild.exe
 Replace (peazip sources) with fill qualified path to PeaZip source's directory.
 In alternative open the aforementioned .lpi files in Lazarus and follow suggestions of the DETAILED GUIDE section.
 
@@ -66,12 +70,19 @@ CONTENT
 (peazip sources)/dev/project_peach.lpi: originally PEACH, PEAlaunCHer, that compiles to the main executable PeaZip and act as GUI frontend for PEA, 7z and other utilities
 (peazip sources)/dev/project_demo_lib.lpi: an OPTIONAL demo application using PEA sources as a library, this is only meant as example and it is not required by PeaZip
 
+(peazip sources)/dev/metadarkstyle subdirectory contains zamtmn metadarkstyle Lazarus package which adds support to W10+ dark mode.
+It is unused on non-Windows platforms but the package needs to be installed following the IDE instructions or from command line (first step of section 2 of the quick guide), alternatively the package can be removed from project's dependencies from the IDE.
+
 (peazip sources)/res subdirectory contains resources to run PeaZip application
 
 Windows-only:
 
 (peazip sources)/dev/dragdropfilesdll subdirectory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems
 It requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael Köcher / six (on Lazarus);  the package is available in Lazarus Online Package Manager or from https://packages.lazarus-ide.org/DragDrop.zip
+
+IMPORTANT: dragdropfilesdll.dll SHA256 is checked by PeaZip for Windows on startup in procedure internaldllcheck, in order to assure the dll matches with a known whitelisted hash value to prevent DLL Hijacking attacks.
+If dragdropfilesdll.dll SHA256 hash does not match with the value hardcoded in procedure internaldllcheck, PeaZip will halt displaying an error message about the dll.
+If you plan to recompile or modify dragdropfilesdll.dll you will need to modify the reference hash value in procedure internaldllcheck to match the hash value of the new dll file.
 
 (peazip sources)/dev/installer subdirectory contains InnoSetup script files creating Windows installers with file associations and menu / SendTo integration for PeaZip; it requires InnoSetup.
 
