@@ -72,7 +72,7 @@ txt_8_8_centered: 居中按鈕
 txt_8_8_light: 亮色
 txt_8_8_lnk: 連結
 txt_8_8_intnote: 請注意，如果在控制台中編輯了命令列，那麼「交互式解壓縮」選項（於選項 > 設定 > 壓縮檔管理員中）會被忽略。
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
+txt_8_8_snz: 傳播 Zone.Identifier 串流 (Windows)
 txt_8_8_sm: 小圖示尺寸
 txt_8_8_solcol: 地址塊
 txt_8_8_snoi: 儲存所有者/群組 ID（TAR、Linux）
