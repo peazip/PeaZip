@@ -1,28 +1,28 @@
-﻿=== PeaZip language file ===
+=== PeaZip language file ===
 Български / Bulgarian
 9.6
 Превод: Любомир Симеонов
 Корекция: Живко Жеков
-Последна корекция: 14/09/2023
+Последна корекция: 06/02/2024
 
 === PeaZip text group ===
 
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
+txt_9_6_centered: Центриран
+txt_9_6_cside: Компактна странична лента
+txt_9_6_loadpconfirm: Искате ли да заредите този профил? Всички данни от текущия профил ще бъдат презаписани, включително запазените скриптове и Мениджърът на пароли.
+txt_9_6_loadp: Зареди профил
+txt_9_6_saveppw: ОПЦИОНАЛНО: Защитете този профил с парола / ключов файл?
+txt_9_6_savepoverwrite: Презапиши съществуващия профил? Всички данни от съществуващия профил ще бъдат презаписани, включително запазените скриптове и Мениджърът на пароли.
+txt_9_6_savep: Запази профила
+txt_9_6_scside: Покажи компактната странична лента
+txt_9_5_all: Всички
+txt_9_5_precond: Предварителен анализ, при открити грешки
+txt_9_5_largea: Предварителен анализ на големи архиви
 txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_smalla: Предварителен анализ на малки архиви
+txt_9_5_reopentab: Преотвори последния раздел
+txt_9_5_savetabs: Запази разделите
+txt_9_5_sb: Използвай двоични системни пътища.
 txt_9_4_r: четене
 txt_9_4_rw: четене/запис
 txt_9_4_savecomment: Запиши коментара
