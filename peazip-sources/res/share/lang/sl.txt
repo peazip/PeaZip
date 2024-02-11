@@ -3,23 +3,23 @@ Slovenski jezik
 9.7
 Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
-Zadnja revizija: 20231216
+Zadnja revizija: 20240211
 
 === PeaZip text group ===
 
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
+txt_9_7_tarpipe: 7z/p7zip uporablja cev
+txt_9_7_smartsorting: Pametno razvrščanje imen datotek
 txt_9_6_centered: Na sredini
-txt_9_6_cside: Kompaktna stranska vrstica
+txt_9_6_cside: Strnjena stranska vrstica
 txt_9_6_loadpconfirm: Ali želite naložiti ta profil? Vsi podatki trenutnega profila bodo prepisani, vključno s shranjenimi skripti in upraviteljem gesel.
 txt_9_6_loadp: Naloži profil
 txt_9_6_saveppw: NEOBVEZNO: Želite zaščititi ta profil z geslom/datoteko ključev?
 txt_9_6_savepoverwrite: Želite prepisati obstoječi profil? Vsi podatki obstoječega profila bodo prepisani, vključno s shranjenimi skripti in upraviteljem gesel.
 txt_9_6_savep: Shrani profil
-txt_9_6_scside: Prikaži kompaktno stransko vrstico
+txt_9_6_scside: Prikaži strnjeno stransko vrstico
 txt_9_5_all: Vse
 txt_9_5_precond: Predrazčleni, če so odkrite napake
-txt_9_5_largea: Predrazčleni velie arhive
+txt_9_5_largea: Predrazčleni velike arhive
 txt_9_5_mediuma: Predrazčleni srednje arhive
 txt_9_5_smalla: Predrazčleni majhne arhive
 txt_9_5_reopentab: Znova odpri zadnji zavihek
@@ -34,13 +34,13 @@ txt_9_3_contrast: Kontrast
 txt_9_3_fsd: prosti prostor na cilju morda ne bo dovolj
 txt_9_3_fsw: prosti prostor na začasni delovni poti morda ne bo dovolj
 txt_9_3_mrar: Ročno nastavi dvojiško datoteko RAR
-txt_9_3_canedit: To vrsto arhiva je mogoče urejati
-txt_9_3_canforce: To vrsto arhiva je mogoče urejati (vsiljeno)
+txt_9_3_canedit: Te vrste arhiva je mogoče urejati
+txt_9_3_canforce: Te vrste arhiva je mogoče urejati (vsiljeno)
 txt_9_3_cannotedit: Te vrste arhiva ni mogoče urejati
 txt_9_2_7za: Kratko ime 7z/p7zip
 txt_9_2_changelog: Dnevnik sprememb
-txt_9_2_tfaq: Preveri prevode
-txt_9_2_compact: Kompaktno
+txt_9_2_tfaq: Preveri obstoj prevodov
+txt_9_2_compact: Strni
 txt_9_2_swt: Orodje za zamenjavo/naslovna vrstica
 txt_9_2_tos: TOS, Zasebnost
 txt_9_2_doc: Preveri dokumentacijo, Sledilnik težav...
@@ -358,13 +358,13 @@ txt_5_4_deletefilesconfirm: Želite potrditi  izvirnih datotek?
 txt_5_4_used: Uporabljeno
 txt_5_3_profilebest: Najboljše stiskanje. 7Z format Ultra stopnja
 txt_5_3_profileadvanced: Napredno stiskanje. 7Z format
-txt_5_3_profilenormal: Običajno ZIP stiskanje. Združljivo z večino razširljevalcev
+txt_5_3_profilenormal: Običajno ZIP stiskanje. Združljivo z večino razširjevalcev
 txt_5_3_profileveryfast: Zelo hitro ZIP stiskanje. Priporočeno za velike večpredstavnostne datoteke
 txt_5_3_profilepassword: Zaščiti z geslom, 7Z format
-txt_5_3_profile10mb: Ohrani izhod pod 25 MB. Za omejitve e-poštnih prilog
+txt_5_3_profile10mb: Ohrani izhod pod 25 MB. Za omejitve prilog elektronske pošte
 txt_5_3_profilesfx: Samodejno razširjanje. Prejemnik ne bo potreboval programa za razširjanje
 txt_5_3_cml: Jezik sistemskega priročnega menija
-txt_5_3_cmlmessage: Dvokliknite na želen jezik priročnega menija in potrdite združitev registra. To nastavitev je treba ponovno uporabiti, ko je aplikacija nameščena/posodobljena ali po uporabi čarovnika za sistemsko integracijo.
+txt_5_3_cmlmessage: Dvokliknite na želen jezik priročnega menija in potrdite spajanje registra. To nastavitev je treba znova uporabiti, ko je aplikacija nameščena/posodobljena ali po uporabi čarovnika za sistemsko integracijo.
 txt_5_3_exc: Filtri za izključitev prevladajo nad filtri za vključevanje
 txt_5_3_ia: Vključi tudi
 txt_5_3_io: Vključi samo
@@ -425,7 +425,7 @@ txt_5_0_resetbookmarks: Želite ponastaviti zaznamke na privzeto? (Zaznamke lahk
 txt_5_0_sh: Zgodovina seje
 txt_5_0_skip: Preskoči oštevilčenje vsebine map v postavitvi
 txt_5_0_videos: Videoposnetki
-txt_4_9_frame: Okvir
+txt_4_9_frame: Sličica
 txt_4_9_listth: Seznam in sličice
 txt_4_9_shadow: Senca
 txt_4_9_style: Slog
@@ -613,7 +613,7 @@ txt_2_7_ok: Vredu
 txt_2_7_drag_archive: Želite odpreti datoteko kot nov arhiv? ('Ne' za dodajanje datoteke v trenutno postavitev arhiviranja)
 txt_2_7_oop: Po končanem opravilu odpri izhodno pot
 txt_2_7_validatefn: Operacija je ustavljena. Odkrito je neveljavno ime datoteke:
-txt_2_7_validatecl: Operacija je ustavljena. Zaznan je bil potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
+txt_2_7_validatecl: Operacija je ustavljena. Zaznan je bil potencialno nevaren ukaz (npr. spajanje ukazov v programu ni dovoljeno):
 txt_2_7_output: Izhod
 txt_2_7_pwnotset: Geslo ni nastavljeno 
 txt_2_7_pwarcset: Geslo je nastavljeno
@@ -707,13 +707,13 @@ txt_attach10: 10 MB priloga
 txt_7z_exitcode2: 2: Prišlo je do usodne napake
 txt_7z_exitcode255: 255: Opravilo je ustavil sam uporabnik
 txt_fat32: 4 GB FAT32 datoteka
-txt_dvd: 4.7 GB DVD
+txt_dvd: DVD 4.7 GB 
 txt_attach5: 5 MB priloga
-txt_cd650: 650 MB CD
+txt_cd650: CD650 MB 
 txt_7z_exitcode7: 7: Napaka: dobil je napačno ukazno vrstico
-txt_cd700: 700 MB CD
+txt_cd700: CD 700 MB
 txt_type_description_7z: 7Z: funkcija bogatega arhivskega formata z visokim razmerjem stiskanja
-txt_dvddl: 8.5 GB DVD DL
+txt_dvddl: DVD DL 8.5 GB 
 txt_7z_exitcode8: 8: Napaka: za zahtevano operacijo ni dovolj pomnilnika 
 txt_abort: Želite prekiniti načrtovana kopiranja/premike datoteke?
 txt_about: Vizitka
@@ -953,8 +953,8 @@ txt_theme_exists: že obstaja. Zagotovite drugačno pot
 txt_job_code: koda opravila:
 txt_job_definition_saved: Definicija opravila je uspešno shranjena v
 txt_job_success: Opravilo je uspešno dokončano!
-txt_join: Združi
-txt_joinfiles: Združi datoteke
+txt_join: Spoji
+txt_joinfiles: Spoji datoteke
 txt_keyfile: Datoteka s ključi
 txt_keyfile_not_found: Datoteke s ključi ni mogoče najti ali brati. Izberite drugo datoteko s ključi.
 txt_keyfile_notcreated: Datoteka s ključi ni ustvarjena
@@ -1018,18 +1018,18 @@ txt_ondblclick: Ob dvokliku naredi:
 txt_opacity: Prosojnost
 txt_open: Odpri
 txt_openarchive: Odpri arhiv
-txt_title_open: Odpri arhiv, šifriraj, združi...
-txt_open_bookmark: Odpri tatnamek
-txt_cphere: Odpri ukazno vrstico tukaj
+txt_title_open: Odpri arhiv, šifriraj, spoji...
+txt_open_bookmark: Odpri zaznamek
+txt_cphere: Tukaj odpri ukazno vrstico
 txt_open_file: Odpri datoteko
 txt_open_files: Odpri datoteke
 txt_open_path: Odpri pot
 txt_opensource: Odprtokodni prenosni arhiver
 txt_openwith: Odpri z...
-txt_aborted: Postopek je prekinjen
+txt_aborted: Operacija je prekinjena
 txt_unit_cd: Optični pogon
 txt_options: Možnosti
-txt_other: Ostalo
+txt_other: Drugo
 txt_otherparams: Drugi parametri (prosto urejanje)
 txt_oip: izhod, vhod, parametri
 txt_opi: izhod, parametri, vhod
@@ -1076,7 +1076,7 @@ txt_recentarchives: Nedavni arhivi
 txt_rr_hint: Zapisi obnovitve omogočajo, poskus popravkov arhiva v primeru okvare podatkov
 txt_search_refine: Izboljšaj iskalni filter. Sprejema nadomestna znaka ? in *
 txt_fefreshf5: Osveži (F5)
-txt_release: objava:
+txt_release: izdaja:
 txt_unit_removable: Odstranljiva enota
 txt_remove_bookmark: Odstrani zaznamek
 txt_remove_external_unit: Odstrani zunanje naprave
@@ -1114,13 +1114,13 @@ txt_selectdir: Izberi mapo
 txt_selected_obj: izbrano
 txt_selected_objects: Izbrani predmeti
 txt_sfx: Samorazširjanje
-txt_sendbymail: Pošlji po e-pošti
+txt_sendbymail: Pošlji po elektronski pošti
 txt_set_defaults: Nastavi privzete parametre aplikacije
 txt_settings: Nastavitve
-txt_sfx_interface: sfx vmesnik
+txt_sfx_interface: Vmesnik sfx
 txt_showhints: Prikaži namige
 txt_show_messages: Prikaži informacijska sporočila
-txt_showpw: Prikaži vsebina polja z geslom
+txt_showpw: Prikaži vsebino polja z geslom
 txt_singlevol: Enojni nosilec. Ne razdeli ga
 txt_size: Velikost
 txt_sizeb: Velikost (B)
@@ -1199,7 +1199,7 @@ txt_websearch: Spletno iskanje
 txt_websites: Spletne strani
 txt_word: Beseda
 txt_write: Zapisuje:
-txt_ramdompw_hint: Od tukaj lahko kopirate naključno generirano geslo
+txt_ramdompw_hint: Od tukaj lahko kopirate naključno ustvarjeno geslo
 txt_exe_hint: Lahko prosto vnesete ime izvedljive datoteke in parametre stiskanja po meri in izberete konstrukcijo sintakse. Upoštevajte, da lahko tudi ročno spremenite sintakso ukaza v zavihku 'Konzola'.
 txt_pj_hint2: Definicijo opravila lahko uvozite iz grafičnega vmesnika v spodnje 'memo' polje. Nato lahko urejate, zaženete ali shranite datoteko brez spremembe ali izgube opravilo, določeno za grafični vmesnik.
 txt_type_description_zip: ZIP: hiter format za arhiviranje/stiskanje. Prevladuje v sistemih Windows
@@ -1247,9 +1247,9 @@ txt_3_0_arc: Nekaterih vhodnih datotek ni mogoče prebrati (morda so zaklenjene,
 txt_3_0_ext: Arhiv lahko zahteva drugačno geslo za trenutno operacijo
 txt_2_8_oop: Po končanem opravilu odpri izhodno pot 
 txt_2_7_validatefn: Operacija je ustavljena. Zaznano je neveljavno ime datoteke:
-txt_2_7_validatecl: Operacija je ustavljena. zaznan potencialno nevaren ukaz (npr. združevanje ukazov v programu ni dovoljeno):
+txt_2_7_validatecl: Operacija je ustavljena. zaznan potencialno nevaren ukaz (npr. spajanje ukazov v programu ni dovoljeno):
 txt_2_6_open: Odpri arhiv
-txt_2_5_ace_missing: Manjka UNACE vtičnik. Za upravljanje ACE arhivov lahko prenesete vtičnik s PeaZipove spletne strani (če je UNACE zaprt vir, vtičnik ni prikazan v osnovnem paketu)
+txt_2_5_ace_missing: Manjka UNACE vtičnik. Za upravljanje arhivov ACE lahko prenesete vtičnik s PeaZipove spletne strani (če je UNACE zaprt vir, vtičnik ni prikazan v osnovnem paketu)
 txt_2_3_pw_errorchar_gwrap: V trenutnem sistemu ni mogoče uporabiti znakov narekovajev za gesla s PeaLauncherjem. Spremenite geslo ali izberite način 'Konzola' v podpori dvojiških datotek uporabniškega vmesnika pod 'Možnosti -> Nastavitve'
 txt_2_3_renameexisting: Samodejno preimenuj obstoječe datoteke
 txt_2_3_renameextracted: Samodejno preimenuj razširjene datoteke
@@ -1275,7 +1275,7 @@ txt_job2: 2: Prišlo je do usodne napake
 txt_job255: 255: Opravilo je zaustavil uporabnik
 txt_job7: 7: Napaka: dobljena nepravilna ukazna vrstica
 txt_job8: 8: Napaka: za zahtevano operacijo ni dovolj pomnilnika
-txt_autoclose: Zapri to okno po dokončannju opravila
+txt_autoclose: Zapri to okno po dokončanju opravila
 txt_crscale: Razmerje stiskanja (nižje, boljše):
 txt_console: Konzola
 txt_benchscale: Ocena Core 2 Duo 6600, ekvivalentna hitrost MHz.
@@ -1414,7 +1414,7 @@ PeaZip je odprtokodna datoteka in upravitelj arhivov: navzkrižna platforma, dos
 
 PeaZip omogoča uporabo močnih več iskalnih filtrov v vsebini arhiva. Ustvarja in razširja več arhivov hkrati. Ustvarja samodejno razširljive arhive. Omogoča izvoz definicije opravila kot ukazne vrstice, shranjevanje postavitve arhiviranja/razširjanja, zaznamovanje arhivov in map, pregled in odpiranje stisnjenih/razširjenih datotek z aplikacijami po meri, itn.
 
-Ostale funkcije: močno šifriranje, robustno kopiranje datotek, delitev/združevanje datotek (razpon datotek), varno brisanje podatkov, primerjava, kontrolna vsota in hash datoteke, sistemska primerjava, ustvarjanje naključnih gesel in ključnih datotek.
+Ostale funkcije: močno šifriranje, robustno kopiranje datotek, delitev/spajanje datotek (razpon datotek), varno brisanje podatkov, primerjava, kontrolna vsota in hash datoteke, sistemska primerjava, ustvarjanje naključnih gesel in ključnih datotek.
 
 Prenos: http://peazip.github.io
 Preberite več: http://peazip.github.io/peazip-free-archiver.html

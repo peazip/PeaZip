@@ -2,13 +2,13 @@
 Simplified Chinese - 简体中文
 9.7
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
-Last rev. by: Junde Yhi
-Last rev.: 20231218
+Last rev. by: yangyangdaji
+Last rev.: 20240211
 
 === PeaZip text group ===
 
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
+txt_9_7_tarpipe: 7z / p7zip 使用管道
+txt_9_7_smartsorting: 智能排序文件名
 txt_9_6_centered: 居中
 txt_9_6_cside: 紧凑型侧边栏
 txt_9_6_loadpconfirm: 您想加载此配置文件吗？当前配置文件的所有数据都将被覆盖，包括保存的脚本和密码管理器。
