@@ -13,6 +13,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper]
 "MUIVerb"="PeaZip, open file or folder"
+"Icon"="C:\\Program Files\\PeaZip\\peazip.exe,0"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper\command]
 @="\"C:\\Program Files\\PeaZip\\PEAZIP.EXE\" \"-ext2openasarchive\" \"%1\""
 

@@ -11,6 +11,19 @@ Removes PeaZip entries form Windows 11 mini context menu.
 
 The scripts use whitelisted ID SetDesktopWallpaper: you can use different whitelisted IDs if you prefer, and if made available by Microsoft.
 
+This is a short list of known whitelistd IDs:
+ConnectNetworkDrive
+DisconnectNetworkDrive
+Extract
+PinToHome
+SetDesktopWallpaper
+UnpinFromHome
+Windows.CompressTo
+which can be used in HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\ 
+Directory, AllFileSystemObjects, or any file type can be used in place of * type.
+
+A further alternative is adding a menu item to open the app when clicking on an empty spot, from HKEY_CLASSES_ROOT\Directory\Background\shell
+
 Please note all context menu and SenTo menu entries are available from "Show more options", or pressing Shift+F10, in the Windows 11 full context menu, and are not affected by those scripts.
 
 Read PeaZip documentation for the full list of supported functions and please note commands containing "multi" particle are natively capable to pass multiple items to a single program's instance.

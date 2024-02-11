@@ -13,6 +13,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper]
 "MUIVerb"="PeaZip, add to WIM"
+"Icon"="C:\\Program Files\\PeaZip\\res\\share\\icons\\peazip_seven.icl,2"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\SetDesktopWallpaper\command]
 @="\"C:\\Program Files\\PeaZip\\PEAZIP.EXE\" \"-add2multiwim\" \"%1\""
 
