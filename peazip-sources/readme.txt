@@ -71,7 +71,10 @@ CONTENT
 (peazip sources)/dev/project_demo_lib.lpi: an OPTIONAL demo application using PEA sources as a library, this is only meant as example and it is not required by PeaZip
 
 (peazip sources)/dev/metadarkstyle subdirectory contains zamtmn metadarkstyle Lazarus package which adds support to W10+ dark mode.
-It is unused on non-Windows platforms but the package needs to be installed following the IDE instructions or from command line (first step of section 2 of the quick guide), alternatively the package can be removed from project's dependencies from the IDE.
+The package is unused on non-Windows platforms, but in any case Lazarus IDE needs that the package is either manually added to the project, or removed from project dependencies, both for peazip and pea.
+To add the package to the project (which is recommended on Windows platform) you can use the command line mentioned at point 2) of the quick guide section, or (from the IDE) main menu > Package > Add package file (.lpk), click "Use" dropdown and select "Add to project".
+To remove the package dependency open the project in the IDE, which will notify the missing dependency, the project can be removed from main menu > Project > Project Inspector, select "MetaDarkStyle" and click the "Remove" button; as alternative attemptiong to build the project will result in an error message showing Project Inspector which can be used to remove the package dependency as explained.
+This extra step is due to Lazarus architecture in which packages belongs to the IDE rather than to the specific project, that is meant to make easiser to reuse packages in multiple projects.
 
 (peazip sources)/res subdirectory contains resources to run PeaZip application
 
