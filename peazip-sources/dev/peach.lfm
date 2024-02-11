@@ -10125,7 +10125,7 @@ object Form_peach: TForm_peach
             AnchorSideBottom.Side = asrCenter
             Left = 775
             Height = 15
-            Top = -1719681433
+            Top = 1871213397
             Width = 3
             Anchors = []
             BorderSpacing.Left = 8

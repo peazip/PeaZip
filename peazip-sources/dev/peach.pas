@@ -61441,7 +61441,7 @@ end;
 procedure TForm_peach.CheckBoxArchiveHistoryClick(Sender: TObject);
 begin
 on_CheckBoxArchiveHistory_click;
-saverestartclosepeaapp;
+if openstarted=true then saverestartclosepeaapp;
 end;
 
 procedure TForm_peach.CheckBoxArchiveOFClick(Sender: TObject);
