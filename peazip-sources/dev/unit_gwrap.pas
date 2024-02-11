@@ -150,6 +150,7 @@ unit Unit_gwrap;
                                 Optimized speed for operations on archives containing large number of files
  1.09     20210923  G.Tani      Merged patches for Darwin support
                                 Optimized memory usage for progress and report streams
+ 1.10     20240204  G.Tani      Improved translations loading
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -753,7 +754,7 @@ try
    reset(t);
    read_header(t);
    readln(t,s); //declaration
-   if s<>'=== PeaZip language file ===' then
+   if (s<>'=== PeaZip language file ===') and (s<>'== PeaZip language file ===') then
       begin
       closefile(t);
       exit;
@@ -776,11 +777,7 @@ try
       closefile(t);
       exit;
       end;
-   if lver<>peazipver then
-      {if i=0 then i:=fallback_valorize_text
-      else}
-   else
-      if i=0 then i:=valorize_text;
+   if i=0 then i:=valorize_text;
    if i=0 then assign_guitext
    else
       begin
@@ -798,21 +795,135 @@ except
 end;
 end;
 
+procedure load_default_texts;
+begin
+txt_6_9_remaining:='remaining';
+txt_6_5_abort:='Abort';
+txt_6_5_error:='Error';
+txt_6_5_no:='No';
+txt_6_5_warning:='Warning';
+txt_6_5_yes:='Yes';
+txt_6_5_yesall:='Yes to all';
+txt_5_6_update:='Check for updates';
+txt_5_6_cml:='System context menu language';
+txt_5_6_donations:='Donations';
+txt_5_6_localization:='Localization';
+txt_5_6_runasadmin:='Run as administrator';
+txt_5_6_help:='Online support';
+txt_5_5_cancelall:='Cancel all';
+txt_5_3_details:='Details';
+txt_5_3_files:='files';
+txt_5_3_folders:='folders';
+txt_5_3_info:='Info';
+txt_5_3_list:='List';
+txt_5_3_os:='Original size';
+txt_5_3_ps:='Packed size';
+txt_5_3_test:='Test';
+txt_5_0_extract:='Extract';
+txt_5_0_from:='from';
+txt_5_0_in:='in';
+txt_5_0_to:='to';
+txt_4_5_search:='Search';
+txt_4_0_drag:='Drag here the archive to extract, or ';
+txt_4_0_dragorselect:='Drag here or select file';
+txt_4_0_select:='select file';
+txt_3_6_selectdir:='Select directory';
+txt_3_5_close:='Close';
+txt_3_0_details:='For more details please see "Report" tab for the full task''s log, and "Console" tab for task definition as command line.';
+txt_3_0_hints:='Hints about the error';
+txt_3_0_arc:='Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.';
+txt_3_0_ext:='The archive may require a different password for the current operation.';
+txt_2_8_oop:='Open output path when task completes';
+txt_2_7_validatefn:='Operation stopped, invalid file name detected:';
+txt_2_7_validatecl:='Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program):';
+txt_2_6_open:='Open archive';
+txt_2_5_ace_missing:='UNACE plugin is missing; for handling ACE archives you can download the plugin form PeaZip''s website (being UNACE closed source, the plugin is not featured in base package)';
+txt_2_3_pw_errorchar_gwrap:='quote character cannot be used by PeaLauncher in passwords under current system, please change password or chose Console mode in Backend binaries user interface in Options > Settings';
+txt_2_3_renameexisting:='Auto rename existing files';
+txt_2_3_renameextracted:='Auto rename extracted files';
+txt_2_3_cancel:='Cancel';
+txt_2_3_encryption:='Encryption';
+txt_2_3_extinnew:='Extract in new folder';
+txt_2_3_keyfile:='Keyfile';
+txt_2_3_kf_not_found_gwrap:='Keyfile cannot be found or read. Please chose a different Keyfile.';
+txt_2_3_moreoptions:='More options...';
+txt_2_3_nopaths:='No paths';
+txt_2_3_options:='Options';
+txt_2_3_overexisting:='Overwrite existing files';
+txt_2_3_pw:='Password';
+txt_2_3_skipexisting:='Skip existing files';
+txt_job_unknown:=': Unknown error encountered';
+txt_stdjob:='[animation will stop at task''s completion]';
+txt_benchmarkjob:='[system will respond slowly while running the benchmark (some minutes)]';
+txt_defragjob:='[will not respond while defragmenting, you can let it run in background]';
+txt_consolejob:='[task''s feedback and detailed progress available in console window]';
+txt_job1:='1: Warning, non fatal error(s); i.e. some files missing or locked';
+txt_job127:='127: Cannot execute requested operation';
+txt_job2:='2: Fatal error occurred';
+txt_job255:='255: Task halted by the user';
+txt_job7:='7: Error, got incorrect command line';
+txt_job8:='8: Error, not enough memory for requested operation';
+txt_autoclose:='Close this window when task completes';
+txt_crscale:='Compression ratio (lower, better):';
+txt_console:='Console';
+txt_benchscale:='Core 2 Duo 6600 rating, equivalent MHz speed.';
+txt_create:='Create';
+txt_done:='Done:';
+txt_nocl:='Empty command line';
+txt_error:='Error:';
+txt_explore:='Explore';
+txt_extto:='Extract to';
+txt_halt:='Halt system when task completes';
+txt_halted:='Halted:';
+txt_hardware:='hardware';
+txt_high:='high priority';
+txt_idle:='idle priority';
+txt_input:='Input:';
+txt_jpaused:='Task paused';
+txt_jresumed:='Task resumed';
+txt_job_started:='Task started';
+txt_jobstatus:='Task status:';
+txt_jstopped:='Task halted by the user';
+txt_jobstopped:='Task halted by the user; you can inspect the partial outcome clicking output path link.';
+txt_job_success:='Task successfully completed';
+txt_lt:='List/test';
+txt_normal:='normal priority';
+txt_ok:='OK';
+txt_output:='Output:';
+txt_pause:='Pause';
+txt_paused:='Paused,';
+txt_p_high:='Priority set to high';
+txt_p_idle:='Priority set to idle';
+txt_p_normal:='Priority set to normal';
+txt_p_realtime:='Priority set to real time';
+txt_rating:='Rating:';
+txt_rt:='real time priority';
+txt_report:='Report';
+txt_resume:='Resume';
+txt_priority:='Click to set task''s priority';
+txt_running:='Running,';
+txt_isrunning:='Running...';
+txt_saveas:='Save as';
+txt_savejob:='Save task definition as script';
+txt_savelog:='Save task''s log';
+txt_software:='software';
+txt_speedscale:='Speed, logarithmic scale (higher, better):';
+txt_status:='Status';
+txt_stop:='Stop';
+txt_bench:='System benchmark';
+txt_threads:='Threads:';
+txt_time:='Time:';
+end;
+
 function texts(lang:ansistring):integer;
 begin
-   //preload default language file to valorize possibly untranslated strings (i.e. older translations)
-   texts:=load_texts('default.txt');
-   //fallback to english if default language file is not ok
-   if texts<>0 then texts:=load_texts('en.txt');
-   //fallback to british english if even english language file is not ok
-   if texts<>0 then texts:=load_texts('en-gb.txt');
-   if lang<>'default.txt' then
-      if load_texts(lang)<>0 then //try to load language file sequentially; fallback to a slower recoursive procedure to valorize each known variable from lang file strings if the language file version doesn't match with PeaZip's version
-         begin
-         lang_file:='default.txt'; //try to load default language file on failure
-         load_texts(lang_file);
-         end
-      else texts:=0;
+if load_texts(lang)<>0 then //try to load language file
+   begin
+   load_default_texts;
+   assign_guitext;
+   texts:=0;
+   end
+else texts:=0;
 end;
 
 function cp_open(s:ansistring; desk_env:byte):integer;
@@ -1562,6 +1673,17 @@ repeat
 until needinteraction=false;
 end;
 
+function getalignw(ntabs:integer):integer;
+begin
+result:=Form_gwrap.ShapeTitleb1.Width+
+Form_gwrap.ShapeTitleb2.Width+
+Form_gwrap.ShapeTitleb3.Width+
+Form_gwrap.LabelTitle1.BorderSpacing.Left+Form_gwrap.LabelTitle1.BorderSpacing.Left+
+Form_gwrap.LabelTitle2.BorderSpacing.Left+
+Form_gwrap.LabelTitle3.BorderSpacing.Left;
+if ntabs=4 then result:=result+Form_gwrap.ShapeTitleb4.Width+Form_gwrap.LabelTitle4.BorderSpacing.Left;
+end;
+
 procedure launch_cl;
 var
    P: TProcessUTF8;
@@ -1607,7 +1729,7 @@ if ppause=false then
    Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
    end;
 Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
-Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
+Form_gwrap.PanelTitlePLTabAlign.Width:=getalignw(4);
 if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1) else clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.Shapelink1);
 if insize>0 then
    if (pinsize>0) and (pinsize<>insize) then Form_gwrap.LabelInfo1.Caption:=nicenumber(inttostr(pinsize),filesizebase)+' / '+nicenumber(inttostr(insize),filesizebase)
@@ -1846,7 +1968,7 @@ end;
 tdiff:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if tdiff<=0 then tdiff:=100000;
 if pproglast=true then if exit_code<>0 then Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
-Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
+Form_gwrap.PanelTitlePLTabAlign.Width:=getalignw(4);
 if (alttabstyle<>1) and (alttabstyle<>4) then clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.ShapeTitleb1) else clicklabel_launcher(Form_gwrap.LabelTitle1,Form_gwrap.Shapelink1);
 {$IFNDEF MSWINDOWS}
 if stopped=true then exit_code:=255;
@@ -1995,7 +2117,7 @@ if autoopen=1 then
    if (modeofuse<>1) and (modeofuse<>4) and (modeofuse<>5) and (modeofuse<>2) then
       if (psubfun<>'extract') and (psubfun<>'convert') then explore_out(''); //deferred (in peach unit) to let run move after extraction operations if needed
 Form_gwrap.LabelTitle4.Visible:=false;
-Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width;
+Form_gwrap.PanelTitlePLTabAlign.Width:=getalignw(3);
 end;
 
 case pautoclose of
@@ -2223,7 +2345,7 @@ if ppause=false then
    Form_gwrap.ButtonPause.Caption:='   '+txt_pause+'   ';
    Form_gwrap.pm2pause.Caption:=txt_pause;
    Form_gwrap.LabelTitle1.caption:='      '+txt_isrunning+'      ';
-   Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
+   Form_gwrap.PanelTitlePLTabAlign.Width:=getalignw(4);
    Form_gwrap.ShapeProgress.Color:=PGREEN;
    Form_gwrap.ShapeGlobalProgress.Color:=PGREEN;
    end
@@ -2239,7 +2361,7 @@ else
    Form_gwrap.ButtonPause.Caption:='   '+txt_resume+'   ';
    Form_gwrap.pm2pause.Caption:=txt_resume;
    Form_gwrap.LabelTitle1.caption:='      '+txt_status+'      ';
-   Form_gwrap.PanelTitlePLTabAlign.Width:=Form_gwrap.ShapeTitleb1.Width+Form_gwrap.ShapeTitleb2.Width+Form_gwrap.ShapeTitleb3.Width+Form_gwrap.ShapeTitleb4.Width;
+   Form_gwrap.PanelTitlePLTabAlign.Width:=getalignw(4);
    Form_gwrap.ShapeProgress.Color:=PYELLOW;
    Form_gwrap.ShapeGlobalProgress.Color:=PYELLOW;
    end;

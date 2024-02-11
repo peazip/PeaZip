@@ -420,7 +420,10 @@ end;
 
 procedure TForm_report.FormShow(Sender: TObject);
 begin
-Form_report.PanelTitleREPTabAlign.Width:=Form_report.ShapeTitleREPb1.Width+Form_report.ShapeTitleREPb2.Width;
+Form_report.PanelTitleREPTabAlign.Width:=Form_report.ShapeTitleREPb1.Width+
+Form_report.ShapeTitleREPb2.Width+
+Form_report.LabelTitleREP1.BorderSpacing.Left+Form_report.LabelTitleREP1.BorderSpacing.Left+
+Form_report.LabelTitleREP2.BorderSpacing.Left;
 if alttabstyle<=2 then
    Form_report.PanelTitleREPTabAlign.AnchorSideLeft.Side:=asrleft
 else
@@ -443,6 +446,24 @@ else
    Form_report.ShapeTitleREPb2.visible:=true;
    Form_report.ShapeLinkREP2.visible:=false;
    end;
+
+   case alttabstyle of
+      0,3:
+      begin
+      Form_report.ShapeTitleREPb1.Shape:=stRoundRect;
+      Form_report.ShapeTitleREPb2.Shape:=stRoundRect;
+      Form_report.LabelTitleREP1.BorderSpacing.Left:=6;
+      Form_report.LabelTitleREP2.BorderSpacing.Left:=6;
+      end
+      else
+      begin
+      Form_report.ShapeTitleREPb1.Shape:=stRectangle;
+      Form_report.ShapeTitleREPb2.Shape:=stRectangle;
+      Form_report.LabelTitleREP1.BorderSpacing.Left:=0;
+      Form_report.LabelTitleREP2.BorderSpacing.Left:=0;
+      end;
+      end;
+
 end;
 
 procedure TForm_report.LabelCaseClick(Sender: TObject);

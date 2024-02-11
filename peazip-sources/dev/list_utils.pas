@@ -1861,6 +1861,7 @@ begin
 {$IFDEF LCLCOCOA} caption_build := caption_build + ', Cocoa'; {$ENDIF}
 {$IFDEF LCLQT} caption_build := caption_build + ', QT4'; {$ENDIF}
 {$IFDEF LCLQT5} caption_build := caption_build + ', QT5'; {$ENDIF}
+{$IFDEF LCLQT6} caption_build := caption_build + ', QT6'; {$ENDIF}
 {$IFDEF LCLGTK} caption_build := caption_build + ', GTK'; {$ENDIF}
 {$IFDEF LCLGTK2} caption_build := caption_build + ', GTK2'; {$ENDIF}
 {$IFDEF LCLGTK3} caption_build := caption_build + ', GTK3'; {$ENDIF}

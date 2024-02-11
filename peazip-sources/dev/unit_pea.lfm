@@ -47,7 +47,7 @@ object Form_pea: TForm_pea
   OnShow = FormShow
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '3.0.0.3'
   object ButtonRefSize: TButton
     AnchorSideTop.Control = Owner
     AnchorSideTop.Side = asrBottom
@@ -168,6 +168,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 193
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 7
     object LabelTools2: TLabel
@@ -304,6 +305,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 270
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 6
     Visible = False
@@ -388,11 +390,11 @@ object Form_pea: TForm_pea
         '100 GB Blu-Ray XL3'
         '128 GB Blu-Ray XL4'
       )
-      OnChange = ComboBox1Change
       ParentFont = False
       Style = csDropDownList
       TabOrder = 0
       Text = 'Custom size'
+      OnChange = ComboBox1Change
     end
     object ComboBox2: TComboBox
       AnchorSideLeft.Control = SpinEdit1
@@ -565,6 +567,7 @@ object Form_pea: TForm_pea
       Width = 2
       Anchors = [akLeft, akBottom]
       BevelOuter = bvNone
+      ParentBackground = False
       ParentFont = False
       TabOrder = 6
     end
@@ -581,6 +584,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 193
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 2
     object LabelEncrypt2: TLabel
@@ -698,6 +702,7 @@ object Form_pea: TForm_pea
       BevelOuter = bvNone
       ClientHeight = 95
       ClientWidth = 500
+      ParentBackground = False
       ParentFont = False
       TabOrder = 0
       object ShapeE1: TShape
@@ -784,6 +789,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 193
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 1
     object LabelDecrypt2: TLabel
@@ -939,6 +945,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 270
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 9
     object LabelUtilsFun: TLabel
@@ -1168,6 +1175,7 @@ object Form_pea: TForm_pea
       Width = 1
       Anchors = [akLeft, akBottom]
       BevelOuter = bvNone
+      ParentBackground = False
       ParentFont = False
       TabOrder = 4
     end
@@ -1184,6 +1192,7 @@ object Form_pea: TForm_pea
       BevelOuter = bvNone
       ClientHeight = 36
       ClientWidth = 560
+      ParentBackground = False
       TabOrder = 5
       object ComboBoxUtils: TComboBox
         AnchorSideLeft.Control = PanelUtilsTitle
@@ -1223,11 +1232,11 @@ object Form_pea: TForm_pea
           'Zero delete free space'
           'Show environment strings'
         )
-        OnChange = ComboBoxUtilsChange
         ParentFont = False
         Style = csDropDownList
         TabOrder = 0
         Text = 'Checksum/Hash (common algorithms)'
+        OnChange = ComboBoxUtilsChange
       end
       object ButtonUtilsReset: TSpeedButton
         AnchorSideTop.Control = PanelUtilsTitle
@@ -1276,6 +1285,7 @@ object Form_pea: TForm_pea
     BevelOuter = bvNone
     ClientHeight = 270
     ClientWidth = 560
+    ParentBackground = False
     ParentFont = False
     TabOrder = 0
     Visible = False
@@ -1447,10 +1457,10 @@ object Form_pea: TForm_pea
       BorderSpacing.Top = 12
       BorderSpacing.Right = 12
       EchoMode = emPassword
-      OnKeyUp = EditPW1KeyUp
       ParentFont = False
       PasswordChar = '*'
       TabOrder = 0
+      OnKeyUp = EditPW1KeyUp
     end
     object EditConfirm1: TEdit
       AnchorSideLeft.Control = LabelKeyFileName1
@@ -1572,6 +1582,7 @@ object Form_pea: TForm_pea
       Width = 2
       Anchors = [akLeft, akBottom]
       BevelOuter = bvNone
+      ParentBackground = False
       ParentFont = False
       TabOrder = 4
     end

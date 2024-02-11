@@ -1,24 +1,20 @@
-﻿Notes to 9.6.0 release
-
-Modified existing text strings:
-txt_console_interface: Console
-txt_guicl: GUI + Console
-txt_guipealauncher: GUI
-
+﻿Notes to 9.7.0 release
 
 = GENERAL NOTES =
 
 Language files needs to be saved as "UTF-8 with BOM" txt files, and can be found in (peazip)/res/share/lang subfolder of PeaZip application.
 If you see untransalted strings in the app or in the language file, most likely newly added text lines, it means the language needs a translator to take care updating the language file: your help is always welcome!
-This package, named peazip-x.y.about_translations.zip, contains data and information for translators. 
-It can be found in "PeaZip translations" download page, and also on other repositories of PeaZip project.
+This package, named peazip-x.y.about_translations.zip, contains data and information for translators, it can be found in "PeaZip translations" repository (and also on other repositories of PeaZip project).
+
+In case no text is added with a new release of PeaZip, it is recommended to, however, update the language files with the new version number (third line) and to review the current translation for possible improvements and fixes.
 
 = HOW TO TRANSLATE THE APPLICATION =
 
 Language files are contained in "lang" folder. 
 Instead, if you are interested in translating Windows context menu entries (for W7 and above) please refer to instructions in "readme_about_windows_context_menu.txt".
 
-Language files are plain UTF-8 with BOM encoded text files which can be freely edited using any suitable text editor.
+Language files are text files encodedn as UTF-8 with BOM, which can be freely edited using any suitable text editor.
+Plain UTF-8 text files are supported too, but the preferred encoding is UTF-8 with BOM.
 To create a new translation file you can:
 1 - make a copy of default.txt (in PeaZip's path in /res/share/lang subfolder) or of any other language file if you prefer starting from a language other than English;
 2 - edit lines 2 to 6 of the document to enter language name (both in English and in the original language for better readability), PeaZip's version (major.minor) the translation is aimed to, translator's and last last revisor's name and last revision date;

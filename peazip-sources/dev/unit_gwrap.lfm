@@ -49,7 +49,7 @@ object Form_gwrap: TForm_gwrap
   OnShow = FormShow
   ShowHint = True
   ShowInTaskBar = stAlways
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '3.0.0.3'
   object Panel5: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideBottom.Control = Owner
@@ -60,6 +60,7 @@ object Form_gwrap: TForm_gwrap
     Width = 0
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
+    ParentBackground = False
     ParentFont = False
     TabOrder = 3
   end
@@ -160,6 +161,7 @@ object Form_gwrap: TForm_gwrap
     Width = 4
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
+    ParentBackground = False
     ParentFont = False
     TabOrder = 6
     Visible = False
@@ -230,6 +232,7 @@ object Form_gwrap: TForm_gwrap
     BevelOuter = bvNone
     ClientHeight = 340
     ClientWidth = 800
+    ParentBackground = False
     ParentFont = False
     TabOrder = 5
     object PanelTitle: TPanel
@@ -247,6 +250,7 @@ object Form_gwrap: TForm_gwrap
       BevelOuter = bvNone
       ClientHeight = 45
       ClientWidth = 800
+      ParentBackground = False
       ParentFont = False
       TabOrder = 4
       object ShapeTitleb4: TShape
@@ -394,6 +398,7 @@ object Form_gwrap: TForm_gwrap
         Top = 0
         Width = 391
         BevelOuter = bvNone
+        ParentBackground = False
         TabOrder = 0
       end
       object Shapelink1: TShape
@@ -481,6 +486,7 @@ object Form_gwrap: TForm_gwrap
       BevelOuter = bvNone
       ClientHeight = 295
       ClientWidth = 800
+      ParentBackground = False
       ParentFont = False
       TabOrder = 2
       object Memo2: TMemo
@@ -518,6 +524,7 @@ object Form_gwrap: TForm_gwrap
       BevelOuter = bvNone
       ClientHeight = 295
       ClientWidth = 800
+      ParentBackground = False
       ParentFont = False
       TabOrder = 1
       object StringGrid1: TStringGrid
@@ -561,6 +568,7 @@ object Form_gwrap: TForm_gwrap
       BevelOuter = bvNone
       ClientHeight = 295
       ClientWidth = 800
+      ParentBackground = False
       ParentFont = False
       TabOrder = 3
       object Panel3: TPanel
@@ -578,6 +586,7 @@ object Form_gwrap: TForm_gwrap
         BevelOuter = bvNone
         ClientHeight = 295
         ClientWidth = 800
+        ParentBackground = False
         ParentFont = False
         TabOrder = 0
         object CheckBoxHalt: TCheckBox
@@ -585,7 +594,7 @@ object Form_gwrap: TForm_gwrap
           Left = 30
           Height = 24
           Top = 30
-          Width = 239
+          Width = 236
           Caption = 'Halt system when job completes'
           ParentFont = False
           TabOrder = 0
@@ -597,12 +606,12 @@ object Form_gwrap: TForm_gwrap
           Left = 30
           Height = 24
           Top = 58
-          Width = 280
+          Width = 277
           BorderSpacing.Top = 4
           Caption = 'Open output path when job completes'
-          OnClick = cbAutoOpenClick
           ParentFont = False
           TabOrder = 1
+          OnClick = cbAutoOpenClick
         end
       end
     end
@@ -622,6 +631,7 @@ object Form_gwrap: TForm_gwrap
       BevelOuter = bvNone
       ClientHeight = 295
       ClientWidth = 800
+      ParentBackground = False
       ParentFont = False
       TabOrder = 0
       object Panel1: TPanel
@@ -639,6 +649,7 @@ object Form_gwrap: TForm_gwrap
         BevelOuter = bvNone
         ClientHeight = 295
         ClientWidth = 800
+        ParentBackground = False
         ParentFont = False
         TabOrder = 0
         object PanelBench: TPanel
@@ -659,6 +670,7 @@ object Form_gwrap: TForm_gwrap
           BevelOuter = bvNone
           ClientHeight = 265
           ClientWidth = 725
+          ParentBackground = False
           ParentFont = False
           TabOrder = 1
           Visible = False
@@ -722,6 +734,7 @@ object Form_gwrap: TForm_gwrap
           BevelOuter = bvNone
           ClientHeight = 265
           ClientWidth = 725
+          ParentBackground = False
           ParentFont = False
           TabOrder = 0
           object Labeli: TLabel
@@ -977,6 +990,7 @@ object Form_gwrap: TForm_gwrap
     Width = 4
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
+    ParentBackground = False
     ParentFont = False
     TabOrder = 8
     Visible = False

@@ -10,7 +10,9 @@ uses
   Forms
   { add your units here }, 
   Unit_pea, pea_utils, list_utils, Unit_report
-  {$IfDef WINDOWS}, uMetaDarkStyle, uDarkStyleParams, uDarkStyleSchemes{$EndIf};
+  {$IFDEF MSWINDOWS}
+  ,umetadarkstyle,udarkstyleparams,udarkstyleschemes
+  {$ENDIF};
 
 {$IFDEF MSWINDOWS}
 {$R pea.res}
@@ -20,13 +22,11 @@ uses
 {$R *.res}
 
 begin
-  {$IfDef WINDOWS}
-  RequireDerivedFormResource:=True;
   Application.Scaled:=True;
-  PreferredAppMode:=pamAllowDark;
-  uMetaDarkStyle.ApplyMetaDarkStyle(DefaultDark);
-  {$EndIf}
-  Application.Scaled:=True;
+  {$IFDEF MSWINDOWS}
+  PreferredAppMode:=pamallowdark;
+  umetadarkstyle.ApplyMetaDarkStyle(DefaultDark);
+  {$ENDIF}
   Application.Title:='Pea';
   Application.Initialize;
   Application.CreateForm(TForm_pea, Form_pea);

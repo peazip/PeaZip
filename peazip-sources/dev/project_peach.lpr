@@ -11,7 +11,9 @@ uses
   { add your units here },
   peach, Unit3, Unit5, Unit6, Unit2, Unit1, Unit8, Unit9, Unit10,
   Unit11, Unit12, Unit13, Unit7, Unit_gwrap, Unit14
-  {$IfDef WINDOWS}, uMetaDarkStyle, uDarkStyleParams, uDarkStyleSchemes{$EndIf};
+  {$IFDEF MSWINDOWS}//W10+ dark mode
+  ,umetadarkstyle,udarkstyleparams,udarkstyleschemes
+  {$ENDIF};
 
 {$IFDEF MSWINDOWS}
 {$R peazip.res}
@@ -21,13 +23,11 @@ uses
 {$R *.res}
 
 begin
-{$IfDef WINDOWS}
-RequireDerivedFormResource:=True;
 Application.Scaled:=True;
-PreferredAppMode:=pamAllowDark;
-uMetaDarkStyle.ApplyMetaDarkStyle(DefaultDark);
-{$EndIf}
-Application.Scaled:=True;
+{$IFDEF MSWINDOWS}//W10+ dark mode
+PreferredAppMode:=pamallowdark;
+umetadarkstyle.ApplyMetaDarkStyle(DefaultDark);
+{$ENDIF}
 Application.Title:='PeaZip';
 Application.Initialize;
 Application.CreateForm(TForm_peach, Form_peach);

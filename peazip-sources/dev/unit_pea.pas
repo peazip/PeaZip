@@ -198,6 +198,8 @@ unit Unit_pea;
  1.14     20230807  G.Tani      Added Blue-Ray pre-sets for file split
  1.15     20231020  G.Tani      Added context menu item to chacksum/hash screen to save selected CRC or hash value for all listed files, compatible with Coreutils sha256sum and similar utilities
  1.16     20231209  G.Tani      Fixes, updated theming
+ 1.17     20240202  G.Tani      Updated theming, added W10+ dark mode, compiled for Lazarus 3.0
+                                Improved error detection in PEA archive header data
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -380,7 +382,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.16'; //declares release version for the whole build
+  P_RELEASE          = '1.17'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -634,12 +636,14 @@ while ((chunks_ok=true) and (ind<byte_to_read)) do
          if IOResult<>0 then internal_error('IO error opening '+in_folder+in_file);
          srcfilesize(in_folder+in_file,total);
          total:=total-volume_tag_size;
+         if total<byte_to_read then internal_error('Impossible to read requested data from '+in_file+'. The archive may be invalid or corrupted');
          //total:=system.filesize(f_in)-volume_tag_size;
          while ((total>0) and (ind<byte_to_read)) do
             begin
             if total>maxsize then i:=maxsize else i:=total;
             //try
             blockread (f_in,tmp_buf,i,numread);
+            //if singlevolume=true then if numread<byte_to_read then check_chunk(in_folder,j,chunks_ok);
             //except
             //internal_error('IO error reading from '+in_folder+in_file);
             //end;
