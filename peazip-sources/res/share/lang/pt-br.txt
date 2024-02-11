@@ -3,12 +3,12 @@ Portuguese (Brazil) - Português
 9.7
 Translated by: Havokdan
 Last rev. by: Giorgio Tani
-Last rev.: 20231009
+Last rev.: 20240117
 
 === PeaZip text group ===
 
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
+txt_9_7_tarpipe: Usar pipe 7z / p7zip
+txt_9_7_smartsorting: Classificação inteligente de nomes de arquivos
 txt_9_6_centered: Centralizado
 txt_9_6_cside: Barra lateral compacta
 txt_9_6_loadpconfirm: Deseja carregar este perfil? Todos os dados do perfil atual serão substituídos, incluindo scripts salvos e Gerenciador de Senhas.
@@ -1006,7 +1006,7 @@ txt_list_nomatch: sem correspondente
 txt_singlethread: Sem multithreading
 txt_none2: vazio
 txt_nonsolid: Não-sólido
-txt_level_normal: Normal
+txt_level_normal: normal
 txt_copy_error: copiado ou movido sem sucesso, código de erro:
 txt_description: Nota/descrição
 txt_compare_second: Agora selecione arquivo para ser comparado com
@@ -1027,7 +1027,7 @@ txt_open_path: Abrir diretório
 txt_opensource: Compressor portátil de Código Aberto
 txt_openwith: Abrir com...
 txt_aborted: Operação abortada
-txt_unit_cd: Unidade óptica
+txt_unit_cd: Drive óptico
 txt_options: Opções
 txt_other: Outros
 txt_otherparams: Outros parâmetros (livre edição)
