@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.6
+9.7
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20231208
+Ultima rev.: 20240117
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip usa pipe
+txt_9_7_smartsorting: Ordinamento intelligente nomi file
 txt_9_6_centered: Centrato
 txt_9_6_cside: Barra laterale compatta
 txt_9_6_loadpconfirm: Caricare questo profilo? Tutti i dati del profilo corrente verrano sovrascitti, compresi gli script salvati e il Password Manager.

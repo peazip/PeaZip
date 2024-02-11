@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Polski
-9.6
+9.7
 Tłumaczenie: M. Trzebiatowski, M. Kacprzak, M. Kałużny, Jono13 <meerkat at interia dot eu>
 Ostatnia wersja: Jono13
 Data akt.: 06.07.2022
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centered
 txt_9_6_cside: Compact side bar
 txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.

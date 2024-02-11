@@ -1,12 +1,14 @@
-=== PeaZip language file ===
+﻿=== PeaZip language file ===
 Български / Bulgarian
-9.6
+9.7
 Превод: Любомир Симеонов
 Корекция: Живко Жеков
 Последна корекция: 06/02/2024
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Центриран
 txt_9_6_cside: Компактна странична лента
 txt_9_6_loadpconfirm: Искате ли да заредите този профил? Всички данни от текущия профил ще бъдат презаписани, включително запазените скриптове и Мениджърът на пароли.

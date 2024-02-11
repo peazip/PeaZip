@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-9.6
+9.7
 Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
 Zadnja revizija: 20231216
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Na sredini
 txt_9_6_cside: Kompaktna stranska vrstica
 txt_9_6_loadpconfirm: Ali želite naložiti ta profil? Vsi podatki trenutnega profila bodo prepisani, vključno s shranjenimi skripti in upraviteljem gesel.

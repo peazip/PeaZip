@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Portuguese (Brazil) - Português
-9.6
+9.7
 Translated by: Havokdan
 Last rev. by: Giorgio Tani
 Last rev.: 20231009
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centralizado
 txt_9_6_cside: Barra lateral compacta
 txt_9_6_loadpconfirm: Deseja carregar este perfil? Todos os dados do perfil atual serão substituídos, incluindo scripts salvos e Gerenciador de Senhas.

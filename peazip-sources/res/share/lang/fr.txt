@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Français
-9.6
+9.7
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 16.12.2023
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centré
 txt_9_6_cside: Barre latérale compacte
 txt_9_6_loadpconfirm: Voulez-vous charger ce profil ? Toutes les données du profil actuel seront écrasées, y compris les scripts enregistrés et le gestionnaire de mots de passe.

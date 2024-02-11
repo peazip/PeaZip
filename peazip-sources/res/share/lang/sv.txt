@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Swedish - Svenska
-9.6
+9.7
 Översatt av: FX (old translation: Mikael Hiort af Ornäs 20140413)
 Senast rev. av: FX
 Senast rev.: 2023-12-29
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centrerad
 txt_9_6_cside: Kompakt sidopanel
 txt_9_6_loadpconfirm: Vill du ladda denna profil? All data i den befintliga profilen kommer att skrivas över, inklusive sparade skript och lösenords hanteraren.

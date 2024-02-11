@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-9.6
+9.7
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
 Sist revidert: 20231219
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Sentrert
 txt_9_6_cside: Kompakt sidestolpe
 txt_9_6_loadpconfirm: Vil du laste inn denne profilen? Alle data for gjeldende profil blir overskrevet, inkludert lagrede skript og passord-håndterer.

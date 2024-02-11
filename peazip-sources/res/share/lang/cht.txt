@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Chinese Traditional - 繁體中文
-9.6
+9.7
 譯者: Sophina Liu, Hsiu-Ming Chang, @ifloppy
 Last rev. by: @ifloppy
 Last rev.: 20240126
 
 === PeaZip text group ===
 
+txt_9_7_tarpipe: 7z / p7zip use pipe
+txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: 居中
 txt_9_6_cside: 緊湊型側邊欄
 txt_9_6_loadpconfirm: 您想載入此設定檔嗎？ 目前設定檔的所有資料都將被覆寫，包括已儲存的腳本和密碼管理器。
