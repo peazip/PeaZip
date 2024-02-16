@@ -3,7 +3,7 @@ English (United Kingdom)
 9.7
 Translated by: Robert Readman
 Last rev. by: Chris Brooker
-Last rev.: 20231219
+Last rev.: 20240216
 
 === PeaZip text group ===
 
@@ -73,10 +73,10 @@ txt_8_8_cb: Button colour
 txt_8_8_centered: Centred buttons
 txt_8_8_light: Light
 txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
+txt_8_8_intnote: Please note that "Extract then move" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
 txt_8_8_snz: Propagate Zone. Identifier stream (Windows)
 txt_8_8_sm: Small icons size
-txt_8_8_solcol: Address field
+txt_8_8_solcol: Breadcrumb bar
 txt_8_8_snoi: Store owner/group ids (TAR, Linux)
 txt_8_8_snon: Store owner/group names (TAR, Linux)
 txt_8_8_tab: Tab
@@ -89,9 +89,9 @@ txt_8_7_bintest: binaries tested.
 txt_8_7_csv: CSV separator
 txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
 txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
+txt_8_7_showhm: Open Browser header menu
 txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
+txt_8_7_showsm: Open Style menu
 txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
 txt_8_7_verifybin: Verify hash of binaries
 txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
@@ -101,7 +101,7 @@ txt_8_6_immediate: Immediate execution
 txt_8_6_yessimple: Update archive, keep temp edited files for further editing
 txt_8_5_advbrowser: Apply filters to archive browser
 txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
+txt_8_5_intext: Extract to temporary working directory then move to output destination, interactively ask before overwriting
 txt_8_5_listlarge: List, large
 txt_8_5_loadlayout: Load layout at startup
 txt_8_5_samplescripts: Sample scripts
@@ -142,11 +142,11 @@ txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images
 txt_8_0_commonalgo: Common algorithms
 txt_8_0_forceconvert: Convert non-canonical archive types
 txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
+txt_8_0_defaultaction: Default action on input
 txt_8_0_enableextand: Enable "Extract and open with" submenu
 txt_8_0_forcetyping: Force typing passwords interactively
 txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
+txt_8_0_forcetypinghelp: If supported by the backend, the task will prompt interactively for password. LIMITATIONS: task will run in console, will not run unattended, and cannot browse archives with encrypted filenames.
 txt_7_9_spacing: Spacing
 txt_7_9_zooming: Zooming
 txt_7_8_changelocalization: Change PeaZip language
@@ -155,7 +155,7 @@ txt_7_8_destexistfile: Destination already contains processed files. Replace fil
 txt_7_8_dd: Drag and Drop
 txt_7_8_priorityhigh: High
 txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction, extract then move to destination
+txt_7_8_rel: Extract then move to destination
 txt_7_8_prioritynormal: Normal
 txt_7_8_priorityrealtime: Real time
 txt_7_8_requirerestart: [requires restarting PeaZip]
@@ -167,16 +167,16 @@ txt_7_7_outtemp: Output, preview in user's temp
 txt_7_7_sys7zreq: Requires 7z, 7-Zip, or p7zip, or equivalent package to be installed
 txt_7_7_tw: Temporary work folder for archive creation, editing, preview and drag&drop extraction
 txt_7_7_sys7z: Use system 7z if available
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
+txt_7_6_zipenc: ZIP filenames encoding
 txt_7_6_color: Colour
 txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
+txt_7_6_dark: Darker
 txt_7_6_tno: Do not sync archive tree
 txt_7_6_forcelocalenc: Force local
 txt_7_6_forceutf8enc: Force UTF-8
 txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
 txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
+txt_7_6_dim: Dark
 txt_7_6_setcurdef: Set current path as default output path
 txt_7_6_setdef: Set default output path
 txt_7_6_tadvanced: Sync archive tree, keep visited nodes
@@ -209,7 +209,7 @@ txt_7_4_setarc: Set advanced archiving options
 txt_7_4_setext: Set advanced extraction options
 txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
 txt_7_3_archiveerrors: [archive may contain errors]
-txt_7_3_archiveerrorshint: Archive may not be valid (due to missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
+txt_7_3_archiveerrorshint: Archive may not be valid (due to missing, corrupted, or non-standard data), run Test for detailed information. If archive's table of contents is encrypted, password is needed before browsing it.
 txt_7_3_clickextall: Click "Extract all" to enable
 txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
 txt_7_3_profile7zfastest: Fast compression, 7Z fastest
@@ -228,19 +228,19 @@ txt_7_2_fzstandardcomp: Fastest compression, Zstandard
 txt_7_2_loadcompsettings: Load compression settings
 txt_7_2_savecompsettings: Save compression settings
 txt_7_2_source: Source
-txt_7_2_updateclear: Update archive, and clear temp edited files
+txt_7_2_updateclear: Update archive, clear temp edited files
 txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here, in new folder
-txt_7_1_smart: Extract all here, smart new folder
+txt_7_1_new: Extract all here (in new folder)
+txt_7_1_smart: Extract all here (smart new folder)
 txt_7_1_profileintermediate: Medium compression, ZIP/BZip2 fast
 txt_7_1_renfilesonly: Rename only files
 txt_7_1_typetosearch: Type to search in current path
 txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
 txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
+txt_7_0_autoopentar: Auto open TAR archive inside compressed TAR.* files
 txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
 txt_6_9_autou: Auto update modified files in archives
-txt_6_9_forceu: Update edited files in archives
+txt_6_9_forceu: Update edited files in archive
 txt_6_9_opuns: Operation not supported for current archive type
 txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
 txt_6_9_uconf: Previewed file has been modified. Update the current archive?
@@ -248,8 +248,8 @@ txt_6_8_ndrop: Use native Drag and Drop on Windows
 txt_6_7_nop: (no preview)
 txt_6_6_pdupfound: possible duplicates found (quick approximate test)
 txt_6_6_rsh: Reset search history
-txt_6_6_pdupfind: Suggest possible duplicates
-txt_6_6_forcemodify: Edit non-canonical archive types
+txt_6_6_pdupfind: Suggest duplicates
+txt_6_6_forcemodify: Edit non-canonical archive types as
 txt_6_5_mandatory: (mandatory)
 txt_6_5_abort: Abort
 txt_6_5_askp: Ask to set password at startup
@@ -260,7 +260,7 @@ txt_6_5_error: Error
 txt_6_5_seqerr: Error(s) detected, original files will not be deleted
 txt_6_5_sni: Include NT security information
 txt_6_5_sns: Include NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
+txt_6_5_privacy: Privacy and Security
 txt_6_5_showvolatile: Show which options are volatile / context dependent
 txt_6_5_force: Try to open archives containing errors
 txt_6_5_warning: Warning
@@ -299,10 +299,10 @@ txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
 txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
 txt_5_8_fs: Free Software compliance
 txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
-txt_5_8_fsr: This format is not supported due Free Software compliance restrictions (Options > Advanced)
+txt_5_8_fsr: This format is not supported due to Free Software compliance restrictions (Options > Settings > Advanced)
 txt_5_7_pinstalled: INSTALLED
 txt_5_7_pmissing: MISSING
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for plug-in and add-on
+txt_5_7_plugin: Plugin missing, can be installed from Help > Check for Plugins
 txt_5_6_basic: Basic
 txt_5_6_exarc: Extract archive
 txt_5_6_tab: Open in new tab
@@ -314,7 +314,7 @@ txt_5_5_case: (case sensitive)
 txt_5_5_add: Add string at specified position
 txt_5_5_addsel: Add to current selection
 txt_5_5_ext: Change files extension
-txt_5_5_plugin: Check for plugin and addon
+txt_5_5_plugin: Check for Plugins
 txt_5_5_copypath: Copy path
 txt_5_5_delete: Delete characters at specified position
 txt_5_5_halt: Halt system when task completes
@@ -415,10 +415,10 @@ txt_5_1_weekly: Weekly
 txt_5_1_weeks: Weeks
 txt_5_0_bc: Breadcrumb
 txt_5_0_resetpm: Do you confirm resetting Password Manager? All passwords stored in PeaZip's Password Manager will be lost if confirmed.
-txt_5_0_enum: Enumerate directories' content
+txt_5_0_enum: Enumerate folder content
 txt_5_0_music: Music
 txt_5_0_ps: Open PowerShell here
-txt_5_0_perf: Performances
+txt_5_0_perf: Performance
 txt_5_0_pictures: Pictures
 txt_5_0_removeall: Remove all
 txt_5_0_resetbookmarks: Reset Bookmarks to default? (Bookmarks can then be customised with Bookmarks > Organise)
@@ -429,10 +429,10 @@ txt_4_9_frame: Frame
 txt_4_9_listth: List and thumbnails
 txt_4_9_shadow: Shadow
 txt_4_9_style: Style
-txt_4_8_attach25: 25 MB (attachment limit)
+txt_4_8_attach25: 25 MB attachment
 txt_4_8_crop: Crop
-txt_4_8_detailsno: Light file browser
-txt_4_8_details: File browser with thumbnails
+txt_4_8_detailsno: Details
+txt_4_8_details: Details and thumbnails
 txt_4_8_fit: Fit to
 txt_4_8_fitl: Fit to largest
 txt_4_8_flip: Flip
@@ -445,7 +445,7 @@ txt_4_8_iconl: Large images
 txt_4_8_iconm: Icons and images
 txt_4_8_imagemanager: Image manager
 txt_4_8_immersive: Immersive
-txt_4_8_listno: Minimal list
+txt_4_8_listno: List
 txt_4_8_aspect: Maintain aspect ratio
 txt_4_8_mirror: Mirror
 txt_4_8_presets: Presets
@@ -473,21 +473,21 @@ txt_4_5_l: Left
 txt_4_5_noupdate: PeaZip is up to date
 txt_4_5_properties: Properties
 txt_4_5_r: Right
-txt_4_5_pj: Saved task definition scripts
+txt_4_5_pj: Saved scripts
 txt_4_5_shaddress: Show address bar
-txt_4_5_shnav: Show navigation bar
+txt_4_5_shnav: Show Side bar
 txt_4_5_shstatus: Show status bar
 txt_4_5_shtool: Show tool bar
 txt_4_5_upxpj: Sorry, cannot export task definition since this action or option requires performing multiple distinct commands
 txt_4_5_t: Top
-txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks, Password manager)?
+txt_4_4_confremoveall: Remove all PeaZip customisation files (Applications, Bookmarks)?
 txt_4_4_confremove: Remove PeaZip configuration?
 txt_4_3_pwmanhint: Double click to edit items in password list, right-click for options, Ctrl+C to copy passwords
 txt_4_3_exppl: Export password list
 txt_4_3_expple: Encrypted (backup Password manager)
 txt_4_3_keeppw: Keep password/keyfile for current session
 txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the password manager. Password/keyfile can be changed at any time from this form.
-txt_4_3_pwmanmaster: Set/change master password
+txt_4_3_pwmanmaster: Set/change PM master password
 txt_4_3_pwmanlist: Password list
 txt_4_3_pwman: Password manager
 txt_4_3_pwmancorr: Password manager seems tampered or corrupted. Keep Password manager anyway and try to recover current password list, if you trust it? (No will reset password manager, recommended)
@@ -516,7 +516,7 @@ txt_3_6_ignoredd: Always ignore paths for Drag and Drop extraction
 txt_3_6_close: Close
 txt_3_6_resetapps: Do you want to reset Applications (customizable group of programs and scripts to open files with, overriding file associations)?
 txt_3_6_ethemes: Existing Themes
-txt_3_5_td: Download Themes
+txt_3_5_td: Check for Themes
 txt_3_5_managecustomthemes: Manage Themes
 txt_3_4_nopaths: No paths
 txt_3_4_smallicons: Icons
@@ -541,13 +541,13 @@ txt_3_1_pathexc: Path exceeding maximum allowed size
 txt_3_1_recent: Recent
 txt_3_1_plsmartmin: Run minimised, show/keep open only if needed
 txt_3_1_src: Searches
-txt_3_1_systmp: System temp
+txt_3_1_systmp: User's temp
 txt_3_1_languagetools: Translate
 txt_3_1_workingdir: Working directory
 txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, volumes may be missing, or its table of content could be encrypted. Would you like to try a password?
 txt_3_0_readablepw: Archive may be password protected
 txt_3_0_configure: File associations and system menu integration
-txt_3_0_resettmp: Reset peazip-tmp
+txt_3_0_resettmp: Reset temporary work files
 txt_2_9_address: Address bar
 txt_2_9_adv: Advanced filters are applied when managing any file supported through 7z or FreeArc backends, see documentation, and overrides basic filters (that are used for search functions and are displayed in Bookmarks and History panels)
 txt_2_9_columns: Columns
@@ -560,7 +560,7 @@ txt_2_9_lt: Large
 txt_2_9_mt: Medium
 txt_2_9_movehere: Move here
 txt_2_9_nav: Navigation
-txt_2_9_navbar: Navigation bar
+txt_2_9_navbar: Side bar
 txt_2_9_none: None
 txt_2_9_organize: Organise
 txt_2_9_public: Public
@@ -597,7 +597,7 @@ txt_2_8_usedefaultoutpath: Always use default output path
 txt_2_7_experimental: (experimental, see documentation)
 txt_2_7_optional: (optional)
 txt_2_7_list_tryflatorpw: , possible solutions: try flat view (F6), provide password (F9), get a fresh copy of the archive
-txt_2_7_separate: Add each object to a separate archive
+txt_2_7_separate: Add to separate archives
 txt_2_7_pwsupported: archiving with password
 txt_2_7_cancel: Cancel
 txt_2_7_encfn: Encrypt also file names (if supported by the format)
@@ -618,12 +618,12 @@ txt_2_7_output: Output
 txt_2_7_pwnotset: Password is not set 
 txt_2_7_pwarcset: Password is set
 txt_2_7_pwextset: Password is set, it is possible to extract/list/test encrypted archives
-txt_2_7_archivehint: Drag here files and folders to archive, or right-click for more selection options
-txt_2_7_exthint: Drag here archives to extract, or right-click for more selection options
+txt_2_7_archivehint: Drag files and folders here to archive, or right-click for more selection options
+txt_2_7_exthint: Drag archives here to extract, or right-click for more selection options
 txt_2_7_setadvf: Set advanced filters
 txt_2_7_selpath: Selected item's path
-txt_2_7_separateerror: Sorry, cannot import task definition's command line while using "Add each object to a separate archive" switch, since the task is performed as multiple distinct commands
-txt_2_7_noinput: The layout is empty: please use Add files or Load Layout to populate the list of archives to be extracted
+txt_2_7_separateerror: Sorry, cannot import task definition's command line while using "Add to a separate archives" switch, since the task is performed as multiple distinct commands
+txt_2_7_noinput: The layout is empty: please use Add file(s) or Load Layout to populate the list of archives to be extracted
 txt_2_7_dirsize: The size of the content of folders is not checked for calculating the total size
 txt_2_7_un7z_browse_flat: try flat view (F6)
 txt_2_7_updating: [Updating existing archive]
@@ -635,7 +635,7 @@ txt_2_5_sessionio: (this session)
 txt_2_5_advanced: Advanced edit: place spaces between parameter strings and filename if needed
 txt_2_5_basic: Basic edit: application and parameters before input name
 txt_2_5_cannotrun: Cannot run
-txt_2_5_custeditors: Custom editors, players, antivirus scanners etc... (override system's file associations)
+txt_2_5_custeditors: Custom editors, players, antivirus scanners, etc... (override system's file associations)
 txt_2_5_delete: Delete
 txt_2_5_delete_fromarchive: Delete from archive
 txt_2_5_langflag: Display archived object's name as UTF-8 text; uncheck to replace extended characters with "?"
@@ -643,7 +643,7 @@ txt_2_5_encpj: Encode task definition as UTF-8 text
 txt_2_5_execommand: Executable or command
 txt_2_5_help: Help
 txt_2_5_langhint: Hint: replacing extended characters with "?" jolly character can improve syntax if archive's character set cannot be successfully converted on the current machine
-txt_2_5_mini_help: Localised tutorial
+txt_2_5_mini_help: Localised Tutorial
 txt_2_5_offline_help: PeaZip help
 txt_2_5_tray: Reduce to tray
 txt_2_5_remove: Remove
@@ -668,7 +668,7 @@ txt_2_4_wenc: Encyclopedia
 txt_2_4_extractfrom: Extract from
 txt_2_4_hexp: Hex preview
 txt_2_4_operation: Operation
-txt_2_4_path: path is not writeable (missing, or read-only), please select a writeable output path
+txt_2_4_path: path is not writeable (i.e. full, or read-only). Do you want to select a writeable output path?
 txt_2_4_removefromclipboard: Remove from clipboard
 txt_2_4_stdclip: Standard: keep a single selection in clipboard, clear cut operations on paste
 txt_2_4_totalmem: total memory
@@ -684,7 +684,7 @@ txt_2_3_home: User's home
 txt_2_3_on_pw: On extract/list/test operations from system's menus:
 txt_2_3_test_pw100: Test for encryption <100MB archives
 txt_2_3_test_pw: Test for encryption (may be slow)
-txt_exclude_recourse: "exclude" recourse subdirs
+txt_exclude_recourse: "exclude" recurse subdirs
 txt_action_extopen: "Extract and open with associated application" action
 txt_error_passwordnotmatch: "Password" and "Confirm" fields doesn't match, please correct them
 txt_action_preview: "Preview with associated application" action
@@ -703,12 +703,12 @@ txt_list_isfolder:  [folder]
 txt_none: <none>
 txt_fd: 1.44 MB Floppy Disk
 txt_7z_exitcode1: 1: Warning: non fatal error(s); i.e. some files missing or locked
-txt_attach10: 10 MB (attachment limit)
+txt_attach10: 10 MB attachment
 txt_7z_exitcode2: 2: Fatal error occurred
 txt_7z_exitcode255: 255: Task halted by the user
-txt_fat32: 4 GB (max FAT32 file size)
+txt_fat32: 4 GB FAT32 file
 txt_dvd: 4.7 GB DVD
-txt_attach5: 5 MB (attachment limit)
+txt_attach5: 5 MB attachment
 txt_cd650: 650 MB CD
 txt_7z_exitcode7: 7: Error: got incorrect command line
 txt_cd700: 700 MB CD
@@ -728,7 +728,7 @@ txt_add_path: Add path
 txt_add_tolayout: Add selected files and folders to archive's layout
 txt_add_toarchive: Add to archive
 txt_add_tobookmarks: Add to bookmarks
-txt_address_hint: Address: accepts wildcards ? for character and * for string; doesn't need " or ' delimiters
+txt_address_hint: Filter: accepts * and ? wildcards
 txt_adv_filters: Advanced filters
 txt_algo: Algorithm
 txt_all: all
@@ -772,8 +772,8 @@ txt_blowfish: Blowfish448 (64 bit blocks)
 txt_bookmarks: Bookmarks
 txt_browse: Browse
 txt_browser: Browser
-txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search or filters functions (or exiting "Flat view"); extract/list/test operations are not affected by this issue.
-txt_list_browsing: Browsing:
+txt_aborted_error: Browsing archive stopped, it would take too much time. You can narrow the selection using search (F3) or avoiding Flat view mode (F6). You can directly extract, list or test the archive.
+txt_list_browsing: Browsing
 txt_archive_root: Browsing: archive's root
 txt_type_description_bzip2: BZip2: quite powerful compression, average speed
 txt_pw_empty: Please provide a password (or a keyfile)
@@ -783,10 +783,10 @@ txt_list_error: Cannot list archive's content, please check if the archive is pa
 txt_conf_cannotsave: Cannot save configuration file, check if the path is writeable and with some free space
 txt_check_hint: Check for casual data corruption; hash algorithms are suitable to detect even malicious data tampering (see the documentation)
 txt_check: Checksum/hash file(s)
-txt_check_select: Checksum/hash to perform
+txt_check_select: Checksum/hash
 txt_clear: Clear
 txt_clearlayout: Clear layout
-txt_pj_hint: Click to import task, reset changes and load up to date definition from GUI
+txt_pj_hint: Click to import task, reset changes and load up to date task definition from GUI
 txt_autoclose: Never stop to inspect task report
 txt_cl: command line:
 txt_compare: Compare files
@@ -797,18 +797,18 @@ txt_compression: Compression
 txt_compmanagement: Computer management
 txt_pw_confirm: Confirm
 txt_console: Console
-txt_console_interface: Console: native interface
+txt_console_interface: Console
 txt_content: Content
 txt_controlpanel: Control panel
 txt_convert: Convert disk to NTFS
 txt_copy: Copy
 txt_copyto: Copy to...
 txt_create: Create
-txt_create_archive: Create archive
+txt_create_archive: Create new archive
 txt_title_create: Create archive, compress, encrypt, split...
 txt_create_keyfile: Create keyfile
 txt_create_folder: Create new folder
-txt_create_theme: Create new theme from current settings:
+txt_create_theme: Create Theme from current settings
 txt_rr: Create recovery records
 txt_create_sfx: Create self-extracting archive
 txt_cr_current: Current path or filter compression ratio
@@ -836,7 +836,7 @@ txt_displayedmnu_obj: displayed
 txt_displayedobjects: Displayed items
 txt_nocompress: do not compress
 txt_delete: Do you want to delete selected file(s)? The operation can't be undone and files will be not recoverable from recycle bin
-txt_wipe: Do you want to securely delete selected file(s)? The operation can't be undone and files will be not recoverable.
+txt_wipe: Do you want to securely delete selected file(s)? The operation can't be undone and files will be not recoverable
 txt_done: Done
 txt_edit: Edit
 txt_elapsed: elapsed:
@@ -848,7 +848,7 @@ txt_note: Enter note/description
 txt_random_keys: Enter random keys
 txt_random_keys_hint: Enter random keys (you not have to remember)
 txt_ent: Entropy evaluation
-txt_ent_tools: Entropy sampling tools
+txt_ent_tools: Move the mouse or use additional entropy sampling tools
 txt_eqorlarger: Same or larger than selected object
 txt_eqorrecent: Same or more recent than selected object
 txt_eqorolder: Same or older than selected object
@@ -857,8 +857,8 @@ txt_equal: Same of selected object
 txt_erase_hint: Secure delete: overwrite with random data, mask size, rename, finally delete
 txt_extraction_error: Error extracting the selected object. If the archive is password protected please provide it
 txt_exclude_hint: Exclude file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
-txt_exclusion_recourse: Exclusion filters recourse subdirs
-txt_exclusion: Exclusion:
+txt_exclusion_recourse: Exclusion filters recurse subdirs
+txt_exclusion: Exclude
 txt_exe: Executable
 txt_overwrite_qry: exists in destination path; overwrite with file(s) with same name from source path? (Cancel: skip copying this object)
 txt_confirm_overwrite: exists; overwrite it? (no to skip)
@@ -888,21 +888,21 @@ txt_fastopen: Fast open routine, stop browsing extremely large archives, use fil
 txt_level_fastest: Fastest
 txt_favformats: Favourite formats shortcuts
 txt_file: File
-txt_filebrowser: File browser / archive browser
+txt_filebrowser: File browser
 txt_filetools: File tools
 txt_files: file(s),
 txt_nfiles: Files
 txt_fs: Filesystem
-txt_filters_recourse: filter(s) recourse subdirs
+txt_filters_recourse: filter(s) recurse subdirs
 txt_filters: Filters
 txt_flat: Flat (show all)
-txt_list_flat: Flat view:
+txt_list_flat: Flat view
 txt_unit_floppy: Floppy disk
 txt_foldername: Folder name
 txt_nfolders: Folders
 txt_error_input_multi: format allows a single file as input; you can use "TAR before" switch to save input in a .TAR archive before, otherwise you can choose another format. HINT: chose archive format after had selected input data: "TAR before" switch will be automatically set
 txt_fwd: Forward
-txt_list_found: Found:
+txt_list_found: Found
 txt_free: Free
 txt_free2: free
 txt_name_full: Full name
@@ -911,8 +911,8 @@ txt_general: General
 txt_multithreading: generic multithreading
 txt_go_browser: Go to file browser
 txt_go_path: Explore path (PeaZip)
-txt_guicl: Graphic + console
-txt_guipealauncher: Graphic: wrapped by PeaLauncher
+txt_guicl: GUI + Console
+txt_guipealauncher: GUI
 txt_graphic: Graphic's folder
 txt_gridaltcolor: Grids alternate colour
 txt_gridrowheight: Grids row height
@@ -927,8 +927,8 @@ txt_attach: If the mail client supports that command, the archive will be attach
 txt_images: Images
 txt_include_hint: Include file(s), one per line; use * and ? wildcards; " and ' delimiters are not needed
 txt_filters_hint: Inclusion and exclusion filters for 7z binary, please carefully read 7-Zip documentation to understand how those filters works
-txt_inclusion_recourse: Inclusion filters recourse subdirs
-txt_inclusion: Inclusion:
+txt_inclusion_recourse: Inclusion filters recurse subdirs
+txt_inclusion: Include
 txt_error_function: Incorrect function requested
 txt_info: Info
 txt_infoall: Info on all
@@ -938,7 +938,7 @@ txt_inputinfo: Input information
 txt_input_list: Input list:
 txt_iop: input, output, parameters
 txt_ipo: input, parameters, output
-txt_input: input:
+txt_input: Input
 txt_integrity: Integrity check
 txt_chunk_size: Invalid custom size, please correct it in a numerical value
 txt_invertsel: Invert selection
@@ -947,9 +947,9 @@ txt_return_to_archive: is currently open; do you want to browse it?
 txt_not_accessible: is no longer accessible
 txt_type_unsupported: is not a supported archive type
 txt_checkname_failed: is not a valid name.
-txt_not_accessible_list: is not accessible, please check if the file list provided is correct and up to date
+txt_not_accessible_list: not accessible, please check if the file list provided is correct and up to date
 txt_theme_create_error: It was not possible to create the theme, try to use a name valid for a folder as theme name and to chose a writeable path
-txt_theme_exists: jet exists, please provide a different path
+txt_theme_exists: already exists, please provide a different path
 txt_job_code: task code:
 txt_job_definition_saved: task definition successfully saved in
 txt_job_success: task successfully completed!
@@ -1008,7 +1008,7 @@ txt_none2: none
 txt_nonsolid: Non-solid
 txt_level_normal: Normal
 txt_copy_error: not successfully copied or moved, error code:
-txt_description: Note/description
+txt_description: Notes
 txt_compare_second: Now select file to be compared with
 txt_peaobj: Object control
 txt_displayed_obj: object(s)
@@ -1053,7 +1053,7 @@ txt_pea_appcolor: Application accent
 txt_pea_textcolor: Pea text colour
 txt_type_description_pea: PEA: security oriented archive format with fast compression
 txt_peazip_new: PeaZip (new instance)
-txt_peazip_help: Support
+txt_peazip_help: Online support
 txt_peazip_web: PeaZip website
 txt_performall: All algorithms
 txt_name_provide: \ / : * ? ' " < > | characters are not allowed in file names
@@ -1075,7 +1075,7 @@ txt_read: Read:
 txt_recentarchives: Recent archives
 txt_rr_hint: Recovery records allows to try to correct archives in case of data corruption
 txt_search_refine: Refine search filter, accepts ? and * wildcards
-txt_fefreshf5: Refresh (F5)
+txt_fefreshf5: Refresh
 txt_release: release:
 txt_unit_removable: Removable unit
 txt_remove_bookmark: Remove bookmark
@@ -1095,8 +1095,8 @@ txt_sample: Sample:
 txt_saveas: Save as
 txt_savehistory: Save history data
 txt_save_infolder: Save in folder (auto)
-txt_savejob: Save task
-txt_savejobdefinition: Save task definition
+txt_savejob: Save task definition as script
+txt_savejobdefinition: Save task definition as script
 txt_savejobdefinition_hint: Save task definition as plain text; you can use it from your scripts
 txt_savelayout: Save layout
 txt_save_winstate: Save main window state
@@ -1105,7 +1105,7 @@ txt_searchanddrag: Search and drag here
 txt_searchfor: Search
 txt_nrsearch: Search here (non recursive)
 txt_search_hint: Search in archive's subdirectories for matches with filter(s)
-txt_search_web: Search on the web
+txt_search_web: Web search
 txt_list_searching: Searching...
 txt_securedelete: Secure delete
 txt_default_description: Select a function or drag files here
@@ -1121,17 +1121,17 @@ txt_sfx_interface: sfx interface
 txt_showhints: Show hints
 txt_show_messages: Show information messages
 txt_showpw: Show password field content
-txt_singlevol: Single volume
+txt_singlevol: Single volume, do not split
 txt_size: Size
 txt_sizeb: Size (B)
 txt_skip_existing: Skip existing files
 txt_slowercomp: slower compression but equally fast decompression
 txt_smaller: Smaller than selected object
 txt_solid: Solid
-txt_solid_block: Solid block
+txt_solid_block: Block size
 txt_solid_auto: Solid, auto-adjust
 txt_solid_extension: Solid, group by extension
-txt_listtest: sorry, list/test operation is not jet implemented for this format
+txt_listtest: sorry, list/test operation is not yet implemented for this format
 txt_sortbysel: Sort by selection status
 txt_list_sorting: Sorting...
 txt_speed: speed
@@ -1144,7 +1144,7 @@ txt_level_store: Store
 txt_stream_control: Stream control
 txt_strip: Strip before UPX (recommended)
 txt_keyfile_created: Successfully created KeyFile as:
-txt_suggestpw: Suggest password
+txt_suggestpw: Create random password
 txt_noupx: Symbols stripped, UPX compression omitted
 txt_syntax: Syntax:
 txt_sysbenchmark: System benchmark
@@ -1158,9 +1158,9 @@ txt_testall: Test all
 txt_testdisp: Test displayed object(s)
 txt_testpw: Test password / keyfile
 txt_testsel: Test selected object(s)
-txt_col_hint: The colour should be chosen in order to integrate well with icon colours and to other GUI's elements
+txt_col_hint: Colour should be chosen in order to integrate well with icon colours and to other GUI's elements
 txt_bookmarks_hint: The complete and editable list of bookmarks is available in the file browser interface, clicking on the "More controls" icon and on "Toggle history/bookmarks"
-txt_archive_noinput_tolist: The layout is empty: please use Add files, Add folder(s) or Load Layout to populate the archive's layout
+txt_archive_noinput_tolist: The layout is empty: please use Add file(s), Add folder(s) or Load Layout to populate the archive's layout
 txt_theme: Theme
 txt_icons_found: Theme loaded successfully.
 txt_themename: Theme name
@@ -1169,11 +1169,11 @@ txt_theme_create_success: theme successfully created in
 txt_theming: Theming
 txt_extand_error: This function can be performed on a single object at time
 txt_threads: Threads
-txt_titlescolor: Titles colour
+txt_titlescolor: Title colour
 txt_to: to
-txt_toggle_browseflat: Toggle browse/flat view
-txt_toggle_historybookmarks: Toggle status bar
-txt_toolbarscolor: Toolbars colour
+txt_toggle_browseflat: Toggle browse / flat view (show all)
+txt_toggle_historybookmarks: Toggle status bar, bookmarks, history, clipboard
+txt_toolbarscolor: Bar colour
 txt_tools: Tools
 txt_best: try best settings (slow)
 txt_type: Type
@@ -1201,7 +1201,7 @@ txt_word: Word
 txt_write: Write:
 txt_ramdompw_hint: You can copy the random generated password from here
 txt_exe_hint: You can freely enter executable name and parameters for custom compression, and chose syntax's construction. Please note that you can also manually change command's syntax in "Console" tab.
-txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field below. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
+txt_pj_hint2: You can import the task's definition from the GUI frontend in the memo field above. Then, you can edit, launch or save it without changing or losing the task defined for the GUI frontend.
 txt_type_description_zip: ZIP: fast archiving/compression format, mainstream on Windows systems
 txt_zipcrypto_hint: ZipCrypto (legacy)
 
@@ -1316,8 +1316,8 @@ txt_priority: Click to set task's priority
 txt_running: Running,
 txt_isrunning: Running...
 txt_saveas: Save as
-txt_savejob: Save task definition (may include password!)
-txt_savelog: Save task log
+txt_savejob: Save task definition as script
+txt_savelog: Save task's log
 txt_software: software
 txt_speedscale: Speed, logarithmic scale (higher, better):
 txt_status: Status
@@ -1390,28 +1390,27 @@ Saved passwords can be selected from the drop-down menu on the left of password 
 If no master password is set for the password manager, the password list is accessible without prompting for authentication, otherwise passwords will not be displayed until the user correctly authenticates.
 
 CONFIGURE THE APPLICATION
-Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
+Options > Localisation (and in Options > Settings, first tab) allows setting of application’s language.
+Options > File associations and system integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
 Options > Settings allows editing of applications’ settings
-Options > Theme allows changing of application’s icons and appearance
-Options > System integration allows configuration of file associations, context menu and SendTo menu entries (on Windows)
-Organise menu contains entries to customise, enable or disable browser’s features, like toolbar, address bar, navigation bar, etc
+Organise menu contains entries to customise, enable or disable browser’s features, like toolbar, address bar, side bar, etc
 
 F1 	help
-F2 	rename file(s) / Ctrl+F2 browse user’s desktop / Shift+F2 browse computer’s root / Ctrl+Shift+F2 browse archive root, if browsing inside an archive (otherwise browse computer’s root)
-F3	search (recursivity option is remembered) / Ctrl+F3 start as non-recursive (search here) / Shift+F3 recursive
-F4 	show navigation pop-up menu / Ctrl+Shift+F4 browse computer root / Ctrl+F4 browse desktop / Shift+F4 browse home
+F2 	rename file(s) / Ctrl+F2 copy selected to / Shift+F2 move selected to
+F3	search (recursivity option is remembered) / Ctrl+F3 start as non recursive (search here) / Shift+F3 recursive / Alt+F3 system search
+F4 	show navigation popup menu / Ctrl+Shift+F4 browse computer root / Ctrl+F4 browse desktop / Shift+F4 browse home
 F5 	refresh
 F6 	toggle browse/flat view
-F7 	browse most recently visited item (Ctrl, second, Shift, third)
+F7 	add to bookmarks / Ctrl+F7 open in a new instance of PeaZip / Shift+F7 open command prompt in selected path / Alt+F7 explore selected path
 F8 	browse first item in bookmarks list (Ctrl, second, Shift, third)
-F9 	set password/keyfile / Ctrl+F9 create keyfile or random password
-F10 	menu
-F11 	set advanced filters / Ctrl+F11 immersive
+F9 	set password/keyfile / Shift+F9 password manager / Ctrl+F9 create keyfile or random password / Ctrl+Shift+F9 set advanced filters
+F10 	menu / Ctrl+F10 run as different user / Alt+F10 run as administrator (Windows Vista and newer systems)
+F11 	toggle full screen mode / Ctrl+F11 immersive
 F12 	extract all to...
 
 ABOUT PEAZIP
 
-PeaZip is an open source file and archive manager: cross-platform, available as portable and installable software for 32 and 64-bit Windows (9x, 2k, XP, Vista) and Linux (PeaZip is a desktop neutral application).
+PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for Linux (desktop neutral application), macOS, and 32 and 64 bit Windows.
 
 PeaZip allows application of powerful multiple search filters to archive's content; create and extract multiple archives at once; create self-extracting archives; export task definition as command line; save archiving and extraction layouts; bookmark archives and folders; scan and open with custom applications compressed and uncompressed files etc...
 
