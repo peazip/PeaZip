@@ -1,30 +1,30 @@
-﻿=== PeaZip language file ===
+=== PeaZip language file ===
 German - Deutsch
 9.7
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20230828
+Last rev.: 20240223
 
 === PeaZip text group ===
 
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_7_tarpipe: 7z / p7zip verwenden Pipe
+txt_9_7_smartsorting: Intelligente Sortierung der Dateinamen
+txt_9_6_centered: Zentriert
+txt_9_6_cside: Kompatke Seitenleiste
+txt_9_6_loadpconfirm: Möchten Sie dieses Profil laden? Alle Daten des aktuellen Profils werden überschrieben, einschließlich gespeicherter Skripte und Daten des Passwort-Managers.
+txt_9_6_loadp: Profil laden
+txt_9_6_saveppw: OPTIONAL: dieses Profil mit einem Passwort / Schlüsseldatei schützen?
+txt_9_6_savepoverwrite: Vorhandenes Profil überschrieben? Alle Daten des vorhandenen Profils werden überschrieben, einschließlich gespeicherter Skripte und Daten des Passwort-Managers.
+txt_9_6_savep: Profil speichern
+txt_9_6_scside: Kompakte Seitenleiste anzeigen
+txt_9_5_all: Alle
+txt_9_5_precond: Vorparsen, wenn Fehler auftreten
+txt_9_5_largea: Große Archive vorparsen
+txt_9_5_mediuma: Mittelgroße Archive vorparsen
+txt_9_5_smalla: Kleine Archive vorparsen
+txt_9_5_reopentab: Letzten Tab öffnen
+txt_9_5_savetabs: Tabs speichern
+txt_9_5_sb: Binärdateien in Systempfaden verwenden
 txt_9_4_r: lesen
 txt_9_4_rw: lesen/schreiben
 txt_9_4_savecomment: Kommentar speichern
