@@ -66,7 +66,7 @@ object Form_peach: TForm_peach
   OnShow = FormShow
   ShowHint = True
   UseDockManager = True
-  LCLVersion = '3.0.0.3'
+  LCLVersion = '3.2.0.0'
   object StringGridTabsLast: TStringGrid
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Side = asrBottom
@@ -94,9 +94,9 @@ object Form_peach: TForm_peach
     AnchorSideRight.Control = Options
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = GroupBoxCreateOut
-    Left = 1402
+    Left = 1584
     Height = 256
-    Top = 431
+    Top = 478
     Width = 1024
     Anchors = []
     BorderSpacing.Bottom = 18
@@ -441,13 +441,13 @@ object Form_peach: TForm_peach
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panelnav
     AnchorSideBottom.Side = asrBottom
-    Left = 710
+    Left = 745
     Height = 329
-    Top = 1294
+    Top = 1350
     Width = 200
     Anchors = []
     BorderStyle = bsNone
-    FileSortType = fstNone
+    FileSortType = fstAlphabet
     ParentFont = False
     ReadOnly = True
     ScrollBars = ssAutoVertical
@@ -5917,7 +5917,7 @@ object Form_peach: TForm_peach
               AnchorSideTop.Side = asrCenter
               AnchorSideRight.Control = LabelArchiveOther7
               AnchorSideRight.Side = asrBottom
-              Left = 146
+              Left = 147
               Height = 15
               Top = 39
               Width = 62
@@ -5930,7 +5930,7 @@ object Form_peach: TForm_peach
               AnchorSideTop.Side = asrCenter
               AnchorSideRight.Control = LabelArchiveOther7
               AnchorSideRight.Side = asrBottom
-              Left = 170
+              Left = 171
               Height = 15
               Top = 68
               Width = 38
@@ -5943,7 +5943,7 @@ object Form_peach: TForm_peach
               AnchorSideTop.Control = EditNameCustom1
               AnchorSideBottom.Control = EditNameCustom1
               AnchorSideBottom.Side = asrBottom
-              Left = 220
+              Left = 221
               Height = 23
               Top = 6
               Width = 26
@@ -5957,7 +5957,7 @@ object Form_peach: TForm_peach
               AnchorSideTop.Control = EditNameCustom1
               AnchorSideTop.Side = asrCenter
               AnchorSideRight.Control = ButtonEditName4
-              Left = 151
+              Left = 152
               Height = 15
               Top = 10
               Width = 57
@@ -5971,7 +5971,7 @@ object Form_peach: TForm_peach
               AnchorSideLeft.Side = asrBottom
               AnchorSideTop.Control = EditNameCustom1
               AnchorSideTop.Side = asrBottom
-              Left = 246
+              Left = 247
               Height = 23
               Top = 35
               Width = 400
@@ -5984,7 +5984,7 @@ object Form_peach: TForm_peach
               AnchorSideLeft.Side = asrBottom
               AnchorSideTop.Control = EditOPcustom1
               AnchorSideTop.Side = asrBottom
-              Left = 246
+              Left = 247
               Height = 23
               Top = 64
               Width = 400
@@ -6009,7 +6009,7 @@ object Form_peach: TForm_peach
               AnchorSideLeft.Side = asrBottom
               AnchorSideTop.Control = CompressionCustom1
               AnchorSideRight.Control = ButtonEditNameCustom1
-              Left = 246
+              Left = 247
               Height = 23
               Top = 6
               Width = 374
@@ -6024,7 +6024,7 @@ object Form_peach: TForm_peach
               AnchorSideRight.Side = asrBottom
               AnchorSideBottom.Control = EditNameCustom1
               AnchorSideBottom.Side = asrBottom
-              Left = 620
+              Left = 621
               Height = 23
               Top = 6
               Width = 26
@@ -6042,7 +6042,7 @@ object Form_peach: TForm_peach
               AnchorSideTop.Side = asrCenter
               AnchorSideRight.Control = LabelArchiveOther7
               Cursor = crHandPoint
-              Left = 123
+              Left = 124
               Height = 16
               Top = 9
               Width = 16
@@ -9259,717 +9259,6 @@ object Form_peach: TForm_peach
             ParentFont = False
           end
         end
-        object PageOpt1: TScrollBox
-          AnchorSideLeft.Control = Splitter3
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Control = Notebook1
-          AnchorSideRight.Control = Notebook1
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = PanelActDefaults
-          Left = 181
-          Height = 552
-          Top = 0
-          Width = 843
-          HorzScrollBar.Page = 656
-          VertScrollBar.Page = 552
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderStyle = bsNone
-          ClientHeight = 552
-          ClientWidth = 826
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 1
-          object PanelLine1: TPanel
-            AnchorSideLeft.Control = PageOpt1
-            AnchorSideLeft.Side = asrCenter
-            AnchorSideTop.Control = PageOpt1
-            Left = 113
-            Height = 1
-            Top = 0
-            Width = 600
-            BevelOuter = bvNone
-            ParentBackground = False
-            ParentFont = False
-            TabOrder = 10
-          end
-          object CheckBoxShowHints: TCheckBox
-            AnchorSideLeft.Control = PageOpt1
-            AnchorSideTop.Side = asrBottom
-            Left = 12
-            Height = 19
-            Top = 22
-            Width = 76
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 3
-            Caption = 'Show hints'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 2
-            Visible = False
-            OnClick = CheckBoxShowHintsClick
-          end
-          object LabelLang2: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxLanguage
-            AnchorSideTop.Side = asrCenter
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 100
-            Width = 63
-            BorderSpacing.Top = 24
-            Caption = 'Localization'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelLang2Click
-          end
-          object LabelWD: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxWD
-            AnchorSideTop.Side = asrCenter
-            AnchorSideRight.Control = ComboBoxWD
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 512
-            Width = 95
-            Caption = 'Working directory'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelWDClick
-          end
-          object CheckBoxWindowStatus: TCheckBox
-            AnchorSideTop.Side = asrBottom
-            Left = 440
-            Height = 19
-            Top = 137
-            Width = 145
-            BorderSpacing.Top = 6
-            Caption = 'Save main window state'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 3
-            Visible = False
-            OnClick = CheckBoxWindowStatusClick
-          end
-          object CheckBoxParallelArchiving: TCheckBox
-            Left = 440
-            Height = 19
-            Top = 112
-            Width = 216
-            BorderSpacing.Top = 8
-            Caption = 'Execute jobs in parallel when possible'
-            ParentFont = False
-            TabOrder = 4
-            Visible = False
-            OnClick = CheckBoxParallelArchivingClick
-          end
-          object CheckBoxzcopy: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxBrowseNotVerbose
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 335
-            Width = 275
-            BorderSpacing.Top = 6
-            Caption = '(Windows) Copy files in restartable mode, slower'
-            ParentFont = False
-            TabOrder = 5
-            OnClick = CheckBoxzcopyClick
-          end
-          object ComboBoxWD: TComboBox
-            AnchorSideLeft.Control = LabelWD
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = LabelDoc
-            AnchorSideTop.Side = asrBottom
-            Left = 220
-            Height = 23
-            Top = 508
-            Width = 400
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 12
-            ItemHeight = 15
-            ItemIndex = 0
-            Items.Strings = (
-              'Output'
-              'Output, preview in system temp'
-              'System temp'
-              'Custom'
-              'None, preview in system temp'
-              'None (no preview)'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 6
-            Text = 'Output'
-            OnChange = ComboBoxWDChange
-          end
-          object CheckBoxnetworkinfo: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxzcopy
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 360
-            Width = 378
-            BorderSpacing.Top = 6
-            Caption = '(Windows) Get volume information for network units, slower startup'
-            ParentFont = False
-            TabOrder = 7
-            OnClick = CheckBoxnetworkinfoClick
-          end
-          object Labelogperf: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxDragDrop
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 15
-            Top = 225
-            Width = 78
-            BorderSpacing.Top = 48
-            Caption = 'Performances'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object Labelcb7: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxArchiveHistory
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 593
-            Width = 105
-            BorderSpacing.Top = 12
-            Caption = 'Reset "Open with..."'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = Labelcb7Click
-          end
-          object LabelResetHistory: TLabel
-            AnchorSideLeft.Control = Labelspac4
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = CheckBoxArchiveHistory
-            AnchorSideTop.Side = asrCenter
-            Cursor = crHandPoint
-            Left = 335
-            Height = 15
-            Top = 564
-            Width = 67
-            BorderSpacing.Left = 12
-            Caption = 'Reset history'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelResetHistoryClick
-          end
-          object LabelResetBookmarks: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = Labelcb7
-            AnchorSideTop.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 620
-            Width = 90
-            BorderSpacing.Top = 12
-            Caption = 'Reset bookmarks'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelResetBookmarksClick
-          end
-          object LabelResetPM: TLabel
-            AnchorSideLeft.Control = Labelspac6
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = LabelResetBookmarks
-            AnchorSideTop.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 230
-            Height = 15
-            Top = 647
-            Width = 131
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 12
-            Caption = 'Reset Password Manager'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelResetPMClick
-          end
-          object Labelogreset: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxnetworkinfo
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 15
-            Top = 427
-            Width = 83
-            BorderSpacing.Top = 48
-            Caption = 'Privacy / Reset'
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object CheckBoxArchiveHistory: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = CheckBoxSkipDel
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 562
-            Width = 195
-            BorderSpacing.Top = 6
-            Caption = 'Save history of latest used archive'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 8
-            OnClick = CheckBoxArchiveHistoryClick
-          end
-          object LabelResetPtmp: TLabel
-            AnchorSideLeft.Control = Labelspac5
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = CheckBoxSkipDel
-            AnchorSideTop.Side = asrCenter
-            Cursor = crHandPoint
-            Left = 374
-            Height = 15
-            Top = 539
-            Width = 92
-            BorderSpacing.Left = 12
-            Caption = 'Reset peazip-tmp'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelResetPtmpClick
-          end
-          object CheckBoxBrowseNotVerbose: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxPriority
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 310
-            Width = 57
-            BorderSpacing.Top = 6
-            Caption = '7z -bb0'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 9
-            OnClick = CheckBoxBrowseNotVerboseClick
-          end
-          object LabelConfigurePeaZip: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxLanguage
-            AnchorSideTop.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 131
-            Width = 317
-            BorderSpacing.Top = 12
-            Caption = 'Configure file associations, context menu and SendTo menu'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelConfigurePeaZipClick
-          end
-          object BevelTitleOpt1: TPanel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = Labelo1
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = PanelLine1
-            AnchorSideRight.Side = asrBottom
-            AnchorSideBottom.Side = asrBottom
-            Left = 113
-            Height = 1
-            Top = 47
-            Width = 600
-            Anchors = [akTop, akLeft, akRight]
-            BorderSpacing.Top = 12
-            BevelOuter = bvNone
-            Color = 553621811
-            Constraints.MaxWidth = 800
-            ParentBackground = False
-            ParentColor = False
-            ParentFont = False
-            TabOrder = 0
-          end
-          object Labelspac4: TLabel
-            AnchorSideLeft.Control = CheckBoxArchiveHistory
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = CheckBoxArchiveHistory
-            AnchorSideTop.Side = asrCenter
-            Left = 320
-            Height = 15
-            Top = 564
-            Width = 3
-            BorderSpacing.Left = 12
-            Caption = '|'
-            ParentFont = False
-            OnClick = LabelLang2Click
-          end
-          object ComboBoxprivacy: TComboBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = LabelResetPM
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 23
-            Top = 674
-            Width = 400
-            BorderSpacing.Top = 12
-            ItemHeight = 15
-            ItemIndex = 0
-            Items.Strings = (
-              'Don''t ask to set pw'
-              'Ask to set pw'
-              'Ask to set pw (mandatory)'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 1
-            Text = 'Don''t ask to set pw'
-            OnChange = ComboBoxprivacyChange
-          end
-          object Labelcwd: TLabel
-            AnchorSideLeft.Control = ComboBoxWD
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = ComboBoxWD
-            AnchorSideTop.Side = asrCenter
-            Left = 632
-            Height = 1
-            Top = 519
-            Width = 1
-            BorderSpacing.Left = 12
-            ParentFont = False
-          end
-          object CheckBoxDragDrop: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = LabelConfigurePeaZip
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 158
-            Width = 221
-            BorderSpacing.Top = 12
-            Caption = 'Use native Drag and Drop on Windows'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 11
-            OnClick = CheckBoxDragDropClick
-          end
-          object ComboBoxBrowser: TComboBox
-            AnchorSideLeft.Control = CheckBoxPrebrowse
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = Labelogperf
-            AnchorSideTop.Side = asrBottom
-            Left = 167
-            Height = 23
-            Top = 252
-            Width = 260
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 12
-            ItemHeight = 15
-            Items.Strings = (
-              '0'
-              '1'
-              '2'
-              '3'
-              '4'
-              '5'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 12
-            OnChange = ComboBoxBrowserChange
-          end
-          object CheckBoxPrebrowse: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxBrowser
-            AnchorSideTop.Side = asrCenter
-            Left = 113
-            Height = 15
-            Top = 256
-            Width = 42
-            Caption = 'Browser'
-            ParentFont = False
-          end
-          object ComboBoxDrag: TComboBox
-            AnchorSideLeft.Control = CheckBoxDragDrop
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = CheckBoxDragDrop
-            AnchorSideTop.Side = asrCenter
-            Left = 346
-            Height = 23
-            Top = 156
-            Width = 200
-            BorderSpacing.Left = 12
-            ItemHeight = 15
-            ItemIndex = 3
-            Items.Strings = (
-              'Do not lock target'
-              'Lock drop target'
-              'Hide drop target'
-              'Lock and hide target'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 13
-            Text = 'Lock and hide target'
-            OnChange = ComboBoxDragChange
-          end
-          object Lpriority: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxPriority
-            AnchorSideTop.Side = asrCenter
-            Left = 113
-            Height = 15
-            Top = 285
-            Width = 68
-            Caption = 'Tasks priority'
-            ParentFont = False
-          end
-          object ComboBoxPriority: TComboBox
-            AnchorSideLeft.Control = Lpriority
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = ComboBoxBrowser
-            AnchorSideTop.Side = asrBottom
-            Left = 193
-            Height = 23
-            Top = 281
-            Width = 120
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 6
-            ItemHeight = 15
-            ItemIndex = 2
-            Items.Strings = (
-              'Real time'
-              'High'
-              'Normal'
-              'Idle'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 14
-            Text = 'Normal'
-            OnChange = ComboBoxPriorityChange
-          end
-          object CheckBoxSkipDel: TCheckBox
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = ComboBoxWD
-            AnchorSideTop.Side = asrBottom
-            Left = 113
-            Height = 19
-            Top = 537
-            Width = 234
-            BorderSpacing.Top = 6
-            Caption = 'Skip delete temporary work files if locked'
-            Checked = True
-            ParentFont = False
-            State = cbChecked
-            TabOrder = 15
-            OnClick = CheckBoxSkipDelClick
-          end
-          object Labelspac5: TLabel
-            AnchorSideLeft.Control = CheckBoxSkipDel
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = CheckBoxSkipDel
-            AnchorSideTop.Side = asrCenter
-            Left = 359
-            Height = 15
-            Top = 539
-            Width = 3
-            BorderSpacing.Left = 12
-            Caption = '|'
-            ParentFont = False
-            OnClick = LabelLang2Click
-          end
-          object ComboBoxLanguage: TComboBox
-            AnchorSideLeft.Control = LabelLang2
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = BevelTitleOpt1
-            AnchorSideTop.Side = asrBottom
-            Left = 188
-            Height = 23
-            Top = 96
-            Width = 120
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 48
-            DropDownCount = 16
-            ItemHeight = 15
-            ItemIndex = 8
-            Items.Strings = (
-              'ar.txt'
-              'bg.txt'
-              'by-cr.txt'
-              'by-lt.txt'
-              'ca.txt'
-              'chs.txt'
-              'cht.txt'
-              'cz.txt'
-              'default.txt'
-              'de-uml.txt'
-              'en.txt'
-              'en-gb.txt'
-              'es-es.txt'
-              'es-la.txt'
-              'eu.txt'
-              'fi.txt'
-              'fr.txt'
-              'gl.txt'
-              'gr.txt'
-              'he-prototype.txt'
-              'hu.txt'
-              'id.txt'
-              'it.txt'
-              'ja.txt'
-              'ko.txt'
-              'lv.txt'
-              'nl.txt'
-              'no.txt'
-              'pl.txt'
-              'pt-br.txt'
-              'pt-pt.txt'
-              'ro.txt'
-              'ru.txt'
-              'si.txt'
-              'sk.txt'
-              'sl.txt'
-              'sv.txt'
-              'tj.txt'
-              'tr.txt'
-              'uk.txt'
-              'uz.txt'
-              'vn.txt'
-            )
-            ParentFont = False
-            Style = csDropDownList
-            TabOrder = 16
-            Text = 'default.txt'
-            OnCloseUp = ComboBoxLanguageCloseUp
-          end
-          object csvsepchar: TLabel
-            AnchorSideLeft.Control = ComboBoxLanguage
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = LabelLang2
-            AnchorSideTop.Side = asrCenter
-            Left = 321
-            Height = 15
-            Top = 100
-            Width = 73
-            BorderSpacing.Left = 13
-            Caption = 'CSV separator'
-            ParentFont = False
-          end
-          object EditCSVsep: TEdit
-            AnchorSideLeft.Control = csvsepchar
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = csvsepchar
-            AnchorSideTop.Side = asrCenter
-            Left = 407
-            Height = 23
-            Top = 96
-            Width = 26
-            BorderSpacing.Left = 13
-            TabOrder = 17
-            Text = ','
-          end
-          object Labelo1: TLabel
-            AnchorSideLeft.Control = BevelTitleOpt1
-            AnchorSideTop.Control = PageOpt1
-            Left = 113
-            Height = 23
-            Top = 12
-            Width = 61
-            BorderSpacing.Top = 12
-            BorderSpacing.Right = 128
-            BorderSpacing.Bottom = 12
-            Caption = 'General'
-            Font.Height = -17
-            Font.Style = [fsBold]
-            ParentFont = False
-          end
-          object babouttranslations: TSpeedButton
-            AnchorSideLeft.Control = EditCSVsep
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = EditCSVsep
-            AnchorSideTop.Side = asrCenter
-            Left = 445
-            Height = 19
-            Top = 98
-            Width = 66
-            AutoSize = True
-            BorderSpacing.Left = 12
-            BorderSpacing.Top = 48
-            Caption = 'Translations'
-            Flat = True
-            Spacing = 3
-            OnClick = babouttranslationsClick
-            ParentFont = False
-          end
-          object LabelPMpw: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = LabelResetBookmarks
-            AnchorSideTop.Side = asrBottom
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 647
-            Width = 90
-            BorderSpacing.Top = 12
-            Caption = 'Set PM password'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelPMpwClick
-          end
-          object Labelspac6: TLabel
-            AnchorSideLeft.Control = LabelPMpw
-            AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = LabelPMpw
-            AnchorSideTop.Side = asrCenter
-            Left = 215
-            Height = 15
-            Top = 647
-            Width = 3
-            BorderSpacing.Left = 12
-            Caption = '|'
-            ParentFont = False
-            OnClick = LabelLang2Click
-          end
-          object LabelUpdates: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = Labelogreset
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = ComboBoxWD
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 454
-            Width = 135
-            BorderSpacing.Top = 12
-            Caption = 'Updates, binaries, plugins'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelTitleOptions8Click
-          end
-          object LabelDoc: TLabel
-            AnchorSideLeft.Control = PanelLine1
-            AnchorSideTop.Control = LabelUpdates
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = ComboBoxWD
-            Cursor = crHandPoint
-            Left = 113
-            Height = 15
-            Top = 481
-            Width = 155
-            BorderSpacing.Top = 12
-            Caption = 'Documentation, Issue Tracker'
-            Font.Color = 13391121
-            ParentFont = False
-            OnClick = LabelTitleOptions7Click
-          end
-        end
         object PageOpt2: TScrollBox
           AnchorSideLeft.Control = Splitter3
           AnchorSideLeft.Side = asrBottom
@@ -10125,7 +9414,7 @@ object Form_peach: TForm_peach
             AnchorSideBottom.Side = asrCenter
             Left = 775
             Height = 15
-            Top = 1871213397
+            Top = 2005878352
             Width = 3
             Anchors = []
             BorderSpacing.Left = 8
@@ -11264,6 +10553,717 @@ object Form_peach: TForm_peach
             ParentFont = False
           end
         end
+        object PageOpt1: TScrollBox
+          AnchorSideLeft.Control = Splitter3
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = Notebook1
+          AnchorSideRight.Control = Notebook1
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelActDefaults
+          Left = 181
+          Height = 552
+          Top = 0
+          Width = 843
+          HorzScrollBar.Page = 656
+          VertScrollBar.Page = 552
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderStyle = bsNone
+          ClientHeight = 552
+          ClientWidth = 826
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 1
+          object PanelLine1: TPanel
+            AnchorSideLeft.Control = PageOpt1
+            AnchorSideLeft.Side = asrCenter
+            AnchorSideTop.Control = PageOpt1
+            Left = 113
+            Height = 1
+            Top = 0
+            Width = 600
+            BevelOuter = bvNone
+            ParentBackground = False
+            ParentFont = False
+            TabOrder = 10
+          end
+          object CheckBoxShowHints: TCheckBox
+            AnchorSideLeft.Control = PageOpt1
+            AnchorSideTop.Side = asrBottom
+            Left = 12
+            Height = 19
+            Top = 22
+            Width = 76
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 3
+            Caption = 'Show hints'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 2
+            Visible = False
+            OnClick = CheckBoxShowHintsClick
+          end
+          object LabelLang2: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxLanguage
+            AnchorSideTop.Side = asrCenter
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 100
+            Width = 63
+            BorderSpacing.Top = 24
+            Caption = 'Localization'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelLang2Click
+          end
+          object LabelWD: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxWD
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Control = ComboBoxWD
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 512
+            Width = 95
+            Caption = 'Working directory'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelWDClick
+          end
+          object CheckBoxWindowStatus: TCheckBox
+            AnchorSideTop.Side = asrBottom
+            Left = 440
+            Height = 19
+            Top = 137
+            Width = 145
+            BorderSpacing.Top = 6
+            Caption = 'Save main window state'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 3
+            Visible = False
+            OnClick = CheckBoxWindowStatusClick
+          end
+          object CheckBoxParallelArchiving: TCheckBox
+            Left = 440
+            Height = 19
+            Top = 112
+            Width = 216
+            BorderSpacing.Top = 8
+            Caption = 'Execute jobs in parallel when possible'
+            ParentFont = False
+            TabOrder = 4
+            Visible = False
+            OnClick = CheckBoxParallelArchivingClick
+          end
+          object CheckBoxzcopy: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxBrowseNotVerbose
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 335
+            Width = 275
+            BorderSpacing.Top = 6
+            Caption = '(Windows) Copy files in restartable mode, slower'
+            ParentFont = False
+            TabOrder = 5
+            OnClick = CheckBoxzcopyClick
+          end
+          object ComboBoxWD: TComboBox
+            AnchorSideLeft.Control = LabelWD
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = LabelDoc
+            AnchorSideTop.Side = asrBottom
+            Left = 220
+            Height = 23
+            Top = 508
+            Width = 400
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 12
+            ItemHeight = 15
+            ItemIndex = 0
+            Items.Strings = (
+              'Output'
+              'Output, preview in system temp'
+              'System temp'
+              'Custom'
+              'None, preview in system temp'
+              'None (no preview)'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 6
+            Text = 'Output'
+            OnChange = ComboBoxWDChange
+          end
+          object CheckBoxnetworkinfo: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxzcopy
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 360
+            Width = 378
+            BorderSpacing.Top = 6
+            Caption = '(Windows) Get volume information for network units, slower startup'
+            ParentFont = False
+            TabOrder = 7
+            OnClick = CheckBoxnetworkinfoClick
+          end
+          object Labelogperf: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxDragDrop
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 15
+            Top = 225
+            Width = 78
+            BorderSpacing.Top = 48
+            Caption = 'Performances'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Labelcb7: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxArchiveHistory
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 593
+            Width = 105
+            BorderSpacing.Top = 12
+            Caption = 'Reset "Open with..."'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = Labelcb7Click
+          end
+          object LabelResetHistory: TLabel
+            AnchorSideLeft.Control = Labelspac4
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = CheckBoxArchiveHistory
+            AnchorSideTop.Side = asrCenter
+            Cursor = crHandPoint
+            Left = 335
+            Height = 15
+            Top = 564
+            Width = 67
+            BorderSpacing.Left = 12
+            Caption = 'Reset history'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelResetHistoryClick
+          end
+          object LabelResetBookmarks: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = Labelcb7
+            AnchorSideTop.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 620
+            Width = 90
+            BorderSpacing.Top = 12
+            Caption = 'Reset bookmarks'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelResetBookmarksClick
+          end
+          object LabelResetPM: TLabel
+            AnchorSideLeft.Control = Labelspac6
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = LabelResetBookmarks
+            AnchorSideTop.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 230
+            Height = 15
+            Top = 647
+            Width = 131
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 12
+            Caption = 'Reset Password Manager'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelResetPMClick
+          end
+          object Labelogreset: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxnetworkinfo
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 15
+            Top = 427
+            Width = 83
+            BorderSpacing.Top = 48
+            Caption = 'Privacy / Reset'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object CheckBoxArchiveHistory: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = CheckBoxSkipDel
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 562
+            Width = 195
+            BorderSpacing.Top = 6
+            Caption = 'Save history of latest used archive'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 8
+            OnClick = CheckBoxArchiveHistoryClick
+          end
+          object LabelResetPtmp: TLabel
+            AnchorSideLeft.Control = Labelspac5
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = CheckBoxSkipDel
+            AnchorSideTop.Side = asrCenter
+            Cursor = crHandPoint
+            Left = 374
+            Height = 15
+            Top = 539
+            Width = 92
+            BorderSpacing.Left = 12
+            Caption = 'Reset peazip-tmp'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelResetPtmpClick
+          end
+          object CheckBoxBrowseNotVerbose: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxPriority
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 310
+            Width = 57
+            BorderSpacing.Top = 6
+            Caption = '7z -bb0'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 9
+            OnClick = CheckBoxBrowseNotVerboseClick
+          end
+          object LabelConfigurePeaZip: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxLanguage
+            AnchorSideTop.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 131
+            Width = 317
+            BorderSpacing.Top = 12
+            Caption = 'Configure file associations, context menu and SendTo menu'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelConfigurePeaZipClick
+          end
+          object BevelTitleOpt1: TPanel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = Labelo1
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = PanelLine1
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Side = asrBottom
+            Left = 113
+            Height = 1
+            Top = 47
+            Width = 600
+            Anchors = [akTop, akLeft, akRight]
+            BorderSpacing.Top = 12
+            BevelOuter = bvNone
+            Color = 553621811
+            Constraints.MaxWidth = 800
+            ParentBackground = False
+            ParentColor = False
+            ParentFont = False
+            TabOrder = 0
+          end
+          object Labelspac4: TLabel
+            AnchorSideLeft.Control = CheckBoxArchiveHistory
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = CheckBoxArchiveHistory
+            AnchorSideTop.Side = asrCenter
+            Left = 320
+            Height = 15
+            Top = 564
+            Width = 3
+            BorderSpacing.Left = 12
+            Caption = '|'
+            ParentFont = False
+            OnClick = LabelLang2Click
+          end
+          object ComboBoxprivacy: TComboBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = LabelResetPM
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 23
+            Top = 674
+            Width = 400
+            BorderSpacing.Top = 12
+            ItemHeight = 15
+            ItemIndex = 0
+            Items.Strings = (
+              'Don''t ask to set pw'
+              'Ask to set pw'
+              'Ask to set pw (mandatory)'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 1
+            Text = 'Don''t ask to set pw'
+            OnChange = ComboBoxprivacyChange
+          end
+          object Labelcwd: TLabel
+            AnchorSideLeft.Control = ComboBoxWD
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = ComboBoxWD
+            AnchorSideTop.Side = asrCenter
+            Left = 632
+            Height = 1
+            Top = 519
+            Width = 1
+            BorderSpacing.Left = 12
+            ParentFont = False
+          end
+          object CheckBoxDragDrop: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = LabelConfigurePeaZip
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 158
+            Width = 221
+            BorderSpacing.Top = 12
+            Caption = 'Use native Drag and Drop on Windows'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 11
+            OnClick = CheckBoxDragDropClick
+          end
+          object ComboBoxBrowser: TComboBox
+            AnchorSideLeft.Control = CheckBoxPrebrowse
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Labelogperf
+            AnchorSideTop.Side = asrBottom
+            Left = 167
+            Height = 23
+            Top = 252
+            Width = 260
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 12
+            ItemHeight = 15
+            Items.Strings = (
+              '0'
+              '1'
+              '2'
+              '3'
+              '4'
+              '5'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 12
+            OnChange = ComboBoxBrowserChange
+          end
+          object CheckBoxPrebrowse: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxBrowser
+            AnchorSideTop.Side = asrCenter
+            Left = 113
+            Height = 15
+            Top = 256
+            Width = 42
+            Caption = 'Browser'
+            ParentFont = False
+          end
+          object ComboBoxDrag: TComboBox
+            AnchorSideLeft.Control = CheckBoxDragDrop
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = CheckBoxDragDrop
+            AnchorSideTop.Side = asrCenter
+            Left = 346
+            Height = 23
+            Top = 156
+            Width = 200
+            BorderSpacing.Left = 12
+            ItemHeight = 15
+            ItemIndex = 3
+            Items.Strings = (
+              'Do not lock target'
+              'Lock drop target'
+              'Hide drop target'
+              'Lock and hide target'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 13
+            Text = 'Lock and hide target'
+            OnChange = ComboBoxDragChange
+          end
+          object Lpriority: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxPriority
+            AnchorSideTop.Side = asrCenter
+            Left = 113
+            Height = 15
+            Top = 285
+            Width = 68
+            Caption = 'Tasks priority'
+            ParentFont = False
+          end
+          object ComboBoxPriority: TComboBox
+            AnchorSideLeft.Control = Lpriority
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = ComboBoxBrowser
+            AnchorSideTop.Side = asrBottom
+            Left = 193
+            Height = 23
+            Top = 281
+            Width = 120
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 6
+            ItemHeight = 15
+            ItemIndex = 2
+            Items.Strings = (
+              'Real time'
+              'High'
+              'Normal'
+              'Idle'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 14
+            Text = 'Normal'
+            OnChange = ComboBoxPriorityChange
+          end
+          object CheckBoxSkipDel: TCheckBox
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = ComboBoxWD
+            AnchorSideTop.Side = asrBottom
+            Left = 113
+            Height = 19
+            Top = 537
+            Width = 234
+            BorderSpacing.Top = 6
+            Caption = 'Skip delete temporary work files if locked'
+            Checked = True
+            ParentFont = False
+            State = cbChecked
+            TabOrder = 15
+            OnClick = CheckBoxSkipDelClick
+          end
+          object Labelspac5: TLabel
+            AnchorSideLeft.Control = CheckBoxSkipDel
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = CheckBoxSkipDel
+            AnchorSideTop.Side = asrCenter
+            Left = 359
+            Height = 15
+            Top = 539
+            Width = 3
+            BorderSpacing.Left = 12
+            Caption = '|'
+            ParentFont = False
+            OnClick = LabelLang2Click
+          end
+          object ComboBoxLanguage: TComboBox
+            AnchorSideLeft.Control = LabelLang2
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = BevelTitleOpt1
+            AnchorSideTop.Side = asrBottom
+            Left = 188
+            Height = 23
+            Top = 96
+            Width = 120
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 48
+            DropDownCount = 16
+            ItemHeight = 15
+            ItemIndex = 8
+            Items.Strings = (
+              'ar.txt'
+              'bg.txt'
+              'by-cr.txt'
+              'by-lt.txt'
+              'ca.txt'
+              'chs.txt'
+              'cht.txt'
+              'cz.txt'
+              'default.txt'
+              'de-uml.txt'
+              'en.txt'
+              'en-gb.txt'
+              'es-es.txt'
+              'es-la.txt'
+              'eu.txt'
+              'fi.txt'
+              'fr.txt'
+              'gl.txt'
+              'gr.txt'
+              'he-prototype.txt'
+              'hu.txt'
+              'id.txt'
+              'it.txt'
+              'ja.txt'
+              'ko.txt'
+              'lv.txt'
+              'nl.txt'
+              'no.txt'
+              'pl.txt'
+              'pt-br.txt'
+              'pt-pt.txt'
+              'ro.txt'
+              'ru.txt'
+              'si.txt'
+              'sk.txt'
+              'sl.txt'
+              'sv.txt'
+              'tj.txt'
+              'tr.txt'
+              'uk.txt'
+              'uz.txt'
+              'vn.txt'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 16
+            Text = 'default.txt'
+            OnCloseUp = ComboBoxLanguageCloseUp
+          end
+          object csvsepchar: TLabel
+            AnchorSideLeft.Control = ComboBoxLanguage
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = LabelLang2
+            AnchorSideTop.Side = asrCenter
+            Left = 321
+            Height = 15
+            Top = 100
+            Width = 73
+            BorderSpacing.Left = 13
+            Caption = 'CSV separator'
+            ParentFont = False
+          end
+          object EditCSVsep: TEdit
+            AnchorSideLeft.Control = csvsepchar
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = csvsepchar
+            AnchorSideTop.Side = asrCenter
+            Left = 407
+            Height = 23
+            Top = 96
+            Width = 26
+            BorderSpacing.Left = 13
+            TabOrder = 17
+            Text = ','
+          end
+          object Labelo1: TLabel
+            AnchorSideLeft.Control = BevelTitleOpt1
+            AnchorSideTop.Control = PageOpt1
+            Left = 113
+            Height = 23
+            Top = 12
+            Width = 61
+            BorderSpacing.Top = 12
+            BorderSpacing.Right = 128
+            BorderSpacing.Bottom = 12
+            Caption = 'General'
+            Font.Height = -17
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object babouttranslations: TSpeedButton
+            AnchorSideLeft.Control = EditCSVsep
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = EditCSVsep
+            AnchorSideTop.Side = asrCenter
+            Left = 445
+            Height = 19
+            Top = 98
+            Width = 66
+            AutoSize = True
+            BorderSpacing.Left = 12
+            BorderSpacing.Top = 48
+            Caption = 'Translations'
+            Flat = True
+            Spacing = 3
+            OnClick = babouttranslationsClick
+            ParentFont = False
+          end
+          object LabelPMpw: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = LabelResetBookmarks
+            AnchorSideTop.Side = asrBottom
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 647
+            Width = 90
+            BorderSpacing.Top = 12
+            Caption = 'Set PM password'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelPMpwClick
+          end
+          object Labelspac6: TLabel
+            AnchorSideLeft.Control = LabelPMpw
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = LabelPMpw
+            AnchorSideTop.Side = asrCenter
+            Left = 215
+            Height = 15
+            Top = 647
+            Width = 3
+            BorderSpacing.Left = 12
+            Caption = '|'
+            ParentFont = False
+            OnClick = LabelLang2Click
+          end
+          object LabelUpdates: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = Labelogreset
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = ComboBoxWD
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 454
+            Width = 135
+            BorderSpacing.Top = 12
+            Caption = 'Updates, binaries, plugins'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelTitleOptions8Click
+          end
+          object LabelDoc: TLabel
+            AnchorSideLeft.Control = PanelLine1
+            AnchorSideTop.Control = LabelUpdates
+            AnchorSideTop.Side = asrBottom
+            AnchorSideRight.Control = ComboBoxWD
+            Cursor = crHandPoint
+            Left = 113
+            Height = 15
+            Top = 481
+            Width = 155
+            BorderSpacing.Top = 12
+            Caption = 'Documentation, Issue Tracker'
+            Font.Color = 13391121
+            ParentFont = False
+            OnClick = LabelTitleOptions7Click
+          end
+        end
         object PageOpt6: TScrollBox
           AnchorSideLeft.Control = Splitter3
           AnchorSideLeft.Side = asrBottom
@@ -11827,11 +11827,10 @@ object Form_peach: TForm_peach
             ItemHeight = 15
             Items.Strings = (
               'Main-embedded'
-              'Different'
-              'Droid'
+              'Mac'
               'Main'
               'Ten'
-              'Tuxedo'
+              'Tux'
               'Custom'
             )
             ParentFont = False
@@ -13308,7 +13307,7 @@ object Form_peach: TForm_peach
             Anchors = [akTop, akLeft, akRight, akBottom]
             BorderSpacing.Top = 16
             BorderStyle = bsNone
-            FileSortType = fstNone
+            FileSortType = fstAlphabet
             ParentColor = True
             ParentFont = False
             PopupMenu = pmbreadcrumb
@@ -15461,10 +15460,6 @@ object Form_peach: TForm_peach
     end
     object pmFoldersmenu: TMenuItem
       Caption = 'Files / Folders'
-      object pmembf0: TMenuItem
-        Caption = 'Bookmarks'
-        Enabled = False
-      end
       object pmembf1: TMenuItem
         OnClick = pmembf1Click
       end
@@ -15494,133 +15489,132 @@ object Form_peach: TForm_peach
       end
       object pmemrf0: TMenuItem
         Caption = 'Recent'
-        Enabled = False
-      end
-      object pmemrf1: TMenuItem
-        OnClick = pmemrf1Click
-      end
-      object pmemrf2: TMenuItem
-        OnClick = pmemrf2Click
-      end
-      object pmemrf3: TMenuItem
-        OnClick = pmemrf3Click
-      end
-      object pmemrf4: TMenuItem
-        OnClick = pmemrf4Click
-      end
-      object pmemrf5: TMenuItem
-        OnClick = pmemrf5Click
-      end
-      object pmemrf6: TMenuItem
-        OnClick = pmemrf6Click
-      end
-      object pmemrf7: TMenuItem
-        OnClick = pmemrf7Click
-      end
-      object pmemrf8: TMenuItem
-        OnClick = pmemrf8Click
-      end
-      object pmamr1: TMenuItem
-        OnClick = pmamr1Click
-      end
-      object pmamr2: TMenuItem
-        OnClick = pmamr2Click
-      end
-      object pmamr3: TMenuItem
-        OnClick = pmamr3Click
-      end
-      object pmamr4: TMenuItem
-        OnClick = pmamr4Click
-      end
-      object pmamr5: TMenuItem
-        OnClick = pmamr5Click
-      end
-      object pmamr6: TMenuItem
-        OnClick = pmamr6Click
-      end
-      object pmamr7: TMenuItem
-        OnClick = pmamr7Click
-      end
-      object pmamr8: TMenuItem
-        OnClick = pmamr8Click
-      end
-      object Separator20: TMenuItem
-        Caption = '-'
-      end
-      object pnhf0: TMenuItem
-        Caption = 'Session history'
-        Enabled = False
-      end
-      object pnhf1: TMenuItem
-        Caption = 'pnhf1'
-        OnClick = pnhf1Click
-      end
-      object pnhf2: TMenuItem
-        Caption = 'pnhf2'
-        OnClick = pnhf2Click
-      end
-      object pnhf3: TMenuItem
-        Caption = 'pnhf3'
-        OnClick = pnhf3Click
-      end
-      object pnhf4: TMenuItem
-        Caption = 'pnhf4'
-        OnClick = pnhf4Click
-      end
-      object pnhf5: TMenuItem
-        Caption = 'pnhf5'
-        OnClick = pnhf5Click
-      end
-      object pnhf6: TMenuItem
-        Caption = 'pnhf6'
-        OnClick = pnhf6Click
-      end
-      object pnhf7: TMenuItem
-        Caption = 'pnhf7'
-        OnClick = pnhf7Click
-      end
-      object pnhf8: TMenuItem
-        Caption = 'pnhf8'
-        OnClick = pnhf8Click
-      end
-      object Separator22: TMenuItem
-        Caption = '-'
-      end
-      object pnbcf0: TMenuItem
-        Caption = 'Breadcrumb'
-        Enabled = False
-      end
-      object pnbcf1: TMenuItem
-        Caption = 'pnbcf1'
-        OnClick = pnbcf1Click
-      end
-      object pnbcf2: TMenuItem
-        Caption = 'pnbcf2'
-        OnClick = pnbcf2Click
-      end
-      object pnbcf3: TMenuItem
-        Caption = 'pnbcf3'
-        OnClick = pnbcf3Click
-      end
-      object pnbcf4: TMenuItem
-        Caption = 'pnbcf4'
-        OnClick = pnbcf4Click
-      end
-      object pnbcf5: TMenuItem
-        Caption = 'pnbcf5'
-        OnClick = pnbcf5Click
-      end
-      object pnbcf6: TMenuItem
-        Caption = 'pnbcf6'
-        OnClick = pnbcf6Click
-      end
-      object pnbcf7: TMenuItem
-        Caption = 'pnbcf7'
-        OnClick = pnbcf7Click
-      end
-      object pnbcf8: TMenuItem
-        Caption = 'pnbcf8'
-        OnClick = pnbcf8Click
+        object pmemrf1: TMenuItem
+          OnClick = pmemrf1Click
+        end
+        object pmemrf2: TMenuItem
+          OnClick = pmemrf2Click
+        end
+        object pmemrf3: TMenuItem
+          OnClick = pmemrf3Click
+        end
+        object pmemrf4: TMenuItem
+          OnClick = pmemrf4Click
+        end
+        object pmemrf5: TMenuItem
+          OnClick = pmemrf5Click
+        end
+        object pmemrf6: TMenuItem
+          OnClick = pmemrf6Click
+        end
+        object pmemrf7: TMenuItem
+          OnClick = pmemrf7Click
+        end
+        object pmemrf8: TMenuItem
+          OnClick = pmemrf8Click
+        end
+        object pmamr1: TMenuItem
+          OnClick = pmamr1Click
+        end
+        object pmamr2: TMenuItem
+          OnClick = pmamr2Click
+        end
+        object pmamr3: TMenuItem
+          OnClick = pmamr3Click
+        end
+        object pmamr4: TMenuItem
+          OnClick = pmamr4Click
+        end
+        object pmamr5: TMenuItem
+          OnClick = pmamr5Click
+        end
+        object pmamr6: TMenuItem
+          OnClick = pmamr6Click
+        end
+        object pmamr7: TMenuItem
+          OnClick = pmamr7Click
+        end
+        object pmamr8: TMenuItem
+          OnClick = pmamr8Click
+        end
+        object Separator20: TMenuItem
+          Caption = '-'
+        end
+        object pnhf0: TMenuItem
+          Caption = 'Session history'
+          Enabled = False
+        end
+        object pnhf1: TMenuItem
+          Caption = 'pnhf1'
+          OnClick = pnhf1Click
+        end
+        object pnhf2: TMenuItem
+          Caption = 'pnhf2'
+          OnClick = pnhf2Click
+        end
+        object pnhf3: TMenuItem
+          Caption = 'pnhf3'
+          OnClick = pnhf3Click
+        end
+        object pnhf4: TMenuItem
+          Caption = 'pnhf4'
+          OnClick = pnhf4Click
+        end
+        object pnhf5: TMenuItem
+          Caption = 'pnhf5'
+          OnClick = pnhf5Click
+        end
+        object pnhf6: TMenuItem
+          Caption = 'pnhf6'
+          OnClick = pnhf6Click
+        end
+        object pnhf7: TMenuItem
+          Caption = 'pnhf7'
+          OnClick = pnhf7Click
+        end
+        object pnhf8: TMenuItem
+          Caption = 'pnhf8'
+          OnClick = pnhf8Click
+        end
+        object Separator22: TMenuItem
+          Caption = '-'
+        end
+        object pnbcf0: TMenuItem
+          Caption = 'Breadcrumb'
+          Enabled = False
+        end
+        object pnbcf1: TMenuItem
+          Caption = 'pnbcf1'
+          OnClick = pnbcf1Click
+        end
+        object pnbcf2: TMenuItem
+          Caption = 'pnbcf2'
+          OnClick = pnbcf2Click
+        end
+        object pnbcf3: TMenuItem
+          Caption = 'pnbcf3'
+          OnClick = pnbcf3Click
+        end
+        object pnbcf4: TMenuItem
+          Caption = 'pnbcf4'
+          OnClick = pnbcf4Click
+        end
+        object pnbcf5: TMenuItem
+          Caption = 'pnbcf5'
+          OnClick = pnbcf5Click
+        end
+        object pnbcf6: TMenuItem
+          Caption = 'pnbcf6'
+          OnClick = pnbcf6Click
+        end
+        object pnbcf7: TMenuItem
+          Caption = 'pnbcf7'
+          OnClick = pnbcf7Click
+        end
+        object pnbcf8: TMenuItem
+          Caption = 'pnbcf8'
+          OnClick = pnbcf8Click
+        end
       end
     end
     object Separator19: TMenuItem
@@ -15632,10 +15626,6 @@ object Form_peach: TForm_peach
     end
     object pmExploremenu: TMenuItem
       Caption = 'Explore'
-      object pmemb0: TMenuItem
-        Caption = 'Bookmarks'
-        Enabled = False
-      end
       object pmemb1: TMenuItem
         OnClick = pmemb1Click
       end
@@ -15665,109 +15655,108 @@ object Form_peach: TForm_peach
       end
       object pmemr0: TMenuItem
         Caption = 'Recent'
-        Enabled = False
-      end
-      object pmemr1: TMenuItem
-        OnClick = pmemr1Click
-      end
-      object pmemr2: TMenuItem
-        OnClick = pmemr2Click
-      end
-      object pmemr3: TMenuItem
-        OnClick = pmemr3Click
-      end
-      object pmemr4: TMenuItem
-        OnClick = pmemr4Click
-      end
-      object pmemr5: TMenuItem
-        OnClick = pmemr5Click
-      end
-      object pmemr6: TMenuItem
-        OnClick = pmemr6Click
-      end
-      object pmemr7: TMenuItem
-        OnClick = pmemr7Click
-      end
-      object pmemr8: TMenuItem
-        OnClick = pmemr8Click
-      end
-      object Separator21: TMenuItem
-        Caption = '-'
-      end
-      object pnhe0: TMenuItem
-        Caption = 'Session history'
-        Enabled = False
-      end
-      object pnhe1: TMenuItem
-        Caption = 'pnhe1'
-        OnClick = pnhe1Click
-      end
-      object pnhe2: TMenuItem
-        Caption = 'pnhe2'
-        OnClick = pnhe2Click
-      end
-      object pnhe3: TMenuItem
-        Caption = 'pnhe3'
-        OnClick = pnhe3Click
-      end
-      object pnhe4: TMenuItem
-        Caption = 'pnhe4'
-        OnClick = pnhe4Click
-      end
-      object pnhe5: TMenuItem
-        Caption = 'pnhe5'
-        OnClick = pnhe5Click
-      end
-      object pnhe6: TMenuItem
-        Caption = 'pnhe6'
-        OnClick = pnhe6Click
-      end
-      object pnhe7: TMenuItem
-        Caption = 'pnhe7'
-        OnClick = pnhe7Click
-      end
-      object pnhe8: TMenuItem
-        Caption = 'pnhe8'
-        OnClick = pnhe8Click
-      end
-      object Separator23: TMenuItem
-        Caption = '-'
-      end
-      object pnbce0: TMenuItem
-        Caption = 'Breadcrumb'
-        Enabled = False
-      end
-      object pnbce1: TMenuItem
-        Caption = 'pnbce1'
-        OnClick = pnbce1Click
-      end
-      object pnbce2: TMenuItem
-        Caption = 'pnbce2'
-        OnClick = pnbce2Click
-      end
-      object pnbce3: TMenuItem
-        Caption = 'pnbce3'
-        OnClick = pnbce3Click
-      end
-      object pnbce4: TMenuItem
-        Caption = 'pnbce4'
-        OnClick = pnbce4Click
-      end
-      object pnbce5: TMenuItem
-        Caption = 'pnbce5'
-        OnClick = pnbce5Click
-      end
-      object pnbce6: TMenuItem
-        Caption = 'pnbce6'
-        OnClick = pnbce6Click
-      end
-      object pnbce7: TMenuItem
-        Caption = 'pnbce7'
-        OnClick = pnbce7Click
-      end
-      object pnbce8: TMenuItem
-        Caption = 'pnbce8'
-        OnClick = pnbce8Click
+        object pmemr1: TMenuItem
+          OnClick = pmemr1Click
+        end
+        object pmemr2: TMenuItem
+          OnClick = pmemr2Click
+        end
+        object pmemr3: TMenuItem
+          OnClick = pmemr3Click
+        end
+        object pmemr4: TMenuItem
+          OnClick = pmemr4Click
+        end
+        object pmemr5: TMenuItem
+          OnClick = pmemr5Click
+        end
+        object pmemr6: TMenuItem
+          OnClick = pmemr6Click
+        end
+        object pmemr7: TMenuItem
+          OnClick = pmemr7Click
+        end
+        object pmemr8: TMenuItem
+          OnClick = pmemr8Click
+        end
+        object Separator21: TMenuItem
+          Caption = '-'
+        end
+        object pnhe0: TMenuItem
+          Caption = 'Session history'
+          Enabled = False
+        end
+        object pnhe1: TMenuItem
+          Caption = 'pnhe1'
+          OnClick = pnhe1Click
+        end
+        object pnhe2: TMenuItem
+          Caption = 'pnhe2'
+          OnClick = pnhe2Click
+        end
+        object pnhe3: TMenuItem
+          Caption = 'pnhe3'
+          OnClick = pnhe3Click
+        end
+        object pnhe4: TMenuItem
+          Caption = 'pnhe4'
+          OnClick = pnhe4Click
+        end
+        object pnhe5: TMenuItem
+          Caption = 'pnhe5'
+          OnClick = pnhe5Click
+        end
+        object pnhe6: TMenuItem
+          Caption = 'pnhe6'
+          OnClick = pnhe6Click
+        end
+        object pnhe7: TMenuItem
+          Caption = 'pnhe7'
+          OnClick = pnhe7Click
+        end
+        object pnhe8: TMenuItem
+          Caption = 'pnhe8'
+          OnClick = pnhe8Click
+        end
+        object Separator23: TMenuItem
+          Caption = '-'
+        end
+        object pnbce0: TMenuItem
+          Caption = 'Breadcrumb'
+          Enabled = False
+        end
+        object pnbce1: TMenuItem
+          Caption = 'pnbce1'
+          OnClick = pnbce1Click
+        end
+        object pnbce2: TMenuItem
+          Caption = 'pnbce2'
+          OnClick = pnbce2Click
+        end
+        object pnbce3: TMenuItem
+          Caption = 'pnbce3'
+          OnClick = pnbce3Click
+        end
+        object pnbce4: TMenuItem
+          Caption = 'pnbce4'
+          OnClick = pnbce4Click
+        end
+        object pnbce5: TMenuItem
+          Caption = 'pnbce5'
+          OnClick = pnbce5Click
+        end
+        object pnbce6: TMenuItem
+          Caption = 'pnbce6'
+          OnClick = pnbce6Click
+        end
+        object pnbce7: TMenuItem
+          Caption = 'pnbce7'
+          OnClick = pnbce7Click
+        end
+        object pnbce8: TMenuItem
+          Caption = 'pnbce8'
+          OnClick = pnbce8Click
+        end
       end
     end
     object Separator18: TMenuItem
@@ -16684,6 +16673,13 @@ object Form_peach: TForm_peach
         Caption = 'Refresh (F5)'
         ShortCut = 116
         OnClick = mRefreshClick
+      end
+      object Separator32: TMenuItem
+        Caption = '-'
+      end
+      object mFlatArchives: TMenuItem
+        Caption = 'Browse archives in flat mode'
+        OnClick = mFlatArchivesClick
       end
       object mFlat: TMenuItem
         Caption = 'Toggle browse/flat view'
@@ -17697,18 +17693,6 @@ object Form_peach: TForm_peach
       Caption = 'Extract here'
       OnClick = po_exthereClick
     end
-    object MenuItemExtAllHere: TMenuItem
-      Caption = 'Extract all here'
-      OnClick = MenuItemExtAllHereClick
-    end
-    object MenuItemExtAllHereSmart: TMenuItem
-      Caption = 'Extract all here (smart)'
-      OnClick = MenuItemExtAllHereSmartClick
-    end
-    object MenuItemExtAllHereNew: TMenuItem
-      Caption = 'Extract all here (new folder)'
-      OnClick = MenuItemExtAllHereNewClick
-    end
     object MenuItemTextEncoding: TMenuItem
       Caption = 'Text encoding'
       object mzenclocalutf8: TMenuItem
@@ -17818,10 +17802,6 @@ object Form_peach: TForm_peach
     end
     object mmore: TMenuItem
       Caption = 'More'
-      object MenuItemExtAllTo: TMenuItem
-        Caption = 'Extract all to...'
-        OnClick = MenuItemExtAllToClick
-      end
       object MenuItemOpen_test: TMenuItem
         Caption = 'Test'
         object MenuItemOpen_test_all: TMenuItem
@@ -17917,6 +17897,179 @@ object Form_peach: TForm_peach
         Caption = 'Clear preview files'
         OnClick = mForceClearClick
       end
+    end
+    object SeparatorDE: TMenuItem
+      Caption = '-'
+    end
+    object mextto: TMenuItem
+      Caption = 'Extract to...'
+      object mexttob1: TMenuItem
+        Caption = 'mexttob1'
+        OnClick = mexttob1Click
+      end
+      object mexttob2: TMenuItem
+        Caption = 'mexttob2'
+        OnClick = mexttob2Click
+      end
+      object mexttob3: TMenuItem
+        Caption = 'mexttob3'
+        OnClick = mexttob3Click
+      end
+      object mexttob4: TMenuItem
+        Caption = 'mexttob4'
+        OnClick = mexttob4Click
+      end
+      object mexttob5: TMenuItem
+        Caption = 'mexttob5'
+        OnClick = mexttob5Click
+      end
+      object mexttob6: TMenuItem
+        Caption = 'mexttob6'
+        OnClick = mexttob6Click
+      end
+      object mexttob7: TMenuItem
+        Caption = 'mexttob7'
+        OnClick = mexttob7Click
+      end
+      object mexttob8: TMenuItem
+        Caption = 'mexttob8'
+        OnClick = mexttob8Click
+      end
+      object Separator31: TMenuItem
+        Caption = '-'
+      end
+      object mexttohistory: TMenuItem
+        Caption = 'History'
+        object mexttoh1: TMenuItem
+          Caption = 'mexttoh1'
+          OnClick = mexttoh1Click
+        end
+        object mexttoh2: TMenuItem
+          Caption = 'mexttoh2'
+          OnClick = mexttoh2Click
+        end
+        object mexttoh3: TMenuItem
+          Caption = 'mexttoh3'
+          OnClick = mexttoh3Click
+        end
+        object mexttoh4: TMenuItem
+          Caption = 'mexttoh4'
+          OnClick = mexttoh4Click
+        end
+        object mexttoh5: TMenuItem
+          Caption = 'mexttoh5'
+          OnClick = mexttoh5Click
+        end
+        object mexttoh6: TMenuItem
+          Caption = 'mexttoh6'
+          OnClick = mexttoh6Click
+        end
+        object mexttoh7: TMenuItem
+          Caption = 'mexttoh7'
+          OnClick = mexttoh7Click
+        end
+        object mexttoh8: TMenuItem
+          Caption = 'mexttoh8'
+          OnClick = mexttoh8Click
+        end
+        object Separator28: TMenuItem
+          Caption = '-'
+        end
+        object mexttos0: TMenuItem
+          Caption = 'Session history'
+          Enabled = False
+        end
+        object mexttos1: TMenuItem
+          Caption = 'mexttos1'
+          OnClick = mexttos1Click
+        end
+        object mexttos2: TMenuItem
+          Caption = 'mexttos2'
+          OnClick = mexttos2Click
+        end
+        object mexttos3: TMenuItem
+          Caption = 'mexttos3'
+          OnClick = mexttos3Click
+        end
+        object mexttos4: TMenuItem
+          Caption = 'mexttos4'
+          OnClick = mexttos4Click
+        end
+        object mexttos5: TMenuItem
+          Caption = 'mexttos5'
+          OnClick = mexttos5Click
+        end
+        object mexttos6: TMenuItem
+          Caption = 'mexttos6'
+          OnClick = mexttos6Click
+        end
+        object mexttos7: TMenuItem
+          Caption = 'mexttos7'
+          OnClick = mexttos7Click
+        end
+        object mexttos8: TMenuItem
+          Caption = 'mexttos8'
+          OnClick = mexttos8Click
+        end
+        object Separator29: TMenuItem
+          Caption = '-'
+        end
+        object mexttoc0: TMenuItem
+          Caption = 'Breadcrumb'
+          Enabled = False
+        end
+        object mexttoc1: TMenuItem
+          Caption = 'mexttoc1'
+          OnClick = mexttoc1Click
+        end
+        object mexttoc2: TMenuItem
+          Caption = 'mexttoc2'
+          OnClick = mexttoc2Click
+        end
+        object mexttoc3: TMenuItem
+          Caption = 'mexttoc3'
+          OnClick = mexttoc3Click
+        end
+        object mexttoc4: TMenuItem
+          Caption = 'mexttoc4'
+          OnClick = mexttoc4Click
+        end
+        object mexttoc5: TMenuItem
+          Caption = 'mexttoc5'
+          OnClick = mexttoc5Click
+        end
+        object mexttoc6: TMenuItem
+          Caption = 'mexttoc6'
+          OnClick = mexttoc6Click
+        end
+        object mexttoc7: TMenuItem
+          Caption = 'mexttoc7'
+          OnClick = mexttoc7Click
+        end
+        object mexttoc8: TMenuItem
+          Caption = 'mexttoc8'
+          OnClick = mexttoc8Click
+        end
+      end
+      object Separator30: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemExtAllTo: TMenuItem
+        Caption = 'Extract to...'
+        OnClick = MenuItemExtAllToClick
+      end
+    end
+    object MenuItemExtAllHere: TMenuItem
+      Caption = 'Extract here'
+      OnClick = MenuItemExtAllHereClick
+    end
+    object MenuItemExtAllHereSmart: TMenuItem
+      Caption = 'Extract here (smart)'
+      OnClick = MenuItemExtAllHereSmartClick
+    end
+    object MenuItemExtAllHereNew: TMenuItem
+      Caption = 'Extract here (new folder)'
+      OnClick = MenuItemExtAllHereNewClick
     end
     object MenuItem20: TMenuItem
       Caption = '-'
@@ -18069,6 +18222,10 @@ object Form_peach: TForm_peach
       end
       object MenuItem68: TMenuItem
         Caption = '-'
+      end
+      object pmflatarchives: TMenuItem
+        Caption = 'pmflatarchives'
+        OnClick = pmflatarchivesClick
       end
       object po_flat: TMenuItem
         Caption = 'Toggle flat view'
@@ -19004,8 +19161,8 @@ object Form_peach: TForm_peach
     end
   end
   object pCustom: TPopupMenu
-    Left = 392
-    Top = 400
+    Left = 390
+    Top = 416
     object pcustmakecab: TMenuItem
       Caption = 'CAB'
       OnClick = pcustmakecabClick
@@ -19694,7 +19851,7 @@ object Form_peach: TForm_peach
   end
   object PopupMenuHistory: TPopupMenu
     Left = 264
-    Top = 400
+    Top = 416
     object mhpea: TMenuItem
       Caption = 'Explore path with PeaZip'
       OnClick = mhpeaClick
@@ -20429,7 +20586,7 @@ object Form_peach: TForm_peach
   end
   object pmbreadcrumb: TPopupMenu
     Left = 112
-    Top = 88
+    Top = 90
     object pmbcaddbookmark: TMenuItem
       Caption = 'Add to bookmarks'
       OnClick = pmbcaddbookmarkClick
@@ -21200,7 +21357,7 @@ object Form_peach: TForm_peach
   end
   object pmapptosys1: TPopupMenu
     Left = 128
-    Top = 403
+    Top = 416
     object pma2s_extract1: TMenuItem
       Caption = 'Extract selected here'
       OnClick = pma2s_extract1Click
@@ -25360,6 +25517,17 @@ object Form_peach: TForm_peach
     object pmsno: TMenuItem
       Caption = 'pmsno'
       OnClick = pmsnoClick
+    end
+    object Separator33: TMenuItem
+      Caption = '-'
+    end
+    object pmscomment: TMenuItem
+      Caption = 'pmscomment'
+      OnClick = pmscommentClick
+    end
+    object pmsinfo: TMenuItem
+      Caption = 'pmsinfo'
+      OnClick = pmsinfoClick
     end
   end
   object Timer4: TTimer

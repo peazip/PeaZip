@@ -376,11 +376,11 @@ if Form_report.StringGrid1.Cells[0,Form_report.StringGrid1.Row]='* Digest *' the
 fname:=Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,0]+'.txt';
 assignfile(t,fname);
 rewrite(t);
-write_header(t);
+//write_header(t);
 for x:=1 to Form_report.StringGrid1.RowCount-1 do
    begin
    if Form_report.StringGrid1.Cells[0,x]='* Digest *' then break;
-   writeln(t,Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,x]+'  '+Form_report.StringGrid1.Cells[1,x]);
+   write(t,Form_report.StringGrid1.Cells[Form_report.StringGrid1.Col,x]+'  '+Form_report.StringGrid1.Cells[1,x]+char($0A));
    end;
 closefile(t);
 end;
@@ -478,7 +478,7 @@ if LabelCase.Caption='[CASE]' then
    if Form_report.StringGrid1.RowCount<2 then exit;
    if Form_report.StringGrid1.ColCount<24 then exit;
    for irow:=1 to Form_report.StringGrid1.RowCount-1 do
-      for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=lowercase(Form_report.StringGrid1.Cells[icol,irow]);
+      for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=upcase(Form_report.StringGrid1.Cells[icol,irow]);
    end
 else
    begin
@@ -486,7 +486,7 @@ else
    if Form_report.StringGrid1.RowCount<2 then exit;
    if Form_report.StringGrid1.ColCount<24 then exit;
    for irow:=1 to Form_report.StringGrid1.RowCount-1 do
-      for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=upcase(Form_report.StringGrid1.Cells[icol,irow]);
+      for icol:=7 to 24 do Form_report.StringGrid1.Cells[icol,irow]:=lowercase(Form_report.StringGrid1.Cells[icol,irow]);
    end;
 clicklabel_rep(LabelTitleREP2,ShapeTitleREPb2);
 if orig_activelabel_rep=LabelTitleREP1 then clicklabel_rep(LabelTitleREP1,ShapeTitleREPb1);

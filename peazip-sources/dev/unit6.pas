@@ -24,6 +24,8 @@ type
     Labelspac3: TLabel;
     Labelappdirn: TLabel;
     Labelspac4: TLabel;
+    LabelMoveTo: TLabel;
+    Labelspac5: TLabel;
     LabelUp: TLabel;
     LabelTimestamp: TLabel;
     Labelprepdirn: TLabel;
@@ -33,6 +35,7 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure EditinputqueryKeyPress(Sender: TObject; var Key: char);
     procedure LabelappdirnClick(Sender: TObject);
+    procedure LabelMoveToClick(Sender: TObject);
     procedure LabelLowClick(Sender: TObject);
     procedure LabelprepdirnClick(Sender: TObject);
     procedure LabelrenameresetClick(Sender: TObject);
@@ -46,7 +49,7 @@ type
 
 var
   FormInput: TFormInput;
-  tsstyle:integer;
+  tsstyle,moveclick:integer;
   dirn,instr:ansistring;
 
 implementation
@@ -118,6 +121,12 @@ begin
 s:=Editinputquery.Text;
 apply_dirnametoname(s,'append');
 Editinputquery.Text:=s;
+end;
+
+procedure TFormInput.LabelMoveToClick(Sender: TObject);
+begin
+moveclick:=1;
+FormInput.ModalResult:=mrCancel;
 end;
 
 procedure TFormInput.LabelLowClick(Sender: TObject);

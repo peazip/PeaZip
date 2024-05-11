@@ -44,7 +44,7 @@ object Form_report: TForm_report
   OnShow = FormShow
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '3.0.0.3'
   object Label4: TLabel
     AnchorSideLeft.Control = Label3
     AnchorSideTop.Control = Label3
@@ -257,6 +257,7 @@ object Form_report: TForm_report
     BevelOuter = bvNone
     ClientHeight = 45
     ClientWidth = 1000
+    ParentBackground = False
     TabOrder = 3
     object ShapeTitleREPb2: TShape
       AnchorSideLeft.Control = LabelTitleREP2
@@ -350,6 +351,7 @@ object Form_report: TForm_report
       Top = 0
       Width = 391
       BevelOuter = bvNone
+      ParentBackground = False
       TabOrder = 0
     end
     object Shapelinkrep1: TShape
@@ -414,6 +416,7 @@ object Form_report: TForm_report
     Width = 1
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
+    ParentBackground = False
     TabOrder = 4
   end
   object SaveDialog1: TSaveDialog

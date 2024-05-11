@@ -200,6 +200,10 @@ unit Unit_pea;
  1.16     20231209  G.Tani      Fixes, updated theming
  1.17     20240202  G.Tani      Updated theming, added W10+ dark mode, compiled for Lazarus 3.0
                                 Improved error detection in PEA archive header data
+ 1.18     20240422  G.Tani      By default hexadecimal checksum and hash values are written as lowercase
+                                Save hash and filename function (context menu in report screen, rightclicking on one of the performed crc or hash functioons) now generates a file fully compatible with sha256sum and similar utilities
+                                Compiled for Lazarus 3.2
+                                (Windows 10+) Can now be manually forced to light or dark mode regardless system colors, accordingly to peazip app
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -382,7 +386,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.17'; //declares release version for the whole build
+  P_RELEASE          = '1.18'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -5983,26 +5987,26 @@ for k:=0 to nfound-1 do
          begin
          if CRC24_on then Form_report.StringGrid1.Cells[10,t]:=hexstr(@CRC24,sizeof(CRC24));
          end;
-      if Adler32_on then Form_report.StringGrid1.Cells[8,t]:=upcase(hexstr(@adler,sizeof(Adler)));
-      if CRC16_on then Form_report.StringGrid1.Cells[9,t]:=upcase(hexstr(@CRC16,sizeof(CRC16)));
-      if CRC32_on then Form_report.StringGrid1.Cells[11,t]:=upcase(hexstr(@CRC32,sizeof(CRC32)));
-      if CRC64_on then Form_report.StringGrid1.Cells[12,t]:=upcase(hexstr(@CRC64,sizeof(CRC64)));
+      if Adler32_on then Form_report.StringGrid1.Cells[8,t]:=lowercase(hexstr(@adler,sizeof(Adler)));
+      if CRC16_on then Form_report.StringGrid1.Cells[9,t]:=lowercase(hexstr(@CRC16,sizeof(CRC16)));
+      if CRC32_on then Form_report.StringGrid1.Cells[11,t]:=lowercase(hexstr(@CRC32,sizeof(CRC32)));
+      if CRC64_on then Form_report.StringGrid1.Cells[12,t]:=lowercase(hexstr(@CRC64,sizeof(CRC64)));
       if ED2K_on then
          begin
-         Form_report.StringGrid1.Cells[13,t]:=upcase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
-         if ED2KRes.differ then Form_report.StringGrid1.Cells[13,t]:=Form_report.StringGrid1.Cells[13,t]+' / eMule: '+upcase(hexstr(@ED2KRes.eMule, sizeof(ED2KRes.eMule)));
+         Form_report.StringGrid1.Cells[13,t]:=lowercase(hexstr(@ED2KRes.eDonkey, sizeof(ED2KRes.eDonkey)));
+         if ED2KRes.differ then Form_report.StringGrid1.Cells[13,t]:=Form_report.StringGrid1.Cells[13,t]+' / eMule: '+lowercase(hexstr(@ED2KRes.eMule, sizeof(ED2KRes.eMule)));
          end;
-      if MD4_on then Form_report.StringGrid1.Cells[14,t]:=upcase(hexstr(@MD4Digest,sizeof(MD4Digest)));
-      if MD5_on then Form_report.StringGrid1.Cells[15,t]:=upcase(hexstr(@MD5Digest,sizeof(MD5Digest)));
-      if RIPEMD160_on then Form_report.StringGrid1.Cells[16,t]:=upcase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
-      if SHA1_on then Form_report.StringGrid1.Cells[17,t]:=upcase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
-      if Blake2s_on then Form_report.StringGrid1.Cells[18,t]:=upcase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));//if SHA224_on then Form_report.StringGrid1.Cells[18,t]:=upcase(hexstr(@SHA224Digest,sizeof(SHA224Digest)));
-      if SHA256_on then Form_report.StringGrid1.Cells[19,t]:=upcase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
-      if SHA3_256_on then Form_report.StringGrid1.Cells[20,t]:=upcase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
-      if Blake2b_on then Form_report.StringGrid1.Cells[21,t]:=upcase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));//if SHA384_on then Form_report.StringGrid1.Cells[21,t]:=upcase(hexstr(@SHA384Digest,sizeof(SHA384Digest)));
-      if SHA512_on then Form_report.StringGrid1.Cells[22,t]:=upcase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
-      if SHA3_512_on then Form_report.StringGrid1.Cells[23,t]:=upcase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
-      if Whirlpool_on then Form_report.StringGrid1.Cells[24,t]:=upcase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
+      if MD4_on then Form_report.StringGrid1.Cells[14,t]:=lowercase(hexstr(@MD4Digest,sizeof(MD4Digest)));
+      if MD5_on then Form_report.StringGrid1.Cells[15,t]:=lowercase(hexstr(@MD5Digest,sizeof(MD5Digest)));
+      if RIPEMD160_on then Form_report.StringGrid1.Cells[16,t]:=lowercase(hexstr(@RMD160Digest,sizeof(RMD160Digest)));
+      if SHA1_on then Form_report.StringGrid1.Cells[17,t]:=lowercase(hexstr(@SHA1Digest,sizeof(SHA1Digest)));
+      if Blake2s_on then Form_report.StringGrid1.Cells[18,t]:=lowercase(hexstr(@Blake2sDigest,sizeof(Blake2sDigest)));//if SHA224_on then Form_report.StringGrid1.Cells[18,t]:=upcase(hexstr(@SHA224Digest,sizeof(SHA224Digest)));
+      if SHA256_on then Form_report.StringGrid1.Cells[19,t]:=lowercase(hexstr(@SHA256Digest,sizeof(SHA256Digest)));
+      if SHA3_256_on then Form_report.StringGrid1.Cells[20,t]:=lowercase(hexstr(@SHA3_256Digest,sizeof(SHA3_256Digest)));
+      if Blake2b_on then Form_report.StringGrid1.Cells[21,t]:=lowercase(hexstr(@Blake2bDigest,sizeof(Blake2bDigest)));//if SHA384_on then Form_report.StringGrid1.Cells[21,t]:=upcase(hexstr(@SHA384Digest,sizeof(SHA384Digest)));
+      if SHA512_on then Form_report.StringGrid1.Cells[22,t]:=lowercase(hexstr(@SHA512Digest,sizeof(SHA512Digest)));
+      if SHA3_512_on then Form_report.StringGrid1.Cells[23,t]:=lowercase(hexstr(@SHA3_512Digest,sizeof(SHA3_512Digest)));
+      if Whirlpool_on then Form_report.StringGrid1.Cells[24,t]:=lowercase(hexstr(@WhirlDigest,sizeof(WhirlDigest)));
       end
    else
       begin

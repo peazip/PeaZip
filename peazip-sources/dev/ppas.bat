@@ -1,7 +1,7 @@
 @echo off
-SET THEFILE=C:\Users\Giorgio\Desktop\9.6.0\PeaZip\dev\peazip.exe
+SET THEFILE=C:\WSIOTEMP\PeaZip\dev\peazip.exe
 echo Linking %THEFILE%
-C:\lazarus\fpc\3.2.2\bin\x86_64-win64\ld.exe -b pei-x86-64  --gc-sections  -s --subsystem windows --entry=_WinMainCRTStartup    -o C:\Users\Giorgio\Desktop\9.6.0\PeaZip\dev\peazip.exe C:\Users\Giorgio\Desktop\9.6.0\PeaZip\dev\link6028.res
+C:\lazarus\fpc\3.2.2\bin\x86_64-win64\ld.exe -b pei-x86-64  --gc-sections  -s --subsystem windows --entry=_WinMainCRTStartup    -o C:\WSIOTEMP\PeaZip\dev\peazip.exe C:\WSIOTEMP\PeaZip\dev\link6236.res
 if errorlevel 1 goto linkend
 goto end
 :asmend

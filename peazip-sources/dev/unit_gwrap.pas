@@ -946,42 +946,6 @@ if cp_open<33 then
 {$IFDEF DARWIN}cp_open:=cp_open_linuxlike(s,desk_env);{$ENDIF}
 end;
 
-procedure apply_theme;
-begin
-   Form_gwrap.Label1.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.Label5.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.l6.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.Label6.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.Labeli.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.Labelo.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.LabelInfo1.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.LabelInfo2.Font.Color:=pGray;//clInactiveCaptionText;
-   Form_gwrap.LabelInfo3.Font.Color:=pGray;//clInactiveCaptionText;
-end;
-
-procedure getthemepath(var thpath:ansistring);
-var
-   theme_name,s:ansistring;
-begin
-s:=graphicsfolder;
-if s<>'' then setlength(s,length(s)-1);
-theme_name:=extractfilename(s);
-//default and no graphic themes are in application's path, custom themes are in configuration path (application's path for portable versions, user's home/application data for installable versions)
-if (upcase(theme_name)<>upcase(DEFAULT_THEME)) and (upcase(theme_name)<>'NOGRAPHIC') then thpath:=confpath
-else thpath:=sharepath;
-end;
-
-procedure load_icons;
-var
-   thpath:ansistring;
-begin
-with Form_gwrap do
-   try
-   Imagestatus.Picture.Bitmap:=Bp1;
-   except
-   end;
-end;
-
 procedure save_report;
 var
    s,p:ansistring;
@@ -990,7 +954,7 @@ begin
 s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+'job_log.txt';
 Form_gwrap.SaveDialog1.FileName:=s;
 if outpath<>'' then
-   if directoryexists(outpath) then Form_gwrap.SaveDialog1.InitialDir:=outpath
+   if checkdirexists(outpath) then Form_gwrap.SaveDialog1.InitialDir:=outpath
    else Form_gwrap.SaveDialog1.InitialDir:=extractfilepath(outpath);
 if Form_gwrap.SaveDialog1.Execute then
    begin
@@ -1023,7 +987,7 @@ begin
 s:=formatdatetime('yyyymmdd_hh.nn.ss_',now)+'job_definition.txt';
 Form_gwrap.SaveDialog1.FileName:=s;
 if outpath<>'' then
-   if directoryexists(outpath) then Form_gwrap.SaveDialog1.InitialDir:=outpath
+   if checkdirexists(outpath) then Form_gwrap.SaveDialog1.InitialDir:=outpath
    else Form_gwrap.SaveDialog1.InitialDir:=extractfilepath(outpath);
 if Form_gwrap.SaveDialog1.Execute then
    begin
@@ -1083,7 +1047,7 @@ if umode=0 then
      if fileexists(tpath+'.tmp') then tpath:=outpath+'.tmp';
    try
    if fileexists(tpath) then
-      if not(directoryexists(tpath)) then
+      if not(checkdirexists(tpath)) then
          begin
          srcfilesize_multipart(tpath,outsize);
          if insize<outsize then
@@ -1157,7 +1121,7 @@ else
       if fileexists(tpath+'.tmp') then tpath:=outpath+'.tmp';
    try
       if fileexists(tpath) then
-         if not(directoryexists(tpath)) then
+         if not(checkdirexists(tpath)) then
             begin
             srcfilesize_multipart(tpath,outsize);
             if outsize>0 then
@@ -1562,11 +1526,14 @@ if length(dummystr)<2 then break;
 if dummystr[1]=' ' then dummystr:=copy(dummystr,2,length(dummystr)-1)
 else stopinfo:=true;
 end;
-s1:=s1+copy(dummystr,1,pos(' ',dummystr)-1)+' '+txt_5_3_files+', ';
+s1:=s1+copy(dummystr,1,pos(' ',dummystr)-1)+' '+txt_5_3_files;
 dummystr:=copy(dummystr,pos(' ',dummystr),length(dummystr)-pos(' ',dummystr)+1);
 //dirs number
 i:=pos('folder',dummystr)-1;
-s1:=s1+copy(dummystr,pos(', ',dummystr)+2,i-pos(', ',dummystr)-2)+' '+txt_5_3_folders+char($0A)+char($0D);
+if i>1 then
+   s1:=s1+', '+copy(dummystr,pos(', ',dummystr)+2,i-pos(', ',dummystr)-2)+' '+txt_5_3_folders+char($0A)+char($0D)
+else
+   s1:=s1+char($0A)+char($0D)
 except
    if rc>4 then
    s:=Form_gwrap.StringGrid1.Cells[0,rc-4]+char($0A)+char($0D)+
@@ -2286,14 +2253,22 @@ end;
 
 procedure settheme;
 begin
-apply_theme;
-load_icons;
+Form_gwrap.Imagestatus.Picture.Bitmap:=Bp1;
 if color3='clForm' then color3:=ColorToString(PTACOL);
 getpcolors(stringtocolor(color1),stringtocolor(color2),stringtocolor(color3),temperature,contrast);
 Form_gwrap.ShapeTitleb1.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb2.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb3.Brush.Color:=StringToColor(COLLOW);
 Form_gwrap.ShapeTitleb4.Brush.Color:=StringToColor(COLLOW);
+Form_gwrap.Label1.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.Label5.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.l6.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.Label6.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.Labeli.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.Labelo.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.LabelInfo1.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.LabelInfo2.Font.Color:=pGray;//clInactiveCaptionText;
+Form_gwrap.LabelInfo3.Font.Color:=pGray;//clInactiveCaptionText;
 if (opacity<100) then
    begin
    Form_gwrap.AlphaBlend:=true;

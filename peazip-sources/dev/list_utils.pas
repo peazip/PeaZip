@@ -123,6 +123,7 @@ unit list_utils;
  0.61     20210925  G.Tani      Nicenumber can now display various types of multiple-bytes fomats for file sizes (binary, decimanl, none)
  0.62     20220125  G.Tani      Added support for .vhdx format: 226 extensions supported
  0.63     20221209  G.Tani      Added support for .pmdx, .pmvx, .tmdx, .prdx SoftMaker Office files, 230 extensions supported
+ 0.64     20240228  G.Tani      Added function to check if a directory exists, checking both address with and without ending separator character
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -391,6 +392,9 @@ function correctdelimiter(s:AnsiString): AnsiString;
 //get desktop environment
 procedure getdesk_env(var bytedesk: byte; var caption_build, delimiter: ansistring);
 
+//set ending directory separator character if missing
+procedure setendingdirseparator(var s:ansistring);
+
 //get desktop path
 procedure get_desktop_path(var s: ansistring);
 
@@ -459,6 +463,10 @@ function rLast(dir, mask: ansistring; //last modified time
   //true: recursive (search in all subfolders); false not recursive (search only in main folder)
   var ltime:longint
   ): integer;
+
+function checkdirexists(s:ansistring):boolean;
+
+function checkfiledirexists(s:ansistring):boolean;
 
 implementation
 
@@ -1882,6 +1890,13 @@ begin
   end;
 end;
 
+procedure setendingdirseparator(var s:ansistring);
+begin
+if s<>'' then
+   if s[length(s)]<>directoryseparator then
+      s:=s+directoryseparator;
+end;
+
 procedure get_home_path(var s: ansistring); //superseded in Windows
 begin
 {$IFDEF MSWINDOWS}
@@ -1904,49 +1919,47 @@ begin
 {$ENDIF}
 if s = '' then
    s := (getcurrentdir);
-if s<>'' then
-   if s[length(s)] <> directoryseparator then
-     s := s + directoryseparator;
+setendingdirseparator(s);
 end;
 
 procedure get_home_subpaths(var usr_documents,usr_downloads,usr_music,usr_pictures,usr_videos: ansistring);
+var
+  s:ansistring;
 begin
 {$IFNDEF MSWINDOWS}
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Documents/') then usr_documents := GetEnvironmentVariable('HOME') + '/Documents/';
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Downloads/') then usr_downloads := GetEnvironmentVariable('HOME') + '/Downloads/';
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Music/') then usr_music := GetEnvironmentVariable('HOME') + '/Music/';
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Pictures/') then usr_pictures := GetEnvironmentVariable('HOME') + '/Pictures/';
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Videos/') then usr_videos := GetEnvironmentVariable('HOME') + '/Videos/';
+get_home_path(s);
+if DirectoryExists(s + 'Documents/') then usr_documents := s + 'Documents/';
+if DirectoryExists(s + 'Downloads/') then usr_downloads := s + 'Downloads/';
+if DirectoryExists(s + 'Music/') then usr_music := s + 'Music/';
+if DirectoryExists(s + 'Pictures/') then usr_pictures := s + 'Pictures/';
+if DirectoryExists(s + 'Videos/') then usr_videos := s + 'Videos/';
 {$IFDEF DARWIN}
-if DirectoryExists(GetEnvironmentVariable('HOME') + '/Movies/') then usr_videos := GetEnvironmentVariable('HOME') + '/Movies/';
+if DirectoryExists(s + 'Movies/') then usr_videos := s + 'Movies/';
 {$ENDIF}
 {$ENDIF}
 end;
 
 procedure get_desktop_path(var s: ansistring); //superseded in Windows
 begin
+get_home_path(s);
 {$IFDEF MSWINDOWS}
-  s := (GetEnvironmentVariable('USERPROFILE') + '\Desktop\');
+  s := s + 'Desktop\';
 {$ENDIF}
 {$IFDEF LINUX}
-  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+  s := s + 'Desktop/';
 {$ENDIF}
 {$IFDEF FREEBSD}
-  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+  s := s + 'Desktop/';
 {$ENDIF}
 {$IFDEF NETBSD}
-  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+  s := s + 'Desktop/';
 {$ENDIF}
 {$IFDEF OPENBSD}
-  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+  s := s + 'Desktop/';
 {$ENDIF}
 {$IFDEF DARWIN}
-  s := GetEnvironmentVariable('HOME') + '/Desktop/';
+  s := s + 'Desktop/';
 {$ENDIF}
-if s = '' then get_home_path(s);
-if s<>'' then
-   if s[length(s)] <> directoryseparator then
-     s := s + directoryseparator;
 end;
 
 procedure get_usrtmp_path(var s: ansistring);
@@ -1954,9 +1967,7 @@ procedure get_usrtmp_path(var s: ansistring);
 begin
 s:=GetTempDir;
 if s = '' then get_desktop_path(s);
-if s<>'' then
-   if s[length(s)] <> directoryseparator then
-      s := s + directoryseparator;
+setendingdirseparator(s);
 end;
 
 function fget_usrtmp_path:ansistring;
@@ -2285,7 +2296,7 @@ var
 begin
   testinput := 0;//not supported filetype
   if testdir = True then
-    if directoryexists((infile)) then
+    if checkdirexists(infile) then
       testinput := 1000;
   i := testext(infile);
   if i >= 0 then
@@ -2478,6 +2489,32 @@ begin
     end;
   if result = INCOMPLETE_FUNCTION then
     result := SUCCESS;
+end;
+
+function checkdirexists(s:ansistring):boolean;
+var s1:ansistring;
+begin
+result:=true;
+if s='' then
+   begin
+   result:=false;
+   exit;
+   end;
+s1:=s;
+if not(directoryexists(s1)) then
+   if s1[length(s1)]=directoryseparator then
+      begin
+      setlength(s1,length(s1)-1);
+      if not(directoryexists(s1)) then result:=false;
+      end
+   else result:=false;
+end;
+
+function checkfiledirexists(s:ansistring):boolean;
+begin
+result:=true;
+if not(fileexists(s)) then
+   if not(checkdirexists(s)) then result:=false;
 end;
 
 end.

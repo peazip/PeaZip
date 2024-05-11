@@ -11,7 +11,7 @@ uses
   { add your units here }, 
   Unit_pea, pea_utils, list_utils, Unit_report
   {$IFDEF MSWINDOWS}
-  ,umetadarkstyle,udarkstyleparams,udarkstyleschemes
+  ,SysUtils,fileutil,umetadarkstyle,udarkstyleparams,udarkstyleschemes
   {$ENDIF};
 
 {$IFDEF MSWINDOWS}
@@ -24,8 +24,22 @@ uses
 begin
   Application.Scaled:=True;
   {$IFDEF MSWINDOWS}
-  PreferredAppMode:=pamallowdark;
-  umetadarkstyle.ApplyMetaDarkStyle(DefaultDark);
+  if fileexists(Programdirectory+'light') then
+     begin
+     PreferredAppMode:=pamForceLight;
+     umetadarkstyle.ApplyMetaDarkStyle(DefaultWhite);
+     end
+  else
+     if fileexists(Programdirectory+'dark') then
+        begin
+        PreferredAppMode:=pamForceDark ;
+        umetadarkstyle.ApplyMetaDarkStyle(DefaultDark);
+        end
+     else
+        begin
+        PreferredAppMode:=pamallowdark;
+        umetadarkstyle.ApplyMetaDarkStyle(DefaultDark);
+        end;
   {$ENDIF}
   Application.Title:='Pea';
   Application.Initialize;

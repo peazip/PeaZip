@@ -47,7 +47,7 @@ object Form_pea: TForm_pea
   OnShow = FormShow
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '3.0.0.3'
+  LCLVersion = '3.2.0.0'
   object ButtonRefSize: TButton
     AnchorSideTop.Control = Owner
     AnchorSideTop.Side = asrBottom

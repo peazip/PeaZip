@@ -1,4 +1,8 @@
-﻿Notes to 9.7.0 release
+﻿Notes to 9.8.0 release
+
+Modified existing text strings:
+txt_8_0_defaultaction: Default action on input (open, auto-extract...)
+txt_3_0_readablepw: Archive is unreadable, may be password protected
 
 = GENERAL NOTES =
 

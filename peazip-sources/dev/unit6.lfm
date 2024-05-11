@@ -60,7 +60,7 @@ object FormInput: TFormInput
   }
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '3.0.0.3'
   object PanelInput: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -77,6 +77,7 @@ object FormInput: TFormInput
     BevelOuter = bvNone
     ClientHeight = 175
     ClientWidth = 700
+    ParentBackground = False
     TabOrder = 0
     object CheckBox1: TCheckBox
       AnchorSideLeft.Control = Editinputquery
@@ -86,7 +87,7 @@ object FormInput: TFormInput
       Left = 15
       Height = 24
       Top = 151
-      Width = 257
+      Width = 254
       Anchors = [akLeft, akBottom]
       Caption = 'Recoursive: search in subdirectories'
       Checked = True
@@ -137,10 +138,11 @@ object FormInput: TFormInput
     end
     object LabelTimestamp: TLabel
       AnchorSideLeft.Control = Labelspac4
+      AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Labelspac2
       AnchorSideTop.Side = asrCenter
       Cursor = crHandPoint
-      Left = 185
+      Left = 191
       Height = 20
       Top = 88
       Width = 74
@@ -238,8 +240,40 @@ object FormInput: TFormInput
       BorderSpacing.Top = 30
       BorderSpacing.Right = 15
       ItemHeight = 20
-      OnKeyPress = EditinputqueryKeyPress
       TabOrder = 1
+      OnKeyPress = EditinputqueryKeyPress
+    end
+    object LabelMoveTo: TLabel
+      AnchorSideLeft.Control = Labelspac5
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Labelspac2
+      AnchorSideTop.Side = asrCenter
+      Cursor = crHandPoint
+      Left = 301
+      Height = 20
+      Top = 88
+      Width = 55
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 30
+      Caption = 'Move to'
+      Font.Color = 13391121
+      ParentFont = False
+      Visible = False
+      OnClick = LabelMoveToClick
+    end
+    object Labelspac5: TLabel
+      AnchorSideLeft.Control = LabelTimestamp
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = LabelLow
+      AnchorSideTop.Side = asrCenter
+      Left = 280
+      Height = 20
+      Top = 88
+      Width = 6
+      BorderSpacing.Left = 15
+      Caption = '/'
+      ParentFont = False
+      Visible = False
     end
   end
   object ButtonPanel1: TButtonPanel
@@ -321,6 +355,6 @@ object FormInput: TFormInput
     Title = 'Open file'
     FilterIndex = 0
     Left = 180
-    Top = 90
+    Top = 112
   end
 end
