@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-9.7
+9.8
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Muhammed Emin Subaşı
 Son güncelleme: 7 Aralık 2023
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z / p7zip use pipe
 txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centered

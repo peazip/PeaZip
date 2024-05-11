@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.7
+9.8
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20240117
+Ultima rev.: 20240305
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Apri sempre gli archivi in modo flat
+txt_9_8_fnew: Estrai qui (nuova cartella)
+txt_9_8_fsmart: Estrai qui (smart)
 txt_9_7_tarpipe: 7z / p7zip usa pipe
 txt_9_7_smartsorting: Ordinamento intelligente nomi file
 txt_9_6_centered: Centrato
@@ -142,7 +145,7 @@ txt_8_0_forcebrowse: Esplora archivi di tipi non canonici (containers, immagini 
 txt_8_0_commonalgo: Algoritmi comuni
 txt_8_0_forceconvert: Converti archivi di tipi non canonici
 txt_8_0_defaultactionhint: Azione da eseguire quando da sistema si fa doppio click su un tipo di file associato a PeaZip
-txt_8_0_defaultaction: Azione all'apertura
+txt_8_0_defaultaction: Azione all'apertura (apri, estrazione automatica...)
 txt_8_0_enableextand: Mostra il submenu "Estrai e apri con"
 txt_8_0_forcetyping: Richiedi sempre la password interattivamente
 txt_8_0_setpwopt: Opzioni password / keyfile
@@ -230,8 +233,8 @@ txt_7_2_savecompsettings: Salva opzioni di compressione
 txt_7_2_source: Sorgente
 txt_7_2_updateclear: Aggiorna archivio ed elimina le anteprime
 txt_7_1_type_description_brotli: Brotli: compressore veloce di Google, decompressione molto rapida
-txt_7_1_new: Estrai tutto qui, nuova cartella
-txt_7_1_smart: Estrai tutto qui, smart
+txt_7_1_new: Estrai tutto qui (nuova cartella)
+txt_7_1_smart: Estrai tutto qui (smart)
 txt_7_1_profileintermediate: Compressione media, ZIP/BZip2 veloce
 txt_7_1_renfilesonly: Rinomina soli i files
 txt_7_1_typetosearch: Digita per cercare in questo percorso
@@ -545,7 +548,7 @@ txt_3_1_systmp: Temp dell'utente
 txt_3_1_languagetools: Traduttore
 txt_3_1_workingdir: Directory di lavoro
 txt_3_0_nonreadableorpw: Archivio non leggibile. L'archivio potrebbe essere non valido, avere partim mancanti, o elenco dei contenuti cifrato. Provare una password?
-txt_3_0_readablepw: Archivio protetto da password
+txt_3_0_readablepw: Archivio non leggibile o protetto da password
 txt_3_0_configure: Configura associazione file e integrazione con il sistema
 txt_3_0_resettmp: Reset file temporanei di lavoro
 txt_2_9_address: Barra dell'indirizzo

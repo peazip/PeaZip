@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-9.7
+9.8
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
 Last rev. by: yangyangdaji
 Last rev.: 20240211
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z / p7zip 使用管道
 txt_9_7_smartsorting: 智能排序文件名
 txt_9_6_centered: 居中

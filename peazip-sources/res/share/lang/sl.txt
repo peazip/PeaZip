@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Slovenski jezik
-9.7
+9.8
 Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
 Zadnja revizija: 20240211
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z/p7zip uporablja cev
 txt_9_7_smartsorting: Pametno razvrščanje imen datotek
 txt_9_6_centered: Na sredini

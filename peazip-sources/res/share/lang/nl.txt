@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Dutch - Nederlands
-9.7
+9.8
 Translated by: Koos van Riemsdijk - Stephan Paternotte
 Last rev. by: Stephan Paternotte
 Last rev.: 20160620
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z / p7zip use pipe
 txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centered

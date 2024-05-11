@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 English
-9.7
+9.8
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
-Last rev.: 20240117
+Last rev.: 20240225
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z / p7zip use pipe
 txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centered
@@ -142,7 +145,7 @@ txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images
 txt_8_0_commonalgo: Common algorithms
 txt_8_0_forceconvert: Convert non-canonical archive types
 txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on input
+txt_8_0_defaultaction: Default action on input (open, auto-extract...)
 txt_8_0_enableextand: Enable "Extract and open with" submenu
 txt_8_0_forcetyping: Force typing passwords interactively
 txt_8_0_setpwopt: Set password / keyfile options
@@ -545,7 +548,7 @@ txt_3_1_systmp: User's temp
 txt_3_1_languagetools: Translate
 txt_3_1_workingdir: Working directory
 txt_3_0_nonreadableorpw: Archive is not readable. The archive may not be valid, volumes may be missing, or its table of content could be encrypted. Would you like to try a password?
-txt_3_0_readablepw: Archive may be password protected
+txt_3_0_readablepw: Archive is unreadable, may be password protected
 txt_3_0_configure: File associations and system menu integration
 txt_3_0_resettmp: Reset temporary work files
 txt_2_9_address: Address bar

@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Spanish (Latin America) - Español (América latina)
-9.7
+9.8
 Translated by: Agustín Bou, Anonymous
 Last rev. by: Anonymous
 Last rev.: 20180510
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: 7z / p7zip use pipe
 txt_9_7_smartsorting: Smart file name sorting
 txt_9_6_centered: Centered

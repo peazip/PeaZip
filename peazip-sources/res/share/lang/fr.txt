@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Français
-9.7
+9.8
 Traduit par: Drake4478
 Dernière version par: Drake4478
 Date du: 11.02.2024
 
 === PeaZip text group ===
 
+txt_9_8_alwaysflat: Always open archives in flat view
+txt_9_8_fnew: Extract here (in new folder)
+txt_9_8_fsmart: Extract here (smart new folder)
 txt_9_7_tarpipe: Tuyau d’utilisation 7z/P7zip
 txt_9_7_smartsorting: Tri intelligent des noms de fichiers
 txt_9_6_centered: Centré
