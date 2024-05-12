@@ -2,14 +2,14 @@
 Simplified Chinese - 简体中文
 9.8
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
-Last rev. by: yangyangdaji
-Last rev.: 20240211
+Last rev. by: Junde Yhi
+Last rev.: 20240511
 
 === PeaZip text group ===
 
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
+txt_9_8_alwaysflat: 总是以平面视图打开归档文件
+txt_9_8_fnew: 提取到此处（新建文件夹）
+txt_9_8_fsmart: 提取到此处（智能创建文件夹）
 txt_9_7_tarpipe: 7z / p7zip 使用管道
 txt_9_7_smartsorting: 智能排序文件名
 txt_9_6_centered: 居中
@@ -145,7 +145,7 @@ txt_8_0_forcebrowse: 浏览非规范的归档文件（容器、磁盘镜像、�
 txt_8_0_commonalgo: 通用算法
 txt_8_0_forceconvert: 转换非规范的归档文件类型
 txt_8_0_defaultactionhint: 在系统里双击关联到 PeaZip 的文件时的默认动作
-txt_8_0_defaultaction: 输入时的默认动作
+txt_8_0_defaultaction: 输入时的默认动作（打开、自动解压……）
 txt_8_0_enableextand: 启用“提取并以…打开”子菜单
 txt_8_0_forcetyping: 强制交互式输入密码
 txt_8_0_setpwopt: 设置密码或密钥文件选项
@@ -548,7 +548,7 @@ txt_3_1_systmp: 用户临时文件夹
 txt_3_1_languagetools: 翻译
 txt_3_1_workingdir: 工作目录
 txt_3_0_nonreadableorpw: 归档文件无法读取。此归档文件可能失效，或者其目录可能被加密。输入密码试试？
-txt_3_0_readablepw: 归档文件似乎有密码保护
+txt_3_0_readablepw: 无法读取归档文件，似乎有密码保护
 txt_3_0_configure: 系统集成和文件关联
 txt_3_0_resettmp: 重置 PeaZip 临时文件夹
 txt_2_9_address: 地址栏
