@@ -1,4 +1,4 @@
-=== PeaZip language file ===
+﻿=== PeaZip language file ===
 Български / Bulgarian
 9.8
 Превод: Любомир Симеонов
