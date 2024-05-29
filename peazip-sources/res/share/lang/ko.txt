@@ -1,635 +1,635 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
 9.8
-번역자: Sleepy
-최근 교정: (please update translation)
-교정 일자: 20110531
+번역자: Sleepy, EhangB
+최근 교정: 20240525 by EhangB
+교정 일자: 20110531 by Sleep
 
 === PeaZip text group ===
 
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
-txt_9_5_all: All
-txt_9_5_precond: Pre-parse if errors are detected
-txt_9_5_largea: Pre-parse large archives
-txt_9_5_mediuma: Pre-parse medium archives
-txt_9_5_smalla: Pre-parse small archives
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
-txt_9_4_r: read
-txt_9_4_rw: read/write
-txt_9_4_savecomment: Save comment
-txt_9_4_hintcomment: Type or paste comment, load or drag here comment file.
-txt_9_3_continue: Continue anyway?
-txt_9_3_contrast: Contrast
-txt_9_3_fsd: Free space on destination may not be enough
-txt_9_3_fsw: Free space on temporary work path may not be enough
-txt_9_3_mrar: Manually set RAR binary
-txt_9_3_canedit: This archive type can be edited
-txt_9_3_canforce: This archive type can be edited (forced)
-txt_9_3_cannotedit: This archive type cannot be edited
-txt_9_2_7za: 7z / p7zip alias
-txt_9_2_changelog: Change log
-txt_9_2_tfaq: Check for Translations
-txt_9_2_compact: Compact
-txt_9_2_swt: Swap Tool / Address bar
-txt_9_2_tos: TOS, Privacy
-txt_9_2_doc: Verify documentation, Issue Tracker...
-txt_9_2_updates: Verify updates, binaries, Plugins...
-txt_9_1_7zs: 7z / p7zip syntax level
-txt_9_1_ac: Archive conversion scripts allow user's interaction
-txt_9_1_closeall: Close all
-txt_9_1_enlargeicons: Enlarge file browser icons
-txt_9_1_ef: Exclude empty folders from archiving and extraction operations (7z / p7zip)
-txt_9_1_nw: Open in a new window
-txt_9_1_qdup: Use quick deduplication routine
-txt_9_0_autoexttar: Auto extract TAR archive from compressed TAR.* files
-txt_9_0_accesstime: Do not change last access time
-txt_9_0_mem: Maximum memory usage
-txt_9_0_showmainmenu: Open Main menu
-txt_9_0_navmenu: Open Navigation menu
-txt_9_0_plugind: Open binaries and Plugin directory
-txt_9_0_df: Sort dirs before files
-txt_9_0_hl: Store hard links as links
-txt_9_0_sl: Store symbolic links as links
-txt_9_0_tnav: Toggle side bar, treeview, none
-txt_8_9_empty: Archive seems empty
-txt_8_9_disp: Displaying archive content
-txt_8_9_parsing: Parsing archive content
-txt_8_9_stoptest: Stop to inspect report for error, list, test, auto-test
-txt_8_9_ttb: Toggle tool bar
-txt_8_8_ca: Accent color
-txt_8_8_btn: Button
-txt_8_8_cb: Button color
-txt_8_8_centered: Centered buttons
-txt_8_8_light: Light
-txt_8_8_lnk: Link
-txt_8_8_intnote: Please note that "Interactive extraction" option (in Options > Settings > Archive manager) is ignored for composing the command line in Console tab.
-txt_8_8_snz: Propagate Zone.Identifier stream (Windows)
-txt_8_8_sm: Small icons size
-txt_8_8_solcol: Solid bar
-txt_8_8_snoi: Store owner/group ids (TAR, Linux)
-txt_8_8_snon: Store owner/group names (TAR, Linux)
-txt_8_8_tab: Tab
-txt_8_8_altt: Tabs style
-txt_8_8_autotest: Test archives after creation, if supported by the format
-txt_8_8_cw: Window color
-txt_8_7_csvhelp: "," international standard, ";" common in Latin locales
-txt_8_7_after: After archiving / extraction
-txt_8_7_bintest: binaries tested.
-txt_8_7_csv: CSV separator
-txt_8_7_hok: Hash of binaries used by PeaZip match with expected values
-txt_8_7_mo: Set archive manager options
-txt_8_7_showhm: Show file browser Header menu
-txt_8_7_showsearchbar: Show search bar
-txt_8_7_showsm: Show Style menu
-txt_8_7_hnotok: Some hash of binaries used by PeaZip do not match with expected values:
-txt_8_7_verifybin: Verify hash of binaries
-txt_8_6_clear: "Clear" option removes temp edited files, otherwise available for further editing.
-txt_8_6_noclear: Discard all changes without updating the archive
-txt_8_6_nosimple: Do not update archive, keep temp edited files for further editing
-txt_8_6_immediate: Immediate execution
-txt_8_6_yessimple: Update archive, keep temp edited files for further editing
-txt_8_5_advbrowser: Apply filters to archive browser
-txt_8_5_detailslarge: Details, large
-txt_8_5_intext: Extract to temp work path then move to output (ask before overwriting)
-txt_8_5_listlarge: List, large
-txt_8_5_loadlayout: Load layout at startup
-txt_8_5_samplescripts: Sample scripts
-txt_8_4_keepopenerrorslist: Stop to inspect report for error, list
-txt_8_3_mbubin: Binary
-txt_8_3_cw: Change working directory? This will reset temporary work files and restart the application.
-txt_8_3_temperature: Color temperature
-txt_8_3_mbudec: Decimal
-txt_8_3_htab: Highlight tabs
-txt_8_3_maxarg: Maximum length of arguments
-txt_8_3_mbu: Multiple-byte unit
-txt_8_3_prefalgo: Preferred algorithms
-txt_8_3_skipdel: Skip deletion of locked temp files (use reset to delete on demand)
-txt_8_3_lw: Some files in working directory are locked and cannot be removed automatically
-txt_8_3_noupx: This binary cannot be compressed (may be already compressed)
-txt_8_2_slower: (slower)
-txt_8_2_df: 7z / p7zip display content of folders
-txt_8_2_vreport: 7z / p7zip non-verbose report
-txt_8_2_ta: Accessed
-txt_8_2_tc: Created
-txt_8_2_keep: Keep files
-txt_8_2_tm: Modified
-txt_8_2_skipet: Skip testing for encryption
-txt_8_2_alltimes: Store all timestamps
-txt_8_2_supportedby: Supported by
-txt_8_1_preparse: Always pre-parse archives
-txt_8_1_bo: Browser optimization
-txt_8_1_bop: Browser optimization options can be set from Options > Settings, General tab, in order to allow browser to display archives containing a very large number of items.
-txt_8_1_nopreparse: Do not pre-parse archives
-txt_8_1_ed: error(s) detected.
-txt_8_1_togglearc: Listing flat view of archive content may take long time, continue anyway?
-txt_8_1_preparsehint: Optimize performances limiting pre-parsing of large archives. Pre-parsing is meant to detect in advance possible issues in archive content.
-txt_8_1_slow: Slow
-txt_8_1_vslow: Very slow
-txt_8_1_volumes: volumes
-txt_8_0_altcol: Alternate grid color
-txt_8_0_forcebrowse: Browse non-canonical archive types (containers, disk images, installers,...)
-txt_8_0_commonalgo: Common algorithms
-txt_8_0_forceconvert: Convert non-canonical archive types
-txt_8_0_defaultactionhint: Default action double-clicking a file associated with PeaZip from the system
-txt_8_0_defaultaction: Default action on start-up
-txt_8_0_enableextand: Enable "Extract and open with" submenu
-txt_8_0_forcetyping: Force typing passwords interactively
-txt_8_0_setpwopt: Set password / keyfile options
-txt_8_0_forcetypinghelp: Will run backend binaries in console, cannot browse archives with encrypted filenames. Allows to create scripts that will not run unattended but rather ask user interactively for password.
-txt_7_9_spacing: Spacing
-txt_7_9_zooming: Zooming
-txt_7_8_changelocalization: Change PeaZip language
-txt_7_8_custext: Custom extension
-txt_7_8_destexistfile: Destination already contains processed files. Replace files with same name?
-txt_7_8_dd: Drag and Drop
-txt_7_8_priorityhigh: High
-txt_7_8_priorityidle: Idle
-txt_7_8_rel: Interactive extraction
-txt_7_8_prioritynormal: Normal
-txt_7_8_priorityrealtime: Real time
-txt_7_8_requirerestart: [requires restarting PeaZip]
-txt_7_8_tpriority: Tasks priority
-txt_7_8_update: Update
-txt_7_7_noneall: None (no preview, no Drag And Drop extraction)
-txt_7_7_nonetemp: None, User's temp if necessary
-txt_7_7_outtemp: Output, preview in User's temp
-txt_7_7_sys7zreq: Requires p7zip-full or equivalent to be installed
-txt_7_7_tw: Temporary work folder for archive creation, editing, preview and Drag And Drop extraction.
-txt_7_7_sys7z: Use system 7z in Linux
-txt_7_6_zipenc: 7z/p7zip ZIP filenames encoding
-txt_7_6_color: Color
-txt_7_6_custenc: Custom code page
-txt_7_6_dark: Dark
-txt_7_6_tno: Do not sync archive tree
-txt_7_6_forcelocalenc: Force local
-txt_7_6_forceutf8enc: Force UTF-8
-txt_7_6_cpnote: If the chosen custom code page is unsupported, tasks will always end in error (most likely memory allocation error). In case that happens, change code page or reset the application.
-txt_7_6_defaultenc: Local, UTF-8 for extra symbols
-txt_7_6_dim: Low light
-txt_7_6_setcurdef: Set current path as default output path
-txt_7_6_setdef: Set default output path
-txt_7_6_tadvanced: Sync archive tree, keep visited nodes
-txt_7_6_tsimple: Sync archive tree, simple
-txt_7_6_tacolor: Text accent
-txt_7_5_always: Always
-txt_7_5_ask: Ask
-txt_7_5_autoclosesingle: Auto close after extraction if no browsing actions took place
-txt_7_5_cutlen: Cut name at specified length
-txt_7_5_cutlenw: Cut name at specified length (4..255) naming conflicts can be fixed manually later
-txt_7_5_dragnone: Do not lock target
-txt_7_5_specialbrowse: Do you want to extract everything in order to provide the file with the extra data it may need?
-txt_7_5_ee: Extract everything for special file types
-txt_7_5_draghide: Hide drop target
-txt_7_5_draglh: Lock and hide target
-txt_7_5_draglock: Lock drop target
-txt_7_5_never: Never
-txt_7_5_repnascii: Replace/remove non-ASCII characters
-txt_7_4_comment: Comment
-txt_7_4_7zfbrotlicomp: Fastest compression, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Fastest compression, 7Z Zstandard
-txt_7_4_presetrar: High compression, RAR
-txt_7_4_tkeep: Keep original archive timestamp
-txt_7_4_lock: Lock archive
-txt_7_4_locked: locked
-txt_7_4_lockconfirm: Locked archives cannot be further modified, proceed locking this archive?
-txt_7_4_recover: Repair archive
-txt_7_4_tcurr: Set archive timestamp from current system time
-txt_7_4_setarc: Set archiving options
-txt_7_4_setext: Set extraction options
-txt_7_4_swzipx: Switch to zipx extension for non-Deflate zip archives
-txt_7_3_archiveerrors: [archive may contain errors]
-txt_7_3_archiveerrorshint: Archive may not be valid (due missing, corrupted, or out of standard data), it is possible to run Test for detailed information. If archive's table of content is encrypted, password is needed before browsing it.
-txt_7_3_clickextall: Click "Extract all" to enable
-txt_7_3_noconfdel: Do not ask confirmation for delete after archiving / extraction
-txt_7_3_profile7zfastest: Fast compression, 7Z fastest
-txt_7_3_maxbr: Maximize Brotli compression using more memory (may be incompatible with some extractors)
-txt_7_3_maxzstd: Maximize Zstandard compression using more memory
-txt_7_3_profile7zfast: Medium compression, 7Z fast
-txt_7_3_stl: Set archive timestamp from most recent file
-txt_7_2_altcomp: Alternative compression, ARC
-txt_7_2_clearnoupdate: Clear edited files
-txt_7_2_autoclosepeazip: Close PeaZip when task completes
-txt_7_2_zpaqall: Extract all revisions
-txt_7_2_extcomp: Extreme compression, ZPAQ
-txt_7_2_extcompultra: Extreme compression, ZPAQ ultra
-txt_7_2_fbrotlicomp: Fastest compression, Brotli
-txt_7_2_fzstandardcomp: Fastest compression, Zstandard
-txt_7_2_loadcompsettings: Load compression settings
-txt_7_2_savecompsettings: Save compression settings
-txt_7_2_source: Source
-txt_7_2_updateclear: Update edited files in archive, and clear edited files
-txt_7_1_type_description_brotli: Brotli: fast compressor from Google, very fast decompression
-txt_7_1_new: Extract all here, in new folder
-txt_7_1_smart: Extract all here, smart
-txt_7_1_profileintermediate: Intermediate compression, ZIP/BZip2 fast
-txt_7_1_renfilesonly: Rename only files
-txt_7_1_typetosearch: Type to search in current path
-txt_7_1_type_description_zstd: Zstandard: fast compressor from Facebook, very fast decompression
-txt_7_0_af: Analyze content of folders
-txt_7_0_autoopentar: Auto open single tar archive inside tar.* files
-txt_7_0_exttmppath: Content will be extracted outside the temporary work path, in: 
-txt_6_9_autou: Auto update modified files in archives
-txt_6_9_forceu: Force update modified files in archives
-txt_6_9_opuns: Operation not supported for current archive type
-txt_6_9_overarch: Overwrite file(s) with same name already existing inside the archive?
-txt_6_9_uconf: Previewed file has been modified. Update the current archive?
-txt_6_8_ndrop: Use native Drag And Drop on Windows
-txt_6_7_nop: (no preview)
-txt_6_6_pdupfound: possible duplicates found (quick approximate test)
-txt_6_6_rsh: Reset search history
-txt_6_6_pdupfind: Suggest possible duplicates
-txt_6_6_forcemodify: Try to edit non explicitly supported file types
-txt_6_5_mandatory: (mandatory)
-txt_6_5_abort: Abort
-txt_6_5_askp: Ask to set password at startup
-txt_6_5_chp: Change password
-txt_6_5_def: Definition
-txt_6_5_nop: Don't ask to set password at startup
-txt_6_5_error: Error
-txt_6_5_seqerr: Error(s) detected, original files will not be deleted
-txt_6_5_sni: Include NT security information
-txt_6_5_sns: Include NTFS Alternate Data Stream
-txt_6_5_privacy: Privacy
-txt_6_5_showvolatile: Show which options are volatile / context depentent
-txt_6_5_force: Try to open archives containing errors
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
-txt_6_5_np: You can now change password of converted archive(s) to a new one, or blank the password to skip encryption
-txt_6_4_absolute: Absolute paths
-txt_6_4_appdirn: Append directory name
-txt_6_4_closeallother: Close all other tabs
-txt_6_4_closeright: Close tabs on the right
-txt_6_4_collapse: Collapse tabs
-txt_6_4_expand: Expand tabs
-txt_6_4_full: Full paths
-txt_6_4_new: New
-txt_6_4_openintab: Open in a new tab
-txt_6_4_paths: Paths
-txt_6_4_prepdirn: Prepend directory name
-txt_6_4_relative: Relative paths
-txt_6_4_tabbar: Tab bar
-txt_6_3_autoadjust: Auto adjust columns
-txt_6_3_cinfo: Info and comments
-txt_6_3_syn: Synchronize archive with disk
-txt_6_3_uar: Update only files already in archive
-txt_6_2_encext: Add ".enc" suffix to encrypted archives
-txt_6_2_archive: Archive file type
-txt_6_2_container: Container file type
-txt_6_1_ec: Expand / collapse archive tree
-txt_6_0_msq: Sort by file type for solid compression
-txt_5_9_lff: Analyze files and folders
-txt_5_9_pff: Analyze, show files header/EOF
-txt_5_9_start: Start from
-txt_5_8_l0: Allow any supported component/format
-txt_5_8_l1: Allow only Free Software components
-txt_5_8_l2: Allow only open archive formats
-txt_5_8_ascii: ASCII safe, scripts are safe on legacy environments
-txt_5_8_cp: Code Page safe, scripts may trigger problems on legacy environments with different Code Pages
-txt_5_8_fs: Free Software compliance
-txt_5_8_utf: Scripts need full UTF-8 / Unicode environment
-txt_5_8_fsr: This format is not suported due Free Software compliance restrictions (Options > Advanced)
-txt_5_7_pinstalled: INSTALLED
-txt_5_7_pmissing: MISSING
-txt_5_7_plugin: Plugin missing, can be installed from Help > Check for pulgin and addon
-txt_5_6_basic: Basic
-txt_5_6_exarc: Extract archive
-txt_5_6_tab: Open in new tab
-txt_5_6_rc: Right click for options
-txt_5_6_layouts: Saved layouts
-txt_5_6_upexisting: Update existing archive
-txt_5_6_verbose: Verbose
-txt_5_5_case: (case sensitive)
-txt_5_5_add: Add string at specified position
-txt_5_5_addsel: Add to current selection
-txt_5_5_ext: Change files extension
-txt_5_5_plugin: Check for plugin and addon
-txt_5_5_copypath: Copy path
-txt_5_5_delete: Delete characters at specified position
-txt_5_5_halt: Halt system when task completes
-txt_5_5_positionw: Hint: 1 add before first char, 2 second, etc... "z" for end of file name
-txt_5_5_positionwd: Hint: 1 delete from first char included, 2 second, ... "z" for end of file name
-txt_5_5_replaceneww: Hint: provide an empty new string to simply remove the old string
-txt_5_5_lower: Lowercase
-txt_5_5_replaceoldw: Modify all occurrences of this string or character in the file name
-txt_5_5_newext: New extension
-txt_5_5_new: New string
-txt_5_5_n: Number of characters to delete
-txt_5_5_old: Old string
-txt_5_5_position: Position (number or "z" for end)
-txt_5_5_intdir: Smart new folder
-txt_5_5_replacestr: Replace/remove string
-txt_5_5_datesameday: Same day of selected object
-txt_5_5_datesamehour: Same hour of selected object
-txt_5_5_datesamemonth: Same month of selected object
-txt_5_5_datesameweek: Same week of selected object
-txt_5_5_datesameyear: Same year of selected object
-txt_5_5_scan: Scan
-txt_5_5_select: Select
-txt_5_5_similar: Similar to selected object
-txt_5_5_starting: Starting with same character
-txt_5_5_string: String to add
-txt_5_5_subtractsel: Subtract from current selection
-txt_5_5_datehour: This hour
-txt_5_5_datemonth: This month
-txt_5_5_dateweek: This week
-txt_5_5_dateyear: This year
-txt_5_5_dateday: Today
-txt_5_5_upper: Uppercase
-txt_5_5_extw: Warning: changing file extension the file may become unusable
-txt_5_4_da: Date added
-txt_5_4_deletearchives: Delete archives after extraction
-txt_5_4_deletefiles: Delete files after archiving
-txt_5_4_deleteoriginal: Deletion procedure, as set in main screen, will be appended to the script.
-txt_5_4_lv: Last visited
-txt_5_4_deletearchivesconfirm: Confirm deletion of original archives?
-txt_5_4_deletefilesconfirm: Confirm deletion of original files?
-txt_5_4_used: Used
-txt_5_3_profilebest: Best compression, 7Z format Ultra level
-txt_5_3_profileadvanced: Advanced compression, 7Z format
-txt_5_3_profilenormal: Normal ZIP compression, compatible with most extractors
-txt_5_3_profileveryfast: Very fast ZIP compression, recommended for large multimedia files
-txt_5_3_profilepassword: Protect with password, 7Z format
-txt_5_3_profile10mb: Keep output under 25 MB, for mail attachment limitations
-txt_5_3_profilesfx: Auto extracting, recipient will not need an extraction software
-txt_5_3_cml: System context menu language
-txt_5_3_cmlmessage: Double click on desired context menu language and confirm registry merging. This setting needs to be re-applied when the application is installed/updated or after System integration wizard is used.
-txt_5_3_exc: Exclusion filters prevail on inclusion filters
-txt_5_3_ia: Include also
-txt_5_3_io: Include only
-txt_5_3_rec: Recurse subdirs
-txt_5_3_resetsi: Re-configure system integration (context menu, SendTo, file associations)?
-txt_5_2_oadd: Archive to original path
-txt_5_2_zerodelete: Do you want to delete and overwrite with all 0 selected file(s)? The operation can't be undone and files will be not recoverable
-txt_5_2_zfree: Do you want to overwrite with all 0 free space on this drive?
-txt_5_2_sdfree: Do you want to securely delete free space on this drive?
-txt_5_2_oext: Extract to original path
-txt_5_2_securedeletefree: Secure delete free space
-txt_5_2_free: This operation can take some minutes and, if performed often, it can quickly wear flash-based disks
-txt_5_2_zerofiles: Zero delete
-txt_5_2_zerofree: Zero delete free space
-txt_5_1_schedadd: Add schedule
-txt_5_1_schederr: Cannot create schedule
-txt_5_1_daily: Daily
-txt_5_1_day: Day
-txt_5_1_days: Days
-txt_5_1_enddate: End date
-txt_5_1_every: Every
-txt_5_1_w6: Friday
-txt_5_1_hourly: Hourly
-txt_5_1_hours: Hours
-txt_5_1_last: Last
-txt_5_1_schedmanage: Task Scheduler, manage tasks saved in PeaZip branch
-txt_5_1_scriptmanage: Manage saved scheduled scripts
-txt_5_1_w2: Monday
-txt_5_1_monthly: Monthly
-txt_5_1_months: Months
-txt_5_1_onlogin: On login
-txt_5_1_onstart: On start
-txt_5_1_once: Once
-txt_5_1_w7: Saturday
-txt_5_1_schedule: Schedule
-txt_5_1_schedexplain: Create a plain text script from GUI task definition and schedule it. Scheduled tasks' scripts are saved in "Scheduled scripts" folder. To edit or delete scheduled tasks you can use system's Task Scheduler, all scheduled tasks created by PeaZip are collected in "PeaZip" branch of the tasks library.
-txt_5_1_schedok: Schedule created successfully
-txt_5_1_schedscripts: Saved scheduled scripts
-txt_5_1_startdate: Start date
-txt_5_1_starttime: Start time
-txt_5_1_w1: Sunday
-txt_5_1_schedname: Task name, identify both the saved scheduled script and the system's scheduled task
-txt_5_1_ts: Task Scheduler
-txt_5_1_w5: Thursday
-txt_5_1_w3: Tuesday
-txt_5_1_w4: Wednesday
-txt_5_1_weekly: Weekly
-txt_5_1_weeks: Weeks
-txt_5_0_bc: Breadcrumb
-txt_5_0_resetpm: Do you confirm resetting Password Manager? All passwords stored in PeaZip's Password Manager will be lost if confirmed.
-txt_5_0_enum: Enumerate directories' content
-txt_5_0_music: Music
-txt_5_0_ps: Open PowerShell here
-txt_5_0_perf: Performances
-txt_5_0_pictures: Pictures
-txt_5_0_removeall: Remove all
-txt_5_0_resetbookmarks: Reset Bookmarks to default? (Bookmarks can then be customized with Bookmarks > Organize)
-txt_5_0_sh: Session history
-txt_5_0_skip: Skip enumerating directories' content in layout
-txt_5_0_videos: Videos
-txt_4_9_frame: Frame
-txt_4_9_listth: List and thumbnails
-txt_4_9_shadow: Shadow
-txt_4_9_style: Style
-txt_4_8_attach25: 25 MB (attachment limit)
-txt_4_8_crop: Crop
-txt_4_8_detailsno: Light file browser
-txt_4_8_details: File browser with thumbnails
-txt_4_8_fit: Fit to
-txt_4_8_fitl: Fit to largest
-txt_4_8_flip: Flip
-txt_4_8_fullscreen: Full screen
-txt_4_8_fun: Functions
-txt_4_8_h: Height
-txt_4_8_keeparchive: Keep archive
-txt_4_8_noresize: Keep original size
-txt_4_8_iconl: Large images
-txt_4_8_iconm: Icons and images
-txt_4_8_imagemanager: Image manager
-txt_4_8_immersive: Immersive
-txt_4_8_listno: Minimal list
-txt_4_8_aspect: Maintain aspect ratio
-txt_4_8_mirror: Mirror
-txt_4_8_presets: Presets
-txt_4_8_replace: Replace original image(s)? "No" apply the transformation in new file(s).
-txt_4_8_resize: Resize
-txt_4_8_rl: Rotate left
-txt_4_8_rr: Rotate right
-txt_4_8_stop: Stop
-txt_4_8_t: Transform
-txt_4_8_w: Width
-txt_4_7_pk: Create random password / keyfile
-txt_4_7_spchar: Limit characters to letters and numbers
-txt_4_7_recycleask: Move selected file(s) to Recycle Bin?
-txt_4_7_recycle: Move to Recycle Bin
-txt_4_7_pcomp: Potential compression
-txt_4_6_am: Archive manager
-txt_4_6_fm: File manager
-txt_4_6_users: Users
-txt_4_5_goupdate: A new version is available. Open PeaZip's official website to download the update?
-txt_4_5_b: Bottom
-txt_4_5_koupdate: Cannot check for updates, no connection with update server
-txt_4_5_update: Check for updates
+txt_9_8_alwaysflat: 항상 평면 보기로 아카이브 열기
+txt_9_8_fnew: 여기에 추출 (새 폴더에)
+txt_9_8_fsmart: 여기에 추출 (스마트 새 폴더로)
+txt_9_7_tarpipe: 7z / p7zip 파이프 사용
+txt_9_7_smartsorting: 스마트 파일 이름 정렬
+txt_9_6_centered: 중앙에 배치
+txt_9_6_cside: 컴팩트 사이드바
+txt_9_6_loadpconfirm: 이 프로필을 로드하시겠습니까? 저장된 스크립트 및 비밀번호 관리자를 포함하여 현재 프로필의 모든 데이터를 덮어씁니다.
+txt_9_6_loadp: 프로파일 로드
+txt_9_6_saveppw: 선택 사항: 비밀번호/키 파일로 이 프로파일을 보호하시겠습니까?
+txt_9_6_savepoverwrite: 기존 프로파일을 덮어쓰시겠습니까? 저장된 스크립트 및 비밀번호 관리자를 포함하여 기존 프로파일의 모든 데이터를 덮어씁니다.
+txt_9_6_savep: 프로파일 저장
+txt_9_6_scside: 컴팩트 사이드바 표시
+txt_9_5_all: 모두
+txt_9_5_precond: 오류가 감지되면 사전에 구문 분석
+txt_9_5_largea: 대형 아카이브를 사전에 구문 분석
+txt_9_5_mediuma: 중형 아카이브를 사전에 구문 분석
+txt_9_5_smalla: 소형 아카이브를 사전에 구문 분석
+txt_9_5_reopentab: 마지막 탭 다시 열기
+txt_9_5_savetabs: 탭 저장
+txt_9_5_sb: 시스템 경로에 바이너리 사용
+txt_9_4_r: 읽기
+txt_9_4_rw: 읽기/쓰기
+txt_9_4_savecomment: 주석 저장
+txt_9_4_hintcomment: 주석을 입력하거나 붙여넣기, 여기로 주석 파일을 로드하거나 드래그하세요.
+txt_9_3_continue: 계속하시겠습니까?
+txt_9_3_contrast: 대비
+txt_9_3_fsd: 대상의 여유 공간이 충분하지 않을 수 있습니다
+txt_9_3_fsw: 임시 작업 경로의 여유 공간이 충분하지 않을 수 있습니다
+txt_9_3_mrar: 수동으로 RAR 바이너리 설정
+txt_9_3_canedit: 이 아카이브 형식은 편집 가능합니다
+txt_9_3_canforce: 이 아카이브 형식은 편집(강제)이 가능합니다
+txt_9_3_cannotedit: 이 아카이브 형식은 편집할 수 없습니다
+txt_9_2_7za: 7z / p7zip 별칭
+txt_9_2_changelog: 로그 변경
+txt_9_2_tfaq: 번역 확인
+txt_9_2_compact: 콤팩트
+txt_9_2_swt: 도구 모음 / 주소 표시줄 위치 바꾸기
+txt_9_2_tos: 서비스 약관, 개인정보 보호정책
+txt_9_2_doc: 문서, 이슈 추적기 확인...
+txt_9_2_updates: 업데이트, 바이너리, 플러그인 확인...
+txt_9_1_7zs: 7z / p7zip 구문 수준
+txt_9_1_ac: 아카이브 변환 스크립트는 사용자의 상호 작용을 허용합니다
+txt_9_1_closeall: 모두 닫기
+txt_9_1_enlargeicons: 파일 브라우저 아이콘 확대
+txt_9_1_ef: 아카이브 및 추출 작업에서 빈 폴더 제외(7z/p7zip)
+txt_9_1_nw: 새 창에서 열기
+txt_9_1_qdup: 빠른 중복제거 루틴 사용
+txt_9_0_autoexttar: 압축된 TAR.* 파일에서 TAR 아카이브 자동 추출
+txt_9_0_accesstime: 마지막 액세스 시간 변경 안 함
+txt_9_0_mem: 최대 메모리 사용량
+txt_9_0_showmainmenu: 메인 메뉴 열기
+txt_9_0_navmenu: 탐색 메뉴 열기
+txt_9_0_plugind: 바이너리 및 플러그인 디렉토리 열기
+txt_9_0_df: 디렉토리를 파일보다 앞에 정렬
+txt_9_0_hl: 하드 링크를 링크로 저장
+txt_9_0_sl: 심볼릭 링크를 링크로 저장
+txt_9_0_tnav: 사이드 바, 트리 뷰, 없음 전환
+txt_8_9_empty: 아카이브가 비어있는 것 같습니다.
+txt_8_9_disp: 아카이브 컨텐츠 표시
+txt_8_9_parsing: 아카이브 컨텐츠 구문 분석
+txt_8_9_stoptest: 오류, 목록, 테스트, 자동 테스트에 대한 보고서 검사 중지
+txt_8_9_ttb: 도구 모음 전환
+txt_8_8_ca: 강조 색상
+txt_8_8_btn: 버튼
+txt_8_8_cb: 버튼 색상
+txt_8_8_centered: 중앙 버튼
+txt_8_8_light: 밝은 색상
+txt_8_8_lnk: 링크
+txt_8_8_intnote: 콘솔 탭에서 명령줄을 구성할 때 "대화식 추출" 옵션(옵션 > 설정 > 아카이브 관리자)이 무시된다는 점에 유의하십시오.
+txt_8_8_snz: Zone.Identifier 스트림 전파 (Windows)
+txt_8_8_sm: 작은 아이콘 크기
+txt_8_8_solcol: 솔리드 바
+txt_8_8_snoi: 스토어 소유자/그룹 ID (TAR, Linux)
+txt_8_8_snon: 스토어 소유자/그룹 이름 (TAR, Linux)
+txt_8_8_tab: 탭
+txt_8_8_altt: 탭 스타일
+txt_8_8_autotest: 아카이브 형식이 지원하는 경우, 생성 후 테스트
+txt_8_8_cw: 윈도우 색상
+txt_8_7_csvhelp: ","국제 표준, ";"라틴어 지역에서 흔함
+txt_8_7_after: 아카이브/추출 후
+txt_8_7_bintest: 구성 요소가 테스트되었습니다.
+txt_8_7_csv: CSV 구분기호
+txt_8_7_hok: PeaZip에서 사용하는 바이너리의 해시가 예상 값과 일치합니다.
+txt_8_7_mo: 아카이브 관리자 옵션 설정
+txt_8_7_showhm: 파일 찾아보기 헤더 메뉴 표시
+txt_8_7_showsearchbar: 검색 창 표시
+txt_8_7_showsm: 스타일 메뉴 표시
+txt_8_7_hnotok: 일부 PeaZip 구성 요소의 해시 값이 예상 값과 일치하지 않습니다:
+txt_8_7_verifybin: 구성 요소의 해시 값 확인
+txt_8_6_clear: "지우기" 옵션은 임시 편집된 파일을 제거합니다. 그렇지 않으면 추가 편집이 가능합니다.
+txt_8_6_noclear: 아카이브을 업데이트하지 않고 모든 변경 사항 폐기
+txt_8_6_nosimple: 아카이브을 업데이트하지 않고 추가 편집을 위해 임시 편집 파일을 유지
+txt_8_6_immediate: 즉시 실행
+txt_8_6_yessimple: 아카이브 업데이트, 추가 편집을 위해 임시 편집 파일 유지
+txt_8_5_advbrowser: 아카이브 찾아보기에 필터 적용
+txt_8_5_detailslarge: 자세히, 크게
+txt_8_5_intext: 임시 작업 경로로 추출한 다음 출력으로 이동(덮어쓰기 전에 확인)
+txt_8_5_listlarge: 목록, 크게
+txt_8_5_loadlayout: 시작 시 레이아웃 불러오기
+txt_8_5_samplescripts: 샘플 스크립트
+txt_8_4_keepopenerrorslist: 오류에 대한 보고서를 검사하기 위해 중지, 목록
+txt_8_3_mbubin: 2진수
+txt_8_3_cw: 작업 디렉토리를 변경 하시겠습니까? 이렇게 하면 임시 작업 파일이 재설정되고 응용 프로그램이 다시 시작됩니다.
+txt_8_3_temperature: 색온도
+txt_8_3_mbudec: 10진수
+txt_8_3_htab: 강조 표시
+txt_8_3_maxarg: 인수의 최대 길이
+txt_8_3_mbu: 멀티바이트 단위
+txt_8_3_prefalgo: 권장 알고리즘
+txt_8_3_skipdel: 잠긴 임시 파일 삭제 건너뛰기(재설정을 사용한 요청 시 삭제)
+txt_8_3_lw: 작업 디렉토리의 일부 파일이 잠겨 있으며 자동으로 삭제할 수 없습니다.
+txt_8_3_noupx: 이 바이너리는 압축할 수 없습니다(이미 압축되었을 수 있음)
+txt_8_2_slower: (느림)
+txt_8_2_df: 7z / p7zip 폴더의 내용 표시
+txt_8_2_vreport: 7z / p7zip 상세하지 않은 보고서
+txt_8_2_ta: 액세스
+txt_8_2_tc: 생성
+txt_8_2_keep: 파일 보관
+txt_8_2_tm: 변경됨
+txt_8_2_skipet: 암호화 테스트 건너뛰기
+txt_8_2_alltimes: 모든 타임스탬프 저장
+txt_8_2_supportedby: 지원
+txt_8_1_preparse: 항상 아카이브를 사전에 구문 분석
+txt_8_1_bo: 찾아보기 최적화
+txt_8_1_bop: 많은 항목이 포함된 아카이브를 표시하려면 옵션 > 설정 > 일반 탭에서 "검색 최적화"를 선택하십시오.
+txt_8_1_nopreparse: 아카이브를 사전 분석하지 않음
+txt_8_1_ed: 건의 오류가 감지되었습니다.
+txt_8_1_togglearc: 아카이브 콘텐츠의 평면 보기를 나열하는 데 시간이 오래 걸릴 수 있습니다. 계속하시겠습니까?
+txt_8_1_preparsehint: 대용량 아카이브의 사전 구문 분석을 제한하는 성능을 최적화합니다. 사전 구문 분석은 아카이브 콘텐츠에서 가능한 문제를 미리 감지하기 위한 것입니다.
+txt_8_1_slow: 느림
+txt_8_1_vslow: 매우 느림
+txt_8_1_volumes: 볼륨
+txt_8_0_altcol: 그리드의 색상 변경
+txt_8_0_forcebrowse: 비정규 아카이브 유형 찾아보기(찾아보기 컨테이너, 디스크 이미지, 설치 프로그램 등)
+txt_8_0_commonalgo: 일반 알고리즘
+txt_8_0_forceconvert: 비정규 아카이브 유형 변환
+txt_8_0_defaultactionhint: 시스템에서 PeaZip과 연결된 파일을 더블 클릭하면 기본 동작
+txt_8_0_defaultaction: 시작 시 기본 동작
+txt_8_0_enableextand: "추출 및 열기" 하위 메뉴 사용
+txt_8_0_forcetyping: 비밀번호를 대화식으로 강제 입력
+txt_8_0_setpwopt: 비밀번호/키 파일 옵션 설정
+txt_8_0_forcetypinghelp: 콘솔에서 백엔드 바이너리를 실행하며, 암호화된 파일 이름의 아카이브는 탐색할 수 없습니다. 무인으로 실행되는 대신 사용자에게 비밀번호를 묻는 스크립트를 만들 수 있습니다.
+txt_7_9_spacing: 간격
+txt_7_9_zooming: 확대
+txt_7_8_changelocalization: PeaZip 언어 변경
+txt_7_8_custext: 사용자 지정 확장
+txt_7_8_destexistfile: 대상에 이미 처리된 파일이 포함되어 있습니다. 이름이 같은 파일을 바꾸시겠습니까?
+txt_7_8_dd: 드래그 앤 드롭
+txt_7_8_priorityhigh: 높음
+txt_7_8_priorityidle: 유휴
+txt_7_8_rel: 대화형 추출
+txt_7_8_prioritynormal: 일반
+txt_7_8_priorityrealtime: 실시간
+txt_7_8_requirerestart: [PeaZip을 다시 시작해야 합니다.]
+txt_7_8_tpriority: 작업 우선 순위
+txt_7_8_update: 업데이트
+txt_7_7_noneall: 없음 (미리보기 없음, 드래그 앤 드롭 추출 없음)
+txt_7_7_nonetemp: 없음, 필요에 따라 사용자가 설정
+txt_7_7_outtemp: 출력, 사용자 측 미리보기
+txt_7_7_sys7zreq: p7zip-full 또는 이에 상응하는 설치가 필요합니다.
+txt_7_7_tw: 아카이브 생성, 편집, 미리보기 및 드래그 앤 드롭 추출을 위한 임시 작업 폴더입니다.
+txt_7_7_sys7z: Linux에서 시스템 7z 사용
+txt_7_6_zipenc: 7z/p7zip ZIP 파일 이름 인코딩
+txt_7_6_color: 색상
+txt_7_6_custenc: 사용자 지정 코드 페이지
+txt_7_6_dark: 다크
+txt_7_6_tno: 아카이브 트리를 동기화하지 않음
+txt_7_6_forcelocalenc: 지역 강제 적용
+txt_7_6_forceutf8enc: UTF-8 강제 적용
+txt_7_6_cpnote: 선택한 사용자 지정 코드 페이지가 지원되지 않는 경우 작업은 항상 오류로 종료됩니다(대부분 메모리 할당 오류). 이 경우 코드 페이지를 변경하거나 응용 프로그램을 재설정하십시오.
+txt_7_6_defaultenc: 지역, 추가 기호를 위한 UTF-8
+txt_7_6_dim: 다커
+txt_7_6_setcurdef: 현재 경로를 기본 출력 경로로 설정
+txt_7_6_setdef: 기본 출력 경로 설정
+txt_7_6_tadvanced: 아카이브 트리 동기화, 방문한 노드 유지
+txt_7_6_tsimple: 아카이브 트리 동기화, 단순
+txt_7_6_tacolor: 텍스트 강조
+txt_7_5_always: 항상
+txt_7_5_ask: 물어보기
+txt_7_5_autoclosesingle: 찾아보기 작업이 없으면 추출 후 자동으로 닫기
+txt_7_5_cutlen: 지정된 길이로 이름 자르기
+txt_7_5_cutlenw: 이름을 지정된 길이(4~255)로 잘라내어 나중에 이름 충돌을 수동으로 수정할 수 있습니다.
+txt_7_5_dragnone: 대상을 잠그지 않음
+txt_7_5_specialbrowse: 파일에 필요할 수 있는 추가 데이터를 제공하기 위해 모든 것을 추출하시겠습니까?
+txt_7_5_ee: 특수 파일 형식에 대한 모든 항목 추출
+txt_7_5_draghide: 드롭 대상 숨기기
+txt_7_5_draglh: 대상 잠금 및 숨기기
+txt_7_5_draglock: 드롭 대상 잠금
+txt_7_5_never: 하지않음
+txt_7_5_repnascii: ASCII가 아닌 문자 변경/제거
+txt_7_4_comment: 주석
+txt_7_4_7zfbrotlicomp: 가장 빠른 압축, 7Z Brotli
+txt_7_4_7zfzstandardcomp: 가장 빠른 압축, 7Z Zstandard
+txt_7_4_presetrar: 높은 압축률, RAR
+txt_7_4_tkeep: 원본 아카이브 타임스탬프 유지
+txt_7_4_lock: 아카이브 잠금
+txt_7_4_locked: 잠김
+txt_7_4_lockconfirm: 잠긴 아카이브는 더 이상 수정할 수 없습니다. 이 아카이브를 잠그시겠습니까?
+txt_7_4_recover: 아카이브 복구
+txt_7_4_tcurr: 현재 시스템 시간에서 아카이브 타임스탬프 설정
+txt_7_4_setarc: 고급 아카이브 옵션 설정
+txt_7_4_setext: 고급 추출 옵션 설정
+txt_7_4_swzipx: Deflate가 아닌 ZIP 아카이브를 위해 zipx 확장으로 전환
+txt_7_3_archiveerrors: [아카이브에 오류가 있을 수 있습니다.]
+txt_7_3_archiveerrorshint: 아카이브가 유효하지 않을 수 있습니다 (누락, 손상, 비표준으로 인해), 테스트를 실행하여 자세한 정보를 확인할 수 있습니다. 아카이브의 목차가 암호화된 경우, 보기 전에 비밀번호가 필요합니다.
+txt_7_3_clickextall: 활성화하려면 "모두 추출"을 클릭하십시오.
+txt_7_3_noconfdel: 아카이브 / 추출 후 삭제 확인을 묻지 않음
+txt_7_3_profile7zfastest: 빠른 압축, 7Z 가장 빠름
+txt_7_3_maxbr: 더 많은 메모리를 사용하여 Brotli 압축 최대화 (일부 추출기와 호환되지 않을 수 있음)
+txt_7_3_maxzstd: 더 많은 메모리를 사용하여 Zstandard 압축 최대화
+txt_7_3_profile7zfast: 중간 압축, 7Z 빠름
+txt_7_3_stl: 가장 최근 파일에서 아카이브 타임스탬프 설정
+txt_7_2_altcomp: 대체 압축, ARC
+txt_7_2_clearnoupdate: 편집된 파일 지우기
+txt_7_2_autoclosepeazip: 작업 완료 시 PeaZip 닫기
+txt_7_2_zpaqall: 모든 수정 버전 추출
+txt_7_2_extcomp: 극한적 압축, ZPAQ
+txt_7_2_extcompultra: 극한적 압축, ZPAQ 최강
+txt_7_2_fbrotlicomp: 가장 빠른 압축, Brotli
+txt_7_2_fzstandardcomp: 가장 빠른 압축, Zstandard
+txt_7_2_loadcompsettings: 압축 설정 불러오기
+txt_7_2_savecompsettings: 압축 설정 저장
+txt_7_2_source: 소스
+txt_7_2_updateclear: 아카이브에서 편집된 파일 업데이트 및 편집된 파일 지우기
+txt_7_1_type_description_brotli: Brotli: Google의 빠른 압축기, 매우 빠른 압축 해제
+txt_7_1_new: 여기에 모두 추출 (새 폴더 생성후)
+txt_7_1_smart: 여기에 모두 추출 (스마트 새 폴더)
+txt_7_1_profileintermediate: 중간 압축, ZIP/BZip2 고속
+txt_7_1_renfilesonly: 파일만 이름 바꾸기
+txt_7_1_typetosearch: 현재 경로에서 검색하려면 입력하세요.
+txt_7_1_type_description_zstd: Zstandard: Facebook의 빠른 압축기, 매우 빠른 압축 해제
+txt_7_0_af: 폴더의 내용 분석
+txt_7_0_autoopentar: 압축된 TAR.* 파일에서 TAR 아카이브 자동 열기
+txt_7_0_exttmppath: 콘텐츠는 다음 위치에서 임시 작업 경로 외부에서 추출됩니다:
+txt_6_9_autou: 아카이브에서 수정된 파일 자동 업데이트
+txt_6_9_forceu: 아카이브에서 수정된 파일 강제 업데이트
+txt_6_9_opuns: 현재 아카이브 형식에 대해 지원되지 않는 작업
+txt_6_9_overarch: 아카이브파일이 이미 존재하는 동일한 이름의 파일을 덮어쓰시겠습니까?
+txt_6_9_uconf: 미리 보기 파일이 수정되었습니다. 현재 아카이브을 업데이트하시겠습니까?
+txt_6_8_ndrop: Windows에서 기본 드래그 앤 드롭 사용
+txt_6_7_nop: (미리보기 없음)
+txt_6_6_pdupfound: 개의 중복 가능성이 발견되었습니다. (빠른 유사성 테스트)
+txt_6_6_rsh: 검색 기록 재설정
+txt_6_6_pdupfind: 중복될 수 있는 것을 제시
+txt_6_6_forcemodify: 명시적으로 지원되지 않는 파일 형식 편집 시도
+txt_6_5_mandatory: (필수)
+txt_6_5_abort: 중지
+txt_6_5_askp: 시작 시 비밀번호 설정 요청
+txt_6_5_chp: 비밀번호 변경
+txt_6_5_def: 정의
+txt_6_5_nop: 시작할 때 비밀번호 설정을 묻지 않음
+txt_6_5_error: 오류
+txt_6_5_seqerr: 오류가 감지되었습니다. 원본 파일은 삭제되지 않습니다.
+txt_6_5_sni: NT 보안 정보 포함
+txt_6_5_sns: NTFS 대체 데이터 스트림 포함
+txt_6_5_privacy: 개인정보
+txt_6_5_showvolatile: 컨텍스트에 따라 변경되는 옵션 표시
+txt_6_5_force: 오류가 포함된 아카이브파일 열기 시도
+txt_6_5_warning: 경고
+txt_6_5_yes: 예
+txt_6_5_yesall: 모두 예
+txt_6_5_np: 이제 변환된 아카이브의 비밀번호를 새 비밀번호로 변경하거나 비밀번호를 비워 암호화를 건너뛸 수 있습니다.
+txt_6_4_absolute: 절대 경로
+txt_6_4_appdirn: 디렉토리 이름 추가
+txt_6_4_closeallother:다른 모든 탭 닫기
+txt_6_4_closeright: 오른쪽 탭 닫기
+txt_6_4_collapse: 탭 접기
+txt_6_4_expand: 탭 펼치기
+txt_6_4_full: 전체 경로
+txt_6_4_new: 새로 만들기
+txt_6_4_openintab: 새 탭에서 열기
+txt_6_4_paths: 경로
+txt_6_4_prepdirn: 디렉토리 이름 앞에 추가
+txt_6_4_relative: 상대 경로
+txt_6_4_tabbar: 탭바
+txt_6_3_autoadjust: 열 자동 조정
+txt_6_3_cinfo: 정보 및 주석
+txt_6_3_syn: 아카이브파일을 디스크와 동기화
+txt_6_3_uar: 이미 아카이브파일에 있는 파일만 업데이트
+txt_6_2_encext: 암호화된 아카이브파일에 ".enc" 접미사 추가
+txt_6_2_archive: 아카이브 형식
+txt_6_2_container: 컨테이너 파일 형식
+txt_6_1_ec: 아카이브 트리 확장/축소
+txt_6_0_msq: 솔리드 압축을 위해 파일 형식별로 정렬
+txt_5_9_lff: 파일 및 폴더 분석
+txt_5_9_pff: 분석, 파일 헤더/EOF 표시
+txt_5_9_start: 시작 위치
+txt_5_8_l0: 지원되는 모든 구성 요소/형식 허용
+txt_5_8_l1: 자유 소프트웨어 구성 요소만 허용
+txt_5_8_l2: 공개 아카이브 형식만 허용
+txt_5_8_ascii: ASCII 안전, 스크립트는 레거시 환경에서 안전합니다.
+txt_5_8_cp: 코드 페이지 안전, 스크립트는 코드 페이지가 다른 레거시 환경에서 문제를 유발할 수 있습니다.
+txt_5_8_fs: 자유 소프트웨어 준수
+txt_5_8_utf: 스크립트는 완전한 UTF-8 / 유니 코드 환경이 필요합니다.
+txt_5_8_fsr: 이 형식은 자유 소프트웨어 준수 제한으로 인해 지원되지 않습니다 (옵션 > 설정 > 고급)
+txt_5_7_pinstalled: 설치됨
+txt_5_7_pmissing: 없음
+txt_5_7_plugin: 플러그인이 없습니다. 도움말 > 플러그인 및 애드온 확인에서 설치할 수 있습니다.
+txt_5_6_basic: 기본
+txt_5_6_exarc: 아카이브 추출
+txt_5_6_tab: 새 탭에서 열기
+txt_5_6_rc: 옵션을 보려면 마우스 오른쪽 버튼 클릭
+txt_5_6_layouts: 저장된 레이아웃
+txt_5_6_upexisting: 기존 아카이브 업데이트
+txt_5_6_verbose: 자세히
+txt_5_5_case: (대/소문자 구분)
+txt_5_5_add:지정된 위치에 문자열 추가
+txt_5_5_addsel: 현재 선택 항목에 추가
+txt_5_5_ext: 파일 확장자 변경
+txt_5_5_plugin: 플러그인 및 애드온 확인
+txt_5_5_copypath: 경로 복사
+txt_5_5_delete: 지정된 위치의 문자 삭제
+txt_5_5_halt: 작업 완료 시 시스템 중지
+txt_5_5_positionw: 힌트: 1을 첫번째 문자 앞에 추가, 2를 두번째 문자에, ... 파일 이름의 끝은 "z"
+txt_5_5_positionwd: 힌트: 1을 포함하는 첫 번째 문자에서 삭제, 2를 두번째 문자에, ... 파일 이름의 끝은 "z"
+txt_5_5_replaceneww: 힌트: 이전 문자열을 삭제하려면, 새 문자열을 비워 둡니다.
+txt_5_5_lower: 소문자
+txt_5_5_replaceoldw: 파일 이름에서 이 문자열 또는 문자의 모든 항목을 수정합니다.
+txt_5_5_newext: 새 확장 프로그램
+txt_5_5_new: 새 문자열
+txt_5_5_n: 삭제할 문자 수
+txt_5_5_old: 이전 문자열
+txt_5_5_position: 위치 (숫자 또는 "z"로 끝)
+txt_5_5_intdir: 스마트 새 폴더
+txt_5_5_replacestr: 문자열 교체/제거
+txt_5_5_datesameday: 선택한 항목과 같은 날
+txt_5_5_datesamehour: 선택한 항목과 같은 시간
+txt_5_5_datesamemonth: 선택한 항목과 같은 달
+txt_5_5_datesameweek: 선택한 항목과 같은 주
+txt_5_5_datesameyear: 선택한 항목과 같은 해
+txt_5_5_scan: 스캔
+txt_5_5_select: 선택
+txt_5_5_similar: 선택한 항목과 유사
+txt_5_5_starting: 같은 문자로 시작
+txt_5_5_string: 추가할 문자열
+txt_5_5_subtractsel: 현재 선택에서 제외
+txt_5_5_datehour: 현재 시간
+txt_5_5_datemonth: 이번 달
+txt_5_5_dateweek: 이번 주
+txt_5_5_dateyear: 이번 해
+txt_5_5_dateday: 오늘
+txt_5_5_upper: 대문자
+txt_5_5_extw: 경고: 파일 확장자를 변경하면 파일을 사용할 수 없게 될 수 있습니다.
+txt_5_4_da: 추가된 날짜
+txt_5_4_deletearchives: 추출 후 아카이브 삭제
+txt_5_4_deletefiles: 아카이브 후 파일 삭제
+txt_5_4_deleteoriginal: 메인 화면에서 설정한 삭제 절차가 스크립트에 추가됩니다.
+txt_5_4_lv: 마지막 방문
+txt_5_4_deletearchivesconfirm: 원래 아카이브파일을 삭제하시겠습니까?
+txt_5_4_deletefilesconfirm: 원본 파일을 삭제하시겠습니까?
+txt_5_4_used: 사용
+txt_5_3_profilebest: 극한적 압축, 7Z 최강
+txt_5_3_profileadvanced: 고급 압축, 7Z
+txt_5_3_profilenormal: 일반 ZIP 압축, 대부분의 추출기와 호환 가능
+txt_5_3_profileveryfast: 매우 빠른 ZIP 압축, 대용량 멀티미디어 파일에 권장
+txt_5_3_profilepassword: 비밀번호로 보호, 7Z 형식
+txt_5_3_profile10mb: 출력을 25MB 미만으로 유지, 메일 첨부 제한 경우
+txt_5_3_profilesfx: 자동 추출 아카이브, 압축 해제 소프트웨어 필요 없음
+txt_5_3_cml: 시스템 상황에 맞는 메뉴 언어
+txt_5_3_cmlmessage: 컨텍스트 메뉴의 언어를 두 번 클릭하여 레지스트리 추가를 확인합니다. 이 설정은 응용 프로그램을 설치/업데이트할 때 또는 시스템 통합 마법사를 사용한 후에 다시 적용해야 합니다.
+txt_5_3_exc: 제외 필터가 포함 필터보다 우선합니다.
+txt_5_3_ia: 포함
+txt_5_3_io: 포함
+txt_5_3_rec: 하위 디렉토리 재귀
+txt_5_3_resetsi: 시스템 통합을 재구성하시겠습니까(컨텍스트 메뉴, 보내기, 파일 연결)?
+txt_5_2_oadd: 원래 경로에 아카이브
+txt_5_2_zerodelete: 선택한 파일을 모두 0으로 덮어쓰고 삭제하시겠습니까? 작업을 취소할 수 없으며 파일을 복구할 수 없습니다.
+txt_5_2_zfree: 이 드라이브의 여유 공간을 모두 0으로 덮어쓰시겠습니까?
+txt_5_2_sdfree: 이 드라이브의 여유 공간을 안전하게 지우시겠습니까?
+txt_5_2_oext: 원래 경로로 추출
+txt_5_2_securedeletefree: 안전한 여유 공간 삭제
+txt_5_2_free: 이 작업은 몇 분 정도 걸릴 수 있으며 자주 수행하면 플래시 기반 디스크가 빠르게 마모될 수 있습니다.
+txt_5_2_zerofiles: 0으로 채우기
+txt_5_2_zerofree: 디스크 공간을 0으로 채우기
+txt_5_1_schedadd: 일정 추가
+txt_5_1_schederr: 일정을 만들 수 없습니다.
+txt_5_1_daily: 매일
+txt_5_1_day: 일
+txt_5_1_days: 일
+txt_5_1_enddate: 종료일
+txt_5_1_every: 매번
+txt_5_1_w6: 금요일
+txt_5_1_hourly: 매시간
+txt_5_1_hours: 시간
+txt_5_1_last: 최근
+txt_5_1_schedmanage: 작업 스케줄러, PeaZip 분기에 저장된 작업 관리
+txt_5_1_scriptmanage: 저장된 예약 스크립트 관리
+txt_5_1_w2: 월요일
+txt_5_1_monthly: 매월
+txt_5_1_months: 월
+txt_5_1_onlogin: 로그인 시
+txt_5_1_onstart: 시작 시
+txt_5_1_once: 한번만
+txt_5_1_w7: 토요일
+txt_5_1_schedule: 스케줄
+txt_5_1_schedexplain: GUI 작업 정의에서 일반 텍스트 스크립트를 생성하고 예약합니다. 예약된 작업의 스크립트는 "Scheduled scripts" 폴더에 저장됩니다. 예약된 작업을 편집하거나 삭제하려면 시스템의 작업 스케줄러를 사용할 수 있습니다. PeaZip에서 생성한 모든 예약된 작업은 작업 라이브러리의 "PeaZip" 분기에 수집됩니다.
+txt_5_1_schedok: 예약이 성공적으로 생성되었습니다.
+txt_5_1_schedscripts: 저장된 예약 스크립트
+txt_5_1_startdate: 시작 일
+txt_5_1_starttime: 시작 시간
+txt_5_1_w1: 일요일
+txt_5_1_schedname: 작업 이름, 저장된 예약된 스크립트와 시스템의 예약된 작업을 모두 식별합니다.
+txt_5_1_ts: 작업 스케줄러
+txt_5_1_w5: 목요일
+txt_5_1_w3: 화요일
+txt_5_1_w4: 수요일
+txt_5_1_weekly: 매주
+txt_5_1_weeks: 주
+txt_5_0_bc: 이동 경로
+txt_5_0_resetpm: 비밀번호 관리자를 재설정 하시겠습니까? PeaZip의 비밀번호 관리자에 저장된 모든 비밀번호는 손실됩니다.
+txt_5_0_enum: 디렉토리의 내용 열거
+txt_5_0_music: 음악
+txt_5_0_ps: 여기에서 PowerShell 열기
+txt_5_0_perf: 퍼포먼스
+txt_5_0_pictures: 사진
+txt_5_0_removeall: 모두 제거
+txt_5_0_resetbookmarks: 북마크를 기본값으로 재설정하시겠습니까? (북마크는 북마크 > 구성으로 사용자 정의할 수 있습니다)
+txt_5_0_sh: 세션 기록
+txt_5_0_skip: 레이아웃에서 디렉토리의 내용 열거 건너 뛰기
+txt_5_0_videos: 동영상
+txt_4_9_frame: 프레임
+txt_4_9_listth: 목록 및 썸네일
+txt_4_9_shadow: 음영
+txt_4_9_style: 스타일
+txt_4_8_attach25: 25 MB (첨부 파일 제한)
+txt_4_8_crop: 자르기
+txt_4_8_detailsno: 세부정보
+txt_4_8_details: 세부정보 및 썸네일
+txt_4_8_fit: 맞추기
+txt_4_8_fitl: 최대 크기에 맞추기
+txt_4_8_flip: 뒤집기
+txt_4_8_fullscreen: 전체화면
+txt_4_8_fun: 기능
+txt_4_8_h: 높이
+txt_4_8_keeparchive: 아카이브 유지
+txt_4_8_noresize: 원본 크기 유지
+txt_4_8_iconl: 큰 이미지
+txt_4_8_iconm: 아이콘 및 이미지
+txt_4_8_imagemanager: 이미지 관리자
+txt_4_8_immersive: 몰입형
+txt_4_8_listno: 최소 목록
+txt_4_8_aspect: 종횡비 유지
+txt_4_8_mirror: 대칭 복사
+txt_4_8_presets: 프리셋
+txt_4_8_replace: 원본 이미지를 바꾸시겠습니까? "아니오"는 새 파일에 변환을 적용합니다.
+txt_4_8_resize: 크기 조정
+txt_4_8_rl: 왼쪽으로 회전
+txt_4_8_rr: 오른쪽으로 회전
+txt_4_8_stop: 중지
+txt_4_8_t: 변환
+txt_4_8_w: 너비
+txt_4_7_pk: 임의 비밀번호 / 키 파일 생성
+txt_4_7_spchar: 문자를 문자와 숫자로 제한
+txt_4_7_recycleask: 선택한 파일을 휴지통으로 이동 하시겠습니까?
+txt_4_7_recycle: 휴지통으로 이동
+txt_4_7_pcomp: 잠재적 압축
+txt_4_6_am: 아카이브 관리자
+txt_4_6_fm: 파일 관리자
+txt_4_6_users: 사용자
+txt_4_5_goupdate: 새 버전을 사용할 수 있습니다. PeaZip의 공식 웹사이트를 열어 업데이트를 다운로드하시겠습니까?
+txt_4_5_b: 맨 아래
+txt_4_5_koupdate: 업데이트를 확인할 수 없음, 업데이트 서버에 연결되지 않음
+txt_4_5_update: 업데이트 확인
 txt_4_5_dock: Dock
-txt_4_5_l: Left
-txt_4_5_noupdate: PeaZip is up to date
-txt_4_5_properties: Properties
-txt_4_5_r: Right
-txt_4_5_pj: Saved job definition scripts
-txt_4_5_shaddress: Show address bar
-txt_4_5_shnav: Show navigation bar
-txt_4_5_shstatus: Show status bar
-txt_4_5_shtool: Show tool bar
-txt_4_5_upxpj: Sorry, cannot export job definition since this action or option requires performing multiple distinct commands
-txt_4_5_t: Top
-txt_4_4_confremoveall: Remove all PeaZip customization files (Applications, Bookmarks, Password manager)?
-txt_4_4_confremove: Remove PeaZip configuration?
-txt_4_3_pwmanhint: Double click to edit items in password list, rightclick for options, Ctrl+C to copy passwords
-txt_4_3_exppl: Export password list
-txt_4_3_expple: Encrypted (backup Password manager)
-txt_4_3_keeppw: Keep password/keyfile for current session
-txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the password manager. Password/keyfile can be changed at any time from this form.
-txt_4_3_pwmanmaster: Set/change master password
-txt_4_3_pwmanlist: Password list
-txt_4_3_pwman: Password manager
-txt_4_3_pwmancorr: Password manager seems tampered or corrupted. Keep Password manager anyway and try to recover current password list, if you trust it? (No will reset password manager, recommended)
-txt_4_3_expplp: Plain text (all uses)
-txt_4_3_recsrc: Recursive search by default
-txt_4_3_resetpm: Reset Password manager? All saved passwords will be deleted
-txt_4_3_breadcrumb: Show address as breadcrumb
-txt_4_2_arcabspath: Use absolute paths
-txt_4_1_duplicateshint: "size"/"checksum" string is reported in CRC column for all duplicate candidates found in current directory or search filter
-txt_4_1_adminhint: (HINT: alternatively, you can request UAC elevation to work in protected paths, Alt+F10 or Options > Run as administrator)
-txt_4_1_selected: (selected)
-txt_4_1_duplicatesfound: duplicates found
-txt_4_1_duplicatesfind: Find duplicates
-txt_4_1_runasadmin: Run as administrator
-txt_4_1_simplesearch: Simple search
-txt_4_0_thim: Show picture thumbnails
-txt_3_8_type_description_wim: WIM: Microsoft's disk image format
-txt_3_8_type_description_xz: XZ: powerful file compression based on LZMA2
-txt_3_7_donations: Donations
-txt_3_7_nameasparent: Name archive as selected item's parent folder, if multiple items are added
-txt_3_7_tracker: PeaZip tracker: bugs, feature requests
-txt_3_7_sort: Sort by
-txt_3_7_swapbars: Swap Tool bar / Address bar
-txt_3_7_themedbars: Themed bars
-txt_3_6_ignoredd: Always ignore paths for drag and drop extraction
-txt_3_6_close: Close
-txt_3_6_resetapps: Do you want to reset Applications (customizable group of programs and scripts to open files with, overriding file associations)?
-txt_3_6_ethemes: Existing Themes
-txt_3_5_td: Download Themes
-txt_3_5_managecustomthemes: Manage Themes
+txt_4_5_l: 왼쪽
+txt_4_5_noupdate: PeaZip이 최신 상태입니다.
+txt_4_5_properties: 속성
+txt_4_5_r: 오른쪽
+txt_4_5_pj: 저장된 작업 정의 스크립트
+txt_4_5_shaddress: 주소 표시줄 표시
+txt_4_5_shnav: 탐색 모음 표시
+txt_4_5_shstatus: 상태 표시줄 표시
+txt_4_5_shtool: 도구 모음 표시
+txt_4_5_upxpj: 죄송합니다. 이 작업 또는 옵션을 사용하려면 여러 별개의 명령을 수행해야 하므로 작업 정의를 내보낼 수 없습니다.
+txt_4_5_t: 위쪽
+txt_4_4_confremoveall: 모든 PeaZip 사용자 지정 파일(응용 프로그램, 북마크, 비밀번호 관리자)을 제거하시겠습니까?
+txt_4_4_confremove: PeaZip 구성을 제거하시겠습니까?
+txt_4_3_pwmanhint: 비밀번호 목록의 항목을 편집하려면 더블클릭, 옵션을 보려면 오른쪽 클릭, 비밀번호 복사는 Ctrl+C
+txt_4_3_exppl: 비밀번호 목록 내보내기
+txt_4_3_expple: 암호화 됨(비밀번호 관리자 백업)
+txt_4_3_keeppw: 현재 세션에 대한 비밀번호/키 파일 유지
+txt_4_3_pwmanpwhint: 비밀번호 목록을 암호화하기 위해 비밀번호/키 파일(선택 사항)을 설정하는 것이 좋으며, 이러한 방식으로 비밀번호 관리자에 액세스하려면 인증이 필요합니다. 비밀번호/키 파일은 이 양식에서 언제든지 변경할 수 있습니다.
+txt_4_3_pwmanmaster: 마스터 비밀번호 설정/변경
+txt_4_3_pwmanlist: 비밀번호 목록
+txt_4_3_pwman: 비밀번호 관리자
+txt_4_3_pwmancorr: 비밀번호 관리자가 변조되었거나 손상된 것 같습니다. 신뢰할 수 있다면 강제로 비밀번호 관리자를 유지하고 현재 비밀번호 목록을 복원하려고 합니까? (아니요, 비밀번호 관리자를 재설정합니다. 추천)
+txt_4_3_expplp: 일반 텍스트(모든 용도)
+txt_4_3_recsrc: 기본적으로 재귀 검색
+txt_4_3_resetpm: 비밀번호 관리자를 재설정하시겠습니까? 저장된 모든 비밀번호가 삭제됩니다
+txt_4_3_breadcrumb: 주소를 이동 경로로 표시
+txt_4_2_arcabspath: 절대 경로 사용
+txt_4_1_duplicateshint: "크기"/"체크섬" 문자열은 현재 디렉토리 또는 검색 필터에서 발견된 모든 중복 후보에 대해 CRC 열에 보고됩니다.
+txt_4_1_adminhint: (힌트: 보호된 경로에서 작동하도록 사용자 권한을 상승시킬 수 있습니다. Alt + F10을 누르거나 옵션 > 관리자 권한으로 실행을 클릭할 수 있습니다)
+txt_4_1_selected: (선택됨)
+txt_4_1_duplicatesfound: 중복 발견됨
+txt_4_1_duplicatesfind: 중복 찾기
+txt_4_1_runasadmin: 관리자 권한으로 실행
+txt_4_1_simplesearch: 단순 검색
+txt_4_0_thim: 사진 썸네일 표시
+txt_3_8_type_description_wim: WIM: Microsoft의 디스크 이미지 형식
+txt_3_8_type_description_xz: XZ: LZMA2를 기반으로 한 강력한 파일 압축
+txt_3_7_donations: 기부
+txt_3_7_nameasparent: 아카이브파일을 선택한 항목의 상위 폴더로 지정(여러 항목이 추가된 경우)
+txt_3_7_tracker: PeaZip 추적기 : 버그, 기능 요청
+txt_3_7_sort: 정렬 기준
+txt_3_7_swapbars: 도구 모음/주소 표시줄 위치 바꾸기
+txt_3_7_themedbars: 테마 바
+txt_3_6_ignoredd: 끌어서 놓기 추출을 위해 항상 경로 무시
+txt_3_6_close: 닫기
+txt_3_6_resetapps: 응용 프로그램(파일 연결을 재정의하여 파일을 열 수 있는 사용자 지정 가능한 프로그램 및 스크립트 그룹)을 재설정하시겠습니까?
+txt_3_6_ethemes: 기존 테마
+txt_3_5_td: 테마 다운로드
+txt_3_5_managecustomthemes: 테마 관리
 txt_3_4_nopaths: 경로 없음
-txt_3_4_smallicons: Icons
-txt_3_3_skipunits: (Windows) Get volume information for network units, slower startup
-txt_3_3_stralt: Alternative command, when no parameter is passed
-txt_3_3_apps: Applications
-txt_3_3_multi: Multiple selection
-txt_3_3_runexp: Open a program, file, folder or website
-txt_3_3_apppath: Open PeaZip's folder
-txt_3_3_run: Run
-txt_3_2_7zutf8nonascii: 7z / p7zip -mcu use UTF8 for file names containing non-ASCII symbols inside .zip files
-txt_3_2_alltasks: All tasks
-txt_3_2_conf: Configuration
-txt_3_2_donations: Donate to charitable organizations
-txt_3_1_sccenc: 7z / p7zip -scc character encoding
-txt_3_1_downloads: Downloads
-txt_3_1_lib: Libraries
-txt_3_1_more: More
-txt_3_1_openasarchive: Open as archive
-txt_3_1_sendto: Open user’s SendTo menu folder
-txt_3_1_pathexc: Path exceeding maximum allowed size
-txt_3_1_recent: Recent
-txt_3_1_plsmartmin: Run minimized, show/keep open only if needed
-txt_3_1_src: Searches
-txt_3_1_systmp: System temp
-txt_3_1_languagetools: Translate
-txt_3_1_workingdir: Working directory
-txt_3_0_nonreadableorpw: Archive seems non readable or password protected
-txt_3_0_readablepw: Archive seems password protected
-txt_3_0_configure: Configure file associations, context menu and SendTo menu
-txt_3_0_resettmp: Reset peazip-tmp
-txt_2_9_address: Address bar
-txt_2_9_adv: Advanced filters are applied when managing any file supported through 7z or FreeArc backends, see documentation, and overrides basic filters (that are used for search functions and are displayed in Bookmarks and History panels)
-txt_2_9_columns: Columns
-txt_2_9_copyhere: Copy here
-txt_2_9_noscan: Don't scan files being added to layout
-txt_2_9_extconsole: Extraction console is available only while browsing archives
-txt_2_9_thl: Highlight buttons
-txt_2_9_home: Home
-txt_2_9_lt: Large
-txt_2_9_mt: Medium
-txt_2_9_movehere: Move here
-txt_2_9_nav: Navigation
-txt_2_9_navbar: Navigation bar
-txt_2_9_none: None
-txt_2_9_organize: Organize
-txt_2_9_public: Public
-txt_2_9_rec: Recursive: search in subdirectories, may take some time
-txt_2_9_selected: Selected
-txt_2_9_setapps: Set preferred applications
-txt_2_9_showmenu: Show menu bar
-txt_2_9_st: Small
-txt_2_9_test_pw2G: Test for encryption <2GB archives
-txt_2_9_vst: Text only
-txt_2_9_toolbar: Toolbar
-txt_2_9_tree: Tree
-txt_2_9_views: Views
-txt_2_8_experimental: (experimental)
-txt_2_8_zcopy: (Windows) Copy files in restartable mode, slower
-txt_2_8_addvol: Adding entire volume(s) to archive may take long time, continue anyway?
-txt_2_8_uniterror: Cannot access the unit
-txt_2_8_cannotconvert: Cannot convert selected archives
-txt_2_8_convertbegin: Continue with compression stage to finalize the conversion?
-txt_2_8_convert: Convert
-txt_2_8_convertexisting: Convert existing archives
-txt_2_8_convertdelete: Delete files and folders created temporarily for conversion?
-txt_2_8_details: Details
-txt_2_8_parallel: Execute jobs in parallel when possible
-txt_2_8_convertnote: In any case original archives were not modified, to let the user in control about keeping or removing them
-txt_2_8_custom: is not directly supported by PeaZip, but in extraction stage you can set PeaZip to handle custom file types in "Advanced" tab. Proceed opening this file?
-txt_2_8_unitrecommend: It is recommended either to extract (rightclick > extract selected) or to open filesystems from computer's root (system tools > Open unit as archive)
-txt_2_8_viewasarchive: Open unit as archive
-txt_2_8_nounit: No unit selected
-txt_2_8_rowselect: Row select
-txt_2_8_statusbar: Status bar
-txt_2_8_typeunit: Type logical or physical unit name
-txt_2_8_usedefaultoutpath: Use default output path
+txt_3_4_smallicons: 아이콘
+txt_3_3_skipunits: (Windows) 네트워크 장치에 대한 볼륨 정보 가져오기, 느린 시작
+txt_3_3_stralt: 대체 명령 (매개변수가 전달되지 않은 경우)
+txt_3_3_apps: 응용 프로그램
+txt_3_3_multi: 다중 선택
+txt_3_3_runexp: 프로그램, 파일, 폴더 또는 웹사이트 열기
+txt_3_3_apppath: PeaZip폴더 열기
+txt_3_3_run: 실행
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu는 .zip 파일 내에 ASCII가 아닌 기호가 포함 된 파일 이름에 UTF8을 사용합니다.
+txt_3_2_alltasks: 모든 작업
+txt_3_2_conf: 설정
+txt_3_2_donations: 자선 단체에 기부
+txt_3_1_sccenc: 7z / p7zip -scc 문자 인코딩
+txt_3_1_downloads: 다운로드
+txt_3_1_lib: 라이브러리
+txt_3_1_more: 더보기
+txt_3_1_openasarchive: 아카이브파일 열기
+txt_3_1_sendto: 사용자의 보내기 메뉴 폴더 열기
+txt_3_1_pathexc: 최대 허용 크기를 초과하는 경로
+txt_3_1_recent: 최근
+txt_3_1_plsmartmin: 최소화 실행, 필요한 경우에만 표시/열림 유지
+txt_3_1_src: 검색
+txt_3_1_systmp: 시스템 temp
+txt_3_1_languagetools: 번역
+txt_3_1_workingdir: 작업 디렉토리:
+txt_3_0_nonreadableorpw: 아카이브가 읽을 수 없거나 비밀번호로 보호된 것 같습니다.
+txt_3_0_readablepw: 아카이브가 비밀번호로 보호된 것 같습니다.
+txt_3_0_configure: 파일 연결 및 시스템 메뉴 통합
+txt_3_0_resettmp: peazip-tmp 초기화
+txt_2_9_address: 주소 표시줄
+txt_2_9_adv: 고급 필터는 7z 또는 FreeArc 백엔드를 통해 지원되는 모든 파일을 관리할 때 적용되며 설명서를 참조하고 기본 필터를 재정의합니다(검색 기능에 사용되며 북마크 및 기록 패널에 표시됨)
+txt_2_9_columns: 칼럼
+txt_2_9_copyhere: 여기에 복사
+txt_2_9_noscan: 레이아웃에 추가되는 파일을 검사하지 않음
+txt_2_9_extconsole: 추출 콘솔은 아카이브를 탐색하는 동안에만 사용할 수 있습니다.
+txt_2_9_thl: 강조표시 버튼
+txt_2_9_home: 홈
+txt_2_9_lt: 크게
+txt_2_9_mt: 보통
+txt_2_9_movehere: 여기로 이동
+txt_2_9_nav: 탐색
+txt_2_9_navbar: 탐색 바
+txt_2_9_none: 없음
+txt_2_9_organize: 구성
+txt_2_9_public: 공용
+txt_2_9_rec: Recursive: 하위 디렉토리에서 검색, 시간이 걸릴 수 있음
+txt_2_9_selected: 선택
+txt_2_9_setapps: 기본 응용 프로그램 설정
+txt_2_9_showmenu: 메뉴 표시줄 표시
+txt_2_9_st: 작게
+txt_2_9_test_pw2G: <2GB 아카이브파일 암호화 테스트
+txt_2_9_vst: 텍스트만
+txt_2_9_toolbar: 도구 모음
+txt_2_9_tree: 트리
+txt_2_9_views: 보기
+txt_2_8_experimental: (실험적)
+txt_2_8_zcopy: (Windows) 재시작 가능 모드에서 파일 복사, 더 느림
+txt_2_8_addvol: 아카이브에 전체 볼륨을 추가하는 데 시간이 오래 걸릴 수 있습니다. 계속하시겠습니까?
+txt_2_8_uniterror: 장치에 액세스할 수 없습니다.
+txt_2_8_cannotconvert: 선택한 아카이브를 변환할 수 없습니다.
+txt_2_8_convertbegin: 변환을 완료하기 위해 압축 단계를 계속하시겠습니까?
+txt_2_8_convert: 변환
+txt_2_8_convertexisting: 기존 아카이브 변환
+txt_2_8_convertdelete: 변환을 위해 임시로 생성된 파일 및 폴더를 삭제하시겠습니까?
+txt_2_8_details: 세부 정보
+txt_2_8_parallel: 가능한 경우 병렬로 작업 실행
+txt_2_8_convertnote: 어떤 경우에도 원본 아카이브는 수정되지 않았으므로 사용자가 보관 또는 제거를 제어 할 수 있습니다.
+txt_2_8_custom: PeaZip에서 직접 지원하지는 않지만 추출 단계에서 "고급"탭에서 사용자 정의 파일 형식을 처리하도록 PeaZip을 설정할 수 있습니다. 이 파일을 계속 열시겠습니까?
+txt_2_8_unitrecommend: 아카이브에서 추출하거나(오른쪽 클릭 > 선택 항목 추출) 또는 컴퓨터 루트에서 파일 시스템 열기(시스템 도구 > 단위로 아카이브 열기)를 권장합니다.
+txt_2_8_viewasarchive: 장치를 아카이브로 열기
+txt_2_8_nounit: 선택된 장치 없음
+txt_2_8_rowselect: 행 선택
+txt_2_8_statusbar: 상태 표시줄
+txt_2_8_typeunit: 논리적 또는 물리적 장치 이름을 입력하십시오.
+txt_2_8_usedefaultoutpath: 기본 출력 경로 사용
 txt_2_7_experimental: (테스트용, 도움말 참고)
-txt_2_7_optional: (임의)
-txt_2_7_list_tryflatorpw: , 가능한 방법: 전체항목 보기 (F6), 암호 지정 (F9), 복사본 저장
-txt_2_7_separate: 각 항목별로 개별 압축파일 만들기
-txt_2_7_pwsupported: 암호 압축
+txt_2_7_optional: (선택 사항)
+txt_2_7_list_tryflatorpw: , 가능한 방법: 전체항목 보기 (F6), 비밀번호 지정 (F9), 복사본 저장
+txt_2_7_separate: 개별 아카이브에 추가
+txt_2_7_pwsupported: 비밀번호 아카이브
 txt_2_7_cancel: 취소
 txt_2_7_encfn: 파일명도 암호화 (지원하는 포맷에 한해)
-txt_2_7_setpw: 암호 / 키파일 입력
-txt_2_7_ext: 압축풀기:
-txt_2_7_extfrom: 압축파일로부터 풀기:
-txt_2_7_es: 지원하는 비-압축파일 형식 풀기, i.e. 실행 파일, MS오피스, OOo 파일
-txt_2_7_eu: 지원하지 않는 파일 형식 풀기, 사용자 지정 프로그램에 지정
-txt_2_7_clipboard: 클립보드 콘솔
-txt_2_7_goarclayout: 압축
-txt_2_7_goextlayout: 압축 풀기
+txt_2_7_setpw: 비밀번호 / 키 파일 입력
+txt_2_7_ext: 추출:
+txt_2_7_extfrom: 아카이브에서 추출:
+txt_2_7_es: 지원하는 비-아카이브 형식 추출, i.e. 실행 파일, MS오피스, OOo 파일
+txt_2_7_eu: 지원하지 않는 파일 형식 추출, 사용자 지정 프로그램에 지정
+txt_2_7_clipboard: 클립보드
+txt_2_7_goarclayout: 아카이브 레이아웃으로 이동
+txt_2_7_goextlayout: 추출 레이아웃으로 이동
 txt_2_7_ok: 확인
-txt_2_7_drag_archive: 새 압축파일로 열겠습니까? (현재 압축파일에 추가하려면 "No" 선택)
+txt_2_7_drag_archive: 새로운 아카이브로 여시겠습니까? (현재 아카이브에 추가하려면 "아니오" 선택)
 txt_2_7_oop: 작업완료 후 폴더 열기
 txt_2_7_validatefn: 작업 중지, 잘못된 파일명 발견:
 txt_2_7_validatecl: 작업 중지, 잠재적으로 위험한 명령을 감지했습니다 (i.e. 프로그램 간의 명령어 연계는 사용할 수 없습니다):
-txt_2_7_output: 대상
-txt_2_7_pwnotset: 암호 미지정
-txt_2_7_pwarcset: 암호 지정
-txt_2_7_pwextset: 암호가 설정되었습니다, 암호화된 압축파일의 풀기/목록 보기/테스트가 가능합니다
-txt_2_7_archivehint: 파일을 추가하거나 다른 기능을 보려면 마우스 우측 버튼을 누르세요, 파일을 끌어다 놓아도 추가됩니다
-txt_2_7_exthint: 압축 풀 파일을 추가하거나 다른 기능을 보려면 마우스 우측 버튼을 누르세요, 혹은 압축 풀 파일을 여기로 끌어다 놓아도 됩니다
+txt_2_7_output: 출력
+txt_2_7_pwnotset: 비밀번호 미지정
+txt_2_7_pwarcset: 비밀번호 지정
+txt_2_7_pwextset: 비밀번호가 설정되었습니다, 암호화된 아카이브의 추출/목록 보기/테스트가 가능합니다.
+txt_2_7_archivehint: 여기에 파일과 폴더를 드래그하여 아카이브하거나 더 많은 옵션을 보려면 마우스 오른쪽 버튼을 클릭하십시오.
+txt_2_7_exthint: 여기에 아카이브를 드래그하여 추출하거나 더 많은 옵션을 보려면 마우스 오른쪽 버튼을 클릭하십시오.
 txt_2_7_setadvf: 고급 필터 설정
 txt_2_7_selpath: 아이템 경로 선택
-txt_2_7_separateerror: 죄송합니다, "각 항목별로 개별 압축파일 만들기" 스위치를 사용함으로 인해 작업 정의된 명령행을 불러올 수 없습니다, 작업에 전혀 다른 여러개의 명령이 수행되기 때문입니다
-txt_2_7_noinput: 레이아웃이 비어 있습니다: 압축풀 파일 목록을 구성하기 위해 파일을 추가하시거나 레이아웃을 로드하세요
-txt_2_7_dirsize: 전체 크기 계산에 폴더는 체크되지 않았습니다
+txt_2_7_separateerror: 죄송합니다, "개별 아카이브에 추가" 스위치를 사용함으로 인해 작업 정의된 명령행을 불러올 수 없습니다, 작업에 전혀 다른 여러개의 명령이 수행되기 때문입니다.
+txt_2_7_noinput: 레이아웃이 비어 있습니다: 아카이브에서 추출할 파일 목록을 구성하기 위해 파일을 추가하시거나 레이아웃을 불러오기하세요.
+txt_2_7_dirsize: 전체 크기 계산에 폴더는 체크되지 않았습니다.
 txt_2_7_un7z_browse_flat: 전체항목 보기 (F6)
-txt_2_7_updating: 업데이트 중, 현재 압축파일에 추가:
+txt_2_7_updating: 업데이트 중, 현재 아카이브에 추가:
 txt_2_6_folders: (폴더)
 txt_2_6_advanced: 고급
 txt_2_6_plalways: 작업 보고서 점검을 위해 항상 열어두기
@@ -640,13 +640,13 @@ txt_2_5_basic: 기본 편집: 입력 파일명 앞의 프로그램/파라미터
 txt_2_5_cannotrun: 실행 불가
 txt_2_5_custeditors: 사용자 편집기, 재생기, 바이러스 스캐너 등... (시스템 기본 연결에 우선함)
 txt_2_5_delete: 삭제
-txt_2_5_delete_fromarchive: 압축파일에서 삭제
-txt_2_5_langflag: 압축파일 내 파일/폴더명을 UTF-8 문자로 보기; 체크하지 않으면 확장문자를 "?"로 표시
+txt_2_5_delete_fromarchive: 아카이브에서 삭제
+txt_2_5_langflag: 아카이브 내 파일/폴더명을 UTF-8 문자로 보기; 체크하지 않으면 확장문자를 "?"로 표시
 txt_2_5_encpj: 작업 정의 파일에 UTF-8 문자 인코딩 사용
 txt_2_5_execommand: 실행파일/명령어
 txt_2_5_help: 도움말
-txt_2_5_langhint: 힌트: 현재 시스템에서 압축파일의 문자셋이 제대로 변환되지 않을 경우, 확장 문자를 "?" jolly 문자로 교체하면 신택스가 개선될 수 있습니다
-txt_2_5_mini_help: 미니 설명서
+txt_2_5_langhint: 힌트: 현재 시스템에서 아카이브의 문자셋이 제대로 변환되지 않을 경우, 확장 문자를 "?" jolly 문자로 교체하면 신택스가 개선될 수 있습니다
+txt_2_5_mini_help: 현지화된 자습서
 txt_2_5_offline_help: PeaZip 도움말
 txt_2_5_tray: 트레이로 축소
 txt_2_5_remove: 제거
@@ -655,43 +655,43 @@ txt_2_5_selectapp: 프로그램 선택
 txt_2_5_strafter: 파일명 뒤의 문자열
 txt_2_5_strbefore: 파일명 앞의 문자열
 txt_2_5_encoding: 문자 인코딩
-txt_2_5_nopw: 현재의 압축형식은 암호화를 지원하지 않습니다
+txt_2_5_nopw: 현재의 아카이브형식은 암호화를 지원하지 않습니다
 txt_2_4_draghint: [탐색기 창으로 잡아 끌기]
 txt_2_4_tb: 툴바 버튼 적용 (PeaZip 재실행)
-txt_2_4_adding: 추가 중
+txt_2_4_adding: 추가
 txt_2_4_advclip: 고급: 클립보드에서 다중 항목 선택 (중복 안함), 붙여넣을 때 초기화
 txt_2_4_yanswers: 지식 검색
 txt_2_4_itemsheight: 자동으로 항목 높이 맞춤
-txt_2_4_clearclipboard: 클립보드 비우기 (Esc)
+txt_2_4_clearclipboard: 클립보드 지우기 (Esc)
 txt_2_4_wcommons: 일반
 txt_2_4_copyfrom: 복사:
 txt_2_4_deletebookmarks: 북마크 파일과 폴더 목록을 삭제하시겠습니까?
 txt_2_4_documents: 내 문서
 txt_2_4_wenc: 백과 사전
-txt_2_4_extractfrom: 풀기
+txt_2_4_extractfrom: 추출
 txt_2_4_hexp: Hex 미리보기
 txt_2_4_operation: 작업
 txt_2_4_path: 경로에 기록할 수 없습니다(없거나 읽기 전용), 기록 가능한 대상 폴더를 선택하세요
 txt_2_4_removefromclipboard: 클립보드에서 제거
-txt_2_4_stdclip: 기본: 클립보드에서 단일 항목 선택, 붙여넣을 때 잘라내기 작업 초기화
+txt_2_4_stdclip: 기본: 클립보드에서 단일 항목 선택, 붙여넣을 때 잘라내기 작업 지우기
 txt_2_4_totalmem: 총 메모리
 txt_2_4_gvideo: 비디오
-txt_2_4_wbook: 위키북
-txt_2_4_wnews: 위키뉴스
-txt_2_4_wsrc: 위키소스
-txt_2_4_wdict: 윅셔너리
-txt_2_3_pw_errorchar: : 이 문자는 현재 시스템에서 PeaZip GUI에 암호로 사용할 수 없습니다, 암호를 바꾸시거나 도구 > 설정으로 들어가 콘솔모드를 선택하세요
+txt_2_4_wbook: 위키책(Wikibooks)
+txt_2_4_wnews: 위키뉴스(Wikinews)
+txt_2_4_wsrc: 위키문헌(Wikisource)
+txt_2_4_wdict: 위키낱말사전(Wiktionary)
+txt_2_3_pw_errorchar: : 이 문자는 현재 시스템에서 PeaZip GUI에 비밀번호로 사용할 수 없습니다, 비밀번호를 바꾸시거나 도구 > 설정으로 들어가 콘솔모드를 선택하세요
 txt_2_3_envstr: 환경 변수 보기
-txt_2_3_never_pw: 암호 묻지 않기
+txt_2_3_never_pw: 비밀번호 묻지 않기
 txt_2_3_home: 사용자 폴더
-txt_2_3_on_pw: 시스템 메뉴의 압축풀기/목록 보기/테스트 동작에서
-txt_2_3_test_pw100: 100MB 이하의 압축파일에 대해 암호화 테스트
+txt_2_3_on_pw: 시스템 메뉴의 추출/목록 보기/테스트 동작에서
+txt_2_3_test_pw100: 100MB 이하의 아카이브에 대해 암호화 테스트
 txt_2_3_test_pw: 암호화 테스트 (느림)
 txt_exclude_recourse: 하위 폴더 "제외"
-txt_action_extopen: "압축 풀고 기본 프로그램으로 실행" 동작
-txt_error_passwordnotmatch: "암호"와 "암호 확인" 필드가 일치하지 않습니다, 똑바로 입력하세요
-txt_action_preview: "기본 프로그램으로 미리보기" 동작
-txt_preview_hint: "미리보기" 동작은 "압축 풀고 실행"과 같지만 임시폴더에 풀고 압축파일을 닫으면 자동으로 제거하는 차이가 있습니다.
+txt_action_extopen: "관련 응용프로그램에서 추출 및 열기" 작업
+txt_error_passwordnotmatch: "비밀번호"와 "비밀번호 확인" 필드가 일치하지 않습니다, 똑바로 입력하세요
+txt_action_preview: "기본 프로그램으로 미리보기" 작업
+txt_preview_hint: "미리보기" 작업은 "추출하고 열기"와 같지만 임시폴더에 추출하고 아카이브를 닫으면 자동으로 제거하는 차이가 있습니다.
 txt_better: (좋음)
 txt_default2: (기본)
 txt_faster: (빠름)
@@ -704,68 +704,68 @@ txt_newfolder: (새 폴더)
 txt_7z_exitcodeunknown: : 작업 중 알려지지 않은 오류 발생
 txt_list_isfolder:  [폴더]
 txt_none: <없음>
-txt_fd: 1.44 MB 플로피 디스크
+txt_fd: 1.44 MB (플로피 디스크)
 txt_7z_exitcode1: 1: 경고: 치명적이지 않은 오류; i.e. 몇몇 파일이 누락되었거나 잠김
 txt_attach10: 10 MB (첨부용)
 txt_7z_exitcode2: 2: 치명적 오류 발생
 txt_7z_exitcode255: 255: 사용자가 작업을 중지하였습니다
 txt_fat32: 4 GB (FAT32 에서의 최대크기)
-txt_dvd: 4.7 GB DVD
+txt_dvd: 4.7 GB (DVD)
 txt_attach5: 5 MB (첨부용)
-txt_cd650: 650 MB CD
+txt_cd650: 650 MB (CD)
 txt_7z_exitcode7: 7: 오류: 잘못된 명령행
-txt_cd700: 700 MB CD
-txt_type_description_7z: 7Z: 고압축률의 리치 파일 포맷
-txt_dvddl: 8.5 GB DVD DL
+txt_cd700: 700 MB (CD)
+txt_type_description_7z: 7Z: 압축률이 높은 기능이 풍부한 아카이브 형식
+txt_dvddl: 8.5 GB (DVD DL)
 txt_7z_exitcode8: 8: 오류: 작업 수행을 위한 메모리 부족
 txt_abort: 예약된 파일 복사/이동 작업을 취소하겠습니까?
 txt_about: 정보
 txt_action: 동작
 txt_action_hint: 기본 프로그램으로 열거나 미리보기 시 동작
-txt_add: 압축
-txt_add_existing_archive: 압축파일에 추가
-txt_add_archive: 압축
+txt_add: 추가
+txt_add_existing_archive: 아카이브에 추가
+txt_add_archive: 아카이브
 txt_add_files: 파일 추가
 txt_add_folder: 폴더 추가
 txt_add_path: 경로 추가
-txt_add_tolayout: 선택한 파일 및 폴더를 압축하기
-txt_add_toarchive: 압축파일에 추가
+txt_add_tolayout: 선택한 파일 및 폴더를 아카이브하기
+txt_add_toarchive: 아카이브에 추가
 txt_add_tobookmarks: 북마크에 추가
 txt_address_hint: 안내: 와일드 카드는 ? 를 글자로, * 를 문자열로 사용하며 " 와 ' 같은 구분자는 불필요
 txt_adv_filters: 고급 필터
-txt_algo: 알고리듬
+txt_algo: 알고리즘
 txt_all: 모두
 txt_all_default: 모두 (기본값)
 txt_all_type: 같은 형식의 모든 항목
 txt_all_date: 날짜 기준...
 txt_all_psize: 압축된 크기 기준...
 txt_all_attributes: 같은 속성의 모든 항목
-txt_all_size: 원래 크기 기준...
+txt_all_size: 파일 크기 기준...
 txt_error_input_upx: 는 하나의 실행파일만 압축할 수 있습니다
-txt_always_pw: 항상 암호 묻기
-txt_ignore_ext: "압축 풀기..."에서 경로 건너뛰기
-txt_ignore_disp: "보이는 항목 풀기..."에서 경로 건너뛰기
-txt_ignore_sel: "선택한 항목 풀기..."에서 경로 건너뛰기
-txt_key_hint: 키파일의 해쉬값을 암호에 추가; 압축파일은 PeaZip, 또는 같은 표준을 준수하는 다른 프로그램을 사용하거나 암호에 해쉬를 추가 입력함으로써 복호화 할 수 있습니다
-txt_timestamp: 압축파일명에 타임 스탬프 덧붙이기
+txt_always_pw: 항상 비밀번호 묻기
+txt_ignore_ext: "추출..."에서 경로 건너뛰기
+txt_ignore_disp: "보이는 항목 추출..."에서 경로 건너뛰기
+txt_ignore_sel: "선택한 항목 추출..."에서 경로 건너뛰기
+txt_key_hint: 키 파일의 해쉬값을 비밀번호에 추가; 아카이브는 PeaZip, 또는 같은 표준을 준수하는 다른 프로그램을 사용하거나 비밀번호에 해쉬를 추가 입력함으로써 복호화 할 수 있습니다
+txt_timestamp: 아카이브명에 타임 스탬프 덧붙이기
 txt_appoptions: 프로그램 옵션
-txt_type_description_arc: ARC: 테스트용 압축기, 강력하고 효율적인 리치 포맷
-txt_archive: 압축
-txt_un7z_browse_ok: 압축파일 탐색을 마쳤습니다
-txt_interface: 브라우저 인터페이스
-txt_archivecreation: 압축파일 생성
-txt_tarbefore_hint: 지정된 유형으로 압축하기 전에 TAR 포맷으로 먼저 압축합니다.
-txt_archive_hint: 파일, 폴더, 볼륨을 보관, 압축, 나누기 및 보호
+txt_type_description_arc: ARC: 강력하고 효율적이며 기능이 풍부한 실험용 아카이브
+txt_archive: 아카이브
+txt_un7z_browse_ok: 아카이브 탐색을 마쳤습니다
+txt_interface: 찾아보기 인터페이스
+txt_archivecreation: 아카이브 생성
+txt_tarbefore_hint: 지정된 유형보다 먼저 TAR 형식의 데이터를 아카이브합니다.
+txt_archive_hint: 아카이브, 압축, 분할 및 개인 파일, 폴더 및 볼륨 유지
 txt_compressionratio_hint: 압축률
-txt_archiving: 압축:
+txt_archiving: 아카이브:
 txt_cl_long: 인수들이 PeaZip 프론트엔드에서 처리할 수 있는 최대 크기를 초과한 것 같습니다, 파일을 적게 선택하세요 (i.e. 개별 파일보다는 디렉토리를 선택하세요)
 txt_overwrite_askbefore: 덮어쓰기 전에 물어보기 (콘솔 모드에서 사용)
 txt_associated: 연결된 기본 프로그램
 txt_attributes: 속성
 txt_author: 제작자
 txt_ren_existing: 기존 파일명을 자동으로 변경
-txt_ren_extracted: 푸는 파일명을 자동으로 변경
-txt_autofolder: 압축파일을 풀기 위해 새 폴더를 자동으로 생성하겠습니까?
+txt_ren_extracted: 추출하는 파일명을 자동으로 변경
+txt_autofolder: 아카이브를 추출하기 위해 새 폴더를 자동으로 생성하겠습니까?
 txt_back: 뒤로
 txt_backend: 백엔드 바이너리 사용자 인터페이스
 txt_backupexe: 실행파일 백업 (권장)
@@ -775,20 +775,20 @@ txt_blowfish: Blowfish448 (64비트 블럭)
 txt_bookmarks: 북마크
 txt_browse: 탐색
 txt_browser: 탐색
-txt_aborted_error: 압축파일 탐색 중지됨, 시간이 너무 오래 걸립니다. 검색이나 필터 기능(또는 기존 "전체항목 보기")을 이용해 선택 범위를 줄일 수 있습니다 ; 풀기/목록 보기/테스트 기능은 영향받지 않습니다.
+txt_aborted_error: 아카이브 탐색 중지됨, 시간이 너무 오래 걸립니다. 검색이나 필터 기능(또는 기존 "전체항목 보기")을 이용해 선택 범위를 줄일 수 있습니다 ; 추출/목록 보기/테스트 기능은 영향받지 않습니다.
 txt_list_browsing: 보기:
-txt_archive_root: Browsing: 압축파일 루트
+txt_archive_root: Browsing: 아카이브 루트
 txt_type_description_bzip2: BZip2: 상당히 좋은 압축률, 평균 속도
-txt_pw_empty: 입력필드가 공란입니다, 암호를 입력하던가 "암호화" 옵션의 체크를 없애세요
-txt_add_error: 항목을 추가/업데이트하거나 삭제할 수 없습니다; 탐색/풀기만 지원하거나 해당 작업을 지원하지 않는 형식이기 때문인 것 같습니다 (i.e. 멀티볼륨 혹은 솔리드), 아니면 PeaZip이 압축파일명을 제대로 처리하지 못해서일 수도 있습니다
-txt_un7z_browse_failure: 압축파일을 탐색할 수 없습니다
-txt_list_error: 압축파일의 목록을 구성할 수 없습니다, 압축파일이 손상되었거나 암호가 걸려 있는지 확인하세요.
+txt_pw_empty: 비밀번호(또는 키 파일)를 입력하십시오
+txt_add_error: 항목을 추가/업데이트하거나 삭제할 수 없습니다; 탐색/추출만 지원하거나 해당 작업을 지원하지 않는 형식이기 때문인 것 같습니다 (i.e. 멀티볼륨 혹은 솔리드), 아니면 PeaZip이 아카이브명을 제대로 처리하지 못해서일 수도 있습니다
+txt_un7z_browse_failure: 아카이브를 탐색할 수 없습니다
+txt_list_error: 아카이브의 목록을 구성할 수 없습니다, 아카이브가 손상되었거나 비밀번호가 걸려 있는지 확인하세요.
 txt_conf_cannotsave: 설정 파일을 저장할 수 없습니다, 해당 경로의 여유 공간이나 쓰기 가능한지 여부를 확인하세요
-txt_check_hint: 일반적인 데이터 무결성 검사; 해쉬 알고리듬은 악성 코드로 인한 데이터 변경 감지에도 유용합니다 (도움말 참고)
-txt_check: 검사합/해쉬 파일
-txt_check_select: 검사합/해쉬 선택
-txt_clear: 필드 초기화
-txt_clearlayout: 레이아웃 초기화
+txt_check_hint: 일반적인 데이터 무결성 검사; 해쉬 알고리즘은 악성 코드로 인한 데이터 변경 감지에도 유용합니다 (도움말 참고)
+txt_check: 체크섬/해쉬 파일
+txt_check_select: 체크섬/해쉬 선택
+txt_clear: 지우기
+txt_clearlayout: 레이아웃 지우기
 txt_pj_hint: 클릭하면 작업을 가져오고 변경 사항을 초기화하며, GUI로부터 최신의 정의를 불러옵니다
 txt_autoclose: 작업이 완료되면 PeaLauncher 닫기
 txt_cl: 명령행:
@@ -798,22 +798,22 @@ txt_compress_executable: 실행파일 압축
 txt_compress_openforwriting: 사용중인 파일도 압축
 txt_compression: 압축
 txt_compmanagement: 컴퓨터 관리
-txt_pw_confirm: 암호 확인
+txt_pw_confirm: 비밀번호 확인
 txt_console: 콘솔
 txt_console_interface: 콘솔: 네이티브 인터페이스
-txt_content: Content
+txt_content: 콘텐츠
 txt_controlpanel: 제어판
 txt_convert: 파일 시스템을 NTFS로 변경
 txt_copy: 복사
 txt_copyto: 복사하기...
-txt_create: 만들기
-txt_create_archive: 압축파일 생성
-txt_title_create: 압축파일 생성, 압축, 암호화, 나누기...
-txt_create_keyfile: 키파일 생성
+txt_create: 생성:
+txt_create_archive: 아카이브 생성
+txt_title_create: 아카이브 생성, 압축, 암호화, 분할...
+txt_create_keyfile: 키 파일 생성
 txt_create_folder: 새 폴더 생성
 txt_create_theme: 현재 설정으로 새로운 테마 만들기:
 txt_rr: 복구기록 생성
-txt_create_sfx: 자동 풀림 아카이브 생성
+txt_create_sfx: 자동 추출 아카이브 생성
 txt_cr_current: 현재 경로 및 필터 압축률
 txt_custom: 사용자 지정
 txt_type_description_custom: 사용자 지정 (고급 사용자): 실행파일명과 파라미터 입력
@@ -841,7 +841,7 @@ txt_nocompress: 압축하지 않음
 txt_delete: 선택한 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없으며 휴지통으로부터 복구할 수도 없습니다
 txt_wipe: 선택한 파일을 안전하게 삭제하시겠습니까? 이 작업은 되돌릴 수 없으며 파일의 복구는 불가능합니다.
 txt_done: 완료
-txt_edit: 선택
+txt_edit: 편집
 txt_elapsed: 경과 시간:
 txt_error_emptycl: 빈 명령행
 txt_encrypt: 암호화
@@ -858,7 +858,7 @@ txt_eqorolder: 선택된 항목과 같거나 이전
 txt_eqorsmaller: 선택된 항목과 같거나 작음
 txt_equal: 선택된 항목과 같음
 txt_erase_hint: 파일 삭제: 무작위 데이터, 마스크, 이름 바꾸기로 덮어쓴 후, 최종적으로 삭제
-txt_extraction_error: 선택 항목을 풀 수 없습니다. 암호가 걸려있다면 입력하세요
+txt_extraction_error: 선택 항목을 추출할 수 없습니다. 비밀번호가 걸려있다면 입력하세요
 txt_exclude_hint: 파일 제외, 한 줄에 하나씩; 와일드 카드는 * 와 ? 를 사용하세요; " 나 ' 같은 구분자는 불필요합니다
 txt_exclusion_recourse: 제외 필터는 하위 디렉토리에 적용됨
 txt_exclusion: 제외:
@@ -868,30 +868,30 @@ txt_confirm_overwrite: 중복 파일입니다; 덮어쓸까요? (건너뛰려면
 txt_explore_outpath: 대상 폴더 탐색
 txt_explore_path: 경로 탐색
 txt_ext: 확장자:
-txt_caption_extract: 압축 풀기
-txt_ext_nopath: 풀기 (경로 미지정)
-txt_ext_all: 모두 풀기
-txt_ext_allhere: 여기에 보이는 항목 풀기
-txt_ext_allto: 모두 풀기
-txt_extopen_custom: 압축 풀고 사용자 프로그램으로 실행
-txt_extopen_with: 압축 풀고 실행...
-txt_ext_disp_here: 여기에 보이는 항목 풀기
-txt_ext_disp: 보이는 항목 풀기
-txt_ext_disp_to: 보이는 항목 풀기...
-txt_ext_here: 여기에 풀기
-txt_ext_sel_here: 여기에 선택 항목 풀기
-txt_ext_sel: 선택 항목 풀기
-txt_ext_sel_to: 선택 항목 풀기...
-txt_extobj: 항목 풀기
-txt_newfoldermenu: 새 폴더에 압축 풀기
-txt_extto: 폴더에 압축 풀기...
+txt_caption_extract: 추출
+txt_ext_nopath: 추출 (경로 미지정)
+txt_ext_all: 모두 추출
+txt_ext_allhere: 여기에 보이는 항목 추출
+txt_ext_allto: 모두 추출
+txt_extopen_custom: 사용자 지정 응용 프로그램으로 추출 및 열기
+txt_extopen_with: 추출하고 열기...
+txt_ext_disp_here: 여기에 보이는 항목 추출
+txt_ext_disp: 보이는 항목 추출
+txt_ext_disp_to: 보이는 항목 추출...
+txt_ext_here: 여기에 추출
+txt_ext_sel_here: 여기에 선택 항목 추출
+txt_ext_sel: 선택 항목 추출
+txt_ext_sel_to: 선택 항목 추출...
+txt_extobj: 항목 추출
+txt_newfoldermenu: 새 폴더에 추출
+txt_extto: 폴더에 추출...
 txt_level_fast: 빠름
 txt_fastcompr: 빠른 압축
 txt_fastopen: 빠른 탐색 루틴, 목록 제한값을 초과하면 탐색 중지
 txt_level_fastest: 가장 빠름
 txt_favformats: 선호 포맷
 txt_file: 파일
-txt_filebrowser: 파일 브라우저 / 아카이브 브라우저
+txt_filebrowser: 파일 찾아보기 / 아카이브 찾아보기
 txt_filetools: 파일 도구
 txt_files: 파일,
 txt_nfiles: 파일
@@ -903,11 +903,11 @@ txt_list_flat: 전체항목 보기:
 txt_unit_floppy: 플로피 디스크
 txt_foldername: 폴더명
 txt_nfolders: 폴더
-txt_error_input_multi: 는 하나의 파일만 압축할 수 있습니다; "TAR 우선 압축" 스위치를 사용하여 파일을 .TAR 형식으로 먼저 압축하거나, 아니면 다른 포맷을 선택할 수도 있습니다. 힌트: 압축할 데이터를 먼저 선택한 후 압축 포맷을 선택하면: "TAR 우선 압축" 스위치가 자동으로 설정됩니다
+txt_error_input_multi: 는 하나의 파일만 아카이브할 수 있습니다; "TAR 우선 아카이브" 스위치를 사용하여 파일을 .TAR 형식으로 먼저 아카이브하거나, 아니면 다른 포맷을 선택할 수도 있습니다. 힌트: 아카이브할 데이터를 먼저 선택한 후 아카이브 포맷을 선택하면: "TAR 우선 압축" 스위치가 자동으로 설정됩니다
 txt_fwd: 앞으로
 txt_list_found: 찾기:
-txt_free: Free
-txt_free2: free
+txt_free: 공간
+txt_free2: 공간
 txt_name_full: 전체 경로
 txt_function: 동작
 txt_general: 일반
@@ -915,7 +915,7 @@ txt_multithreading: 일반 멀티쓰레딩
 txt_go_browser: 탐색창으로 가기
 txt_go_path: 경로 탐색 (PeaZip)
 txt_guicl: GUI + 콘솔
-txt_guipealauncher: GUI: PeaLauncher
+txt_guipealauncher: GUI: PeaLauncher로 표시
 txt_graphic: 테마 폴더
 txt_gridaltcolor: 리스트 교차 색상
 txt_gridrowheight: 리스트 행 높이
@@ -923,10 +923,10 @@ txt_gui: GUI
 txt_type_description_gzip: GZip: 빠른 압축
 txt_here: 여기
 txt_list_history: 히스토리
-txt_homeroot: 컴퓨터/압축파일 루트 레벨
-txt_quickbrowse_hint: 탐색이 중지되면 검색이나 필터 기능을 이용해 선택 범위를 줄일 수 있습니다; 풀기/목록 보기/테스트 기능은 영향받지 않습니다.
+txt_homeroot: 컴퓨터/아카이브 루트 레벨
+txt_quickbrowse_hint: 탐색이 중지되면 검색이나 필터 기능을 이용해 선택 범위를 줄일 수 있습니다; 추출/목록 보기/테스트 기능은 영향받지 않습니다.
 txt_backupexe_hint: 오류로 인해 정상 동작하지 않는 결과가 생길 경우, 자동 백업본으로 원본 실행 파일을 복구할 수 있습니다
-txt_attach: 메일 클라이언트에서 지원할 경우, 압축파일을 새 메일로 첨부합니다
+txt_attach: 메일 클라이언트에서 지원할 경우, 아카이브를 새 메일로 첨부합니다
 txt_images: 이미지
 txt_include_hint: 포함하는 파일, 한 줄에 하나씩; 와일드 카드는 * 와 ? 를 사용하세요; " 나 ' 같은 구분자는 불필요합니다
 txt_filters_hint: 7z 바이너리에서 포함 및 제외 필터 사용 시, 필터가 어떻게 동작하는지에 관해 7-Zip 설명서를 주의깊게 읽어보세요
@@ -937,18 +937,18 @@ txt_info: 정보
 txt_infoall: 전체 항목 정보
 txt_infodisp: 보이는 항목 정보
 txt_infosel: 선택한 항목 정보
-txt_inputinfo: 원본 정보
-txt_input_list: 원본 목록:
-txt_iop: 원본, 대상, 파라미터
-txt_ipo: 원본, 파라미터, 대상
-txt_input: 원본:
+txt_inputinfo: 입력 정보
+txt_input_list: 입력 목록:
+txt_iop: 입력, 출력, 파라미터
+txt_ipo: 입력, 파라미터, 출력
+txt_input: 입력:
 txt_integrity: 무결성 검사
 txt_chunk_size: 잘못된 사용자 사이즈, 숫자값으로 고쳐주세요
 txt_invertsel: 선택 반전
 txt_type_exe: 은(는) 윈도우즈 실행파일입니다, 실행할까요? (PeaZip 탐색기로 열어보려면 "아니오" 선택; 오직 NSIS 인스톨러, 7-Zip's sfx, .MSI 인스톨러만 이 방법으로 열어볼 수 있습니다)
 txt_return_to_archive: 이(가) 현재 열려 있습니다; 탐색하시겠습니까?
 txt_not_accessible: 에 접근할 수 없습니다
-txt_type_unsupported: 은(는) 지원하는 압축 형식이 아닙니다
+txt_type_unsupported: 은(는) 지원하는 아카이브 형식이 아닙니다
 txt_checkname_failed: 은(는) 올바른 이름이 아닙니다.
 txt_not_accessible_list: 을(를) 읽을 수 없습니다, 리스트가 올바른지 확인해 보시고 새로 고침해 보세요
 txt_theme_create_error: 테마를 생성할 수 없습니다, 쓰기 가능한 경로에 올바른 이름을 가진 폴더를 사용하세요
@@ -958,15 +958,15 @@ txt_job_definition_saved: 다음 경로에 작업 정의 파일이 저장되었�
 txt_job_success: 작업을 끝마쳤습니다!
 txt_join: 합치기
 txt_joinfiles: 파일 합치기
-txt_keyfile: 키파일
-txt_keyfile_not_found: 키파일을 읽을 수 없습니다. 다른 키파일을 선택하세요.
-txt_keyfile_notcreated: 키파일이 생성되지 않았습니다
+txt_keyfile: 키 파일
+txt_keyfile_not_found: 키 파일을 읽을 수 없습니다. 다른 키 파일을 선택하세요.
+txt_keyfile_notcreated: 키 파일이 생성되지 않았습니다
 txt_larger: 선택된 항목보다 큼
 txt_lastused: 최근 값
 txt_launch: 작업 시작
 txt_layout: 레이아웃
 txt_filelist_savedas: 레이아웃이 저장되었습니다: 
-txt_level: 압축률
+txt_level: 수준
 txt_license: 라이선스
 txt_caption_list: 목록
 txt_list_details: 목록 (자세히)
@@ -985,30 +985,30 @@ txt_maxcomp: 최대 압축 모드
 txt_level_maximum: 최대
 txt_restartrequired: 프로그램 재시작 후 적용
 txt_required_memory: MB 메모리 필요
-txt_method: 메소드
+txt_method: 방법
 txt_misc: 기타
 txt_modify: 수정
 txt_morecontrols: 컨트롤 더보기 (히스토리, 북마크, ...)
 txt_morerecent: 선택된 항목보다 최신
-txt_ent_hint: 마우스를 움직여 입력 필드에 키를 입력하고, 파일을 로드하여 시스템에서 enthropy를 수집하세요...
+txt_ent_hint: 마우스를 움직여 입력 필드에 키를 입력하고, 파일을 불러오기하여 시스템에서 enthropy를 수집하세요...
 txt_moveto: 이동...
 txt_mypc: 내 컴퓨터
 txt_list_na: n/a
 txt_name: 이름
 txt_naming: 중복파일 규칙
 txt_unit_remote: 네트워크 드라이브
-txt_newarchive: 새 압축파일
+txt_newarchive: 새 아카이브
 txt_cnewfolder: 새 폴더
 txt_news: 뉴스
 txt_no: 아니오
-txt_noinput: 압축 가능한 항목이 없습니다
+txt_noinput: 접근 가능한 입력이 수신되지 않았습니다
 txt_nocompress_hint: 무압축 (더 빠름)
-txt_split_noinput: 쪼갤 파일을 선택하세요
-txt_open_noinput: 압축파일을 선택하세요 (멀티 볼륨일 경우, 첫번째를 선택)
+txt_split_noinput: 분할할 파일을 선택하세요
+txt_open_noinput: 아카이브를 선택하세요 (멀티 볼륨일 경우, 첫번째를 선택)
 txt_list_nomatch: 일치하지 않음
 txt_singlethread: 멀티쓰레딩 안함
 txt_none2: 없음
-txt_nonsolid: 비 솔리드 압축
+txt_nonsolid: 비 솔리드
 txt_level_normal: 보통
 txt_copy_error: 정상적으로 복사/이동되지 않음, 오류 코드:
 txt_description: 주석/설명
@@ -1016,55 +1016,55 @@ txt_compare_second: 비교할 파일 선택
 txt_peaobj: 오브젝트 컨트롤
 txt_displayed_obj: 항목
 txt_olderthan: 선택된 항목보다 이전
-txt_on: on
-txt_ondblclick: 더블클릭 시 행동:
+txt_on: 위치
+txt_ondblclick: 더블클릭 시 동작:
 txt_opacity: 투명도
 txt_open: 열기
-txt_openarchive: 압축파일 열기
-txt_title_open: 압축파일 열기, 복호화, 합치기...
+txt_openarchive: 아카이브 열기
+txt_title_open: 아카이브 열기, 복호화, 합치기...
 txt_open_bookmark: 북마크 열기
-txt_cphere: 현재 위치의 명령행 열기
+txt_cphere: 여기에서 명령 프롬프트 열기
 txt_open_file: 파일 열기
 txt_open_files: 파일 열기
-txt_open_path: 폴더 찾아보기
-txt_opensource: 오픈소스 포터블 압축
+txt_open_path: 폴더로 찾아보기
+txt_opensource: 오픈소스 포터블 아카이브
 txt_openwith: 다른 프로그램으로 열기...
 txt_aborted: 작업이 취소됨
 txt_unit_cd: 광학 드라이브
 txt_options: 옵션
 txt_other: 기타
 txt_otherparams: 기타 파라미터 (자유롭게 편집)
-txt_oip: 대상, 원본, 파라미터
-txt_opi: 대상, 파라미터, 원본
-txt_output: 대상:
+txt_oip: 출력, 입력, 파라미터
+txt_opi: 출력, 파라미터, 입력
+txt_output: 출력:
 txt_overwrite: 덮어쓰기
 txt_compressed_size: 압축된 크기
 txt_paqver: PAQ 버전
 txt_type_description_paq: PAQ: 느리지만 매우 강력한 압축기
-txt_pio: 파라미터, 원본, 대상
-txt_poi: 파라미터, 대상, 원본
+txt_pio: 파라미터, 입력, 출력
+txt_poi: 파라미터, 출력, 입력
 txt_parameters: 파라미터:
-txt_error_partial: 현재 압축 형식에서는 부분 압축 풀기를 이행할 수 없습니다
+txt_error_partial: 현재 아카이브 형식에서는 부분 추출을 이행할 수 없습니다
 txt_passes: 시도
-txt_pw: 암호
-txt_pwlength: 암호 글자수 (4..64)
-txt_un7z_browse_pw: 암호가 필요합니다
-txt_un7z_browse_pw_other: 암호가 틀립니다
+txt_pw: 비밀번호
+txt_pwlength: 비밀번호 글자수 (4..64)
+txt_un7z_browse_pw: 비밀번호가 필요합니다
+txt_un7z_browse_pw_other: 비밀번호가 틀립니다
 txt_paste: 붙여넣기
-txt_path: 경로:
+txt_path: 위치 경로:
 txt_pea_appcolor: Pea 프로그램 색상
 txt_pea_textcolor: Pea 글자 색상
-txt_type_description_pea: PEA: 보안 위주의 고속 압축 포맷
+txt_type_description_pea: PEA: 보안 위주의 고속 아카이브 포맷
 txt_peazip_new: PeaZip (새 인스턴스)
 txt_peazip_help: PeaZip 도움말 (온라인)
 txt_peazip_web: PeaZip 프로젝트 웹사이트
-txt_performall: 지원하는 모든 알고리듬 수행
+txt_performall: 지원하는 모든 알고리즘 수행
 txt_name_provide: 새 이름 (\ / : * ? ' " < > | 문자는 사용 불가)
 txt_upxorstrip: 바이너리 스트립 혹은 UPX를 선택하세요
 txt_not_removable_file: PeaZip에서 파일을 삭제하려면 사용중인 파일을 닫으셔야 합니다:
 txt_not_removable: PeaZip에서 폴더를 삭제하려면 사용중인 파일을 닫으셔야 합니다:
 txt_custom_executable_missing: 사용자 실행파일명을 설정하세요
-txt_type_unsupported_select: 지원되는 압축 유형을 선택하세요:
+txt_type_unsupported_select: 지원되는 아카이브 유형을 선택하세요:
 txt_no_theme_name: 테마 이름을 지정하세요
 txt_please_wait: 기다리세요
 txt_copy_wait: 예약된 같은 종류의 작업이 끝날때까지 현재 예약된 파일 복사/이동 작업을 기다리세요
@@ -1076,7 +1076,7 @@ txt_quit: 종료
 txt_unit_ram: 램 디스크
 txt_read: 읽기:
 txt_recentarchives: 최근 기록
-txt_rr_hint: 복구기록이 있으면 압축파일의 데이터 오류를 정정할 수 있습니다
+txt_rr_hint: 복구기록이 있으면 아카이브의 데이터 오류를 정정할 수 있습니다
 txt_search_refine: 검색필터 정의, ? 와 * 와일드카드 사용
 txt_fefreshf5: 새로 고침 (F5)
 txt_release: release:
@@ -1085,18 +1085,18 @@ txt_remove_bookmark: 북마크 제거
 txt_remove_external_unit: 하드웨어 안전하게 제거
 txt_removeselected: 선택한 항목 제거
 txt_rename: 이름 바꾸기
-txt_caption_repair: 고치기
+txt_caption_repair: 복구
 txt_restartrequired2: 프로그램 재시작 후 적용
-txt_reset: 필드 초기화
-txt_reset_archivename: 압축파일명 초기화
+txt_reset: [초기화]
+txt_reset_archivename: 아카이브명 초기화
 txt_hardreset: 북마크 초기화
 txt_reset_theme: 내장 테마로 초기화
 txt_restore_att: 원래 속성으로 되돌림
-txt_run_as: 다른 계정으로 실행 (암호 설정이 안된 계정으로는 전환 불가)
+txt_run_as: 다른 계정으로 실행 (비밀번호 설정이 안된 계정으로는 전환 불가)
 txt_run_as2: 다른 사용자 계정으로 실행
 txt_sample: 샘플: 
 txt_saveas: 새로 저장
-txt_savehistory: 히스토리에 최근 사용한 압축파일 저장
+txt_savehistory: 히스토리에 최근 사용한 아카이브 저장
 txt_save_infolder: 저장 폴더 (자동)
 txt_savejob: 작업 저장
 txt_savejobdefinition: 작업 정의 파일 저장
@@ -1107,7 +1107,7 @@ txt_search: 찾기 (하위 폴더 포함, 시간이 좀 걸림)
 txt_searchanddrag: 파일 검색
 txt_searchfor: 찾기
 txt_nrsearch: 현재 위치에서 찾기 (하위 폴더 제외)
-txt_search_hint: 압축파일의 서브디렉토리에서 필터에 부합하는 항목 찾기
+txt_search_hint: 아카이브의 서브디렉토리에서 필터에 부합하는 항목 찾기
 txt_search_web: 웹에서 찾기
 txt_list_searching: 찾는 중...
 txt_securedelete: 안전 삭제
@@ -1116,14 +1116,14 @@ txt_selectall: 모두 선택
 txt_selectdir: 디렉토리 선택
 txt_selected_obj: 선택됨
 txt_selected_objects: 선택된 항목
-txt_sfx: 자동 압축 풀림
+txt_sfx: 자동 추출 아카이브
 txt_sendbymail: 메일로 전송 (지원될 경우)
 txt_set_defaults: 프로그램 기본 파라미터 설정
 txt_settings: 설정
 txt_sfx_interface: sfx 인터페이스
 txt_showhints: 힌트 보기
 txt_show_messages: 정보 메시지 보기
-txt_showpw: 암호 보이기
+txt_showpw: 비밀번호 보이기
 txt_singlevol: 단일 볼륨
 txt_size: 크기
 txt_sizeb: 크기(Byte)
@@ -1138,36 +1138,36 @@ txt_listtest: 죄송합니다, 이 포맷에 대한 목록 보기/테스트 기�
 txt_sortbysel: 선택 항목 정렬
 txt_list_sorting: 정렬...
 txt_speed: 속도
-txt_split: 나누기
-txt_type_description_split: 무결성 검사 옵션으로 파일 나누기
-txt_split_file: 파일 나누기
+txt_split: 분할
+txt_type_description_split: 무결성 검사 옵션으로 파일 분할
+txt_split_file: 파일 분할
 txt_list_nostats: 통계를 낼 수 없음
 txt_status: 상태
 txt_level_store: 저장
 txt_stream_control: 스트림 제어
 txt_strip: Strip before UPX (권장)
-txt_keyfile_created: 키파일이 생성되었습니다:
-txt_suggestpw: 암호 넣기
+txt_keyfile_created: 키 파일이 생성되었습니다:
+txt_suggestpw: 비밀번호 넣기
 txt_noupx: 부호 제거됨, UPX 압축이 생략되었습니다
 txt_syntax: 신택스:
 txt_sysbenchmark: 시스템 벤치마크
 txt_benchmark: 시스템 벤치마크는 몇 분의 시간이 소요되며 사용 가능한 모든 CPU 및 메모리 자원을 사용합니다. 벤치마크 도중에는 시스템이 응답하지 않을 수 있습니다; 수행할까요?
 txt_systools: 시스템 도구
-txt_tarbefore: TAR 우선 압축
-txt_type_description_tar: TAR: UNIX 시스템의 주류 압축 포맷
+txt_tarbefore: TAR 우선 아카이브
+txt_type_description_tar: TAR: UNIX 시스템의 주류 아카이브 포맷
 txt_taskman: 작업 관리자
 txt_caption_test: 테스트
 txt_testall: 모두 테스트
 txt_testdisp: 보이는 항목 테스트
-txt_testpw: 암호 / 키파일 테스트
+txt_testpw: 비밀번호 / 키 파일 테스트
 txt_testsel: 선택한 항목 테스트
 txt_col_hint: 아이콘 색상 및 다른 GUI 요소들과 잘 통합되도록 색상을 선택해야 합니다
 txt_bookmarks_hint: "컨트롤 더보기"와 "히스토리/북마크 토글" 아이콘을 클릭하면, 파일 탐색 인터페이스에서 편집 가능한 전체 북마크를 사용할 수 있습니다
-txt_archive_noinput_tolist: 레이아웃이 비어 있습니다: 압축파일 구성을 위해 파일, 폴더를 추가하시거나 레이아웃을 로드하세요
+txt_archive_noinput_tolist: 레이아웃이 비어 있습니다: 아카이브 구성을 위해 파일, 폴더를 추가하시거나 레이아웃을 불러오기하세요
 txt_theme: 테마
 txt_icons_found: 테마를 성공적으로 불러왔습니다.
 txt_themename: 테마 이름
-txt_icons_not_found: 테마가 제대로 로드되지 않았습니다. 기본 테마나 잘 작동하는 테마로 바꾸세요.
+txt_icons_not_found: 테마가 제대로 불러오기되지 않았습니다. 기본 테마나 잘 작동하는 테마로 바꾸세요.
 txt_theme_create_success: 테마가 생성됨
 txt_theming: 테마
 txt_extand_error: 이 기능은 한번에 하나의 항목에 대해서만 수행됩니다
@@ -1180,92 +1180,92 @@ txt_toolbarscolor: 툴바 색상
 txt_tools: 도구
 txt_best: 최적 설정 적용 (느림)
 txt_type: 유형
-txt_level_ultra: 울트라
+txt_level_ultra: 최강
 txt_error_openfile: 지정된 파일을 열 수 없습니다
 txt_cl_hint: UNACE와 UPX는 항상 콘솔 모드에서 실행; 목록 보기, 테스트, 벤치마크 작업은 항상 GUI 모드에서 실행
-txt_ace_missing: UNACE 플러그인이 없습니다; ACE 압축파일을 처리하기 위해 PeaZip's 웹사이트로부터 플러그인을 내려받을 수 있습니다 (UNACE가 클로즈드소스이기 때문에, 플러그인은 기본 패키지에 포함되지 않습니다)
+txt_ace_missing: UNACE 플러그인이 없습니다; ACE 아카이브을 처리하기 위해 PeaZip's 웹사이트로부터 플러그인을 내려받을 수 있습니다 (UNACE가 클로즈드소스이기 때문에, 플러그인은 기본 패키지에 포함되지 않습니다)
 txt_units: 장치
 txt_unit_unknown: 알려지지 않은 드라이브 유형
 txt_un7z_pw_untested: 테스트되지 않음
 txt_up: 상위
-txt_update: 압축파일 업데이트
+txt_update: 아카이브 업데이트
 txt_type_description_upx: UPX: 실행파일 전용 압축기
 txt_advfilters: 고급 사용자 필터
-txt_openfiles_hint: 이 옵션은 다른 프로그램에 의해 사용중인 파일도 압축에 포함시킵니다 (백업 시 유용)
+txt_openfiles_hint: 이 옵션은 다른 프로그램에 의해 사용중인 파일도 아카이브에 포함시킵니다 (백업 시 유용)
 txt_usenet: 유즈넷
 txt_user_name: 계정; '사용자@도메인' 혹은 '도메인\사용자' 형식을 사용하세요.
 txt_using: Using:
 txt_volumepea: 볼륨 컨트롤
 txt_volume_size: 볼륨 사이즈
-txt_type_ext_uns: 의 압축이 잘 풀렸습니다
+txt_type_ext_uns: 이 성공적으로 추출되었습니다
 txt_websearch: 웹 검색
 txt_websites: 웹사이트
-txt_word: 단어
-txt_write: 압축:
+txt_word: 문자
+txt_write: 쓰기:
 txt_ramdompw_hint: 여기에서 무작위 생성된 비밀 번호를 복사할 수 있습니다
 txt_exe_hint: 사용자 지정에서는 실행파일명과 파라미터를 자유롭게 입력하고 신택스 구조를 설정할 수 있습니다. "콘솔" 탭에서도 수동으로 명령어 신택스를 변경할 수 있음을 참고하세요.
 txt_pj_hint2: 사용자는 아래에 있는 GUI 프론트엔드의 메모 필드에 작업 정의 파일을 불러올 수 있습니다. 그리고 나서 GUI 프론트엔드에 정의된 작업을 변경하거나 잃어버리는 일 없이 편집/실행/저장할 수 있습니다.
-txt_type_description_zip: ZIP: 빠른 압축/보관 형식, 윈도우즈 시스템의 주류 압축 포맷
-txt_zipcrypto_hint: ZipCrypto (legacy)
+txt_type_description_zip: ZIP: 빠른 아카이브/압축 형식, 윈도우즈 시스템의 주류 형식
+txt_zipcrypto_hint: ZipCrypto (기존방식)
 
 === end PeaZip text group ===
 
 === PeaLauncher text group ===
 
-txt_6_9_remaining: remaining
-txt_6_5_abort: Abort
-txt_6_5_error: Error
-txt_6_5_no: No
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
-txt_5_6_update: Check for updates
-txt_5_6_cml: System context menu language
-txt_5_6_donations: Donations
-txt_5_6_localization: Localization
-txt_5_6_runasadmin: Run as administrator
-txt_5_6_help: Online support
-txt_5_5_cancelall: Cancel all
-txt_5_3_details: Details
-txt_5_3_files: files
-txt_5_3_folders: folders
-txt_5_3_info: Info
-txt_5_3_list: List
-txt_5_3_os: Original size
-txt_5_3_ps: Packed size
-txt_5_3_test: Test
-txt_5_0_extract: Extract
-txt_5_0_from: from
-txt_5_0_in: in
-txt_5_0_to: to
-txt_4_5_search: search
-txt_4_0_drag: Drag here the archive to extract, or 
-txt_4_0_dragorselect: Drag here or select file
-txt_4_0_select: select file
-txt_3_6_selectdir: Select directory
-txt_3_5_close: Close
-txt_3_0_details: For more details please see "Report" tab for the full task's log, and "Console" tab for task definition as command line.
-txt_3_0_hints: Hints about the error
-txt_3_0_arc: Possible causes of the error may be non readable input files (locked, not accessible, corrupted, missing volumes in multipart archive...), or full or not accessible output path.
-txt_3_0_ext: The archive may require a different password for the current operation.
+txt_6_9_remaining: 잔여
+txt_6_5_abort: 취소
+txt_6_5_error: 오류
+txt_6_5_no: 아니오
+txt_6_5_warning: 경고
+txt_6_5_yes: 예
+txt_6_5_yesall: 모두 예
+txt_5_6_update: 업데이트 확인
+txt_5_6_cml: System 컨텍스트 메뉴 언어
+txt_5_6_donations: 후원
+txt_5_6_localization: 현지화
+txt_5_6_runasadmin: 관리자 권한으로 시작
+txt_5_6_help: Online 지원
+txt_5_5_cancelall: 모두 취소
+txt_5_3_details: 자세히
+txt_5_3_files: 파일
+txt_5_3_folders: 폴더
+txt_5_3_info: 정보
+txt_5_3_list: 리스트
+txt_5_3_os: 원본 크기
+txt_5_3_ps: 팩키지 크기
+txt_5_3_test: 테스트
+txt_5_0_extract: 추출
+txt_5_0_from: 발신처
+txt_5_0_in: 위치:
+txt_5_0_to: 대상처
+txt_4_5_search: 검색
+txt_4_0_drag: 추출할 아카이브를 여기에 드래그하거나 
+txt_4_0_dragorselect: 여기에 드래그 또는 파일 선택
+txt_4_0_select: 파일 선택
+txt_3_6_selectdir: 디렉토리 선택
+txt_3_5_close: 닫기
+txt_3_0_details: 세부 정보: 보고서에는 작업 로그가 포함되고 콘솔에는 작업 정의가 명령줄로 포함됩니다.
+txt_3_0_hints: 오류에 대한 힌트
+txt_3_0_arc: 일부 입력 파일을 읽을 수 없습니다. (잠겨 있거나, 액세스할 수 없거나, 손상된 멀티파트 아카이브 볼륨이 누락되었을 수 있습니다.)
+txt_3_0_ext: 아카이브에 현재 작업에 대해 다른 비밀번호가 필요할 수 있습니다.
 txt_2_8_oop: 작업완료 후 폴더 열기
 txt_2_7_validatefn: 작업 중지, 잘못된 파일명 발견:
 txt_2_7_validatecl: 작업 중지, 잠재적으로 위험한 명령을 감지했습니다 (i.e. 프로그램 간의 명령어 연계는 사용할 수 없습니다):
-txt_2_6_open: 압축파일 열기
-txt_2_5_ace_missing: UNACE 플러그인이 없습니다; ACE 압축파일을 처리하기 위해 PeaZip's 웹사이트로부터 플러그인을 내려받을 수 있습니다 (UNACE가 클로즈드소스이기 때문에, 플러그인은 기본 패키지에 포함되지 않습니다)
-txt_2_3_pw_errorchar_gwrap: : 이 문자는 현재 시스템에서 PeaZip GUI에 암호로 사용할 수 없습니다, 암호를 바꾸시거나 도구 > 설정으로 들어가 콘솔모드를 선택하세요
+txt_2_6_open: 아카이브 열기
+txt_2_5_ace_missing: UNACE 플러그인이 없습니다; ACE 아카이브를 처리하기 위해 PeaZip's 웹사이트로부터 플러그인을 내려받을 수 있습니다 (UNACE가 클로즈드소스이기 때문에, 플러그인은 기본 패키지에 포함되지 않습니다)
+txt_2_3_pw_errorchar_gwrap: : 이 문자는 현재 시스템에서 PeaZip GUI에 비밀번호로 사용할 수 없습니다, 비밀번호를 바꾸시거나 도구 > 설정으로 들어가 콘솔모드를 선택하세요
 txt_2_3_renameexisting: 기존 파일명을 자동으로 변경
-txt_2_3_renameextracted: 푸는 파일명을 자동으로 변경
+txt_2_3_renameextracted: 추출하는 파일명을 자동으로 변경
 txt_2_3_cancel: 취소
 txt_2_3_encryption: 암호화
-txt_2_3_extinnew: 새 폴더에 압축 풀기
-txt_2_3_keyfile: 키파일
-txt_2_3_kf_not_found_gwrap: 키파일을 읽을 수 없습니다. 다른 키파일을 선택하세요.
+txt_2_3_extinnew: 새 폴더에 추출
+txt_2_3_keyfile: 키 파일
+txt_2_3_kf_not_found_gwrap: 키 파일을 읽을 수 없습니다. 다른 키 파일을 선택하세요.
 txt_2_3_moreoptions: 옵션 더보기...
 txt_2_3_nopaths: 경로 없음
 txt_2_3_options: 옵션
 txt_2_3_overexisting: 덮어쓰기
-txt_2_3_pw: 암호
+txt_2_3_pw: 비밀번호
 txt_2_3_skipexisting: 중복파일 건너뛰기
 txt_job_unknown: : 알려지지 않은 오류 발생
 txt_stdjob: [작업이 완료되면 애니메이션이 꺼집니다]
@@ -1282,18 +1282,18 @@ txt_autoclose: 작업 완료 후 이 창을 닫음
 txt_crscale: 압축률 (낮음, 좋음):
 txt_console: 콘솔
 txt_benchscale: Core 2 Duo 6600 등급과 동급의 MHz 속도.
-txt_create: 만들기
+txt_create: 생성
 txt_done: 완료:
 txt_nocl: 빈 명령행
 txt_error: 오류:
 txt_explore: 탐색
-txt_extto: 풀기
+txt_extto: 추출
 txt_halt: 작업 완료 후 시스템 종료
 txt_halted: 중단:
 txt_hardware: 하드웨어
 txt_high: 우선 순위 높음
 txt_idle: 우선 순위 낮음
-txt_input: 원본:
+txt_input: 입력:
 txt_jpaused: 작업이 일시 중지됨
 txt_jresumed: 작업이 재개됨
 txt_job_started: 작업이 시작됨
@@ -1301,10 +1301,10 @@ txt_jobstatus: 작업 상황:
 txt_jstopped: 사용자가 작업을 중단
 txt_jobstopped: 사용자가 작업을 중단함; "탐색" 버튼으로 작업된 일부분을 살펴보시거나 작업 로그를 읽어보세요
 txt_job_success: 작업을 끝마쳤음
-txt_lt: 압축파일 목록 보기/테스트/정정
+txt_lt: 아카이브 목록 보기/테스트/정정
 txt_normal: 우선 순위 보통
 txt_ok: 확인
-txt_output: 대상:
+txt_output: 출력:
 txt_pause: 일시 정지
 txt_paused: 일시 정지됨,
 txt_p_high: 우선 순위가 높음으로 설정됨
@@ -1319,7 +1319,7 @@ txt_priority: 클릭: 작업 우선 순위 설정
 txt_running: 실행,
 txt_isrunning: 실행 중...
 txt_saveas: 새로 저장
-txt_savejob: 작업 정의 파일 저장 (암호가 포함됨!)
+txt_savejob: 작업 정의 저장
 txt_savelog: 작업 로그 저장
 txt_software: 소프트웨어
 txt_speedscale: 속도, 로그 스케일 (높을수록 좋음):
@@ -1333,123 +1333,92 @@ txt_time: 시간:
 
 === about text group ===
 
-EXTRACT ARCHIVE(S)
-From the system 
-- rightclick on the archive(s) and in system’s context menu click "Extract here" or "Extract here (in new folder)" to extract with no further interaction
-- otherwise use "Extract..." menu entry for having more options: output path, password, extract files to a new directory, chose to skip, rename or overwrite existing files etc.
+아카이브 추출
+시스템에서 
+- 아카이브를 마우스 오른쪽 버튼으로 클릭하고 시스템의 컨텍스트 메뉴에서 "여기에 추출" 또는 "여기에 추출(새 폴더에서)"을 클릭하여 추가 상호 작용 없이 추출합니다.
+- 그렇지 않으면 "추출..." 더 많은 옵션을 갖기위한 메뉴 항목 : 출력 경로, 비밀번호, 새 디렉토리로 파일 추출, 건너뛰기, 이름 바꾸기 또는 기존 파일 덮어쓰기 선택 등.
 
-Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
-- click on "Extract" in toolbar or in context menu to extract only selected objects trough the confirmation dialog allowing to set all options (output path, password, naming policy, extract to a new directory etc)
-- drag files and folders to the desired destination, only selected content will be extracted (for more information see chapter about drag and drop in PeaZip)
-- click the quick extraction dropdown button on the right of “Extract” in the toolbar, it allows to directly extract the entire archive to most common destinations (skipping the confirmation dialog) and to set most important options; keyboard shortcuts: Ctrl+E (or F12) extracts the entire archive, asks for output directory; Ctrl+Alt+E extracts archive in its current folder; Ctrl+Shift+E extracts to desktop; Ctrl+Alt+Shift+E extracts to documents; Ctrl+1..8 extracts to path of bookmark 1..8 (if defined)
+PeaZip에서 아카이브를 열거나(예: 더블 클릭) PeaZip의 창 또는 아이콘에서 아카이브를 드래그합니다.
+- 도구 모음 또는 컨텍스트 메뉴에서 "추출"을 클릭하여 모든 옵션 (출력 경로, 비밀번호, 명명 정책, 새 디렉토리로 추출 등)을 설정할 수 있는 확인 대화상자에서 선택한 개체만 추출합니다.
+- 파일 및 폴더를 원하는 대상으로 드래그하면 선택한 콘텐츠만 추출됩니다(자세한 내용은 PeaZip의 드래그 앤 드롭에 대한 장을 참조).
+- 도구 모음의 "추출" 오른쪽에 있는 빠른 추출 드롭다운 버튼을 클릭하면 전체 아카이브를 가장 일반적인 대상으로 직접 추출하고(확인 대화상자 건너뛰기) 가장 중요한 옵션을 설정할 수 있습니다; 키보드 단축키: Ctrl+E(또는 F12)는 전체 아카이브를 추출하고 출력 디렉토리를 요청합니다; Ctrl+Alt+E는 현재 폴더에서 아카이브를 추출합니다; Ctrl+Shift+E는 데스크탑으로 추출합니다; Ctrl+Alt+Shift+E는 문서로 추출합니다; Ctrl+1..8는 북마크 1..8의 경로로 추출(정의된 경우)
 
-Open PeaZip, select one or more archives and click “Extract” in toolbar or context menu, or use quick extraction destinations as explained at the previous point.
+PeaZip을 열고 하나 이상의 아카이브를 선택한 다음 도구 모음 또는 컨텍스트 메뉴에서 "추출"을 클릭하거나 이전 지점에서 설명한 대로 빠른 추출 대상을 사용하십시오.
 
-EXTRACT ONLY SELECTED OBJECTS FROM THE ARCHIVE
-Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
-- click "Extract" in toolbar: only selected items will be extracted
-- drag files and folders to the desired destination, only selected content will be extracted
-- rightclick and in “Extract” group of the context menu click “Extract selected” (to extract only selected items) or “Extract displayed” (to extract content of current directory or of current search filter)
+아카이브에서 선택한 개체만 추출
+PeaZip에서 아카이브를 열거나(예: 더블 클릭) PeaZip의 창 또는 아이콘에서 아카이브를 드래그합니다.
+- 툴바에서 "추출" 클릭: 선택한 항목만 추출됩니다.
+- 파일 및 폴더를 원하는 위치로 드래그하면 선택한 콘텐츠만 추출됩니다.
+- 마우스 오른쪽 버튼을 클릭하고 컨텍스트 메뉴의 "추출"그룹에서 "선택 항목 추출"(선택한 항목 만 추출) 또는 "보이는 항목 추출"(현재 디렉토리 또는 현재 검색 필터의 내용을 추출)을 클릭합니다.
 
-ENTER A PASSWORD TO BROWSE OR EXTRACT AN ARCHIVE
-Click on the padlock icon to enter a password and optionally a keyfile.
-The icon is featured both in PeaZip’s file browser’s status bar and in the archive extraction interface; once the password is set the icon will change color.
+비밀번호를 입력하여 아카이브 찾아보기 또는 추출
+자물쇠 아이콘을 클릭하여 비밀번호와 선택적으로 키 파일을 입력하십시오
+이 아이콘은 PeaZip의 파일 브라우저 상태 표시줄과 아카이브 추출 인터페이스 모두에 표시됩니다. 비밀번호가 설정되면 아이콘의 색상이 변경됩니다.
 
-CREATE ARCHIVE
-From the system
-- rightclick on objects to be archived and click on "Add to archive" in context menu or SendTo menu. It will open the archive creation confirmation dialog, more options are available in “Advanced” tab; click OK to create the archive.
-- alternatively, drag files/folders to PeaZip’s window or shortcut; the same archive creation interface will be shown.
+아카이브 생성
+시스템에서
+- 아카이브 개체를 마우스 오른쪽 버튼으로 클릭하고 컨텍스트 메뉴 또는 보내기 메뉴에서 "아카이브에 추가"를 클릭합니다. 아카이브 생성 확인 대화 상자가 열리고 "고급" 탭에서 더 많은 옵션을 사용할 수 있습니다. 확인을 클릭하여 아카이브를 만듭니다.
+- 또는 파일/폴더를 PeaZip의 창이나 바로 가기로 드래그하십시오. 동일한 아카이브 생성 인터페이스가 표시됩니다.
 
-From PeaZip 
-- select objects to be archived and click on "Add" button; the same archive creation interface will be shown.
+PeaZip에서
+- 아카이브할 개체를 선택하고 "추가" 버튼을 클릭하십시오. 동일한 아카이브 생성 인터페이스가 표시됩니다.
 
-ADD FILES/FOLDERS TO UPDATE EXISTING ARCHIVE
-Open an archive in PeaZip (i.e. with doubleclick, or drag an archive on PeaZip’s window or icon), then drag files and folders to be added in the archive (or click on "Add" button and use application's context menu to add objects to the archive).
-It will open the archive creation confirmation dialog, click OK to update the existing archive.
+파일/폴더를 추가하여 기존 아카이브 업데이트
+PeaZip에서 아카이브를 연 다음(예 : 더블 클릭하거나 PeaZip의 창 또는 아이콘에서 아카이브를 드래그) 아카이브에 추가할 파일 및 폴더를 드래그하십시오(또는 "추가"버튼을 클릭하고 응용 프로그램의 컨텍스트 메뉴를 사용하여 아카이브에 개체를 추가하십시오).
+아카이브 생성 확인 대화 상자가 열리고 확인을 클릭하여 기존 아카이브를 업데이트합니다.
 
-CREATE ARCHIVE SPLIT IN SMALLER FILES
-While creating an archive as explained in previous points, click on “Single volume” dropdown menu to select a size for output files (volumes) the archive will be split in.
-Most common types of archives supports this option.
+더 작은 파일로 분할된 아카이브 생성
+이전 항목에서 설명한 대로 아카이브를 생성하는 동안 "단일 볼륨" 드롭다운 메뉴를 클릭하여 아카이브가 분할될 출력 파일(볼륨)의 크기를 선택합니다.
+가장 일반적인 아카이브 유형은 이 옵션을 지원합니다.
 
-CREATE ENCRYPTED ARCHIVE
-Click on the padlock icon to enter a password and optionally a keyfile; the icon is featured both in PeaZip’s file browser’s status bar and in archive creation interface.
-To hide names of files and directories contained in the archive check “Encrypt also filenames”, please note that it will be applied only if the archive will be created in a format supporting this function, like 7Z and ARC.
-Note that in archive creation interface, alongside the padlock icon, there is a warning to visually inform if encryption is set and if the current archive format supports encryption.
+암호화된 아카이브 생성
+비밀번호와 선택적으로 키 파일을 입력하려면 자물쇠 아이콘을 클릭하십시오; 아이콘은 PeaZip의 파일 브라우저 상태 표시줄과 아카이브 작성 인터페이스에 모두에 표시됩니다.
+아카이브 확인 "파일 이름도 암호화"에 포함된 파일 및 디렉토리의 이름을 숨기려면 7Z 및 ARC와 같이 이 기능을 지원하는 형식으로 아카이브가 생성되는 경우에만 적용됩니다.
+아카이브 생성 인터페이스에는 자물쇠 아이콘과 함께 암호화가 설정되어 있는지, 현재 아카이브 형식이 암호화를 지원하는지 시각적으로 알려주는 경고가 있습니다.
 
-CREATE SEPARATE ARCHIVES
-Add objects to be archived (with PeaZip’s "Add" button, or from system’s context menu or SendTo menu) and before confirming with "Ok" check "Add each object to a separate archive" option.
+개별 아카이브 생성
+아카이브할 개체를 추가하고(PeaZip의 "추가" 단추를 사용하거나 시스템의 컨텍스트 메뉴 또는 보내기 메뉴에서) "확인"을 눌러 확인하기 전에 "개별 아카이브에 추가" 옵션을 선택하십시오.
 
-CONVERT ARCHIVES
-From PeaZip select archives to be converted and click on "Convert" on toolbar or context menu, non-archive files and folders can be added as well, the difference being in archives being extracted before compression stage.
-Using the “Convert existing archives” switch in conjunction with “Add each object to a separate archive" (default) it performs a mass conversion of listed archives, without that switch archive conversion is meant to consolidate input data in a single archive, improving compression efficiency because it allows recompression of the original data from its uncompressed form.
+아카이브 변환
+PeaZip에서 변환할 아카이브를 선택하고 도구 모음 또는 컨텍스트 메뉴에서 "변환"을 클릭하면 아카이브가 아닌 파일과 폴더도 추가할 수 있습니다. 차이점은 압축 단계 전에 아카이브에서 추출됩니다.
+"기존 아카이브 변환"스위치를 "개별 아카이브에 추가"(기본값)와 함께 사용하면 스위치 아카이브 변환없이 나열된 아카이브의 대량 변환을 수행하므로 입력 데이터를 단일 아카이브에 통합하여 압축 효율을 향상시킬 수 있습니다. 압축되지 않은 형식의 원본 데이터를 다시 압축할 수 있습니다.
 
-DIRECTLY CREATE ARCHIVES IN A SPECIFIED FORMAT AND WITH A CHOSEN COMPRESSION LEVEL
-Using “System integration” procedure in Options menu it is possible to enable context menu entries to directly add selected files/folders to a ZIP, 7Z or self extracting archive.
-For Zip and 7Z formats it is also possible to enable context menu entries to compress to fastest, normal or ultra level, bypassing the default compression level for the selected format.
+지정된 형식과 선택한 압축 수준으로 아카이브를 직접 생성
+옵션 메뉴에서 "시스템 통합"절차를 사용하면 컨텍스트 메뉴 항목을 활성화하여 선택한 파일/폴더를 ZIP, 7Z 또는 자체 추출 아카이브에 직접 추가 할 수 있습니다.
+Zip 및 7Z 형식의 경우 선택한 형식의 기본 압축 수준을 우회하여 컨텍스트 메뉴 항목을 가장 빠름, 일반 또는 최강 수준으로 압축 할 수도 있습니다.
 
-CONFIGURE THE APPLICATION
-Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
-Options > Settings allows to edit applications’ settings
-Options > Theme allows to change application’s icons and appearance
-Options > System integration starts a procedure to configure file associations, context menu and SendTo menu entries (on Windows)
-Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, navigation bar, etc
+비밀번호 관리자
+비밀번호 관리자는 메인 메뉴, 도구 > 비밀번호 관리자 또는 비밀번호 양식에서 비밀번호 필드 왼쪽의 드롭 다운 메뉴에서 액세스 할 수 있습니다.
+저장된 비밀번호는 비밀번호 양식으로 제출된 비밀번호 왼쪽의 드롭다운 메뉴에서 선택하거나 비밀번호 관리자에서 복사하여 다른 응용프로그램에서 사용할 수 있습니다.
+비밀번호 관리자에 대한 마스터 비밀번호가 설정되지 않은 경우 인증 프롬프트 없이 비밀번호 목록에 액세스할 수 있습니다. 그렇지 않으면 사용자가 올바르게 인증할 때까지 비밀번호가 표시되지 않습니다.
 
-F1 	help
-F2 	browse desktop / Ctrl+F2 browse user’s home / Shift+F2 browse computer’s root / Ctrl+Shift+F2 browse archive root, if browsing inside an archive (otherwise browse computer’s root)
-F3	search (recursivity option is remembered) / Ctrl+F3 start as non recursive (search here) / Shift+F3 recursive
-F4 	up one level
-F5 	refresh
-F6 	toggle browse/flat view
-F7 	browse most recently visited item (Ctrl, second, Shift, third)
-F8 	browse first item in bookmarks list (Ctrl, second, Shift, third)
-F9 	set password/keyfile / Ctrl+F9 create keyfile or random password
-F10 	menu
-F11 	set advanced filters
-F12 	extract all to...
+응용 프로그램 설정
+옵션 > 언어(및 옵션 > 설정, 첫 번째 탭)에서 응용 프로그램 언어를 설정할 수 있습니다.
+옵션 > 설정을 통해 응용 프로그램의 설정을 편집할 수 있습니다.
+옵션 > 테마를 통해 응용 프로그램의 아이콘과 모양을 변경할 수 있습니다.
+옵션 > 시스템 통합은 파일 연결, 컨텍스트 메뉴, 보내기 메뉴의 항목을 설정하는 마법사를 시작합니다(Windows의 경우).
+구성 메뉴에는 도구 모음, 주소 표시줄, 사이드 바 등과 같은 브라우저의 기능을 사용자 정의, 활성화 또는 비활성화하는 항목이 포함되어 있습니다.
 
-언어 변경
+F1 	도움말
+F2 	파일 이름 바꾸기 / Ctrl+F2 선택한 파일 복사 / Shift+F2 선택한 파일 이동
+F3	검색 (재귀성 옵션이 기억됨) / Ctrl+F3 비재귀적으로 시작 (여기에서 검색) / Shift+F3 재귀 / Alt+F3 시스템 검색
+F4 	탐색 팝업 메뉴 표시 / Ctrl+Shift+F4 컴퓨터 루트 찾아보기 / Ctrl+F4 바탕 화면 찾아보기 / Shift+F4 홈 찾아보기
+F5 	새로고침
+F6 	찾아보기/플랫 보기 전환
+F7 	북마크에 추가 / Ctrl+F7 PeaZip의 새 인스턴스에서 열기 / Shift+F7 선택한 경로에서 명령 프롬프트 열기 / Alt+F7 선택한 경로 탐색
+F8 	북마크 목록에서 첫 번째 항목 찾아보기(Ctrl, 두 번째, Shift, 세 번째)
+F9 	비밀번호/키 파일 설정 / Shift+F9 비밀번호 관리자 / Ctrl+F9 키 파일 또는 비밀번호 임의 생성 / Ctrl+Shift+F9 고급 필터 설정
+F10 	메뉴 / Ctrl+F10 다른 사용자로 실행 / Alt+F10 관리자 권한으로 실행 (Windows Vista 및 최신 시스템)
+F11 	전체 화면 모드 / Ctrl+Shift+F11 몰입형
+F12 	모두 추출...
 
-다양한 언어의 유저 인터페이스를 사용할 수 있습니다: 옵션 > 설정 > 언어
-
-
-압축 풀기
-
-시스템에서: 압축파일에 마우스 우클릭 후 "여기에 풀기"나 "여기에 풀기 (새 폴더)" 선택, 혹은 "풀기..."를 클릭하여 추가 옵션 적용 (풀 경로, 암호...)
-
-PeaZip에서 (권장): 압축파일 선택 후 "압축 풀기" 버튼 클릭, 혹은 컨텍스트 메뉴에서 "압축 풀기" or "압축 풀기 (새 폴더)" 클릭
-
-
-압축파일 내 항목 풀기
-
-압축파일을 더블클릭하여 PeaZip으로 열고, 풀고자 하는 파일과 폴더를 선택한 다음, 마우스로 드래그하거나 우클릭 후 "선택 항목 풀기" 선택
-
-
-압축파일 만들기
-
-시스템에서: 압축하고자 하는 항목에 마우스 우클릭 후 보내기 메뉴의 "Add to archive" 선택
-
-PeaZip에서 (권장): 압축하고자 하는 항목을 선택하고 "압축" 버튼 클릭
-
-
-개별 압축파일 만들기
-
-시스템에서: 압축하고자 하는 항목에 각각 마우스 우클릭 후 "Add to separate archives" 선택
-
-PeaZip에서 (권장): 압축하고자 하는 항목을 선택 후 "압축" 버튼 클릭; "확인" 누르기 전에 "각 항목별로 개별 압축파일 만들기" 옵션에 체크
-
-
-기존의 압축파일 업데이트
-
-압축파일을 더블클릭하여 PeaZip으로 열고, 파일과 폴더를 마우스로 드래그하거나 "압축" 버튼을 누른 뒤 컨텍스트 메뉴로 추가할 수 있습니다
-
-
-PEAZIP은...
+PEAZIP 정보
 
 PeaZip은 오픈소스 파일 및 압축 매니저입니다: 32/64비트 윈도우즈(9x, 2k, XP, Vista)와 리눅스(PeaZip은 데스트탑 중립적인 프로그램입니다)를 지원하는 크로스 플랫폼 소프트웨어이며, 포터블과 설치 버전으로 사용할 수 있습니다.
 
-PeaZip은 압축파일의 항목에 대해 강력한 다중 검색 필터를 지원합니다; 여러개의 압축파일을 한꺼번에 생성하고 풀 수 있습니다; 자동 풀림 압축파일을 생성할 수 있습니다; 명령행으로 작업 정의 파일을 내보낼 수 있습니다; 압축 및 풀기 레이아웃을 저장할 수 있습니다; 압축파일 및 폴더 북마크를 지원합니다; 압축파일이나 압축이 안된 파일을 사용자가 원하는 프로그램으로 스캔하고 실행하는 등의 기능을 제공합니다...
+PeaZip은 아카이브의 항목에 대해 강력한 다중 검색 필터를 지원합니다; 여러개의 아카이브를 한꺼번에 생성하고 추출할 수 있습니다; 자동 풀림 아카이브를 생성할 수 있습니다; 명령행으로 작업 정의 파일을 내보낼 수 있습니다; 아카이브 및 추출 레이아웃을 저장할 수 있습니다; 아카이브 및 폴더 북마크를 지원합니다; 아카이브나 압축이 안된 파일을 사용자가 원하는 프로그램으로 스캔하고 여는 등의 기능을 제공합니다...
 
-다른 기능: 강력한 암호화, 안전한 파일 복사, 파일을 나누기/합치기, 안전한 데이터 삭제, 비교, 검사합과 해쉬 파일, 시스템 벤치마크, 무작위 암호 및 키파일 생성.
+다른 기능: 강력한 암호화, 안전한 파일 복사, 파일을 분할/합치기, 안전한 데이터 삭제, 비교, 검사합과 해쉬 파일, 시스템 벤치마크, 무작위 암호 및 키 파일 생성.
 
 변경사항 확인 및 내려받기: https://peazip.github.io
 기능 및 지원하는 형식 목록: https://peazip.github.io/peazip-free-archiver.html
