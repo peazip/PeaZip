@@ -8,7 +8,7 @@ interface
 
 {$IFDEF WINDOWS}
 uses
-    {IF DEFINED(LCLQT5)}
+    {IF DEFINED(LCLQT5) OR DEFINED(LCLQT6)}
       uDarkStyle,
     {ENDIF}
     uDarkStyleParams,
