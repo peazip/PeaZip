@@ -81,7 +81,7 @@ This extra step is due to Lazarus architecture in which packages belongs to the 
 Windows-only:
 
 (peazip sources)/dev/dragdropfilesdll subdirectory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems
-It requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael Köcher / six (on Lazarus);  the package is available in Lazarus Online Package Manager or from https://packages.lazarus-ide.org/DragDrop.zip
+It requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael Kï¿½cher / six (on Lazarus);  the package is available in Lazarus Online Package Manager or from https://packages.lazarus-ide.org/DragDrop.zip
 
 IMPORTANT: dragdropfilesdll.dll SHA256 is checked by PeaZip for Windows on startup in procedure internaldllcheck, in order to assure the dll matches with a known whitelisted hash value to prevent DLL Hijacking attacks.
 If dragdropfilesdll.dll SHA256 hash does not match with the value hardcoded in procedure internaldllcheck, PeaZip will halt displaying an error message about the dll.
@@ -111,7 +111,7 @@ NAMING
 PeaZip project packages follows this naming convention: name-version.architecture 
 DEB packages are an exception to this rule, following Debian naming convention: name_version_architecture
 "name" states the pakage (i.e. PeaZip, PeaZip Portable, sources...)
-"version" field starts with version number x.y.z, then states target OS (LINUX, WINDOWS, WIN64); on Linux systems is then declared the target widgetset (i.e. GKT2, Qt5), and finally the release number (usually -1).
+"version" field starts with version number x.y.z, then states target OS (LINUX, WINDOWS, WIN64); on Linux systems is then declared the target widgetset (i.e. GKT2, Qt5, Qt6), and finally the release number (usually -1).
 "architecture" on Linux declare target architecture (on Debian amd64 is used in place of x86_64) and is omitted on Windows.
 
 PORTABLE PACKAGES

@@ -37,5 +37,5 @@ PeaZip is developed in FreePascal using Lazarus development environment; to comp
 
 QT VERSION
 
-Qt widgetset packages requires Qt5 (Qt 4.3 for legacy 32 bit Linux packages), and needs libQt5Pas.so.1.2.6 often referred as libQt5Pas.so.1 (libqt4intf.so and libqt4pas5 for 32 bit) or equivalent binary installed in /usr/local/lib or equivalent directory, such as /usr/lib or /usr/lib32.
+Qt widgetset packages requires Qt5 or Qt6 (Qt 4.3 for legacy 32 bit Linux packages), and needs libQt5Pas.so.1.2.6/libQt6Pas.so.6.2.7 often referred as libQt5Pas.so.1/libQt6Pas.so.6 (libqt4intf.so and libqt4pas5 for 32 bit) or equivalent binary installed in /usr/local/lib or equivalent directory, such as /usr/lib or /usr/lib32.
 You can get up to date missing libraries using distribution-specific ways, i.e. apt-get install package:architecture, or copy the file manually and run ldconfig

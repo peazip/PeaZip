@@ -58268,7 +58268,7 @@ end;
 
 procedure set_rowselect;
 begin
-{$IF DEFINED(LCLQT5) OR DEFINED(LCLQT6)}rowselect:=true;{$ENDIF}//workaround, deselecting first subitem in listview does not deselect the row in Qt5, which leads to behavior of the component which is not consistent with oter widget.sets
+{$IF DEFINED(LCLQT5) OR DEFINED(LCLQT6)}rowselect:=true;{$ENDIF}//workaround, deselecting first subitem in listview does not deselect the row in Qt5 and Qt6, which leads to behavior of the component which is not consistent with oter widget.sets
 Form_peach.ListView1.Rowselect:=rowselect;
 Form_peach.mrowselect.checked:=rowselect;
 Form_peach.pmrow.checked:=rowselect;
@@ -75294,7 +75294,7 @@ begin
    {$ELSE}
    //Linux notes about TListView
    //GTK2 changing to vsIcon workaround is needed to correctly load small and large icons
-   //Qt4 and Qt5 the workaround is disabled as with tested Lazarus/PFC versions it crashes chaging at runtime back to vsReport (which is default visual style), this bug also breaks changing visual style back to default vsReport at runtime for Qt versions
+   //Qt4, Qt5 and Qt6 the workaround is disabled as with tested Lazarus/PFC versions it crashes chaging at runtime back to vsReport (which is default visual style), this bug also breaks changing visual style back to default vsReport at runtime for Qt versions
    {$IFDEF LCLQT}
    {$ELSE}
       {$IF DEFINED(LCLQT5) OR DEFINED(LCLQT6)}
