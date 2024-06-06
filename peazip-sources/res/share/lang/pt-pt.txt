@@ -3,15 +3,15 @@ Portuguese (Portugal) - Português
 9.8
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Sérgio Marques
-Revisto em: 20240102
+Revisto em: 20240605
 
 === PeaZip text group ===
 
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
+txt_9_8_alwaysflat: Abrir ficheiros na vista plana
+txt_9_8_fnew: Extrair aqui (em nova pasta)
+txt_9_8_fsmart: Extrair aqui (nova pasta inteligente)
+txt_9_7_tarpipe: Utilizar canal 7z/p7zip
+txt_9_7_smartsorting: Ordenação inteligente de ficheiros
 txt_9_6_centered: Centrado
 txt_9_6_cside: Barra lateral compacta
 txt_9_6_loadpconfirm: Tem a certeza de que deseja carregar este perfil? Todos os dados do perfil atual serão substituídos, incluindo os scripts e palavras-passe guardadas.
@@ -144,7 +144,7 @@ txt_8_0_altcol: Alternar cor da grelha
 txt_8_0_forcebrowse: Explorar tipos de arquivos não canónicos (contentores, imagens de disco, instaladores...)
 txt_8_0_commonalgo: Algoritmos comuns
 txt_8_0_forceconvert: Converter tipos de arquivos não canónicos
-txt_8_0_defaultactionhint: Ação padrão com duplo clique em ficheiros associados a PeaZip (a partir do sistema)
+txt_8_0_defaultactionhint: Ação padrão nas operações (abrir, extração automática...)
 txt_8_0_defaultaction: Ação padrão ao iniciar
 txt_8_0_enableextand: Ativar submenu "Extrair e abrir com"
 txt_8_0_forcetyping: Impor introdução interativa de palavras-passe
@@ -548,7 +548,7 @@ txt_3_1_systmp: Temporários
 txt_3_1_languagetools: Traduzir
 txt_3_1_workingdir: Diretório de trabalho
 txt_3_0_nonreadableorpw: O arquivo não está legível. Isto pode ocorrer se o arquivo não for válido ou se o seu conteúdo estiver cifrado. Gostaria de tentar com uma palavra-passe?
-txt_3_0_readablepw: O arquivo pode estar protegido por palavra-passe
+txt_3_0_readablepw: Não foi possível ler o arquivo. Será que está protegido por palavra passe?
 txt_3_0_configure: Integração de sistemas e associação de ficheiros
 txt_3_0_resettmp: Repor ficheiros de trabalho temporários
 txt_2_9_address: Barra de endereço
