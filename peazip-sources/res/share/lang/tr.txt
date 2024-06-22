@@ -7,19 +7,19 @@ Son güncelleme: 7 Aralık 2023
 
 === PeaZip text group ===
 
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_8_alwaysflat: Arşivleri her zaman düz görünümde aç
+txt_9_8_fnew: Buraya çıkart (yeni klasörde)
+txt_9_8_fsmart: Buraya çıkart (akıllı yeni klasör)
+txt_9_7_tarpipe: 7z / p7zip pipe kullan
+txt_9_7_smartsorting: Akıllı dosya adı sırala
+txt_9_6_centered: Merkezi
+txt_9_6_cside: Kompakt kenar çubuğu
+txt_9_6_loadpconfirm: Bu profili yüklemek istiyor musunuz? Kayıtlı komut dosyaları ve Parola Yöneticisi de dahil olmak üzere mevcut profilin tüm verilerinin üzerine yazılacaktır.
+txt_9_6_loadp: Profili yükle
+txt_9_6_saveppw: OPSİYONEL: bu profili şifre / anahtar dosyası ile koru?
+txt_9_6_savepoverwrite: Mevcut profilin üzerine yazılsın mı? Kayıtlı komut dosyaları ve Parola Yöneticisi dahil olmak üzere mevcut profilin tüm verilerinin üzerine yazılacaktır.
+txt_9_6_savep: Profili kaydet
+txt_9_6_scside: Kompakt yan çubuğu göster
 txt_9_5_all: Tümü
 txt_9_5_precond: Hata tespit edilirse ön ayrıştır
 txt_9_5_largea: Büyük arşivleri önceden ayrıştır
