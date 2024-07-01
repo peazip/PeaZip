@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap8="http://schemas.microsoft.com/appx/manifest/uap/windows10/8"
+  xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+  xmlns:uap11="http://schemas.microsoft.com/appx/manifest/uap/windows10/11"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  xmlns:com2="http://schemas.microsoft.com/appx/manifest/com/windows10/2"
+  xmlns:com3="http://schemas.microsoft.com/appx/manifest/com/windows10/3"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  xmlns:desktop5="http://schemas.microsoft.com/appx/manifest/desktop/windows10/5"
+  xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+  xmlns:desktop7="http://schemas.microsoft.com/appx/manifest/desktop/windows10/7"
+  xmlns:desktop8="http://schemas.microsoft.com/appx/manifest/desktop/windows10/8"
+  xmlns:virtualization="http://schemas.microsoft.com/appx/manifest/virtualization/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap uap3 uap8 uap10 uap11 com com2 com3 desktop desktop4 desktop5 desktop6 desktop7 desktop8 virtualization rescap">
+
+  <Identity
+    Name="PeaZip"
+    Publisher="CN=PeaZip"
+    Version="9.8.0.0"
+    ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>PeaZip</DisplayName>
+    <PublisherDisplayName>Giorgio Tani</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <!--<uap10:AllowExternalContent>true</uap10:AllowExternalContent>-->
+    <uap10:PackageIntegrity>
+      <uap10:Content Enforcement="on" />
+    </uap10:PackageIntegrity>
+    <virtualization:FileSystemWriteVirtualization>
+      <virtualization:ExcludedDirectories>
+        <virtualization:ExcludedDirectory>$(KnownFolder:RoamingAppData)\PeaZip</virtualization:ExcludedDirectory>
+      </virtualization:ExcludedDirectories>
+    </virtualization:FileSystemWriteVirtualization>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19645.0" MaxVersionTested="10.0.22621.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en"/>
+    <Resource Language="be"/>
+    <Resource Language="be-Latn"/>
+    <Resource Language="bg"/>
+    <Resource Language="ca"/>
+    <Resource Language="de"/>
+    <Resource Language="cs-cz"/>
+    <Resource Language="el-gr"/>
+    <Resource Language="en-gb"/>
+    <Resource Language="es-419"/>
+    <Resource Language="es-es"/>
+    <Resource Language="eu"/>
+    <Resource Language="fi"/>
+    <Resource Language="fr"/>
+    <Resource Language="hu"/>
+    <Resource Language="id"/>
+    <Resource Language="it"/>
+    <Resource Language="ja-JP"/>
+    <Resource Language="ko"/>
+    <Resource Language="lv"/>
+    <Resource Language="nl"/>
+    <Resource Language="pl"/>
+    <Resource Language="pt-br"/>
+    <Resource Language="pt-pt"/>
+    <Resource Language="ru"/>
+    <Resource Language="sl"/>
+    <Resource Language="sv"/>
+    <Resource Language="tr"/>
+    <Resource Language="uk"/>
+    <Resource Language="zh-Hans"/>
+    <Resource Language="zh-Hant"/>
+  </Resources>
+
+  <Applications>
+    <Application
+      Id="PeaZip"
+      Executable="peazip.exe"
+      uap10:RuntimeBehavior="win32App"
+      uap10:TrustLevel="mediumIL">
+      <uap3:VisualElements
+        DisplayName="PeaZip"
+        Description="File and archive manager"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\AppList.png"
+        VisualGroup="PeaZip">
+        <uap:DefaultTile
+          Wide310x150Logo="Assets\Wide310x150Logo.png"
+          Square71x71Logo="Assets\SmallTile.png"
+          Square310x310Logo="Assets\LargeTile.png"/>
+      </uap3:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias">
+          <uap3:AppExecutionAlias>
+            <uap8:ExecutionAlias Alias="peazip.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+
+        <com2:Extension Category="windows.comServer">
+          <com2:ComServer>
+            <com3:SurrogateServer DisplayName="PeaZip Shell Extension">
+              <com:Class Id="01F6DED0-42C8-4CFA-9F2D-96998BA8BB17" Path="PeaZip.ShellEx\PeaZip.ShellEx.dll" ThreadingModel="STA"/>
+              <com:Class Id="01F6DED1-42C8-4CFA-9F2D-96998BA8BB17" Path="PeaZip.ShellEx\PeaZip.ShellEx.dll" ThreadingModel="STA"/>
+            </com3:SurrogateServer>
+          </com2:ComServer>
+        </com2:Extension>
+        <desktop4:Extension Category="windows.fileExplorerContextMenus">
+          <desktop4:FileExplorerContextMenus>
+            <desktop5:ItemType Type="*">
+              <desktop5:Verb Id="PeaZip" Clsid="01F6DED0-42C8-4CFA-9F2D-96998BA8BB17" />
+            </desktop5:ItemType>
+            <desktop5:ItemType Type="Directory">
+              <desktop5:Verb Id="PeaZip" Clsid="01F6DED0-42C8-4CFA-9F2D-96998BA8BB17" />
+            </desktop5:ItemType>
+            <desktop5:ItemType Type="Directory\Background">
+              <desktop5:Verb Id="Ext2BrowsePath" Clsid="01F6DED1-42C8-4CFA-9F2D-96998BA8BB17" />
+            </desktop5:ItemType>
+          </desktop4:FileExplorerContextMenus>
+        </desktop4:Extension>
+
+        <!--<desktop7:Extension Category="windows.shortcut">
+          <desktop7:Shortcut
+            File="[{Common Programs}]\PeaZip\Add to archive.lnk"
+            Icon="res\share\icons\peazip.png"
+            Arguments="-add2archive" />
+        </desktop7:Extension>
+        <desktop7:Extension Category="windows.shortcut">
+          <desktop7:Shortcut
+            File="[{Common Programs}]\PeaZip\Extract here (smart new folder).lnk"
+            Icon="res\share\icons\peazip_seven.icl,14"
+            Arguments="-ext2folder" />
+        </desktop7:Extension>
+        <desktop7:Extension Category="windows.shortcut">
+          <desktop7:Shortcut
+            File="[{Common Programs}]\PeaZip\Extract....lnk"
+            Icon="res\share\icons\peazip_extract.png"
+            Arguments="-ext2main" />
+        </desktop7:Extension>
+        <desktop7:Extension Category="windows.shortcut">
+          <desktop7:Shortcut
+            File="[{Common Programs}]\PeaZip\Open as archive.lnk"
+            Icon="peazip.exe"
+            Arguments="-ext2openasarchive" />
+        </desktop7:Extension>-->
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="001" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.001</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Sprit</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_block.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="7z" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-7z-compressed">.7z</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/7z</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_7z.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="ace" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-ace-compressed">.ACE</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Ace</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="arc" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-freearc">.arc</uap:FileType>
+              <uap:FileType>.wrc</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Arc</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="arj" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/arj">.arj</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Arj</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="balz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.balz</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Balz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="bcm" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.bcm</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Bcm</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="br" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-brotli">.br</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Brotli</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="bz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-bzip2">.bz</uap:FileType>
+              <uap:FileType ContentType="application/x-bzip2">.bz2</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/BZip2</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="cab" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/vnd.ms-cab-compressed">.cab</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Cab</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="cpio" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-cpio">.cpio</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Cpio</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="deb" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/vnd.debian.binary-package">.deb</uap:FileType>
+              <uap:FileType ContentType="application/vnd.debian.binary-package">.udeb</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Deb</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="dmg" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-apple-diskimage">.dmg</uap:FileType>
+              <uap:FileType ContentType="application/x-apple-diskimage">.smi</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Dmg</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="gz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/gzip">.gz</uap:FileType>
+              <uap:FileType ContentType="application/gzip">.gzip</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Gz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="hfs" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.HFS</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Hfs</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="iso" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-iso9660-image">.iso</uap:FileType>
+              <uap:FileType ContentType="application/x-iso9660-image">.img</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Iso</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_cd.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="lzh" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-lzh">.lha</uap:FileType>
+              <uap:FileType ContentType="application/x-lzh">.lzh</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Lzh</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="lpaq1" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.lpaq1</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Lpaq1</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="lpaq5" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.lpaq5</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Lpaq5</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="lpaq8" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.lpaq8</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Lpaq8</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="paq8f" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.paq8f</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Paq8f</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="paq8jd" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.paq8jd</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Paq8jd</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="paq8l" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.paq8l</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Paq8l</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="paq8o" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.paq8o</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Paq8o</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="pea" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.pea</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Pea</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="pet" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.pup</uap:FileType>
+              <uap:FileType>.pet</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Pet</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="quad" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.quad</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Quad</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="rar" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/vnd.rar">.rar</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Rar</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_rar.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="rpm" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-rpm">.rpm</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Rpm</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="slp" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.slp</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Slp</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_package.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="tar" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-tar">.tar</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Tar</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="taz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-gtar">.taZ</uap:FileType>
+              <uap:FileType ContentType="application/x-gtar">.tz</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Taz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="tbz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-gtar">.tbz</uap:FileType>
+              <uap:FileType ContentType="application/x-gtar">.tbz2</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Tbz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="tgz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-gtar">.tgz</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Tgz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="tzst" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-gtar">.tzst</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Tzst</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="udf" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.udf</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Udf</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_cd.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="xz" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-xz">.xz</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Xz</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="z" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-compress">.z</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Z</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="zip" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/zip">.zip</uap:FileType>
+              <uap:FileType ContentType="application/zip">.zipx</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Zip</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip_zip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="zpaq" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/x-zpaq">.zpaq</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Zpaq</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="zst" Parameters="&quot;%1&quot;">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/zstd">.zst</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>ms-resource:/ManifestResources/FileType/Zst</uap:DisplayName>
+            <uap:Logo>res\share\icons\peazip.png</uap:Logo>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+
+    <Application
+      Id="Pea"
+      Executable="pea.exe"
+      uap10:RuntimeBehavior="win32App"
+      uap10:TrustLevel="mediumIL">
+      <uap3:VisualElements
+        DisplayName="Pea"
+        Description="Pea"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Pea.png"
+        AppListEntry="none">
+        <uap:DefaultTile/>
+      </uap3:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias">
+          <uap3:AppExecutionAlias>
+            <uap8:ExecutionAlias Alias="pea.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="allowElevation" />
+    <rescap:Capability Name="unvirtualizedResources" />
+  </Capabilities>
+</Package>

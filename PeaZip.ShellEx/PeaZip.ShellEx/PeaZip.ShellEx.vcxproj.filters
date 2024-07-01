@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{85c78aee-3f95-4646-bd29-1d2bed1729c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util\icon">
+      <UniqueIdentifier>{9da2fc9b-78e2-4ad3-8bd1-e53d9a1168a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util\icon">
+      <UniqueIdentifier>{127b5607-1b02-4bcd-be76-5717e2dc789b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util\registory">
+      <UniqueIdentifier>{4c6c6bad-6009-426c-b0be-7e1b524d37fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings">
+      <UniqueIdentifier>{747810e8-44e5-41c8-89fd-e27a520961dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\en">
+      <UniqueIdentifier>{7028f869-644c-44dd-a568-d1a79bbd9903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\be">
+      <UniqueIdentifier>{fed37f3c-079b-4f3c-9e56-136db90bc4e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\ja-JP">
+      <UniqueIdentifier>{512fba67-5e5b-4c22-af6e-931debb1be1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\bg">
+      <UniqueIdentifier>{eec2843d-dc40-4dfe-bcdb-42e623bf8c44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\ca">
+      <UniqueIdentifier>{f01ad666-9721-409d-8b2b-879d93b868de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\cs-cz">
+      <UniqueIdentifier>{8afa6719-75a6-4454-a9dd-73d2b7746fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\de">
+      <UniqueIdentifier>{5ebe976b-c195-44fc-b637-dd79499dbd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\el-gr">
+      <UniqueIdentifier>{9cc3efd9-2dd0-419f-af84-8cb5e949b062}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\en-gb">
+      <UniqueIdentifier>{e337e9eb-6629-4585-a5e8-2f77e93334b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\es-419">
+      <UniqueIdentifier>{37526bfa-c61b-4a96-bdac-211bdb878177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\es-es">
+      <UniqueIdentifier>{c5b63a33-acc9-494b-a24f-a9599125ffe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\eu">
+      <UniqueIdentifier>{1cc8fadd-52c1-401b-9bb8-3c69dfe45c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\fi">
+      <UniqueIdentifier>{41220f05-bb43-40db-9983-ac9e064c0844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\fr">
+      <UniqueIdentifier>{6d90bfc8-e9fe-4b12-a074-10153d1c601c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\hu">
+      <UniqueIdentifier>{3a591f16-ce93-4785-9f46-c1d30cfad801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\id">
+      <UniqueIdentifier>{f24e4adc-1e97-49db-9475-1ad5210ac389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\it">
+      <UniqueIdentifier>{4796911a-dc36-49a7-8d06-c0ffcf19a3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\ko">
+      <UniqueIdentifier>{94a794eb-8330-477e-8023-cd3579b5200e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\lv">
+      <UniqueIdentifier>{751c40e4-4338-4ef2-b1be-a0a4ce3cb3ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\nl">
+      <UniqueIdentifier>{d24489eb-1b46-42a7-8137-839ecbd35207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\pl">
+      <UniqueIdentifier>{a33d6275-f01e-40a5-add8-e530af88637d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\pt-br">
+      <UniqueIdentifier>{605acb63-4bff-4a0b-9f53-dc4d1eea1d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\pt-pt">
+      <UniqueIdentifier>{35940d84-ae20-48d1-9200-7475603e2792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\ru">
+      <UniqueIdentifier>{87be926a-66d1-4d0a-bf32-01c1b8086232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\sl">
+      <UniqueIdentifier>{a06ee6ac-7650-41ed-9216-086e9baa8dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\sv">
+      <UniqueIdentifier>{1adbd444-7306-424a-a759-330d254627d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\tr">
+      <UniqueIdentifier>{c89d7c2d-ef84-4d0a-b3fc-7a18525c85f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\uk">
+      <UniqueIdentifier>{587d140e-8244-4c33-9f80-b0fd9249147d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\zh-Hans">
+      <UniqueIdentifier>{cdc28747-8a9b-4191-a891-7b36d8bfb2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\zh-Hant">
+      <UniqueIdentifier>{4dd6050a-8a72-431b-80b6-14e0e313b722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Strings\be-Latn">
+      <UniqueIdentifier>{58c80aa1-18ba-48b3-ad56-105b5d7e0c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Command">
+      <UniqueIdentifier>{2daf6199-036b-4c43-a27d-d27f2e6c98be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Command">
+      <UniqueIdentifier>{98b8bb7d-9119-49b4-a1f9-0eea9b41c5a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplorerCommandBase.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="AnalyzeCommand.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="BrowsePathCommand.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplorerCommandRoot.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util.icon.ixx">
+      <Filter>Source Files\util\icon</Filter>
+    </ClCompile>
+    <ClCompile Include="util.icon.cpp">
+      <Filter>Source Files\util\icon</Filter>
+    </ClCompile>
+    <ClCompile Include="util.registry.cpp">
+      <Filter>Source Files\util\registory</Filter>
+    </ClCompile>
+    <ClCompile Include="util.registry.ixx">
+      <Filter>Source Files\util\registory</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplorerCommandBase.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="AnalyzeCommand.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="BrowsePathCommand.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplorerCommandRoot.cpp">
+      <Filter>Source Files\Command</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en\Resources.resw">
+      <Filter>Resource Files\Strings\en</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\be\Resources.resw">
+      <Filter>Resource Files\Strings\be</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\be\Resources.resw">
+      <Filter>Resource Files\Strings\be</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\bg\Resources.resw">
+      <Filter>Resource Files\Strings\bg</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\ca\Resources.resw">
+      <Filter>Resource Files\Strings\ca</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\cs-cz\Resources.resw">
+      <Filter>Resource Files\Strings\cs-cz</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\de\Resources.resw">
+      <Filter>Resource Files\Strings\de</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\el-gr\Resources.resw">
+      <Filter>Resource Files\Strings\el-gr</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\en-gb\Resources.resw">
+      <Filter>Resource Files\Strings\en-gb</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\es-419\Resources.resw">
+      <Filter>Resource Files\Strings\es-419</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\es-es\Resources.resw">
+      <Filter>Resource Files\Strings\es-es</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\eu\Resources.resw">
+      <Filter>Resource Files\Strings\eu</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\fi\Resources.resw">
+      <Filter>Resource Files\Strings\fi</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\fr\Resources.resw">
+      <Filter>Resource Files\Strings\fr</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\hu\Resources.resw">
+      <Filter>Resource Files\Strings\hu</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\id\Resources.resw">
+      <Filter>Resource Files\Strings\id</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\it\Resources.resw">
+      <Filter>Resource Files\Strings\it</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\ja-JP\Resources.resw">
+      <Filter>Resource Files\Strings\ja-JP</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\ko\Resources.resw">
+      <Filter>Resource Files\Strings\ko</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\lv\Resources.resw">
+      <Filter>Resource Files\Strings\lv</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\nl\Resources.resw">
+      <Filter>Resource Files\Strings\nl</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\pl\Resources.resw">
+      <Filter>Resource Files\Strings\pl</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\pt-br\Resources.resw">
+      <Filter>Resource Files\Strings\pt-br</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\pt-pt\Resources.resw">
+      <Filter>Resource Files\Strings\pt-pt</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\ru\Resources.resw">
+      <Filter>Resource Files\Strings\ru</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\sl\Resources.resw">
+      <Filter>Resource Files\Strings\sl</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\sv\Resources.resw">
+      <Filter>Resource Files\Strings\sv</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\tr\Resources.resw">
+      <Filter>Resource Files\Strings\tr</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\uk\Resources.resw">
+      <Filter>Resource Files\Strings\uk</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\zh-Hans\Resources.resw">
+      <Filter>Resource Files\Strings\zh-Hans</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\zh-Hant\Resources.resw">
+      <Filter>Resource Files\Strings\zh-Hant</Filter>
+    </PRIResource>
+    <PRIResource Include="Strings\be-Latn\Resources.resw">
+      <Filter>Resource Files\Strings\be-Latn</Filter>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Source.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+  </ItemGroup>
+</Project>

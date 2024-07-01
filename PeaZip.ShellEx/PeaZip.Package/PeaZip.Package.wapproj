@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <!--<ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>-->
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <WapProjPath Condition="'$(WapProjPath)'==''">$(MSBuildExtensionsPath)\Microsoft\DesktopBridge\</WapProjPath>
+    <DebuggerType>NativeOnly</DebuggerType>
+    <BackgroundTaskDebugEngines>NativeOnly</BackgroundTaskDebugEngines>
+  </PropertyGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
+  <PropertyGroup>
+    <ProjectGuid>9355ca9b-1b1d-4b55-9476-a1b475b81150</ProjectGuid>
+    <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <DefaultLanguage>en</DefaultLanguage>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <EntryPointExe>peazip.exe</EntryPointExe>
+    <EntryPointProjectUniqueName>..\PeaZip.ShellEx\PeaZip.ShellEx.vcxproj</EntryPointProjectUniqueName>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppList.targetsize-16.png" />
+    <Content Include="Assets\AppList.targetsize-16_altform-lightunplated.png" />
+    <Content Include="Assets\AppList.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\AppList.targetsize-24.png" />
+    <Content Include="Assets\AppList.targetsize-24_altform-lightunplated.png" />
+    <Content Include="Assets\AppList.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\AppList.targetsize-32.png" />
+    <Content Include="Assets\AppList.targetsize-32_altform-lightunplated.png" />
+    <Content Include="Assets\AppList.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\AppList.targetsize-48.png" />
+    <Content Include="Assets\AppList.targetsize-48_altform-lightunplated.png" />
+    <Content Include="Assets\AppList.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\AppList.targetsize-256.png" />
+    <Content Include="Assets\AppList.targetsize-256_altform-lightunplated.png" />
+    <Content Include="Assets\AppList.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\AppList.scale-100.png" />
+    <Content Include="Assets\AppList.scale-200.png" />
+    <Content Include="Assets\AppList.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\Pea.scale-100.png" />
+    <Content Include="Assets\Pea.targetsize-16.png" />
+    <Content Include="Assets\Pea.targetsize-16_altform-lightunplated.png" />
+    <Content Include="Assets\Pea.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\Pea.targetsize-24.png" />
+    <Content Include="Assets\Pea.targetsize-24_altform-lightunplated.png" />
+    <Content Include="Assets\Pea.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Pea.targetsize-256.png" />
+    <Content Include="Assets\Pea.targetsize-256_altform-lightunplated.png" />
+    <Content Include="Assets\Pea.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Pea.targetsize-32.png" />
+    <Content Include="Assets\Pea.targetsize-32_altform-lightunplated.png" />
+    <Content Include="Assets\Pea.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\Pea.targetsize-48.png" />
+    <Content Include="Assets\Pea.targetsize-48_altform-lightunplated.png" />
+    <Content Include="Assets\Pea.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PeaZip.Package_TemporaryKey.pfx" />
+    <PRIResource Include="Strings\en\ManifestResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\input\**\*" Exclude="..\input\res\portable;..\input\res\share\lang-wincontext\*;..\input\res\share\batch\**">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PeaZip.ShellEx\PeaZip.ShellEx.vcxproj">
+      <Project>{d76ce929-8988-40fd-8c54-6a05d5aa6989}</Project>
+    </ProjectReference>
+    <None Include="..\$(Platform)\$(Configuration)\PeaZip.ShellEx.pri">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240607001">
+      <IncludeAssets>build</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1">
+      <IncludeAssets>build</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+</Project>

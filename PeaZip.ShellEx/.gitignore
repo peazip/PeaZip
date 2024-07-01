@@ -1,0 +1,8 @@
+# Visual Studio cache/options directory
+.vs/
+# Build results
+artifacts/
+**/x64/
+input/**
+# The packages folder can be ignored because of Package Restore
+packages/
