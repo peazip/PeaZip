@@ -1,0 +1,119 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\PeaZip.Package.wapproj": {}
+  },
+  "projects": {
+    "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\PeaZip.Package.wapproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\PeaZip.Package.wapproj",
+        "projectName": "PeaZip.Package",
+        "projectPath": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\PeaZip.Package.wapproj",
+        "packagesPath": "D:\\Users\\ycco3\\.nuget\\packages",
+        "outputPath": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ycco3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net451"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.19041": {
+            "targetAlias": "net451",
+            "projectReferences": {
+              "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.ShellEx\\PeaZip.ShellEx.vcxproj": {
+                "projectPath": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.ShellEx\\PeaZip.ShellEx.vcxproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "uap10.0.19041": {
+          "targetAlias": "net451",
+          "dependencies": {
+            "Microsoft.Windows.SDK.BuildTools": {
+              "include": "Build",
+              "target": "Package",
+              "version": "[10.0.26100.1, )"
+            },
+            "Microsoft.WindowsAppSDK": {
+              "include": "Build",
+              "target": "Package",
+              "version": "[1.5.240607001, )"
+            }
+          },
+          "imports": [
+            "netcoreapp3.1",
+            "netcoreapp3.0",
+            "netcoreapp2.0",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481",
+            "net8.0-windows10.0.22621",
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.ShellEx\\PeaZip.ShellEx.vcxproj": {
+      "restore": {
+        "projectUniqueName": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.ShellEx\\PeaZip.ShellEx.vcxproj",
+        "projectName": "PeaZip.ShellEx",
+        "projectPath": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.ShellEx\\PeaZip.ShellEx.vcxproj",
+        "frameworks": {
+          "native": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "native": {}
+      }
+    }
+  }
+}

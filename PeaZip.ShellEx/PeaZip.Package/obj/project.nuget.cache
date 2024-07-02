@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oqziiZxLVg8=",
+  "success": true,
+  "projectFilePath": "D:\\source\\repos\\PeaZip\\PeaZip.ShellEx\\PeaZip.Package\\PeaZip.Package.wapproj",
+  "expectedPackageFiles": [
+    "D:\\Users\\ycco3\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.26100.1\\microsoft.windows.sdk.buildtools.10.0.26100.1.nupkg.sha512",
+    "D:\\Users\\ycco3\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240607001\\microsoft.windowsappsdk.1.5.240607001.nupkg.sha512"
+  ],
+  "logs": []
+}

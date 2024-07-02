@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.props" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.props')" />
+  <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.props')" />
+  <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <PropertyGroup Label="Globals">
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
+    <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
+    <MinimalCoreWin>true</MinimalCoreWin>
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{d76ce929-8988-40fd-8c54-6a05d5aa6989}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>PeaZip.ShellEx</ProjectName>
+    <RootNamespace>PeaZip.ShellEx</RootNamespace>
+    <DefaultLanguage>en</DefaultLanguage>
+    <AppContainerApplication>false</AppContainerApplication>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.19041.0</WindowsTargetPlatformMinVersion>
+    <_VC_Target_Library_Platform>Desktop</_VC_Target_Library_Platform>
+    <DesktopCompatible>true</DesktopCompatible>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>PEAZIPSHELLEX_EXPORTS;_WINDOWS;_USRDLL;_WINRT_DLL;WINRT_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>%(AdditionalOptions) /permissive- /bigobj</AdditionalOptions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+      <BuildStlModules>true</BuildStlModules>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalUsingDirectories>$(WindowsSDK_WindowsMetadata);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='x64'">
+    <ClCompile>
+      <GuardEHContMetadata>true</GuardEHContMetadata>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AnalyzeCommand.h" />
+    <ClInclude Include="BrowsePathCommand.h" />
+    <ClInclude Include="Commands.h" />
+    <ClInclude Include="ExplorerCommandBase.h" />
+    <ClInclude Include="ExplorerCommandRoot.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnalyzeCommand.cpp" />
+    <ClCompile Include="BrowsePathCommand.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="ExplorerCommandBase.cpp" />
+    <ClCompile Include="ExplorerCommandRoot.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(UsePrecompiledHeaders)' != 'false'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="util.icon.cpp" />
+    <ClCompile Include="util.icon.ixx" />
+    <ClCompile Include="util.registry.cpp" />
+    <ClCompile Include="util.registry.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Source.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\be\Resources.resw" />
+    <PRIResource Include="Strings\be-Latn\Resources.resw" />
+    <PRIResource Include="Strings\bg\Resources.resw" />
+    <PRIResource Include="Strings\ca\Resources.resw" />
+    <PRIResource Include="Strings\cs-cz\Resources.resw" />
+    <PRIResource Include="Strings\de\Resources.resw" />
+    <PRIResource Include="Strings\el-gr\Resources.resw" />
+    <PRIResource Include="Strings\en\Resources.resw" />
+    <PRIResource Include="Strings\en-gb\Resources.resw" />
+    <PRIResource Include="Strings\es-419\Resources.resw" />
+    <PRIResource Include="Strings\es-es\Resources.resw" />
+    <PRIResource Include="Strings\eu\Resources.resw" />
+    <PRIResource Include="Strings\fi\Resources.resw" />
+    <PRIResource Include="Strings\fr\Resources.resw" />
+    <PRIResource Include="Strings\hu\Resources.resw" />
+    <PRIResource Include="Strings\id\Resources.resw" />
+    <PRIResource Include="Strings\it\Resources.resw" />
+    <PRIResource Include="Strings\ja-JP\Resources.resw" />
+    <PRIResource Include="Strings\ko\Resources.resw" />
+    <PRIResource Include="Strings\lv\Resources.resw" />
+    <PRIResource Include="Strings\nl\Resources.resw" />
+    <PRIResource Include="Strings\pl\Resources.resw" />
+    <PRIResource Include="Strings\pt-br\Resources.resw" />
+    <PRIResource Include="Strings\pt-pt\Resources.resw" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+    <PRIResource Include="Strings\sl\Resources.resw" />
+    <PRIResource Include="Strings\sv\Resources.resw" />
+    <PRIResource Include="Strings\tr\Resources.resw" />
+    <PRIResource Include="Strings\uk\Resources.resw" />
+    <PRIResource Include="Strings\zh-Hans\Resources.resw" />
+    <PRIResource Include="Strings\zh-Hant\Resources.resw" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets')" />
+    <Import Project="..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.targets" Condition="Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.targets" Condition="Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.targets')" />
+    <Import Project="..\packages\Microsoft.Windows.ImplementationLibrary.1.0.240122.1\build\native\Microsoft.Windows.ImplementationLibrary.targets" Condition="Exists('..\packages\Microsoft.Windows.ImplementationLibrary.1.0.240122.1\build\native\Microsoft.Windows.ImplementationLibrary.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.CppWinRT.2.0.240405.15\build\native\Microsoft.Windows.CppWinRT.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.WindowsAppSDK.1.5.240607001\build\native\Microsoft.WindowsAppSDK.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.SDK.BuildTools.10.0.26100.1\build\Microsoft.Windows.SDK.BuildTools.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.ImplementationLibrary.1.0.240122.1\build\native\Microsoft.Windows.ImplementationLibrary.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.ImplementationLibrary.1.0.240122.1\build\native\Microsoft.Windows.ImplementationLibrary.targets'))" />
+  </Target>
+</Project>
