@@ -2,26 +2,26 @@
 Turkish (Türkçe)
 9.8
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
-Son güncelleyen: Muhammed Emin Subaşı
-Son güncelleme: 7 Aralık 2023
+Son güncelleyen: Osman Öz
+Son güncelleme: 19 Temmuz 2024
 
 === PeaZip text group ===
 
 txt_9_8_alwaysflat: Arşivleri her zaman düz görünümde aç
-txt_9_8_fnew: Buraya çıkart (yeni klasörde)
-txt_9_8_fsmart: Buraya çıkart (akıllı yeni klasör)
-txt_9_7_tarpipe: 7z / p7zip pipe kullan
-txt_9_7_smartsorting: Akıllı dosya adı sırala
-txt_9_6_centered: Merkezi
+txt_9_8_fnew: Buraya çıkartın (yeni klasörde)
+txt_9_8_fsmart: Buraya çıkartın (yeni akıllı klasör)
+txt_9_7_tarpipe: 7z / p7zip çubuğunu kullan
+txt_9_7_smartsorting: Akıllı dosya adı sıralaması
+txt_9_6_centered: Ortalanmış
 txt_9_6_cside: Kompakt kenar çubuğu
-txt_9_6_loadpconfirm: Bu profili yüklemek istiyor musunuz? Kayıtlı komut dosyaları ve Parola Yöneticisi de dahil olmak üzere mevcut profilin tüm verilerinin üzerine yazılacaktır.
+txt_9_6_loadpconfirm: Bu profili yüklemek istiyor musunuz? Kaydedilen komut dosyaları ve Şifre Yöneticisi de dahil olmak üzere mevcut profildeki tüm verilerin üzerine yazılacaktır.
 txt_9_6_loadp: Profili yükle
-txt_9_6_saveppw: OPSİYONEL: bu profili şifre / anahtar dosyası ile koru?
-txt_9_6_savepoverwrite: Mevcut profilin üzerine yazılsın mı? Kayıtlı komut dosyaları ve Parola Yöneticisi dahil olmak üzere mevcut profilin tüm verilerinin üzerine yazılacaktır.
+txt_9_6_saveppw: İSTEĞE BAĞLI: bu profil şifreyle/anahtar dosyasıyla korunsun mu?
+txt_9_6_savepoverwrite: Mevcut profilin üzerine yazılsın mı? Kaydedilen komut dosyaları ve Şifre Yöneticisi de dahil olmak üzere mevcut profildeki tüm verilerin üzerine yazılacaktır.
 txt_9_6_savep: Profili kaydet
-txt_9_6_scside: Kompakt yan çubuğu göster
+txt_9_6_scside: Kompakt kenar çubuğunu göster
 txt_9_5_all: Tümü
-txt_9_5_precond: Hata tespit edilirse ön ayrıştır
+txt_9_5_precond: Hata tespit edilirse önceden ayrıştır
 txt_9_5_largea: Büyük arşivleri önceden ayrıştır
 txt_9_5_mediuma: Ortam arşivlerini önceden ayrıştır
 txt_9_5_smalla: Küçük arşivleri önceden ayrıştır
@@ -1393,11 +1393,10 @@ Kaydedilen şifreler, Şifre formundaki şifre alanının sol tarafındaki açı
 Şifre yöneticisi için bir ana şifre ayarlanmamışsa, şifre listesine kimlik doğrulama istenmeden erişilebilir, aksi takdirde şifreler doğru bir şekilde kullanıcı doğrulanana kadar görüntülenmez.
 
 UYGULAMAYI YAPILANDIRMAK
-Seçenekler > Yerelleştirme, (ve Seçenekler > Ayarlar bölümünün ilk sekmesinde) uygulamanın dilini ayarlamaya izin verir.
-Seçenekler > Ayarlar, uygulamaların ayarlarını düzenlemeye izin ve
-Seçenekler > Tema, uygulamanın simgelerini ve görünümünü değiştirmeye izin verir
-Seçenekler > Sistem entegrasyonu, dosya ilişkilendirmelerini, bağlam menüsünü ve Gönder menü girdilerini yapılandırmak için bir prosedür başlatır (Windows'ta)
-Organize menüsü, araç çubuğu, adres çubuğu, gezinme çubuğu vb. gibi tarayıcının özelliklerini özelleştirmek, etkinleştirmek veya devre dışı bırakmak için giriş içerir.
+Seçenekler > Yerelleştirme (ve Seçenekler > Ayarlar'da, ilk sekme) uygulamanın dilini ayarlamanıza olanak tanır.
+Seçenekler > Dosya ilişkileri ve sistem entegrasyonu, dosya ilişkilerini, içerik menüsünü ve SendTo menü girişlerini yapılandırmak için bir sihirbaz başlatır (Windows'ta)
+Seçenekler > Ayarlar, uygulamaların ayarlarını düzenlemenize olanak tanır
+Düzenleme menüsü, araç çubuğu, adres çubuğu, kenar çubuğu vb. gibi tarayıcının özelliklerini özelleştirmek, etkinleştirmek veya devre dışı bırakmak için giriş içerir
 
 F1 	yardım
 F2 	dosya(lar)ı yeniden adlandır / Ctrl+F2 seçileni kopyala / Shift+F2 seçileni taşı
