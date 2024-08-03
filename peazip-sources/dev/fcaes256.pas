@@ -102,7 +102,7 @@ type
 
 
 function FCA_EAX256_init(var cx: TAES_EAXContext; pPW: pointer; pLen: word; var hdr: TFCA256Hdr): integer;
-function FCA_EAX256_initP(var cx: TAES_EAXContext; pPW: pointer; pLen: word; var hdr: TFCA256Hdr): integer;//50x iterations
+function FCA_EAX256_initP(var cx: TAES_EAXContext; pPW: pointer; pLen: word; var hdr: TFCA256Hdr; niter:byte): integer;
   {-Initialize crypt context using password pointer pPW and hdr.salt}
 
 function FCA_EAX256_initS(var cx: TAES_EAXContext; sPW: Str255; var hdr: TFCA256Hdr): integer;
@@ -246,15 +246,18 @@ begin
   fillchar(XKey, sizeof(XKey),0);
 end;
 
-function FCA_EAX256_initP(var cx: TAES_EAXContext; pPW: pointer; pLen: word; var hdr: TFCA256Hdr): integer;
+function FCA_EAX256_initP(var cx: TAES_EAXContext; pPW: pointer; pLen: word; var hdr: TFCA256Hdr; niter:byte): integer;
   {-Initialize crypt context using password pointer pPW and hdr.salt}
 var
   XKey: TX256Key;
   Err : integer;
+  intiter:longint;
 begin
 
+  intiter:=(niter*100000)+25000;
+
   {derive the EAX key / nonce and pw verifier}
-  Err := pbkdf2(FindHash_by_ID(_Whirlpool), pPW, pLen, @hdr.salt, sizeof(TFCA256Salt), 25000, XKey, sizeof(XKey));
+  Err := pbkdf2(FindHash_by_ID(_Whirlpool), pPW, pLen, @hdr.salt, sizeof(TFCA256Salt), intiter, XKey, sizeof(XKey));
 
   {init AES EAX mode with ak/hk}
   if Err=0 then Err := AES_EAX_Init(XKey.ak, 8*sizeof(XKey.ak), xkey.hk, sizeof(XKey.hk), cx);;

@@ -36,11 +36,11 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="52">
+    <Units Count="53">
       <Unit0>
         <Filename Value="project_pea.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="7"/>
         <CursorPos X="56" Y="41"/>
         <UsageCount Value="200"/>
@@ -66,17 +66,17 @@
         <Filename Value="pea_utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="108"/>
-        <CursorPos X="22" Y="143"/>
+        <TopLine Value="92"/>
+        <CursorPos X="23" Y="111"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="list_utils.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="2394"/>
-        <CursorPos Y="2413"/>
+        <CursorPos X="54" Y="2396"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -102,8 +102,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit_pea"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="190"/>
-        <CursorPos X="19" Y="203"/>
+        <TopLine Value="7759"/>
+        <CursorPos X="47" Y="7773"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -116,9 +116,9 @@
       </Unit7>
       <Unit8>
         <Filename Value="rfs_utils.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="5"/>
-        <CursorPos X="68" Y="24"/>
+        <CursorPos X="71" Y="11"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
       </Unit8>
@@ -144,7 +144,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="83"/>
         <CursorPos Y="87"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -311,24 +311,27 @@
       </Unit37>
       <Unit38>
         <Filename Value="fcaes256.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="234"/>
-        <CursorPos X="70" Y="256"/>
-        <UsageCount Value="10"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="225"/>
+        <CursorPos X="18" Y="257"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
       </Unit38>
       <Unit39>
         <Filename Value="fctf256.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="223"/>
-        <CursorPos X="39" Y="246"/>
-        <UsageCount Value="11"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="206"/>
+        <CursorPos X="103" Y="238"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
       </Unit39>
       <Unit40>
         <Filename Value="fcsp256.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="231"/>
-        <CursorPos X="114" Y="243"/>
-        <UsageCount Value="10"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="75"/>
+        <CursorPos X="103" Y="94"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
       </Unit40>
       <Unit41>
         <Filename Value="crc32.pas"/>
@@ -349,7 +352,7 @@
         <Filename Value="img_utils.pas"/>
         <EditorIndex Value="2"/>
         <TopLine Value="16"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit43>
       <Unit44>
@@ -411,127 +414,134 @@
         <CursorPos X="68" Y="77"/>
         <UsageCount Value="10"/>
       </Unit51>
+      <Unit52>
+        <Filename Value="kdf.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="182"/>
+        <CursorPos X="19" Y="192"/>
+        <UsageCount Value="10"/>
+      </Unit52>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2642" Column="42" TopLine="2610"/>
+        <Caret Line="1409" Column="29" TopLine="1379"/>
       </Position1>
       <Position2>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2661" Column="46" TopLine="2629"/>
+        <Caret Line="1475" Column="32" TopLine="1466"/>
       </Position2>
       <Position3>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2680" Column="49" TopLine="2648"/>
+        <Caret Line="1510" Column="32" TopLine="1485"/>
       </Position3>
       <Position4>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2718" Column="60" TopLine="2686"/>
+        <Caret Line="1795" Column="20" TopLine="1777"/>
       </Position4>
       <Position5>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2768" Column="64" TopLine="2736"/>
+        <Caret Line="1796" Column="29" TopLine="1777"/>
       </Position5>
       <Position6>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="2811" Column="68" TopLine="2779"/>
+        <Caret Line="2347" Column="29" TopLine="2316"/>
       </Position6>
       <Position7>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="3766" Column="32" TopLine="3734"/>
+        <Caret Line="2348" Column="29" TopLine="2326"/>
       </Position7>
       <Position8>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="3808" Column="18" TopLine="3776"/>
+        <Caret Line="2469" Column="29" TopLine="2439"/>
       </Position8>
       <Position9>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="3827" Column="18" TopLine="3795"/>
+        <Caret Line="3541" Column="44" TopLine="3510"/>
       </Position9>
       <Position10>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="3846" Column="49" TopLine="3814"/>
+        <Caret Line="3575" Column="41" TopLine="3544"/>
       </Position10>
       <Position11>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="3868" Column="70" TopLine="3836"/>
+        <Caret Line="3997" Column="32" TopLine="3966"/>
       </Position11>
       <Position12>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4210" Column="32" TopLine="4178"/>
+        <Caret Line="347" Column="36" TopLine="335"/>
       </Position12>
       <Position13>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4307" Column="18" TopLine="4275"/>
+        <Caret Line="1340" Column="29" TopLine="1309"/>
       </Position13>
       <Position14>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4326" Column="18" TopLine="4294"/>
+        <Caret Line="1409" Column="29" TopLine="1379"/>
       </Position14>
       <Position15>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4345" Column="49" TopLine="4313"/>
+        <Caret Line="1475" Column="32" TopLine="1445"/>
       </Position15>
       <Position16>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4370" Column="68" TopLine="4338"/>
+        <Caret Line="1510" Column="32" TopLine="1479"/>
       </Position16>
       <Position17>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="5634" Column="10" TopLine="5603"/>
+        <Caret Line="1796" Column="29" TopLine="1765"/>
       </Position17>
       <Position18>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="4370" Column="62" TopLine="4351"/>
+        <Caret Line="2044" Column="29" TopLine="2013"/>
       </Position18>
       <Position19>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="6" Column="96" TopLine="2"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="2348" Column="29" TopLine="2317"/>
       </Position19>
       <Position20>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="202" Column="15" TopLine="178"/>
+        <Caret Line="2469" Column="29" TopLine="2439"/>
       </Position20>
       <Position21>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="489" Column="79"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="3012" Column="29" TopLine="2981"/>
       </Position21>
       <Position22>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="577" Column="10" TopLine="575"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="3541" Column="44" TopLine="3510"/>
       </Position22>
       <Position23>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="371" Column="62" TopLine="350"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="3575" Column="41" TopLine="3544"/>
       </Position23>
       <Position24>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="383" Column="116" TopLine="363"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="3685" Column="29" TopLine="3654"/>
       </Position24>
       <Position25>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="203" Column="106" TopLine="190"/>
+        <Caret Line="3998" Column="32" TopLine="3970"/>
       </Position25>
       <Position26>
-        <Filename Value="unit_pea.pas"/>
-        <Caret Line="230" Column="47" TopLine="205"/>
+        <Filename Value="pea_utils.pas"/>
+        <Caret Line="153" Column="19" TopLine="149"/>
       </Position26>
       <Position27>
-        <Filename Value="unit_pea.pas"/>
-        <Caret Line="237" Column="31" TopLine="205"/>
+        <Filename Value="pea_utils.pas"/>
+        <Caret Line="597" Column="25" TopLine="588"/>
       </Position27>
       <Position28>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="816" Column="53" TopLine="804"/>
+        <Caret Line="193" Column="29" TopLine="190"/>
       </Position28>
       <Position29>
-        <Filename Value="unit_report.pas"/>
-        <Caret Line="383" Column="8" TopLine="363"/>
+        <Filename Value="unit_pea.pas"/>
+        <Caret Line="435" Column="37" TopLine="409"/>
       </Position29>
       <Position30>
         <Filename Value="unit_pea.pas"/>
-        <Caret Line="203" Column="19" TopLine="190"/>
+        <Caret Line="7515" Column="16" TopLine="7504"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

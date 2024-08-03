@@ -19,18 +19,23 @@ type
     ButtonKFLoadFile: TButton;
     ButtonPanel1: TButtonPanel;
     ButtonSuggestPW: TButton;
+    ButtonPWfromhash: TButton;
     CheckBoxSuggestPW: TCheckBox;
     EditEnt: TEdit;
     EditSuggestPW: TEdit;
+    EditPWfromhash: TEdit;
     GroupBoxKF: TGroupBox;
     ImageInfoArchive1: TImage;
     OpenDialog2: TOpenDialog;
     PanelKeyfile: TPanel;
     ProgressBar1: TProgressBar;
     SaveDialog1: TSaveDialog;
+    Shape1: TShape;
+    Shape2: TShape;
     SpinEditSuggestPW: TSpinEdit;
     procedure ButtonKFClick(Sender: TObject);
     procedure ButtonKFLoadFileClick(Sender: TObject);
+    procedure ButtonPWfromhashClick(Sender: TObject);
     procedure ButtonSuggestPWClick(Sender: TObject);
     procedure EditEntKeyPress(Sender: TObject; var Key: char);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -211,6 +216,24 @@ if OpenDialog2.Execute then
 except
 pMessageErrorOK(txt_error_openfile);
 end;
+end;
+
+procedure TFormKF.ButtonPWfromhashClick(Sender: TObject);
+var
+  hpw:ansistring;
+begin //load password from hash
+try
+if OpenDialog2.Execute then
+   if OpenDialog2.Filename<>'' then
+      begin
+      hpw:='';
+      prepend_keyfile(hpw,OpenDialog2.Filename);
+      EditPWfromhash.Caption:=hpw;
+      end;
+except
+pMessageErrorOK(txt_error_openfile);
+end;
+
 end;
 
 procedure TFormKF.ButtonSuggestPWClick(Sender: TObject);

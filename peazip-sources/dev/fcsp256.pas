@@ -91,7 +91,7 @@ type
 
 
 function FCS_EAX256_init(var cx: TSP_EAXContext; pPW: pointer; pLen: word; var hdr: TFCS256Hdr): integer;
-function FCS_EAX256_initP(var cx: TSP_EAXContext; pPW: pointer; pLen: word; var hdr: TFCS256Hdr): integer;
+function FCS_EAX256_initP(var cx: TSP_EAXContext; pPW: pointer; pLen: word; var hdr: TFCS256Hdr; niter:byte): integer;
   {-Initialize crypt context using password pointer pPW and hdr.salt}
 
 function FCS_EAX256_initS(var cx: TSP_EAXContext; sPW: Str255; var hdr: TFCS256Hdr): integer;
@@ -235,15 +235,18 @@ begin
   fillchar(XKey, sizeof(XKey),0);
 end;
 
-function FCS_EAX256_initP(var cx: TSP_EAXContext; pPW: pointer; pLen: word; var hdr: TFCS256Hdr): integer;
+function FCS_EAX256_initP(var cx: TSP_EAXContext; pPW: pointer; pLen: word; var hdr: TFCS256Hdr; niter:byte): integer;
   {-Initialize crypt context using password pointer pPW and hdr.salt}
 var
   XKey: TX256Key;
   Err : integer;
+  intiter:longint;
 begin
 
+  intiter:=(niter*100000)+75000;
+
   {derive the EAX key / nonce and pw verifier}
-  Err := pbkdf2(FindHash_by_ID(_SHA3_512), pPW, pLen, @hdr.salt, sizeof(TFCS256Salt), 75000, XKey, sizeof(XKey));
+  Err := pbkdf2(FindHash_by_ID(_SHA3_512), pPW, pLen, @hdr.salt, sizeof(TFCS256Salt), intiter, XKey, sizeof(XKey));
 
   {init SP EAX mode with ak/hk}
   if Err=0 then Err := SP_EAX_Init(XKey.ak, 8*sizeof(XKey.ak), xkey.hk, sizeof(XKey.hk), cx);;

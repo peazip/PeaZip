@@ -1,8 +1,7 @@
-﻿Notes to 9.8.0 release
+﻿Notes to 9.9 release
 
-Modified existing text strings:
-txt_8_0_defaultaction: Default action on input (open, auto-extract...)
-txt_3_0_readablepw: Archive is unreadable, may be password protected
+Modified existing text
+txt_7_9_zooming: Zoom
 
 = GENERAL NOTES =
 

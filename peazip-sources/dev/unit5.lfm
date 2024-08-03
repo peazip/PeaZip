@@ -1,7 +1,7 @@
 object FormKF: TFormKF
-  Left = 133
+  Left = 145
   Height = 500
-  Top = 494
+  Top = 232
   Width = 750
   Caption = 'FormKF'
   ClientHeight = 500
@@ -60,7 +60,7 @@ object FormKF: TFormKF
   OnClose = FormClose
   Position = poScreenCenter
   ShowHint = True
-  LCLVersion = '2.2.0.4'
+  LCLVersion = '3.4.0.0'
   object PanelKeyfile: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -76,6 +76,7 @@ object FormKF: TFormKF
     BevelOuter = bvNone
     ClientHeight = 500
     ClientWidth = 750
+    ParentBackground = False
     TabOrder = 0
     OnMouseMove = PanelKeyfileMouseMove
     object GroupBoxKF: TGroupBox
@@ -85,68 +86,72 @@ object FormKF: TFormKF
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = ButtonPanel1
       Left = 15
-      Height = 115
-      Top = 325
+      Height = 80
+      Top = 360
       Width = 720
       Anchors = [akLeft, akRight, akBottom]
       BorderSpacing.Bottom = 15
       Caption = 'Enthropy sampling tools'
-      ClientHeight = 90
+      ClientHeight = 55
       ClientWidth = 716
+      ParentBackground = False
       TabOrder = 0
       OnMouseMove = GroupBoxKFMouseMove
       object EditEnt: TEdit
         AnchorSideLeft.Control = GroupBoxKF
+        AnchorSideTop.Control = GroupBoxKF
+        AnchorSideTop.Side = asrCenter
         AnchorSideRight.Control = ButtonKFLoadFile
         Left = 15
         Height = 28
-        Top = 0
+        Top = 13
         Width = 584
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Left = 15
         BorderSpacing.Right = 8
-        OnKeyPress = EditEntKeyPress
         TabOrder = 0
         Text = 'Enter random keys'
+        OnKeyPress = EditEntKeyPress
       end
       object ButtonKFLoadFile: TButton
         AnchorSideLeft.Control = EditEnt
         AnchorSideTop.Control = EditEnt
+        AnchorSideTop.Side = asrCenter
         AnchorSideRight.Control = GroupBoxKF
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = EditEnt
         AnchorSideBottom.Side = asrBottom
         Left = 607
         Height = 28
-        Top = 0
+        Top = 13
         Width = 94
         Anchors = [akTop, akRight, akBottom]
         AutoSize = True
         BorderSpacing.Right = 15
         BorderSpacing.InnerBorder = 5
         Caption = 'Load file'
-        OnClick = ButtonKFLoadFileClick
         TabOrder = 1
+        OnClick = ButtonKFLoadFileClick
       end
     end
     object ButtonKF: TButton
       AnchorSideLeft.Control = EditSuggestPW
-      AnchorSideTop.Control = CheckBoxSuggestPW
+      AnchorSideTop.Control = Shape1
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = SpinEditSuggestPW
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = ButtonPanel1
       Left = 15
       Height = 30
-      Top = 158
+      Top = 159
       Width = 720
       Anchors = [akTop, akLeft, akRight]
       AutoSize = True
-      BorderSpacing.Top = 30
+      BorderSpacing.Top = 15
       BorderSpacing.Bottom = 8
       Caption = 'Create KeyFile'
-      OnClick = ButtonKFClick
       TabOrder = 1
+      OnClick = ButtonKFClick
     end
     object EditSuggestPW: TEdit
       AnchorSideLeft.Control = PanelKeyfile
@@ -196,8 +201,8 @@ object FormKF: TFormKF
       AutoSize = True
       BorderSpacing.Top = 8
       Caption = 'Suggest password'
-      OnClick = ButtonSuggestPWClick
       TabOrder = 4
+      OnClick = ButtonSuggestPWClick
     end
     object ButtonPanel1: TButtonPanel
       Left = 15
@@ -259,12 +264,78 @@ object FormKF: TFormKF
       Left = 15
       Height = 24
       Top = 104
-      Width = 281
+      Width = 278
       BorderSpacing.Top = 8
       Caption = 'Limit characters to letters and numbers'
       Checked = True
       State = cbChecked
       TabOrder = 6
+    end
+    object EditPWfromhash: TEdit
+      AnchorSideLeft.Control = PanelKeyfile
+      AnchorSideTop.Control = Shape2
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = ButtonKF
+      Left = 15
+      Height = 28
+      Top = 220
+      Width = 720
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 15
+      TabOrder = 7
+    end
+    object ButtonPWfromhash: TButton
+      AnchorSideLeft.Control = EditSuggestPW
+      AnchorSideTop.Control = EditPWfromhash
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = SpinEditSuggestPW
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 15
+      Height = 30
+      Top = 256
+      Width = 720
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Top = 8
+      Caption = 'Password from hash'
+      TabOrder = 8
+      OnClick = ButtonPWfromhashClick
+    end
+    object Shape1: TShape
+      AnchorSideLeft.Control = PanelKeyfile
+      AnchorSideTop.Control = CheckBoxSuggestPW
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelKeyfile
+      AnchorSideRight.Side = asrBottom
+      Left = 80
+      Height = 1
+      Top = 143
+      Width = 590
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 80
+      BorderSpacing.Top = 15
+      BorderSpacing.Right = 80
+      Pen.Color = clSilver
+    end
+    object Shape2: TShape
+      AnchorSideLeft.Control = PanelKeyfile
+      AnchorSideTop.Control = ButtonKF
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelKeyfile
+      AnchorSideRight.Side = asrBottom
+      Left = 80
+      Height = 1
+      Top = 204
+      Width = 590
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 80
+      BorderSpacing.Top = 15
+      BorderSpacing.Right = 80
+      Pen.Color = clSilver
     end
   end
   object SaveDialog1: TSaveDialog

@@ -204,6 +204,8 @@ unit Unit_pea;
                                 Save hash and filename function (context menu in report screen, rightclicking on one of the performed crc or hash functioons) now generates a file fully compatible with sha256sum and similar utilities
                                 Compiled for Lazarus 3.2
                                 (Windows 10+) Can now be manually forced to light or dark mode regardless system colors, accordingly to peazip app
+ 1.19     20240617  G.Tani      New PEA format revision 1.4
+                                 Introduced support for variable number of extra KDF rounds for cascaded encryption (up to 100 K to 25,5 M for each algorithm)
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -386,10 +388,10 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.18'; //declares release version for the whole build
+  P_RELEASE          = '1.19'; //declares release version for the whole build
   PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
-  PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
+  PEA_FILEFORMAT_REV = 4; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
   SBUFSIZE           = 65535;//32768;
   {32KB of size for reading small buffers, used for ciphers and hashes}
   WBUFSIZE           = 1048576;
@@ -464,6 +466,7 @@ procedure pea_procedure ( out_param: ansistring;
                           obj_algo: ansistring;
                           obj_authsize: byte;
                           algo:ansistring;
+                          niter:byte;
                           headersize,authsize: byte;
                           pwneeded: boolean;
                           pw_param,password,keyf_name:ansistring;
@@ -725,7 +728,7 @@ var
    ch_size:qword;
    compr_level,volume_authsize,obj_authsize,headersize,authsize:byte;
    pwneeded:boolean;
-
+   niter:byte;
 
 procedure parse_pea_cl; //exit at first error with descriptive message, including parameters passed if relevant
 var i,k:dword;
@@ -756,7 +759,7 @@ try
       internal_error('"'+obj_algo+'" is not a valid control algorithm for object check, please refer to the documentation for supported ones');
    //get control algorithm
    algo:=upcase(paramstr(7));
-   if decode_control_algo(algo,headersize,authsize,pwneeded)<>0 then
+   if decode_control_algo(algo,headersize,authsize,pwneeded,niter)<>0 then
       internal_error('"'+algo+'" is not a valid control algorithm, please refer to the documentation for supported ones');
    //get operation mode
    inc(i,1);
@@ -803,7 +806,7 @@ end;
 
 begin
 parse_pea_cl;
-pea_procedure(out_param,ch_size,compr,compr_level,volume_algo,volume_authsize,obj_algo,obj_authsize,algo,headersize,authsize,pwneeded,pw_param,password,keyf_name,in_param);
+pea_procedure(out_param,ch_size,compr,compr_level,volume_algo,volume_authsize,obj_algo,obj_authsize,algo,niter,headersize,authsize,pwneeded,pw_param,password,keyf_name,in_param);
 end;
 
 procedure pea_lib_procedure ( out_param: ansistring;                            //archive qualified name (without .(volume number).PEA suffix) or AUTONAME
@@ -819,6 +822,7 @@ var
    pw_param:ansistring;
    compr_level,volume_authsize,obj_authsize,headersize,authsize:byte;
    pwneeded:boolean;
+   niter:byte;
 begin
 //// control volume size
 if ch_size=0 then ch_size:=1024*1024*1024*1024*1024; // if chunk size is set to 0 no chunks will be done
@@ -834,7 +838,7 @@ ch_size:=ch_size-volume_authsize;
 if decode_obj_control_algo(obj_algo,obj_authsize)<>0 then
    internal_error('"'+obj_algo+'" is not a valid control algorithm for object check, please refer to the documentation for supported ones');
 //get control algorithm
-if decode_control_algo(algo,headersize,authsize,pwneeded)<>0 then
+if decode_control_algo(algo,headersize,authsize,pwneeded,niter)<>0 then
    internal_error('"'+algo+'" is not a valid control algorithm, please refer to the documentation for supported ones');
 //input list (will be expanded in pea_procedure) is jet loaded in in_param, TFoundList (array of ansistring)
 //get operation mode
@@ -843,7 +847,7 @@ if (upcase(opmode)<>'INTERACTIVE') and (upcase(opmode)<>'BATCH') and (upcase(opm
 if (upcase(opmode)='INTERACTIVE') or (upcase(opmode)='INTERACTIVE_REPORT') then
    internal_error('INTERACTIVE* modes are not allowed calling pea_lib_procedure, use BATCH* or HIDDEN* modes');
 pw_param:=upcase(opmode);
-pea_procedure(out_param,ch_size,compr,compr_level,volume_algo,volume_authsize,obj_algo,obj_authsize,algo,headersize,authsize,pwneeded,pw_param,password,keyf_name,in_param);
+pea_procedure(out_param,ch_size,compr,compr_level,volume_algo,volume_authsize,obj_algo,obj_authsize,algo,niter,headersize,authsize,pwneeded,pw_param,password,keyf_name,in_param);
 end;
 
 procedure pea_procedure ( out_param: ansistring;
@@ -855,6 +859,7 @@ procedure pea_procedure ( out_param: ansistring;
                           obj_algo: ansistring;
                           obj_authsize: byte;
                           algo:ansistring;
+                          niter:byte;
                           headersize,authsize: byte;
                           pwneeded: boolean;
                           pw_param,password,keyf_name:ansistring;
@@ -1327,15 +1332,19 @@ var
   i:integer;
   sbufx,tsbuf2:array [0..65534] of byte;
   tpw_len,verw:Word;
+  tcapt:ansistring;
 begin
+tcapt:=Form_pea.Caption;
+Form_pea.Caption:='RUNNING KDF';
+Application.ProcessMessages;
 case upcase(algo) of
 'TRIATS','TRITSA','TRISAT':
 begin
 for i:=0 to pw_len-1 do tsbuf2[i]:=sbuf2[i]; tpw_len:=pw_len;
 case upcase(algo) of
-   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res));
-   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res));
-   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res));
+   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res,niter));
+   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res,niter));
+   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res,niter));
    end;
 prog_size:=prog_size+num_res;
 prog_compsize:=prog_compsize+num_res;
@@ -1349,9 +1358,9 @@ write2chunks ( num_res,
 for i:=0 to tpw_len-1 do sbuf2[i]:=tsbuf2[i]; pw_len:=tpw_len;
 for i:=0 to tpw_len-1 do sbuf2[i]:=sbuf2[i] xor (pw_len+i) xor ord(upcase(algo[length(algo)-1]));
 case upcase(algo) of
-   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res));
-   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res));
-   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res));
+   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res,niter));
+   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res,niter));
+   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res,niter));
    end;
 prog_size:=prog_size+num_res;
 prog_compsize:=prog_compsize+num_res;
@@ -1365,9 +1374,9 @@ write2chunks ( num_res,
 for i:=0 to tpw_len-1 do sbuf2[i]:=tsbuf2[i]; pw_len:=tpw_len;
 for i:=0 to tpw_len-1 do sbuf2[i]:=sbuf2[i] xor (pw_len xor i) xor ord(upcase(algo[length(algo)]));
 case upcase(algo) of
-   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res));
-   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res));
-   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res));
+   'TRIATS': test_pea_error('creating stream crypto subheader with '+algo,pea_speax256_subhdrP (cxs,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,shdr256,sbuf1,num_res,niter));
+   'TRITSA': test_pea_error('creating stream crypto subheader with '+algo,pea_eax256_subhdrP (cxe,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,hdr256,sbuf1,num_res,niter));
+   'TRISAT': test_pea_error('creating stream crypto subheader with '+algo,pea_tfeax256_subhdrP (cxf,persistent_source,fingerprint,ment,kent,fent,7,sbuf2,pw_len,fhdr256,sbuf1,num_res,niter));
    end;
 for i:=0 to tpw_len-1 do tsbuf2[i]:=0; tpw_len:=0;
 verw:=hdr256.PW_Ver xor fhdr256.PW_Ver xor shdr256.PW_Ver;
@@ -1395,6 +1404,8 @@ end;
 'CRC32' : CRC32Init(crc32);
 'ADLER32' : Adler32Init(adler);
 end;
+Form_pea.Caption:=tcapt;
+Application.ProcessMessages;
 end;
 
 procedure compress_file;
@@ -1781,6 +1792,7 @@ ts_start:=datetimetotimestamp(now);
 i:=0;
 //give preliminary information on work status to the GUI
 first_gui_output;
+application.ProcessMessages;
 {
 expand the list of input objects and evaluate input and expected uncompressed
 output size (taking overheads in account):
@@ -1827,7 +1839,7 @@ else
 if IOResult<>0 then internal_error('IO error opening first volume');
 SetLength(volume_tags,length(volume_tags)+1);
 init_volume_control_algo;
-test_pea_error('creating archive header',pea_archive_hdr(volume_algo,sbuf1,num_res));
+test_pea_error('creating archive header',pea_archive_hdr(volume_algo,sbuf1,num_res,niter));
 j:=1;
 ch_res:=ch_size;
 prog_size:=num_res;
@@ -2028,6 +2040,7 @@ output:=out_path;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
 Form_pea.ButtonPeaExit.Visible:=false;
+Application.ProcessMessages;
 if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log PEA','txt',upcase(pw_param),out_path);
 if inskipped=true then exitcode:=-2 else exitcode:=0;
 Sleep(500);
@@ -2143,6 +2156,7 @@ var
    cxf : Ttf_EAXContext;
    cxs : Tsp_EAXContext;
    cxh : TFCA_HMAC_Context;
+   niter,niterf: byte;
    auth,auth2,auth3 : array [0..15] of byte;//TFCA_AuthBlock;
    HashContext,HashContext_obj,HashContext_volume: THashContext;
    Blake2sContext,Blake2sContext_obj,Blake2sContext_volume:blake2s_ctx;
@@ -2326,7 +2340,11 @@ var
    i:integer;
    tsbuf2:array [0..65534] of byte;
    verw:word;
+   tcapt:ansistring;
 begin
+tcapt:=Form_pea.Caption;
+Form_pea.Caption:='RUNNING KDF';
+Application.ProcessMessages;
 case  upcase(algo) of
 'TRIATS':
 begin
@@ -2336,14 +2354,14 @@ hdr256.Flags:=hdr.Flags;
 hdr256.Salt:=hdr.Salt;
 hdr256.PW_Ver:=hdr.PW_Ver;
 hdrd256:=hdr256;
-if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 fhdr256.FCfsig:=fhdr.FCfsig;
 fhdr256.Flags:=fhdr.Flags;
 fhdr256.Salt:=fhdr.Salt;
 fhdr256.PW_Ver:=fhdr.PW_Ver;
 fhdrd256:=fhdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i] xor (pw_len+i) xor ord(upcase(algo[length(algo)-1]));
-if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 shdr256.FCssig:=shdr.FCssig;
 shdr256.Flags:=shdr.Flags;
 shdr256.Salt:=shdr.Salt;
@@ -2351,7 +2369,7 @@ shdr256.PW_Ver:=shdr.PW_Ver;
 shdrd256:=shdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i];
 for i:=0 to pw_len-1 do sbuf2[i]:=sbuf2[i] xor (pw_len xor i) xor ord(upcase(algo[length(algo)]));
-if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 verw:=hdrd256.PW_Ver xor fhdrd256.PW_Ver xor shdrd256.PW_Ver;
 if shdr256.PW_ver<>verw then internal_error('Wrong password or keyfile');
 for i:=0 to pw_len-1 do tsbuf2[i]:=0;
@@ -2365,14 +2383,14 @@ fhdr256.Flags:=fhdr.Flags;
 fhdr256.Salt:=fhdr.Salt;
 fhdr256.PW_Ver:=fhdr.PW_Ver;
 fhdrd256:=fhdr256;
-if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 shdr256.FCssig:=shdr.FCssig;
 shdr256.Flags:=shdr.Flags;
 shdr256.Salt:=shdr.Salt;
 shdr256.PW_Ver:=shdr.PW_Ver;
 shdrd256:=shdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i] xor (pw_len+i) xor ord(upcase(algo[length(algo)-1]));
-if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 hdr256.FCAsig:=hdr.FCAsig;
 hdr256.Flags:=hdr.Flags;
 hdr256.Salt:=hdr.Salt;
@@ -2380,7 +2398,7 @@ hdr256.PW_Ver:=hdr.PW_Ver;
 hdrd256:=hdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i];
 for i:=0 to pw_len-1 do sbuf2[i]:=sbuf2[i] xor (pw_len xor i) xor ord(upcase(algo[length(algo)]));
-if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 verw:=hdrd256.PW_Ver xor fhdrd256.PW_Ver xor shdrd256.PW_Ver;
 if hdr256.PW_ver<>verw then internal_error('Wrong password or keyfile');
 for i:=0 to pw_len-1 do tsbuf2[i]:=0;
@@ -2394,14 +2412,14 @@ shdr256.Flags:=shdr.Flags;
 shdr256.Salt:=shdr.Salt;
 shdr256.PW_Ver:=shdr.PW_Ver;
 shdrd256:=shdr256;
-if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCs_EAX256_initP(cxs, @sbuf2, pw_len, shdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 hdr256.FCAsig:=hdr.FCAsig;
 hdr256.Flags:=hdr.Flags;
 hdr256.Salt:=hdr.Salt;
 hdr256.PW_Ver:=hdr.PW_Ver;
 hdrd256:=hdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i] xor (pw_len+i) xor ord(upcase(algo[length(algo)-1]));
-if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCA_EAX256_initP(cxe, @sbuf2, pw_len, hdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 fhdr256.FCfsig:=fhdr.FCfsig;
 fhdr256.Flags:=fhdr.Flags;
 fhdr256.Salt:=fhdr.Salt;
@@ -2409,7 +2427,7 @@ fhdr256.PW_Ver:=fhdr.PW_Ver;
 fhdrd256:=fhdr256;
 for i:=0 to pw_len-1 do sbuf2[i]:=tsbuf2[i];
 for i:=0 to pw_len-1 do sbuf2[i]:=sbuf2[i] xor (pw_len xor i) xor ord(upcase(algo[length(algo)]));
-if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
+if FCf_EAX256_initP(cxf, @sbuf2, pw_len, fhdrd256, niter)<>0 then internal_error('Stream control algorithm: error in '+algo+' init');
 verw:=hdrd256.PW_Ver xor fhdrd256.PW_Ver xor shdrd256.PW_Ver;
 if fhdr256.PW_ver<>verw then internal_error('Wrong password or keyfile');
 for i:=0 to pw_len-1 do tsbuf2[i]:=0;
@@ -2446,6 +2464,8 @@ if FCs_EAX256_init(cxs, @sbuf2, pw_len, shdrd256)<>0 then internal_error('Stream
 if shdr256.PW_ver<>shdrd256.PW_ver then internal_error('Wrong password or keyfile');
 end;
 end;
+Form_pea.Caption:=tcapt;
+Application.ProcessMessages;
 end;
 
 procedure init_AE128_control_algo;
@@ -2988,6 +3008,7 @@ setcurrentdir(extractfilepath(out_param));
 if exp_space>diskfree(0) then
    if MessageDlg('Output path '+extractfilepath(out_param)+' seems to not have enough free space. Continue anyway?',mtWarning,[mbYes, mbNo],0)=6 then
    else halt(-3);
+application.ProcessMessages;
 {blockread 10 byte archive header; since volume tag size is unknown to UnPEA,
 PEA set first volume size mandatory at least 10 byte (plus volume tag) in order
 to make UnPEA able to blockread the archive header and calculate the volume tag
@@ -2998,7 +3019,7 @@ filemode:=0;
 if IOResult<>0 then internal_error('IO error reading from '+in_qualified_name);
 blockread (f_in,sbuf1,10,numread);
 close(f_in);
-test_pea_error('parsing archive header',pea_parse_archive_header(sbuf1,volume_algo,archive_datetimeencoding));
+test_pea_error('parsing archive header',pea_parse_archive_header(sbuf1,volume_algo,archive_datetimeencoding,niter));
 decode_volume_control_algo (volume_algo,volume_authsize);
 //read 10 byte archive header plus 10 byte stream header plus other 16 byte crypto subheader (if AE is used) plus 4 byte for compression buffer size (if compression is used)
 read_from_chunks ( in_folder,in_name,
@@ -3013,7 +3034,8 @@ test_pea_error('parsing stream header',pea_parse_stream_header(sbuf1, compr, com
 decode_control_algo ( algo,
                       headersize,
                       authsize,
-                      pwneeded);
+                      pwneeded,
+                      niterf);
 if compr<>'PCOMPRESS0' then headersize:=headersize+14//stream header size + 10 (archive header size) + 4 (compression buffer field size, if compression is used)
 else headersize:=headersize+10;
 decode_obj_control_algo (obj_algo,obj_authsize);
@@ -3659,6 +3681,7 @@ output:=out_path+out_file;
 Form_pea.LabelOpen.visible:=true;
 Form_pea.ButtonDone1.Visible:=true;
 Form_pea.ButtonPeaExit1.Visible:=false;
+Application.ProcessMessages;
 if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt',upcase(pw_param),out_path);
 if report_errors =0 then
    begin
@@ -6898,6 +6921,7 @@ var
    pwneeded,singlevolume:boolean;
    compr_level,headersize,authsize,volume_authsize,archive_datetimeencoding:byte;
    i,numread:integer;
+   niter:byte;
 begin
 Form_pea.PanelRFSinteractive.visible:=false;
 Form_pea.PanelTools.visible:=false;
@@ -6929,7 +6953,7 @@ except
 internal_error('IO error reading from '+in_qualified_name);
 end;
 close(f_in);
-test_pea_error('parsing archive header',pea_parse_archive_header(buf,volume_algo,archive_datetimeencoding));
+test_pea_error('parsing archive header',pea_parse_archive_header(buf,volume_algo,archive_datetimeencoding,niter));
 decode_volume_control_algo (volume_algo,volume_authsize);
 read_from_chunks ( in_folder,in_name,
                    20,
@@ -6942,7 +6966,8 @@ pea_parse_stream_header(buf, compr, compr_level, algo, obj_algo);
 decode_control_algo ( algo,
                       headersize,
                       authsize,
-                      pwneeded);
+                      pwneeded,
+                      niter);
 //if password is needed, open the password panel
 if pwneeded=true then
    if (upcase(paramstr(7))='INTERACTIVE') or (upcase(paramstr(7))='INTERACTIVE_REPORT') then
@@ -7740,12 +7765,12 @@ with Form_pea do
 begin
 refsize:=ButtonRefSize.Height;
 get_pformscaling(refsize,qscale,qscaleimages);
-qscale:=(qscale*pzooming) div 100;
-qscaleimages:=(qscaleimages*pzooming) div 100;
 Width:=560*qscale div 100;
 Height:=270*qscale div 100;
 Form_report.Width:=800*qscale div 100;
 Form_report.Height:=420*qscale div 100;
+qscale:=(qscale*pzooming) div 100;
+qscaleimages:=(qscaleimages*pzooming) div 100;
 //tabs
 tabheight:=36*qscale div 100;
 if (alttabstyle=2) or (alttabstyle=5) then tablabelheight:=30
@@ -7786,6 +7811,13 @@ if color3='clForm' then color3:=ColorToString(PTACOL);
 getpcolors(StringToColor(color1),StringToColor(color2),StringToColor(color3),temperature,contrast);
 img_utils.relwindowcolor:=stringtocolor(color2);
 load_icons;
+
+if pzooming<>100 then
+   begin
+   Form_pea.ScaleBy(pzooming,100);
+   Form_report.ScaleBy(pzooming,100);
+   end;
+
 Form_pea.Color:=StringToColor(color2);
 Form_pea.LabelE1.Font.Color:=pgray;
 Form_pea.labelopenfile2.Font.Color:=ptextaccent;

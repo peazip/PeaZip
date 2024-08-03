@@ -108,7 +108,7 @@ type
 
 const
 PEA_FILEFORMAT_VER = 1;
-PEA_FILEFORMAT_REV = 3; //version and revision declared to be implemented must match with the ones in unit_pea, otherwise a warning will be raised (unit_pea)
+PEA_FILEFORMAT_REV = 4; //version and revision declared to be implemented must match with the ones in unit_pea, otherwise a warning will be raised (unit_pea)
 SUCCESS = 0;
 INCOMPLETE_FUNCTION = 1;
 NOT_PEA_HEADER = 2;
@@ -152,7 +152,8 @@ functions for generating PEA version1 revision1 fields
 //generate PEA archive header as an array of 10 byte
 function pea_archive_hdr ( volume_control_algorithm:ansistring;                 //algorithm to error check each volume
                            var hdr_data:array of byte;                          //buffer for header data
-                           var hdr_size:dword                                   //size, in byte, of the volume header
+                           var hdr_size:dword;                                   //size, in byte, of the volume header
+                           niter:byte                                          //number of iterations (multiplier)
                            ):integer;
 
 //generate PEA stream header as an array of 10 byte
@@ -238,7 +239,7 @@ function pea_speax256_subhdr ( var cxs:TSP_EAXContext;                          
                              var hdr_size:dword                                 //size, in byte of the header
                              ):integer;
 
-//same as previous group but with slower 64000 iterations key derivation
+//same as previous group but with cariabòe iterations key derivation
 function pea_eax256_subhdrP ( var cxe:TAES_EAXContext;                           //control algorithm context
                              persistent_source:ansistring;                      //path of persistent source of random data
                              fingerprint:TSHA512Digest;                         //system fingerprint
@@ -248,7 +249,8 @@ function pea_eax256_subhdrP ( var cxe:TAES_EAXContext;                          
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCA256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 //Twofish 256 variant
 function pea_tfeax256_subhdrP ( var cxf:TTF_EAXContext;                          //control algorithm context
@@ -260,7 +262,8 @@ function pea_tfeax256_subhdrP ( var cxf:TTF_EAXContext;                         
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCf256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 //Serpent 256 variant
 function pea_speax256_subhdrP ( var cxs:TSP_EAXContext;                           //control algorithm context
@@ -272,7 +275,8 @@ function pea_speax256_subhdrP ( var cxs:TSP_EAXContext;                         
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCs256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 
 //initializes Authenticated Encryption and generate a FCA style header to append to PEA stream header if HMAC is used as control algorithm; uses salt from generate_salt
@@ -301,7 +305,8 @@ functions for parsing PEA fields, from an array of byte loaded reading a PEA arc
 //parse a PEA archive header (from an array of byte), please note that only volume control algorithm and system date and time encoding are returned, since are only information relevant for the actual implementation
 function pea_parse_archive_header ( read_data:array of byte;                    //the buffer containing the header matherial
                                     var volume_algo:ansistring;                 //control algorithm for the volumes
-                                    var datetimeencoding:byte                   //system date and time encoding
+                                    var datetimeencoding:byte;                  //system date and time encoding
+                                    var niter:byte                              //number of iterations (multiplier)
                                     ):integer;                                  //note that the function will exit at all error condition (excluded INCOMPLETE_FUNCTION); in this way it will always be returned the code of the first error encountered
 
 //parse a PEA stream header (from an array of byte)
@@ -335,10 +340,11 @@ function decode_compression_algo ( compr:ansistring;                            
                                    ):integer;
 
 //get the control algorithm from a command param
-function decode_control_algo ( algo:ansistring;                                 //control algorithm
+function decode_control_algo ( var algo:ansistring;                             //control algorithm
                                var headersize:byte;                             //size of the header needed
                                var authsize:byte;                               //authntication tag size
-                               var pwneeded:boolean                             //password is required by the control algorithm
+                               var pwneeded:boolean;                            //password is required by the control algorithm
+                               var niter:byte                                //number of iterations
                                ):integer;
 
 //get the control algorithm for single objects (supported by PEA ver0rev1) from a command param;
@@ -581,7 +587,8 @@ end;
 
 function pea_archive_hdr ( volume_control_algorithm:ansistring;                 //algorithm to error check each volume
                            var hdr_data:array of byte;                          //buffer for header data
-                           var hdr_size:dword                                   //size, in byte, of the volume header
+                           var hdr_size:dword;                                  //size, in byte, of the volume header
+                           niter:byte                                           //number of iterations (multiplier)
                            ):integer;
 begin
 pea_archive_hdr:=INCOMPLETE_FUNCTION; //generic error code: the subroutine is jet not completed (useful if the function somehow cannot complete)
@@ -603,7 +610,7 @@ hdr_data[7]:=$01; //ANSI
 get_CPUe(hdr_data[8]);
 {this implementation only support x86 due to some parts in ASM in crypto library used}
 //byte 9: reserved
-hdr_data[9]:=$00; //actually unused, zeroed
+hdr_data[9]:=niter;//$00; //actually unused, zeroed
 hdr_size:=10;
 pea_archive_hdr:=SUCCESS;
 end;
@@ -876,7 +883,8 @@ function pea_eax256_subhdrP ( var cxe:TAES_EAXContext;                          
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCA256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 var
    salt:TSHA512Digest;
@@ -891,7 +899,7 @@ SHA1Update(SHA1Context, @salt, sizeof(salt));
 SHA1Final(SHA1Context, shortsalt);
 move(shortsalt, hdr.salt, sizeof(hdr.salt));
 // init the context headers
-FCA_EAX256_initP(cxe, @pw_array, pw_len, hdr);
+FCA_EAX256_initP(cxe, @pw_array, pw_len, hdr, niter);
 // generate the encryption header
 hdr_data[0]:=$00; //hdr.FCAsig;
 hdr_data[1]:=$00; //hdr.Flags;
@@ -916,7 +924,8 @@ function pea_tfeax256_subhdrP ( var cxf:TTF_EAXContext;                         
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCf256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 var
    salt:TSHA512Digest;
@@ -931,7 +940,7 @@ SHA1Update(SHA1Context, @salt, sizeof(salt));
 SHA1Final(SHA1Context, shortsalt);
 move(shortsalt, hdr.salt, sizeof(hdr.salt));
 // init the context headers
-FCf_EAX256_initP(cxf, @pw_array, pw_len, hdr);
+FCf_EAX256_initP(cxf, @pw_array, pw_len, hdr, niter);
 // generate the encryption header
 hdr_data[0]:=$00; //hdr.FCAsig;
 hdr_data[1]:=$00; //hdr.Flags;
@@ -947,7 +956,7 @@ pw_len:=0;
 if pea_tfeax256_subhdrP=INCOMPLETE_FUNCTION then pea_tfeax256_subhdrP:=SUCCESS;
 end;
 
-function pea_speax256_subhdrP ( var cxs:TSP_EAXContext;                           //control algorithm context
+function pea_speax256_subhdrP ( var cxs:TSP_EAXContext;                          //control algorithm context
                              persistent_source:ansistring;                      //path of persistent source of random data
                              fingerprint:TSHA512Digest;                         //system fingerprint
                              ment,kent,fent:THashContext;                       //entropy sources
@@ -956,7 +965,8 @@ function pea_speax256_subhdrP ( var cxs:TSP_EAXContext;                         
                              var pw_len:word;                                   //size of keying matherial, zeroed on exit
                              var hdr:TFCs256Hdr;                                //control algorithm header
                              var hdr_data:array of byte;                        //buffer for header data as array of byte
-                             var hdr_size:dword                                 //size, in byte of the header
+                             var hdr_size:dword;                                //size, in byte of the header
+                             niter: byte                                     //number of iterations
                              ):integer;
 var
    salt:TSHA512Digest;
@@ -971,7 +981,7 @@ SHA1Update(SHA1Context, @salt, sizeof(salt));
 SHA1Final(SHA1Context, shortsalt);
 move(shortsalt, hdr.salt, sizeof(hdr.salt));
 // init the context headers
-FCS_EAX256_initP(cxs, @pw_array, pw_len, hdr);
+FCS_EAX256_initP(cxs, @pw_array, pw_len, hdr, niter);
 // generate the encryption header
 hdr_data[0]:=$00; //hdr.FCAsig;
 hdr_data[1]:=$00; //hdr.Flags;
@@ -1047,7 +1057,8 @@ end;
 
 function pea_parse_archive_header ( read_data:array of byte;                    //the buffer containing the header matherial
                                     var volume_algo:ansistring;                 //control algorithm for the volumes
-                                    var datetimeencoding:byte                   //system date and time encoding
+                                    var datetimeencoding:byte;                  //system date and time encoding
+                                    var niter:byte                                  //number of iterations (multioplier)
                                     ):integer;                                  //note that the function will exit at all error condition (excluded INCOMPLETE_FUNCTION); in this way it will always be returned the code of the first error encountered
 begin
 pea_parse_archive_header:=INCOMPLETE_FUNCTION;
@@ -1081,6 +1092,7 @@ if read_data[0]=234 then
          end;
       end;
    datetimeencoding:=read_data[6];
+   niter:=read_data[9];
    end
 else pea_parse_archive_header:=NOT_PEA_HEADER;
 if pea_parse_archive_header=INCOMPLETE_FUNCTION then pea_parse_archive_header:=SUCCESS;
@@ -1255,13 +1267,16 @@ case upcase(compr) of
 if decode_compression_algo=INCOMPLETE_FUNCTION then decode_compression_algo:=SUCCESS;
 end;
 
-function decode_control_algo ( algo:ansistring;                                 //control algorithm
+function decode_control_algo ( var algo:ansistring;                             //control algorithm
                                var headersize:byte;                             //size of the header needed
                                var authsize:byte;                               //authntication tag size
-                               var pwneeded:boolean                             //password is required by the control algorithm
+                               var pwneeded:boolean;                            //password is required by the control algorithm
+                               var niter:byte                                //number iterations
                                ):integer;
+var nalgo:ansistring;
 begin
 authsize:=255;
+niter:=0;
 decode_control_algo:=INCOMPLETE_FUNCTION;
 case upcase(algo) of
    'NOALGO':
@@ -1269,12 +1284,6 @@ case upcase(algo) of
    headersize:=10;
    authsize:=0;
    pwneeded:=false;
-   end;
-   'TRIATS','TRITSA','TRISAT':
-   begin
-   headersize:=10+16+16+16;
-   authsize:=16+16+16;
-   pwneeded:=true;
    end;
    'EAX256':
    begin
@@ -1395,6 +1404,25 @@ case upcase(algo) of
    headersize:=10;
    authsize:=64;
    pwneeded:=false;
+   end;
+else
+   begin
+   if length(algo)>=6 then
+      begin
+      try nalgo:=copy(upcase(algo),1,6) except end;
+      niter:=0;
+      if length(algo)>6 then
+         try niter:=strtoint(copy((algo),7,length(algo)-6)) except end;
+      end;
+   case nalgo of
+      'TRIATS','TRITSA','TRISAT':
+      begin
+      algo:=nalgo;
+      headersize:=10+16+16+16;
+      authsize:=16+16+16;
+      pwneeded:=true;
+      end;
+   end;
    end;
    end;
 if authsize=255 then decode_control_algo:=UNKNOWN_CONTROL_ALGORITHM;

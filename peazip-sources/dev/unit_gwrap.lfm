@@ -1,15 +1,16 @@
 object Form_gwrap: TForm_gwrap
   Left = 30
-  Height = 320
+  Height = 400
   Top = 178
-  Width = 640
+  Width = 800
   AllowDropFiles = True
   Caption = 'PeaLauncher'
-  ClientHeight = 320
-  ClientWidth = 640
+  ClientHeight = 400
+  ClientWidth = 800
   Color = clWindow
-  Constraints.MinHeight = 240
-  Constraints.MinWidth = 480
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 600
+  DesignTimePPI = 120
   Icon.Data = {
     7E03000000000100010010100000010018006803000016000000280000001000
     0000200000000100180000000000000300006400000064000000000000000000
@@ -48,14 +49,14 @@ object Form_gwrap: TForm_gwrap
   OnShow = FormShow
   ShowHint = True
   ShowInTaskBar = stAlways
-  LCLVersion = '3.2.0.0'
+  LCLVersion = '3.4.0.0'
   object Panel5: TPanel
     AnchorSideLeft.Control = Owner
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 48
-    Top = 272
+    Height = 60
+    Top = 340
     Width = 0
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
@@ -67,9 +68,9 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Side = asrBottom
     Left = -9
-    Height = 16
+    Height = 20
     Top = -9
-    Width = 16
+    Width = 20
     Anchors = []
     Lines.Strings = (
       'memo1'
@@ -85,15 +86,15 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panel5
     AnchorSideBottom.Side = asrCenter
-    Left = 532
-    Height = 25
-    Top = 283
-    Width = 96
+    Left = 665
+    Height = 30
+    Top = 355
+    Width = 120
     Anchors = [akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Right = 12
+    BorderSpacing.Right = 15
     Caption = 'OK'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     OnClick = Button1Click
     ParentFont = False
     TabOrder = 2
@@ -102,15 +103,15 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Control = ButtonPause
     AnchorSideBottom.Control = Panel5
     AnchorSideBottom.Side = asrCenter
-    Left = 430
-    Height = 25
-    Top = 283
-    Width = 96
+    Left = 537
+    Height = 30
+    Top = 355
+    Width = 120
     Anchors = [akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Right = 6
+    BorderSpacing.Right = 8
     Caption = 'Cancel'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     OnClick = ButtonStopClick
     ParentFont = False
     TabOrder = 1
@@ -120,15 +121,15 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panel5
     AnchorSideBottom.Side = asrCenter
-    Left = 532
-    Height = 25
-    Top = 283
-    Width = 96
+    Left = 665
+    Height = 30
+    Top = 355
+    Width = 120
     Anchors = [akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Right = 12
+    BorderSpacing.Right = 15
     Caption = 'Pause'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     OnClick = ButtonPauseClick
     ParentFont = False
     TabOrder = 0
@@ -139,11 +140,11 @@ object Form_gwrap: TForm_gwrap
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Side = asrCenter
     Cursor = crHandPoint
-    Left = 12
-    Height = 15
-    Top = 289
-    Width = 110
-    BorderSpacing.Left = 12
+    Left = 15
+    Height = 20
+    Top = 360
+    Width = 138
+    BorderSpacing.Left = 15
     Caption = 'Hints about the error'
     Font.Color = 13391121
     ParentFont = False
@@ -155,9 +156,9 @@ object Form_gwrap: TForm_gwrap
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 4
-    Top = 316
-    Width = 3
+    Height = 5
+    Top = 395
+    Width = 4
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
     ParentBackground = False
@@ -170,10 +171,10 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Control = ButtonStopAll
     AnchorSideBottom.Control = ButtonStop
     AnchorSideBottom.Side = asrBottom
-    Left = 304
-    Height = 25
-    Top = 283
-    Width = 24
+    Left = 379
+    Height = 30
+    Top = 355
+    Width = 30
     Anchors = [akTop, akRight, akBottom]
     Flat = True
     OnClick = ButtonStop1Click
@@ -186,12 +187,12 @@ object Form_gwrap: TForm_gwrap
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Side = asrCenter
     Cursor = crHandPoint
-    Left = 149
-    Height = 15
+    Left = 187
+    Height = 20
     Hint = 'Save job log'
-    Top = 289
-    Width = 59
-    BorderSpacing.Left = 12
+    Top = 360
+    Width = 76
+    BorderSpacing.Left = 15
     Caption = 'Save report'
     Font.Color = 13391121
     ParentFont = False
@@ -205,12 +206,12 @@ object Form_gwrap: TForm_gwrap
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Side = asrCenter
     Cursor = crHandPoint
-    Left = 149
-    Height = 15
+    Left = 187
+    Height = 20
     Hint = 'Save job definition (may include password!)'
-    Top = 289
-    Width = 102
-    BorderSpacing.Left = 12
+    Top = 360
+    Width = 129
+    BorderSpacing.Left = 15
     Caption = 'Save task definition'
     Font.Color = 13391121
     ParentFont = False
@@ -224,13 +225,13 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Panel5
     Left = 0
-    Height = 272
+    Height = 340
     Top = 0
-    Width = 640
+    Width = 800
     Anchors = [akTop, akLeft, akRight, akBottom]
     BevelOuter = bvNone
-    ClientHeight = 272
-    ClientWidth = 640
+    ClientHeight = 340
+    ClientWidth = 800
     ParentBackground = False
     ParentFont = False
     TabOrder = 5
@@ -242,13 +243,13 @@ object Form_gwrap: TForm_gwrap
       AnchorSideBottom.Control = Notebook1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 36
+      Height = 45
       Top = 0
-      Width = 640
+      Width = 800
       Anchors = [akTop, akLeft, akRight]
       BevelOuter = bvNone
-      ClientHeight = 36
-      ClientWidth = 640
+      ClientHeight = 45
+      ClientWidth = 800
       ParentBackground = False
       ParentFont = False
       TabOrder = 4
@@ -259,12 +260,12 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 382
-        Height = 32
-        Top = 6
-        Width = 78
+        Left = 487
+        Height = 40
+        Top = 8
+        Width = 100
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 6
+        BorderSpacing.Top = 8
         Brush.Color = 16448250
         Pen.Color = clNone
         Pen.Style = psClear
@@ -277,12 +278,12 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 303
-        Height = 32
-        Top = 6
-        Width = 79
+        Left = 386
+        Height = 40
+        Top = 8
+        Width = 101
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 6
+        BorderSpacing.Top = 8
         Brush.Color = 16448250
         Pen.Color = clNone
         Pen.Style = psClear
@@ -295,12 +296,12 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 232
-        Height = 32
-        Top = 6
-        Width = 71
+        Left = 293
+        Height = 40
+        Top = 8
+        Width = 93
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 6
+        BorderSpacing.Top = 8
         Brush.Color = 16448250
         Pen.Color = clNone
         Pen.Style = psClear
@@ -313,12 +314,12 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 164
-        Height = 32
-        Top = 6
-        Width = 68
+        Left = 205
+        Height = 40
+        Top = 8
+        Width = 88
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 6
+        BorderSpacing.Top = 8
         Brush.Color = 16448250
         Pen.Color = clNone
         Pen.Style = psClear
@@ -329,10 +330,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = ShapeTitleb2
         AnchorSideTop.Side = asrCenter
-        Left = 232
-        Height = 15
-        Top = 15
-        Width = 71
+        Left = 293
+        Height = 20
+        Top = 18
+        Width = 93
         Caption = '      Report      '
         Font.Color = clGray
         ParentFont = False
@@ -345,10 +346,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = ShapeTitleb3
         AnchorSideTop.Side = asrCenter
-        Left = 303
-        Height = 15
-        Top = 15
-        Width = 79
+        Left = 386
+        Height = 20
+        Top = 18
+        Width = 101
         Caption = '      Console      '
         Font.Color = clGrayText
         ParentFont = False
@@ -361,10 +362,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = ShapeTitleb4
         AnchorSideTop.Side = asrCenter
-        Left = 382
-        Height = 15
-        Top = 15
-        Width = 78
+        Left = 487
+        Height = 20
+        Top = 18
+        Width = 100
         Caption = '      Options      '
         Font.Color = clGray
         ParentFont = False
@@ -376,10 +377,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideLeft.Control = PanelTitlePLTabAlign
         AnchorSideTop.Control = ShapeTitleb1
         AnchorSideTop.Side = asrCenter
-        Left = 164
-        Height = 15
-        Top = 15
-        Width = 68
+        Left = 205
+        Height = 20
+        Top = 18
+        Width = 88
         Caption = '      Status      '
         ParentFont = False
         OnClick = LabelTitle1Click
@@ -392,10 +393,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideTop.Control = PanelTitle
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Side = asrBottom
-        Left = 164
+        Left = 205
         Height = 1
         Top = 0
-        Width = 313
+        Width = 391
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 0
@@ -406,10 +407,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 164
-        Height = 6
-        Top = 30
-        Width = 68
+        Left = 205
+        Height = 8
+        Top = 37
+        Width = 88
         Anchors = [akLeft, akRight, akBottom]
         Brush.Color = 16448250
         Pen.Color = clNone
@@ -423,10 +424,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 232
-        Height = 6
-        Top = 30
-        Width = 71
+        Left = 293
+        Height = 8
+        Top = 37
+        Width = 93
         Anchors = [akLeft, akRight, akBottom]
         Brush.Color = 16448250
         Pen.Color = clNone
@@ -440,10 +441,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 303
-        Height = 6
-        Top = 30
-        Width = 79
+        Left = 386
+        Height = 8
+        Top = 37
+        Width = 101
         Anchors = [akLeft, akRight, akBottom]
         Brush.Color = 16448250
         Pen.Color = clNone
@@ -457,10 +458,10 @@ object Form_gwrap: TForm_gwrap
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = PanelTitle
         AnchorSideBottom.Side = asrBottom
-        Left = 382
-        Height = 6
-        Top = 30
-        Width = 78
+        Left = 487
+        Height = 8
+        Top = 37
+        Width = 100
         Anchors = [akLeft, akRight, akBottom]
         Brush.Color = 16448250
         Pen.Color = clNone
@@ -478,13 +479,13 @@ object Form_gwrap: TForm_gwrap
       AnchorSideBottom.Control = Notebook1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 236
-      Top = 36
-      Width = 640
+      Height = 295
+      Top = 45
+      Width = 800
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 236
-      ClientWidth = 640
+      ClientHeight = 295
+      ClientWidth = 800
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
@@ -496,9 +497,9 @@ object Form_gwrap: TForm_gwrap
         AnchorSideBottom.Control = Page3
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 236
+        Height = 295
         Top = 0
-        Width = 640
+        Width = 800
         Anchors = [akTop, akLeft, akRight, akBottom]
         ParentColor = True
         ParentFont = False
@@ -516,13 +517,13 @@ object Form_gwrap: TForm_gwrap
       AnchorSideBottom.Control = Notebook1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 236
-      Top = 36
-      Width = 640
+      Height = 295
+      Top = 45
+      Width = 800
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 236
-      ClientWidth = 640
+      ClientHeight = 295
+      ClientWidth = 800
       ParentBackground = False
       ParentFont = False
       TabOrder = 1
@@ -534,12 +535,12 @@ object Form_gwrap: TForm_gwrap
         AnchorSideBottom.Control = Page2
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 236
+        Height = 295
         Top = 0
-        Width = 640
+        Width = 800
         Anchors = [akTop, akLeft, akRight, akBottom]
         ColCount = 1
-        DefaultColWidth = 600
+        DefaultColWidth = 750
         FixedCols = 0
         FixedRows = 0
         Flat = True
@@ -560,13 +561,13 @@ object Form_gwrap: TForm_gwrap
       AnchorSideBottom.Control = Notebook1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 236
-      Top = 36
-      Width = 640
+      Height = 295
+      Top = 45
+      Width = 800
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 236
-      ClientWidth = 640
+      ClientHeight = 295
+      ClientWidth = 800
       ParentBackground = False
       ParentFont = False
       TabOrder = 3
@@ -578,22 +579,22 @@ object Form_gwrap: TForm_gwrap
         AnchorSideBottom.Control = Page4
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 236
+        Height = 295
         Top = 0
-        Width = 640
+        Width = 800
         Anchors = [akTop, akLeft, akRight, akBottom]
         BevelOuter = bvNone
-        ClientHeight = 236
-        ClientWidth = 640
+        ClientHeight = 295
+        ClientWidth = 800
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
         object CheckBoxHalt: TCheckBox
           AnchorSideTop.Side = asrBottom
-          Left = 24
-          Height = 19
-          Top = 24
-          Width = 190
+          Left = 30
+          Height = 24
+          Top = 30
+          Width = 236
           Caption = 'Halt system when job completes'
           ParentFont = False
           TabOrder = 0
@@ -602,11 +603,11 @@ object Form_gwrap: TForm_gwrap
           AnchorSideLeft.Control = CheckBoxHalt
           AnchorSideTop.Control = CheckBoxHalt
           AnchorSideTop.Side = asrBottom
-          Left = 24
-          Height = 19
-          Top = 46
-          Width = 223
-          BorderSpacing.Top = 3
+          Left = 30
+          Height = 24
+          Top = 58
+          Width = 277
+          BorderSpacing.Top = 4
           Caption = 'Open output path when job completes'
           ParentFont = False
           TabOrder = 1
@@ -623,13 +624,13 @@ object Form_gwrap: TForm_gwrap
       AnchorSideBottom.Control = Notebook1
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 236
-      Top = 36
-      Width = 640
+      Height = 295
+      Top = 45
+      Width = 800
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 236
-      ClientWidth = 640
+      ClientHeight = 295
+      ClientWidth = 800
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
@@ -641,34 +642,35 @@ object Form_gwrap: TForm_gwrap
         AnchorSideBottom.Control = Page1
         AnchorSideBottom.Side = asrBottom
         Left = 0
-        Height = 236
+        Height = 295
         Top = 0
-        Width = 640
+        Width = 800
         Anchors = [akTop, akLeft, akRight, akBottom]
         BevelOuter = bvNone
-        ClientHeight = 236
-        ClientWidth = 640
+        ClientHeight = 295
+        ClientWidth = 800
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
         object PanelBench: TPanel
-          AnchorSideLeft.Control = Panel1
+          AnchorSideLeft.Control = Image1
+          AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = Panel1
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = Panel1
           AnchorSideBottom.Side = asrBottom
-          Left = 48
-          Height = 212
-          Top = 24
-          Width = 580
+          Left = 190
+          Height = 265
+          Top = 30
+          Width = 595
           Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Left = 48
-          BorderSpacing.Top = 24
-          BorderSpacing.Right = 12
+          BorderSpacing.Left = 30
+          BorderSpacing.Top = 30
+          BorderSpacing.Right = 15
           BevelOuter = bvNone
-          ClientHeight = 212
-          ClientWidth = 580
+          ClientHeight = 265
+          ClientWidth = 595
           ParentBackground = False
           ParentFont = False
           TabOrder = 1
@@ -678,7 +680,7 @@ object Form_gwrap: TForm_gwrap
             Height = 1
             Top = 0
             Width = 1
-            Font.Height = -15
+            Font.Height = -19
             ParentFont = False
           end
           object Label3: TLabel
@@ -686,10 +688,10 @@ object Form_gwrap: TForm_gwrap
             AnchorSideTop.Side = asrBottom
             Left = 0
             Height = 1
-            Top = 4
+            Top = 5
             Width = 1
-            BorderSpacing.Top = 3
-            Font.Height = -15
+            BorderSpacing.Top = 4
+            Font.Height = -19
             ParentFont = False
           end
           object Label7: TLabel
@@ -697,10 +699,10 @@ object Form_gwrap: TForm_gwrap
             AnchorSideTop.Side = asrBottom
             Left = 0
             Height = 1
-            Top = 8
+            Top = 10
             Width = 1
-            BorderSpacing.Top = 3
-            Font.Height = -15
+            BorderSpacing.Top = 4
+            Font.Height = -19
             ParentFont = False
           end
           object Label8: TLabel
@@ -708,57 +710,60 @@ object Form_gwrap: TForm_gwrap
             AnchorSideTop.Side = asrBottom
             Left = 0
             Height = 1
-            Top = 21
+            Top = 26
             Width = 1
-            BorderSpacing.Top = 12
-            Font.Height = -17
+            BorderSpacing.Top = 15
+            Font.Height = -21
             ParentFont = False
           end
         end
         object Panel2: TPanel
-          AnchorSideLeft.Control = Panel1
+          AnchorSideLeft.Control = Image1
+          AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = Panel1
+          AnchorSideTop.Side = asrCenter
           AnchorSideRight.Control = Panel1
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = Panel1
           AnchorSideBottom.Side = asrBottom
-          Left = 48
-          Height = 212
-          Top = 24
-          Width = 580
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Left = 48
-          BorderSpacing.Top = 24
-          BorderSpacing.Right = 12
+          Left = 190
+          Height = 146
+          Top = 74
+          Width = 595
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = True
+          BorderSpacing.Left = 30
+          BorderSpacing.Top = 30
+          BorderSpacing.Right = 15
           BevelOuter = bvNone
-          ClientHeight = 212
-          ClientWidth = 580
+          ClientHeight = 146
+          ClientWidth = 595
           ParentBackground = False
           ParentFont = False
           TabOrder = 0
           object Labeli: TLabel
             AnchorSideLeft.Control = Label1
-            AnchorSideTop.Control = Label1
+            AnchorSideTop.Control = l1
             AnchorSideTop.Side = asrBottom
             AnchorSideRight.Control = LabelInfo1
             Left = 0
-            Height = 15
-            Top = 80
-            Width = 34
-            BorderSpacing.Top = 3
+            Height = 20
+            Top = 67
+            Width = 41
+            BorderSpacing.Top = 4
             Caption = 'Input: '
             ParentFont = False
           end
           object Labelo: TLabel
-            AnchorSideLeft.Control = Labeli
+            AnchorSideLeft.Control = LabelInfo1
+            AnchorSideLeft.Side = asrBottom
             AnchorSideTop.Control = Labeli
-            AnchorSideTop.Side = asrBottom
+            AnchorSideTop.Side = asrCenter
             AnchorSideRight.Control = LabelInfo2
-            Left = 0
-            Height = 15
-            Top = 98
-            Width = 44
-            BorderSpacing.Top = 3
+            Left = 68
+            Height = 20
+            Top = 67
+            Width = 53
             Caption = 'Output: '
             ParentFont = False
           end
@@ -766,80 +771,50 @@ object Form_gwrap: TForm_gwrap
             AnchorSideLeft.Control = Labeli
             AnchorSideLeft.Side = asrBottom
             AnchorSideTop.Control = Labeli
-            Left = 34
-            Height = 15
-            Top = 80
-            Width = 10
+            Left = 41
+            Height = 20
+            Top = 67
+            Width = 12
+            BorderSpacing.Right = 15
             Caption = '--'
             ParentFont = False
           end
           object Label1: TLabel
-            AnchorSideTop.Control = Label6
+            AnchorSideTop.Control = Labeli
             AnchorSideTop.Side = asrBottom
             AnchorSideRight.Control = Panel2
             AnchorSideRight.Side = asrBottom
             Left = 0
-            Height = 15
-            Top = 62
-            Width = 57
-            BorderSpacing.Top = 3
+            Height = 20
+            Top = 91
+            Width = 67
+            BorderSpacing.Top = 4
             Caption = 'Running... '
             ParentFont = False
           end
           object LabelInfo2: TLabel
             AnchorSideLeft.Control = Labelo
             AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = Labelo
-            Left = 44
-            Height = 15
-            Top = 98
-            Width = 10
+            AnchorSideTop.Control = Labeli
+            Left = 121
+            Height = 20
+            Top = 67
+            Width = 12
             Caption = '--'
             ParentFont = False
           end
-          object Label5: TLabel
-            AnchorSideLeft.Control = Label1
-            AnchorSideTop.Control = Labelo
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = Panel2
-            AnchorSideRight.Side = asrBottom
-            Left = 0
-            Height = 1
-            Top = 116
-            Width = 580
-            Anchors = [akTop, akLeft, akRight]
-            BorderSpacing.Top = 3
-            ParentFont = False
-          end
-          object Label6: TLabel
-            AnchorSideLeft.Control = Label1
-            AnchorSideTop.Control = l6
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Control = Panel2
-            AnchorSideRight.Side = asrBottom
-            Left = 0
-            Height = 15
-            Top = 44
-            Width = 580
-            Anchors = [akTop, akLeft, akRight]
-            BorderSpacing.Top = 3
-            Caption = ' '
-            ParentFont = False
-          end
           object l1: TLabel
-            AnchorSideLeft.Control = l7spc
-            AnchorSideLeft.Side = asrBottom
+            AnchorSideLeft.Control = Panel2
             AnchorSideTop.Control = l5
-            AnchorSideTop.Side = asrCenter
+            AnchorSideTop.Side = asrBottom
             AnchorSideRight.Control = Panel2
             AnchorSideRight.Side = asrBottom
-            Left = 8
+            Left = 0
             Height = 20
-            Top = 0
+            Top = 43
             Width = 99
-            BorderSpacing.Top = 3
+            BorderSpacing.Top = 8
             Caption = 'Input file from '
-            Font.Height = -15
             ParentFont = False
           end
           object l2: TLabel
@@ -850,13 +825,12 @@ object Form_gwrap: TForm_gwrap
             AnchorSideRight.Control = Panel2
             AnchorSideRight.Side = asrBottom
             Cursor = crHandPoint
-            Left = 107
+            Left = 99
             Height = 20
-            Top = 0
+            Top = 43
             Width = 30
             Caption = 'path'
             Font.Color = 13391121
-            Font.Height = -15
             ParentFont = False
             PopupMenu = PopupMenu1
             OnClick = l2Click
@@ -868,13 +842,12 @@ object Form_gwrap: TForm_gwrap
             AnchorSideTop.Side = asrCenter
             AnchorSideRight.Control = Panel2
             AnchorSideRight.Side = asrBottom
-            Left = 137
+            Left = 129
             Height = 20
-            Top = 0
+            Top = 43
             Width = 22
-            BorderSpacing.Top = 3
+            BorderSpacing.Top = 4
             Caption = ' to '
-            Font.Height = -15
             ParentFont = False
           end
           object l4: TLabel
@@ -885,14 +858,13 @@ object Form_gwrap: TForm_gwrap
             AnchorSideRight.Control = Panel2
             AnchorSideRight.Side = asrBottom
             Cursor = crHandPoint
-            Left = 159
+            Left = 151
             Height = 20
-            Top = 0
+            Top = 43
             Width = 78
-            BorderSpacing.Bottom = 12
+            BorderSpacing.Bottom = 15
             Caption = 'output path'
             Font.Color = 13391121
-            Font.Height = -15
             ParentFont = False
             PopupMenu = PopupMenu1
             OnClick = l4Click
@@ -902,62 +874,231 @@ object Form_gwrap: TForm_gwrap
             AnchorSideTop.Control = Panel2
             AnchorSideRight.Side = asrCenter
             Left = 0
-            Height = 20
-            Top = 0
-            Width = 4
+            Height = 25
+            Top = 10
+            Width = 5
+            BorderSpacing.Top = 10
             Caption = ' '
-            Font.Height = -15
+            Font.Height = -19
+            Font.Style = [fsBold]
             ParentFont = False
           end
           object LabelInfo3: TLabel
             AnchorSideLeft.Control = Label1
             AnchorSideLeft.Side = asrBottom
             AnchorSideTop.Control = Label1
-            Left = 57
-            Height = 15
-            Top = 62
-            Width = 10
+            AnchorSideTop.Side = asrCenter
+            Left = 67
+            Height = 20
+            Top = 91
+            Width = 12
             Caption = '--'
             ParentFont = False
           end
           object l6: TLabel
-            AnchorSideLeft.Control = Panel2
-            AnchorSideTop.Control = l1
-            AnchorSideTop.Side = asrBottom
-            AnchorSideRight.Side = asrBottom
-            Left = 0
-            Height = 15
-            Top = 26
-            Width = 44
-            BorderSpacing.Top = 6
-            Caption = ' | Action'
-            ParentFont = False
-          end
-          object l7spc: TLabel
             AnchorSideLeft.Control = l5
             AnchorSideLeft.Side = asrBottom
-            AnchorSideTop.Control = Panel2
-            AnchorSideRight.Side = asrCenter
-            Left = 4
-            Height = 20
-            Top = 0
-            Width = 4
-            Caption = ' '
-            Font.Height = -15
+            AnchorSideTop.Control = l5
+            AnchorSideTop.Side = asrCenter
+            AnchorSideRight.Side = asrBottom
+            Left = 5
+            Height = 25
+            Top = 10
+            Width = 58
+            BorderSpacing.Top = 8
+            Caption = 'Action'
+            Font.Height = -19
+            Font.Style = [fsBold]
             ParentFont = False
           end
           object Imagestatus: TImage
             AnchorSideLeft.Control = Panel2
-            AnchorSideTop.Control = Labelo
+            AnchorSideTop.Control = Label1
             AnchorSideTop.Side = asrBottom
             AnchorSideRight.Side = asrBottom
             Left = 0
-            Height = 16
-            Top = 129
-            Width = 16
-            BorderSpacing.Top = 16
+            Height = 20
+            Top = 126
+            Width = 20
+            BorderSpacing.Top = 15
             Transparent = True
           end
+          object Shape1: TShape
+            AnchorSideLeft.Control = Imagestatus
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 0
+            Height = 2
+            Top = 135
+            Width = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape2: TShape
+            AnchorSideLeft.Control = Shape1
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 4
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape3: TShape
+            AnchorSideLeft.Control = Shape2
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 8
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape4: TShape
+            AnchorSideLeft.Control = Shape3
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 12
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape5: TShape
+            AnchorSideLeft.Control = Shape4
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 16
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape6: TShape
+            AnchorSideLeft.Control = Shape5
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 20
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape7: TShape
+            AnchorSideLeft.Control = Shape6
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 24
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape8: TShape
+            AnchorSideLeft.Control = Shape7
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 28
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape9: TShape
+            AnchorSideLeft.Control = Shape8
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 32
+            Height = 2
+            Top = 135
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape10: TShape
+            AnchorSideLeft.Control = Shape9
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 36
+            Height = 0
+            Top = 136
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape11: TShape
+            AnchorSideLeft.Control = Shape10
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 40
+            Height = 0
+            Top = 136
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+          object Shape12: TShape
+            AnchorSideLeft.Control = Shape11
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Imagestatus
+            AnchorSideTop.Side = asrCenter
+            Left = 44
+            Height = 0
+            Top = 136
+            Width = 2
+            BorderSpacing.Left = 2
+            Brush.Color = clSilver
+            Pen.Color = clSilver
+            Pen.Width = 0
+          end
+        end
+        object Image1: TImage
+          AnchorSideLeft.Control = Panel1
+          AnchorSideTop.Control = Panel1
+          AnchorSideTop.Side = asrCenter
+          Left = 40
+          Height = 120
+          Top = 87
+          Width = 120
+          BorderSpacing.Left = 40
         end
       end
     end
@@ -966,15 +1107,15 @@ object Form_gwrap: TForm_gwrap
     AnchorSideRight.Control = ButtonStop
     AnchorSideBottom.Control = Panel5
     AnchorSideBottom.Side = asrCenter
-    Left = 328
-    Height = 25
-    Top = 283
-    Width = 96
+    Left = 409
+    Height = 30
+    Top = 355
+    Width = 120
     Anchors = [akRight, akBottom]
     AutoSize = True
-    BorderSpacing.Right = 6
+    BorderSpacing.Right = 8
     Caption = 'Cancel All'
-    Constraints.MinWidth = 96
+    Constraints.MinWidth = 120
     OnClick = ButtonStopAllClick
     ParentFont = False
     TabOrder = 7
@@ -984,9 +1125,9 @@ object Form_gwrap: TForm_gwrap
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Control = ShapeGlobalProgress
     Left = 0
-    Height = 4
-    Top = 312
-    Width = 3
+    Height = 5
+    Top = 390
+    Width = 4
     Anchors = [akLeft, akBottom]
     BevelOuter = bvNone
     ParentBackground = False
@@ -999,11 +1140,11 @@ object Form_gwrap: TForm_gwrap
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Panel5
     AnchorSideTop.Side = asrCenter
-    Left = 134
-    Height = 15
-    Top = 289
-    Width = 3
-    BorderSpacing.Left = 12
+    Left = 168
+    Height = 20
+    Top = 360
+    Width = 4
+    BorderSpacing.Left = 15
     Caption = '|'
     ParentFont = False
     Visible = False
@@ -1015,13 +1156,13 @@ object Form_gwrap: TForm_gwrap
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Side = asrCenter
     Cursor = crHandPoint
-    Left = 149
-    Height = 15
+    Left = 187
+    Height = 20
     Hint = 'Keep files'
-    Top = 289
-    Width = 102
-    BorderSpacing.Left = 12
-    Caption = 'Save task definition'
+    Top = 360
+    Width = 34
+    BorderSpacing.Left = 15
+    Caption = 'Keep'
     Font.Color = 13391121
     ParentFont = False
     Visible = False
@@ -1029,12 +1170,12 @@ object Form_gwrap: TForm_gwrap
   end
   object SaveDialog1: TSaveDialog
     DefaultExt = '.txt'
-    Left = 224
-    Top = 216
+    Left = 280
+    Top = 270
   end
   object PopupMenu1: TPopupMenu
-    Left = 312
-    Top = 240
+    Left = 390
+    Top = 300
     object pmei: TMenuItem
       Caption = 'Explore input path'
       OnClick = pmeiClick
@@ -1058,39 +1199,62 @@ object Form_gwrap: TForm_gwrap
     object N1: TMenuItem
       Caption = '-'
     end
+    object pmwintm: TMenuItem
+      Caption = 'Task Manager'
+      OnClick = pmwintmClick
+    end
+    object pmmactm: TMenuItem
+      Caption = 'Activity Monitor'
+      OnClick = pmmactmClick
+    end
+    object pmgnometm: TMenuItem
+      Caption = 'gnome-system-monitor'
+      OnClick = pmgnometmClick
+    end
+    object pmkdetm: TMenuItem
+      Caption = 'KSysGuard'
+      OnClick = pmkdetmClick
+    end
+    object pmtop: TMenuItem
+      Caption = 'top'
+      OnClick = pmtopClick
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
     object pmbackground: TMenuItem
       Caption = 'Background'
       OnClick = pmbackgroundClick
     end
   end
   object SaveDialog2: TSaveDialog
-    Left = 184
-    Top = 216
+    Left = 230
+    Top = 270
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
     Title = 'Create folder'
-    Left = 392
-    Top = 216
+    Left = 490
+    Top = 270
   end
   object OpenDialog1: TOpenDialog
     Title = 'Open archive'
     Filter = '*.*|*.*|7Z/XZ|*.7z;*.lzma*;*.xz|ISO/UDF|*.iso;*.udf|PEA|*.pea|RAR|*.rar|TAR/BZ2/GZ|*.tar;*.taz;*.tbz;*.tgz;*.bz2;*.gz|ZIP/ZIPX|*.zip;*.zipx'
     InitialDir = 'C:\Users\Giorgio\Desktop\'
-    Left = 432
-    Top = 216
+    Left = 540
+    Top = 270
   end
   object Timer2: TTimer
     Enabled = False
     Interval = 100
     OnTimer = Timer2Timer
-    Left = 144
-    Top = 216
+    Left = 180
+    Top = 270
   end
   object OpenDialog2: TOpenDialog
     Title = 'Select language file'
     Filter = 'txt|*.txt'
-    Left = 432
-    Top = 176
+    Left = 540
+    Top = 220
   end
   object TrayIcon1: TTrayIcon
     PopUpMenu = PopupMenu2
@@ -1144,12 +1308,12 @@ object Form_gwrap: TForm_gwrap
     Hint = 'PeaZip'
     OnClick = TrayIcon1Click
     OnDblClick = TrayIcon1DblClick
-    Left = 592
-    Top = 240
+    Left = 740
+    Top = 300
   end
   object PopupMenu2: TPopupMenu
-    Left = 312
-    Top = 192
+    Left = 390
+    Top = 240
     object pm2restore: TMenuItem
       Caption = 'PeaZip'
       OnClick = pm2restoreClick
