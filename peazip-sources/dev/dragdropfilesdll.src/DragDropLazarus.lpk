@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="DragDropLazarus"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Anders Melander, fork for Lazarus Michael Köcher (six1)"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="."/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+        <ObjectPath Value="..\Source"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+        </SyntaxOptions>
+      </Parsing>
+      <Other>
+        <Verbosity>
+          <ShoLineNum Value="True"/>
+          <ShowDebugInfo Value="True"/>
+          <ShowUsedFiles Value="True"/>
+          <ShowTriedFiles Value="True"/>
+        </Verbosity>
+        <CustomOptions Value="-dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="The Drag and Drop Component Suite is a freeware VCL component Library that enables your Lazarus applications to support COM based drag and drop and integrate with the Windows Clipboard"/>
+    <License Value="Creative Commons Attribution-Share Alike 3.0 
+https://creativecommons.org/licenses/by-sa/3.0/"/>
+    <Version Major="5" Minor="2"/>
+    <Files Count="1">
+      <Item1>
+        <Filename Value="DragDropDesign.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="DragDropDesign"/>
+      </Item1>
+    </Files>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LazControls"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="IDEIntf"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>
