@@ -204,3 +204,7 @@ Store symbolic links as links (WIM, TAR)
 0
 7z/p7zip max memory usage
 0
+
+9.9.0 EXTENSION
+Level of extra KDF rounds for PEA cascaded encryption
+0
