@@ -55,7 +55,7 @@ Computer's root
 [show password field in clear]
 0
 
-[ask for password on extract/list/test operations from system's menus]
+[UNUSED ask for password on extract/list/test operations from system's menus]
 3
 
 [archive browser style]
@@ -236,13 +236,13 @@ PeaZip
 0
 13
 1
-240
-80
-80
-80
-160
+300
+90
+90
+90
+180
 60
-100
+90
 0
 
 [extract to new folder]
@@ -675,7 +675,7 @@ Computer's root
 0
 0
 1
-160
+180
 
 [preferred checksum and hash algorithms]
 CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
@@ -750,7 +750,7 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 [sort dirs before files]
 1
 
-[7z / p7zip syntax level 0 latest tested for the app, 1 21.07]
+[7z / p7zip syntax level 0 latest tested for the app, 1 23.01 2 21.07]
 0
 
 [archive converion scripts allow user's interaction]
@@ -779,7 +779,7 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 
 [extended columns, comments]
 0
-100
+90
 
 [Manually set RAR binary]
 0
@@ -788,4 +788,17 @@ CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256
 0
 
 [Side bar]
+0
+
+[7z / p7zip use stdin / stdout pipe for tar and untar on compressed TAR archives: 0 no (default) 1 yes]
+0
+0
+
+[Smart sile name sorting]
+1
+
+[7z / p7zip display timestamps as UTC]
+0
+
+[Level of extra KDF rounds for PEA cascaded encryption]
 0
