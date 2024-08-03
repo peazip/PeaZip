@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Simplified Chinese - 简体中文
-9.8
+9.9
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
 Last rev. by: Junde Yhi
 Last rev.: 20240511
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: 总是以平面视图打开归档文件
 txt_9_8_fnew: 提取到此处（新建文件夹）
 txt_9_8_fsmart: 提取到此处（智能创建文件夹）

@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Swedish - Svenska
-9.8
+9.9
 Översatt av: FX (old translation: Mikael Hiort af Ornäs 20140413)
 Senast rev. av: FX
 Senast rev.: 2023-12-29
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: Always open archives in flat view
 txt_9_8_fnew: Extract here (in new folder)
 txt_9_8_fsmart: Extract here (smart new folder)

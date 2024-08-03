@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-9.8
+9.9
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı
 Son güncelleyen: Osman Öz
 Son güncelleme: 19 Temmuz 2024
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: Arşivleri her zaman düz görünümde aç
 txt_9_8_fnew: Buraya çıkartın (yeni klasörde)
 txt_9_8_fsmart: Buraya çıkartın (yeni akıllı klasör)

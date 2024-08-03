@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-9.8
+9.9
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20240305
+Ultima rev.: 20240704
 
 === PeaZip text group ===
 
+txt_9_9_uac: L'utente non ha i diritti di scrittura per questa destinazione. Riavviare PeaZip con elevazione UAC?
+TXT_9_9_kdf: Iterazioni KDF
+txt_9_9_utc: Data e ora UTC
 txt_9_8_alwaysflat: Apri sempre gli archivi in modo flat
 txt_9_8_fnew: Estrai qui (nuova cartella)
 txt_9_8_fsmart: Estrai qui (smart)

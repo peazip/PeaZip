@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
-9.8
+9.9
 번역자: Sleepy, EhangB
 최근 교정: 20240613 by EhangB
 교정 일자: 20110531 by Sleep
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: 항상 평면 보기로 아카이브 열기
 txt_9_8_fnew: 여기에 추출 (새 폴더에)
 txt_9_8_fsmart: 여기에 추출 (스마트 새 폴더로)

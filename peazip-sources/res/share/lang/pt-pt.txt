@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Portuguese (Portugal) - Português
-9.8
+9.9
 Tradução: Hugo Carvalho, José Carlos, Sérgio Marques
 Revisão: Sérgio Marques
 Revisto em: 20240605
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: Abrir ficheiros na vista plana
 txt_9_8_fnew: Extrair aqui (em nova pasta)
 txt_9_8_fsmart: Extrair aqui (nova pasta inteligente)

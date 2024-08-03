@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Български / Bulgarian
-9.8
+9.9
 Превод: Любомир Симеонов
 Корекция: Живко Жеков
 Последна корекция: 19/05/2024
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: Винаги отваряй архивите в плосък изглед
 txt_9_8_fnew: Извлечи тук (в нова папка)
 txt_9_8_fsmart: Извлечи тук (интелигентно нова папка)

@@ -1,12 +1,15 @@
 ﻿=== PeaZip language file ===
 Spanish (Latin America) - Español (América latina)
-9.8
+9.9
 Translated by: Agustín Bou, Anonymous
 Last rev. by: Anonymous
 Last rev.: 20180510
 
 === PeaZip text group ===
 
+txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+TXT_9_9_kdf: KDF rounds
+txt_9_9_utc: Show timestamps as UTC
 txt_9_8_alwaysflat: Always open archives in flat view
 txt_9_8_fnew: Extract here (in new folder)
 txt_9_8_fsmart: Extract here (smart new folder)
