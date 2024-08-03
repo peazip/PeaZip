@@ -3,7 +3,7 @@ Italian - Italiano
 9.9
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
-Ultima rev.: 20240704
+Ultima rev.: 20240803
 
 === PeaZip text group ===
 
@@ -334,7 +334,7 @@ txt_5_5_new: Nuova stringa
 txt_5_5_n: Numero di caratteri da cancellare
 txt_5_5_old: Vecchia stringa
 txt_5_5_position: Posizione (numero o "z" per fine)
-txt_5_5_intdir: Estrazione smart in nuova cartella
+txt_5_5_intdir: Nuova cartella smart
 txt_5_5_replacestr: Sostituisci/rimuovi stringa
 txt_5_5_datesameday: Stesso giorno dell'oggetto selezionato
 txt_5_5_datesamehour: Stessa ora dell'oggetto selezionato

@@ -3,13 +3,13 @@ Portuguese (Brazil) - Português
 9.9
 Translated by: Havokdan
 Last rev. by: Giorgio Tani
-Last rev.: 20240225
+Last rev.: 20240716
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
+txt_9_9_uac: O usuário atual não pode gravar neste caminho de saída. Você deseja executar o PeaZip com elevação UAC?
 TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
+txt_9_9_utc: Mostrar carimbos de data/hora como UTC
 txt_9_8_alwaysflat: Sempre abrir arquivos em exibição plana
 txt_9_8_fnew: Extrair aqui (em uma nova pasta)
 txt_9_8_fsmart: Extrair aqui (nova pasta inteligente)
@@ -82,7 +82,7 @@ txt_8_8_lnk: Link
 txt_8_8_intnote: Observe que a opção "Extração interativa" (em Opções > Configurações > Gerenciador de arquivos) é ignorada para compor a linha de comando na aba Console.
 txt_8_8_snz: Propagar fluxo Zone.Identifier (Windows)
 txt_8_8_sm: Tamanho de ícones pequenos
-txt_8_8_solcol: Barra sólida
+txt_8_8_solcol: Barra de navegação estrutural
 txt_8_8_snoi: IDs do proprietário/grupo de ids (TAR, Linux)
 txt_8_8_snon: Nomes do proprietário/grupo de ids (TAR, Linux)
 txt_8_8_tab: Aba
@@ -154,7 +154,7 @@ txt_8_0_forcetyping: Forçar digitar senhas interativamente
 txt_8_0_setpwopt: Definir opções de senha / arquivo-chave
 txt_8_0_forcetypinghelp: Se for compatível com o backend, a tarefa solicitará a senha de forma interativa. LIMITAÇÕES: a tarefa será executada no console, não será executada de forma autônoma e não poderá navegar em arquivos com nomes de arquivos criptografados.
 txt_7_9_spacing: Espaçamento
-txt_7_9_zooming: Ampliação
+txt_7_9_zooming: Ampliar
 txt_7_8_changelocalization: Mudar idioma do PeaZip
 txt_7_8_custext: Personalizar extensão
 txt_7_8_destexistfile: O destino já contém arquivos processados. Substituir arquivos com o mesmo nome?
@@ -419,7 +419,7 @@ txt_5_1_w3: Terça-feira
 txt_5_1_w4: Quarta-feira
 txt_5_1_weekly: Semanalmente
 txt_5_1_weeks: Semanas
-txt_5_0_bc: Barra de Trilha
+txt_5_0_bc: Navegação estrutural
 txt_5_0_resetpm: Você confirmar que quer restaurar Gerenciador de Senhas? Todas as senhas armazenadas no Peazip irão ser perdidas.
 txt_5_0_enum: Enumerar conteúdos dos diretórios
 txt_5_0_music: Música
@@ -500,7 +500,7 @@ txt_4_3_pwmancorr: Gerenciador de senhas parece adulterado ou corrompidos. Mante
 txt_4_3_expplp: Texto simples (todos os usos)
 txt_4_3_recsrc: Busca recursiva por padrão
 txt_4_3_resetpm: Redefinir gerente senha? Todas as senhas salvas serão excluídas
-txt_4_3_breadcrumb: Mostrar endereço como barra de trilha
+txt_4_3_breadcrumb: Mostrar endereço como navegação estrutural
 txt_4_2_arcabspath: Usar diretórios absolutos
 txt_4_1_duplicateshint: “Tamanho”/“Soma” linha é relatado na coluna CRC para todos os candidatos duplicados encontrados no atual diretório ou filtro de busca
 txt_4_1_adminhint: (Dica: alternativamente, você pode pedir a elevação no UAC para trabalhar com diretórios protegidos, Alt+F10 ou Opções > Executar como administrador)
