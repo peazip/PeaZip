@@ -3,13 +3,13 @@ Simplified Chinese - 简体中文
 9.9
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天
 Last rev. by: Junde Yhi
-Last rev.: 20240511
+Last rev.: 20240803
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
+txt_9_9_uac: 当前用户无法写入此输出路径。您想用“用户账户控制（UAC）”提升 PeaZip 的权限吗？
+TXT_9_9_kdf: 密钥派生函数（KDF）转换次数
+txt_9_9_utc: 以世界协调时（UTC）显示时间戳
 txt_9_8_alwaysflat: 总是以平面视图打开归档文件
 txt_9_8_fnew: 提取到此处（新建文件夹）
 txt_9_8_fsmart: 提取到此处（智能创建文件夹）
@@ -194,7 +194,7 @@ txt_7_5_autoclosesingle: 如果没有浏览动作，则提取后自动关闭
 txt_7_5_cutlen: 截断文件名到特定长度
 txt_7_5_cutlenw: 截断文件名到特定长度（4 到 255）文件名冲突可以之后手动解决
 txt_7_5_dragnone: 不要锁定目标
-txt_7_5_specialbrowse: 你想提取一切信息来呈现文件所需的额外数据吗？
+txt_7_5_specialbrowse: 您想提取一切信息来呈现文件所需的额外数据吗？
 txt_7_5_ee: 提取特殊类型文件的一切信息
 txt_7_5_draghide: 隐藏拖放目标
 txt_7_5_draglh: 锁定并隐藏目标
@@ -272,7 +272,7 @@ txt_6_5_force: 尝试打开有错误的归档文件
 txt_6_5_warning: 警告
 txt_6_5_yes: 是
 txt_6_5_yesall: 全部选是
-txt_6_5_np: 你现在可以把转换过的归档文件密码改成新的，或者留空密码以跳过加密
+txt_6_5_np: 您现在可以把转换过的归档文件密码改成新的，或者留空密码以跳过加密
 txt_6_4_absolute: 绝对路径
 txt_6_4_appdirn: 在后面加上目录名
 txt_6_4_closeallother: 关闭其它标签页
@@ -377,9 +377,9 @@ txt_5_3_io: 只包括
 txt_5_3_rec: 递归子目录
 txt_5_3_resetsi: 重新配置系统集成（右键菜单、“发送到”菜单、文件关联）吗？
 txt_5_2_oadd: 归档到原始路径
-txt_5_2_zerodelete: 你想要删除所选文件并用 0 全部覆盖吗？该操作无法被撤销，文件将无法被恢复
-txt_5_2_zfree: 你想要用 0 覆盖这个驱动器上的所有未使用空间吗？
-txt_5_2_sdfree: 你想安全擦除这个驱动器上的未使用空间吗？
+txt_5_2_zerodelete: 您想要删除所选文件并用 0 全部覆盖吗？该操作无法被撤销，文件将无法被恢复
+txt_5_2_zfree: 您想要用 0 覆盖这个驱动器上的所有未使用空间吗？
+txt_5_2_sdfree: 您想安全擦除这个驱动器上的未使用空间吗？
 txt_5_2_oext: 提取到原始路径
 txt_5_2_securedeletefree: 安全擦除未使用空间
 txt_5_2_free: 此操作可能需要几分钟。不过，如果经常这么干，会很快就弄坏 U 盘、固态盘等带有闪存的存储器的。
@@ -406,7 +406,7 @@ txt_5_1_onstart: 在启动时
 txt_5_1_once: 一次
 txt_5_1_w7: 星期六
 txt_5_1_schedule: 调度
-txt_5_1_schedexplain: 从图形界面的任务定义创建一个纯文本格式的脚本并调度它。被计划的任务脚本保存在“Scheduled scripts”文件夹。要编辑或删除这些文件，你可以使用系统的任务计划程序，因为所有由 PeaZip 调度的任务都已经被收集在任务计划程序库中的“PeaZip”分支中了。
+txt_5_1_schedexplain: 从图形界面的任务定义创建一个纯文本格式的脚本并调度它。被计划的任务脚本保存在“Scheduled scripts”文件夹。要编辑或删除这些文件，您可以使用系统的任务计划程序，因为所有由 PeaZip 调度的任务都已经被收集在任务计划程序库中的“PeaZip”分支中了。
 txt_5_1_schedok: 成功创建调度方案
 txt_5_1_schedscripts: 保存调度脚本
 txt_5_1_startdate: 起始日期
@@ -420,7 +420,7 @@ txt_5_1_w4: 星期三
 txt_5_1_weekly: 每周
 txt_5_1_weeks: 周
 txt_5_0_bc: 地址块
-txt_5_0_resetpm: 你确定重置密码管理器吗？如果是，所有存储在其中的密码将会悉数遗失。
+txt_5_0_resetpm: 您确定重置密码管理器吗？如果是，所有存储在其中的密码将会悉数遗失。
 txt_5_0_enum: 列出目录内容
 txt_5_0_music: 音乐
 txt_5_0_ps: 在此打开 PowerShell
@@ -674,7 +674,7 @@ txt_2_4_wenc: 百科全书
 txt_2_4_extractfrom: 提取自
 txt_2_4_hexp: 十六进制预览
 txt_2_4_operation: 操作
-txt_2_4_path: 路径不可写（也就是说已经满了或者只读）。你想要选择一个可以写入的输出路径吗？
+txt_2_4_path: 路径不可写（也就是说已经满了或者只读）。您想要选择一个可以写入的输出路径吗？
 txt_2_4_removefromclipboard: 从剪贴板中移除
 txt_2_4_stdclip: Standard：仅在剪贴板中保留一个选择项，粘贴后即删除剪切项
 txt_2_4_totalmem: 内存总计
@@ -778,7 +778,7 @@ txt_blowfish: Blowfish448（64 位块）
 txt_bookmarks: 书签
 txt_browse: 浏览
 txt_browser: 浏览器
-txt_aborted_error: 归档文件载入浏览耗时太久，已停止。你可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；提取 / 列出 / 测试操作不受此操作影响。
+txt_aborted_error: 归档文件载入浏览耗时太久，已停止。您可以使用搜索（F3）缩小选择范围或退出平面视图（F6）；提取 / 列出 / 测试操作不受此操作影响。
 txt_list_browsing: 浏览：
 txt_archive_root: 浏览：归档文件根目录
 txt_type_description_bzip2: BZip2：十分强大的压缩比，速度一般
@@ -1392,7 +1392,7 @@ txt_time: 时间：
 
 【密码管理器】
 密码管理器可以在主菜单、工具 > 密码管理器，或是密码表格、密码输入框左侧的下拉菜单中找到。
-已保存的密码可以在密码输入框左侧的下拉菜单中选用，或者你也可以从密码管理器复制密码从而在其它应用程序中使用。
+已保存的密码可以在密码输入框左侧的下拉菜单中选用，或者您也可以从密码管理器复制密码从而在其它应用程序中使用。
 如果没有为密码管理器设置主密码，那么任何人不需任何认证即可访问密码列表；否则，在用户输入正确的主密码后才会显示保存的密码。
 
 【配置应用程序】
