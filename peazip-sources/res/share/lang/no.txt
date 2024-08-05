@@ -3,16 +3,16 @@ Norwegian - Norsk
 9.9
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Kristoffer Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20240412
+Sist revidert: 20240804
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
+txt_9_9_uac: Innlogget bruker kan ikke skrive til denne filstien. Vil du kjøre PeaZip med opphøyd UAC?
+TXT_9_9_kdf: KDF runder
+txt_9_9_utc: Vis tidsangivelser som UTC
+txt_9_8_alwaysflat: Altid åpne arkiver i 'flat'visning
+txt_9_8_fnew: Pakk ut her (i ny mappe)
+txt_9_8_fsmart: Pakk ut her (smart ny mappe)
 txt_9_7_tarpipe: 7z / p7zip bruk pipe
 txt_9_7_smartsorting: Smart filnavn-sortering
 txt_9_6_centered: Sentrert
