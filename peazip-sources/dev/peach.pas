@@ -188,44 +188,18 @@ unit peach;
  1.71     20240213  G.Tani      9.7.1
  1.72     20240424  G.Tani      9.8.0
  1.73     20240728  G.Tani      9.9.0
+ 1.74     20240814  G.Tani      9.9.1
 
 BACKEND
-7z 24.07
-Pea 1.19 adds optional extra KDF rounds for triple cascaded encryption in .PEA format (up to 20 millions iterations for each algorithm)
-Zstd 1.5.6 (Windows, Linux)
 
 CODE
-Compiled with Lazarus 3.4, sources are still compatible with Lazarus 2.x
-Fixes and code cleanup
-  Fixed loading Custom format in custom compression settings
-  Fixed browsing some special cases of archives (containing items with absolute paths starting with directopry separator characters)
-Updated Options screen
- (7z/p7zip) syntax level can now be set to 21.07 and 23.01 legacy versions, form Options > Settings > Advances, Backend binaries
- (7z/p7zip) new option to show timestamps as UTC insead of local time, form form Options > Settings > Archive manager
- New group for TAR -related options in Options > Settings > Archive manager
+Updated GitHub repository
 
 FILE MANAGER
-(Windows) When UAC elevation is needed (non writeable output path) the user is now offered to restart the app UAC elevated.
- In this way it is not needed to require elevation to subsequent operations on the same path, and it is possible to use all of functions of PeaZip (console mode, force interactive password)
-Added internal drag and drop features
- It is now possible drag and drop extraction from file/archive manager to sidebar, both toward treeview panel and navigation panel (bookmarks, filesystem, history paths).
-  It is possible to extract either one or more entire archive(s), or selected archive content while browsing archives
-  If right mouse button is pressed, it will be possible to choese to extract with or without new folder/smart new folder, overriding defaults
- It is now possible to use drag and drop to add items from file browser/archive browser to Bookmarks panel
-Archives are now tested for encryption also for list/test operations, so password is required in advance if needed
-Improved System tools menu for Linux (context menu, File manager)
-Improved Zoom (Options, Settings, Themes), now available also in Style menu
- Application's layout, graphic and font can be zoomed in or out from 50% to 200%
-New "Extract here" quick link on the right of the tool bar, shown when browing an archive
- Extracts selected content, or entire archive if nothing is selected
- Extracts to new/smart folder depending on settings, link text is adjusted accordingly
- Shows context menu with all extraction options (here, smart, new folder) to be used on the fly without changing the configuration
-The app now dispays if it isrunning as root (admin or UAC elevated on Windows), showing <ROOT> (or <ADMIN>) note in main menu, or dropdown main menu (if main menu is hidden)
+Fixed rename bugs
+Updated translations
 
 EXTRACTION and ARCHIVING
-Improved reading DMG, IMG, RPM, and SQUASHFS files as archives
-Revamped task launcher GUI
-Updated compression Presets files to support latest options set
 
 INSTALLERS
 
@@ -5575,7 +5549,7 @@ const
   WS_EX_LAYERED = $80000;
   LWA_ALPHA     = $2;
   PEAZIPVERSION = '9.9';
-  PEAZIPREVISION= '.0';
+  PEAZIPREVISION= '.1';
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   PREFALGOCONST = 'CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256';
   FIRSTDOM      = 'https://peazip.github.io/';
@@ -73062,6 +73036,7 @@ var
    i,j,k,z,nsel,rc,nchar,npos:integer;
    namecollisionfound:boolean;
 begin
+if Form_peach.ListView1.ReadOnly=false then exit;
 if (fun<>'FILEBROWSER') and (fun<>'UN7Z') then exit;
 {$IFDEF MSWINDOWS}if Form_peach.EditOpenIn.Text=txt_mypc then exit;{$ENDIF}
 if Form_peach.StringGridList.RowCount<2 then exit;
@@ -73109,7 +73084,7 @@ rc:=Form_peach.StringGridList.RowCount;
 namecollisionfound:=false;
 if fun='UN7Z' then
    for i:=1 to Form_peach.StringGridArchive.Rowcount-1 do
-     for j:=1 to rc-2 do
+     for j:=1 to rc-1 do
         if Form_peach.StringGridList.Cells[16,j]='1' then
             if Form_peach.StringGridArchive.Cells[12,i]=extractfilepath(Form_peach.StringGridList.Cells[12,j])+s then
                begin
@@ -73117,7 +73092,11 @@ if fun='UN7Z' then
                break;
                end;
 if namecollisionfound=true then
-   if pMessageInfoYesNo(txt_6_9_overarch)=7 then exit;
+   if pMessageInfoYesNo(txt_6_9_overarch)=7 then
+      begin
+      exit_busy_status;
+      exit;
+      end;
 
 for i:=1 to rc-1 do
    begin
