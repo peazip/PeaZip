@@ -29,24 +29,21 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="DragDropLazarus"/>
+        <PackageName Value="MetaDarkStyle"/>
       </Item1>
       <Item2>
-        <PackageName Value="MetaDarkStyle"/>
-      </Item2>
-      <Item3>
         <PackageName Value="SynEdit"/>
         <MinVersion Major="1" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
-      </Item4>
-      <Item5>
         <PackageName Value="FCL"/>
         <MinVersion Major="1" Valid="True"/>
-      </Item5>
+      </Item4>
     </RequiredPackages>
     <Units Count="201">
       <Unit0>
@@ -66,7 +63,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="34"/>
+        <TopLine Value="181"/>
+        <CursorPos X="23" Y="200"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
           <Item0 X="9" Y="41545" ID="8"/>
