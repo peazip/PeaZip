@@ -3,13 +3,13 @@ Français
 9.9
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20240511
+Last rev.: 20240818
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
+txt_9_9_uac: L'utilisateur actuel ne peut enregistrer dans ce répertoire. Lancer PeaZip avec les droits d'administrateur ?
+TXT_9_9_kdf: Cycles d'itération KDF
+txt_9_9_utc: Horodatage UTC
 txt_9_8_alwaysflat: Toujours développer les archives à l'ouverture
 txt_9_8_fnew: Extraire ici (nouveau dossier)
 txt_9_8_fsmart: Extraire ici (nouveau dossier adaptatif)
