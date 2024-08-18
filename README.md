@@ -9,9 +9,13 @@ PeaZip is a free file archiver utility and rar extractor for Linux, macOS, and W
 
 The project aims to provide a cross-platform, portable, GUI frontend for multiple Open Source technologies (7-Zip, FreeArc, PAQ/ZPAQ, PEA, UPX, Brotli, Zstd) focused on file and archive management, and security (strong encryption, two factor authentication, encrypted password manager, secure delete).
 
-The program is written in Lazarus/FreePascal (Windows installable packages are scripted with InnoSetup, with Pascal-like syntax) and offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, Linux x86/x86-64 (with Linux ARM and BSD ports also available), and Darwin/macOS both Intel x86_64 and aarch64 (e.g. M1 Apple Silicon SoC).
+PeaZip offers a LGPLv3 alternative to proprietary software (WinZip, WinRar, etc), running as native application on Windows/Win64, Wine/ReactOS, Linux x86/x86-64 (with Linux ARM and BSD ports also available), and Darwin/macOS both Intel x86_64 and aarch64 (e.g. M1 Apple Silicon SoC).
 
-Up to date sources are available in peazip-sources Git directory, and snapshots of the source code at each x.y.z release are available in Releases as peazip-x.y.z.src.zip packages, with https://github.com/peazip/PeaZip/blob/sources/peazip-sources/readme.txt (featured both in Git and in source packages) containing detailed instructions for compiling the application and building packages for different systems.
+**How to build PeaZip**
+
+Up to date sources are available in peazip-sources Git directory, and snapshots of the source code at each x.y.z release are available in Releases as peazip-x.y.z.src.zip packages, with https://github.com/peazip/PeaZip/blob/sources/peazip-sources/readme.txt (featured both in Git and inside the source packages) containing detailed instructions for compiling the application and building packages for different systems.
+
+The program is written in Lazarus/FreePascal, Windows installers are scripted with InnoSetup, also using a Pascal-like syntax.
 
 **Userful links:**
 
