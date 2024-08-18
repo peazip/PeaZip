@@ -19,16 +19,24 @@ In case of issues with installation (step 1) or use (step 2) of Lazarus, its com
 
 Add additional packages to vanilla Lazarus:
 lazbuild --add-package (peazip sources)/dev/metadarkstyle/metadarkstyle.lpk
+(only needed to build dragdropfilesdll.dll for Windows systems)
+lazbuild --add-package (peazip sources)\dev\dragdropfilesdll\DragDropLazarus.lpk
 
 Run:
 lazbuild (peazip sources)/dev/project_peach.lpi
 lazbuild (peazip sources)/dev/project_pea.lpi
-lazbuild (peazip sources)/dev/dragdropfilesdll/dragdropfilesdll.lpi (only needed for Windows systems)
+(only needed to build dragdropfilesdll.dll for Windows systems)
+lazbuild (peazip sources)\dev\dragdropfilesdll\dragdropfilesdll.lpi
 
 Please note:
 Replace lazbuild with full qualified path to lazbuild binary if needed; usually on windows it is C:\lazarus\lazbuild.exe
 Replace (peazip sources) with fill qualified path to PeaZip source's directory.
+LINUX
+On Linux systems Lazarus will currently build for GTK2 widget set by default:--widgetset= option allows to target different widget sets (Qt5, Qt6, GTK3...), assuming correct Pascal bindings are installed - please refer to Lazarus documentation for each specific widget-set.
+In example, lazbuild --widgetset=qt5 project_peach.lpi will compile peazip binary for Qt5 libraries, if available to Lazarus IDE.
 In alternative open the aforementioned .lpi files in Lazarus and follow suggestions of the DETAILED GUIDE section.
+MACOS
+Binaries produced with Lazarus 3.2 and following can trigger an non-existent unspecified error when launched from Automator scripts.
 
 3) MOVE THE BINARIES 
 
@@ -73,21 +81,22 @@ CONTENT
 (peazip sources)/dev/metadarkstyle subdirectory contains zamtmn metadarkstyle Lazarus package which adds support to W10+ dark mode.
 The package is unused on non-Windows platforms, but in any case Lazarus IDE needs that the package is either manually added to the project, or removed from project dependencies, both for peazip and pea.
 To add the package to the project (which is recommended on Windows platform) you can use the command line mentioned at point 2) of the quick guide section, or (from the IDE) main menu > Package > Add package file (.lpk), click "Use" dropdown and select "Add to project".
-To remove the package dependency open the project in the IDE, which will notify the missing dependency, the project can be removed from main menu > Project > Project Inspector, select "MetaDarkStyle" and click the "Remove" button; as alternative attemptiong to build the project will result in an error message showing Project Inspector which can be used to remove the package dependency as explained.
+To remove the package dependency open the project in the IDE, which will notify the missing dependency, the package dependency can be removed from main menu > Project > Project Inspector, select "MetaDarkStyle" and click the "Remove" button; as alternative attemptiong to build the project will result in an error message showing Project Inspector which can be used to remove the package dependency as explained.
 This extra step is due to Lazarus architecture in which packages belongs to the IDE rather than to the specific project, that is meant to make easiser to reuse packages in multiple projects.
 
 (peazip sources)/res subdirectory contains resources to run PeaZip application
 
 Windows-only:
 
-(peazip sources)/dev/dragdropfilesdll subdirectory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems
+(peazip sources)\dev\dragdropfilesdll subdirectory contains sources to build dragdropfilesdll.dll, which provides application-to-system files drag&drop functions under Windows systems
 It requires installation of optional Lazarus package DragDropLazarus5.2 (or newer) to be compiled, which is based on work of Angus Johnson & Anders Melander (on Delphi), and Michael Köcher / six (on Lazarus);  the package is available in Lazarus Online Package Manager or from https://packages.lazarus-ide.org/DragDrop.zip
+As alternative to installation in the Lazarus IDE, the package can be simply added to the project (from the IDE) main menu > Package > Add package file (.lpk), click "Use" dropdown and select "Add to project".
 
 IMPORTANT: dragdropfilesdll.dll SHA256 is checked by PeaZip for Windows on startup in procedure internaldllcheck, in order to assure the dll matches with a known whitelisted hash value to prevent DLL Hijacking attacks.
 If dragdropfilesdll.dll SHA256 hash does not match with the value hardcoded in procedure internaldllcheck, PeaZip will halt displaying an error message about the dll.
 If you plan to recompile or modify dragdropfilesdll.dll you will need to modify the reference hash value in procedure internaldllcheck to match the hash value of the new dll file.
 
-(peazip sources)/dev/installer subdirectory contains InnoSetup script files creating Windows installers with file associations and menu / SendTo integration for PeaZip; it requires InnoSetup.
+(peazip sources)\dev\installer subdirectory contains InnoSetup script files creating Windows installers with file associations and menu / SendTo integration for PeaZip; it requires InnoSetup.
 
 .res files in (peazip sources)/dev are compiled with windres (see windres_pea.bat and windres_peazip.bat as examples) into .rc files, which are used on Windows platform to give to the application's executables manifest and binaries information (author, version etc)
 
