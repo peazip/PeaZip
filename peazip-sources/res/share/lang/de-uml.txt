@@ -1,22 +1,22 @@
-﻿=== PeaZip language file ===
+=== PeaZip language file ===
 German - Deutsch
 9.9
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20240223
+Last rev.: 20240806
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
+txt_9_9_uac: Der aktuelle Benutzer kann nicht in diesen Ausgabepfad schreiben. Möchten Sie PeaZip mit UAC-Administratorrechten ausführen?
+TXT_9_9_kdf: KDF-Runden (Key Derivation Function)
+txt_9_9_utc: Zeitstempel als UTC anzeigen
+txt_9_8_alwaysflat: Archive immer mit flacher Ansicht öffnen
+txt_9_8_fnew: Hier entpacken (in neuem Ordner)
+txt_9_8_fsmart: Hier entpacken (ohne redundanten neuen Ordner)
 txt_9_7_tarpipe: 7z / p7zip verwenden Pipe
 txt_9_7_smartsorting: Intelligente Sortierung der Dateinamen
 txt_9_6_centered: Zentriert
-txt_9_6_cside: Kompatke Seitenleiste
+txt_9_6_cside: Kompakte Seitenleiste
 txt_9_6_loadpconfirm: Möchten Sie dieses Profil laden? Alle Daten des aktuellen Profils werden überschrieben, einschließlich gespeicherter Skripte und Daten des Passwort-Managers.
 txt_9_6_loadp: Profil laden
 txt_9_6_saveppw: OPTIONAL: dieses Profil mit einem Passwort / Schlüsseldatei schützen?
@@ -236,8 +236,8 @@ txt_7_2_savecompsettings: Komprimierungseinstellungen speichern
 txt_7_2_source: Quelle
 txt_7_2_updateclear: Geänderte Dateien im Archiv aktualisieren und geänderte Dateien verwerfen
 txt_7_1_type_description_brotli: Brotli: Schneller Kompressor von Google, sehr schnelle Dekomprimierung
-txt_7_1_new: Alles hier entpacken, in neuem Ordner
-txt_7_1_smart: Alles hier entpacken, smart
+txt_7_1_new: Alles hier in neuem Ordner entpacken
+txt_7_1_smart: Alles hier in neuem Ordner entpacken, ohne redundanten Ordner
 txt_7_1_profileintermediate: Mittlere Komprimierung, ZIP/BZip2 fast
 txt_7_1_renfilesonly: Nur Dateien umbenennen
 txt_7_1_typetosearch: Tippen, um in aktuellem Pfad zu suchen
@@ -248,7 +248,7 @@ txt_7_0_exttmppath: Inhalt wird außerhalb des temporären Ordners entpackt, in:
 txt_6_9_autou: Geänderte Dateien in Archiven automatisch aktualisieren
 txt_6_9_forceu: Geänderte Dateien aktualisieren
 txt_6_9_opuns: Vorgang wird für diesen Archivtyp nicht unterstützt
-txt_6_9_overarch: Dateien mit gleichem Namen, die bereits im Archiv vorhanden sind, überschreiben?
+txt_6_9_overarch: Dateien mit gleichem Namen überschreiben, die bereits im Archiv vorhanden sind, ?
 txt_6_9_uconf: Die geöffnete Datei wurde geändert. Archiv aktualisieren?
 txt_6_8_ndrop: Natives Drag and Drop unter Windows verwenden
 txt_6_7_nop: (keine Vorschau)
@@ -334,7 +334,7 @@ txt_5_5_new: Neue Zeichenfolge
 txt_5_5_n: Anzahl zu löschender Zeichen
 txt_5_5_old: Alte Zeichenfolge
 txt_5_5_position: Position (Nummer oder "z" für das Ende)
-txt_5_5_intdir: Smart entpacken ohne überflüssigen Ordner
+txt_5_5_intdir: Intelligent entpacken ohne redundanten Ordner
 txt_5_5_replacestr: Zeichenfolge ersetzen/entfernen
 txt_5_5_datesameday: Gleicher Tag der ausgewählten Datei
 txt_5_5_datesamehour: Gleiche Stunde der ausgewählten Datei
@@ -503,7 +503,7 @@ txt_4_3_resetpm: Soll der Passwort-Manager zurückgesetzt werden? Alle gespeiche
 txt_4_3_breadcrumb: Adresszeile im Brotkrumen-Stil anzeigen
 txt_4_2_arcabspath: Absolute Pfade verwenden
 txt_4_1_duplicateshint: "Größe"/"Prüfsumme" wird in der CRC-Spalte für wahrscheinlich doppelte Dateien im aktuellen Ordner oder Suchfilter angezeigt
-txt_4_1_adminhint: (HINWEIS: Alternativ kann man über UAC Administratorrechte anfordern, um in geschützten Pfaden zu arbeiten. Alt+F10 oder Optionen > Als Administrator ausführen)
+txt_4_1_adminhint: (HINWEIS: Alternativ kann man über UAC-Administratorrechte anfordern, um in geschützten Pfaden zu arbeiten. Alt+F10 oder Optionen > Als Administrator ausführen)
 txt_4_1_selected: (ausgewählt)
 txt_4_1_duplicatesfound: Doppelte Dateien gefunden
 txt_4_1_duplicatesfind: Doppelte Dateien suchen
@@ -1261,7 +1261,7 @@ txt_2_3_renameexisting: Vorhandene Dateien automatisch umbenennen
 txt_2_3_renameextracted: Entpackte Dateien automatisch umbenennen
 txt_2_3_cancel: Abbruch
 txt_2_3_encryption: Verschlüsselung
-txt_2_3_extinnew: In neuen Ordner entpacken
+txt_2_3_extinnew: In neuem Ordner entpacken
 txt_2_3_keyfile: Schlüsseldatei
 txt_2_3_kf_not_found_gwrap: Schlüsseldatei kann nicht gefunden oder gelesen werden. Bitte andere Schlüsseldatei angeben.
 txt_2_3_moreoptions: Mehr Optionen...
@@ -1338,7 +1338,7 @@ txt_time: Zeit:
 
 ARCHIVE ENTPACKEN
 Innerhalb des Systems: 
-- Rechtsklick auf ein oder mehrere Archive und im Kontextmenü des Systems auf "Entpacke hier" oder "Entpacke hier (in neuen Ordner)" anklicken um ohne weitere Interaktion Archive zu entpacken
+- Rechtsklick auf ein oder mehrere Archive und im Kontextmenü des Systems auf "Hier entpacken" oder "Entpacke hier (in neuem Ordner)" anklicken um ohne weitere Interaktion Archive zu entpacken
 - ansonsten den Menüeintrag "Entpacken nach ..." benutzen um weitere Optionen zu erhalten: Ausgabeordner, Passwort, entpacken von Dateien in einen neuen Ordner, überspringen von Dateien, umbenennen oder überschreiben von vorhandenen Dateien, usw.
 
 Öffnen von Archiven in PeaZip, z. B. mit Doppelklick, oder ziehen eines Archivs auf das Programmfenster von PeaZip oder dessen Verknüpfungssymbol auf dem Dsektop / im "Senden an..."-Menü
@@ -1438,11 +1438,11 @@ ARCHIVE ÖFFNEN
 2b) Durch einen Doppelklick auf eine Datei in einem Archiv oder durch drücken der "Eingabe"-Taste wird die Datei in der verknüpften Anwendung geöffnet, oder in PeaZip angezeigt (wenn es sich um ein Archiv handelt), oder in PeaZip aufgelistet falls es ein Ordner in einem Archiv ist;
 2c) ausgewählte Dateien in einem Archiv werden entpackt wenn die mittlere Maustaste oder die "Leertaste" gedrückt wird (der Ausgabepfad wird in einem Dialog abgefragt);
 2d) Innerhalb des PeaZip-Fensters steht durch einen Rechtsklick ein Menü für alle verfügbaren Möglichkeiten zur Verfügung, wie z.B. das Entpacken von Dateien, Vorschau, testen, auflisten, hinzufügen und entfernen von Dateien, etc...
-Hinweis: wenn das Archiv in einem neuen Ordner entpackt werden soll, steht im Kontext-Menü "Entpacke in neuen Ordner" zur Verfügung (oder I/O Tab), oder es kann die "\"-Taste oder "Strg+N"-Tastenkombination im PeaZip-Fenster gedrückt werden.
+Hinweis: wenn das Archiv in einem neuen Ordner entpackt werden soll, steht im Kontext-Menü "Entpacke in neuem Ordner" zur Verfügung (oder I/O Tab), oder es kann die "\"-Taste oder "Strg+N"-Tastenkombination im PeaZip-Fenster gedrückt werden.
 
 Vorgang:
 - "Optionen"-Reiter um Format-spezifische Parameter einzugeben;
-- "I/O"-Reiter für Eingabe / Ausgabeoptionen, einschließlich "Entpacke in neuen Ordner" (auch im Kontext-Menü verfügbar);
+- "I/O"-Reiter für Eingabe / Ausgabeoptionen, einschließlich "Entpacke in neuem Ordner" (auch im Kontext-Menü verfügbar);
 - "Filter"-Reiter um erweiterte Einschluss-/Ausschluss-Filter zu nutzen, falls diese für das gewählte Archiv-Format zur Verfügung stehen;
 - "Konsole"-Reiter zur Analyse und Anpassung der Aufgaben-Syntax, oder eine Aufgabe als Befehlszeile zu exportieren.
 
