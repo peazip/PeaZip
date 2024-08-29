@@ -3,34 +3,34 @@
 9.9
 Перевод: Rytikov Slava, Dmitry Tsvetkov, xoxmodav, ViktorOn
 Посл. пров.: ViktorOn
-Посл. ред.: 31.07.2023
+Посл. ред.: 30.08.2024
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_9_uac: Текущий пользователь не может записывать по этому пути. Хотите запустить PeaZip с повышением привилегий UAC?
+TXT_9_9_kdf: Циклы KDF
+txt_9_9_utc: Показивать метки времени в формате UTC
+txt_9_8_alwaysflat: Всегда открывать архивы в развёрнутом виде
+txt_9_8_fnew: Извлечь сюда (в новую папку)
+txt_9_8_fsmart: Извлечь сюда (в умную папку)
+txt_9_7_tarpipe: Использовать для 7z/p7zip канал
+txt_9_7_smartsorting: Умная сортировка имён файлов
+txt_9_6_centered: Центровать
+txt_9_6_cside: Компактная боковая панель
+txt_9_6_loadpconfirm: Хотите загрузить этот профиль? Все данные текущего профиля будут перезаписаны, включая сохранённые скрипты и Менеджер паролей.
+txt_9_6_loadp: Загрузить профиль
+txt_9_6_saveppw: OPTIONAL: НЕОБЯЗАТЕЛЬНО: защитить этот профиль паролем/ключевым файлом?
+txt_9_6_savepoverwrite: Перезаписать существующий профиль? Все данные текущего профиля будут перезаписаны, включая сохранённые скрипты и Менеджер паролей.
+txt_9_6_savep: Сохранить профиль
+txt_9_6_scside: Показывать компактную боковую панель
 txt_9_5_all: Все
 txt_9_5_precond: Преданализ, если обнаружены ошибки
 txt_9_5_largea: Преданализ больших архивов
 txt_9_5_mediuma: Преданализ средних архивов
 txt_9_5_smalla: Преданализ небольших архивов
-txt_9_5_reopentab: Reopen last tab
-txt_9_5_savetabs: Save tabs
-txt_9_5_sb: Use binaries in system paths
+txt_9_5_reopentab: Переоткрыть последнюю вкладку
+txt_9_5_savetabs: Сохранить вкладки
+txt_9_5_sb: Использовать двоичные файлы в системных путях
 txt_9_4_r: чтение
 txt_9_4_rw: чтение/запись
 txt_9_4_savecomment: Сохранить комментарий
@@ -47,12 +47,12 @@ txt_9_2_7za: Псевдоним 7z/p7zip
 txt_9_2_changelog: Журнал изменений
 txt_9_2_tfaq: Проверить наличие переводов
 txt_9_2_compact: Свернуть
-txt_9_2_swt: Swap Tool / Address bar
+txt_9_2_swt: Панель инструментов/Адресная строка
 txt_9_2_tos: TOS, Конфиденциальность
 txt_9_2_doc: Проверка документации, трекер вопросов...
 txt_9_2_updates: Проверка обновлений, двоичных файлов, плагинов...
 txt_9_1_7zs: Уровень синтаксиса 7z/p7zip
-txt_9_1_ac: Archive conversion scripts allow user's interaction
+txt_9_1_ac: Пользователь может взаимодействовать со скриптами преобразования архивов
 txt_9_1_closeall: Закрыть все
 txt_9_1_enlargeicons: Увеличить значки файлового проводника
 txt_9_1_ef: Исключить пустые папки из операций архивирования и извлечения (7z/p7zip)
@@ -550,7 +550,7 @@ txt_3_1_src: Поиск
 txt_3_1_systmp: Системный "Temp"
 txt_3_1_languagetools: Перевод
 txt_3_1_workingdir: Рабочий каталог
-txt_3_0_nonreadableorpw: Архив не читаем. Возможно архив недействителен, отсуствуют тома или защищён паролем. Попробуете ввести пароль?
+txt_3_0_nonreadableorpw: Архив нечитаем. Возможно архив недействителен, отсуствуют тома или защищён паролем. Попробуете ввести пароль?
 txt_3_0_readablepw: Возможно, архив защищён паролем
 txt_3_0_configure: Ассоциации файлов и интеграция в контекстное меню
 txt_3_0_resettmp: Сброс временных файлов
@@ -783,7 +783,7 @@ txt_list_browsing: Просмотр:
 txt_archive_root: Просмотр корневого каталога архива
 txt_type_description_bzip2: BZip2: довольно сильное сжатие, средняя скорость
 txt_pw_empty: Нельзя использовать пустой пароль. Введите пароль или не используйте опцию шифрования
-txt_add_error: Невозможно добавить/обновить или удалить объект(ы). Архив не доступен для записи или не поддерживает эту операцию. Редактирование некоторых типов архивов можно включить в настройках менеджера архивов.
+txt_add_error: Невозможно добавить/обновить или удалить объект(ы). Архив недоступен для записи или не поддерживает эту операцию. Редактирование некоторых типов архивов можно включить в настройках менеджера архивов.
 txt_un7z_browse_failure: невозможно просмотреть архив
 txt_list_error: Невозможно отобразить содержимое архива: возможно архив зашифрован или повреждён.
 txt_conf_cannotsave: Невозможно сохранить файл конфигурации. Снимите защиту от записи и проверьте свободное место на диске.
