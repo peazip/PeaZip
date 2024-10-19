@@ -1,28 +1,28 @@
 ﻿=== PeaZip language file ===
 Ukrainian - Українська
 9.9
-Переклад: Василь Мельник(VMenik, GIT = VMelnikV), Решетнюк В.В.(IxI_JOKER_IxI), Міщенко О.С., sasha[at]mishchenko.tk, Пилипчук О.П., pilipchukap[at]rambler[dot]ru, ViktorOn
-Останній раз ред.: IxI_JOKER_IxI (Localize.org.ua)
-Останнє ред.: 28.02.2022
+Переклад: Василь Мельник(VMenik, GIT = VMelnikV), Решетнюк В.В.(IxI_JOKER_IxI), Міщенко О.С., sasha[at]mishchenko.tk, Пилипчук О.П., pilipchukap[at]rambler[dot]ru, ViktorOn , Oleksandr (yupiter43@gmail.com)
+Останній раз ред.: Oleksandr (yupiter43@gmail.com)
+Останнє ред.: 19.10.2024
 
 === PeaZip text group ===
 
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
-txt_9_7_tarpipe: 7z / p7zip use pipe
-txt_9_7_smartsorting: Smart file name sorting
-txt_9_6_centered: Centered
-txt_9_6_cside: Compact side bar
-txt_9_6_loadpconfirm: Do you want to load this profile? All the data of current profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_loadp: Load profile
-txt_9_6_saveppw: OPTIONAL: protect this profile with password / keyfile?
-txt_9_6_savepoverwrite: Overwrite existing profile? All the data of the existing profile will be overwritten, including saved scripts and Password Manager.
-txt_9_6_savep: Save profile
-txt_9_6_scside: Show Compact side bar
+txt_9_9_uac: Поточний користувач не може писати в цей вихідний шлях. Бажаєте запустити PeaZip з підвищенням UAC?
+TXT_9_9_kdf: KDF раунди
+txt_9_9_utc: Показувати мітки часу як UTC
+txt_9_8_alwaysflat: Завжди відкривати архіви у розгорнутому вигляді
+txt_9_8_fnew: Витягти тут (у новій папці)
+txt_9_8_fsmart: Вийняти тут (розумна нова папка)
+txt_9_7_tarpipe: 7z / p7zip використовує канал
+txt_9_7_smartsorting: Розумне сортування імен файлів
+txt_9_6_centered: Центровано
+txt_9_6_cside: Компактна бічна панель
+txt_9_6_loadpconfirm: Ви хочете завантажити цей профіль? Усі дані поточного профілю буде перезаписано, включаючи збережені сценарії та менеджер паролів.
+txt_9_6_loadp: Завантажити профіль
+txt_9_6_saveppw: НЕОБОВ'ЯЗКОВО: Захистити цей профіль паролем / файлом ключа?
+txt_9_6_savepoverwrite: Перезаписати існуючий профіль? Усі дані наявного профілю буде перезаписано, включаючи збережені сценарії та менеджер паролів.
+txt_9_6_savep: Зберегти профіль
+txt_9_6_scside: Показати компактну бічну панель
 txt_9_5_all: Все
 txt_9_5_precond: Попередній аналіз, якщо виявлені помилки
 txt_9_5_largea: Попередній аналіз великих архівів
@@ -202,8 +202,8 @@ txt_7_5_draglock: Заблокувати ціль перетягування
 txt_7_5_never: Ніколи
 txt_7_5_repnascii: Замінити/видалити не-ASCII символи
 txt_7_4_comment: Коментар
-txt_7_4_7zfbrotlicomp: Найшвидше стиснення, 7Z Brotli
-txt_7_4_7zfzstandardcomp: Найшвидше стиснення, 7Z Zstandard
+txt_7_4_7zfbrotlicomp: Найшвидше стиснення, 7Z Бротлі
+txt_7_4_7zfzstandardcomp: Найшвидше стиснення, 7Z Zстандарт
 txt_7_4_presetrar: Висока ступінь стиснення, RAR
 txt_7_4_tkeep: Зберігайте оригінальну мітку часу архіву
 txt_7_4_lock: Заблокувати архів
@@ -218,9 +218,9 @@ txt_7_3_archiveerrors: [архів може містити помилки].
 txt_7_3_archiveerrorshint: Архів може бути зіпсованим (відсутні, пошкоджені або нестандартні дані), можна запустити тест для отримання детальної інформації. Якщо зміст архіву зашифровано, перед переглядом потрібно ввести пароль.
 txt_7_3_clickextall: Натисніть "Видобути все", щоб увімкнути
 txt_7_3_noconfdel: Не запитувати підтвердження на видалення після архівування/видобування
-txt_7_3_profile7zfastest: Швидке стиснення, 7Z fastest
-txt_7_3_maxbr: Максимальне стиснення за методом Brotli з використанням більшої кількості пам'яті (може бути несумісним з деякими програмами-розпаковувачами)
-txt_7_3_maxzstd: Максимізувати стиснення Zstandard, використовуючи більше пам'яті
+txt_7_3_profile7zfastest: Швидке стиснення, 7Z найшвидший
+txt_7_3_maxbr: Максимальне стиснення за методом Бротлі з використанням більшої кількості пам'яті (може бути несумісним з деякими програмами-розпаковувачами)
+txt_7_3_maxzstd: Максимізувати стиснення Zстандарт, використовуючи більше пам'яті
 txt_7_3_profile7zfast: Середнє стиснення, 7Z швидко
 txt_7_3_stl: Встановити мітку часу архіву з останнього файлу
 txt_7_2_altcomp: Альтернативне стиснення, ARC
@@ -228,24 +228,24 @@ txt_7_2_clearnoupdate: Очистити відредаговані файли
 txt_7_2_autoclosepeazip: Закривати PeaZip після завершення завдання
 txt_7_2_zpaqall: Витягти усі зміни
 txt_7_2_extcomp: Екстремальне стиснення, ZPAQ
-txt_7_2_extcompultra: Екстремальне стиснення, ZPAQ ultra
-txt_7_2_fbrotlicomp: Найшвидше стиснення, Brotli
-txt_7_2_fzstandardcomp: Найшвидше стиснення, Zstandard
+txt_7_2_extcompultra: Екстремальне стиснення, ZPAQ ультра
+txt_7_2_fbrotlicomp: Найшвидше стиснення, Бротлі
+txt_7_2_fzstandardcomp: Найшвидше стиснення, Zстандарт
 txt_7_2_loadcompsettings: Завантажити налаштування стиснення
 txt_7_2_savecompsettings: зберегти налаштування стиснення
 txt_7_2_source: Джерело
 txt_7_2_updateclear: оновити та очистити відредаговані файли в архіві 
-txt_7_1_type_description_brotli: Brotli: швидкий компресор від Google, дуже швидка декомпресія
+txt_7_1_type_description_brotli: Бротлі: швидкий компресор від Google, дуже швидка декомпресія
 txt_7_1_new: Розпакуйте все тут, у нову папку
 txt_7_1_smart: Розпакуйте все тут, у розумну папку
 txt_7_1_profileintermediate: Проміжне стиснення, швидке ZIP/BZip2
 txt_7_1_renfilesonly: Перейменувати лише файли
 txt_7_1_typetosearch: Введіть для пошуку в поточному шляху
-txt_7_1_type_description_zstd: Zstandard: швидкий компресор від Facebook, дуже швидка декомпресія
+txt_7_1_type_description_zstd: Zстандарт: швидкий компресор від Facebook, дуже швидка декомпресія
 txt_7_0_af: Аналізуйте вміст папок
 txt_7_0_autoopentar: Автоматично відкривати один архів tar всередині файлів tar.*
 txt_7_0_exttmppath: Контент буде витягнутий за межі тимчасового робочого шляху, у: 
-txt_6_9_autou: Auto update modified files in archives
+txt_6_9_autou: Автоматичне оновлення змінених файлів в архівах
 txt_6_9_forceu: Примусове оновлення змінених файлів у архівах
 txt_6_9_opuns: Операція не підтримується поточним типом архіву
 txt_6_9_overarch: Перезаписати файл(и) з такою ж назвою, що вже існує всередині архіву?
@@ -681,8 +681,8 @@ txt_2_4_totalmem: всього пам'яті
 txt_2_4_gvideo: Відео
 txt_2_4_wbook: Wiki-книга
 txt_2_4_wnews: Wiki-новини
-txt_2_4_wsrc: Wikisource
-txt_2_4_wdict: Wiktionary
+txt_2_4_wsrc: Wiki-джерела
+txt_2_4_wdict: Wiki-словник
 txt_2_3_pw_errorchar: : Ваша операційна система не дозволяє графічній оболонці PeaZip використовувати цей символ в паролі. Будь ласка змініть пароль або виберіть режим консолі в "Інструменти > Налаштування"
 txt_2_3_envstr: Показати змінні оточення
 txt_2_3_never_pw: Не питати пароль
