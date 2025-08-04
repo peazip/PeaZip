@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separate]
-@="添加到归档文件"
+@="到归档文件"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\PeaZip.add2separatesingle]
 @="添加到归档文件并分割"
