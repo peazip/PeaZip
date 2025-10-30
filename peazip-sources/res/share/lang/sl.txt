@@ -3,55 +3,55 @@ Slovenski jezik
 10.7
 Prevod         : Jadran Rudec, jrudec@gmail.com
 Zadnja revizija: Jadran Rudec 
-Zadnja revizija: 20240211
+Zadnja revizija: 20251030
 
 === PeaZip text group ===
 
-txt_10_7_errload: Cannot display image
-txt_10_7_errfile: File not found
-txt_10_7_first: First
-txt_10_7_fit: Fit to screen
-txt_10_7_fith: Fit to screen height
-txt_10_7_fitw: Fit to screen width
-txt_10_7_keep: Keep output files if extraction ends in error or is cancelled
-txt_10_7_next: Next
-txt_10_7_prev: Previous
-txt_10_7_pwh: Password from hash
-txt_10_7_images: View images
-txt_10_7_thumbnails: View thumbnails
-txt_10_6_virtual: Dynamic virtual mode
-txt_10_5_fr: (full report)
-txt_10_5_sectype: Ask confirmation for running following file types
-txt_10_5_checkmotw: Check Zone.Identifier (MoTW)
-txt_10_5_sectypewarning: Do you want to run this file?
-txt_10_5_pathlock: Items in this path of the archive cannot be edited
-txt_10_5_type_description_rar: RAR: proprietary archive format, high compression ratio, supported through external compressor
-txt_10_5_sh: Show hidden files and folders in the filesystem
-txt_10_5_ntfsalt: This format is able to store NTFS Alternate Data Stream, including Mark of The Web
+txt_10_7_errload: Slike ni mogoče prikazati
+txt_10_7_errfile: Datoteka ni najdena
+txt_10_7_first: Prvi
+txt_10_7_fit: Prilagodi zaslonu
+txt_10_7_fith: Prilagodi višini zaslona
+txt_10_7_fitw: Prilagodi širini zaslona
+txt_10_7_keep: Ohrani izhodne datoteke, če razširjanje konča z napako ali je preklicano
+txt_10_7_next: Naprej
+txt_10_7_prev: Prejšnji
+txt_10_7_pwh: Geslo iz hasha
+txt_10_7_images: Prikaži slike
+txt_10_7_thumbnails: Prikaži sličice
+txt_10_6_virtual: Dinamični navidezni način
+txt_10_5_fr: (polno poročilo)
+txt_10_5_sectype: Zahtevaj potrditev za zagon naslednjih vrst datotek
+txt_10_5_checkmotw: Preveri Zone.Identifier (MoTW)
+txt_10_5_sectypewarning: Želite zagnati to datoteko?
+txt_10_5_pathlock: Elementov na tej poti arhiva ni mogoče urejati
+txt_10_5_type_description_rar: RAR: lastniški arhivski format z visokim razmerjem stiskanja; podprt prek zunanjega kompresorja
+txt_10_5_sh: Pokaži skrite datoteke in mape v datotečnem sistemu
+txt_10_5_ntfsalt: Ta format lahko hrani NTFS alternativni podatkovni tok (ADS), vključno z »Mark of The Web«
 txt_10_4_moving: (Moving)
-txt_10_3_classic: Classic
-txt_10_3_ascii: It is recommended to use only ASCII characters in passwords for the current archive format (mixed case letters, numbers, and special characters).
-txt_10_3_minimal: Minimal
-txt_10_3_m: Modern
-txt_10_3_pm: Postmodern
-txt_10_3_aw: Workaround: check "Force typing password interactively" in the password prompt, or set Console mode for backend binaries.
-txt_10_2_savecopy: Save a copy
-txt_10_1_full: Full
-txt_10_1_kdfw: KDF work load
-txt_10_1_under: Underlined
-txt_10_0_exptrash: Explore Trash
-txt_10_0_ptarzst: Fastest compression, TAR.ZST
-txt_10_0_ptarxz: High compression, TAR.XZ
-txt_10_0_ptargz: Medium compression, TAR.GZ
-txt_10_0_comp: Pure compression formats only accept a single file as input. Archive conversion towards those formats will fail if the source contains multiple files or folders, which cannot be determined in advance.
-txt_10_0_save: Save
-txt_10_0_tp: Text preview
-txt_9_9_uac: Current user cannot write to this output path. Do you want to run PeaZip with UAC elevation?
-TXT_9_9_kdf: KDF rounds
-txt_9_9_utc: Show timestamps as UTC
-txt_9_8_alwaysflat: Always open archives in flat view
-txt_9_8_fnew: Extract here (in new folder)
-txt_9_8_fsmart: Extract here (smart new folder)
+txt_10_3_classic: Klasičen
+txt_10_3_ascii: Za trenutni format arhiva priporočamo uporabo le znakov ASCII v geslih (velike/male črke, številke in posebni znaki).
+txt_10_3_minimal: Minimalen
+txt_10_3_m: Sodoben
+txt_10_3_pm: Postmoderen
+txt_10_3_aw: Obvoz: označite »Vsili interaktivni vnos gesla« v pozivu za geslo ali nastavite konzolni način za dvojiške programe v ozadju.
+txt_10_2_savecopy: Shrani kopijo
+txt_10_1_full: Polno
+txt_10_1_kdfw: Obremenitev KDF
+txt_10_1_under: Podčrtano
+txt_10_0_exptrash: Razišči Smetnjak
+txt_10_0_ptarzst: Najhitrejše stiskanje, TAR.ZST
+txt_10_0_ptarxz: Visoko stiskanje, TAR.XZ
+txt_10_0_ptargz: Srednje stiskanje, TAR.GZ
+txt_10_0_comp: Čisti kompresijski formati sprejmejo kot vhod le eno datoteko. Pretvorba arhiva v te formate bo spodletela, če vir vsebuje več datotek ali map, česar vnaprej ni mogoče določiti.
+txt_10_0_save: Shrani
+txt_10_0_tp: Predogled besedila
+txt_9_9_uac: Trenutni uporabnik ne more pisati v to izhodno pot. Želite zagnati PeaZip z zvišanimi pravicami UAC?
+TXT_9_9_kdf: Krogi KDF
+txt_9_9_utc: Prikaži časovne žige kot UTC
+txt_9_8_alwaysflat: Vedno odpri arhive v ploskem pogledu
+txt_9_8_fnew: Razširi tukaj (v novi mapi)
+txt_9_8_fsmart: Razširi tukaj (pametna nova mapa)
 txt_9_7_tarpipe: 7z/p7zip uporablja cev
 txt_9_7_smartsorting: Pametno razvrščanje imen datotek
 txt_9_6_centered: Na sredini
