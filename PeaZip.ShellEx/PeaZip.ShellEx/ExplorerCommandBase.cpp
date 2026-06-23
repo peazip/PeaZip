@@ -130,7 +130,13 @@ void ExplorerCommandBase::LaunchAppWithArgs(const std::wstring&& commandLine) co
         nullptr
     };
 
-    ShellExecuteExW(&shExecInfo);
+    if (!ShellExecuteExW(&shExecInfo))
+    {
+        const auto error = GetLastError();
+        std::wstringstream message;
+        message << L"Failed to launch PeaZip. Error code: " << error;
+        MessageBoxW(nullptr, message.str().c_str(), L"PeaZip Shell Extension", MB_ICONERROR | MB_OK);
+    }
 }
 
 fire_and_forget ExplorerCommandBase::InvokeAsync(_In_opt_ IShellItemArray* selection) noexcept

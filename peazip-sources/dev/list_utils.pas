@@ -549,6 +549,9 @@ function peapparamexecute(var P:TProcessUTF8): integer;
 
 implementation
 
+uses
+  filename_utils;
+
 function nicetime(s: ansistring): ansistring;
 var
   ntime, ints, decs: qword;
@@ -1652,52 +1655,14 @@ begin
 end;
 
 function checkfiledirname(s: ansistring): integer;
-//function errs on safe side to prevent cross platform interoperability issues
-var
-   sf: ansistring;
-   i: integer;
 begin
-checkfiledirname := -1;
-if s = '' then exit;
-//illegal characters, full name
-for i := 0 to 31 do
-   if pos(char(i), s) <> 0 then exit;
-//reserved characters, full name
-if pos('*', s) <> 0 then exit;
-if pos('?', s) <> 0 then exit;
-if pos('<', s) <> 0 then exit;
-if pos('>', s) <> 0 then exit;
-if pos('|', s) <> 0 then exit;
-if pos('       ', s) <> 0 then exit;
-{$IFDEF MSWINDOWS}
-if pos('"', s) <> 0 then exit;
-{$ENDIF}
-sf := extractfilename(s);
-//reserved characters, filename only (others are checked for the full name)
-if pos('\', sf) <> 0 then exit;
-if pos('/', sf) <> 0 then exit;
-if pos(':', sf) <> 0 then exit;
-//reserved filenames (Windows)
-{$IFDEF MSWINDOWS}
-cutextension(sf);
-sf := upcase(sf);
-if (sf = 'CON') or (sf = 'PRN') or (sf = 'AUX') or (sf = 'NUL') or
-   (sf = 'COM1') or (sf = 'COM2') or (sf = 'COM3') or (sf = 'COM4') or
-   (sf = 'COM5') or (sf = 'COM6') or (sf = 'COM7') or (sf = 'COM8') or
-   (sf = 'COM9') or (sf = 'LPT1') or (sf = 'LPT2') or (sf = 'LPT3') or
-   (sf = 'LPT4') or (sf = 'LPT5') or (sf = 'LPT6') or (sf = 'LPT7') or
-   (sf = 'LPT8') or (sf = 'LPT9') then
-   exit;
-{$ENDIF}
-checkfiledirname := 0;
+  result := filename_utils.checkfiledirname(s);
 end;
 
 //wrapper for filename/dir check, accepts empty or valid name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
 function checkfiledirname_acceptblank(s: ansistring): integer;
 begin
-result := -1;
-if s = '' then result:=0
-else result:=checkfiledirname(s);
+  result := filename_utils.checkfiledirname_acceptblank(s);
 end;
 
 function checkescapedoutname(s: ansistring):ansistring;
@@ -1788,48 +1753,53 @@ result := escapefilenamelinuxlike(s, desk_env);
 end;
 
 function stringdelim(s:ansistring): ansistring;
-var
-   cdelim:utf8string;
 begin
-cdelim:=correctdelimiter(s);
-result := cdelim+s+cdelim;
+  result := filename_utils.stringdelim(s);
 end;
 
 function stringundelim(s:ansistring): ansistring;
-var
-   cdelim:utf8string;
-   st:ansistring;
 begin
-st:=s;
-cdelim:=correctdelimiter(st);
-if length(st)>1 then if st[1]=cdelim then st:=copy(st,2,length(st)-1);
-if length(st)>1 then if st[length(st)]=cdelim then st:=copy(st,1,length(st)-1);
-result:=st;
+  result := filename_utils.stringundelim(s);
 end;
 
 function cp_open_linuxlike(s: ansistring; desk_env: byte): integer;
 var
   P: TProcessUTF8;
-  cl:AnsiString;
+  target: ansistring;
+  i: integer;
 begin
   result := -1;
   if s = '' then
     exit;
   if (desk_env = 10) then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10
     exit;
+  target := s;
+  i := pos('file://', target);
+  if i > 0 then
+    target := copy(target, i + 7, length(target) - i - 6);
+  if desk_env = 1 then
+    if filegetattr(s) <= 0 then
+      repeat
+        i := pos('%20', target);
+        if i > 0 then
+        begin
+          Delete(target, i, 3);
+          insert(' ', target, i);
+        end;
+      until i = 0;
   P := TProcessUTF8.Create(nil);
-  P.Options := [poWaitOnExit];
-  if desk_env = 20 then // Darwin=20
-    begin
-    cl:='open ' + stringdelim(escapefilename(s, desk_env));
-    end
-  else
-    begin
-    cl:='xdg-open ' + stringdelim(escapefilename(s, desk_env));
-    end;
-  peapexecute(P,cl);
-  result := P.ExitStatus;
-  P.Free;
+  try
+    P.Options := [poWaitOnExit];
+    if desk_env = 20 then // Darwin=20
+      P.Executable := 'open'
+    else
+      P.Executable := 'xdg-open';
+    P.Parameters.Add(target);
+    peapparamexecute(P);
+    result := P.ExitStatus;
+  finally
+    P.Free;
+  end;
 end;
 
 procedure winexplorepath(s: ansistring);
@@ -1891,12 +1861,7 @@ function correctdelimiter(s:AnsiString): AnsiString;
 //UNLESS the process itself runs the command through a shell (cmd.exe, /bin/sh, bash, xterm, gnome-terminal, konsole, open on macOS...)
 //in this specific case it is necessary to carefully evaluate if weak quotes " are applied AND a variable expansion character is used without strong quotes '
 begin
-result := '''';
-{$IFDEF MSWINDOWS}
-result := '"';
-{$ELSE}
-if pos('''',s)<>0 then result := '"';
-{$ENDIF}
+  result := filename_utils.correctdelimiter(s);
 end;
 
 procedure getdesk_env(var bytedesk: byte; var caption_build, delimiter: ansistring);
@@ -2062,68 +2027,25 @@ result:=s;
 end;
 
 procedure cutextension(var s: ansistring);//uses a small set of rules to avoid cutting strings which are not really meant as extensions
-var
-   sext:ansistring;
 begin
-   sext:=extractfileext(s);
-   if sext='' then exit;
-   if pos(' ',sext) <>0 then exit;
-   if length(sext)>6 then exit;
-   setlength(s, length(s) - length(extractfileext(s)));
+  filename_utils.cutextension(s);
 end;
 
 function cutext(var s: ansistring):ansistring;
-var s1:ansistring;
 begin
-   s1:=s;
-   cutextension(s1);
-   result:=s1;
+  result := filename_utils.cutext(s);
 end;
 
 function checkfilename(s: ansistring): integer;
 //function errs on safe side to prevent cross platform interoperability issues
-var
-  s1: ansistring;
-  i: integer;
 begin
-checkfilename := -1;
-if (s = '') or (s='.') or (s='..') then exit;
-//illegal characters (no problem for additional UTF8 bytes since have MSB set to 1 to avoid conflict with those control characters)
-for i := 0 to 31 do
-   if pos(char(i), s) <> 0 then exit;
-//reserved characters
-if pos('\', s) <> 0 then exit;
-if pos('/', s) <> 0 then exit;
-if pos(':', s) <> 0 then exit;
-if pos('*', s) <> 0 then exit;
-if pos('?', s) <> 0 then exit;
-if pos('<', s) <> 0 then exit;
-if pos('>', s) <> 0 then exit;
-if pos('|', s) <> 0 then exit;
-if pos('       ', s) <> 0 then exit;
-{$IFDEF MSWINDOWS}
-if pos('"', s) <> 0 then exit;
-//reserved filenames (Windows)
-s1 := extractfilename(s);
-cutextension(s1);
-s1 := upcase(s1);
-if (s1 = 'CON') or (s1 = 'PRN') or (s1 = 'AUX') or (s1 = 'NUL') or
-   (s1 = 'COM1') or (s1 = 'COM2') or (s1 = 'COM3') or (s1 = 'COM4') or
-   (s1 = 'COM5') or (s1 = 'COM6') or (s1 = 'COM7') or (s1 = 'COM8') or
-   (s1 = 'COM9') or (s1 = 'LPT1') or (s1 = 'LPT2') or (s1 = 'LPT3') or
-   (s1 = 'LPT4') or (s1 = 'LPT5') or (s1 = 'LPT6') or (s1 = 'LPT7') or
-   (s1 = 'LPT8') or (s1 = 'LPT9') then
-   exit;
-{$ENDIF}
-checkfilename := 0;
+  result := filename_utils.checkfilename(s);
 end;
 
 //wrapper for filename check, accepts empty or valid file name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
 function checkfilename_acceptblank(s: ansistring): integer;
 begin
-result := -1;
-if s = '' then result:=0
-else result:=checkfilename(s);
+  result := filename_utils.checkfilename_acceptblank(s);
 end;
 
 function validatecl(var s: ansistring): integer;
