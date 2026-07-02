@@ -104,7 +104,7 @@ uses
       Result := SelectString(Result, 'Linking').Split(' ')[2].Replace(LineEnding, EmptyStr);
       OutLog(etInfo, #9'to:'#9 + Result);
       Text := ReadFileToString(Path.Replace('.lpi', '.lpr'));
-      if Text.Contains('program') and Text.Contains('consoletestrunner') then
+      if Text.Contains('program') and (Text.Contains('consoletestrunner') or Text.Contains('PEAZIP_SMOKE_TEST')) then
         RunTest(Result)
       else if Text.Contains('library') and Text.Contains('exports') then
         AddDDL(Result)
