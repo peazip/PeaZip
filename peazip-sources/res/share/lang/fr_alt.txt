@@ -3,12 +3,12 @@ Français
 11.2
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20260511
+Last rev.: 20260712
 
 === PeaZip text group ===
 
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
+txt_11_2_comp: Le nom et l'extension originals du fichier sont toujours préservés lors de l'utilisation de formats de compression purs (Brotli, BZip2, GZip, XZ, Zstd…), excepté si l'option “TAR avant” est utilisée, laquelle remplace le nom du fichier de sortie.
+txt_11_2_funexp: Saisissez ou sélectionnez l'une des fonctions prises en charge par l'application (à appliquer aux fichiers, le cas échéant)
 txt_11_1_pp: Si l'étape de pré-analyse est ignorée, l'application peut ne pas détecter d'éventuels problèmes relatifs aux archives et même ne pas les afficher correctement. Dans tous les cas, l'extraction n'est pas affectée par ce paramètre.
 txt_11_0_adv: Avancé et options spécifiques au format
 txt_11_0_bt: Test d'archives par lot
@@ -152,7 +152,7 @@ txt_8_8_tab: Onglet
 txt_8_8_altt: Style d'onglet
 txt_8_8_autotest: Tester les archives après création si pris en charge
 txt_8_8_cw: Couleur de fenêtre
-txt_8_7_csvhelp: "," standard international, ";" des langues latines
+txt_8_7_csvhelp: “,” standard international, “;” des langues latines
 txt_8_7_after: Après archivage/extraction
 txt_8_7_bintest: éléments testés.
 txt_8_7_csv: Séparateur CSV
@@ -163,7 +163,7 @@ txt_8_7_showsearchbar: Afficher la barre de recherche
 txt_8_7_showsm: Ouvrir le style de menu
 txt_8_7_hnotok: Certaines empreintes utilisées par PeaZip sont différentes :
 txt_8_7_verifybin: Vérifier l'empreinte
-txt_8_6_clear: L'option "Effacer" supprime les fichiers temporaires, sinon ceux-ci sont conservés pour usage futur.
+txt_8_6_clear: L'option “Effacer” supprime les fichiers temporaires, sinon ceux-ci sont conservés pour usage futur.
 txt_8_6_noclear: Abandonner toutes les modifications sans mettre à jour l'archive
 txt_8_6_nosimple: Ne pas mettre à jour l'archive, mais conserver les fichiers pour usage futur
 txt_8_6_immediate: Exécution immédiate
@@ -212,7 +212,7 @@ txt_8_0_commonalgo: Algorithmes standard
 txt_8_0_forceconvert: Convertir les archives non-canoniques
 txt_8_0_defaultactionhint: Action par défaut du double-clic sur fichier dans PeaZip
 txt_8_0_defaultaction: Action par défaut (ouvrir, extraire automatiquement…)
-txt_8_0_enableextand: Activer le sous-menu "Extraire et ouvrir avec"
+txt_8_0_enableextand: Activer le sous-menu “Extraire et ouvrir avec”
 txt_8_0_forcetyping: Requérir la saisie d'un mot de passe
 txt_8_0_setpwopt: Options de mot de passe/fichier clé
 txt_8_0_forcetypinghelp: Empêche de parcourir les archives cryptées lorsqu'elles sont chargées en arrière-plan dans la console. Ceci permet de créer des scripts qui ne pourront s'exécuter tant que le mot de passe n'a pas été saisi.
@@ -279,7 +279,7 @@ txt_7_4_setext: Options d'extraction avancées
 txt_7_4_swzipx: Passer en extension zipx pour les archives ZIP Deflate
 txt_7_3_archiveerrors: [l'archive peut contenir des erreurs]
 txt_7_3_archiveerrorshint: L'archive est peut être invalide (données manquantes, corrompues ou non-standard). Il est possible de la tester aux fins d'informations détaillées. Si la table du contenu est cryptée, le mot de passe sera requis.
-txt_7_3_clickextall: Cliquez sur "Tout extraire" pour activer
+txt_7_3_clickextall: Cliquez sur “Tout extraire” pour activer
 txt_7_3_noconfdel: Ne pas confirmer la suppression après archivage/extraction
 txt_7_3_profile7zfastest: Compression très rapide, 7z très rapide
 txt_7_3_maxbr: Augmenter la compression Brotli en utilisant plus de mémoire (peut être incompatible avec certains extracteurs)
@@ -353,7 +353,7 @@ txt_6_3_autoadjust: Ajustement automatique des colonnes
 txt_6_3_cinfo: Info et commentaires
 txt_6_3_syn: Synchroniser avec le disque
 txt_6_3_uar: Mettre seulement à jour les fichiers déjà présents dans l'archive
-txt_6_2_encext: Ajouter le suffixe ".enc" aux archives cryptées
+txt_6_2_encext: Ajouter le suffixe “.enc” aux archives cryptées
 txt_6_2_archive: Type de fichier d'archive
 txt_6_2_container: Type de fichier conteneur
 txt_6_1_ec: Développer/Réduire l'arborescence d'archive
@@ -387,8 +387,8 @@ txt_5_5_plugin: Extensions
 txt_5_5_copypath: Copier le chemin
 txt_5_5_delete: Supprimer les caractères à la position spécifiée
 txt_5_5_halt: Arrêter le système une fois la tâche terminée
-txt_5_5_positionw: Info : 1 est ajouté avec le 1ᵉʳ caractère, 2 pour le second, etc, "z" à la fin du nom
-txt_5_5_positionwd: Info : 1 est supprimé du 1ᵉʳ caractère inclus, 2 du second, etc, "z" à la fin du nom
+txt_5_5_positionw: Info : 1 est ajouté avec le 1ᵉʳ caractère, 2 pour le second, etc, “z” à la fin du nom
+txt_5_5_positionwd: Info : 1 est supprimé du 1ᵉʳ caractère inclus, 2 du second, etc, “z” à la fin du nom
 txt_5_5_replaceneww: Info : génère une nouvelle chaîne vide afin de supprimer l'ancienne
 txt_5_5_lower: minuscules
 txt_5_5_replaceoldw: Modifie toutes les occurrences de la chaîne ou caractère dans le nom de fichier
@@ -396,7 +396,7 @@ txt_5_5_newext: Nouvelle extension
 txt_5_5_new: Nouvelle chaîne
 txt_5_5_n: Nombre de caractères à supprimer
 txt_5_5_old: Chaîne précédente
-txt_5_5_position: Position (nombre ou "z" pour la fin)
+txt_5_5_position: Position (nombre ou “z” pour la fin)
 txt_5_5_intdir: Nouveau dossier adaptatif
 txt_5_5_replacestr: Remplacer/Effacer la chaîne
 txt_5_5_datesameday: Même jour que l'élément sélectionné
@@ -469,7 +469,7 @@ txt_5_1_onstart: Au démarrage
 txt_5_1_once: Une seule fois
 txt_5_1_w7: Samedi
 txt_5_1_schedule: Planification
-txt_5_1_schedexplain: Crée un script en texte brut à partir de l'interface et le planifie dans la rubrique "PeaZip" du planificateur. Les scripts à planifier sont enregistrés dans le dossier "Scripts planifiés". Pour modifier ou supprimer une tâche planifiée, vous pouvez utiliser le planificateur du système. Toutes les tâches créées par PeaZip sont récupérées à partir de la rubrique "PeaZip" du gestionnaire de tâches.
+txt_5_1_schedexplain: Crée un script en texte brut à partir de l'interface et le planifie dans la rubrique “PeaZip” du planificateur. Les scripts à planifier sont enregistrés dans le dossier “Scripts planifiés”. Pour modifier ou supprimer une tâche planifiée, vous pouvez utiliser le planificateur du système. Toutes les tâches créées par PeaZip sont récupérées à partir de la rubrique “PeaZip” du gestionnaire de tâches.
 txt_5_1_schedok: La tâche a bien été créée
 txt_5_1_schedscripts: Scripts planifiés enregistrés
 txt_5_1_startdate: Date de début
@@ -518,7 +518,7 @@ txt_4_8_listno: Liste
 txt_4_8_aspect: Préserver le rapport l/H
 txt_4_8_mirror: Miroir
 txt_4_8_presets: Types d'affichage
-txt_4_8_replace: Remplacer l'image originale ? "Non" appliquera la transformation au nouveau fichier.
+txt_4_8_replace: Remplacer l'image originale ? “Non” appliquera la transformation au nouveau fichier.
 txt_4_8_resize: Redimensionner
 txt_4_8_rl: Rotation anti-horaire
 txt_4_8_rr: Rotation horaire
@@ -565,7 +565,7 @@ txt_4_3_recsrc: Recherche récursive par défaut
 txt_4_3_resetpm: Réinitialiser le gestionnaire de mots de passe ? Tous les mots de passe seront supprimés.
 txt_4_3_breadcrumb: Afficher l'adresse en tant que fil d'Ariane
 txt_4_2_arcabspath: Utiliser des chemins absolus
-txt_4_1_duplicateshint: "Taille" et "Somme de contrôle" sont déplacés dans la colonne CRC lors de la présence de doublons dans le répertoire actuel ou le filtre de recherche
+txt_4_1_duplicateshint: “Taille” et “Somme de contrôle” sont déplacés dans la colonne CRC lors de la présence de doublons dans le répertoire actuel ou le filtre de recherche
 txt_4_1_adminhint: (Info : vous pouvez également demander un rôle supérieur pour l'autorisation UAC pour accéder librement aux répertoires protégés, Alt+F10 ou Options > Exécuter en tant qu'administrateur)
 txt_4_1_selected: (sélectionné)
 txt_4_1_duplicatesfound: présence de doublons
@@ -618,7 +618,7 @@ txt_3_0_readablepw: Archive illisible, peut-être protégée par mot de passe
 txt_3_0_configure: Intégration système et associations de fichiers
 txt_3_0_resettmp: Réinitialiser les fichiers temporaires actuels
 txt_2_9_address: Barre d'adresse
-txt_2_9_adv: Les filtres avancés sont appliqués sur tout fichier traité en arrière-plan pris en charge par 7z ou FreeArc. Consultez la documentation. Remplacent les filtres initiaux utilisés pour la recherche et sont affichés dans les rubriques "Favoris" et "Historique".
+txt_2_9_adv: Les filtres avancés sont appliqués sur tout fichier traité en arrière-plan pris en charge par 7z ou FreeArc. Consultez la documentation. Remplacent les filtres initiaux utilisés pour la recherche et sont affichés dans les rubriques “Favoris” et “Historique”.
 txt_2_9_columns: Colonnes
 txt_2_9_copyhere: Copier ici
 txt_2_9_noscan: Ne pas analyser les fichiers ajoutés à la session
@@ -655,7 +655,7 @@ txt_2_8_convertdelete: Supprimer les fichiers et dossiers temporaires de la conv
 txt_2_8_details: Détails
 txt_2_8_parallel: Exécuter si possible les tâches en parallèle
 txt_2_8_convertnote: Les archives originales ne seront pas modifiées afin de laisser le choix à l'utilisateur de les conserver ou les supprimer.
-txt_2_8_custom: n'est pas directement pris en charge par PeaZip, mais pour l'étape d'extraction, PeaZip peut être configuré pour accepter des types de fichiers personnalisés dans l'onglet "Avancé". Ouvrir le fichier ?
+txt_2_8_custom: n'est pas directement pris en charge par PeaZip, mais pour l'étape d'extraction, PeaZip peut être configuré pour accepter des types de fichiers personnalisés dans l'onglet “Avancé”. Ouvrir le fichier ?
 txt_2_8_unitrecommend: Il est recommandé d'extraire (clic droit > Extraire la sélection) ou ouvrir les fichiers système à partir de la racine de l'ordinateur (Outils système > Ouvrir le lecteur en tant qu'archive)
 txt_2_8_viewasarchive: Ouvrir le lecteur en tant qu'archive
 txt_2_8_nounit: Aucun lecteur sélectionné
@@ -679,7 +679,7 @@ txt_2_7_clipboard: Presse-papiers
 txt_2_7_goarclayout: Aller à la session d'archivage
 txt_2_7_goextlayout: Aller à la session d'extraction
 txt_2_7_ok: OK
-txt_2_7_drag_archive: ouvrir le fichier comme nouvelle archive ? Si "Non", le fichier sera ajouté à la session de l'archive actuelle)
+txt_2_7_drag_archive: ouvrir le fichier comme nouvelle archive ? Si “Non”, le fichier sera ajouté à la session de l'archive actuelle)
 txt_2_7_oop: Ouvrir le chemin de destination une fois la tâche terminée
 txt_2_7_validatefn: Opération interrompue, nom de fichier invalide détecté :
 txt_2_7_validatecl: Opération interrompue, commande potentiellement dangereuse détectée (ex. : concaténation de commande non autorisée dans le programme) :
@@ -691,7 +691,7 @@ txt_2_7_archivehint: Déposez les fichiers et dossiers à archiver ici, ou clic 
 txt_2_7_exthint: Déposez les archives à extraire ici, ou clic droit pour plus d'options
 txt_2_7_setadvf: Définir les filtres avancés
 txt_2_7_selpath: Chemin de l'élément sélectionné
-txt_2_7_separateerror: Impossible d'importer la tâche lors de l'utilisation de l'option "Ajouter en archives séparées", celle-ci étant effectuée avec plusieurs commandes distinctes
+txt_2_7_separateerror: Impossible d'importer la tâche lors de l'utilisation de l'option “Ajouter en archives séparées”, celle-ci étant effectuée avec plusieurs commandes distinctes
 txt_2_7_noinput: La session est vide : ajoutez des fichiers ou chargez une session pour peupler la liste des archives à extraire
 txt_2_7_dirsize: Le contenu des dossiers n'est pas pris en compte dans le calcul de la taille totale
 txt_2_7_un7z_browse_flat: essayez l'affichage développé (F6)
@@ -707,11 +707,11 @@ txt_2_5_cannotrun: Exécution impossible
 txt_2_5_custeditors: Éditeurs, lecteurs, antivirus, etc (remplace les associations de fichiers du système)
 txt_2_5_delete: Supprimer
 txt_2_5_delete_fromarchive: Supprimer de l'archive
-txt_2_5_langflag: Afficher le nom de l'élément archivé en texte UTF-8 (remplace les caractères non-ASCII par un "?" si décoché)
+txt_2_5_langflag: Afficher le nom de l'élément archivé en texte UTF-8 (remplace les caractères non-ASCII par un “?” si décoché)
 txt_2_5_encpj: Encoder la tâche en texte UTF-8
 txt_2_5_execommand: Exécutable ou commande
 txt_2_5_help: Aide
-txt_2_5_langhint: Conseil : le remplacement des caractères non-ASCII par le caractère générique "?" peut faciliter la syntaxe si le jeu de caractères de l'archive ne peut être converti sur la machine actuelle.
+txt_2_5_langhint: Conseil : le remplacement des caractères non-ASCII par le caractère générique “?” peut faciliter la syntaxe si le jeu de caractères de l'archive ne peut être converti sur la machine actuelle.
 txt_2_5_mini_help: Tutoriels dans d'autres langues
 txt_2_5_offline_help: Aide de PeaZip
 txt_2_5_tray: Réduire dans la barre des tâches
@@ -753,17 +753,17 @@ txt_2_3_home: Utilisateur
 txt_2_3_on_pw: Lors d'opérations extraction, liste ou test à partir des menus système :
 txt_2_3_test_pw100: Test de cryptage pour les archives < 100 Mo
 txt_2_3_test_pw: Test de cryptage (peut être lent)
-txt_exclude_recourse: "exclure" les sous-dossiers récursifs
-txt_action_extopen: Action "Extraire et ouvrir avec l'application associée"
-txt_error_passwordnotmatch: Les champs "Mot de passe" et "Confirmer" ne concordent pas, veuillez les corriger
-txt_action_preview: Action "Visualiser avec l'application associée"
-txt_preview_hint: L'action "Visualiser" effectue la même tâche que "Extraire et ouvrir" mais dans le dossier de destination temporaire, lequel est automatiquement supprimé à la fermeture de l'archive.
+txt_exclude_recourse: “exclure” les sous-dossiers récursifs
+txt_action_extopen: Action “Extraire et ouvrir avec l'application associée”
+txt_error_passwordnotmatch: Les champs “Mot de passe” et “Confirmer” ne concordent pas, veuillez les corriger
+txt_action_preview: Action “Visualiser avec l'application associée”
+txt_preview_hint: L'action “Visualiser” effectue la même tâche que “Extraire et ouvrir” mais dans le dossier de destination temporaire, lequel est automatiquement supprimé à la fermeture de l'archive.
 txt_better: (préférable)
 txt_default2: (par défaut)
 txt_faster: (très rapide)
 txt_fastermem: (très rapide avec peu de mémoire)
 txt_tempdir: (dossier de travail temporaire de PeaZip)
-txt_stream: (défini par "Contrôle du flux")
+txt_stream: (défini par “Contrôle du flux”)
 txt_slowermem: (lent avec plus de mémoire)
 txt_store: (sans compression, très rapide)
 txt_newfolder: (dans un nouveau dossier)
@@ -809,9 +809,9 @@ txt_all_attributes: Mêmes attributs
 txt_all_size: Taille
 txt_error_input_upx: autoriser un seul fichier exécutable
 txt_always_pw: Toujours demander un mot de passe
-txt_ignore_ext: Toujours ignorer les chemins pour "Extraire et…"
-txt_ignore_disp: Toujours ignorer les chemins pour "Extraire la vue…"
-txt_ignore_sel: Toujours ignorer les chemins pour "Extraire la sélection…"
+txt_ignore_ext: Toujours ignorer les chemins pour “Extraire et…”
+txt_ignore_disp: Toujours ignorer les chemins pour “Extraire la vue…”
+txt_ignore_sel: Toujours ignorer les chemins pour “Extraire la sélection…”
 txt_key_hint: Annexer l'empreinte du fichier clé au mot de passe ; l'archive peut être décryptée par PeaZip, les autres applications du même standard ou en renseignant l'empreinte comme partie du mot de passe
 txt_timestamp: Annexer l'horodatage au nom
 txt_appoptions: Options de l'application
@@ -969,7 +969,7 @@ txt_list_flat: Affichage développé
 txt_unit_floppy: Lecteur de disquette
 txt_foldername: Nom du dossier
 txt_nfolders: Dossiers
-txt_error_input_multi: Ce format n'autorise qu'un seul fichier. Vous pouvez activer "TAR avant" pour enregistrer d'abord l'archive dans ce format, sinon, choisissez un autre format. Conseil : choisissez le format d'archive après avoir sélectionné les fichiers à compresser, "TAR avant" sera automatiquement activé
+txt_error_input_multi: Ce format n'autorise qu'un seul fichier. Vous pouvez activer “TAR avant” pour enregistrer d'abord l'archive dans ce format, sinon, choisissez un autre format. Conseil : choisissez le format d'archive après avoir sélectionné les fichiers à compresser, “TAR avant” sera automatiquement activé
 txt_fwd: Suivant
 txt_list_found: Trouvé
 txt_free: Espace libre
@@ -1011,7 +1011,7 @@ txt_input: Source
 txt_integrity: Vérifier l'intégrité
 txt_chunk_size: Taille personnalisée invalide, veuillez saisir une valeur numérique 
 txt_invertsel: Inverser la sélection
-txt_type_exe: est un exécutable Windows, le lancer ? "Non" tentera de l'ouvrir en tant qu'archive. Info : certains exécutables nécessitent que l'archive soit d'abord extraite avant de pouvoir être lancés
+txt_type_exe: est un exécutable Windows, le lancer ? “Non” tentera de l'ouvrir en tant qu'archive. Info : certains exécutables nécessitent que l'archive soit d'abord extraite avant de pouvoir être lancés
 txt_return_to_archive: est actuellement ouverte, la parcourir ?
 txt_not_accessible: n'est plus accessible
 txt_type_unsupported: n'est pas un format d'archive prise en charge.
@@ -1228,7 +1228,7 @@ txt_testdisp: Tester l·es élément·s affiché·s
 txt_testpw: Tester le mot de passe/fichier clé
 txt_testsel: Tester l·es élément·s sélectionné·s
 txt_col_hint: La couleur doit être choisie afin de s'adapter aux couleurs des icônes et autres éléments de l'interface
-txt_bookmarks_hint: La liste complète et modifiable des favoris est disponible dans le navigateur de fichiers an cliquant sur l'icône "Autres options" puis "Alterner entre historique/favoris"
+txt_bookmarks_hint: La liste complète et modifiable des favoris est disponible dans le navigateur de fichiers an cliquant sur l'icône “Autres options” puis “Alterner entre historique/favoris”
 txt_archive_noinput_tolist: La session est vide : veuillez ajouter des fichiers, des dossiers ou charger une session afin de peupler l'archive
 txt_theme: Thème
 txt_icons_found: Le thème a bien été chargé.
@@ -1310,7 +1310,7 @@ txt_4_0_dragorselect: Déposer ici ou sélectionner un fichier
 txt_4_0_select: sélectionner un fichier
 txt_3_6_selectdir: Sélectionner un répertoire
 txt_3_5_close: Fermer
-txt_3_0_details: Pour un journal détaillé de la tâche, consultez l'onglet "Compte-rendu" ou l'onglet "Console" pour les tâches en ligne de commande.
+txt_3_0_details: Pour un journal détaillé de la tâche, consultez l'onglet “Compte-rendu” ou l'onglet “Console” pour les tâches en ligne de commande.
 txt_3_0_hints: Informations sur les erreurs
 txt_3_0_arc: Les causes possibles de l'erreur peuvent être un fichier source non lisible (verrouillé, non accessible, endommagé, volumes manquants pour les archives en plusieurs parties…) ou un chemin de destination non accessible.
 txt_3_0_ext: L'archive peut nécessiter un autre mot de passe pour l'opération actuelle.
@@ -1401,21 +1401,21 @@ txt_time: Temps :
 
 EXTRAIRE DES ARCHIVES
 À partir du système :
-- Cliquez avec le bouton droit sur l'archive, allez dans le menu contextuel et cliquer sur "Extraire ici" ou "Extraire ici (nouveau dossier adaptatif)" pour l'extraire sans d'autre interaction. L'option nouveau dossier adaptatif crée un dossier au niveau racine seulement si nécessaire, lorsque les archives contiennent plus d'un fichier ou dossier.
-- Sinon, utilisez "Extraire…" afin d'avoir accès aux options comme : la destination, le mot de passe, l'extraction dans un nouveau répertoire, choisir d'ignorer, renommer ou remplacer les fichiers existants, etc. 
+- Cliquez avec le bouton droit sur l'archive, allez dans le menu contextuel et cliquer sur “Extraire ici” ou “Extraire ici (nouveau dossier adaptatif)” pour l'extraire sans d'autre interaction. L'option nouveau dossier adaptatif crée un dossier au niveau racine seulement si nécessaire, lorsque les archives contiennent plus d'un fichier ou dossier.
+- Sinon, utilisez “Extraire…” afin d'avoir accès aux options comme : la destination, le mot de passe, l'extraction dans un nouveau répertoire, choisir d'ignorer, renommer ou remplacer les fichiers existants, etc. 
 
 Ouvrir une archive dans PeaZip, par double-clic ou en la déposant sur la fenêtre ou l'icône de PeaZip :
-- Cliquez sur "Extraire" dans la barre d'outils où à partir du menu contextuel pour extraire seulement les éléments sélectionnés via la boîte de dialogue de confirmation où vous pourrez définir toutes les options (destination, mot de passe, gestion des noms de fichiers, extraire dans un nouveau répertoire, etc.)
+- Cliquez sur “Extraire” dans la barre d'outils où à partir du menu contextuel pour extraire seulement les éléments sélectionnés via la boîte de dialogue de confirmation où vous pourrez définir toutes les options (destination, mot de passe, gestion des noms de fichiers, extraire dans un nouveau répertoire, etc.)
 - Déposez les fichiers et dossiers sur la destination souhaitée, seuls les éléments sélectionnés seront extraits (pour plus d'informations, consultez le chapitre sur le glissé-déposé dans PeaZip)
-- Cliquez sur le bouton déroulant situé à droite de "Extraire" dans la barre d'outils afin d'extraire rapidement l'intégralité de l'archive vers les destinations communes (sans boîte de confirmation) et définir les options les plus importantes. Raccourcis clavier : Ctrl+E (ou F12) extrait l'intégralité de l'archive et demande la destination ; Ctrl+Alt+E extrait l'archive dans le dossier actuel ; Ctrl+Shift+E extrait sur le bureau ; Ctrl+Alt+Shift+E extrait vers "Mes documents" ; Ctrl+0 extrait vers la destination précédente ; Ctrl+1 à 8 extrait vers les destinations des favoris 1 à 8 (si définis).
+- Cliquez sur le bouton déroulant situé à droite de “Extraire” dans la barre d'outils afin d'extraire rapidement l'intégralité de l'archive vers les destinations communes (sans boîte de confirmation) et définir les options les plus importantes. Raccourcis clavier : Ctrl+E (ou F12) extrait l'intégralité de l'archive et demande la destination ; Ctrl+Alt+E extrait l'archive dans le dossier actuel ; Ctrl+Shift+E extrait sur le bureau ; Ctrl+Alt+Shift+E extrait vers “Mes documents” ; Ctrl+0 extrait vers la destination précédente ; Ctrl+1 à 8 extrait vers les destinations des favoris 1 à 8 (si définis).
 Ouvrez PeaZip, sélectionnez une ou plusieurs archives et cliquez sur “Extraire” dans la barre d'outils ou le menu contextuel, où utilisez les destinations d'extraction rapide comme expliqué dans le paragraphe précédent.
 
 EXTRAIRE SEULEMENT LES ÉLÉMENTS SÉLECTIONNÉS
 Ouvrez une archive dans PeaZip, par double-clic ou en la déposant sur la fenêtre ou l'icône de PeaZip :
 
-- Cliquez sur "Extraire" dans la barre d'outils, seuls les éléments sélectionnés seront extraits.
+- Cliquez sur “Extraire” dans la barre d'outils, seuls les éléments sélectionnés seront extraits.
 - Glissez-déposez les dossiers sur la destination souhaitée, seul le contenu sélectionné sera extrait.
-- Cliquez avec le bouton droit sur le groupe "Extraire" du menu contextuel, puis “Extraire la sélection” (pour extraire seulement les éléments sélectionnés) ou "Extraire la vue" (pour extraire le contenu du dossier ou du filtre de recherche actuel).
+- Cliquez avec le bouton droit sur le groupe “Extraire” du menu contextuel, puis “Extraire la sélection” (pour extraire seulement les éléments sélectionnés) ou “Extraire la vue” (pour extraire le contenu du dossier ou du filtre de recherche actuel).
 
 SAISIR UN MOT DE PASSE POUR PARCOURIR OU EXTRAIRE UNE ARCHIVE
 Cliquez sur l'icône cadenas pour entrer un mot de passe et éventuellement un fichier clé.
@@ -1423,30 +1423,30 @@ L'icône apparaît dans le navigateur de fichiers et l'interface d'extraction de
 
 CRÉER UNE ARCHIVE
 À partir du système :
-- Cliquez avec le bouton droit sur les éléments à archiver, puis sur "Ajouter à l'archive" dans le menu contextuel ou dans le menu "Envoyer vers". Ceci ouvrira la boîte de dialogue de confirmation de création. D'autres options sont disponibles dans l'onglet "Avancé". Cliquez sur "OK" pour créer l'archive.
+- Cliquez avec le bouton droit sur les éléments à archiver, puis sur “Ajouter à l'archive” dans le menu contextuel ou dans le menu “Envoyer vers”. Ceci ouvrira la boîte de dialogue de confirmation de création. D'autres options sont disponibles dans l'onglet “Avancé”. Cliquez sur “OK” pour créer l'archive.
 - Sinon, glissez-déposez les fichiers/dossiers dans la fenêtre ou sur le raccourci de PeaZip. Vous accéderez à la même interface utilisée pour la création.
 À partir de PeaZip :
-- Sélectionnez les éléments à archiver et cliquez sur le bouton "Ajouter". Vous accéderez à la même interface utilisée pour la création.
+- Sélectionnez les éléments à archiver et cliquez sur le bouton “Ajouter”. Vous accéderez à la même interface utilisée pour la création.
 
 AJOUTER DES FICHIERS/DOSSIERS À UNE ARCHIVE EXISTANTE
-Ouvrir une archive dans PeaZip (par double-clic ou glissé-déposé sur la fenêtre ou l'icône de PeaZip). Glissez-déposez les fichiers et dossiers à ajouter dans l'archive (ou cliquez sur le bouton "Ajouter" accessible à partir de l'interface ou du menu contextuel).
-Ceci ouvrira la boîte de dialogue de confirmation de création. Cliquez sur "OK" pour mettre à jour l'archive existante.
+Ouvrir une archive dans PeaZip (par double-clic ou glissé-déposé sur la fenêtre ou l'icône de PeaZip). Glissez-déposez les fichiers et dossiers à ajouter dans l'archive (ou cliquez sur le bouton “Ajouter” accessible à partir de l'interface ou du menu contextuel).
+Ceci ouvrira la boîte de dialogue de confirmation de création. Cliquez sur “OK” pour mettre à jour l'archive existante.
 
 CRÉER UNE ARCHIVE EN PLUSIEURS PARTIES
-Une fois l'archive créée comme expliqué précédemment, cliquez sur le menu déroulant "Volume unique" afin de choisir la taille des fichiers de destination constituant l'archive (volumes).
+Une fois l'archive créée comme expliqué précédemment, cliquez sur le menu déroulant “Volume unique” afin de choisir la taille des fichiers de destination constituant l'archive (volumes).
 La plupart des formats d'archives prennent en charge cette fonctionnalité.
 
 CRÉER UNE ARCHIVE CRYPTÉE
 Cliquez sur l'icône cadenas pour saisir un mot de passe et éventuellement un fichier clé. L'icône apparaît dans la barre d'état du navigateur de fichiers et l'interface d'extraction de PeaZip.
-Pour cacher les noms de fichiers et dossiers contenus dans l'archive, cochez "Crypter aussi les noms de fichiers". Notez que ceci ne pourra être effectif que pour une archive créée dans un format prenant en charge cette fonctionnalité, comme 7z et ARC.
+Pour cacher les noms de fichiers et dossiers contenus dans l'archive, cochez “Crypter aussi les noms de fichiers”. Notez que ceci ne pourra être effectif que pour une archive créée dans un format prenant en charge cette fonctionnalité, comme 7z et ARC.
 À côté de l'icône cadenas dans l'interface de création se trouve un symbole d'avertissement indiquant si l'archive est cryptée et si le format actuel prend en charge le cryptage.
 
 CRÉER DES ARCHIVES SÉPARÉES
-Ajoutez les éléments à archiver (à partir du bouton "Ajouter" ou des menus contextuels) puis, avant de valider par "OK", cochez l'option "Ajouter en archives séparées".
+Ajoutez les éléments à archiver (à partir du bouton “Ajouter” ou des menus contextuels) puis, avant de valider par “OK”, cochez l'option “Ajouter en archives séparées”.
 
 CONVERTIR DES ARCHIVES
-Sélectionnez les archives à convertir à partir de PeaZip puis cliquez sur le bouton "Convertir" dans la barre d'outils ou dans le menu contextuel. Les fichiers et dossiers non archivés sera ajoutés normalement et les archives extraites avant d'être compressées à nouveau dans le nouveau format.
-Utilisez "Convertir des archives existantes" avec "Ajouter en archives séparées" (par défaut) afin de procéder à une conversion par lot des archives actuelles. Sans conversion, les données source seront combinées en une seule archive, ceci améliorant l'efficacité de la compression du fait de la re-compression des données originales.
+Sélectionnez les archives à convertir à partir de PeaZip puis cliquez sur le bouton “Convertir” dans la barre d'outils ou dans le menu contextuel. Les fichiers et dossiers non archivés sera ajoutés normalement et les archives extraites avant d'être compressées à nouveau dans le nouveau format.
+Utilisez “Convertir des archives existantes” avec “Ajouter en archives séparées” (par défaut) afin de procéder à une conversion par lot des archives actuelles. Sans conversion, les données source seront combinées en une seule archive, ceci améliorant l'efficacité de la compression du fait de la re-compression des données originales.
 
 CRÉER DES ARCHIVES DIRECTEMENT DANS UN FORMAT ET UN TAUX DE COMPRESSION SPÉCIFIÉ
 En définissant l'intégration système dans les options, il est possible de créer des menus contextuels proposant d'ajouter des fichiers/dossiers à une archive ZIP, 7z ou auto-extractible.
@@ -1462,7 +1462,7 @@ Options > Langue (et aussi dans Options > Paramètres, premier onglet) : permet
 Options > Paramètres : permet de modifier les paramètres de l'application.
 Options > Thèmes : permet de changer l'apparence de l'interface et des icônes.
 Options > Système : permet de configurer l'intégration au système, les associations de fichiers et les entrées des menus contextuels (sous Windows).
-Le menu "Organiser" contient les éléments relatifs à l'affichage, comme le navigateur, la barre d'outils, d'adresse, latérale, etc.
+Le menu “Organiser” contient les éléments relatifs à l'affichage, comme le navigateur, la barre d'outils, d'adresse, latérale, etc.
 
 F1  Aide
 F2  Renommer le·s fichier·s — Ctrl+F2 Copier la sélection vers — Shift+F2 Déplacer la sélection vers
