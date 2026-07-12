@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 German - Deutsch
-11.1
+11.2
 Translated by: Vacon
 Last rev. by: Andrain
 Last rev.: 20260408
 
 === PeaZip text group ===
 
+txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
+txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
 txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
 txt_11_0_adv: Erweiterte und formatspezifische Optionen
 txt_11_0_bt: Stapelverarbeitung von Testarchiven

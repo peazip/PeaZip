@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Turkish (Türkçe)
-11.1
+11.2
 Çeviren: Osman Öz, Cihan Alkan, Muhammed Emin Subaşı, Onur Gevinoğlu
 Son güncelleyen: Osman Öz
 Son güncelleme: 07 Mayıs 2026
 
 === PeaZip text group ===
 
+txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
+txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
 txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
 txt_11_0_adv: Gelişmiş ve biçime özgü seçenekler
 txt_11_0_bt: Toplu test arşivleri
