@@ -1500,7 +1500,8 @@ for i:=l downto 1 do
        try
        iperc:=strtoint(copy(stri1,i-3,3));
        if copy(stri1,i+2,1)=':' then iact:=txt_10_4_moving+' ' else iact:='';
-       if (iperc<100) then break;
+       if copy(stri1,i-4,1)=char($0D) then
+          if (iperc<100) then break; //break as soon as reading progress percentage from correct position at the beginning of a new line
        except
        end;
        end;
@@ -1817,7 +1818,7 @@ else
    {$ENDIF}
 
 try
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); ended:=true; exit; end;
+if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); ended:=true; exit; end; //explicitly tested for exception as possible cause of error 127 cannot execute
 tsin:=datetimetotimestamp(now);
 pcount:=1;
 stri:='';
@@ -2055,6 +2056,9 @@ if pproglast=true then FormGwrap.ShapeGlobalProgress.Width:=FormGwrap.Width-3;
 Application.ProcessMessages;
 except
 exit_code:=127; //"cannot execute" error
+P.Free;
+M.Free;
+M2.Free;
 end;
 tdiff:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if tdiff<=0 then tdiff:=100000;
@@ -2704,12 +2708,12 @@ var
    P:TProcessUTF8;
    bin_name,in_param:ansistring;
 begin
-P:=TProcessUTF8.Create(nil);
 in_param:=stringdelim(escapefilename(cl,desk_env));
 bin_name:=stringdelim(escapefilename(peazippath,desk_env)+'peazip'+EXEEXT);
-{$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 cl:=bin_name+' -ext2open '+in_param; //ext2open handles a single input in open interface
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+P:=TProcessUTF8.Create(nil);
+{$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
 P.Free;
 Application.Terminate;
@@ -2816,7 +2820,6 @@ begin
 if in_name='' then exit;
 if erasemode<>3 then
    if pMessageWarningYesNo(txt_delete+char($0D)+char($0A)+char($0D)+char($0A)+in_name)<>6 then exit;
-P:=tprocessutf8.Create(nil);
 in_param:=stringdelim(escapefilename(in_name,desk_env));
 bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
 if in_param<>'' then
@@ -2833,9 +2836,10 @@ case perasepasses of
 if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
-{$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+P:=tprocessutf8.Create(nil);
+{$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
 P.Free;
 end;
@@ -2991,15 +2995,15 @@ var
    cl:ansistring;
 begin
 {$IFNDEF MSWINDOWS}
-P:=tprocessutf8.Create(nil);
 cl:=s;
 if FormGwrap.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+P:=tprocessutf8.Create(nil);
 try
 peapexecute(P,cl);
-except
-end;
+finally
 P.Free;
+end;
 {$ENDIF}
 end;
 
@@ -3009,19 +3013,18 @@ var
    cl:ansistring;
 begin
 {$IFNDEF MSWINDOWS}
-P:=tprocessutf8.Create(nil);
 case desk_env of
    0: begin cl:='xterm -e'; end;
    1: begin cl:='gnome-terminal -e'; end;
    2: begin cl:='konsole -e'; end;
    end;
 cl:=cl+' ''bash -c "'+s+'; read line"''';
-
 {$IFDEF DARWIN}
 cl:='open '+s;
 {$ENDIF}
 if FormGwrap.Visible=true then Application.ProcessMessages;
 if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
 {$ENDIF}

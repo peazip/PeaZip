@@ -2261,7 +2261,7 @@ end;
 
 function pw4cl(sw:ansistring; var pw:ansistring):integer;
 var
-   cdelim:utf8string;
+   cdelim:ansistring;
 begin
 pw4cl:=-1;
 cdelim:=correctdelimiter(sw+pw);//Windows = ", Linux and others = ' unless ' is found in the string, in this case swap to "

@@ -130,6 +130,7 @@ unit list_utils;
                                 Moved here ansiutf8_utils functions as the unit was suppressed
                                 New functions to read file header's magic bytes, and to split strings
  0.68     20251110  G.Tani      New function to conditionally pass ansistring to TProcess as command line or as executable name + list of parameters
+ 0.69     20260702  G.Tani      Code reviewed and modernized
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -245,8 +246,21 @@ function rCountSize(dir, mask: ansistring;
   //file attributes to filter the search
   recur: boolean;
   //true: recursive (search in all subfolders); false not recursive (search only in main folder)
-  var nfiles, ndirs, tsize:
-  qword                              //number of files and dirs found, total size
+  var nfiles, ndirs, tsize: qword
+  //number of files and dirs found, total size
+  ): integer;
+
+//optionally recursive function to count files, total size, and return string with all files/dirs names (sorted as in Find function)
+function rCountSizeN(dir, mask: ansistring;
+  //path and mask for search
+  fattrib: qword;
+  //file attributes to filter the search
+  recur: boolean;
+  //true: recursive (search in all subfolders); false not recursive (search only in main folder)
+  var nfiles, ndirs, tsize: qword;
+  //number of files and dirs found, total size
+  var strn: ansistring
+  //string with found files/dirs names
   ): integer;
 
 {
@@ -496,11 +510,11 @@ function check7zvolume(s:ansistring):boolean;
 
 function checkUNCpath(s:ansistring):boolean;
 
-function checklinapp(s:utf8string):boolean;
+function checklinapp(s:ansistring):boolean;
 
-function checkmacapp(s:utf8string):boolean;
+function checkmacapp(s:ansistring):boolean;
 
-function checkmacappbin(s:utf8string):boolean;
+function checkmacappbin(s:ansistring):boolean;
 
 function smartsortstring(s:ansistring):ansistring;
 
@@ -976,8 +990,8 @@ function rCountSize(dir, mask: ansistring;
   //file attributes to filter the search
   recur: boolean;
   //true: recursive (search in all subfolders); false not recursive (search only in main folder)
-  var nfiles, ndirs, tsize:
-  qword                                 //number of files and dirs found, total size
+  var nfiles, ndirs, tsize: qword
+  //number of files and dirs found, total size
   ): integer;
 var
   r: TSearchRec;
@@ -1021,6 +1035,63 @@ begin
     end;
   if rCountSize = INCOMPLETE_FUNCTION then
     rCountSize := SUCCESS;
+end;
+
+//optionally recursive function to count files, total size, and return string with all files/dirs names (sorted as in Find function)
+function rCountSizeN(dir, mask: ansistring;
+  //path and mask for search
+  fattrib: qword;
+  //file attributes to filter the search
+  recur: boolean;
+  //true: recursive (search in all subfolders); false not recursive (search only in main folder)
+  var nfiles, ndirs, tsize: qword;
+  //number of files and dirs found, total size
+  var strn: ansistring
+  //string with found files/dirs names
+  ): integer;
+var
+  r: TSearchRec;
+begin
+  rCountSizeN := INCOMPLETE_FUNCTION;
+  Inc(ndirs, 1);
+  if FindFirst(dir + mask, fattrib, r) = 0 then
+  begin
+    try
+      repeat
+        if ((showhidden=true) or {$IFDEF MSWINDOWS}((r.Attr and faHidden)=0){$ELSE}(r.Name[1] <> '.'){$ENDIF}) then
+        if ((r.Name <> '.') and (r.Name <> '..')) then
+        begin
+          Inc(nfiles, 1);
+          tsize := tsize + r.Size;
+          strn := strn + r.Name;
+        end;
+      until findnext(r) <> 0;
+    except
+      FindClose(r);
+      rCountSizeN := LIST_ERROR;
+      exit;
+    end;
+    FindClose(r);
+  end;
+  if recur = True then
+    if FindFirst(dir + '*', fattrib or faDirectory, r) = 0 then
+    begin
+      try
+        repeat
+          if ((r.Attr and faDirectory) <> 0) and (r.Name <> '.') and
+            (r.Name <> '..') then
+            rCountSizeN(dir + (r.Name) + DirectorySeparator, mask, fattrib,
+              recur, nfiles, ndirs, tsize, strn);
+        until findnext(r) <> 0;
+      except
+        FindClose(r);
+        rCountSizeN := LIST_RECURSION_ERROR;
+        exit;
+      end;
+      FindClose(r);
+    end;
+  if rCountSizeN = INCOMPLETE_FUNCTION then
+    rCountSizeN := SUCCESS;
 end;
 
 function check_in(var f_in: TFileOfByte;
@@ -1651,13 +1722,27 @@ begin
   str.Free;
 end;
 
+{$IFDEF MSWINDOWS}
+function winreserved(var s:ansistring): boolean;
+begin
+result:=false;
+cutextension(s);
+s:=upcase(s);
+case s of
+'CON','PRN','AUX','NUL',
+'COM1','COM2','COM3','COM4','COM5','COM6','COM7','COM8','COM9',
+'LPT1','LPT2','LPT3','LPT4','LPT5','LPT6','LPT7','LPT8','LPT9': result:=true;
+end;
+end;
+{$ENDIF}
+
 function checkfiledirname(s: ansistring): integer;
 //function errs on safe side to prevent cross platform interoperability issues
 var
    sf: ansistring;
    i: integer;
 begin
-checkfiledirname := -1;
+result := -1;
 if s = '' then exit;
 //illegal characters, full name
 for i := 0 to 31 do
@@ -1679,17 +1764,9 @@ if pos('/', sf) <> 0 then exit;
 if pos(':', sf) <> 0 then exit;
 //reserved filenames (Windows)
 {$IFDEF MSWINDOWS}
-cutextension(sf);
-sf := upcase(sf);
-if (sf = 'CON') or (sf = 'PRN') or (sf = 'AUX') or (sf = 'NUL') or
-   (sf = 'COM1') or (sf = 'COM2') or (sf = 'COM3') or (sf = 'COM4') or
-   (sf = 'COM5') or (sf = 'COM6') or (sf = 'COM7') or (sf = 'COM8') or
-   (sf = 'COM9') or (sf = 'LPT1') or (sf = 'LPT2') or (sf = 'LPT3') or
-   (sf = 'LPT4') or (sf = 'LPT5') or (sf = 'LPT6') or (sf = 'LPT7') or
-   (sf = 'LPT8') or (sf = 'LPT9') then
-   exit;
+if winreserved(sf)=true then exit;
 {$ENDIF}
-checkfiledirname := 0;
+result := 0;
 end;
 
 //wrapper for filename/dir check, accepts empty or valid name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
@@ -1789,7 +1866,7 @@ end;
 
 function stringdelim(s:ansistring): ansistring;
 var
-   cdelim:utf8string;
+   cdelim:ansistring;
 begin
 cdelim:=correctdelimiter(s);
 result := cdelim+s+cdelim;
@@ -1797,8 +1874,7 @@ end;
 
 function stringundelim(s:ansistring): ansistring;
 var
-   cdelim:utf8string;
-   st:ansistring;
+   cdelim,st:ansistring;
 begin
 st:=s;
 cdelim:=correctdelimiter(st);
@@ -1817,8 +1893,6 @@ begin
     exit;
   if (desk_env = 10) then //continue for gnome=1 kde=2 and unknown desktop manager =0, exit for Windows=10
     exit;
-  P := TProcessUTF8.Create(nil);
-  P.Options := [poWaitOnExit];
   if desk_env = 20 then // Darwin=20
     begin
     cl:='open ' + stringdelim(escapefilename(s, desk_env));
@@ -1827,6 +1901,8 @@ begin
     begin
     cl:='xdg-open ' + stringdelim(escapefilename(s, desk_env));
     end;
+  P := TProcessUTF8.Create(nil);
+  P.Options := [poWaitOnExit];
   peapexecute(P,cl);
   result := P.ExitStatus;
   P.Free;
@@ -1838,7 +1914,6 @@ var
   cl: ansistring;
 begin
 {$IFDEF MSWINDOWS}
-P := TProcessUTF8.Create(nil);
 if fileexists(s) then
    if s[1] = '"' then
       cl := 'explorer /select,' + s
@@ -1849,7 +1924,7 @@ else
       cl := 'explorer ' + extractfilepath(s)
    else
        cl := 'explorer "' + extractfilepath(s) + '"';
-cl := (cl);
+P := TProcessUTF8.Create(nil);
 peapexecute(P,cl);
 P.Free;
 {$ENDIF}
@@ -1861,9 +1936,9 @@ var
   cl:AnsiString;
 begin
 if s = '' then  exit;
+cl:='open -R '+stringdelim(escapefilename(s, 20));
 P := TProcessUTF8.Create(nil);
 P.Options := [poWaitOnExit];
-cl:='open -R '+stringdelim(escapefilename(s, 20));
 peapexecute(P,cl);
 P.Free;
 end;
@@ -1873,15 +1948,14 @@ var
   P: TProcessUTF8;
   cl:AnsiString;
 begin
-  if (desk_env = 0) or (desk_env = 10) then
-    exit;
-  P := TProcessUTF8.Create(nil);
-  P.Options := [poWaitOnExit];
+  if (desk_env = 0) or (desk_env = 10) then exit;
   case desk_env of
      1: cl:='xdg-open /';//'gnome-search-tool';
      2: cl:='kfind';
      20: cl:='open /';
      end;
+  P := TProcessUTF8.Create(nil);
+  P.Options := [poWaitOnExit];
   peapexecute(P,cl);
   P.Free;
 end;
@@ -2048,7 +2122,7 @@ end;
 procedure get_usrtmp_path(var s: ansistring);
 //works fine in Windows even if username contains extended characters
 begin
-s:=GetTempDir(false);
+s:=GetTempDir(false);//documented as local user temporary files on multi user systems
 if s = '' then get_desktop_path(s);
 setendingdirseparator(s);
 end;
@@ -2083,10 +2157,12 @@ end;
 function checkfilename(s: ansistring): integer;
 //function errs on safe side to prevent cross platform interoperability issues
 var
-  s1: ansistring;
-  i: integer;
+   {$IFDEF MSWINDOWS}
+   s1: ansistring;
+   {$ENDIF}
+   i: integer;
 begin
-checkfilename := -1;
+result := -1;
 if (s = '') or (s='.') or (s='..') then exit;
 //illegal characters (no problem for additional UTF8 bytes since have MSB set to 1 to avoid conflict with those control characters)
 for i := 0 to 31 do
@@ -2105,17 +2181,9 @@ if pos('       ', s) <> 0 then exit;
 if pos('"', s) <> 0 then exit;
 //reserved filenames (Windows)
 s1 := extractfilename(s);
-cutextension(s1);
-s1 := upcase(s1);
-if (s1 = 'CON') or (s1 = 'PRN') or (s1 = 'AUX') or (s1 = 'NUL') or
-   (s1 = 'COM1') or (s1 = 'COM2') or (s1 = 'COM3') or (s1 = 'COM4') or
-   (s1 = 'COM5') or (s1 = 'COM6') or (s1 = 'COM7') or (s1 = 'COM8') or
-   (s1 = 'COM9') or (s1 = 'LPT1') or (s1 = 'LPT2') or (s1 = 'LPT3') or
-   (s1 = 'LPT4') or (s1 = 'LPT5') or (s1 = 'LPT6') or (s1 = 'LPT7') or
-   (s1 = 'LPT8') or (s1 = 'LPT9') then
-   exit;
+if winreserved(s1) then exit;
 {$ENDIF}
-checkfilename := 0;
+result := 0;
 end;
 
 //wrapper for filename check, accepts empty or valid file name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
@@ -2314,6 +2382,7 @@ begin
     '.apk', '.xapk', '.apkm', '.apks', '.aab': testext := 135; //Android packages (.zip derived)
     '.mcaddon', '.mcmeta', '.mcpack', '.mcproject', '.mcstructure', '.mctemplate', '.mcworld': testext := 136; //Minecraft packages (.zip derived)
     //'.app' macOS app bundles are not assigned as file extension, being treated as folders
+    '.zim': testext := 137;
 
     //200..499 filesystems
     '.iso': testext := 200;
@@ -2416,7 +2485,7 @@ case sl of
    '.lnk',
    '.csv',
    '.eml',
-   '.html','.htm','.xml','.xhtml','.xht','.mht','.url',
+   '.html','.htm','.xml','.xhtml','.xht','.mht','.mhtml','.url',
    '.md','.markdown': result:=true
    else result:=false;
 end;
@@ -2429,7 +2498,7 @@ begin
 ext:=lowercase(extractfileext(s));
 case ext of
    '.lnk','.txt','.rtf','.wri','.ini','.log','.mid','.midi',
-   '.htm','.html','.xml','.mht','.url','.css','.xhtml',
+   '.htm','.html','.xml','.mht','.mhtml','.url','.css','.xhtml',
    '.bat','.pif','.scr','.vbs','.cmd','.reg',
    '.pas','.pp','.h','.c','.hh','.cpp','.cc','.cxx','.hxx','.cs','.java','.pl','.pm','.php','.py','.p','rb',
    '.js','.asp','.aspx','.vb','.manifest': begin result:=10; exit; end;
@@ -2672,21 +2741,21 @@ if length(s)>=2 then
    if copy(s,1,2)=DirectorySeparator+DirectorySeparator then checkUNCpath:=true;
 end;
 
-function checklinapp(s:utf8string):boolean;
+function checklinapp(s:ansistring):boolean;
 begin
 result:=false;
 if (fileexists('/bin/'+s)) or
    (fileexists('/usr/bin/'+s)) then result:=true;
 end;
 
-function checkmacapp(s:utf8string):boolean;
+function checkmacapp(s:ansistring):boolean;
 begin
 result:=false;
 if (checkdirexists('/Applications/'+s)) or
    (checkdirexists('/System/Applications/'+s)) then result:=true;
 end;
 
-function checkmacappbin(s:utf8string):boolean;
+function checkmacappbin(s:ansistring):boolean;
 begin
 result:=false;
 if (checkdirexists('/usr/local/'+s)) then result:=true;

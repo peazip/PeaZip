@@ -244,6 +244,7 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
  1.30     20260401  G.Tani      Recompiled with updated rendering routines, fixes
  1.31     20260506  G.Tani      (.pea format) Fixed path traversal evasion on extraction, enforcing canonicalization of names (archiving and extraction) and explicit rejection of relative paths stored in name field (extraction), vulnerability and poc reported by Harshit Gupta
                                 (Windows) Fixed sanitization of input for functions invoking PowerShell, vulnerability and poc reported by Harshit Gupta
+ 1.32     20260704  G.Tani      Hardened integrity tags checks with constant-time comparison routines, fixes
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -433,7 +434,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.31'; //declares release version for the entire build
+  P_RELEASE          = '1.32'; //declares release version for the entire build
   //PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 6; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -481,6 +482,9 @@ var
    conf,conftextpreview:text;
    opacity,closepolicy,qscale,qscaleimages,pspacing,pzooming,alttabstyle,ensmall,gridaltcolor,highlighttabs,temperature,contrast,decostyle:integer;
    executable_path,resource_path,binpath,sharepath,persistent_source,color1,color2,color3,color4,color5:string;
+
+   //text
+   txt_processed,txt_in,txt_error,txt_outerror:ansistring;
 
 {
 PEA features can be called using different modes of operation:
@@ -561,6 +565,15 @@ procedure rfj_procedure ( in_qualified_name,
                           
 implementation
 
+//text
+procedure set_pea_text;
+begin
+txt_processed:='Processed';
+txt_in:='in';
+txt_error:='Error';
+txt_outerror:='Output path seems to not have enough free space for an output volume, try to free some space on it or exchange it with an empty one if it''s a removable media. Do you want to test the path another time?'
+end;
+
 {
 misc procedures
 }
@@ -574,7 +587,7 @@ tsout:=datetimetotimestamp(now);
 time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
 if time<=0 then time:=100000;
 speed:=(size * 1000) div time;
-FormPea.LabelOpStatus.Caption:='Processed '+nicenumber(inttostr(size),0)+' in '+nicetime(inttostr(time))+' @ '+nicenumber(inttostr(speed),0)+'/s';
+FormPea.LabelOpStatus.Caption:=txt_processed+' '+nicenumber(inttostr(size),0)+' '+txt_in+' '+nicetime(inttostr(time))+' @ '+nicenumber(inttostr(speed),0)+'/s';
 FormPea.ButtonClosePea.Visible:=true;
 end;
 
@@ -587,7 +600,7 @@ begin
 if err<>0 then
    begin
    decode_pea_error(err,decoded_err);
-   MessageDlg('Error '+s+': '+inttostr(err)+' '+decoded_err, mtError, [mbOK], 0);
+   MessageDlg(txt_error+' '+s+': '+inttostr(err)+' '+decoded_err, mtError, [mbOK], 0);
    halt(-3);
    end;
 end;
@@ -630,7 +643,7 @@ begin
 size_ok:=false;
 repeat
    if ((chsize>diskfree(0)) and (chsize<>1024*1024*1024*1024*1024)) then
-      if MessageDlg('Output path '+outpath+' seems to not have enough free space for an output volume, try to free some space on it or exchange it with an empty one if it''s a removable media. Do you want to test the path another time?',mtWarning,[mbYes, mbNo],0)=6 then
+      if MessageDlg(outpath+' '+txt_outerror,mtWarning,[mbYes, mbNo],0)=6 then
       else halt(-3)
    else size_ok:=true;
 until size_ok=true;
@@ -642,7 +655,7 @@ begin
 size_ok:=false;
 repeat
    if ((chsize>diskfree(0)) and (chsize<>1024*1024*1024*1024*1024-volume_authsize)) then
-      if MessageDlg('Output path '+outpath+' seems to not have enough free space for an output volume, try to free some space on it or exchange it with an empty one if it''s a removable media. Do you want to test the path another time?',mtWarning,[mbYes, mbNo],0)=6 then
+      if MessageDlg(outpath+' '+txt_outerror,mtWarning,[mbYes, mbNo],0)=6 then
       else halt(-3)
    else size_ok:=true;
 until size_ok=true;
@@ -2967,6 +2980,7 @@ end;
 
 procedure authenticate_stream;
 var
+   diff:byte;
    k:dword;
    tag_match:boolean;
    ct384:THashContext;
@@ -3005,12 +3019,15 @@ if upcase(algo)<>'NOALGO' then
       'CRC32' : dword2bytebuf(crc32,sbuf1,0);
       'ADLER32' : dword2bytebuf(adler,sbuf1,0);
       end;
-   tag_match:=true;
+   {tag_match:=true;
    for k:=0 to authsize-1 do if sbuf1[k]<>exp_auth[k] then
       begin
       tag_match:=false;
       break;
-      end;
+      end;}
+   diff:=0;
+   for k:=0 to authsize-1 do diff:=diff or (sbuf1[k] xor exp_auth[k]);
+   tag_match:=(diff=0);
    if tag_match=false then
       begin
       FormPea.LabelDecryptResult1.Caption:='The archive''s stream of data seem corrupted or tampered! You should not trust the stream''s content!';
@@ -3032,6 +3049,7 @@ end;
 
 procedure check_obj;
 var
+   diff:byte;
    k:dword;
    tag_match:boolean;
 begin
@@ -3058,12 +3076,15 @@ if upcase(obj_algo)<>'NOALGO' then
       'ADLER32' : dword2bytebuf(adler_obj,sbuf1,0);
       end;
    for k:=0 to obj_authsize-1 do obj_tags[nobj,k]:=sbuf1[k];
-   tag_match:=true;
+   {tag_match:=true;
    for k:=0 to obj_authsize-1 do if obj_tags[nobj,k]<>exp_obj_tags[nobj,k] then
       begin
       tag_match:=false;
       break;
-      end;
+      end;}
+   diff:=0;
+   for k:=0 to obj_authsize-1 do diff:=diff or (obj_tags[nobj,k] xor exp_obj_tags[nobj,k]);
+   tag_match:=(diff=0);
    if tag_match=true then status_objects[nobj]:='Object is OK'
    else
       begin
@@ -3075,6 +3096,7 @@ end;
 
 procedure check_volume;
 var
+   diff:byte;
    k:dword;
    tag_match:boolean;
 begin
@@ -3101,12 +3123,15 @@ if upcase(volume_algo)<>'NOALGO' then
       'ADLER32' : dword2bytebuf(adler_volume,tagbuf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=tagbuf[k];
-   tag_match:=true;
+   {tag_match:=true;
    for k:=0 to volume_authsize-1 do if volume_tags[j-1,k]<>exp_volume_tags[j-1,k] then
       begin
       tag_match:=false;
       break;
-      end;
+      end;}
+   diff:=0;
+   for k:=0 to volume_authsize-1 do diff:=diff or (volume_tags[j-1,k] xor exp_volume_tags[j-1,k]);
+   tag_match:=(diff=0);
    if tag_match=true then status_volumes[j-1]:='Volume is OK'
    else
       begin
@@ -4697,6 +4722,7 @@ end;
 
 procedure check_volume;
 var
+   diff:byte;
    k:dword;
    tag_match:boolean;
 begin
@@ -4723,12 +4749,15 @@ if upcase(volume_algo)<>'NOALGO' then
       'ADLER32' : dword2bytebuf(adler_volume,tagbuf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=tagbuf[k];
-   tag_match:=true;
+   {tag_match:=true;
    for k:=0 to volume_authsize-1 do if volume_tags[j-1,k]<>exp_volume_tags[j-1,k] then
       begin
       tag_match:=false;
       break;
-      end;
+      end;}
+   diff:=0;
+   for k:=0 to volume_authsize-1 do diff:=diff or (volume_tags[j-1,k] xor exp_volume_tags[j-1,k]);
+   tag_match:=(diff=0);
    if tag_match=true then status_volumes[j-1]:='Volume is OK'
    else status_volumes[j-1]:='Wrong tag!';
    end;
@@ -6166,6 +6195,7 @@ for i:=j to paramcount do
       ntfiles:=ntfiles+nfiles;
       end;
    tsize:=tsize+ctsize;
+   ctsize:=0;
    end;
 //perform checks
 t:=0;
@@ -8022,13 +8052,13 @@ case ComboBoxUtils.ItemIndex of
       if MessageDlg('Do you want to securely delete selected file(s)? The operation can''t be undone and files will be not recoverable', mtWarning, [mbYes,mbNo], 0)=6 then
          begin
          cl:=bin_name+' WIPE MEDIUM '+in_param;
+         if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
          P:=TProcessUTF8.Create(nil);
          {$IFDEF MSWINDOWS}
          P.Options := [poNoConsole,poWaitOnExit];
          {$ELSE}
          P.Options := [poWaitOnExit];
          {$ENDIF}
-         if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
          peapexecute(p,cl);
          P.Free;
          i:=0;
@@ -8065,11 +8095,11 @@ case ComboBoxUtils.ItemIndex of
       end;
    23: cl:=bin_name+' ENVSTR';
 end;
+if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
 P:=TProcessUTF8.Create(nil);
 {$IFDEF MSWINDOWS}
 P.Options := [poNoConsole];
 {$ENDIF}
-if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
 peapexecute(p,cl);
 P.Free;
 end;
@@ -8436,6 +8466,7 @@ getdesk_env(desk_env,caption_build,delimiter);
 UnitReport.desk_env:=desk_env;
 height_set:=false;
 toolactioncancelled:=false;
+set_pea_text;
 FormPea.Caption:='PEA '+P_RELEASE+' / specs '+inttostr(PEA_FILEFORMAT_VER)+'.'+inttostr(PEA_FILEFORMAT_REV);
 if (PEA_FILEFORMAT_VER <> pea_utils.PEA_FILEFORMAT_VER) or (PEA_FILEFORMAT_REV <> pea_utils.PEA_FILEFORMAT_REV) then
    FormPea.Caption:='PEA '+P_RELEASE+' / Warning: inconsistent internal specs level!';

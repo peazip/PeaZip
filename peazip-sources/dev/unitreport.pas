@@ -45,6 +45,7 @@ unit UnitReport; //Form for reporting results of completed task, with options to
  0.26     20231216  G.Tani      Updated theming
  0.27     20251014  G.Tani      New text preview
  0.28     20251224  G.Tani      Improved text preview, options are now persistent
+ 0.29     20260521  G.Tani      Rationalized use of text
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -258,8 +259,49 @@ var
    tablowcol,tabpencol,tabbrushcol,tabbrushhighcol:TColor;
    intextfileenc:TEncoding;
    peaprevpos:array of integer;
+   //text
+   txt_textpreview,txt_hexpreview,txt_fileheader,txt_eof,txt_digest,txt_list,
+   txt_info,txt_compare,txt_ch,txt_analyze,txt_ev,txt_sys,txt_encerr,txt_saveto,
+   txt_l,txt_w,txt_c,txt_lowcase,txt_upcase,txt_name,txt_size,txt_modified,
+   txt_attributes,txt_save,txt_search,txt_sh,txt_thisfile,txt_values,
+   txt_savefilehash,txt_savehashnames:ansistring;
    
 implementation
+
+///text
+procedure set_report_text;
+begin
+txt_textpreview:='Text preview';
+txt_hexpreview:='Hex preview';
+txt_fileheader:='File header';
+txt_eof:='End of file';
+txt_digest:='* Digest *';
+txt_list:='List';
+txt_info:='Info';
+txt_compare:='Compare';
+txt_ch:='Checksum and hash';
+txt_analyze:='Analyze';
+txt_ev:='Environment variables';
+txt_sys:='System default';
+txt_encerr:='Try different encoding';
+txt_saveto:='Save to';
+txt_l:='Lines';
+txt_w:='Words';
+txt_c:='Chars';
+txt_lowcase:='case';
+txt_upcase:=UpCase(txt_lowcase);
+txt_name:='Name';
+txt_size:='Size';
+txt_modified:='Modified';
+txt_attributes:='Attributes';
+txt_save:='Save';
+txt_search:='Search';
+txt_sh:='Search selected CRC/hash';
+txt_thisfile:='of this file';
+txt_values:='values and file names';
+txt_savefilehash:='Save selected CRC/hash of this file';
+txt_savehashnames:='Save selected CRC/hash values and file names';
+end;
 
 ///rep
 procedure exitlabel_rep(var a: TLabel; var b:TShape);
@@ -311,7 +353,7 @@ for x:=1 to FormReport.StringGridInput.RowCount-1 do
    begin
    for y:=0 to FormReport.StringGridInput.ColCount-1 do
       if FormReport.StringGridInput.ColWidths[y]>0 then
-      if ((FormReport.StringGridInput.Cells[y,0]<>'File header') and (FormReport.StringGridInput.Cells[y,0]<>'End of file')) then
+      if ((FormReport.StringGridInput.Cells[y,0]<>txt_fileheader) and (FormReport.StringGridInput.Cells[y,0]<>txt_eof)) then
       if FormReport.StringGridInput.Cells[y,x]<>'' then
          FormReport.MemoReport.Append(FormReport.StringGridInput.Cells[y,0]+': '+FormReport.StringGridInput.Cells[y,x])
       else
@@ -449,7 +491,7 @@ else //batch or hidden, non interactive
 
 if s<>'' then
 begin
-if FormReport.LabelReport1.Caption='Text preview' then
+if FormReport.LabelReport1.Caption=txt_textpreview then
    begin
    FormReport.MemoReport.Lines.SaveToFile(s,intextfileenc);
    exit;
@@ -457,13 +499,13 @@ if FormReport.LabelReport1.Caption='Text preview' then
 assignfile(t,s);
 rewrite(t);
 write_header(t);
-if FormReport.Caption<>'Hex preview' then
+if FormReport.Caption<>txt_hexpreview then
 begin
 for x:=0 to FormReport.StringGridInput.RowCount-1 do
    begin
    for y:=0 to FormReport.StringGridInput.ColCount-1 do
       if FormReport.StringGridInput.ColWidths[y]>0 then
-      if ((FormReport.StringGridInput.Cells[y,0]<>'File header') and (FormReport.StringGridInput.Cells[y,0]<>'End of file')) then
+      if ((FormReport.StringGridInput.Cells[y,0]<>txt_fileheader) and (FormReport.StringGridInput.Cells[y,0]<>txt_eof)) then
       write(t,FormReport.StringGridInput.Cells[y,x]+field_delim);
    writeln(t);
    end;
@@ -488,7 +530,7 @@ var
 x,hcol:dword;
 fname,p:ansistring;
 begin
-if FormReport.StringGridInput.Cells[0,FormReport.StringGridInput.Row]='* Digest *' then exit;
+if FormReport.StringGridInput.Cells[0,FormReport.StringGridInput.Row]=txt_digest then exit;
 hcol:=FormReport.StringGridInput.Col;
 fname:=FormReport.StringGridInput.Cells[hcol,0]+'.txt';
 if pathistmp(GetCurrentDir)=true then //switch to desktop if file is in PeaZip's temp path (i.e. using the function on a preview of archived item)
@@ -502,7 +544,7 @@ rewrite(t);
 //write_header(t);
 for x:=1 to FormReport.StringGridInput.RowCount-1 do
    begin
-   if FormReport.StringGridInput.Cells[0,x]='* Digest *' then break;
+   if FormReport.StringGridInput.Cells[0,x]=txt_digest then break;
    if FormReport.StringGridInput.Cells[hcol,x]<>'' then
       if (hcol>8) and (hcol<13) then
          write(t,FormReport.StringGridInput.Cells[hcol,x]+' '+FormReport.StringGridInput.Cells[4,x]+' '+FormReport.StringGridInput.Cells[1,x]+char($0A))
@@ -519,7 +561,7 @@ begin
 try
 assignfile(conftextpreview,(confpath+'textpreview.txt'));
 rewrite(conftextpreview);
-writeln(conftextpreview,'[Text preview]');
+writeln(conftextpreview,'['+txt_textpreview+']');
 writeln(conftextpreview,textwrap);
 writeln(conftextpreview,textcase);
 writeln(conftextpreview,textbold);
@@ -534,14 +576,14 @@ end;
 
 procedure conditional_stop;
 begin
-if FormReport.Caption='List' then Application.Terminate;
-if FormReport.Caption='Info' then Application.Terminate;
-if FormReport.Caption='Compare' then Application.Terminate;
-if FormReport.Caption='Checksum and hash' then Application.Terminate;
-if FormReport.Caption='Analyze' then Application.Terminate;
-if FormReport.Caption='Environment variables' then Application.Terminate;
-if FormReport.LabelReport1.Caption='Hex preview' then Application.Terminate;
-if FormReport.LabelReport1.Caption='Text preview' then Application.Terminate;
+if FormReport.Caption=txt_list then Application.Terminate;
+if FormReport.Caption=txt_info then Application.Terminate;
+if FormReport.Caption=txt_compare then Application.Terminate;
+if FormReport.Caption=txt_ch then Application.Terminate;
+if FormReport.Caption=txt_analyze then Application.Terminate;
+if FormReport.Caption=txt_ev then Application.Terminate;
+if FormReport.LabelReport1.Caption=txt_hexpreview then Application.Terminate;
+if FormReport.LabelReport1.Caption=txt_textpreview then Application.Terminate;
 if FormReport.Caption='MoTW' then Application.Terminate;
 if needclose=true then
    begin
@@ -653,15 +695,15 @@ function decodetextencoding:ansistring;
 begin
 if FormReport.encansi.Checked=true then result:='ANSI';
 if FormReport.encascii.Checked=true then result:='ASCII';
-if FormReport.encdefault.Checked=true then result:='System default';
+if FormReport.encdefault.Checked=true then result:=txt_sys;
 if FormReport.encunicodebe.Checked=true then result:='Unicode-BE';
 if FormReport.encunicodele.Checked=true then result:='Unicode-LE';
 if FormReport.encutf7.Checked=true then result:='UTF-7';
 if FormReport.encutf8.Checked=true then result:='UTF-8';
-if (result='UTF-8') and (isutf8withbom=true) then result:='UTF-8 with BOM';
-if (result='UTF-7') and (isutf7withbom=true) then result:='UTF-7 with BOM';
-if (result='Unicode-BE') and (isutf8withbom=true) then result:='Unicode-BE with BOM';
-if (result='Unicode-LE') and (isutf8withbom=true) then result:='Unicode-LE with BOM';
+if (result='UTF-8') and (isutf8withbom=true) then result:='UTF-8/BOM';
+if (result='UTF-7') and (isutf7withbom=true) then result:='UTF-7/BOM';
+if (result='Unicode-BE') and (isutf8withbom=true) then result:='Unicode-BE/BOM';
+if (result='Unicode-LE') and (isutf8withbom=true) then result:='Unicode-LE/BOM';
 end;
 
 function peatextstats:integer;
@@ -670,23 +712,23 @@ var
 begin
 result:=-1;
 if FormReport.Visible<>true then exit;
-if FormReport.LabelReport1.Caption<>'Text preview' then exit;
+if FormReport.LabelReport1.Caption<>txt_textpreview then exit;
 sfin:=TStringList.Create;
 result:=peasplitstring(FormReport.MemoReport.Text,sfin);
 texstatsresult:=result;
 if result<0 then
    begin
-   FormReport.Labelsave.Caption:=sizeastr+' [Try different encoding] '+
-   ' | Save to ';
+   FormReport.Labelsave.Caption:=sizeastr+' ['+txt_encerr+'] '+
+   ' | '+txt_saveto+' ';
    end
 else
    begin
    FormReport.Labelsave.Caption:=sizeastr+' ['+
    inttostr(FormReport.MemoReport.CaretPos.Y+1)+':'+inttostr(FormReport.MemoReport.CaretPos.X+1)+'] '+
-   decodetextencoding+', '+inttostr(FormReport.MemoReport.Lines.Count)+' Lines, '+
-   inttostr(result)+' Words, '+
-   inttostr(FormReport.MemoReport.GetTextLen)+' Chars'+
-   ' | Save to ';
+   decodetextencoding+', '+inttostr(FormReport.MemoReport.Lines.Count)+' '+txt_l+', '+
+   inttostr(result)+' '+txt_w+', '+
+   inttostr(FormReport.MemoReport.GetTextLen)+' '+txt_c+
+   ' | '+txt_saveto+' ';
    end;
 end;
 
@@ -1018,6 +1060,7 @@ needclose:=false;
 noreportdetails:=false;
 psearchpos:=1;
 peacasesensitive:=false;
+set_report_text;
 {$IFDEF DARWIN}
 //replace some shortcuts with macOS specific alternative
 peafind.ShortCut:=($1000) + Ord('F');
@@ -1078,9 +1121,9 @@ var
    orig_activelabel_rep:TLabel;
 begin
 orig_activelabel_rep:=activelabel_rep;
-if LabelCase.Caption='[CASE]' then
+if LabelCase.Caption='['+txt_upcase+']' then
    begin
-   LabelCase.Caption:='[case]';
+   LabelCase.Caption:='['+txt_lowcase+']';
    if FormReport.StringGridInput.RowCount<2 then exit;
    if FormReport.StringGridInput.ColCount<24 then exit;
    for irow:=1 to FormReport.StringGridInput.RowCount-1 do
@@ -1088,7 +1131,7 @@ if LabelCase.Caption='[CASE]' then
    end
 else
    begin
-   LabelCase.Caption:='[CASE]';
+   LabelCase.Caption:='['+txt_upcase+']';
    if FormReport.StringGridInput.RowCount<2 then exit;
    if FormReport.StringGridInput.ColCount<24 then exit;
    for irow:=1 to FormReport.StringGridInput.RowCount-1 do
@@ -1172,7 +1215,7 @@ if StringGridInput.Row>0 then
    if (StringGridInput.Col>7) and (StringGridInput.Col<25) then
       begin
       s:=StringGridInput.Cells[StringGridInput.Col,StringGridInput.Row];
-      if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then exit;
+      if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then exit;
       fname:=StringGridInput.Cells[0,StringGridInput.Row]+'.'+StringGridInput.Cells[StringGridInput.Col,0]+'.txt';
       if pathistmp(GetCurrentDir)=true then //switch to desktop if file is in PeaZip's temp path (i.e. using the function on a preview of archived item)
          begin
@@ -1194,7 +1237,7 @@ var
 begin
 if StringGridInput.Row>0 then
    begin
-   if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then exit;
+   if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then exit;
    fname:=StringGridInput.Cells[0,StringGridInput.Row]+'.info.txt';
    if pathistmp(GetCurrentDir)=true then //switch to desktop if file is in PeaZip's temp path (i.e. using the function on a preview of archived item)
       begin
@@ -1205,10 +1248,10 @@ if StringGridInput.Row>0 then
    assignfile(t,fname);
    rewrite(t);
    write_header(t);
-   writeln(t,'Name: '+StringGridInput.Cells[1,StringGridInput.Row]);
-   writeln(t,'Size: '+StringGridInput.Cells[3,StringGridInput.Row]+' ('+StringGridInput.Cells[4,StringGridInput.Row]+' Bytes)');
-   writeln(t,'Modified: '+StringGridInput.Cells[5,StringGridInput.Row]);
-   writeln(t,'Attributes: '+StringGridInput.Cells[6,StringGridInput.Row]);
+   writeln(t,txt_name+': '+StringGridInput.Cells[1,StringGridInput.Row]);
+   writeln(t,txt_size+': '+StringGridInput.Cells[3,StringGridInput.Row]+' ('+StringGridInput.Cells[4,StringGridInput.Row]+' B)');
+   writeln(t,txt_modified+': '+StringGridInput.Cells[5,StringGridInput.Row]);
+   writeln(t,txt_attributes+': '+StringGridInput.Cells[6,StringGridInput.Row]);
    for y:=8 to 24 do
       if StringGridInput.ColWidths[y]>0 then
          writeln(t,StringGridInput.Cells[y,0]+': '+StringGridInput.Cells[y,StringGridInput.Row]);
@@ -1265,7 +1308,7 @@ if StringGridInput.Row>0 then
    if (StringGridInput.Col>7) and (StringGridInput.Col<25) then
       begin
       s:=StringGridInput.Cells[StringGridInput.Col,StringGridInput.Row];
-      if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then exit;
+      if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then exit;
       webopen('https://www.virustotal.com/gui/file/'+s);
       end;
 end;
@@ -1278,7 +1321,7 @@ if StringGridInput.Row>0 then
    if (StringGridInput.Col>7) and (StringGridInput.Col<25) then
       begin
       s:=StringGridInput.Cells[StringGridInput.Col,StringGridInput.Row];
-      if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then exit;
+      if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then exit;
       webopen('https://www.google.com/search?q='+s);
       end;
 end;
@@ -1291,7 +1334,7 @@ if StringGridInput.Row>0 then
    if (StringGridInput.Col>7) and (StringGridInput.Col<25) then
       begin
       s:=StringGridInput.Cells[StringGridInput.Col,StringGridInput.Row];
-      if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then exit;
+      if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then exit;
       webopen('https://virusscan.jotti.org/en-EN/search/hash/'+s);
       end;
 end;
@@ -1315,21 +1358,21 @@ end;
 procedure TFormReport.peafindExecute(Sender: TObject);
 begin
 if FormReport.Visible<>true then exit;
-if FormReport.LabelReport1.Caption<>'Text preview' then exit;
+if FormReport.LabelReport1.Caption<>txt_textpreview then exit;
 peafindtext;
 end;
 
 procedure TFormReport.peafindnextExecute(Sender: TObject);
 begin
 if FormReport.Visible<>true then exit;
-if FormReport.LabelReport1.Caption<>'Text preview' then exit;
+if FormReport.LabelReport1.Caption<>txt_textpreview then exit;
 peafindtext;
 end;
 
 procedure TFormReport.peafindprevExecute(Sender: TObject);
 begin
 if FormReport.Visible<>true then exit;
-if FormReport.LabelReport1.Caption<>'Text preview' then exit;
+if FormReport.LabelReport1.Caption<>txt_textpreview then exit;
 peafindprevtext;
 end;
 
@@ -1345,8 +1388,8 @@ begin
 if grid1index=index then grid1switch:=not(grid1switch);
 if grid1switch=true then StringGridInput.SortOrder:=soAscending else StringGridInput.SortOrder:=soDescending;
 i:=index;
-if (FormReport.Caption='Checksum and hash') and ((i=3) or (i=4)) then i:=25;
-if (FormReport.Caption='Checksum and hash') and (i=29) then i:=30;
+if (FormReport.Caption=txt_ch) and ((i=3) or (i=4)) then i:=25;
+if (FormReport.Caption=txt_ch) and (i=29) then i:=30;
 StringGridInput.SortColRow(true,i);
 grid1index:=Index;
 end;
@@ -1370,27 +1413,27 @@ StringGridInput.Col:=col;
 if (StringGridInput.Col>7) and (StringGridInput.Col<25) then
    begin
    crcmenuenable(true);
-   MenuItem1.Caption:='Save '+StringGridInput.Cells[StringGridInput.Col,0]+' value of this file';
-   MenuItem3.Caption:='Save '+StringGridInput.Cells[StringGridInput.Col,0]+' values and file names';
-   MenuItem4.Caption:='Search '+StringGridInput.Cells[StringGridInput.Col,0]+' value on VirusTotal';
-   MenuItem6.Caption:='Search '+StringGridInput.Cells[StringGridInput.Col,0]+' value on Jotti VirusScan';
-   MenuItem5.Caption:='Search '+StringGridInput.Cells[StringGridInput.Col,0]+' value on Google';
+   MenuItem1.Caption:=txt_save+' '+StringGridInput.Cells[StringGridInput.Col,0]+' '+txt_thisfile;
+   MenuItem3.Caption:=txt_save+' '+StringGridInput.Cells[StringGridInput.Col,0]+' '+txt_values;
+   MenuItem4.Caption:=txt_search+' '+StringGridInput.Cells[StringGridInput.Col,0]+' / VirusTotal';
+   MenuItem6.Caption:=txt_search+' '+StringGridInput.Cells[StringGridInput.Col,0]+' / Jotti VirusScan';
+   MenuItem5.Caption:=txt_search+' '+StringGridInput.Cells[StringGridInput.Col,0]+' / Google';
    end
 else
    begin
    crcmenuenable(true);
-   MenuItem1.Caption:='Save selected CRC or hash value of this file';
-   MenuItem3.Caption:='Save selected CRC or hash values and file names';
-   MenuItem4.Caption:='Search selected CRC or hash value on VirusTotal';
-   MenuItem4.Caption:='Search selected CRC or hash value on Jotti VirusScan';
-   MenuItem5.Caption:='Search selected CRC or hash value value on Google';
+   MenuItem1.Caption:=txt_savefilehash;
+   MenuItem3.Caption:=txt_savehashnames;
+   MenuItem4.Caption:=txt_sh+' / VirusTotal';
+   MenuItem6.Caption:=txt_sh+' / Jotti VirusScan';
+   MenuItem5.Caption:=txt_sh+' / Google';
    MenuItem1.Enabled:=false;
    MenuItem3.Enabled:=false;
    MenuItem4.Enabled:=false;
    MenuItem6.Enabled:=false;
    MenuItem5.Enabled:=false;
    end;
-if StringGridInput.Cells[0,StringGridInput.Row]='* Digest *' then crcmenuenable(false);
+if StringGridInput.Cells[0,StringGridInput.Row]=txt_digest then crcmenuenable(false);
 end;
 
 procedure TFormReport.StringGridOutputHeaderClick(Sender: TObject;

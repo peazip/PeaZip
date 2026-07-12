@@ -1,4 +1,4 @@
-Notes to 11.1 release
+Notes to 11.2 release
 
 
 

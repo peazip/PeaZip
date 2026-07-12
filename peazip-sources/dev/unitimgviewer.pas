@@ -578,10 +578,10 @@ if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';//enabled only in Windows and macOS
 if pMessageWarningYesNo(pstr+char($0D)+char($0A)+char($0D)+char($0A)+in_name)=6 then
    begin
-   P:=tprocessutf8.Create(nil);
-   {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
    if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   P:=tprocessutf8.Create(nil);
+   {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
    P.Free;
    open_next_item;
