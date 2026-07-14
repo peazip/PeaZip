@@ -3,12 +3,12 @@ Français
 11.2
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 11.05.2026
+Date du: 13.07.2026
 
 === PeaZip text group ===
 
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
+txt_11_2_comp: Le nom de fichier original et son extension sont toujours conservés lorsqu'on utilise des formats de compression pure (Brotli, BZip2, GZip, XZ, Zstd...), sauf si l'option TAR avant est utilisée, ce qui remplace le nom du fichier de sortie.
+txt_11_2_funexp: Saisisser ou sélectionner une fonction de l'application prise en charge (s'exécute sur les fichiers sélectionnés, si applicable)
 txt_11_1_pp: En ignorant l'étape de pré-analyse, l'application peut ne pas détecter à l'avance d'éventuels problèmes d'archive et peut ne pas afficher correctement certaines archives. Quoi qu'il en soit, l'extraction n'est pas affectée par ce paramètre.
 txt_11_0_adv: Options avancées et spécifiques au format
 txt_11_0_bt: Archives de tests par lot
