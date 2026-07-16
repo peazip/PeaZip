@@ -1,15 +1,15 @@
-﻿=== PeaZip language file ===
+=== PeaZip language file ===
 German - Deutsch
 11.2
 Translated by: Vacon
 Last rev. by: Andrain
-Last rev.: 20260408
+Last rev.: 20260716
 
 === PeaZip text group ===
 
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
-txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
+txt_11_2_comp: Ursprüngliche Dateinamen und Dateiendungen bleiben bei reinen Komprimierungsformaten (Brotli, BZip2, GZip, XZ, Zstd...) immer erhalten, nur bei der Option "TAR zuerst erstellen" wird der ausgegebenene Dateiname überschrieben.
+txt_11_2_funexp: Beliebige Funktion der unterstützten App eingeben oder auswählen (sofern möglich, auf die ausgewählten Dateien anwenden)
+txt_11_1_pp: Wenn die Vorab-Analyse übersprungen wird, werden mögliche Probleme mit den Archiven nicht im Voraus erkannt und einige Archive möglicherweise nicht korrekt angezeigt. Das Entpacken wird von dieser Einstellung jedoch nicht beeinflusst.
 txt_11_0_adv: Erweiterte und formatspezifische Optionen
 txt_11_0_bt: Stapelverarbeitung von Testarchiven
 txt_11_0_good: Gut
@@ -87,10 +87,10 @@ txt_9_6_savepoverwrite: Vorhandenes Profil überschrieben? Alle Daten des vorhan
 txt_9_6_savep: Profil speichern
 txt_9_6_scside: Kompakte Seitenleiste anzeigen
 txt_9_5_all: Alle
-txt_9_5_precond: Vorparsen, wenn Fehler auftreten
-txt_9_5_largea: Große Archive vorparsen
-txt_9_5_mediuma: Mittelgroße Archive vorparsen
-txt_9_5_smalla: Kleine Archive vorparsen
+txt_9_5_precond: Vorab analysieren, wenn Fehler auftreten
+txt_9_5_largea: Große Archive vorab analysieren
+txt_9_5_mediuma: Mittelgroße Archive vorab analysieren
+txt_9_5_smalla: Kleine Archive vorab analysieren
 txt_9_5_reopentab: Letzten Tab öffnen
 txt_9_5_savetabs: Tabs speichern
 txt_9_5_sb: Binärdateien in Systempfaden verwenden
@@ -969,7 +969,7 @@ txt_list_flat: flache Darstellung
 txt_unit_floppy: Floppy disk
 txt_foldername: Ordnername
 txt_nfolders: Ordner
-txt_error_input_multi: Der Dateityp erlaubt nur eine einzelne Datei als Quelle. Man kann "Erstelle zuerst TAR" aktivieren, um mehrere Dateien vor dem Komprimieren in ein .TAR-Archiv zu überführen. HINWEIS: Archivtyp erst nach der Aktivierung von "Erstelle zuerst TAR"-Auswahl festlegen
+txt_error_input_multi: Der Dateityp erlaubt nur eine einzelne Datei als Quelle. Man kann "TAR zuerst erstellen" aktivieren, um mehrere Dateien vor dem Komprimieren in ein .TAR-Archiv zu überführen. HINWEIS: Archivtyp erst nach der Aktivierung von "TAR zuerst erstellen"-Auswahl festlegen
 txt_fwd: Vorwärts
 txt_list_found: Gefunden:
 txt_free: Frei
