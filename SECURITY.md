@@ -1,16 +1,30 @@
-# Security Policy
+# Security
 
 ## Supported Versions
 
-Security updates are implemented in the last release of the software.
+Security updates are implemented in the latest release of the software.
 
-So, in case a CVE is published reporting a vulnerability, the corrective action is updating the software to the last available update, or update to the first version reported as immune to the vulnerability either by the CVE report or by PeaZip's change log https://peazip.github.io/changelog.html
+The corrective action for a vulnerability is consequently to update the software to the latest release, or to a release reported as safe by the vulnerability's CVE report or by PeaZip's change log https://peazip.github.io/changelog.html
 
-In case it is needed to backport a vulnerability correction to an older version, sources and instructions are available at https://peazip.github.io/peazip-sources.html , older version's sources are available at https://github.com/peazip/PeaZip/releases/ (as peazip-X.Y.Z.src.zip
-packages), and further support is available at https://peazip.github.io/peazip-more.html  
+Backporting a fix to an older X.Y.Z version is possible by working on the sourcecode of the target version, which is available as peazip-X.Y.Z.src.zip package on https://github.com/peazip/PeaZip/releases/
 
-## Reporting a Vulnerability
+Detailed instructions for compiling the application's binaries, and assembling a working package, are available at https://peazip.github.io/peazip-sources.html
 
-To report a vulnerability, please read https://peazip.github.io/peazip-more.html for the CVE list, link to the Issue Tracker, and for contacting the developer.
+## Reporting Security Issues
 
-It is recommended to periodically browse a public CVE database like https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=peazip in order to stay informed about the current and past vulnerabilities of the application.
+Vulnerabilities should be reported to developer's email, to allow time for a thorough analisys and implementation of corrective actions before public disclosure, to minimize risks for users.
+
+Please read https://peazip.github.io/peazip-more.html for the developer's email address, link to CVE databases containing previously disclosed vulnerabilities, and link to the Issue Tracker - which, for historical reasons, is hosted on SourceForge.
+
+To help understanding the reported vulnerability please provide:
+  * Step-by-step instructions to reproduce the issue
+  * Version(s) tested for the issue, e.g. "Windows Portable package X.Y.Z version"
+  * Any special configuration required to reproduce the issue (if applicable)
+  * Proof-of-concept or exploit code (if possible)
+  * Impact of the issue, including how an attacker might exploit the issue
+
+Thank you in advance for helping PeaZip project to grow and to keep providing a safe experience for users.
+
+## Preferred Languages
+
+The preferred language for all communications is English.
