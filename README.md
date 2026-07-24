@@ -3,9 +3,9 @@
 # PeaZip Free Archiver
 
   
-|    GitHub      |   SourceForge  |    Flathub     |
-|:--------------:|:--------------:|:--------------:|
-| ![GitHub all releases](https://img.shields.io/github/downloads/peazip/PeaZip/total) | ![SourceForge](https://img.shields.io/sourceforge/dt/peazip) | ![Flathub](https://img.shields.io/flathub/downloads/io.github.peazip.PeaZip) |
+|    GitHub      |  GitHub Latest |   SourceForge  |     Flathub    |
+|:--------------:|:--------------:|:--------------:|:--------------:|
+| ![GitHub all releases](https://img.shields.io/github/downloads/peazip/PeaZip/total) | ![GitHub latest](https://img.shields.io/github/downloads/peazip/PeaZip/latest/total) | ![SourceForge](https://img.shields.io/sourceforge/dt/peazip) | ![Flathub](https://img.shields.io/flathub/downloads/io.github.peazip.PeaZip) |
 
 </div>
 
