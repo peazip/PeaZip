@@ -11,6 +11,12 @@ MESSAGE="Could not find the $APPLICATION executable."
 
 if which peazip 2> /dev/null
 then
+	if [ -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+		IFS='
+'
+		set -- $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+		unset IFS
+	fi
 	peazip -add2archive "$@"
 else
 	# Show an error message
