@@ -3,12 +3,12 @@ Norwegian - Norsk
 11.2
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Eilertsen
 Sist rev. av: Arne Hanssen
-Sist revidert: 20260529
+Sist revidert: 20260816
 
 === PeaZip text group ===
 
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
+txt_11_2_comp: Opprinnelig filnavn og suffiks blir alltid lagret når direkte pakkeformater brukes (Brotli, BZip2, GZip, XZ, Zstd...), unntatt når TAR angis før alternativet, som overstyrer navn på resultatfil.
+txt_11_2_funexp: Skriv eller velg uansett funksjon til støttet app (utført på valgte filer, hvis tilgjengelig)
 txt_11_1_pp: Utelater pre-parse steg, programmet kan overse mulige arkiv-problemer i forkant, og kanskje ikke vise enkelte arkiver korrekt. Ekstrahering er uansett ikke påvirket av denne settingen.
 txt_11_0_adv: Avanserte og format-spesifikke valg
 txt_11_0_bt: Batch-test arkiver
@@ -17,7 +17,7 @@ txt_11_0_items: enheter
 txt_11_0_native: Innebygde
 txt_11_0_pr: Vurder passordets entropi
 txt_11_0_rendering: Rendering
-txt_11_0_sch: Schedule execution of the task defined in the GUI as CLI script
+txt_11_0_sch: Planlegg kjøring av jobben definert i GUI som et CLI-script
 txt_11_0_sharp: Skarp
 txt_11_0_soft: Myk
 txt_11_0_strong: Sterk
