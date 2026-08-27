@@ -197,6 +197,7 @@ type
     ButtonStopAll: TBitBtn;
     CheckBoxHalt: TCheckBox;
     ImageTask: TImage;
+    LabelInfo3: TLabel;
     lspac1: TLabel;
     LabelSaveReport: TLabel;
     LabelSavePJ: TLabel;
@@ -389,7 +390,7 @@ var
   pprogn,pjobtype,ptsize,ppsize,pinputfile,poutname,poutnamet,pcl,paction,pcapt,pbackground,psubfun,pfun,parcstr,iact:ansistring;
   pprogbar,pprogbarprev,perrors,iperc,ipercp,remtime,temperature,contrast,alttabstyle,highlighttabs,
   modeofuse,max_l,ppriority,autoopen,exit_code,ws_gw_top,ws_gw_left,ws_gw_height,ws_gw_width,
-  pbarh,pbarhsmall,pjobcommentrar,pjobuserar,instperc,instdelta:integer;
+  pbarh,pbarhsmall,pjobcommentrar,pjobuserar,instperc,instdelta,docr:integer;
   pproglast,pprogfirst,pfromnativedrag,pgook,perrignore,pcanignore,launched,
   stopped,ended,ppause,pstarted,launchwithsemaphore,gocancelall, needinteraction,
   exbackground,pldesigned,okseven,ppiperar:boolean;
@@ -403,7 +404,7 @@ var
   tsin:TTimestamp;
   activelabel_launcher :TLabel;
   //imported strings
-  txt_10_7_keep,txt_10_4_moving,txt_7_4_recover,txt_rr,txt_7_8_dd,txt_8_2_keep,txt_2_5_delete:ansistring;
+  txt_11_3_cr,txt_compression,txt_10_7_keep,txt_10_4_moving,txt_7_4_recover,txt_rr,txt_7_8_dd,txt_8_2_keep,txt_2_5_delete:ansistring;
   //translations
   txt_6_9_remaining,txt_6_5_abort,txt_6_5_error,txt_6_5_no,txt_6_5_yes,txt_6_5_yesall,txt_6_5_warning,
   txt_5_6_update,txt_5_6_cml,txt_5_6_donations,txt_5_6_localization,txt_5_6_runasadmin,
@@ -995,7 +996,7 @@ if FormGwrap.SaveDialogTask.Execute then
    for i:=0 to FormGwrap.StringGridReport.Rowcount-1 do writeln(t,FormGwrap.StringGridReport.Cells[0,i]);
    writeln(t,'');
    writeln(t,FormGwrap.LabelAction.Caption);
-   writeln(t,FormGwrap.l1.Caption+FormGwrap.l2.Caption+' '+FormGwrap.l3.Caption+FormGwrap.l4.Caption+' '+FormGwrap.l5.Caption);
+   writeln(t,FormGwrap.l1.Caption+FormGwrap.l2.Caption+' '+FormGwrap.l3.Caption+FormGwrap.l4.Caption+FormGwrap.l5.Caption);
    writeln(t,txt_input+' '+FormGwrap.LabelInfo1.Caption);
    writeln(t,txt_output+' '+FormGwrap.LabelInfo2.Caption);
    writeln(t,FormGwrap.l6.Caption);
@@ -1107,7 +1108,7 @@ if (pfun<>'UN7Z') and (pfun<>'7Z') then umode:=0 else umode:=1;
 //if runelevated=true then umode:=0;
 
 //On external drives NTFS seems not updating output file size, even using SHChangeNotify
-
+FormGwrap.LabelInfo3.Caption:='';
 if umode=0 then //not 7z / p7zip
    begin
    tpath:=outpath;
@@ -1124,8 +1125,10 @@ if umode=0 then //not 7z / p7zip
             if insize<>0 then percentout:=(outsize*1000000) div insize;
          if outsize>0 then
             begin
-            if (percentout>0) and (percentout<1200000) then FormGwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase)+' ('+inttostr(percentout div 10000)+'%)'
-            else FormGwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
+            FormGwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
+            if (percentout>0) and (percentout<=1000000) then
+               if docr=1 then FormGwrap.LabelInfo3.Caption:='| '+txt_11_3_cr+' '+inttostr(percentout div 10000)+'% '
+               else FormGwrap.LabelInfo3.Caption:='| '+txt_compression+' '+inttostr((1000000-percentout) div 10000)+'% ';
             if tdiff<>0 then speed:=outsize div tdiff * 1000;
             if speed>0 then
                FormGwrap.LabelInfo2.Caption:=FormGwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed),filesizebase)+'/s';
@@ -1193,7 +1196,9 @@ else //7z / p7zip
                      begin
                      percentout:=(((outsize*100) div iperc)*1000000) div insize; //Compression ratio projection
                      //percentout:=(outsize*1000000) div insize; //actual input/output ratio
-                     if (percentout>0) and (percentout<1200000) then FormGwrap.LabelInfo2.Caption:=FormGwrap.LabelInfo2.Caption+' (cr '+inttostr(percentout div 10000)+'%)';
+                     if (percentout>0) and (percentout<=1000000) then
+                        if docr=1 then FormGwrap.LabelInfo3.Caption:='| '+txt_11_3_cr+' '+inttostr(percentout div 10000)+'% '
+                        else FormGwrap.LabelInfo3.Caption:='| '+txt_compression+' '+inttostr((1000000-percentout) div 10000)+'% ';
                      end;
                if tdiff<>0 then speed:=outsize div tdiff * 1000;
                if speed>0 then
@@ -1220,14 +1225,14 @@ if iperc>0 then
    end;
 
 if (pfun<>'UN7Z') and (pfun<>'7Z') then
-   l5.Caption:='| '+nicetime(inttostr(tdiff))
+   l5.Caption:=FormGwrap.LabelInfo3.Caption+'| '+nicetime(inttostr(tdiff))
 else
    begin
    if (iperc>0) and (iperc<100) then
       if iperc>ipercp then
          remtime:=(tdiff*(100-iperc)) div iperc;
-   if remtime>0 then l5.Caption:='| '+nicetime(inttostr(tdiff))+', '+txt_6_9_remaining+' '+nicetime(inttostr(remtime))
-   else l5.Caption:='| '+nicetime(inttostr(tdiff));
+   if remtime>0 then l5.Caption:=FormGwrap.LabelInfo3.Caption+'| '+nicetime(inttostr(tdiff))+', '+txt_6_9_remaining+' '+nicetime(inttostr(remtime))
+   else l5.Caption:=FormGwrap.LabelInfo3.Caption+'| '+nicetime(inttostr(tdiff));
    end;
 if (iperc>0) and (iperc<100) then ipercp:=iperc;
 if ShapeGlobalProgress.visible=true then gperc:=(ShapeGlobalProgress.Width * 100) div FormGwrap.Width
@@ -1295,7 +1300,7 @@ case modeofuse of
    2 :
    begin
    pcapt:=txt_bench;
-   FormGwrap.l3.Caption:=txt_bench;
+   FormGwrap.l3.Caption:=txt_bench+' ';
    FormGwrap.l3.Visible:=true;
    FormGwrap.l7.Visible:=false;
    exit;
@@ -2091,14 +2096,16 @@ if fileexists((outpath)) then
    end;
 except
 end;
+FormGwrap.LabelInfo3.Caption:='';
 if (outsize>0) then
    if (insize>0) then
       begin
       cratio:=outsize * 100;
       cratio:=cratio div insize;
       FormGwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase);
-      if (cratio>0) and (cratio<120) then
-         FormGwrap.LabelInfo2.Caption:=FormGwrap.LabelInfo2.Caption+' ('+inttostr(cratio)+'%)';
+      if (cratio>0) and (cratio<=100) then
+         if docr=1 then FormGwrap.LabelInfo3.Caption:='| '+txt_11_3_cr+' '+inttostr(cratio)+'% '
+         else FormGwrap.LabelInfo3.Caption:='| '+txt_compression+' '+inttostr(100-cratio)+'% ';
       end
    else
       FormGwrap.LabelInfo2.Caption:=nicenumber(inttostr(outsize),filesizebase)
@@ -2109,7 +2116,7 @@ speed1:=0;
 speed2:=0;
 if tdiff<>0 then speed1:=pinsize div tdiff * 1000;
 if tdiff<>0 then speed2:=outsize div tdiff * 1000;
-FormGwrap.l5.Caption:='| '+nicetime(inttostr(tdiff));
+FormGwrap.l5.Caption:=FormGwrap.LabelInfo3.Caption+'| '+nicetime(inttostr(tdiff));
 setwrap;
 if speed1>0 then FormGwrap.LabelInfo1.Caption:=FormGwrap.LabelInfo1.Caption+' @ '+nicenumber(inttostr(speed1),filesizebase)+'/s';
 if speed2>0 then FormGwrap.LabelInfo2.Caption:=FormGwrap.LabelInfo2.Caption+' @ '+nicenumber(inttostr(speed2),filesizebase)+'/s';
@@ -3018,6 +3025,7 @@ case desk_env of
    1: begin cl:='gnome-terminal -e'; end;
    2: begin cl:='konsole -e'; end;
    end;
+if pos('"',s)<>0 then exit;
 cl:=cl+' ''bash -c "'+s+'; read line"''';
 {$IFDEF DARWIN}
 cl:='open '+s;

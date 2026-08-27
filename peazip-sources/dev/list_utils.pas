@@ -131,6 +131,8 @@ unit list_utils;
                                 New functions to read file header's magic bytes, and to split strings
  0.68     20251110  G.Tani      New function to conditionally pass ansistring to TProcess as command line or as executable name + list of parameters
  0.69     20260702  G.Tani      Code reviewed and modernized
+ 0.70     20260826  G.Tani      Improved sanitization of special characters in validatecl: the use of more special characters is prevented to avoid generating potentially unsafe scripts
+                                Improved sanitization of input string in stringdelim: the string is discarded if already containing the quotation character, to avoid propagating strings which can be not correctly handled in scripts
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -1869,6 +1871,7 @@ var
    cdelim:ansistring;
 begin
 cdelim:=correctdelimiter(s);
+if pos(cdelim, s)<>0 then begin result:='#'; exit; end;//error, quotation character already used in the string: string is sanitized for security and replaced with # which guarantee the containing string being discarded by validatecl before execution
 result := cdelim+s+cdelim;
 end;
 
@@ -1901,6 +1904,7 @@ begin
     begin
     cl:='xdg-open ' + stringdelim(escapefilename(s, desk_env));
     end;
+  if validatecl(cl)<>0 then exit;
   P := TProcessUTF8.Create(nil);
   P.Options := [poWaitOnExit];
   peapexecute(P,cl);
@@ -1924,6 +1928,7 @@ else
       cl := 'explorer ' + extractfilepath(s)
    else
        cl := 'explorer "' + extractfilepath(s) + '"';
+if validatecl(cl)<>0 then exit;
 P := TProcessUTF8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -1937,6 +1942,7 @@ var
 begin
 if s = '' then  exit;
 cl:='open -R '+stringdelim(escapefilename(s, 20));
+if validatecl(cl)<>0 then exit;
 P := TProcessUTF8.Create(nil);
 P.Options := [poWaitOnExit];
 peapexecute(P,cl);
@@ -1954,6 +1960,7 @@ begin
      2: cl:='kfind';
      20: cl:='open /';
      end;
+  if validatecl(cl)<>0 then exit;
   P := TProcessUTF8.Create(nil);
   P.Options := [poWaitOnExit];
   peapexecute(P,cl);
@@ -2060,7 +2067,7 @@ begin
   s := (GetEnvironmentVariable('USERPROFILE'));
 {$ENDIF}
 {$IFDEF LINUX}
-  s := GetEnvironmentVariable('HOME');
+  s := GetEnvironmentVariable('HOME'); //env variable should be always set as required by POSIX standard
 {$ENDIF}
 {$IFDEF FREEBSD}
   s := GetEnvironmentVariable('HOME');
@@ -2120,10 +2127,18 @@ get_home_path(s);
 end;
 
 procedure get_usrtmp_path(var s: ansistring);
-//works fine in Windows even if username contains extended characters
 begin
-s:=GetTempDir(false);//documented as local user temporary files on multi user systems
+s:=GetTempDir(false);
 if s = '' then get_desktop_path(s);
+//fallback to ensure a private path is returned on POSIX compliant systems if system temp path is returned
+{$IFNDEF MSWINDOWS}
+if (s = '/tmp/') or (s = '/var/tmp/') then
+  begin
+  get_home_path(s);
+  if DirectoryExists(s+'.cache',False) then s:=s+'.cache' //***needs testing for a macOS specific branch
+  else get_desktop_path(s);
+  end;
+{$ENDIF}
 setendingdirseparator(s);
 end;
 
@@ -2194,12 +2209,44 @@ if s = '' then result:=0
 else result:=checkfilename(s);
 end;
 
+function vis7z(s:ansistring): boolean;
+begin
+result:=false;
+if (pos('bin'+directoryseparator+'7z'+directoryseparator,s)<>0) or //local binary, supports alias7z
+   (pos('7z',s)=1) or (pos('7zalt',s)=1) or (pos('7za',s)=1) or (pos('7zr',s)=1) or (pos('7zz',s)=1) //system binary, does not support alias7z, but checks most common 7z aliases
+then result:=true;
+end;
+
+function visarc(s:ansistring): boolean;
+begin
+result:=false;
+if (pos('bin'+directoryseparator+'arc'+directoryseparator,s)<>0) or
+   (pos('arc',s)=1)
+then result:=true;
+end;
+
+function visrar(s:ansistring): boolean;
+begin
+result:=false;
+if (pos(directoryseparator+'rar',s)<>0) or //rar found in custom path
+   (pos('rar',s)=1) //rar found in system paths
+then result:=true;
+end;
+
+function viszpaq(s:ansistring): boolean;
+begin
+result:=false;
+if (pos('bin'+directoryseparator+'zpaq'+directoryseparator,s)<>0) or
+   (pos('zpaq',s)=1)
+then result:=true;
+end;
+
 function validatecl(var s: ansistring): integer;
 var
   i: integer;
   s1,delimch:ansistring;
 begin
-validatecl := -1;
+result := -1;
 if s = '' then   exit;
 for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
 
@@ -2207,10 +2254,9 @@ delimch := correctdelimiter(s);
 
 s1:=s;
 
-//does not currently apply pw field exceptions if using system binaries (sys7zlin>0)
-if (pos('bin'+directoryseparator+'7z',s)<>0) or //catches 7z and alias7z
-   (pos('bin'+directoryseparator+'arc',s)<>0) or
-   (pos('Rar.exe',s)<>0) then
+//check for password field, if applicable for the inferred operation type
+//if password field is found, do not check the filed for special characters
+if vis7z(s) or visarc(s) or visrar(s) then
    if pos(delimch+'-p',s)<>0 then
       begin
       s1:=copy(s,pos(delimch+'-p',s)+3,length(s)-pos(delimch+'-p',s)-2);
@@ -2225,8 +2271,7 @@ if (pos('bin'+directoryseparator+'7z',s)<>0) or //catches 7z and alias7z
       s1:=copy(s,1,pos(' -p',s))+s1;
       end;
 
-if (pos('bin'+directoryseparator+'arc',s)<>0) or
-   (pos('Rar.exe',s)<>0) then
+if visarc(s) or visrar(s) then
    if pos(delimch+'-hp',s)<>0 then
       begin
       s1:=copy(s,pos(delimch+'-hp',s)+4,length(s)-pos(delimch+'-hp',s)-3);
@@ -2241,9 +2286,15 @@ if (pos('bin'+directoryseparator+'arc',s)<>0) or
       s1:=copy(s,1,pos(' -hp',s))+s1;
       end;
 
-if (pos(directoryseparator+'pea',s)<>0) and
-   (pos('bin'+directoryseparator+'7z',s)=0) and
-   (pos('bin'+directoryseparator+'arc',s)=0) then
+if viszpaq(s) then
+   if pos(' -key ',s)<>0 then
+      begin
+      s1:=copy(s,pos(' -key ',s)+7,length(s)-pos(' -key ',s)-6); //skip one character, which is always the delimiter
+      s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1)); //field is always delimited, even if not needed
+      s1:=copy(s,1,pos(' -key ',s))+s1;
+      end;
+
+if (pos(directoryseparator+'pea',s)<>0) then
    if pos('BATCH',s)<>0 then
       begin
       s1:=copy(s,pos('BATCH',s)+6,length(s)-pos('BATCH',s)-5);
@@ -2252,11 +2303,23 @@ if (pos(directoryseparator+'pea',s)<>0) and
       s1:=copy(s,1,pos('BATCH',s))+s1;
       end;
 
-{if pos('<',s1)<>0 then exit;
-if pos('>',s1)<>0 then exit;}
-if pos('|', s1) <> 0 then exit;
-if pos('       ', s1) <> 0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
-validatecl := 0;
+if pos('|',s1)<>0 then exit;//critical pipe
+if pos('&',s1)<>0 then exit;//critical ampersand command chaining
+if pos(';',s1)<>0 then exit;//critical semicolon command chaining
+if pos('<',s1)<>0 then exit;//critical input redirection
+if pos('>',s1)<>0 then exit;//critical output redirection, disable generation of command scripts for tar with pipe
+if pos('`',s1)<>0 then exit;//critical backtick command substitution
+if pos('$',s1)<>0 then exit;//critical dollar variable expansion
+//if pos('!',s1)<>0 then exit;//exclamation history expansion (needed by the syntax of some backends, e.g. 7z include switch)
+//if pos('"',s1)<>0 then exit;//quote double (input quotation must be correctly handled before being passed here, relevant procedure stringdelim)
+//if pos('''',s1)<>0 then exit;//quote single
+//if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows, also used in escapefilenamelinuxlike when passing command as separate parameters on non-Windows systems)
+//possibly needs to be tested for line separators \r \n and Unicode U+2028, U+2029 in TProcess.Commandline (not a real console, limited support for meta characters) and possibly with additional procedure if the command is passed to a real console
+if pos('#',s1)<>0 then exit;//hash bash comment or special character, used as temporary error marker in stringdelim to have the command line discarded
+if pos('~',s1)<>0 then exit;//tilde home directory expansion
+
+if pos('       ',s1)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
+result := 0;
 end;
 
 {$IFDEF MSWINDOWS}
@@ -2314,7 +2377,7 @@ begin
   ext := lowercase(extractfileext(s));
   //file types supported through 7z backend
   case ext of
-    //trditioanl archive types 0..99
+    //traditioanl archive types 0..99
     '.7z', '.cb7': testext := 0;
     '.bz', '.bz2', '.bzip2', '.bzip', '.tbz2', '.tbz', '.tbzip2', '.tbzip', '.tb2': testext := 1;
     '.gz', '.gzip', '.tgz', '.tpz', '.cpgz' : testext := 2;
@@ -2338,6 +2401,7 @@ begin
     '.wim', '.swm': testext := 18;//MS WIM Windows image file, SWM Split WIM image file
     '.lzma86', '.lzma': testext := 19;
     '.part1', '.split': testext := 20; //generic spanned archive, open with 7z binary
+    '.ar': testext := 21; //Unix archiver
 
     //container types 100..499
     //100..199 packages
@@ -2497,14 +2561,13 @@ var
 begin
 ext:=lowercase(extractfileext(s));
 case ext of
-   '.lnk','.txt','.rtf','.wri','.ini','.log','.mid','.midi',
-   '.htm','.html','.xml','.mht','.mhtml','.url','.css','.xhtml',
-   '.bat','.pif','.scr','.vbs','.cmd','.reg',
+   '.lnk','.txt','.asc','.readme','.rtf','.wri','.ini','.inf','.cfg','.config','.lst','.log','.mid','.midi',
+   '.eml','.htm','.html','.xml','.mht','.mhtml','.url','.css','.xhtml','.md','.markdown',
+   '.bat','.pif','.scr','.vbs','.cmd','.reg','.sh','.command','.csh',
    '.pas','.pp','.h','.c','.hh','.cpp','.cc','.cxx','.hxx','.cs','.java','.pl','.pm','.php','.py','.p','rb',
    '.js','.asp','.aspx','.vb','.manifest': begin result:=10; exit; end;
    '.xls','.xlt','.gnm','.csv',
    '.ani','.cur','.ico','.icl': begin result:=30; exit; end;
-   '.eml',
    '.doc','.dot',
    '.dll','.sys','.so','.dylib',
    '.bmp','.tga','.tif','.tiff',
@@ -3058,7 +3121,7 @@ begin
 result:='';
 fext:='';
 try
-fext:=ExtractFileExt(s);
+fext:=lowercase(ExtractFileExt(s));
 result:=fext;
 assignfile(f,s);
 filemode:=0;
@@ -3094,7 +3157,7 @@ begin
 result:='';
 fext:='';
 try
-fext:=ExtractFileExt(s);
+fext:=lowercase(ExtractFileExt(s));
 result:=fext;
 assignfile(f,s);
 filemode:=0;
@@ -3145,6 +3208,7 @@ if (sbuf[0]=120) and (sbuf[1]=97) and (sbuf[2]=114) and (sbuf[3]=73) and (sbuf[4
 if (sbuf[0]=253) and (sbuf[1]=55) and (sbuf[2]=122) and (sbuf[3]=88) and (sbuf[4]=90) and (sbuf[5]=0) and (sbuf[6]=28) then begin result:=fext+'/XZ'; exit; end;
 if ((sbuf[0]=31) and (sbuf[1]=157)) or ((sbuf[0]=31) and (sbuf[1]=160)) then begin result:=fext+'/Z'; exit; end;
 if (sbuf[0]=40) and (sbuf[1]=181) and (sbuf[2]=47) and (sbuf[3]=253) then begin result:=fext+'/ZST'; exit; end;
+if (sbuf[0]=55) and (sbuf[1]=107) and (sbuf[2]=83) then begin result:=fext+'/ZPAQ'; exit; end;
 except
 end;
 end;

@@ -1114,6 +1114,16 @@ object FormGwrap: TFormGwrap
             Caption = ' '
             ParentFont = False
           end
+          object LabelInfo3: TLabel
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = PanelTask
+            Left = 114
+            Height = 1
+            Top = 0
+            Width = 1
+            ParentFont = False
+            Visible = False
+          end
         end
         object ImageTask: TImage
           AnchorSideLeft.Control = PanelStatus

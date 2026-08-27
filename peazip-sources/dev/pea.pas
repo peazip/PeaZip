@@ -245,6 +245,10 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
  1.31     20260506  G.Tani      (.pea format) Fixed path traversal evasion on extraction, enforcing canonicalization of names (archiving and extraction) and explicit rejection of relative paths stored in name field (extraction), vulnerability and poc reported by Harshit Gupta
                                 (Windows) Fixed sanitization of input for functions invoking PowerShell, vulnerability and poc reported by Harshit Gupta
  1.32     20260704  G.Tani      Hardened integrity tags checks with constant-time comparison routines, fixes
+ 1.33     20260827  G.Tani      *** IN PROGRESS
+                                Fixed some PEA files erroneously reported as containing relative paths
+                                Fixed validation of first compressed block size on extraction of PEA archives
+                                Updated some app colors
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -434,7 +438,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.32'; //declares release version for the entire build
+  P_RELEASE          = '1.33'; //declares release version for the entire build
   //PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 6; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -3698,7 +3702,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
                if upcase(struct_param)='EXTRACT2DIR' then
                   begin
                   //explicit rejection of relative paths, enforce format specs about only absolute full qualified names being supported
-                  if fn<>ExpandFileName(fn) then internal_error('Relative filenames not supported '+fn);
+                  if pos(fn,ExpandFileName(fn))=0 then internal_error('Relative filenames not supported '+fn); //in non-Windows systems Windows paths gets expanded starting from work path (in this case output path)
                   //additional check for relative paths, should be made redundant by previous check
                   if (pos(directoryseparator+'..'+directoryseparator,fn)<>0) or (pos('/../',fn)<>0) or (pos('\..\',fn)<>0) or
                   (pos('\../',fn)<>0) or (pos('/..\',fn)<>0) or
@@ -3788,6 +3792,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
                update_control_algo(sbuf1,4);
                update_obj_control_algo(sbuf1,4);
                compsize:=sbuf1[0] + (sbuf1[1] shl 8) + (sbuf1[2] shl 16) + (sbuf1[3] shl 24);
+               if compsize>WBUFSIZE then internal_error('Decompression error, declared compsize bigger than compression buffer');
                end;
             end;
          while ((total>0) and (readingf=true)) do
@@ -3811,9 +3816,9 @@ while (chunks_ok=true) and (end_of_archive=false) do
                   end;
                dec(total,numread);
                inc(wrk_space,numread);
-               for k:=0 to i-1 do wbuf1[addr+k]:=wbuf2[k];
+               for k:=0 to numread-1 do wbuf1[addr+k]:=wbuf2[k];
                inc(addr,numread);
-               if addr=compsize+4 then readingcompblock:=false;
+               if addr>=compsize+4 then readingcompblock:=false;
                end;
             if readingcompblock=false then //read a compressed block sized compsize and next 4 byte (next block's compressed size, or uncompressed size for last block)
                begin

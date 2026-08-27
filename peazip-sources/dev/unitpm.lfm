@@ -111,6 +111,98 @@ object FormPM: TFormPM
     ParentBackground = False
     ParentFont = False
     TabOrder = 1
+    object TabSheetPWlist: TPanel
+      AnchorSideLeft.Control = PageControlPM
+      AnchorSideTop.Control = PageControlPM
+      AnchorSideRight.Control = PageControlPM
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PageControlPM
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 396
+      Top = 0
+      Width = 750
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BevelOuter = bvNone
+      ClientHeight = 396
+      ClientWidth = 750
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+      object StringGridPM1: TStringGrid
+        AnchorSideLeft.Control = TabSheetPWlist
+        AnchorSideTop.Control = TabSheetPWlist
+        AnchorSideRight.Control = TabSheetPWlist
+        AnchorSideRight.Side = asrBottom
+        Left = 0
+        Height = 356
+        Top = 0
+        Width = 750
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderStyle = bsNone
+        ColCount = 4
+        DefaultRowHeight = 22
+        Flat = True
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goSmoothScroll]
+        ParentColor = True
+        ParentFont = False
+        PopupMenu = pmPM
+        RowCount = 1
+        TabOrder = 0
+        TitleStyle = tsNative
+        Visible = False
+        OnColRowMoved = StringGridPMColRowMoved
+        OnDblClick = StringGridPMDblClick
+        OnKeyPress = StringGridPMKeyPress
+        OnMouseDown = StringGridPMMouseDown
+      end
+      object StringGridPM: TStringGrid
+        AnchorSideLeft.Control = TabSheetPWlist
+        AnchorSideTop.Control = TabSheetPWlist
+        AnchorSideRight.Control = TabSheetPWlist
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = TabSheetPWlist
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 396
+        Top = 0
+        Width = 750
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ColCount = 4
+        DefaultRowHeight = 22
+        Flat = True
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goColSizing, goRowMoving, goSmoothScroll]
+        ParentColor = True
+        ParentFont = False
+        PopupMenu = pmPM
+        RowCount = 1
+        TabOrder = 1
+        TitleStyle = tsNative
+        OnColRowMoved = StringGridPMColRowMoved
+        OnDblClick = StringGridPMDblClick
+        OnHeaderClick = StringGridPMHeaderClick
+        OnKeyPress = StringGridPMKeyPress
+        OnMouseDown = StringGridPMMouseDown
+      end
+      object MemoPM: TMemo
+        AnchorSideLeft.Control = StringGridPM
+        AnchorSideRight.Control = StringGridPM
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = StringGridPM
+        AnchorSideBottom.Side = asrBottom
+        Left = 0
+        Height = 38
+        Top = 350
+        Width = 750
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Bottom = 8
+        ParentFont = False
+        TabOrder = 2
+        Visible = False
+      end
+    end
     object TabSheetMasterPW: TPanel
       AnchorSideLeft.Control = PageControlPM
       AnchorSideTop.Control = PageControlPM
@@ -335,98 +427,6 @@ object FormPM: TFormPM
           Flat = True
           OnClick = ButtonEditNamePwClick
         end
-      end
-    end
-    object TabSheetPWlist: TPanel
-      AnchorSideLeft.Control = PageControlPM
-      AnchorSideTop.Control = PageControlPM
-      AnchorSideRight.Control = PageControlPM
-      AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = PageControlPM
-      AnchorSideBottom.Side = asrBottom
-      Left = 0
-      Height = 396
-      Top = 0
-      Width = 750
-      Anchors = [akTop, akLeft, akRight, akBottom]
-      BevelOuter = bvNone
-      ClientHeight = 396
-      ClientWidth = 750
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 1
-      object StringGridPM1: TStringGrid
-        AnchorSideLeft.Control = TabSheetPWlist
-        AnchorSideTop.Control = TabSheetPWlist
-        AnchorSideRight.Control = TabSheetPWlist
-        AnchorSideRight.Side = asrBottom
-        Left = 0
-        Height = 356
-        Top = 0
-        Width = 750
-        Anchors = [akTop, akLeft, akRight, akBottom]
-        BorderStyle = bsNone
-        ColCount = 4
-        DefaultRowHeight = 22
-        Flat = True
-        GridLineWidth = 0
-        Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goSmoothScroll]
-        ParentColor = True
-        ParentFont = False
-        PopupMenu = pmPM
-        RowCount = 1
-        TabOrder = 0
-        TitleStyle = tsNative
-        Visible = False
-        OnColRowMoved = StringGridPMColRowMoved
-        OnDblClick = StringGridPMDblClick
-        OnKeyPress = StringGridPMKeyPress
-        OnMouseDown = StringGridPMMouseDown
-      end
-      object StringGridPM: TStringGrid
-        AnchorSideLeft.Control = TabSheetPWlist
-        AnchorSideTop.Control = TabSheetPWlist
-        AnchorSideRight.Control = TabSheetPWlist
-        AnchorSideRight.Side = asrBottom
-        AnchorSideBottom.Control = TabSheetPWlist
-        AnchorSideBottom.Side = asrBottom
-        Left = 0
-        Height = 396
-        Top = 0
-        Width = 750
-        Anchors = [akTop, akLeft, akRight, akBottom]
-        ColCount = 4
-        DefaultRowHeight = 22
-        Flat = True
-        GridLineWidth = 0
-        Options = [goFixedVertLine, goFixedHorzLine, goColSizing, goRowMoving, goSmoothScroll]
-        ParentColor = True
-        ParentFont = False
-        PopupMenu = pmPM
-        RowCount = 1
-        TabOrder = 1
-        TitleStyle = tsNative
-        OnColRowMoved = StringGridPMColRowMoved
-        OnDblClick = StringGridPMDblClick
-        OnHeaderClick = StringGridPMHeaderClick
-        OnKeyPress = StringGridPMKeyPress
-        OnMouseDown = StringGridPMMouseDown
-      end
-      object MemoPM: TMemo
-        AnchorSideLeft.Control = StringGridPM
-        AnchorSideRight.Control = StringGridPM
-        AnchorSideRight.Side = asrBottom
-        AnchorSideBottom.Control = StringGridPM
-        AnchorSideBottom.Side = asrBottom
-        Left = 0
-        Height = 38
-        Top = 350
-        Width = 750
-        Anchors = [akLeft, akRight, akBottom]
-        BorderSpacing.Bottom = 8
-        ParentFont = False
-        TabOrder = 2
-        Visible = False
       end
     end
   end

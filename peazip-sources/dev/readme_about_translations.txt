@@ -1,5 +1,8 @@
-Notes to 11.2 release
+Notes to 11.3 release
 
+Modified existing text string:
+
+txt_4_3_pwmanpwhint: Setting a password/keyfile to encrypt password list is mandatory, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
 
 
 = GENERAL NOTES =
