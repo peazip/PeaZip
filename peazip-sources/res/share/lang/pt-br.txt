@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
-English
-11.2
+Portuguese (Brazil)
+11.3
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20260114
 
 === PeaZip text group ===
 
+txt_11_3_cr: Compression Ratio
+txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: O nome e a extensão do arquivo original são sempre preservados ao usar formatos de compressão pura (Brotli, BZip2, GZip, XZ, Zstd...), a menos que a opção TAR antes seja usada, substituindo o Nome do arquivo de saída.
 txt_11_2_funexp: Digite ou selecione qualquer uma das funções do aplicativo suportado (executar nos arquivos selecionados, se aplicável)
 txt_11_1_pp: Ignorar a etapa de pré-análise pode fazer com que o aplicativo não detecte possíveis problemas no arquivo compactado com antecedência e não exiba corretamente alguns arquivos compactados. De qualquer forma, a extração não é afetada por esta configuração.

@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-11.2
+11.3
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Eilertsen
 Sist rev. av: Arne Hanssen
 Sist revidert: 20260816
 
 === PeaZip text group ===
 
+txt_11_3_cr: Compression Ratio
+txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Opprinnelig filnavn og suffiks blir alltid lagret når direkte pakkeformater brukes (Brotli, BZip2, GZip, XZ, Zstd...), unntatt når TAR angis før alternativet, som overstyrer navn på resultatfil.
 txt_11_2_funexp: Skriv eller velg uansett funksjon til støttet app (utført på valgte filer, hvis tilgjengelig)
 txt_11_1_pp: Utelater pre-parse steg, programmet kan overse mulige arkiv-problemer i forkant, og kanskje ikke vise enkelte arkiver korrekt. Ekstrahering er uansett ikke påvirket av denne settingen.

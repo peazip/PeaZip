@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 English
-11.2
+11.3
 Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20260114
 
 === PeaZip text group ===
 
+txt_11_3_cr: Compression Ratio
+txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
 txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
 txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
@@ -555,7 +557,7 @@ txt_4_3_pwmanhint: Double click to edit items in password list, rightclick for o
 txt_4_3_exppl: Export password list
 txt_4_3_expple: Encrypted (backup Password Manager)
 txt_4_3_keeppw: Keep password/keyfile for current session
-txt_4_3_pwmanpwhint: Setting a password/keyfile (optional) to encrypt password list is recommended, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
+txt_4_3_pwmanpwhint: Setting a password/keyfile to encrypt password list is mandatory, in this way authentication will be required to access to the Password Manager. Password/keyfile can be changed at any time from this form.
 txt_4_3_pwmanmaster: Set/change PM master password
 txt_4_3_pwmanlist: Password list
 txt_4_3_pwman: Password Manager

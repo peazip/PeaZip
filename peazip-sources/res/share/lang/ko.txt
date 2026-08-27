@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
-11.2
+11.3
 번역자: Sleepy, EhangB
 최근 교정: 20260523 by EhangB
 교정 일자: 20110531 by Sleep
 
 === PeaZip text group ===
 
+txt_11_3_cr: Compression Ratio
+txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
 txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
 txt_11_1_pp: 사전 분석 단계를 건너뛰면 앱이 아카이브의 잠재적 문제를 미리 감지하지 못할 수 있으며, 일부 아카이브가 제대로 표시되지 않을 수 있습니다. 어쨌든, 압축 해제 기능에는 이 설정이 영향을 미치지 않습니다.

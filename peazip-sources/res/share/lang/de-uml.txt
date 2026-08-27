@@ -1,12 +1,14 @@
 === PeaZip language file ===
 German - Deutsch
-11.2
+11.3
 Translated by: Vacon
 Last rev. by: Andrain
 Last rev.: 20260716
 
 === PeaZip text group ===
 
+txt_11_3_cr: Compression Ratio
+txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Ursprüngliche Dateinamen und Dateiendungen bleiben bei reinen Komprimierungsformaten (Brotli, BZip2, GZip, XZ, Zstd...) immer erhalten, nur bei der Option "TAR zuerst erstellen" wird der ausgegebenene Dateiname überschrieben.
 txt_11_2_funexp: Beliebige Funktion der unterstützten App eingeben oder auswählen (sofern möglich, auf die ausgewählten Dateien anwenden)
 txt_11_1_pp: Wenn die Vorab-Analyse übersprungen wird, werden mögliche Probleme mit den Archiven nicht im Voraus erkannt und einige Archive möglicherweise nicht korrekt angezeigt. Das Entpacken wird von dieser Einstellung jedoch nicht beeinflusst.

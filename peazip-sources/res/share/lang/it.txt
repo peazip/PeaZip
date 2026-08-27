@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Italian - Italiano
-11.2
+11.3
 Tradotto da: Giorgio Tani
 Ultima rev. di: Giorgio Tani
 Ultima rev.: 20260114
 
 === PeaZip text group ===
 
+txt_11_3_cr: Rapporto di Compressione
+txt_11_3_showcr: Mostra compressione come Rapporto di Compressione
 txt_11_2_comp: Nome ed estensione originali sono sempre preservati quando si usano formati di compressione semplice (Brotli, BZip2, GZip, XZ, Zstd...) ignorando il nome file impostato in Output, a meno che non sia utilizzata l'opzione Crea TAR.
 txt_11_2_funexp: Digitare o selezionare una delle funzioni supportate (applicata ai file selezionati, se previsto dalla funzione)
 txt_11_1_pp: Saltando l'analisi degli archivi all'apertura alcuni problemi potrebbero non essere rilevati, e il contenuto potrebbe non essere mostrato correttamente nel browser. La possibilità di estrazione degli archivi non è comunque influenzata da questo parametro.
@@ -555,7 +557,7 @@ txt_4_3_pwmanhint: Doppio click per editare gli oggetti nell'elenco password, ta
 txt_4_3_exppl: Esporta elenco password
 txt_4_3_expple: Cifrato (backup del Password manager)
 txt_4_3_keeppw: Mantieni password/keyfile per la sessione corrente
-txt_4_3_pwmanpwhint: Si raccomanda di usare password/keyfile (optional) per cifrare l'elenco password, in questo modo sarà richiesta l'autenticazione per accedere al password manager. Password/keyfile possono essere cambiati in qualunque momento da questo form.
+txt_4_3_pwmanpwhint: E'necessario usare password/keyfile per cifrare l'elenco password, in questo modo sarà richiesta l'autenticazione per accedere al password manager. Password/keyfile possono essere cambiati in qualunque momento da questo form.
 txt_4_3_pwmanmaster: Inserire/modificare la master password del Password Manager
 txt_4_3_pwmanlist: Elenco password
 txt_4_3_pwman: Password manager
