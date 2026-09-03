@@ -386,6 +386,13 @@ function ShellTreeViewSetTextPath(ashelltreeview: TShellTreeView;
 //set parent paths as entries in a combobox
 procedure ComboBoxSetPaths(acombobox: TComboBox; apath:ansistring);
 
+//replace special characters disallowd in Windows paths
+procedure replacespecialpathchars(var s:ansistring);
+
+//sanitize file/dir name string to avoid relative paths
+function sanitizenamestr(var s:ansistring): integer;
+function sanitizepath(s0,s1:ansistring): integer;
+
 //check full name against reserved and illegal characters, and reserved filenames
 function checkfiledirname(s: ansistring): integer;
 function checkfiledirname_acceptblank(s: ansistring): integer;
@@ -451,6 +458,8 @@ function checkfilename_acceptblank(s: ansistring): integer;
 
 //generic command string sanitization
 function validatecl(var s: ansistring): integer;
+//command string sanitization for real console instance, meant as additional control to validatecl
+function validatecl_console(var s: ansistring): integer;
 
 //get comspec and Windows version
 {$IFDEF MSWINDOWS}
@@ -1725,6 +1734,17 @@ begin
 end;
 
 {$IFDEF MSWINDOWS}
+function wintrailing(var s:ansistring): boolean;
+begin
+result:=true;
+if s='' then begin result:=false; exit; end;
+if s[length(s)]=' ' then exit;
+if s[length(s)]='.' then exit;
+result:=false;
+end;
+{$ENDIF}
+
+{$IFDEF MSWINDOWS}
 function winreserved(var s:ansistring): boolean;
 begin
 result:=false;
@@ -1737,6 +1757,39 @@ case s of
 end;
 end;
 {$ENDIF}
+
+procedure replacespecialpathchars(var s:ansistring);//replace special characters disallowd in Windows paths
+begin
+{$IFDEF MSWINDOWS}
+s:=StringReplace(s,':','_', [rfReplaceAll]); //remove : as in unit name in absolute paths
+s:=StringReplace(s,'.'+DirectorySeparator,'_'+DirectorySeparator,[rfReplaceAll]); //remove last dir name char if dot (not allowed), only this pattern
+s:=StringReplace(s,' '+DirectorySeparator,'_'+DirectorySeparator,[rfReplaceAll]); //remove last dir name char if space (not allowed), only this pattern
+{$ENDIF}
+end;
+
+function sanitizenamestr(var s:ansistring):integer;
+begin
+result:=-1;
+if s='' then begin result:=0; exit; end;
+s:=StringReplace(s,'../','', [rfReplaceAll]);
+s:=StringReplace(s,'..\','', [rfReplaceAll]);
+s:=StringReplace(s,'..'+DirectorySeparator,'', [rfReplaceAll]);
+{s:=StringReplace(s,'./','', [rfReplaceAll]);
+s:=StringReplace(s,'.\','', [rfReplaceAll]);
+s:=StringReplace(s,'.'+DirectorySeparator,'', [rfReplaceAll]);}
+result:=0;
+end;
+
+function sanitizepath(s0,s1:AnsiString): integer;
+var
+  s:AnsiString;
+begin
+result:=-1;
+if s1='' then begin result:=0; exit; end;
+s:=ExpandFileName(s0+s1);
+if pos(s0,s)<>1 then exit;
+result:=0;
+end;
 
 function checkfiledirname(s: ansistring): integer;
 //function errs on safe side to prevent cross platform interoperability issues
@@ -1758,14 +1811,15 @@ if pos('|', s) <> 0 then exit;
 if pos('       ', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
 if pos('"', s) <> 0 then exit;
+if wintrailing(s)=true then exit;
 {$ENDIF}
 sf := extractfilename(s);
 //reserved characters, filename only (others are checked for the full name)
 if pos('\', sf) <> 0 then exit;
 if pos('/', sf) <> 0 then exit;
 if pos(':', sf) <> 0 then exit;
-//reserved filenames (Windows)
 {$IFDEF MSWINDOWS}
+//reserved filenames (Windows)
 if winreserved(sf)=true then exit;
 {$ENDIF}
 result := 0;
@@ -1871,7 +1925,7 @@ var
    cdelim:ansistring;
 begin
 cdelim:=correctdelimiter(s);
-if pos(cdelim, s)<>0 then begin result:='#'; exit; end;//error, quotation character already used in the string: string is sanitized for security and replaced with # which guarantee the containing string being discarded by validatecl before execution
+if pos(cdelim, s)<>0 then begin result:='#invalid string#'; exit; end;//error, quotation character already used in the string: string is sanitized for security and replaced with a rejection string #invalid string# which is checked by validatecl before execution, assuring the containing command line will be discarded
 result := cdelim+s+cdelim;
 end;
 
@@ -2128,14 +2182,14 @@ end;
 
 procedure get_usrtmp_path(var s: ansistring);
 begin
-s:=GetTempDir(false);
+s:=GetTempDir(false); //provides user's path on Windows and macOS
 if s = '' then get_desktop_path(s);
 //fallback to ensure a private path is returned on POSIX compliant systems if system temp path is returned
 {$IFNDEF MSWINDOWS}
 if (s = '/tmp/') or (s = '/var/tmp/') then
   begin
   get_home_path(s);
-  if DirectoryExists(s+'.cache',False) then s:=s+'.cache' //***needs testing for a macOS specific branch
+  if DirectoryExists(s+'.cache',False) then s:=s+'.cache'
   else get_desktop_path(s);
   end;
 {$ENDIF}
@@ -2194,6 +2248,7 @@ if pos('|', s) <> 0 then exit;
 if pos('       ', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
 if pos('"', s) <> 0 then exit;
+if wintrailing(s)=true then exit;
 //reserved filenames (Windows)
 s1 := extractfilename(s);
 if winreserved(s1) then exit;
@@ -2248,6 +2303,9 @@ var
 begin
 result := -1;
 if s = '' then   exit;
+
+if pos('#invalid string#',s1)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
+
 for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
 
 delimch := correctdelimiter(s);
@@ -2314,11 +2372,32 @@ if pos('$',s1)<>0 then exit;//critical dollar variable expansion
 //if pos('"',s1)<>0 then exit;//quote double (input quotation must be correctly handled before being passed here, relevant procedure stringdelim)
 //if pos('''',s1)<>0 then exit;//quote single
 //if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows, also used in escapefilenamelinuxlike when passing command as separate parameters on non-Windows systems)
-//possibly needs to be tested for line separators \r \n and Unicode U+2028, U+2029 in TProcess.Commandline (not a real console, limited support for meta characters) and possibly with additional procedure if the command is passed to a real console
-if pos('#',s1)<>0 then exit;//hash bash comment or special character, used as temporary error marker in stringdelim to have the command line discarded
+//line separators \r \n and Unicode U+2028, U+2029 should not be supported in TProcess.Commandline (not a real console, limited support for meta characters)
+if pos('#',s1)<>0 then exit;//hash bash comment or special character
 if pos('~',s1)<>0 then exit;//tilde home directory expansion
 
 if pos('       ',s1)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
+result := 0;
+end;
+
+function validatecl_console(var s: ansistring): integer;
+var
+  i: integer;
+  s1,delimch:ansistring;
+begin
+result := -1;
+
+{$IFNDEF MSWINDOWS}
+{$IFNDEF DARWIN}
+if s='' then exit;
+if pos('"',s)<>0 then exit;
+if pos('\r',s)<>0 then exit; //carriage return
+if pos('\n',s)<>0 then exit; //line feed
+if pos(#$E2#$80#$A8,s)<>0 then exit; //Unicode line separator U+2028
+if pos(#$E2#$80#$A9,s)<>0 then exit; //Unicode paragraph separator U+2028
+//if pos('\',s)<>0 then exit;
+{$ENDIF}
+{$ENDIF}
 result := 0;
 end;
 

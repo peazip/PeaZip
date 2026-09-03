@@ -207,26 +207,34 @@ unit peach; //Main form of PeaZip, organized in file browser, archiving, extract
  1.86     20260405  G.Tani     11.0.0
  1.87     20260508  G.Tani     11.1.0
  1.88     20260708  G.Tani     11.2.0
- 1.89     20260827  G.Tani     11.3.0 *** IN PROGRESS
+ 1.89     20260903  G.Tani     11.3.0 *** IN PROGRESS
 
 BACKEND
 Pea 1.33
+ Fixed erroneously reporting some PEA archives as containing relative paths
+ Fixed unchecked size of first compressed block in PEA archives
+ UNPEA procedure now extracts to a random named temporary work folder first, in case of successful validation the work folder is renamed to actual output name, in case of falied validation it is automatically deleted
 
 CODE
+Added instructions to create system-wide Windows hotkeys for PeaZip functions, in (peazip)/res/share/batch/Windows
 Improved handling of invalid filenames and interoperability of filenames between different Operating Systems
 Updated some app colors to improve blending with supported systems
 Various fixes
- Extended the default list of extensions raising warning being launched
+ (Windows) dragdropfilesdll.dll is now loaded at runtime from absolute path, after hash validation
+ Extended the default list of security-sensitive extensions requiring for user confirmation before being launched
+  the check is now applied to "Open/Preview with associated application", previously triggered only by double click event
  Fixed crash on command line export for compressed tar formats
  Fixed crash/hang operating on encrypted ZPAQ archives without providing password in advance
- Fixed erroneously reporting some PEA archives as containing relative paths
+ Fixed syntax for checking MoTW and Alternate Data Streams
  Improved detection of user's temp path on non-Windows systems
  Improved sanitization of special characters in different stages of the scripting engine
- It is now mandatory to set a master password for the integrated Password manager
+ Sanitized unexpected input relative filenames
 
 FILE MANAGER
 Added Shift+F12 keyboard shortcut to open the new "Open with" screen, displaying custom applications and common options (open with associated app, custom app, new PeaZip instance)
  custom apps, scripts, and web services can be defined as usual in Options > Settings > Applications
+It is now mandatory to set a master password for the integrated Password Manager
+ if you are using the Password Manager it is recommended to backup your passwords with previous version of PeaZip (set a master password, rightclick on password list screen and use Export > Encrypted), and import in the new version (use the exported pm file to replace the pm file in PeaZip's configuration path)
 Various usability improvements
 
 EXTRACTION and ARCHIVING
@@ -556,6 +564,7 @@ type
    { TFormPeach }
 
    TFormPeach = class(TForm)
+     Label1: TLabel;
      mbksp: TMenuItem;
      owcustomapps: TMenuItem;
      pmappapps: TMenuItem;
@@ -5839,14 +5848,15 @@ type //used for custom drag and drop
     destructor Destroy; override;
   end;
 
-procedure FixControlStyles(Parent: TControl);
+type
+  // Windows native drag and drop integration
+  TEdodropfiles = procedure(winc:TWinControl; sarr:array of ansistring; dropmode:integer); //cdecl; not needed
+  TEdodropvfiles = procedure(winc:TWinControl; vpath:ansistring; dropmode:integer);
+  TEchangevpath = procedure(vpath2: ansistring);
+  TEreadvstatus = procedure(var vstat: ansistring);
+  TEsetvstatus = procedure(vstat: ansistring);
 
-//used for system drag and drop
-procedure dodropfiles(winc:TWinControl; sarr:array of ansistring; dropmode:integer); external 'dragdropfilesdll.dll';
-procedure dodropvfiles(winc:TWinControl; vpath:ansistring; dropmode:integer); external 'dragdropfilesdll.dll';
-procedure changevpath(vpath2: ansistring);  external 'dragdropfilesdll.dll';
-procedure readvstatus(var vstat: ansistring);  external 'dragdropfilesdll.dll';
-procedure setvstatus(vstat: ansistring);  external 'dragdropfilesdll.dll';
+procedure FixControlStyles(Parent: TControl);
 {$ENDIF}
 //(Windows) custom drag and drop
 function dragtowin(var dragdest:ansistring):integer;
@@ -6070,7 +6080,7 @@ const
   PEAZIPREVISION= '.0';
   SPECEXTCONST  = '001 bat exe htm html msi r01 z01';
   {$IFDEF MSWINDOWS}
-  SECEXTCONST   = 'bat cmd com cpl exe hta jar js jse lnk msc msi pif ps1 reg scf scr url vbe vbs website wsf wsh';
+  SECEXTCONST   = 'appref-ms application bat chm cmd com cpl diagcab exe gadget hta jar js jse lnk msc msi msp msu mst pif ps1 reg scf scr sct settingcontent-ms url vbe vbs website wsc wsf wsh xll';
   {$ELSE}
   {$IFDEF DARWIN}
   SECEXTCONST   = 'sh scpt scptd applescript';
@@ -6131,6 +6141,14 @@ var
    imod,inbcnode,rowsize,selnode:integer;
    abcrs: array [1..4] of ansistring;
    specextensions,secextensions: array of ansistring;
+
+   {$IFDEF MSWINDOWS}
+   dodropfiles: TEdodropfiles;
+   dodropvfiles: TEdodropvfiles;
+   changevpath: TEchangevpath;
+   readvstatus: TEreadvstatus;
+   setvstatus: TEsetvstatus;
+   {$ENDIF}
 
    //scaling
    il16,ilsmall,il96: TImageList;
@@ -10435,14 +10453,14 @@ astr:=FormPeach.editExtEvForWhat.Caption;
 aastr:=astr.Split(' ');
 j:=0;
 SetLength(specextensions,0);
-SetLength(specextensions,128);
+SetLength(specextensions,256);
 for i:=0 to length(aastr)-1 do
    if aastr[i]<>'' then
       begin
       specextensions[j]:=aastr[i];
       if specextensions[j,1] <> '.' then specextensions[j]:='.'+specextensions[j];
       j:=j+1;
-      if j>=128 then break;
+      if j>=256 then break;
       end;
 SetLength(specextensions,j);
 end;
@@ -17630,15 +17648,40 @@ if s<>'' then pMessageWarningOK(inttostr(fexe)+' '+txt_8_7_bintest+char($0d)+cha
 else pMessageInfoOK(inttostr(fexe)+' '+txt_8_7_bintest+char($0d)+char($0a)+char($0d)+char($0a)+txt_8_7_hok);
 end;
 
-procedure internaldllcheck;//check dragdropfilesdll.dll (sole dll belonging to the project loaded at application startup, even if unused until drag and drop events) againsts list of known SHA256 hash values
+procedure internaldllcheck;//check dragdropfilesdll.dll (sole dll belonging to the project, unused until drag and drop events) againsts list of known SHA256 hash values
 var
    st,hs:ansistring;
+   libh:THandle;
 begin
 {$IFDEF MSWINDOWS}
 st:=executable_path+'dragdropfilesdll.dll';
 hs:=getchash(st);
 {$IFDEF WIN32}if hs<>HDDDLL_WIN32_X then begin pMessageErrorOK(txt_6_5_error+' / dragdropfilesdll.dll SHA256 hash'); halt; end;{$ENDIF}
 {$IFDEF WIN64}if hs<>HDDDLL_WIN64_X then begin pMessageErrorOK(txt_6_5_error+' / dragdropfilesdll.dll SHA256 hash'); halt; end;{$ENDIF}
+//load library from absolute path, after hash validation
+libh := SafeLoadLibrary(st);
+if libh <> NilHandle then
+   begin
+   dodropfiles := TEdodropfiles(GetProcAddress(libh, 'dodropfiles'));
+   dodropvfiles := TEdodropvfiles(GetProcAddress(libh, 'dodropvfiles'));
+   changevpath := TEchangevpath(GetProcAddress(libh, 'changevpath'));
+   readvstatus := TEreadvstatus(GetProcAddress(libh, 'readvstatus'));
+   setvstatus := TEsetvstatus(GetProcAddress(libh, 'setvstatus'));
+   if (not Assigned(dodropfiles)) or
+      (not Assigned(dodropvfiles)) or
+      (not Assigned(changevpath)) or
+      (not Assigned(readvstatus)) or
+      (not Assigned(setvstatus)) then
+      begin
+      pMessageErrorOK(txt_6_5_error+' / dragdropfilesdll.dll');
+      halt;
+      end;
+   end
+else
+   begin
+   pMessageErrorOK(txt_6_5_error+' / dragdropfilesdll.dll');
+   halt;
+   end;
 {$ENDIF}
 end;
 
@@ -38438,7 +38481,7 @@ case desk_env of
    1: begin cl:='gnome-terminal -e'; end;
    2: begin cl:='konsole -e'; end;
    end;
-if pos('"',s)<>0 then exit;
+if validatecl_console(s)<>0 then exit;
 cl:=cl+' ''bash -c "'+s+'; read line"''';
 {$IFDEF DARWIN}
 cl:='open '+s;
@@ -38868,7 +38911,10 @@ if s='' then exit;
 P:=tprocessutf8.Create(nil);
 P.Executable:='powershell.exe';
 P.Parameters.Add('-NoExit');
-if streamtype='*' then P.Parameters.Add('Get-Item '+QuotedStr(s)) else P.Parameters.Add('Get-Content '+QuotedStr(s+'*'));
+if streamtype='*' then
+   P.Parameters.Add('Get-Item -LiteralPath '+QuotedStr(s))
+else
+   P.Parameters.Add('Get-Content -LiteralPath '+QuotedStr(s));
 P.Parameters.Add('-Stream '+streamtype);
 peapparamexecute(P);
 P.Free;
@@ -38961,6 +39007,8 @@ openw_obj:=-1;
 if outname<>'' then
    if outname[length(outname)] <> directoryseparator then outname:=outname+directoryseparator;
 s:=outname+tempstring;
+sanitizenamestr(tempstring);
+if sanitizepath(outname,tempstring) <> 0 then exit;
 if checkfiledirname(s)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s); exit; end;
 woutname:=utf8decode(outname);
 wtempstring:=utf8decode(tempstring);
@@ -39028,6 +39076,8 @@ if (fun='UNARC') or (fun='UN7Z') then
    if outname<>'' then
       if specialopen=false then
          if outname[length(outname)]<>directoryseparator then outname:=outname+directoryseparator;
+sanitizenamestr(tempstring); //redundant, tempstring should always have been checked at creation
+if sanitizepath(outname,tempstring) <> 0 then exit;//outname+tempstring does not resolve inside outname, should be catched by sanitizenamestr in advance
 case efun of
    {0: //(extract the object)
       begin
@@ -44807,6 +44857,47 @@ listdir(s,false,false);
 addtohistory;
 end;
 
+function testsecextensions(s,sext:ansistring): integer; //ask confirmation to open file types with active content
+var
+   i:integer;
+   testsec:boolean;
+begin
+result:=-1;
+if s='' then exit;
+if sext='' then sext:=ExtractFileExt(s);
+testsec:=false;
+case seccond of
+   0: if fun<>'FILEBROWSER' then testsec:=true;
+   1: if fun='FILEBROWSER' then testsec:=true;
+   2: testsec:=true;
+   end;
+if (length(secextensions)>0) and (testsec=true) then
+   begin
+   for i:=0 to length(secextensions)-1 do
+      if LowerCase(secextensions[i])=LowerCase(sext) then
+         begin
+         if pMessageWarningYesNo(s+char($0D)+char($0A)+char($0D)+char($0A)+txt_10_5_sectypewarning)<>6 then exit;
+         break;
+         end;
+   {$IFDEF MSWINDOWS}
+   if '.'=LowerCase(sext) then exit;
+   for i:=0 to length(secextensions)-1 do
+      if LowerCase(secextensions[i]+'.')=LowerCase(sext) then
+         begin
+         exit;//trailing dot or space is not allowd in Windows and triggers immediate rejection as suspicious spoofing attempt
+         break;
+         end;
+   for i:=0 to length(secextensions)-1 do
+      if LowerCase(secextensions[i]+' ')=LowerCase(sext) then
+         begin
+         exit;
+         break;
+         end;
+   {$ENDIF}
+   end;
+result:=0;
+end;
+
 procedure open_associated;
 var
    i:integer;
@@ -44815,7 +44906,11 @@ begin
 {$IFDEF MSWINDOWS}if FormPeach.PanelArchive.Visible=true{$ELSE}if FormPeach.PanelArchive.top=0{$ENDIF} then sg:=FormPeach.StringGridAdd
 else sg:=FormPeach.StringGridExtract;
 i:=sg.Row;
-if i>0 then cp_open(sg.Cells[8,i],desk_env);
+if i>0 then
+   begin
+   if testsecextensions(sg.Cells[8,i],'')<>0 then exit;
+   cp_open(sg.Cells[8,i],desk_env);
+   end;
 end;
 
 function set_grid:boolean;
@@ -45277,13 +45372,6 @@ beingpreviewed:='';
 create_ptmpcode(ptmpcode);
 end;
 
-procedure replacespecialpathchars(var s:ansistring);//replace special characters disallowd in Windows paths
-begin
-s:=StringReplace(s,':','_', [rfReplaceAll]); //remove : as in unit name in absolute paths
-s:=StringReplace(s,'.'+DirectorySeparator,'_'+DirectorySeparator,[rfReplaceAll]); //remove last dir name char if dot (not allowed), only this pattern
-s:=StringReplace(s,' '+DirectorySeparator,'_'+DirectorySeparator,[rfReplaceAll]); //remove last dir name char if space (not allowed), only this pattern
-end;
-
 procedure openwith_cust(act,custmode:ansistring; j:integer);
 //act preview, extandrun
 //custmode cust, adv, run
@@ -45364,9 +45452,7 @@ else
                   begin
                   if s[length(s)]<>directoryseparator then s:=s+directoryseparator;
                   tmpstr:=FormPeach.StringGridList.Cells[12,i];
-                  {$IFDEF MSWINDOWS}
                   replacespecialpathchars(tmpstr);
-                  {$ENDIF}
                   s:=s+tmpstr;
                   end;
                if fun='UNZPAQ' then
@@ -45461,7 +45547,7 @@ if checklistanysel<>0 then
             case target of
                'peazip': execute_obj(2,outname);
                'browser': cp_open(extractfilepath(outname+tempstring),desk_env);
-               'associated': execute_obj(4,outname);
+               'associated': begin if testsecextensions(outname+tempstring,'')<>0 then exit; execute_obj(4,outname); end;
                'custom': openw_obj(outname);
             end
          else
@@ -45472,7 +45558,7 @@ if checklistanysel<>0 then
             case target of
                'peazip': execute_obj(2,outname);
                'browser': cp_open(extractfilepath(outname+tempstring),desk_env);
-               'associated': execute_obj(4,outname);
+               'associated': begin if testsecextensions(outname+tempstring,'')<>0 then exit; execute_obj(4,outname); end;
                'custom': openw_obj(outname);
             end
          else
@@ -45509,7 +45595,7 @@ else
             case target of
                'peazip': execute_obj(2,outname);
                'browser': cp_open(extractfilepath(outname+tempstring),desk_env);
-               'associated': execute_obj(4,outname);
+               'associated': begin if testsecextensions(outname+tempstring,'')<>0 then exit; execute_obj(4,outname); end;
                'custom': openw_obj(outname);
                'imgviewer':
                   begin
@@ -45537,7 +45623,7 @@ if checklistanysel<>0 then
    begin
    case optype of
       'custom': openw_obj(FormPeach.EditOpenInInteractive.Caption);
-      'associated': execute_obj(4,FormPeach.EditOpenInInteractive.Caption);
+      'associated': begin if testsecextensions(FormPeach.EditOpenInInteractive.Caption,'')<>0 then exit; execute_obj(4,FormPeach.EditOpenInInteractive.Caption); end;
       end;
    exit;
    end;
@@ -45545,7 +45631,7 @@ for i:=1 to FormPeach.StringGridList.RowCount-1 do
    if FormPeach.StringGridList.Cells[16,i]='1' then
       case optype of
       'custom': openw_obj(StringGridList.Cells[12,i]);
-      'associated': execute_obj(4,FormPeach.StringGridList.Cells[12,i]);
+      'associated': begin if testsecextensions(FormPeach.StringGridList.Cells[12,i],'')<>0 then exit; execute_obj(4,FormPeach.StringGridList.Cells[12,i]); end;
       end;
 end;
 end;
@@ -45653,7 +45739,7 @@ var
    mri,i,j:integer;
    cl,jobcode,outname,s,howspecialopenstr:ansistring;
    w:widestring;
-   tfparam,testsec:boolean;
+   tfparam:boolean;
 begin
 with FormPeach do
 begin
@@ -45673,22 +45759,7 @@ if FormPeach.EditOpenIn.Text=txt_mypc then
 if oafromgrid=true then
 else
    begin
-
-//ask confirmation to run file types with active content
-testsec:=false;
-case seccond of
-   0: if fun<>'FILEBROWSER' then testsec:=true;
-   1: if fun='FILEBROWSER' then testsec:=true;
-   2: testsec:=true;
-   end;
-if (length(secextensions)>0) and (testsec=true) then
-   for i:=0 to length(secextensions)-1 do
-      if LowerCase(secextensions[i])=LowerCase(StringGridList.Cells[2,StringGridList.Row]) then
-         begin
-         if pMessageWarningYesNo(StringGridList.Cells[1,StringGridList.Row]+char($0D)+char($0A)+char($0D)+char($0A)+txt_10_5_sectypewarning)<>6 then exit;
-         break;
-         end;
-
+if testsecextensions(StringGridList.Cells[1,StringGridList.Row],StringGridList.Cells[2,StringGridList.Row])<>0 then exit;
 //speacial "Extract everything for" cases
 specialopen:=false;
 if fun='UN7Z' then
@@ -49900,9 +49971,10 @@ if mode='preview' then //preview special feature, replaces archive function and 
    archive_function:='x';
    tempstring:=FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row];
    //if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
-   {$IFDEF MSWINDOWS}replacespecialpathchars(tempstring);{$ENDIF}
+   replacespecialpathchars(tempstring);
    overwrite_policy:='-o+';
    end;
+if sanitizenamestr(tempstring)<>0 then begin cl:=''; exit; end;
 if (archive_function<>'x') and (archive_function<>'e') then //clear overwrite policies for non extraction modes
    begin
    overwrite_policy:='';
@@ -51115,9 +51187,10 @@ if mode='preview' then //preview special feature, replaces archive function and 
    archive_function:='x';
    tempstring:=FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row];
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
-   {$IFDEF MSWINDOWS}replacespecialpathchars(tempstring);{$ENDIF}
+   replacespecialpathchars(tempstring);
    overwrite_policy:='-o+';
    end;
+if sanitizenamestr(tempstring)<>0 then begin cl:=''; exit; end;
 if (archive_function<>'x') and (archive_function<>'e') and (archive_function<>'d') then
 //clear overwrite policies for list and test mode (no need for writing)
    begin
@@ -51273,7 +51346,7 @@ if (specialopen=false) and (mode<>'info') and (mode<>'list') and (mode<>'test') 
 if (mode='ext') and (specialopen=true) then //specialopen switches to extract entire directory for some file types (exe, bat, html...)
    begin
    alt_tempstring:=FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row];
-   {$IFDEF MSWINDOWS}replacespecialpathchars(alt_tempstring);{$ENDIF}
+   replacespecialpathchars(alt_tempstring);
    if pstmpdir<>'' then if checkdirexists(pstmpdir) then else CreateDir(pstmpdir);
    filesetattr(pstmpdir, faHidden);
    end;
@@ -51450,11 +51523,13 @@ if mode='preview' then //preview special feature, replaces archive function and 
    archive_function:='x';
    tempstring:=FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row];
    if selection='displayed' then tempstring:=ExtractFilePath(tempstring);
-   {$IFDEF MSWINDOWS}replacespecialpathchars(tempstring);{$ENDIF}
+   replacespecialpathchars(tempstring);
    overwrite_policy:='-aos';//do not overwrite previewed data
    keeppreview:=true;
    beingpreviewed:=FormPeach.EditOpenIn.Text;
    end;
+if sanitizenamestr(alt_tempstring)<>0 then begin cl:=''; exit; end;
+if sanitizenamestr(tempstring)<>0 then begin cl:=''; exit; end;
 if (archive_function<>'x') and (archive_function<>'e') and (archive_function<>'d') then //clear overwrite policies for list and test mode (no need for writing)
    begin
    overwrite_policy:='';
@@ -54800,6 +54875,7 @@ var
    {$ENDIF}
    clconsole:=cl;
    if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl_console(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
    keepopen:=false;
 
    if (subfun='rarcomment') then
@@ -54807,7 +54883,6 @@ var
       {$IFDEF MSWINDOWS}
       clconsole:='cmd /c "'+cl+'"';
       {$ELSE}
-      if pos('"',cl)<>0 then exit;
       clconsole:='bash -c "'+cl+'"';
       {$IFDEF DARWIN}
       clconsole:='open '+cl;
@@ -54820,7 +54895,6 @@ var
       {$IFDEF MSWINDOWS}
       clconsole:='cmd /k "'+cl+'"';
       {$ELSE}
-      if pos('"',cl)<>0 then exit;
       clconsole:='bash -c "'+cl+'; read line"';
       {$IFDEF DARWIN}
       clconsole:='open '+cl;
@@ -55857,15 +55931,15 @@ var
    s1,s2:ansistring;
 begin
 result:=-1;
-s1:=FormPM.EditUn7zaPW.Caption;
-s2:=FormPM.EditUn7zaPW1.Caption;
-{if FormPM.EditUn7zaPW.Caption='' then pmpw:='default'
-else}//since 11.3.0 password is mandatory
-if FormPM.EditUn7zaPW.Caption='' then
+if (FormPM.EditUn7zaPW.Caption='') and (FormPM.EditName3.Text='') then
    begin
    //if openstarted=true then pMessageWarningOK(txt_4_3_pwmanmaster+char($0D)+char($0A)+char($0D)+char($0A)+txt_4_3_pwmanpwhint);
    exit;
    end;
+s1:=FormPM.EditUn7zaPW.Caption;
+s2:=FormPM.EditUn7zaPW1.Caption;
+{if FormPM.EditUn7zaPW.Caption='' then pmpw:='default'
+else}//since 11.3.0 password/keyfile is mandatory
 pmpw:=FormPM.EditUn7zaPW.Caption;
 if (showpwfield=0) and (FormPM.EditUn7zaPW.Caption<>'') and (FormPM.EditUn7zaPW.Caption<>FormPM.EditUn7zaPW1.Caption) then
    begin
@@ -56069,6 +56143,12 @@ else
 FormPM.PanelTitlePMTabAlign.Width:=FormPM.LabelTitlePM1.Width+
 FormPM.LabelTitlePM2.Width+
 FormPM.LabelTitlePM1.BorderSpacing.Left*3;
+//since 11.3.0 setting pw/keyfile is mandatory
+if (FormPM.EditUn7zaPW.Caption='') and (FormPM.EditName3.Text='') then
+   begin
+   if (alttabstyle<>1) and (alttabstyle<>4) then UnitPM.clicklabel_pm(FormPM.LabelTitlePM2,FormPM.ShapeTitlePMb2) else UnitPM.clicklabel_pm(FormPM.LabelTitlePM2,FormPM.Shapelinkpm2);
+   FormPM.LabelTitlePM1.Visible:=false;
+   end;
 FormPM.ShowModal;
 case FormPM.ModalResult of
    mrOk:
@@ -59379,7 +59459,7 @@ if (FormPeach.ComboBoxActionExtract.ItemIndex<2) and //extraction operations
          begin
          //relpath:=StringReplace(FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row],':','_',[rfReplaceAll]);
          relpath:=FormPeach.StringGridList.Cells[12,FormPeach.StringGridList.Row];
-         {$IFDEF MSWINDOWS}replacespecialpathchars(relpath);{$ENDIF}
+         replacespecialpathchars(relpath);
          relpath:=extractfilepath(relpath);
          end
       else

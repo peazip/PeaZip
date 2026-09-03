@@ -245,10 +245,17 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
  1.31     20260506  G.Tani      (.pea format) Fixed path traversal evasion on extraction, enforcing canonicalization of names (archiving and extraction) and explicit rejection of relative paths stored in name field (extraction), vulnerability and poc reported by Harshit Gupta
                                 (Windows) Fixed sanitization of input for functions invoking PowerShell, vulnerability and poc reported by Harshit Gupta
  1.32     20260704  G.Tani      Hardened integrity tags checks with constant-time comparison routines, fixes
- 1.33     20260827  G.Tani      *** IN PROGRESS
+ 1.33     20260903  G.Tani      *** IN PROGRESS
+                                Fixed MoTW check failing for some filenames
                                 Fixed some PEA files erroneously reported as containing relative paths
                                 Fixed validation of first compressed block size on extraction of PEA archives
-                                Updated some app colors
+                                Hardening of UNPEA procedure
+                                 if blockwrite fails with critical error, try to discard the current output file before terminating
+                                 run the extraction to a random named temporary working directory first
+                                     in case of successful validation rename the working directory to the actual output name
+                                     in case of failed validation auto delete the working directory
+                                     in case the process is abruptly terminated before validation by unexpected conditions or interactions, the leftover data is still inside the random named working directory to not get confused with verified output
+                                 Updated some app colors
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -609,9 +616,18 @@ if err<>0 then
    end;
 end;
 
-//when an internal error is encountered, show error description then halt
+//when an internal error is encountered: show error description then halt
 procedure internal_error (s:ansistring);
 begin
+MessageDlg(s, mtError, [mbOK], 0);
+halt(-3);
+end;
+
+//when an internal error is encountered extracting data from pea archive: delete erroneous output file, show error description then halt
+procedure internal_error_delete (var f_out: TFileOfByte; s:ansistring);
+begin
+closefile(f_out);
+erase(f_out);
 MessageDlg(s, mtError, [mbOK], 0);
 halt(-3);
 end;
@@ -2273,7 +2289,7 @@ var
    total,wrk_space,exp_space,cent_size,fs,out_size,qw0,qw1,qw2,qw3,qw4,qw5,qw6,qw7:qword;
    nobj:int64;
    stream_error,obj_error,volume_error,end_of_archive,pwneeded,chunks_ok,filenamed,out_created,no_more_files,readingstream,readingheader,readingfns,readingtrigger,readingfn,readingfs,readingfage,readingfattrib,readingcompsize,fassigned,readingf,readingcompblock,readingobjauth,readingauth,singlevolume:boolean;
-   subroot,basedir,s,in_file,in_name,in_folder,out_path,out_file,algo,obj_algo,volume_algo,compr,fn,finpre:ansistring;
+   subroot,basedir,s,in_file,in_name,in_folder,out_path,real_out_file,out_file,algo,obj_algo,volume_algo,compr,fn,finpre:ansistring;
 
 procedure clean_variables;
 begin
@@ -3217,7 +3233,7 @@ for k:=0 to j-2 do
        end;
     end;
 FormReport.StringGridOutput.AutosizeColumns;
-FormReport.LabelReport1.Caption:=in_folder+in_name+'.* -> '+out_path+out_file+DirectorySeparator;
+FormReport.LabelReport1.Caption:=in_folder+in_name+'.* -> '+out_path+FormPea.LabelDecryptOutput.Caption;
 FormReport.LabelReport2.Caption:=FormPea.LabelDecryptInfo.Caption;
 FormReport.LabelReport3.Caption:='Input: '+inttostr(j-1)+' volume(s), '+nicenumber(inttostr(wrk_space),0)+' -> Extracted '+inttostr(obj_ok)+' objects ('+inttostr(n_dirs)+' dirs, '+inttostr(obj_ok-n_dirs)+' files) of '+inttostr(n_input_files)+' ('+inttostr(n_input_files-obj_ok)+' not extracted); total output: '+nicenumber(inttostr(out_size),0);
 FormReport.LabelReport4.Caption:=FormPea.LabelDecryptResult1.Caption+' '+FormPea.LabelDecryptResult2.Caption
@@ -3250,6 +3266,57 @@ if obj_error=true then s:=s+'object(s); ';
 if volume_error=true then s:=s+'volume(s); ';
 s:=s+'please check job log!';
 MessageDlg(s, mtError, [mbOK], 0);
+end;
+
+procedure getactualname;
+var
+   countj:integer;
+begin
+out_created:=false;
+if upcase(struct_param)='EXTRACT2DIR' then //save objects with shortest path in a dir with archive's name; actually this is the only output method allowed
+   begin
+   s:=real_out_file;
+   countj:=0;
+   repeat
+     if not(directoryexists(out_path+real_out_file)) and not(fileexists(out_path+real_out_file)) then
+         out_created:=true
+      else
+         begin
+         countj:=countj+1;
+         real_out_file:=s+' - '+inttostr(countj);
+         if countj=1000 then //to break recursivity if filename is not valid (ie unsupported character encoding)
+            begin
+            real_out_file:=s+'output';
+            out_created:=true;
+            end;
+         end;
+      until out_created=true;
+   end;
+end;
+
+function delout(s:ansistring):integer;
+var
+   k:integer;
+   nfound:qword;
+begin
+result:=-1;
+if (out_path='') and (out_file='') then exit;//safeguard
+expand(s,exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
+if nfound=0 then nfound:=1;
+for k:=0 to nfound-1 do
+   begin
+   if filegetattr(exp_files[k]) and faDirectory = 0 then //file
+      begin
+      {$IFDEF MSWINDOWS}
+      upredeletefile(exp_files[k]);
+      {$ENDIF}
+      udeletefile(exp_files[k]);//quick delete
+      end
+   else RemoveDir(exp_files[k]);
+   end;
+RemoveDir(s);
+if DirectoryExists(s,false) then exit;
+result:=0;
 end;
 
 begin
@@ -3442,39 +3509,20 @@ else
    update_control_algo(tagbuf,20);//check the archive and stream headers
    end;
 FormPea.LabelDecryptInfo.Caption:='Using: '+compr+', stream: '+algo+', objects: '+obj_algo+', volume(s): '+volume_algo;
-out_created:=false;
-if upcase(struct_param)='EXTRACT2DIR' then //save objects with shortest path in a dir with archive's name; actually this is the only output method allowed
+setcurrentdir(out_param);
+//get random named temporary work folder
+if upcase(struct_param)='EXTRACT2DIR' then //actually this is the only output method allowed
    begin
-   s:=out_file;
-   j:=0;
-   repeat
-     if not(directoryexists(out_path+out_file)) and not(fileexists(out_path+out_file)) then
-         try
-         forcedirectories(out_path+out_file);
-         out_created:=true;
-         except
-         out_file:=s+'output';
-         out_created:=true;
-         end
-      else
-         begin
-         j:=j+1;
-         out_file:=s+' - '+inttostr(j);
-         if j=1000 then //to break recursivity if filename is not valid (ie unsupported character encoding)
-            begin
-            out_file:=s+'output';
-            out_created:=true;
-            end;
-         end;
-      {try //no longer works with Lazarus 0.9.30, exception is not returned
-         mkdir(out_path+out_file);
-         out_created:=true;
-      except
-         out_file:=s+' - '+inttostr(j);
-         j:=j+1;
-      end;}
-      until out_created=true;
-   setcurrentdir(out_param);
+   Randomize;
+   real_out_file:=out_file;
+   out_file:='.UNPEA'+inttohex(random(16000000),6);
+   try
+   forcedirectories(out_path+out_file);
+   except
+   sleep(200+random(50));
+   out_file:='.UNPEA'+inttohex(random(16000000),6);
+   forcedirectories(out_path+out_file);
+   end;
    end;
 FormPea.LabelDecryptOutput.Caption:=out_file+DirectorySeparator;
 FormPea.LabelDecryptOutput.Hint:='Output: '+out_path+out_file+DirectorySeparator;
@@ -3847,7 +3895,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
                try
                blockwrite (f_out,wbuf2,uncompsize,numwritten);
                except
-               internal_error('IO error writing data');
+               internal_error_delete(f_out,'IO error writing data');
                end;
                dec(fs,numwritten);
                compsize:=wbuf1[compsize]+(wbuf1[compsize+1] shl 8)+(wbuf1[compsize+2] shl 16)+(wbuf1[compsize+3] shl 24);
@@ -3887,7 +3935,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
             try
             blockwrite (f_out,sbuf1,numread,numwritten);
             except
-            internal_error('IO error writing data');
+            internal_error_delete(f_out,'IO error writing data');
             end;
             FormPea.ProgressBarPea.Position:=(wrk_space) div cent_size;
             FormPea.LabelDecryptProgress.Caption:=' '+inttostr(FormPea.ProgressBarPea.Position)+'%';
@@ -4000,7 +4048,6 @@ FormPea.LabelDecryptResult2.Caption:='Done '+struct_param+' on archive';
 FormPea.ProgressBarPea.Position:=100;
 FormPea.LabelDecryptProgress.Caption:='';
 setcurrentdir(out_path);
-do_report_unpea;
 timing(ts_start,wrk_space);
 FormPea.LabelLogPea.Visible:=true;
 FormPea.LabelOpen.Caption:='Explore';
@@ -4008,10 +4055,21 @@ output:=out_path+out_file;
 FormPea.LabelOpen.visible:=true;
 FormPea.ButtonClosePea.Visible:=true;
 FormPea.ButtonDecryptCancel.Visible:=false;
+getactualname;
 Application.ProcessMessages;
-if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
 if report_errors =0 then
    begin
+   FormPea.LabelDecryptOutput.Caption:=real_out_file+DirectorySeparator;
+   FormPea.LabelDecryptOutput.Hint:='Output: '+out_path+real_out_file+DirectorySeparator;
+   output:=out_path+real_out_file;
+   if (out_path<>'') and (out_file<>'') then
+      if RenameFile(out_path+out_file+DirectorySeparator,out_path+real_out_file+DirectorySeparator)=false then
+         begin
+         sleep(200+random(50));
+         RenameFile(out_path+out_file+DirectorySeparator,out_path+real_out_file+DirectorySeparator);
+         end;
+   do_report_unpea;
+   if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
    FormPea.ImageInfoDecrypt.Picture.Bitmap:=Bok;
    Application.ProcessMessages;
    exitcode:=0;
@@ -4020,6 +4078,28 @@ if report_errors =0 then
    end
 else
    begin
+   do_report_unpea;
+   FormPea.LabelOpen.Enabled:=false;
+   if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
+   if delout(output)<>0 then
+      begin
+      sleep(200+random(50));
+      delout(output);
+      end;
+   {
+   //alternative: mark the output with ERROR string
+   FormPea.LabelDecryptOutput.Caption:='ERROR '+real_out_file+DirectorySeparator;
+   FormPea.LabelDecryptOutput.Hint:='Output: '+out_path+'ERROR '+real_out_file+DirectorySeparator;
+   output:=out_path+'ERROR '+real_out_file;
+   if (out_path<>'') and (out_file<>'') then
+      if RenameFile(out_path+out_file+DirectorySeparator,out_path+'ERROR '+real_out_file+DirectorySeparator)=false then
+         begin
+         sleep(200+random(50));
+         RenameFile(out_path+out_file+DirectorySeparator,out_path+'ERROR '+real_out_file+DirectorySeparator);
+         end;
+   do_report_unpea;
+   if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
+   }
    FormPea.ImageInfoDecrypt.Picture.Bitmap:=Bcancel;
    Application.ProcessMessages;
    exitcode:=-2;
@@ -7034,7 +7114,7 @@ if s='' then exit;
 P:=tprocessutf8.Create(nil);
 p.Options:=[poWaitOnExit,poNoConsole];
 P.Executable:='powershell.exe';
-P.Parameters.Add('Get-Content '+QuotedStr(s+'*'));
+P.Parameters.Add('Get-Content -LiteralPath '+QuotedStr(s));
 P.Parameters.Add('-Stream Zone.Identifier');
 peapparamexecute(P);
 if P.ExitCode=0 then result:=true; //motw found, else error is raised and result is <>0
@@ -7063,7 +7143,7 @@ M2.SetSize(32*1024);
 P:=tprocessutf8.Create(nil);
 P.Options := [poUsePipes, poNoConsole];
 P.Executable:='powershell.exe';
-P.Parameters.Add('Get-Content '+QuotedStr(s+'*'));
+P.Parameters.Add('Get-Content -LiteralPath '+QuotedStr(s));
 P.Parameters.Add('-Stream Zone.Identifier');
 peapparamexecute(P);
 
@@ -7151,7 +7231,7 @@ for i:=2 to paramcount do
       end
    else //directory
       for j:=0 to nfound-1 do
-         if pos('D',exp_fattr_dec[j])<>0 then
+         if pos('D',exp_fattr_dec[j])=0 then
             begin
             if toolactioncancelled=true then
                begin

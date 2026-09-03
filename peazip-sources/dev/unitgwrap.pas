@@ -3025,7 +3025,7 @@ case desk_env of
    1: begin cl:='gnome-terminal -e'; end;
    2: begin cl:='konsole -e'; end;
    end;
-if pos('"',s)<>0 then exit;
+if validatecl_console(s)<>0 then exit;
 cl:=cl+' ''bash -c "'+s+'; read line"''';
 {$IFDEF DARWIN}
 cl:='open '+s;
