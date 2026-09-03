@@ -1,0 +1,5 @@
+1) Use PeaZip link on the desktop, or use a link pointing to a specified function (as in the links in SendTo)
+2) Right-click the link and select "Properties"
+3) Select the "Shortcut" tab in "Properties"
+4) Click the "Shortcut key" field and press the key combination you want to use to activate the link
+5) Save with Apply / OK
