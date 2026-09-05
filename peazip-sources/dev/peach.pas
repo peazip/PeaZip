@@ -207,9 +207,10 @@ unit peach; //Main form of PeaZip, organized in file browser, archiving, extract
  1.86     20260405  G.Tani     11.0.0
  1.87     20260508  G.Tani     11.1.0
  1.88     20260708  G.Tani     11.2.0
- 1.89     20260903  G.Tani     11.3.0 *** IN PROGRESS
+ 1.89     20260905  G.Tani     11.3.0 *** IN PROGRESS
 
 BACKEND
+7z/p7zip 26.03
 Pea 1.33
  Fixed erroneously reporting some PEA archives as containing relative paths
  Fixed unchecked size of first compressed block in PEA archives

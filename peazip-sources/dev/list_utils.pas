@@ -2304,7 +2304,7 @@ begin
 result := -1;
 if s = '' then   exit;
 
-if pos('#invalid string#',s1)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
+if pos('#invalid string#',s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
 
 for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
 
