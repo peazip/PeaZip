@@ -131,7 +131,7 @@ unit list_utils;
                                 New functions to read file header's magic bytes, and to split strings
  0.68     20251110  G.Tani      New function to conditionally pass ansistring to TProcess as command line or as executable name + list of parameters
  0.69     20260702  G.Tani      Code reviewed and modernized
- 0.70     20260826  G.Tani      Improved sanitization of special characters in validatecl: the use of more special characters is prevented to avoid generating potentially unsafe scripts
+ 0.70     20260917  G.Tani      Improved sanitization of special characters in validatecl: the use of more special characters is prevented to avoid generating potentially unsafe scripts
                                 Improved sanitization of input string in stringdelim: the string is discarded if already containing the quotation character, to avoid propagating strings which can be not correctly handled in scripts
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
@@ -537,13 +537,9 @@ function strsafeenc(s:ansistring):ansistring;
 
 function strsafedec(s:ansistring):ansistring;
 
-procedure cutendspaces(var s1:ansistring); //if archive name ends with spaces (allowed, since they are before the extension) cut them to get a valid folder name (can't end with spaces)
-
-procedure cutenddot(var s1:ansistring); //if archive name ends with dot cut it to get a valid folder name (can't end with dot)
-
 procedure cutendforbid(var s1:ansistring); //if archive name ends with non allowed characters cut them to get a valid folder name
 
-procedure cutenddelim(var s1:ansistring; inparam:ansistring); //if archive name ends with dot cut it to get a valid folder name (can't end with dot)
+procedure cutenddelim(var s1:ansistring; inparam:ansistring); //if archive name ends with single delim cut it to get a valid folder name
 
 function unpadaddress(s:ansistring):ansistring;
 
@@ -1743,6 +1739,12 @@ result:=true;
 if s='' then begin result:=false; exit; end;
 if s[length(s)]=' ' then exit;
 if s[length(s)]='.' then exit;
+if pos(' /', s) > 0 then exit;
+if pos(' \', s) > 0 then exit;
+if pos(' '+directoryseparator, s) > 0 then exit;
+if pos('./', s) > 1 then exit; //allow exception for *x ./path form
+if pos('.\', s) > 1 then exit;
+if pos('.'+directoryseparator, s) > 1 then exit;
 result:=false;
 end;
 {$ENDIF}
@@ -2345,22 +2347,11 @@ if (pos('bin'+directoryseparator+'zpaq'+directoryseparator,s)<>0) or
 then result:=true;
 end;
 
-function validatecl(var s: ansistring): integer;
+procedure removepwfield(var s, s1: ansistring);
 var
-  i: integer;
-  s1,delimch:ansistring;
+   delimch: AnsiString;
 begin
-result := -1;
-if s = '' then   exit;
-
-if pos('#rejected_string#',s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
-
-for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
-
 delimch := correctdelimiter(s);
-
-s1:=s;
-
 //check for password field, if applicable for the inferred operation type
 //if password field is found, do not check the filed for special characters
 if vis7z(s) or visarc(s) or visrar(s) then
@@ -2368,7 +2359,7 @@ if vis7z(s) or visarc(s) or visrar(s) then
       begin
       s1:=copy(s,pos(delimch+'-p',s)+3,length(s)-pos(delimch+'-p',s)-2);
       s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1));
-      s1:=copy(s,1,pos(delimch+'-p',s))+s1;
+      s1:=copy(s,1,pos(delimch+'-p',s)-1)+s1;
       end
    else
       if pos(' -p',s)<>0 then
@@ -2383,7 +2374,7 @@ if visarc(s) or visrar(s) then
       begin
       s1:=copy(s,pos(delimch+'-hp',s)+4,length(s)-pos(delimch+'-hp',s)-3);
       s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1));
-      s1:=copy(s,1,pos(delimch+'-hp',s))+s1;
+      s1:=copy(s,1,pos(delimch+'-hp',s)-1)+s1;
       end
    else
       if pos(' -hp',s)<>0 then
@@ -2397,7 +2388,7 @@ if viszpaq(s) then
    if pos(' -key ',s)<>0 then
       begin
       s1:=copy(s,pos(' -key ',s)+7,length(s)-pos(' -key ',s)-6); //skip one character, which is always the delimiter
-      s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1)); //field is always delimited, even if not needed
+      s1:=copy(s1,pos(delimch,s1)+1,length(s1)-pos(delimch,s1)); //field is always delimited, needed by this function, even if not needed by the password itself
       s1:=copy(s,1,pos(' -key ',s))+s1;
       end;
 
@@ -2407,9 +2398,21 @@ if (pos(directoryseparator+'pea',s)<>0) then
       s1:=copy(s,pos('BATCH',s)+6,length(s)-pos('BATCH',s)-5);
       if pos('FROMCL',s1)<>0 then s1:=copy(s1,pos('FROMCL',s1)+7,length(s1)-pos('FROMCL',s1)-6)
       else s1:=copy(s1,pos('NOKEYFILE',s1)+9,length(s1)-pos('NOKEYFILE',s1)-8);
-      s1:=copy(s,1,pos('BATCH',s))+s1;
+      s1:=copy(s,1,pos('BATCH',s)-1)+s1; //also removes keying parameters
       end;
+end;
 
+function validatecl(var s: ansistring): integer;
+var
+  i: integer;
+  s1:ansistring;
+begin
+result := -1;
+if s = '' then exit;
+if pos('#rejected_string#',s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
+for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
+s1:=s;
+removepwfield(s,s1);//remove password field from tesing; pw are not sent in command line unless launching a script e.g. from Console tab
 if pos('|',s1)<>0 then exit;//critical pipe
 if pos('&',s1)<>0 then exit;//critical ampersand command chaining
 if pos(';',s1)<>0 then exit;//critical semicolon command chaining
@@ -2423,9 +2426,8 @@ if pos('$',s1)<>0 then exit;//critical dollar variable expansion
 //if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows)
 //backslash is also used in escapefilenamelinuxlike when passing command as separate parameters (pmode=1) on non-Windows systems; escapefilename, which calls escapefilenamelinuxlike, before the escaping part discards file names containing \ (on all platforms) and file/dir names containing \' \" (on non-Windows)
 //line separators \r \n and Unicode U+2028, U+2029 are crrently not supported in TProcess.Commandline (not a real console, provides limited support for meta characters) and are checked separately in validatecl_console only when passing input to a real console instance
-if pos('#',s1)<>0 then exit;//hash bash comment or special character
+{$IFNDEF MSWINDOWS} if pos('#',s1)<>0 then exit;{$ENDIF}//hash bash comment or special character, seems not exploitable on Windows
 if pos('~',s1)<>0 then exit;//tilde home directory expansion
-
 if pos('       ',s1)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
 result := 0;
 end;
@@ -3084,24 +3086,6 @@ until (stin='');
 result:=stout;
 end;
 
-procedure cutendspaces(var s1:ansistring); //if archive name ends with spaces (allowed, since they are before the extension) cut them to get a valid folder name (can't end with spaces)
-var endwithspace:boolean;
-begin
-endwithspace:=true;
-repeat
-if s1<>'' then
-   if s1[length(s1)]=' ' then setlength(s1,length(s1)-1)
-   else endwithspace:=false;
-until endwithspace=false;
-if s1='' then s1:='noname';
-end;
-
-procedure cutenddot(var s1:ansistring); //if archive name ends with dot cut it to get a valid folder name (can't end with dot)
-begin
-if s1<>'' then if s1[length(s1)]='.' then s1[length(s1)]:='_';
-if s1='' then s1:='noname';
-end;
-
 procedure cutendforbid(var s1:ansistring); //if archive name ends with non allowed characters cut them to get a valid folder name
 var
   endwithchar:boolean;
@@ -3110,17 +3094,24 @@ endwithchar:=true;
 repeat
 {$IFDEF MSWINDOWS}
 if s1<>'' then
-   if s1[length(s1)]='"' then setlength(s1,length(s1)-1)
+   if (s1[length(s1)]='"') or
+      (s1[length(s1)]=' ') or
+      (s1[length(s1)]='.')
+   then
+     setlength(s1,length(s1)-1)
+   else endwithchar:=false;
 {$ELSE}
 if s1<>'' then
-   if s1[length(s1)]='''' then setlength(s1,length(s1)-1)
+   if (s1[length(s1)]='"') or (s1[length(s1)]='''') then //get a more console friendly folder name without quotes in it
+     setlength(s1,length(s1)-1)
+   else
+     endwithchar:=false;
 {$ENDIF}
-else endwithchar:=false;
-until endwithchar=false;
+until (endwithchar=false) or (s1='');
 if s1='' then s1:='noname';
 end;
 
-procedure cutenddelim(var s1:ansistring; inparam:ansistring); //if archive name ends with dot cut it to get a valid folder name (can't end with dot)
+procedure cutenddelim(var s1:ansistring; inparam:ansistring); //if archive name ends with single delimiter cut it to get a valid folder name
 begin
 if s1<>'' then if s1[length(s1)]=correctdelimiter(inparam) then setlength(s1,length(s1)-1);
 if s1='' then s1:='noname';
@@ -3355,7 +3346,7 @@ end;
 //get a random 6 chars string which can be used as filename
 function randfn: ansistring;
 var
-   i:integer;
+   i:int64;
    s:ansistring;
 begin
 //s:=inttohex(random(16000000),6); //(legacy) random 16M, hex encoded 6 chars string

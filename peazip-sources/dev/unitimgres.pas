@@ -1,6 +1,6 @@
 unit UnitImgRes; //Form to resize and convert graphic image files selected in the main form file browser
 
-{$mode objfpc}
+{$mode objfpc}{$H+}
 
 interface
 

@@ -213,7 +213,11 @@ var
 begin
 cp_open:=-1;
 if s='' then exit;
-if validatecl(s)<>0 then begin pMessageWarningOK(validate_txt+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(validate_txt+' '+s);
+   exit;
+   end;
 {$IFDEF MSWINDOWS}
 w:=utf8decode(s);
 cp_open:=ShellExecuteW(FormPW.Handle, PWideChar ('open'), PWideChar(w), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);

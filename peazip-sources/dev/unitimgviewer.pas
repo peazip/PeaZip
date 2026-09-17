@@ -579,7 +579,11 @@ if erasemode=3 then eraselevel:='RECYCLE';//enabled only in Windows and macOS
 if pMessageWarningYesNo(pstr+char($0D)+char($0A)+char($0D)+char($0A)+in_name)=6 then
    begin
    cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);

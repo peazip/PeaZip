@@ -1,6 +1,6 @@
 unit UnitDlg; //Dialog form to display apps' info, warnings, errors messages, and user's interaction requests
 
-{$mode objfpc}
+{$mode objfpc}{$H+}
 
 interface
 

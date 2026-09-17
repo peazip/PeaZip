@@ -245,7 +245,9 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
  1.31     20260506  G.Tani      (.pea format) Fixed path traversal evasion on extraction, enforcing canonicalization of names (archiving and extraction) and explicit rejection of relative paths stored in name field (extraction), vulnerability and poc reported by Harshit Gupta
                                 (Windows) Fixed sanitization of input for functions invoking PowerShell, vulnerability and poc reported by Harshit Gupta
  1.32     20260704  G.Tani      Hardened integrity tags checks with constant-time comparison routines, fixes
- 1.33     20260910  G.Tani      *** IN PROGRESS
+ 1.33     20260917  G.Tani      *** IN PROGRESS
+                                Added Test mode for PEA archives (EXTRACT2TEST interactive, stay open for log, EXTRACT2TESTB batch autoclose to pass result as exit code only)
+                                 current EXTRACT2TESTB limitation: does not suppress messages for critical internal errors before final validation, requiring interaction in those specific cases
                                 Fixed "invalid password length" error triggered by some interactive modes
                                 Fixed MoTW check failing for some filenames
                                 Fixed some PEA files erroneously reported as containing relative paths
@@ -282,7 +284,7 @@ The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
 {$modeswitch ObjectiveC1}
 {$linkframework CoreFoundation}
 {$ENDIF}
-{$INLINE ON}{$UNITPATH ./we}
+{$INLINE ON}
 
 interface
 
@@ -539,7 +541,7 @@ procedure unpea_lib_procedure ( in_qualified_name,                              
                                 out_param,                                      //dir were extracting the archive (or AUTONAME)
                                 date_param,                                     //actually only supported RESETDATE, reset date of extracted files
                                 attr_param,                                     //RESETATTR (or SETATTR only on Windows to set object's attributes as on original objects)
-                                struct_param,                                   //actually only supported EXTRACT2DIR, create a dir and extract archive in the dir using shortest paths for archived objects
+                                struct_param,                                   //EXTRACT2DIR, create a dir and extract archive in the dir using shortest paths for archived objects; EXTRACT2TEST, simulate extraction for testing; EXTRACT2TESTB, close with exitcode only
                                 password,keyf_name:ansistring;                  //password and keyfile qualified name (if needed)
                                 opmode:ansistring);                             //mode of operation
 
@@ -780,12 +782,13 @@ except
 end;
 end;
 
-function cleardirsimple(s:ansistring):integer;
+function cleardirsimple(st:ansistring):integer;
 var
    P: tprocessutf8;
-   cl:ansistring;
+   cl,s:ansistring;
 begin
 result:=-1;
+s:=st;
 if s='' then
    begin
    result:=0;
@@ -2235,9 +2238,9 @@ try
    attr_param:=upcase(paramstr(5)); //like the previous, about attribute data: SETATTR (not supported on *x) set the output objects attributes as saved in the archive; RESETATTR set the output object attribute as they are by default for the target system and position
    if not ((attr_param='SETATTR') or (attr_param='RESETATTR')) then
       internal_error('"'+attr_param+'" is not a valid parameter for file attributes metadata: SETATTR (not supported on *x) set the output objects attributes as saved in the archive; RESETATTR set the output objects attributes as they are by default for the target system and position');
-   struct_param:=upcase(paramstr(6)); //EXTRACT2DIR: make a dir with output object with shortest possible path derived from input structures
-   if struct_param<>'EXTRACT2DIR' then
-      internal_error('"'+struct_param+'" is not a valid parameter for output structure, the only parameter supported is EXTRACT2DIR: make a dir with output object with shortest possible path derived from input structures');
+   struct_param:=upcase(paramstr(6)); //EXTRACT2DIR or test
+   if (struct_param<>'EXTRACT2DIR') and (struct_param<>'EXTRACT2TEST') and (struct_param<>'EXTRACT2TESTB') then
+      internal_error('"'+struct_param+'" is not a valid parameter for output structure, use EXTRACT2DIR for extraction, EXTRACT2TEST/EXTRACT2TESTB for testing interactive/batch');
    //get operation mode
    pw_param:=upcase(paramstr(7));
    if (pw_param<>'INTERACTIVE') and (pw_param<>'INTERACTIVE_REPORT') then
@@ -2263,7 +2266,7 @@ procedure unpea_lib_procedure ( in_qualified_name,                              
                                 out_param,                                      //dir were extracting the archive (or AUTONAME)
                                 date_param,                                     //actually only supported RESETDATE, reset date of extracted files
                                 attr_param,                                     //RESETATTR (or SETATTR only on Windows to set object's attributes as on original objects)
-                                struct_param,                                   //actually only supported EXTRACT2DIR, create a dir and extract archive in the dir using shortest paths for archived objects
+                                struct_param,                                   //EXTRACT2DIR, create a dir and extract archive in the dir using shortest paths for archived objects; EXTRACT2TEST, simulate extraction for testing; EXTRACT2TESTB, close with exitcode only
                                 password,keyf_name:ansistring;                  //password and keyfile qualified name (if needed)
                                 opmode:ansistring);                             //mode of operation: VISIBLE the form is visible, HIDDEN the form is not visible, MESSAGE the form is not visible, a message is sent as popup at the end of the operation
 var
@@ -2277,9 +2280,9 @@ if date_param<>'RESETDATE' then  //(date_param<>'SETDATE') or
 //like the previous, about attribute data: SETATTR (not supported on *x) set the output objects attributes as saved in the archive; RESETATTR set the output object attribute as they are by default for the target system and position
 if not ((attr_param='SETATTR') or (attr_param='RESETATTR')) then
    internal_error('"'+attr_param+'" is not a valid parameter for file attributes metadata: SETATTR (not supported on *x) set the output objects attributes as saved in the archive; RESETATTR set the output objects attributes as they are by default for the target system and position');
-//EXTRACT2DIR: make a dir with output object with shortest possible path derived from input structures
-if struct_param<>'EXTRACT2DIR' then
-   internal_error('"'+struct_param+'" is not a valid parameter for output structure, the only parameter supported is EXTRACT2DIR: make a dir with output object with shortest possible path derived from input structures');
+//EXTRACT2DIR or test
+if (struct_param<>'EXTRACT2DIR') and (struct_param<>'EXTRACT2TEST') and (struct_param<>'EXTRACT2TESTB') then
+   internal_error('"'+struct_param+'" is not a valid parameter for output structure, use EXTRACT2DIR for extraction, EXTRACT2TEST/EXTRACT2TESTB for testing interactive/batch');
 //get operation mode
 if (upcase(opmode)<>'INTERACTIVE') and (upcase(opmode)<>'BATCH') and (upcase(opmode)<>'HIDDEN') and (upcase(opmode)<>'INTERACTIVE_REPORT') and (upcase(opmode)<>'BATCH_REPORT') and (upcase(opmode)<>'HIDDEN_REPORT') then
    internal_error('"'+upcase(opmode)+'" is not a valid operation mode, please refer to the documentation');
@@ -3310,7 +3313,7 @@ if stream_error=true then s:=s+'stream; ';
 if obj_error=true then s:=s+'object(s); ';
 if volume_error=true then s:=s+'volume(s); ';
 s:=s+'please check job log!';
-MessageDlg(s, mtError, [mbOK], 0);
+if struct_param<>'EXTRACT2TESTB' then MessageDlg(s, mtError, [mbOK], 0);
 end;
 
 procedure getactualname;
@@ -3318,7 +3321,7 @@ var
    countj:integer;
 begin
 out_created:=false;
-if upcase(struct_param)='EXTRACT2DIR' then //save objects with shortest path in a dir with archive's name; actually this is the only output method allowed
+if (upcase(struct_param)='EXTRACT2DIR') or (struct_param='EXTRACT2TEST') or (struct_param='EXTRACT2TESTB') then //save objects with shortest path in a dir with archive's name; test mode will skip actual writing data to files
    begin
    s:=real_out_file;
    countj:=0;
@@ -3537,7 +3540,7 @@ else
 FormPea.LabelDecryptInfo.Caption:='Using: '+compr+', stream: '+algo+', objects: '+obj_algo+', volume(s): '+volume_algo;
 setcurrentdir(out_param);
 //get random named temporary work folder
-if upcase(struct_param)='EXTRACT2DIR' then //actually this is the only output method allowed
+if (upcase(struct_param)='EXTRACT2DIR') or (struct_param='EXTRACT2TEST') or (struct_param='EXTRACT2TESTB') then
    begin
    Randomize;
    real_out_file:=out_file;
@@ -3773,7 +3776,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
             if fassigned=false then
                begin
                dodirseparators(fn);
-               if upcase(struct_param)='EXTRACT2DIR' then
+               if (upcase(struct_param)='EXTRACT2DIR') or (struct_param='EXTRACT2TEST') or (struct_param='EXTRACT2TESTB') then
                   begin
                   //explicit rejection of relative paths, enforce format specs about only absolute full qualified names being supported
                   if pos(fn,ExpandFileName(fn))=0 then
@@ -3929,11 +3932,11 @@ while (chunks_ok=true) and (end_of_archive=false) do
                   inc(ci,cj);
                   end;
                try
-               blockwrite (f_out,wbuf2,uncompsize,numwritten);
+               if struct_param='EXTRACT2DIR' then blockwrite (f_out,wbuf2,uncompsize,numwritten);
                except
                internal_error_delete(f_out,'IO error writing data');
                end;
-               dec(fs,numwritten);
+               if struct_param='EXTRACT2DIR' then dec(fs,numwritten) else dec(fs,uncompsize);
                compsize:=wbuf1[compsize]+(wbuf1[compsize+1] shl 8)+(wbuf1[compsize+2] shl 16)+(wbuf1[compsize+3] shl 24);
                if compsize>WBUFSIZE then internal_error('Decompression error, declared compsize bigger than compression buffer');
                dword2bytebuf(compsize,sbuf1,0);
@@ -3969,7 +3972,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
             update_control_algo(sbuf1,numread);
             update_obj_control_algo(sbuf1,numread);
             try
-            blockwrite (f_out,sbuf1,numread,numwritten);
+            if struct_param='EXTRACT2DIR' then blockwrite (f_out,sbuf1,numread,numwritten);
             except
             internal_error_delete(f_out,'IO error writing data');
             end;
@@ -4109,8 +4112,19 @@ if report_errors =0 then
    FormPea.ImageInfoDecrypt.Picture.Bitmap:=Bok;
    Application.ProcessMessages;
    exitcode:=0;
-   sleep(500);
-   if closepolicy>0 then FormPea.Close;
+   case struct_param of
+      'EXTRACT2TEST': do_cleardir(output);
+      'EXTRACT2TESTB':
+      begin
+      do_cleardir(output);
+      FormPea.Close;
+      end;
+   else
+      begin
+      sleep(500);
+      if closepolicy>0 then FormPea.Close;
+      end;
+   end;
    end
 else
    begin
@@ -4118,23 +4132,10 @@ else
    FormPea.LabelOpen.Enabled:=false;
    if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
    do_cleardir(output);
-   {
-   //alternative: mark the output with ERROR string
-   FormPea.LabelDecryptOutput.Caption:='ERROR '+real_out_file+DirectorySeparator;
-   FormPea.LabelDecryptOutput.Hint:='Output: '+out_path+'ERROR '+real_out_file+DirectorySeparator;
-   output:=out_path+'ERROR '+real_out_file;
-   if (out_path<>'') and (out_file<>'') then
-      if RenameFile(out_path+out_file+DirectorySeparator,out_path+'ERROR '+real_out_file+DirectorySeparator)=false then
-         begin
-         sleep(200+random(50));
-         RenameFile(out_path+out_file+DirectorySeparator,out_path+'ERROR '+real_out_file+DirectorySeparator);
-         end;
-   do_report_unpea;
-   if (upcase(pw_param)='INTERACTIVE_REPORT') or (upcase(pw_param)='BATCH_REPORT') or (upcase(pw_param)='HIDDEN_REPORT') then save_report('Auto log UnPEA','txt','',upcase(pw_param),out_path);
-   }
    FormPea.ImageInfoDecrypt.Picture.Bitmap:=Bcancel;
    Application.ProcessMessages;
    exitcode:=-2;
+   if struct_param='EXTRACT2TESTB' then FormPea.Close;
    end;
 end;
 
@@ -5929,7 +5930,11 @@ FormPea.LabelToolsInput.Hint:=shint;
 FormPea.LabelToolsResult1.Hint:=shint;
 FormPea.LabelToolsResult2.Hint:=shint;
 cl:=executable_path+'pea'+EXEEXT+' BENCHINT SINGLE 1 1';
-if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0);
+   exit;
+   end;
 
 //single
 tsin:=datetimetotimestamp(now);
@@ -7288,7 +7293,7 @@ for i:=2 to paramcount do
                end;
             end;
    end;
-FormPea.LabelToolsResult1.Caption:=inttostr(i-1)+'/'+inttostr(paramcount-1)+' Done';
+FormPea.LabelToolsResult1.Caption:=FormPea.LabelToolsResult1.Caption+' Done';
 FormPea.LabelToolsInput.Caption:='Zone.Identifier (Mark of The Web) NOT found in input file(s)';
 FormPea.ProgressBarPea.Position:=100;
 FormPea.ButtonToolsCancel.visible:=false;
@@ -8172,7 +8177,11 @@ case ComboBoxUtils.ItemIndex of
       if MessageDlg('Do you want to securely delete selected file(s)? The operation can''t be undone and files will be not recoverable', mtWarning, [mbYes,mbNo], 0)=6 then
          begin
          cl:=bin_name+' WIPE MEDIUM '+in_param;
-         if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
+         if validatecl(cl)<>0 then
+            begin
+            if cl<>'' then MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0);
+            exit;
+            end;
          P:=TProcessUTF8.Create(nil);
          {$IFDEF MSWINDOWS}
          P.Options := [poNoConsole,poWaitOnExit];
@@ -8215,7 +8224,11 @@ case ComboBoxUtils.ItemIndex of
       end;
    23: cl:=bin_name+' ENVSTR';
 end;
-if validatecl(cl)<>0 then begin MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then MessageDlg('Operation stopped, potentially dangerous command detected (i.e. command concatenation not allowed within the program): '+cl, mtWarning, [mbOK], 0);
+   exit;
+   end;
 P:=TProcessUTF8.Create(nil);
 {$IFDEF MSWINDOWS}
 P.Options := [poNoConsole];
@@ -8568,6 +8581,7 @@ var
    dummyint:integer;
 begin
 interacting:=true;
+list_utils.showhidden:=true;//pea routines always assume to include hidden files
 //valorize application's paths
 executable_path:=Application.location;
 if executable_path='' then extractfilepath(paramstr(0));
@@ -8575,9 +8589,12 @@ if executable_path<>'' then
    if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
 {$IFDEF Darwin}
-   resource_path:=executable_path+'../Resources/';
+resource_path:=ExtractFilePath(copy(executable_path,1,length(executable_path)-1));
+if resource_path<>'' then
+   if resource_path[length(resource_path)]<>directoryseparator then resource_path:=resource_path+directoryseparator;
+resource_path:=resource_path+'Resources/';
 {$ELSE}
-   resource_path:=executable_path+'res'+directoryseparator;
+resource_path:=executable_path+'res'+directoryseparator;
 {$ENDIF}
 SetFocusedControl(EditPW);
 pmode:=0;

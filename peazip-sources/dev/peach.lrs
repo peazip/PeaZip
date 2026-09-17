@@ -19,8 +19,8 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'nt'#2#1#8'TabOrder'#2#16#10'TitleStyle'#7#8'tsNative'#7'Visible'#8#0#0#11'T'
   +'StringGrid'#12'StringGridTB'#22'AnchorSideLeft.Control'#7#10'OptionsAdd'#23
   +'AnchorSideRight.Control'#7#10'OptionsAdd'#20'AnchorSideRight.Side'#7#9'asrB'
-  +'ottom'#24'AnchorSideBottom.Control'#7#18'PanelAddArchiveOut'#4'Left'#3#217
-  +#16#6'Height'#3'@'#1#3'Top'#3#157#4#5'Width'#3#0#5#7'Anchors'#11#0#20'Border'
+  +'ottom'#24'AnchorSideBottom.Control'#7#18'PanelAddArchiveOut'#4'Left'#3#249
+  +#16#6'Height'#3'@'#1#3'Top'#3#165#4#5'Width'#3#0#5#7'Anchors'#11#0#20'Border'
   +'Spacing.Bottom'#2#22#11'BorderStyle'#7#6'bsNone'#8'ColCount'#2#16#21'Constr'
   +'aints.MinHeight'#3#160#0#16'DefaultRowHeight'#2#22#9'FixedCols'#2#0#4'Flat'
   +#9#13'GridLineWidth'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLin'
@@ -41,7 +41,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'gGridAddressAllFoldersContent'#22'AnchorSideLeft.Control'#7#15'ListViewBrow'
   +'ser'#21'AnchorSideTop.Control'#7#15'ListViewBrowser'#23'AnchorSideRight.Con'
   +'trol'#7#12'PanelFilters'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorS'
-  +'ideBottom.Side'#7#9'asrBottom'#4'Left'#3#190#6#6'Height'#2'd'#3'Top'#3#27#1
+  +'ideBottom.Side'#7#9'asrBottom'#4'Left'#3#212#6#6'Height'#2'd'#3'Top'#3#29#1
   +#5'Width'#3'j'#3#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#8'ColCount'#2#19
   +#15'DefaultColWidth'#2#25#16'DefaultRowHeight'#2#22#9'FixedCols'#2#0#4'Flat'
   +#9#13'GridLineWidth'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLin'
@@ -51,7 +51,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'deLeft.Control'#7#15'ListViewBrowser'#21'AnchorSideTop.Control'#7#15'ListVi'
   +'ewBrowser'#23'AnchorSideRight.Control'#7#12'PanelFilters'#20'AnchorSideRigh'
   +'t.Side'#7#9'asrBottom'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3
-  +#209#6#6'Height'#2'd'#3'Top'#3#27#1#5'Width'#3'b'#3#7'Anchors'#11#0#11'Borde'
+  +#231#6#6'Height'#2'd'#3'Top'#3#29#1#5'Width'#3'b'#3#7'Anchors'#11#0#11'Borde'
   +'rStyle'#7#6'bsNone'#8'ColCount'#2#19#15'DefaultColWidth'#2#25#16'DefaultRow'
   +'Height'#2#22#9'FixedCols'#2#0#4'Flat'#9#13'GridLineWidth'#2#0#7'Options'#11
   +#15'goFixedVertLine'#15'goFixedHorzLine'#13'goRangeSelect'#11'goColSizing'#11
@@ -76,8 +76,8 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +#31'StringGridAddressOmittedFolders'#22'AnchorSideLeft.Control'#7#15'ListVie'
   +'wBrowser'#21'AnchorSideTop.Control'#7#15'ListViewBrowser'#23'AnchorSideRigh'
   +'t.Control'#7#12'PanelFilters'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'An'
-  +'chorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#204#6#6'Height'#2'd'#3'Top'#3
-  +#27#1#5'Width'#3'^'#3#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#8'ColCount'
+  +'chorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#226#6#6'Height'#2'd'#3'Top'#3
+  +#29#1#5'Width'#3'^'#3#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#8'ColCount'
   +#2#19#15'DefaultColWidth'#2#25#16'DefaultRowHeight'#2#22#9'FixedCols'#2#0#4
   +'Flat'#9#13'GridLineWidth'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedH'
   +'orzLine'#13'goRangeSelect'#11'goColSizing'#11'goRowSelect'#18'goDblClickAut'
@@ -86,7 +86,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'AddressAllFolders'#22'AnchorSideLeft.Control'#7#15'ListViewBrowser'#21'Anch'
   +'orSideTop.Control'#7#15'ListViewBrowser'#23'AnchorSideRight.Control'#7#12'P'
   +'anelFilters'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorSideBottom.Si'
-  +'de'#7#9'asrBottom'#4'Left'#3#204#6#6'Height'#2'd'#3'Top'#3#248#0#5'Width'#3
+  +'de'#7#9'asrBottom'#4'Left'#3#226#6#6'Height'#2'd'#3'Top'#3#250#0#5'Width'#3
   +'^'#3#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#8'ColCount'#2#19#15'Defaul'
   +'tColWidth'#2#25#16'DefaultRowHeight'#2#22#9'FixedCols'#2#0#4'Flat'#9#13'Gri'
   +'dLineWidth'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#13'go'
@@ -95,8 +95,8 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +#7'Visible'#8#0#0#11'TStringGrid'#14'StringGridList'#22'AnchorSideLeft.Contr'
   +'ol'#7#15'ListViewBrowser'#21'AnchorSideTop.Control'#7#15'ListViewBrowser'#23
   +'AnchorSideRight.Control'#7#12'PanelFilters'#20'AnchorSideRight.Side'#7#9'as'
-  +'rBottom'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#162#6#6'Height'
-  +#2'd'#3'Top'#3#179#0#5'Width'#3'/'#3#7'Anchors'#11#0#8'AutoEdit'#8#11'Border'
+  +'rBottom'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3#182#6#6'Height'
+  +#2'd'#3'Top'#3#181#0#5'Width'#3'/'#3#7'Anchors'#11#0#8'AutoEdit'#8#11'Border'
   +'Style'#7#6'bsNone'#8'ColCount'#2#19#15'DefaultColWidth'#2#25#16'DefaultRowH'
   +'eight'#2#22#9'FixedCols'#2#0#4'Flat'#9#13'GridLineWidth'#2#0#7'Options'#11
   +#15'goFixedVertLine'#15'goFixedHorzLine'#13'goRangeSelect'#11'goRowSelect'#14
@@ -104,7 +104,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'ingGrid'#17'StringGridAddress'#22'AnchorSideLeft.Control'#7#15'ListViewBrow'
   +'ser'#21'AnchorSideTop.Control'#7#15'ListViewBrowser'#23'AnchorSideRight.Con'
   +'trol'#7#12'PanelFilters'#20'AnchorSideRight.Side'#7#9'asrBottom'#21'AnchorS'
-  +'ideBottom.Side'#7#9'asrBottom'#4'Left'#3#162#6#6'Height'#2'd'#3'Top'#3#213#0
+  +'ideBottom.Side'#7#9'asrBottom'#4'Left'#3#182#6#6'Height'#2'd'#3'Top'#3#215#0
   +#5'Width'#3'/'#3#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#8'ColCount'#2#19
   +#15'DefaultColWidth'#2#25#16'DefaultRowHeight'#2#22#9'FixedCols'#2#0#4'Flat'
   +#9#13'GridLineWidth'#2#0#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLin'
@@ -114,7 +114,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'trol'#7#12'SplitterSide'#19'AnchorSideLeft.Side'#7#9'asrBottom'#21'AnchorSi'
   +'deTop.Control'#7#12'PanelFilters'#23'AnchorSideRight.Control'#7#12'PanelFil'
   +'ters'#20'AnchorSideRight.Side'#7#9'asrBottom'#24'AnchorSideBottom.Control'#7
-  +#14'SplitterBottom'#4'Left'#3#160#6#6'Height'#3'4'#2#3'Top'#3'^'#3#5'Width'#3
+  +#14'SplitterBottom'#4'Left'#3#179#6#6'Height'#3'4'#2#3'Top'#3'm'#3#5'Width'#3
   +#226#2#7'Anchors'#11#0#8'AutoSort'#8#11'BorderStyle'#7#6'bsNone'#7'Columns'
   +#14#1#7'Caption'#6#4'Name'#8'MinWidth'#3#250#0#5'Width'#3#250#0#0#1#7'Captio'
   +'n'#6#4'Type'#5'Width'#2'd'#0#1#9'Alignment'#7#14'taRightJustify'#7'Caption'
@@ -129,8 +129,8 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +#16'ShellTreeViewTmp'#22'AnchorSideLeft.Control'#7#8'Panelnav'#18'AnchorSide'
   +'Top.Side'#7#9'asrBottom'#23'AnchorSideRight.Control'#7#8'Panelnav'#20'Ancho'
   +'rSideRight.Side'#7#9'asrBottom'#24'AnchorSideBottom.Control'#7#8'Panelnav'
-  ,#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3'e'#5#6'Height'#3#155#1#3
-  +'Top'#3'_'#9#5'Width'#3#250#0#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#12
+  ,#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#3'l'#5#6'Height'#3#155#1#3
+  +'Top'#3'i'#9#5'Width'#3#250#0#7'Anchors'#11#0#11'BorderStyle'#7#6'bsNone'#12
   +'FileSortType'#7#11'fstAlphabet'#10'ParentFont'#8#10'ScrollBars'#7#14'ssAuto'
   +'Vertical'#11'ShowButtons'#8#8'TabOrder'#2#1#7'Visible'#8#7'Options'#11#17't'
   +'voAutoItemHeight'#16'tvoHideSelection'#21'tvoKeepCollapsedNodes'#11'tvoRead'
@@ -3384,10 +3384,10 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +'op'#2'<'#7'Caption'#6#8'Encoding'#10'Font.Style'#11#6'fsBold'#0#10'ParentFo'
   +'nt'#8#0#0#6'TLabel'#9'LabelConf'#19'AnchorSideLeft.Side'#7#9'asrBottom'#21
   +'AnchorSideBottom.Side'#7#9'asrCenter'#4'Left'#3#201#3#6'Height'#2#20#3'Top'
-  +#4'7'#222'Eg'#5'Width'#2#4#7'Anchors'#11#0#18'BorderSpacing.Left'#2#10#7'Cap'
-  +'tion'#6#1' '#10'ParentFont'#8#7'Visible'#8#0#0#6'TLabel'#9'Labeloaui'#22'An'
-  +'chorSideLeft.Control'#7#10'PanelLine2'#21'AnchorSideTop.Control'#7#10'Combo'
-  +'BoxSD'#18'AnchorSideTop.Side'#7#9'asrBottom'#4'Left'#3#141#0#6'Height'#2#20
+  +#4#161#240'5J'#5'Width'#2#4#7'Anchors'#11#0#18'BorderSpacing.Left'#2#10#7'Ca'
+  +'ption'#6#1' '#10'ParentFont'#8#7'Visible'#8#0#0#6'TLabel'#9'Labeloaui'#22'A'
+  +'nchorSideLeft.Control'#7#10'PanelLine2'#21'AnchorSideTop.Control'#7#10'Comb'
+  +'oBoxSD'#18'AnchorSideTop.Side'#7#9'asrBottom'#4'Left'#3#141#0#6'Height'#2#20
   +#3'Top'#3'?'#2#5'Width'#2'v'#17'BorderSpacing.Top'#2'<'#7'Caption'#6#16'Back'
   +'end binaries'#10'Font.Style'#11#6'fsBold'#0#10'ParentFont'#8#0#0#6'TImage'
   +#17'ImageInfoBinaries'#22'AnchorSideLeft.Control'#7#9'Labeloaui'#19'AnchorSi'

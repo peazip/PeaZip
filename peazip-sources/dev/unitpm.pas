@@ -1,6 +1,6 @@
 unit UnitPM; //Password manager form: save and organize passwords and notes, set master password for the manager
 
-{$mode objfpc}
+{$mode objfpc}{$H+}
 
 interface
 
@@ -412,7 +412,11 @@ var
 begin
 cp_open:=-1;
 if s='' then exit;
-if validatecl(s)<>0 then begin pMessageWarningOK(validate_txt+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(validate_txt+' '+s);
+   exit;
+   end;
 {$IFDEF MSWINDOWS}
 w:=utf8decode(s);
 cp_open:=ShellExecuteW(FormPM.Handle, PWideChar ('open'), PWideChar(w), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);

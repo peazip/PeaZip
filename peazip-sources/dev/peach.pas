@@ -207,11 +207,12 @@ unit peach; //Main form of PeaZip, organized in file browser, archiving, extract
  1.86     20260405  G.Tani     11.0.0
  1.87     20260508  G.Tani     11.1.0
  1.88     20260708  G.Tani     11.2.0
- 1.89     20260910  G.Tani     11.3.0 *** IN PROGRESS
+ 1.89     20260917  G.Tani     11.3.0 *** IN PROGRESS
 
 BACKEND
 7z/p7zip 26.03
 Pea 1.33
+ Added Test mode for PEA archives
  Fixed erroneously reporting some PEA archives as containing relative paths
  Fixed "invalid password length" error triggered by some interactive modes
  Fixed unchecked size of first compressed block in PEA archives
@@ -241,6 +242,7 @@ Added Shift+F12 keyboard shortcut to open the new "Open with" screen, displaying
  custom apps, scripts, and web services can be defined as usual in Options > Settings > Applications
 It is now mandatory to set a master password for the integrated Password Manager
  if you are using the Password Manager it is recommended to backup your passwords with previous version of PeaZip (set a master password, rightclick on password list screen and use Export > Encrypted), and import in the new version (use the exported pm file to replace the pm file in PeaZip's configuration path)
+New Blue and Blue-Dark themes, can be set from Option > Themes, Custom
 Various usability improvements
 
 EXTRACTION and ARCHIVING
@@ -5871,8 +5873,8 @@ function dragtowin(var dragdest:ansistring):integer;
 //(Windows) native drag and drop
 procedure cleandragtmp;
 //delete directory and verify result
-function cleardir(var s:ansistring; cleardirname,force_skip_ptmpcode:boolean):integer;
-function cleardirsimple(s:ansistring):integer;
+function cleardir(var st:ansistring; cleardirname,force_skip_ptmpcode:boolean):integer;
+function cleardirsimple(st:ansistring):integer;
 //password and keyfile request
 function ask_pwkeyfile:integer;
 procedure hideconfirmation;
@@ -5893,7 +5895,7 @@ function compose_unpaq_cl(var cl,jobcode,outname:ansistring; real_extract:boolea
 function compose_unquad_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode:ansistring):integer;
 function compose_unbrotli_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
 function compose_unzstd_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
-function compose_unpea_cl(var cl,jobcode,outname:ansistring):integer;
+function compose_unpea_cl(var cl,jobcode,outname:ansistring; mode:ansistring):integer;
 function compose_uncustom_cl(var cl,jobcode,outname:ansistring; real_extract:boolean):integer;
 function compose_rarspecfun_cl(var cl,jobcode,outname:ansistring; specfun:ansistring):integer;
 procedure check_files(var in_param,cl,oper:ansistring);
@@ -6091,9 +6093,9 @@ const
   SECEXTCONST   = 'appref-ms application bat chm cmd com cpl diagcab exe gadget hta jar js jse lnk msc msi msp msu mst pif ps1 reg scf scr sct settingcontent-ms url vbe vbs website wsc wsf wsh xll';
   {$ELSE}
   {$IFDEF DARWIN}
-  SECEXTCONST   = 'sh scpt scptd applescript';
+  SECEXTCONST   = 'sh zsh scpt scptd applescript';
   {$ELSE}
-  SECEXTCONST   = 'sh';
+  SECEXTCONST   = 'sh bash zsh';
   {$ENDIF}
   {$ENDIF}
   PREFALGOCONST = 'CRC32 CRC64 MD5 RIPEMD160 SHA1 BLAKE2S SHA256 SHA3_256';
@@ -13298,6 +13300,10 @@ case fun of
    po_join.Visible:=false;
    MenuItemViewImage.visible:=true;
    end;
+   'UNPEA':
+   begin
+   ButtonUn7zaTest.Enabled:=true;
+   end;
    end;
 ImageFlatadd.Enabled:=ButtonUn7zaAdd.Enabled;
 ImageFlatconvert.Enabled:=ButtonUn7zaConvert.Enabled;
@@ -18174,7 +18180,7 @@ istr:=0;
 if fileexists(winpfolder32+'Windows Defender\MSASCui.exe') or fileexists(winpfolder32+'Windows Defender\MpCmdRun.exe') then
    begin
    istr:=istr+1;
-   astr[istr]:='Microsoft Windows Defender';
+   astr[istr]:='Microsoft Windows Defender (x86)';
    bstr[istr]:=wincomspec+' /k ""'+winpfolder32+'Windows Defender\MpCmdRun.exe" -Scan -ScanType 3 -File ';
    cstr[istr]:='"';
    if fileexists(winpfolder32+'Windows Defender\MSASCui.exe') then dstr[istr]:=winpfolder32+'Windows Defender\MSASCui.exe'
@@ -18193,7 +18199,7 @@ if fileexists(winpfolder+'Windows Defender\MSASCui.exe') or fileexists(winpfolde
 if fileexists(winpfolder32+'Avira\AntiVir Desktop\avscan.exe') then
    begin
    istr:=istr+1;
-   astr[istr]:='Avira AntiVir Personal';
+   astr[istr]:='Avira AntiVir Personal (x86)';
    bstr[istr]:='"'+winpfolder32+'Avira\AntiVir Desktop\avscan.exe" /GUIMODE=1 /PATH=';
    cstr[istr]:='';
    dstr[istr]:=winpfolder32+'Avira\AntiVir Desktop\avcenter.exe';
@@ -18210,7 +18216,7 @@ if fileexists(winpfolder+'Avira\AntiVir Desktop\avscan.exe') then
 if fileexists(winpfolder32+'ClamWin\Bin\ClamWin.exe') then
    begin
    istr:=istr+1;
-   astr[istr]:='ClamWin';
+   astr[istr]:='ClamWin (x86)';
    bstr[istr]:='"'+winpfolder32+'ClamWin\Bin\ClamWin.exe" --mode="scanner" --path=';
    cstr[istr]:='';
    dstr[istr]:=winpfolder32+'ClamWin\Bin\ClamWin.exe';
@@ -18257,7 +18263,7 @@ if mbampath<>'' then
 if fileexists(winpfolder32+'Spybot - Search & Destroy\SDFiles.exe') then
    begin
    istr:=istr+1;
-   astr[istr]:='Spybot - Search and Destroy';
+   astr[istr]:='Spybot - Search and Destroy (x86)';
    bstr[istr]:='"'+winpfolder32+'Spybot - Search & Destroy\SDFiles.exe" ';
    cstr[istr]:='';
    dstr[istr]:=winpfolder32+'Spybot - Search & Destroy\SpybotSD.exe';
@@ -18274,7 +18280,7 @@ if fileexists(winpfolder+'Spybot - Search & Destroy\SDFiles.exe') then
 if fileexists(winpfolder32+'VirusTotalUploader2\VirusTotalUpload2.exe') then
    begin
    istr:=istr+1;
-   astr[istr]:='VirusTotal';
+   astr[istr]:='VirusTotal (x86)';
    bstr[istr]:='"'+winpfolder32+'VirusTotalUploader2\VirusTotalUpload2.exe" ';
    cstr[istr]:='';
    dstr[istr]:=winpfolder32+'VirusTotalUploader2\VirusTotalUpload2.exe';
@@ -22937,7 +22943,10 @@ if executable_path<>'' then
    if executable_path[length(executable_path)]<>directoryseparator then executable_path:=executable_path+directoryseparator;
 setcurrentdir(executable_path);
 {$IFDEF DARWIN}
-resource_path:=executable_path+'../Resources/';
+resource_path:=ExtractFilePath(copy(executable_path,1,length(executable_path)-1));
+if resource_path<>'' then
+   if resource_path[length(resource_path)]<>directoryseparator then resource_path:=resource_path+directoryseparator;
+resource_path:=resource_path+'Resources/';
 binpath:=executable_path+'bin'+directoryseparator;//binaries, architecture dependant
 {$ELSE}
 resource_path:=executable_path+'res'+directoryseparator;
@@ -27542,17 +27551,17 @@ else
 //4 image viewers FastStone then Irfan then XnView
 if fileexists(winpfolder32+'IrfanView\i_view32.exe') then
    begin
-   StringGridCustedit.Cells[1,4]:='IrfanView';
+   StringGridCustedit.Cells[1,4]:='IrfanView (x86)';
    custedit4:=winpfolder32+'IrfanView\i_view32.exe';
    end;
 if fileexists(winpfolder32+'xnview\xnview.exe') then
    begin
-   StringGridCustedit.Cells[1,4]:='XnView';
+   StringGridCustedit.Cells[1,4]:='XnView (x86)';
    custedit4:=winpfolder32+'xnview\xnview.exe';
    end;
 if fileexists(winpfolder32+'FastStone Image Viewer\FSViewer.exe') then
    begin
-   StringGridCustedit.Cells[1,4]:='FastStone Image Viewer';
+   StringGridCustedit.Cells[1,4]:='FastStone Image Viewer (x86)';
    custedit4:=winpfolder32+'FastStone Image Viewer\FSViewer.exe';
    end;
 if fileexists(winpfolder+'xnview\xnview.exe') then
@@ -27586,18 +27595,18 @@ for iacro:=4 to 11 do
 begin
 if fileexists(winpfolder32+'Adobe\Reader '+inttostr(iacro)+'.0\Reader\AcroRd32.exe') then
    begin
-   StringGridCustedit.Cells[1,6]:='Acrobat Reader';
+   StringGridCustedit.Cells[1,6]:='Acrobat Reader (x86)';
    custedit6:=winpfolder32+'Adobe\Reader '+inttostr(iacro)+'.0\Reader\AcroRd32.exe';
    end;
 end;
 if fileexists(winpfolder32+'PDF24\pdf24-Reader.exe') then
    begin
-   StringGridCustedit.Cells[1,6]:='PDF24 Reader';
+   StringGridCustedit.Cells[1,6]:='PDF24 Reader (x86)';
    custedit6:=winpfolder32+'PDF24\pdf24-Reader.exe';
    end;
 if fileexists(winpfolder32+'Adobe\Acrobat Reader DC\Reader\AcroRd32.exe') then
    begin
-   StringGridCustedit.Cells[1,6]:='Acrobat Reader DC';
+   StringGridCustedit.Cells[1,6]:='Acrobat Reader DC (x86)';
    custedit6:=winpfolder32+'Adobe\Acrobat Reader DC\Reader\AcroRd32.exe';
    end;
 //7 documents Office, then Libre/Open Office then Wordpad
@@ -27718,7 +27727,7 @@ for ioff:=8 to 29 do
 begin
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\winword.exe') then
    begin
-   StringGridCustedit.Cells[1,7]:='Word';
+   StringGridCustedit.Cells[1,7]:='Word (x86)';
    custedit7:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\winword.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\winword.exe') then
@@ -27728,7 +27737,7 @@ if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\winword.exe'
    end;
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\excel.exe') then
    begin
-   StringGridCustedit.Cells[1,8]:='Excel';
+   StringGridCustedit.Cells[1,8]:='Excel (x86)';
    custedit8:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\excel.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\excel.exe') then
@@ -27738,7 +27747,7 @@ if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\excel.exe') 
    end;
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\powerpnt.exe') then
    begin
-   StringGridCustedit.Cells[1,9]:='PowerPoint';
+   StringGridCustedit.Cells[1,9]:='PowerPoint (x86)';
    custedit9:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\powerpnt.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\powerpnt.exe') then
@@ -27748,7 +27757,7 @@ if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\powerpnt.exe
    end;
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\msaccess.exe') then
    begin
-   StringGridCustedit.Cells[1,10]:='Access';
+   StringGridCustedit.Cells[1,10]:='Access (x86)';
    custedit10:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\msaccess.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\msaccess.exe') then
@@ -27758,7 +27767,7 @@ if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\msaccess.exe
    end;
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\outlook.exe') then
    begin
-   StringGridCustedit.Cells[1,11]:='Outlook';
+   StringGridCustedit.Cells[1,11]:='Outlook (x86)';
    custedit11:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\outlook.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\outlook.exe') then
@@ -27768,7 +27777,7 @@ if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\outlook.exe'
    end;
 if fileexists(winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\visio.exe') then
    begin
-   StringGridCustedit.Cells[1,12]:='Visio';
+   StringGridCustedit.Cells[1,12]:='Visio (x86)';
    custedit12:=winpfolder32+'Microsoft Office\Office'+inttostr(ioff)+'\visio.exe';
    end;
 if fileexists(winpfolder+'Microsoft Office\Office'+inttostr(ioff)+'\visio.exe') then
@@ -28840,7 +28849,11 @@ var
 begin
 {$IFDEF MSWINDOWS}
 cl:=stringdelim(escapefilename(binpath,desk_env)+'Configure PeaZip'+EXEEXT)+' /DIR='+stringdelim(escapefilename(executable_path,desk_env));
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 if pwait=true then P.Options := [poNoConsole, poWaitOnExit]
 else P.Options := [poNoConsole];
@@ -28862,7 +28875,11 @@ if s<>'' then
    bin_name:=stringdelim(escapefilename(binpath,desk_env)+'7z'+DirectorySeparator+alias7z+EXEEXT);
    if sys7zlin>0 then bin_name:=alias7z+EXEEXT;
    cl:=bin_name+' x -aoa '+out_param+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    if FormPeach.Visible=true then Application.ProcessMessages;
    P:=tprocessutf8.Create(nil);
    P.Options := [poWaitOnExit{$IFDEF MSWINDOWS}, poNoConsole{$ENDIF}];
@@ -29215,7 +29232,11 @@ if intpw=1 then
 if pw<>'' then
    if (pipepw<>'') and (consolecl=false) then else cl:=cl+' '+pw;
 cl:=cl+' '+out_param+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 if execute_cl_simple(cl)<>0 then pMessageerrorOK(txt_6_5_error+' '+confpath+'Profiles'+DirectorySeparator+s+'.profile.7z');
 {$IFDEF MSWINDOWS}
 if (winver='nt6+') and (majmin<>'6.0') then
@@ -29344,7 +29365,7 @@ if pw<>'' then
 cl:=cl+' '+out_param+' '+in_param+' '+delimiter+'-xr0!profiles'+delimiter;
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 if execute_cl_simple(cl)=0 then pMessageInfoOK(txt_done+' '+confpath+'Profiles'+DirectorySeparator+s+'.profile.7z');
@@ -30646,7 +30667,11 @@ if sg.Row=0 then exit;
 for i:=1 to sg.Rowcount-1 do
    if sg.Cells[11,i]='1' then in_param:=in_param+stringdelim(escapefilename(sg.Cells[8,i],desk_env))+' ';
 check_files(in_param,cl,oper);
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -30662,7 +30687,11 @@ if checkfiledirname(FormPeach.EditOpenIn.Text)<>0 then begin pMessageWarningOK(t
 if fname='*' then fname:=FormPeach.EditOpenIn.Text;
 in_param:=stringdelim(escapefilename(fname,desk_env));
 check_files(in_param,cl,oper);
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -30715,7 +30744,11 @@ for i:=1 to FormPeach.StringGridList.Rowcount-1 do
       in_param:=in_param+stringdelim(escapefilename(FormPeach.StringGridList.Cells[12,i],desk_env))+' ';
       end;
 check_files(in_param,cl,oper);
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -30746,7 +30779,11 @@ if FormPeach.OpenDialogArchive.Execute then
       fileb:=stringdelim(escapefilename(FormPeach.OpenDialogArchive.Filename,desk_env));
       bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
       cl:=bin_name+' COMPARE '+filea+' '+fileb;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -30768,7 +30805,11 @@ if FormPeach.OpenDialogArchive.Execute then
       fileb:=stringdelim(escapefilename(FormPeach.OpenDialogArchive.Filename,desk_env));
       bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
       cl:=bin_name+' COMPARE '+filea+' '+fileb;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -30807,7 +30848,11 @@ if FormPeach.OpenDialogArchive.Execute then
       fileb:=stringdelim(escapefilename(FormPeach.OpenDialogArchive.Filename,desk_env));
       bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
       cl:=bin_name+' COMPARE '+filea+' '+fileb;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -34596,12 +34641,13 @@ subsection DELETE and reset routines
 
 ///////////////////////////////////////////////////////////////////////////////}
 
-function cleardirsimple(s:ansistring):integer;
+function cleardirsimple(st:ansistring):integer;
 var
    P: tprocessutf8;
-   cl:ansistring;
+   cl,s:ansistring;
 begin
 result:=-1;
+s:=st;
 if s='' then
    begin
    result:=0;
@@ -34614,14 +34660,14 @@ if not(checkdirexists((s))) then
    end;
 if validatecl(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    result:=0;
    exit;
    end; //should not happen, because string must be valid for the filesystem
 {$IFDEF MSWINDOWS}
 if validatecl_console(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    result:=0;
    exit;
    end;
@@ -34642,12 +34688,13 @@ P.Free;
 if checkdirexists(s) then result:=-1;
 end;
 
-function cleardirasync(s:ansistring):integer;
+function cleardirasync(st:ansistring):integer;
 var
    P: tprocessutf8;
-   cl:ansistring;
+   cl,s:ansistring;
 begin
 result:=-1;
+s:=st;
 if s='' then
    begin
    result:=0;
@@ -34660,14 +34707,14 @@ if not(checkdirexists((s))) then
    end;
 if validatecl(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    result:=0;
    exit;
    end; //should not happen, because string must be valid for the filesystem
 {$IFDEF MSWINDOWS}
 if validatecl_console(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    result:=0;
    exit;
    end;
@@ -34685,16 +34732,17 @@ P.Free;
 result:=0;//means the async deletion request was correctly launched
 end;
 
-function cleardir(var s:ansistring; cleardirname,force_skip_ptmpcode:boolean):integer;
+function cleardir(var st:ansistring; cleardirname,force_skip_ptmpcode:boolean):integer;
 //if directory is not cleared at first attempt (i.e. some objects temporary locked by system or security process), sleep and retry; on failure notify user if applicable
 //cleardirname clear variable containing directory name
 //force_skip_ptmpcode force avoiding to clear ptmpcode variable, otherwise decide parsing directory name
 var
   P: tprocessutf8;
-  cl:ansistring;
+  cl,s:ansistring;
   ntry:integer;
 begin
 cleardir:=-1;
+s:=st;
 if s='' then
    begin
    cleardir:=0;
@@ -34707,7 +34755,7 @@ if not(checkdirexists((s))) then
    end;
 if validatecl(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    cleardir:=0;
    exit;
    end; //should not happen, because string must be valid for the filesystem
@@ -34723,7 +34771,7 @@ if FormPeach.Visible=true then Application.ProcessMessages;
 {$IFDEF MSWINDOWS}
 if validatecl_console(s)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
    result:=0;
    exit;
    end;
@@ -34791,7 +34839,7 @@ else
 until cleardir=0;
 if force_skip_ptmpcode=false then
    if (s<>pstmpdir) and (s<>ptmpdir+'f'+DirectorySeparator) then ptmpcode:='';
-if cleardirname=true then s:='';
+if cleardirname=true then st:='';
 end;
 
 function clearfile(s:ansistring):integer;
@@ -35049,7 +35097,11 @@ if erasemode=3 then eraselevel:='RECYCLE';
 if pMessageWarningYesNo(txt_5_4_deletefilesconfirm+char($0D)+char($0A)+char($0D)+char($0A)+pstr+char($0D)+char($0A)+char($0D)+char($0A)+in_param)=6 then
    begin
    cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -35097,7 +35149,11 @@ if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 if executemode=1 then
@@ -35126,7 +35182,11 @@ if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 if executemode=1 then
@@ -35236,7 +35296,11 @@ if FormPeach.visible=true then
       end;
       if smode=2 then eraselevel:='ZERO';
       cl:=bin_name+' SANITIZE '+eraselevel+' '+s;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       P.Options := [poNoConsole];
       peapexecute(P,cl);
@@ -35272,7 +35336,11 @@ if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 if executemode=1 then
@@ -35301,7 +35369,11 @@ if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 if executemode=1 then
@@ -35426,7 +35498,11 @@ if FormPeach.visible=true then
    if erasemode=0 then eraselevel:='NONE';
    if erasemode=2 then eraselevel:='ZERO';
    cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -35463,7 +35539,11 @@ if FormPeach.visible=true then
    if erasemode=0 then eraselevel:='NONE';
    if erasemode=2 then eraselevel:='ZERO';
    cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -36575,7 +36655,7 @@ if (FormAdvf.CheckBoxAdvFilters.State=cbChecked) and (filterbrowser=1) then //us
 else //use basic filters (from browser)
    basic_filters(cl);
 if FormPeach.EditUn7zaFilter.Text<>'*' then funflag:=false else funflag:=true;
-result:=execute_cl(cl,mode);
+if cl<>'' then result:=execute_cl(cl,mode);
 end;
 
 function list_unrar5_do(mode:ansistring):integer;
@@ -36612,7 +36692,7 @@ if FormAdvf.CheckBoxAdvFilters.State=cbChecked then //use advanced filters, igno
 else //use basic filters (from browser)
    basic_filters_rar5(cl);
 if FormPeach.EditUn7zaFilter.Text<>'*' then funflag:=false else funflag:=true;
-result:=execute_cl(cl,mode);
+if cl<>'' then result:=execute_cl(cl,mode);
 end;
 
 procedure reportnotsupported_info(sfo:ansistring);
@@ -36695,9 +36775,9 @@ function list_un7z(mode:ansistring):integer;
 begin
 result:=-1;
 if libre_directive=2 then if testifrar(FormPeach.EditOpenIn.Text)=1 then reportnotsupported('RAR');
-if libre_directive=1 then listun7z_do(mode)
+if libre_directive=1 then result:=listun7z_do(mode)
 else
-   if testifrar5(FormPeach.EditOpenIn.Text)=1 then list_unrar5_do(mode)
+   if testifrar5(FormPeach.EditOpenIn.Text)=1 then result:=list_unrar5_do(mode)
    else result:=listun7z_do(mode);
 generate_archive_breadcrumb;
 end;
@@ -38180,12 +38260,16 @@ var
 begin
 execute_cl:=-1;
 zaout:=zaout1;
-if cl='' then
+{if cl='' then
    begin
    pMessageErrorOK(txt_error_emptycl);
    exit_nosave;
+   end;}
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
    end;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
 enter_busy_status;
 if FormPeach.Visible=true then Application.ProcessMessages;
 skipped_prebrowse:=false;
@@ -38420,13 +38504,17 @@ var
 begin
 result:=-1;
 zaout:=zaout1;
-if cl='' then
+{if cl='' then
    begin
    pMessageErrorOK(txt_error_emptycl);
    exit_nosave;
-   end;
+   end;}
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 i:=0;
 j:=0;
 P:=tprocessutf8.Create(nil);
@@ -38508,7 +38596,11 @@ case desk_env of
    end;
 {$ENDIF}
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38531,7 +38623,11 @@ cl:=cl+' ''bash -c "'+s+'; read line"''';
 cl:='open '+s;
 {$ENDIF}
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38546,7 +38642,11 @@ begin
 {$IFNDEF MSWINDOWS}
 cl:=s;
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 try
 peapexecute(P,cl);
@@ -38561,7 +38661,11 @@ var
    P:tprocessutf8;
 begin
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38604,7 +38708,11 @@ else s:=copy(FormPeach.EditOpenIn.Text, 1, 2);
 if s<>'' then cl:='cleanmgr /d '+s
 else cl:='cleanmgr';
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38625,7 +38733,11 @@ if fun='FILEBROWSER' then
 else s:=copy(FormPeach.EditOpenIn.Text, 1, 2);
 cl:='convert '+s+' /FS:NTFS';
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38657,7 +38769,11 @@ if fun='FILEBROWSER' then
    if FormPeach.EditOpenIn.Text=txt_mypc then s:=copy(FormPeach.StringGridList.Cells[12, FormPeach.StringGridList.Row], 1, 2)
    else s:=copy(FormPeach.EditOpenIn.Text, 1, 2)
 else s:=copy(FormPeach.EditOpenIn.Text, 1, 2);
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 if winver='nt5' then ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar('dfrg.msc'), PWideChar (s), PWideChar (''), SW_SHOWNORMAL)
 else ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar('dfrgui.exe'), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
 {$ENDIF}
@@ -38674,7 +38790,11 @@ else sg:=FormPeach.StringGridExtract;
 if sg.Row=0 then exit;
 in_param:=stringdelim(escapefilename(sg.Cells[8,sg.Row],desk_env));
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' '+poper+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -38815,7 +38935,11 @@ if not pInputQuery(txt_3_3_run, txt_3_3_runexp, '', tmpprevrun, false) then exit
 s:=tmpprevrun;
 if s='' then exit;
 {$IFDEF MSWINDOWS}
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 w:=utf8decode(s);
 ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar('"'+w+'"'), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
 {$ELSE}
@@ -38825,7 +38949,11 @@ cl:=stringdelim(escapefilename(s,desk_env));
 if s[1] = '/' then cl:='open '+cl
 else cl:='open -a '+cl;
 {$ENDIF}
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -38847,7 +38975,11 @@ if checktype='full' then
    cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' MOTWFULL '+in_param
 else
    cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' MOTW '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -38899,7 +39031,11 @@ if checktype='full' then
    cl:=bin_name+' MOTWFULL'+s
 else
    cl:=bin_name+' MOTW'+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 peapexecute(P,cl);
@@ -38926,7 +39062,11 @@ if checktype='full' then
    cl:=bin_name+' MOTWFULL'+s
 else
    cl:=bin_name+' MOTW'+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 peapexecute(P,cl);
@@ -38982,7 +39122,11 @@ if i>=0 then
    bin_name:=stringdelim(escapefilename(executable_path+'peazip'+EXEEXT,desk_env))+' -ext2openasarchive';
    cl:=bin_name+' '+instr;
    if FormPeach.Visible=true then Application.ProcessMessages;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -39056,7 +39200,11 @@ if sanitizepath(outname,tempstring) <> 0 then exit;
 if checkfiledirname(s)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s); exit; end;
 woutname:=utf8decode(outname);
 wtempstring:=utf8decode(tempstring);
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 shellexecutew(FormPeach.handle, PWideChar('open'), PWideChar('RUNDLL32.EXE'), PWideChar('shell32.dll,OpenAs_RunDLL '+woutname+wtempstring), PWideChar (''), SW_SHOWNORMAL);
 openw_obj:=0;
 {$ENDIF}
@@ -39069,7 +39217,11 @@ var
 begin
 cp_open:=-1;
 if s='' then exit;
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 {$IFDEF MSWINDOWS}
 w:=utf8decode(s);
 cp_open:=ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar(w), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
@@ -39148,7 +39300,11 @@ case efun of
          bin_name:=stringdelim(escapefilename(executable_path+'peazip'+EXEEXT,desk_env))+' -ext2openasarchive';
          cl:=bin_name+' '+outname;
          if FormPeach.Visible=true then Application.ProcessMessages;
-         if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+         if validatecl(cl)<>0 then
+            begin
+            if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+            exit;
+            end;
          P:=tprocessutf8.Create(nil);
          {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ENDIF}//not needed {$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
          peapexecute(P,cl);
@@ -39185,7 +39341,11 @@ case efun of
                woutname:=utf8decode(outname);
                wtempstring:=utf8decode(tempstring);
                s:=outname+tempstring;
-               if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+               if validatecl(s)<>0 then
+                  begin
+                  if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+                  exit;
+                  end;
                ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar(woutname+wtempstring), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
                execute_obj:=0;
                tempstring:='';
@@ -39207,7 +39367,11 @@ case efun of
          bin_name:=stringdelim(escapefilename(executable_path+'peazip'+EXEEXT,desk_env));
          cl:=bin_name+' -ext2open '+outname;
          if FormPeach.Visible=true then Application.ProcessMessages;
-         if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+         if validatecl(cl)<>0 then
+            begin
+            if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+            exit;
+            end;
          P:=tprocessutf8.Create(nil);
          {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ENDIF}//not needed {$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
          peapexecute(P,cl);
@@ -43450,7 +43614,7 @@ for i:=0 to length(clipcontent)-1 do
       if cl='' then break;
       if validatecl(cl)<>0 then
          begin
-         pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
          exit_busy_status;
          filecopying:=false;
          exit;
@@ -44715,7 +44879,7 @@ if sout<>'' then
       cl:='cp -p -r '+stringdelim(sin)+' '+stringdelim(sout);
       if validatecl(cl)<>0 then
          begin
-         pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
          exit;
          end;
       P:=tprocessutf8.Create(nil);
@@ -45034,22 +45198,22 @@ procedure open_custedit_empty(i:integer);
 begin
 {$IFDEF MSWINDOWS}
 case i of
-   1: if validatecl(custedit1)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit1); exit; end;
-   2: if validatecl(custedit2)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit2); exit; end;
-   3: if validatecl(custedit3)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit3); exit; end;
-   4: if validatecl(custedit4)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit4); exit; end;
-   5: if validatecl(custedit5)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit5); exit; end;
-   6: if validatecl(custedit6)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit6); exit; end;
-   7: if validatecl(custedit7)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit7); exit; end;
-   8: if validatecl(custedit8)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit8); exit; end;
-   9: if validatecl(custedit9)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit9); exit; end;
-   10: if validatecl(custedit10)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit10); exit; end;
-   11: if validatecl(custedit11)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit11); exit; end;
-   12: if validatecl(custedit12)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit12); exit; end;
-   13: if validatecl(custedit13)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit13); exit; end;
-   14: if validatecl(custedit14)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit14); exit; end;
-   15: if validatecl(custedit15)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit15); exit; end;
-   16: if validatecl(custedit16)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit16); exit; end;
+   1: if validatecl(custedit1)<>0 then begin if custedit1<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit1); exit; end;
+   2: if validatecl(custedit2)<>0 then begin if custedit2<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit2); exit; end;
+   3: if validatecl(custedit3)<>0 then begin if custedit3<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit3); exit; end;
+   4: if validatecl(custedit4)<>0 then begin if custedit4<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit4); exit; end;
+   5: if validatecl(custedit5)<>0 then begin if custedit5<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit5); exit; end;
+   6: if validatecl(custedit6)<>0 then begin if custedit6<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit6); exit; end;
+   7: if validatecl(custedit7)<>0 then begin if custedit7<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit7); exit; end;
+   8: if validatecl(custedit8)<>0 then begin if custedit8<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit8); exit; end;
+   9: if validatecl(custedit9)<>0 then begin if custedit9<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit9); exit; end;
+   10: if validatecl(custedit10)<>0 then begin if custedit10<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit10); exit; end;
+   11: if validatecl(custedit11)<>0 then begin if custedit11<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit11); exit; end;
+   12: if validatecl(custedit12)<>0 then begin if custedit12<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit12); exit; end;
+   13: if validatecl(custedit13)<>0 then begin if custedit13<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit13); exit; end;
+   14: if validatecl(custedit14)<>0 then begin if custedit14<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit14); exit; end;
+   15: if validatecl(custedit15)<>0 then begin if custedit15<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit15); exit; end;
+   16: if validatecl(custedit16)<>0 then begin if custedit16<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit16); exit; end;
    end;
 case i of
    1: ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar('"'+utf8decode(custedit1)+'"'), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
@@ -45110,7 +45274,11 @@ case i of
    16: cl:=stringdelim(custedit16);
    end;
 {$ENDIF}
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -45136,22 +45304,22 @@ if s='' then
 if checkfiledirname(s)<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+s); exit; end;
 {$IFDEF MSWINDOWS}
 case i of
-   1: if validatecl(custedit1)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit1); exit; end;
-   2: if validatecl(custedit2)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit2); exit; end;
-   3: if validatecl(custedit3)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit3); exit; end;
-   4: if validatecl(custedit4)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit4); exit; end;
-   5: if validatecl(custedit5)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit5); exit; end;
-   6: if validatecl(custedit6)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit6); exit; end;
-   7: if validatecl(custedit7)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit7); exit; end;
-   8: if validatecl(custedit8)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit8); exit; end;
-   9: if validatecl(custedit9)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit9); exit; end;
-   10: if validatecl(custedit10)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit10); exit; end;
-   11: if validatecl(custedit11)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit11); exit; end;
-   12: if validatecl(custedit12)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit12); exit; end;
-   13: if validatecl(custedit13)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit13); exit; end;
-   14: if validatecl(custedit14)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit14); exit; end;
-   15: if validatecl(custedit15)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit15); exit; end;
-   16: if validatecl(custedit16)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+custedit16); exit; end;
+   1: if validatecl(custedit1)<>0 then begin if custedit1<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit1); exit; end;
+   2: if validatecl(custedit2)<>0 then begin if custedit2<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit2); exit; end;
+   3: if validatecl(custedit3)<>0 then begin if custedit3<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit3); exit; end;
+   4: if validatecl(custedit4)<>0 then begin if custedit4<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit4); exit; end;
+   5: if validatecl(custedit5)<>0 then begin if custedit5<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit5); exit; end;
+   6: if validatecl(custedit6)<>0 then begin if custedit6<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit6); exit; end;
+   7: if validatecl(custedit7)<>0 then begin if custedit7<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit7); exit; end;
+   8: if validatecl(custedit8)<>0 then begin if custedit8<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit8); exit; end;
+   9: if validatecl(custedit9)<>0 then begin if custedit9<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit9); exit; end;
+   10: if validatecl(custedit10)<>0 then begin if custedit10<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit10); exit; end;
+   11: if validatecl(custedit11)<>0 then begin if custedit11<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit11); exit; end;
+   12: if validatecl(custedit12)<>0 then begin if custedit12<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit12); exit; end;
+   13: if validatecl(custedit13)<>0 then begin if custedit13<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit13); exit; end;
+   14: if validatecl(custedit14)<>0 then begin if custedit14<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit14); exit; end;
+   15: if validatecl(custedit15)<>0 then begin if custedit15<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit15); exit; end;
+   16: if validatecl(custedit16)<>0 then begin if custedit16<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+custedit16); exit; end;
    end;
 w:=utf8decode(s);
 w1:=utf8decode(extractfilename(s));
@@ -45359,7 +45527,11 @@ case i of
          cl:=stringdelim(custedit16)+' '+stringdelim(escapefilename(s,desk_env));
    end;
 {$ENDIF}
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -45399,7 +45571,11 @@ else
    7: cl:=advedit7before+stringdelim(escapefilename(s,desk_env))+advedit7after;
    8: cl:=advedit8before+stringdelim(escapefilename(s,desk_env))+advedit8after;
    end;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;
@@ -45751,6 +45927,7 @@ with FormPeach do
 begin
 listrow:=StringgridList.Row;
 if ListRow=0 then exit;
+if StringGridList.Cells[12,StringGridList.Row]='' then exit;
 {$IFDEF MSWINDOWS}
 if FormPeach.EditOpenIn.Text=txt_mypc then
    begin
@@ -45985,7 +46162,11 @@ else
             if mri=6 then
                begin
                w:=utf8decode(s);
-               if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+               if validatecl(s)<>0 then
+                  begin
+                  if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+                  exit;
+                  end;
                ShellExecuteW(FormPeach.Handle, PWideChar ('open'), PWideChar(w), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
                exit;
                end
@@ -49411,7 +49592,7 @@ var
    s,out_param,in_param,exclude_param,include_param,archive_function,solid_option,sfx_option,pw_option,pw,
    bin_name,compression_level,encalgo,recovery_option,work_path,wpt:ansistring;
 begin
-compose_arc_cl:=-1;
+result:=-1;
 fun:='ARC';
 subfun:='archive';
 btfun:='arc';
@@ -49536,7 +49717,7 @@ if (work_path<>'') and (work_path<>'-w') then
 if work_path<>'' then cl:=cl+' '+work_path;
 cl:=cl+' '+out_param+' '+in_param+' '+exclude_param;//+' '+include_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_arc_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 procedure set_outpath_preview(var out_param:ansistring);
@@ -49782,8 +49963,7 @@ if FormPeach.CheckBoxFolder.State=cbChecked then
          if (extractfileext(s1)='.001') or (extractfileext(s1)='.001'+delimiter) then cutextension(s1);
          if extractfileext(s1)<>'' then cutextension(s1) else cutendforbid(s1);
          if upcase(extractfileext(s1))='.TAR' then cutextension(s1) else cutendforbid(s1);
-         cutendspaces(s1);
-         cutenddot(s1);
+         cutendforbid(s1);
          if (extractfileext(s1)='.part1') or (extractfileext(s1)='.part1'+delimiter) then cutextension(s1);
          s0:=out_param;
          if s0[length(s0)]<>directoryseparator then s0:=s0+directoryseparator;
@@ -49856,7 +50036,7 @@ var
    i:integer;
    contains_folder,checksel:boolean;
 begin
-compose_unarc_cl:=-1;
+result:=-1;
 subfun:='extract';
 btfun:='unarc';
 set_output_option(out_param);
@@ -50087,7 +50267,7 @@ if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extr
    cl:=cl+' -- '+stringdelim(escapefilename(filter1,desk_env));
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_unarc_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_custom_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -50097,7 +50277,7 @@ var
    vol_size:qword;
    name_ok:boolean;
 begin
-compose_custom_cl:=-1;
+result:=-1;
 fun:='CUSTOM';
 subfun:='archive';
 btfun:='custom';
@@ -50280,7 +50460,7 @@ else
    5: cl:=bin_name+' '+out_param+' '+in_param+' '+param_param;
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_custom_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_rarspecfun_cl(var cl,jobcode,outname:ansistring; specfun:ansistring):integer;
@@ -50356,7 +50536,7 @@ if archive_function='d' then
          cl:=cl+' '+stringdelim(escapefilename(filter1,desk_env));
          end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_arcspecfun_cl(var cl,jobcode,outname:ansistring; specfun:ansistring):integer;
@@ -50364,7 +50544,7 @@ var
    out_param,in_param,bin_name,pw_option,pw,archive_function:ansistring;
    i:integer;
 begin
-compose_arcspecfun_cl:=-1;
+result:=-1;
 //output name
 out_param:=FormPeach.EditOpenIn.Text;
 if pmode=0 then outname:=checkescapedoutname(escapefilename(out_param,desk_env)) else outname:=out_param;
@@ -50406,14 +50586,14 @@ if pw<>'' then cl:=cl+' '+pw;
 out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
 cl:=cl+' -- '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_arcspecfun_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_uncustom_cl(var cl,jobcode,outname:ansistring; real_extract:boolean):integer;
 var
    out_param,in_param,param_param,bin_name:ansistring;
 begin
-compose_uncustom_cl:=-1;
+result:=-1;
 //check for custom executable's name
 if (FormPeach.EditNameCustomExt.Text='') or (FormPeach.EditNameCustomExt.Text=' ') then
    begin
@@ -50459,7 +50639,7 @@ if FormPeach.EditNameCustomExt.Text='Extrac32' then
       cl:=bin_name+' '+param_param+' /E '+in_param+' /L '+out_param;
 
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_uncustom_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function test_canbechanged(s:ansistring):integer; //1 it's an explicitly supported file type 0 no, it should be protected from editing
@@ -50614,7 +50794,7 @@ var
    name_ok:boolean;
    cla: array of ansistring;
 begin
-compose_archive_cl:=-1;
+result:=-1;
 fun:='7Z';
 subfun:='archive';
 btfun:='7z';
@@ -51073,7 +51253,7 @@ cl:=cl+' '+out_param+' '+in_param;
 if exclude_param<>'' then cl:=cl+' '+exclude_param;
 if include_param<>'' then cl:=cl+' '+include_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_archive_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unrar5_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
@@ -51304,7 +51484,7 @@ if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extr
    end;
 if out_param<>'' then cl:=cl+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function isabspath(s:ansistring):boolean; //detect absolute paths to prevent running operations currently not correctly supported by some backend functions
@@ -51324,7 +51504,7 @@ var
    i:integer;
    contains_folder,checksel:boolean;
 begin
-compose_un7z_cl:=-1;
+result:=-1;
 //in_param
 if FormPeach.LabelStatusExtract.Caption= txt_2_7_ext then
    in_param:=FormPeach.StringGridExtract.Cells[8,FormPeach.StringGridExtract.Row]
@@ -51679,7 +51859,7 @@ if ((mode='extandrun') or (mode='preview')) and (selection='single') then //extr
    cl:=cl+' '+stringdelim('-i!'+escapefilename(filter1,desk_env));
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_un7z_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_pea_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -51689,7 +51869,7 @@ var
    vol_size:qword;
    name_ok:boolean;
 begin
-compose_pea_cl:=-1;
+result:=-1;
 subfun:='archive';
 btfun:='pea';
 fun:='PEA';
@@ -51740,6 +51920,7 @@ if check_input<>0 then exit;
       until name_ok = true;
       out_param:=s+NAMEVARSTR+inttostr(i);
       end;
+   cutendforbid(out_param);
    outname:=out_param+p_ext;
    case FormPeach.ComboBoxPEALevel.ItemIndex of
       0: compr:='PCOMPRESS3';
@@ -51888,7 +52069,7 @@ if intpw=1 then
    bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
    cl:=bin_name+' '+fun+' '+out_param+' '+inttostr(vol_size)+' '+compr+' '+vol_algo+' '+obj_algo+' '+strm_algo+' '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
-compose_pea_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_rfs_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -51898,7 +52079,7 @@ var
    vol_size:qword;
    name_ok:boolean;
 begin
-compose_rfs_cl:=-1;
+result:=-1;
 subfun:='archive';
 btfun:='rfs';
 fun:='RFS';
@@ -51987,14 +52168,14 @@ fun:='RFS';
    bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
    cl:=bin_name+' '+fun+' '+out_param+' '+inttostr(vol_size)+' '+vol_algo+' BATCH '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
-compose_rfs_cl:=0;
+if cl<>'' then result:=0;
 end;
 
-function compose_unpea_cl(var cl,jobcode,outname:ansistring):integer;
+function compose_unpea_cl(var cl,jobcode,outname:ansistring; mode:ansistring):integer;
 var
-   attr_param,out_param,in_param,bin_name,s,pw:ansistring;
+   attr_param,out_param,in_param,bin_name,s,pw,smode:ansistring;
 begin
-compose_unpea_cl:=-1;
+result:=-1;
 subfun:='extract';
 btfun:='unpea';
 set_output_option(out_param);
@@ -52018,10 +52199,15 @@ else
 bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
 if fun='UNPEA' then
    begin
+   if mode='test' then
+      begin
+      if autoclosegwrap=4 then smode:='EXTRACT2TESTB' else smode:='EXTRACT2TEST';
+      end
+   else smode:='EXTRACT2DIR';
    pw:=FormPW.EditPWpass.Text;
    if (FormPW.EditPWpass.Text<>'') or (FormPW.EditPWkeyfile.Text<>'') then
       begin
-      cl:=bin_name+' '+fun+' '+in_param+' '+out_param+' RESETDATE '+attr_param+' EXTRACT2DIR BATCH';
+      cl:=bin_name+' '+fun+' '+in_param+' '+out_param+' RESETDATE '+attr_param+' '+smode+' BATCH';
       if FormPW.EditPWpass.Text<>'' then
          cl:=cl+' '+stringdelim(FormPW.EditPWpass.Text)
       else
@@ -52036,7 +52222,7 @@ if fun='UNPEA' then
             end
       else cl:=cl+' NOKEYFILE';
       end
-   else cl:=bin_name+' '+fun+' '+in_param+' '+out_param+' RESETDATE '+attr_param+' EXTRACT2DIR INTERACTIVE';
+   else cl:=bin_name+' '+fun+' '+in_param+' '+out_param+' RESETDATE '+attr_param+' '+smode+' INTERACTIVE';
    if pw<>'' then
       if pw4cl('',pw)<>0 then
          begin
@@ -52051,14 +52237,14 @@ if (fun<>'UNPEA') and (fun<>'RFJ') then
    exit;
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms',now)+fun;
-compose_unpea_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unlpaq_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode:ansistring):integer;
 var
    s1,out_param,in_param,bin_name,lpaq_ver:ansistring;
 begin
-compose_unlpaq_cl:=-1;
+result:=-1;
 subfun:='extract';
 btfun:='unlpaq';
 set_output_option(out_param);
@@ -52111,14 +52297,14 @@ bin_name:=stringdelim(escapefilename(binpath,desk_env)+'lpaq'+DirectorySeparator
 if sys7zlin>1 then bin_name:=lpaq_ver+EXEEXT;
 cl:=bin_name+' d '+in_param+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_unlpaq_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unpaq_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode:ansistring):integer;
 var
    out_param,in_param,bin_name,paq_ver:ansistring;
 begin
-compose_unpaq_cl:=-1;
+result:=-1;
 fun:='PAQ';
 subfun:='extract';
 btfun:='unpaq';
@@ -52156,14 +52342,14 @@ bin_name:=stringdelim(escapefilename(binpath,desk_env)+'paq'+DirectorySeparator+
 if sys7zlin>1 then bin_name:=paq_ver+EXEEXT;
 cl:=bin_name+' -d '+in_param+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_unpaq_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_zpaq_cl(var cl,jobcode,outname,sel:ansistring):integer;
 var
    s,out_param,in_param,bin_name,compression_level,zthreads,paq_ver,pw:ansistring;
 begin
-compose_zpaq_cl:=-1;
+result:=-1;
 fun:='PAQ';
 btfun:='zpaq';
 case FormPeach.RadioGroupPaq.ItemIndex of
@@ -52213,6 +52399,7 @@ case FormPeach.RadioGroupPaq.ItemIndex of
       apply_timestamptoname(s,1,0,'file');
       get_new_archive_name(s);//check if name, with extension, exists
       cutextension(s); //cut extension since paq executable doesn't want extension
+      cutendforbid(s);
       out_param:=s;
       //Compression level; PAQ versions supported uses -0..8 as PAQ8F
       //compression_level:='-'+inttostr(FormPeach.ComboBoxPAQLevel.ItemIndex);
@@ -52243,6 +52430,7 @@ case FormPeach.RadioGroupPaq.ItemIndex of
       apply_timestamptoname(s,1,0,'file');
       if updatingarchive_inarchive=false then get_new_archive_name(s);//check if name, with extension, exists
       cutextension(s); //cut extension since paq executable doesn't want extension
+      cutendforbid(s);
       out_param:=s;
       //Compression level
       case FormPeach.ComboBoxPAQLevel.ItemIndex of
@@ -52286,7 +52474,7 @@ case FormPeach.RadioGroupPaq.ItemIndex of
       end;
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_zpaq_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unzpaq_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
@@ -52295,7 +52483,7 @@ var
    fstate,checksel:boolean;
    i:integer;
 begin
-compose_unzpaq_cl:=-1;
+result:=-1;
 dummystr:=FormPeach.Caption;
 subfun:='extract';
 btfun:='unzpaq';
@@ -52416,7 +52604,7 @@ case mode of
 {$ENDIF}
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
 FormPeach.Caption:=dummystr;
-compose_unzpaq_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_upx_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -52427,7 +52615,7 @@ var
    read_data:array[0..65535]of byte;
    in_param,bin_name,compression_level,s,sl,clstrip:ansistring;
 begin
-compose_upx_cl:=-1;
+result:=-1;
 fun:='UPX';
 subfun:='archive';
 btfun:='upx';
@@ -52506,7 +52694,11 @@ if FormPeach.CheckBoxUPXStrip.State=cbChecked then
    clstrip:=('strip '+in_param);
    {$ENDIF}
    if FormPeach.Visible=true then Application.ProcessMessages;
-   if validatecl(clstrip)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+clstrip); exit; end;
+   if validatecl(clstrip)<>0 then
+      begin
+      if clstrip<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+clstrip);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    P.Options := [poWaitOnExit{$IFDEF MSWINDOWS}, poNoConsole{$ENDIF}];
    {$IFDEF MSWINDOWS}
@@ -52520,7 +52712,7 @@ if FormPeach.ComboBoxUPX.ItemIndex=0 then //exit with -1 exitcode, not launching
    cl:='';
    exit;
    end;
-compose_upx_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_brotli_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -52562,7 +52754,7 @@ cl:=cl+' '+compression_level;
 if FormPeach.CheckBoxBrotli.Checked=true then cl:=cl+' --large_window=27';
 cl:=cl+' '+in_param+' -o '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unbrotli_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
@@ -52619,7 +52811,7 @@ if mode<>'test' then
    end
 else cl:=bin_name+' -t '+in_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_zstd_cl(var cl,jobcode,outname,sel:ansistring):integer;
@@ -52661,7 +52853,7 @@ cl:=cl+' -T0 -q '+compression_level;
 if FormPeach.CheckBoxZstd.Checked=true then cl:=cl+' --long=31';
 cl:=cl+' '+in_param+' -o '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unzstd_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
@@ -52721,14 +52913,14 @@ else cl:=bin_name+' -t '+in_param;
 cl:=cl+' --long=31';
 if zstderr=1 then cl:=cl+' --no-check';
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-result:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_quad_cl(var cl,jobcode,outname,sel:ansistring):integer;
 var
    s,out_param,in_param,bin_name,compression_level,exetype:ansistring;
 begin
-compose_quad_cl:=-1;
+result:=-1;
 fun:='QUAD';
 subfun:='archive';
 updatecontent(FormPeach.StringGridAdd,tvolumes,tdirs,tfiles,tsize,false);
@@ -52776,14 +52968,14 @@ case FormPeach.RadioGroupQuad.ItemIndex of
    end;
 cl:=cl+' '+in_param+' '+out_param;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_quad_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unquad_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode:ansistring):integer;
 var
    s1,s_in,out_param,in_param,bin_name:ansistring;
 begin
-compose_unquad_cl:=-1;
+result:=-1;
 subfun:='extract';
 set_output_option(out_param);
 if mode='preview' then
@@ -52849,14 +53041,14 @@ if extractfileext(s_in)='.balz' then
    btfun:='unbalz';
    end;
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_unquad_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 function compose_unace_cl(var cl,jobcode,outname:ansistring; real_extract:boolean; mode,selection:ansistring):integer;
 var
    out_param,in_param,bin_name,archive_function:ansistring;
 begin
-compose_unace_cl:=-1;
+result:=-1;
 //libre_directive level 1 and 2: disallow calls for non-free software (unace calls are discarded)
 if libre_directive>0 then begin reportnotsupported_info('ACE'); exit; end;
 subfun:='extract';
@@ -52933,7 +53125,7 @@ cl:=cl+' '+in_param;
 if out_param<>'' then if checkdirexists(out_param) then else CreateDir(out_param);
 if out_param<>'' then setcurrentdir(out_param);
 jobcode:=formatdatetime('yyyymmdd_hh.nn.ss.ms_',now)+fun;
-compose_unace_cl:=0;
+if cl<>'' then result:=0;
 end;
 
 procedure check_files(var in_param,cl,oper:ansistring);
@@ -53262,7 +53454,11 @@ if nonverboselog=1 then cl:=cl+' -bb0 -bse0 -bsp2' else cl:=cl+' -bb1 -bse1 -bsp
 cl:=cl+' '+out_param+' '+in_param;
 FormPeach.StringGridAdd.Cursor:=crHourGlass;
 if FormPeach.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 tberr:=0;
 
 if realtar=true then
@@ -53487,7 +53683,11 @@ if upcase(extractfileext(in_param))='.TAR' then
    if (scriptuntarpipe=1) and (FormPeach.cbuntarpipe.enabled=true) and
       (FormPeach.LabelStatusExtract.Caption=txt_2_7_ext) and (fun2='UN7Z') then in_param:='-si -ttar';
    cl:=cl+' '+in_param;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    if realuntar=true then
       begin
       {$IFDEF MSWINDOWS}
@@ -53758,7 +53958,11 @@ exit;
 end;
 //submit ScheduleAdd
 cl:=s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 peapexecute(P,cl);
@@ -54175,7 +54379,7 @@ case fun of
 'UNZSTD': if compose_unzstd_cl(cl,jobcode,outname,realext,s,mode)<>0 then exit;
 'UNACE': if compose_unace_cl(cl,jobcode,outname,realext,s,mode)<>0 then exit;
 'UNARC': if compose_unarc_cl(cl,jobcode,outname,realext,s,mode)<>0 then begin zaout:=zaout1; exit; end;
-'UNPEA','RFJ': if compose_unpea_cl(cl,jobcode,outname)<>0 then exit;
+'UNPEA','RFJ': if compose_unpea_cl(cl,jobcode,outname,'')<>0 then exit;
 'UN7Z': if compose_un7z_cl(cl,jobcode,outname,realext,s,mode)<>0 then begin zaout:=zaout1; exit; end;
 end;
 extract_finalize_bytype:=0;
@@ -54391,7 +54595,11 @@ if fun='FILEBROWSER' then
    ShellExecuteW(0, nil , PWideChar ('cmd'), PWideChar ('/c mkdir "'+w+'"'), PWideChar (''), SW_HIDE);
    {$ELSE}//system needs to support mkdir command
    cl:='mkdir '+stringdelim(escapefilename(FormPeach.EditOpenIn.Text+s,desk_env));
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    P.Options := [poWaitOnExit];
    peapexecute(P,cl);
@@ -54425,7 +54633,7 @@ cl:='cp -p -r -f '+stringdelim(FormPeach.LabelTheme1.hint+'.')+' '+stringdelim(c
 {$ENDIF}
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 P:=tprocessutf8.Create(nil);
@@ -54452,7 +54660,7 @@ if work_path<>'' then bin_name:=bin_name+' '+work_path;
 cl:=bin_name+' '+out_param+' '+in_param;
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 P:=tprocessutf8.Create(nil);
@@ -54475,10 +54683,9 @@ subsection COMMENTS archive level comments routines
 function readzipcomment(sfile:AnsiString; var commpos,commsize:int64; var commcontent:ansistring):integer;
 var
    fs:file of byte;
-   len:qword;
    sbuf:array [1..65558] of byte;//65536 max comment size + 22 footer size
    i,j,n,commarraysize:integer;
-   commarraystart:int64;
+   commarraystart,len:qword;
    footerfound:boolean;
 begin
 result:=-1; //incomplete function
@@ -54493,13 +54700,16 @@ assignfile(fs,sfile);//consistently with 7-Zip and WinrRar tis function does not
 filemode:=0;
 reset(fs);
 srcfilesize(sfile,len);
-commarraystart:=len-65558;
-if commarraystart<0 then
+if len<65558 then
    begin
    commarraystart:=0;
    commarraysize:=len;
    end
-else commarraysize:=65558;
+else
+   begin
+   commarraystart:=len-65558;
+   commarraysize:=65558;
+   end;
 seek(fs,commarraystart);
 blockread(fs,sbuf,commarraysize,n);
 for i:=1 to n-3 do  //4 byte footer tag
@@ -54560,10 +54770,18 @@ try CloseFile(fs); except end;
 exit;
 end;
 result:=-3; //testing comment size
-if testcommsize<>oldcommsize then exit; //comment size not matching, file may have been changed
+if testcommsize<>oldcommsize then
+   begin
+   try CloseFile(fs); except end;
+   exit; //comment size not matching, file may have been changed
+   end;
 result:=-4; //testing comment content
 if testcommsize<>0 then SetString(testcommcontent, PChar(@sbuf[1]), testcommsize);
-if testcommcontent<>oldcommcontent then exit; //comment content not matching, file may have been changed
+if testcommcontent<>oldcommcontent then
+   begin
+   try CloseFile(fs); except end;
+   exit; //comment content not matching, file may have been changed
+   end;
 result:=1; //valid comment found
 newcommsize:=length(newcommcontent);
 if newcommsize>65535 then
@@ -54930,7 +55148,11 @@ var
       P.Options:=[poNewConsole];
    {$ENDIF}
    clconsole:=cl;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    if validatecl_console(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
    keepopen:=false;
 
@@ -55023,7 +55245,7 @@ if intpw=1 then pforceconsole:=1;
 i:=validatecl(cl);
 if i<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    if pdrop=true then
       begin
       try
@@ -55382,7 +55604,11 @@ FormPeach.EditOpenIn.Text:=dummystr;
 subfun:=dummysub;;
 
 if cl='' then exit;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 i:=0;
 P:=tprocessutf8.Create(nil);
 M := TMemoryStream.Create;
@@ -56926,7 +57152,11 @@ begin
 getmulti('add',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemulti '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -56942,7 +57172,11 @@ begin
 getmulti('add',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemulticonvert '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -56958,7 +57192,11 @@ begin
 getmulti('addseparate',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultiseparate '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -56974,7 +57212,11 @@ begin
 getmulti('add7z',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemulti7z '+level+' '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -56990,7 +57232,11 @@ begin
 getmulti('addarchive',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultigeneric '+archtype+' '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57006,7 +57252,11 @@ begin
 getmulti('addzip',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultizip '+level+' '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57022,7 +57272,11 @@ begin
 getmulti('addsplit',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultisplit '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57038,7 +57292,11 @@ begin
 getmulti('addsfx',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -add2archivemultisfx '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57054,7 +57312,11 @@ begin
 getmulti('neutral',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -ext2archivemultitest '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57070,7 +57332,11 @@ begin
 getmulti('neutral',s);
 if s='' then exit;
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -ext2archivemulti '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57090,7 +57356,11 @@ if s='' then exit;
 //-ext2archivemultifolder extract to new folder
 //-ext2archive desktop, documents, downloads, bookmark1..8 set destination without changing new folder policy, as -ext2archiveneutral
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' '+dirdirective+' '+s;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options := [poNoConsole];
 runmulti(P,cl);
@@ -57117,7 +57387,11 @@ if test_in_params(j)<>0 then begin exit_nosave; exit; end;
          4: eraselevel:='VERY_SLOW';
       end;
       cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -57136,7 +57410,11 @@ if test_in_params(j)<>0 then begin exit_nosave; exit; end;
 for i:=2 to 3 do in_param:=in_param+stringdelim(escapefilename(ExpandFileName((paramstr(i))),desk_env))+' ';
 bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT);
 cl:=bin_name+' COMPARE '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -57202,7 +57480,11 @@ begin
          in_param:=stringdelim(escapefilename(in_param,desk_env));
          bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT);
          cl:=bin_name+' -ext2open '+in_param; //ext2open handles a single input in open interface
-         if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+         if validatecl(cl)<>0 then
+            begin
+            if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+            exit;
+            end;
          P:=tprocessutf8.Create(nil);
          {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
          peapexecute(P,cl);
@@ -57909,7 +58191,11 @@ for i:=2 to paramcount do
    in_param:=stringdelim(escapefilename(in_param,desk_env));
    bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT);
    cl:=bin_name+' -ext2open '+in_param; //ext2open handles a single input in open interface
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -57940,7 +58226,11 @@ for i:=2 to paramcount do
    in_param:=stringdelim(escapefilename(in_param,desk_env));
    bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT);
    cl:=bin_name+' -ext2openasarchive '+in_param; //ext2openasarchive handles a single input in open interface with forceopenasarchive set true
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
    peapexecute(P,cl);
@@ -57973,7 +58263,11 @@ else
       in_param:=stringdelim(escapefilename(in_param,desk_env));
       bin_name:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT);
       cl:=bin_name+' -ext2open '+in_param; //ext2open handles a single input in open interface
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -58730,6 +59024,7 @@ case fun of
    'UNBROTLI': if compose_unbrotli_cl(cl,jobcode,outname,false,funct,'all')=0 then launch_cl(cl,jobcode,outname);
    'UNZPAQ': if compose_unzpaq_cl(cl,jobcode,outname,false,funct,select)=0 then launch_cl(cl,jobcode,outname);
    'UNZSTD': if compose_unzstd_cl(cl,jobcode,outname,false,funct,'all')=0 then launch_cl(cl,jobcode,outname);
+   'UNPEA': if compose_unpea_cl(cl,jobcode,outname,'test')=0 then launch_cl(cl,jobcode,outname);
    end;
 FormPeach.Visible:=true;
 end;
@@ -58793,12 +59088,17 @@ for i:=0 to k-1 do
    'UNBROTLI': if funct='test' then if compose_unbrotli_cl(cl,jobcode,outname,false,funct,'all')=0 then scheduleclip[i,11]:=inttostr(launch_cl(cl,jobcode,outname));
    'UNZPAQ': if funct='test' then if compose_unzpaq_cl(cl,jobcode,outname,false,funct,'all')=0 then scheduleclip[i,11]:=inttostr(launch_cl(cl,jobcode,outname));
    'UNZSTD': if funct='test' then if compose_unzstd_cl(cl,jobcode,outname,false,funct,'all')=0 then scheduleclip[i,11]:=inttostr(launch_cl(cl,jobcode,outname));
+   'UNPEA': if funct='test' then if compose_unpea_cl(cl,jobcode,outname,funct)=0 then scheduleclip[i,11]:=inttostr(launch_cl(cl,jobcode,outname));
    else
       if (funct1='details') then
          begin
          cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' list info '+stringdelim(FormPeach.EditOpenIn.Text);
          if FormPeach.Visible=true then Application.ProcessMessages;
-         if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+         if validatecl(cl)<>0 then
+            begin
+            if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+            exit;
+            end;
          P:=tprocessutf8.Create(nil);
          peapexecute(P,cl);
          P.Free;
@@ -59454,7 +59754,7 @@ else
       end;
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 P:=tprocessutf8.Create(nil);
@@ -60254,7 +60554,11 @@ if checkfiledirname(FormPeach.EditOpenIn.Text)<>0 then begin pMessageWarningOK(t
 if fname='*' then fname:=FormPeach.EditOpenIn.Text;
 in_param:=stringdelim(escapefilename(fname,desk_env));
 cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' '+previewfun+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -60294,7 +60598,11 @@ for i:=1 to FormPeach.StringGridList.RowCount-1 do
       if checkfiledirname(FormPeach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+FormPeach.StringGridList.Cells[12,i]); exit; end;
       in_param:=stringdelim(escapefilename(FormPeach.StringGridList.Cells[12,i],desk_env));
       cl:=stringdelim(escapefilename(executable_path,desk_env)+'pea'+EXEEXT)+' '+previewfun+' '+in_param;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -60325,7 +60633,11 @@ if length(cl)>3 then
    begin
    if ord(cl[length(cl)])=$0a then setlength(cl,length(cl)-2); //remove text feeds, which are illegal characters for the command line
    if ord(cl[length(cl)])=$0d then setlength(cl,length(cl)-1);
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    P:=tprocessutf8.Create(nil);
    P.Options := [poWaitOnExit];
    peapexecute(P,cl);
@@ -61407,7 +61719,7 @@ else
 
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 execute_cl_simple(cl);
@@ -61509,7 +61821,7 @@ out_param:=FormPeach.EditOpenIn.Caption;
 cl:=bin_name+' -- '+stringdelim(escapefilename(out_param,desk_env))+' '+stringdelim(escapefilename(nameold,desk_env))+' '+stringdelim(escapefilename(namenew,desk_env));
 if validatecl(cl)<>0 then
    begin
-   pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
    exit;
    end;
 execute_cl_simple(cl);
@@ -64080,7 +64392,11 @@ r:=pInputQuery(txt_run_as, txt_user_name, '', u, false);
 if not(r) then begin P.Free; exit; end;
 if u='' then begin P.Free; exit; end;
 cl:='runas /env /user:'+u+' "'+executable_path+'peazip.exe"';
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$ELSE}//system needs to support sudo
 u:='root';
@@ -64088,7 +64404,11 @@ r:=pInputQuery(txt_run_as, txt_user_name, '', u, false);
 if not(r) then begin P.Free; exit; end;
 if u='' then begin P.Free; exit; end;
 cl:='sudo -u '+u+' '''+executable_path+'peazip''';
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 P.Options:=[poNewConsole];
 {$ENDIF}
@@ -76787,7 +77107,11 @@ if i>0 then
 {$IFDEF MSWINDOWS}
 wname:=utf8decode(sg.Cells[8,i]);
 s:=sg.Cells[8,i];
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 shellexecutew(FormPeach.handle,PWideChar('open'),PWideChar('RUNDLL32.EXE'),PWideChar('shell32.dll,OpenAs_RunDLL '+wname),PWideChar (''), SW_SHOWNORMAL);
 {$ENDIF}
 end;
@@ -76811,7 +77135,11 @@ if i>0 then
       save_bookmarks;
       cl:=stringdelim(escapefilename(executable_path,desk_env)+'peazip'+EXEEXT)+' -ext2open '+stringdelim(escapefilename(sg.Cells[8,i],desk_env));
       if FormPeach.Visible=true then Application.ProcessMessages;
-      if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+      if validatecl(cl)<>0 then
+         begin
+         if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+         exit;
+         end;
       P:=tprocessutf8.Create(nil);
       {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
       peapexecute(P,cl);
@@ -80036,8 +80364,8 @@ if (useextrac32=1) and (libre_directive=0) then
       customsyntax1:=0;
       end;
 case fun of
-   'RFJ' : fres:=compose_unpea_cl(cl,jobcode,outname);
-   'UNPEA' : fres:=compose_unpea_cl(cl,jobcode,outname);
+   'RFJ' : fres:=compose_unpea_cl(cl,jobcode,outname,'');
+   'UNPEA' : fres:=compose_unpea_cl(cl,jobcode,outname,'');
    'UNLPAQ' : fres:=compose_unlpaq_cl(cl,jobcode,outname,true,'ext');
    'UNPAQ' : fres:=compose_unpaq_cl(cl,jobcode,outname,true,'ext');
    'UNZPAQ' : fres:=compose_unzpaq_cl(cl,jobcode,outname,true,'ext','single');
@@ -80067,7 +80395,11 @@ if fres=0 then
    if (dragtargetprotect=1) or (dragtargetprotect=3) then if haddress<>0 then EnableWindow(haddress,false);
    if (dragtargetprotect=2) or (dragtargetprotect=3) then if haddress<>0 then ShowWindow(haddress,6);
 
-   if validatecl(clthread)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+clthread); exit; end;
+   if validatecl(clthread)<>0 then
+      begin
+      if clthread<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+clthread);
+      exit;
+      end;
    peapexecute(P,clthread);
 
    if pipepw<>'' then
@@ -80436,13 +80768,13 @@ if (lpPoint.x<FormPeach.left-8) or (lpPoint.y<FormPeach.top-8) or (lpPoint.x>For
    case fun of
       'RFJ' :
       if totrow<3 then
-         if compose_unpea_cl(cl,jobcode,outname)=0 then launch_cl(cl,jobcode,outname)
+         if compose_unpea_cl(cl,jobcode,outname,'')=0 then launch_cl(cl,jobcode,outname)
          else
       else
          pMessageWarningOK(txt_error_partial); //never happens since split file is a single object
       'UNPEA' :
       if totrow<3 then
-         if compose_unpea_cl(cl,jobcode,outname)=0 then launch_cl(cl,jobcode,outname)
+         if compose_unpea_cl(cl,jobcode,outname,'')=0 then launch_cl(cl,jobcode,outname)
          else
       else
          pMessageWarningOK(txt_error_partial); //never happens since PEA visualize content as a single object

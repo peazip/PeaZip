@@ -963,7 +963,11 @@ var
 begin
 cp_open:=-1;
 if s='' then exit;
-if validatecl(s)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+s); exit; end;
+if validatecl(s)<>0 then
+   begin
+   if s<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+s);
+   exit;
+   end;
 {$IFDEF MSWINDOWS}
 w:=utf8decode(s);
 cp_open:=ShellExecuteW(FormGwrap.Handle, PWideChar ('open'), PWideChar(w), PWideChar (''), PWideChar (''), SW_SHOWNORMAL);
@@ -1823,7 +1827,12 @@ else
    {$ENDIF}
 
 try
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); ended:=true; exit; end; //explicitly tested for exception as possible cause of error 127 cannot execute
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   ended:=true;
+   exit;
+   end; //explicitly tested for exception as possible cause of error 127 cannot execute
 tsin:=datetimetotimestamp(now);
 pcount:=1;
 stri:='';
@@ -2233,7 +2242,11 @@ begin
    cl:='halt';
    {$ENDIF}
    if FormGwrap.Visible=true then Application.ProcessMessages;
-   if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+   if validatecl(cl)<>0 then
+      begin
+      if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+      exit;
+      end;
    peapexecute(P,cl);
    P.Free;
    end;}
@@ -2718,7 +2731,11 @@ begin
 in_param:=stringdelim(escapefilename(cl,desk_env));
 bin_name:=stringdelim(escapefilename(peazippath,desk_env)+'peazip'+EXEEXT);
 cl:=bin_name+' -ext2open '+in_param; //ext2open handles a single input in open interface
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=TProcessUTF8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -2844,7 +2861,11 @@ if erasemode=0 then eraselevel:='QUICK';
 if erasemode=2 then eraselevel:='ZERO';
 if erasemode=3 then eraselevel:='RECYCLE';
 cl:=bin_name+' WIPE '+eraselevel+' '+in_param;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 {$IFDEF MSWINDOWS}P.Options := [poNoConsole, poWaitOnExit];{$ELSE}P.Options := [poWaitOnExit];{$ENDIF}
 peapexecute(P,cl);
@@ -3004,7 +3025,11 @@ begin
 {$IFNDEF MSWINDOWS}
 cl:=s;
 if FormGwrap.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 try
 peapexecute(P,cl);
@@ -3031,7 +3056,11 @@ cl:=cl+' ''bash -c "'+s+'; read line"''';
 cl:='open '+s;
 {$ENDIF}
 if FormGwrap.Visible=true then Application.ProcessMessages;
-if validatecl(cl)<>0 then begin pMessageWarningOK(txt_2_7_validatecl+' '+cl); exit; end;
+if validatecl(cl)<>0 then
+   begin
+   if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+   exit;
+   end;
 P:=tprocessutf8.Create(nil);
 peapexecute(P,cl);
 P.Free;

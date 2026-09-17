@@ -1,6 +1,6 @@
 unit UnitImgCrop; //Form to crop graphic image files selected in the main form file browser
 
-{$mode objfpc}
+{$mode objfpc}{$H+}
 
 interface
 
