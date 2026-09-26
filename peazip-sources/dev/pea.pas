@@ -245,20 +245,20 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
  1.31     20260506  G.Tani      (.pea format) Fixed path traversal evasion on extraction, enforcing canonicalization of names (archiving and extraction) and explicit rejection of relative paths stored in name field (extraction), vulnerability and poc reported by Harshit Gupta
                                 (Windows) Fixed sanitization of input for functions invoking PowerShell, vulnerability and poc reported by Harshit Gupta
  1.32     20260704  G.Tani      Hardened integrity tags checks with constant-time comparison routines, fixes
- 1.33     20260917  G.Tani      *** IN PROGRESS
-                                Added Test mode for PEA archives (EXTRACT2TEST interactive, stay open for log, EXTRACT2TESTB batch autoclose to pass result as exit code only)
+ 1.33     20260924  G.Tani      Added Test mode for PEA archives (EXTRACT2TEST interactive, stay open for log, EXTRACT2TESTB batch autoclose to pass result as exit code only)
                                  current EXTRACT2TESTB limitation: does not suppress messages for critical internal errors before final validation, requiring interaction in those specific cases
                                 Fixed "invalid password length" error triggered by some interactive modes
                                 Fixed MoTW check failing for some filenames
                                 Fixed some PEA files erroneously reported as containing relative paths
                                 Fixed validation of first compressed block size on extraction of PEA archives
                                 Hardening of UNPEA procedure
+                                 fixed input checking after reading
                                  if blockwrite fails with critical error, try to discard the current output file before terminating
                                  run the extraction to a random named temporary working directory first
-                                     in case of successful validation rename the working directory to the actual output name
-                                     in case of failed validation auto delete the working directory
-                                     in case the process is abruptly terminated before validation by unexpected conditions or interactions, the leftover data is still inside the random named working directory to not get confused with verified output
-                                 Updated some app colors
+                                  in case of successful validation rename the working directory to the actual output name
+                                  in case of failed validation auto delete the working directory
+                                  in case the process is abruptly terminated before validation by unexpected conditions or interactions, the leftover data is still inside the random named working directory to not get confused with verified output
+                                Updated some app colors
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -724,6 +724,7 @@ while ((chunks_ok=true) and (ind<byte_to_read)) do
          {$I-}reset(f_in);{$I+}
          if IOResult<>0 then internal_error('IO error opening '+in_folder+in_file);
          srcfilesize(in_folder+in_file,total);
+         if total<volume_tag_size then internal_error('Impossible to read requested data from '+in_file+'. The archive may be invalid or corrupted');
          total:=total-volume_tag_size;
          if total<byte_to_read then internal_error('Impossible to read requested data from '+in_file+'. The archive may be invalid or corrupted');
          //total:=system.filesize(f_in)-volume_tag_size;
@@ -737,7 +738,7 @@ while ((chunks_ok=true) and (ind<byte_to_read)) do
             //internal_error('IO error reading from '+in_folder+in_file);
             //end;
             dec(total,numread);
-            for k:=0 to numread-1 do buf[ind+k]:=tmp_buf[k];
+            if numread>0 then for k:=0 to numread-1 do buf[ind+k]:=tmp_buf[k];
             inc(ind,numread);
             end;
          {$I-}close(f_in);{$I+}
@@ -3642,7 +3643,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=2 then
             begin
@@ -3678,7 +3679,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=4 then
             begin
@@ -3704,7 +3705,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=fns then
             begin
@@ -3737,7 +3738,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=4 then
             begin
@@ -3761,7 +3762,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=4 then
             begin
@@ -3817,7 +3818,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=8 then
             begin
@@ -3869,7 +3870,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
             update_volume_control_algo(sbuf2,numread);
             dec(total,numread);
             inc(wrk_space,numread);
-            for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+            if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
             inc(addr,numread);
             if addr>=4 then
                begin
@@ -3903,7 +3904,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
                   end;
                dec(total,numread);
                inc(wrk_space,numread);
-               for k:=0 to numread-1 do wbuf1[addr+k]:=wbuf2[k];
+               if numread>0 then for k:=0 to numread-1 do wbuf1[addr+k]:=wbuf2[k];
                inc(addr,numread);
                if addr>=compsize+4 then readingcompblock:=false;
                end;
@@ -4007,7 +4008,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr>=obj_authsize then
             begin
@@ -4035,7 +4036,7 @@ while (chunks_ok=true) and (end_of_archive=false) do
          update_volume_control_algo(sbuf2,numread);
          dec(total,numread);
          inc(wrk_space,numread);
-         for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
+         if numread>0 then for k:=0 to numread-1 do sbuf1[addr+k]:=sbuf2[k];
          inc(addr,numread);
          if addr=authsize then
             begin

@@ -131,8 +131,9 @@ unit list_utils;
                                 New functions to read file header's magic bytes, and to split strings
  0.68     20251110  G.Tani      New function to conditionally pass ansistring to TProcess as command line or as executable name + list of parameters
  0.69     20260702  G.Tani      Code reviewed and modernized
- 0.70     20260917  G.Tani      Improved sanitization of special characters in validatecl: the use of more special characters is prevented to avoid generating potentially unsafe scripts
+ 0.70     20260920  G.Tani      Improved sanitization of special characters in validatecl and validatecl_console: the use of more special characters is prevented to avoid generating potentially unsafe scripts
                                 Improved sanitization of input string in stringdelim: the string is discarded if already containing the quotation character, to avoid propagating strings which can be not correctly handled in scripts
+                                Improved sanitization of input file names, checking and rejecting non valid file names and sanitizing relative file names
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -1822,9 +1823,8 @@ if pos('       ', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
 if pos('"', s) <> 0 then exit;
 if wintrailing(s)=true then exit;
-//{$ELSE}
-//if pos('\"', s) <> 0 then exit; //made redundant by other checks
-//if pos('\''', s) <> 0 then exit;
+{$ELSE}
+if pos(correctdelimiter(s), s) <> 0 then exit;
 {$ENDIF}
 sf := extractfilename(s);
 //reserved characters, filename only (others are checked for the full name)
@@ -1859,9 +1859,8 @@ if pos('       ', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
 if pos('"', s) <> 0 then exit;
 if wintrailing(s)=true then exit;
-//{$ELSE}
-//if pos('\"', s) <> 0 then exit; //made redundant by other checks
-//if pos('\''', s) <> 0 then exit;
+{$ELSE}
+if pos(correctdelimiter(s), s) <> 0 then exit;
 {$ENDIF}
 sf := extractfilename(s);
 //reserved characters, filename only (others are checked for the full name)
@@ -2303,6 +2302,8 @@ if wintrailing(s)=true then exit;
 //reserved filenames (Windows)
 s1 := extractfilename(s);
 if winreserved(s1) then exit;
+{$ELSE}
+if pos(correctdelimiter(s), s) <> 0 then exit;
 {$ENDIF}
 result := 0;
 end;
@@ -2412,7 +2413,7 @@ if s = '' then exit;
 if pos('#rejected_string#',s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
 for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
 s1:=s;
-removepwfield(s,s1);//remove password field from tesing; pw are not sent in command line unless launching a script e.g. from Console tab
+removepwfield(s,s1);//remove password field from testing; pw are not sent in command line unless launching a script e.g. from Console tab
 if pos('|',s1)<>0 then exit;//critical pipe
 if pos('&',s1)<>0 then exit;//critical ampersand command chaining
 if pos(';',s1)<>0 then exit;//critical semicolon command chaining
@@ -2425,9 +2426,9 @@ if pos('$',s1)<>0 then exit;//critical dollar variable expansion
 //if pos('''',s1)<>0 then exit;//quote single
 //if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows)
 //backslash is also used in escapefilenamelinuxlike when passing command as separate parameters (pmode=1) on non-Windows systems; escapefilename, which calls escapefilenamelinuxlike, before the escaping part discards file names containing \ (on all platforms) and file/dir names containing \' \" (on non-Windows)
-//line separators \r \n and Unicode U+2028, U+2029 are crrently not supported in TProcess.Commandline (not a real console, provides limited support for meta characters) and are checked separately in validatecl_console only when passing input to a real console instance
+//line separators \r \n and Unicode U+2028, U+2029 are currently not supported in TProcess.Commandline (not a real console, provides limited support for meta characters) and are checked separately in validatecl_console only when passing input to a real console instance
 {$IFNDEF MSWINDOWS} if pos('#',s1)<>0 then exit;{$ENDIF}//hash bash comment or special character, seems not exploitable on Windows
-if pos('~',s1)<>0 then exit;//tilde home directory expansion
+if pos('~',s1)<>0 then exit;//tilde home directory expansion on bash, and 8.3 filenames expansion in Windows which may not be unambiguous for the user
 if pos('       ',s1)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
 result := 0;
 end;
@@ -2442,7 +2443,8 @@ if s='' then exit;
 {$IFDEF MSWINDOWS}
 //seem not exploitable: % environment variables wrap, ^ escape character
 {$ELSE}
-if pos('"',s)<>0 then exit;
+if pos('"',s)<>0 then exit; //also escapes trailing \" when passing command to a real console; please note `,$,\ are treated as metacharacters between " weak quotes on non-Windows systems, and \ is not rejecyed by validatecl as it is not supported by TProcess.Commandline limited metacharacters interpreter
+//please note this check prevents using console mode if input filenames contains eithr ' or ", in both cases both quotes will be needed to be employed, and the quotation of the resulting command line would be potentially troublesome
 if pos('\r',s)<>0 then exit; //carriage return
 if pos('\n',s)<>0 then exit; //line feed
 //\t tab \v vertical space \f form feed could be added for increased safety
@@ -3382,7 +3384,7 @@ end;
 function peapexecute(var P:TProcessUTF8; var cl:ansistring): integer;
 begin
 result:=-1;
-case pmode of //some composite command strings on Windows cannot be correctly passwed with pmode=1, i.e. add rar comment
+case pmode of
    0: P.CommandLine:=cl;
    1: {$IFDEF MSWINDOWS}P.ParseCmdLine(cl);{$ELSE}P.ParseCmdLine(cl,True);{$ENDIF}//ReadBackslash set to true for non-Windows systems: when using parameters, non_Windows escaping uses \ character to escape the true string delimiter character
 end;

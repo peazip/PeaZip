@@ -207,7 +207,7 @@ unit peach; //Main form of PeaZip, organized in file browser, archiving, extract
  1.86     20260405  G.Tani     11.0.0
  1.87     20260508  G.Tani     11.1.0
  1.88     20260708  G.Tani     11.2.0
- 1.89     20260917  G.Tani     11.3.0 *** IN PROGRESS
+ 1.89     20260924  G.Tani     11.3.0
 
 BACKEND
 7z/p7zip 26.03
@@ -50523,7 +50523,22 @@ if (intpw=1) and (specfun<>'k') then //lock disabled, as a suitable fast unlock 
 if work_path<>'' then FormPeach.EditOPcustom.Caption:=FormPeach.EditOPcustom.Caption+' '+work_path;
 out_param:=stringdelim(checkescapedoutname(escapefilename(out_param,desk_env)));
 param_param:=FormPeach.EditOPCustom.Caption;
-cl:=bin_name+' '+param_param+' -- '+out_param;
+cl:=bin_name+' '+param_param;
+if archive_function='c' then
+   begin
+   try
+      rarcommentfilename:=peaziptmpdirroot+STR_PZWORKTMP+directoryseparator+'rarcomment.txt';
+      ForceDirectories(peaziptmpdirroot+STR_PZWORKTMP+directoryseparator);
+      assignfile(t,rarcommentfilename);
+      rewrite(t);
+      write(t,FormComment.MemoComment.Caption);
+      closefile(t);
+   except
+      try closefile(t); except end;
+   end;
+   cl:=cl+' -z'+stringdelim(escapefilename(rarcommentfilename,desk_env));
+   end;
+cl:=cl+' -- '+out_param;
 if archive_function='r' then cl:=cl+' '+stringdelim(escapefilename(extractfilepath(FormPeach.EditOpenIn.Text),desk_env));
 if archive_function='d' then
 {$IFDEF MSWINDOWS}if FormPeach.PanelOpen.Visible=true{$ELSE}if FormPeach.PanelOpen.top=0{$ENDIF} then
@@ -54891,22 +54906,10 @@ fun:='UPX';
 subfun:='rarcomment';
 case upcase(extractfileext(in_param)) of
    '.RAR':
-   if compose_rarspecfun_cl(cl,jobcode,outname,'c')=0 then
-      begin
-      try
-      rarcommentfilename:=peaziptmpdirroot+STR_PZWORKTMP+directoryseparator+'rarcomment.txt';
-      ForceDirectories(peaziptmpdirroot+STR_PZWORKTMP+directoryseparator);
-      assignfile(t,rarcommentfilename);
-      rewrite(t);
-      write(t,FormComment.MemoComment.Caption);
-      closefile(t);
-      except
-      try closefile(t); except end;
-      end;
-      cl:=cl+' < '+stringdelim(escapefilename(rarcommentfilename,desk_env));
-      launch_cl(cl,jobcode,outname); //fails if mgotypeRAR TOC is encrypted and password is requested, because input pipe is used by comment file
-      udeletefile(rarcommentfilename);
-      end;
+   begin
+   if compose_rarspecfun_cl(cl,jobcode,outname,'c')=0 then launch_cl(cl,jobcode,outname);
+   try udeletefile(rarcommentfilename); except end;
+   end;
 end;
 fun:=dummyfun;
 subfun:=dummysubfun;
@@ -55159,7 +55162,7 @@ var
    if (subfun='rarcomment') then
       begin
       {$IFDEF MSWINDOWS}
-      clconsole:='cmd /c "'+cl+'"';
+      if pmode=0 then clconsole:='cmd /c "'+cl+'"' else clconsole:='cmd /c '+cl;
       {$ELSE}
       clconsole:='bash -c "'+cl+'"';
       {$IFDEF DARWIN}
@@ -55171,7 +55174,7 @@ var
    if (subfun='list') or (subfun='test') or (subfun='bench') then
       begin
       {$IFDEF MSWINDOWS}
-      clconsole:='cmd /k "'+cl+'"';
+      if pmode=0 then clconsole:='cmd /k "'+cl+'"' else clconsole:='cmd /k '+cl;
       {$ELSE}
       clconsole:='bash -c "'+cl+'; read line"';
       {$IFDEF DARWIN}
@@ -55302,6 +55305,7 @@ else //launch either or pealauncher or ConsoleCreate application, depending on r
             end;
       P.Free;
       pforceconsole:=0;
+      clean_after_launch;
       exit;
       end;
    if (zaout>0) or (subfun='list') or (subfun='test') or (subfun='bench') then
@@ -59066,7 +59070,12 @@ setlength(scheduleclip,1);
 for i:=1 to FormPeach.StringGridList.RowCount-1 do
    if FormPeach.StringGridList.Cells[16,i]='1' then
       begin
-      if checkfiledirname(FormPeach.StringGridList.Cells[12,i])<>0 then begin pMessageWarningOK(txt_2_7_validatefn+' '+FormPeach.StringGridList.Cells[12,i]); exit; end;
+      if checkfiledirname(FormPeach.StringGridList.Cells[12,i])<>0 then
+         begin
+         pMessageWarningOK(txt_2_7_validatefn+' '+FormPeach.StringGridList.Cells[12,i]);
+         FormPeach.Visible:=true;
+         exit;
+         end;
       for j:=0 to FormPeach.StringGridList.ColCount-1 do
          scheduleclip[k,j]:=FormPeach.StringGridList.Cells[j,i];
       setlength(scheduleclip,length(scheduleclip)+1);
@@ -59097,6 +59106,7 @@ for i:=0 to k-1 do
          if validatecl(cl)<>0 then
             begin
             if cl<>'' then pMessageWarningOK(txt_2_7_validatecl+' '+cl);
+            FormPeach.Visible:=true;
             exit;
             end;
          P:=tprocessutf8.Create(nil);
