@@ -1,14 +1,14 @@
 ﻿=== PeaZip language file ===
-Portuguese (Brazil)
+Português do Brasil
 11.3
-Translated by: Giorgio Tani
+Translated by: Havokdan
 Last rev. by: Giorgio Tani
 Last rev.: 20260114
 
 === PeaZip text group ===
 
-txt_11_3_cr: Compression Ratio
-txt_11_3_showcr: Show compression as Compression Ratio
+txt_11_3_cr: Taxa de Compactação
+txt_11_3_showcr: Mostra compressão como Taxa de Compactação
 txt_11_2_comp: O nome e a extensão do arquivo original são sempre preservados ao usar formatos de compressão pura (Brotli, BZip2, GZip, XZ, Zstd...), a menos que a opção TAR antes seja usada, substituindo o Nome do arquivo de saída.
 txt_11_2_funexp: Digite ou selecione qualquer uma das funções do aplicativo suportado (executar nos arquivos selecionados, se aplicável)
 txt_11_1_pp: Ignorar a etapa de pré-análise pode fazer com que o aplicativo não detecte possíveis problemas no arquivo compactado com antecedência e não exiba corretamente alguns arquivos compactados. De qualquer forma, a extração não é afetada por esta configuração.
@@ -557,7 +557,7 @@ txt_4_3_pwmanhint: Clique duplo para editar itens na lista de senhas, clique com
 txt_4_3_exppl: Exportar lista de senhas
 txt_4_3_expple: Criptografado (backup do Gerenciador de Senhas)
 txt_4_3_keeppw: Manter senha/arquivo-chave para a sessão atual
-txt_4_3_pwmanpwhint: Recomenda-se definir uma senha/arquivo-chave (opcional) para criptografar a lista de senhas; dessa forma, será necessária autenticação para acessar o Gerenciador de Senhas. A senha/arquivo-chave pode ser alterada a qualquer momento neste formulário.
+txt_4_3_pwmanpwhint: É obrigatório definir uma senha/arquivo de chave para criptografar a lista de senhas, desta forma será necessária autenticação para acessar o Gerenciador de Senhas. A senha/arquivo-chave pode ser alterada a qualquer momento neste formulário.
 txt_4_3_pwmanmaster: Definir/alterar a senha mestre do Gerenciador de Senhas
 txt_4_3_pwmanlist: Lista de senhas
 txt_4_3_pwman: Gerenciador de Senhas
