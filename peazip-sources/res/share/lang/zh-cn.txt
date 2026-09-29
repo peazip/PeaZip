@@ -1,33 +1,33 @@
 ﻿=== PeaZip language file ===
 Chinese (Simplified)
 11.3
-Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天, 风之暇想, Booskz
-Last rev. by: Booskz
-Last rev.: 20251230
+Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天, 风之暇想, Booskz, gksj
+Last rev. by: gksj
+Last rev.: 20260930
 
 === PeaZip text group ===
 
-txt_11_3_cr: Compression Ratio
-txt_11_3_showcr: Show compression as Compression Ratio
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
-txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
-txt_11_0_adv: Advanced and format-specific options
-txt_11_0_bt: Batch test archives
-txt_11_0_good: Good
-txt_11_0_items: items
-txt_11_0_native: Native
-txt_11_0_pr: Rate password entropy
-txt_11_0_rendering: Rendering
-txt_11_0_sch: Schedule execution of the task defined in the GUI as CLI script
-txt_11_0_sharp: Sharp
-txt_11_0_soft: Soft
-txt_11_0_strong: Strong
-txt_11_0_vw: Very weak
-txt_11_0_w: Weak
-txt_10_9_deletearchive: Delete archive
-txt_10_9_kfl: Keyfile size limited to first 100MB
-txt_10_9_mb: Middle mouse button click
+txt_11_3_cr: 压缩率
+txt_11_3_showcr: 将压缩率显示为“压缩率”
+txt_11_2_comp: 使用纯压缩格式（Brotli、BZip2、GZip、XZ、Zstd 等）时，始终保留原始文件名和扩展名，除非使用“先 TAR（TAR before）”选项，该选项会覆盖“输出文件名”。
+txt_11_2_funexp: 输入或选择受支持应用的任意功能（如果适用，则对选定文件运行）
+txt_11_1_pp: 跳过预解析步骤后，应用可能无法提前检测到潜在的压缩包问题，并且某些压缩包可能无法正确显示。不过，此设置不会影响解压。
+txt_11_0_adv: 高级和格式特定选项
+txt_11_0_bt: 批量测试压缩包
+txt_11_0_good: 良好
+txt_11_0_items: 项
+txt_11_0_native: 原生
+txt_11_0_pr: 密码熵评级
+txt_11_0_rendering: 渲染
+txt_11_0_sch: 将 GUI 中定义的任务计划为 CLI 脚本执行
+txt_11_0_sharp: 锐利
+txt_11_0_soft: 柔和
+txt_11_0_strong: 强
+txt_11_0_vw: 极弱
+txt_11_0_w: 弱
+txt_10_9_deletearchive: 删除压缩包
+txt_10_9_kfl: 密钥文件大小限制为前 100 MB
+txt_10_9_mb: 单击鼠标中键
 txt_10_8_log: 命令日志
 txt_10_8_rv: 创建恢复分卷
 txt_10_8_bk: 在后台执行轻量任务
