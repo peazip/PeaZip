@@ -6637,6 +6637,7 @@ object Formpeach: TFormpeach
               ParentFont = False
               ReadOnly = True
               TabOrder = 18
+              Visible = False
             end
             object EditAddFilepath: TEdit
               AnchorSideLeft.Control = EditAddName
@@ -6650,6 +6651,7 @@ object Formpeach: TFormpeach
               ParentFont = False
               ReadOnly = True
               TabOrder = 17
+              Visible = False
             end
             object ImageSplit: TImage
               AnchorSideLeft.Side = asrBottom
