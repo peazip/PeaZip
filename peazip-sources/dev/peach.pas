@@ -72771,6 +72771,9 @@ procedure TFormPeach.FormCreate(Sender: TObject);
 begin
 {$IFDEF MSWINDOWS}
 getwinenvadv(wincomspec,winver,majmin);
+{$ELSE}
+//ignore SIGPIPE: writing to stdin of a backend that already exited (e.g. piped password for 7z listing RAR comment) must not terminate the app
+fpSignal(SIGPIPE, SignalHandler(SIG_IGN));
 {$ENDIF}
 setbasevars;
 get_usrtmp_path(peaziptmpdir);
