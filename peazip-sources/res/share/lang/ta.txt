@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Tamil - தமிழ்
-11.3
+11.4
 Translated by:  தமிழ்நேர குழு
 Last rev. by:  தமிழ்நேர குழு
 Last rev.:  20260909
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Compression Ratio
 txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: தூய சுருக்க வடிவங்களைப் பயன்படுத்தும் போது அசல் கோப்பு பெயர் மற்றும் நீட்டிப்பு எப்போதும் பாதுகாக்கப்படும் (Brotli, BZip2, GZip, XZ, Zstd...), நாடாகாப்பு முன் விருப்பம் பயன்படுத்தப்படாவிட்டால், வெளியீட்டு கோப்பு பெயரை மீறுகிறது.

@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Dutch - Nederlands
-11.3
+11.4
 Translated by: Koos van Riemsdijk - Stephan Paternotte
 Last rev. by: Stephan Paternotte
 Last rev.: 20251030
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Compression Ratio
 txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.

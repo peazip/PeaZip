@@ -1,14 +1,16 @@
 ﻿=== PeaZip language file ===
 Français
-11.3
+11.4
 Translated by: Jean-Michel Coinus
 Last rev. by: Jean-Michel Coinus
-Last rev.: 20260712
+Last rev.: 20260926
 
 === PeaZip text group ===
 
-txt_11_3_cr: Compression Ratio
-txt_11_3_showcr: Show compression as Compression Ratio
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
+txt_11_3_cr: Taux de compression
+txt_11_3_showcr: Afficher la compression en tant que taux
 txt_11_2_comp: Le nom et l'extension originals du fichier sont toujours préservés lors de l'utilisation de formats de compression purs (Brotli, BZip2, GZip, XZ, Zstd…), excepté si l'option “TAR avant” est utilisée, laquelle remplace le nom du fichier de sortie.
 txt_11_2_funexp: Saisissez ou sélectionnez l'une des fonctions prises en charge par l'application (à appliquer aux fichiers, le cas échéant)
 txt_11_1_pp: Si l'étape de pré-analyse est ignorée, l'application peut ne pas détecter d'éventuels problèmes relatifs aux archives et même ne pas les afficher correctement. Dans tous les cas, l'extraction n'est pas affectée par ce paramètre.
@@ -195,7 +197,7 @@ txt_8_2_ta: Dernier accès
 txt_8_2_tc: Date de création
 txt_8_2_keep: Conserver les fichiers
 txt_8_2_tm: Modifié
-txt_8_2_skipet: Ignorer le test de cryptage
+txt_8_2_skipet: Ignorer le test de chiffrage
 txt_8_2_alltimes: Enregistrer tous les horodatages
 txt_8_2_supportedby: Pris en charge par
 txt_8_1_preparse: Toujours pré-analyser les archives
@@ -217,7 +219,7 @@ txt_8_0_defaultaction: Action par défaut (ouvrir, extraire automatiquement…)
 txt_8_0_enableextand: Activer le sous-menu “Extraire et ouvrir avec”
 txt_8_0_forcetyping: Requérir la saisie d'un mot de passe
 txt_8_0_setpwopt: Options de mot de passe/fichier clé
-txt_8_0_forcetypinghelp: Empêche de parcourir les archives cryptées lorsqu'elles sont chargées en arrière-plan dans la console. Ceci permet de créer des scripts qui ne pourront s'exécuter tant que le mot de passe n'a pas été saisi.
+txt_8_0_forcetypinghelp: Empêche de parcourir les archives chiffrées lorsqu'elles sont chargées en arrière-plan dans la console. Ceci permet de créer des scripts qui ne pourront s'exécuter tant que le mot de passe n'a pas été saisi.
 txt_7_9_spacing: Espacement
 txt_7_9_zooming: Zoom
 txt_7_8_changelocalization: Changer la langue de PeaZip
@@ -280,7 +282,7 @@ txt_7_4_setarc: Options d'archivage avancées
 txt_7_4_setext: Options d'extraction avancées
 txt_7_4_swzipx: Passer en extension zipx pour les archives ZIP Deflate
 txt_7_3_archiveerrors: [l'archive peut contenir des erreurs]
-txt_7_3_archiveerrorshint: L'archive est peut être invalide (données manquantes, corrompues ou non-standard). Il est possible de la tester aux fins d'informations détaillées. Si la table du contenu est cryptée, le mot de passe sera requis.
+txt_7_3_archiveerrorshint: L'archive est peut être invalide (données manquantes, corrompues ou non-standard). Il est possible de la tester aux fins d'informations détaillées. Si la table du contenu est chiffrée, le mot de passe sera requis.
 txt_7_3_clickextall: Cliquez sur “Tout extraire” pour activer
 txt_7_3_noconfdel: Ne pas confirmer la suppression après archivage/extraction
 txt_7_3_profile7zfastest: Compression très rapide, 7z très rapide
@@ -337,7 +339,7 @@ txt_6_5_force: Tenter d'ouvrir les archives contenant des erreurs
 txt_6_5_warning: Avertissement
 txt_6_5_yes: Oui
 txt_6_5_yesall: Oui pour tout
-txt_6_5_np: Vous pouvez à présent changer le mot de passe des archives converties ou ne pas en définir afin d'ignorer l'encryptage
+txt_6_5_np: Vous pouvez à présent changer le mot de passe des archives converties ou ne pas en définir afin d'ignorer le chiffrage
 txt_6_4_absolute: Chemins absolus
 txt_6_4_appdirn: Nom du répertoire d'ajout
 txt_6_4_closeallother: Fermer tous les autres onglets
@@ -355,7 +357,7 @@ txt_6_3_autoadjust: Ajustement automatique des colonnes
 txt_6_3_cinfo: Info et commentaires
 txt_6_3_syn: Synchroniser avec le disque
 txt_6_3_uar: Mettre seulement à jour les fichiers déjà présents dans l'archive
-txt_6_2_encext: Ajouter le suffixe “.enc” aux archives cryptées
+txt_6_2_encext: Ajouter le suffixe “.enc” aux archives chiffrées
 txt_6_2_archive: Type de fichier d'archive
 txt_6_2_container: Type de fichier conteneur
 txt_6_1_ec: Développer/Réduire l'arborescence d'archive
@@ -460,7 +462,7 @@ txt_5_1_every: Tou·te·s les
 txt_5_1_w6: Vendredi
 txt_5_1_hourly: Horaire
 txt_5_1_hours: Heures
-txt_5_1_last: Dernière
+txt_5_1_last: Actuelle
 txt_5_1_schedmanage: Gérer les planifications de PeaZip dans le gestionnaire de tâches système
 txt_5_1_scriptmanage: Gérer les scripts planifiés existants
 txt_5_1_w2: Lundi
@@ -555,9 +557,9 @@ txt_4_4_confremoveall: Effacer tous les fichiers de personnalisation de PeaZip (
 txt_4_4_confremove: Effacer la configuration de PeaZip ?
 txt_4_3_pwmanhint: Double-cliquez pour modifier les éléments, clic droit pour les options, Ctrl+C pour copier les mots de passe
 txt_4_3_exppl: Exporter les mots de passe
-txt_4_3_expple: Cryptés (copie de sauvegarde du gestionnaire de mots de passe)
+txt_4_3_expple: Chiffrés (copie de sauvegarde du gestionnaire de mots de passe)
 txt_4_3_keeppw: Conserver le mot de passe/fichier clé pour la session en cours
-txt_4_3_pwmanpwhint: La création d'un mot de passe/fichier clé (optionnel) pour crypter la liste est recommandé. Une identification sera requise lors de l'accès au gestionnaire. Le mot de passe/clé fichier peut être modifié à tout moment à partir de cette page.
+txt_4_3_pwmanpwhint: La création d'un mot de passe/fichier clé (optionnel) pour chiffrer la liste est recommandé. Une identification sera requise lors de l'accès au gestionnaire. Le mot de passe/clé fichier peut être modifié à tout moment à partir de cette page.
 txt_4_3_pwmanmaster: Créer/Modifier le mot de passe principal
 txt_4_3_pwmanlist: Liste des mots de passe
 txt_4_3_pwman: Gestionnaire de mots de passe
@@ -615,7 +617,7 @@ txt_3_1_src: Recherches
 txt_3_1_systmp: Répertoire temporaire utilisateur
 txt_3_1_languagetools: Traduire
 txt_3_1_workingdir: Répertoire de travail
-txt_3_0_nonreadableorpw: Archive illisible. L'archive peut être invalide, des volumes sont manquants ou sa table du contenu est cryptée. Essayer un mot de passe ?
+txt_3_0_nonreadableorpw: Archive illisible. L'archive peut être invalide, des volumes sont manquants ou sa table du contenu est chiffrée. Essayer un mot de passe ?
 txt_3_0_readablepw: Archive illisible, peut-être protégée par mot de passe
 txt_3_0_configure: Intégration système et associations de fichiers
 txt_3_0_resettmp: Réinitialiser les fichiers temporaires actuels
@@ -640,7 +642,7 @@ txt_2_9_selected: Sélectionné
 txt_2_9_setapps: Organiser les applications
 txt_2_9_showmenu: Afficher la barre de menu
 txt_2_9_st: Petit
-txt_2_9_test_pw2G: Tester l'encryptage des archives < 2 Go
+txt_2_9_test_pw2G: Tester le chiffrage des archives < 2 Go
 txt_2_9_vst: Texte seulement
 txt_2_9_toolbar: Barre d'outils
 txt_2_9_tree: Arborescence
@@ -671,7 +673,7 @@ txt_2_7_list_tryflatorpw: , solutions possibles : essayez l'affichage développ
 txt_2_7_separate: Ajouter en archives séparées
 txt_2_7_pwsupported: archivage avec mot de passe
 txt_2_7_cancel: Annuler
-txt_2_7_encfn: Crypter aussi les noms de fichiers (si pris en charge par le format)
+txt_2_7_encfn: Chiffrer aussi les noms de fichiers (si pris en charge par le format)
 txt_2_7_setpw: Définir un mot de passe/fichier clé
 txt_2_7_ext: Extraction :
 txt_2_7_extfrom: Extraction de l'archive :
@@ -688,7 +690,7 @@ txt_2_7_validatecl: Opération interrompue, commande potentiellement dangereuse 
 txt_2_7_output: Destination
 txt_2_7_pwnotset: Mot de passe non défini 
 txt_2_7_pwarcset: Mot de passe défini
-txt_2_7_pwextset: Mot de passe défini, possibilité d'extraire, lister ou tester les archives cryptées
+txt_2_7_pwextset: Mot de passe défini, possibilité d'extraire, lister ou tester les archives chiffrées
 txt_2_7_archivehint: Déposez les fichiers et dossiers à archiver ici, ou clic droit pour plus d'options
 txt_2_7_exthint: Déposez les archives à extraire ici, ou clic droit pour plus d'options
 txt_2_7_setadvf: Définir les filtres avancés
@@ -723,7 +725,7 @@ txt_2_5_selectapp: Sélectionner une application
 txt_2_5_strafter: Chaîne après le nom
 txt_2_5_strbefore: Chaîne avant le nom
 txt_2_5_encoding: Encodage du texte
-txt_2_5_nopw: ce type d'archive ne prend pas en charge le cryptage
+txt_2_5_nopw: ce type d'archive ne prend pas en charge le chiffrage
 txt_2_4_draghint: [glisser vers l'explorateur avec la barre d'adresse activée]
 txt_2_4_tb: Ajuster les boutons de la barre d'outils (redémarrage de PeaZip)
 txt_2_4_adding: Ajout
@@ -753,8 +755,8 @@ txt_2_3_envstr: Afficher les variables d'environnement
 txt_2_3_never_pw: Ne pas demander de mot de passe
 txt_2_3_home: Utilisateur
 txt_2_3_on_pw: Lors d'opérations extraction, liste ou test à partir des menus système :
-txt_2_3_test_pw100: Test de cryptage pour les archives < 100 Mo
-txt_2_3_test_pw: Test de cryptage (peut être lent)
+txt_2_3_test_pw100: Test de chiffrage pour les archives < 100 Mo
+txt_2_3_test_pw: Test de chiffrage (peut être lent)
 txt_exclude_recourse: “exclure” les sous-dossiers récursifs
 txt_action_extopen: Action “Extraire et ouvrir avec l'application associée”
 txt_error_passwordnotmatch: Les champs “Mot de passe” et “Confirmer” ne concordent pas, veuillez les corriger
@@ -814,7 +816,7 @@ txt_always_pw: Toujours demander un mot de passe
 txt_ignore_ext: Toujours ignorer les chemins pour “Extraire et…”
 txt_ignore_disp: Toujours ignorer les chemins pour “Extraire la vue…”
 txt_ignore_sel: Toujours ignorer les chemins pour “Extraire la sélection…”
-txt_key_hint: Annexer l'empreinte du fichier clé au mot de passe ; l'archive peut être décryptée par PeaZip, les autres applications du même standard ou en renseignant l'empreinte comme partie du mot de passe
+txt_key_hint: Annexer l'empreinte du fichier clé au mot de passe ; l'archive peut être déchiffrée par PeaZip, les autres applications du même standard ou en renseignant l'empreinte comme partie du mot de passe
 txt_timestamp: Annexer l'horodatage au nom
 txt_appoptions: Options de l'application
 txt_type_description_arc: ARC : archiveur expérimental, puissant, performant avec de nombreuses fonctionnalités
@@ -876,7 +878,7 @@ txt_copy: Copier
 txt_copyto: Copier vers…
 txt_create: Créer
 txt_create_archive: Créer une nouvelle archive
-txt_title_create: Créer une archive, compresser, crypter, diviser…
+txt_title_create: Créer une archive, compresser, chiffrer, diviser…
 txt_create_keyfile: Créer un fichier clé
 txt_create_folder: Créer un nouveau dossier
 txt_create_theme: Créer un thème à partir des paramètres actuels
@@ -912,9 +914,9 @@ txt_done: Effectué
 txt_edit: Modifier
 txt_elapsed: écoulé :
 txt_error_emptycl: Ligne de commande vide !
-txt_encrypt: Crypter
-txt_encrypted: crypté
-txt_encryption: Cryptage
+txt_encrypt: Chiffrer
+txt_encrypted: chiffré
+txt_encryption: Chiffrage
 txt_note: Saisir une note/description
 txt_random_keys: Saisir des caractères aléatoires
 txt_random_keys_hint: Saisir des caractères aléatoires (inutile de s'en souvenir)
@@ -1089,7 +1091,7 @@ txt_ondblclick: Sur double-clique
 txt_opacity: Opacité
 txt_open: Ouvrir
 txt_openarchive: Ouvrir une archive
-txt_title_open: Ouvrir une archive, la décrypter, la fusionner…
+txt_title_open: Ouvrir une archive, la déchiffrer, la fusionner…
 txt_open_bookmark: Ouvrir un favori
 txt_cphere: Ouvrir l'invite de commande ici
 txt_open_file: Ouvrir un fichier
@@ -1325,7 +1327,7 @@ txt_2_3_pw_errorchar_gwrap: Les guillemets ne peuvent être utilisés dans les m
 txt_2_3_renameexisting: Renommer automatiquement les fichiers existants
 txt_2_3_renameextracted: Renommer automatiquement les fichiers extraits
 txt_2_3_cancel: Annuler
-txt_2_3_encryption: Cryptage
+txt_2_3_encryption: Chiffrage
 txt_2_3_extinnew: Extraire dans un nouveau dossier
 txt_2_3_keyfile: Fichier clé
 txt_2_3_kf_not_found_gwrap: Le fichier clé ne peut être trouvé ou lu. Veuillez choisir un autre fichier clé.
@@ -1438,10 +1440,10 @@ CRÉER UNE ARCHIVE EN PLUSIEURS PARTIES
 Une fois l'archive créée comme expliqué précédemment, cliquez sur le menu déroulant “Volume unique” afin de choisir la taille des fichiers de destination constituant l'archive (volumes).
 La plupart des formats d'archives prennent en charge cette fonctionnalité.
 
-CRÉER UNE ARCHIVE CRYPTÉE
+CRÉER UNE ARCHIVE CHIFFRÉE
 Cliquez sur l'icône cadenas pour saisir un mot de passe et éventuellement un fichier clé. L'icône apparaît dans la barre d'état du navigateur de fichiers et l'interface d'extraction de PeaZip.
-Pour cacher les noms de fichiers et dossiers contenus dans l'archive, cochez “Crypter aussi les noms de fichiers”. Notez que ceci ne pourra être effectif que pour une archive créée dans un format prenant en charge cette fonctionnalité, comme 7z et ARC.
-À côté de l'icône cadenas dans l'interface de création se trouve un symbole d'avertissement indiquant si l'archive est cryptée et si le format actuel prend en charge le cryptage.
+Pour cacher les noms de fichiers et dossiers contenus dans l'archive, cochez “Chiffrer aussi les noms de fichiers”. Notez que ceci ne pourra être effectif que pour une archive créée dans un format prenant en charge cette fonctionnalité, comme 7z et ARC.
+À côté de l'icône cadenas dans l'interface de création se trouve un symbole d'avertissement indiquant si l'archive est chiffrée et si le format actuel prend en charge le chiffrage.
 
 CRÉER DES ARCHIVES SÉPARÉES
 Ajoutez les éléments à archiver (à partir du bouton “Ajouter” ou des menus contextuels) puis, avant de valider par “OK”, cochez l'option “Ajouter en archives séparées”.
@@ -1484,7 +1486,7 @@ PeaZip est un gestionnaire d'archives open source multi-plate-formes, disponible
 
 PeaZip permet d'appliquer de puissants filtres de recherche sur le contenu des archives, la création et l'extraction de plusieurs archives en même temps, la création d'archives auto-extractibles, d'exporter la tâche actuelle sous forme de ligne de commande, enregistrer des sessions d'archivage et d'extraction, de créer des favoris pour les archives et dossiers, ouvrir et analyser à l'aide d'applications personnalisées, etc…
 
-Autres fonctionnalités : cryptage fort, copie de fichiers éprouvée, fusion/division/séparation de fichiers, suppression sécurisée, comparaison, sommes de contrôle et empreintes de fichiers, benchmark système, générateur de mots de passe aléatoires et de fichiers clé.
+Autres fonctionnalités : chiffrage fort, copie de fichiers éprouvée, fusion/division/séparation de fichiers, suppression sécurisée, comparaison, sommes de contrôle et empreintes de fichiers, benchmark système, générateur de mots de passe aléatoires et de fichiers clé.
 
 Téléchargements : https://peazip.github.io
 En savoir plus : https://peazip.github.io/peazip-free-archiver.html

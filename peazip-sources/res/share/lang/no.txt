@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Norwegian - Norsk
-11.3
+11.4
 Oversatt av: Rune C. Akselsen, Arne Hanssen og Imre Eilertsen
 Sist rev. av: Arne Hanssen
 Sist revidert: 20260816
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Compression Ratio
 txt_11_3_showcr: Show compression as Compression Ratio
 txt_11_2_comp: Opprinnelig filnavn og suffiks blir alltid lagret når direkte pakkeformater brukes (Brotli, BZip2, GZip, XZ, Zstd...), unntatt når TAR angis før alternativet, som overstyrer navn på resultatfil.

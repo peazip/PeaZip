@@ -1,12 +1,14 @@
 === PeaZip language file ===
 Български / Bulgarian
-11.3
+11.4
 Превод: Любомир Симеонов
 Корекция: Живко Жеков
 Последна корекция: 20261003
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Ниво на компресия
 txt_11_3_showcr: Показвай ниво на компресия
 txt_11_2_comp: Оригиналното име и разширение на файла винаги се запазват, когато се използват формат с чиста компресия (Brotli, BZip2, GZip, XZ, Zstd...), освен ако не се използва опцията TAR преди, заменяща името на изходния файл.

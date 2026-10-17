@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Korean - 한국어
-11.3
+11.4
 번역자: Sleepy, EhangB
 최근 교정: 20260523 by EhangB
 교정 일자: 20110531 by Sleep
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: 압축 비율
 txt_11_3_showcr: 압축 정도를 압축 비율로 표시
 txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.

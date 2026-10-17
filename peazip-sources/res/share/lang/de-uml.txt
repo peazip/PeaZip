@@ -1,12 +1,14 @@
 === PeaZip language file ===
 German - Deutsch
-11.3
+11.4
 Translated by: Vacon
 Last rev. by: Andrain
 Last rev.: 20260930
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Komprimierungsverhältnis
 txt_11_3_showcr: Komprimierung als Komprimierungsverhältnis anzeigen
 txt_11_2_comp: Ursprüngliche Dateinamen und Dateiendungen bleiben bei reinen Komprimierungsformaten (Brotli, BZip2, GZip, XZ, Zstd...) immer erhalten, nur bei der Option "TAR zuerst erstellen" wird der ausgegebenene Dateiname überschrieben.

@@ -1,12 +1,14 @@
 ﻿=== PeaZip language file ===
 Português do Brasil
-11.3
+11.4
 Translated by: Havokdan
 Last rev. by: Giorgio Tani
 Last rev.: 20260114
 
 === PeaZip text group ===
 
+txt_11_4_maxsize: Input size exceeds maximum supported size
+txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
 txt_11_3_cr: Taxa de Compactação
 txt_11_3_showcr: Mostra compressão como Taxa de Compactação
 txt_11_2_comp: O nome e a extensão do arquivo original são sempre preservados ao usar formatos de compressão pura (Brotli, BZip2, GZip, XZ, Zstd...), a menos que a opção TAR antes seja usada, substituindo o Nome do arquivo de saída.
