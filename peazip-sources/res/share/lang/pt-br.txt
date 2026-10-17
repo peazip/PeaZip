@@ -1,14 +1,14 @@
 ﻿=== PeaZip language file ===
-Português do Brasil
+English
 11.4
-Translated by: Havokdan
+Translated by: Giorgio Tani
 Last rev. by: Giorgio Tani
 Last rev.: 20260114
 
 === PeaZip text group ===
 
-txt_11_4_maxsize: Input size exceeds maximum supported size
-txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
+txt_11_4_maxsize: O tamanho da entrada excede o tamanho máximo suportado
+txt_11_4_mc: O script conterá meta-caracteres potencialmente perigosos (ex.: concatenação de comandos, expansão de variáveis). Deseja prosseguir mesmo assim?
 txt_11_3_cr: Taxa de Compactação
 txt_11_3_showcr: Mostra compressão como Taxa de Compactação
 txt_11_2_comp: O nome e a extensão do arquivo original são sempre preservados ao usar formatos de compressão pura (Brotli, BZip2, GZip, XZ, Zstd...), a menos que a opção TAR antes seja usada, substituindo o Nome do arquivo de saída.
@@ -62,7 +62,7 @@ txt_10_3_ascii: Recomenda-se utilizar apenas caracteres ASCII em senhas para o f
 txt_10_3_minimal: Mínimo
 txt_10_3_m: Moderno
 txt_10_3_pm: Pós-moderno
-txt_10_3_aw: Solução alternativa: marque "Forçar digitação de senha interativamente" no prompt de senha, ou defina o modo Console para os binários de back-end.
+txt_10_3_aw: Solução alternativa: marque "Forçar digitação de senha de forma interativa" na solicitação de senha, ou defina o modo Console para os binários do backend.
 txt_10_2_savecopy: Salvar uma cópia
 txt_10_1_full: Completo
 txt_10_1_kdfw: Carga de trabalho do KDF
@@ -124,7 +124,7 @@ txt_9_1_closeall: Fechar todos
 txt_9_1_enlargeicons: Ampliar ícones do navegador de arquivos
 txt_9_1_ef: Excluir pastas vazias das operações de compactação e extração (7z / p7zip)
 txt_9_1_nw: Abrir em uma nova janela
-txt_9_1_qdup: Usar rotina de deduplicação rápida
+txt_9_1_qdup: Use rotina rápida de desduplicação
 txt_9_0_autoexttar: Extrair automaticamente o arquivo TAR de arquivos TAR.* comprimidos
 txt_9_0_accesstime: Não alterar o horário do último acesso
 txt_9_0_mem: Uso máximo de memória
@@ -138,7 +138,7 @@ txt_9_0_tnav: Alternar barra de navegação
 txt_8_9_empty: O arquivo compactado parece estar vazio
 txt_8_9_disp: Exibindo conteúdo do arquivo compactado
 txt_8_9_parsing: Analisando conteúdo do arquivo compactado
-txt_8_9_stoptest: Pausar para inspecionar o relatório de erros, lista, teste e autoteste
+txt_8_9_stoptest: Pausar para inspecionar o relatório de erros, lista, teste e auto-teste
 txt_8_9_ttb: Alternar barra de ferramentas
 txt_8_8_ca: Cor de destaque
 txt_8_8_btn: Botão
@@ -435,7 +435,7 @@ txt_5_3_profilenormal: Compressão média, ZIP (compatível com a maioria dos ex
 txt_5_3_profileveryfast: Compressão rápida, ZIP rápido (compatível com a maioria dos extratores)
 txt_5_3_profilepassword: Proteger com senha, formato 7Z
 txt_5_3_profile10mb: Manter a saída abaixo de 25 MB, para limitações de anexo de e-mail
-txt_5_3_profilesfx: Autoextração, o destinatário não precisará de um software de extração
+txt_5_3_profilesfx: Auto-extração, o destinatário não precisará de um software de extração
 txt_5_3_cml: Idioma do menu de contexto do sistema
 txt_5_3_cmlmessage: Clique duas vezes no idioma desejado para o menu de contexto e confirme a mesclagem no registro. Esta configuração precisa ser reaplicada quando o aplicativo for instalado/atualizado ou após o uso do assistente de integração do sistema.
 txt_5_3_exc: Os filtros de exclusão prevalecem sobre os filtros de inclusão
@@ -837,7 +837,7 @@ txt_ren_existing: Renomear automaticamente arquivos existentes
 txt_ren_extracted: Renomear automaticamente arquivos extraídos
 txt_autofolder: Criar automaticamente nova pasta para extrair o arquivo compactado?
 txt_back: Voltar
-txt_backend: Binários de back-end
+txt_backend: Binários de backend
 txt_backupexe: Fazer backup do executável (recomendado)
 txt_bettercompression: melhor compressão
 txt_blogs: Blogs
@@ -883,7 +883,7 @@ txt_create_keyfile: Criar arquivo-chave
 txt_create_folder: Criar nova pasta
 txt_create_theme: Criar tema a partir das configurações atuais
 txt_rr: Criar registros de recuperação
-txt_create_sfx: Criar arquivo compactado autoextraível
+txt_create_sfx: Criar arquivo compactado auto-extraível
 txt_cr_current: Taxa de compressão do caminho ou filtro atual
 txt_custom: Personalizado
 txt_type_description_custom: Personalizado (usuários avançados): insira o nome do executável e os parâmetros
@@ -1485,7 +1485,7 @@ SOBRE O PEAZIP
 
 O PeaZip é um gerenciador de arquivos e arquivos compactados de código aberto: multiplataforma, disponível como software portátil e instalável para Linux (aplicativo neutro em relação ao desktop), macOS e Windows de 32 e 64 bits.
 
-O PeaZip permite aplicar filtros de pesquisa múltiplos e poderosos ao conteúdo de arquivos compactados; criar e extrair múltiplos arquivos compactados de uma vez; criar arquivos compactados autoextraíveis; exportar a definição de tarefa como linha de comando; salvar layouts de compactação e extração; adicionar arquivos compactados e pastas aos Marcadores; verificar e abrir arquivos comprimidos e não comprimidos com aplicativos personalizados, etc...
+O PeaZip permite aplicar filtros de pesquisa múltiplos e poderosos ao conteúdo de arquivos compactados; criar e extrair múltiplos arquivos compactados de uma vez; criar arquivos compactados auto-extraíveis; exportar a definição de tarefa como linha de comando; salvar layouts de compactação e extração; adicionar arquivos compactados e pastas aos Marcadores; verificar e abrir arquivos comprimidos e não comprimidos com aplicativos personalizados, etc...
 
 Outros recursos: criptografia robusta, cópia segura de arquivos, divisão/junção de arquivos (abrangência de arquivo), exclusão segura de dados, comparação, soma de verificação e hash de arquivos, benchmark do sistema, geração de senhas aleatórias e arquivos-chave.
 
