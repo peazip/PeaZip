@@ -45,4 +45,3 @@ PeaZip also provides a capable file manager: bookmarking, search, instant conten
 - **[Benchmarks](https://peazip.github.io/peazip-compression-benchmark.html)**
 - **[Donations](https://peazip.github.io/donations.html)**
 
-![License](https://img.shields.io/github/license/peazip/PeaZip)
