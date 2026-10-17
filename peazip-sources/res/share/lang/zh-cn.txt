@@ -3,12 +3,12 @@ Chinese (Simplified)
 11.4
 Translated by: Aerowolf, Junde Yhi, Dingzhong Chen, yangyangdaji, ddzzkunye, 無情天, 风之暇想, Booskz, gksj
 Last rev. by: gksj
-Last rev.: 20260930
+Last rev.: 20261017
 
 === PeaZip text group ===
 
-txt_11_4_maxsize: Input size exceeds maximum supported size
-txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
+txt_11_4_maxsize: 输入大小超过支持的最大值
+txt_11_4_mc: 脚本将包含可能存在危险的元字符（例如命令拼接、变量展开），是否仍要继续？
 txt_11_3_cr: 压缩比
 txt_11_3_showcr: 将压缩大小显示为压缩比
 txt_11_2_comp: 使用纯压缩格式（Brotli、BZip2、GZip、XZ、Zstd 等）时，始终保留原始文件名和扩展名，除非使用“先 TAR（TAR before）”选项，该选项会覆盖“输出文件名”。
