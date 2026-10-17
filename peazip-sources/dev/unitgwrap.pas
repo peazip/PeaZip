@@ -176,7 +176,7 @@ The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 }
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 
@@ -3039,7 +3039,7 @@ end;
 {$ENDIF}
 end;
 
-procedure linlaunchconsole(s:ansistring);
+procedure linlaunchconsole(s:ansistring);//always used to launch fixed strings
 var
    P:tprocessutf8;
    cl:ansistring;

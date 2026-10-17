@@ -259,6 +259,9 @@ unit pea; //Main form of pea executable, providing GUI to file tools, pea/unpea 
                                   in case of failed validation auto delete the working directory
                                   in case the process is abruptly terminated before validation by unexpected conditions or interactions, the leftover data is still inside the random named working directory to not get confused with verified output
                                 Updated some app colors
+ 1.34     20261011  G.Tani      Started enabling range check
+                                New cross-platform pure Pascal recoursive non-empty directory delete routine replaces use of system commands
+                                NONE mode in wipe routine adapted for background file deletion, previously alias of QUICK mode
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 
@@ -448,7 +451,7 @@ type
   Type fileofbyte = file of byte;
 
 const
-  P_RELEASE          = '1.33'; //declares release version for the entire build
+  P_RELEASE          = '1.34'; //declares release version for the entire build
   //PEAUTILS_RELEASE   = '1.3'; //declares for reference last peautils release
   PEA_FILEFORMAT_VER = 1;
   PEA_FILEFORMAT_REV = 6; //version and revision declared to be implemented must match with the ones in pea_utils, otherwise a warning will be raised (form caption)
@@ -805,26 +808,7 @@ if validatecl(s)<>0 then
    result:=0;
    exit;
    end; //should not happen, because string must be valid for the filesystem
-{$IFDEF MSWINDOWS}
-if validatecl_console(s)<>0 then
-   begin
-   result:=0;
-   exit;
-   end;
-cl:='cmd /c rmdir "'+s+'" /s /q';
-P:=tprocessutf8.Create(nil);
-P.Options := [poNoConsole, poWaitOnExit];
-peapexecute(P,cl);
-result:=P.ExitStatus;
-P.Free;
-{$ELSE} //system needs to support rm command
-cl:='rm -r '+stringdelim(escapefilename(s,desk_env));
-P:=tprocessutf8.Create(nil);
-P.Options := [poWaitOnExit];
-peapexecute(P,cl);
-result:=P.ExitStatus;
-P.Free;
-{$ENDIF}
+result:=pdeletedir(s);
 if checkdirexists(s) then result:=-1;
 end;
 
@@ -1137,7 +1121,7 @@ procedure clean_keying_vars;
 var
    k:integer;
 begin
-for k:=0 to SBUFSIZE do sbuf2[k]:=0;
+for k:=0 to length(sbuf2)-1 do sbuf2[k]:=0;
 pw:='';
 password:='';
 keyfile_name:='';
@@ -1367,11 +1351,11 @@ if upcase(volume_algo)<>'NOALGO' then
       'MD5' : for k:=0 to volume_authsize-1 do auth_buf[k]:=MD5Digest_volume[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_volume.lo32,auth_buf,0);
-      dword2bytebuf(crc64_volume.hi32,auth_buf,4);
+      longint2bytebuf(crc64_volume.lo32,auth_buf,0);
+      longint2bytebuf(crc64_volume.hi32,auth_buf,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_volume,auth_buf,0);
-      'ADLER32' : dword2bytebuf(adler_volume,auth_buf,0);
+      'CRC32' : longint2bytebuf(crc32_volume,auth_buf,0);
+      'ADLER32' : longint2bytebuf(adler_volume,auth_buf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=auth_buf[k];
    blockwrite (f_out,auth_buf,volume_authsize);
@@ -1730,11 +1714,11 @@ case upcase(algo) of
    'MD5' : for k:=0 to authsize-1 do sbuf1[k]:=MD5Digest[k];
    'CRC64' :
    begin
-   dword2bytebuf(crc64.lo32,sbuf1,0);
-   dword2bytebuf(crc64.hi32,sbuf1,4);
+   longint2bytebuf(crc64.lo32,sbuf1,0);
+   longint2bytebuf(crc64.hi32,sbuf1,4);
    end;
-   'CRC32' : dword2bytebuf(crc32,sbuf1,0);
-   'ADLER32' : dword2bytebuf(adler,sbuf1,0);
+   'CRC32' : longint2bytebuf(crc32,sbuf1,0);
+   'ADLER32' : longint2bytebuf(adler,sbuf1,0);
    end;
 s:='';
 num_res:=authsize;
@@ -1767,11 +1751,11 @@ if upcase(obj_algo)<>'NOALGO' then
       'MD5' : for k:=0 to obj_authsize-1 do sbuf1[k]:=MD5Digest_obj[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_obj.lo32,sbuf1,0);
-      dword2bytebuf(crc64_obj.hi32,sbuf1,4);
+      longint2bytebuf(crc64_obj.lo32,sbuf1,0);
+      longint2bytebuf(crc64_obj.hi32,sbuf1,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_obj,sbuf1,0);
-      'ADLER32' : dword2bytebuf(adler_obj,sbuf1,0);
+      'CRC32' : longint2bytebuf(crc32_obj,sbuf1,0);
+      'ADLER32' : longint2bytebuf(adler_obj,sbuf1,0);
       end;
    for k:=0 to obj_authsize-1 do obj_tags[i,k]:=sbuf1[k];
    update_control_algo(sbuf1,obj_authsize);
@@ -3082,11 +3066,11 @@ if upcase(algo)<>'NOALGO' then
       'MD5' : for k:=0 to authsize-1 do sbuf1[k]:=MD5Digest[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64.lo32,sbuf1,0);
-      dword2bytebuf(crc64.hi32,sbuf1,4);
+      longint2bytebuf(crc64.lo32,sbuf1,0);
+      longint2bytebuf(crc64.hi32,sbuf1,4);
       end;
-      'CRC32' : dword2bytebuf(crc32,sbuf1,0);
-      'ADLER32' : dword2bytebuf(adler,sbuf1,0);
+      'CRC32' : longint2bytebuf(crc32,sbuf1,0);
+      'ADLER32' : longint2bytebuf(adler,sbuf1,0);
       end;
    {tag_match:=true;
    for k:=0 to authsize-1 do if sbuf1[k]<>exp_auth[k] then
@@ -3138,11 +3122,11 @@ if upcase(obj_algo)<>'NOALGO' then
       'MD5' : for k:=0 to obj_authsize-1 do sbuf1[k]:=MD5Digest_obj[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_obj.lo32,sbuf1,0);
-      dword2bytebuf(crc64_obj.hi32,sbuf1,4);
+      longint2bytebuf(crc64_obj.lo32,sbuf1,0);
+      longint2bytebuf(crc64_obj.hi32,sbuf1,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_obj,sbuf1,0);
-      'ADLER32' : dword2bytebuf(adler_obj,sbuf1,0);
+      'CRC32' : longint2bytebuf(crc32_obj,sbuf1,0);
+      'ADLER32' : longint2bytebuf(adler_obj,sbuf1,0);
       end;
    for k:=0 to obj_authsize-1 do obj_tags[nobj,k]:=sbuf1[k];
    {tag_match:=true;
@@ -3185,11 +3169,11 @@ if upcase(volume_algo)<>'NOALGO' then
       'MD5' : for k:=0 to volume_authsize-1 do tagbuf[k]:=MD5Digest_volume[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_volume.lo32,tagbuf,0);
-      dword2bytebuf(crc64_volume.hi32,tagbuf,4);
+      longint2bytebuf(crc64_volume.lo32,tagbuf,0);
+      longint2bytebuf(crc64_volume.hi32,tagbuf,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_volume,tagbuf,0);
-      'ADLER32' : dword2bytebuf(adler_volume,tagbuf,0);
+      'CRC32' : longint2bytebuf(crc32_volume,tagbuf,0);
+      'ADLER32' : longint2bytebuf(adler_volume,tagbuf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=tagbuf[k];
    {tag_match:=true;
@@ -4350,11 +4334,11 @@ if upcase(volume_algo)<>'NOALGO' then
       'MD5' : for k:=0 to volume_authsize-1 do auth_buf[k]:=MD5Digest_volume[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_volume.lo32,auth_buf,0);
-      dword2bytebuf(crc64_volume.hi32,auth_buf,4);
+      longint2bytebuf(crc64_volume.lo32,auth_buf,0);
+      longint2bytebuf(crc64_volume.hi32,auth_buf,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_volume,auth_buf,0);
-      'ADLER32' : dword2bytebuf(adler_volume,auth_buf,0);
+      'CRC32' : longint2bytebuf(crc32_volume,auth_buf,0);
+      'ADLER32' : longint2bytebuf(adler_volume,auth_buf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=auth_buf[k];
    blockwrite (f_check,auth_buf,volume_authsize);
@@ -4861,11 +4845,11 @@ if upcase(volume_algo)<>'NOALGO' then
       'MD5' : for k:=0 to volume_authsize-1 do tagbuf[k]:=MD5Digest_volume[k];
       'CRC64' :
       begin
-      dword2bytebuf(crc64_volume.lo32,tagbuf,0);
-      dword2bytebuf(crc64_volume.hi32,tagbuf,4);
+      longint2bytebuf(crc64_volume.lo32,tagbuf,0);
+      longint2bytebuf(crc64_volume.hi32,tagbuf,4);
       end;
-      'CRC32' : dword2bytebuf(crc32_volume,tagbuf,0);
-      'ADLER32' : dword2bytebuf(adler_volume,tagbuf,0);
+      'CRC32' : longint2bytebuf(crc32_volume,tagbuf,0);
+      'ADLER32' : longint2bytebuf(adler_volume,tagbuf,0);
       end;
    for k:=0 to volume_authsize-1 do volume_tags[j-1,k]:=tagbuf[k];
    {tag_match:=true;
@@ -5192,7 +5176,7 @@ dfiles:=0;
 ddirs:=0;
 ntotalexp:=paramcount-2;
 case level of
-   'NONE' : nlevel:=0;
+   'NONE' : nlevel:=0; //operates in background
    'QUICK' : nlevel:=0;
    'RECYCLE' : nlevel:=0;
    'HEADER' : nlevel:=1;
@@ -5204,6 +5188,7 @@ case level of
    'SLOW' : nlevel:=4;
    else nlevel:=5;
    end;
+if level<>'NONE' then FormPea.Visible:=true;
 nleveli:=nlevel;
 tsize:=0;
 etsize:=0;
@@ -5218,7 +5203,7 @@ for j:=3 to paramcount do
    end;
 FormPea.LabelToolsInput.Caption:=FormPea.LabelToolsInput.Caption+', '+nicenumber(inttostr(tsize),0);
 end2caption:=FormPea.LabelToolsInput.Caption;
-Application.ProcessMessages;
+if FormPea.Visible=true then Application.ProcessMessages;
 tsize:=(tsize*nlevel) + paramcount;
 randomize;
 for j:=3 to paramcount do
@@ -5227,28 +5212,37 @@ for j:=3 to paramcount do
    tsout:=datetimetotimestamp(now);
    time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
    FormPea.LabelToolsResult2.Caption:=nicetime(inttostr(time))+' elapsed';
-   Application.ProcessMessages;
+   if FormPea.Visible=true then Application.ProcessMessages;
    try
-      if level='RECYCLE' then
-               begin
-               {$IFDEF MSWINDOWS}//recycle (Windows)
-               in_param:=paramstr(j);
-               findfirst(in_param, faAnyFile, sr);
-               s := StrPas(sr.FindData.cAlternateFileName);
-               if s='' then s:= extractfilename(in_param);
-               s := extractfilepath(in_param) + s;
-               FindClose(sr);
-               recyclefile_fromname(s);
-               {$ENDIF}
-               {$IFDEF DARWIN}//move to trash (macOS)
-               in_param:=paramstr(j);
-               findfirst(in_param, faAnyFile, sr);
-               s:= extractfilename(in_param);
-               s := extractfilepath(in_param) + s;
-               FindClose(sr);
-               mac_movetotrash(s);
-               {$ENDIF}
-               end
+   case level of
+      'RECYCLE':
+      begin
+      {$IFDEF MSWINDOWS}//recycle (Windows)
+      in_param:=paramstr(j);
+      findfirst(in_param, faAnyFile, sr);
+      s := StrPas(sr.FindData.cAlternateFileName);
+      if s='' then s:= extractfilename(in_param);
+      s := extractfilepath(in_param) + s;
+      FindClose(sr);
+      recyclefile_fromname(s);
+      {$ENDIF}
+      {$IFDEF DARWIN}//move to trash (macOS)
+      in_param:=paramstr(j);
+      findfirst(in_param, faAnyFile, sr);
+      s:= extractfilename(in_param);
+      s := extractfilepath(in_param) + s;
+      FindClose(sr);
+      mac_movetotrash(s);
+      {$ENDIF}
+      end;
+      'NONE':
+      begin
+      in_param:=paramstr(j);
+      if filegetattr(in_param) and faDirectory = 0 then //file
+         udeletefile(in_param)
+      else
+         pdeletedir(in_param);
+      end;
       else
       begin
       expand((paramstr(j)),exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
@@ -5264,10 +5258,10 @@ for j:=3 to paramcount do
             if nlevel>0 then FormPea.LabelToolsInput.Caption:=end2caption+', '+nicenumber(inttostr(etsize div nlevel),0)+' deleted'
             else FormPea.LabelToolsInput.Caption:=end2caption;
             FormPea.LabelToolsResult1.Caption:='Processing item '+inttostr(rc-1)+' of '+inttostr(ntotalexp)+' found';
-            application.ProcessMessages;
+            if FormPea.Visible=true then Application.ProcessMessages;
             try
                {$IFDEF MSWINDOWS}
-               upredeletefile(exp_files[k]);
+               if (level<>'QUICK') then upredeletefile(exp_files[k]);
                {$ENDIF}
                assignfile(f,exp_files[k]);
                filemode:=0;
@@ -5282,8 +5276,8 @@ for j:=3 to paramcount do
                   exit;
                   end;
                case level of
-               'NONE': udeletefile(exp_files[k]);//quick delete
-               'QUICK': udeletefile(exp_files[k]);//quick delete (alias)
+               //'NONE': udeletefile(exp_files[k]);//quick delete, background
+               'QUICK': udeletefile(exp_files[k]);//quick delete
                'ZERO': //overwrite with zero
                   begin
                   wipefixed(0);
@@ -5299,7 +5293,7 @@ for j:=3 to paramcount do
                get_fingerprint(fingerprint,false);
                //init encryption
                for i:=0 to 31 do fingerprint[i]:=fingerprint[i];
-               for i:=0 to 15 do aes_iv[i]:=fingerprint[i]+random(256);
+               for i:=0 to 15 do aes_iv[i]:=fingerprint[i] xor random(256);
                AES_CTR_Init(fingerprint, 256, aes_iv, aes_ctx);
                if nlevel>2 then
                   begin
@@ -5324,7 +5318,7 @@ for j:=3 to paramcount do
                      tsout:=datetimetotimestamp(now);
                      time:=((tsout.date-tsin.date)*24*60*60*1000)+tsout.time-tsin.time;
                      FormPea.LabelToolsResult2.Caption:=nicetime(inttostr(time))+' elapsed';
-                     Application.ProcessMessages;
+                     if FormPea.Visible=true then Application.ProcessMessages;
                      if toolactioncancelled=true then
                         begin
                         closefile(f);
@@ -5393,7 +5387,7 @@ for j:=3 to paramcount do
             rc:=FormReport.StringGridInput.RowCount+1;
             FormReport.StringGridInput.RowCount:=rc;
             FormPea.LabelToolsResult1.Caption:='Processing item '+inttostr(rc-1)+' of '+inttostr(ntotalexp)+', directory';
-            Application.ProcessMessages;
+            if FormPea.Visible=true then Application.ProcessMessages;
             try
                randomstring:=(exp_dirs[k]);
                for i:=1 to nlevel do //rename
@@ -5403,6 +5397,9 @@ for j:=3 to paramcount do
                   renamefile(randomstring,randomstring2);
                   randomstring:=randomstring2;
                   end;
+               {$IFDEF MSWINDOWS}
+               upredeletefile(randomstring);
+               {$ENDIF}
                removedir(randomstring);
                FormReport.StringGridInput.Cells[0,rc-1]:=exp_dirs[k];
                FormReport.StringGridInput.Cells[1,rc-1]:='directory successfully deleted';
@@ -5414,13 +5411,21 @@ for j:=3 to paramcount do
             end;
             end;
       end;
-    except
-       rc:=FormReport.StringGridInput.RowCount+1;
-       FormReport.StringGridInput.RowCount:=rc;
-       FormReport.StringGridInput.Cells[0,FormReport.StringGridInput.RowCount-1]:=(paramstr(j));
-       FormReport.StringGridInput.Cells[1,FormReport.StringGridInput.RowCount-1]:='OBJECT NOT DELETED';
-       errors:=errors+1;
+
    end;
+   except
+      rc:=FormReport.StringGridInput.RowCount+1;
+      FormReport.StringGridInput.RowCount:=rc;
+      FormReport.StringGridInput.Cells[0,FormReport.StringGridInput.RowCount-1]:=(paramstr(j));
+      FormReport.StringGridInput.Cells[1,FormReport.StringGridInput.RowCount-1]:='OBJECT NOT DELETED';
+      errors:=errors+1;
+   end;
+   end;
+if level='NONE' then
+   begin
+   if errors=0 then exitcode:=0 else exitcode:=-2;
+   FormPea.Close;
+   exit;
    end;
 FormPea.ButtonToolsCancel.visible:=false;
 FormPea.ProgressBarPea.Position:=100;
@@ -5621,7 +5626,7 @@ case level of
    get_fingerprint(fingerprint,false);
    //init encryption
    for i:=0 to 31 do fingerprint[i]:=fingerprint[i];
-   for i:=0 to 15 do aes_iv[i]:=fingerprint[i]+random(256);
+   for i:=0 to 15 do aes_iv[i]:=fingerprint[i] xor random(256);
    AES_CTR_Init(fingerprint, 256, aes_iv, aes_ctx);
    //overwrite nlevel times with random data (AES256 CTR init once by system fingerprint)
    if nlevel>2 then
@@ -7915,7 +7920,7 @@ end;
 
 procedure call_wipe;
 begin
-FormPea.Visible:=true;
+//FormPea.Visible:=true; //allow background operation
 FormPea.PanelRFSinteractive.visible:=false;
 FormPea.PanelTools.visible:=true;
 interacting:=false;

@@ -448,6 +448,11 @@ function dword2bytebuf ( indword:dword;                                         
                          addr:dword
                          ):integer;
 
+function longint2bytebuf ( inlongint:longint;                                   //write signed 32 bit integer
+                         var buf:array of byte;
+                         addr:dword
+                         ):integer;
+
 //write a qword to an array of byte
 function qword2bytebuf ( inqword:qword;                                         //qword to write in the buffer starting from the given address, please note that size of the buffer is not checked
                          var buf:array of byte;
@@ -2118,10 +2123,9 @@ function word2bytebuf ( inword:word;                                            
                         addr:dword
                         ):integer;
 begin
-word2bytebuf:=INCOMPLETE_FUNCTION;
-buf[addr]  :=inword;
-buf[addr+1]:=inword shr 8;
-if word2bytebuf=INCOMPLETE_FUNCTION then word2bytebuf:=SUCCESS;
+result:=INCOMPLETE_FUNCTION;
+move(inword,buf[addr],sizeof(inword));
+if result=INCOMPLETE_FUNCTION then result:=SUCCESS;
 end;
 
 function dword2bytebuf ( indword:dword;                                         //dword to write in the buffer starting from the given address, please note that size of the buffer is not checked
@@ -2129,12 +2133,19 @@ function dword2bytebuf ( indword:dword;                                         
                          addr:dword
                          ):integer;
 begin
-dword2bytebuf:=INCOMPLETE_FUNCTION;
-buf[addr]  :=indword;
-buf[addr+1]:=indword shr 8;
-buf[addr+2]:=indword shr 16;
-buf[addr+3]:=indword shr 24;
-if dword2bytebuf=INCOMPLETE_FUNCTION then dword2bytebuf:=SUCCESS;
+result:=INCOMPLETE_FUNCTION;
+move(indword,buf[addr],sizeof(indword));
+if result=INCOMPLETE_FUNCTION then result:=SUCCESS;
+end;
+
+function longint2bytebuf ( inlongint:longint;                                   //write signed 32 bit integer
+                         var buf:array of byte;
+                         addr:dword
+                         ):integer;
+begin
+result:=INCOMPLETE_FUNCTION;
+move(inlongint,buf[addr],sizeof(inlongint));
+if result=INCOMPLETE_FUNCTION then result:=SUCCESS;
 end;
 
 function qword2bytebuf ( inqword:qword;                                         //qword to write in the buffer starting from the given address, please note that size of the buffer is not checked
@@ -2142,16 +2153,9 @@ function qword2bytebuf ( inqword:qword;                                         
                          addr:dword
                          ):integer;
 begin
-qword2bytebuf:=INCOMPLETE_FUNCTION;
-buf[addr]  :=inqword;
-buf[addr+1]:=inqword shr 8;
-buf[addr+2]:=inqword shr 16;
-buf[addr+3]:=inqword shr 24;
-buf[addr+4]:=inqword shr 32;
-buf[addr+5]:=inqword shr 40;
-buf[addr+6]:=inqword shr 48;
-buf[addr+7]:=inqword shr 56;
-if qword2bytebuf=INCOMPLETE_FUNCTION then qword2bytebuf:=SUCCESS;
+result:=INCOMPLETE_FUNCTION;
+move(inqword,buf[addr],sizeof(inqword));
+if result=INCOMPLETE_FUNCTION then result:=SUCCESS;
 end;
 
 function decode_pea_error ( err:integer;                                        //error code

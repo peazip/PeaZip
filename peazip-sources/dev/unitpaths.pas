@@ -1,6 +1,6 @@
 unit UnitPaths; //Form to display and copy paths of items selected in the main form file browser
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

@@ -1,6 +1,6 @@
 unit UnitComment; //Form to manage archive-level comment field for formats supporting that metadata
 
-{$mode ObjFPC}{$H+}
+{$mode ObjFPC}{$H+}{$R+}
 
 interface
 

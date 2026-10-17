@@ -134,6 +134,7 @@ unit list_utils;
  0.70     20260920  G.Tani      Improved sanitization of special characters in validatecl and validatecl_console: the use of more special characters is prevented to avoid generating potentially unsafe scripts
                                 Improved sanitization of input string in stringdelim: the string is discarded if already containing the quotation character, to avoid propagating strings which can be not correctly handled in scripts
                                 Improved sanitization of input file names, checking and rejecting non valid file names and sanitizing relative file names
+ 0.71     20261006  G.Tani      New cross-platform pure Pascal recoursive non-empty directory delete routine replaces use of system commands
 
 (C) Copyright 2006 Giorgio Tani giorgio.tani.software@gmail.com
 The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
@@ -153,7 +154,7 @@ The program is released under GNU LGPL http://www.gnu.org/licenses/lgpl.txt
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 }
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 {$INLINE ON}
 
 interface
@@ -181,6 +182,7 @@ const
   DWORD_DECODE_TO_ATTRIBUTES_ERROR = 5;
   STRING_DECODE_TO_ATTRIBUTES_ERROR = 6;
   OBJECT_NOT_ACCESSIBLE = 7;
+  REJECTED_STRING = '*rejected_string*';
   //PeaZip's folder in working directory, containing all temporary work files unless 1) set to be created in output 2) archive conversion, always run in output
   STR_PZWORKTMP = 'peazip-tmp';
   //temp app subfolder, where different peazip instances can exchange messages and data
@@ -394,9 +396,11 @@ procedure replacespecialpathchars(var s:ansistring);
 function sanitizenamestr(var s:ansistring): integer;
 function sanitizepath(s0,s1:ansistring): integer;
 
-//check full name against reserved and illegal characters, and reserved filenames
+//check file name against reserved and illegal characters, and reserved filenames
 function checkfiledirname(s: ansistring): integer;
 function checkfiledirname_acceptblank(s: ansistring): integer;
+function checkfilename(s: ansistring): integer;
+function checkfilename_acceptblank(s: ansistring): integer;
 
 //check for some special characters in filenames in *x environments
 function checkescapedoutname(s: ansistring):ansistring;
@@ -452,10 +456,6 @@ procedure cutextension(var s: ansistring);
 
 //cut extension from filename and return string
 function cutext(var s: ansistring):ansistring;
-
-//check file name against reserved and illegal characters, and reserved filenames
-function checkfilename(s: ansistring): integer;
-function checkfilename_acceptblank(s: ansistring): integer;
 
 //generic command string sanitization
 function validatecl(var s: ansistring): integer;
@@ -571,6 +571,8 @@ function peasplitstring(s:AnsiString; var sfin:TStringList):integer;
 function peapexecute(var P:TProcessUTF8; var cl:ansistring): integer;
 //launch TProcess with parameters, optional log
 function peapparamexecute(var P:TProcessUTF8): integer;
+//pure pascal recursize non empty dir deletion with one auto-retry in case of locked files
+function pdeletedir(s:ansistring):integer;
 
 implementation
 
@@ -1802,8 +1804,10 @@ if pos(s0,s)<>1 then exit;
 result:=0;
 end;
 
-function checkfiledirname(s: ansistring): integer;
+function checkfiledirname_io(s: ansistring): integer;
+//check for valid directory or file name, allow exception for wildcards (used in input/output filters)
 //function errs on safe side to prevent cross platform interoperability issues
+//metacharacters are not supported by TProcess unless invoking a console instance, in this case more metacharacters are checked in validatecl_console
 var
    sf: ansistring;
    i: integer;
@@ -1813,9 +1817,10 @@ if s = '' then exit;
 //illegal characters, full name
 for i := 0 to 31 do
    if pos(char(i), s) <> 0 then exit;
+//wildcards allowed at this stage, used in input/output filters
+//if pos('*', s) <> 0 then exit;
+//if pos('?', s) <> 0 then exit;
 //reserved characters, full name
-if pos('*', s) <> 0 then exit;
-if pos('?', s) <> 0 then exit;
 if pos('<', s) <> 0 then exit;
 if pos('>', s) <> 0 then exit;
 if pos('|', s) <> 0 then exit;
@@ -1838,20 +1843,37 @@ if winreserved(sf)=true then exit;
 result := 0;
 end;
 
-function checkfiledirname_io(s: ansistring): integer;
-//check for valid directory or file name, allow exception for wildcards (used in input/output filters)
-var
-   sf: ansistring;
-   i: integer;
+function checkfiledirname(s: ansistring): integer;
+//check for valid directory or file name, disallow exception for wildcards
 begin
 result := -1;
 if s = '' then exit;
-//illegal characters, full name
+if checkfiledirname_io(s)<>0 then exit;
+//wildcards not allowed in real dir or file names
+if pos('*', s) <> 0 then exit;
+if pos('?', s) <> 0 then exit;
+result := 0;
+end;
+
+function checkfilename(s: ansistring): integer;
+//function errs on safe side to prevent cross platform interoperability issues
+var
+   {$IFDEF MSWINDOWS}
+   s1: ansistring;
+   {$ENDIF}
+   i: integer;
+begin
+result := -1;
+if (s = '') or (s='.') or (s='..') then exit;
+//illegal characters (no problem for additional UTF8 bytes since have MSB set to 1 to avoid conflict with those control characters)
 for i := 0 to 31 do
    if pos(char(i), s) <> 0 then exit;
-//reserved characters, full name
-//if pos('*', s) <> 0 then exit;//used in input/output filters
-//if pos('?', s) <> 0 then exit;//used in input/output filters
+//reserved characters
+if pos('\', s) <> 0 then exit;
+if pos('/', s) <> 0 then exit;
+if pos(':', s) <> 0 then exit;
+if pos('*', s) <> 0 then exit;
+if pos('?', s) <> 0 then exit;
 if pos('<', s) <> 0 then exit;
 if pos('>', s) <> 0 then exit;
 if pos('|', s) <> 0 then exit;
@@ -1859,17 +1881,11 @@ if pos('       ', s) <> 0 then exit;
 {$IFDEF MSWINDOWS}
 if pos('"', s) <> 0 then exit;
 if wintrailing(s)=true then exit;
+//reserved filenames (Windows)
+s1 := extractfilename(s);
+if winreserved(s1) then exit;
 {$ELSE}
 if pos(correctdelimiter(s), s) <> 0 then exit;
-{$ENDIF}
-sf := extractfilename(s);
-//reserved characters, filename only (others are checked for the full name)
-if pos('\', sf) <> 0 then exit;
-if pos('/', sf) <> 0 then exit;
-if pos(':', sf) <> 0 then exit;
-{$IFDEF MSWINDOWS}
-//reserved filenames (Windows)
-if winreserved(sf)=true then exit;
 {$ENDIF}
 result := 0;
 end;
@@ -1880,6 +1896,14 @@ begin
 result := -1;
 if s = '' then result:=0
 else result:=checkfiledirname(s);
+end;
+
+//wrapper for filename check, accepts empty or valid file name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
+function checkfilename_acceptblank(s: ansistring): integer;
+begin
+result := -1;
+if s = '' then result:=0
+else result:=checkfilename(s);
 end;
 
 function checkescapedoutname(s: ansistring):ansistring;
@@ -1898,6 +1922,22 @@ until i = 0;
 result:=varstr;
 end;
 
+procedure escapestring(dstr:ansistring; var varstr:ansistring);
+var
+   i,j:integer;
+begin
+j := 1;
+i := 1;
+repeat
+i := pos(dstr, varstr,j);
+if i > 0 then
+   begin
+   insert('\',varstr,i);
+   j:=i+2;
+   end;
+until i = 0;
+end;
+
 function escapefilenamelinuxlike(s: ansistring; desk_env: byte): ansistring;
 //a more robust escaping procedure should be based on the POSIX compliant method of replacing ' with '\''
 //however TProcess.CommandLine does not support this method of escaping, so the command line would work if pasted in shells but not from within the app
@@ -1909,7 +1949,7 @@ begin
   varstr := s;
   dstr:=correctdelimiter(s); //correctdelimiter swaps ' and " quotes, but that cannot guarantee against both characters being used in the same string
   case pmode of
-     0: begin //replace correctdelimiter quote character with ? jolly
+     0: begin //replace correctdelimiter quote character with ? jolly, \ escaping not supported by Process Commandline
         i := 1;
         repeat
         i := pos(dstr, varstr);
@@ -1917,29 +1957,17 @@ begin
            varstr[pos(dstr, varstr)] := '?';
         until i = 0;
         end;
-     1: begin //quote correctdelimiter quote character with \, command will be passed as list of parameters with ReadBackslash set to true
-        //escape \ char with \
-        j := 1;
-        i := 1;
-        repeat
-        i := pos('\', varstr,j);
-        if i > 0 then
-           begin
-           insert('\',varstr,i);
-           j:=i+2;
-           end;
-        until i = 0;
+     1: begin //command will be passed as list of arguments with ReadBackslash set to true, to treat chars escaped with \ as literal values
+        //escape \ char, strictly needs to go first
+        escapestring('\',varstr);
         //escape quote char with \
-        j := 1;
-        i := 1;
-        repeat
-        i := pos(dstr, varstr,j);
-        if i > 0 then
-           begin
-           insert('\',varstr,i);
-           j:=i+2;
-           end;
-        until i = 0;
+        escapestring(dstr,varstr);
+        //escape backtick and dollar which are not escaped in case of weak quotes
+        if dstr='"' then
+          begin
+          escapestring('`',varstr);
+          escapestring('$',varstr);
+          end;
         end;
   end;
   // find and delete 'file://' (and any part before) if it is passed as part of filename (it happens sometimes in Gnome, i.e. using "open with" context menu entry)
@@ -1962,7 +1990,7 @@ end;
 
 function escapefilename(s: ansistring; desk_env: byte): ansistring;
 begin
-if checkfiledirname_io(s)<>0 then begin result:='#rejected_string#'; exit; end;
+if checkfiledirname_io(s)<>0 then begin result:=REJECTED_STRING; exit; end;
 {$IFDEF MSWINDOWS}
 result := s;
 {$ELSE}
@@ -1975,7 +2003,7 @@ var
    cdelim:ansistring;
 begin
 cdelim:=correctdelimiter(s);
-if pos(cdelim, s)<>0 then begin result:='#rejected_string#'; exit; end;//error, quotation character already used in the string: input string is sanitized for security and replaced with a rejection string placeholder which is checked by validatecl before execution, assuring the containing command line will be discarded
+if pos(cdelim, s)<>0 then begin result:=REJECTED_STRING; exit; end;//error, quotation character already used in the string: input string is sanitized for security and replaced with a rejection string placeholder which is checked by validatecl before execution, assuring the containing command line will be discarded
 result := cdelim+s+cdelim;
 end;
 
@@ -2273,49 +2301,6 @@ begin
    result:=s1;
 end;
 
-function checkfilename(s: ansistring): integer;
-//function errs on safe side to prevent cross platform interoperability issues
-var
-   {$IFDEF MSWINDOWS}
-   s1: ansistring;
-   {$ENDIF}
-   i: integer;
-begin
-result := -1;
-if (s = '') or (s='.') or (s='..') then exit;
-//illegal characters (no problem for additional UTF8 bytes since have MSB set to 1 to avoid conflict with those control characters)
-for i := 0 to 31 do
-   if pos(char(i), s) <> 0 then exit;
-//reserved characters
-if pos('\', s) <> 0 then exit;
-if pos('/', s) <> 0 then exit;
-if pos(':', s) <> 0 then exit;
-if pos('*', s) <> 0 then exit;
-if pos('?', s) <> 0 then exit;
-if pos('<', s) <> 0 then exit;
-if pos('>', s) <> 0 then exit;
-if pos('|', s) <> 0 then exit;
-if pos('       ', s) <> 0 then exit;
-{$IFDEF MSWINDOWS}
-if pos('"', s) <> 0 then exit;
-if wintrailing(s)=true then exit;
-//reserved filenames (Windows)
-s1 := extractfilename(s);
-if winreserved(s1) then exit;
-{$ELSE}
-if pos(correctdelimiter(s), s) <> 0 then exit;
-{$ENDIF}
-result := 0;
-end;
-
-//wrapper for filename check, accepts empty or valid file name as valid input for special purposes i.e. replace string in file name with a valid string or nothing (it is needed a separate final check for the file name to not be empty)
-function checkfilename_acceptblank(s: ansistring): integer;
-begin
-result := -1;
-if s = '' then result:=0
-else result:=checkfilename(s);
-end;
-
 function vis7z(s:ansistring): boolean;
 begin
 result:=false;
@@ -2352,7 +2337,11 @@ procedure removepwfield(var s, s1: ansistring);
 var
    delimch: AnsiString;
 begin
-delimch := correctdelimiter(s);
+{$IFDEF MSWINDOWS}
+delimch := '"';
+{$ELSE}
+delimch := '''';//only allow exception if pw field is strong quoted
+{$ENDIF}
 //check for password field, if applicable for the inferred operation type
 //if password field is found, do not check the filed for special characters
 if vis7z(s) or visarc(s) or visrar(s) then
@@ -2403,53 +2392,61 @@ if (pos(directoryseparator+'pea',s)<>0) then
       end;
 end;
 
-function validatecl(var s: ansistring): integer;
+function testmetachars(s:ansistring):integer;
 var
-  i: integer;
-  s1:ansistring;
+   s1:ansistring;
 begin
-result := -1;
-if s = '' then exit;
-if pos('#rejected_string#',s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
-for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters
+result:=-1;
 s1:=s;
 removepwfield(s,s1);//remove password field from testing; pw are not sent in command line unless launching a script e.g. from Console tab
 if pos('|',s1)<>0 then exit;//critical pipe
 if pos('&',s1)<>0 then exit;//critical ampersand command chaining
-if pos(';',s1)<>0 then exit;//critical semicolon command chaining
+{$IFNDEF MSWINDOWS}if pos(';',s1)<>0 then exit;{$ENDIF}//critical semicolon command chaining, not supported on Windows
 if pos('<',s1)<>0 then exit;//critical input redirection
 if pos('>',s1)<>0 then exit;//critical output redirection, disable generation of command scripts for tar with pipe
-if pos('`',s1)<>0 then exit;//critical backtick command substitution
-if pos('$',s1)<>0 then exit;//critical dollar variable expansion
+{$IFNDEF MSWINDOWS}if pos('`',s1)<>0 then exit;{$ENDIF}//critical backtick command substitution, not supported on Windows
+{$IFNDEF MSWINDOWS}if pos('$',s1)<>0 then exit;{$ENDIF}//critical dollar variable expansion, %var% on Windows
 //if pos('!',s1)<>0 then exit;//exclamation history expansion, bash interactive (needed by the syntax of some backends, e.g. 7z include switch)
 //if pos('"',s1)<>0 then exit;//quote double (input quotation must be correctly handled before being passed here, relevant procedure stringdelim)
 //if pos('''',s1)<>0 then exit;//quote single
-//if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows)
+//if pos('\',s1)<>0 then exit;//backslash escape character (needed as path separator for UNC and Windows), ^ is the equivalent on Windows
 //backslash is also used in escapefilenamelinuxlike when passing command as separate parameters (pmode=1) on non-Windows systems; escapefilename, which calls escapefilenamelinuxlike, before the escaping part discards file names containing \ (on all platforms) and file/dir names containing \' \" (on non-Windows)
-//line separators \r \n and Unicode U+2028, U+2029 are currently not supported in TProcess.Commandline (not a real console, provides limited support for meta characters) and are checked separately in validatecl_console only when passing input to a real console instance
-{$IFNDEF MSWINDOWS} if pos('#',s1)<>0 then exit;{$ENDIF}//hash bash comment or special character, seems not exploitable on Windows
-if pos('~',s1)<>0 then exit;//tilde home directory expansion on bash, and 8.3 filenames expansion in Windows which may not be unambiguous for the user
-if pos('       ',s1)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
+{$IFNDEF MSWINDOWS}
+if pos('#',s1)<>0 then exit;//hash bash comment or special character, seems not exploitable on Windows
+if pos('~',s1)<>0 then exit;//tilde home directory expansion on bash, 8.3 filenames expansion in Windows
+if pos('\r',s)<>0 then exit; //carriage return
+if pos('\n',s)<>0 then exit; //line feed
+//\t tab \v vertical space \f form feed could be added for increased safety
+if pos(#$E2#$80#$A8,s)<>0 then exit; //Unicode line separator U+2028
+if pos(#$E2#$80#$A9,s)<>0 then exit; //Unicode paragraph separator U+2028
+{$ENDIF}
+result:=0;
+end;
+
+function validatecl(var s: ansistring): integer; //all variable strings are quoted and rejected beforehand if quoting is evaded or validation fails otherwise (valid file name, path, etc)
+var
+  i: integer;
+begin
+result := -1;
+if s = '' then exit;
+if pos(REJECTED_STRING,s)<>0 then exit;//rejection string, in depth safeguard to discard the containing cl if an appropriate check did not happened earlier: if a string sanitization routine has failed to produce a valid output it replaces the offending input with the rejection string
+for i := 0 to 31 do if pos(char(i), s) <> 0 then exit; //illegal characters, including $0a and $0d separators
+if pos('       ',s)<>0 then exit; //more than 6 consecutive spaces may be intentional attempt to hamper readability (as in 7-Zip)
 result := 0;
 end;
 
-function validatecl_console(var s: ansistring): integer;//should be called after validatecl to cover exclusion of specific metacharacters which can be dangerous or troublesome to parse if passed to a real console instance
+function validatecl_console(var s: ansistring): integer;//should be called after validatecl to cover all exclusion cases
 var
   i: integer;
   s1,delimch:ansistring;
 begin
 result := -1;
 if s='' then exit;
-{$IFDEF MSWINDOWS}
-//seem not exploitable: % environment variables wrap, ^ escape character
-{$ELSE}
-if pos('"',s)<>0 then exit; //also escapes trailing \" when passing command to a real console; please note `,$,\ are treated as metacharacters between " weak quotes on non-Windows systems, and \ is not rejecyed by validatecl as it is not supported by TProcess.Commandline limited metacharacters interpreter
+if testmetachars(s)<>0 then exit; //metacharacters supported only when cl is invoking execution from a real console
+{$IFNDEF MSWINDOWS}
+if pos('"',s)<>0 then exit; //err for safety rejecting passing cl to a real console if weak quoting is used (as quoting is objectively more complicated)
+//this also rejects trailing \" when passing command to a real console; please note `,$,\ are treated as metacharacters between " weak quotes on non-Windows systems, and \ is not rejecyed by validatecl as it is not supported by TProcess limited metacharacters interpreter
 //please note this check prevents using console mode if input filenames contains eithr ' or ", in both cases both quotes will be needed to be employed, and the quotation of the resulting command line would be potentially troublesome
-if pos('\r',s)<>0 then exit; //carriage return
-if pos('\n',s)<>0 then exit; //line feed
-//\t tab \v vertical space \f form feed could be added for increased safety
-if pos(#$E2#$80#$A8,s)<>0 then exit; //Unicode line separator U+2028
-if pos(#$E2#$80#$A9,s)<>0 then exit; //Unicode paragraph separator U+2028
 {$ENDIF}
 result := 0;
 end;
@@ -3418,6 +3415,38 @@ if logcommands=1 then
    cllog.Add(cl);
    end;
 result:=0;
+end;
+
+function pdeletedir_internal(s:ansistring):integer;
+var
+   exp_files:TFoundList;
+   exp_fsizes:TFoundListSizes;
+   exp_ftimes:TFoundListAges;
+   exp_fattr:TFoundListAttrib;
+   exp_fattr_dec:TFoundList;
+   nfound:qword;
+   k:integer;
+begin
+result:=-1;
+if s='' then exit;
+//SetCurrentDir(GetTempDir(false)); //enable as safeguard if the routine cannot remove dir if is the current dir
+{$IFDEF MSWINDOWS}
+expand(s,exp_files,exp_fsizes,exp_ftimes,exp_fattr,exp_fattr_dec,nfound);
+if nfound=0 then nfound:=1;
+for k:=0 to nfound-1 do upredeletefile(exp_files[k]);//remove attributes preventing deletion from files and dirs, i.e. read-only
+{$ENDIF}
+if DeleteDirectory(s,false)= true then result:=0;
+end;
+
+function pdeletedir(s:ansistring):integer;
+begin
+result:=pdeletedir_internal(s);
+if result<>0 then
+   begin
+   sleep(random(100));
+   result:=pdeletedir_internal(s);
+   end;
+if checkdirexists(s) then result:=-1;
 end;
 
 end.

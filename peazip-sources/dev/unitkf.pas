@@ -1,6 +1,6 @@
 unit UnitKF; //Form to create keyfile and random password, sampling enthropy from system and user input
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

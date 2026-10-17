@@ -1,6 +1,6 @@
 unit UnitPW; //Form with password and keyfile fields, and password -relevant options
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

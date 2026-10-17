@@ -1,6 +1,6 @@
 unit UnitPM; //Password manager form: save and organize passwords and notes, set master password for the manager
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

@@ -1,6 +1,6 @@
 unit UnitSelect; //Form to apply advanced selection filter on the main form's file browser
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

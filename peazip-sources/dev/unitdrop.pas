@@ -1,6 +1,6 @@
 unit UnitDrop; //Custom drag and drop floater form
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

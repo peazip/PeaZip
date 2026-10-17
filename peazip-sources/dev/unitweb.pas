@@ -1,6 +1,6 @@
 unit UnitWeb; //Form to serach string (filename of selected item in the main form file browser) on various web search engines
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

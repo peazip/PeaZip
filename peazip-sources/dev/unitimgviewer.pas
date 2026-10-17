@@ -1,6 +1,6 @@
 unit UnitImgViewer; //Image viewer form: mzoom in and out 5-1000% or fit to screen height/width, switch to immersive mode, browse next previous first last item in the list received from the file browser, replicate delete and rename file browser's functions
 
-{$mode ObjFPC}{$H+}
+{$mode ObjFPC}{$H+}{$R+}
 
 interface
 

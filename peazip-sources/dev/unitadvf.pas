@@ -1,6 +1,6 @@
 unit UnitAdvf; //Form to apply advanced filters (multiple inclusion and exclusion strings) to formats supported through 7z/p7zip backend
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

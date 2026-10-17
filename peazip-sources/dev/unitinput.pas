@@ -1,6 +1,6 @@
 unit UnitInput; //Multi-purpose user input form (search, rename)
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 interface
 

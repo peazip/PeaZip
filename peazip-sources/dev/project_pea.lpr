@@ -1,6 +1,6 @@
 program project_pea;
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$R+}
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
