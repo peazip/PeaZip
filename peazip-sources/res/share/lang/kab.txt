@@ -1,0 +1,1495 @@
+﻿=== PeaZip language file ===
+Kabyle / Taqbaylit
+11.3
+Translated by: Agurzil
+Last rev. by: Agurzil
+Last rev.: 20261017
+
+=== PeaZip text group ===
+
+txt_11_3_cr: Assaɣ n usekkussem
+txt_11_3_showcr: Sken asekkussem s talɣa n wassaɣ n usekkussem
+txt_11_2_comp: Isem aneṣli n ufaylu d usiɣzef-is ttwaḥerzen yal tikkelt mi ara ttwasqedcen yimasalen n usekkussem aḥerfi (Brotli, BZip2, GZip, XZ, Zstd...), ala ma tettwaseqdec textiṛt « TAR uqbel », i yettbeddilen isem n ufaylu n tuffɣa.
+txt_11_2_funexp: Aru neɣ fren yiwet seg twuriwin i yesεa usnas (ad tettwaselkem ɣef yifuyla yettwafernen, ma tella tezmer)
+txt_11_1_pp: Ma tettwazgel umecwar n uzarasleḍ, asnas yezmer ur d-yettif ara uguren yezmer ad ilin deg yiɣbaṛen uqbel, yerna yezmer ur d-yeskanay ara kra n yiɣbaṛen akken iwata. Ɣas akken, tussfa ur tettwaḥaz ara s uɣewwaṛ-a.
+txt_11_0_adv: Tixtiṛin tinaẓiyin d tid icudden ɣer umasal
+txt_11_0_bt: Sekyed iɣbaṛen s yigemmʷunen
+txt_11_0_good: Igerrez
+txt_11_0_items: iferdisen
+txt_11_0_native: Aneṣli
+txt_11_0_pr: Ktazel asket n urway n wawal uffir
+txt_11_0_rendering: Asuneɣ
+txt_11_0_sch: Sbadu akud n uselkem n twuri yettwasbadun deg ugrudem udlif s talɣa n uskript n uzirig n tladna
+txt_11_0_sharp: Aḥṛiṣ
+txt_11_0_soft: Alewwaɣ
+txt_11_0_strong: Iǧhed
+txt_11_0_vw: D aḍɛif aṭas
+txt_11_0_w: D aḍɛif
+txt_10_9_deletearchive: Kkes aɣbaṛ
+txt_10_9_kfl: Tiddi n ufaylu n tsarut tettwaḥedded ɣer 100 MB imezwura
+txt_10_9_mb: Asiti s teqfalt talemmast n tɣerdayt
+txt_10_8_log: Aɣmis n tladna
+txt_10_8_rv: Rnu iblaɣen n ujebber
+txt_10_8_bk: Selkem imuhal imeẓẓyanen deg ugilal
+txt_10_8_params: Seddi azirig n tladna s talɣa n yiɣewwaṛen yemgaraden
+txt_10_8_untarerr: Isem n TAR ur yemṣada ara d yisem n uɣbaṛ. Tzemreḍ ad tɛerḍeḍ ad teldiḍ aɣbaṛ iwakken ad tessfeḍ agbur n TAR s ufus.
+txt_10_7_errload: Ur yezmir ara ad d-yesken tugna
+txt_10_7_errfile: Afaylu ur yettwaf ara
+txt_10_7_first: Amezwaru
+txt_10_7_fit: Sezg tugna ɣer ugdil
+txt_10_7_fith: Sezg tugna ɣer teɣzi n ugdil
+txt_10_7_fitw: Sezg tugna ɣer tehri n ugdil
+txt_10_7_keep: Ḥrez ifuyla n tuffɣa ma yekfa tussfa s tuccḍa neɣ ma yettwasfesex
+txt_10_7_next: Uḍfir
+txt_10_7_prev: Uzwir
+txt_10_7_pwh: Awal uffir seg ugdazal n ugeddeḥ
+txt_10_7_images: Ameskan n tugniwin
+txt_10_7_thumbnails: Sken tugniwin timeẓẓyanin
+txt_10_6_virtual: Askar uhlis asmussaw
+txt_10_5_fr: (aneqqis ummid)
+txt_10_5_sectype: Suter asentem uqbel aselkem n wanawen-a n yifuyla
+txt_10_5_checkmotw: Senqed Zone.Identifier (MoTW)
+txt_10_5_sectypewarning: Tebɣiḍ ad tselkmeḍ afaylu-a?
+txt_10_5_pathlock: Iferdisen yellan deg ubrid-a n uɣbaṛ ur zemren ara ad ttwaẓergen
+txt_10_5_type_description_rar: RAR: amasal n uɣbaṛ amli, assaɣ n usekkussem ɛlayen, yettusefrak s usekkussem azɣaray
+txt_10_5_sh: Sken ifuyla uffiren (deg unagraw n yifuyla)
+txt_10_5_ntfsalt: Amasal-a yezmer ad iḥrez isuddman imlellayen n yisefka n NTFS, ula d Mark of The Web
+txt_10_4_moving: (Asmutti)
+txt_10_3_classic: Aklasiki
+txt_10_3_ascii: Ilaq ad tesqedceḍ kan isekkilen ASCII deg wawalen uffiren i umasal n uɣbaṛ amiran (isekkilen imeqqranen d yimeẓẓyanen, imḍanen d yisekkilen uzzigen).
+txt_10_3_minimal: Adday
+txt_10_3_m: Atrar
+txt_10_3_pm: Aglezatrar
+txt_10_3_aw: Tifrat tamlellayt: fren « Ḥettem tira n wawal uffir s usdiwen » deg usuter n wawal uffir, neɣ sbadu askar n tdiwent i yifuyla imisinen n ugilal.
+txt_10_2_savecopy: Ḥrez tanɣelt
+txt_10_1_full: Ummid
+txt_10_1_kdfw: Asali n umahil KDF
+txt_10_1_under: Yettuderrer
+txt_10_0_exptrash: Snirem taqecwalt
+txt_10_0_ptarzst: Asekkussem arurad akk, TAR.ZST
+txt_10_0_ptarxz: Asekkussem ɛlayen, TAR.XZ
+txt_10_0_ptargz: Asekkussem alemmas, TAR.GZ
+txt_10_0_comp: Imasalen n usekkussem aḥerfi qebblen kan yiwen n ufaylu d anekcum. Aselket n uɣbaṛ ɣer yimasalen-a ad yecceḍ ma yella uɣbalu yesɛa aṭas n yifuyla neɣ n yikaramen, ayen ur nezmir ara ad t-id-nẓer uqbel.
+txt_10_0_save: Ḥrez
+txt_10_0_tp: Ameskan n uḍris
+txt_9_9_uac: Aseqdac amiran ur yezmir ara ad yaru deg ubrid-a n tuffɣa. Tebɣiḍ ad tselkmeḍ PeaZip s usali n tsirag UAC?
+txt_9_9_kdf: Tikkal n KDF
+txt_9_9_utc: Sken ticraḍ n wakud s UTC
+txt_9_8_alwaysflat: Ldi yal tikkelt iɣbaṛen deg uskan alevel
+txt_9_8_fnew: Ssef dagi (deg ukaram amaynut)
+txt_9_8_fsmart: Ssef dagi (akaram amaynut s tigzi)
+txt_9_7_tarpipe: 7z / p7zip seqdacen tagʷmamt
+txt_9_7_smartsorting: Asmizwer s tigzi n yismawen n yifuyla
+txt_9_6_centered: Deg tlemmast
+txt_9_6_cside: Afeggag n yidis akussim
+txt_9_6_loadpconfirm: Tebɣiḍ ad tessaliḍ amaɣnu-a? Akk isefka n umaɣnu amiran ad ttwasemselsin, ula d yiskripten yettwaḥerzen d Umsefrak n Wawalen Uffiren.
+txt_9_6_loadp: Ssali amaɣnu
+txt_9_6_saveppw: D AXTIṚI: Ḥrez amaɣnu-a s wawal uffir / ufaylu n tsarut?
+txt_9_6_savepoverwrite: Semselsi amaɣnu yellan? Akk isefka n umaɣnu yellan ad ttwasemselsin, ula d yiskripten yettwaḥerzen d Umsefrak n Wawalen Uffiren.
+txt_9_6_savep: Ḥrez amaɣnu
+txt_9_6_scside: Sken afeggag n yidis akussim
+txt_9_5_all: Akk
+txt_9_5_precond: Azarasleḍ ma ttwaṭṭfent tuccḍiwin
+txt_9_5_largea: Azarasleḍ iɣbaṛen imeqqranen
+txt_9_5_mediuma: Azarasleḍ iɣbaṛen ilemmasen
+txt_9_5_smalla: Azarasleḍ iɣbaṛen imeẓẓyanen
+txt_9_5_reopentab: Ales alday n yiccer aneggaru
+txt_9_5_savetabs: Ḥrez iccaren
+txt_9_5_sb: Seqdec ifuyla imisinen yellan deg yiberdan n unagraw
+txt_9_4_r: taɣuri
+txt_9_4_rw: taɣuri/tira
+txt_9_4_savecomment: Ḥrez awennit
+txt_9_4_hintcomment: Aru neɣ senteḍ awennit, ssali neɣ zuɣer-d dagi afaylu n uwennit.
+txt_9_3_continue: Kemmel akken yebɣu yili?
+txt_9_3_contrast: Amyeẓli
+txt_9_3_fsd: Tallunt tilellit deg nnican tezmer ur tettqaddi ara
+txt_9_3_fsw: Tallunt tilellit deg ubrid n umahil akudan tezmer ur tettqaddi ara
+txt_9_3_mrar: Sbadu s ufus afaylu imisin n RAR
+txt_9_3_canedit: Anaw-a n uɣbaṛ yezmer ad yettwaẓreg
+txt_9_3_canforce: Anaw-a n uɣbaṛ yezmer ad yettwaẓreg (s uḥettem)
+txt_9_3_cannotedit: Anaw-a n uɣbaṛ ur yezmir ara ad yettwaẓreg
+txt_9_2_7za: Tazaẓlut n 7z / p7zip
+txt_9_2_changelog: Aɣmis n yibeddilen
+txt_9_2_tfaq: Senqed tisuqilin
+txt_9_2_compact: Akussim
+txt_9_2_swt: Mmeskel afeggag n yiccaren / afeggag n tansa
+txt_9_2_tos: Tiwtilin n useqdec, tudert tusligt
+txt_9_2_doc: Senqed tasemlit, anagraw n uḍfar n wuguren...
+txt_9_2_updates: Senqed ileqman, ifuyla imisinen, isiɣzaf...
+txt_9_1_7zs: Aswir n tseddast n 7z / p7zip
+txt_9_1_ac: Iskripten n uselket n yiɣbaṛen sirigen asdiwen d useqdac
+txt_9_1_closeall: Mdel akk
+txt_9_1_enlargeicons: Semɣer tignatin n yiminig n yifuyla
+txt_9_1_ef: Sukkes ikaramen ilmawen seg tigawin n uɣbaṛ d tussfa (7z / p7zip)
+txt_9_1_nw: Ldi deg usfaylu amaynut
+txt_9_1_qdup: Seqdec tarrayt taruradt n tukksa n yisefka yettwaslegen
+txt_9_0_autoexttar: Ssef s wudem awurman aɣbaṛ TAR seg yifuyla TAR.* yettwasekkusmen
+txt_9_0_accesstime: Ur beddel ara akud n wadduf aneggaru
+txt_9_0_mem: Aseqdec afellay n tkatut
+txt_9_0_showmainmenu: Ldi umuɣ agejdan
+txt_9_0_navmenu: Ldi umuɣ n yinig
+txt_9_0_plugind: Ldi akaram n yifuyla imisinen d yisiɣzaf
+txt_9_0_df: Smizwer ikaramen uqbel ifuyla
+txt_9_0_hl: Ḥrez iseɣwan iqquranen d iseɣwan
+txt_9_0_sl: Ḥrez iseɣwan izamulen d iseɣwan
+txt_9_0_tnav: Sken/Ffer afeggag n yinig
+txt_8_9_empty: Aɣbar yettban-d d ilem
+txt_8_9_disp: Askan n ugbur n uɣbaṛ
+txt_8_9_parsing: Asleḍ n ugbur n uɣbaṛ
+txt_8_9_stoptest: Ḥbes iwakken ad tesneqdeḍ aneqqis deg tegnatin n tuccḍa, umuɣ, usekyed d usekyed awurman
+txt_8_9_ttb: Sken/Ffer afeggag n yifecka
+txt_8_8_ca: Ini n useɣdeb
+txt_8_8_btn: Taqfalt
+txt_8_8_cb: Ini n teqfalt
+txt_8_8_centered: Tiqfalin deg tlemmast
+txt_8_8_light: Aceɛlal
+txt_8_8_lnk: Aseɣwen
+txt_8_8_intnote: Tamawt: taxtiṛt « Ssef sakin smutti » (deg Tixtiṛin > Iɣewwaṛen > Amsefrak n yiɣbaṛen) ur tettwaseqdec ara deg usuddes n uzirig n tladna deg yiccer n tdiwent.
+txt_8_8_snz: Snerni Zone.Identifier (MoTW) (Windows, NTFS)
+txt_8_8_sm: Tiddi n tignatin timeẓẓyanin
+txt_8_8_solcol: Afeggag n ubrid n yinig
+txt_8_8_snoi: Ḥrez isulayen n bab n ufaylu / ugraw (TAR, Linux)
+txt_8_8_snon: Ḥrez ismawen n bab n ufaylu / ugraw (TAR, Linux)
+txt_8_8_tab: Iccer
+txt_8_8_altt: Aɣanib n yiccaren
+txt_8_8_autotest: Sekyed iɣbaṛen seld timerna-nsen, ma yella umasal yessefrak aya
+txt_8_8_cw: Ini n usfaylu
+txt_8_7_csvhelp: "," d alugen agreɣlan, ";" yettwaseqdec s waṭas deg twila n tmura s tutlayin tilatiniyin
+txt_8_7_after: Seld aɣbaṛ / tussfa
+txt_8_7_bintest: n yifuyla imisinen ttwasenqden.
+txt_8_7_csv: Anabraz CSV
+txt_8_7_hok: Igdazalen n ugeddeḥ n yifuyla imisinen i yesseqdac PeaZip mṣadan d wazalen yetturaǧun
+txt_8_7_mo: Swel tixtiṛin n umsefrak n yiɣbaṛen
+txt_8_7_showhm: Ldi umuɣ n uqerru n yiminig
+txt_8_7_showsearchbar: Sken afeggag n unadi
+txt_8_7_showsm: Ldi umuɣ n uɣanib
+txt_8_7_hnotok: Kra n yigdazalen n ugeddeḥ n yifuyla imisinen i yesseqdac PeaZip ur mṣadan ara d wazalen yetturaǧun:
+txt_8_7_verifybin: Senqed igdazalen n ugeddeḥ n yifuyla imisinen
+txt_8_6_clear: Taxtiṛt « Sfeḍ » tekkes ifuyla ikudanen yettwaẓergen, i yezmer ad qqimen i teẓrigt nniḍen ma ur tettwafren ara textiṛt-a.
+txt_8_6_noclear: Sefsex akk ibeddilen war aleqqem n uɣbaṛ
+txt_8_6_nosimple: Ur leqqem ara aɣbaṛ, ḥrez ifuyla ikudanen yettwaẓergen i teẓrigt nniḍen
+txt_8_6_immediate: Aselkem imiren
+txt_8_6_yessimple: Leqqem aɣbaṛ, ḥrez ifuyla ikudanen yettwaẓergen i teẓrigt nniḍen
+txt_8_5_advbrowser: Snes tistayin ɣef yiminig n yiɣbaṛen
+txt_8_5_detailslarge: Talqayt, tameqqrant
+txt_8_5_intext: Ssef ɣer ukaram n umahil akudan, sakin smutti ɣer nnican n tuffɣa; suter asentem s usdiwen uqbel asemselsi
+txt_8_5_listlarge: Umuɣ, ameqqran
+txt_8_5_loadlayout: Ssali taneɣruft deg tnekra
+txt_8_5_samplescripts: Imedyaten n yiskripten
+txt_8_4_keepopenerrorslist: Ḥbes iwakken ad tesneqdeḍ aneqqis deg tegnatin n tuccḍa d umuɣ
+txt_8_3_mbubin: Imisin
+txt_8_3_cw: Beddel akaram n umahil? Aya ad yales awennez n yifuyla ikudanen n umahil, ad yales daɣen asenker n usnas.
+txt_8_3_temperature: Taẓɣelt n yini
+txt_8_3_mbudec: Amrawan
+txt_8_3_htab: Sebrureq iccaren
+txt_8_3_maxarg: Teɣzi tafellayt n tɣirtin
+txt_8_3_mbu: Aferdis s waṭas n yitamḍanen
+txt_8_3_prefalgo: Alguriten yettwasmenyafen
+txt_8_3_skipdel: Zgel tukksa n yifuyla ikudanen isekkeṛen (seqdec awennez i tukksa-nsen mi ara tesriḍ)
+txt_8_3_lw: Kra n yifuyla deg ukaram n umahil sekkeṛen, ur zemren ara ad ttwakksen s wudem awurman
+txt_8_3_noupx: Afaylu-a imisin ur yezmir ara ad yettwasekkussem (yezmer yettwasekkussem yakan)
+txt_8_2_slower: (ẓẓay ugar)
+txt_8_2_df: 7z / p7zip skanayen agbur n yikaramen
+txt_8_2_vreport: Aneqqis n 7z / p7zip war talqayt
+txt_8_2_ta: Yettwaddef
+txt_8_2_tc: Yettwarna
+txt_8_2_keep: Ḥrez ifuyla
+txt_8_2_tm: Yettwabeddel
+txt_8_2_skipet: Zgel asekyed n uwgelhen
+txt_8_2_alltimes: Ḥrez akk ticraḍ n wakud
+txt_8_2_supportedby: Yettusefrak sɣur
+txt_8_1_preparse: Azarasleḍ iɣbaṛen yal tikkelt
+txt_8_1_bo: Asekkey n yiminig
+txt_8_1_bop: Tixtiṛin n usekkey n yiminig zemrent ad ttwaseɣwrent deg Tixtiṛin > Iɣewwaṛen > Iccer Amatu, iwakken iminig ad yezmer ad d-yesken iɣbaṛen i yesɛan amḍan ameqqran aṭas n yiferdisen.
+txt_8_1_nopreparse: Ur eg ara azarasleḍ n yiɣbaṛen
+txt_8_1_ed: Tuccḍa neɣ tuccḍiwin ttwaṭṭfent.
+txt_8_1_togglearc: Askan n ugbur n uɣbaṛ s talɣa n umuɣ alevel yezmer ad yeṭṭef aṭas n wakud. Kemmel akken yebɣu yili?
+txt_8_1_preparsehint: Sekk tamellit s uḥedded n uzarasleḍ n yiɣbaṛen imeqqranen. Azarasleḍ iswi-s d tifin uqbel n wuguren yezmer ad ilin deg ugbur n uɣbaṛ.
+txt_8_1_slow: Aẓẓayan
+txt_8_1_vslow: Aẓẓayan aṭas
+txt_8_1_volumes: iblaɣen
+txt_8_0_altcol: Ini amlellay n yiẓiki
+txt_8_0_forcebrowse: Snirem anawen n yiɣbaṛen ur nelli d imagnuyen (imakiwen, tugniwin n yiḍebsiyen, imsebdaden,...)
+txt_8_0_commonalgo: Alguriten yettwasqedcen s waṭas
+txt_8_0_forceconvert: Selket anawen n yiɣbaṛen ur nelli d imagnuyen
+txt_8_0_defaultactionhint: Tigawt tamezwert mi ara tsiteḍ snat n tikkal ɣef ufaylu icudden ɣer PeaZip seg unagraw
+txt_8_0_defaultaction: Tigawt tamezwert deg unekcum (alday, tussfa tawurmant...)
+txt_8_0_enableextand: Rmed adumuɣ « Ssef yerna ldi s »
+txt_8_0_forcetyping: Ḥettem tira n wawalen uffiren s usdiwen
+txt_8_0_setpwopt: Swel tixtiṛin n wawal uffir / ufaylu n tsarut
+txt_8_0_forcetypinghelp: Ma yessefrak-it umsedday n ugilal, tawuri ad tsuter awal uffir s usdiwen. TILISA: tawuri ad tettwaselkem deg tdiwent, ur tettwaselkam ara war aɛassu, yerna ur tezmir ara ad tesnirem iɣbaṛen s yismawen n yifuyla iwegelhanen.
+txt_7_9_spacing: Iceṛṛiq
+txt_7_9_zooming: Zoom
+txt_7_8_changelocalization: Beddel tutlayt n PeaZip
+txt_7_8_custext: Asiɣzef udmawan
+txt_7_8_destexistfile: Nnican yesɛa yakan ifuyla yettwasesfren. Semselsi ifuyla s yiwen n yisem?
+txt_7_8_dd: Zuɣer yerna sers
+txt_7_8_priorityhigh: Ɛlayen
+txt_7_8_priorityidle: Deg wakud n ustaɛfu
+txt_7_8_rel: Ssef sakin smutti ɣer nnican
+txt_7_8_prioritynormal: Amagnu
+txt_7_8_priorityrealtime: Akud ilaw
+txt_7_8_requirerestart: [yesra ales n usenker n PeaZip]
+txt_7_8_tpriority: Tazwart n twuriwin
+txt_7_8_update: Leqqem
+txt_7_7_noneall: Ula yiwen: sens taskant, taẓrigt, azuɣer d userres, akked tussfa s usdiwen
+txt_7_7_nonetemp: Ula yiwen, seqdec akaram akudan n useqdac ma ilaq
+txt_7_7_outtemp: Tuffɣa, taskant deg ukaram akudan n useqdac
+txt_7_7_sys7zreq: Yesra asbeddi n 7z, 7-Zip, p7zip neɣ ukemmus agdazal
+txt_7_7_tw: Akaram akudan n umahil i tmerna n yiɣbaṛen, teẓrigt, taskant d tussfa s uzuɣer d userres
+txt_7_7_sys7z: Seqdec 7z n unagraw ma yella
+txt_7_6_zipenc: Asettengel n yismawen n yifuyla ZIP
+txt_7_6_color: Ini
+txt_7_6_custenc: Asebter n tengalt udmawan
+txt_7_6_dark: Ubrik ugar
+txt_7_6_tno: Ur mtawi ara aseklu n uɣbaṛ
+txt_7_6_forcelocalenc: Ḥettem asettengel adigan
+txt_7_6_forceutf8enc: Ḥettem UTF-8
+txt_7_6_cpnote: Ma yella usebter n tengalt udmawan yettwafernen ur yettusefrak ara, tiwuriwin ad fakkent yal tikkelt s tuccḍa (s tuget d tuccḍa n uḥeṛṛi n tkatut). Ma yeḍra waya, beddel asebter n tengalt neɣ ales awennez n usnas.
+txt_7_6_defaultenc: Adigan, UTF-8 i yizamulen imernan
+txt_7_6_dim: Ubrik
+txt_7_6_setcurdef: Sbadu abrid amiran d abrid amezwer n tuffɣa
+txt_7_6_setdef: Sbadu abrid amezwer n tuffɣa
+txt_7_6_tadvanced: Mtawi aseklu n uɣbaṛ, ḥrez tikerrisin yettwarzan
+txt_7_6_tsimple: Mtawi aseklu n uɣbaṛ, s wudem aḥerfi
+txt_7_6_tacolor: Aseɣdeb n uḍris
+txt_7_5_always: Yal tikkelt
+txt_7_5_ask: Suter
+txt_7_5_autoclosesingle: Mdel s wudem awurman seld tussfa ma ur tella ara tigawt n yinig
+txt_7_5_cutlen: Gzem isem deg teɣzi yettwasbadun
+txt_7_5_cutlenw: Gzem isem deg teɣzi yettwasbadun (4..255); uguren n yismawen yezmer ad ttwaṣegɣin s ufus ticki
+txt_7_5_dragnone: Ur sekkeṛ ara nnican
+txt_7_5_specialbrowse: Tebɣiḍ ad tessfeḍ akk iwakken ad tefkeḍ i ufaylu isefka imernan i yezmer ad yesɛu sra?
+txt_7_5_ee: Ssef akk i wanawen uzzigen n yifuyla
+txt_7_5_draghide: Ffer nnican n userres
+txt_7_5_draglh: Sekkeṛ yerna ffer nnican
+txt_7_5_draglock: Sekkeṛ nnican n userres
+txt_7_5_never: Werǧin
+txt_7_5_repnascii: Semselsi/kkes isekkilen ur nelli d ASCII
+txt_7_4_comment: Awennit
+txt_7_4_7zfbrotlicomp: Asekkussem arurad akk, 7Z Brotli
+txt_7_4_7zfzstandardcomp: Asekkussem arurad akk, 7Z Zstandard
+txt_7_4_presetrar: Asekkussem ɛlayen, RAR
+txt_7_4_tkeep: Ḥrez tacṛeḍt n wakud taneṣlit n uɣbaṛ
+txt_7_4_lock: Sekkeṛ aɣbaṛ
+txt_7_4_locked: isekkeṛ
+txt_7_4_lockconfirm: Iɣbaren isekkeṛen ur zemren ara ad ttwaẓergen ticki. Tebɣiḍ ad tsekkeṛeḍ aɣbaṛ-a?
+txt_7_4_recover: Seggem aɣbaṛ
+txt_7_4_tcurr: Sbadu tacṛeḍt n wakud n uɣbaṛ seg wakud amiran n unagraw
+txt_7_4_setarc: Swel tixtiṛin tinaẓiyin n uɣbaṛ
+txt_7_4_setext: Swel tixtiṛin tinaẓiyin n tussfa
+txt_7_4_swzipx: Uɣal ɣer usiɣzef zipx i yiɣbaṛen zip ur nseqdac ara Deflate
+txt_7_3_archiveerrors: [aɣbaṛ yezmer ad yesɛu tuccḍiwin]
+txt_7_3_archiveerrorshint: Aɣbaṛ ur yezmir ara ad yili d ameɣtu (ssebba n yisefka ixuṣṣen, yerẓen neɣ ur neḍfir ara alugen). Tzemreḍ ad tselkmeḍ asekyed i talɣut talqayant. Ma tewgelhen tfelwit n ugbur n uɣbaṛ, ilaq wawal uffir uqbel ad t-tesniremeḍ.
+txt_7_3_clickextall: Sit ɣef « Ssef akk » iwakken ad tremdeḍ
+txt_7_3_noconfdel: Ur suter ara asentem i tukksa seld aɣbaṛ / tussfa
+txt_7_3_profile7zfastest: Asekkussem arurad, 7Z arurad akk
+txt_7_3_maxbr: Sali asekkussem Brotli ɣer wazal afellay s useqdec n tkatut ugar (yezmer ur yemṣada ara d kra n yisuffaɣen)
+txt_7_3_maxzstd: Sali asekkussem Zstandard ɣer wazal afellay s useqdec n tkatut ugar
+txt_7_3_profile7zfast: Asekkussem alemmas, 7Z arurad
+txt_7_3_stl: Sbadu tacṛeḍt n wakud n uɣbaṛ seg ufaylu aneggaru
+txt_7_2_altcomp: Asekkussem ɛlayen, ARC
+txt_7_2_clearnoupdate: Sfeḍ ifuyla yettwaẓergen
+txt_7_2_autoclosepeazip: Mdel PeaZip mi ara tfak twuri
+txt_7_2_zpaqall: Ssef akk iceggiren
+txt_7_2_extcomp: Asekkussem imixfiw, ZPAQ
+txt_7_2_extcompultra: Asekkussem imixfiw, ZPAQ ultra
+txt_7_2_fbrotlicomp: Asekkussem arurad akk, Brotli
+txt_7_2_fzstandardcomp: Asekkussem arurad akk, Zstandard
+txt_7_2_loadcompsettings: Ssali iɣewwaṛen n usekkussem
+txt_7_2_savecompsettings: Ḥrez iɣewwaṛen n usekkussem
+txt_7_2_source: Aɣbalu
+txt_7_2_updateclear: Leqqem aɣbaṛ, sfeḍ ifuyla ikudanen yettwaẓergen
+txt_7_1_type_description_brotli: Brotli: asekkussem arurad seg Google, asefruri arurad aṭas
+txt_7_1_new: Ssef akk dagi (deg ukaram amaynut)
+txt_7_1_smart: Ssef akk dagi (akaram amaynut s tigzi)
+txt_7_1_profileintermediate: Asekkussem alemmas, ZIP/BZip2 arurad
+txt_7_1_renfilesonly: Beddel kan ismawen n yifuyla
+txt_7_1_typetosearch: Aru iwakken ad tnadiḍ deg ubrid amiran
+txt_7_1_type_description_zstd: Zstandard: asekkussem arurad seg Facebook, asefruri arurad aṭas
+txt_7_0_af: Sleḍ agbur n yikaramen
+txt_7_0_autoopentar: Ldi s wudem awurman aɣbaṛ TAR yellan daxel n yifuyla TAR.* yettwasekkusmen
+txt_7_0_exttmppath: Agbur ad yettwassef berra n ubrid akudan n umahil, deg: 
+txt_6_9_autou: Leqqem s wudem awurman ifuyla yettwabeddlen deg yiɣbaṛen
+txt_6_9_forceu: Leqqem ifuyla yettwaẓergen deg uɣbaṛ
+txt_6_9_opuns: Tigawt ur tettusefrak ara i wanaw amiran n uɣbaṛ
+txt_6_9_overarch: Semselsi ifuyla s yiwen n yisem yellan yakan daxel n uɣbaṛ?
+txt_6_9_uconf: Afaylu yettwaskanen deg teskant yettwabeddel. Leqqem aɣbaṛ amiran?
+txt_6_8_ndrop: Seqdec azuɣer d userres aneṣli n Windows
+txt_6_7_nop: (war taskant)
+txt_6_6_pdupfound: Ttwaffen yifuyla izemren ad ilin s wudem n usisleg (asekyed arurad s usnemhel)
+txt_6_6_rsh: Ales awennez n umazray n unadi
+txt_6_6_pdupfind: Sumer-d ifuyla n usisleg
+txt_6_6_forcemodify: Ẓreg anawen n yiɣbaṛen ur nelli d imagnuyen am
+txt_6_5_mandatory: (d aḥettem)
+txt_6_5_abort: Ḥbes
+txt_6_5_askp: Suter asbadu n wawal uffir deg tnekra
+txt_6_5_chp: Beddel awal uffir
+txt_6_5_def: Tabadut
+txt_6_5_nop: Ur suter ara asbadu n wawal uffir deg tnekra
+txt_6_5_error: Tuccḍa
+txt_6_5_seqerr: Ttwafent tuccḍiwin, ifuyla ineṣliyen ur ttwakksen ara
+txt_6_5_sni: Seddu talɣut n tɣellist n NT
+txt_6_5_sns: Seddu asuddem amlellay n yisefka n NTFS
+txt_6_5_privacy: Tudert tusligt d taɣellist
+txt_6_5_showvolatile: Sken anwa tixtiṛin i yettbeddilen / i yeqqnen ɣer usatal
+txt_6_5_force: Ɛreḍ ad teldiḍ iɣbaṛen i yesɛan tuccḍiwin
+txt_6_5_warning: Alɣu
+txt_6_5_yes: Ih
+txt_6_5_yesall: Ih i meṛṛa
+txt_6_5_np: Tzemreḍ tura ad tbeddleḍ awal uffir n yiɣbaṛen yettwaselkten s wawal amaynut, neɣ ad t-teǧǧeḍ d ilem iwakken ad tzegleḍ awgelhen
+txt_6_4_absolute: Iberdan imagdazen
+txt_6_4_appdirn: Rnu isem n ukaram ɣer taggara
+txt_6_4_closeallother: Mdel akk iccaren nniḍen
+txt_6_4_closeright: Mdel iccaren yellan ɣer yeffus
+txt_6_4_collapse: Fneẓ iccaren
+txt_6_4_expand: Ssewseɛ iccaren
+txt_6_4_full: Iberdan ummiden
+txt_6_4_new: Amaynut
+txt_6_4_openintab: Ldi deg yiccer amaynut
+txt_6_4_paths: Iberdan
+txt_6_4_prepdirn: Rnu isem n ukaram ɣer tazwara
+txt_6_4_relative: Iberdan imassaɣen
+txt_6_4_tabbar: Afeggag n yiccaren
+txt_6_3_autoadjust: Sezg tigejda s wudem awurman
+txt_6_3_cinfo: Talɣut d yiwenniten
+txt_6_3_syn: Mtawi aɣbaṛ d uḍebsi
+txt_6_3_uar: Leqqem kan ifuyla yellan yakan deg uɣbaṛ
+txt_6_2_encext: Rnu adfir ".enc" i yiɣbaṛen iwegelhanen
+txt_6_2_archive: Anaw n ufaylu n uɣbaṛ
+txt_6_2_container: Anaw n ufaylu n umaki
+txt_6_1_ec: Ssewseɛ / fneẓ aseklu n uɣbaṛ
+txt_6_0_msq: Smizwer ilmend n wanaw n ufaylu i usekkussem s yiwen n uḥder
+txt_5_9_lff: Sleḍ ifuyla d yikaramen
+txt_5_9_pff: Sleḍ, sken aqerru / taggara n ufaylu (EOF)
+txt_5_9_start: Bdu seg
+txt_5_8_l0: Sireg yal isger / amasal yettusefraken
+txt_5_8_l1: Sireg kan isegran n yiseɣẓanen ilelliyen
+txt_5_8_l2: Sireg kan imasalen n yiɣbaṛen yeldin
+txt_5_8_ascii: ASCII aɣelsan, iskripten d iɣelsanen deg twennaḍin tiqburin
+txt_5_8_cp: Aɣelsan ilmend n usebter n tengalt, iskripten zemren ad d-glun s wuguren deg twennaḍin tiqburin s yisebtar n tengalt yemgaraden
+txt_5_8_fs: Aḍfar n yilugan n yiseɣẓanen ilelliyen
+txt_5_8_utf: Iskripten sran tawennaḍt UTF-8 / Unicode tummidt
+txt_5_8_fsr: Amasal-a ur yettusefrak ara ssebba n tilisa n uḍfar n yilugan n yiseɣẓanen ilelliyen (Tixtiṛin > Iɣewwaṛen > Tinaẓiyin)
+txt_5_7_pinstalled: YETTWASEBDED
+txt_5_7_pmissing: IXUṢṢ
+txt_5_7_plugin: Asiɣzef ixuṣṣ, yezmer ad yettwasebded seg Tallalt > Senqed isiɣzaf
+txt_5_6_basic: Azadur
+txt_5_6_exarc: Ssef aɣbaṛ
+txt_5_6_tab: Ldi deg yiccer amaynut
+txt_5_6_rc: Sit s teqfalt tayeffust i textiṛin
+txt_5_6_layouts: Tineɣrufin yettwaḥerzen
+txt_5_6_upexisting: Leqqem aɣbaṛ yellan
+txt_5_6_verbose: S talqayt
+txt_5_5_case: (yessemgired gar yisekkilen imeqqranen d yimeẓẓyanen)
+txt_5_5_add: Rnu azrar deg umḍiq yettwasbadun
+txt_5_5_addsel: Rnu ɣer ufran amiran
+txt_5_5_ext: Beddel asiɣzef n yifuyla
+txt_5_5_plugin: Senqed isiɣzaf
+txt_5_5_copypath: Nɣel abrid
+txt_5_5_delete: Kkes isekkilen deg umḍiq yettwasbadun
+txt_5_5_halt: Ḥbes anagraw mi ara tfak twuri
+txt_5_5_positionw: Asemmeter: 1 i tmerna uqbel asekkil amezwaru, 2 uqbel wis sin, atg... "z" i taggara n yisem n ufaylu
+txt_5_5_positionwd: Asemmeter: 1 i tukksa seg usekkil amezwaru, ula d netta, 2 seg wis sin, ... "z" i taggara n yisem n ufaylu
+txt_5_5_replaceneww: Asemmeter: Eǧǧ azrar amaynut d ilem iwakken ad tekkseḍ kan azrar aqbur
+txt_5_5_lower: isekkilen imeẓẓyanen
+txt_5_5_replaceoldw: Beddel akk tikkal i d-yettban uzrar-a neɣ usekkil-a deg yisem n ufaylu
+txt_5_5_newext: Asiɣzef amaynut
+txt_5_5_new: Azrar amaynut
+txt_5_5_n: Amḍan n yisekkilen ara ttwakksen
+txt_5_5_old: Azrar aqbur
+txt_5_5_position: Amḍiq (amḍan neɣ "z" i taggara)
+txt_5_5_intdir: Akaram amaynut s tigzi
+txt_5_5_replacestr: Semselsi/kkes azrar
+txt_5_5_datesameday: Yiwen n wass d tɣawsa yettwafernen
+txt_5_5_datesamehour: Yiwen n usrag d tɣawsa yettwafernen
+txt_5_5_datesamemonth: Yiwen n waggur d tɣawsa yettwafernen
+txt_5_5_datesameweek: Yiwen n yimalas d tɣawsa yettwafernen
+txt_5_5_datesameyear: Yiwen n useggas d tɣawsa yettwafernen
+txt_5_5_scan: Sken
+txt_5_5_select: Fren
+txt_5_5_similar: Yecban taɣawsa yettwafernen
+txt_5_5_starting: Yebdan s yiwen n usekkil
+txt_5_5_string: Azrar ara ternuḍ
+txt_5_5_subtractsel: Kkes seg ufran amiran
+txt_5_5_datehour: Asrag-a
+txt_5_5_datemonth: Aggur-a
+txt_5_5_dateweek: Imalas-a
+txt_5_5_dateyear: Aseggas-a
+txt_5_5_dateday: Ass-a
+txt_5_5_upper: ISEKKILEN IMEQQRANEN
+txt_5_5_extw: Alɣu: ma tbeddleḍ asiɣzef n ufaylu, yezmer ur yettuseqdac ara
+txt_5_4_da: Azemz n tmerna
+txt_5_4_deletearchives: Kkes iɣbaṛen seld tussfa
+txt_5_4_deletefiles: Kkes ifuyla seld aɣbaṛ
+txt_5_4_deleteoriginal: Tasekkirt n tukksa, akken tettwasbadu deg ugdil agejdan, ad ternu ɣer taggara n uskript.
+txt_5_4_lv: Tirza taneggarut
+txt_5_4_deletearchivesconfirm: Sentem tukksa n yiɣbaṛen ineṣliyen?
+txt_5_4_deletefilesconfirm: Sentem tukksa n yifuyla ineṣliyen?
+txt_5_4_used: Yettwaseqdec
+txt_5_3_profilebest: Asekkussem imixfiw, 7Z ultra
+txt_5_3_profileadvanced: Asekkussem ɛlayen, 7Z
+txt_5_3_profilenormal: Asekkussem alemmas, ZIP (yemṣada d tuget n yisuffaɣen)
+txt_5_3_profileveryfast: Asekkussem arurad, ZIP arurad (yemṣada d tuget n yisuffaɣen)
+txt_5_3_profilepassword: Ḥrez s wawal uffir, amasal 7Z
+txt_5_3_profile10mb: Ḥrez tiddi n tuffɣa ddaw 25 MB, ilmend n tilisa n yimeddayen n yimayl
+txt_5_3_profilesfx: Tussfa tawurmant, aɣerwaḍ ur yesri ara aseɣẓan n tussfa
+txt_5_3_cml: Tutlayt n wumuɣ n usatal n unagraw
+txt_5_3_cmlmessage: Sit snat n tikkal ɣef tutlayt n wumuɣ n usatal i tebɣiḍ, sakin sentem asmezdi n ukalas. Aseɣwer-a ilaq ad yettwasnes tikkelt nniḍen mi ara yettwasebded / yettwaleqqem usnas, neɣ seld aseqdec n umallal n useddu deg unagraw.
+txt_5_3_exc: Tistayin n usukkes sɛant tazwart ɣef tistayin n useddu
+txt_5_3_ia: Seddu daɣen
+txt_5_3_io: Seddu kan
+txt_5_3_rec: Kcem s wallus ɣer yikaramen inaddawen
+txt_5_3_resetsi: Ales tawila n useddu deg unagraw (umuɣ n usatal, Azen ɣer, tuqqniwin n yifuyla)?
+txt_5_2_oadd: Ɣbeṛ deg ubrid aneṣli
+txt_5_2_zerodelete: Tebɣiḍ ad tekkseḍ ifuyla yettwafernen yerna ad tsemselsiḍ akk agbur-nsen s 0? Tigawt-a ur tezmir ara ad tettwasefsex, ifuyla ur zemren ara ad d-ttwarran.
+txt_5_2_zfree: Tebɣiḍ ad tsemselsiḍ akk tallunt tilellit n uḍebsi-a s 0?
+txt_5_2_sdfree: Tebɣiḍ ad tekkseḍ tallunt tilellit n uḍebsi-a s wudem aɣelsan?
+txt_5_2_oext: Ssef ɣer ubrid aneṣli
+txt_5_2_securedeletefree: Kkes tallunt tilellit s wudem aɣelsan
+txt_5_2_free: Tigawt-a tezmer ad teṭṭef kra n tesdatin, yerna ma tettwaselkam s waṭas, tezmer ad tesɛeyyu s zreb iḍebsiyen ibedden ɣef tkatut flash
+txt_5_2_zerofiles: Kkes s tira n yilmawen
+txt_5_2_zerofree: Kkes tallunt tilellit s tira n yilmawen
+txt_5_1_schedadd: Rnu asɣiwes
+txt_5_1_schederr: Ur yezmir ara ad d-yernu asɣiwes
+txt_5_1_daily: Yal ass
+txt_5_1_day: Ass
+txt_5_1_days: Ussan
+txt_5_1_enddate: Azemz n taggara
+txt_5_1_every: Yal
+txt_5_1_w6: Sem
+txt_5_1_hourly: Yal asrag
+txt_5_1_hours: Isragen
+txt_5_1_last: Aneggaru
+txt_5_1_schedmanage: Asɣiwes n twuriwin, sefrek tiwuriwin yettwaḥerzen deg ufurk n PeaZip
+txt_5_1_scriptmanage: Sefrek iskripten yettwaḥerzen i yesɛan aɣawas n uselkem
+txt_5_1_w2: Arim
+txt_5_1_monthly: Yal aggur
+txt_5_1_months: Agguren
+txt_5_1_onlogin: Deg tuqqna
+txt_5_1_onstart: Deg tnekra
+txt_5_1_once: Yiwen n ubrid
+txt_5_1_w7: Sed
+txt_5_1_schedule: Asɣiwes
+txt_5_1_schedexplain: Yettarra tabadut n twuri deg ugrudem udlif d askript s uḍris aḥerfi, yerna yesɣiwis aselkem-is. Iskripten n twuriwin yettwasɣiwsen ttwaḥerzen deg ukaram « Iskripten yettwasɣiwsen ». I teẓrigt neɣ tukksa n twuriwin yettwasɣiwsen, tzemreḍ ad tesqedceḍ Asɣiwes n twuriwin n unagraw. Akk tiwuriwin yettwasɣiwsen i d-yernu PeaZip ttwasduklent deg ufurk « PeaZip » n temkarḍit n twuriwin.
+txt_5_1_schedok: Asɣiwes yettwarna akken iwata
+txt_5_1_schedscripts: Iskripten yettwasɣiwsen yettwaḥerzen
+txt_5_1_startdate: Azemz n tazwara
+txt_5_1_starttime: Asrag n tazwara
+txt_5_1_w1: Acer
+txt_5_1_schedname: Isem n twuri, yesulu askript yettwasɣiwsen yettwaḥerzen akked twuri yettwasɣiwsen n unagraw
+txt_5_1_ts: Asɣiwes n twuriwin
+txt_5_1_w5: Amhad
+txt_5_1_w3: Aram
+txt_5_1_w4: Ahad
+txt_5_1_weekly: Yal imalas
+txt_5_1_weeks: Imalasen
+txt_5_0_bc: Abrid n yinig
+txt_5_0_resetpm: Tessentmeḍ ales n uwennez n Umsefrak n Wawalen Uffiren? Akk awalen uffiren yettwaḥerzen deg Umsefrak n Wawalen Uffiren n PeaZip ad ṛuḥen ma tessentmeḍ.
+txt_5_0_enum: Siḍen agbur n ukaram
+txt_5_0_music: Aẓawan
+txt_5_0_ps: Ldi PowerShell dagi
+txt_5_0_perf: Timellal
+txt_5_0_pictures: Tugniwin
+txt_5_0_removeall: Kkes akk
+txt_5_0_resetbookmarks: Err ticraḍ n yisebtar ɣer twila tamezwert? (Tzemreḍ sakin ad tent-tesagneḍ deg Ticraḍ n yisebtar > Suddes)
+txt_5_0_sh: Amazray n tɣimit
+txt_5_0_skip: Zgel asiḍen n ugbur n yikaramen deg tneɣruft
+txt_5_0_videos: Tividyutin
+txt_4_9_frame: Akatar
+txt_4_9_listth: Umuɣ d tugniwin timeẓẓyanin
+txt_4_9_shadow: Tili
+txt_4_9_style: Aɣanib
+txt_4_8_attach25: Amedday n 25 MB
+txt_4_8_crop: Gzem
+txt_4_8_detailsno: Talqayt
+txt_4_8_details: Talqayt d tugniwin timeẓẓyanin
+txt_4_8_fit: Sezg ɣer
+txt_4_8_fitl: Sezg ɣer umeqqran akk
+txt_4_8_flip: Tti
+txt_4_8_fullscreen: Agdil aččuran
+txt_4_8_fun: Tiwuriwin
+txt_4_8_h: Teɣzi
+txt_4_8_keeparchive: Ḥrez aɣbaṛ
+txt_4_8_noresize: Ḥrez tiddi taneṣlit
+txt_4_8_iconl: Tugniwin timeqqranin
+txt_4_8_iconm: Tignatin d tugniwin
+txt_4_8_imagemanager: Amsefrak n tugniwin
+txt_4_8_immersive: Askan s tuṭṭfa n ugdil
+txt_4_8_listno: Umuɣ
+txt_4_8_aspect: Ḥrez assaɣ gar tehri d teɣzi
+txt_4_8_mirror: Tti am usiḍen
+txt_4_8_presets: Iɣewwaṛen yettwasbadun uqbel
+txt_4_8_replace: Semselsi tugniwin tineṣliyin? « Uhu » ad yesnes aselket deg yifuyla imaynuten.
+txt_4_8_resize: Beddel tiddi
+txt_4_8_rl: Zzi ɣer zelmeḍ
+txt_4_8_rr: Zzi ɣer yeffus
+txt_4_8_stop: Ḥbes
+txt_4_8_t: Selket
+txt_4_8_w: Tehri
+txt_4_7_pk: Rnu awal uffir / afaylu n tsarut agacuran
+txt_4_7_spchar: Eg talast i yisekkilen: ala isekkilen n ugemmay d yimḍanen
+txt_4_7_recycleask: Smutti ifuyla yettwafernen ɣer tqecwalt?
+txt_4_7_recycle: Smutti ɣer tqecwalt
+txt_4_7_pcomp: Asekkussem yezmer ad yili
+txt_4_6_am: Amsefrak n yiɣbaṛen
+txt_4_6_fm: Amsefrak n yifuyla
+txt_4_6_users: Iseqdacen
+txt_4_5_goupdate: Lqem amaynut yella. Ldi asmel web unṣib n PeaZip iwakken ad tessidreḍ aleqqem?
+txt_4_5_b: Ddaw
+txt_4_5_koupdate: Ur yezmir ara ad isenqed ileqman, ulac tuqqna d uqeddac n uleqqem
+txt_4_5_update: Senqed ileqman
+txt_4_5_dock: Senteḍ
+txt_4_5_l: Zelmeḍ
+txt_4_5_noupdate: PeaZip yettwaleqqem
+txt_4_5_properties: Iraten
+txt_4_5_r: Yeffus
+txt_4_5_pj: Iskripten yettwaḥerzen
+txt_4_5_shaddress: Sken afeggag n tansa
+txt_4_5_shnav: Sken afeggag n yidis
+txt_4_5_shstatus: Sken afeggag n waddad
+txt_4_5_shtool: Sken afeggag n yifecka
+txt_4_5_upxpj: Suref-aɣ, ur nezmir ara ad nsifeḍ tabadut n twuri, acku tigawt-a neɣ taxtiṛt-a tesra aselkem n waṭas n tladna yemgaraden
+txt_4_5_t: Afella
+txt_4_4_confremoveall: Kkes akk ifuyla n usagen n PeaZip (Isnasen, Ticraḍ n yisebtar)?
+txt_4_4_confremove: Kkes tawila n PeaZip?
+txt_4_3_pwmanhint: Sit snat n tikkal iwakken ad tẓergeḍ iferdisen deg umuɣ n wawalen uffiren, sit s teqfalt tayeffust i textiṛin, Ctrl+C i unɣal n wawalen uffiren
+txt_4_3_exppl: Sifeḍ umuɣ n wawalen uffiren
+txt_4_3_expple: Iwegelhen (tanɣelt n uḥraz n Umsefrak n Wawalen Uffiren)
+txt_4_3_keeppw: Ḥrez awal uffir / afaylu n tsarut i tɣimit tamirant
+txt_4_3_pwmanpwhint: Asbadu n wawal uffir / ufaylu n tsarut i uwgelhen n wumuɣ n wawalen uffiren d aḥettem. Akka, ilaq usesteb iwakken ad tkecmeḍ ɣer Umsefrak n Wawalen Uffiren. Tzemreḍ ad tbeddleḍ awal uffir / afaylu n tsarut melmi tebɣiḍ seg tferkit-a.
+txt_4_3_pwmanmaster: Sbadu/beddel awal uffir agejdan n Umsefrak n Wawalen Uffiren
+txt_4_3_pwmanlist: Umuɣ n wawalen uffiren
+txt_4_3_pwman: Amsefrak n Wawalen Uffiren
+txt_4_3_pwmancorr: Amsefrak n Wawalen Uffiren yettban-d yettwabeddel war tasiregt neɣ yerreẓ. Tebɣiḍ ad t-teḥerzeḍ akken yebɣu yili yerna ad tɛerḍeḍ ad d-terreḍ umuɣ amiran n wawalen uffiren, ma tettamneḍ deg-s? (« Uhu » ad yales awennez n Umsefrak n Wawalen Uffiren, d ayen yettwasemter)
+txt_4_3_expplp: Aḍris aḥerfi (akk iseqdacen)
+txt_4_3_recsrc: Anadi s wallus s wudem amezwer
+txt_4_3_resetpm: Ales awennez n Umsefrak n Wawalen Uffiren? Akk awalen uffiren yettwaḥerzen ad ttwakksen
+txt_4_3_breadcrumb: Sken tansa s talɣa n ubrid n yinig
+txt_4_2_arcabspath: Seqdec iberdan imagdazen
+txt_4_1_duplicateshint: Azrar "size"/"checksum" yettwaskan deg tgejdit CRC i meṛṛa ifuyla izemren ad ilin s wudem n usisleg, yettwafen deg ukaram amiran neɣ ilmend n testayt n unadi
+txt_4_1_adminhint: (ASEMMETER: tzemreḍ daɣen ad tessutreḍ asali n tsirag UAC iwakken ad txedmeḍ deg yiberdan yettwaḥerzen, Alt+F10 neɣ Tixtiṛin > Selkem d anedbal)
+txt_4_1_selected: (yettwafernen)
+txt_4_1_duplicatesfound: Ttwafen yifuyla n usisleg
+txt_4_1_duplicatesfind: Af-d ifuyla n usisleg
+txt_4_1_runasadmin: Selkem d anedbal
+txt_4_1_simplesearch: Anadi aḥerfi
+txt_4_0_thim: Sken tugniwin timeẓẓyanin n tewlafin
+txt_3_8_type_description_wim: WIM: amasal n tugna n uḍebsi n Microsoft
+txt_3_8_type_description_xz: XZ: asekkussem n yifuyla iǧehden, ibedd ɣef LZMA2
+txt_3_7_donations: Tikciwin
+txt_3_7_nameasparent: Semmi aɣbaṛ s yisem n ukaram amaraw n tɣawsa yettwafernen, ma ttwarnan aṭas n yiferdisen
+txt_3_7_tracker: Anagraw n uḍfar n wuguren
+txt_3_7_sort: Smizwer ilmend n
+txt_3_7_swapbars: Mmeskel afeggag n yifecka / afeggag n tansa
+txt_3_7_themedbars: Ifeggagen s yisental
+txt_3_6_ignoredd: Zgel yal tikkelt iberdan i tussfa s uzuɣer d userres
+txt_3_6_close: Mdel
+txt_3_6_resetapps: Tebɣiḍ ad talseḍ awennez n Yisnasen (agraw n wahilen d yiskripten i tzemreḍ ad tesagneḍ, i ulday n yifuyla, deg umḍiq n tuqqniwin n yifuyla)?
+txt_3_6_ethemes: Isental yellan
+txt_3_5_td: Senqed isental
+txt_3_5_managecustomthemes: Sefrek isental
+txt_3_4_nopaths: War iberdan
+txt_3_4_smallicons: Tignatin
+txt_3_3_skipunits: (Windows) Awi-d talɣut n ublaɣ i yiferdisen n uzeṭṭa, tanekra ad tili ẓẓayet ugar
+txt_3_3_stralt: Taladna tamlellayt, mi ur yettwasɛedda ara ula d yiwen n uɣewwaṛ
+txt_3_3_apps: Isnasen
+txt_3_3_multi: Afran usgit
+txt_3_3_runexp: Ldi ahil, afaylu, akaram neɣ asmel web
+txt_3_3_apppath: Akaram n PeaZip
+txt_3_3_run: Selkem
+txt_3_2_7zutf8nonascii: 7z / p7zip -mcu seqdacen UTF8 i yismawen n yifuyla i yesɛan izamulen ur nelli d ASCII daxel n yifuyla .zip
+txt_3_2_alltasks: Akk tiwuriwin
+txt_3_2_conf: Tawila
+txt_3_2_donations: Mudd tikci i tuddsiwin n lxir
+txt_3_1_sccenc: Asettengel n yisekkilen n TDIWENT n 7z / p7zip
+txt_3_1_downloads: Isadaren
+txt_3_1_lib: Timkarḍiyin
+txt_3_1_more: Ugar
+txt_3_1_openasarchive: Ldi d aɣbaṛ
+txt_3_1_sendto: Akaram n wumuɣ « Azen ɣer » n useqdac
+txt_3_1_pathexc: Abrid iɛedda tiddi tafellayt yettwasirgen
+txt_3_1_recent: Amiran
+txt_3_1_plsmartmin: Selkem s usfaylu yettwafneẓ; sken-it / eǧǧ-it yeldi kan ma ilaq
+txt_3_1_src: Inadiyen
+txt_3_1_systmp: Akaram akudan n useqdac
+txt_3_1_languagetools: Suqel
+txt_3_1_workingdir: Akaram n umahil
+txt_3_0_nonreadableorpw: Aɣbaṛ ur yezmir ara ad yettwaɣra. Aɣbaṛ ur yezmir ara ad yili d ameɣtu, iblaɣen zemren ad xuṣṣen, neɣ tafelwit n ugbur-is tezmer ad tili tewgelhen. Tebɣiḍ ad tɛerḍeḍ awal uffir?
+txt_3_0_readablepw: Aɣbaṛ ur yezmir ara ad yettwaɣra, yezmer yettwaḥrez s wawal uffir
+txt_3_0_configure: Tuqqniwin n yifuyla d useddu deg wumuɣ n unagraw
+txt_3_0_resettmp: Ales awennez n yifuyla ikudanen n umahil
+txt_2_9_address: Afeggag n tansa
+txt_2_9_adv: Tistayin tinaẓiyin ttwasnasent mi ara ttwasferken yifuyla i yettusefraken s yimseddayen n ugilal 7z neɣ FreeArc (ẓer tasemlit), yerna sɛant tazwart ɣef tistayin tizadurin (i yettwasqedcen i twuriwin n unadi, i d-yettwaskanen deg yigalis n Ticraḍ n yisebtar d umazray)
+txt_2_9_columns: Tigejda
+txt_2_9_copyhere: Nɣel dagi
+txt_2_9_noscan: Ur sken ara ifuyla i yettwarnan ɣer tneɣruft
+txt_2_9_extconsole: Tadiwent n tussfa tella kan deg usnirem n yiɣbaṛen
+txt_2_9_thl: Sebrureq tiqfalin
+txt_2_9_home: Axxam
+txt_2_9_lt: Ameqqran
+txt_2_9_mt: Alemmas
+txt_2_9_movehere: Smutti dagi
+txt_2_9_nav: Inig
+txt_2_9_navbar: Afeggag n yidis
+txt_2_9_none: Ula yiwen
+txt_2_9_organize: Suddes
+txt_2_9_public: Azayez
+txt_2_9_rec: S wallus: nadi deg yikaramen inaddawen, yezmer ad yeṭṭef kra n wakud
+txt_2_9_selected: Yettwafernen
+txt_2_9_setapps: Suddes isnasen
+txt_2_9_showmenu: Sken afeggag n wumuɣ
+txt_2_9_st: Ameẓẓyan
+txt_2_9_test_pw2G: Senqed awgelhen n yiɣbaṛen <2GB
+txt_2_9_vst: Aḍris kan
+txt_2_9_toolbar: Afeggag n yifecka
+txt_2_9_tree: Aseklu
+txt_2_9_views: Timeẓra
+txt_2_8_experimental: (armitan)
+txt_2_8_zcopy: (Windows) Nɣel ifuyla s uskar i yezmer ad yekker tikelt nniḍen, anɣal ẓẓay ugar
+txt_2_8_addvol: Timerna n ublaɣ neɣ n yiblaɣen s lekmal ɣer uɣbaṛ tezmer ad teṭṭef aṭas n wakud, ad tkemmleḍ akken yebɣu yili?
+txt_2_8_uniterror: Ur yezmir ara ad yekcem ɣer tayunt
+txt_2_8_cannotconvert: Ur yezmir ara ad iselket iɣbaṛen yettwafernen
+txt_2_8_convertbegin: Ad tkemmleḍ s umecwar n usekkussem i wakken ad tfakkeḍ aselket?
+txt_2_8_convert: Selket
+txt_2_8_convertexisting: Selket iɣbaṛen yellan
+txt_2_8_convertdelete: Ad tekkseḍ ifuyla d yikaramen i d-yettwarnan s wudem akudan i uselket?
+txt_2_8_details: Talqayt
+txt_2_8_parallel: Selkem tiwuriwin s wudem amsadaɣ mi ara yili waya yezmer
+txt_2_8_convertnote: Deg yal addad, iɣbaṛen ineṣliyen ur ttwasenfel ara, i wakken ad yeqqim useqdac d bab n ufran gar uḥraz-nsen d tukksa-nsen
+txt_2_8_custom: ur yettusefrak ara srid s PeaZip, maca deg umecwar n tussfa, tzemreḍ ad teswelḍ PeaZip i usefrek n tewsatin n yifuyla yugnen deg yiccer « Tinaẓiyin ». Ad tkemmleḍ alday n ufaylu-a?
+txt_2_8_unitrecommend: Yelha ad tessfeḍ (asiti s teqfalt tayeffust > Ssef ayen yettwafernen) neɣ ad teldiḍ inagrawen n yifuyla seg uẓar n uselkim (Ifecka n unagraw > Ldi tayunt am uɣbaṛ)
+txt_2_8_viewasarchive: Ldi tayunt am uɣbaṛ
+txt_2_8_nounit: Ulac tayunt yettwafernen
+txt_2_8_rowselect: Afran n udur
+txt_2_8_statusbar: Afeggag n waddad
+txt_2_8_typeunit: Sekcem isem n tayunt tameẓẓult neɣ tafizikt
+txt_2_8_usedefaultoutpath: Seqdec yal tikelt abrid n tuffɣa amezwer
+txt_2_7_experimental: (armitan, ẓer tasemlit)
+txt_2_7_optional: (afrayan)
+txt_2_7_list_tryflatorpw: , tifratin izemren: ɛreḍ timeẓri taleqqaqt (F6), sekcem awal uffir (F9), awi-d tanɣelt tamaynut n uɣbaṛ
+txt_2_7_separate: Rnu ɣer yiɣbaṛen yemgaraden
+txt_2_7_pwsupported: asɣber s wawal uffir
+txt_2_7_cancel: Sefsex
+txt_2_7_encfn: Wgelhen daɣen ismawen n yifuyla (ma yessefrak-it umasal)
+txt_2_7_setpw: Sbadu awal uffir / afaylu n tsarut
+txt_2_7_ext: Tussfa:
+txt_2_7_extfrom: Tussfa seg uɣbaṛ:
+txt_2_7_es: Ssef tiwsatin n yifuyla yettusefraken ur nelli d iɣbaṛen, am yimselkam, ifuyla n MS Office d OOo
+txt_2_7_eu: Ssef tiwsatin n yifuyla ur nettusefrak ara, s usbadu n ufecku yugnen n tussfa
+txt_2_7_clipboard: Tacfawit
+txt_2_7_goarclayout: Ddu ɣer tneɣruft n usɣber
+txt_2_7_goextlayout: Ddu ɣer tneɣruft n tussfa
+txt_2_7_ok: Ih
+txt_2_7_drag_archive: Ad teldiḍ afaylu am uɣbaṛ amaynut? (« Ala » i tmerna n ufaylu ɣer tneɣruft tamirant n usɣber)
+txt_2_7_oop: Ldi abrid n tuffɣa mi ara tfak twuri
+txt_2_7_validatefn: Tamhelt teḥbes, yettwaf isem n ufaylu arameɣtu:
+txt_2_7_validatecl: Tamhelt teḥbes, yettwaf unezḍay i yezmer ad yili d amihi (am tuqqna n yineẓḍayen ur nettwasireg ara deg wahil):
+txt_2_7_output: Tuffɣa
+txt_2_7_pwnotset: Awal uffir ur yettusbadu ara
+txt_2_7_pwarcset: Awal uffir yettusbadu
+txt_2_7_pwextset: Awal uffir yettusbadu, tzemreḍ ad tessfeḍ / ad tebderḍ / ad tesneqdeḍ iɣbaṛen iwgelhanen
+txt_2_7_archivehint: Zuɣer dagi ifuyla d yikaramen i usɣber, neɣ sit s teqfalt tayeffust i ugar n textiṛiyin
+txt_2_7_exthint: Zuɣer dagi iɣbaṛen i tussfa, neɣ sit s teqfalt tayeffust i ugar n textiṛiyin
+txt_2_7_setadvf: Sbadu tistayin tinaẓiyin
+txt_2_7_selpath: Abrid n uferdis yettwafernen
+txt_2_7_separateerror: Surfaɣ, ur yezmir ara ad ikter izirig n unezḍay n usbadu n twuri mi ara tettwasqedc textiṛt « Rnu ɣer yiɣbaṛen yemgaraden », acku tawuri tettwaselkam s waṭas n yineẓḍayen yemgaraden
+txt_2_7_noinput: Taneɣruft d tilemt: seqdec « Rnu afaylu / ifuyla » neɣ « Ssali taneɣruft » i wakken ad tččareḍ umuɣ n yiɣbaṛen ara tessfeḍ
+txt_2_7_dirsize: Tiddi n ugbur n yikaramen ur tettwasenqad ara i usiḍen n tiddi taɣrudt
+txt_2_7_un7z_browse_flat: ɛreḍ timeẓri taleqqaqt (F6)
+txt_2_7_updating: [Aleqqem n uɣbaṛ yellan]
+txt_2_6_folders: (ikaramen)
+txt_2_6_advanced: Tinaẓiyin
+txt_2_6_plalways: Ḥbes yal tikelt i usenqed n uneqqis n twuri
+txt_2_6_plsmart: Ḥbes i usenqed n uneqqis deg waddad n tuccḍa, n ubder neɣ n usenqed
+txt_2_5_sessionio: (tiɣimit-a)
+txt_2_5_advanced: Taẓrigt tanaẓit: rnu tallunin gar yizriren n yiɣewwaṛen d yisem n ufaylu ma ilaq
+txt_2_5_basic: Taẓrigt tazadurt: asnas d yiɣewwaṛen uqbel isem n unekcum
+txt_2_5_cannotrun: Ur yezmir ara ad iselkem
+txt_2_5_custeditors: Imaẓragen, imeɣriyen, inafraḍen n mgalavirus yugnen, atg... (semselsin tuqqniwin n yifuyla n unagraw)
+txt_2_5_delete: Kkes
+txt_2_5_delete_fromarchive: Kkes seg uɣbaṛ
+txt_2_5_langflag: Sken isem n tɣawsa yettwasɣebren am uḍris UTF-8; kkes ticreḍt i usemselsi n yisekkilen ussiɛen s « ? »
+txt_2_5_encpj: Settengel asbadu n twuri am uḍris UTF-8
+txt_2_5_execommand: Amselkam neɣ anezḍay
+txt_2_5_help: Tallelt
+txt_2_5_langhint: Awellih: asemselsi n yisekkilen ussiɛen s usekkil amatu « ? » yezmer ad isseɣti taseddast ma ur yezmir ara ad yettuselket ugraw n yisekkilen n uɣbaṛ akken iwata deg tmacint tamirant
+txt_2_5_mini_help: Aselmed yettwasuqelen
+txt_2_5_offline_help: Tallelt n PeaZip
+txt_2_5_tray: Fneẓ ɣer temnaḍt n telɣa
+txt_2_5_remove: Kkes
+txt_2_5_hintpaths: Sit s teqfalt tayeffust i ulday n yiberdan n unagraw d useqdac
+txt_2_5_selectapp: Fren asnas
+txt_2_5_strafter: Azrir deffir yisem n unekcum
+txt_2_5_strbefore: Azrir uqbel isem n unekcum
+txt_2_5_encoding: Asettengel n uḍris
+txt_2_5_nopw: tawsit-a n yiɣbaṛen ur tesfrak ara awgelhen
+txt_2_4_draghint: [zuɣer ɣer Explorer s ufeggag n tansa yermden]
+txt_2_4_tb: Sezg tiqfalin n ufeggag n yifecka (ales tanekra n PeaZip)
+txt_2_4_adding: Timerna
+txt_2_4_advclip: Tacfawit teḥrez aṭas n yifranen
+txt_2_4_yanswers: Tiririyin
+txt_2_4_itemsheight: Sezg s wudem awurman tattayt n yiferdisen
+txt_2_4_clearclipboard: Sfeḍ tacfawit (Esc)
+txt_2_4_wcommons: Commons
+txt_2_4_copyfrom: Nɣel seg
+txt_2_4_deletebookmarks: Tebɣiḍ ad tekkseḍ umuɣ n yifuyla d yikaramen yettwarnan ɣer tecraḍ n yisebtar?
+txt_2_4_documents: Isemliyen
+txt_2_4_wenc: Tasnayt
+txt_2_4_extractfrom: Ssef seg
+txt_2_4_hexp: Askan amrawsedis
+txt_2_4_operation: Tamhelt
+txt_2_4_path: abrid ur iqebbel ara tira (am wakken yeččur neɣ d taɣuri kan). Tebɣiḍ ad tferneḍ abrid n tuffɣa i iqebblen tira?
+txt_2_4_removefromclipboard: Kkes seg tecfawit
+txt_2_4_stdclip: Alugan: ḥrez yiwen n ufran deg tecfawit, sfeḍ timhalin n ugzam mi ara tsenteḍḍeḍ
+txt_2_4_totalmem: takatut taɣrudt
+txt_2_4_gvideo: Vidyu
+txt_2_4_wbook: Wikibook
+txt_2_4_wnews: Wikinews
+txt_2_4_wsrc: Wikisource
+txt_2_4_wdict: Wiktionary
+txt_2_3_pw_errorchar: Aseqdec n usekkil n tuccar deg wawalen uffiren ur yettusemter ara (i PeaZip d yiskripten). Ma tesriḍ ad d-tesnulfuḍ neɣ ad tessfeḍ aɣbaṛ s wawal-a uffir, tzemreḍ ad tagiḍ izen-a; ad ak-d-yettwasuter ad tsekcmeḍ awal uffir s wudem amyigaw deg tadiwent.
+txt_2_3_envstr: Sken imuttiyen n twennaḍt
+txt_2_3_never_pw: Ur ssutur ara awal uffir
+txt_2_3_home: Akaram agejdan n useqdac
+txt_2_3_on_pw: Deg temhalin n tussfa / ubder / usenqed seg wumuɣen n unagraw:
+txt_2_3_test_pw100: Senqed awgelhen n yiɣbaṛen <100MB
+txt_2_3_test_pw: Senqed awgelhen (yezmer ad yili ẓẓay)
+txt_exclude_recourse: « Stixer » s wallus deg yikaramen inaddawen
+txt_action_extopen: Tigawt « Ssef u ldi s usnas yeqqnen »
+txt_error_passwordnotmatch: Urtan « Awal uffir » d « Sentem » ur mṣadan ara, seɣti-ten
+txt_action_preview: Tigawt « Sken taskant s usnas yeqqnen »
+txt_preview_hint: Tigawt « Taskant » teselkam tawuri am « Ssef u ldi », maca deg ubrid akudan deg ukaram n tuffɣa, i yettwakksen s wudem awurman mi ara yettwamedel uɣbaṛ.
+txt_better: (ugar n tɣara)
+txt_default2: (amezwer)
+txt_faster: (arurad ugar)
+txt_fastermem: (arurad ugar, takatut drus)
+txt_tempdir: (akaram akudan n umahil n PeaZip)
+txt_stream: (yettusbadu s « Asenqed n usuddem »)
+txt_slowermem: (ẓẓay ugar, takatut ugar)
+txt_store: (aḥraz war asekkussem, arurad akk)
+txt_newfolder: (deg ukaram amaynut)
+txt_7z_exitcodeunknown: : Tuccḍa tarussint deg twuri
+txt_list_isfolder:  [akaram]
+txt_none: <ula yiwen>
+txt_fd: Taḍebsit talwayant 1.44 MB
+txt_7z_exitcode1: 1: Alɣu: tuccḍa neɣ tuccḍiwin ur neḥbis ara tawuri; am yifuyla ixuṣṣen neɣ yettwasekkṛen
+txt_attach10: Afaylu yeddan 10 MB
+txt_7z_exitcode2: 2: Teḍra-d tuccḍa i yeḥebsen tawuri
+txt_7z_exitcode255: 255: Tawuri teḥbes sɣur useqdac
+txt_fat32: Afaylu FAT32 4 GB
+txt_dvd: DVD 4.7 GB
+txt_attach5: Afaylu yeddan 5 MB
+txt_cd650: CD 650 MB
+txt_7z_exitcode7: 7: Tuccḍa: izirig n unezḍay arameɣtu
+txt_cd700: CD 700 MB
+txt_type_description_7z: 7Z: amasal n uɣbaṛ yesɛan aṭas n tmahilin d wassaɣ ɛlayen n usekkussem
+txt_dvddl: DVD DL 8.5 GB
+txt_7z_exitcode8: 8: Tuccḍa: takatut ur tekfi ara i temhelt yettwasutren
+txt_abort: Ad tesfesxeḍ timhalin n unɣal / usmutti n yifuyla yettwasɣiwsen?
+txt_about: Ɣef
+txt_action: Tigawt
+txt_action_hint: Tigawt deg ulday neɣ deg teskant s usnas yeqqnen
+txt_add: Rnu
+txt_add_existing_archive: Rnu (ma yella uɣbaṛ)
+txt_add_archive: Rnu aɣbaṛ
+txt_add_files: Rnu ifuyla
+txt_add_folder: Rnu akaram
+txt_add_path: Rnu abrid
+txt_add_tolayout: Rnu ifuyla d yikaramen yettwafernen ɣer tneɣruft n uɣbaṛ
+txt_add_toarchive: Rnu ɣer uɣbaṛ
+txt_add_tobookmarks: Rnu ɣer tecraḍ n yisebtar
+txt_address_hint: Tastayt: tqebbel isekkilen imuta * d ?
+txt_adv_filters: Tistayin tinaẓiyin
+txt_algo: Alguritm
+txt_all: akk
+txt_all_default: Akk (amezwer)
+txt_all_type: Tawsit kifkif
+txt_all_date: Azemz
+txt_all_psize: Tiddi n ufaylu yettwasekkusmen
+txt_all_attributes: Iraten kifkif
+txt_all_size: Tiddi n ufaylu
+txt_error_input_upx: isirig yiwen kan n ufaylu amselkam am unekcum
+txt_always_pw: Ssutur yal tikelt awal uffir
+txt_ignore_ext: Zgel yal tikelt iberdan i « Ssef u... »
+txt_ignore_disp: Zgel yal tikelt iberdan i « Ssef ayen yettwaskanen... »
+txt_ignore_sel: Zgel yal tikelt iberdan i « Ssef ayen yettwafernen... »
+txt_key_hint: Rnu adsil n ufaylu n tsarut ɣer taggara n wawal uffir; aɣbaṛ yezmer ad yettwakkes uwgelhen-is s PeaZip d yisnasen nniḍen i yeḍefren alugan-nni, neɣ s usekcem n udsil am uḥric n wawal uffir
+txt_timestamp: Rnu ticreḍt n wakud ɣer taggara n yisem
+txt_appoptions: Tixtiṛiyin n usnas
+txt_type_description_arc: ARC: amsɣbar armitan, iǧehden, igerrzen deg umahil, yesɛan aṭas n tmahilin
+txt_archive: Aɣbaṛ
+txt_un7z_browse_ok: aɣbaṛ yettwasnirem akken iwata
+txt_interface: Agrudem n usnirem n yiɣbaṛen
+txt_archivecreation: Asnulfu n uɣbaṛ
+txt_tarbefore_hint: Sɣber isefka s umasal TAR uqbel asɣber-nsen s tewsit yettusbadun.
+txt_archive_hint: Sɣber, sekkussem, bḍu u ḥrez tabaḍnit n yifuyla, n yikaramen d yiblaɣen
+txt_compressionratio_hint: Assaɣ n usekkussem n uɣbaṛ
+txt_archiving: Asɣber:
+txt_cl_long: Tiɣiret uɣalent amzun ɛeddant tiddi tafellayt i yezmer ad isɛeddi ugrudem n PeaZip, fren drus n yifuyla n unekcum (am ufran n yikaramen deg umḍiq n yifuyla yiwen yiwen)
+txt_overwrite_askbefore: Ssuter uqbel asemselsi (deg tadiwent)
+txt_associated: Asnas yeqqnen
+txt_attributes: Iraten
+txt_author: Ameskar
+txt_ren_existing: Snifel s wudem awurman ismawen n yifuyla yellan
+txt_ren_extracted: Snifel s wudem awurman ismawen n yifuyla yettwassfen
+txt_autofolder: Ad d-tesnulfuḍ s wudem awurman akaram amaynut i tussfa n uɣbaṛ deg-s?
+txt_back: Uɣal
+txt_backend: Ifuyla imisinen n ugilal
+txt_backupexe: Ḥrez tanɣelt n ufaylu amselkam (yettusemter)
+txt_bettercompression: asekkussem yelhan ugar
+txt_blogs: Iblugen
+txt_blowfish: Blowfish448 (iḥedran n 64 bit)
+txt_bookmarks: Ticraḍ n yisebtar
+txt_browse: Snirem
+txt_browser: Amsnirem
+txt_aborted_error: Asnirem n uɣbaṛ yeḥbes, acku ad yeṭṭef aṭas n wakud. Tzemreḍ ad tesneɣseḍ afran s useqdec n unadi (F3) neɣ s uzgal n uskar n tmeẓri taleqqaqt (F6). Tzemreḍ ad tessfeḍ, ad tebderḍ neɣ ad tesneqdeḍ aɣbaṛ srid.
+txt_list_browsing: Asnirem
+txt_archive_root: Asnirem: aẓar n uɣbaṛ
+txt_type_description_bzip2: BZip2: asekkussem iǧehden s waṭas, arured alemmas
+txt_pw_empty: Sekcem awal uffir (neɣ afaylu n tsarut)
+txt_add_error: Ur yezmir ara ad irnu / ad ileqqem neɣ ad yekkes tiɣawsiwin. Aɣbaṛ ur iqebbel ara tira, neɣ ur yezmir ara ad isefrek tamhelt-a. Taẓrigt n tewsatin n yiɣbaṛen ur nelli d tiluganin tezmer ad tettwarmed deg textiṛiyin n umsefrak n yiɣbaṛen.
+txt_un7z_browse_failure: ur yezmir ara ad isnirem aɣbaṛ
+txt_list_error: Ur yezmir ara ad ibder agbur n uɣbaṛ, senqed ma aɣbaṛ yettwaḥrez s wawal uffir neɣ yerreẓ.
+txt_conf_cannotsave: Ur yezmir ara ad iḥrez afaylu n twila, senqed ma abrid iqebbel tira yerna yesɛa kra n tallunt tilellit
+txt_check_hint: Senqed ma isefka rẓan s ṛṛay; ilguritm n udsil wulmen ula i tifin n usenfel n yisefka s yir lebɣi (ẓer tasemlit)
+txt_check: Siḍen aɣrud n usenqed / adsil n ufaylu / yifuyla
+txt_check_select: Aɣrud n usenqed / adsil
+txt_clear: Sfeḍ
+txt_clearlayout: Sfeḍ taneɣruft
+txt_pj_hint: Sit i ukter n twuri, i usefsex n yisenfal d usali n usbadu yettwaleqqmen n twuri seg ugrudem udlif
+txt_autoclose: Ur ḥebbes ara i usenqed n uneqqis n twuri
+txt_cl: Izirig n unezḍay
+txt_compare: Serwes ifuyla
+txt_compress: Sekkussem
+txt_compress_executable: Sekkussem afaylu amselkam
+txt_compress_openforwriting: Sekkussem ifuyla yeldin i tira
+txt_compression: Asekkussem
+txt_compmanagement: Asefrek n uselkim
+txt_pw_confirm: Sentem
+txt_console: Tadiwent
+txt_console_interface: Tadiwent
+txt_content: Agbur
+txt_controlpanel: Aglis n usenqed
+txt_convert: Selket aḍebsi ɣer NTFS
+txt_copy: Nɣel
+txt_copyto: Nɣel ɣer...
+txt_create: Snulfu-d
+txt_create_archive: Snulfu-d aɣbaṛ amaynut
+txt_title_create: Snulfu-d aɣbaṛ, sekkussem, wgelhen, bḍu...
+txt_create_keyfile: Snulfu-d afaylu n tsarut
+txt_create_folder: Snulfu-d akaram amaynut
+txt_create_theme: Snulfu-d asentel seg yiɣewwaṛen imiranen
+txt_rr: Snulfu-d iklasen n tririt
+txt_create_sfx: Snulfu-d aɣbaṛ i yessafen iman-is
+txt_cr_current: Assaɣ n usekkussem n ubrid neɣ n testayt tamirant
+txt_custom: Yugen
+txt_type_description_custom: Yugen (iseqdacen inaẓiyen): sekcem isem n ufaylu amselkam d yiɣewwaṛen
+txt_customapp: Asnas yugen
+txt_custom_parameters: Iɣewwaṛen yugnen
+txt_customsize: Tiddi tugent
+txt_cut: Gzem
+txt_datetime: Azemz / akud
+txt_default: Amezwer
+txt_default_compression: asekkussem amezwer
+txt_default_format: Amasal amezwer
+txt_theme_default: Asentel amezwer
+txt_hard_reset_hint: Kkes afaylu n tecraḍ n yisebtar
+txt_desktop: Tanaṛit
+txt_dictionary: Amawal
+txt_dirs: akaram / ikaramen,
+txt_dis: Tukksa n urmid:
+txt_disk_cleanup: Asizdeg n uḍebsi
+txt_disk_defrag: Asemlil n yiferdisen n uḍebsi
+txt_disk_management: Asefrek n uḍebsi
+txt_dispaly: Sken igmaḍ am
+txt_displayedmnu_obj: yettwaskanen
+txt_displayedobjects: Iferdisen yettwaskanen
+txt_nocompress: ur sekkussem ara
+txt_delete: Tebɣiḍ ad tekkseḍ afaylu / ifuyla yettwafernen? Tamhelt-a ur tezmir ara ad tettwasefsex, yerna ifuyla ur zemren ara ad d-ttwarran seg tqecwalt
+txt_wipe: Tebɣiḍ ad tekkseḍ s wudem aɣelsan afaylu / ifuyla yettwafernen? Tamhelt-a ur tezmir ara ad tettwasefsex, yerna ifuyla ur zemren ara ad d-ttwarran
+txt_done: Yettwaxdem
+txt_edit: Ẓreg
+txt_elapsed: akud iɛeddan:
+txt_error_emptycl: Izirig n unezḍay d ilem!
+txt_encrypt: Wgelhen
+txt_encrypted: yettwawgelhen
+txt_encryption: Awgelhen
+txt_note: Sekcem tamawt / aglam
+txt_random_keys: Sit ɣef teqfalin s wudem agacuran
+txt_random_keys_hint: Sit ɣef teqfalin s wudem agacuran (ur tesriḍ ara ad tent-tcfuḍ)
+txt_ent: Aktazal n usket n urway
+txt_ent_tools: Smutti taɣerdayt neɣ seqdec ifecka imernan n ulemmec n usket n urway
+txt_eqorlarger: S tiddi kifkif neɣ meqqer ɣef tɣawsa yettwafernen
+txt_eqorrecent: S uzemz kifkif neɣ d amiran ugar n tɣawsa yettwafernen
+txt_eqorolder: S uzemz kifkif neɣ d aqbur ugar n tɣawsa yettwafernen
+txt_eqorsmaller: S tiddi kifkif neɣ meẓẓi ɣef tɣawsa yettwafernen
+txt_equal: Kifkif d tɣawsa yettwafernen
+txt_erase_hint: Tukksa taɣelsant: semselsi agbur s yisefka igacuranen, ffer tiddi, ales asnifel n yisem, syin kkes
+txt_extraction_error: Tuccḍa deg tussfa n tɣawsa yettwafernen. Ma aɣbaṛ yettwaḥrez s wawal uffir, sekcem-it
+txt_exclude_hint: Stixer ifuyla, yiwen deg yal izirig; seqdec isekkilen imuta * d ?; imeskar " d ' ur ilaqen ara
+txt_exclusion_recourse: Tistayin n ustixer ttwasnasent s wallus deg yikaramen inaddawen
+txt_exclusion: Stixer
+txt_exe: Amselkam
+txt_overwrite_qry: yella deg ubrid n tɣerwaḍt; ad t-tsemselsiḍ s ufaylu / yifuyla yesɛan isem-nni seg ubrid aɣbalu? (Sefsex: zgel anɣal n tɣawsa-a)
+txt_confirm_overwrite: yella; ad t-tsemselsiḍ? (ala i uzgal)
+txt_explore_outpath: Snirem abrid n tuffɣa
+txt_explore_path: Snirem abrid
+txt_ext: Asiɣzef:
+txt_caption_extract: Ssef
+txt_ext_nopath: Ssef (war abrid)
+txt_ext_all: Ssef akk
+txt_ext_allhere: Ssef akk dagi
+txt_ext_allto: Ssef akk ɣer
+txt_extopen_custom: Ssef u ldi s usnas yugen
+txt_extopen_with: Ssef u ldi s...
+txt_ext_disp_here: Ssef dagi ayen yettwaskanen
+txt_ext_disp: Ssef tiɣawsiwin yettwaskanen
+txt_ext_disp_to: Ssef tiɣawsiwin yettwaskanen ɣer...
+txt_ext_here: Ssef dagi
+txt_ext_sel_here: Ssef dagi ayen yettwafernen
+txt_ext_sel: Ssef tiɣawsiwin yettwafernen
+txt_ext_sel_to: Ssef tiɣawsiwin yettwafernen ɣer...
+txt_extobj: Ssef taɣawsa
+txt_newfoldermenu: Ssef deg ukaram amaynut
+txt_extto: Ssef ɣer...
+txt_level_fast: Arurad
+txt_fastcompr: asekkussem arurad
+txt_fastopen: Tarrayt n ulday arurad: ḥbes asnirem n yiɣbaṛen imeqqranen aṭas, seqdec tistayin deg umḍiq-is
+txt_level_fastest: Arurad akk
+txt_favformats: Inegzumen n yimasalen imenyafen
+txt_file: Afaylu
+txt_filebrowser: Amsnirem n yifuyla
+txt_filetools: Ifecka n yifuyla
+txt_files: afaylu / ifuyla,
+txt_nfiles: Ifuyla
+txt_fs: Anagraw n yifuyla
+txt_filters_recourse: tistayin ttwasnasent s wallus deg yikaramen inaddawen
+txt_filters: Tistayin
+txt_flat: Aleqqaq (sken akk)
+txt_list_flat: Timeẓri taleqqaqt
+txt_unit_floppy: Taḍebsit talwayant
+txt_foldername: Isem n ukaram
+txt_nfolders: Ikaramen
+txt_error_input_multi: amasal isirig yiwen kan n ufaylu am unekcum; tzemreḍ ad tesqedceḍ taxtiṛt « TAR uqbel » i uḥraz n unekcum deg uɣbaṛ .TAR uqbel, neɣ ad tferneḍ amasal nniḍen. AWELLIH: fren amasal n uɣbaṛ seld afran n yisefka n unekcum: taxtiṛt « TAR uqbel » ad tettwarmed s wudem awurman
+txt_fwd: Ɣer sdat
+txt_list_found: Yettwaf
+txt_free: Ilelli
+txt_free2: ilelli
+txt_name_full: Isem ummid
+txt_function: Tawuri
+txt_general: Amatu
+txt_multithreading: Aseqdec amatu n waṭas n yizriren n uselkem
+txt_go_browser: Ddu ɣer umsnirem n yifuyla
+txt_go_path: Snirem abrid (PeaZip)
+txt_guicl: Agrudem udlif + Tadiwent
+txt_guipealauncher: Agrudem udlif
+txt_graphic: Akaram n wudlifen
+txt_gridaltcolor: Ini amlellay n tfelwin
+txt_gridrowheight: Tattayt n yiduren n tfelwin
+txt_gui: Agrudem udlif
+txt_type_description_gzip: GZip: asekkussem arurad
+txt_here: dagi
+txt_list_history: Amazray
+txt_homeroot: Aswir n uẓar n uselkim / uɣbaṛ
+txt_quickbrowse_hint: Ma yeḥbes usnirem, aseqdac yezmer ad isneɣseḍ afran s useqdec n twuriwin n unadi neɣ n testayt; tiwuriwin n tussfa / ubder / usenqed ur ttwaḥazent ara.
+txt_backupexe_hint: Ma teḍra-d tuccḍa i d-yettawin agmuḍ ur ixeddmen ara, tzemreḍ ad d-terreḍ afaylu amselkam aneṣli seg tenɣelt n uḥraz tawurmant
+txt_attach: Ma amsaɣ n yimayl yessefrak anezḍay-a, aɣbaṛ ad yeddu d yimayl amaynut
+txt_images: Tugniwin
+txt_include_hint: Seddu ifuyla, yiwen deg yal izirig; seqdec isekkilen imuta * d ?; imeskar " d ' ur ilaqen ara
+txt_filters_hint: Tistayin n useddu d ustixer i ufaylu amisin 7z, ɣer s telqayt tasemlit n 7-Zip i wakken ad tegzuḍ amek xeddment tistayin-a
+txt_inclusion_recourse: Tistayin n useddu ttwasnasent s wallus deg yikaramen inaddawen
+txt_inclusion: Seddu
+txt_error_function: Tawuri yettwasutren d tarameɣtut
+txt_info: Talɣut
+txt_infoall: Talɣut ɣef meṛṛa
+txt_infodisp: Talɣut ɣef tɣawsiwin yettwaskanen
+txt_infosel: Talɣut ɣef tɣawsiwin yettwafernen
+txt_inputinfo: Talɣut n unekcum
+txt_input_list: Umuɣ n unekcum:
+txt_iop: anekcum, tuffɣa, iɣewwaṛen
+txt_ipo: anekcum, iɣewwaṛen, tuffɣa
+txt_input: Anekcum
+txt_integrity: Asenqed n timmad
+txt_chunk_size: Tiddi tugent d tarameɣtut, sekcem azal umḍin ameɣtu
+txt_invertsel: Tti afran
+txt_type_exe: d afaylu amselkam n Windows, tebɣiḍ ad t-teselkmeḍ? (« Ala » i uɛraḍ n ulday-is am uɣbaṛ) AWELLIH: kra n yimselkam zemren ur xeddmen ara akken iwata alamma yettwassef uɣbaṛ s lekmal uqbel
+txt_return_to_archive: yeldi akka tura; tebɣiḍ ad t-tesniremeḍ?
+txt_not_accessible: ur yezmir ara ad yettwakcem ɣur-s tura
+txt_type_unsupported: mačči d tawsit n uɣbaṛ yettusefraken
+txt_checkname_failed: mačči d isem ameɣtu.
+txt_not_accessible_list: ur yezmir ara ad yettwakcem ɣur-s, senqed ma umuɣ n yifuyla i d-yettunefken iṣeḥḥa yerna yettwaleqqem
+txt_theme_create_error: Ur yezmir ara ad d-yesnulfu asentel, ɛreḍ ad tesqedceḍ isem ameɣtu n ukaram am yisem n usentel, ad tferneḍ abrid i iqebblen tira
+txt_theme_exists: yella yakan, sekcem abrid nniḍen
+txt_job_code: tangalt n twuri:
+txt_job_definition_saved: Asbadu n twuri yettwaḥrez akken iwata deg
+txt_job_success: Tawuri tfuk akken iwata!
+txt_join: Sdukkel
+txt_joinfiles: Sdukkel ifuyla
+txt_keyfile: Afaylu n tsarut
+txt_keyfile_not_found: Afaylu n tsarut ur yezmir ara ad yettwaf neɣ ad yettwaɣra. Fren afaylu n tsarut nniḍen.
+txt_keyfile_notcreated: Afaylu n tsarut ur d-yettwasnulfu ara
+txt_larger: Meqqer ɣef tɣawsa yettwafernen
+txt_lastused: Yettwasqedcen taneggarut
+txt_launch: Selkem tawuri
+txt_layout: Taneɣruft
+txt_filelist_savedas: Taneɣruft tettwaḥrez am
+txt_level: Aswir
+txt_license: Turagt
+txt_caption_list: Bder
+txt_list_details: Bder (s telqayt)
+txt_list_all: Bder akk
+txt_list_disp: Bder tiɣawsiwin yettwaskanen
+txt_list_sel: Bder tiɣawsiwin yettwafernen
+txt_toggle_warning: Abder n ugbur n ubrid s tmeẓri taleqqaqt yezmer ad yeṭṭef aṭas n wakud, ad tkemmleḍ akken yebɣu yili?
+txt_loadfile: Ssali afaylu
+txt_loadlayout: Ssali taneɣruft
+txt_unit_hd: Aḍebsi adigan
+txt_localization: Asideg
+txt_lpaqver: Lqem n LPAQ
+txt_type_description_lpaq: LPAQ: lqem arurad ugar n PAQ, asekkussem yelhan aṭas
+txt_maininterface: Agrudem agejdan
+txt_maxcomp: Askar n usekkussem afellay
+txt_level_maximum: Afellay
+txt_restartrequired: Yezmer ad yesri ales n tnekra n usnas i wakken ad yettwasnas
+txt_required_memory: MB n tkatut yettwasran
+txt_method: Tarrayt
+txt_misc: Ayen nniḍen
+txt_modify: Senfel
+txt_morecontrols: Ugar n yisenqaden (amazray, ticraḍ n yisebtar, ...)
+txt_morerecent: Amiran ugar n tɣawsa yettwafernen
+txt_ent_hint: Smutti taɣerdayt, sit ɣef teqfalin deg wurti n teẓrigt, ssali ifuyla i ulqaḍ n usket n urway seg unagraw...
+txt_moveto: Smutti ɣer...
+txt_mypc: Aẓar n uselkim
+txt_list_na: ur ittwasnas ara
+txt_name: Isem
+txt_naming: Asmi
+txt_unit_remote: Aḍebsi n uẓeṭṭa
+txt_newarchive: Aɣbaṛ amaynut
+txt_cnewfolder: Akaram amaynut
+txt_news: Isallen
+txt_no: Ala
+txt_noinput: Ulac isefka n unekcum i d-yettwarmsen i wumi nezmer ad nekcem
+txt_nocompress_hint: war asekkussem (arurad ugar)
+txt_split_noinput: Ulac anekcum yettwafernen; fren afaylu ara tebḍuḍ
+txt_open_noinput: Ulac anekcum yettwafernen; fren aɣbaṛ (ablaɣ amezwaru n uɣbaṛ i yiɣbaṛen yesɛan aṭas n yiblaɣen)
+txt_list_nomatch: ulac amṣada
+txt_singlethread: War aseqdec n waṭas n yizriren n uselkem
+txt_none2: ula yiwen
+txt_nonsolid: War asekkussem imsuddas
+txt_level_normal: Amagnu
+txt_copy_error: ur yettwanɣel neɣ ur yettwasmutti ara akken iwata, tangalt n tuccḍa:
+txt_description: Timawin
+txt_compare_second: Tura fren afaylu ara tesrewseḍ yid-s
+txt_peaobj: Asenqed n tɣawsa
+txt_displayed_obj: taɣawsa / tiɣawsiwin
+txt_olderthan: Aqbur ugar n tɣawsa yettwafernen
+txt_on: yermed
+txt_ondblclick: Mi ara tsitiḍ snat n tikkal
+txt_opacity: Tiḍullest
+txt_open: Ldi
+txt_openarchive: Ldi aɣbaṛ
+txt_title_open: Ldi aɣbaṛ, kkes awgelhen, sdukkel...
+txt_open_bookmark: Ldi ticreḍt n usebter
+txt_cphere: Ldi aneftaɣ n unezḍay dagi
+txt_open_file: Ldi afaylu
+txt_open_files: Ldi afaylu / ifuyla
+txt_open_path: Ldi abrid
+txt_opensource: Amsɣbar aziraz s uɣbalu yeldin
+txt_openwith: Ldi s...
+txt_aborted: Tamhelt tettwasefsex
+txt_unit_cd: Aḍebsi aẓran
+txt_options: Tixtiṛiyin
+txt_other: Ayen nniḍen
+txt_otherparams: Iɣewwaṛen nniḍen (taẓrigt tilellit)
+txt_oip: tuffɣa, anekcum, iɣewwaṛen
+txt_opi: tuffɣa, iɣewwaṛen, anekcum
+txt_output: tuffɣa:
+txt_overwrite: Semselsi ifuyla yellan
+txt_compressed_size: Yettwasekkusmen
+txt_paqver: Lqem n PAQ
+txt_type_description_paq: PAQ: asekkussem ẓẓay maca iǧehden aṭas
+txt_pio: iɣewwaṛen, anekcum, tuffɣa
+txt_poi: iɣewwaṛen, tuffɣa, anekcum
+txt_parameters: Iɣewwaṛen:
+txt_error_partial: Tussfa n uḥric kan ur tettwasbeddi ara i tewsit tamirant n uɣbaṛ
+txt_passes: Iɛeddiyen
+txt_pw: Awal uffir
+txt_pwlength: Teɣzi n wawal uffir s yisekkilen (4..64)
+txt_un7z_browse_pw: awal uffir yezmer ad yettwasuter
+txt_un7z_browse_pw_other: awal uffir yezmer ad yili d arameɣtu
+txt_paste: Senteḍ
+txt_path: Abrid
+txt_pea_appcolor: Ini n usebrureq n usnas
+txt_pea_textcolor: Ini n uḍris Pea
+txt_type_description_pea: PEA: amasal n uɣbaṛ i yerran azal i tɣellist, s usekkussem arurad
+txt_peazip_new: PeaZip (tummant tamaynut)
+txt_peazip_help: Tallelt srid
+txt_peazip_web: Asmel Web n PeaZip
+txt_performall: Akk ilguritm
+txt_name_provide: Isekkilen \ / : * ? ' " < > | ur ttwasirgen ara deg yismawen n yifuyla
+txt_upxorstrip: Fren Strip d/neɣ UPX i ufaylu amisin
+txt_not_removable_file: Mdel afaylu yettwasqedcen, i wakken ad tesirgeḍ i PeaZip ad t-yekkes:
+txt_not_removable: Mdel ifuyla yettwasqedcen, i wakken ad tesirgeḍ i PeaZip ad yekkes akaram:
+txt_custom_executable_missing: Sekcem isem n ufaylu amselkam yugen
+txt_type_unsupported_select: Fren tawsit n uɣbaṛ yettusefraken:
+txt_no_theme_name: Sbadu isem n usentel
+txt_please_wait: Rǧu
+txt_copy_wait: Rǧu ad fakken timhalin n unɣal / usmutti n yifuyla yettwasɣiwsen akka tura, uqbel asɣiwes n temhalin nniḍen n tewsit-nni
+txt_previewwith: Sken taskant s...
+txt_projectadmin: Anedbal n usenfaṛ:
+txt_type_description_quad: BALZ/QUAD: isekkusamen n yifuyla s tmellit ɛlayen, yebnan ɣef ROLZ
+txt_quickdelete: Tukksa taruradt
+txt_quit: Ffeɣ
+txt_unit_ram: Aḍebsi RAM
+txt_read: Ɣer:
+txt_recentarchives: Iɣbaṛen imiranen
+txt_rr_hint: Iklasen n tririt sirigen aɛraḍ n useɣti n yiɣbaṛen ma rẓan yisefka
+txt_search_refine: Ṣeggem tastayt n unadi, tqebbel isekkilen imuta ? d *
+txt_fefreshf5: Smiren
+txt_release: lqem:
+txt_unit_removable: Tayunt i nezmer ad nekkes
+txt_remove_bookmark: Kkes ticreḍt n usebter
+txt_remove_external_unit: Kkes ibenkan iɣarayen
+txt_removeselected: Kkes tiɣawsiwin yettwafernen
+txt_rename: Ales asnifel n yisem
+txt_caption_repair: Seggem
+txt_restartrequired2: yesra ales n tnekra n usnas i wakken ad yettwasnas
+txt_reset: Ales awennez
+txt_reset_archivename: Ales awennez n yisem n uɣbaṛ
+txt_hardreset: Ales awennez n tecraḍ n yisebtar
+txt_reset_theme: Uɣal ɣer usentel yeddan d usnas
+txt_restore_att: err-d iraten ineṣliyen
+txt_run_as: Selkem am (ur yezmir ara ad ibeddel ɣer yiseqdacen yesɛan awal uffir ilem)
+txt_run_as2: Selkem am useqdac nniḍen
+txt_sample: Amedya:
+txt_saveas: Ḥrez am
+txt_savehistory: Ḥrez isefka n umazray
+txt_save_infolder: Ḥrez deg ukaram (awurman)
+txt_savejob: Ḥrez asbadu n twuri am uskript
+txt_savejobdefinition: Ḥrez asbadu n twuri am uskript
+txt_savejobdefinition_hint: Sifeḍ tawuri yettusbadun deg ugrudem udlif am uskript n yizirig n unezḍay
+txt_savelayout: Ḥrez taneɣruft
+txt_save_winstate: Ḥrez addad n usfaylu agejdan
+txt_search: Nadi (s wallus, yezmer ad yeṭṭef kra n wakud)
+txt_searchanddrag: Nadi u zuɣer dagi
+txt_searchfor: Nadi
+txt_nrsearch: Nadi dagi (war allus)
+txt_search_hint: Nadi deg yikaramen inaddawen n uɣbaṛ ɣef wayen yemṣadan d testayt / tistayin
+txt_search_web: Anadi deg Web
+txt_list_searching: Anadi...
+txt_securedelete: Tukksa taɣelsant
+txt_default_description: Fren tawuri neɣ zuɣer ifuyla dagi
+txt_selectall: Fren akk
+txt_selectdir: Fren akaram
+txt_selected_obj: yettwafernen
+txt_selected_objects: Iferdisen yettwafernen
+txt_sfx: Yessaf iman-is
+txt_sendbymail: Azen s yimayl
+txt_set_defaults: Sbadu iɣewwaṛen imezwer n usnas
+txt_settings: Iɣewwaṛen
+txt_sfx_interface: agrudem SFX
+txt_showhints: Sken iwelleh d tililac n tallalt
+txt_show_messages: Sken iznan n telɣut
+txt_showpw: Sken agbur n wurti n wawal uffir
+txt_singlevol: Yiwen n ublaɣ, ur beṭṭu ara
+txt_size: Tiddi
+txt_sizeb: Tiddi (B)
+txt_skip_existing: Zgel ifuyla yellan
+txt_slowercomp: asekkussem ẓẓay ugar maca asefruri s wurured kifkif
+txt_smaller: Meẓẓi ɣef tɣawsa yettwafernen
+txt_solid: Asekkussem imsuddas
+txt_solid_block: Tiddi n yiḥder
+txt_solid_auto: Asekkussem imsuddas, asezg awurman
+txt_solid_extension: Asekkussem imsuddas, segrew ilmend n usiɣzef
+txt_listtest: surfaɣ, tamhelt n ubder / usenqed ur tettwasbeddi ara yakan i umasal-a
+txt_sortbysel: Smizzwer ilmend n waddad n ufran
+txt_list_sorting: Asmizzwer...
+txt_speed: arured
+txt_split: Bḍu
+txt_type_description_split: Bḍu afaylu s usenqed afrayan n timmad
+txt_split_file: Bḍu afaylu
+txt_list_nostats: Tidaddanin ur llint ara
+txt_status: Addad
+txt_level_store: Ḥrez war asekkussem
+txt_stream_control: Asenqed n usuddem
+txt_strip: Kkes izamulen uqbel UPX (yettusemter)
+txt_keyfile_created: Afaylu n tsarut yettwasnulfu-d akken iwata am:
+txt_suggestpw: Snulfu-d awal uffir agacuran
+txt_noupx: Izamulen ttwakksen, asekkussem UPX yettwazgel
+txt_syntax: Taseddast:
+txt_sysbenchmark: Akayad n tmellit n unagraw
+txt_benchmark: Akayad n tmellit n unagraw ad yeṭṭef kra n tesdatin, ad iseqdec akk tiɣbula yellan n CPU d tkatut. Anagraw yezmer ur d-yettarra ara deg ukayad; ad t-teselkmeḍ akken yebɣu yili?
+txt_systools: Ifecka n unagraw
+txt_tarbefore: TAR uqbel
+txt_type_description_tar: TAR: amasal n usɣber yettwasqedcen s waṭas deg yinagrawen UNIX
+txt_taskman: Amsefrak n twuriwin
+txt_caption_test: Senqed
+txt_testall: Senqed akk
+txt_testdisp: Senqed tiɣawsiwin yettwaskanen
+txt_testpw: Senqed awal uffir / afaylu n tsarut
+txt_testsel: Senqed tiɣawsiwin yettwafernen
+txt_col_hint: Ilaq ad yettwafren yini i wakken ad yemṣada akken iwata d yiniten n tignitin d yiferdisen nniḍen n ugrudem udlif
+txt_bookmarks_hint: Umuɣ ummid n tecraḍ n yisebtar i nezmer ad nẓreg yella deg ugrudem n umsnirem n yifuyla, s usiti ɣef tignit « Ugar n yisenqaden », syin ɣef « Beddel gar umazray d tecraḍ n yisebtar »
+txt_archive_noinput_tolist: Taneɣruft d tilemt: seqdec « Rnu afaylu / ifuyla », « Rnu akaram / ikaramen » neɣ « Ssali taneɣruft » i wakken ad tččareḍ taneɣruft n uɣbaṛ
+txt_theme: Asentel
+txt_icons_found: Asentel yettwassuli akken iwata.
+txt_themename: Isem n usentel
+txt_icons_not_found: Asentel ur yettwassuli ara akken iwata. Ɛreḍ ad tuɣaleḍ ɣer usentel amezwer, neɣ ɣer yiwen i teẓriḍ ixeddem.
+txt_theme_create_success: asentel yettwasnulfu-d akken iwata deg
+txt_theming: Aswel n yisental
+txt_extand_error: Tawuri-a tezmer ad tettwaselkem ɣef yiwet kan n tɣawsa deg yiwet n tikelt
+txt_threads: Izirren n uselkem
+txt_titlescolor: Ini n yizwal
+txt_to: ɣer
+txt_toggle_browseflat: Beddel gar usnirem d tmeẓri taleqqaqt (sken akk)
+txt_toggle_historybookmarks: Sken / Ffer afeggag n waddad
+txt_toolbarscolor: Ini n yifeggagen
+txt_tools: Ifecka
+txt_best: ɛreḍ iɣewwaṛen yelhan akk (ẓẓay)
+txt_type: Tawsit
+txt_level_ultra: Afellay akk
+txt_error_openfile: Ur yezmir ara ad yeldi afaylu yettusbadun
+txt_cl_hint: UNACE d UPX ttwaselkamen yal tikelt s uskar n tadiwent; tiwuriwin n ubder, n usenqed d ukayad n tmellit ttwaselkament yal tikelt s uskar n ugrudem udlif
+txt_ace_missing: Asiɣzef UNACE ixuṣṣ; i usefrek n yiɣbaṛen ACE, tzemreḍ ad d-tsidreḍ asiɣzef seg usmel Web n PeaZip (imi aɣbalu n UNACE yergel, asiɣzef ur yeddi ara deg ukemmus azadur)
+txt_units: tayunin
+txt_unit_unknown: Tawsit n uḍebsi tarussint
+txt_un7z_pw_untested: Ur yettwajṛeb ara
+txt_up: Ɣer ufella
+txt_update: Leqqem (ma yella uɣbaṛ)
+txt_type_description_upx: UPX: asekkussem n yifuyla imselkam kan
+txt_advfilters: Seqdec tistayin tinaẓiyin
+txt_openfiles_hint: Seqdec taxtiṛt-a i useddu deg uɣbaṛ n yifuyla i ldin yisnasen nniḍen i tira (yenfeɛ deg twuriwin n uḥraz)
+txt_usenet: Usenet
+txt_user_name: Isem n useqdac; seqdec talɣa user@DOMAIN neɣ DOMAIN\user ma ilaq.
+txt_using: Aseqdec:
+txt_volumepea: Asenqed n ublaɣ
+txt_volume_size: Tiddi n ublaɣ
+txt_type_ext_uns: yettwassef akken iwata
+txt_websearch: Anadi deg Web
+txt_websites: Ismal Web
+txt_word: Awal
+txt_write: Aru:
+txt_ramdompw_hint: Tzemreḍ ad tneɣleḍ seg dagi awal uffir i d-yettwasnulfan s wudem agacuran
+txt_exe_hint: Tzemreḍ ad tsekcmeḍ s tlelli isem n ufaylu amselkam d yiɣewwaṛen i usekkussem yugnen, ad tferneḍ daɣen tuddsa n tseddast. Tzemreḍ daɣen ad tbeddeleḍ s ufus taseddast n unezḍay deg yiccer « Tadiwent ».
+txt_pj_hint2: Tzemreḍ ad tketreḍ asbadu n twuri seg ugrudem udlif ɣer wurti n teẓrigt yellan ufella. Syin, tzemreḍ ad t-tẓergeḍ, ad t-teselkmeḍ neɣ ad t-tḥerzeḍ war ma tbeddeleḍ neɣ tesruḥeḍ tawuri yettusbadun i ugrudem udlif.
+txt_type_description_zip: ZIP: amasal arurad n usɣber / usekkussem, yettwasqedcen s waṭas deg yinagrawen Windows
+txt_zipcrypto_hint: ZipCrypto (aqbur)
+
+=== end PeaZip text group ===
+
+=== PeaLauncher text group ===
+
+txt_6_9_remaining: ayen i d-yeqqimen
+txt_6_5_abort: Sefsex
+txt_6_5_error: Tuccḍa
+txt_6_5_no: Ala
+txt_6_5_warning: Alɣu
+txt_6_5_yes: Ih
+txt_6_5_yesall: Ih i meṛṛa
+txt_5_6_update: Senqed ileqman
+txt_5_6_cml: Tutlayt n wumuɣ n usatal n unagraw
+txt_5_6_donations: Tikciwin
+txt_5_6_localization: Asideg
+txt_5_6_runasadmin: Selkem am unedbal
+txt_5_6_help: Tallelt srid
+txt_5_5_cancelall: Sefsex akk
+txt_5_3_details: Talqayt
+txt_5_3_files: ifuyla
+txt_5_3_folders: ikaramen
+txt_5_3_info: Talɣut
+txt_5_3_list: Bder
+txt_5_3_os: Tiddi taneṣlit
+txt_5_3_ps: Tiddi yettwasekkusmen
+txt_5_3_test: Senqed
+txt_5_0_extract: Ssef
+txt_5_0_from: seg
+txt_5_0_in: deg
+txt_5_0_to: ɣer
+txt_4_5_search: Nadi
+txt_4_0_drag: Zuɣer dagi aɣbaṛ ara tessfeḍ, neɣ 
+txt_4_0_dragorselect: Zuɣer dagi neɣ fren afaylu
+txt_4_0_select: fren afaylu
+txt_3_6_selectdir: Fren akaram
+txt_3_5_close: Mdel
+txt_3_0_details: I ugar n telqayt, ẓer iccer « Aneqqis » i uɣmis ummid n twuri, akked yiccer « Tadiwent » i usbadu n twuri s talɣa n yizirig n unezḍay.
+txt_3_0_hints: Iwelleh ɣef tuccḍa
+txt_3_0_arc: Tuccḍa tezmer ad d-tekke seg yifuyla n unekcum ur nezmir ara ad nɣer (yettwasekkṛen, ur nezmir ara ad nekcem ɣur-sen, rẓan, neɣ kra n yiblaɣen xuṣṣen deg uɣbaṛ yebḍan ɣef waṭas n yiblaɣen...), neɣ seg ubrid n tuffɣa yeččuren neɣ ur nezmir ara ad nekcem ɣur-s.
+txt_3_0_ext: Aɣbaṛ yezmer ad yesri awal uffir nniḍen i temhelt tamirant.
+txt_2_8_oop: Ldi abrid n tuffɣa mi ara tfak twuri
+txt_2_7_validatefn: Tamhelt teḥbes, yettwaf isem n ufaylu arameɣtu:
+txt_2_7_validatecl: Tamhelt teḥbes, yettwaf unezḍay i yezmer ad yili d amihi (am tuqqna n yineẓḍayen ur nettwasireg ara deg wahil):
+txt_2_6_open: Ldi aɣbaṛ
+txt_2_5_ace_missing: Asiɣzef UNACE ixuṣṣ; i usefrek n yiɣbaṛen ACE, tzemreḍ ad d-tsidreḍ asiɣzef seg usmel Web n PeaZip (imi aɣbalu n UNACE yergel, asiɣzef ur yeddi ara deg ukemmus azadur)
+txt_2_3_pw_errorchar_gwrap: Asekkil n tuccar ur yezmir ara ad yettwasqdec deg wawalen uffiren deg unagraw amiran, senfel awal uffir neɣ fren askar n Tadiwent deg ugrudem n yifuyla imisinen n ugilal, deg Tixtiṛiyin > Iɣewwaṛen
+txt_2_3_renameexisting: Snifel s wudem awurman ismawen n yifuyla yellan
+txt_2_3_renameextracted: Snifel s wudem awurman ismawen n yifuyla yettwassfen
+txt_2_3_cancel: Sefsex
+txt_2_3_encryption: Awgelhen
+txt_2_3_extinnew: Ssef deg ukaram amaynut
+txt_2_3_keyfile: Afaylu n tsarut
+txt_2_3_kf_not_found_gwrap: Afaylu n tsarut ur yezmir ara ad yettwaf neɣ ad yettwaɣra. Fren afaylu n tsarut nniḍen.
+txt_2_3_moreoptions: Ugar n textiṛiyin...
+txt_2_3_nopaths: War iberdan
+txt_2_3_options: Tixtiṛiyin
+txt_2_3_overexisting: Semselsi ifuyla yellan
+txt_2_3_pw: Awal uffir
+txt_2_3_skipexisting: Zgel ifuyla yellan
+txt_job_unknown: : Teḍra-d tuccḍa tarussint
+txt_stdjob: [amray ad yeḥbes mi ara tfak twuri]
+txt_benchmarkjob: [tiririt n unagraw ad tili ẓẓayet deg uselkem n ukayad n tmellit (kra n tesdatin)]
+txt_defragjob: [ur d-yettarra ara deg usemlil n yiferdisen, tzemreḍ ad t-teǧǧeḍ ixeddem deg ugilal]
+txt_consolejob: [Talɣut ɣef twuri d umhaz-is s telqayt llan deg usfaylu n tadiwent]
+txt_job1: 1: Alɣu: tuccḍa neɣ tuccḍiwin ur neḥbis ara tawuri; am yifuyla ixuṣṣen neɣ yettwasekkṛen
+txt_job127: 127: Ur yezmir ara ad iselkem tamhelt yettwasutren
+txt_job2: 2: Teḍra-d tuccḍa i yeḥebsen tawuri
+txt_job255: 255: Tawuri teḥbes sɣur useqdac
+txt_job7: 7: Tuccḍa: izirig n unezḍay arameɣtu
+txt_job8: 8: Tuccḍa: takatut ur tekfi ara i temhelt yettwasutren
+txt_autoclose: Mdel asfaylu-a mi ara tfak twuri
+txt_crscale: Assaɣ n usekkussem (mi ara yenɣes, ad yif):
+txt_console: Tadiwent
+txt_benchscale: Aktazal s Core 2 Duo 6600, arured agdazal s MHz.
+txt_create: Snulfu-d
+txt_done: Yettwaxdem:
+txt_nocl: Izirig n unezḍay d ilem
+txt_error: Tuccḍa:
+txt_explore: Snirem
+txt_extto: Ssef ɣer
+txt_halt: Sens anagraw mi ara tfak twuri
+txt_halted: Yeḥbes:
+txt_hardware: arrum
+txt_high: tazwart ɛlayen
+txt_idle: tazwart deg wakud n ustaɛfu
+txt_input: Anekcum:
+txt_jpaused: Tawuri tettwaḥbes i kra n wakud
+txt_jresumed: Tawuri tettwakemmel
+txt_job_started: Tawuri tebda
+txt_jobstatus: Addad n twuri:
+txt_jstopped: Tawuri teḥbes sɣur useqdac
+txt_jobstopped: Tawuri teḥbes sɣur useqdac; tzemreḍ ad tesneqdeḍ agmuḍ n uḥric i yettwaxedmen s usiti ɣef useɣwen n ubrid n tuffɣa.
+txt_job_success: Tawuri tfuk akken iwata
+txt_lt: Abder / asenqed
+txt_normal: tazwart tamagnut
+txt_ok: Ih
+txt_output: Tuffɣa:
+txt_pause: Ḥbes i kra n wakud
+txt_paused: Yeḥbes i kra n wakud,
+txt_p_high: Tazwart tettusbadu d taɛlayant
+txt_p_idle: Tazwart tettusbadu i wakud n ustaɛfu
+txt_p_normal: Tazwart tettusbadu d tamagnut
+txt_p_realtime: Tazwart tettusbadu i wakud ilaw
+txt_rating: Aktazal:
+txt_rt: tazwart n wakud ilaw
+txt_report: Aneqqis
+txt_resume: Kemmel
+txt_priority: Sit i usbadu n tezwart n twuri
+txt_running: Yettwaselkam,
+txt_isrunning: Yettwaselkam...
+txt_saveas: Ḥrez am
+txt_savejob: Ḥrez asbadu n twuri am uskript
+txt_savelog: Ḥrez aɣmis n twuri
+txt_software: aseɣẓan
+txt_speedscale: Arured, tafesna talugaritmit (mi ara yali, ad yif):
+txt_status: Addad
+txt_stop: Ḥbes
+txt_bench: Akayad n tmellit n unagraw
+txt_threads: Izirren n uselkem:
+txt_time: Akud:
+
+=== end PeaLauncher text group ===
+
+=== about text group ===
+
+EXTRACT ARCHIVE(S)
+From the system 
+- rightclick on the archive(s) and in system’s context menu click "Extract here" or "Extract here (smart new folder)" to extract with no further interaction. Smart new folder option takes care to create a new top level folder only if necessary, when the archives root contains more than one file or folder.
+- otherwise use "Extract..." menu entry for having more options: output path, password, extract files to a new directory, chose to skip, rename or overwrite existing files etc.
+
+Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
+- click on "Extract" in toolbar or in context menu to extract only selected objects trough the confirmation dialog allowing to set all options (output path, password, naming policy, extract to a new directory etc)
+- drag files and folders to the desired destination, only selected content will be extracted (for more information see chapter about drag and drop in PeaZip)
+- click the quick extraction dropdown button on the right of “Extract” in the toolbar, it allows to directly extract the entire archive to most common destinations (skipping the confirmation dialog) and to set most important options; keyboard shortcuts: Ctrl+E (or F12) extracts the entire archive, asks for output directory; Ctrl+Alt+E extracts archive in its current folder; Ctrl+Shift+E extracts to desktop; Ctrl+Alt+Shift+E extracts to documents; Ctrl+0 extracts to previous path; Ctrl+1..8 extracts to path of bookmark 1..8 (if defined)
+
+Open PeaZip, select one or more archives and click “Extract” in toolbar or context menu, or use quick extraction destinations as explained at the previous point.
+
+EXTRACT ONLY SELECTED OBJECTS FROM THE ARCHIVE
+Open an archive in PeaZip, i.e. with doubleclick, or drag an archive on PeaZip’s window or icon
+- click "Extract" in toolbar: only selected items will be extracted
+- drag files and folders to the desired destination, only selected content will be extracted
+- rightclick and in “Extract” group of the context menu click “Extract selected” (to extract only selected items) or “Extract displayed” (to extract content of current directory or of current search filter)
+
+ENTER A PASSWORD TO BROWSE OR EXTRACT AN ARCHIVE
+Click on the padlock icon to enter a password and optionally a keyfile.
+The icon is featured both in PeaZip’s file browser’s status bar and in the archive extraction interface; once the password is set the icon will change color.
+
+CREATE ARCHIVE
+From the system
+- rightclick on objects to be archived and click on "Add to archive" in context menu or SendTo menu. It will open the archive creation confirmation dialog, more options are available in “Advanced” tab; click OK to create the archive.
+- alternatively, drag files/folders to PeaZip’s window or shortcut; the same archive creation interface will be shown.
+
+From PeaZip 
+- select objects to be archived and click on "Add" button; the same archive creation interface will be shown.
+
+ADD FILES/FOLDERS TO UPDATE EXISTING ARCHIVE
+Open an archive in PeaZip (i.e. with doubleclick, or drag an archive on PeaZip’s window or icon), then drag files and folders to be added in the archive (or click on "Add" button and use application's context menu to add objects to the archive).
+It will open the archive creation confirmation dialog, click OK to update the existing archive.
+
+CREATE ARCHIVE SPLIT IN SMALLER FILES
+While creating an archive as explained in previous points, click on “Single volume” dropdown menu to select a size for output files (volumes) the archive will be split in.
+Most common types of archives supports this option.
+
+CREATE ENCRYPTED ARCHIVE
+Click on the padlock icon to enter a password and optionally a keyfile; the icon is featured both in PeaZip’s file browser’s status bar and in archive creation interface.
+To hide names of files and directories contained in the archive check “Encrypt also filenames”, please note that it will be applied only if the archive will be created in a format supporting this function, like 7Z and ARC.
+Note that in archive creation interface, alongside the padlock icon, there is a warning to visually inform if encryption is set and if the current archive format supports encryption.
+
+CREATE SEPARATE ARCHIVES
+Add objects to be archived (with PeaZip’s "Add" button, or from system’s context menu or SendTo menu) and before confirming with "Ok" check "Add to separate archives" option.
+
+CONVERT ARCHIVES
+From PeaZip select archives to be converted and click on "Convert" on toolbar or context menu, non-archive files and folders can be added as well, the difference being in archives being extracted before compression stage.
+Using the “Convert existing archives” switch in conjunction with “Add to a separate archives" (default) it performs a mass conversion of listed archives, without that switch archive conversion is meant to consolidate input data in a single archive, improving compression efficiency because it allows recompression of the original data from its uncompressed form.
+
+DIRECTLY CREATE ARCHIVES IN A SPECIFIED FORMAT AND WITH A CHOSEN COMPRESSION LEVEL
+Using “System integration” procedure in Options menu it is possible to enable context menu entries to directly add selected files/folders to a ZIP, 7Z or self extracting archive.
+For Zip and 7Z formats it is also possible to enable context menu entries to compress to fastest, normal or ultra level, bypassing the default compression level for the selected format.
+
+PASSWORD MANAGER
+Password manager is accessible from main menu, Tools > Password manager or from Password form, from drop down menu on the left of Password field.
+Saved passwords can be selected from the dropdown menu on the left of password filed in Password form, or can be copied from password manager to be used in any other application.
+If no master password is set for the password manager, the password list is accessible without prompting for authentication, otherwise passwords will not be displayed until the user correctly authenticates.
+
+CONFIGURE THE APPLICATION
+Options > Localization (and in Options > Settings, first tab) allows to set application’s language.
+Options > File associations and system integration starts a wizard to configure file associations, context menu and SendTo menu entries (on Windows)
+Options > Settings allows to edit applications’ settings
+Organize menu contains entry to customize, enable or disable browser’s features, like toolbar, address bar, side bar, etc
+
+F1 	help
+F2 	rename file(s) / Ctrl+F2 copy selected to / Shift+F2 move selected to
+F3	search (recursivity option is remembered) / Ctrl+F3 start as non recursive (search here) / Shift+F3 recursive / Alt+F3 system search
+F4 	show navigation popup menu / Ctrl+Shift+F4 browse computer root / Ctrl+F4 browse desktop / Shift+F4 browse home
+F5 	refresh
+F6 	toggle browse/flat view
+F7 	add to bookmarks / Ctrl+F7 open in a new instance of PeaZip / Shift+F7 open command prompt in selected path / Alt+F7 explore selected path
+F8 	browse first item in bookmarks list (Ctrl, second, Shift, third)
+F9 	set password/keyfile / Shift+F9 password manager / Ctrl+F9 create keyfile or random password / Ctrl+Shift+F9 set advanced filters
+F10 	menu / Ctrl+F10 run as different user / Alt+F10 run as administrator (Windows Vista and newer systems)
+F11 	toggle full screen mode / Ctrl+F11 immersive
+F12 	extract all to...
+
+ABOUT PEAZIP
+
+PeaZip is an open source file and archive manager: cross platform, available as portable and installable software for Linux (desktop neutral application), macOS, and 32 and 64 bit Windows.
+
+PeaZip allows to apply powerful multiple search filters to archive's content; create and extract multiple archives at once; create self-extracting archives; export task definition as command line; save archiving and extraction layouts; bookmark archives and folders; scan and open with custom applications compressed and uncompressed files etc...
+
+Other features: strong encryption, robust file copy, split/join files (file span), secure data deletion, compare, checksum and hash files, system benchmark, generate random passwords and keyfiles.
+
+Downloads: https://peazip.github.io
+Learn more: https://peazip.github.io/peazip-free-archiver.html
+Support: https://peazip.github.io/peazip-help.html
+FAQ: https://peazip.github.io/peazip-help-faq.html
+
+Many thanks to all people contributing to PeaZip project's growth developing Open Source software components used in this application (see website for complete list), and to all users contributing with feedback, experience and advices.
