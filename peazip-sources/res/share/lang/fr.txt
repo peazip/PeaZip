@@ -3,12 +3,12 @@ Français
 11.4
 Traduit par: Drake4478
 Dernière version par: Drake4478
-Date du: 26.09.2026
+Date du: 17.10.2026
 
 === PeaZip text group ===
 
-txt_11_4_maxsize: Input size exceeds maximum supported size
-txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
+txt_11_4_maxsize: La taille de l'entrée dépasse la taille maximale autorisée
+txt_11_4_mc: Le script contiendra des métacaractères potentiellement dangereux (c’est-à-dire concaténation de commandes, expansion de variables), continuer quand même ?
 txt_11_3_cr: Taux de compression
 txt_11_3_showcr: Afficher la compression sous forme de taux de compression
 txt_11_2_comp: Le nom de fichier original et son extension sont toujours conservés lorsqu'on utilise des formats de compression pure (Brotli, BZip2, GZip, XZ, Zstd...), sauf si l'option TAR avant est utilisée, ce qui remplace le nom du fichier de sortie.
