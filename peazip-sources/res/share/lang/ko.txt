@@ -2,16 +2,16 @@
 Korean - 한국어
 11.4
 번역자: Sleepy, EhangB
-최근 교정: 20260523 by EhangB
+최근 교정: 20261017 by EhangB
 교정 일자: 20110531 by Sleep
 
 === PeaZip text group ===
 
-txt_11_4_maxsize: Input size exceeds maximum supported size
-txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
+txt_11_4_maxsize: 입력 크기가 지원되는 최대 크기를 초과합니다
+txt_11_4_mc: 스크립트에는 잠재적으로 위험한 메타 문자(예: 명령 연결, 변수 확장)가 포함되어 있습니다. 계속하시겠습니까?
 txt_11_3_cr: 압축 비율
 txt_11_3_showcr: 압축 정도를 압축 비율로 표시
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
+txt_11_2_comp: 순수 압축 형식(Brotli, BZip2, GZip, XZ, Zstd 등)을 사용하는 경우 원래 파일 이름과 확장자는 항상 유지되며, TAR before 옵션을 사용하지 않는 한 출력 파일 이름을 대체합니다.
 txt_11_2_funexp: 지원되는 앱 기능을 입력하거나 선택하세요(해당하는 경우 선택한 파일에 실행됩니다).
 txt_11_1_pp: 사전 분석 단계를 건너뛰면 앱이 아카이브의 잠재적 문제를 미리 감지하지 못할 수 있으며, 일부 아카이브가 제대로 표시되지 않을 수 있습니다. 어쨌든, 압축 해제 기능에는 이 설정이 영향을 미치지 않습니다.
 txt_11_0_adv: 고급 및 형식별 옵션
