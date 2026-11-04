@@ -6251,7 +6251,7 @@ object Formpeach: TFormpeach
                   Left = 128
                   Height = 23
                   Top = 428
-                  Width = 150
+                  Width = 180
                   BorderSpacing.Top = 12
                   ItemHeight = 15
                   ItemIndex = 0

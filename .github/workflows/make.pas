@@ -113,6 +113,7 @@ uses
     begin
       ExitCode += 1;
       OutLog(etError, SelectString(Result, '(Fatal|Error):'));
+      OutLog(etDebug, Result);
     end;
   end;
 
