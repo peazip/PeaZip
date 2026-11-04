@@ -845,3 +845,12 @@ exe cmd msi bat ps1 vbs reg
 
 [middle mouse button click action: 0 Up 1 Back 2 Rename 3 Open in a new tab 4 Open in a new window
 3
+
+[task progress window shows: 0 compression percentage 1 compression ratio
+0
+
+[browse output directory with PeaZip when task ends]
+0
+
+[encryption algorithm for 7Z 0 AES256 (default), 1 XChaCha20, 2 XChaCha20-Poly1305, 3 AES+XChaCha20-Poly1305, 4 AES+XChaCha20+Ascon, 5 XChaCha20+AES+AEGIS; methods other than AES256 require a 7-Zip-zstd-crypto backend]
+0

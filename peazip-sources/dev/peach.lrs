@@ -2111,7 +2111,7 @@ LazarusResources.Add('TFormpeach','FORMDATA',[
   +#11#5'akTop'#7'akRight'#0#19'BorderSpacing.Right'#2#12#7'Caption'#6#9'Algori'
   +'thm'#10'ParentFont'#8#0#0#9'TComboBox'#14'ComboBox7zalgo'#21'AnchorSideTop.'
   +'Control'#7#16'Subtitle7zEncOpt'#18'AnchorSideTop.Side'#7#9'asrBottom'#4'Lef'
-  +'t'#3#128#0#6'Height'#2#23#3'Top'#3#172#1#5'Width'#3#150#0#17'BorderSpacing.'
+  +'t'#3#128#0#6'Height'#2#23#3'Top'#3#172#1#5'Width'#3#180#0#17'BorderSpacing.'
   +'Top'#2#12#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6#6'AES2'
   ,'56'#6#18'ZipCrypto (legacy)'#0#10'ParentFont'#8#5'Style'#7#14'csDropDownLis'
   +'t'#8'TabOrder'#2#12#4'Text'#6#6'AES256'#8'OnChange'#7#20'ComboBox7zalgoChan'

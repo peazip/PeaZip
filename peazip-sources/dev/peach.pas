@@ -6291,6 +6291,7 @@ var
    dragtargetprotect,whenspecialopen,howspecialopen,ptsync,taskpriority,defaultactionst,displayfoldercontent,filterbrowser,
    immediate_execution,defaultarchiveaction,showsearchbar,tar_atomic,tar_atomic_convert,syntaxlevel7z,convint,
    qdup,restoretabbar,scripttarpipe,scriptuntarpipe,zstderr,executesmallbk,logcommands:byte;
+   algo_7zenc,crypto7zalt:integer;
 
    call_validated,keyf_opened,no_more_files,az,
    using_tarbefore,tarbeforenameexception,seemencrypted,imgloaded,imgloading,
@@ -14434,6 +14435,8 @@ procedure on_ComboBox7zalgochange;
 begin
 getarccaption(FormPeach.cbType.Text);
 if archive_type='zip' then algo_zipenc:=FormPeach.ComboBox7zalgo.ItemIndex;
+if archive_type='7z' then
+   if FormPeach.ComboBox7zalgo.ItemIndex>=0 then algo_7zenc:=FormPeach.ComboBox7zalgo.ItemIndex;
 end;
 
 procedure cbSplit_onchange;
@@ -23279,6 +23282,8 @@ solid_arc:=1; //default solid mode for ARC 0 non-solid 1 solid, auto-adjust
 rr_arc:=1; //default recovery records for ARC: ON
 algo_arc:=0; //default encryption algorithm for ARC: 0 AES 1 Serpent 2 Twofish 3 Blowfish (always max keysize)
 algo_zipenc:=0; //default encryption algorithm for ZIP: 0 AES 1 ZipCrypto
+algo_7zenc:=0; //default encryption algorithm for 7Z: 0 AES256 1 XChaCha20 2 XChaCha20-Poly1305 3 AES+XChaCha20-Poly1305 4 AES+XChaCha20+Ascon 5 XChaCha20+AES+AEGIS
+crypto7zalt:=-1; //-1 not checked yet, 0 new 7z encryption methods not available, 1 available (7-Zip-zstd-crypto backend)
 level_bzip2:=2; //default Compression level for bzip2: average
 level_gz:=2; //default Compression level for gzip: average
 level_paq:=1; //default Compression level for zpaq: normal
@@ -23673,6 +23678,7 @@ if (solid_arc>2) then solid_arc:=1;
 if (rr_arc>1) then rr_arc:=1;
 if (algo_arc>3) then algo_arc:=0;
 if (algo_zipenc>1) then algo_arc:=1;
+if (algo_7zenc<0) or (algo_7zenc>5) then algo_7zenc:=0;
 if (level_bzip2>4) then level_bzip2:=2;
 if (level_gz>4) then level_gz:=2;
 if (level_paq>3) then level_paq:=1;
@@ -25998,6 +26004,13 @@ readln(conf,s); docr:=strtoint(s);
 readln(conf,s);
 readln(conf,s);
 readln(conf,s); autopz:=strtoint(s);
+try
+readln(conf,s);
+readln(conf,s);
+readln(conf,s); algo_7zenc:=strtoint(s);
+except
+algo_7zenc:=0;
+end;
 end;
 
 procedure writeconf_colors;
@@ -26929,6 +26942,9 @@ writeln(conf,inttostr(docr));
 writeln(conf,'');
 writeln(conf,'[browse output directory with PeaZip when task ends]');
 writeln(conf,inttostr(autopz));
+writeln(conf,'');
+writeln(conf,'[encryption algorithm for 7Z 0 AES256 (default), 1 XChaCha20, 2 XChaCha20-Poly1305, 3 AES+XChaCha20-Poly1305, 4 AES+XChaCha20+Ascon, 5 XChaCha20+AES+AEGIS; methods other than AES256 require a 7-Zip-zstd-crypto backend]');
+writeln(conf,inttostr(algo_7zenc));
 end;
 
 procedure updateconf;
@@ -29783,7 +29799,7 @@ begin
       readln(t,s); //ntfs stream
       readln(t,s); if s='1' then FormPeach.CheckBoxsns.Checked:=true else FormPeach.CheckBoxsns.Checked:=false; FormPeach.CheckBoxsnsClick(nil);
       readln(t,s); //encryption algorithm
-      readln(t,s); FormPeach.ComboBox7zalgo.itemindex:=strtoint(s); FormPeach.ComboBox7zalgoChange(nil);
+      readln(t,s); if (strtoint(s)<0) or (strtoint(s)>FormPeach.ComboBox7zalgo.Items.Count-1) then FormPeach.ComboBox7zalgo.itemindex:=0 else FormPeach.ComboBox7zalgo.itemindex:=strtoint(s); FormPeach.ComboBox7zalgoChange(nil);
 
       readln(t,s);
       readln(t,s); //BACKEND arc
@@ -30862,7 +30878,90 @@ if s='off' then //disallow multithread selection since Compression algorithms us
    end;
 end;
 
+{7z encryption methods added by 7-Zip-zstd-crypto builds, name of the -mem switch for each algorithm}
+function crypto7z_mem(i:integer):ansistring;
+begin
+result:='';
+case i of
+   1: result:='xchacha20';
+   2: result:='xchacha20poly1305';
+   3: result:='axp';
+   4: result:='axa';
+   5: result:='xaa';
+   end;
+end;
+
+{label shown in the encryption algorithm combobox for each 7z algorithm}
+function crypto7z_label(i:integer):ansistring;
+begin
+case i of
+   1: result:='XChaCha20';
+   2: result:='XChaCha20-Poly1305';
+   3: result:='AES+XChaCha20-Poly1305';
+   4: result:='AES+XChaCha20+Ascon';
+   5: result:='XChaCha20+AES+AEGIS';
+   else result:='AES256';
+   end;
+end;
+
+{check once per session if the 7z backend supports the additional encryption methods, by reading the method list printed by "7z i"}
+function crypto7z_supported:boolean;
+var
+   P:TProcessUTF8;
+   M:TMemoryStream;
+   BytesRead,i:integer;
+   cl,s:ansistring;
+begin
+if crypto7zalt>=0 then
+   begin
+   result:=crypto7zalt=1;
+   exit;
+   end;
+crypto7zalt:=0;
+P:=nil;
+M:=nil;
+try
+   cl:=stringdelim(escapefilename(binpath,desk_env)+'7z'+DirectorySeparator+alias7z+EXEEXT);
+   if sys7zlin>0 then cl:=alias7z+EXEEXT;
+   cl:=cl+' i';
+   P:=tprocessutf8.Create(nil);
+   M:=TMemoryStream.Create;
+   {$IFDEF MSWINDOWS}
+   P.Options:=[poUsePipes, poNoConsole];
+   {$ELSE}
+   P.Options:=[poUsePipes];
+   {$ENDIF}
+   peapexecute(P,cl);
+   BytesRead:=0;
+   while P.Running do
+      begin
+      if BytesRead+16*1024>=M.Size then M.SetSize(BytesRead+64*1024);
+      if P.Output.NumBytesAvailable>0 then i:=P.Output.Read((M.Memory+BytesRead)^,16*1024) else i:=0;
+      if i>0 then Inc(BytesRead,i);
+      end;
+   repeat
+      M.SetSize(BytesRead+4*1024);
+      i:=P.Output.Read((M.Memory+BytesRead)^,4*1024);
+      if i>0 then Inc(BytesRead,i);
+   until i<=0;
+   M.SetSize(BytesRead);
+   if BytesRead>0 then
+      begin
+      setlength(s,BytesRead);
+      Move(M.Memory^,s[1],BytesRead);
+      if pos('XChaCha20',s)>0 then crypto7zalt:=1;
+      end;
+except
+   crypto7zalt:=0;
+end;
+M.Free;
+P.Free;
+result:=crypto7zalt=1;
+end;
+
 procedure set_values(archive_type,compression_method,compression_level:ansistring);
+var
+   i:integer;
 begin
 if archive_type=prev_type then
    if compression_method=prev_method then
@@ -30908,9 +31007,12 @@ if archive_type='7z' then
    FormPeach.Subtitle7zEncOpt.Visible:=true;
    FormPeach.Combobox7zalgo.Visible:=true;
    FormPeach.Combobox7zalgo.Clear;
-   FormPeach.Combobox7zalgo.DropDownCount:=1;
    FormPeach.Combobox7zalgo.Items.Append('AES256');
-   FormPeach.Combobox7zalgo.ItemIndex:=0;
+   if crypto7z_supported=true then
+      for i:=1 to 5 do FormPeach.Combobox7zalgo.Items.Append(crypto7z_label(i));
+   FormPeach.Combobox7zalgo.DropDownCount:=FormPeach.Combobox7zalgo.Items.Count;
+   if algo_7zenc>FormPeach.Combobox7zalgo.Items.Count-1 then algo_7zenc:=0;
+   FormPeach.Combobox7zalgo.ItemIndex:=algo_7zenc;
    if compression_level=txt_level_store then
       begin
       set_multi('off');
@@ -50901,11 +51003,18 @@ if pw_option<>'' then
    end;
 //encryption algorithm
 if FormPeach.ComboBox7zalgo.Visible=true then
+   begin
    if archive_type='zip' then
       case FormPeach.ComboBox7zalgo.Itemindex of
          0: encalgo:='-mem=AES256';
          1: encalgo:=''; //if em is omitted, ZipCrypto is used; omitting the parameter rather than explicitly declare it allows to use transparently also older 7z implementation not supporting that switch, providing the user unckeck the use AES option (or the binary to be recompiled hiding the AES option checkbox)
       end;
+   if archive_type='7z' then
+      begin
+      encalgo:=''; //AES256 is the default 7z encryption method, omitting the parameter keeps compatibility with 7z implementations not supporting the -mem switch
+      if FormPeach.ComboBox7zalgo.ItemIndex>0 then encalgo:='-mem='+crypto7z_mem(FormPeach.ComboBox7zalgo.ItemIndex);
+      end;
+   end;
 //send by mail
 if (FormPeach.CheckBoxMailAdd.Enabled=true) and (FormPeach.CheckBoxMailAdd.State=cbChecked) then mail_option:='-seml' else mail_option:='';
 if mail_option='-seml' then if FormPeach.CheckBoxMailKeep.State=cbUnChecked then mail_option:=mail_option+'.';
