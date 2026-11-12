@@ -59,7 +59,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>/Applications/peazip.app/Contents/MacOS/peazip -add2xz $* || true</string>
+					<string>nohup /Applications/peazip.app/Contents/MacOS/peazip -add2xz "$@" &gt;/dev/null 2&gt;&amp;1 &amp;</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
