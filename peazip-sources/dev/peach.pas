@@ -23448,7 +23448,7 @@ forcebrowse:=1;
 forceconvert:=0;
 nativedrag:=1;
 autosync:=1;
-sys7zlin:=0;
+sys7zlin:=HSYSBIN;
 ignorepathdd:=0;
 level_brotli:=3;
 level_rar:=3;
@@ -23845,7 +23845,7 @@ if (zpaqall>1) then zpaqall:=0;
 if (zpaqfull>1) then zpaqfull:=0;
 if (zpaqabsolute>1) then zpaqabsolute:=1;
 if (zpaqforce>1) then zpaqforce:=0;
-if (sys7zlin<0) or (sys7zlin>2) then sys7zlin:=0;
+if (sys7zlin<0) or (sys7zlin>2) then sys7zlin:=HSYSBIN;
 end;
 
 procedure settabsstyled;
