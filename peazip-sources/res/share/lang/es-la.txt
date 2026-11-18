@@ -1,40 +1,40 @@
 ﻿=== PeaZip language file ===
 Spanish (Latin America) - Español (América latina)
 11.4
-Translated by: Agustín Bou, Anonymous
-Last rev. by: Anonymous
-Last rev.: 20180510
+Translated by: Agustín Bou, Anonymous, Pedro Flores
+Last rev. by: Pedro Flores
+Last rev.: 20261118
 
 === PeaZip text group ===
 
-txt_11_4_maxsize: Input size exceeds maximum supported size
-txt_11_4_mc: The script will contain potentially dangerous metacharacters (i.e. command concatenation, variable expansion), proceed anyway?
-txt_11_3_cr: Compression Ratio
-txt_11_3_showcr: Show compression as Compression Ratio
-txt_11_2_comp: Original file name and extension are always preserved when using pure compression formats (Brotli, BZip2, GZip, XZ, Zstd...), unless TAR before option is used, overriding Output file name.
-txt_11_2_funexp: Type or select any of supported app's function (run on selected files, if applicable)
-txt_11_1_pp: Skipping pre-parse step the app may not detect possible archive issues in advance, and may not display correctly some archives. Anyway, extraction is unaffected by this setting.
-txt_11_0_adv: Advanced and format-specific options
-txt_11_0_bt: Batch test archives
-txt_11_0_good: Good
-txt_11_0_items: items
-txt_11_0_native: Native
-txt_11_0_pr: Rate password entropy
-txt_11_0_rendering: Rendering
-txt_11_0_sch: Schedule execution of the task defined in the GUI as CLI script
-txt_11_0_sharp: Sharp
-txt_11_0_soft: Soft
-txt_11_0_strong: Strong
-txt_11_0_vw: Very weak
-txt_11_0_w: Weak
-txt_10_9_deletearchive: Delete archive
-txt_10_9_kfl: Keyfile size limited to first 100MB
-txt_10_9_mb: Middle mouse button click
-txt_10_8_log: Commands log
-txt_10_8_rv: Create recovery volumes
-txt_10_8_bk: Execute small workloads in background
-txt_10_8_params: Pass command line as separate parameters
-txt_10_8_untarerr: TAR name does not match archive name. It is possible to try to open the archive to manually extract the TAR content.
+txt_11_4_maxsize: El tamaño de la entrada supera el máximo admitido
+txt_11_4_mc: El script contendrá metacaracteres potencialmente peligrosos (p. ej., concatenación de comandos o expansión de variables). ¿Continuar de todos modos?
+txt_11_3_cr: Relación de compresión
+txt_11_3_showcr: Mostrar la compresión como relación de compresión
+txt_11_2_comp: El nombre y la extensión originales del archivo siempre se conservan al usar formatos de compresión pura (Brotli, BZip2, GZip, XZ, Zstd...), a menos que se use la opción "TAR antes", que reemplaza el nombre del archivo de salida.
+txt_11_2_funexp: Escriba o seleccione cualquier función compatible de la aplicación (se ejecuta en los archivos seleccionados, si corresponde)
+txt_11_1_pp: Si se omite el preprocesamiento, es posible que la aplicación no detecte de antemano posibles problemas del archivo y que algunos archivos no se muestren correctamente. De todos modos, esta opción no afecta la extracción.
+txt_11_0_adv: Opciones avanzadas y específicas del formato
+txt_11_0_bt: Probar archivos por lotes
+txt_11_0_good: Buena
+txt_11_0_items: elementos
+txt_11_0_native: Nativo
+txt_11_0_pr: Evaluar la entropía de la contraseña
+txt_11_0_rendering: Renderizado
+txt_11_0_sch: Programar la ejecución de la tarea definida en la interfaz gráfica como script de línea de comandos
+txt_11_0_sharp: Nítido
+txt_11_0_soft: Suave
+txt_11_0_strong: Fuerte
+txt_11_0_vw: Muy débil
+txt_11_0_w: Débil
+txt_10_9_deletearchive: Eliminar archivo
+txt_10_9_kfl: Tamaño del archivo de clave limitado a los primeros 100 MB
+txt_10_9_mb: Clic con el botón central del mouse
+txt_10_8_log: Registro de comandos
+txt_10_8_rv: Crear volúmenes de recuperación
+txt_10_8_bk: Ejecutar las tareas pequeñas en segundo plano
+txt_10_8_params: Pasar la línea de comandos como parámetros separados
+txt_10_8_untarerr: El nombre del TAR no coincide con el nombre del archivo. Puede intentar abrir el archivo para extraer manualmente el contenido del TAR.
 txt_10_7_errload: No se puede mostrar la imagen
 txt_10_7_errfile: Archivo no encontrado
 txt_10_7_first: Primero
@@ -75,7 +75,7 @@ txt_10_0_comp: Los formatos de compresión pura solo aceptan un archivo como ent
 txt_10_0_save: Guardar
 txt_10_0_tp: Vista previa de texto
 txt_9_9_uac: El usuario actual no puede escribir en esta ruta de salida. ¿Deseas ejecutar PeaZip con permisos elevados (UAC)?
-TXT_9_9_kdf: Rondas KDF
+txt_9_9_kdf: Rondas KDF
 txt_9_9_utc: Mostrar marcas de tiempo en UTC
 txt_9_8_alwaysflat: Abrir siempre los archivos en vista plana
 txt_9_8_fnew: Extraer aquí (en nueva carpeta)
@@ -486,7 +486,7 @@ txt_5_1_w3: Martes
 txt_5_1_w4: Miércoles
 txt_5_1_weekly: Semanalmente
 txt_5_1_weeks: Semanas
-txt_5_0_bc: Breadcrumb
+txt_5_0_bc: Ruta de navegación
 txt_5_0_resetpm: ¿Confirma que desea reestablecer el administrador de contraseñas? Todas las contraseñas almacenadas en el administrador de contraseñas de PeaZip se perderán si confirma.
 txt_5_0_enum: Enumerar contenido de directorios
 txt_5_0_music: Música
@@ -1282,13 +1282,13 @@ txt_zipcrypto_hint: ZipCrypto (legal)
 
 === PeaLauncher text group ===
 
-txt_6_9_remaining: remaining
-txt_6_5_abort: Abort
+txt_6_9_remaining: restante
+txt_6_5_abort: Abortar
 txt_6_5_error: Error
 txt_6_5_no: No
-txt_6_5_warning: Warning
-txt_6_5_yes: Yes
-txt_6_5_yesall: Yes to all
+txt_6_5_warning: Advertencia
+txt_6_5_yes: Sí
+txt_6_5_yesall: Sí a todo
 txt_5_6_update: Comprobar actualizaciones
 txt_5_6_cml: Idioma de menú contextual de sistema
 txt_5_6_donations: Donaciones
