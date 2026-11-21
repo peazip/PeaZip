@@ -88,6 +88,8 @@ const
 var
   FormPW: TFormPW;
   desk_env,showpwfield:byte;
+  kfhidden:boolean; //keyfile panel unavailable (sfx): keep PanelKF hidden
+  kfvisible:boolean; //PanelKF visibility before it was hidden for sfx
   caption_build,delimiter,wincomspec,winver,validate_txt,txt_pw,txt_pr1,txt_pr2,txt_pr3,txt_pr4:ansistring;
   activelabel_pw:TLabel;
 
@@ -166,7 +168,7 @@ if CheckBoxIntPw.State=cbChecked then
    begin
    EditPWpass.Text:='';
    EditPWconfirm.Text:='';
-   PanelKF.Visible:=true;
+   if kfhidden=false then PanelKF.Visible:=true;
    EditPWpass.Enabled:=false;
    EditPWconfirm.Enabled:=false;
    LabelPWkeyfile.Enabled:=false;
@@ -203,7 +205,7 @@ end;
 
 procedure TFormPW.LabelPWkeyfileClick(Sender: TObject);
 begin
-PanelKF.Visible:=not(PanelKF.Visible);
+if kfhidden=false then PanelKF.Visible:=not(PanelKF.Visible);
 end;
 
 //open, cross platform, with sanitization of string passed to the function
