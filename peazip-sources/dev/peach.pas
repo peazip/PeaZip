@@ -5861,7 +5861,7 @@ procedure cleandragtmp;
 function cleardir(var st:ansistring; cleardirname,force_skip_ptmpcode:boolean):integer;
 function cleardirsimple(st:ansistring):integer;
 //password and keyfile request
-function ask_pwkeyfile:integer;
+function ask_pwkeyfile(sfxmode:boolean=false):integer;
 procedure hideconfirmation;
 procedure showconfirmation;
 //request input
@@ -55803,7 +55803,16 @@ else listun7z_expandall;
 FormPeach.PanelProgress.Visible:=false;
 end;
 
-function ask_pwkeyfile_core:integer;
+function sfxcreatepw:boolean; //true when the dialog is going to set the password for sfx archive creation
+begin
+{$IFDEF MSWINDOWS}
+sfxcreatepw:=(disable_twofactor=true) and (FormPeach.PanelArchive.Visible=true);
+{$ELSE}
+sfxcreatepw:=(disable_twofactor=true) and (FormPeach.PanelArchive.Top=0);
+{$ENDIF}
+end;
+
+function ask_pwkeyfile_core(sfxmode:boolean=false):integer;
 var
    s1,s1b,s2:ansistring;
    encfn,eintpw,shp:boolean;
@@ -55814,13 +55823,35 @@ result:=-1;
 s1:=FormPW.EditPWpass.Text;
 s1b:=FormPW.EditPWconfirm.Text;
 s2:=FormPW.EditPWkeyfile.Text;
+if sfxmode=true then //sfx archive creation: keyfile is not supported, hide keyfile input
+   begin
+   if kfhidden=false then kfvisible:=FormPW.PanelKF.Visible; //remember the panel state to restore it later
+   FormPW.LabelPWkeyfile.Visible:=false;
+   FormPW.EditPWkeyfile.Visible:=false;
+   FormPW.ButtonPWkeyfile.Visible:=false;
+   FormPW.PanelKF.Visible:=false;
+   FormPW.EditPWkeyfile.Text:='';
+   FormPW.PanelPWOpen1.AnchorSideTop.Control:=FormPW.EditPWconfirm; //close the gap left by the hidden keyfile row
+   FormPW.PanelPWOpen1.AnchorSideTop.Side:=asrBottom;
+   kfhidden:=true;
+   end
+else
+   begin
+   FormPW.LabelPWkeyfile.Visible:=true;
+   FormPW.EditPWkeyfile.Visible:=true;
+   FormPW.ButtonPWkeyfile.Visible:=true;
+   if kfhidden=true then FormPW.PanelKF.Visible:=kfvisible;
+   FormPW.PanelPWOpen1.AnchorSideTop.Control:=FormPW.ButtonPWkeyfile;
+   FormPW.PanelPWOpen1.AnchorSideTop.Side:=asrBottom;
+   kfhidden:=false;
+   end;
 if setencfn=1 then FormPW.CheckBoxEncFn.State:=cbChecked;
 if intpw=1 then
    begin
    FormPW.CheckBoxintpw.State:=cbChecked;
    FormPW.EditPWpass.Text:='';
    FormPW.EditPWconfirm.Text:='';
-   FormPW.PanelKF.Visible:=true;
+   if kfhidden=false then FormPW.PanelKF.Visible:=true;
    FormPW.EditPWpass.Enabled:=false;
    FormPW.EditPWconfirm.Enabled:=false;
    FormPW.LabelPWkeyfile.Enabled:=false;
@@ -55963,12 +55994,12 @@ else
 setpwicons;
 end;
 
-function ask_pwkeyfile:integer;
+function ask_pwkeyfile(sfxmode:boolean):integer;
 begin
 //if FormPeach.StringGridList.RowCount<2 then exit;
 ask_pwkeyfile:=-1;
 repeat
-ask_pwkeyfile:=ask_pwkeyfile_core;
+ask_pwkeyfile:=ask_pwkeyfile_core(sfxmode);
 until ask_pwkeyfile>=0;
 if ask_pwkeyfile=0 then
    try //pw could be optionally tested here for extraction, caveats: 1) should not block unsupervised batch tasks; 2) multiple passwords can be used in the archive
@@ -62465,7 +62496,7 @@ if capt=txt_joinfiles then begin do_join; exit; end;
 if capt=txt_split_file then begin do_split; exit; end;
 if capt=txt_controlpanel then begin open_cpl; exit; end;
 if capt=txt_4_3_pwman then begin setpm(1); exit; end;
-if capt=txt_2_7_setpw then begin ask_pwkeyfile; exit; end;
+if capt=txt_2_7_setpw then begin ask_pwkeyfile(sfxcreatepw); exit; end;
 if capt=txt_searchfor then
    begin
    FormPeach.editun7zafilter.caption:='*';
@@ -64888,7 +64919,7 @@ begin
 {$IFDEF MSWINDOWS}if PanelOpen.visible=true{$ELSE}if PanelOpen.top=0{$ENDIF} then ask_pwkeyfile
 else
    repeat
-   i:=ask_pwkeyfile_core;
+   i:=ask_pwkeyfile_core(sfxcreatepw);
    until i>=0;
 end;
 
@@ -66358,7 +66389,7 @@ var
    i:integer;
 begin
 repeat
-i:=ask_pwkeyfile_core;
+i:=ask_pwkeyfile_core(disable_twofactor);
 until i>=0;
 getarccaption(FormPeach.cbType.Text);
 end;
